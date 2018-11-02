@@ -15,6 +15,7 @@ var globalEffectHandlers = {}
 
 const API_CUSTOMER_SESSIONS_PATH        = '/v1/customer_sessions/'
 const API_CUSTOMER_PROFILES_PATH        = '/v1/customer_profiles/'
+const API_CUSTOMER_DATA_PATH            = '/v1/customer_data/'
 const API_EVENTS_PATH                   = '/v1/events'
 const API_REFERRALS_PATH                = '/v1/referrals'
 const API_CUSTOMER_PROFILES_SEARCH_PATH = '/v1/customer_profiles_search'
@@ -56,6 +57,12 @@ function handleEffects (client, response, callback) {
 function effectsCallback(client, callback) {
   return function(error, response) {
     (error) ? callback(error) : handleEffects(client, response, callback)
+  }
+}
+
+function emptyResponseCallback(callback) {
+  return function(error, response) {
+    (error) ? callback(error) : true
   }
 }
 
@@ -101,6 +108,15 @@ IntegrationClient.prototype.updateCustomerSession = function (sessionId, updates
  */
 IntegrationClient.prototype.updateCustomerProfile = function (customerId, updates, callback) {
   return this.request('PUT', API_CUSTOMER_PROFILES_PATH + customerId, updates, effectsCallback(this, callback))
+}
+
+/**
+ * Delete a customer information
+ *
+ * @param {string} customerId: The integration ID of the customer profile
+ */
+IntegrationClient.prototype.deleteCustomerInformation = function(customerId, callback) {
+  return this.request('DELETE', API_CUSTOMER_DATA_PATH + customerId, {}, emptyResponseCallback(callback))
 }
 
 /**
@@ -153,6 +169,17 @@ IntegrationClient.prototype.customersByAttributes = function (customerAttr, call
   return this.request('POST', API_CUSTOMER_PROFILES_SEARCH_PATH, { attributes: customerAttr }, callback)
 }
 
+handleByResponseCode = function(code, callback) {
+  switch (code) {
+    case 404:
+      callback(new Error('Integration ID not found'))
+      break;
+
+    default:
+      break;
+  }
+}
+
 IntegrationClient.prototype.request = function (method, path, payload, callback) {
   var impl = this.defaults.protocol == "http:" ? http : https
   var req = impl.request({
@@ -168,6 +195,10 @@ IntegrationClient.prototype.request = function (method, path, payload, callback)
     hmac.write(buff);
     hmac.end()
     var signature = hmac.read().toString('hex')
+    // `DELETE` requests drop the body (see https://github.com/nodejs/node/issues/19179)
+    if(Object.keys(payload).length === 0 && payload.constructor === Object && req.method === 'DELETE') {
+      req.useChunkedEncodingByDefault = true
+    }
     req.setHeader('Content-Type', 'application/json')
     req.setHeader('Content-Signature', 'signer=' + this.applicationId + '; signature=' + signature)
     req.write(buff)
@@ -189,17 +220,23 @@ IntegrationClient.prototype.request = function (method, path, payload, callback)
       var buff = Buffer.concat(buffs, responseLength)
       var data
       try {
-        data = JSON.parse(buff.toString())
+        if (req.method !== 'DELETE'){
+          data = JSON.parse(buff.toString())
+        }
       } catch (err) {
         callback(new Error('Received non-JSON response: ' + buff))
       }
       if (res.statusCode >= 200 && res.statusCode < 300) {
         callback(null, data)
       } else {
-        var err = new Error(data.message)
-        err.errors = data.errors || [];
-        err.statusCode = res.statusCode
-        callback(err)
+        if (req.method !== 'DELETE') {
+          var err = new Error(data.message)
+          err.errors = data.errors || [];
+          err.statusCode = res.statusCode
+          callback(err)
+        } else {
+          handleByResponseCode(res.statusCode, callback)
+        }
       }
     })
   })
