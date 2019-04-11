@@ -20,7 +20,7 @@ please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.co
 Then install it via:
 
 ```shell
-npm install talonone_api --save
+npm install talon_one --save
 ```
 
 ##### Local development
@@ -93,17 +93,17 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = "YOUR API KEY"
+manager_auth.apiKey = "YOUR API KEY";
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix['Authorization'] = "Token"
+//manager_auth.apiKeyPrefix['Authorization'] = "Token";
 
-var api = new TalononeApi.ManagementApiApi()
+var api = new TalononeApi.ManagementApi();
 
 var opts = { 
   'body': new TalononeApi.Body13() // {Body13} 
@@ -113,9 +113,12 @@ api.createAPIKey(opts).then(function(data) {
 }, function(error) {
   console.error(error);
 });
-
-
 ```
+
+There are further usage examples in the following files:
+
+* [example_consumers/integration.js](example_consumers/integration.js)
+* [example_consumers/management.js](example_consumers/management.js)
 
 ## Documentation for API Endpoints
 
