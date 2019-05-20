@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **coupon** | **String** | Any coupon code entered. | 
 **referral** | **String** | Any referal code entered. | 
 **state** | **String** | Indicating if the customer session is in progress (\&quot;open\&quot;), \&quot;closed\&quot;, or \&quot;cancelled\&quot;. | 
-**cartItems** | [**[InlineResponse20018CartItems]**](InlineResponse20018CartItems.md) | Serialized JSON representation. | 
+**cartItems** | [**[CartItem]**](CartItem.md) | Serialized JSON representation. | 
 **discounts** | **{String: Number}** | A map of labelled discount values, in the same currency as the session. | 
 **attributes** | **Object** | Arbitrary properties associated with this item | [optional] 
 

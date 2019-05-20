@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20018Adjustment'], factory);
+    define(['ApiClient', 'model/CartItemAdjustment'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20018Adjustment'));
+    module.exports = factory(require('../ApiClient'), require('./CartItemAdjustment'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.CartItem = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20018Adjustment);
+    root.TalononeApi.CartItem = factory(root.TalononeApi.ApiClient, root.TalononeApi.CartItemAdjustment);
   }
-}(this, function(ApiClient, InlineResponse20018Adjustment) {
+}(this, function(ApiClient, CartItemAdjustment) {
   'use strict';
 
 
@@ -110,7 +110,7 @@
         obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
       }
       if (data.hasOwnProperty('adjustment')) {
-        obj['adjustment'] = InlineResponse20018Adjustment.constructFromObject(data['adjustment']);
+        obj['adjustment'] = CartItemAdjustment.constructFromObject(data['adjustment']);
       }
     }
     return obj;
@@ -167,7 +167,7 @@
    */
   exports.prototype['attributes'] = undefined;
   /**
-   * @member {module:model/InlineResponse20018Adjustment} adjustment
+   * @member {module:model/CartItemAdjustment} adjustment
    */
   exports.prototype['adjustment'] = undefined;
 

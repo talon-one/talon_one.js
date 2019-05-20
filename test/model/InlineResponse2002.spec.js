@@ -56,26 +56,14 @@
       //expect(instance).to.be.a(TalononeApi.InlineResponse2002);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property totalResultSize (base name: "totalResultSize")', function() {
+      // uncomment below and update the code to test the property totalResultSize
       //var instane = new TalononeApi.InlineResponse2002();
       //expect(instance).to.be();
     });
 
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
-      //var instane = new TalononeApi.InlineResponse2002();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property applicationId (base name: "applicationId")', function() {
-      // uncomment below and update the code to test the property applicationId
-      //var instane = new TalononeApi.InlineResponse2002();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property set (base name: "set")', function() {
-      // uncomment below and update the code to test the property set
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new TalononeApi.InlineResponse2002();
       //expect(instance).to.be();
     });

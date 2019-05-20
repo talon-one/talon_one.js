@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse2004Data]**](InlineResponse2004Data.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[Coupon]**](Coupon.md) |  | 
 
 

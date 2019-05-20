@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20014Data'], factory);
+    define(['ApiClient', 'model/CustomerActivityReport'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20014Data'));
+    module.exports = factory(require('../ApiClient'), require('./CustomerActivityReport'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse20014 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20014Data);
+    root.TalononeApi.InlineResponse20014 = factory(root.TalononeApi.ApiClient, root.TalononeApi.CustomerActivityReport);
   }
-}(this, function(ApiClient, InlineResponse20014Data) {
+}(this, function(ApiClient, CustomerActivityReport) {
   'use strict';
 
 
@@ -43,13 +43,13 @@
    * Constructs a new <code>InlineResponse20014</code>.
    * @alias module:model/InlineResponse20014
    * @class
-   * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/InlineResponse20014Data>} 
+   * @param hasMore {Boolean} 
+   * @param data {Array.<module:model/CustomerActivityReport>} 
    */
-  var exports = function(totalResultSize, data) {
+  var exports = function(hasMore, data) {
     var _this = this;
 
-    _this['totalResultSize'] = totalResultSize;
+    _this['hasMore'] = hasMore;
     _this['data'] = data;
   };
 
@@ -64,22 +64,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('totalResultSize')) {
-        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+      if (data.hasOwnProperty('hasMore')) {
+        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse20014Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [CustomerActivityReport]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} totalResultSize
+   * @member {Boolean} hasMore
    */
-  exports.prototype['totalResultSize'] = undefined;
+  exports.prototype['hasMore'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse20014Data>} data
+   * @member {Array.<module:model/CustomerActivityReport>} data
    */
   exports.prototype['data'] = undefined;
 

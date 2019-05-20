@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccessControlList', 'model/AccessLogEntry', 'model/Account', 'model/AnyValue', 'model/ApiKey', 'model/ApiKeyWithUsage', 'model/Application', 'model/ApplicationApiHealth', 'model/ApplicationCustomer', 'model/ApplicationCustomerSearch', 'model/ApplicationEvent', 'model/ApplicationEventType', 'model/ApplicationSession', 'model/Attribute', 'model/AttributeQuery', 'model/Binding', 'model/Body', 'model/Body1', 'model/Body10', 'model/Body11', 'model/Body12', 'model/Body13', 'model/Body14', 'model/Body15', 'model/Body16', 'model/Body17', 'model/Body18', 'model/Body19', 'model/Body2', 'model/Body20', 'model/Body21', 'model/Body22', 'model/Body23', 'model/Body24', 'model/Body25', 'model/Body26', 'model/Body27', 'model/Body28', 'model/Body29', 'model/Body3', 'model/Body4', 'model/Body5', 'model/Body6', 'model/Body7', 'model/Body8', 'model/Body9', 'model/Campaign', 'model/CampaignAnalytics', 'model/CampaignDuplicate', 'model/CampaignSearch', 'model/CampaignSet', 'model/CampaignSetBranchNode', 'model/CampaignSetLeafNode', 'model/CampaignSetNode', 'model/CartItem', 'model/CartItemAdjustment', 'model/Change', 'model/CodeGeneratorSettings', 'model/Coupon', 'model/CouponSearch', 'model/CustomerActivityReport', 'model/EventType', 'model/FeaturesFeed', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20011Data', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20013Data', 'model/InlineResponse20014', 'model/InlineResponse20014Data', 'model/InlineResponse20014LoyaltyMemberships', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20016Data', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20018Adjustment', 'model/InlineResponse20018CartItems', 'model/InlineResponse20018Data', 'model/InlineResponse20019', 'model/InlineResponse20019Data', 'model/InlineResponse2001CouponSettings', 'model/InlineResponse2001Data', 'model/InlineResponse2001Limits', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20023Data', 'model/InlineResponse20023Params', 'model/InlineResponse20024', 'model/InlineResponse20024Data', 'model/InlineResponse20025', 'model/InlineResponse20025Data', 'model/InlineResponse20026', 'model/InlineResponse20026Data', 'model/InlineResponse20027', 'model/InlineResponse20027Data', 'model/InlineResponse20028', 'model/InlineResponse20028Data', 'model/InlineResponse20029', 'model/InlineResponse2002Set', 'model/InlineResponse2002SetElements', 'model/InlineResponse2003', 'model/InlineResponse20030', 'model/InlineResponse20031', 'model/InlineResponse20031Data', 'model/InlineResponse20032', 'model/InlineResponse20032Data', 'model/InlineResponse20033', 'model/InlineResponse2003Bindings', 'model/InlineResponse2003Data', 'model/InlineResponse2003Rules', 'model/InlineResponse2004', 'model/InlineResponse2004Data', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2006Data', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2008Data', 'model/InlineResponse2009', 'model/InlineResponse2009Data', 'model/InlineResponse200Data', 'model/InlineResponse201', 'model/InlineResponse2011', 'model/InlineResponse204', 'model/InlineResponse2041', 'model/LatestFeature', 'model/LimitConfig', 'model/LimitEntityEnum', 'model/LoginParams', 'model/LoyaltyMembership', 'model/ManagerConfig', 'model/MiscUpdateUserLatestFeature', 'model/ModelExport', 'model/ModelImport', 'model/NewApiKey', 'model/NewApplication', 'model/NewAttribute', 'model/NewCampaign', 'model/NewCampaignSet', 'model/NewCoupons', 'model/NewEventType', 'model/NewInvitation', 'model/NewPassword', 'model/NewPasswordEmail', 'model/NewRole', 'model/NewRuleset', 'model/NewWebhook', 'model/Policy', 'model/Referral', 'model/Role', 'model/Rule', 'model/Ruleset', 'model/Session', 'model/TemplateArgDef', 'model/UpdateAccount', 'model/UpdateCoupon', 'model/UpdateUser', 'model/User', 'model/Webhook', 'model/WebhookActivationLogEntry', 'model/WebhookLogEntry', 'api/ManagementApi', 'api/Integration'], factory);
+    define(['ApiClient', 'model/APIError', 'model/AccessLogEntry', 'model/Account', 'model/AccountAnalytics', 'model/AccountEntity', 'model/AccountLimits', 'model/Application', 'model/ApplicationAPIKey', 'model/ApplicationApiHealth', 'model/ApplicationCustomer', 'model/ApplicationCustomerEntity', 'model/ApplicationCustomerSearch', 'model/ApplicationEntity', 'model/ApplicationEvent', 'model/ApplicationSession', 'model/ApplicationSessionEntity', 'model/ApplicationStorage', 'model/ApplicationStorageData', 'model/ApplicationStorageTuple', 'model/Attribute', 'model/AttributeQuery', 'model/Binding', 'model/Campaign', 'model/CampaignAnalytics', 'model/CampaignCopy', 'model/CampaignEntity', 'model/CampaignSearch', 'model/CampaignSet', 'model/CampaignSetBranchNode', 'model/CampaignSetLeafNode', 'model/CampaignSetNode', 'model/CartItem', 'model/CartItemAdjustment', 'model/Change', 'model/CodeGeneratorSettings', 'model/Coupon', 'model/CouponConstraints', 'model/CouponRejectionReason', 'model/CouponSearch', 'model/CouponValue', 'model/CreateApplicationAPIKey', 'model/CustomerActivityReport', 'model/CustomerAnalytics', 'model/CustomerProfile', 'model/CustomerProfileSearchQuery', 'model/CustomerSession', 'model/EmailEntity', 'model/Entity', 'model/Environment', 'model/ErrorResponse', 'model/ErrorSource', 'model/Event', 'model/EventType', 'model/FeatureFlag', 'model/FeatureFlags', 'model/FeaturesFeed', 'model/FuncArgDef', 'model/FunctionDef', 'model/ImportCoupons', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20019', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20024', 'model/InlineResponse20025', 'model/InlineResponse20026', 'model/InlineResponse20027', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/IntegrationEntity', 'model/IntegrationProfileEntity', 'model/IntegrationState', 'model/LedgerEntry', 'model/LibraryAttribute', 'model/LimitConfig', 'model/LoginParams', 'model/Loyalty', 'model/LoyaltyLedger', 'model/LoyaltyLedgerEntry', 'model/LoyaltyMembership', 'model/LoyaltyPoints', 'model/LoyaltyProgram', 'model/LoyaltyProgramBalance', 'model/ManagerConfig', 'model/Meta', 'model/MiscUpdateUserLatestFeature', 'model/ModelExport', 'model/ModelImport', 'model/MultiApplicationEntity', 'model/MutableEntity', 'model/NewAccount', 'model/NewAccountSignUp', 'model/NewApplication', 'model/NewApplicationAPIKey', 'model/NewApplicationStorage', 'model/NewApplicationStorageData', 'model/NewApplicationStorageTuple', 'model/NewAttribute', 'model/NewCampaign', 'model/NewCampaignSet', 'model/NewCoupons', 'model/NewCustomerProfile', 'model/NewCustomerSession', 'model/NewEvent', 'model/NewEventType', 'model/NewFeatureFlags', 'model/NewImport', 'model/NewInvitation', 'model/NewInviteEmail', 'model/NewLoyaltyProgram', 'model/NewPassword', 'model/NewPasswordEmail', 'model/NewReferral', 'model/NewRole', 'model/NewRuleset', 'model/NewTemplateDef', 'model/NewUser', 'model/NewWebhook', 'model/Referral', 'model/Role', 'model/RoleAssign', 'model/RoleMembership', 'model/Rule', 'model/Ruleset', 'model/Session', 'model/SlotDef', 'model/TemplateArgDef', 'model/TemplateDef', 'model/UpdateAccount', 'model/UpdateCampaign', 'model/UpdateCoupon', 'model/UpdateCouponBatch', 'model/UpdateLoyaltyProgram', 'model/UpdateRole', 'model/UpdateUser', 'model/User', 'model/UserEntity', 'model/Webhook', 'model/WebhookActivationLogEntry', 'model/WebhookLogEntry', 'api/IntegrationApi', 'api/ManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AccessControlList'), require('./model/AccessLogEntry'), require('./model/Account'), require('./model/AnyValue'), require('./model/ApiKey'), require('./model/ApiKeyWithUsage'), require('./model/Application'), require('./model/ApplicationApiHealth'), require('./model/ApplicationCustomer'), require('./model/ApplicationCustomerSearch'), require('./model/ApplicationEvent'), require('./model/ApplicationEventType'), require('./model/ApplicationSession'), require('./model/Attribute'), require('./model/AttributeQuery'), require('./model/Binding'), require('./model/Body'), require('./model/Body1'), require('./model/Body10'), require('./model/Body11'), require('./model/Body12'), require('./model/Body13'), require('./model/Body14'), require('./model/Body15'), require('./model/Body16'), require('./model/Body17'), require('./model/Body18'), require('./model/Body19'), require('./model/Body2'), require('./model/Body20'), require('./model/Body21'), require('./model/Body22'), require('./model/Body23'), require('./model/Body24'), require('./model/Body25'), require('./model/Body26'), require('./model/Body27'), require('./model/Body28'), require('./model/Body29'), require('./model/Body3'), require('./model/Body4'), require('./model/Body5'), require('./model/Body6'), require('./model/Body7'), require('./model/Body8'), require('./model/Body9'), require('./model/Campaign'), require('./model/CampaignAnalytics'), require('./model/CampaignDuplicate'), require('./model/CampaignSearch'), require('./model/CampaignSet'), require('./model/CampaignSetBranchNode'), require('./model/CampaignSetLeafNode'), require('./model/CampaignSetNode'), require('./model/CartItem'), require('./model/CartItemAdjustment'), require('./model/Change'), require('./model/CodeGeneratorSettings'), require('./model/Coupon'), require('./model/CouponSearch'), require('./model/CustomerActivityReport'), require('./model/EventType'), require('./model/FeaturesFeed'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse20010'), require('./model/InlineResponse20011'), require('./model/InlineResponse20011Data'), require('./model/InlineResponse20012'), require('./model/InlineResponse20013'), require('./model/InlineResponse20013Data'), require('./model/InlineResponse20014'), require('./model/InlineResponse20014Data'), require('./model/InlineResponse20014LoyaltyMemberships'), require('./model/InlineResponse20015'), require('./model/InlineResponse20016'), require('./model/InlineResponse20016Data'), require('./model/InlineResponse20017'), require('./model/InlineResponse20018'), require('./model/InlineResponse20018Adjustment'), require('./model/InlineResponse20018CartItems'), require('./model/InlineResponse20018Data'), require('./model/InlineResponse20019'), require('./model/InlineResponse20019Data'), require('./model/InlineResponse2001CouponSettings'), require('./model/InlineResponse2001Data'), require('./model/InlineResponse2001Limits'), require('./model/InlineResponse2002'), require('./model/InlineResponse20020'), require('./model/InlineResponse20021'), require('./model/InlineResponse20022'), require('./model/InlineResponse20023'), require('./model/InlineResponse20023Data'), require('./model/InlineResponse20023Params'), require('./model/InlineResponse20024'), require('./model/InlineResponse20024Data'), require('./model/InlineResponse20025'), require('./model/InlineResponse20025Data'), require('./model/InlineResponse20026'), require('./model/InlineResponse20026Data'), require('./model/InlineResponse20027'), require('./model/InlineResponse20027Data'), require('./model/InlineResponse20028'), require('./model/InlineResponse20028Data'), require('./model/InlineResponse20029'), require('./model/InlineResponse2002Set'), require('./model/InlineResponse2002SetElements'), require('./model/InlineResponse2003'), require('./model/InlineResponse20030'), require('./model/InlineResponse20031'), require('./model/InlineResponse20031Data'), require('./model/InlineResponse20032'), require('./model/InlineResponse20032Data'), require('./model/InlineResponse20033'), require('./model/InlineResponse2003Bindings'), require('./model/InlineResponse2003Data'), require('./model/InlineResponse2003Rules'), require('./model/InlineResponse2004'), require('./model/InlineResponse2004Data'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2006Data'), require('./model/InlineResponse2007'), require('./model/InlineResponse2008'), require('./model/InlineResponse2008Data'), require('./model/InlineResponse2009'), require('./model/InlineResponse2009Data'), require('./model/InlineResponse200Data'), require('./model/InlineResponse201'), require('./model/InlineResponse2011'), require('./model/InlineResponse204'), require('./model/InlineResponse2041'), require('./model/LatestFeature'), require('./model/LimitConfig'), require('./model/LimitEntityEnum'), require('./model/LoginParams'), require('./model/LoyaltyMembership'), require('./model/ManagerConfig'), require('./model/MiscUpdateUserLatestFeature'), require('./model/ModelExport'), require('./model/ModelImport'), require('./model/NewApiKey'), require('./model/NewApplication'), require('./model/NewAttribute'), require('./model/NewCampaign'), require('./model/NewCampaignSet'), require('./model/NewCoupons'), require('./model/NewEventType'), require('./model/NewInvitation'), require('./model/NewPassword'), require('./model/NewPasswordEmail'), require('./model/NewRole'), require('./model/NewRuleset'), require('./model/NewWebhook'), require('./model/Policy'), require('./model/Referral'), require('./model/Role'), require('./model/Rule'), require('./model/Ruleset'), require('./model/Session'), require('./model/TemplateArgDef'), require('./model/UpdateAccount'), require('./model/UpdateCoupon'), require('./model/UpdateUser'), require('./model/User'), require('./model/Webhook'), require('./model/WebhookActivationLogEntry'), require('./model/WebhookLogEntry'), require('./api/ManagementApi'), require('./api/IntegrationApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/APIError'), require('./model/AccessLogEntry'), require('./model/Account'), require('./model/AccountAnalytics'), require('./model/AccountEntity'), require('./model/AccountLimits'), require('./model/Application'), require('./model/ApplicationAPIKey'), require('./model/ApplicationApiHealth'), require('./model/ApplicationCustomer'), require('./model/ApplicationCustomerEntity'), require('./model/ApplicationCustomerSearch'), require('./model/ApplicationEntity'), require('./model/ApplicationEvent'), require('./model/ApplicationSession'), require('./model/ApplicationSessionEntity'), require('./model/ApplicationStorage'), require('./model/ApplicationStorageData'), require('./model/ApplicationStorageTuple'), require('./model/Attribute'), require('./model/AttributeQuery'), require('./model/Binding'), require('./model/Campaign'), require('./model/CampaignAnalytics'), require('./model/CampaignCopy'), require('./model/CampaignEntity'), require('./model/CampaignSearch'), require('./model/CampaignSet'), require('./model/CampaignSetBranchNode'), require('./model/CampaignSetLeafNode'), require('./model/CampaignSetNode'), require('./model/CartItem'), require('./model/CartItemAdjustment'), require('./model/Change'), require('./model/CodeGeneratorSettings'), require('./model/Coupon'), require('./model/CouponConstraints'), require('./model/CouponRejectionReason'), require('./model/CouponSearch'), require('./model/CouponValue'), require('./model/CreateApplicationAPIKey'), require('./model/CustomerActivityReport'), require('./model/CustomerAnalytics'), require('./model/CustomerProfile'), require('./model/CustomerProfileSearchQuery'), require('./model/CustomerSession'), require('./model/EmailEntity'), require('./model/Entity'), require('./model/Environment'), require('./model/ErrorResponse'), require('./model/ErrorSource'), require('./model/Event'), require('./model/EventType'), require('./model/FeatureFlag'), require('./model/FeatureFlags'), require('./model/FeaturesFeed'), require('./model/FuncArgDef'), require('./model/FunctionDef'), require('./model/ImportCoupons'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse20010'), require('./model/InlineResponse20011'), require('./model/InlineResponse20012'), require('./model/InlineResponse20013'), require('./model/InlineResponse20014'), require('./model/InlineResponse20015'), require('./model/InlineResponse20016'), require('./model/InlineResponse20017'), require('./model/InlineResponse20018'), require('./model/InlineResponse20019'), require('./model/InlineResponse2002'), require('./model/InlineResponse20020'), require('./model/InlineResponse20021'), require('./model/InlineResponse20022'), require('./model/InlineResponse20023'), require('./model/InlineResponse20024'), require('./model/InlineResponse20025'), require('./model/InlineResponse20026'), require('./model/InlineResponse20027'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2007'), require('./model/InlineResponse2008'), require('./model/InlineResponse2009'), require('./model/IntegrationEntity'), require('./model/IntegrationProfileEntity'), require('./model/IntegrationState'), require('./model/LedgerEntry'), require('./model/LibraryAttribute'), require('./model/LimitConfig'), require('./model/LoginParams'), require('./model/Loyalty'), require('./model/LoyaltyLedger'), require('./model/LoyaltyLedgerEntry'), require('./model/LoyaltyMembership'), require('./model/LoyaltyPoints'), require('./model/LoyaltyProgram'), require('./model/LoyaltyProgramBalance'), require('./model/ManagerConfig'), require('./model/Meta'), require('./model/MiscUpdateUserLatestFeature'), require('./model/ModelExport'), require('./model/ModelImport'), require('./model/MultiApplicationEntity'), require('./model/MutableEntity'), require('./model/NewAccount'), require('./model/NewAccountSignUp'), require('./model/NewApplication'), require('./model/NewApplicationAPIKey'), require('./model/NewApplicationStorage'), require('./model/NewApplicationStorageData'), require('./model/NewApplicationStorageTuple'), require('./model/NewAttribute'), require('./model/NewCampaign'), require('./model/NewCampaignSet'), require('./model/NewCoupons'), require('./model/NewCustomerProfile'), require('./model/NewCustomerSession'), require('./model/NewEvent'), require('./model/NewEventType'), require('./model/NewFeatureFlags'), require('./model/NewImport'), require('./model/NewInvitation'), require('./model/NewInviteEmail'), require('./model/NewLoyaltyProgram'), require('./model/NewPassword'), require('./model/NewPasswordEmail'), require('./model/NewReferral'), require('./model/NewRole'), require('./model/NewRuleset'), require('./model/NewTemplateDef'), require('./model/NewUser'), require('./model/NewWebhook'), require('./model/Referral'), require('./model/Role'), require('./model/RoleAssign'), require('./model/RoleMembership'), require('./model/Rule'), require('./model/Ruleset'), require('./model/Session'), require('./model/SlotDef'), require('./model/TemplateArgDef'), require('./model/TemplateDef'), require('./model/UpdateAccount'), require('./model/UpdateCampaign'), require('./model/UpdateCoupon'), require('./model/UpdateCouponBatch'), require('./model/UpdateLoyaltyProgram'), require('./model/UpdateRole'), require('./model/UpdateUser'), require('./model/User'), require('./model/UserEntity'), require('./model/Webhook'), require('./model/WebhookActivationLogEntry'), require('./model/WebhookLogEntry'), require('./api/IntegrationApi'), require('./api/ManagementApi'));
   }
-}(function(ApiClient, AccessControlList, AccessLogEntry, Account, AnyValue, ApiKey, ApiKeyWithUsage, Application, ApplicationApiHealth, ApplicationCustomer, ApplicationCustomerSearch, ApplicationEvent, ApplicationEventType, ApplicationSession, Attribute, AttributeQuery, Binding, Body, Body1, Body10, Body11, Body12, Body13, Body14, Body15, Body16, Body17, Body18, Body19, Body2, Body20, Body21, Body22, Body23, Body24, Body25, Body26, Body27, Body28, Body29, Body3, Body4, Body5, Body6, Body7, Body8, Body9, Campaign, CampaignAnalytics, CampaignDuplicate, CampaignSearch, CampaignSet, CampaignSetBranchNode, CampaignSetLeafNode, CampaignSetNode, CartItem, CartItemAdjustment, Change, CodeGeneratorSettings, Coupon, CouponSearch, CustomerActivityReport, EventType, FeaturesFeed, InlineResponse200, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20011Data, InlineResponse20012, InlineResponse20013, InlineResponse20013Data, InlineResponse20014, InlineResponse20014Data, InlineResponse20014LoyaltyMemberships, InlineResponse20015, InlineResponse20016, InlineResponse20016Data, InlineResponse20017, InlineResponse20018, InlineResponse20018Adjustment, InlineResponse20018CartItems, InlineResponse20018Data, InlineResponse20019, InlineResponse20019Data, InlineResponse2001CouponSettings, InlineResponse2001Data, InlineResponse2001Limits, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20023Data, InlineResponse20023Params, InlineResponse20024, InlineResponse20024Data, InlineResponse20025, InlineResponse20025Data, InlineResponse20026, InlineResponse20026Data, InlineResponse20027, InlineResponse20027Data, InlineResponse20028, InlineResponse20028Data, InlineResponse20029, InlineResponse2002Set, InlineResponse2002SetElements, InlineResponse2003, InlineResponse20030, InlineResponse20031, InlineResponse20031Data, InlineResponse20032, InlineResponse20032Data, InlineResponse20033, InlineResponse2003Bindings, InlineResponse2003Data, InlineResponse2003Rules, InlineResponse2004, InlineResponse2004Data, InlineResponse2005, InlineResponse2006, InlineResponse2006Data, InlineResponse2007, InlineResponse2008, InlineResponse2008Data, InlineResponse2009, InlineResponse2009Data, InlineResponse200Data, InlineResponse201, InlineResponse2011, InlineResponse204, InlineResponse2041, LatestFeature, LimitConfig, LimitEntityEnum, LoginParams, LoyaltyMembership, ManagerConfig, MiscUpdateUserLatestFeature, ModelExport, ModelImport, NewApiKey, NewApplication, NewAttribute, NewCampaign, NewCampaignSet, NewCoupons, NewEventType, NewInvitation, NewPassword, NewPasswordEmail, NewRole, NewRuleset, NewWebhook, Policy, Referral, Role, Rule, Ruleset, Session, TemplateArgDef, UpdateAccount, UpdateCoupon, UpdateUser, User, Webhook, WebhookActivationLogEntry, WebhookLogEntry, ManagementApi, IntegrationApi) {
+}(function(ApiClient, APIError, AccessLogEntry, Account, AccountAnalytics, AccountEntity, AccountLimits, Application, ApplicationAPIKey, ApplicationApiHealth, ApplicationCustomer, ApplicationCustomerEntity, ApplicationCustomerSearch, ApplicationEntity, ApplicationEvent, ApplicationSession, ApplicationSessionEntity, ApplicationStorage, ApplicationStorageData, ApplicationStorageTuple, Attribute, AttributeQuery, Binding, Campaign, CampaignAnalytics, CampaignCopy, CampaignEntity, CampaignSearch, CampaignSet, CampaignSetBranchNode, CampaignSetLeafNode, CampaignSetNode, CartItem, CartItemAdjustment, Change, CodeGeneratorSettings, Coupon, CouponConstraints, CouponRejectionReason, CouponSearch, CouponValue, CreateApplicationAPIKey, CustomerActivityReport, CustomerAnalytics, CustomerProfile, CustomerProfileSearchQuery, CustomerSession, EmailEntity, Entity, Environment, ErrorResponse, ErrorSource, Event, EventType, FeatureFlag, FeatureFlags, FeaturesFeed, FuncArgDef, FunctionDef, ImportCoupons, InlineResponse200, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20015, InlineResponse20016, InlineResponse20017, InlineResponse20018, InlineResponse20019, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20024, InlineResponse20025, InlineResponse20026, InlineResponse20027, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, IntegrationEntity, IntegrationProfileEntity, IntegrationState, LedgerEntry, LibraryAttribute, LimitConfig, LoginParams, Loyalty, LoyaltyLedger, LoyaltyLedgerEntry, LoyaltyMembership, LoyaltyPoints, LoyaltyProgram, LoyaltyProgramBalance, ManagerConfig, Meta, MiscUpdateUserLatestFeature, ModelExport, ModelImport, MultiApplicationEntity, MutableEntity, NewAccount, NewAccountSignUp, NewApplication, NewApplicationAPIKey, NewApplicationStorage, NewApplicationStorageData, NewApplicationStorageTuple, NewAttribute, NewCampaign, NewCampaignSet, NewCoupons, NewCustomerProfile, NewCustomerSession, NewEvent, NewEventType, NewFeatureFlags, NewImport, NewInvitation, NewInviteEmail, NewLoyaltyProgram, NewPassword, NewPasswordEmail, NewReferral, NewRole, NewRuleset, NewTemplateDef, NewUser, NewWebhook, Referral, Role, RoleAssign, RoleMembership, Rule, Ruleset, Session, SlotDef, TemplateArgDef, TemplateDef, UpdateAccount, UpdateCampaign, UpdateCoupon, UpdateCouponBatch, UpdateLoyaltyProgram, UpdateRole, UpdateUser, User, UserEntity, Webhook, WebhookActivationLogEntry, WebhookLogEntry, IntegrationApi, ManagementApi) {
   'use strict';
 
   /**
@@ -62,10 +62,10 @@
      */
     ApiClient: ApiClient,
     /**
-     * The AccessControlList model constructor.
-     * @property {module:model/AccessControlList}
+     * The APIError model constructor.
+     * @property {module:model/APIError}
      */
-    AccessControlList: AccessControlList,
+    APIError: APIError,
     /**
      * The AccessLogEntry model constructor.
      * @property {module:model/AccessLogEntry}
@@ -77,25 +77,30 @@
      */
     Account: Account,
     /**
-     * The AnyValue model constructor.
-     * @property {module:model/AnyValue}
+     * The AccountAnalytics model constructor.
+     * @property {module:model/AccountAnalytics}
      */
-    AnyValue: AnyValue,
+    AccountAnalytics: AccountAnalytics,
     /**
-     * The ApiKey model constructor.
-     * @property {module:model/ApiKey}
+     * The AccountEntity model constructor.
+     * @property {module:model/AccountEntity}
      */
-    ApiKey: ApiKey,
+    AccountEntity: AccountEntity,
     /**
-     * The ApiKeyWithUsage model constructor.
-     * @property {module:model/ApiKeyWithUsage}
+     * The AccountLimits model constructor.
+     * @property {module:model/AccountLimits}
      */
-    ApiKeyWithUsage: ApiKeyWithUsage,
+    AccountLimits: AccountLimits,
     /**
      * The Application model constructor.
      * @property {module:model/Application}
      */
     Application: Application,
+    /**
+     * The ApplicationAPIKey model constructor.
+     * @property {module:model/ApplicationAPIKey}
+     */
+    ApplicationAPIKey: ApplicationAPIKey,
     /**
      * The ApplicationApiHealth model constructor.
      * @property {module:model/ApplicationApiHealth}
@@ -107,25 +112,50 @@
      */
     ApplicationCustomer: ApplicationCustomer,
     /**
+     * The ApplicationCustomerEntity model constructor.
+     * @property {module:model/ApplicationCustomerEntity}
+     */
+    ApplicationCustomerEntity: ApplicationCustomerEntity,
+    /**
      * The ApplicationCustomerSearch model constructor.
      * @property {module:model/ApplicationCustomerSearch}
      */
     ApplicationCustomerSearch: ApplicationCustomerSearch,
+    /**
+     * The ApplicationEntity model constructor.
+     * @property {module:model/ApplicationEntity}
+     */
+    ApplicationEntity: ApplicationEntity,
     /**
      * The ApplicationEvent model constructor.
      * @property {module:model/ApplicationEvent}
      */
     ApplicationEvent: ApplicationEvent,
     /**
-     * The ApplicationEventType model constructor.
-     * @property {module:model/ApplicationEventType}
-     */
-    ApplicationEventType: ApplicationEventType,
-    /**
      * The ApplicationSession model constructor.
      * @property {module:model/ApplicationSession}
      */
     ApplicationSession: ApplicationSession,
+    /**
+     * The ApplicationSessionEntity model constructor.
+     * @property {module:model/ApplicationSessionEntity}
+     */
+    ApplicationSessionEntity: ApplicationSessionEntity,
+    /**
+     * The ApplicationStorage model constructor.
+     * @property {module:model/ApplicationStorage}
+     */
+    ApplicationStorage: ApplicationStorage,
+    /**
+     * The ApplicationStorageData model constructor.
+     * @property {module:model/ApplicationStorageData}
+     */
+    ApplicationStorageData: ApplicationStorageData,
+    /**
+     * The ApplicationStorageTuple model constructor.
+     * @property {module:model/ApplicationStorageTuple}
+     */
+    ApplicationStorageTuple: ApplicationStorageTuple,
     /**
      * The Attribute model constructor.
      * @property {module:model/Attribute}
@@ -142,156 +172,6 @@
      */
     Binding: Binding,
     /**
-     * The Body model constructor.
-     * @property {module:model/Body}
-     */
-    Body: Body,
-    /**
-     * The Body1 model constructor.
-     * @property {module:model/Body1}
-     */
-    Body1: Body1,
-    /**
-     * The Body10 model constructor.
-     * @property {module:model/Body10}
-     */
-    Body10: Body10,
-    /**
-     * The Body11 model constructor.
-     * @property {module:model/Body11}
-     */
-    Body11: Body11,
-    /**
-     * The Body12 model constructor.
-     * @property {module:model/Body12}
-     */
-    Body12: Body12,
-    /**
-     * The Body13 model constructor.
-     * @property {module:model/Body13}
-     */
-    Body13: Body13,
-    /**
-     * The Body14 model constructor.
-     * @property {module:model/Body14}
-     */
-    Body14: Body14,
-    /**
-     * The Body15 model constructor.
-     * @property {module:model/Body15}
-     */
-    Body15: Body15,
-    /**
-     * The Body16 model constructor.
-     * @property {module:model/Body16}
-     */
-    Body16: Body16,
-    /**
-     * The Body17 model constructor.
-     * @property {module:model/Body17}
-     */
-    Body17: Body17,
-    /**
-     * The Body18 model constructor.
-     * @property {module:model/Body18}
-     */
-    Body18: Body18,
-    /**
-     * The Body19 model constructor.
-     * @property {module:model/Body19}
-     */
-    Body19: Body19,
-    /**
-     * The Body2 model constructor.
-     * @property {module:model/Body2}
-     */
-    Body2: Body2,
-    /**
-     * The Body20 model constructor.
-     * @property {module:model/Body20}
-     */
-    Body20: Body20,
-    /**
-     * The Body21 model constructor.
-     * @property {module:model/Body21}
-     */
-    Body21: Body21,
-    /**
-     * The Body22 model constructor.
-     * @property {module:model/Body22}
-     */
-    Body22: Body22,
-    /**
-     * The Body23 model constructor.
-     * @property {module:model/Body23}
-     */
-    Body23: Body23,
-    /**
-     * The Body24 model constructor.
-     * @property {module:model/Body24}
-     */
-    Body24: Body24,
-    /**
-     * The Body25 model constructor.
-     * @property {module:model/Body25}
-     */
-    Body25: Body25,
-    /**
-     * The Body26 model constructor.
-     * @property {module:model/Body26}
-     */
-    Body26: Body26,
-    /**
-     * The Body27 model constructor.
-     * @property {module:model/Body27}
-     */
-    Body27: Body27,
-    /**
-     * The Body28 model constructor.
-     * @property {module:model/Body28}
-     */
-    Body28: Body28,
-    /**
-     * The Body29 model constructor.
-     * @property {module:model/Body29}
-     */
-    Body29: Body29,
-    /**
-     * The Body3 model constructor.
-     * @property {module:model/Body3}
-     */
-    Body3: Body3,
-    /**
-     * The Body4 model constructor.
-     * @property {module:model/Body4}
-     */
-    Body4: Body4,
-    /**
-     * The Body5 model constructor.
-     * @property {module:model/Body5}
-     */
-    Body5: Body5,
-    /**
-     * The Body6 model constructor.
-     * @property {module:model/Body6}
-     */
-    Body6: Body6,
-    /**
-     * The Body7 model constructor.
-     * @property {module:model/Body7}
-     */
-    Body7: Body7,
-    /**
-     * The Body8 model constructor.
-     * @property {module:model/Body8}
-     */
-    Body8: Body8,
-    /**
-     * The Body9 model constructor.
-     * @property {module:model/Body9}
-     */
-    Body9: Body9,
-    /**
      * The Campaign model constructor.
      * @property {module:model/Campaign}
      */
@@ -302,10 +182,15 @@
      */
     CampaignAnalytics: CampaignAnalytics,
     /**
-     * The CampaignDuplicate model constructor.
-     * @property {module:model/CampaignDuplicate}
+     * The CampaignCopy model constructor.
+     * @property {module:model/CampaignCopy}
      */
-    CampaignDuplicate: CampaignDuplicate,
+    CampaignCopy: CampaignCopy,
+    /**
+     * The CampaignEntity model constructor.
+     * @property {module:model/CampaignEntity}
+     */
+    CampaignEntity: CampaignEntity,
     /**
      * The CampaignSearch model constructor.
      * @property {module:model/CampaignSearch}
@@ -357,25 +242,120 @@
      */
     Coupon: Coupon,
     /**
+     * The CouponConstraints model constructor.
+     * @property {module:model/CouponConstraints}
+     */
+    CouponConstraints: CouponConstraints,
+    /**
+     * The CouponRejectionReason model constructor.
+     * @property {module:model/CouponRejectionReason}
+     */
+    CouponRejectionReason: CouponRejectionReason,
+    /**
      * The CouponSearch model constructor.
      * @property {module:model/CouponSearch}
      */
     CouponSearch: CouponSearch,
+    /**
+     * The CouponValue model constructor.
+     * @property {module:model/CouponValue}
+     */
+    CouponValue: CouponValue,
+    /**
+     * The CreateApplicationAPIKey model constructor.
+     * @property {module:model/CreateApplicationAPIKey}
+     */
+    CreateApplicationAPIKey: CreateApplicationAPIKey,
     /**
      * The CustomerActivityReport model constructor.
      * @property {module:model/CustomerActivityReport}
      */
     CustomerActivityReport: CustomerActivityReport,
     /**
+     * The CustomerAnalytics model constructor.
+     * @property {module:model/CustomerAnalytics}
+     */
+    CustomerAnalytics: CustomerAnalytics,
+    /**
+     * The CustomerProfile model constructor.
+     * @property {module:model/CustomerProfile}
+     */
+    CustomerProfile: CustomerProfile,
+    /**
+     * The CustomerProfileSearchQuery model constructor.
+     * @property {module:model/CustomerProfileSearchQuery}
+     */
+    CustomerProfileSearchQuery: CustomerProfileSearchQuery,
+    /**
+     * The CustomerSession model constructor.
+     * @property {module:model/CustomerSession}
+     */
+    CustomerSession: CustomerSession,
+    /**
+     * The EmailEntity model constructor.
+     * @property {module:model/EmailEntity}
+     */
+    EmailEntity: EmailEntity,
+    /**
+     * The Entity model constructor.
+     * @property {module:model/Entity}
+     */
+    Entity: Entity,
+    /**
+     * The Environment model constructor.
+     * @property {module:model/Environment}
+     */
+    Environment: Environment,
+    /**
+     * The ErrorResponse model constructor.
+     * @property {module:model/ErrorResponse}
+     */
+    ErrorResponse: ErrorResponse,
+    /**
+     * The ErrorSource model constructor.
+     * @property {module:model/ErrorSource}
+     */
+    ErrorSource: ErrorSource,
+    /**
+     * The Event model constructor.
+     * @property {module:model/Event}
+     */
+    Event: Event,
+    /**
      * The EventType model constructor.
      * @property {module:model/EventType}
      */
     EventType: EventType,
     /**
+     * The FeatureFlag model constructor.
+     * @property {module:model/FeatureFlag}
+     */
+    FeatureFlag: FeatureFlag,
+    /**
+     * The FeatureFlags model constructor.
+     * @property {module:model/FeatureFlags}
+     */
+    FeatureFlags: FeatureFlags,
+    /**
      * The FeaturesFeed model constructor.
      * @property {module:model/FeaturesFeed}
      */
     FeaturesFeed: FeaturesFeed,
+    /**
+     * The FuncArgDef model constructor.
+     * @property {module:model/FuncArgDef}
+     */
+    FuncArgDef: FuncArgDef,
+    /**
+     * The FunctionDef model constructor.
+     * @property {module:model/FunctionDef}
+     */
+    FunctionDef: FunctionDef,
+    /**
+     * The ImportCoupons model constructor.
+     * @property {module:model/ImportCoupons}
+     */
+    ImportCoupons: ImportCoupons,
     /**
      * The InlineResponse200 model constructor.
      * @property {module:model/InlineResponse200}
@@ -397,11 +377,6 @@
      */
     InlineResponse20011: InlineResponse20011,
     /**
-     * The InlineResponse20011Data model constructor.
-     * @property {module:model/InlineResponse20011Data}
-     */
-    InlineResponse20011Data: InlineResponse20011Data,
-    /**
      * The InlineResponse20012 model constructor.
      * @property {module:model/InlineResponse20012}
      */
@@ -412,25 +387,10 @@
      */
     InlineResponse20013: InlineResponse20013,
     /**
-     * The InlineResponse20013Data model constructor.
-     * @property {module:model/InlineResponse20013Data}
-     */
-    InlineResponse20013Data: InlineResponse20013Data,
-    /**
      * The InlineResponse20014 model constructor.
      * @property {module:model/InlineResponse20014}
      */
     InlineResponse20014: InlineResponse20014,
-    /**
-     * The InlineResponse20014Data model constructor.
-     * @property {module:model/InlineResponse20014Data}
-     */
-    InlineResponse20014Data: InlineResponse20014Data,
-    /**
-     * The InlineResponse20014LoyaltyMemberships model constructor.
-     * @property {module:model/InlineResponse20014LoyaltyMemberships}
-     */
-    InlineResponse20014LoyaltyMemberships: InlineResponse20014LoyaltyMemberships,
     /**
      * The InlineResponse20015 model constructor.
      * @property {module:model/InlineResponse20015}
@@ -442,11 +402,6 @@
      */
     InlineResponse20016: InlineResponse20016,
     /**
-     * The InlineResponse20016Data model constructor.
-     * @property {module:model/InlineResponse20016Data}
-     */
-    InlineResponse20016Data: InlineResponse20016Data,
-    /**
      * The InlineResponse20017 model constructor.
      * @property {module:model/InlineResponse20017}
      */
@@ -457,45 +412,10 @@
      */
     InlineResponse20018: InlineResponse20018,
     /**
-     * The InlineResponse20018Adjustment model constructor.
-     * @property {module:model/InlineResponse20018Adjustment}
-     */
-    InlineResponse20018Adjustment: InlineResponse20018Adjustment,
-    /**
-     * The InlineResponse20018CartItems model constructor.
-     * @property {module:model/InlineResponse20018CartItems}
-     */
-    InlineResponse20018CartItems: InlineResponse20018CartItems,
-    /**
-     * The InlineResponse20018Data model constructor.
-     * @property {module:model/InlineResponse20018Data}
-     */
-    InlineResponse20018Data: InlineResponse20018Data,
-    /**
      * The InlineResponse20019 model constructor.
      * @property {module:model/InlineResponse20019}
      */
     InlineResponse20019: InlineResponse20019,
-    /**
-     * The InlineResponse20019Data model constructor.
-     * @property {module:model/InlineResponse20019Data}
-     */
-    InlineResponse20019Data: InlineResponse20019Data,
-    /**
-     * The InlineResponse2001CouponSettings model constructor.
-     * @property {module:model/InlineResponse2001CouponSettings}
-     */
-    InlineResponse2001CouponSettings: InlineResponse2001CouponSettings,
-    /**
-     * The InlineResponse2001Data model constructor.
-     * @property {module:model/InlineResponse2001Data}
-     */
-    InlineResponse2001Data: InlineResponse2001Data,
-    /**
-     * The InlineResponse2001Limits model constructor.
-     * @property {module:model/InlineResponse2001Limits}
-     */
-    InlineResponse2001Limits: InlineResponse2001Limits,
     /**
      * The InlineResponse2002 model constructor.
      * @property {module:model/InlineResponse2002}
@@ -522,140 +442,35 @@
      */
     InlineResponse20023: InlineResponse20023,
     /**
-     * The InlineResponse20023Data model constructor.
-     * @property {module:model/InlineResponse20023Data}
-     */
-    InlineResponse20023Data: InlineResponse20023Data,
-    /**
-     * The InlineResponse20023Params model constructor.
-     * @property {module:model/InlineResponse20023Params}
-     */
-    InlineResponse20023Params: InlineResponse20023Params,
-    /**
      * The InlineResponse20024 model constructor.
      * @property {module:model/InlineResponse20024}
      */
     InlineResponse20024: InlineResponse20024,
-    /**
-     * The InlineResponse20024Data model constructor.
-     * @property {module:model/InlineResponse20024Data}
-     */
-    InlineResponse20024Data: InlineResponse20024Data,
     /**
      * The InlineResponse20025 model constructor.
      * @property {module:model/InlineResponse20025}
      */
     InlineResponse20025: InlineResponse20025,
     /**
-     * The InlineResponse20025Data model constructor.
-     * @property {module:model/InlineResponse20025Data}
-     */
-    InlineResponse20025Data: InlineResponse20025Data,
-    /**
      * The InlineResponse20026 model constructor.
      * @property {module:model/InlineResponse20026}
      */
     InlineResponse20026: InlineResponse20026,
-    /**
-     * The InlineResponse20026Data model constructor.
-     * @property {module:model/InlineResponse20026Data}
-     */
-    InlineResponse20026Data: InlineResponse20026Data,
     /**
      * The InlineResponse20027 model constructor.
      * @property {module:model/InlineResponse20027}
      */
     InlineResponse20027: InlineResponse20027,
     /**
-     * The InlineResponse20027Data model constructor.
-     * @property {module:model/InlineResponse20027Data}
-     */
-    InlineResponse20027Data: InlineResponse20027Data,
-    /**
-     * The InlineResponse20028 model constructor.
-     * @property {module:model/InlineResponse20028}
-     */
-    InlineResponse20028: InlineResponse20028,
-    /**
-     * The InlineResponse20028Data model constructor.
-     * @property {module:model/InlineResponse20028Data}
-     */
-    InlineResponse20028Data: InlineResponse20028Data,
-    /**
-     * The InlineResponse20029 model constructor.
-     * @property {module:model/InlineResponse20029}
-     */
-    InlineResponse20029: InlineResponse20029,
-    /**
-     * The InlineResponse2002Set model constructor.
-     * @property {module:model/InlineResponse2002Set}
-     */
-    InlineResponse2002Set: InlineResponse2002Set,
-    /**
-     * The InlineResponse2002SetElements model constructor.
-     * @property {module:model/InlineResponse2002SetElements}
-     */
-    InlineResponse2002SetElements: InlineResponse2002SetElements,
-    /**
      * The InlineResponse2003 model constructor.
      * @property {module:model/InlineResponse2003}
      */
     InlineResponse2003: InlineResponse2003,
     /**
-     * The InlineResponse20030 model constructor.
-     * @property {module:model/InlineResponse20030}
-     */
-    InlineResponse20030: InlineResponse20030,
-    /**
-     * The InlineResponse20031 model constructor.
-     * @property {module:model/InlineResponse20031}
-     */
-    InlineResponse20031: InlineResponse20031,
-    /**
-     * The InlineResponse20031Data model constructor.
-     * @property {module:model/InlineResponse20031Data}
-     */
-    InlineResponse20031Data: InlineResponse20031Data,
-    /**
-     * The InlineResponse20032 model constructor.
-     * @property {module:model/InlineResponse20032}
-     */
-    InlineResponse20032: InlineResponse20032,
-    /**
-     * The InlineResponse20032Data model constructor.
-     * @property {module:model/InlineResponse20032Data}
-     */
-    InlineResponse20032Data: InlineResponse20032Data,
-    /**
-     * The InlineResponse20033 model constructor.
-     * @property {module:model/InlineResponse20033}
-     */
-    InlineResponse20033: InlineResponse20033,
-    /**
-     * The InlineResponse2003Bindings model constructor.
-     * @property {module:model/InlineResponse2003Bindings}
-     */
-    InlineResponse2003Bindings: InlineResponse2003Bindings,
-    /**
-     * The InlineResponse2003Data model constructor.
-     * @property {module:model/InlineResponse2003Data}
-     */
-    InlineResponse2003Data: InlineResponse2003Data,
-    /**
-     * The InlineResponse2003Rules model constructor.
-     * @property {module:model/InlineResponse2003Rules}
-     */
-    InlineResponse2003Rules: InlineResponse2003Rules,
-    /**
      * The InlineResponse2004 model constructor.
      * @property {module:model/InlineResponse2004}
      */
     InlineResponse2004: InlineResponse2004,
-    /**
-     * The InlineResponse2004Data model constructor.
-     * @property {module:model/InlineResponse2004Data}
-     */
-    InlineResponse2004Data: InlineResponse2004Data,
     /**
      * The InlineResponse2005 model constructor.
      * @property {module:model/InlineResponse2005}
@@ -667,11 +482,6 @@
      */
     InlineResponse2006: InlineResponse2006,
     /**
-     * The InlineResponse2006Data model constructor.
-     * @property {module:model/InlineResponse2006Data}
-     */
-    InlineResponse2006Data: InlineResponse2006Data,
-    /**
      * The InlineResponse2007 model constructor.
      * @property {module:model/InlineResponse2007}
      */
@@ -682,75 +492,90 @@
      */
     InlineResponse2008: InlineResponse2008,
     /**
-     * The InlineResponse2008Data model constructor.
-     * @property {module:model/InlineResponse2008Data}
-     */
-    InlineResponse2008Data: InlineResponse2008Data,
-    /**
      * The InlineResponse2009 model constructor.
      * @property {module:model/InlineResponse2009}
      */
     InlineResponse2009: InlineResponse2009,
     /**
-     * The InlineResponse2009Data model constructor.
-     * @property {module:model/InlineResponse2009Data}
+     * The IntegrationEntity model constructor.
+     * @property {module:model/IntegrationEntity}
      */
-    InlineResponse2009Data: InlineResponse2009Data,
+    IntegrationEntity: IntegrationEntity,
     /**
-     * The InlineResponse200Data model constructor.
-     * @property {module:model/InlineResponse200Data}
+     * The IntegrationProfileEntity model constructor.
+     * @property {module:model/IntegrationProfileEntity}
      */
-    InlineResponse200Data: InlineResponse200Data,
+    IntegrationProfileEntity: IntegrationProfileEntity,
     /**
-     * The InlineResponse201 model constructor.
-     * @property {module:model/InlineResponse201}
+     * The IntegrationState model constructor.
+     * @property {module:model/IntegrationState}
      */
-    InlineResponse201: InlineResponse201,
+    IntegrationState: IntegrationState,
     /**
-     * The InlineResponse2011 model constructor.
-     * @property {module:model/InlineResponse2011}
+     * The LedgerEntry model constructor.
+     * @property {module:model/LedgerEntry}
      */
-    InlineResponse2011: InlineResponse2011,
+    LedgerEntry: LedgerEntry,
     /**
-     * The InlineResponse204 model constructor.
-     * @property {module:model/InlineResponse204}
+     * The LibraryAttribute model constructor.
+     * @property {module:model/LibraryAttribute}
      */
-    InlineResponse204: InlineResponse204,
-    /**
-     * The InlineResponse2041 model constructor.
-     * @property {module:model/InlineResponse2041}
-     */
-    InlineResponse2041: InlineResponse2041,
-    /**
-     * The LatestFeature model constructor.
-     * @property {module:model/LatestFeature}
-     */
-    LatestFeature: LatestFeature,
+    LibraryAttribute: LibraryAttribute,
     /**
      * The LimitConfig model constructor.
      * @property {module:model/LimitConfig}
      */
     LimitConfig: LimitConfig,
     /**
-     * The LimitEntityEnum model constructor.
-     * @property {module:model/LimitEntityEnum}
-     */
-    LimitEntityEnum: LimitEntityEnum,
-    /**
      * The LoginParams model constructor.
      * @property {module:model/LoginParams}
      */
     LoginParams: LoginParams,
+    /**
+     * The Loyalty model constructor.
+     * @property {module:model/Loyalty}
+     */
+    Loyalty: Loyalty,
+    /**
+     * The LoyaltyLedger model constructor.
+     * @property {module:model/LoyaltyLedger}
+     */
+    LoyaltyLedger: LoyaltyLedger,
+    /**
+     * The LoyaltyLedgerEntry model constructor.
+     * @property {module:model/LoyaltyLedgerEntry}
+     */
+    LoyaltyLedgerEntry: LoyaltyLedgerEntry,
     /**
      * The LoyaltyMembership model constructor.
      * @property {module:model/LoyaltyMembership}
      */
     LoyaltyMembership: LoyaltyMembership,
     /**
+     * The LoyaltyPoints model constructor.
+     * @property {module:model/LoyaltyPoints}
+     */
+    LoyaltyPoints: LoyaltyPoints,
+    /**
+     * The LoyaltyProgram model constructor.
+     * @property {module:model/LoyaltyProgram}
+     */
+    LoyaltyProgram: LoyaltyProgram,
+    /**
+     * The LoyaltyProgramBalance model constructor.
+     * @property {module:model/LoyaltyProgramBalance}
+     */
+    LoyaltyProgramBalance: LoyaltyProgramBalance,
+    /**
      * The ManagerConfig model constructor.
      * @property {module:model/ManagerConfig}
      */
     ManagerConfig: ManagerConfig,
+    /**
+     * The Meta model constructor.
+     * @property {module:model/Meta}
+     */
+    Meta: Meta,
     /**
      * The MiscUpdateUserLatestFeature model constructor.
      * @property {module:model/MiscUpdateUserLatestFeature}
@@ -767,15 +592,50 @@
      */
     ModelImport: ModelImport,
     /**
-     * The NewApiKey model constructor.
-     * @property {module:model/NewApiKey}
+     * The MultiApplicationEntity model constructor.
+     * @property {module:model/MultiApplicationEntity}
      */
-    NewApiKey: NewApiKey,
+    MultiApplicationEntity: MultiApplicationEntity,
+    /**
+     * The MutableEntity model constructor.
+     * @property {module:model/MutableEntity}
+     */
+    MutableEntity: MutableEntity,
+    /**
+     * The NewAccount model constructor.
+     * @property {module:model/NewAccount}
+     */
+    NewAccount: NewAccount,
+    /**
+     * The NewAccountSignUp model constructor.
+     * @property {module:model/NewAccountSignUp}
+     */
+    NewAccountSignUp: NewAccountSignUp,
     /**
      * The NewApplication model constructor.
      * @property {module:model/NewApplication}
      */
     NewApplication: NewApplication,
+    /**
+     * The NewApplicationAPIKey model constructor.
+     * @property {module:model/NewApplicationAPIKey}
+     */
+    NewApplicationAPIKey: NewApplicationAPIKey,
+    /**
+     * The NewApplicationStorage model constructor.
+     * @property {module:model/NewApplicationStorage}
+     */
+    NewApplicationStorage: NewApplicationStorage,
+    /**
+     * The NewApplicationStorageData model constructor.
+     * @property {module:model/NewApplicationStorageData}
+     */
+    NewApplicationStorageData: NewApplicationStorageData,
+    /**
+     * The NewApplicationStorageTuple model constructor.
+     * @property {module:model/NewApplicationStorageTuple}
+     */
+    NewApplicationStorageTuple: NewApplicationStorageTuple,
     /**
      * The NewAttribute model constructor.
      * @property {module:model/NewAttribute}
@@ -797,15 +657,50 @@
      */
     NewCoupons: NewCoupons,
     /**
+     * The NewCustomerProfile model constructor.
+     * @property {module:model/NewCustomerProfile}
+     */
+    NewCustomerProfile: NewCustomerProfile,
+    /**
+     * The NewCustomerSession model constructor.
+     * @property {module:model/NewCustomerSession}
+     */
+    NewCustomerSession: NewCustomerSession,
+    /**
+     * The NewEvent model constructor.
+     * @property {module:model/NewEvent}
+     */
+    NewEvent: NewEvent,
+    /**
      * The NewEventType model constructor.
      * @property {module:model/NewEventType}
      */
     NewEventType: NewEventType,
     /**
+     * The NewFeatureFlags model constructor.
+     * @property {module:model/NewFeatureFlags}
+     */
+    NewFeatureFlags: NewFeatureFlags,
+    /**
+     * The NewImport model constructor.
+     * @property {module:model/NewImport}
+     */
+    NewImport: NewImport,
+    /**
      * The NewInvitation model constructor.
      * @property {module:model/NewInvitation}
      */
     NewInvitation: NewInvitation,
+    /**
+     * The NewInviteEmail model constructor.
+     * @property {module:model/NewInviteEmail}
+     */
+    NewInviteEmail: NewInviteEmail,
+    /**
+     * The NewLoyaltyProgram model constructor.
+     * @property {module:model/NewLoyaltyProgram}
+     */
+    NewLoyaltyProgram: NewLoyaltyProgram,
     /**
      * The NewPassword model constructor.
      * @property {module:model/NewPassword}
@@ -817,6 +712,11 @@
      */
     NewPasswordEmail: NewPasswordEmail,
     /**
+     * The NewReferral model constructor.
+     * @property {module:model/NewReferral}
+     */
+    NewReferral: NewReferral,
+    /**
      * The NewRole model constructor.
      * @property {module:model/NewRole}
      */
@@ -827,15 +727,20 @@
      */
     NewRuleset: NewRuleset,
     /**
+     * The NewTemplateDef model constructor.
+     * @property {module:model/NewTemplateDef}
+     */
+    NewTemplateDef: NewTemplateDef,
+    /**
+     * The NewUser model constructor.
+     * @property {module:model/NewUser}
+     */
+    NewUser: NewUser,
+    /**
      * The NewWebhook model constructor.
      * @property {module:model/NewWebhook}
      */
     NewWebhook: NewWebhook,
-    /**
-     * The Policy model constructor.
-     * @property {module:model/Policy}
-     */
-    Policy: Policy,
     /**
      * The Referral model constructor.
      * @property {module:model/Referral}
@@ -846,6 +751,16 @@
      * @property {module:model/Role}
      */
     Role: Role,
+    /**
+     * The RoleAssign model constructor.
+     * @property {module:model/RoleAssign}
+     */
+    RoleAssign: RoleAssign,
+    /**
+     * The RoleMembership model constructor.
+     * @property {module:model/RoleMembership}
+     */
+    RoleMembership: RoleMembership,
     /**
      * The Rule model constructor.
      * @property {module:model/Rule}
@@ -862,20 +777,50 @@
      */
     Session: Session,
     /**
+     * The SlotDef model constructor.
+     * @property {module:model/SlotDef}
+     */
+    SlotDef: SlotDef,
+    /**
      * The TemplateArgDef model constructor.
      * @property {module:model/TemplateArgDef}
      */
     TemplateArgDef: TemplateArgDef,
+    /**
+     * The TemplateDef model constructor.
+     * @property {module:model/TemplateDef}
+     */
+    TemplateDef: TemplateDef,
     /**
      * The UpdateAccount model constructor.
      * @property {module:model/UpdateAccount}
      */
     UpdateAccount: UpdateAccount,
     /**
+     * The UpdateCampaign model constructor.
+     * @property {module:model/UpdateCampaign}
+     */
+    UpdateCampaign: UpdateCampaign,
+    /**
      * The UpdateCoupon model constructor.
      * @property {module:model/UpdateCoupon}
      */
     UpdateCoupon: UpdateCoupon,
+    /**
+     * The UpdateCouponBatch model constructor.
+     * @property {module:model/UpdateCouponBatch}
+     */
+    UpdateCouponBatch: UpdateCouponBatch,
+    /**
+     * The UpdateLoyaltyProgram model constructor.
+     * @property {module:model/UpdateLoyaltyProgram}
+     */
+    UpdateLoyaltyProgram: UpdateLoyaltyProgram,
+    /**
+     * The UpdateRole model constructor.
+     * @property {module:model/UpdateRole}
+     */
+    UpdateRole: UpdateRole,
     /**
      * The UpdateUser model constructor.
      * @property {module:model/UpdateUser}
@@ -886,6 +831,11 @@
      * @property {module:model/User}
      */
     User: User,
+    /**
+     * The UserEntity model constructor.
+     * @property {module:model/UserEntity}
+     */
+    UserEntity: UserEntity,
     /**
      * The Webhook model constructor.
      * @property {module:model/Webhook}

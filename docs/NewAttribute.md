@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **title** | **String** | The human-readable name for the attribute that will be shown in the Campaign Manager. Like &#x60;name&#x60;, the combination of entity and title must also be unique. | 
 **type** | **String** | The data type of the attribute, a &#x60;time&#x60; attribute must be sent as a string that conforms to the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp format. | 
 **description** | **String** | A description of this attribute. | 
-**tags** | **[String]** | A list of tags for the attribute. | 
 **suggestions** | **[String]** | A list of suggestions for the attribute. | 
 **editable** | **Boolean** | Whether or not this attribute can be edited. | 
 
@@ -50,6 +49,10 @@ Name | Type | Description | Notes
 * `(list string)` (value: `"(list string)"`)
 
 * `(list number)` (value: `"(list number)"`)
+
+* `(list time)` (value: `"(list time)"`)
+
+* `location` (value: `"location"`)
 
 
 

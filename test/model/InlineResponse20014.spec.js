@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(TalononeApi.InlineResponse20014);
     });
 
-    it('should have the property totalResultSize (base name: "totalResultSize")', function() {
-      // uncomment below and update the code to test the property totalResultSize
+    it('should have the property hasMore (base name: "hasMore")', function() {
+      // uncomment below and update the code to test the property hasMore
       //var instane = new TalononeApi.InlineResponse20014();
       //expect(instance).to.be();
     });

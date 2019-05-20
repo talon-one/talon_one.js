@@ -20,7 +20,7 @@ please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.co
 Then install it via:
 
 ```shell
-npm install talon_one --save
+npm install talonone_api --save
 ```
 
 ##### Local development
@@ -93,32 +93,29 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var TalononeApi = require('talon_one');
+var TalononeApi = require('talonone_api');
 
 var defaultClient = TalononeApi.ApiClient.instance;
 
-// Configure API key authorization: manager_auth
-var manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = "YOUR API KEY";
+// Configure API key authorization: integration_auth
+var integration_auth = defaultClient.authentications['integration_auth'];
+integration_auth.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix['Authorization'] = "Token";
+//integration_auth.apiKeyPrefix['Content-Signature'] = "Token"
 
-var api = new TalononeApi.ManagementApi();
+var api = new TalononeApi.IntegrationApi()
 
 var opts = { 
-  'body': new TalononeApi.Body13() // {Body13} 
+  'body': new TalononeApi.NewReferral() // {NewReferral} 
 };
-api.createAPIKey(opts).then(function(data) {
+api.createReferral(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
+
+
 ```
-
-There are further usage examples in the following files:
-
-* [example_consumers/integration.js](example_consumers/integration.js)
-* [example_consumers/management.js](example_consumers/management.js)
 
 ## Documentation for API Endpoints
 
@@ -126,151 +123,119 @@ All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*TalononeApi.ManagementApiApi* | [**createAPIKey**](docs/ManagementApiApi.md#createAPIKey) | **POST** /v1/api_keys | Create an API Key
-*TalononeApi.ManagementApiApi* | [**createApplication**](docs/ManagementApiApi.md#createApplication) | **POST** /v1/applications | Create an Application
-*TalononeApi.ManagementApiApi* | [**createCampaign**](docs/ManagementApiApi.md#createCampaign) | **POST** /v1/applications/{applicationId}/campaigns | Create a Campaign
-*TalononeApi.ManagementApiApi* | [**createCoupons**](docs/ManagementApiApi.md#createCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Create Coupons
-*TalononeApi.ManagementApiApi* | [**createEventType**](docs/ManagementApiApi.md#createEventType) | **POST** /v1/event_types | Create Event Type
-*TalononeApi.ManagementApiApi* | [**createInvite**](docs/ManagementApiApi.md#createInvite) | **POST** /v1/invites | Invite a new user to your account
-*TalononeApi.ManagementApiApi* | [**createPasswordRecoveryEmail**](docs/ManagementApiApi.md#createPasswordRecoveryEmail) | **POST** /v1/password_recovery_emails | Request a password reset
-*TalononeApi.ManagementApiApi* | [**createRole**](docs/ManagementApiApi.md#createRole) | **POST** /v1/roles | Create a role
-*TalononeApi.ManagementApiApi* | [**createRuleset**](docs/ManagementApiApi.md#createRuleset) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets | Create a Ruleset
-*TalononeApi.ManagementApiApi* | [**createSession**](docs/ManagementApiApi.md#createSession) | **POST** /v1/sessions | Create a Session
-*TalononeApi.ManagementApiApi* | [**createWebhook**](docs/ManagementApiApi.md#createWebhook) | **POST** /v1/webhooks | Create Webhook
-*TalononeApi.ManagementApiApi* | [**deleteAPIKey**](docs/ManagementApiApi.md#deleteAPIKey) | **DELETE** /api_keys/{apiKeyId} | Delete an API key
-*TalononeApi.ManagementApiApi* | [**deleteApplication**](docs/ManagementApiApi.md#deleteApplication) | **DELETE** /v1/applications/{applicationId} | Delete an Application
-*TalononeApi.ManagementApiApi* | [**deleteAttribute**](docs/ManagementApiApi.md#deleteAttribute) | **DELETE** /v1/attributes/{attributeId} | Delete a custom attribute
-*TalononeApi.ManagementApiApi* | [**deleteCampaign**](docs/ManagementApiApi.md#deleteCampaign) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId} | Delete a Campaign
-*TalononeApi.ManagementApiApi* | [**deleteCoupon**](docs/ManagementApiApi.md#deleteCoupon) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Delete one Coupon
-*TalononeApi.ManagementApiApi* | [**deleteCoupons**](docs/ManagementApiApi.md#deleteCoupons) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Delete Coupons
-*TalononeApi.ManagementApiApi* | [**deleteEventType**](docs/ManagementApiApi.md#deleteEventType) | **DELETE** /v1/event_types/{eventTypeId} | Delete Event Type
-*TalononeApi.ManagementApiApi* | [**deleteReferral**](docs/ManagementApiApi.md#deleteReferral) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals/{referralId} | Delete one Referral
-*TalononeApi.ManagementApiApi* | [**deleteRole**](docs/ManagementApiApi.md#deleteRole) | **DELETE** /roles/{roleId} | Delete a role
-*TalononeApi.ManagementApiApi* | [**deleteRuleset**](docs/ManagementApiApi.md#deleteRuleset) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId} | Delete a Ruleset
-*TalononeApi.ManagementApiApi* | [**deleteUser**](docs/ManagementApiApi.md#deleteUser) | **DELETE** /v1/users/{userId} | Delete a User
-*TalononeApi.ManagementApiApi* | [**deleteWebhook**](docs/ManagementApiApi.md#deleteWebhook) | **DELETE** /v1/webhooks/{webhookId} | Delete Webhook
-*TalononeApi.ManagementApiApi* | [**destroySession**](docs/ManagementApiApi.md#destroySession) | **DELETE** /v1/sessions | Destroy a Session
-*TalononeApi.ManagementApiApi* | [**duplicateCampaignToApplications**](docs/ManagementApiApi.md#duplicateCampaignToApplications) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/campaign_duplicate | Duplicate the campaign into every specified application
-*TalononeApi.ManagementApiApi* | [**getAPIKey**](docs/ManagementApiApi.md#getAPIKey) | **GET** /api_keys/{apiKeyId} | Get API Key
-*TalononeApi.ManagementApiApi* | [**getAPIKeys**](docs/ManagementApiApi.md#getAPIKeys) | **GET** /v1/api_keys | List API Keys for the account
-*TalononeApi.ManagementApiApi* | [**getAccessLogs**](docs/ManagementApiApi.md#getAccessLogs) | **GET** /v1/applications/{applicationId}/access_logs | Get access logs for application
-*TalononeApi.ManagementApiApi* | [**getAccessLogsWithoutTotalCount**](docs/ManagementApiApi.md#getAccessLogsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/access_logs/no_total | Get access logs for application
-*TalononeApi.ManagementApiApi* | [**getAccount**](docs/ManagementApiApi.md#getAccount) | **GET** /v1/accounts/{accountId} | Get Account Details
-*TalononeApi.ManagementApiApi* | [**getAllAccessLogs**](docs/ManagementApiApi.md#getAllAccessLogs) | **GET** /v1/access_logs | Get all access logs
-*TalononeApi.ManagementApiApi* | [**getApplication**](docs/ManagementApiApi.md#getApplication) | **GET** /v1/applications/{applicationId} | Get Application
-*TalononeApi.ManagementApiApi* | [**getApplicationApiHealth**](docs/ManagementApiApi.md#getApplicationApiHealth) | **GET** /v1/applications/{applicationId}/health_report | Get report of health of application API
-*TalononeApi.ManagementApiApi* | [**getApplicationCustomer**](docs/ManagementApiApi.md#getApplicationCustomer) | **GET** /v1/applications/{applicationId}/customers/{customerId} | Get Application Customer
-*TalononeApi.ManagementApiApi* | [**getApplicationCustomers**](docs/ManagementApiApi.md#getApplicationCustomers) | **GET** /v1/applications/{applicationId}/customers | List Application Customers
-*TalononeApi.ManagementApiApi* | [**getApplicationCustomersByAttributes**](docs/ManagementApiApi.md#getApplicationCustomersByAttributes) | **POST** /v1/application_customer_search | Get a list of the customer profiles that match the given attributes
-*TalononeApi.ManagementApiApi* | [**getApplicationEventTypes**](docs/ManagementApiApi.md#getApplicationEventTypes) | **GET** /v1/applications/{applicationId}/event_types | List Applications Event Types
-*TalononeApi.ManagementApiApi* | [**getApplicationEvents**](docs/ManagementApiApi.md#getApplicationEvents) | **GET** /v1/applications/{applicationId}/events | List Applications Events
-*TalononeApi.ManagementApiApi* | [**getApplicationEventsWithoutTotalCount**](docs/ManagementApiApi.md#getApplicationEventsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/events/no_total | List Applications Events
-*TalononeApi.ManagementApiApi* | [**getApplicationSession**](docs/ManagementApiApi.md#getApplicationSession) | **GET** /v1/applications/{applicationId}/sessions/{sessionId} | Get Application Session
-*TalononeApi.ManagementApiApi* | [**getApplicationSessions**](docs/ManagementApiApi.md#getApplicationSessions) | **GET** /v1/applications/{applicationId}/sessions | List Application Sessions
-*TalononeApi.ManagementApiApi* | [**getApplications**](docs/ManagementApiApi.md#getApplications) | **GET** /v1/applications | List Applications
-*TalononeApi.ManagementApiApi* | [**getAttribute**](docs/ManagementApiApi.md#getAttribute) | **GET** /v1/attributes/{attributeId} | Get a custom attribute
-*TalononeApi.ManagementApiApi* | [**getCampaign**](docs/ManagementApiApi.md#getCampaign) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId} | Get a Campaign
-*TalononeApi.ManagementApiApi* | [**getCampaignAnalytics**](docs/ManagementApiApi.md#getCampaignAnalytics) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/analytics | Get analytics of campaigns
-*TalononeApi.ManagementApiApi* | [**getCampaignByAttributes**](docs/ManagementApiApi.md#getCampaignByAttributes) | **POST** /v1/applications/{applicationId}/campaigns_search | Get a list of all campaigns that match the given attributes
-*TalononeApi.ManagementApiApi* | [**getCampaignSet**](docs/ManagementApiApi.md#getCampaignSet) | **GET** /v1/applications/{applicationId}/campaign_set | List CampaignSet
-*TalononeApi.ManagementApiApi* | [**getCampaigns**](docs/ManagementApiApi.md#getCampaigns) | **GET** /v1/applications/{applicationId}/campaigns | List your Campaigns
-*TalononeApi.ManagementApiApi* | [**getChanges**](docs/ManagementApiApi.md#getChanges) | **GET** /v1/changes | Get audit log for an account
-*TalononeApi.ManagementApiApi* | [**getCoupons**](docs/ManagementApiApi.md#getCoupons) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | List Coupons
-*TalononeApi.ManagementApiApi* | [**getCouponsByAttributes**](docs/ManagementApiApi.md#getCouponsByAttributes) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search | Get a list of the coupons that match the given attributes
-*TalononeApi.ManagementApiApi* | [**getCouponsByAttributesApplicationWide**](docs/ManagementApiApi.md#getCouponsByAttributesApplicationWide) | **POST** /v1/applications/{applicationId}/coupons_search | Get a list of the coupons that match the given attributes in all active campaigns of an application
-*TalononeApi.ManagementApiApi* | [**getCouponsWithoutTotalCount**](docs/ManagementApiApi.md#getCouponsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/no_total | List Coupons
-*TalononeApi.ManagementApiApi* | [**getCustomerActivityReport**](docs/ManagementApiApi.md#getCustomerActivityReport) | **GET** /v1/applications/{applicationId}/customer_activity_reports/{customerId} | Get Activity Report for Single Customer
-*TalononeApi.ManagementApiApi* | [**getCustomerActivityReports**](docs/ManagementApiApi.md#getCustomerActivityReports) | **GET** /v1/applications/{applicationId}/customer_activity_reports | Get Activity Reports for Application Customers
-*TalononeApi.ManagementApiApi* | [**getCustomerActivityReportsWithoutTotalCount**](docs/ManagementApiApi.md#getCustomerActivityReportsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/customer_activity_reports/no_total | Get Activity Reports for Application Customers
-*TalononeApi.ManagementApiApi* | [**getEventType**](docs/ManagementApiApi.md#getEventType) | **GET** /v1/event_types/{eventTypeId} | Get Event Type
-*TalononeApi.ManagementApiApi* | [**getEventTypes**](docs/ManagementApiApi.md#getEventTypes) | **GET** /v1/event_types | List Event Types
-*TalononeApi.ManagementApiApi* | [**getExports**](docs/ManagementApiApi.md#getExports) | **GET** /v1/exports | Get Exports
-*TalononeApi.ManagementApiApi* | [**getFeaturesFeed**](docs/ManagementApiApi.md#getFeaturesFeed) | **GET** /v1/misc/help_center_articles | Fetch the features RSS feed.
-*TalononeApi.ManagementApiApi* | [**getImports**](docs/ManagementApiApi.md#getImports) | **GET** /v1/imports | Get Imports
-*TalononeApi.ManagementApiApi* | [**getManagerConfig**](docs/ManagementApiApi.md#getManagerConfig) | **GET** /v1/manager_config | Get Campaign Manager config
-*TalononeApi.ManagementApiApi* | [**getReferrals**](docs/ManagementApiApi.md#getReferrals) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals | List Referrals
-*TalononeApi.ManagementApiApi* | [**getReferralsWithoutTotalCount**](docs/ManagementApiApi.md#getReferralsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals/no_total | List Referrals
-*TalononeApi.ManagementApiApi* | [**getRole**](docs/ManagementApiApi.md#getRole) | **GET** /roles/{roleId} | Get role
-*TalononeApi.ManagementApiApi* | [**getRoles**](docs/ManagementApiApi.md#getRoles) | **GET** /v1/roles | List roles for the account
-*TalononeApi.ManagementApiApi* | [**getRuleset**](docs/ManagementApiApi.md#getRuleset) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId} | Get a Ruleset
-*TalononeApi.ManagementApiApi* | [**getRulesets**](docs/ManagementApiApi.md#getRulesets) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets | List Campaign Rulesets
-*TalononeApi.ManagementApiApi* | [**getUser**](docs/ManagementApiApi.md#getUser) | **GET** /v1/users/{userId} | Get a single User
-*TalononeApi.ManagementApiApi* | [**getUsers**](docs/ManagementApiApi.md#getUsers) | **GET** /v1/users | List Users in your account
-*TalononeApi.ManagementApiApi* | [**getWebhook**](docs/ManagementApiApi.md#getWebhook) | **GET** /v1/webhooks/{webhookId} | Get Webhook
-*TalononeApi.ManagementApiApi* | [**getWebhookActivationLogs**](docs/ManagementApiApi.md#getWebhookActivationLogs) | **GET** /v1/webhook_activation_logs | List Webhook activation Log Entries
-*TalononeApi.ManagementApiApi* | [**getWebhookLogs**](docs/ManagementApiApi.md#getWebhookLogs) | **GET** /v1/webhook_logs | List Webhook Log Entries
-*TalononeApi.ManagementApiApi* | [**getWebhooks**](docs/ManagementApiApi.md#getWebhooks) | **GET** /v1/webhooks | List Webhooks
-*TalononeApi.ManagementApiApi* | [**refreshAnalytics**](docs/ManagementApiApi.md#refreshAnalytics) | **POST** /v1/refresh_analytics | Triger refresh on stale analytics.
-*TalononeApi.ManagementApiApi* | [**renewAPIToken**](docs/ManagementApiApi.md#renewAPIToken) | **PUT** /v1/api_keys/renew_token | Renew the token for an API key
-*TalononeApi.ManagementApiApi* | [**resetPassword**](docs/ManagementApiApi.md#resetPassword) | **POST** /v1/reset_password | Reset password
-*TalononeApi.ManagementApiApi* | [**searchCouponsAdvanced**](docs/ManagementApiApi.md#searchCouponsAdvanced) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced | Get a list of the coupons that match the given attributes
-*TalononeApi.ManagementApiApi* | [**searchCouponsAdvancedApplicationWide**](docs/ManagementApiApi.md#searchCouponsAdvancedApplicationWide) | **POST** /v1/applications/{applicationId}/coupons_search_advanced | Get a list of the coupons that match the given attributes in all active campaigns of an application
-*TalononeApi.ManagementApiApi* | [**updateAPIKey**](docs/ManagementApiApi.md#updateAPIKey) | **PUT** /api_keys/{apiKeyId} | Update API key data
-*TalononeApi.ManagementApiApi* | [**updateAccount**](docs/ManagementApiApi.md#updateAccount) | **PUT** /v1/accounts/{accountId} | Update Account
-*TalononeApi.ManagementApiApi* | [**updateApplication**](docs/ManagementApiApi.md#updateApplication) | **PUT** /v1/applications/{applicationId} | Update Application data
-*TalononeApi.ManagementApiApi* | [**updateAttribute**](docs/ManagementApiApi.md#updateAttribute) | **PUT** /v1/attributes/{attributeId} | Update a custom attribute
-*TalononeApi.ManagementApiApi* | [**updateCampaign**](docs/ManagementApiApi.md#updateCampaign) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId} | Update a Campaign
-*TalononeApi.ManagementApiApi* | [**updateCampaignSet**](docs/ManagementApiApi.md#updateCampaignSet) | **PUT** /v1/applications/{applicationId}/campaign_set | Update a Campaign Set
-*TalononeApi.ManagementApiApi* | [**updateCoupon**](docs/ManagementApiApi.md#updateCoupon) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Update a Coupon
-*TalononeApi.ManagementApiApi* | [**updateManagerConfig**](docs/ManagementApiApi.md#updateManagerConfig) | **PUT** /v1/manager_config | Update Campaign Manager config
-*TalononeApi.ManagementApiApi* | [**updateRole**](docs/ManagementApiApi.md#updateRole) | **PUT** /roles/{roleId} | Update role data
-*TalononeApi.ManagementApiApi* | [**updateRuleset**](docs/ManagementApiApi.md#updateRuleset) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId} | Update a Ruleset
-*TalononeApi.ManagementApiApi* | [**updateUser**](docs/ManagementApiApi.md#updateUser) | **PUT** /v1/users/{userId} | Update User data
-*TalononeApi.ManagementApiApi* | [**updateUserLatestFeature**](docs/ManagementApiApi.md#updateUserLatestFeature) | **PUT** /v1/misc/update_user_latest_feature | Updates the latest feature without the need of the user&#39;s password
-*TalononeApi.ManagementApiApi* | [**updateWebhook**](docs/ManagementApiApi.md#updateWebhook) | **PUT** /v1/webhooks/{webhookId} | Update Webhook
+*TalononeApi.IntegrationApi* | [**createReferral**](docs/IntegrationApi.md#createReferral) | **POST** /v1/referrals | Create a referral code for an advocate
+*TalononeApi.IntegrationApi* | [**deleteCustomerData**](docs/IntegrationApi.md#deleteCustomerData) | **DELETE** /v1/customer_data/{integrationId} | Delete the personal data of a customer.
+*TalononeApi.IntegrationApi* | [**trackEvent**](docs/IntegrationApi.md#trackEvent) | **POST** /v1/events | Track an Event
+*TalononeApi.IntegrationApi* | [**updateCustomerProfile**](docs/IntegrationApi.md#updateCustomerProfile) | **PUT** /v1/customer_profiles/{integrationId} | Update a Customer Profile
+*TalononeApi.IntegrationApi* | [**updateCustomerSession**](docs/IntegrationApi.md#updateCustomerSession) | **PUT** /v1/customer_sessions/{customerSessionId} | Update a Customer Session
+*TalononeApi.ManagementApi* | [**addLoyaltyPoints**](docs/ManagementApi.md#addLoyaltyPoints) | **PUT** /v1/loyalty_programs/{programID}/profile/{integrationID}/add_points | Add points in a certain loyalty program for the specified customer
+*TalononeApi.ManagementApi* | [**copyCampaignToApplications**](docs/ManagementApi.md#copyCampaignToApplications) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/copy | Copy the campaign into every specified application
+*TalononeApi.ManagementApi* | [**createCampaign**](docs/ManagementApi.md#createCampaign) | **POST** /v1/applications/{applicationId}/campaigns | Create a Campaign
+*TalononeApi.ManagementApi* | [**createCoupons**](docs/ManagementApi.md#createCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Create Coupons
+*TalononeApi.ManagementApi* | [**createPasswordRecoveryEmail**](docs/ManagementApi.md#createPasswordRecoveryEmail) | **POST** /v1/password_recovery_emails | Request a password reset
+*TalononeApi.ManagementApi* | [**createRuleset**](docs/ManagementApi.md#createRuleset) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets | Create a Ruleset
+*TalononeApi.ManagementApi* | [**createSession**](docs/ManagementApi.md#createSession) | **POST** /v1/sessions | Create a Session
+*TalononeApi.ManagementApi* | [**deleteCampaign**](docs/ManagementApi.md#deleteCampaign) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId} | Delete a Campaign
+*TalononeApi.ManagementApi* | [**deleteCoupon**](docs/ManagementApi.md#deleteCoupon) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Delete one Coupon
+*TalononeApi.ManagementApi* | [**deleteCoupons**](docs/ManagementApi.md#deleteCoupons) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Delete Coupons
+*TalononeApi.ManagementApi* | [**deleteReferral**](docs/ManagementApi.md#deleteReferral) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals/{referralId} | Delete one Referral
+*TalononeApi.ManagementApi* | [**deleteRuleset**](docs/ManagementApi.md#deleteRuleset) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId} | Delete a Ruleset
+*TalononeApi.ManagementApi* | [**getAccessLogs**](docs/ManagementApi.md#getAccessLogs) | **GET** /v1/applications/{applicationId}/access_logs | Get access logs for application
+*TalononeApi.ManagementApi* | [**getAccessLogsWithoutTotalCount**](docs/ManagementApi.md#getAccessLogsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/access_logs/no_total | Get access logs for application
+*TalononeApi.ManagementApi* | [**getAccount**](docs/ManagementApi.md#getAccount) | **GET** /v1/accounts/{accountId} | Get Account Details
+*TalononeApi.ManagementApi* | [**getAccountAnalytics**](docs/ManagementApi.md#getAccountAnalytics) | **GET** /v1/accounts/{accountId}/analytics | Get Account Analytics
+*TalononeApi.ManagementApi* | [**getAccountLimits**](docs/ManagementApi.md#getAccountLimits) | **GET** /v1/accounts/{accountId}/limits | Get Account Limits
+*TalononeApi.ManagementApi* | [**getAllAccessLogs**](docs/ManagementApi.md#getAllAccessLogs) | **GET** /v1/access_logs | Get all access logs
+*TalononeApi.ManagementApi* | [**getAllRoles**](docs/ManagementApi.md#getAllRoles) | **GET** /v1/roles | Get all roles.
+*TalononeApi.ManagementApi* | [**getApplication**](docs/ManagementApi.md#getApplication) | **GET** /v1/applications/{applicationId} | Get Application
+*TalononeApi.ManagementApi* | [**getApplicationApiHealth**](docs/ManagementApi.md#getApplicationApiHealth) | **GET** /v1/applications/{applicationId}/health_report | Get report of health of application API
+*TalononeApi.ManagementApi* | [**getApplicationCustomer**](docs/ManagementApi.md#getApplicationCustomer) | **GET** /v1/applications/{applicationId}/customers/{customerId} | Get Application Customer
+*TalononeApi.ManagementApi* | [**getApplicationCustomers**](docs/ManagementApi.md#getApplicationCustomers) | **GET** /v1/applications/{applicationId}/customers | List Application Customers
+*TalononeApi.ManagementApi* | [**getApplicationCustomersByAttributes**](docs/ManagementApi.md#getApplicationCustomersByAttributes) | **POST** /v1/application_customer_search | Get a list of the customer profiles that match the given attributes
+*TalononeApi.ManagementApi* | [**getApplicationEventTypes**](docs/ManagementApi.md#getApplicationEventTypes) | **GET** /v1/applications/{applicationId}/event_types | List Applications Event Types
+*TalononeApi.ManagementApi* | [**getApplicationEvents**](docs/ManagementApi.md#getApplicationEvents) | **GET** /v1/applications/{applicationId}/events | List Applications Events
+*TalononeApi.ManagementApi* | [**getApplicationEventsWithoutTotalCount**](docs/ManagementApi.md#getApplicationEventsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/events/no_total | List Applications Events
+*TalononeApi.ManagementApi* | [**getApplicationSession**](docs/ManagementApi.md#getApplicationSession) | **GET** /v1/applications/{applicationId}/sessions/{sessionId} | Get Application Session
+*TalononeApi.ManagementApi* | [**getApplicationSessions**](docs/ManagementApi.md#getApplicationSessions) | **GET** /v1/applications/{applicationId}/sessions | List Application Sessions
+*TalononeApi.ManagementApi* | [**getApplications**](docs/ManagementApi.md#getApplications) | **GET** /v1/applications | List Applications
+*TalononeApi.ManagementApi* | [**getAttribute**](docs/ManagementApi.md#getAttribute) | **GET** /v1/attributes/{attributeId} | Get a custom attribute
+*TalononeApi.ManagementApi* | [**getCampaign**](docs/ManagementApi.md#getCampaign) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId} | Get a Campaign
+*TalononeApi.ManagementApi* | [**getCampaignAnalytics**](docs/ManagementApi.md#getCampaignAnalytics) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/analytics | Get analytics of campaigns
+*TalononeApi.ManagementApi* | [**getCampaignByAttributes**](docs/ManagementApi.md#getCampaignByAttributes) | **POST** /v1/applications/{applicationId}/campaigns_search | Get a list of all campaigns that match the given attributes
+*TalononeApi.ManagementApi* | [**getCampaignSet**](docs/ManagementApi.md#getCampaignSet) | **GET** /v1/applications/{applicationId}/campaign_set | List CampaignSet
+*TalononeApi.ManagementApi* | [**getCampaigns**](docs/ManagementApi.md#getCampaigns) | **GET** /v1/applications/{applicationId}/campaigns | List your Campaigns
+*TalononeApi.ManagementApi* | [**getChanges**](docs/ManagementApi.md#getChanges) | **GET** /v1/changes | Get audit log for an account
+*TalononeApi.ManagementApi* | [**getCoupons**](docs/ManagementApi.md#getCoupons) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | List Coupons
+*TalononeApi.ManagementApi* | [**getCouponsByAttributes**](docs/ManagementApi.md#getCouponsByAttributes) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search | Get a list of the coupons that match the given attributes
+*TalononeApi.ManagementApi* | [**getCouponsByAttributesApplicationWide**](docs/ManagementApi.md#getCouponsByAttributesApplicationWide) | **POST** /v1/applications/{applicationId}/coupons_search | Get a list of the coupons that match the given attributes in all active campaigns of an application
+*TalononeApi.ManagementApi* | [**getCouponsWithoutTotalCount**](docs/ManagementApi.md#getCouponsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/no_total | List Coupons
+*TalononeApi.ManagementApi* | [**getCustomerActivityReport**](docs/ManagementApi.md#getCustomerActivityReport) | **GET** /v1/applications/{applicationId}/customer_activity_reports/{customerId} | Get Activity Report for Single Customer
+*TalononeApi.ManagementApi* | [**getCustomerActivityReports**](docs/ManagementApi.md#getCustomerActivityReports) | **GET** /v1/applications/{applicationId}/customer_activity_reports | Get Activity Reports for Application Customers
+*TalononeApi.ManagementApi* | [**getCustomerActivityReportsWithoutTotalCount**](docs/ManagementApi.md#getCustomerActivityReportsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/customer_activity_reports/no_total | Get Activity Reports for Application Customers
+*TalononeApi.ManagementApi* | [**getCustomerAnalytics**](docs/ManagementApi.md#getCustomerAnalytics) | **GET** /v1/applications/{applicationId}/customers/{customerId}/analytics | Get Analytics Report for a Customer
+*TalononeApi.ManagementApi* | [**getCustomerProfile**](docs/ManagementApi.md#getCustomerProfile) | **GET** /v1/customers/{customerId} | Get Customer Profile
+*TalononeApi.ManagementApi* | [**getCustomerProfiles**](docs/ManagementApi.md#getCustomerProfiles) | **GET** /v1/customers/no_total | List Customer Profiles
+*TalononeApi.ManagementApi* | [**getCustomersByAttributes**](docs/ManagementApi.md#getCustomersByAttributes) | **POST** /v1/customer_search/no_total | Get a list of the customer profiles that match the given attributes
+*TalononeApi.ManagementApi* | [**getEventTypes**](docs/ManagementApi.md#getEventTypes) | **GET** /v1/event_types | List Event Types
+*TalononeApi.ManagementApi* | [**getExports**](docs/ManagementApi.md#getExports) | **GET** /v1/exports | Get Exports
+*TalononeApi.ManagementApi* | [**getImports**](docs/ManagementApi.md#getImports) | **GET** /v1/imports | Get Imports
+*TalononeApi.ManagementApi* | [**getLoyaltyPoints**](docs/ManagementApi.md#getLoyaltyPoints) | **GET** /v1/loyalty_programs/{programID}/profile/{integrationID} | get the Loyalty Ledger for this integrationID
+*TalononeApi.ManagementApi* | [**getLoyaltyProgram**](docs/ManagementApi.md#getLoyaltyProgram) | **GET** /v1/loyalty_programs/{programID} | Get a loyalty program
+*TalononeApi.ManagementApi* | [**getLoyaltyPrograms**](docs/ManagementApi.md#getLoyaltyPrograms) | **GET** /v1/loyalty_programs | List all loyalty Programs
+*TalononeApi.ManagementApi* | [**getReferrals**](docs/ManagementApi.md#getReferrals) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals | List Referrals
+*TalononeApi.ManagementApi* | [**getReferralsWithoutTotalCount**](docs/ManagementApi.md#getReferralsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals/no_total | List Referrals
+*TalononeApi.ManagementApi* | [**getRole**](docs/ManagementApi.md#getRole) | **GET** /v1/roles/{roleId} | Get information for the specified role.
+*TalononeApi.ManagementApi* | [**getRuleset**](docs/ManagementApi.md#getRuleset) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId} | Get a Ruleset
+*TalononeApi.ManagementApi* | [**getRulesets**](docs/ManagementApi.md#getRulesets) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets | List Campaign Rulesets
+*TalononeApi.ManagementApi* | [**getUser**](docs/ManagementApi.md#getUser) | **GET** /v1/users/{userId} | Get a single User
+*TalononeApi.ManagementApi* | [**getUsers**](docs/ManagementApi.md#getUsers) | **GET** /v1/users | List Users in your account
+*TalononeApi.ManagementApi* | [**getWebhook**](docs/ManagementApi.md#getWebhook) | **GET** /v1/webhooks/{webhookId} | Get Webhook
+*TalononeApi.ManagementApi* | [**getWebhookActivationLogs**](docs/ManagementApi.md#getWebhookActivationLogs) | **GET** /v1/webhook_activation_logs | List Webhook activation Log Entries
+*TalononeApi.ManagementApi* | [**getWebhookLogs**](docs/ManagementApi.md#getWebhookLogs) | **GET** /v1/webhook_logs | List Webhook Log Entries
+*TalononeApi.ManagementApi* | [**getWebhooks**](docs/ManagementApi.md#getWebhooks) | **GET** /v1/webhooks | List Webhooks
+*TalononeApi.ManagementApi* | [**refreshAnalytics**](docs/ManagementApi.md#refreshAnalytics) | **POST** /v1/refresh_analytics | Trigger refresh on stale analytics.
+*TalononeApi.ManagementApi* | [**removeLoyaltyPoints**](docs/ManagementApi.md#removeLoyaltyPoints) | **PUT** /v1/loyalty_programs/{programID}/profile/{integrationID}/deduct_points | Deduct points in a certain loyalty program for the specified customer
+*TalononeApi.ManagementApi* | [**resetPassword**](docs/ManagementApi.md#resetPassword) | **POST** /v1/reset_password | Reset password
+*TalononeApi.ManagementApi* | [**searchCouponsAdvanced**](docs/ManagementApi.md#searchCouponsAdvanced) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced | Get a list of the coupons that match the given attributes
+*TalononeApi.ManagementApi* | [**searchCouponsAdvancedApplicationWide**](docs/ManagementApi.md#searchCouponsAdvancedApplicationWide) | **POST** /v1/applications/{applicationId}/coupons_search_advanced | Get a list of the coupons that match the given attributes in all active campaigns of an application
+*TalononeApi.ManagementApi* | [**searchCouponsAdvancedApplicationWideWithoutTotalCount**](docs/ManagementApi.md#searchCouponsAdvancedApplicationWideWithoutTotalCount) | **POST** /v1/applications/{applicationId}/coupons_search_advanced/no_total | Get a list of the coupons that match the given attributes in all active campaigns of an application
+*TalononeApi.ManagementApi* | [**searchCouponsAdvancedWithoutTotalCount**](docs/ManagementApi.md#searchCouponsAdvancedWithoutTotalCount) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total | Get a list of the coupons that match the given attributes
+*TalononeApi.ManagementApi* | [**setAccountLimits**](docs/ManagementApi.md#setAccountLimits) | **PUT** /v1/accounts/{accountId}/limits | Set account limits
+*TalononeApi.ManagementApi* | [**updateCampaign**](docs/ManagementApi.md#updateCampaign) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId} | Update a Campaign
+*TalononeApi.ManagementApi* | [**updateCampaignSet**](docs/ManagementApi.md#updateCampaignSet) | **PUT** /v1/applications/{applicationId}/campaign_set | Update a Campaign Set
+*TalononeApi.ManagementApi* | [**updateCoupon**](docs/ManagementApi.md#updateCoupon) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Update a Coupon
+*TalononeApi.ManagementApi* | [**updateCouponBatch**](docs/ManagementApi.md#updateCouponBatch) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Update a Batch of Coupons
+*TalononeApi.ManagementApi* | [**updateRuleset**](docs/ManagementApi.md#updateRuleset) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId} | Update a Ruleset
 
 
 ## Documentation for Models
 
- - [TalononeApi.AccessControlList](docs/AccessControlList.md)
+ - [TalononeApi.APIError](docs/APIError.md)
  - [TalononeApi.AccessLogEntry](docs/AccessLogEntry.md)
  - [TalononeApi.Account](docs/Account.md)
- - [TalononeApi.AnyValue](docs/AnyValue.md)
- - [TalononeApi.ApiKey](docs/ApiKey.md)
- - [TalononeApi.ApiKeyWithUsage](docs/ApiKeyWithUsage.md)
+ - [TalononeApi.AccountAnalytics](docs/AccountAnalytics.md)
+ - [TalononeApi.AccountEntity](docs/AccountEntity.md)
+ - [TalononeApi.AccountLimits](docs/AccountLimits.md)
  - [TalononeApi.Application](docs/Application.md)
+ - [TalononeApi.ApplicationAPIKey](docs/ApplicationAPIKey.md)
  - [TalononeApi.ApplicationApiHealth](docs/ApplicationApiHealth.md)
  - [TalononeApi.ApplicationCustomer](docs/ApplicationCustomer.md)
+ - [TalononeApi.ApplicationCustomerEntity](docs/ApplicationCustomerEntity.md)
  - [TalononeApi.ApplicationCustomerSearch](docs/ApplicationCustomerSearch.md)
+ - [TalononeApi.ApplicationEntity](docs/ApplicationEntity.md)
  - [TalononeApi.ApplicationEvent](docs/ApplicationEvent.md)
- - [TalononeApi.ApplicationEventType](docs/ApplicationEventType.md)
  - [TalononeApi.ApplicationSession](docs/ApplicationSession.md)
+ - [TalononeApi.ApplicationSessionEntity](docs/ApplicationSessionEntity.md)
+ - [TalononeApi.ApplicationStorage](docs/ApplicationStorage.md)
+ - [TalononeApi.ApplicationStorageData](docs/ApplicationStorageData.md)
+ - [TalononeApi.ApplicationStorageTuple](docs/ApplicationStorageTuple.md)
  - [TalononeApi.Attribute](docs/Attribute.md)
  - [TalononeApi.AttributeQuery](docs/AttributeQuery.md)
  - [TalononeApi.Binding](docs/Binding.md)
- - [TalononeApi.Body](docs/Body.md)
- - [TalononeApi.Body1](docs/Body1.md)
- - [TalononeApi.Body10](docs/Body10.md)
- - [TalononeApi.Body11](docs/Body11.md)
- - [TalononeApi.Body12](docs/Body12.md)
- - [TalononeApi.Body13](docs/Body13.md)
- - [TalononeApi.Body14](docs/Body14.md)
- - [TalononeApi.Body15](docs/Body15.md)
- - [TalononeApi.Body16](docs/Body16.md)
- - [TalononeApi.Body17](docs/Body17.md)
- - [TalononeApi.Body18](docs/Body18.md)
- - [TalononeApi.Body19](docs/Body19.md)
- - [TalononeApi.Body2](docs/Body2.md)
- - [TalononeApi.Body20](docs/Body20.md)
- - [TalononeApi.Body21](docs/Body21.md)
- - [TalononeApi.Body22](docs/Body22.md)
- - [TalononeApi.Body23](docs/Body23.md)
- - [TalononeApi.Body24](docs/Body24.md)
- - [TalononeApi.Body25](docs/Body25.md)
- - [TalononeApi.Body26](docs/Body26.md)
- - [TalononeApi.Body27](docs/Body27.md)
- - [TalononeApi.Body28](docs/Body28.md)
- - [TalononeApi.Body29](docs/Body29.md)
- - [TalononeApi.Body3](docs/Body3.md)
- - [TalononeApi.Body4](docs/Body4.md)
- - [TalononeApi.Body5](docs/Body5.md)
- - [TalononeApi.Body6](docs/Body6.md)
- - [TalononeApi.Body7](docs/Body7.md)
- - [TalononeApi.Body8](docs/Body8.md)
- - [TalononeApi.Body9](docs/Body9.md)
  - [TalononeApi.Campaign](docs/Campaign.md)
  - [TalononeApi.CampaignAnalytics](docs/CampaignAnalytics.md)
- - [TalononeApi.CampaignDuplicate](docs/CampaignDuplicate.md)
+ - [TalononeApi.CampaignCopy](docs/CampaignCopy.md)
+ - [TalononeApi.CampaignEntity](docs/CampaignEntity.md)
  - [TalononeApi.CampaignSearch](docs/CampaignSearch.md)
  - [TalononeApi.CampaignSet](docs/CampaignSet.md)
  - [TalononeApi.CampaignSetBranchNode](docs/CampaignSetBranchNode.md)
@@ -281,112 +246,125 @@ Class | Method | HTTP request | Description
  - [TalononeApi.Change](docs/Change.md)
  - [TalononeApi.CodeGeneratorSettings](docs/CodeGeneratorSettings.md)
  - [TalononeApi.Coupon](docs/Coupon.md)
+ - [TalononeApi.CouponConstraints](docs/CouponConstraints.md)
+ - [TalononeApi.CouponRejectionReason](docs/CouponRejectionReason.md)
  - [TalononeApi.CouponSearch](docs/CouponSearch.md)
+ - [TalononeApi.CouponValue](docs/CouponValue.md)
+ - [TalononeApi.CreateApplicationAPIKey](docs/CreateApplicationAPIKey.md)
  - [TalononeApi.CustomerActivityReport](docs/CustomerActivityReport.md)
+ - [TalononeApi.CustomerAnalytics](docs/CustomerAnalytics.md)
+ - [TalononeApi.CustomerProfile](docs/CustomerProfile.md)
+ - [TalononeApi.CustomerProfileSearchQuery](docs/CustomerProfileSearchQuery.md)
+ - [TalononeApi.CustomerSession](docs/CustomerSession.md)
+ - [TalononeApi.EmailEntity](docs/EmailEntity.md)
+ - [TalononeApi.Entity](docs/Entity.md)
+ - [TalononeApi.Environment](docs/Environment.md)
+ - [TalononeApi.ErrorResponse](docs/ErrorResponse.md)
+ - [TalononeApi.ErrorSource](docs/ErrorSource.md)
+ - [TalononeApi.Event](docs/Event.md)
  - [TalononeApi.EventType](docs/EventType.md)
+ - [TalononeApi.FeatureFlag](docs/FeatureFlag.md)
+ - [TalononeApi.FeatureFlags](docs/FeatureFlags.md)
  - [TalononeApi.FeaturesFeed](docs/FeaturesFeed.md)
+ - [TalononeApi.FuncArgDef](docs/FuncArgDef.md)
+ - [TalononeApi.FunctionDef](docs/FunctionDef.md)
+ - [TalononeApi.ImportCoupons](docs/ImportCoupons.md)
  - [TalononeApi.InlineResponse200](docs/InlineResponse200.md)
  - [TalononeApi.InlineResponse2001](docs/InlineResponse2001.md)
  - [TalononeApi.InlineResponse20010](docs/InlineResponse20010.md)
  - [TalononeApi.InlineResponse20011](docs/InlineResponse20011.md)
- - [TalononeApi.InlineResponse20011Data](docs/InlineResponse20011Data.md)
  - [TalononeApi.InlineResponse20012](docs/InlineResponse20012.md)
  - [TalononeApi.InlineResponse20013](docs/InlineResponse20013.md)
- - [TalononeApi.InlineResponse20013Data](docs/InlineResponse20013Data.md)
  - [TalononeApi.InlineResponse20014](docs/InlineResponse20014.md)
- - [TalononeApi.InlineResponse20014Data](docs/InlineResponse20014Data.md)
- - [TalononeApi.InlineResponse20014LoyaltyMemberships](docs/InlineResponse20014LoyaltyMemberships.md)
  - [TalononeApi.InlineResponse20015](docs/InlineResponse20015.md)
  - [TalononeApi.InlineResponse20016](docs/InlineResponse20016.md)
- - [TalononeApi.InlineResponse20016Data](docs/InlineResponse20016Data.md)
  - [TalononeApi.InlineResponse20017](docs/InlineResponse20017.md)
  - [TalononeApi.InlineResponse20018](docs/InlineResponse20018.md)
- - [TalononeApi.InlineResponse20018Adjustment](docs/InlineResponse20018Adjustment.md)
- - [TalononeApi.InlineResponse20018CartItems](docs/InlineResponse20018CartItems.md)
- - [TalononeApi.InlineResponse20018Data](docs/InlineResponse20018Data.md)
  - [TalononeApi.InlineResponse20019](docs/InlineResponse20019.md)
- - [TalononeApi.InlineResponse20019Data](docs/InlineResponse20019Data.md)
- - [TalononeApi.InlineResponse2001CouponSettings](docs/InlineResponse2001CouponSettings.md)
- - [TalononeApi.InlineResponse2001Data](docs/InlineResponse2001Data.md)
- - [TalononeApi.InlineResponse2001Limits](docs/InlineResponse2001Limits.md)
  - [TalononeApi.InlineResponse2002](docs/InlineResponse2002.md)
  - [TalononeApi.InlineResponse20020](docs/InlineResponse20020.md)
  - [TalononeApi.InlineResponse20021](docs/InlineResponse20021.md)
  - [TalononeApi.InlineResponse20022](docs/InlineResponse20022.md)
  - [TalononeApi.InlineResponse20023](docs/InlineResponse20023.md)
- - [TalononeApi.InlineResponse20023Data](docs/InlineResponse20023Data.md)
- - [TalononeApi.InlineResponse20023Params](docs/InlineResponse20023Params.md)
  - [TalononeApi.InlineResponse20024](docs/InlineResponse20024.md)
- - [TalononeApi.InlineResponse20024Data](docs/InlineResponse20024Data.md)
  - [TalononeApi.InlineResponse20025](docs/InlineResponse20025.md)
- - [TalononeApi.InlineResponse20025Data](docs/InlineResponse20025Data.md)
  - [TalononeApi.InlineResponse20026](docs/InlineResponse20026.md)
- - [TalononeApi.InlineResponse20026Data](docs/InlineResponse20026Data.md)
  - [TalononeApi.InlineResponse20027](docs/InlineResponse20027.md)
- - [TalononeApi.InlineResponse20027Data](docs/InlineResponse20027Data.md)
- - [TalononeApi.InlineResponse20028](docs/InlineResponse20028.md)
- - [TalononeApi.InlineResponse20028Data](docs/InlineResponse20028Data.md)
- - [TalononeApi.InlineResponse20029](docs/InlineResponse20029.md)
- - [TalononeApi.InlineResponse2002Set](docs/InlineResponse2002Set.md)
- - [TalononeApi.InlineResponse2002SetElements](docs/InlineResponse2002SetElements.md)
  - [TalononeApi.InlineResponse2003](docs/InlineResponse2003.md)
- - [TalononeApi.InlineResponse20030](docs/InlineResponse20030.md)
- - [TalononeApi.InlineResponse20031](docs/InlineResponse20031.md)
- - [TalononeApi.InlineResponse20031Data](docs/InlineResponse20031Data.md)
- - [TalononeApi.InlineResponse20032](docs/InlineResponse20032.md)
- - [TalononeApi.InlineResponse20032Data](docs/InlineResponse20032Data.md)
- - [TalononeApi.InlineResponse20033](docs/InlineResponse20033.md)
- - [TalononeApi.InlineResponse2003Bindings](docs/InlineResponse2003Bindings.md)
- - [TalononeApi.InlineResponse2003Data](docs/InlineResponse2003Data.md)
- - [TalononeApi.InlineResponse2003Rules](docs/InlineResponse2003Rules.md)
  - [TalononeApi.InlineResponse2004](docs/InlineResponse2004.md)
- - [TalononeApi.InlineResponse2004Data](docs/InlineResponse2004Data.md)
  - [TalononeApi.InlineResponse2005](docs/InlineResponse2005.md)
  - [TalononeApi.InlineResponse2006](docs/InlineResponse2006.md)
- - [TalononeApi.InlineResponse2006Data](docs/InlineResponse2006Data.md)
  - [TalononeApi.InlineResponse2007](docs/InlineResponse2007.md)
  - [TalononeApi.InlineResponse2008](docs/InlineResponse2008.md)
- - [TalononeApi.InlineResponse2008Data](docs/InlineResponse2008Data.md)
  - [TalononeApi.InlineResponse2009](docs/InlineResponse2009.md)
- - [TalononeApi.InlineResponse2009Data](docs/InlineResponse2009Data.md)
- - [TalononeApi.InlineResponse200Data](docs/InlineResponse200Data.md)
- - [TalononeApi.InlineResponse201](docs/InlineResponse201.md)
- - [TalononeApi.InlineResponse2011](docs/InlineResponse2011.md)
- - [TalononeApi.InlineResponse204](docs/InlineResponse204.md)
- - [TalononeApi.InlineResponse2041](docs/InlineResponse2041.md)
- - [TalononeApi.LatestFeature](docs/LatestFeature.md)
+ - [TalononeApi.IntegrationEntity](docs/IntegrationEntity.md)
+ - [TalononeApi.IntegrationProfileEntity](docs/IntegrationProfileEntity.md)
+ - [TalononeApi.IntegrationState](docs/IntegrationState.md)
+ - [TalononeApi.LedgerEntry](docs/LedgerEntry.md)
+ - [TalononeApi.LibraryAttribute](docs/LibraryAttribute.md)
  - [TalononeApi.LimitConfig](docs/LimitConfig.md)
- - [TalononeApi.LimitEntityEnum](docs/LimitEntityEnum.md)
  - [TalononeApi.LoginParams](docs/LoginParams.md)
+ - [TalononeApi.Loyalty](docs/Loyalty.md)
+ - [TalononeApi.LoyaltyLedger](docs/LoyaltyLedger.md)
+ - [TalononeApi.LoyaltyLedgerEntry](docs/LoyaltyLedgerEntry.md)
  - [TalononeApi.LoyaltyMembership](docs/LoyaltyMembership.md)
+ - [TalononeApi.LoyaltyPoints](docs/LoyaltyPoints.md)
+ - [TalononeApi.LoyaltyProgram](docs/LoyaltyProgram.md)
+ - [TalononeApi.LoyaltyProgramBalance](docs/LoyaltyProgramBalance.md)
  - [TalononeApi.ManagerConfig](docs/ManagerConfig.md)
+ - [TalononeApi.Meta](docs/Meta.md)
  - [TalononeApi.MiscUpdateUserLatestFeature](docs/MiscUpdateUserLatestFeature.md)
  - [TalononeApi.ModelExport](docs/ModelExport.md)
  - [TalononeApi.ModelImport](docs/ModelImport.md)
- - [TalononeApi.NewApiKey](docs/NewApiKey.md)
+ - [TalononeApi.MultiApplicationEntity](docs/MultiApplicationEntity.md)
+ - [TalononeApi.MutableEntity](docs/MutableEntity.md)
+ - [TalononeApi.NewAccount](docs/NewAccount.md)
+ - [TalononeApi.NewAccountSignUp](docs/NewAccountSignUp.md)
  - [TalononeApi.NewApplication](docs/NewApplication.md)
+ - [TalononeApi.NewApplicationAPIKey](docs/NewApplicationAPIKey.md)
+ - [TalononeApi.NewApplicationStorage](docs/NewApplicationStorage.md)
+ - [TalononeApi.NewApplicationStorageData](docs/NewApplicationStorageData.md)
+ - [TalononeApi.NewApplicationStorageTuple](docs/NewApplicationStorageTuple.md)
  - [TalononeApi.NewAttribute](docs/NewAttribute.md)
  - [TalononeApi.NewCampaign](docs/NewCampaign.md)
  - [TalononeApi.NewCampaignSet](docs/NewCampaignSet.md)
  - [TalononeApi.NewCoupons](docs/NewCoupons.md)
+ - [TalononeApi.NewCustomerProfile](docs/NewCustomerProfile.md)
+ - [TalononeApi.NewCustomerSession](docs/NewCustomerSession.md)
+ - [TalononeApi.NewEvent](docs/NewEvent.md)
  - [TalononeApi.NewEventType](docs/NewEventType.md)
+ - [TalononeApi.NewFeatureFlags](docs/NewFeatureFlags.md)
+ - [TalononeApi.NewImport](docs/NewImport.md)
  - [TalononeApi.NewInvitation](docs/NewInvitation.md)
+ - [TalononeApi.NewInviteEmail](docs/NewInviteEmail.md)
+ - [TalononeApi.NewLoyaltyProgram](docs/NewLoyaltyProgram.md)
  - [TalononeApi.NewPassword](docs/NewPassword.md)
  - [TalononeApi.NewPasswordEmail](docs/NewPasswordEmail.md)
+ - [TalononeApi.NewReferral](docs/NewReferral.md)
  - [TalononeApi.NewRole](docs/NewRole.md)
  - [TalononeApi.NewRuleset](docs/NewRuleset.md)
+ - [TalononeApi.NewTemplateDef](docs/NewTemplateDef.md)
+ - [TalononeApi.NewUser](docs/NewUser.md)
  - [TalononeApi.NewWebhook](docs/NewWebhook.md)
- - [TalononeApi.Policy](docs/Policy.md)
  - [TalononeApi.Referral](docs/Referral.md)
  - [TalononeApi.Role](docs/Role.md)
+ - [TalononeApi.RoleAssign](docs/RoleAssign.md)
+ - [TalononeApi.RoleMembership](docs/RoleMembership.md)
  - [TalononeApi.Rule](docs/Rule.md)
  - [TalononeApi.Ruleset](docs/Ruleset.md)
  - [TalononeApi.Session](docs/Session.md)
+ - [TalononeApi.SlotDef](docs/SlotDef.md)
  - [TalononeApi.TemplateArgDef](docs/TemplateArgDef.md)
+ - [TalononeApi.TemplateDef](docs/TemplateDef.md)
  - [TalononeApi.UpdateAccount](docs/UpdateAccount.md)
+ - [TalononeApi.UpdateCampaign](docs/UpdateCampaign.md)
  - [TalononeApi.UpdateCoupon](docs/UpdateCoupon.md)
+ - [TalononeApi.UpdateCouponBatch](docs/UpdateCouponBatch.md)
+ - [TalononeApi.UpdateLoyaltyProgram](docs/UpdateLoyaltyProgram.md)
+ - [TalononeApi.UpdateRole](docs/UpdateRole.md)
  - [TalononeApi.UpdateUser](docs/UpdateUser.md)
  - [TalononeApi.User](docs/User.md)
+ - [TalononeApi.UserEntity](docs/UserEntity.md)
  - [TalononeApi.Webhook](docs/Webhook.md)
  - [TalononeApi.WebhookActivationLogEntry](docs/WebhookActivationLogEntry.md)
  - [TalononeApi.WebhookLogEntry](docs/WebhookLogEntry.md)
@@ -394,6 +372,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
+
+### integration_auth
+
+- **Type**: API key
+- **API key parameter name**: Content-Signature
+- **Location**: HTTP header
 
 ### manager_auth
 

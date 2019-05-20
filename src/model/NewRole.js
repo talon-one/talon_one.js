@@ -41,16 +41,20 @@
 
   /**
    * Constructs a new <code>NewRole</code>.
+   * 
    * @alias module:model/NewRole
    * @class
-   * @param name {String} The name of this application.
-   * @param policy {Object.<String, Array.<String>>} A map of access privileges.
+   * @param name {String} Name of the role
+   * @param acl {String} Role Policy this should be a stringified blob of json
+   * @param users {Array.<Number>} An array of userIDs
    */
-  var exports = function(name, policy) {
+  var exports = function(name, acl, users) {
     var _this = this;
 
     _this['name'] = name;
-    _this['policy'] = policy;
+
+    _this['acl'] = acl;
+    _this['users'] = users;
   };
 
   /**
@@ -67,23 +71,39 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('policy')) {
-        obj['policy'] = ApiClient.convertToType(data['policy'], {'String': ['String']});
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('acl')) {
+        obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
+      }
+      if (data.hasOwnProperty('users')) {
+        obj['users'] = ApiClient.convertToType(data['users'], ['Number']);
       }
     }
     return obj;
   }
 
   /**
-   * The name of this application.
+   * Name of the role
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * A map of access privileges.
-   * @member {Object.<String, Array.<String>>} policy
+   * Description of the role
+   * @member {String} description
    */
-  exports.prototype['policy'] = undefined;
+  exports.prototype['description'] = undefined;
+  /**
+   * Role Policy this should be a stringified blob of json
+   * @member {String} acl
+   */
+  exports.prototype['acl'] = undefined;
+  /**
+   * An array of userIDs
+   * @member {Array.<Number>} users
+   */
+  exports.prototype['users'] = undefined;
 
 
 

@@ -44,7 +44,7 @@
    * 
    * @alias module:model/CustomerActivityReport
    * @class
-   * @param integrationId {String} The ID used for this entity in the application system. The ID used for this entity in the application system.
+   * @param integrationId {String} The ID used for this entity in the application system.
    * @param created {Date} The exact moment this entity was created.
    * @param name {String} The name for this customer profile.
    * @param customerId {Number} The internal Talon.One ID of the customer.
@@ -130,7 +130,7 @@
   }
 
   /**
-   * The ID used for this entity in the application system. The ID used for this entity in the application system.
+   * The ID used for this entity in the application system.
    * @member {String} integrationId
    */
   exports.prototype['integrationId'] = undefined;

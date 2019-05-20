@@ -52,7 +52,7 @@
    * @param inviteToken {String} Invite token, empty if the user as already accepted their invite.
    * @param state {module:model/User.StateEnum} Current user state.
    * @param name {String} Full name
-   * @param policy {Object.<String, Array.<String>>} Access policy for the user as json object.
+   * @param policy {String} A blob of ACL JSON
    * @param releaseUpdate {Boolean} Update the user via email
    */
   var exports = function(id, created, modified, email, accountId, inviteToken, state, name, policy, releaseUpdate) {
@@ -66,9 +66,9 @@
     _this['inviteToken'] = inviteToken;
     _this['state'] = state;
     _this['name'] = name;
-
     _this['policy'] = policy;
     _this['releaseUpdate'] = releaseUpdate;
+
 
   };
 
@@ -107,17 +107,17 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('lastActivity')) {
-        obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
-      }
       if (data.hasOwnProperty('policy')) {
-        obj['policy'] = ApiClient.convertToType(data['policy'], {'String': ['String']});
+        obj['policy'] = ApiClient.convertToType(data['policy'], 'String');
       }
       if (data.hasOwnProperty('releaseUpdate')) {
         obj['releaseUpdate'] = ApiClient.convertToType(data['releaseUpdate'], 'Boolean');
       }
       if (data.hasOwnProperty('latestFeature')) {
         obj['latestFeature'] = ApiClient.convertToType(data['latestFeature'], 'String');
+      }
+      if (data.hasOwnProperty('roles')) {
+        obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
       }
     }
     return obj;
@@ -164,13 +164,8 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * Last time user used management API
-   * @member {Date} lastActivity
-   */
-  exports.prototype['lastActivity'] = undefined;
-  /**
-   * Access policy for the user as json object.
-   * @member {Object.<String, Array.<String>>} policy
+   * A blob of ACL JSON
+   * @member {String} policy
    */
   exports.prototype['policy'] = undefined;
   /**
@@ -183,6 +178,11 @@
    * @member {String} latestFeature
    */
   exports.prototype['latestFeature'] = undefined;
+  /**
+   * Contains a list of all roles a user is a memeber of
+   * @member {Array.<Number>} roles
+   */
+  exports.prototype['roles'] = undefined;
 
 
   /**

@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(TalononeApi.InlineResponse20010);
     });
 
-    it('should have the property summary (base name: "summary")', function() {
-      // uncomment below and update the code to test the property summary
+    it('should have the property totalResultSize (base name: "totalResultSize")', function() {
+      // uncomment below and update the code to test the property totalResultSize
       //var instane = new TalononeApi.InlineResponse20010();
       //expect(instance).to.be();
     });
 
-    it('should have the property lastUsed (base name: "lastUsed")', function() {
-      // uncomment below and update the code to test the property lastUsed
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new TalononeApi.InlineResponse20010();
       //expect(instance).to.be();
     });

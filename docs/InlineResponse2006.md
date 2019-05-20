@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse2006Data]**](InlineResponse2006Data.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[Referral]**](Referral.md) |  | 
 
 

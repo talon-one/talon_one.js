@@ -51,8 +51,12 @@
    * @param domainName {String} Subdomain Name for yourcompany.talon.one
    * @param state {module:model/Account.StateEnum} State of the account (trial, active, trial_expired)
    * @param billingEmail {String} The billing email address associated with your company account.
+   * @param applicationCount {Number} The current number of Applications in your account.
+   * @param userCount {Number} The current number of Campaign Manager Users in your account.
+   * @param campaignsActiveCount {Number} The current number of active Campaigns in your account.
+   * @param campaignsInactiveCount {Number} The current number of inactive Campaigns in your account.
    */
-  var exports = function(id, created, modified, companyName, domainName, state, billingEmail) {
+  var exports = function(id, created, modified, companyName, domainName, state, billingEmail, applicationCount, userCount, campaignsActiveCount, campaignsInactiveCount) {
     var _this = this;
 
     _this['id'] = id;
@@ -68,10 +72,10 @@
 
 
 
-
-
-
-
+    _this['applicationCount'] = applicationCount;
+    _this['userCount'] = userCount;
+    _this['campaignsActiveCount'] = campaignsActiveCount;
+    _this['campaignsInactiveCount'] = campaignsInactiveCount;
   };
 
   /**

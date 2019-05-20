@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20025Data'], factory);
+    define(['ApiClient', 'model/ModelExport'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20025Data'));
+    module.exports = factory(require('../ApiClient'), require('./ModelExport'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse20025 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20025Data);
+    root.TalononeApi.InlineResponse20025 = factory(root.TalononeApi.ApiClient, root.TalononeApi.ModelExport);
   }
-}(this, function(ApiClient, InlineResponse20025Data) {
+}(this, function(ApiClient, ModelExport) {
   'use strict';
 
 
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20025
    * @class
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/InlineResponse20025Data>} 
+   * @param data {Array.<module:model/ModelExport>} 
    */
   var exports = function(totalResultSize, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse20025Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse20025Data>} data
+   * @member {Array.<module:model/ModelExport>} data
    */
   exports.prototype['data'] = undefined;
 

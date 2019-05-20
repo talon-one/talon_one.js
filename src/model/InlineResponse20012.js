@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20011Data'], factory);
+    define(['ApiClient', 'model/ApplicationCustomer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20011Data'));
+    module.exports = factory(require('../ApiClient'), require('./ApplicationCustomer'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse20012 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20011Data);
+    root.TalononeApi.InlineResponse20012 = factory(root.TalononeApi.ApiClient, root.TalononeApi.ApplicationCustomer);
   }
-}(this, function(ApiClient, InlineResponse20011Data) {
+}(this, function(ApiClient, ApplicationCustomer) {
   'use strict';
 
 
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20012
    * @class
    * @param hasMore {Boolean} 
-   * @param data {Array.<module:model/InlineResponse20011Data>} 
+   * @param data {Array.<module:model/ApplicationCustomer>} 
    */
   var exports = function(hasMore, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse20011Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['hasMore'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse20011Data>} data
+   * @member {Array.<module:model/ApplicationCustomer>} data
    */
   exports.prototype['data'] = undefined;
 

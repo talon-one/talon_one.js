@@ -62,8 +62,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property policy (base name: "policy")', function() {
-      // uncomment below and update the code to test the property policy
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalononeApi.NewRole();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property acl (base name: "acl")', function() {
+      // uncomment below and update the code to test the property acl
+      //var instane = new TalononeApi.NewRole();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property users (base name: "users")', function() {
+      // uncomment below and update the code to test the property users
       //var instane = new TalononeApi.NewRole();
       //expect(instance).to.be();
     });

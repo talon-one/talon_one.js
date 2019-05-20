@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of this application. | 
-**policy** | **{String: [String]}** | A map of access privileges. | 
-**id** | **Number** | Unique ID for this entity. | 
-**created** | **Date** | The exact moment this entity was created. | 
-**modified** | **Date** | The exact moment this entity was last modified. | 
-**accountId** | **Number** | The ID of the account that owns this entity. | 
+**id** | **Number** | The ID of the role corresponding to the DB row | 
+**accountID** | **Number** | The ID of the Talon.One account that owns this role. | 
+**name** | **String** | Name of the role | [optional] 
+**description** | **String** | Description of the role | [optional] 
+**members** | **[Number]** | A list of userid in this role | [optional] 
+**acl** | **String** | Role Policy this should be a stringified blob of json | [optional] 
 
 

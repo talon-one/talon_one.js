@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2001CouponSettings', 'model/InlineResponse2001Limits'], factory);
+    define(['ApiClient', 'model/CodeGeneratorSettings', 'model/LimitConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2001CouponSettings'), require('./InlineResponse2001Limits'));
+    module.exports = factory(require('../ApiClient'), require('./CodeGeneratorSettings'), require('./LimitConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.NewCampaign = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2001CouponSettings, root.TalononeApi.InlineResponse2001Limits);
+    root.TalononeApi.NewCampaign = factory(root.TalononeApi.ApiClient, root.TalononeApi.CodeGeneratorSettings, root.TalononeApi.LimitConfig);
   }
-}(this, function(ApiClient, InlineResponse2001CouponSettings, InlineResponse2001Limits) {
+}(this, function(ApiClient, CodeGeneratorSettings, LimitConfig) {
   'use strict';
 
 
@@ -47,7 +47,7 @@
    * @param state {module:model/NewCampaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 
    * @param tags {Array.<String>} A list of tags for the campaign.
    * @param features {Array.<module:model/NewCampaign.FeaturesEnum>} A list of features for the campaign.
-   * @param limits {Array.<module:model/InlineResponse2001Limits>} The set of limits that will operate for this campaign
+   * @param limits {Array.<module:model/LimitConfig>} The set of limits that will operate for this campaign
    */
   var exports = function(name, state, tags, features, limits) {
     var _this = this;
@@ -105,13 +105,13 @@
         obj['features'] = ApiClient.convertToType(data['features'], ['String']);
       }
       if (data.hasOwnProperty('couponSettings')) {
-        obj['couponSettings'] = InlineResponse2001CouponSettings.constructFromObject(data['couponSettings']);
+        obj['couponSettings'] = CodeGeneratorSettings.constructFromObject(data['couponSettings']);
       }
       if (data.hasOwnProperty('referralSettings')) {
-        obj['referralSettings'] = InlineResponse2001CouponSettings.constructFromObject(data['referralSettings']);
+        obj['referralSettings'] = CodeGeneratorSettings.constructFromObject(data['referralSettings']);
       }
       if (data.hasOwnProperty('limits')) {
-        obj['limits'] = ApiClient.convertToType(data['limits'], [InlineResponse2001Limits]);
+        obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
       }
     }
     return obj;
@@ -164,16 +164,16 @@
    */
   exports.prototype['features'] = undefined;
   /**
-   * @member {module:model/InlineResponse2001CouponSettings} couponSettings
+   * @member {module:model/CodeGeneratorSettings} couponSettings
    */
   exports.prototype['couponSettings'] = undefined;
   /**
-   * @member {module:model/InlineResponse2001CouponSettings} referralSettings
+   * @member {module:model/CodeGeneratorSettings} referralSettings
    */
   exports.prototype['referralSettings'] = undefined;
   /**
    * The set of limits that will operate for this campaign
-   * @member {Array.<module:model/InlineResponse2001Limits>} limits
+   * @member {Array.<module:model/LimitConfig>} limits
    */
   exports.prototype['limits'] = undefined;
 

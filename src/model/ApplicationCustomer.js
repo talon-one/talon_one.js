@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20014LoyaltyMemberships'], factory);
+    define(['ApiClient', 'model/LoyaltyMembership'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20014LoyaltyMemberships'));
+    module.exports = factory(require('../ApiClient'), require('./LoyaltyMembership'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.ApplicationCustomer = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20014LoyaltyMemberships);
+    root.TalononeApi.ApplicationCustomer = factory(root.TalononeApi.ApiClient, root.TalononeApi.LoyaltyMembership);
   }
-}(this, function(ApiClient, InlineResponse20014LoyaltyMemberships) {
+}(this, function(ApiClient, LoyaltyMembership) {
   'use strict';
 
 
@@ -51,7 +51,7 @@
    * @param accountId {Number} The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile.
    * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
    * @param totalSales {Number} Sum of all purchases made by this customer
-   * @param loyaltyMemberships {Array.<module:model/InlineResponse20014LoyaltyMemberships>} A list of loyalty programs joined by the customer
+   * @param loyaltyMemberships {Array.<module:model/LoyaltyMembership>} A list of loyalty programs joined by the customer
    * @param lastActivity {Date} Timestamp of the most recent event received from this customer
    */
   var exports = function(id, created, integrationId, attributes, accountId, closedSessions, totalSales, loyaltyMemberships, lastActivity) {
@@ -101,7 +101,7 @@
         obj['totalSales'] = ApiClient.convertToType(data['totalSales'], 'Number');
       }
       if (data.hasOwnProperty('loyaltyMemberships')) {
-        obj['loyaltyMemberships'] = ApiClient.convertToType(data['loyaltyMemberships'], [InlineResponse20014LoyaltyMemberships]);
+        obj['loyaltyMemberships'] = ApiClient.convertToType(data['loyaltyMemberships'], [LoyaltyMembership]);
       }
       if (data.hasOwnProperty('lastActivity')) {
         obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
@@ -147,7 +147,7 @@
   exports.prototype['totalSales'] = undefined;
   /**
    * A list of loyalty programs joined by the customer
-   * @member {Array.<module:model/InlineResponse20014LoyaltyMemberships>} loyaltyMemberships
+   * @member {Array.<module:model/LoyaltyMembership>} loyaltyMemberships
    */
   exports.prototype['loyaltyMemberships'] = undefined;
   /**

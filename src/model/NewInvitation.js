@@ -45,7 +45,7 @@
    * @alias module:model/NewInvitation
    * @class
    * @param email {String} 
-   * @param acl {Object.<String, Array.<String>>} A map of access privileges.
+   * @param acl {String} a blob of acl json
    */
   var exports = function(email, acl) {
     var _this = this;
@@ -53,6 +53,7 @@
 
     _this['email'] = email;
     _this['acl'] = acl;
+
   };
 
   /**
@@ -73,7 +74,10 @@
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
       if (data.hasOwnProperty('acl')) {
-        obj['acl'] = ApiClient.convertToType(data['acl'], {'String': ['String']});
+        obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
+      }
+      if (data.hasOwnProperty('roles')) {
+        obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
       }
     }
     return obj;
@@ -89,10 +93,15 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * A map of access privileges.
-   * @member {Object.<String, Array.<String>>} acl
+   * a blob of acl json
+   * @member {String} acl
    */
   exports.prototype['acl'] = undefined;
+  /**
+   * An array of roleIDs to assign the new user to
+   * @member {Array.<Number>} roles
+   */
+  exports.prototype['roles'] = undefined;
 
 
 

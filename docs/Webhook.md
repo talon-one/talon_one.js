@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **url** | **String** | API url (supports templating using parameters) for this webhook | 
 **headers** | **[String]** | List of API HTTP headers for this webhook | 
 **payload** | **String** | API payload (supports templating using parameters) for this webhook | [optional] 
-**params** | [**[InlineResponse20023Params]**](InlineResponse20023Params.md) | Array of template argument definitions | 
+**params** | [**[TemplateArgDef]**](TemplateArgDef.md) | Array of template argument definitions | 
 **enabled** | **Boolean** | Enables or disables webhook from showing in rule builder | 
 **usedAt** | **[String]** | array of rulesets where webhook is used | 
 

@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse2008Data]**](InlineResponse2008Data.md) |  | 
+**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

@@ -53,7 +53,6 @@
 
 
 
-
   };
 
   /**
@@ -67,9 +66,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
-      }
       if (data.hasOwnProperty('usageLimit')) {
         obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
       }
@@ -89,11 +85,6 @@
     return obj;
   }
 
-  /**
-   * The actual coupon code.
-   * @member {String} value
-   */
-  exports.prototype['value'] = undefined;
   /**
    * The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
    * @member {Number} usageLimit

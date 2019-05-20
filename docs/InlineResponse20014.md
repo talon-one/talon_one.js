@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse20014Data]**](InlineResponse20014Data.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[CustomerActivityReport]**](CustomerActivityReport.md) |  | 
 
 

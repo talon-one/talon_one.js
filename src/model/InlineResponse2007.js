@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2006Data'], factory);
+    define(['ApiClient', 'model/LoyaltyProgram'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2006Data'));
+    module.exports = factory(require('../ApiClient'), require('./LoyaltyProgram'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse2007 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2006Data);
+    root.TalononeApi.InlineResponse2007 = factory(root.TalononeApi.ApiClient, root.TalononeApi.LoyaltyProgram);
   }
-}(this, function(ApiClient, InlineResponse2006Data) {
+}(this, function(ApiClient, LoyaltyProgram) {
   'use strict';
 
 
@@ -43,13 +43,13 @@
    * Constructs a new <code>InlineResponse2007</code>.
    * @alias module:model/InlineResponse2007
    * @class
-   * @param hasMore {Boolean} 
-   * @param data {Array.<module:model/InlineResponse2006Data>} 
+   * @param totalResultSize {Number} 
+   * @param data {Array.<module:model/LoyaltyProgram>} 
    */
-  var exports = function(hasMore, data) {
+  var exports = function(totalResultSize, data) {
     var _this = this;
 
-    _this['hasMore'] = hasMore;
+    _this['totalResultSize'] = totalResultSize;
     _this['data'] = data;
   };
 
@@ -64,22 +64,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('hasMore')) {
-        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+      if (data.hasOwnProperty('totalResultSize')) {
+        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse2006Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyProgram]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Boolean} hasMore
+   * @member {Number} totalResultSize
    */
-  exports.prototype['hasMore'] = undefined;
+  exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2006Data>} data
+   * @member {Array.<module:model/LoyaltyProgram>} data
    */
   exports.prototype['data'] = undefined;
 

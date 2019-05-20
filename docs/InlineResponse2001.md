@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse2001Data]**](InlineResponse2001Data.md) |  | 
+**data** | [**[Campaign]**](Campaign.md) |  | 
 
 

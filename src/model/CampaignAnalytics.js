@@ -49,12 +49,18 @@
    * @param totalCampaignRevenue {Number} Amount of revenue in this campaign since it began.
    * @param campaignDiscountCosts {Number} Amount of cost caused by discounts given in the campaign.
    * @param totalCampaignDiscountCosts {Number} Amount of cost caused by discounts given in the campaign since it began.
-   * @param couponRedemptions {Number} Number of coupon redemptions in the campaign.
+   * @param campaignFreeItems {Number} Amount of free items given in the campaign.
+   * @param totalCampaignFreeItems {Number} Amount of free items given in the campaign since it began.
+   * @param couponRedemptions {Number} Number of coupon redemptions in the campaign (only accepted referrals on sessions that were closed are considered).
    * @param totalCouponRedemptions {Number} Number of coupon redemptions in the campaign since it began.
-   * @param couponsCreated {Number} Number of coupons created in the campaign.
-   * @param totalCouponsCreated {Number} Number of coupons created in the campaign since it began.
+   * @param referralRedemptions {Number} Number of referral redemptions in the campaign.
+   * @param totalReferralRedemptions {Number} Number of referral redemptions in the campaign since it began.
+   * @param couponsCreated {Number} Number of coupons created in the campaign by the rule engine.
+   * @param totalCouponsCreated {Number} Number of coupons created in the campaign by the rule engine since it began.
+   * @param referralsCreated {Number} Number of referrals created in the campaign by the rule engine.
+   * @param totalReferralsCreated {Number} Number of referrals created in the campaign by the rule engine since it began.
    */
-  var exports = function(_date, campaignRevenue, totalCampaignRevenue, campaignDiscountCosts, totalCampaignDiscountCosts, couponRedemptions, totalCouponRedemptions, couponsCreated, totalCouponsCreated) {
+  var exports = function(_date, campaignRevenue, totalCampaignRevenue, campaignDiscountCosts, totalCampaignDiscountCosts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated) {
     var _this = this;
 
     _this['date'] = _date;
@@ -62,10 +68,16 @@
     _this['totalCampaignRevenue'] = totalCampaignRevenue;
     _this['campaignDiscountCosts'] = campaignDiscountCosts;
     _this['totalCampaignDiscountCosts'] = totalCampaignDiscountCosts;
+    _this['campaignFreeItems'] = campaignFreeItems;
+    _this['totalCampaignFreeItems'] = totalCampaignFreeItems;
     _this['couponRedemptions'] = couponRedemptions;
     _this['totalCouponRedemptions'] = totalCouponRedemptions;
+    _this['referralRedemptions'] = referralRedemptions;
+    _this['totalReferralRedemptions'] = totalReferralRedemptions;
     _this['couponsCreated'] = couponsCreated;
     _this['totalCouponsCreated'] = totalCouponsCreated;
+    _this['referralsCreated'] = referralsCreated;
+    _this['totalReferralsCreated'] = totalReferralsCreated;
   };
 
   /**
@@ -94,17 +106,35 @@
       if (data.hasOwnProperty('totalCampaignDiscountCosts')) {
         obj['totalCampaignDiscountCosts'] = ApiClient.convertToType(data['totalCampaignDiscountCosts'], 'Number');
       }
+      if (data.hasOwnProperty('campaignFreeItems')) {
+        obj['campaignFreeItems'] = ApiClient.convertToType(data['campaignFreeItems'], 'Number');
+      }
+      if (data.hasOwnProperty('totalCampaignFreeItems')) {
+        obj['totalCampaignFreeItems'] = ApiClient.convertToType(data['totalCampaignFreeItems'], 'Number');
+      }
       if (data.hasOwnProperty('couponRedemptions')) {
         obj['couponRedemptions'] = ApiClient.convertToType(data['couponRedemptions'], 'Number');
       }
       if (data.hasOwnProperty('totalCouponRedemptions')) {
         obj['totalCouponRedemptions'] = ApiClient.convertToType(data['totalCouponRedemptions'], 'Number');
       }
+      if (data.hasOwnProperty('referralRedemptions')) {
+        obj['referralRedemptions'] = ApiClient.convertToType(data['referralRedemptions'], 'Number');
+      }
+      if (data.hasOwnProperty('totalReferralRedemptions')) {
+        obj['totalReferralRedemptions'] = ApiClient.convertToType(data['totalReferralRedemptions'], 'Number');
+      }
       if (data.hasOwnProperty('couponsCreated')) {
         obj['couponsCreated'] = ApiClient.convertToType(data['couponsCreated'], 'Number');
       }
       if (data.hasOwnProperty('totalCouponsCreated')) {
         obj['totalCouponsCreated'] = ApiClient.convertToType(data['totalCouponsCreated'], 'Number');
+      }
+      if (data.hasOwnProperty('referralsCreated')) {
+        obj['referralsCreated'] = ApiClient.convertToType(data['referralsCreated'], 'Number');
+      }
+      if (data.hasOwnProperty('totalReferralsCreated')) {
+        obj['totalReferralsCreated'] = ApiClient.convertToType(data['totalReferralsCreated'], 'Number');
       }
     }
     return obj;
@@ -135,7 +165,17 @@
    */
   exports.prototype['totalCampaignDiscountCosts'] = undefined;
   /**
-   * Number of coupon redemptions in the campaign.
+   * Amount of free items given in the campaign.
+   * @member {Number} campaignFreeItems
+   */
+  exports.prototype['campaignFreeItems'] = undefined;
+  /**
+   * Amount of free items given in the campaign since it began.
+   * @member {Number} totalCampaignFreeItems
+   */
+  exports.prototype['totalCampaignFreeItems'] = undefined;
+  /**
+   * Number of coupon redemptions in the campaign (only accepted referrals on sessions that were closed are considered).
    * @member {Number} couponRedemptions
    */
   exports.prototype['couponRedemptions'] = undefined;
@@ -145,15 +185,35 @@
    */
   exports.prototype['totalCouponRedemptions'] = undefined;
   /**
-   * Number of coupons created in the campaign.
+   * Number of referral redemptions in the campaign.
+   * @member {Number} referralRedemptions
+   */
+  exports.prototype['referralRedemptions'] = undefined;
+  /**
+   * Number of referral redemptions in the campaign since it began.
+   * @member {Number} totalReferralRedemptions
+   */
+  exports.prototype['totalReferralRedemptions'] = undefined;
+  /**
+   * Number of coupons created in the campaign by the rule engine.
    * @member {Number} couponsCreated
    */
   exports.prototype['couponsCreated'] = undefined;
   /**
-   * Number of coupons created in the campaign since it began.
+   * Number of coupons created in the campaign by the rule engine since it began.
    * @member {Number} totalCouponsCreated
    */
   exports.prototype['totalCouponsCreated'] = undefined;
+  /**
+   * Number of referrals created in the campaign by the rule engine.
+   * @member {Number} referralsCreated
+   */
+  exports.prototype['referralsCreated'] = undefined;
+  /**
+   * Number of referrals created in the campaign by the rule engine since it began.
+   * @member {Number} totalReferralsCreated
+   */
+  exports.prototype['totalReferralsCreated'] = undefined;
 
 
 

@@ -44,22 +44,18 @@
    * 
    * @alias module:model/Role
    * @class
-   * @param name {String} The name of this application.
-   * @param policy {Object.<String, Array.<String>>} A map of access privileges.
-   * @param id {Number} Unique ID for this entity.
-   * @param created {Date} The exact moment this entity was created.
-   * @param modified {Date} The exact moment this entity was last modified.
-   * @param accountId {Number} The ID of the account that owns this entity.
+   * @param id {Number} The ID of the role corresponding to the DB row
+   * @param accountID {Number} The ID of the Talon.One account that owns this role.
    */
-  var exports = function(name, policy, id, created, modified, accountId) {
+  var exports = function(id, accountID) {
     var _this = this;
 
-    _this['name'] = name;
-    _this['policy'] = policy;
     _this['id'] = id;
-    _this['created'] = created;
-    _this['modified'] = modified;
-    _this['accountId'] = accountId;
+    _this['accountID'] = accountID;
+
+
+
+
   };
 
   /**
@@ -73,58 +69,58 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('policy')) {
-        obj['policy'] = ApiClient.convertToType(data['policy'], {'String': ['String']});
-      }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+      if (data.hasOwnProperty('accountID')) {
+        obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
       }
-      if (data.hasOwnProperty('modified')) {
-        obj['modified'] = ApiClient.convertToType(data['modified'], 'Date');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('members')) {
+        obj['members'] = ApiClient.convertToType(data['members'], ['Number']);
+      }
+      if (data.hasOwnProperty('acl')) {
+        obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The name of this application.
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * A map of access privileges.
-   * @member {Object.<String, Array.<String>>} policy
-   */
-  exports.prototype['policy'] = undefined;
-  /**
-   * Unique ID for this entity.
+   * The ID of the role corresponding to the DB row
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * The exact moment this entity was created.
-   * @member {Date} created
+   * The ID of the Talon.One account that owns this role.
+   * @member {Number} accountID
    */
-  exports.prototype['created'] = undefined;
+  exports.prototype['accountID'] = undefined;
   /**
-   * The exact moment this entity was last modified.
-   * @member {Date} modified
+   * Name of the role
+   * @member {String} name
    */
-  exports.prototype['modified'] = undefined;
+  exports.prototype['name'] = undefined;
   /**
-   * The ID of the account that owns this entity.
-   * @member {Number} accountId
+   * Description of the role
+   * @member {String} description
    */
-  exports.prototype['accountId'] = undefined;
+  exports.prototype['description'] = undefined;
+  /**
+   * A list of userid in this role
+   * @member {Array.<Number>} members
+   */
+  exports.prototype['members'] = undefined;
+  /**
+   * Role Policy this should be a stringified blob of json
+   * @member {String} acl
+   */
+  exports.prototype['acl'] = undefined;
 
 
 

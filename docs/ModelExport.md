@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 
 * `Effect` (value: `"Effect"`)
 
+* `CustomerSession` (value: `"CustomerSession"`)
+
 
 
 

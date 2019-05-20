@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20023Params'], factory);
+    define(['ApiClient', 'model/TemplateArgDef'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20023Params'));
+    module.exports = factory(require('../ApiClient'), require('./TemplateArgDef'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.NewWebhook = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20023Params);
+    root.TalononeApi.NewWebhook = factory(root.TalononeApi.ApiClient, root.TalononeApi.TemplateArgDef);
   }
-}(this, function(ApiClient, InlineResponse20023Params) {
+}(this, function(ApiClient, TemplateArgDef) {
   'use strict';
 
 
@@ -49,7 +49,7 @@
    * @param verb {module:model/NewWebhook.VerbEnum} API method for this webhook
    * @param url {String} API url (supports templating using parameters) for this webhook
    * @param headers {Array.<String>} List of API HTTP headers for this webhook
-   * @param params {Array.<module:model/InlineResponse20023Params>} Array of template argument definitions
+   * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions
    * @param enabled {Boolean} Enables or disables webhook from showing in rule builder
    */
   var exports = function(applicationIds, title, verb, url, headers, params, enabled) {
@@ -95,7 +95,7 @@
         obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
       }
       if (data.hasOwnProperty('params')) {
-        obj['params'] = ApiClient.convertToType(data['params'], [InlineResponse20023Params]);
+        obj['params'] = ApiClient.convertToType(data['params'], [TemplateArgDef]);
       }
       if (data.hasOwnProperty('enabled')) {
         obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
@@ -136,7 +136,7 @@
   exports.prototype['payload'] = undefined;
   /**
    * Array of template argument definitions
-   * @member {Array.<module:model/InlineResponse20023Params>} params
+   * @member {Array.<module:model/TemplateArgDef>} params
    */
   exports.prototype['params'] = undefined;
   /**

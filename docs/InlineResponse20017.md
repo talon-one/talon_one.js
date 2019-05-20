@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[InlineResponse20016Data]**](InlineResponse20016Data.md) |  | 
+**data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
 
 

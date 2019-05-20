@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(TalononeApi.UpdateCoupon);
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
-      //var instane = new TalononeApi.UpdateCoupon();
-      //expect(instance).to.be();
-    });
-
     it('should have the property usageLimit (base name: "usageLimit")', function() {
       // uncomment below and update the code to test the property usageLimit
       //var instane = new TalononeApi.UpdateCoupon();

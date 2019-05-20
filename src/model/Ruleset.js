@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2003Rules'], factory);
+    define(['ApiClient', 'model/Binding', 'model/Rule'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2003Rules'));
+    module.exports = factory(require('../ApiClient'), require('./Binding'), require('./Rule'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.Ruleset = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2003Rules);
+    root.TalononeApi.Ruleset = factory(root.TalononeApi.ApiClient, root.TalononeApi.Binding, root.TalononeApi.Rule);
   }
-}(this, function(ApiClient, InlineResponse2003Rules) {
+}(this, function(ApiClient, Binding, Rule) {
   'use strict';
 
 
@@ -48,9 +48,10 @@
    * @param created {Date} The exact moment this entity was created.
    * @param campaignId {Number} The ID of the campaign that owns this entity.
    * @param userId {Number} The ID of the account that owns this entity.
-   * @param rules {Array.<module:model/InlineResponse2003Rules>} Set of rules to apply.
+   * @param rules {Array.<module:model/Rule>} Set of rules to apply.
+   * @param bindings {Array.<module:model/Binding>} An array that provides objects with variable names (name) and talang expressions to whose result they are bound (expression) during rule evaluation. The order of the evaluation is decided by the position in the array.
    */
-  var exports = function(id, created, campaignId, userId, rules) {
+  var exports = function(id, created, campaignId, userId, rules, bindings) {
     var _this = this;
 
     _this['id'] = id;
@@ -58,6 +59,8 @@
     _this['campaignId'] = campaignId;
     _this['userId'] = userId;
     _this['rules'] = rules;
+    _this['bindings'] = bindings;
+
 
 
   };
@@ -86,10 +89,16 @@
         obj['userId'] = ApiClient.convertToType(data['userId'], 'Number');
       }
       if (data.hasOwnProperty('rules')) {
-        obj['rules'] = ApiClient.convertToType(data['rules'], [InlineResponse2003Rules]);
+        obj['rules'] = ApiClient.convertToType(data['rules'], [Rule]);
+      }
+      if (data.hasOwnProperty('bindings')) {
+        obj['bindings'] = ApiClient.convertToType(data['bindings'], [Binding]);
       }
       if (data.hasOwnProperty('rbVersion')) {
         obj['rbVersion'] = ApiClient.convertToType(data['rbVersion'], 'String');
+      }
+      if (data.hasOwnProperty('activate')) {
+        obj['activate'] = ApiClient.convertToType(data['activate'], 'Boolean');
       }
       if (data.hasOwnProperty('activatedAt')) {
         obj['activatedAt'] = ApiClient.convertToType(data['activatedAt'], 'Date');
@@ -120,14 +129,24 @@
   exports.prototype['userId'] = undefined;
   /**
    * Set of rules to apply.
-   * @member {Array.<module:model/InlineResponse2003Rules>} rules
+   * @member {Array.<module:model/Rule>} rules
    */
   exports.prototype['rules'] = undefined;
+  /**
+   * An array that provides objects with variable names (name) and talang expressions to whose result they are bound (expression) during rule evaluation. The order of the evaluation is decided by the position in the array.
+   * @member {Array.<module:model/Binding>} bindings
+   */
+  exports.prototype['bindings'] = undefined;
   /**
    * A string indicating which version of the rulebuilder was used to create this ruleset.
    * @member {String} rbVersion
    */
   exports.prototype['rbVersion'] = undefined;
+  /**
+   * A boolean indicating whether this newly created ruleset should also be activated for the campaign owns it
+   * @member {Boolean} activate
+   */
+  exports.prototype['activate'] = undefined;
   /**
    * Timestamp indicating when this Ruleset was activated.
    * @member {Date} activatedAt

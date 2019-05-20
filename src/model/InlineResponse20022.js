@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/EventType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./EventType'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse20022 = factory(root.TalononeApi.ApiClient);
+    root.TalononeApi.InlineResponse20022 = factory(root.TalononeApi.ApiClient, root.TalononeApi.EventType);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, EventType) {
   'use strict';
 
 
@@ -41,45 +41,16 @@
 
   /**
    * Constructs a new <code>InlineResponse20022</code>.
-   * 
    * @alias module:model/InlineResponse20022
    * @class
-   * @param id {Number} Unique ID for this entity.
-   * @param created {Date} The exact moment this entity was created.
-   * @param modified {Date} The exact moment this entity was last modified.
-   * @param accountId {Number} The ID of the account that owns this entity.
-   * @param entity {module:model/InlineResponse20022.EntityEnum} The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an `attributes` object with keys corresponding to the `name` of the custom attributes for that type.
-   * @param name {String} The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload. 
-   * @param title {String} The human-readable name for the attribute that will be shown in the Campaign Manager. Like `name`, the combination of entity and title must also be unique.
-   * @param type {module:model/InlineResponse20022.TypeEnum} The data type of the attribute, a `time` attribute must be sent as a string that conforms to the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp format.
-   * @param description {String} A description of this attribute.
-   * @param tags {Array.<String>} A list of tags for the attribute.
-   * @param suggestions {Array.<String>} A list of suggestions for the attribute.
-   * @param editable {Boolean} Whether or not this attribute can be edited.
-   * @param locked {Boolean} Indicates whether this attribute is in use. If in use only title can be changed and other operations are prohibited.
-   * @param usedAt {Array.<String>} array of rulesets where the attribute is used
+   * @param totalResultSize {Number} 
+   * @param data {Array.<module:model/EventType>} 
    */
-  var exports = function(id, created, modified, accountId, entity, name, title, type, description, tags, suggestions, editable, locked, usedAt) {
+  var exports = function(totalResultSize, data) {
     var _this = this;
 
-    _this['id'] = id;
-    _this['created'] = created;
-    _this['modified'] = modified;
-    _this['accountId'] = accountId;
-    _this['entity'] = entity;
-
-    _this['name'] = name;
-    _this['title'] = title;
-    _this['type'] = type;
-    _this['description'] = description;
-    _this['tags'] = tags;
-    _this['suggestions'] = suggestions;
-    _this['editable'] = editable;
-    _this['locked'] = locked;
-
-
-
-    _this['usedAt'] = usedAt;
+    _this['totalResultSize'] = totalResultSize;
+    _this['data'] = data;
   };
 
   /**
@@ -93,234 +64,25 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      if (data.hasOwnProperty('totalResultSize')) {
+        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
-      if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'Date');
-      }
-      if (data.hasOwnProperty('modified')) {
-        obj['modified'] = ApiClient.convertToType(data['modified'], 'Date');
-      }
-      if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
-      }
-      if (data.hasOwnProperty('entity')) {
-        obj['entity'] = ApiClient.convertToType(data['entity'], 'String');
-      }
-      if (data.hasOwnProperty('eventType')) {
-        obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('title')) {
-        obj['title'] = ApiClient.convertToType(data['title'], 'String');
-      }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('tags')) {
-        obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
-      }
-      if (data.hasOwnProperty('suggestions')) {
-        obj['suggestions'] = ApiClient.convertToType(data['suggestions'], ['String']);
-      }
-      if (data.hasOwnProperty('editable')) {
-        obj['editable'] = ApiClient.convertToType(data['editable'], 'Boolean');
-      }
-      if (data.hasOwnProperty('locked')) {
-        obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
-      }
-      if (data.hasOwnProperty('lastUsed')) {
-        obj['lastUsed'] = ApiClient.convertToType(data['lastUsed'], 'Date');
-      }
-      if (data.hasOwnProperty('lastUsedRequestUuid')) {
-        obj['lastUsedRequestUuid'] = ApiClient.convertToType(data['lastUsedRequestUuid'], 'String');
-      }
-      if (data.hasOwnProperty('lastUsedApplicationId')) {
-        obj['lastUsedApplicationId'] = ApiClient.convertToType(data['lastUsedApplicationId'], 'Number');
-      }
-      if (data.hasOwnProperty('usedAt')) {
-        obj['usedAt'] = ApiClient.convertToType(data['usedAt'], ['String']);
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
       }
     }
     return obj;
   }
 
   /**
-   * Unique ID for this entity.
-   * @member {Number} id
+   * @member {Number} totalResultSize
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['totalResultSize'] = undefined;
   /**
-   * The exact moment this entity was created.
-   * @member {Date} created
+   * @member {Array.<module:model/EventType>} data
    */
-  exports.prototype['created'] = undefined;
-  /**
-   * The exact moment this entity was last modified.
-   * @member {Date} modified
-   */
-  exports.prototype['modified'] = undefined;
-  /**
-   * The ID of the account that owns this entity.
-   * @member {Number} accountId
-   */
-  exports.prototype['accountId'] = undefined;
-  /**
-   * The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an `attributes` object with keys corresponding to the `name` of the custom attributes for that type.
-   * @member {module:model/InlineResponse20022.EntityEnum} entity
-   */
-  exports.prototype['entity'] = undefined;
-  /**
-   * @member {String} eventType
-   */
-  exports.prototype['eventType'] = undefined;
-  /**
-   * The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload. 
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * The human-readable name for the attribute that will be shown in the Campaign Manager. Like `name`, the combination of entity and title must also be unique.
-   * @member {String} title
-   */
-  exports.prototype['title'] = undefined;
-  /**
-   * The data type of the attribute, a `time` attribute must be sent as a string that conforms to the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp format.
-   * @member {module:model/InlineResponse20022.TypeEnum} type
-   */
-  exports.prototype['type'] = undefined;
-  /**
-   * A description of this attribute.
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
-  /**
-   * A list of tags for the attribute.
-   * @member {Array.<String>} tags
-   */
-  exports.prototype['tags'] = undefined;
-  /**
-   * A list of suggestions for the attribute.
-   * @member {Array.<String>} suggestions
-   */
-  exports.prototype['suggestions'] = undefined;
-  /**
-   * Whether or not this attribute can be edited.
-   * @member {Boolean} editable
-   */
-  exports.prototype['editable'] = undefined;
-  /**
-   * Indicates whether this attribute is in use. If in use only title can be changed and other operations are prohibited.
-   * @member {Boolean} locked
-   * @default false
-   */
-  exports.prototype['locked'] = false;
-  /**
-   * Timestamp that indicates last time this attribute was used by integration API call.
-   * @member {Date} lastUsed
-   */
-  exports.prototype['lastUsed'] = undefined;
-  /**
-   * Unique id of integration API request that contained this attribute.
-   * @member {String} lastUsedRequestUuid
-   */
-  exports.prototype['lastUsedRequestUuid'] = undefined;
-  /**
-   * Indicates which application used this attribute in integration API call.
-   * @member {Number} lastUsedApplicationId
-   */
-  exports.prototype['lastUsedApplicationId'] = undefined;
-  /**
-   * array of rulesets where the attribute is used
-   * @member {Array.<String>} usedAt
-   */
-  exports.prototype['usedAt'] = undefined;
+  exports.prototype['data'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>entity</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.EntityEnum = {
-    /**
-     * value: "Application"
-     * @const
-     */
-    "Application": "Application",
-    /**
-     * value: "Campaign"
-     * @const
-     */
-    "Campaign": "Campaign",
-    /**
-     * value: "CustomerProfile"
-     * @const
-     */
-    "CustomerProfile": "CustomerProfile",
-    /**
-     * value: "CustomerSession"
-     * @const
-     */
-    "CustomerSession": "CustomerSession",
-    /**
-     * value: "CartItem"
-     * @const
-     */
-    "CartItem": "CartItem",
-    /**
-     * value: "Coupon"
-     * @const
-     */
-    "Coupon": "Coupon",
-    /**
-     * value: "Event"
-     * @const
-     */
-    "Event": "Event"  };
-
-  /**
-   * Allowed values for the <code>type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TypeEnum = {
-    /**
-     * value: "string"
-     * @const
-     */
-    "string": "string",
-    /**
-     * value: "number"
-     * @const
-     */
-    "number": "number",
-    /**
-     * value: "boolean"
-     * @const
-     */
-    "boolean": "boolean",
-    /**
-     * value: "time"
-     * @const
-     */
-    "time": "time",
-    /**
-     * value: "(list string)"
-     * @const
-     */
-    "(list string)": "(list string)",
-    /**
-     * value: "(list number)"
-     * @const
-     */
-    "(list number)": "(list number)"  };
 
 
   return exports;

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/CampaignAnalytics'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./CampaignAnalytics'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse20010 = factory(root.TalononeApi.ApiClient);
+    root.TalononeApi.InlineResponse20010 = factory(root.TalononeApi.ApiClient, root.TalononeApi.CampaignAnalytics);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, CampaignAnalytics) {
   'use strict';
 
 
@@ -41,17 +41,16 @@
 
   /**
    * Constructs a new <code>InlineResponse20010</code>.
-   * Report of health of the API connection of an application
    * @alias module:model/InlineResponse20010
    * @class
-   * @param summary {module:model/InlineResponse20010.SummaryEnum} One-word summary of the health of the API connection of an application
-   * @param lastUsed {Date} time of last request relevant to the API health test
+   * @param totalResultSize {Number} 
+   * @param data {Array.<module:model/CampaignAnalytics>} 
    */
-  var exports = function(summary, lastUsed) {
+  var exports = function(totalResultSize, data) {
     var _this = this;
 
-    _this['summary'] = summary;
-    _this['lastUsed'] = lastUsed;
+    _this['totalResultSize'] = totalResultSize;
+    _this['data'] = data;
   };
 
   /**
@@ -65,59 +64,25 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('summary')) {
-        obj['summary'] = ApiClient.convertToType(data['summary'], 'String');
+      if (data.hasOwnProperty('totalResultSize')) {
+        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
-      if (data.hasOwnProperty('lastUsed')) {
-        obj['lastUsed'] = ApiClient.convertToType(data['lastUsed'], 'Date');
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], [CampaignAnalytics]);
       }
     }
     return obj;
   }
 
   /**
-   * One-word summary of the health of the API connection of an application
-   * @member {module:model/InlineResponse20010.SummaryEnum} summary
+   * @member {Number} totalResultSize
    */
-  exports.prototype['summary'] = undefined;
+  exports.prototype['totalResultSize'] = undefined;
   /**
-   * time of last request relevant to the API health test
-   * @member {Date} lastUsed
+   * @member {Array.<module:model/CampaignAnalytics>} data
    */
-  exports.prototype['lastUsed'] = undefined;
+  exports.prototype['data'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>summary</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.SummaryEnum = {
-    /**
-     * value: "OK"
-     * @const
-     */
-    "OK": "OK",
-    /**
-     * value: "WARNING"
-     * @const
-     */
-    "WARNING": "WARNING",
-    /**
-     * value: "ERROR"
-     * @const
-     */
-    "ERROR": "ERROR",
-    /**
-     * value: "CRITICAL"
-     * @const
-     */
-    "CRITICAL": "CRITICAL",
-    /**
-     * value: "NONE"
-     * @const
-     */
-    "NONE": "NONE"  };
 
 
   return exports;

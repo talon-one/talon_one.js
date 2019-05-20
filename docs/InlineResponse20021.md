@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | **[String]** |  | 
+**data** | [**[WebhookLogEntry]**](WebhookLogEntry.md) |  | 
 
 

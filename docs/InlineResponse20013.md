@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse20013Data]**](InlineResponse20013Data.md) |  | 
+**data** | [**[CustomerActivityReport]**](CustomerActivityReport.md) |  | 
 
 

@@ -86,8 +86,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bindings (base name: "bindings")', function() {
+      // uncomment below and update the code to test the property bindings
+      //var instane = new TalononeApi.Ruleset();
+      //expect(instance).to.be();
+    });
+
     it('should have the property rbVersion (base name: "rbVersion")', function() {
       // uncomment below and update the code to test the property rbVersion
+      //var instane = new TalononeApi.Ruleset();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property activate (base name: "activate")', function() {
+      // uncomment below and update the code to test the property activate
       //var instane = new TalononeApi.Ruleset();
       //expect(instance).to.be();
     });

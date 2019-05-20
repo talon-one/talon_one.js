@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **type** | **String** | Indicates the node type | 
 **name** | **String** | Name of the set | 
 **operator** | **String** | How does the set operates on its elements | 
-**elements** | [**[InlineResponse2002SetElements]**](InlineResponse2002SetElements.md) | Child elements of this set | 
+**elements** | [**[CampaignSetNode]**](CampaignSetNode.md) | Child elements of this set | 
 
 
 <a name="TypeEnum"></a>

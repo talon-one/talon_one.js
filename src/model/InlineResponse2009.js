@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2009Data'], factory);
+    define(['ApiClient', 'model/AccessLogEntry'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2009Data'));
+    module.exports = factory(require('../ApiClient'), require('./AccessLogEntry'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse2009 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2009Data);
+    root.TalononeApi.InlineResponse2009 = factory(root.TalononeApi.ApiClient, root.TalononeApi.AccessLogEntry);
   }
-}(this, function(ApiClient, InlineResponse2009Data) {
+}(this, function(ApiClient, AccessLogEntry) {
   'use strict';
 
 
@@ -43,13 +43,13 @@
    * Constructs a new <code>InlineResponse2009</code>.
    * @alias module:model/InlineResponse2009
    * @class
-   * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/InlineResponse2009Data>} 
+   * @param hasMore {Boolean} 
+   * @param data {Array.<module:model/AccessLogEntry>} 
    */
-  var exports = function(totalResultSize, data) {
+  var exports = function(hasMore, data) {
     var _this = this;
 
-    _this['totalResultSize'] = totalResultSize;
+    _this['hasMore'] = hasMore;
     _this['data'] = data;
   };
 
@@ -64,22 +64,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('totalResultSize')) {
-        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+      if (data.hasOwnProperty('hasMore')) {
+        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse2009Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} totalResultSize
+   * @member {Boolean} hasMore
    */
-  exports.prototype['totalResultSize'] = undefined;
+  exports.prototype['hasMore'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2009Data>} data
+   * @member {Array.<module:model/AccessLogEntry>} data
    */
   exports.prototype['data'] = undefined;
 

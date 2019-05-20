@@ -49,11 +49,10 @@
    * @param title {String} The human-readable name for the attribute that will be shown in the Campaign Manager. Like `name`, the combination of entity and title must also be unique.
    * @param type {module:model/NewAttribute.TypeEnum} The data type of the attribute, a `time` attribute must be sent as a string that conforms to the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp format.
    * @param description {String} A description of this attribute.
-   * @param tags {Array.<String>} A list of tags for the attribute.
    * @param suggestions {Array.<String>} A list of suggestions for the attribute.
    * @param editable {Boolean} Whether or not this attribute can be edited.
    */
-  var exports = function(entity, name, title, type, description, tags, suggestions, editable) {
+  var exports = function(entity, name, title, type, description, suggestions, editable) {
     var _this = this;
 
     _this['entity'] = entity;
@@ -62,7 +61,6 @@
     _this['title'] = title;
     _this['type'] = type;
     _this['description'] = description;
-    _this['tags'] = tags;
     _this['suggestions'] = suggestions;
     _this['editable'] = editable;
   };
@@ -95,9 +93,6 @@
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('tags')) {
-        obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
       }
       if (data.hasOwnProperty('suggestions')) {
         obj['suggestions'] = ApiClient.convertToType(data['suggestions'], ['String']);
@@ -138,11 +133,6 @@
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
-  /**
-   * A list of tags for the attribute.
-   * @member {Array.<String>} tags
-   */
-  exports.prototype['tags'] = undefined;
   /**
    * A list of suggestions for the attribute.
    * @member {Array.<String>} suggestions
@@ -232,7 +222,17 @@
      * value: "(list number)"
      * @const
      */
-    "(list number)": "(list number)"  };
+    "(list number)": "(list number)",
+    /**
+     * value: "(list time)"
+     * @const
+     */
+    "(list time)": "(list time)",
+    /**
+     * value: "location"
+     * @const
+     */
+    "location": "location"  };
 
 
   return exports;

@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -83,7 +84,7 @@
         obj['newPassword'] = ApiClient.convertToType(data['newPassword'], 'String');
       }
       if (data.hasOwnProperty('policy')) {
-        obj['policy'] = ApiClient.convertToType(data['policy'], {'String': ['String']});
+        obj['policy'] = ApiClient.convertToType(data['policy'], 'String');
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -93,6 +94,9 @@
       }
       if (data.hasOwnProperty('latestFeature')) {
         obj['latestFeature'] = ApiClient.convertToType(data['latestFeature'], 'String');
+      }
+      if (data.hasOwnProperty('roles')) {
+        obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
       }
     }
     return obj;
@@ -119,8 +123,8 @@
    */
   exports.prototype['newPassword'] = undefined;
   /**
-   * A map of access privileges.
-   * @member {Object.<String, Array.<String>>} policy
+   * a blob of acl json
+   * @member {String} policy
    */
   exports.prototype['policy'] = undefined;
   /**
@@ -138,6 +142,11 @@
    * @member {String} latestFeature
    */
   exports.prototype['latestFeature'] = undefined;
+  /**
+   * Update
+   * @member {Array.<Number>} roles
+   */
+  exports.prototype['roles'] = undefined;
 
 
   /**

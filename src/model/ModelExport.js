@@ -142,7 +142,12 @@
      * value: "Effect"
      * @const
      */
-    "Effect": "Effect"  };
+    "Effect": "Effect",
+    /**
+     * value: "CustomerSession"
+     * @const
+     */
+    "CustomerSession": "CustomerSession"  };
 
 
   return exports;

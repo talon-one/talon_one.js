@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002Set'], factory);
+    define(['ApiClient', 'model/CampaignSetBranchNode'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002Set'));
+    module.exports = factory(require('../ApiClient'), require('./CampaignSetBranchNode'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.CampaignSet = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2002Set);
+    root.TalononeApi.CampaignSet = factory(root.TalononeApi.ApiClient, root.TalononeApi.CampaignSetBranchNode);
   }
-}(this, function(ApiClient, InlineResponse2002Set) {
+}(this, function(ApiClient, CampaignSetBranchNode) {
   'use strict';
 
 
@@ -47,7 +47,7 @@
    * @param id {Number} Unique ID for this entity.
    * @param created {Date} The exact moment this entity was created.
    * @param applicationId {Number} The ID of the application that owns this entity.
-   * @param set {module:model/InlineResponse2002Set} 
+   * @param set {module:model/CampaignSetBranchNode} 
    */
   var exports = function(id, created, applicationId, set) {
     var _this = this;
@@ -79,7 +79,7 @@
         obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
       }
       if (data.hasOwnProperty('set')) {
-        obj['set'] = InlineResponse2002Set.constructFromObject(data['set']);
+        obj['set'] = CampaignSetBranchNode.constructFromObject(data['set']);
       }
     }
     return obj;
@@ -101,7 +101,7 @@
    */
   exports.prototype['applicationId'] = undefined;
   /**
-   * @member {module:model/InlineResponse2002Set} set
+   * @member {module:model/CampaignSetBranchNode} set
    */
   exports.prototype['set'] = undefined;
 

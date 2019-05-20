@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2006Data'], factory);
+    define(['ApiClient', 'model/Referral'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2006Data'));
+    module.exports = factory(require('../ApiClient'), require('./Referral'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse2006 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2006Data);
+    root.TalononeApi.InlineResponse2006 = factory(root.TalononeApi.ApiClient, root.TalononeApi.Referral);
   }
-}(this, function(ApiClient, InlineResponse2006Data) {
+}(this, function(ApiClient, Referral) {
   'use strict';
 
 
@@ -43,13 +43,13 @@
    * Constructs a new <code>InlineResponse2006</code>.
    * @alias module:model/InlineResponse2006
    * @class
-   * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/InlineResponse2006Data>} 
+   * @param hasMore {Boolean} 
+   * @param data {Array.<module:model/Referral>} 
    */
-  var exports = function(totalResultSize, data) {
+  var exports = function(hasMore, data) {
     var _this = this;
 
-    _this['totalResultSize'] = totalResultSize;
+    _this['hasMore'] = hasMore;
     _this['data'] = data;
   };
 
@@ -64,22 +64,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('totalResultSize')) {
-        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+      if (data.hasOwnProperty('hasMore')) {
+        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse2006Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [Referral]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} totalResultSize
+   * @member {Boolean} hasMore
    */
-  exports.prototype['totalResultSize'] = undefined;
+  exports.prototype['hasMore'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2006Data>} data
+   * @member {Array.<module:model/Referral>} data
    */
   exports.prototype['data'] = undefined;
 

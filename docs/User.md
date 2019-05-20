@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **inviteToken** | **String** | Invite token, empty if the user as already accepted their invite. | 
 **state** | **String** | Current user state. | 
 **name** | **String** | Full name | 
-**lastActivity** | **Date** | Last time user used management API | [optional] 
-**policy** | **{String: [String]}** | Access policy for the user as json object. | 
+**policy** | **String** | A blob of ACL JSON | 
 **releaseUpdate** | **Boolean** | Update the user via email | 
 **latestFeature** | **String** | Latest feature the user has been notified. | [optional] 
+**roles** | **[Number]** | Contains a list of all roles a user is a memeber of | [optional] 
 
 
 <a name="StateEnum"></a>

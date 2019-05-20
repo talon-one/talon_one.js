@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20018CartItems'], factory);
+    define(['ApiClient', 'model/CartItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20018CartItems'));
+    module.exports = factory(require('../ApiClient'), require('./CartItem'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.ApplicationSession = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20018CartItems);
+    root.TalononeApi.ApplicationSession = factory(root.TalononeApi.ApiClient, root.TalononeApi.CartItem);
   }
-}(this, function(ApiClient, InlineResponse20018CartItems) {
+}(this, function(ApiClient, CartItem) {
   'use strict';
 
 
@@ -51,7 +51,7 @@
    * @param coupon {String} Any coupon code entered.
    * @param referral {String} Any referal code entered.
    * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (\"open\"), \"closed\", or \"cancelled\".
-   * @param cartItems {Array.<module:model/InlineResponse20018CartItems>} Serialized JSON representation.
+   * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
    * @param discounts {Object.<String, Number>} A map of labelled discount values, in the same currency as the session.
    */
   var exports = function(id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts) {
@@ -106,7 +106,7 @@
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
       }
       if (data.hasOwnProperty('cartItems')) {
-        obj['cartItems'] = ApiClient.convertToType(data['cartItems'], [InlineResponse20018CartItems]);
+        obj['cartItems'] = ApiClient.convertToType(data['cartItems'], [CartItem]);
       }
       if (data.hasOwnProperty('discounts')) {
         obj['discounts'] = ApiClient.convertToType(data['discounts'], {'String': 'Number'});
@@ -160,7 +160,7 @@
   exports.prototype['state'] = undefined;
   /**
    * Serialized JSON representation.
-   * @member {Array.<module:model/InlineResponse20018CartItems>} cartItems
+   * @member {Array.<module:model/CartItem>} cartItems
    */
   exports.prototype['cartItems'] = undefined;
   /**

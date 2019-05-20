@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 
 * `setDiscount` (value: `"setDiscount"`)
 
+* `createCoupon` (value: `"createCoupon"`)
+
 
 
 

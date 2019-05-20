@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20019Data'], factory);
+    define(['ApiClient', 'model/WebhookActivationLogEntry'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20019Data'));
+    module.exports = factory(require('../ApiClient'), require('./WebhookActivationLogEntry'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse20020 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20019Data);
+    root.TalononeApi.InlineResponse20020 = factory(root.TalononeApi.ApiClient, root.TalononeApi.WebhookActivationLogEntry);
   }
-}(this, function(ApiClient, InlineResponse20019Data) {
+}(this, function(ApiClient, WebhookActivationLogEntry) {
   'use strict';
 
 
@@ -43,13 +43,13 @@
    * Constructs a new <code>InlineResponse20020</code>.
    * @alias module:model/InlineResponse20020
    * @class
-   * @param hasMore {Boolean} 
-   * @param data {Array.<module:model/InlineResponse20019Data>} 
+   * @param totalResultSize {Number} 
+   * @param data {Array.<module:model/WebhookActivationLogEntry>} 
    */
-  var exports = function(hasMore, data) {
+  var exports = function(totalResultSize, data) {
     var _this = this;
 
-    _this['hasMore'] = hasMore;
+    _this['totalResultSize'] = totalResultSize;
     _this['data'] = data;
   };
 
@@ -64,22 +64,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('hasMore')) {
-        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+      if (data.hasOwnProperty('totalResultSize')) {
+        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse20019Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [WebhookActivationLogEntry]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Boolean} hasMore
+   * @member {Number} totalResultSize
    */
-  exports.prototype['hasMore'] = undefined;
+  exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse20019Data>} data
+   * @member {Array.<module:model/WebhookActivationLogEntry>} data
    */
   exports.prototype['data'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20013Data'], factory);
+    define(['ApiClient', 'model/CustomerActivityReport'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20013Data'));
+    module.exports = factory(require('../ApiClient'), require('./CustomerActivityReport'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse20013 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse20013Data);
+    root.TalononeApi.InlineResponse20013 = factory(root.TalononeApi.ApiClient, root.TalononeApi.CustomerActivityReport);
   }
-}(this, function(ApiClient, InlineResponse20013Data) {
+}(this, function(ApiClient, CustomerActivityReport) {
   'use strict';
 
 
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20013
    * @class
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/InlineResponse20013Data>} 
+   * @param data {Array.<module:model/CustomerActivityReport>} 
    */
   var exports = function(totalResultSize, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse20013Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [CustomerActivityReport]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse20013Data>} data
+   * @member {Array.<module:model/CustomerActivityReport>} data
    */
   exports.prototype['data'] = undefined;
 

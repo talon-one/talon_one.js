@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2003Bindings'], factory);
+    define(['ApiClient', 'model/Binding'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2003Bindings'));
+    module.exports = factory(require('../ApiClient'), require('./Binding'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.Rule = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2003Bindings);
+    root.TalononeApi.Rule = factory(root.TalononeApi.ApiClient, root.TalononeApi.Binding);
   }
-}(this, function(ApiClient, InlineResponse2003Bindings) {
+}(this, function(ApiClient, Binding) {
   'use strict';
 
 
@@ -75,7 +75,7 @@
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
       if (data.hasOwnProperty('bindings')) {
-        obj['bindings'] = ApiClient.convertToType(data['bindings'], [InlineResponse2003Bindings]);
+        obj['bindings'] = ApiClient.convertToType(data['bindings'], [Binding]);
       }
       if (data.hasOwnProperty('condition')) {
         obj['condition'] = ApiClient.convertToType(data['condition'], [Object]);
@@ -99,7 +99,7 @@
   exports.prototype['description'] = undefined;
   /**
    * An array that provides objects with variable names (name) and talang expressions to whose result they are bound (expression) during rule evaluation. The order of the evaluation is decided by the position in the array.
-   * @member {Array.<module:model/InlineResponse2003Bindings>} bindings
+   * @member {Array.<module:model/Binding>} bindings
    */
   exports.prototype['bindings'] = undefined;
   /**

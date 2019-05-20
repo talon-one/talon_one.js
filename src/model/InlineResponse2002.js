@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002Set'], factory);
+    define(['ApiClient', 'model/Ruleset'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002Set'));
+    module.exports = factory(require('../ApiClient'), require('./Ruleset'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse2002 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2002Set);
+    root.TalononeApi.InlineResponse2002 = factory(root.TalononeApi.ApiClient, root.TalononeApi.Ruleset);
   }
-}(this, function(ApiClient, InlineResponse2002Set) {
+}(this, function(ApiClient, Ruleset) {
   'use strict';
 
 
@@ -41,21 +41,16 @@
 
   /**
    * Constructs a new <code>InlineResponse2002</code>.
-   * 
    * @alias module:model/InlineResponse2002
    * @class
-   * @param id {Number} Unique ID for this entity.
-   * @param created {Date} The exact moment this entity was created.
-   * @param applicationId {Number} The ID of the application that owns this entity.
-   * @param set {module:model/InlineResponse2002Set} 
+   * @param totalResultSize {Number} 
+   * @param data {Array.<module:model/Ruleset>} 
    */
-  var exports = function(id, created, applicationId, set) {
+  var exports = function(totalResultSize, data) {
     var _this = this;
 
-    _this['id'] = id;
-    _this['created'] = created;
-    _this['applicationId'] = applicationId;
-    _this['set'] = set;
+    _this['totalResultSize'] = totalResultSize;
+    _this['data'] = data;
   };
 
   /**
@@ -69,41 +64,24 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      if (data.hasOwnProperty('totalResultSize')) {
+        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
-      if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'Date');
-      }
-      if (data.hasOwnProperty('applicationId')) {
-        obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
-      }
-      if (data.hasOwnProperty('set')) {
-        obj['set'] = InlineResponse2002Set.constructFromObject(data['set']);
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], [Ruleset]);
       }
     }
     return obj;
   }
 
   /**
-   * Unique ID for this entity.
-   * @member {Number} id
+   * @member {Number} totalResultSize
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['totalResultSize'] = undefined;
   /**
-   * The exact moment this entity was created.
-   * @member {Date} created
+   * @member {Array.<module:model/Ruleset>} data
    */
-  exports.prototype['created'] = undefined;
-  /**
-   * The ID of the application that owns this entity.
-   * @member {Number} applicationId
-   */
-  exports.prototype['applicationId'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002Set} set
-   */
-  exports.prototype['set'] = undefined;
+  exports.prototype['data'] = undefined;
 
 
 

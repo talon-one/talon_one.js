@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loyaltyPrograms (base name: "loyaltyPrograms")', function() {
+      // uncomment below and update the code to test the property loyaltyPrograms
+      //var instane = new TalononeApi.Application();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

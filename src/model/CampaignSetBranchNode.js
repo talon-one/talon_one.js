@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002SetElements'], factory);
+    define(['ApiClient', 'model/CampaignSetNode'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002SetElements'));
+    module.exports = factory(require('../ApiClient'), require('./CampaignSetNode'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.CampaignSetBranchNode = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2002SetElements);
+    root.TalononeApi.CampaignSetBranchNode = factory(root.TalononeApi.ApiClient, root.TalononeApi.CampaignSetNode);
   }
-}(this, function(ApiClient, InlineResponse2002SetElements) {
+}(this, function(ApiClient, CampaignSetNode) {
   'use strict';
 
 
@@ -46,7 +46,7 @@
    * @param type {module:model/CampaignSetBranchNode.TypeEnum} Indicates the node type
    * @param name {String} Name of the set
    * @param operator {module:model/CampaignSetBranchNode.OperatorEnum} How does the set operates on its elements
-   * @param elements {Array.<module:model/InlineResponse2002SetElements>} Child elements of this set
+   * @param elements {Array.<module:model/CampaignSetNode>} Child elements of this set
    */
   var exports = function(type, name, operator, elements) {
     var _this = this;
@@ -78,7 +78,7 @@
         obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
       }
       if (data.hasOwnProperty('elements')) {
-        obj['elements'] = ApiClient.convertToType(data['elements'], [InlineResponse2002SetElements]);
+        obj['elements'] = ApiClient.convertToType(data['elements'], [CampaignSetNode]);
       }
     }
     return obj;
@@ -101,7 +101,7 @@
   exports.prototype['operator'] = undefined;
   /**
    * Child elements of this set
-   * @member {Array.<module:model/InlineResponse2002SetElements>} elements
+   * @member {Array.<module:model/CampaignSetNode>} elements
    */
   exports.prototype['elements'] = undefined;
 

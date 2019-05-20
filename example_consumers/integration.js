@@ -1,7 +1,7 @@
-var TalonOne = require('talon_one')
+var TalonOne = require('../src/index')
 
-var applicationId = 217
-var applicationKey = '09774d8afc936b95'
+var applicationId = 216
+var applicationKey = '0000111122223333'
 var client = new TalonOne.IntegrationClient('http://localhost:9000', applicationId, applicationKey)
 
 var sessionId = 'some-identifier-for-this-session'

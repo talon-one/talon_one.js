@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **timezone** | **String** | A string containing an IANA timezone descriptor. | 
 **currency** | **String** | A string describing a default currency for new customer sessions. | 
 **caseSensitivity** | **String** | A string indicating how should campaigns in this application deal with case sensitivity on coupon codes. | [optional] 
+**loyaltyPrograms** | [**[LoyaltyProgram]**](LoyaltyProgram.md) | An array containing all the loyalty programs to which this application is subscribed | 
 
 
 <a name="CaseSensitivityEnum"></a>

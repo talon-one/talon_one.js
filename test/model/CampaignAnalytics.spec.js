@@ -86,6 +86,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignFreeItems (base name: "campaignFreeItems")', function() {
+      // uncomment below and update the code to test the property campaignFreeItems
+      //var instane = new TalononeApi.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalCampaignFreeItems (base name: "totalCampaignFreeItems")', function() {
+      // uncomment below and update the code to test the property totalCampaignFreeItems
+      //var instane = new TalononeApi.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
     it('should have the property couponRedemptions (base name: "couponRedemptions")', function() {
       // uncomment below and update the code to test the property couponRedemptions
       //var instane = new TalononeApi.CampaignAnalytics();
@@ -98,6 +110,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property referralRedemptions (base name: "referralRedemptions")', function() {
+      // uncomment below and update the code to test the property referralRedemptions
+      //var instane = new TalononeApi.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalReferralRedemptions (base name: "totalReferralRedemptions")', function() {
+      // uncomment below and update the code to test the property totalReferralRedemptions
+      //var instane = new TalononeApi.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
     it('should have the property couponsCreated (base name: "couponsCreated")', function() {
       // uncomment below and update the code to test the property couponsCreated
       //var instane = new TalononeApi.CampaignAnalytics();
@@ -106,6 +130,18 @@
 
     it('should have the property totalCouponsCreated (base name: "totalCouponsCreated")', function() {
       // uncomment below and update the code to test the property totalCouponsCreated
+      //var instane = new TalononeApi.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referralsCreated (base name: "referralsCreated")', function() {
+      // uncomment below and update the code to test the property referralsCreated
+      //var instane = new TalononeApi.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalReferralsCreated (base name: "totalReferralsCreated")', function() {
+      // uncomment below and update the code to test the property totalReferralsCreated
       //var instane = new TalononeApi.CampaignAnalytics();
       //expect(instance).to.be();
     });

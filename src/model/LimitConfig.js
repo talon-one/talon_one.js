@@ -116,7 +116,12 @@
      * value: "setDiscount"
      * @const
      */
-    "setDiscount": "setDiscount"  };
+    "setDiscount": "setDiscount",
+    /**
+     * value: "createCoupon"
+     * @const
+     */
+    "createCoupon": "createCoupon"  };
 
   /**
    * Allowed values for the <code>entities</code> property.

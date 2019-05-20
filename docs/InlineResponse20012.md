@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[InlineResponse20011Data]**](InlineResponse20011Data.md) |  | 
+**data** | [**[ApplicationCustomer]**](ApplicationCustomer.md) |  | 
 
 

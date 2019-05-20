@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[InlineResponse20014Data]**](InlineResponse20014Data.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[ApplicationSession]**](ApplicationSession.md) |  | 
 
 

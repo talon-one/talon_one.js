@@ -16,29 +16,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Body', 'model/Body1', 'model/Body10', 'model/Body11', 'model/Body12', 'model/Body13', 'model/Body14', 'model/Body15', 'model/Body16', 'model/Body17', 'model/Body18', 'model/Body19', 'model/Body2', 'model/Body20', 'model/Body21', 'model/Body22', 'model/Body23', 'model/Body24', 'model/Body25', 'model/Body26', 'model/Body27', 'model/Body28', 'model/Body29', 'model/Body3', 'model/Body4', 'model/Body5', 'model/Body6', 'model/Body7', 'model/Body8', 'model/Body9', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20014Data', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20016Data', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20018Data', 'model/InlineResponse20019', 'model/InlineResponse2001Data', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20023Data', 'model/InlineResponse20024', 'model/InlineResponse20025', 'model/InlineResponse20026', 'model/InlineResponse20026Data', 'model/InlineResponse20027', 'model/InlineResponse20027Data', 'model/InlineResponse20028', 'model/InlineResponse20029', 'model/InlineResponse2003', 'model/InlineResponse20030', 'model/InlineResponse20031', 'model/InlineResponse20032', 'model/InlineResponse20033', 'model/InlineResponse2003Data', 'model/InlineResponse2004', 'model/InlineResponse2004Data', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2008Data', 'model/InlineResponse2009', 'model/InlineResponse2009Data', 'model/InlineResponse200Data', 'model/InlineResponse201', 'model/InlineResponse2011', 'model/InlineResponse204', 'model/InlineResponse2041', 'model/LatestFeature'], factory);
+    define(['ApiClient', 'model/Account', 'model/AccountAnalytics', 'model/AccountLimits', 'model/Application', 'model/ApplicationApiHealth', 'model/ApplicationCustomer', 'model/ApplicationCustomerSearch', 'model/ApplicationSession', 'model/Attribute', 'model/AttributeQuery', 'model/Campaign', 'model/CampaignCopy', 'model/CampaignSearch', 'model/CampaignSet', 'model/Coupon', 'model/CouponSearch', 'model/CustomerActivityReport', 'model/CustomerAnalytics', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20019', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20024', 'model/InlineResponse20025', 'model/InlineResponse20026', 'model/InlineResponse20027', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/LoginParams', 'model/LoyaltyLedger', 'model/LoyaltyPoints', 'model/LoyaltyProgram', 'model/NewCampaign', 'model/NewCampaignSet', 'model/NewCoupons', 'model/NewPassword', 'model/NewPasswordEmail', 'model/NewRuleset', 'model/Role', 'model/Ruleset', 'model/Session', 'model/UpdateCampaign', 'model/UpdateCoupon', 'model/UpdateCouponBatch', 'model/User', 'model/Webhook'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Body'), require('../model/Body1'), require('../model/Body10'), require('../model/Body11'), require('../model/Body12'), require('../model/Body13'), require('../model/Body14'), require('../model/Body15'), require('../model/Body16'), require('../model/Body17'), require('../model/Body18'), require('../model/Body19'), require('../model/Body2'), require('../model/Body20'), require('../model/Body21'), require('../model/Body22'), require('../model/Body23'), require('../model/Body24'), require('../model/Body25'), require('../model/Body26'), require('../model/Body27'), require('../model/Body28'), require('../model/Body29'), require('../model/Body3'), require('../model/Body4'), require('../model/Body5'), require('../model/Body6'), require('../model/Body7'), require('../model/Body8'), require('../model/Body9'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/InlineResponse20010'), require('../model/InlineResponse20011'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponse20014Data'), require('../model/InlineResponse20015'), require('../model/InlineResponse20016'), require('../model/InlineResponse20016Data'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponse20018Data'), require('../model/InlineResponse20019'), require('../model/InlineResponse2001Data'), require('../model/InlineResponse2002'), require('../model/InlineResponse20020'), require('../model/InlineResponse20021'), require('../model/InlineResponse20022'), require('../model/InlineResponse20023'), require('../model/InlineResponse20023Data'), require('../model/InlineResponse20024'), require('../model/InlineResponse20025'), require('../model/InlineResponse20026'), require('../model/InlineResponse20026Data'), require('../model/InlineResponse20027'), require('../model/InlineResponse20027Data'), require('../model/InlineResponse20028'), require('../model/InlineResponse20029'), require('../model/InlineResponse2003'), require('../model/InlineResponse20030'), require('../model/InlineResponse20031'), require('../model/InlineResponse20032'), require('../model/InlineResponse20033'), require('../model/InlineResponse2003Data'), require('../model/InlineResponse2004'), require('../model/InlineResponse2004Data'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2008Data'), require('../model/InlineResponse2009'), require('../model/InlineResponse2009Data'), require('../model/InlineResponse200Data'), require('../model/InlineResponse201'), require('../model/InlineResponse2011'), require('../model/InlineResponse204'), require('../model/InlineResponse2041'), require('../model/LatestFeature'));
+    module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/AccountAnalytics'), require('../model/AccountLimits'), require('../model/Application'), require('../model/ApplicationApiHealth'), require('../model/ApplicationCustomer'), require('../model/ApplicationCustomerSearch'), require('../model/ApplicationSession'), require('../model/Attribute'), require('../model/AttributeQuery'), require('../model/Campaign'), require('../model/CampaignCopy'), require('../model/CampaignSearch'), require('../model/CampaignSet'), require('../model/Coupon'), require('../model/CouponSearch'), require('../model/CustomerActivityReport'), require('../model/CustomerAnalytics'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/InlineResponse20010'), require('../model/InlineResponse20011'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponse20015'), require('../model/InlineResponse20016'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponse20019'), require('../model/InlineResponse2002'), require('../model/InlineResponse20020'), require('../model/InlineResponse20021'), require('../model/InlineResponse20022'), require('../model/InlineResponse20023'), require('../model/InlineResponse20024'), require('../model/InlineResponse20025'), require('../model/InlineResponse20026'), require('../model/InlineResponse20027'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2009'), require('../model/LoginParams'), require('../model/LoyaltyLedger'), require('../model/LoyaltyPoints'), require('../model/LoyaltyProgram'), require('../model/NewCampaign'), require('../model/NewCampaignSet'), require('../model/NewCoupons'), require('../model/NewPassword'), require('../model/NewPasswordEmail'), require('../model/NewRuleset'), require('../model/Role'), require('../model/Ruleset'), require('../model/Session'), require('../model/UpdateCampaign'), require('../model/UpdateCoupon'), require('../model/UpdateCouponBatch'), require('../model/User'), require('../model/Webhook'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.ManagementApiApi = factory(root.TalononeApi.ApiClient, root.TalononeApi.Body, root.TalononeApi.Body1, root.TalononeApi.Body10, root.TalononeApi.Body11, root.TalononeApi.Body12, root.TalononeApi.Body13, root.TalononeApi.Body14, root.TalononeApi.Body15, root.TalononeApi.Body16, root.TalononeApi.Body17, root.TalononeApi.Body18, root.TalononeApi.Body19, root.TalononeApi.Body2, root.TalononeApi.Body20, root.TalononeApi.Body21, root.TalononeApi.Body22, root.TalononeApi.Body23, root.TalononeApi.Body24, root.TalononeApi.Body25, root.TalononeApi.Body26, root.TalononeApi.Body27, root.TalononeApi.Body28, root.TalononeApi.Body29, root.TalononeApi.Body3, root.TalononeApi.Body4, root.TalononeApi.Body5, root.TalononeApi.Body6, root.TalononeApi.Body7, root.TalononeApi.Body8, root.TalononeApi.Body9, root.TalononeApi.InlineResponse200, root.TalononeApi.InlineResponse2001, root.TalononeApi.InlineResponse20010, root.TalononeApi.InlineResponse20011, root.TalononeApi.InlineResponse20012, root.TalononeApi.InlineResponse20013, root.TalononeApi.InlineResponse20014, root.TalononeApi.InlineResponse20014Data, root.TalononeApi.InlineResponse20015, root.TalononeApi.InlineResponse20016, root.TalononeApi.InlineResponse20016Data, root.TalononeApi.InlineResponse20017, root.TalononeApi.InlineResponse20018, root.TalononeApi.InlineResponse20018Data, root.TalononeApi.InlineResponse20019, root.TalononeApi.InlineResponse2001Data, root.TalononeApi.InlineResponse2002, root.TalononeApi.InlineResponse20020, root.TalononeApi.InlineResponse20021, root.TalononeApi.InlineResponse20022, root.TalononeApi.InlineResponse20023, root.TalononeApi.InlineResponse20023Data, root.TalononeApi.InlineResponse20024, root.TalononeApi.InlineResponse20025, root.TalononeApi.InlineResponse20026, root.TalononeApi.InlineResponse20026Data, root.TalononeApi.InlineResponse20027, root.TalononeApi.InlineResponse20027Data, root.TalononeApi.InlineResponse20028, root.TalononeApi.InlineResponse20029, root.TalononeApi.InlineResponse2003, root.TalononeApi.InlineResponse20030, root.TalononeApi.InlineResponse20031, root.TalononeApi.InlineResponse20032, root.TalononeApi.InlineResponse20033, root.TalononeApi.InlineResponse2003Data, root.TalononeApi.InlineResponse2004, root.TalononeApi.InlineResponse2004Data, root.TalononeApi.InlineResponse2005, root.TalononeApi.InlineResponse2006, root.TalononeApi.InlineResponse2007, root.TalononeApi.InlineResponse2008, root.TalononeApi.InlineResponse2008Data, root.TalononeApi.InlineResponse2009, root.TalononeApi.InlineResponse2009Data, root.TalononeApi.InlineResponse200Data, root.TalononeApi.InlineResponse201, root.TalononeApi.InlineResponse2011, root.TalononeApi.InlineResponse204, root.TalononeApi.InlineResponse2041, root.TalononeApi.LatestFeature);
+    root.TalononeApi.ManagementApi = factory(root.TalononeApi.ApiClient, root.TalononeApi.Account, root.TalononeApi.AccountAnalytics, root.TalononeApi.AccountLimits, root.TalononeApi.Application, root.TalononeApi.ApplicationApiHealth, root.TalononeApi.ApplicationCustomer, root.TalononeApi.ApplicationCustomerSearch, root.TalononeApi.ApplicationSession, root.TalononeApi.Attribute, root.TalononeApi.AttributeQuery, root.TalononeApi.Campaign, root.TalononeApi.CampaignCopy, root.TalononeApi.CampaignSearch, root.TalononeApi.CampaignSet, root.TalononeApi.Coupon, root.TalononeApi.CouponSearch, root.TalononeApi.CustomerActivityReport, root.TalononeApi.CustomerAnalytics, root.TalononeApi.InlineResponse200, root.TalononeApi.InlineResponse2001, root.TalononeApi.InlineResponse20010, root.TalononeApi.InlineResponse20011, root.TalononeApi.InlineResponse20012, root.TalononeApi.InlineResponse20013, root.TalononeApi.InlineResponse20014, root.TalononeApi.InlineResponse20015, root.TalononeApi.InlineResponse20016, root.TalononeApi.InlineResponse20017, root.TalononeApi.InlineResponse20018, root.TalononeApi.InlineResponse20019, root.TalononeApi.InlineResponse2002, root.TalononeApi.InlineResponse20020, root.TalononeApi.InlineResponse20021, root.TalononeApi.InlineResponse20022, root.TalononeApi.InlineResponse20023, root.TalononeApi.InlineResponse20024, root.TalononeApi.InlineResponse20025, root.TalononeApi.InlineResponse20026, root.TalononeApi.InlineResponse20027, root.TalononeApi.InlineResponse2003, root.TalononeApi.InlineResponse2004, root.TalononeApi.InlineResponse2005, root.TalononeApi.InlineResponse2006, root.TalononeApi.InlineResponse2007, root.TalononeApi.InlineResponse2008, root.TalononeApi.InlineResponse2009, root.TalononeApi.LoginParams, root.TalononeApi.LoyaltyLedger, root.TalononeApi.LoyaltyPoints, root.TalononeApi.LoyaltyProgram, root.TalononeApi.NewCampaign, root.TalononeApi.NewCampaignSet, root.TalononeApi.NewCoupons, root.TalononeApi.NewPassword, root.TalononeApi.NewPasswordEmail, root.TalononeApi.NewRuleset, root.TalononeApi.Role, root.TalononeApi.Ruleset, root.TalononeApi.Session, root.TalononeApi.UpdateCampaign, root.TalononeApi.UpdateCoupon, root.TalononeApi.UpdateCouponBatch, root.TalononeApi.User, root.TalononeApi.Webhook);
   }
-}(this, function(ApiClient, Body, Body1, Body10, Body11, Body12, Body13, Body14, Body15, Body16, Body17, Body18, Body19, Body2, Body20, Body21, Body22, Body23, Body24, Body25, Body26, Body27, Body28, Body29, Body3, Body4, Body5, Body6, Body7, Body8, Body9, InlineResponse200, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20014Data, InlineResponse20015, InlineResponse20016, InlineResponse20016Data, InlineResponse20017, InlineResponse20018, InlineResponse20018Data, InlineResponse20019, InlineResponse2001Data, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20023Data, InlineResponse20024, InlineResponse20025, InlineResponse20026, InlineResponse20026Data, InlineResponse20027, InlineResponse20027Data, InlineResponse20028, InlineResponse20029, InlineResponse2003, InlineResponse20030, InlineResponse20031, InlineResponse20032, InlineResponse20033, InlineResponse2003Data, InlineResponse2004, InlineResponse2004Data, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2008Data, InlineResponse2009, InlineResponse2009Data, InlineResponse200Data, InlineResponse201, InlineResponse2011, InlineResponse204, InlineResponse2041, LatestFeature) {
+}(this, function(ApiClient, Account, AccountAnalytics, AccountLimits, Application, ApplicationApiHealth, ApplicationCustomer, ApplicationCustomerSearch, ApplicationSession, Attribute, AttributeQuery, Campaign, CampaignCopy, CampaignSearch, CampaignSet, Coupon, CouponSearch, CustomerActivityReport, CustomerAnalytics, InlineResponse200, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20015, InlineResponse20016, InlineResponse20017, InlineResponse20018, InlineResponse20019, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20024, InlineResponse20025, InlineResponse20026, InlineResponse20027, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, LoginParams, LoyaltyLedger, LoyaltyPoints, LoyaltyProgram, NewCampaign, NewCampaignSet, NewCoupons, NewPassword, NewPasswordEmail, NewRuleset, Role, Ruleset, Session, UpdateCampaign, UpdateCoupon, UpdateCouponBatch, User, Webhook) {
   'use strict';
 
   /**
-   * ManagementApi service.
-   * @module api/ManagementApiApi
+   * Management service.
+   * @module api/ManagementApi
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new ManagementApiApi. 
-   * @alias module:api/ManagementApiApi
+   * Constructs a new ManagementApi. 
+   * @alias module:api/ManagementApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -49,18 +49,32 @@
 
 
     /**
-     * Create an API Key
-     * Create a new API key in the account.
+     * Add points in a certain loyalty program for the specified customer
+     * 
+     * @param {String} programID 
+     * @param {String} integrationID 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body13} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
+     * @param {module:model/LoyaltyPoints} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.createAPIKeyWithHttpInfo = function(opts) {
+    this.addLoyaltyPointsWithHttpInfo = function(programID, integrationID, opts) {
       opts = opts || {};
       var postBody = opts['body'];
 
+      // verify the required parameter 'programID' is set
+      if (programID === undefined || programID === null) {
+        throw new Error("Missing the required parameter 'programID' when calling addLoyaltyPoints");
+      }
+
+      // verify the required parameter 'integrationID' is set
+      if (integrationID === undefined || integrationID === null) {
+        throw new Error("Missing the required parameter 'integrationID' when calling addLoyaltyPoints");
+      }
+
 
       var pathParams = {
+        'programID': programID,
+        'integrationID': integrationID
       };
       var queryParams = {
       };
@@ -74,24 +88,26 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse201;
+      var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1/api_keys', 'POST',
+        '/v1/loyalty_programs/{programID}/profile/{integrationID}/add_points', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Create an API Key
-     * Create a new API key in the account.
+     * Add points in a certain loyalty program for the specified customer
+     * 
+     * @param {String} programID 
+     * @param {String} integrationID 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body13} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
+     * @param {module:model/LoyaltyPoints} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.createAPIKey = function(opts) {
-      return this.createAPIKeyWithHttpInfo(opts)
+    this.addLoyaltyPoints = function(programID, integrationID, opts) {
+      return this.addLoyaltyPointsWithHttpInfo(programID, integrationID, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -99,18 +115,32 @@
 
 
     /**
-     * Create an Application
-     * Create a new application in the current account.
+     * Copy the campaign into every specified application
+     * Copy the campaign into every specified application.
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200Data} and HTTP response
+     * @param {module:model/CampaignCopy} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
-    this.createApplicationWithHttpInfo = function(opts) {
+    this.copyCampaignToApplicationsWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
       var postBody = opts['body'];
 
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling copyCampaignToApplications");
+      }
+
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling copyCampaignToApplications");
+      }
+
 
       var pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
       };
       var queryParams = {
       };
@@ -124,24 +154,26 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200Data;
+      var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
-        '/v1/applications', 'POST',
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/copy', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Create an Application
-     * Create a new application in the current account.
+     * Copy the campaign into every specified application
+     * Copy the campaign into every specified application.
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200Data}
+     * @param {module:model/CampaignCopy} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
-    this.createApplication = function(opts) {
-      return this.createApplicationWithHttpInfo(opts)
+    this.copyCampaignToApplications = function(applicationId, campaignId, opts) {
+      return this.copyCampaignToApplicationsWithHttpInfo(applicationId, campaignId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -153,8 +185,8 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body2} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001Data} and HTTP response
+     * @param {module:model/NewCampaign} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Campaign} and HTTP response
      */
     this.createCampaignWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -181,7 +213,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2001Data;
+      var returnType = Campaign;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns', 'POST',
@@ -195,8 +227,8 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body2} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001Data}
+     * @param {module:model/NewCampaign} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Campaign}
      */
     this.createCampaign = function(applicationId, opts) {
       return this.createCampaignWithHttpInfo(applicationId, opts)
@@ -213,8 +245,8 @@
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
      * @param {String} opts.silent If set to &#39;yes&#39;, response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
-     * @param {module:model/Body9} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @param {module:model/NewCoupons} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     this.createCouponsWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -248,7 +280,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons', 'POST',
@@ -264,8 +296,8 @@
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
      * @param {String} opts.silent If set to &#39;yes&#39;, response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
-     * @param {module:model/Body9} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @param {module:model/NewCoupons} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     this.createCoupons = function(applicationId, campaignId, opts) {
       return this.createCouponsWithHttpInfo(applicationId, campaignId, opts)
@@ -276,113 +308,11 @@
 
 
     /**
-     * Create Event Type
-     * Define a new event type. Due to event types being immutable, this operation also serves the purpose of updating an event type. To create a new version of an existing event type use the same name with a new &#x60;version&#x60; (by convention the new version is &#x60;oldVersion + 1&#x60;, but any unique &#x60;(name, version)&#x60; combination is allowed. 
-     * @param {module:model/Body22} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026Data} and HTTP response
-     */
-    this.createEventTypeWithHttpInfo = function(body) {
-      var postBody = body;
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createEventType");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20026Data;
-
-      return this.apiClient.callApi(
-        '/v1/event_types', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Create Event Type
-     * Define a new event type. Due to event types being immutable, this operation also serves the purpose of updating an event type. To create a new version of an existing event type use the same name with a new &#x60;version&#x60; (by convention the new version is &#x60;oldVersion + 1&#x60;, but any unique &#x60;(name, version)&#x60; combination is allowed. 
-     * @param {module:model/Body22} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026Data}
-     */
-    this.createEventType = function(body) {
-      return this.createEventTypeWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Invite a new user to your account
-     * Creates a new invitation within your account. To trigger sending of an invitation email, use the &#x60;createInviteEmail&#x60; operation below. 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body24} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027Data} and HTTP response
-     */
-    this.createInviteWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['body'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20027Data;
-
-      return this.apiClient.callApi(
-        '/v1/invites', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Invite a new user to your account
-     * Creates a new invitation within your account. To trigger sending of an invitation email, use the &#x60;createInviteEmail&#x60; operation below. 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body24} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027Data}
-     */
-    this.createInvite = function(opts) {
-      return this.createInviteWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Request a password reset
      * Sends an email with a password recovery link to the email of an existing account. 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body25} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse204} and HTTP response
+     * @param {module:model/NewPasswordEmail} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewPasswordEmail} and HTTP response
      */
     this.createPasswordRecoveryEmailWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -403,7 +333,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse204;
+      var returnType = NewPasswordEmail;
 
       return this.apiClient.callApi(
         '/v1/password_recovery_emails', 'POST',
@@ -416,61 +346,11 @@
      * Request a password reset
      * Sends an email with a password recovery link to the email of an existing account. 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body25} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse204}
+     * @param {module:model/NewPasswordEmail} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewPasswordEmail}
      */
     this.createPasswordRecoveryEmail = function(opts) {
       return this.createPasswordRecoveryEmailWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create a role
-     * Create a new role in the account.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body16} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009Data} and HTTP response
-     */
-    this.createRoleWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['body'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse2009Data;
-
-      return this.apiClient.callApi(
-        '/v1/roles', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Create a role
-     * Create a new role in the account.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body16} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009Data}
-     */
-    this.createRole = function(opts) {
-      return this.createRoleWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -483,8 +363,8 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body7} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003Data} and HTTP response
+     * @param {module:model/NewRuleset} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
     this.createRulesetWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -517,7 +397,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2003Data;
+      var returnType = Ruleset;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/rulesets', 'POST',
@@ -532,8 +412,8 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body7} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003Data}
+     * @param {module:model/NewRuleset} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
      */
     this.createRuleset = function(applicationId, campaignId, opts) {
       return this.createRulesetWithHttpInfo(applicationId, campaignId, opts)
@@ -547,8 +427,8 @@
      * Create a Session
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body28} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2011} and HTTP response
+     * @param {module:model/LoginParams} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Session} and HTTP response
      */
     this.createSessionWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -569,7 +449,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2011;
+      var returnType = Session;
 
       return this.apiClient.callApi(
         '/v1/sessions', 'POST',
@@ -582,222 +462,11 @@
      * Create a Session
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body28} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2011}
+     * @param {module:model/LoginParams} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Session}
      */
     this.createSession = function(opts) {
       return this.createSessionWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create Webhook
-     * Creates a new webhook.
-     * @param {module:model/Body20} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023Data} and HTTP response
-     */
-    this.createWebhookWithHttpInfo = function(body) {
-      var postBody = body;
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createWebhook");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20023Data;
-
-      return this.apiClient.callApi(
-        '/v1/webhooks', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Create Webhook
-     * Creates a new webhook.
-     * @param {module:model/Body20} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023Data}
-     */
-    this.createWebhook = function(body) {
-      return this.createWebhookWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete an API key
-     * Delete an API Key.
-     * @param {Number} apiKeyId The identifier for the API key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteAPIKeyWithHttpInfo = function(apiKeyId) {
-      var postBody = null;
-
-      // verify the required parameter 'apiKeyId' is set
-      if (apiKeyId === undefined || apiKeyId === null) {
-        throw new Error("Missing the required parameter 'apiKeyId' when calling deleteAPIKey");
-      }
-
-
-      var pathParams = {
-        'apiKeyId': apiKeyId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/api_keys/{apiKeyId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete an API key
-     * Delete an API Key.
-     * @param {Number} apiKeyId The identifier for the API key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteAPIKey = function(apiKeyId) {
-      return this.deleteAPIKeyWithHttpInfo(apiKeyId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete an Application
-     * Delete the application specified by the ID. Also deletes associated data.
-     * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteApplicationWithHttpInfo = function(applicationId) {
-      var postBody = null;
-
-      // verify the required parameter 'applicationId' is set
-      if (applicationId === undefined || applicationId === null) {
-        throw new Error("Missing the required parameter 'applicationId' when calling deleteApplication");
-      }
-
-
-      var pathParams = {
-        'applicationId': applicationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/applications/{applicationId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete an Application
-     * Delete the application specified by the ID. Also deletes associated data.
-     * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteApplication = function(applicationId) {
-      return this.deleteApplicationWithHttpInfo(applicationId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a custom attribute
-     * Removes a defined custom attribute.  **Warning:** this will also destroy all data associated with the attribute! 
-     * @param {Number} attributeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteAttributeWithHttpInfo = function(attributeId) {
-      var postBody = null;
-
-      // verify the required parameter 'attributeId' is set
-      if (attributeId === undefined || attributeId === null) {
-        throw new Error("Missing the required parameter 'attributeId' when calling deleteAttribute");
-      }
-
-
-      var pathParams = {
-        'attributeId': attributeId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/attributes/{attributeId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete a custom attribute
-     * Removes a defined custom attribute.  **Warning:** this will also destroy all data associated with the attribute! 
-     * @param {Number} attributeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteAttribute = function(attributeId) {
-      return this.deleteAttributeWithHttpInfo(attributeId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1038,59 +707,6 @@
 
 
     /**
-     * Delete Event Type
-     * Removes an existing event type.
-     * @param {Number} eventTypeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteEventTypeWithHttpInfo = function(eventTypeId) {
-      var postBody = null;
-
-      // verify the required parameter 'eventTypeId' is set
-      if (eventTypeId === undefined || eventTypeId === null) {
-        throw new Error("Missing the required parameter 'eventTypeId' when calling deleteEventType");
-      }
-
-
-      var pathParams = {
-        'eventTypeId': eventTypeId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/event_types/{eventTypeId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete Event Type
-     * Removes an existing event type.
-     * @param {Number} eventTypeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteEventType = function(eventTypeId) {
-      return this.deleteEventTypeWithHttpInfo(eventTypeId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Delete one Referral
      * 
      * @param {Number} applicationId 
@@ -1153,59 +769,6 @@
      */
     this.deleteReferral = function(applicationId, campaignId, referralId) {
       return this.deleteReferralWithHttpInfo(applicationId, campaignId, referralId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a role
-     * Delete a role.
-     * @param {Number} roleId The identifier for the role
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteRoleWithHttpInfo = function(roleId) {
-      var postBody = null;
-
-      // verify the required parameter 'roleId' is set
-      if (roleId === undefined || roleId === null) {
-        throw new Error("Missing the required parameter 'roleId' when calling deleteRole");
-      }
-
-
-      var pathParams = {
-        'roleId': roleId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/roles/{roleId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete a role
-     * Delete a role.
-     * @param {Number} roleId The identifier for the role
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteRole = function(roleId) {
-      return this.deleteRoleWithHttpInfo(roleId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1282,333 +845,6 @@
 
 
     /**
-     * Delete a User
-     * 
-     * @param {Number} userId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteUserWithHttpInfo = function(userId) {
-      var postBody = null;
-
-      // verify the required parameter 'userId' is set
-      if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling deleteUser");
-      }
-
-
-      var pathParams = {
-        'userId': userId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/users/{userId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete a User
-     * 
-     * @param {Number} userId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteUser = function(userId) {
-      return this.deleteUserWithHttpInfo(userId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete Webhook
-     * Removes an existing webhook.
-     * @param {Number} webhookId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteWebhookWithHttpInfo = function(webhookId) {
-      var postBody = null;
-
-      // verify the required parameter 'webhookId' is set
-      if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling deleteWebhook");
-      }
-
-
-      var pathParams = {
-        'webhookId': webhookId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/webhooks/{webhookId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete Webhook
-     * Removes an existing webhook.
-     * @param {Number} webhookId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteWebhook = function(webhookId) {
-      return this.deleteWebhookWithHttpInfo(webhookId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Destroy a Session
-     * 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.destroySessionWithHttpInfo = function() {
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/sessions', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Destroy a Session
-     * 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.destroySession = function() {
-      return this.destroySessionWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Duplicate the campaign into every specified application
-     * Duplicate the campaign into every specified application. 
-     * @param {Number} applicationId 
-     * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body5} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
-     */
-    this.duplicateCampaignToApplicationsWithHttpInfo = function(applicationId, campaignId, opts) {
-      opts = opts || {};
-      var postBody = opts['body'];
-
-      // verify the required parameter 'applicationId' is set
-      if (applicationId === undefined || applicationId === null) {
-        throw new Error("Missing the required parameter 'applicationId' when calling duplicateCampaignToApplications");
-      }
-
-      // verify the required parameter 'campaignId' is set
-      if (campaignId === undefined || campaignId === null) {
-        throw new Error("Missing the required parameter 'campaignId' when calling duplicateCampaignToApplications");
-      }
-
-
-      var pathParams = {
-        'applicationId': applicationId,
-        'campaignId': campaignId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse2001;
-
-      return this.apiClient.callApi(
-        '/v1/applications/{applicationId}/campaigns/{campaignId}/campaign_duplicate', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Duplicate the campaign into every specified application
-     * Duplicate the campaign into every specified application. 
-     * @param {Number} applicationId 
-     * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body5} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
-     */
-    this.duplicateCampaignToApplications = function(applicationId, campaignId, opts) {
-      return this.duplicateCampaignToApplicationsWithHttpInfo(applicationId, campaignId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Get API Key
-     * Get a specific API key.
-     * @param {Number} apiKeyId The identifier for the API key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008Data} and HTTP response
-     */
-    this.getAPIKeyWithHttpInfo = function(apiKeyId) {
-      var postBody = null;
-
-      // verify the required parameter 'apiKeyId' is set
-      if (apiKeyId === undefined || apiKeyId === null) {
-        throw new Error("Missing the required parameter 'apiKeyId' when calling getAPIKey");
-      }
-
-
-      var pathParams = {
-        'apiKeyId': apiKeyId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse2008Data;
-
-      return this.apiClient.callApi(
-        '/api_keys/{apiKeyId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Get API Key
-     * Get a specific API key.
-     * @param {Number} apiKeyId The identifier for the API key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008Data}
-     */
-    this.getAPIKey = function(apiKeyId) {
-      return this.getAPIKeyWithHttpInfo(apiKeyId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List API Keys for the account
-     * Show API keys for this account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
-     */
-    this.getAPIKeysWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip'],
-        'sort': opts['sort'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse2008;
-
-      return this.apiClient.callApi(
-        '/v1/api_keys', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * List API Keys for the account
-     * Show API keys for this account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
-     */
-    this.getAPIKeys = function(opts) {
-      return this.getAPIKeysWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Get access logs for application
      * 
      * @param {Number} applicationId 
@@ -1621,7 +857,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20011} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
      */
     this.getAccessLogsWithHttpInfo = function(applicationId, rangeStart, rangeEnd, opts) {
       opts = opts || {};
@@ -1666,7 +902,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20011;
+      var returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/access_logs', 'GET',
@@ -1688,7 +924,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20011}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
      */
     this.getAccessLogs = function(applicationId, rangeStart, rangeEnd, opts) {
       return this.getAccessLogsWithHttpInfo(applicationId, rangeStart, rangeEnd, opts)
@@ -1711,7 +947,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
     this.getAccessLogsWithoutTotalCountWithHttpInfo = function(applicationId, rangeStart, rangeEnd, opts) {
       opts = opts || {};
@@ -1756,7 +992,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20012;
+      var returnType = InlineResponse2009;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/access_logs/no_total', 'GET',
@@ -1778,7 +1014,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
     this.getAccessLogsWithoutTotalCount = function(applicationId, rangeStart, rangeEnd, opts) {
       return this.getAccessLogsWithoutTotalCountWithHttpInfo(applicationId, rangeStart, rangeEnd, opts)
@@ -1792,7 +1028,7 @@
      * Get Account Details
      * Return the details of your companies Talon.One account. 
      * @param {Number} accountId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Account} and HTTP response
      */
     this.getAccountWithHttpInfo = function(accountId) {
       var postBody = null;
@@ -1818,7 +1054,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20029;
+      var returnType = Account;
 
       return this.apiClient.callApi(
         '/v1/accounts/{accountId}', 'GET',
@@ -1831,10 +1067,116 @@
      * Get Account Details
      * Return the details of your companies Talon.One account. 
      * @param {Number} accountId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Account}
      */
     this.getAccount = function(accountId) {
       return this.getAccountWithHttpInfo(accountId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get Account Analytics
+     * Return the analytics of your companies Talon.One account. 
+     * @param {Number} accountId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountAnalytics} and HTTP response
+     */
+    this.getAccountAnalyticsWithHttpInfo = function(accountId) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAccountAnalytics");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = AccountAnalytics;
+
+      return this.apiClient.callApi(
+        '/v1/accounts/{accountId}/analytics', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get Account Analytics
+     * Return the analytics of your companies Talon.One account. 
+     * @param {Number} accountId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountAnalytics}
+     */
+    this.getAccountAnalytics = function(accountId) {
+      return this.getAccountAnalyticsWithHttpInfo(accountId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get Account Limits
+     * Returns a list of all account limits set 
+     * @param {Number} accountId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountLimits} and HTTP response
+     */
+    this.getAccountLimitsWithHttpInfo = function(accountId) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAccountLimits");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = AccountLimits;
+
+      return this.apiClient.callApi(
+        '/v1/accounts/{accountId}/limits', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get Account Limits
+     * Returns a list of all account limits set 
+     * @param {Number} accountId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountLimits}
+     */
+    this.getAccountLimits = function(accountId) {
+      return this.getAccountLimitsWithHttpInfo(accountId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1853,7 +1195,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20011} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
      */
     this.getAllAccessLogsWithHttpInfo = function(rangeStart, rangeEnd, opts) {
       opts = opts || {};
@@ -1892,7 +1234,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20011;
+      var returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/v1/access_logs', 'GET',
@@ -1913,7 +1255,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20011}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
      */
     this.getAllAccessLogs = function(rangeStart, rangeEnd, opts) {
       return this.getAllAccessLogsWithHttpInfo(rangeStart, rangeEnd, opts)
@@ -1924,10 +1266,53 @@
 
 
     /**
+     * Get all roles.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
+     */
+    this.getAllRolesWithHttpInfo = function() {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse20027;
+
+      return this.apiClient.callApi(
+        '/v1/roles', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get all roles.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
+     */
+    this.getAllRoles = function() {
+      return this.getAllRolesWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get Application
      * Get the application specified by the ID.
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Application} and HTTP response
      */
     this.getApplicationWithHttpInfo = function(applicationId) {
       var postBody = null;
@@ -1953,7 +1338,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200Data;
+      var returnType = Application;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}', 'GET',
@@ -1966,7 +1351,7 @@
      * Get Application
      * Get the application specified by the ID.
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Application}
      */
     this.getApplication = function(applicationId) {
       return this.getApplicationWithHttpInfo(applicationId)
@@ -1980,7 +1365,7 @@
      * Get report of health of application API
      * 
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20010} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicationApiHealth} and HTTP response
      */
     this.getApplicationApiHealthWithHttpInfo = function(applicationId) {
       var postBody = null;
@@ -2006,7 +1391,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20010;
+      var returnType = ApplicationApiHealth;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/health_report', 'GET',
@@ -2019,7 +1404,7 @@
      * Get report of health of application API
      * 
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20010}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicationApiHealth}
      */
     this.getApplicationApiHealth = function(applicationId) {
       return this.getApplicationApiHealthWithHttpInfo(applicationId)
@@ -2034,7 +1419,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Number} customerId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20014Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicationCustomer} and HTTP response
      */
     this.getApplicationCustomerWithHttpInfo = function(applicationId, customerId) {
       var postBody = null;
@@ -2066,7 +1451,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20014Data;
+      var returnType = ApplicationCustomer;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customers/{customerId}', 'GET',
@@ -2080,7 +1465,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Number} customerId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20014Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicationCustomer}
      */
     this.getApplicationCustomer = function(applicationId, customerId) {
       return this.getApplicationCustomerWithHttpInfo(applicationId, customerId)
@@ -2094,7 +1479,7 @@
      * List Application Customers
      * 
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20014} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20011} and HTTP response
      */
     this.getApplicationCustomersWithHttpInfo = function(applicationId) {
       var postBody = null;
@@ -2120,7 +1505,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20014;
+      var returnType = InlineResponse20011;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customers', 'GET',
@@ -2133,7 +1518,7 @@
      * List Application Customers
      * 
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20014}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20011}
      */
     this.getApplicationCustomers = function(applicationId) {
       return this.getApplicationCustomersWithHttpInfo(applicationId)
@@ -2145,10 +1530,10 @@
 
     /**
      * Get a list of the customer profiles that match the given attributes
-     * Gets a list of all the cusomer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body18} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20015} and HTTP response
+     * @param {module:model/ApplicationCustomerSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
      */
     this.getApplicationCustomersByAttributesWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -2166,10 +1551,10 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['integration_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20015;
+      var returnType = InlineResponse20012;
 
       return this.apiClient.callApi(
         '/v1/application_customer_search', 'POST',
@@ -2180,10 +1565,10 @@
 
     /**
      * Get a list of the customer profiles that match the given attributes
-     * Gets a list of all the cusomer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body18} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20015}
+     * @param {module:model/ApplicationCustomerSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
      */
     this.getApplicationCustomersByAttributes = function(opts) {
       return this.getApplicationCustomersByAttributesWithHttpInfo(opts)
@@ -2201,7 +1586,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20018} and HTTP response
      */
     this.getApplicationEventTypesWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -2231,7 +1616,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20021;
+      var returnType = InlineResponse20018;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/event_types', 'GET',
@@ -2248,7 +1633,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20018}
      */
     this.getApplicationEventTypes = function(applicationId, opts) {
       return this.getApplicationEventTypesWithHttpInfo(applicationId, opts)
@@ -2277,7 +1662,7 @@
      * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20019} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     this.getApplicationEventsWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -2318,7 +1703,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20019;
+      var returnType = InlineResponse20016;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/events', 'GET',
@@ -2346,7 +1731,7 @@
      * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20019}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     this.getApplicationEvents = function(applicationId, opts) {
       return this.getApplicationEventsWithHttpInfo(applicationId, opts)
@@ -2375,7 +1760,7 @@
      * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20017} and HTTP response
      */
     this.getApplicationEventsWithoutTotalCountWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -2416,7 +1801,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20020;
+      var returnType = InlineResponse20017;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/events/no_total', 'GET',
@@ -2444,7 +1829,7 @@
      * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20017}
      */
     this.getApplicationEventsWithoutTotalCount = function(applicationId, opts) {
       return this.getApplicationEventsWithoutTotalCountWithHttpInfo(applicationId, opts)
@@ -2459,7 +1844,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Number} sessionId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20018Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicationSession} and HTTP response
      */
     this.getApplicationSessionWithHttpInfo = function(applicationId, sessionId) {
       var postBody = null;
@@ -2491,7 +1876,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20018Data;
+      var returnType = ApplicationSession;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/sessions/{sessionId}', 'GET',
@@ -2505,7 +1890,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Number} sessionId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20018Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicationSession}
      */
     this.getApplicationSession = function(applicationId, sessionId) {
       return this.getApplicationSessionWithHttpInfo(applicationId, sessionId)
@@ -2524,7 +1909,7 @@
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20018} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20015} and HTTP response
      */
     this.getApplicationSessionsWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -2555,7 +1940,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20018;
+      var returnType = InlineResponse20015;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/sessions', 'GET',
@@ -2573,7 +1958,7 @@
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20018}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20015}
      */
     this.getApplicationSessions = function(applicationId, opts) {
       return this.getApplicationSessionsWithHttpInfo(applicationId, opts)
@@ -2644,7 +2029,7 @@
      * Get a custom attribute
      * Returns custom attribute for the account by its id. 
      * @param {Number} attributeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Attribute} and HTTP response
      */
     this.getAttributeWithHttpInfo = function(attributeId) {
       var postBody = null;
@@ -2670,7 +2055,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20022;
+      var returnType = Attribute;
 
       return this.apiClient.callApi(
         '/v1/attributes/{attributeId}', 'GET',
@@ -2683,7 +2068,7 @@
      * Get a custom attribute
      * Returns custom attribute for the account by its id. 
      * @param {Number} attributeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Attribute}
      */
     this.getAttribute = function(attributeId) {
       return this.getAttributeWithHttpInfo(attributeId)
@@ -2698,7 +2083,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Campaign} and HTTP response
      */
     this.getCampaignWithHttpInfo = function(applicationId, campaignId) {
       var postBody = null;
@@ -2730,7 +2115,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2001Data;
+      var returnType = Campaign;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}', 'GET',
@@ -2744,7 +2129,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Campaign}
      */
     this.getCampaign = function(applicationId, campaignId) {
       return this.getCampaignWithHttpInfo(applicationId, campaignId)
@@ -2762,8 +2147,8 @@
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.granularity The time interval between the results in the returned time-series.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20013} and HTTP response
+     * @param {module:model/String} opts.granularity The time interval between the results in the returned time-series.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20010} and HTTP response
      */
     this.getCampaignAnalyticsWithHttpInfo = function(applicationId, campaignId, rangeStart, rangeEnd, opts) {
       opts = opts || {};
@@ -2809,7 +2194,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20013;
+      var returnType = InlineResponse20010;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/analytics', 'GET',
@@ -2826,8 +2211,8 @@
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.granularity The time interval between the results in the returned time-series.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20013}
+     * @param {module:model/String} opts.granularity The time interval between the results in the returned time-series.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20010}
      */
     this.getCampaignAnalytics = function(applicationId, campaignId, rangeStart, rangeEnd, opts) {
       return this.getCampaignAnalyticsWithHttpInfo(applicationId, campaignId, rangeStart, rangeEnd, opts)
@@ -2846,7 +2231,7 @@
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {module:model/Body6} opts.body 
+     * @param {module:model/CampaignSearch} opts.body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.getCampaignByAttributesWithHttpInfo = function(applicationId, opts) {
@@ -2896,7 +2281,7 @@
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {module:model/Body6} opts.body 
+     * @param {module:model/CampaignSearch} opts.body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.getCampaignByAttributes = function(applicationId, opts) {
@@ -2911,7 +2296,7 @@
      * List CampaignSet
      * 
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CampaignSet} and HTTP response
      */
     this.getCampaignSetWithHttpInfo = function(applicationId) {
       var postBody = null;
@@ -2937,7 +2322,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2002;
+      var returnType = CampaignSet;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaign_set', 'GET',
@@ -2950,7 +2335,7 @@
      * List CampaignSet
      * 
      * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CampaignSet}
      */
     this.getCampaignSet = function(applicationId) {
       return this.getCampaignSetWithHttpInfo(applicationId)
@@ -3035,7 +2420,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
      */
     this.getChangesWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -3059,7 +2444,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20028;
+      var returnType = InlineResponse20024;
 
       return this.apiClient.callApi(
         '/v1/changes', 'GET',
@@ -3075,7 +2460,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
      */
     this.getChanges = function(opts) {
       return this.getChangesWithHttpInfo(opts)
@@ -3107,7 +2492,7 @@
      * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     this.getCouponsWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -3156,7 +2541,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons', 'GET',
@@ -3187,7 +2572,7 @@
      * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     this.getCoupons = function(applicationId, campaignId, opts) {
       return this.getCouponsWithHttpInfo(applicationId, campaignId, opts)
@@ -3215,8 +2600,8 @@
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {module:model/Body11} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @param {module:model/CouponSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     this.getCouponsByAttributesWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -3261,7 +2646,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search', 'POST',
@@ -3288,8 +2673,8 @@
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {module:model/Body11} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @param {module:model/CouponSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     this.getCouponsByAttributes = function(applicationId, campaignId, opts) {
       return this.getCouponsByAttributesWithHttpInfo(applicationId, campaignId, opts)
@@ -3317,8 +2702,8 @@
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {module:model/Body12} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @param {module:model/CouponSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     this.getCouponsByAttributesApplicationWideWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -3358,7 +2743,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/coupons_search', 'POST',
@@ -3385,8 +2770,8 @@
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {module:model/Body12} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @param {module:model/CouponSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     this.getCouponsByAttributesApplicationWide = function(applicationId, opts) {
       return this.getCouponsByAttributesApplicationWideWithHttpInfo(applicationId, opts)
@@ -3414,7 +2799,7 @@
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     this.getCouponsWithoutTotalCountWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -3459,7 +2844,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2005;
+      var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons/no_total', 'GET',
@@ -3486,7 +2871,7 @@
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     this.getCouponsWithoutTotalCount = function(applicationId, campaignId, opts) {
       return this.getCouponsWithoutTotalCountWithHttpInfo(applicationId, campaignId, opts)
@@ -3506,7 +2891,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerActivityReport} and HTTP response
      */
     this.getCustomerActivityReportWithHttpInfo = function(rangeStart, rangeEnd, applicationId, customerId, opts) {
       opts = opts || {};
@@ -3553,7 +2938,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20016Data;
+      var returnType = CustomerActivityReport;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customer_activity_reports/{customerId}', 'GET',
@@ -3572,7 +2957,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerActivityReport}
      */
     this.getCustomerActivityReport = function(rangeStart, rangeEnd, applicationId, customerId, opts) {
       return this.getCustomerActivityReportWithHttpInfo(rangeStart, rangeEnd, applicationId, customerId, opts)
@@ -3596,7 +2981,7 @@
      * @param {String} opts.integrationId Only return reports matching the integrationId
      * @param {String} opts.campaignName Only return reports matching the campaignName
      * @param {String} opts.advocateName Only return reports matching the current customer referrer name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20013} and HTTP response
      */
     this.getCustomerActivityReportsWithHttpInfo = function(rangeStart, rangeEnd, applicationId, opts) {
       opts = opts || {};
@@ -3642,7 +3027,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20016;
+      var returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customer_activity_reports', 'GET',
@@ -3665,7 +3050,7 @@
      * @param {String} opts.integrationId Only return reports matching the integrationId
      * @param {String} opts.campaignName Only return reports matching the campaignName
      * @param {String} opts.advocateName Only return reports matching the current customer referrer name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20013}
      */
     this.getCustomerActivityReports = function(rangeStart, rangeEnd, applicationId, opts) {
       return this.getCustomerActivityReportsWithHttpInfo(rangeStart, rangeEnd, applicationId, opts)
@@ -3689,7 +3074,7 @@
      * @param {String} opts.integrationId Only return reports matching the integrationId
      * @param {String} opts.campaignName Only return reports matching the campaignName
      * @param {String} opts.advocateName Only return reports matching the current customer referrer name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20017} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20014} and HTTP response
      */
     this.getCustomerActivityReportsWithoutTotalCountWithHttpInfo = function(rangeStart, rangeEnd, applicationId, opts) {
       opts = opts || {};
@@ -3735,7 +3120,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20017;
+      var returnType = InlineResponse20014;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customer_activity_reports/no_total', 'GET',
@@ -3758,7 +3143,7 @@
      * @param {String} opts.integrationId Only return reports matching the integrationId
      * @param {String} opts.campaignName Only return reports matching the campaignName
      * @param {String} opts.advocateName Only return reports matching the current customer referrer name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20017}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20014}
      */
     this.getCustomerActivityReportsWithoutTotalCount = function(rangeStart, rangeEnd, applicationId, opts) {
       return this.getCustomerActivityReportsWithoutTotalCountWithHttpInfo(rangeStart, rangeEnd, applicationId, opts)
@@ -3769,21 +3154,102 @@
 
 
     /**
-     * Get Event Type
-     * @param {Number} eventTypeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026Data} and HTTP response
+     * Get Analytics Report for a Customer
+     * Fetch analytics for single application customer
+     * @param {Number} applicationId 
+     * @param {Number} customerId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerAnalytics} and HTTP response
      */
-    this.getEventTypeWithHttpInfo = function(eventTypeId) {
+    this.getCustomerAnalyticsWithHttpInfo = function(applicationId, customerId, opts) {
+      opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'eventTypeId' is set
-      if (eventTypeId === undefined || eventTypeId === null) {
-        throw new Error("Missing the required parameter 'eventTypeId' when calling getEventType");
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling getCustomerAnalytics");
+      }
+
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerAnalytics");
       }
 
 
       var pathParams = {
-        'eventTypeId': eventTypeId
+        'applicationId': applicationId,
+        'customerId': customerId
+      };
+      var queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'sort': opts['sort'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CustomerAnalytics;
+
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/customers/{customerId}/analytics', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get Analytics Report for a Customer
+     * Fetch analytics for single application customer
+     * @param {Number} applicationId 
+     * @param {Number} customerId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerAnalytics}
+     */
+    this.getCustomerAnalytics = function(applicationId, customerId, opts) {
+      return this.getCustomerAnalyticsWithHttpInfo(applicationId, customerId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get Customer Profile
+     * 
+     * @param {Number} applicationId 
+     * @param {Number} customerId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicationCustomer} and HTTP response
+     */
+    this.getCustomerProfileWithHttpInfo = function(applicationId, customerId) {
+      var postBody = null;
+
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling getCustomerProfile");
+      }
+
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerProfile");
+      }
+
+
+      var pathParams = {
+        'applicationId': applicationId,
+        'customerId': customerId
       };
       var queryParams = {
       };
@@ -3797,22 +3263,134 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20026Data;
+      var returnType = ApplicationCustomer;
 
       return this.apiClient.callApi(
-        '/v1/event_types/{eventTypeId}', 'GET',
+        '/v1/customers/{customerId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Get Event Type
-     * @param {Number} eventTypeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026Data}
+     * Get Customer Profile
+     * 
+     * @param {Number} applicationId 
+     * @param {Number} customerId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicationCustomer}
      */
-    this.getEventType = function(eventTypeId) {
-      return this.getEventTypeWithHttpInfo(eventTypeId)
+    this.getCustomerProfile = function(applicationId, customerId) {
+      return this.getCustomerProfileWithHttpInfo(applicationId, customerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List Customer Profiles
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
+     */
+    this.getCustomerProfilesWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse20012;
+
+      return this.apiClient.callApi(
+        '/v1/customers/no_total', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List Customer Profiles
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
+     */
+    this.getCustomerProfiles = function(opts) {
+      return this.getCustomerProfilesWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get a list of the customer profiles that match the given attributes
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {module:model/ApplicationCustomerSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
+     */
+    this.getCustomersByAttributesWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = opts['body'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse20012;
+
+      return this.apiClient.callApi(
+        '/v1/customer_search/no_total', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get a list of the customer profiles that match the given attributes
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {module:model/ApplicationCustomerSearch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
+     */
+    this.getCustomersByAttributes = function(opts) {
+      return this.getCustomersByAttributesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3829,7 +3407,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
      */
     this.getEventTypesWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -3856,7 +3434,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20026;
+      var returnType = InlineResponse20022;
 
       return this.apiClient.callApi(
         '/v1/event_types', 'GET',
@@ -3875,7 +3453,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
      */
     this.getEventTypes = function(opts) {
       return this.getEventTypesWithHttpInfo(opts)
@@ -3894,7 +3472,7 @@
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20031} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
      */
     this.getExportsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -3920,7 +3498,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20031;
+      var returnType = InlineResponse20025;
 
       return this.apiClient.callApi(
         '/v1/exports', 'GET',
@@ -3938,55 +3516,10 @@
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20031}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
      */
     this.getExports = function(opts) {
       return this.getExportsWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Fetch the features RSS feed.
-     * 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20033} and HTTP response
-     */
-    this.getFeaturesFeedWithHttpInfo = function() {
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20033;
-
-      return this.apiClient.callApi(
-        '/v1/misc/help_center_articles', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Fetch the features RSS feed.
-     * 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20033}
-     */
-    this.getFeaturesFeed = function() {
-      return this.getFeaturesFeedWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3999,7 +3532,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20032} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
      */
     this.getImportsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4022,7 +3555,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20032;
+      var returnType = InlineResponse20026;
 
       return this.apiClient.callApi(
         '/v1/imports', 'GET',
@@ -4037,7 +3570,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20032}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
      */
     this.getImports = function(opts) {
       return this.getImportsWithHttpInfo(opts)
@@ -4048,11 +3581,125 @@
 
 
     /**
-     * Get Campaign Manager config
-     * Get the current users individual campaign manager configuration. This configuration contains settings for the UI that have no effect on the operation of the API or environment. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
+     * get the Loyalty Ledger for this integrationID
+     * Get the Loyalty Ledger for this profile integration ID.
+     * @param {String} programID The identifier for the application, must be unique within the account.
+     * @param {String} integrationID The identifier for the application, must be unique within the account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoyaltyLedger} and HTTP response
      */
-    this.getManagerConfigWithHttpInfo = function() {
+    this.getLoyaltyPointsWithHttpInfo = function(programID, integrationID) {
+      var postBody = null;
+
+      // verify the required parameter 'programID' is set
+      if (programID === undefined || programID === null) {
+        throw new Error("Missing the required parameter 'programID' when calling getLoyaltyPoints");
+      }
+
+      // verify the required parameter 'integrationID' is set
+      if (integrationID === undefined || integrationID === null) {
+        throw new Error("Missing the required parameter 'integrationID' when calling getLoyaltyPoints");
+      }
+
+
+      var pathParams = {
+        'programID': programID,
+        'integrationID': integrationID
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = LoyaltyLedger;
+
+      return this.apiClient.callApi(
+        '/v1/loyalty_programs/{programID}/profile/{integrationID}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * get the Loyalty Ledger for this integrationID
+     * Get the Loyalty Ledger for this profile integration ID.
+     * @param {String} programID The identifier for the application, must be unique within the account.
+     * @param {String} integrationID The identifier for the application, must be unique within the account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoyaltyLedger}
+     */
+    this.getLoyaltyPoints = function(programID, integrationID) {
+      return this.getLoyaltyPointsWithHttpInfo(programID, integrationID)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get a loyalty program
+     * 
+     * @param {String} programID 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoyaltyProgram} and HTTP response
+     */
+    this.getLoyaltyProgramWithHttpInfo = function(programID) {
+      var postBody = null;
+
+      // verify the required parameter 'programID' is set
+      if (programID === undefined || programID === null) {
+        throw new Error("Missing the required parameter 'programID' when calling getLoyaltyProgram");
+      }
+
+
+      var pathParams = {
+        'programID': programID
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = LoyaltyProgram;
+
+      return this.apiClient.callApi(
+        '/v1/loyalty_programs/{programID}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get a loyalty program
+     * 
+     * @param {String} programID 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoyaltyProgram}
+     */
+    this.getLoyaltyProgram = function(programID) {
+      return this.getLoyaltyProgramWithHttpInfo(programID)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List all loyalty Programs
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     */
+    this.getLoyaltyProgramsWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -4070,22 +3717,22 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20030;
+      var returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
-        '/v1/manager_config', 'GET',
+        '/v1/loyalty_programs', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Get Campaign Manager config
-     * Get the current users individual campaign manager configuration. This configuration contains settings for the UI that have no effect on the operation of the API or environment. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
+     * List all loyalty Programs
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
-    this.getManagerConfig = function() {
-      return this.getManagerConfigWithHttpInfo()
+    this.getLoyaltyPrograms = function() {
+      return this.getLoyaltyProgramsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4107,7 +3754,7 @@
      * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
      * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only referrals where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only referrals where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
      * @param {String} opts.advocate Filter results by match with a profile id specified in the referral&#39;s AdvocateProfileIntegrationId field
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     this.getReferralsWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -4149,7 +3796,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2006;
+      var returnType = InlineResponse2005;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/referrals', 'GET',
@@ -4173,7 +3820,7 @@
      * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
      * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only referrals where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only referrals where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
      * @param {String} opts.advocate Filter results by match with a profile id specified in the referral&#39;s AdvocateProfileIntegrationId field
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     this.getReferrals = function(applicationId, campaignId, opts) {
       return this.getReferralsWithHttpInfo(applicationId, campaignId, opts)
@@ -4198,7 +3845,7 @@
      * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
      * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only referrals where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only referrals where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
      * @param {String} opts.advocate Filter results by match with a profile id specified in the referral&#39;s AdvocateProfileIntegrationId field
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     this.getReferralsWithoutTotalCountWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -4240,7 +3887,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2007;
+      var returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/referrals/no_total', 'GET',
@@ -4264,7 +3911,7 @@
      * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
      * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only referrals where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only referrals where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
      * @param {String} opts.advocate Filter results by match with a profile id specified in the referral&#39;s AdvocateProfileIntegrationId field
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     this.getReferralsWithoutTotalCount = function(applicationId, campaignId, opts) {
       return this.getReferralsWithoutTotalCountWithHttpInfo(applicationId, campaignId, opts)
@@ -4275,10 +3922,9 @@
 
 
     /**
-     * Get role
-     * Get a specific role.
-     * @param {Number} roleId The identifier for the role
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009Data} and HTTP response
+     * Get information for the specified role.
+     * @param {Number} roleId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Role} and HTTP response
      */
     this.getRoleWithHttpInfo = function(roleId) {
       var postBody = null;
@@ -4304,80 +3950,22 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2009Data;
+      var returnType = Role;
 
       return this.apiClient.callApi(
-        '/roles/{roleId}', 'GET',
+        '/v1/roles/{roleId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Get role
-     * Get a specific role.
-     * @param {Number} roleId The identifier for the role
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009Data}
+     * Get information for the specified role.
+     * @param {Number} roleId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Role}
      */
     this.getRole = function(roleId) {
       return this.getRoleWithHttpInfo(roleId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List roles for the account
-     * Show roles for this account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
-     */
-    this.getRolesWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip'],
-        'sort': opts['sort'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse2009;
-
-      return this.apiClient.callApi(
-        '/v1/roles', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * List roles for the account
-     * Show roles for this account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
-     */
-    this.getRoles = function(opts) {
-      return this.getRolesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4390,7 +3978,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Number} rulesetId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
     this.getRulesetWithHttpInfo = function(applicationId, campaignId, rulesetId) {
       var postBody = null;
@@ -4428,7 +4016,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2003Data;
+      var returnType = Ruleset;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId}', 'GET',
@@ -4443,7 +4031,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Number} rulesetId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
      */
     this.getRuleset = function(applicationId, campaignId, rulesetId) {
       return this.getRulesetWithHttpInfo(applicationId, campaignId, rulesetId)
@@ -4462,7 +4050,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     this.getRulesetsWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -4498,7 +4086,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2003;
+      var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/rulesets', 'GET',
@@ -4516,7 +4104,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     this.getRulesets = function(applicationId, campaignId, opts) {
       return this.getRulesetsWithHttpInfo(applicationId, campaignId, opts)
@@ -4530,7 +4118,7 @@
      * Get a single User
      * Retrieves the data (including an invitation code) for a user. Non-admin users can only get themselves. 
      * @param {Number} userId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
      */
     this.getUserWithHttpInfo = function(userId) {
       var postBody = null;
@@ -4556,7 +4144,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20027Data;
+      var returnType = User;
 
       return this.apiClient.callApi(
         '/v1/users/{userId}', 'GET',
@@ -4569,7 +4157,7 @@
      * Get a single User
      * Retrieves the data (including an invitation code) for a user. Non-admin users can only get themselves. 
      * @param {Number} userId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
      */
     this.getUser = function(userId) {
       return this.getUserWithHttpInfo(userId)
@@ -4586,7 +4174,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
      */
     this.getUsersWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4610,7 +4198,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20027;
+      var returnType = InlineResponse20023;
 
       return this.apiClient.callApi(
         '/v1/users', 'GET',
@@ -4626,7 +4214,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
      */
     this.getUsers = function(opts) {
       return this.getUsersWithHttpInfo(opts)
@@ -4640,7 +4228,7 @@
      * Get Webhook
      * Returns an webhook by its id.
      * @param {Number} webhookId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023Data} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Webhook} and HTTP response
      */
     this.getWebhookWithHttpInfo = function(webhookId) {
       var postBody = null;
@@ -4666,7 +4254,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20023Data;
+      var returnType = Webhook;
 
       return this.apiClient.callApi(
         '/v1/webhooks/{webhookId}', 'GET',
@@ -4679,7 +4267,7 @@
      * Get Webhook
      * Returns an webhook by its id.
      * @param {Number} webhookId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023Data}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Webhook}
      */
     this.getWebhook = function(webhookId) {
       return this.getWebhookWithHttpInfo(webhookId)
@@ -4702,7 +4290,7 @@
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
      */
     this.getWebhookActivationLogsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4732,7 +4320,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20024;
+      var returnType = InlineResponse20020;
 
       return this.apiClient.callApi(
         '/v1/webhook_activation_logs', 'GET',
@@ -4754,7 +4342,7 @@
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
      */
     this.getWebhookActivationLogs = function(opts) {
       return this.getWebhookActivationLogsWithHttpInfo(opts)
@@ -4778,7 +4366,7 @@
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
      */
     this.getWebhookLogsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4809,7 +4397,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20025;
+      var returnType = InlineResponse20021;
 
       return this.apiClient.callApi(
         '/v1/webhook_logs', 'GET',
@@ -4832,7 +4420,7 @@
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
      */
     this.getWebhookLogs = function(opts) {
       return this.getWebhookLogsWithHttpInfo(opts)
@@ -4850,7 +4438,7 @@
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20019} and HTTP response
      */
     this.getWebhooksWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4875,7 +4463,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20023;
+      var returnType = InlineResponse20019;
 
       return this.apiClient.callApi(
         '/v1/webhooks', 'GET',
@@ -4892,7 +4480,7 @@
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20019}
      */
     this.getWebhooks = function(opts) {
       return this.getWebhooksWithHttpInfo(opts)
@@ -4903,7 +4491,7 @@
 
 
     /**
-     * Triger refresh on stale analytics.
+     * Trigger refresh on stale analytics.
      * Should be used to trigger a manual refresh of analytics.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -4935,7 +4523,7 @@
     }
 
     /**
-     * Triger refresh on stale analytics.
+     * Trigger refresh on stale analytics.
      * Should be used to trigger a manual refresh of analytics.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -4948,18 +4536,32 @@
 
 
     /**
-     * Renew the token for an API key
-     * Renew the token for an API key.
+     * Deduct points in a certain loyalty program for the specified customer
+     * 
+     * @param {String} programID 
+     * @param {String} integrationID 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body14} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008Data} and HTTP response
+     * @param {module:model/LoyaltyPoints} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.renewAPITokenWithHttpInfo = function(opts) {
+    this.removeLoyaltyPointsWithHttpInfo = function(programID, integrationID, opts) {
       opts = opts || {};
       var postBody = opts['body'];
 
+      // verify the required parameter 'programID' is set
+      if (programID === undefined || programID === null) {
+        throw new Error("Missing the required parameter 'programID' when calling removeLoyaltyPoints");
+      }
+
+      // verify the required parameter 'integrationID' is set
+      if (integrationID === undefined || integrationID === null) {
+        throw new Error("Missing the required parameter 'integrationID' when calling removeLoyaltyPoints");
+      }
+
 
       var pathParams = {
+        'programID': programID,
+        'integrationID': integrationID
       };
       var queryParams = {
       };
@@ -4973,24 +4575,26 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2008Data;
+      var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1/api_keys/renew_token', 'PUT',
+        '/v1/loyalty_programs/{programID}/profile/{integrationID}/deduct_points', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Renew the token for an API key
-     * Renew the token for an API key.
+     * Deduct points in a certain loyalty program for the specified customer
+     * 
+     * @param {String} programID 
+     * @param {String} integrationID 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body14} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008Data}
+     * @param {module:model/LoyaltyPoints} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.renewAPIToken = function(opts) {
-      return this.renewAPITokenWithHttpInfo(opts)
+    this.removeLoyaltyPoints = function(programID, integrationID, opts) {
+      return this.removeLoyaltyPointsWithHttpInfo(programID, integrationID, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5001,8 +4605,8 @@
      * Reset password
      * Consumes the supplied password reset token and updates the password for the associated account. 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body26} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2041} and HTTP response
+     * @param {module:model/NewPassword} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewPassword} and HTTP response
      */
     this.resetPasswordWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -5023,7 +4627,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2041;
+      var returnType = NewPassword;
 
       return this.apiClient.callApi(
         '/v1/reset_password', 'POST',
@@ -5036,8 +4640,8 @@
      * Reset password
      * Consumes the supplied password reset token and updates the password for the associated account. 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body26} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2041}
+     * @param {module:model/NewPassword} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewPassword}
      */
     this.resetPassword = function(opts) {
       return this.resetPasswordWithHttpInfo(opts)
@@ -5065,8 +4669,8 @@
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Object} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     this.searchCouponsAdvancedWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -5111,7 +4715,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced', 'POST',
@@ -5138,8 +4742,8 @@
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Object} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     this.searchCouponsAdvanced = function(applicationId, campaignId, opts) {
       return this.searchCouponsAdvancedWithHttpInfo(applicationId, campaignId, opts)
@@ -5167,8 +4771,8 @@
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {Object} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     this.searchCouponsAdvancedApplicationWideWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -5208,7 +4812,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/coupons_search_advanced', 'POST',
@@ -5235,8 +4839,8 @@
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {Object} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     this.searchCouponsAdvancedApplicationWide = function(applicationId, opts) {
       return this.searchCouponsAdvancedApplicationWideWithHttpInfo(applicationId, opts)
@@ -5247,27 +4851,53 @@
 
 
     /**
-     * Update API key data
-     * Change an existing API key.
-     * @param {Number} apiKeyId The identifier for the API key
+     * Get a list of the coupons that match the given attributes in all active campaigns of an application
+     * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
+     * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body15} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008Data} and HTTP response
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only coupons where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only coupons where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
+     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
+     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
-    this.updateAPIKeyWithHttpInfo = function(apiKeyId, opts) {
+    this.searchCouponsAdvancedApplicationWideWithoutTotalCountWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
       var postBody = opts['body'];
 
-      // verify the required parameter 'apiKeyId' is set
-      if (apiKeyId === undefined || apiKeyId === null) {
-        throw new Error("Missing the required parameter 'apiKeyId' when calling updateAPIKey");
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling searchCouponsAdvancedApplicationWideWithoutTotalCount");
       }
 
 
       var pathParams = {
-        'apiKeyId': apiKeyId
+        'applicationId': applicationId
       };
       var queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'sort': opts['sort'],
+        'value': opts['value'],
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
+        'valid': opts['valid'],
+        'usable': opts['usable'],
+        'referralId': opts['referralId'],
+        'recipientIntegrationId': opts['recipientIntegrationId'],
+        'batchId': opts['batchId'],
+        'exactMatch': opts['exactMatch'],
+        'campaignState': opts['campaignState'],
       };
       var collectionQueryParams = {
       };
@@ -5279,25 +4909,38 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2008Data;
+      var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
-        '/api_keys/{apiKeyId}', 'PUT',
+        '/v1/applications/{applicationId}/coupons_search_advanced/no_total', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Update API key data
-     * Change an existing API key.
-     * @param {Number} apiKeyId The identifier for the API key
+     * Get a list of the coupons that match the given attributes in all active campaigns of an application
+     * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
+     * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body15} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008Data}
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only coupons where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only coupons where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
+     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
+     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
-    this.updateAPIKey = function(apiKeyId, opts) {
-      return this.updateAPIKeyWithHttpInfo(apiKeyId, opts)
+    this.searchCouponsAdvancedApplicationWideWithoutTotalCount = function(applicationId, opts) {
+      return this.searchCouponsAdvancedApplicationWideWithoutTotalCountWithHttpInfo(applicationId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5305,20 +4948,122 @@
 
 
     /**
-     * Update Account
-     * Update the details of your companies Talon.One account. The fields below are the only ones that accept updates via the API. 
+     * Get a list of the coupons that match the given attributes
+     * Gets a list of all the coupons with attributes matching the query criteria 
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only coupons where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only coupons where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
+     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
+     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     */
+    this.searchCouponsAdvancedWithoutTotalCountWithHttpInfo = function(applicationId, campaignId, opts) {
+      opts = opts || {};
+      var postBody = opts['body'];
+
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling searchCouponsAdvancedWithoutTotalCount");
+      }
+
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling searchCouponsAdvancedWithoutTotalCount");
+      }
+
+
+      var pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      var queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'sort': opts['sort'],
+        'value': opts['value'],
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
+        'valid': opts['valid'],
+        'usable': opts['usable'],
+        'referralId': opts['referralId'],
+        'recipientIntegrationId': opts['recipientIntegrationId'],
+        'exactMatch': opts['exactMatch'],
+        'batchId': opts['batchId'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse2004;
+
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get a list of the coupons that match the given attributes
+     * Gets a list of all the coupons with attributes matching the query criteria 
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
+     * @param {module:model/String} opts.valid Either \&quot;expired\&quot;, \&quot;validNow\&quot;, or \&quot;validFuture\&quot;. The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String} opts.usable Either \&quot;true\&quot; or \&quot;false\&quot;. If \&quot;true\&quot;, only coupons where &#x60;usageCounter &lt; usageLimit&#x60; will be returned, \&quot;false\&quot; will return only coupons where &#x60;usageCounter &gt;&#x3D; usageLimit&#x60;. 
+     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field
+     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {module:model/AttributeQuery} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     */
+    this.searchCouponsAdvancedWithoutTotalCount = function(applicationId, campaignId, opts) {
+      return this.searchCouponsAdvancedWithoutTotalCountWithHttpInfo(applicationId, campaignId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Set account limits
+     * sets account limits  
      * @param {Number} accountId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body27} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
+     * @param {module:model/AccountLimits} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.updateAccountWithHttpInfo = function(accountId, opts) {
+    this.setAccountLimitsWithHttpInfo = function(accountId, opts) {
       opts = opts || {};
       var postBody = opts['body'];
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateAccount");
+        throw new Error("Missing the required parameter 'accountId' when calling setAccountLimits");
       }
 
 
@@ -5337,143 +5082,25 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20029;
+      var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1/accounts/{accountId}', 'PUT',
+        '/v1/accounts/{accountId}/limits', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Update Account
-     * Update the details of your companies Talon.One account. The fields below are the only ones that accept updates via the API. 
+     * Set account limits
+     * sets account limits  
      * @param {Number} accountId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body27} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
+     * @param {module:model/AccountLimits} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.updateAccount = function(accountId, opts) {
-      return this.updateAccountWithHttpInfo(accountId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update Application data
-     * Change the application specified by the ID.
-     * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body1} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200Data} and HTTP response
-     */
-    this.updateApplicationWithHttpInfo = function(applicationId, opts) {
-      opts = opts || {};
-      var postBody = opts['body'];
-
-      // verify the required parameter 'applicationId' is set
-      if (applicationId === undefined || applicationId === null) {
-        throw new Error("Missing the required parameter 'applicationId' when calling updateApplication");
-      }
-
-
-      var pathParams = {
-        'applicationId': applicationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse200Data;
-
-      return this.apiClient.callApi(
-        '/v1/applications/{applicationId}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Update Application data
-     * Change the application specified by the ID.
-     * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body1} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200Data}
-     */
-    this.updateApplication = function(applicationId, opts) {
-      return this.updateApplicationWithHttpInfo(applicationId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update a custom attribute
-     * Updates an existing custom attribute. Once created, the only property of a custom attribute that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. E.g. if you have a customer profile attribute with the name &#x60;region&#x60;, and your integration is sending &#x60;attributes.region&#x60; with customer profile updates, changing the name to &#x60;locale&#x60; would cause the integration requests to begin failing.  If you **really** need to change the &#x60;type&#x60; or &#x60;name&#x60; property of a custom attribute, create a new attribute and update any relevant integrations and rules to use the new attribute. Then delete the old attribute when you are confident you have migrated any needed data from the old attribute to the new one. 
-     * @param {Number} attributeId 
-     * @param {module:model/Body19} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
-     */
-    this.updateAttributeWithHttpInfo = function(attributeId, body) {
-      var postBody = body;
-
-      // verify the required parameter 'attributeId' is set
-      if (attributeId === undefined || attributeId === null) {
-        throw new Error("Missing the required parameter 'attributeId' when calling updateAttribute");
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateAttribute");
-      }
-
-
-      var pathParams = {
-        'attributeId': attributeId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20022;
-
-      return this.apiClient.callApi(
-        '/v1/attributes/{attributeId}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Update a custom attribute
-     * Updates an existing custom attribute. Once created, the only property of a custom attribute that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. E.g. if you have a customer profile attribute with the name &#x60;region&#x60;, and your integration is sending &#x60;attributes.region&#x60; with customer profile updates, changing the name to &#x60;locale&#x60; would cause the integration requests to begin failing.  If you **really** need to change the &#x60;type&#x60; or &#x60;name&#x60; property of a custom attribute, create a new attribute and update any relevant integrations and rules to use the new attribute. Then delete the old attribute when you are confident you have migrated any needed data from the old attribute to the new one. 
-     * @param {Number} attributeId 
-     * @param {module:model/Body19} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
-     */
-    this.updateAttribute = function(attributeId, body) {
-      return this.updateAttributeWithHttpInfo(attributeId, body)
+    this.setAccountLimits = function(accountId, opts) {
+      return this.setAccountLimitsWithHttpInfo(accountId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5486,8 +5113,8 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body4} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001Data} and HTTP response
+     * @param {module:model/UpdateCampaign} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Campaign} and HTTP response
      */
     this.updateCampaignWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -5520,7 +5147,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2001Data;
+      var returnType = Campaign;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}', 'PUT',
@@ -5535,8 +5162,8 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body4} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001Data}
+     * @param {module:model/UpdateCampaign} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Campaign}
      */
     this.updateCampaign = function(applicationId, campaignId, opts) {
       return this.updateCampaignWithHttpInfo(applicationId, campaignId, opts)
@@ -5551,8 +5178,8 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body3} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @param {module:model/NewCampaignSet} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CampaignSet} and HTTP response
      */
     this.updateCampaignSetWithHttpInfo = function(applicationId, opts) {
       opts = opts || {};
@@ -5579,7 +5206,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2002;
+      var returnType = CampaignSet;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaign_set', 'PUT',
@@ -5593,8 +5220,8 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body3} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @param {module:model/NewCampaignSet} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CampaignSet}
      */
     this.updateCampaignSet = function(applicationId, opts) {
       return this.updateCampaignSetWithHttpInfo(applicationId, opts)
@@ -5611,8 +5238,8 @@
      * @param {Number} campaignId 
      * @param {String} couponId The ID of the coupon code to update
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body10} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004Data} and HTTP response
+     * @param {module:model/UpdateCoupon} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coupon} and HTTP response
      */
     this.updateCouponWithHttpInfo = function(applicationId, campaignId, couponId, opts) {
       opts = opts || {};
@@ -5651,7 +5278,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2004Data;
+      var returnType = Coupon;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId}', 'PUT',
@@ -5667,8 +5294,8 @@
      * @param {Number} campaignId 
      * @param {String} couponId The ID of the coupon code to update
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body10} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004Data}
+     * @param {module:model/UpdateCoupon} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coupon}
      */
     this.updateCoupon = function(applicationId, campaignId, couponId, opts) {
       return this.updateCouponWithHttpInfo(applicationId, campaignId, couponId, opts)
@@ -5679,75 +5306,32 @@
 
 
     /**
-     * Update Campaign Manager config
-     * Updates your personal configuration of the Campaign Manager. As mentioned above, this configuration has no effect on the behaviour of the API or environment. 
+     * Update a Batch of Coupons
+     * 
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body29} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
+     * @param {module:model/UpdateCouponBatch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.updateManagerConfigWithHttpInfo = function(opts) {
+    this.updateCouponBatchWithHttpInfo = function(applicationId, campaignId, opts) {
       opts = opts || {};
       var postBody = opts['body'];
 
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling updateCouponBatch");
+      }
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20030;
-
-      return this.apiClient.callApi(
-        '/v1/manager_config', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Update Campaign Manager config
-     * Updates your personal configuration of the Campaign Manager. As mentioned above, this configuration has no effect on the behaviour of the API or environment. 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body29} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
-     */
-    this.updateManagerConfig = function(opts) {
-      return this.updateManagerConfigWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update role data
-     * Change an existing role.
-     * @param {String} roleId The identifier for this role.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body17} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009Data} and HTTP response
-     */
-    this.updateRoleWithHttpInfo = function(roleId, opts) {
-      opts = opts || {};
-      var postBody = opts['body'];
-
-      // verify the required parameter 'roleId' is set
-      if (roleId === undefined || roleId === null) {
-        throw new Error("Missing the required parameter 'roleId' when calling updateRole");
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling updateCouponBatch");
       }
 
 
       var pathParams = {
-        'roleId': roleId
+        'applicationId': applicationId,
+        'campaignId': campaignId
       };
       var queryParams = {
       };
@@ -5761,25 +5345,26 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2009Data;
+      var returnType = null;
 
       return this.apiClient.callApi(
-        '/roles/{roleId}', 'PUT',
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Update role data
-     * Change an existing role.
-     * @param {String} roleId The identifier for this role.
+     * Update a Batch of Coupons
+     * 
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body17} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009Data}
+     * @param {module:model/UpdateCouponBatch} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.updateRole = function(roleId, opts) {
-      return this.updateRoleWithHttpInfo(roleId, opts)
+    this.updateCouponBatch = function(applicationId, campaignId, opts) {
+      return this.updateCouponBatchWithHttpInfo(applicationId, campaignId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5793,8 +5378,8 @@
      * @param {Number} campaignId 
      * @param {Number} rulesetId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body8} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003Data} and HTTP response
+     * @param {module:model/NewRuleset} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
     this.updateRulesetWithHttpInfo = function(applicationId, campaignId, rulesetId, opts) {
       opts = opts || {};
@@ -5833,7 +5418,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2003Data;
+      var returnType = Ruleset;
 
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId}', 'PUT',
@@ -5849,179 +5434,11 @@
      * @param {Number} campaignId 
      * @param {Number} rulesetId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/Body8} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003Data}
+     * @param {module:model/NewRuleset} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
      */
     this.updateRuleset = function(applicationId, campaignId, rulesetId, opts) {
       return this.updateRulesetWithHttpInfo(applicationId, campaignId, rulesetId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update User data
-     * 
-     * @param {Number} userId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body23} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027Data} and HTTP response
-     */
-    this.updateUserWithHttpInfo = function(userId, opts) {
-      opts = opts || {};
-      var postBody = opts['body'];
-
-      // verify the required parameter 'userId' is set
-      if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling updateUser");
-      }
-
-
-      var pathParams = {
-        'userId': userId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20027Data;
-
-      return this.apiClient.callApi(
-        '/v1/users/{userId}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Update User data
-     * 
-     * @param {Number} userId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Body23} opts.body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027Data}
-     */
-    this.updateUser = function(userId, opts) {
-      return this.updateUserWithHttpInfo(userId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Updates the latest feature without the need of the user&#39;s password
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/LatestFeature} opts.latestFeature 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.updateUserLatestFeatureWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['latestFeature'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/misc/update_user_latest_feature', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Updates the latest feature without the need of the user&#39;s password
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/LatestFeature} opts.latestFeature 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.updateUserLatestFeature = function(opts) {
-      return this.updateUserLatestFeatureWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update Webhook
-     * Updates an existing webhook.
-     * @param {Number} webhookId 
-     * @param {module:model/Body21} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023Data} and HTTP response
-     */
-    this.updateWebhookWithHttpInfo = function(webhookId, body) {
-      var postBody = body;
-
-      // verify the required parameter 'webhookId' is set
-      if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling updateWebhook");
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateWebhook");
-      }
-
-
-      var pathParams = {
-        'webhookId': webhookId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse20023Data;
-
-      return this.apiClient.callApi(
-        '/v1/webhooks/{webhookId}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Update Webhook
-     * Updates an existing webhook.
-     * @param {Number} webhookId 
-     * @param {module:model/Body21} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023Data}
-     */
-    this.updateWebhook = function(webhookId, body) {
-      return this.updateWebhookWithHttpInfo(webhookId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

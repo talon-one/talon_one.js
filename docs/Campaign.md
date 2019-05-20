@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | This campaign&#39;s ID. Unique ID for this entity. | 
+**id** | **Number** | Unique ID for this entity. | 
 **created** | **Date** | The exact moment this entity was created. | 
 **applicationId** | **Number** | The ID of the application that owns this entity. | 
 **userId** | **Number** | The ID of the account that owns this entity. | 
@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **activeRulesetId** | **Number** | ID of Ruleset this campaign applies on customer session evaluation. | [optional] 
 **tags** | **[String]** | A list of tags for the campaign. | 
 **features** | **[String]** | A list of features for the campaign. | 
-**couponSettings** | [**InlineResponse2001CouponSettings**](InlineResponse2001CouponSettings.md) |  | [optional] 
-**referralSettings** | [**InlineResponse2001CouponSettings**](InlineResponse2001CouponSettings.md) |  | [optional] 
-**limits** | [**[InlineResponse2001Limits]**](InlineResponse2001Limits.md) | The set of limits that will operate for this campaign | 
+**couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
+**referralSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
+**limits** | [**[LimitConfig]**](LimitConfig.md) | The set of limits that will operate for this campaign | 
 **couponRedemptionCount** | **Number** | Number of coupons redeemed in the campaign. | [optional] 
 **referralRedemptionCount** | **Number** | Number of referral codes redeemed in the campaign. | [optional] 
 **discountCount** | **Number** | Total amount of discounts redeemed in the campaign. | [optional] 

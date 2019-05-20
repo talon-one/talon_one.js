@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **activeRulesetId** | **Number** | ID of Ruleset this campaign applies on customer session evaluation. | [optional] 
 **tags** | **[String]** | A list of tags for the campaign. | 
 **features** | **[String]** | A list of features for the campaign. | 
-**couponSettings** | [**InlineResponse2001CouponSettings**](InlineResponse2001CouponSettings.md) |  | [optional] 
-**referralSettings** | [**InlineResponse2001CouponSettings**](InlineResponse2001CouponSettings.md) |  | [optional] 
-**limits** | [**[InlineResponse2001Limits]**](InlineResponse2001Limits.md) | The set of limits that will operate for this campaign | 
+**couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
+**referralSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
+**limits** | [**[LimitConfig]**](LimitConfig.md) | The set of limits that will operate for this campaign | 
 
 
 <a name="StateEnum"></a>

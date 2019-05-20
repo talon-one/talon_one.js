@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 
 **created** | **Date** | The exact moment this entity was created. | 
-**modified** | **Date** | The exact moment this entity was last modified. | 
 **accountId** | **Number** | The ID of the account that owns this entity. | 
 **entity** | **String** | The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an &#x60;attributes&#x60; object with keys corresponding to the &#x60;name&#x60; of the custom attributes for that type. | 
 **eventType** | **String** |  | [optional] 
@@ -13,13 +12,9 @@ Name | Type | Description | Notes
 **title** | **String** | The human-readable name for the attribute that will be shown in the Campaign Manager. Like &#x60;name&#x60;, the combination of entity and title must also be unique. | 
 **type** | **String** | The data type of the attribute, a &#x60;time&#x60; attribute must be sent as a string that conforms to the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp format. | 
 **description** | **String** | A description of this attribute. | 
-**tags** | **[String]** | A list of tags for the attribute. | 
 **suggestions** | **[String]** | A list of suggestions for the attribute. | 
 **editable** | **Boolean** | Whether or not this attribute can be edited. | 
 **locked** | **Boolean** | Indicates whether this attribute is in use. If in use only title can be changed and other operations are prohibited. | [default to false]
-**lastUsed** | **Date** | Timestamp that indicates last time this attribute was used by integration API call. | [optional] 
-**lastUsedRequestUuid** | **String** | Unique id of integration API request that contained this attribute. | [optional] 
-**lastUsedApplicationId** | **Number** | Indicates which application used this attribute in integration API call. | [optional] 
 **usedAt** | **[String]** | array of rulesets where the attribute is used | 
 
 
@@ -59,6 +54,10 @@ Name | Type | Description | Notes
 * `(list string)` (value: `"(list string)"`)
 
 * `(list number)` (value: `"(list number)"`)
+
+* `(list time)` (value: `"(list time)"`)
+
+* `location` (value: `"location"`)
 
 
 

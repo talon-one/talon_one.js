@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2004Data'], factory);
+    define(['ApiClient', 'model/Coupon'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2004Data'));
+    module.exports = factory(require('../ApiClient'), require('./Coupon'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.InlineResponse2004 = factory(root.TalononeApi.ApiClient, root.TalononeApi.InlineResponse2004Data);
+    root.TalononeApi.InlineResponse2004 = factory(root.TalononeApi.ApiClient, root.TalononeApi.Coupon);
   }
-}(this, function(ApiClient, InlineResponse2004Data) {
+}(this, function(ApiClient, Coupon) {
   'use strict';
 
 
@@ -43,13 +43,13 @@
    * Constructs a new <code>InlineResponse2004</code>.
    * @alias module:model/InlineResponse2004
    * @class
-   * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/InlineResponse2004Data>} 
+   * @param hasMore {Boolean} 
+   * @param data {Array.<module:model/Coupon>} 
    */
-  var exports = function(totalResultSize, data) {
+  var exports = function(hasMore, data) {
     var _this = this;
 
-    _this['totalResultSize'] = totalResultSize;
+    _this['hasMore'] = hasMore;
     _this['data'] = data;
   };
 
@@ -64,22 +64,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('totalResultSize')) {
-        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+      if (data.hasOwnProperty('hasMore')) {
+        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [InlineResponse2004Data]);
+        obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} totalResultSize
+   * @member {Boolean} hasMore
    */
-  exports.prototype['totalResultSize'] = undefined;
+  exports.prototype['hasMore'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2004Data>} data
+   * @member {Array.<module:model/Coupon>} data
    */
   exports.prototype['data'] = undefined;
 

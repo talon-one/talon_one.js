@@ -104,12 +104,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property lastActivity (base name: "lastActivity")', function() {
-      // uncomment below and update the code to test the property lastActivity
-      //var instane = new TalononeApi.User();
-      //expect(instance).to.be();
-    });
-
     it('should have the property policy (base name: "policy")', function() {
       // uncomment below and update the code to test the property policy
       //var instane = new TalononeApi.User();
@@ -124,6 +118,12 @@
 
     it('should have the property latestFeature (base name: "latestFeature")', function() {
       // uncomment below and update the code to test the property latestFeature
+      //var instane = new TalononeApi.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
       //var instane = new TalononeApi.User();
       //expect(instance).to.be();
     });

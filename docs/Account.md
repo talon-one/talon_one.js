@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **userLimit** | **Number** | The maximum number of Campaign Manager Users covered by your plan. | [optional] 
 **campaignLimit** | **Number** | The maximum number of Campaigns covered by your plan. | [optional] 
 **apiLimit** | **Number** | The maximum number of Integration API calls covered by your plan per billing period. | [optional] 
-**applicationCount** | **Number** | The current number of Applications in your account. | [optional] 
-**userCount** | **Number** | The current number of Campaign Manager Users in your account. | [optional] 
-**campaignsActiveCount** | **Number** | The current number of active Campaigns in your account. | [optional] 
-**campaignsInactiveCount** | **Number** | The current number of inactive Campaigns in your account. | [optional] 
+**applicationCount** | **Number** | The current number of Applications in your account. | 
+**userCount** | **Number** | The current number of Campaign Manager Users in your account. | 
+**campaignsActiveCount** | **Number** | The current number of active Campaigns in your account. | 
+**campaignsInactiveCount** | **Number** | The current number of inactive Campaigns in your account. | 
 
 
 <a name="StateEnum"></a>

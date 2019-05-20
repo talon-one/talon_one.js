@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **accountId** | **Number** | The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile. | 
 **closedSessions** | **Number** | The total amount of closed sessions by a customer. A closed session is a successful purchase. | 
 **totalSales** | **Number** | Sum of all purchases made by this customer | 
-**loyaltyMemberships** | [**[InlineResponse20014LoyaltyMemberships]**](InlineResponse20014LoyaltyMemberships.md) | A list of loyalty programs joined by the customer | 
+**loyaltyMemberships** | [**[LoyaltyMembership]**](LoyaltyMembership.md) | A list of loyalty programs joined by the customer | 
 **lastActivity** | **Date** | Timestamp of the most recent event received from this customer | 
 
 

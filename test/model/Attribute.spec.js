@@ -68,12 +68,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property modified (base name: "modified")', function() {
-      // uncomment below and update the code to test the property modified
-      //var instane = new TalononeApi.Attribute();
-      //expect(instance).to.be();
-    });
-
     it('should have the property accountId (base name: "accountId")', function() {
       // uncomment below and update the code to test the property accountId
       //var instane = new TalononeApi.Attribute();
@@ -116,12 +110,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property tags (base name: "tags")', function() {
-      // uncomment below and update the code to test the property tags
-      //var instane = new TalononeApi.Attribute();
-      //expect(instance).to.be();
-    });
-
     it('should have the property suggestions (base name: "suggestions")', function() {
       // uncomment below and update the code to test the property suggestions
       //var instane = new TalononeApi.Attribute();
@@ -136,24 +124,6 @@
 
     it('should have the property locked (base name: "locked")', function() {
       // uncomment below and update the code to test the property locked
-      //var instane = new TalononeApi.Attribute();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastUsed (base name: "lastUsed")', function() {
-      // uncomment below and update the code to test the property lastUsed
-      //var instane = new TalononeApi.Attribute();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastUsedRequestUuid (base name: "lastUsedRequestUuid")', function() {
-      // uncomment below and update the code to test the property lastUsedRequestUuid
-      //var instane = new TalononeApi.Attribute();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastUsedApplicationId (base name: "lastUsedApplicationId")', function() {
-      // uncomment below and update the code to test the property lastUsedApplicationId
       //var instane = new TalononeApi.Attribute();
       //expect(instance).to.be();
     });

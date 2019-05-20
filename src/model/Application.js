@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/LoyaltyProgram'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./LoyaltyProgram'));
   } else {
     // Browser globals (root is window)
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.Application = factory(root.TalononeApi.ApiClient);
+    root.TalononeApi.Application = factory(root.TalononeApi.ApiClient, root.TalononeApi.LoyaltyProgram);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, LoyaltyProgram) {
   'use strict';
 
 
@@ -52,8 +52,9 @@
    * @param key {String} Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
    * @param timezone {String} A string containing an IANA timezone descriptor.
    * @param currency {String} A string describing a default currency for new customer sessions.
+   * @param loyaltyPrograms {Array.<module:model/LoyaltyProgram>} An array containing all the loyalty programs to which this application is subscribed
    */
-  var exports = function(id, created, modified, accountId, name, key, timezone, currency) {
+  var exports = function(id, created, modified, accountId, name, key, timezone, currency, loyaltyPrograms) {
     var _this = this;
 
     _this['id'] = id;
@@ -66,6 +67,7 @@
     _this['timezone'] = timezone;
     _this['currency'] = currency;
 
+    _this['loyaltyPrograms'] = loyaltyPrograms;
   };
 
   /**
@@ -108,6 +110,9 @@
       }
       if (data.hasOwnProperty('caseSensitivity')) {
         obj['caseSensitivity'] = ApiClient.convertToType(data['caseSensitivity'], 'String');
+      }
+      if (data.hasOwnProperty('loyaltyPrograms')) {
+        obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
       }
     }
     return obj;
@@ -163,6 +168,11 @@
    * @member {module:model/Application.CaseSensitivityEnum} caseSensitivity
    */
   exports.prototype['caseSensitivity'] = undefined;
+  /**
+   * An array containing all the loyalty programs to which this application is subscribed
+   * @member {Array.<module:model/LoyaltyProgram>} loyaltyPrograms
+   */
+  exports.prototype['loyaltyPrograms'] = undefined;
 
 
   /**

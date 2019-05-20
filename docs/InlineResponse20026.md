@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse20026Data]**](InlineResponse20026Data.md) |  | 
+**data** | [**[ModelImport]**](ModelImport.md) |  | 
 
 

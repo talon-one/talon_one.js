@@ -56,110 +56,14 @@
       //expect(instance).to.be.a(TalononeApi.InlineResponse20022);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property totalResultSize (base name: "totalResultSize")', function() {
+      // uncomment below and update the code to test the property totalResultSize
       //var instane = new TalononeApi.InlineResponse20022();
       //expect(instance).to.be();
     });
 
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property modified (base name: "modified")', function() {
-      // uncomment below and update the code to test the property modified
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property accountId (base name: "accountId")', function() {
-      // uncomment below and update the code to test the property accountId
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property entity (base name: "entity")', function() {
-      // uncomment below and update the code to test the property entity
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eventType (base name: "eventType")', function() {
-      // uncomment below and update the code to test the property eventType
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tags (base name: "tags")', function() {
-      // uncomment below and update the code to test the property tags
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property suggestions (base name: "suggestions")', function() {
-      // uncomment below and update the code to test the property suggestions
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property editable (base name: "editable")', function() {
-      // uncomment below and update the code to test the property editable
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property locked (base name: "locked")', function() {
-      // uncomment below and update the code to test the property locked
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastUsed (base name: "lastUsed")', function() {
-      // uncomment below and update the code to test the property lastUsed
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastUsedRequestUuid (base name: "lastUsedRequestUuid")', function() {
-      // uncomment below and update the code to test the property lastUsedRequestUuid
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastUsedApplicationId (base name: "lastUsedApplicationId")', function() {
-      // uncomment below and update the code to test the property lastUsedApplicationId
-      //var instane = new TalononeApi.InlineResponse20022();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property usedAt (base name: "usedAt")', function() {
-      // uncomment below and update the code to test the property usedAt
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new TalononeApi.InlineResponse20022();
       //expect(instance).to.be();
     });

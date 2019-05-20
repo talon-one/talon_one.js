@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse2003Data]**](InlineResponse2003Data.md) |  | 
+**data** | [**[Coupon]**](Coupon.md) |  | 
 
 

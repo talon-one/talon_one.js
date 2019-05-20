@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[InlineResponse20023Data]**](InlineResponse20023Data.md) |  | 
+**data** | [**[User]**](User.md) |  | 
 
 

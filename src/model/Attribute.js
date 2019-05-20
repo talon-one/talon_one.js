@@ -46,25 +46,22 @@
    * @class
    * @param id {Number} Unique ID for this entity.
    * @param created {Date} The exact moment this entity was created.
-   * @param modified {Date} The exact moment this entity was last modified.
    * @param accountId {Number} The ID of the account that owns this entity.
    * @param entity {module:model/Attribute.EntityEnum} The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an `attributes` object with keys corresponding to the `name` of the custom attributes for that type.
    * @param name {String} The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload. 
    * @param title {String} The human-readable name for the attribute that will be shown in the Campaign Manager. Like `name`, the combination of entity and title must also be unique.
    * @param type {module:model/Attribute.TypeEnum} The data type of the attribute, a `time` attribute must be sent as a string that conforms to the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp format.
    * @param description {String} A description of this attribute.
-   * @param tags {Array.<String>} A list of tags for the attribute.
    * @param suggestions {Array.<String>} A list of suggestions for the attribute.
    * @param editable {Boolean} Whether or not this attribute can be edited.
    * @param locked {Boolean} Indicates whether this attribute is in use. If in use only title can be changed and other operations are prohibited.
    * @param usedAt {Array.<String>} array of rulesets where the attribute is used
    */
-  var exports = function(id, created, modified, accountId, entity, name, title, type, description, tags, suggestions, editable, locked, usedAt) {
+  var exports = function(id, created, accountId, entity, name, title, type, description, suggestions, editable, locked, usedAt) {
     var _this = this;
 
     _this['id'] = id;
     _this['created'] = created;
-    _this['modified'] = modified;
     _this['accountId'] = accountId;
     _this['entity'] = entity;
 
@@ -72,13 +69,9 @@
     _this['title'] = title;
     _this['type'] = type;
     _this['description'] = description;
-    _this['tags'] = tags;
     _this['suggestions'] = suggestions;
     _this['editable'] = editable;
     _this['locked'] = locked;
-
-
-
     _this['usedAt'] = usedAt;
   };
 
@@ -98,9 +91,6 @@
       }
       if (data.hasOwnProperty('created')) {
         obj['created'] = ApiClient.convertToType(data['created'], 'Date');
-      }
-      if (data.hasOwnProperty('modified')) {
-        obj['modified'] = ApiClient.convertToType(data['modified'], 'Date');
       }
       if (data.hasOwnProperty('accountId')) {
         obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
@@ -123,9 +113,6 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('tags')) {
-        obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
-      }
       if (data.hasOwnProperty('suggestions')) {
         obj['suggestions'] = ApiClient.convertToType(data['suggestions'], ['String']);
       }
@@ -134,15 +121,6 @@
       }
       if (data.hasOwnProperty('locked')) {
         obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
-      }
-      if (data.hasOwnProperty('lastUsed')) {
-        obj['lastUsed'] = ApiClient.convertToType(data['lastUsed'], 'Date');
-      }
-      if (data.hasOwnProperty('lastUsedRequestUuid')) {
-        obj['lastUsedRequestUuid'] = ApiClient.convertToType(data['lastUsedRequestUuid'], 'String');
-      }
-      if (data.hasOwnProperty('lastUsedApplicationId')) {
-        obj['lastUsedApplicationId'] = ApiClient.convertToType(data['lastUsedApplicationId'], 'Number');
       }
       if (data.hasOwnProperty('usedAt')) {
         obj['usedAt'] = ApiClient.convertToType(data['usedAt'], ['String']);
@@ -161,11 +139,6 @@
    * @member {Date} created
    */
   exports.prototype['created'] = undefined;
-  /**
-   * The exact moment this entity was last modified.
-   * @member {Date} modified
-   */
-  exports.prototype['modified'] = undefined;
   /**
    * The ID of the account that owns this entity.
    * @member {Number} accountId
@@ -201,11 +174,6 @@
    */
   exports.prototype['description'] = undefined;
   /**
-   * A list of tags for the attribute.
-   * @member {Array.<String>} tags
-   */
-  exports.prototype['tags'] = undefined;
-  /**
    * A list of suggestions for the attribute.
    * @member {Array.<String>} suggestions
    */
@@ -221,21 +189,6 @@
    * @default false
    */
   exports.prototype['locked'] = false;
-  /**
-   * Timestamp that indicates last time this attribute was used by integration API call.
-   * @member {Date} lastUsed
-   */
-  exports.prototype['lastUsed'] = undefined;
-  /**
-   * Unique id of integration API request that contained this attribute.
-   * @member {String} lastUsedRequestUuid
-   */
-  exports.prototype['lastUsedRequestUuid'] = undefined;
-  /**
-   * Indicates which application used this attribute in integration API call.
-   * @member {Number} lastUsedApplicationId
-   */
-  exports.prototype['lastUsedApplicationId'] = undefined;
   /**
    * array of rulesets where the attribute is used
    * @member {Array.<String>} usedAt
@@ -320,7 +273,17 @@
      * value: "(list number)"
      * @const
      */
-    "(list number)": "(list number)"  };
+    "(list number)": "(list number)",
+    /**
+     * value: "(list time)"
+     * @const
+     */
+    "(list time)": "(list time)",
+    /**
+     * value: "location"
+     * @const
+     */
+    "location": "location"  };
 
 
   return exports;

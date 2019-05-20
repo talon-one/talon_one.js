@@ -56,38 +56,38 @@
       //expect(instance).to.be.a(TalononeApi.Role);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new TalononeApi.Role();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property policy (base name: "policy")', function() {
-      // uncomment below and update the code to test the property policy
-      //var instane = new TalononeApi.Role();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new TalononeApi.Role();
       //expect(instance).to.be();
     });
 
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
+    it('should have the property accountID (base name: "accountID")', function() {
+      // uncomment below and update the code to test the property accountID
       //var instane = new TalononeApi.Role();
       //expect(instance).to.be();
     });
 
-    it('should have the property modified (base name: "modified")', function() {
-      // uncomment below and update the code to test the property modified
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new TalononeApi.Role();
       //expect(instance).to.be();
     });
 
-    it('should have the property accountId (base name: "accountId")', function() {
-      // uncomment below and update the code to test the property accountId
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalononeApi.Role();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property members (base name: "members")', function() {
+      // uncomment below and update the code to test the property members
+      //var instane = new TalononeApi.Role();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property acl (base name: "acl")', function() {
+      // uncomment below and update the code to test the property acl
       //var instane = new TalononeApi.Role();
       //expect(instance).to.be();
     });
