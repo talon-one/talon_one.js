@@ -1,8 +1,8 @@
 {
-  "name": "talonone_api",
-  "version": "1.0.0",
-  "description": "The_Talon_One_API_is_used_to_manage_applications_and_campaigns_as_well_as_tointegrate_with_your_application__The_operations_in_the__Integration_API__sectionare_used_to_integrate_with_our_platform_while_the_other_operations_areused_to_manage_applications_and_campaigns__Where_is_the_APIThe_API_is_available_at_the_same_hostname_as_these_docs__For_example_if_you_are_reading_this_page_at_httpsmycompany_talon_onedocsapi_the_URL_for_the__updateCustomerProfile_operation_is_httpsmycompany_talon_onev1customer_profilesid_updateCustomerProfile_operation__v1_customer_profiles__integrationId__put",
-  "license": "Unlicense",
+  "name": "talon_one",
+  "version": "1.1.0",
+  "description": "Talon.One integration and management sdks",
+  "license": "MIT",
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
