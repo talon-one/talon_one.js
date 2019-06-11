@@ -20,7 +20,7 @@ please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.co
 Then install it via:
 
 ```shell
-npm install talonone_api --save
+npm install talon_one --save
 ```
 
 ##### Local development
@@ -38,13 +38,13 @@ Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the follow
 npm link
 ```
 
-Finally, switch to the directory you want to use your talonone_api from, and run:
+Finally, switch to the directory you want to use your talon_one from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('talonone_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('talon_one')` in javascript files from the directory you ran the last 
 command above from.
 
 #### git
@@ -93,7 +93,7 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 
 var defaultClient = TalononeApi.ApiClient.instance;
 
