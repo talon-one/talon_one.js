@@ -39,5 +39,8 @@ api.updateCustomerProfile('exampleprofileid', opts).then(
     console.error(error);
   }
 );
-
 ```
+
+## Docs
+
+For more details on authorization refer to the [Talon.One docs](https://developers.talon.one/Integration-API/Authentication)
