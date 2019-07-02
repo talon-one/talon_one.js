@@ -1,4 +1,4 @@
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 
 var defaultClient = TalononeApi.ApiClient.instance;
 

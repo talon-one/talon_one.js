@@ -94,7 +94,7 @@ Add points in a certain loyalty program for the specified customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -151,7 +151,7 @@ Copy the campaign into every specified application.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -208,7 +208,7 @@ Create a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -262,7 +262,7 @@ Create coupons according to some pattern. Up to 20.000 coupons can be created wi
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -321,7 +321,7 @@ Sends an email with a password recovery link to the email of an existing account
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -372,7 +372,7 @@ Create a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -429,7 +429,7 @@ Create a Session
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -480,7 +480,7 @@ Delete a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -533,7 +533,7 @@ Delete one Coupon
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -589,7 +589,7 @@ Delete Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -670,7 +670,7 @@ Delete one Referral
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -726,7 +726,7 @@ Delete a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -782,7 +782,7 @@ Get access logs for application
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -852,7 +852,7 @@ Get access logs for application
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -922,7 +922,7 @@ Return the details of your companies Talon.One account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -972,7 +972,7 @@ Return the analytics of your companies Talon.One account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1022,7 +1022,7 @@ Returns a list of all account limits set
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1072,7 +1072,7 @@ Fetches the access logs for the entire account. Sensitive requests (logins) are 
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1137,7 +1137,7 @@ Get all roles.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1181,7 +1181,7 @@ Get the application specified by the ID.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1231,7 +1231,7 @@ Get report of health of application API
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1281,7 +1281,7 @@ Get Application Customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1334,7 +1334,7 @@ List Application Customers
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1384,7 +1384,7 @@ Gets a list of all the customer profiles for the account that exactly match a se
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: integration_auth
@@ -1435,7 +1435,7 @@ Get all of the distinct values of the Event &#x60;type&#x60; property for events
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1493,7 +1493,7 @@ Lists all events recorded for an application.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1573,7 +1573,7 @@ Lists all events recorded for an application. Instead of having the total number
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1653,7 +1653,7 @@ Get Application Session
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1706,7 +1706,7 @@ List Application Sessions
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1766,7 +1766,7 @@ List all application in the current account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1821,7 +1821,7 @@ Returns custom attribute for the account by its id.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1871,7 +1871,7 @@ Get a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1924,7 +1924,7 @@ Get analytics of campaigns
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -1987,7 +1987,7 @@ Gets a list of all the campaigns that exactly match a set of attributes.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2049,7 +2049,7 @@ List CampaignSet
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2099,7 +2099,7 @@ List your Campaigns
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2159,7 +2159,7 @@ Get list of changes caused by API calls for an account. Only accessible for admi
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2214,7 +2214,7 @@ List Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2301,7 +2301,7 @@ Gets a list of all the coupons that exactly match a set of attributes.  The matc
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2382,7 +2382,7 @@ Gets a list of all the coupons with attributes matching the query criteria Appli
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2462,7 +2462,7 @@ List Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2541,7 +2541,7 @@ Fetch summary report for single application customer based on a time range
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2606,7 +2606,7 @@ Fetch summary reports for all application customers based on a time range
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2678,7 +2678,7 @@ Fetch summary reports for all application customers based on a time range. Inste
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2750,7 +2750,7 @@ Fetch analytics for single application customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2811,7 +2811,7 @@ Get Customer Profile
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2864,7 +2864,7 @@ List Customer Profiles
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2917,7 +2917,7 @@ Gets a list of all the customer profiles for the account that exactly match a se
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -2972,7 +2972,7 @@ Fetch all event type definitions for your account. Each event type can be
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3033,7 +3033,7 @@ Get a list of all past exports
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3092,7 +3092,7 @@ Get a list of all past imports
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3145,7 +3145,7 @@ Get the Loyalty Ledger for this profile integration ID.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3198,7 +3198,7 @@ Get a loyalty program
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3248,7 +3248,7 @@ List all loyalty Programs
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3292,7 +3292,7 @@ List Referrals
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3365,7 +3365,7 @@ List Referrals
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3436,7 +3436,7 @@ Get information for the specified role.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3486,7 +3486,7 @@ Get a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3542,7 +3542,7 @@ List Campaign Rulesets
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3603,7 +3603,7 @@ Retrieves the data (including an invitation code) for a user. Non-admin users ca
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3653,7 +3653,7 @@ Retrieve all users in your account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3708,7 +3708,7 @@ Returns an webhook by its id.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3758,7 +3758,7 @@ Webhook activation log entries would be created as soon as an integration reques
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3825,7 +3825,7 @@ List Webhook Log Entries
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3894,7 +3894,7 @@ List Webhooks
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3951,7 +3951,7 @@ Should be used to trigger a manual refresh of analytics.
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -3995,7 +3995,7 @@ Deduct points in a certain loyalty program for the specified customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4052,7 +4052,7 @@ Consumes the supplied password reset token and updates the password for the asso
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4103,7 +4103,7 @@ Gets a list of all the coupons with attributes matching the query criteria
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4184,7 +4184,7 @@ Gets a list of all the coupons with attributes matching the query criteria in al
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4264,7 +4264,7 @@ Gets a list of all the coupons with attributes matching the query criteria in al
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4344,7 +4344,7 @@ Gets a list of all the coupons with attributes matching the query criteria
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4425,7 +4425,7 @@ sets account limits
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4479,7 +4479,7 @@ Update a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4536,7 +4536,7 @@ Update a Campaign Set
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4590,7 +4590,7 @@ Update a Coupon
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4650,7 +4650,7 @@ Update a Batch of Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
@@ -4707,7 +4707,7 @@ Update a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: manager_auth

@@ -11,7 +11,7 @@ npm install talon_one --save
 ## Examples
 
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 
 var defaultClient = TalononeApi.ApiClient.instance;
 

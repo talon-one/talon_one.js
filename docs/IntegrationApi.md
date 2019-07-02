@@ -21,7 +21,7 @@ Creates a referral code for an advocate. The code will be valid for the referral
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: api_key_v1
@@ -78,7 +78,7 @@ Delete all attributes on the customer profile and on entities that reference tha
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: api_key_v1
@@ -134,7 +134,7 @@ Records an arbitrary event in a customer session. For example, an integration mi
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: api_key_v1
@@ -191,7 +191,7 @@ Update (or create) a [Customer Profile][]. This profile information can then be 
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: api_key_v1
@@ -251,7 +251,7 @@ Update (or create) a [Customer Session][]. For example, the items in a customers
 
 ### Example
 ```javascript
-var TalononeApi = require('talonone_api');
+var TalononeApi = require('talon_one');
 var defaultClient = TalononeApi.ApiClient.instance;
 
 // Configure API key authorization: api_key_v1
