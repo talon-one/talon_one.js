@@ -44,16 +44,18 @@
    * @alias module:model/NewApplicationAPIKey
    * @class
    * @param id {Number} ID of the API Key
+   * @param title {String} Title for API Key
    * @param accountID {Number} ID of account the key is used for
    * @param applicationID {Number} ID of application the key is used for
    * @param created {Date} The date the API key was created
    * @param expires {Date} The date the API key expired
    * @param key {String} Raw API Key
    */
-  var exports = function(id, accountID, applicationID, created, expires, key) {
+  var exports = function(id, title, accountID, applicationID, created, expires, key) {
     var _this = this;
 
     _this['id'] = id;
+    _this['title'] = title;
     _this['accountID'] = accountID;
     _this['applicationID'] = applicationID;
     _this['created'] = created;
@@ -74,6 +76,9 @@
 
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      }
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
       if (data.hasOwnProperty('accountID')) {
         obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
@@ -99,6 +104,11 @@
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
+  /**
+   * Title for API Key
+   * @member {String} title
+   */
+  exports.prototype['title'] = undefined;
   /**
    * ID of account the key is used for
    * @member {Number} accountID

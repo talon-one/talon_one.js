@@ -67,6 +67,7 @@
     _this['timezone'] = timezone;
     _this['currency'] = currency;
 
+
     _this['loyaltyPrograms'] = loyaltyPrograms;
   };
 
@@ -110,6 +111,9 @@
       }
       if (data.hasOwnProperty('caseSensitivity')) {
         obj['caseSensitivity'] = ApiClient.convertToType(data['caseSensitivity'], 'String');
+      }
+      if (data.hasOwnProperty('attributes')) {
+        obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
       }
       if (data.hasOwnProperty('loyaltyPrograms')) {
         obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
@@ -168,6 +172,11 @@
    * @member {module:model/Application.CaseSensitivityEnum} caseSensitivity
    */
   exports.prototype['caseSensitivity'] = undefined;
+  /**
+   * Arbitrary properties associated with this campaign
+   * @member {Object} attributes
+   */
+  exports.prototype['attributes'] = undefined;
   /**
    * An array containing all the loyalty programs to which this application is subscribed
    * @member {Array.<module:model/LoyaltyProgram>} loyaltyPrograms

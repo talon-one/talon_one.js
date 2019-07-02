@@ -57,6 +57,7 @@
     _this['timezone'] = timezone;
     _this['currency'] = currency;
 
+
   };
 
   /**
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('caseSensitivity')) {
         obj['caseSensitivity'] = ApiClient.convertToType(data['caseSensitivity'], 'String');
+      }
+      if (data.hasOwnProperty('attributes')) {
+        obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
       }
     }
     return obj;
@@ -122,6 +126,11 @@
    * @member {module:model/NewApplication.CaseSensitivityEnum} caseSensitivity
    */
   exports.prototype['caseSensitivity'] = undefined;
+  /**
+   * Arbitrary properties associated with this campaign
+   * @member {Object} attributes
+   */
+  exports.prototype['attributes'] = undefined;
 
 
   /**

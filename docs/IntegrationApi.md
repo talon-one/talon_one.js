@@ -24,6 +24,12 @@ Creates a referral code for an advocate. The code will be valid for the referral
 var TalononeApi = require('talonone_api');
 var defaultClient = TalononeApi.ApiClient.instance;
 
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
 // Configure API key authorization: integration_auth
 var integration_auth = defaultClient.authentications['integration_auth'];
 integration_auth.apiKey = 'YOUR API KEY';
@@ -55,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[integration_auth](../README.md#integration_auth)
+[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
 
 ### HTTP request headers
 
@@ -74,6 +80,12 @@ Delete all attributes on the customer profile and on entities that reference tha
 ```javascript
 var TalononeApi = require('talonone_api');
 var defaultClient = TalononeApi.ApiClient.instance;
+
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 
 // Configure API key authorization: integration_auth
 var integration_auth = defaultClient.authentications['integration_auth'];
@@ -105,7 +117,7 @@ null (empty response body)
 
 ### Authorization
 
-[integration_auth](../README.md#integration_auth)
+[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
 
 ### HTTP request headers
 
@@ -124,6 +136,12 @@ Records an arbitrary event in a customer session. For example, an integration mi
 ```javascript
 var TalononeApi = require('talonone_api');
 var defaultClient = TalononeApi.ApiClient.instance;
+
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 
 // Configure API key authorization: integration_auth
 var integration_auth = defaultClient.authentications['integration_auth'];
@@ -156,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[integration_auth](../README.md#integration_auth)
+[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
 
 ### HTTP request headers
 
@@ -175,6 +193,12 @@ Update (or create) a [Customer Profile][]. This profile information can then be 
 ```javascript
 var TalononeApi = require('talonone_api');
 var defaultClient = TalononeApi.ApiClient.instance;
+
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 
 // Configure API key authorization: integration_auth
 var integration_auth = defaultClient.authentications['integration_auth'];
@@ -210,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[integration_auth](../README.md#integration_auth)
+[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
 
 ### HTTP request headers
 
@@ -229,6 +253,12 @@ Update (or create) a [Customer Session][]. For example, the items in a customers
 ```javascript
 var TalononeApi = require('talonone_api');
 var defaultClient = TalononeApi.ApiClient.instance;
+
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 
 // Configure API key authorization: integration_auth
 var integration_auth = defaultClient.authentications['integration_auth'];
@@ -264,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[integration_auth](../README.md#integration_auth)
+[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
 
 ### HTTP request headers
 

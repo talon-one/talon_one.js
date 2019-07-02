@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **referralId** | **Number** | The integration ID of the referring customer (if any) for whom this coupon was created as an effect. | [optional] 
 **recipientIntegrationId** | **String** | The integration ID of a referred customer profile. | [optional] 
 **importId** | **Number** | The ID of the Import which created this coupon. | [optional] 
+**reservation** | **Boolean** | This value controls what reservations mean to a coupon. If set to true the coupon reservation is used to mark it as a favourite, if set to false the coupon reservation is used as a requirement of usage. This value defaults to false if not specified. | [optional] 
 **batchId** | **String** | The id of the batch the coupon belongs to. | [optional] 
 
 

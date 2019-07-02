@@ -152,6 +152,11 @@
    */
   exports.EntityEnum = {
     /**
+     * value: "Account"
+     * @const
+     */
+    "Account": "Account",
+    /**
      * value: "Application"
      * @const
      */
@@ -232,7 +237,12 @@
      * value: "location"
      * @const
      */
-    "location": "location"  };
+    "location": "location",
+    /**
+     * value: "(list location)"
+     * @const
+     */
+    "(list location)": "(list location)"  };
 
 
   return exports;

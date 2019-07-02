@@ -854,7 +854,7 @@
      * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
      * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
@@ -921,7 +921,7 @@
      * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
      * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
@@ -944,7 +944,7 @@
      * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
      * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
@@ -1011,7 +1011,7 @@
      * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
      * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
@@ -1192,7 +1192,7 @@
      * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
      * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
@@ -1252,7 +1252,7 @@
      * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
      * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
@@ -1583,7 +1583,7 @@
      * Get all of the distinct values of the Event &#x60;type&#x60; property for events recorded in the application.  See also: [Track an event](/integration-api/reference/#trackEvent) 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20018} and HTTP response
@@ -1630,7 +1630,7 @@
      * Get all of the distinct values of the Event &#x60;type&#x60; property for events recorded in the application.  See also: [Track an event](/integration-api/reference/#trackEvent) 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20018}
@@ -1648,7 +1648,7 @@
      * Lists all events recorded for an application. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
@@ -1717,7 +1717,7 @@
      * Lists all events recorded for an application. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
@@ -1746,7 +1746,7 @@
      * Lists all events recorded for an application. Instead of having the total number of results in the response, this endpoint only if there are more results. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
@@ -1815,7 +1815,7 @@
      * Lists all events recorded for an application. Instead of having the total number of results in the response, this endpoint only if there are more results. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
@@ -1905,7 +1905,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
@@ -1954,7 +1954,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
@@ -1972,7 +1972,7 @@
      * List Applications
      * List all application in the current account.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
@@ -2012,7 +2012,7 @@
      * List Applications
      * List all application in the current account.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
@@ -2227,7 +2227,7 @@
      * Gets a list of all the campaigns that exactly match a set of attributes. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
@@ -2277,7 +2277,7 @@
      * Gets a list of all the campaigns that exactly match a set of attributes. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
@@ -2350,7 +2350,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
@@ -2399,7 +2399,7 @@
      * 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
@@ -2417,7 +2417,7 @@
      * Get audit log for an account
      * Get list of changes caused by API calls for an account. Only accessible for admins.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
@@ -2457,7 +2457,7 @@
      * Get audit log for an account
      * Get list of changes caused by API calls for an account. Only accessible for admins.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
@@ -2476,7 +2476,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2556,7 +2556,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2588,7 +2588,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2661,7 +2661,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2689,7 +2689,7 @@
      * Gets a list of all the coupons with attributes matching the query criteria Application wide 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2757,7 +2757,7 @@
      * Gets a list of all the coupons with attributes matching the query criteria Application wide 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2787,7 +2787,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2859,7 +2859,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2889,7 +2889,7 @@
      * @param {Number} applicationId 
      * @param {Number} customerId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerActivityReport} and HTTP response
      */
@@ -2955,7 +2955,7 @@
      * @param {Number} applicationId 
      * @param {Number} customerId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerActivityReport}
      */
@@ -2974,7 +2974,7 @@
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.name Only return reports matching the customer name
@@ -3043,7 +3043,7 @@
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.name Only return reports matching the customer name
@@ -3067,7 +3067,7 @@
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.name Only return reports matching the customer name
@@ -3136,7 +3136,7 @@
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.name Only return reports matching the customer name
@@ -3159,7 +3159,7 @@
      * @param {Number} applicationId 
      * @param {Number} customerId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerAnalytics} and HTTP response
@@ -3213,7 +3213,7 @@
      * @param {Number} applicationId 
      * @param {Number} customerId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerAnalytics}
@@ -3291,7 +3291,7 @@
      * List Customer Profiles
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
      */
@@ -3329,7 +3329,7 @@
      * List Customer Profiles
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
      */
@@ -3345,7 +3345,7 @@
      * Get a list of the customer profiles that match the given attributes
      * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {module:model/ApplicationCustomerSearch} opts.body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
@@ -3384,7 +3384,7 @@
      * Get a list of the customer profiles that match the given attributes
      * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {module:model/ApplicationCustomerSearch} opts.body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
@@ -3404,7 +3404,7 @@
      * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
      * @param {String} opts.name Filter results to event types with the given name. This parameter implies &#x60;includeOldVersions&#x60;.
      * @param {Boolean} opts.includeOldVersions Include all versions of every event type. (default to false)
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
@@ -3450,7 +3450,7 @@
      * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
      * @param {String} opts.name Filter results to event types with the given name. This parameter implies &#x60;includeOldVersions&#x60;.
      * @param {Boolean} opts.includeOldVersions Include all versions of every event type. (default to false)
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
@@ -3467,7 +3467,7 @@
      * Get Exports
      * Get a list of all past exports 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
@@ -3511,7 +3511,7 @@
      * Get Exports
      * Get a list of all past exports 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
@@ -3530,7 +3530,7 @@
      * Get Imports
      * Get a list of all past imports 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
      */
@@ -3568,7 +3568,7 @@
      * Get Imports
      * Get a list of all past imports 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
      */
@@ -3745,7 +3745,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -3811,7 +3811,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -3836,7 +3836,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -3902,7 +3902,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4047,7 +4047,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
@@ -4101,7 +4101,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
@@ -4171,7 +4171,7 @@
      * List Users in your account
      * Retrieve all users in your account. 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
@@ -4211,7 +4211,7 @@
      * List Users in your account
      * Retrieve all users in your account. 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
@@ -4281,7 +4281,7 @@
      * List Webhook activation Log Entries
      * Webhook activation log entries would be created as soon as an integration request triggered an effect with a webhook
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.integrationRequestUuid Filter results by integration request UUID.
@@ -4333,7 +4333,7 @@
      * List Webhook activation Log Entries
      * Webhook activation log entries would be created as soon as an integration request triggered an effect with a webhook
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.integrationRequestUuid Filter results by integration request UUID.
@@ -4356,7 +4356,7 @@
      * List Webhook Log Entries
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
@@ -4410,7 +4410,7 @@
      * List Webhook Log Entries
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
@@ -4436,7 +4436,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20019} and HTTP response
      */
@@ -4478,7 +4478,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20019}
      */
@@ -4657,7 +4657,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4730,7 +4730,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4758,7 +4758,7 @@
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4826,7 +4826,7 @@
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4855,7 +4855,7 @@
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4923,7 +4923,7 @@
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4953,7 +4953,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -5026,7 +5026,7 @@
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.

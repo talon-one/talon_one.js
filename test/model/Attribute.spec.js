@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instane = new TalononeApi.Attribute();
+      //expect(instance).to.be();
+    });
+
     it('should have the property suggestions (base name: "suggestions")', function() {
       // uncomment below and update the code to test the property suggestions
       //var instane = new TalononeApi.Attribute();

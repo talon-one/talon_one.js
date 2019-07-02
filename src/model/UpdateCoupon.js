@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('attributes')) {
         obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
+      }
+      if (data.hasOwnProperty('reservation')) {
+        obj['reservation'] = ApiClient.convertToType(data['reservation'], 'Boolean');
       }
     }
     return obj;
@@ -110,6 +114,11 @@
    * @member {Object} attributes
    */
   exports.prototype['attributes'] = undefined;
+  /**
+   * This value controls what reservations mean to a coupon. If set to true the coupon reservation is used to mark it as a favourite, if set to false the coupon reservation is used as a requirement of usage. This value defaults to false if not specified.
+   * @member {Boolean} reservation
+   */
+  exports.prototype['reservation'] = undefined;
 
 
 

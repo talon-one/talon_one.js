@@ -49,6 +49,7 @@
   var exports = function(companyName, billingEmail) {
     var _this = this;
 
+
     _this['companyName'] = companyName;
     _this['billingEmail'] = billingEmail;
   };
@@ -64,6 +65,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('attributes')) {
+        obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
+      }
       if (data.hasOwnProperty('companyName')) {
         obj['companyName'] = ApiClient.convertToType(data['companyName'], 'String');
       }
@@ -74,6 +78,11 @@
     return obj;
   }
 
+  /**
+   * Arbitrary properties associated with this campaign
+   * @member {Object} attributes
+   */
+  exports.prototype['attributes'] = undefined;
   /**
    * Name of your company.
    * @member {String} companyName

@@ -76,6 +76,7 @@
     _this['userCount'] = userCount;
     _this['campaignsActiveCount'] = campaignsActiveCount;
     _this['campaignsInactiveCount'] = campaignsInactiveCount;
+
   };
 
   /**
@@ -139,6 +140,9 @@
       }
       if (data.hasOwnProperty('campaignsInactiveCount')) {
         obj['campaignsInactiveCount'] = ApiClient.convertToType(data['campaignsInactiveCount'], 'Number');
+      }
+      if (data.hasOwnProperty('attributes')) {
+        obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
       }
     }
     return obj;
@@ -228,6 +232,11 @@
    * @member {Number} campaignsInactiveCount
    */
   exports.prototype['campaignsInactiveCount'] = undefined;
+  /**
+   * Arbitrary properties associated with this campaign
+   * @member {Object} attributes
+   */
+  exports.prototype['attributes'] = undefined;
 
 
   /**

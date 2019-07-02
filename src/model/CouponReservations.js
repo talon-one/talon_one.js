@@ -25,7 +25,7 @@
     if (!root.TalononeApi) {
       root.TalononeApi = {};
     }
-    root.TalononeApi.NewCustomerProfile = factory(root.TalononeApi.ApiClient);
+    root.TalononeApi.CouponReservations = factory(root.TalononeApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,45 +34,47 @@
 
 
   /**
-   * The NewCustomerProfile model module.
-   * @module model/NewCustomerProfile
+   * The CouponReservations model module.
+   * @module model/CouponReservations
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>NewCustomerProfile</code>.
-   * @alias module:model/NewCustomerProfile
+   * Constructs a new <code>CouponReservations</code>.
+   * @alias module:model/CouponReservations
    * @class
+   * @param integrationIDs {Array.<String>} List of Integration IDs
    */
-  var exports = function() {
+  var exports = function(integrationIDs) {
     var _this = this;
 
-
+    _this['integrationIDs'] = integrationIDs;
   };
 
   /**
-   * Constructs a <code>NewCustomerProfile</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CouponReservations</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/NewCustomerProfile} obj Optional instance to populate.
-   * @return {module:model/NewCustomerProfile} The populated <code>NewCustomerProfile</code> instance.
+   * @param {module:model/CouponReservations} obj Optional instance to populate.
+   * @return {module:model/CouponReservations} The populated <code>CouponReservations</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('attributes')) {
-        obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
+      if (data.hasOwnProperty('integrationIDs')) {
+        obj['integrationIDs'] = ApiClient.convertToType(data['integrationIDs'], ['String']);
       }
     }
     return obj;
   }
 
   /**
-   * Arbitrary properties associated with this item
-   * @member {Object} attributes
+   * List of Integration IDs
+   * @member {Array.<String>} integrationIDs
    */
-  exports.prototype['attributes'] = undefined;
+  exports.prototype['integrationIDs'] = undefined;
+
 
 
   return exports;

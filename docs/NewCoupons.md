@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **uniquePrefix** | **String** | A unique prefix to prepend to all generated coupons. | [optional] 
 **attributes** | **Object** | Arbitrary properties associated with this item | [optional] 
 **recipientIntegrationId** | **String** | The integration ID for this coupon&#39;s beneficiary&#39;s profile | [optional] 
+**reservation** | **Boolean** | This value controls what reservations mean to a coupon. If set to true the coupon reservation is used to mark it as a favourite, if set to false the coupon reservation is used as a requirement of usage. This value defaults to false if not specified. | [optional] 
 
 

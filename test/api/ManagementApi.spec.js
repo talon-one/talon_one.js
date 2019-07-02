@@ -200,26 +200,6 @@
         done();
       });
     });
-    describe('getAccountAnalytics', function() {
-      it('should call getAccountAnalytics successfully', function(done) {
-        //uncomment below and update the code to test getAccountAnalytics
-        //instance.getAccountAnalytics(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getAccountLimits', function() {
-      it('should call getAccountLimits successfully', function(done) {
-        //uncomment below and update the code to test getAccountLimits
-        //instance.getAccountLimits(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getAllAccessLogs', function() {
       it('should call getAllAccessLogs successfully', function(done) {
         //uncomment below and update the code to test getAllAccessLogs
@@ -490,36 +470,6 @@
         done();
       });
     });
-    describe('getCustomerAnalytics', function() {
-      it('should call getCustomerAnalytics successfully', function(done) {
-        //uncomment below and update the code to test getCustomerAnalytics
-        //instance.getCustomerAnalytics(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCustomerProfile', function() {
-      it('should call getCustomerProfile successfully', function(done) {
-        //uncomment below and update the code to test getCustomerProfile
-        //instance.getCustomerProfile(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCustomerProfiles', function() {
-      it('should call getCustomerProfiles successfully', function(done) {
-        //uncomment below and update the code to test getCustomerProfiles
-        //instance.getCustomerProfiles(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getCustomersByAttributes', function() {
       it('should call getCustomersByAttributes successfully', function(done) {
         //uncomment below and update the code to test getCustomersByAttributes
@@ -764,16 +714,6 @@
       it('should call searchCouponsAdvancedWithoutTotalCount successfully', function(done) {
         //uncomment below and update the code to test searchCouponsAdvancedWithoutTotalCount
         //instance.searchCouponsAdvancedWithoutTotalCount(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('setAccountLimits', function() {
-      it('should call setAccountLimits successfully', function(done) {
-        //uncomment below and update the code to test setAccountLimits
-        //instance.setAccountLimits(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

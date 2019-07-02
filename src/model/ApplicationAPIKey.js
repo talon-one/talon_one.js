@@ -43,20 +43,24 @@
    * Constructs a new <code>ApplicationAPIKey</code>.
    * @alias module:model/ApplicationAPIKey
    * @class
-   * @param ID {Number} ID of the API Key
+   * @param id {Number} ID of the API Key
+   * @param createdBy {Number} ID of user who created
+   * @param title {String} Title for API Key
    * @param accountID {Number} ID of account the key is used for
    * @param applicationID {Number} ID of application the key is used for
    * @param created {Date} The date the API key was created
    * @param expires {Date} The date the API key expired
    */
-  var exports = function(ID, accountID, applicationID, created, expires) {
+  var exports = function(id, createdBy, title, accountID, applicationID, created, expires) {
     var _this = this;
 
-    _this['ID'] = ID;
-    _this['AccountID'] = accountID;
-    _this['ApplicationID'] = applicationID;
-    _this['Created'] = created;
-    _this['Expires'] = expires;
+    _this['id'] = id;
+    _this['createdBy'] = createdBy;
+    _this['title'] = title;
+    _this['accountID'] = accountID;
+    _this['applicationID'] = applicationID;
+    _this['created'] = created;
+    _this['expires'] = expires;
   };
 
   /**
@@ -70,20 +74,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ID')) {
-        obj['ID'] = ApiClient.convertToType(data['ID'], 'Number');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('AccountID')) {
-        obj['AccountID'] = ApiClient.convertToType(data['AccountID'], 'Number');
+      if (data.hasOwnProperty('createdBy')) {
+        obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'Number');
       }
-      if (data.hasOwnProperty('ApplicationID')) {
-        obj['ApplicationID'] = ApiClient.convertToType(data['ApplicationID'], 'Number');
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
-      if (data.hasOwnProperty('Created')) {
-        obj['Created'] = ApiClient.convertToType(data['Created'], 'Date');
+      if (data.hasOwnProperty('accountID')) {
+        obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
       }
-      if (data.hasOwnProperty('Expires')) {
-        obj['Expires'] = ApiClient.convertToType(data['Expires'], 'Date');
+      if (data.hasOwnProperty('applicationID')) {
+        obj['applicationID'] = ApiClient.convertToType(data['applicationID'], 'Number');
+      }
+      if (data.hasOwnProperty('created')) {
+        obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+      }
+      if (data.hasOwnProperty('expires')) {
+        obj['expires'] = ApiClient.convertToType(data['expires'], 'Date');
       }
     }
     return obj;
@@ -91,29 +101,39 @@
 
   /**
    * ID of the API Key
-   * @member {Number} ID
+   * @member {Number} id
    */
-  exports.prototype['ID'] = undefined;
+  exports.prototype['id'] = undefined;
+  /**
+   * ID of user who created
+   * @member {Number} createdBy
+   */
+  exports.prototype['createdBy'] = undefined;
+  /**
+   * Title for API Key
+   * @member {String} title
+   */
+  exports.prototype['title'] = undefined;
   /**
    * ID of account the key is used for
-   * @member {Number} AccountID
+   * @member {Number} accountID
    */
-  exports.prototype['AccountID'] = undefined;
+  exports.prototype['accountID'] = undefined;
   /**
    * ID of application the key is used for
-   * @member {Number} ApplicationID
+   * @member {Number} applicationID
    */
-  exports.prototype['ApplicationID'] = undefined;
+  exports.prototype['applicationID'] = undefined;
   /**
    * The date the API key was created
-   * @member {Date} Created
+   * @member {Date} created
    */
-  exports.prototype['Created'] = undefined;
+  exports.prototype['created'] = undefined;
   /**
    * The date the API key expired
-   * @member {Date} Expires
+   * @member {Date} expires
    */
-  exports.prototype['Expires'] = undefined;
+  exports.prototype['expires'] = undefined;
 
 
 

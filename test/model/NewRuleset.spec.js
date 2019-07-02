@@ -62,12 +62,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property bindings (base name: "bindings")', function() {
-      // uncomment below and update the code to test the property bindings
-      //var instane = new TalononeApi.NewRuleset();
-      //expect(instance).to.be();
-    });
-
     it('should have the property rbVersion (base name: "rbVersion")', function() {
       // uncomment below and update the code to test the property rbVersion
       //var instane = new TalononeApi.NewRuleset();

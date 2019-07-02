@@ -55,6 +55,8 @@
      * @type {Array.<String>}
      */
     this.authentications = {
+      'api_key_v1': {type: 'apiKey', 'in': 'header', name: 'Authorization'},
+      'integration_auth': {type: 'apiKey', 'in': 'header', name: 'Content-Signature'},
       'manager_auth': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
     };
     /**

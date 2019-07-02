@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new TalononeApi.NewApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
     it('should have the property accountID (base name: "accountID")', function() {
       // uncomment below and update the code to test the property accountID
       //var instane = new TalononeApi.NewApplicationAPIKey();

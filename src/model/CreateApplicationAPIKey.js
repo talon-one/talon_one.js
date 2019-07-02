@@ -43,11 +43,13 @@
    * Constructs a new <code>CreateApplicationAPIKey</code>.
    * @alias module:model/CreateApplicationAPIKey
    * @class
+   * @param title {String} Title for API Key
    * @param expires {Date} The date the API key expired
    */
-  var exports = function(expires) {
+  var exports = function(title, expires) {
     var _this = this;
 
+    _this['title'] = title;
     _this['expires'] = expires;
   };
 
@@ -62,6 +64,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
+      }
       if (data.hasOwnProperty('expires')) {
         obj['expires'] = ApiClient.convertToType(data['expires'], 'Date');
       }
@@ -69,6 +74,11 @@
     return obj;
   }
 
+  /**
+   * Title for API Key
+   * @member {String} title
+   */
+  exports.prototype['title'] = undefined;
   /**
    * The date the API key expired
    * @member {Date} expires

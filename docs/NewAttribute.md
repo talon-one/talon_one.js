@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 ## Enum: EntityEnum
 
 
+* `Account` (value: `"Account"`)
+
 * `Application` (value: `"Application"`)
 
 * `Campaign` (value: `"Campaign"`)
@@ -53,6 +55,8 @@ Name | Type | Description | Notes
 * `(list time)` (value: `"(list time)"`)
 
 * `location` (value: `"location"`)
+
+* `(list location)` (value: `"(list location)"`)
 
 
 

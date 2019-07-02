@@ -56,31 +56,43 @@
       //expect(instance).to.be.a(TalononeApi.ApplicationAPIKey);
     });
 
-    it('should have the property ID (base name: "ID")', function() {
-      // uncomment below and update the code to test the property ID
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new TalononeApi.ApplicationAPIKey();
       //expect(instance).to.be();
     });
 
-    it('should have the property accountID (base name: "AccountID")', function() {
+    it('should have the property createdBy (base name: "createdBy")', function() {
+      // uncomment below and update the code to test the property createdBy
+      //var instane = new TalononeApi.ApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new TalononeApi.ApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountID (base name: "accountID")', function() {
       // uncomment below and update the code to test the property accountID
       //var instane = new TalononeApi.ApplicationAPIKey();
       //expect(instance).to.be();
     });
 
-    it('should have the property applicationID (base name: "ApplicationID")', function() {
+    it('should have the property applicationID (base name: "applicationID")', function() {
       // uncomment below and update the code to test the property applicationID
       //var instane = new TalononeApi.ApplicationAPIKey();
       //expect(instance).to.be();
     });
 
-    it('should have the property created (base name: "Created")', function() {
+    it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
       //var instane = new TalononeApi.ApplicationAPIKey();
       //expect(instance).to.be();
     });
 
-    it('should have the property expires (base name: "Expires")', function() {
+    it('should have the property expires (base name: "expires")', function() {
       // uncomment below and update the code to test the property expires
       //var instane = new TalononeApi.ApplicationAPIKey();
       //expect(instance).to.be();

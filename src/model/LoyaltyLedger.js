@@ -45,13 +45,14 @@
    * @alias module:model/LoyaltyLedger
    * @class
    * @param total {Number} The current balance in the program.
-   * @param transactions {Array.<module:model/LoyaltyLedgerEntry>} 
+   * @param transactions {Array.<module:model/LoyaltyLedgerEntry>} Transactions contains a list of all events that have happened such as additions, subtractions and expiries
    */
   var exports = function(total, transactions) {
     var _this = this;
 
     _this['total'] = total;
     _this['transactions'] = transactions;
+
 
 
   };
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('transactions')) {
         obj['transactions'] = ApiClient.convertToType(data['transactions'], [LoyaltyLedgerEntry]);
       }
+      if (data.hasOwnProperty('expiringPoints')) {
+        obj['expiringPoints'] = ApiClient.convertToType(data['expiringPoints'], [LoyaltyLedgerEntry]);
+      }
       if (data.hasOwnProperty('loyaltyProgramId')) {
         obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
       }
@@ -89,9 +93,15 @@
    */
   exports.prototype['total'] = undefined;
   /**
+   * Transactions contains a list of all events that have happened such as additions, subtractions and expiries
    * @member {Array.<module:model/LoyaltyLedgerEntry>} transactions
    */
   exports.prototype['transactions'] = undefined;
+  /**
+   * ExpiringPoints contains a list of all points that will expiry and when
+   * @member {Array.<module:model/LoyaltyLedgerEntry>} expiringPoints
+   */
+  exports.prototype['expiringPoints'] = undefined;
   /**
    * The ID of the loyalty program this ledger belongs to.
    * @member {Number} loyaltyProgramId

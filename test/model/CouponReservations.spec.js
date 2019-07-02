@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalononeApi.CreateApplicationAPIKey();
+    instance = new TalononeApi.CouponReservations();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,16 @@
       object[property] = value;
   }
 
-  describe('CreateApplicationAPIKey', function() {
-    it('should create an instance of CreateApplicationAPIKey', function() {
-      // uncomment below and update the code to test CreateApplicationAPIKey
-      //var instane = new TalononeApi.CreateApplicationAPIKey();
-      //expect(instance).to.be.a(TalononeApi.CreateApplicationAPIKey);
+  describe('CouponReservations', function() {
+    it('should create an instance of CouponReservations', function() {
+      // uncomment below and update the code to test CouponReservations
+      //var instane = new TalononeApi.CouponReservations();
+      //expect(instance).to.be.a(TalononeApi.CouponReservations);
     });
 
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
-      //var instane = new TalononeApi.CreateApplicationAPIKey();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expires (base name: "expires")', function() {
-      // uncomment below and update the code to test the property expires
-      //var instane = new TalononeApi.CreateApplicationAPIKey();
+    it('should have the property integrationIDs (base name: "integrationIDs")', function() {
+      // uncomment below and update the code to test the property integrationIDs
+      //var instane = new TalononeApi.CouponReservations();
       //expect(instance).to.be();
     });
 

@@ -803,7 +803,7 @@ var opts = {
   'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
   'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
   'status': "status_example", // String | Filter results by HTTP status codes.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
  **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
  **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -873,7 +873,7 @@ var opts = {
   'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
   'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
   'status': "status_example", // String | Filter results by HTTP status codes.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
  **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
  **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -1091,7 +1091,7 @@ var opts = {
   'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
   'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
   'status': "status_example", // String | Filter results by HTTP status codes.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
  **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
  **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -1449,7 +1449,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -1466,7 +1466,7 @@ apiInstance.getApplicationEventTypes(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -1507,7 +1507,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'type': "type_example", // String | Comma-separated list of types by which to filter events. Must be exact match(es).
@@ -1535,7 +1535,7 @@ apiInstance.getApplicationEvents(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **type** | **String**| Comma-separated list of types by which to filter events. Must be exact match(es). | [optional] 
@@ -1587,7 +1587,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'type': "type_example", // String | Comma-separated list of types by which to filter events. Must be exact match(es).
@@ -1615,7 +1615,7 @@ apiInstance.getApplicationEventsWithoutTotalCount(applicationId, opts).then(func
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **type** | **String**| Comma-separated list of types by which to filter events. Must be exact match(es). | [optional] 
@@ -1720,7 +1720,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'profile': "profile_example" // String | Profile integration ID filter for sessions. Must be exact match.
@@ -1738,7 +1738,7 @@ apiInstance.getApplicationSessions(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **profile** | **String**| Profile integration ID filter for sessions. Must be exact match. | [optional] 
@@ -1778,7 +1778,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -1794,7 +1794,7 @@ apiInstance.getApplications(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -2001,7 +2001,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'campaignState': "campaignState_example", // String | Filter results by the state of the campaign.
@@ -2020,7 +2020,7 @@ apiInstance.getCampaignByAttributes(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **campaignState** | **String**| Filter results by the state of the campaign. | [optional] 
@@ -2113,7 +2113,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'campaignState': "campaignState_example" // String | Filter results by the state of the campaign.
@@ -2131,7 +2131,7 @@ apiInstance.getCampaigns(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **campaignState** | **String**| Filter results by the state of the campaign. | [optional] 
@@ -2171,7 +2171,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -2187,7 +2187,7 @@ apiInstance.getChanges(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -2230,7 +2230,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2261,7 +2261,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2317,7 +2317,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2345,7 +2345,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2396,7 +2396,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2424,7 +2424,7 @@ apiInstance.getCouponsByAttributesApplicationWide(applicationId, opts).then(func
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2478,7 +2478,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2505,7 +2505,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2561,7 +2561,7 @@ var applicationId = 56; // Number |
 var customerId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getCustomerActivityReport(rangeStart, rangeEnd, applicationId, customerId, opts).then(function(data) {
@@ -2580,7 +2580,7 @@ Name | Type | Description  | Notes
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
  **applicationId** | **Number**|  | 
  **customerId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
@@ -2624,7 +2624,7 @@ var rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return resu
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'name': "name_example", // String | Only return reports matching the customer name
@@ -2647,7 +2647,7 @@ Name | Type | Description  | Notes
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **name** | **String**| Only return reports matching the customer name | [optional] 
@@ -2696,7 +2696,7 @@ var rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return resu
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'name': "name_example", // String | Only return reports matching the customer name
@@ -2719,7 +2719,7 @@ Name | Type | Description  | Notes
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **name** | **String**| Only return reports matching the customer name | [optional] 
@@ -2766,7 +2766,7 @@ var applicationId = 56; // Number |
 var customerId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -2784,7 +2784,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **customerId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -2876,7 +2876,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getCustomerProfiles(opts).then(function(data) {
@@ -2891,7 +2891,7 @@ apiInstance.getCustomerProfiles(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
@@ -2929,7 +2929,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'body': new TalononeApi.ApplicationCustomerSearch() // ApplicationCustomerSearch | 
 };
@@ -2945,7 +2945,7 @@ apiInstance.getCustomersByAttributes(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **body** | [**ApplicationCustomerSearch**](ApplicationCustomerSearch.md)|  | [optional] 
 
@@ -2987,7 +2987,7 @@ var opts = {
   'applicationIds': "applicationIds_example", // String | Filter by one or more application ids separated by comma
   'name': "name_example", // String | Filter results to event types with the given name. This parameter implies `includeOldVersions`.
   'includeOldVersions': false, // Boolean | Include all versions of every event type.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -3006,7 +3006,7 @@ Name | Type | Description  | Notes
  **applicationIds** | **String**| Filter by one or more application ids separated by comma | [optional] 
  **name** | **String**| Filter results to event types with the given name. This parameter implies &#x60;includeOldVersions&#x60;. | [optional] 
  **includeOldVersions** | **Boolean**| Include all versions of every event type. | [optional] [default to false]
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -3045,7 +3045,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'applicationId': 56, // Number | 
   'campaignId': 56, // Number | 
@@ -3063,7 +3063,7 @@ apiInstance.getExports(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **applicationId** | **Number**|  | [optional] 
  **campaignId** | **Number**|  | [optional] 
@@ -3104,7 +3104,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getImports(opts).then(function(data) {
@@ -3119,7 +3119,7 @@ apiInstance.getImports(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
@@ -3308,7 +3308,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'code': "code_example", // String | Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -3332,7 +3332,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **code** | **String**| Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -3381,7 +3381,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'code': "code_example", // String | Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -3405,7 +3405,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **code** | **String**| Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -3558,7 +3558,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -3576,7 +3576,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -3665,7 +3665,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -3681,7 +3681,7 @@ apiInstance.getUsers(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -3770,7 +3770,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'integrationRequestUuid': "integrationRequestUuid_example", // String | Filter results by integration request UUID.
@@ -3792,7 +3792,7 @@ apiInstance.getWebhookActivationLogs(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **integrationRequestUuid** | **String**| Filter results by integration request UUID. | [optional] 
@@ -3837,7 +3837,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 var apiInstance = new TalononeApi.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'status': "status_example", // String | Filter results by HTTP status codes.
@@ -3860,7 +3860,7 @@ apiInstance.getWebhookLogs(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
@@ -3908,7 +3908,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var opts = { 
   'applicationIds': "applicationIds_example", // String | Filter by one or more application ids separated by comma
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getWebhooks(opts).then(function(data) {
@@ -3925,7 +3925,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationIds** | **String**| Filter by one or more application ids separated by comma | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
@@ -4119,7 +4119,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4147,7 +4147,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -4198,7 +4198,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4226,7 +4226,7 @@ apiInstance.searchCouponsAdvancedApplicationWide(applicationId, opts).then(funct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -4278,7 +4278,7 @@ var apiInstance = new TalononeApi.ManagementApi();
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4306,7 +4306,7 @@ apiInstance.searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -4360,7 +4360,7 @@ var applicationId = 56; // Number |
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4388,7 +4388,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
