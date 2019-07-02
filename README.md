@@ -10,6 +10,8 @@ npm install talon_one --save
 
 ## Examples
 
+### Integration
+
 ```javascript
 var TalononeApi = require('talon_one');
 
@@ -39,6 +41,37 @@ api.updateCustomerProfile('exampleprofileid', opts).then(
     console.error(error);
   }
 );
+```
+
+### Management
+
+```javascript
+var TalononeApi = require('talon_one');
+var defaultClient = TalononeApi.ApiClient.instance;
+defaultClient.basePath = 'http://localhost:9000';
+
+// Configure API key authorization: manager_auth
+var manager_auth = defaultClient.authentications['manager_auth'];
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+manager_auth.apiKeyPrefix = 'Bearer';
+
+var apiInstance = new TalononeApi.ManagementApi();
+
+var opts = { 
+  'body': new TalononeApi.LoginParams("demo@talon.one", "Demo1234")
+};
+
+apiInstance.createSession(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data["token"]);
+  manager_auth.apiKey = data["token"]
+  apiInstance.getApplication(1).then(function(data) {
+    console.log('API called successfully. Returned data: ' + JSON.stringify(data));
+  }, function(error) {
+    console.error(error);
+  });
+}, function(error) {
+  console.error(error);
+});
 ```
 
 ## Docs
