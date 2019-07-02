@@ -1,53 +1,29 @@
-var TalonOne = require('../src/index')
+var TalononeApi = require('talonone_api');
 
-var applicationId = 216
-var applicationKey = '0000111122223333'
-var client = new TalonOne.IntegrationClient('http://localhost:9000', applicationId, applicationKey)
+var defaultClient = TalononeApi.ApiClient.instance;
 
-var sessionId = 'some-identifier-for-this-session'
-var customerId = 'id-used-by-my-company'
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'dbc644d33aa74d582bd9479c59e16f970fe13bf34a208c39d6c7fa7586968468';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+api_key_v1.apiKeyPrefix = 'ApiKey-v1';
+defaultClient.basePath = 'http://localhost:9000';
 
+var api = new TalononeApi.IntegrationApi();
 
-client.updateCustomerProfile(customerId, {
-  attributes: {
-    // only include properties you want to update, null values are ignored
-    Name: 'Val Kust',
+var opts = {
+  body: new TalononeApi.NewCustomerProfile()
+};
+
+opts.body['attributes'] = {
+  Email: "helloworld@yahoo.de"
+}
+
+api.updateCustomerProfile('exampleprofileid', opts).then(
+  function(data) {
+    console.log(JSON.stringify(data));
+  },
+  function(error) {
+    console.error(error);
   }
-}, function (err, integrationState) {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log(integrationState.profile)
-    console.log(integrationState.session)
-    console.log(integrationState.event)
-  }
-})
-
-
-client.updateCustomerSession(sessionId, {
-  // associate this session with the profile we created above
-  profileId: customerId,
-  // set referral ID for this session
-  referral: 'somereferral-identifier',
-}, function (err, integrationState) {
-
-  if (err){
-    console.log(err)
-  } else {
-    console.log(integrationState.profile)
-    console.log(integrationState.session)
-    console.log(integrationState.event)
-  }
-})
-
-
-// sessionId, customerId, eventType, eventData, callback
-client.trackEvent(sessionId, customerId, 'bought_upgrade', {}, function (err, integrationState) {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log(integrationState.profile)
-    console.log(integrationState.session)
-    console.log(integrationState.event)
-  }
-})
+);
