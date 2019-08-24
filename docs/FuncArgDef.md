@@ -1,4 +1,4 @@
-# TalononeApi.FuncArgDef
+# TalonOne.FuncArgDef
 
 ## Properties
 Name | Type | Description | Notes

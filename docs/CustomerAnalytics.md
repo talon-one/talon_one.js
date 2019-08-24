@@ -1,4 +1,4 @@
-# TalononeApi.CustomerAnalytics
+# TalonOne.CustomerAnalytics
 
 ## Properties
 Name | Type | Description | Notes

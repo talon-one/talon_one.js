@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse2006
+# TalonOne.InlineResponse2006
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
+**totalResultSize** | **Number** |  | 
 **data** | [**[Referral]**](Referral.md) |  | 
 
 

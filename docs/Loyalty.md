@@ -1,4 +1,4 @@
-# TalononeApi.Loyalty
+# TalonOne.Loyalty
 
 ## Properties
 Name | Type | Description | Notes

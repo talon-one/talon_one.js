@@ -1,4 +1,4 @@
-# TalononeApi.CodeGeneratorSettings
+# TalonOne.CodeGeneratorSettings
 
 ## Properties
 Name | Type | Description | Notes

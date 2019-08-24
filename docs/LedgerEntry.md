@@ -1,4 +1,4 @@
-# TalononeApi.LedgerEntry
+# TalonOne.LedgerEntry
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.Referral
+# TalonOne.Referral
 
 ## Properties
 Name | Type | Description | Notes

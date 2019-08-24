@@ -1,4 +1,4 @@
-# TalononeApi.UpdateCouponBatch
+# TalonOne.UpdateCouponBatch
 
 ## Properties
 Name | Type | Description | Notes

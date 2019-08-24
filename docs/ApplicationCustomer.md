@@ -1,4 +1,4 @@
-# TalononeApi.ApplicationCustomer
+# TalonOne.ApplicationCustomer
 
 ## Properties
 Name | Type | Description | Notes

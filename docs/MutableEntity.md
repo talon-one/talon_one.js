@@ -1,4 +1,4 @@
-# TalononeApi.MutableEntity
+# TalonOne.MutableEntity
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.NewLoyaltyProgram
+# TalonOne.NewLoyaltyProgram
 
 ## Properties
 Name | Type | Description | Notes

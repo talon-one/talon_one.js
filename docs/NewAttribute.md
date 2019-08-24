@@ -1,4 +1,4 @@
-# TalononeApi.NewAttribute
+# TalonOne.NewAttribute
 
 ## Properties
 Name | Type | Description | Notes

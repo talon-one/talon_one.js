@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse200
+# TalonOne.InlineResponse200
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Application]**](Application.md) |  | 
+**data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
 
 

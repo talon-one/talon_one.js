@@ -1,4 +1,4 @@
-# TalononeApi.ApplicationSessionEntity
+# TalonOne.ApplicationSessionEntity
 
 ## Properties
 Name | Type | Description | Notes

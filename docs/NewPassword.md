@@ -1,4 +1,4 @@
-# TalononeApi.NewPassword
+# TalonOne.NewPassword
 
 ## Properties
 Name | Type | Description | Notes

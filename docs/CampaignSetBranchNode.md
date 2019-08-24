@@ -1,4 +1,4 @@
-# TalononeApi.CampaignSetBranchNode
+# TalonOne.CampaignSetBranchNode
 
 ## Properties
 Name | Type | Description | Notes

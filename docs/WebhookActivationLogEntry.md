@@ -1,4 +1,4 @@
-# TalononeApi.WebhookActivationLogEntry
+# TalonOne.WebhookActivationLogEntry
 
 ## Properties
 Name | Type | Description | Notes

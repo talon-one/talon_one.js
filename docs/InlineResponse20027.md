@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse20027
+# TalonOne.InlineResponse20027
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Role]**](Role.md) |  | 
+**data** | [**[ModelImport]**](ModelImport.md) |  | 
 
 

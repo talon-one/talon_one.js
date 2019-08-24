@@ -1,4 +1,4 @@
-# TalononeApi.LoyaltyLedger
+# TalonOne.LoyaltyLedger
 
 ## Properties
 Name | Type | Description | Notes

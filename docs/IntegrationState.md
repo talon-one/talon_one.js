@@ -1,4 +1,4 @@
-# TalononeApi.IntegrationState
+# TalonOne.IntegrationState
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.NewInvitation
+# TalonOne.NewInvitation
 
 ## Properties
 Name | Type | Description | Notes

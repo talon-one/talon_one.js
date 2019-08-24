@@ -1,4 +1,4 @@
-# TalononeApi.EmailEntity
+# TalonOne.EmailEntity
 
 ## Properties
 Name | Type | Description | Notes

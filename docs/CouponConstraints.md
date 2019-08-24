@@ -1,4 +1,4 @@
-# TalononeApi.CouponConstraints
+# TalonOne.CouponConstraints
 
 ## Properties
 Name | Type | Description | Notes

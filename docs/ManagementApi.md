@@ -1,4 +1,4 @@
-# TalononeApi.ManagementApi
+# TalonOne.ManagementApi
 
 All URIs are relative to *https://localhost*
 
@@ -86,7 +86,7 @@ Method | HTTP request | Description
 
 <a name="addLoyaltyPoints"></a>
 # **addLoyaltyPoints**
-> addLoyaltyPoints(programID, integrationID, opts)
+> addLoyaltyPoints(programID, integrationID, body)
 
 Add points in a certain loyalty program for the specified customer
 
@@ -94,8 +94,8 @@ Add points in a certain loyalty program for the specified customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -103,16 +103,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var programID = "programID_example"; // String | 
 
 var integrationID = "integrationID_example"; // String | 
 
-var opts = { 
-  'body': new TalononeApi.LoyaltyPoints() // LoyaltyPoints | 
-};
-apiInstance.addLoyaltyPoints(programID, integrationID, opts).then(function() {
+var body = new TalonOne.LoyaltyPoints(); // LoyaltyPoints | 
+
+apiInstance.addLoyaltyPoints(programID, integrationID, body).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -126,7 +125,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **programID** | **String**|  | 
  **integrationID** | **String**|  | 
- **body** | [**LoyaltyPoints**](LoyaltyPoints.md)|  | [optional] 
+ **body** | [**LoyaltyPoints**](LoyaltyPoints.md)|  | 
 
 ### Return type
 
@@ -143,7 +142,7 @@ null (empty response body)
 
 <a name="copyCampaignToApplications"></a>
 # **copyCampaignToApplications**
-> InlineResponse2001 copyCampaignToApplications(applicationId, campaignId, opts)
+> InlineResponse2003 copyCampaignToApplications(applicationId, campaignId, body)
 
 Copy the campaign into every specified application
 
@@ -151,8 +150,8 @@ Copy the campaign into every specified application.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -160,16 +159,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.CampaignCopy() // CampaignCopy | 
-};
-apiInstance.copyCampaignToApplications(applicationId, campaignId, opts).then(function(data) {
+var body = new TalonOne.CampaignCopy(); // CampaignCopy | 
+
+apiInstance.copyCampaignToApplications(applicationId, campaignId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -183,11 +181,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **body** | [**CampaignCopy**](CampaignCopy.md)|  | [optional] 
+ **body** | [**CampaignCopy**](CampaignCopy.md)|  | 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -200,7 +198,7 @@ Name | Type | Description  | Notes
 
 <a name="createCampaign"></a>
 # **createCampaign**
-> Campaign createCampaign(applicationId, opts)
+> Campaign createCampaign(applicationId, body)
 
 Create a Campaign
 
@@ -208,8 +206,8 @@ Create a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -217,14 +215,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.NewCampaign() // NewCampaign | 
-};
-apiInstance.createCampaign(applicationId, opts).then(function(data) {
+var body = new TalonOne.NewCampaign(); // NewCampaign | 
+
+apiInstance.createCampaign(applicationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -237,7 +234,7 @@ apiInstance.createCampaign(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **body** | [**NewCampaign**](NewCampaign.md)|  | [optional] 
+ **body** | [**NewCampaign**](NewCampaign.md)|  | 
 
 ### Return type
 
@@ -254,7 +251,7 @@ Name | Type | Description  | Notes
 
 <a name="createCoupons"></a>
 # **createCoupons**
-> InlineResponse2003 createCoupons(applicationId, campaignId, opts)
+> InlineResponse2001 createCoupons(applicationId, campaignId, body, opts)
 
 Create Coupons
 
@@ -262,8 +259,8 @@ Create coupons according to some pattern. Up to 20.000 coupons can be created wi
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -271,17 +268,18 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
+var body = new TalonOne.NewCoupons(); // NewCoupons | 
+
 var opts = { 
-  'silent': "silent_example", // String | If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
-  'body': new TalononeApi.NewCoupons() // NewCoupons | 
+  'silent': "silent_example" // String | If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
 };
-apiInstance.createCoupons(applicationId, campaignId, opts).then(function(data) {
+apiInstance.createCoupons(applicationId, campaignId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -295,12 +293,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
+ **body** | [**NewCoupons**](NewCoupons.md)|  | 
  **silent** | **String**| If set to &#39;yes&#39;, response will be an empty 204, otherwise a list of the coupons generated (to to 1000). | [optional] 
- **body** | [**NewCoupons**](NewCoupons.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -313,7 +311,7 @@ Name | Type | Description  | Notes
 
 <a name="createPasswordRecoveryEmail"></a>
 # **createPasswordRecoveryEmail**
-> NewPasswordEmail createPasswordRecoveryEmail(opts)
+> NewPasswordEmail createPasswordRecoveryEmail(body)
 
 Request a password reset
 
@@ -321,8 +319,8 @@ Sends an email with a password recovery link to the email of an existing account
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -330,12 +328,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
-var opts = { 
-  'body': new TalononeApi.NewPasswordEmail() // NewPasswordEmail | 
-};
-apiInstance.createPasswordRecoveryEmail(opts).then(function(data) {
+var body = new TalonOne.NewPasswordEmail(); // NewPasswordEmail | 
+
+apiInstance.createPasswordRecoveryEmail(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -347,7 +344,7 @@ apiInstance.createPasswordRecoveryEmail(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NewPasswordEmail**](NewPasswordEmail.md)|  | [optional] 
+ **body** | [**NewPasswordEmail**](NewPasswordEmail.md)|  | 
 
 ### Return type
 
@@ -364,7 +361,7 @@ Name | Type | Description  | Notes
 
 <a name="createRuleset"></a>
 # **createRuleset**
-> Ruleset createRuleset(applicationId, campaignId, opts)
+> Ruleset createRuleset(applicationId, campaignId, body)
 
 Create a Ruleset
 
@@ -372,8 +369,8 @@ Create a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -381,16 +378,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.NewRuleset() // NewRuleset | 
-};
-apiInstance.createRuleset(applicationId, campaignId, opts).then(function(data) {
+var body = new TalonOne.NewRuleset(); // NewRuleset | 
+
+apiInstance.createRuleset(applicationId, campaignId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -404,7 +400,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **body** | [**NewRuleset**](NewRuleset.md)|  | [optional] 
+ **body** | [**NewRuleset**](NewRuleset.md)|  | 
 
 ### Return type
 
@@ -421,7 +417,7 @@ Name | Type | Description  | Notes
 
 <a name="createSession"></a>
 # **createSession**
-> Session createSession(opts)
+> Session createSession(body)
 
 Create a Session
 
@@ -429,8 +425,8 @@ Create a Session
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -438,12 +434,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
-var opts = { 
-  'body': new TalononeApi.LoginParams() // LoginParams | 
-};
-apiInstance.createSession(opts).then(function(data) {
+var body = new TalonOne.LoginParams(); // LoginParams | 
+
+apiInstance.createSession(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -455,7 +450,7 @@ apiInstance.createSession(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LoginParams**](LoginParams.md)|  | [optional] 
+ **body** | [**LoginParams**](LoginParams.md)|  | 
 
 ### Return type
 
@@ -480,8 +475,8 @@ Delete a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -489,7 +484,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -533,8 +528,8 @@ Delete one Coupon
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -542,7 +537,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -589,8 +584,8 @@ Delete Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -598,7 +593,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -670,8 +665,8 @@ Delete one Referral
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -679,7 +674,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -726,8 +721,8 @@ Delete a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -735,7 +730,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -774,7 +769,7 @@ null (empty response body)
 
 <a name="getAccessLogs"></a>
 # **getAccessLogs**
-> InlineResponse2008 getAccessLogs(applicationId, rangeStart, rangeEnd, opts)
+> InlineResponse2009 getAccessLogs(applicationId, rangeStart, rangeEnd, opts)
 
 Get access logs for application
 
@@ -782,8 +777,8 @@ Get access logs for application
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -791,7 +786,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -803,7 +798,7 @@ var opts = {
   'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
   'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
   'status': "status_example", // String | Filter results by HTTP status codes.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -825,13 +820,13 @@ Name | Type | Description  | Notes
  **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
  **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -844,7 +839,7 @@ Name | Type | Description  | Notes
 
 <a name="getAccessLogsWithoutTotalCount"></a>
 # **getAccessLogsWithoutTotalCount**
-> InlineResponse2009 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
+> InlineResponse20010 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
 
 Get access logs for application
 
@@ -852,8 +847,8 @@ Get access logs for application
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -861,7 +856,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -873,7 +868,7 @@ var opts = {
   'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
   'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
   'status': "status_example", // String | Filter results by HTTP status codes.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -895,13 +890,13 @@ Name | Type | Description  | Notes
  **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
  **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -922,8 +917,8 @@ Return the details of your companies Talon.One account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -931,7 +926,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var accountId = 56; // Number | 
 
@@ -972,8 +967,8 @@ Return the analytics of your companies Talon.One account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -981,7 +976,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var accountId = 56; // Number | 
 
@@ -1022,8 +1017,8 @@ Returns a list of all account limits set
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1031,7 +1026,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var accountId = 56; // Number | 
 
@@ -1064,7 +1059,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllAccessLogs"></a>
 # **getAllAccessLogs**
-> InlineResponse2008 getAllAccessLogs(rangeStart, rangeEnd, opts)
+> InlineResponse2009 getAllAccessLogs(rangeStart, rangeEnd, opts)
 
 Get all access logs
 
@@ -1072,8 +1067,8 @@ Fetches the access logs for the entire account. Sensitive requests (logins) are 
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1081,7 +1076,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp, must be an RFC3339 timestamp string
 
@@ -1091,7 +1086,7 @@ var opts = {
   'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
   'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
   'status': "status_example", // String | Filter results by HTTP status codes.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -1112,13 +1107,13 @@ Name | Type | Description  | Notes
  **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
  **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -1131,14 +1126,14 @@ Name | Type | Description  | Notes
 
 <a name="getAllRoles"></a>
 # **getAllRoles**
-> InlineResponse20027 getAllRoles()
+> InlineResponse20028 getAllRoles()
 
 Get all roles.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1146,7 +1141,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 apiInstance.getAllRoles().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -1160,7 +1155,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -1181,8 +1176,8 @@ Get the application specified by the ID.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1190,7 +1185,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -1231,8 +1226,8 @@ Get report of health of application API
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1240,7 +1235,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -1281,8 +1276,8 @@ Get Application Customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1290,7 +1285,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -1326,7 +1321,7 @@ Name | Type | Description  | Notes
 
 <a name="getApplicationCustomers"></a>
 # **getApplicationCustomers**
-> InlineResponse20011 getApplicationCustomers(applicationId)
+> InlineResponse20012 getApplicationCustomers(applicationId)
 
 List Application Customers
 
@@ -1334,8 +1329,8 @@ List Application Customers
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1343,7 +1338,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -1363,7 +1358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -1376,7 +1371,7 @@ Name | Type | Description  | Notes
 
 <a name="getApplicationCustomersByAttributes"></a>
 # **getApplicationCustomersByAttributes**
-> InlineResponse20012 getApplicationCustomersByAttributes(opts)
+> InlineResponse20013 getApplicationCustomersByAttributes(body)
 
 Get a list of the customer profiles that match the given attributes
 
@@ -1384,8 +1379,8 @@ Gets a list of all the customer profiles for the account that exactly match a se
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: integration_auth
 var integration_auth = defaultClient.authentications['integration_auth'];
@@ -1393,12 +1388,11 @@ integration_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //integration_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
-var opts = { 
-  'body': new TalononeApi.ApplicationCustomerSearch() // ApplicationCustomerSearch | 
-};
-apiInstance.getApplicationCustomersByAttributes(opts).then(function(data) {
+var body = new TalonOne.ApplicationCustomerSearch(); // ApplicationCustomerSearch | 
+
+apiInstance.getApplicationCustomersByAttributes(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1410,11 +1404,11 @@ apiInstance.getApplicationCustomersByAttributes(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApplicationCustomerSearch**](ApplicationCustomerSearch.md)|  | [optional] 
+ **body** | [**ApplicationCustomerSearch**](ApplicationCustomerSearch.md)|  | 
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -1427,7 +1421,7 @@ Name | Type | Description  | Notes
 
 <a name="getApplicationEventTypes"></a>
 # **getApplicationEventTypes**
-> InlineResponse20018 getApplicationEventTypes(applicationId, opts)
+> InlineResponse20019 getApplicationEventTypes(applicationId, opts)
 
 List Applications Event Types
 
@@ -1435,8 +1429,8 @@ Get all of the distinct values of the Event &#x60;type&#x60; property for events
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1444,12 +1438,12 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -1466,13 +1460,13 @@ apiInstance.getApplicationEventTypes(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -1485,7 +1479,7 @@ Name | Type | Description  | Notes
 
 <a name="getApplicationEvents"></a>
 # **getApplicationEvents**
-> InlineResponse20016 getApplicationEvents(applicationId, opts)
+> InlineResponse20017 getApplicationEvents(applicationId, opts)
 
 List Applications Events
 
@@ -1493,8 +1487,8 @@ Lists all events recorded for an application.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1502,12 +1496,12 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'type': "type_example", // String | Comma-separated list of types by which to filter events. Must be exact match(es).
@@ -1535,87 +1529,7 @@ apiInstance.getApplicationEvents(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
- **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
- **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
- **type** | **String**| Comma-separated list of types by which to filter events. Must be exact match(es). | [optional] 
- **createdBefore** | **Date**| Only return events created before this date | [optional] 
- **createdAfter** | **Date**| Only return events created after this date | [optional] 
- **session** | **String**| Session integration ID filter for events. Must be exact match. | [optional] 
- **profile** | **String**| Profile integration ID filter for events. Must be exact match. | [optional] 
- **customerName** | **String**| Customer name filter for events. Will match substrings case-insensitively. | [optional] 
- **customerEmail** | **String**| Customer e-mail address filter for events. Will match substrings case-insensitively. | [optional] 
- **effectsQuery** | **String**| Effects filter for events. Will perform a full-text search on the text content of the events effects, if any. | [optional] 
- **attributesQuery** | **String**| Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values. | [optional] 
- **ruleQuery** | **String**| Rule name filter for events | [optional] 
- **campaignQuery** | **String**| Campaign name filter for events | [optional] 
-
-### Return type
-
-[**InlineResponse20016**](InlineResponse20016.md)
-
-### Authorization
-
-[manager_auth](../README.md#manager_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getApplicationEventsWithoutTotalCount"></a>
-# **getApplicationEventsWithoutTotalCount**
-> InlineResponse20017 getApplicationEventsWithoutTotalCount(applicationId, opts)
-
-List Applications Events
-
-Lists all events recorded for an application. Instead of having the total number of results in the response, this endpoint only if there are more results. 
-
-### Example
-```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
-
-// Configure API key authorization: manager_auth
-var manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix = 'Token';
-
-var apiInstance = new TalononeApi.ManagementApi();
-
-var applicationId = 56; // Number | 
-
-var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
-  'skip': 56, // Number | Skips the given number of items when paging through large result sets.
-  'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-  'type': "type_example", // String | Comma-separated list of types by which to filter events. Must be exact match(es).
-  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created before this date
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created after this date
-  'session': "session_example", // String | Session integration ID filter for events. Must be exact match.
-  'profile': "profile_example", // String | Profile integration ID filter for events. Must be exact match.
-  'customerName': "customerName_example", // String | Customer name filter for events. Will match substrings case-insensitively.
-  'customerEmail': "customerEmail_example", // String | Customer e-mail address filter for events. Will match substrings case-insensitively.
-  'effectsQuery': "effectsQuery_example", // String | Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
-  'attributesQuery': "attributesQuery_example", // String | Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
-  'ruleQuery': "ruleQuery_example", // String | Rule name filter for events
-  'campaignQuery': "campaignQuery_example" // String | Campaign name filter for events
-};
-apiInstance.getApplicationEventsWithoutTotalCount(applicationId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **type** | **String**| Comma-separated list of types by which to filter events. Must be exact match(es). | [optional] 
@@ -1643,6 +1557,86 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getApplicationEventsWithoutTotalCount"></a>
+# **getApplicationEventsWithoutTotalCount**
+> InlineResponse20018 getApplicationEventsWithoutTotalCount(applicationId, opts)
+
+List Applications Events
+
+Lists all events recorded for an application. Instead of having the total number of results in the response, this endpoint only if there are more results. 
+
+### Example
+```javascript
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
+
+// Configure API key authorization: manager_auth
+var manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+var apiInstance = new TalonOne.ManagementApi();
+
+var applicationId = 56; // Number | 
+
+var opts = { 
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'skip': 56, // Number | Skips the given number of items when paging through large result sets.
+  'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+  'type': "type_example", // String | Comma-separated list of types by which to filter events. Must be exact match(es).
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created before this date
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created after this date
+  'session': "session_example", // String | Session integration ID filter for events. Must be exact match.
+  'profile': "profile_example", // String | Profile integration ID filter for events. Must be exact match.
+  'customerName': "customerName_example", // String | Customer name filter for events. Will match substrings case-insensitively.
+  'customerEmail': "customerEmail_example", // String | Customer e-mail address filter for events. Will match substrings case-insensitively.
+  'effectsQuery': "effectsQuery_example", // String | Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
+  'attributesQuery': "attributesQuery_example", // String | Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
+  'ruleQuery': "ruleQuery_example", // String | Rule name filter for events
+  'campaignQuery': "campaignQuery_example" // String | Campaign name filter for events
+};
+apiInstance.getApplicationEventsWithoutTotalCount(applicationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationId** | **Number**|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
+ **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
+ **type** | **String**| Comma-separated list of types by which to filter events. Must be exact match(es). | [optional] 
+ **createdBefore** | **Date**| Only return events created before this date | [optional] 
+ **createdAfter** | **Date**| Only return events created after this date | [optional] 
+ **session** | **String**| Session integration ID filter for events. Must be exact match. | [optional] 
+ **profile** | **String**| Profile integration ID filter for events. Must be exact match. | [optional] 
+ **customerName** | **String**| Customer name filter for events. Will match substrings case-insensitively. | [optional] 
+ **customerEmail** | **String**| Customer e-mail address filter for events. Will match substrings case-insensitively. | [optional] 
+ **effectsQuery** | **String**| Effects filter for events. Will perform a full-text search on the text content of the events effects, if any. | [optional] 
+ **attributesQuery** | **String**| Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values. | [optional] 
+ **ruleQuery** | **String**| Rule name filter for events | [optional] 
+ **campaignQuery** | **String**| Campaign name filter for events | [optional] 
+
+### Return type
+
+[**InlineResponse20018**](InlineResponse20018.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getApplicationSession"></a>
 # **getApplicationSession**
 > ApplicationSession getApplicationSession(applicationId, sessionId)
@@ -1653,8 +1647,8 @@ Get Application Session
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1662,7 +1656,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -1698,7 +1692,7 @@ Name | Type | Description  | Notes
 
 <a name="getApplicationSessions"></a>
 # **getApplicationSessions**
-> InlineResponse20015 getApplicationSessions(applicationId, opts)
+> InlineResponse20016 getApplicationSessions(applicationId, opts)
 
 List Application Sessions
 
@@ -1706,8 +1700,8 @@ List Application Sessions
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1715,15 +1709,17 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-  'profile': "profile_example" // String | Profile integration ID filter for sessions. Must be exact match.
+  'profile': "profile_example", // String | Profile integration ID filter for sessions. Must be exact match.
+  'state': "state_example", // String | Filter by sessions with this state. Must be exact match.
+  'coupon': "coupon_example" // String | Filter by sessions with this coupon. Must be exact match.
 };
 apiInstance.getApplicationSessions(applicationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1738,14 +1734,16 @@ apiInstance.getApplicationSessions(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **profile** | **String**| Profile integration ID filter for sessions. Must be exact match. | [optional] 
+ **state** | **String**| Filter by sessions with this state. Must be exact match. | [optional] 
+ **coupon** | **String**| Filter by sessions with this coupon. Must be exact match. | [optional] 
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -1758,7 +1756,7 @@ Name | Type | Description  | Notes
 
 <a name="getApplications"></a>
 # **getApplications**
-> InlineResponse200 getApplications(opts)
+> InlineResponse2002 getApplications(opts)
 
 List Applications
 
@@ -1766,8 +1764,8 @@ List all application in the current account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1775,10 +1773,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -1794,13 +1792,13 @@ apiInstance.getApplications(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -1821,8 +1819,8 @@ Returns custom attribute for the account by its id.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1830,7 +1828,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var attributeId = 56; // Number | 
 
@@ -1871,8 +1869,8 @@ Get a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1880,7 +1878,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -1916,7 +1914,7 @@ Name | Type | Description  | Notes
 
 <a name="getCampaignAnalytics"></a>
 # **getCampaignAnalytics**
-> InlineResponse20010 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
+> InlineResponse20011 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
 
 Get analytics of campaigns
 
@@ -1924,8 +1922,8 @@ Get analytics of campaigns
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1933,7 +1931,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | The identifier for the application
 
@@ -1966,7 +1964,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -1979,7 +1977,7 @@ Name | Type | Description  | Notes
 
 <a name="getCampaignByAttributes"></a>
 # **getCampaignByAttributes**
-> InlineResponse2001 getCampaignByAttributes(applicationId, opts)
+> InlineResponse2003 getCampaignByAttributes(applicationId, body, opts)
 
 Get a list of all campaigns that match the given attributes
 
@@ -1987,8 +1985,8 @@ Gets a list of all the campaigns that exactly match a set of attributes.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -1996,18 +1994,19 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
+var body = new TalonOne.CampaignSearch(); // CampaignSearch | 
+
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-  'campaignState': "campaignState_example", // String | Filter results by the state of the campaign.
-  'body': new TalononeApi.CampaignSearch() // CampaignSearch | 
+  'campaignState': "campaignState_example" // String | Filter results by the state of the campaign.
 };
-apiInstance.getCampaignByAttributes(applicationId, opts).then(function(data) {
+apiInstance.getCampaignByAttributes(applicationId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2020,15 +2019,15 @@ apiInstance.getCampaignByAttributes(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**CampaignSearch**](CampaignSearch.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **campaignState** | **String**| Filter results by the state of the campaign. | [optional] 
- **body** | [**CampaignSearch**](CampaignSearch.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -2049,8 +2048,8 @@ List CampaignSet
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2058,7 +2057,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -2091,7 +2090,7 @@ Name | Type | Description  | Notes
 
 <a name="getCampaigns"></a>
 # **getCampaigns**
-> InlineResponse2001 getCampaigns(applicationId, opts)
+> InlineResponse2003 getCampaigns(applicationId, opts)
 
 List your Campaigns
 
@@ -2099,8 +2098,8 @@ List your Campaigns
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2108,15 +2107,19 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-  'campaignState': "campaignState_example" // String | Filter results by the state of the campaign.
+  'campaignState': "campaignState_example", // String | Filter results by the state of the campaign.
+  'name': "name_example", // String | Filter results performing case-insensitive matching against the name of the campaign.
+  'tags': "tags_example", // String | Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00") // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
 };
 apiInstance.getCampaigns(applicationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -2131,14 +2134,18 @@ apiInstance.getCampaigns(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **campaignState** | **String**| Filter results by the state of the campaign. | [optional] 
+ **name** | **String**| Filter results performing case-insensitive matching against the name of the campaign. | [optional] 
+ **tags** | **String**| Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \&quot;name\&quot; query parameter, a logical OR will be performed to search both tags and name for the provided values  | [optional] 
+ **createdBefore** | **Date**| Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. | [optional] 
+ **createdAfter** | **Date**| Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -2151,7 +2158,7 @@ Name | Type | Description  | Notes
 
 <a name="getChanges"></a>
 # **getChanges**
-> InlineResponse20024 getChanges(opts)
+> InlineResponse20025 getChanges(opts)
 
 Get audit log for an account
 
@@ -2159,8 +2166,8 @@ Get list of changes caused by API calls for an account. Only accessible for admi
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2168,10 +2175,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -2187,13 +2194,13 @@ apiInstance.getChanges(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -2206,7 +2213,7 @@ Name | Type | Description  | Notes
 
 <a name="getCoupons"></a>
 # **getCoupons**
-> InlineResponse2003 getCoupons(applicationId, campaignId, opts)
+> InlineResponse2001 getCoupons(applicationId, campaignId, opts)
 
 List Coupons
 
@@ -2214,8 +2221,8 @@ List Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2223,14 +2230,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2261,7 +2268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2280,7 +2287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -2293,7 +2300,7 @@ Name | Type | Description  | Notes
 
 <a name="getCouponsByAttributes"></a>
 # **getCouponsByAttributes**
-> InlineResponse2003 getCouponsByAttributes(applicationId, campaignId, opts)
+> InlineResponse2001 getCouponsByAttributes(applicationId, campaignId, body, opts)
 
 Get a list of the coupons that match the given attributes
 
@@ -2301,8 +2308,8 @@ Gets a list of all the coupons that exactly match a set of attributes.  The matc
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2310,14 +2317,16 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
+var body = new TalonOne.CouponSearch(); // CouponSearch | 
+
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2328,10 +2337,9 @@ var opts = {
   'referralId': 56, // Number | Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code
-  'batchId': "batchId_example", // String | Filter results by batches of coupons
-  'body': new TalononeApi.CouponSearch() // CouponSearch | 
+  'batchId': "batchId_example" // String | Filter results by batches of coupons
 };
-apiInstance.getCouponsByAttributes(applicationId, campaignId, opts).then(function(data) {
+apiInstance.getCouponsByAttributes(applicationId, campaignId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2345,7 +2353,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**CouponSearch**](CouponSearch.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2357,11 +2366,10 @@ Name | Type | Description  | Notes
  **recipientIntegrationId** | **String**| Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field | [optional] 
  **exactMatch** | **Boolean**| Filter results to an exact case-insensitive matching against the coupon code | [optional] [default to false]
  **batchId** | **String**| Filter results by batches of coupons | [optional] 
- **body** | [**CouponSearch**](CouponSearch.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -2374,7 +2382,7 @@ Name | Type | Description  | Notes
 
 <a name="getCouponsByAttributesApplicationWide"></a>
 # **getCouponsByAttributesApplicationWide**
-> InlineResponse2003 getCouponsByAttributesApplicationWide(applicationId, opts)
+> InlineResponse2001 getCouponsByAttributesApplicationWide(applicationId, body, opts)
 
 Get a list of the coupons that match the given attributes in all active campaigns of an application
 
@@ -2382,8 +2390,8 @@ Gets a list of all the coupons with attributes matching the query criteria Appli
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2391,12 +2399,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
+var body = new TalonOne.CouponSearch(); // CouponSearch | 
+
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2408,10 +2418,9 @@ var opts = {
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
   'batchId': "batchId_example", // String | Filter results by batches of coupons
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code
-  'campaignState': "campaignState_example", // String | Filter results by the state of the campaign.
-  'body': new TalononeApi.CouponSearch() // CouponSearch | 
+  'campaignState': "campaignState_example" // String | Filter results by the state of the campaign.
 };
-apiInstance.getCouponsByAttributesApplicationWide(applicationId, opts).then(function(data) {
+apiInstance.getCouponsByAttributesApplicationWide(applicationId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2424,7 +2433,8 @@ apiInstance.getCouponsByAttributesApplicationWide(applicationId, opts).then(func
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**CouponSearch**](CouponSearch.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2437,11 +2447,10 @@ Name | Type | Description  | Notes
  **batchId** | **String**| Filter results by batches of coupons | [optional] 
  **exactMatch** | **Boolean**| Filter results to an exact case-insensitive matching against the coupon code | [optional] [default to false]
  **campaignState** | **String**| Filter results by the state of the campaign. | [optional] 
- **body** | [**CouponSearch**](CouponSearch.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -2454,7 +2463,7 @@ Name | Type | Description  | Notes
 
 <a name="getCouponsWithoutTotalCount"></a>
 # **getCouponsWithoutTotalCount**
-> InlineResponse2004 getCouponsWithoutTotalCount(applicationId, campaignId, opts)
+> InlineResponse2005 getCouponsWithoutTotalCount(applicationId, campaignId, opts)
 
 List Coupons
 
@@ -2462,8 +2471,8 @@ List Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2471,14 +2480,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -2505,7 +2514,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -2520,7 +2529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -2541,8 +2550,8 @@ Fetch summary report for single application customer based on a time range
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2550,7 +2559,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp, must be an RFC3339 timestamp string
 
@@ -2561,7 +2570,7 @@ var applicationId = 56; // Number |
 var customerId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getCustomerActivityReport(rangeStart, rangeEnd, applicationId, customerId, opts).then(function(data) {
@@ -2580,7 +2589,7 @@ Name | Type | Description  | Notes
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
  **applicationId** | **Number**|  | 
  **customerId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
@@ -2598,7 +2607,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerActivityReports"></a>
 # **getCustomerActivityReports**
-> InlineResponse20013 getCustomerActivityReports(rangeStart, rangeEnd, applicationId, opts)
+> InlineResponse20014 getCustomerActivityReports(rangeStart, rangeEnd, applicationId, opts)
 
 Get Activity Reports for Application Customers
 
@@ -2606,8 +2615,8 @@ Fetch summary reports for all application customers based on a time range
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2615,7 +2624,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp, must be an RFC3339 timestamp string
 
@@ -2624,7 +2633,7 @@ var rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return resu
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'name': "name_example", // String | Only return reports matching the customer name
@@ -2647,7 +2656,7 @@ Name | Type | Description  | Notes
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **name** | **String**| Only return reports matching the customer name | [optional] 
@@ -2657,7 +2666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -2670,7 +2679,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerActivityReportsWithoutTotalCount"></a>
 # **getCustomerActivityReportsWithoutTotalCount**
-> InlineResponse20014 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
+> InlineResponse20015 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
 
 Get Activity Reports for Application Customers
 
@@ -2678,8 +2687,8 @@ Fetch summary reports for all application customers based on a time range. Inste
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2687,7 +2696,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp, must be an RFC3339 timestamp string
 
@@ -2696,7 +2705,7 @@ var rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return resu
 var applicationId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'name': "name_example", // String | Only return reports matching the customer name
@@ -2719,7 +2728,7 @@ Name | Type | Description  | Notes
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **name** | **String**| Only return reports matching the customer name | [optional] 
@@ -2729,7 +2738,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -2750,8 +2759,8 @@ Fetch analytics for single application customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2759,14 +2768,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var customerId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -2784,7 +2793,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **customerId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
@@ -2811,8 +2820,8 @@ Get Customer Profile
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2820,7 +2829,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -2856,7 +2865,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerProfiles"></a>
 # **getCustomerProfiles**
-> InlineResponse20012 getCustomerProfiles(opts)
+> InlineResponse20013 getCustomerProfiles(opts)
 
 List Customer Profiles
 
@@ -2864,8 +2873,8 @@ List Customer Profiles
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2873,10 +2882,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getCustomerProfiles(opts).then(function(data) {
@@ -2891,12 +2900,12 @@ apiInstance.getCustomerProfiles(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -2909,7 +2918,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomersByAttributes"></a>
 # **getCustomersByAttributes**
-> InlineResponse20012 getCustomersByAttributes(opts)
+> InlineResponse20013 getCustomersByAttributes(body, opts)
 
 Get a list of the customer profiles that match the given attributes
 
@@ -2917,8 +2926,8 @@ Gets a list of all the customer profiles for the account that exactly match a se
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2926,14 +2935,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
+
+var body = new TalonOne.ApplicationCustomerSearch(); // ApplicationCustomerSearch | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
-  'skip': 56, // Number | Skips the given number of items when paging through large result sets.
-  'body': new TalononeApi.ApplicationCustomerSearch() // ApplicationCustomerSearch | 
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
-apiInstance.getCustomersByAttributes(opts).then(function(data) {
+apiInstance.getCustomersByAttributes(body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2945,13 +2955,13 @@ apiInstance.getCustomersByAttributes(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**ApplicationCustomerSearch**](ApplicationCustomerSearch.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
- **body** | [**ApplicationCustomerSearch**](ApplicationCustomerSearch.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -2964,7 +2974,7 @@ Name | Type | Description  | Notes
 
 <a name="getEventTypes"></a>
 # **getEventTypes**
-> InlineResponse20022 getEventTypes(opts)
+> InlineResponse20023 getEventTypes(opts)
 
 List Event Types
 
@@ -2972,8 +2982,8 @@ Fetch all event type definitions for your account. Each event type can be
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -2981,13 +2991,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
   'applicationIds': "applicationIds_example", // String | Filter by one or more application ids separated by comma
   'name': "name_example", // String | Filter results to event types with the given name. This parameter implies `includeOldVersions`.
   'includeOldVersions': false, // Boolean | Include all versions of every event type.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -3006,13 +3016,13 @@ Name | Type | Description  | Notes
  **applicationIds** | **String**| Filter by one or more application ids separated by comma | [optional] 
  **name** | **String**| Filter results to event types with the given name. This parameter implies &#x60;includeOldVersions&#x60;. | [optional] 
  **includeOldVersions** | **Boolean**| Include all versions of every event type. | [optional] [default to false]
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -3025,7 +3035,7 @@ Name | Type | Description  | Notes
 
 <a name="getExports"></a>
 # **getExports**
-> InlineResponse20025 getExports(opts)
+> InlineResponse20026 getExports(opts)
 
 Get Exports
 
@@ -3033,8 +3043,8 @@ Get a list of all past exports
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3042,10 +3052,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'applicationId': 56, // Number | 
   'campaignId': 56, // Number | 
@@ -3063,7 +3073,7 @@ apiInstance.getExports(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **applicationId** | **Number**|  | [optional] 
  **campaignId** | **Number**|  | [optional] 
@@ -3071,7 +3081,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -3084,7 +3094,7 @@ Name | Type | Description  | Notes
 
 <a name="getImports"></a>
 # **getImports**
-> InlineResponse20026 getImports(opts)
+> InlineResponse20027 getImports(opts)
 
 Get Imports
 
@@ -3092,8 +3102,8 @@ Get a list of all past imports
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3101,10 +3111,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getImports(opts).then(function(data) {
@@ -3119,12 +3129,12 @@ apiInstance.getImports(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -3145,8 +3155,8 @@ Get the Loyalty Ledger for this profile integration ID.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3154,7 +3164,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var programID = "programID_example"; // String | The identifier for the application, must be unique within the account.
 
@@ -3198,8 +3208,8 @@ Get a loyalty program
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3207,7 +3217,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var programID = "programID_example"; // String | 
 
@@ -3240,7 +3250,7 @@ Name | Type | Description  | Notes
 
 <a name="getLoyaltyPrograms"></a>
 # **getLoyaltyPrograms**
-> InlineResponse2007 getLoyaltyPrograms()
+> InlineResponse2008 getLoyaltyPrograms()
 
 List all loyalty Programs
 
@@ -3248,8 +3258,8 @@ List all loyalty Programs
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3257,7 +3267,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 apiInstance.getLoyaltyPrograms().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3271,7 +3281,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -3284,7 +3294,7 @@ This endpoint does not need any parameter.
 
 <a name="getReferrals"></a>
 # **getReferrals**
-> InlineResponse2005 getReferrals(applicationId, campaignId, opts)
+> InlineResponse2006 getReferrals(applicationId, campaignId, opts)
 
 List Referrals
 
@@ -3292,8 +3302,8 @@ List Referrals
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3301,14 +3311,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'code': "code_example", // String | Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -3332,7 +3342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **code** | **String**| Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -3344,7 +3354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -3357,7 +3367,7 @@ Name | Type | Description  | Notes
 
 <a name="getReferralsWithoutTotalCount"></a>
 # **getReferralsWithoutTotalCount**
-> InlineResponse2006 getReferralsWithoutTotalCount(applicationId, campaignId, opts)
+> InlineResponse2007 getReferralsWithoutTotalCount(applicationId, campaignId, opts)
 
 List Referrals
 
@@ -3365,8 +3375,8 @@ List Referrals
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3374,14 +3384,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'code': "code_example", // String | Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -3405,7 +3415,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **code** | **String**| Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -3417,7 +3427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -3436,8 +3446,8 @@ Get information for the specified role.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3445,7 +3455,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var roleId = 56; // Number | 
 
@@ -3486,8 +3496,8 @@ Get a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3495,7 +3505,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -3534,7 +3544,7 @@ Name | Type | Description  | Notes
 
 <a name="getRulesets"></a>
 # **getRulesets**
-> InlineResponse2002 getRulesets(applicationId, campaignId, opts)
+> InlineResponse2004 getRulesets(applicationId, campaignId, opts)
 
 List Campaign Rulesets
 
@@ -3542,8 +3552,8 @@ List Campaign Rulesets
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3551,14 +3561,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -3576,13 +3586,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -3603,8 +3613,8 @@ Retrieves the data (including an invitation code) for a user. Non-admin users ca
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3612,7 +3622,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var userId = 56; // Number | 
 
@@ -3645,7 +3655,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsers"></a>
 # **getUsers**
-> InlineResponse20023 getUsers(opts)
+> InlineResponse20024 getUsers(opts)
 
 List Users in your account
 
@@ -3653,8 +3663,8 @@ Retrieve all users in your account.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3662,10 +3672,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
 };
@@ -3681,13 +3691,13 @@ apiInstance.getUsers(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -3708,8 +3718,8 @@ Returns an webhook by its id.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3717,7 +3727,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var webhookId = 56; // Number | 
 
@@ -3750,7 +3760,7 @@ Name | Type | Description  | Notes
 
 <a name="getWebhookActivationLogs"></a>
 # **getWebhookActivationLogs**
-> InlineResponse20020 getWebhookActivationLogs(opts)
+> InlineResponse20021 getWebhookActivationLogs(opts)
 
 List Webhook activation Log Entries
 
@@ -3758,8 +3768,8 @@ Webhook activation log entries would be created as soon as an integration reques
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3767,10 +3777,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'integrationRequestUuid': "integrationRequestUuid_example", // String | Filter results by integration request UUID.
@@ -3792,7 +3802,7 @@ apiInstance.getWebhookActivationLogs(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **integrationRequestUuid** | **String**| Filter results by integration request UUID. | [optional] 
@@ -3804,7 +3814,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -3817,7 +3827,7 @@ Name | Type | Description  | Notes
 
 <a name="getWebhookLogs"></a>
 # **getWebhookLogs**
-> InlineResponse20021 getWebhookLogs(opts)
+> InlineResponse20022 getWebhookLogs(opts)
 
 List Webhook Log Entries
 
@@ -3825,8 +3835,8 @@ List Webhook Log Entries
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3834,10 +3844,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'status': "status_example", // String | Filter results by HTTP status codes.
@@ -3860,7 +3870,7 @@ apiInstance.getWebhookLogs(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
@@ -3873,7 +3883,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -3886,7 +3896,7 @@ Name | Type | Description  | Notes
 
 <a name="getWebhooks"></a>
 # **getWebhooks**
-> InlineResponse20019 getWebhooks(opts)
+> InlineResponse20020 getWebhooks(opts)
 
 List Webhooks
 
@@ -3894,8 +3904,8 @@ List Webhooks
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3903,12 +3913,12 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var opts = { 
   'applicationIds': "applicationIds_example", // String | Filter by one or more application ids separated by comma
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56 // Number | Skips the given number of items when paging through large result sets.
 };
 apiInstance.getWebhooks(opts).then(function(data) {
@@ -3925,12 +3935,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationIds** | **String**| Filter by one or more application ids separated by comma | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -3951,8 +3961,8 @@ Should be used to trigger a manual refresh of analytics.
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -3960,7 +3970,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 apiInstance.refreshAnalytics().then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -3987,7 +3997,7 @@ null (empty response body)
 
 <a name="removeLoyaltyPoints"></a>
 # **removeLoyaltyPoints**
-> removeLoyaltyPoints(programID, integrationID, opts)
+> removeLoyaltyPoints(programID, integrationID, body)
 
 Deduct points in a certain loyalty program for the specified customer
 
@@ -3995,8 +4005,8 @@ Deduct points in a certain loyalty program for the specified customer
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4004,16 +4014,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var programID = "programID_example"; // String | 
 
 var integrationID = "integrationID_example"; // String | 
 
-var opts = { 
-  'body': new TalononeApi.LoyaltyPoints() // LoyaltyPoints | 
-};
-apiInstance.removeLoyaltyPoints(programID, integrationID, opts).then(function() {
+var body = new TalonOne.LoyaltyPoints(); // LoyaltyPoints | 
+
+apiInstance.removeLoyaltyPoints(programID, integrationID, body).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -4027,7 +4036,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **programID** | **String**|  | 
  **integrationID** | **String**|  | 
- **body** | [**LoyaltyPoints**](LoyaltyPoints.md)|  | [optional] 
+ **body** | [**LoyaltyPoints**](LoyaltyPoints.md)|  | 
 
 ### Return type
 
@@ -4044,7 +4053,7 @@ null (empty response body)
 
 <a name="resetPassword"></a>
 # **resetPassword**
-> NewPassword resetPassword(opts)
+> NewPassword resetPassword(body)
 
 Reset password
 
@@ -4052,8 +4061,8 @@ Consumes the supplied password reset token and updates the password for the asso
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4061,12 +4070,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
-var opts = { 
-  'body': new TalononeApi.NewPassword() // NewPassword | 
-};
-apiInstance.resetPassword(opts).then(function(data) {
+var body = new TalonOne.NewPassword(); // NewPassword | 
+
+apiInstance.resetPassword(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4078,7 +4086,7 @@ apiInstance.resetPassword(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NewPassword**](NewPassword.md)|  | [optional] 
+ **body** | [**NewPassword**](NewPassword.md)|  | 
 
 ### Return type
 
@@ -4095,7 +4103,7 @@ Name | Type | Description  | Notes
 
 <a name="searchCouponsAdvanced"></a>
 # **searchCouponsAdvanced**
-> InlineResponse2003 searchCouponsAdvanced(applicationId, campaignId, opts)
+> InlineResponse2001 searchCouponsAdvanced(applicationId, campaignId, body, opts)
 
 Get a list of the coupons that match the given attributes
 
@@ -4103,8 +4111,8 @@ Gets a list of all the coupons with attributes matching the query criteria
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4112,14 +4120,16 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
+var body = new TalonOne.AttributeQuery(); // AttributeQuery | 
+
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4130,10 +4140,9 @@ var opts = {
   'referralId': 56, // Number | Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code
-  'batchId': "batchId_example", // String | Filter results by batches of coupons
-  'body': new TalononeApi.AttributeQuery() // AttributeQuery | 
+  'batchId': "batchId_example" // String | Filter results by batches of coupons
 };
-apiInstance.searchCouponsAdvanced(applicationId, campaignId, opts).then(function(data) {
+apiInstance.searchCouponsAdvanced(applicationId, campaignId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4147,7 +4156,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**AttributeQuery**](AttributeQuery.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -4159,11 +4169,10 @@ Name | Type | Description  | Notes
  **recipientIntegrationId** | **String**| Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field | [optional] 
  **exactMatch** | **Boolean**| Filter results to an exact case-insensitive matching against the coupon code | [optional] [default to false]
  **batchId** | **String**| Filter results by batches of coupons | [optional] 
- **body** | [**AttributeQuery**](AttributeQuery.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -4176,7 +4185,7 @@ Name | Type | Description  | Notes
 
 <a name="searchCouponsAdvancedApplicationWide"></a>
 # **searchCouponsAdvancedApplicationWide**
-> InlineResponse2003 searchCouponsAdvancedApplicationWide(applicationId, opts)
+> InlineResponse2001 searchCouponsAdvancedApplicationWide(applicationId, body, opts)
 
 Get a list of the coupons that match the given attributes in all active campaigns of an application
 
@@ -4184,8 +4193,8 @@ Gets a list of all the coupons with attributes matching the query criteria in al
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4193,12 +4202,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
+var body = new TalonOne.AttributeQuery(); // AttributeQuery | 
+
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4210,10 +4221,9 @@ var opts = {
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
   'batchId': "batchId_example", // String | Filter results by batches of coupons
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code
-  'campaignState': "campaignState_example", // String | Filter results by the state of the campaign.
-  'body': new TalononeApi.AttributeQuery() // AttributeQuery | 
+  'campaignState': "campaignState_example" // String | Filter results by the state of the campaign.
 };
-apiInstance.searchCouponsAdvancedApplicationWide(applicationId, opts).then(function(data) {
+apiInstance.searchCouponsAdvancedApplicationWide(applicationId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4226,7 +4236,8 @@ apiInstance.searchCouponsAdvancedApplicationWide(applicationId, opts).then(funct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**AttributeQuery**](AttributeQuery.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -4239,11 +4250,10 @@ Name | Type | Description  | Notes
  **batchId** | **String**| Filter results by batches of coupons | [optional] 
  **exactMatch** | **Boolean**| Filter results to an exact case-insensitive matching against the coupon code | [optional] [default to false]
  **campaignState** | **String**| Filter results by the state of the campaign. | [optional] 
- **body** | [**AttributeQuery**](AttributeQuery.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -4256,7 +4266,7 @@ Name | Type | Description  | Notes
 
 <a name="searchCouponsAdvancedApplicationWideWithoutTotalCount"></a>
 # **searchCouponsAdvancedApplicationWideWithoutTotalCount**
-> InlineResponse2004 searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, opts)
+> InlineResponse2005 searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, body, opts)
 
 Get a list of the coupons that match the given attributes in all active campaigns of an application
 
@@ -4264,8 +4274,8 @@ Gets a list of all the coupons with attributes matching the query criteria in al
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4273,12 +4283,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
+var body = new TalonOne.AttributeQuery(); // AttributeQuery | 
+
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4290,10 +4302,9 @@ var opts = {
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
   'batchId': "batchId_example", // String | Filter results by batches of coupons
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code
-  'campaignState': "campaignState_example", // String | Filter results by the state of the campaign.
-  'body': new TalononeApi.AttributeQuery() // AttributeQuery | 
+  'campaignState': "campaignState_example" // String | Filter results by the state of the campaign.
 };
-apiInstance.searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, opts).then(function(data) {
+apiInstance.searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4306,7 +4317,8 @@ apiInstance.searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**AttributeQuery**](AttributeQuery.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -4319,11 +4331,10 @@ Name | Type | Description  | Notes
  **batchId** | **String**| Filter results by batches of coupons | [optional] 
  **exactMatch** | **Boolean**| Filter results to an exact case-insensitive matching against the coupon code | [optional] [default to false]
  **campaignState** | **String**| Filter results by the state of the campaign. | [optional] 
- **body** | [**AttributeQuery**](AttributeQuery.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -4336,7 +4347,7 @@ Name | Type | Description  | Notes
 
 <a name="searchCouponsAdvancedWithoutTotalCount"></a>
 # **searchCouponsAdvancedWithoutTotalCount**
-> InlineResponse2004 searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, opts)
+> InlineResponse2005 searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts)
 
 Get a list of the coupons that match the given attributes
 
@@ -4344,8 +4355,8 @@ Gets a list of all the coupons with attributes matching the query criteria
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4353,14 +4364,16 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
+var body = new TalonOne.AttributeQuery(); // AttributeQuery | 
+
 var opts = { 
-  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1500 will be used.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
@@ -4371,10 +4384,9 @@ var opts = {
   'referralId': 56, // Number | Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code
-  'batchId': "batchId_example", // String | Filter results by batches of coupons
-  'body': new TalononeApi.AttributeQuery() // AttributeQuery | 
+  'batchId': "batchId_example" // String | Filter results by batches of coupons
 };
-apiInstance.searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, opts).then(function(data) {
+apiInstance.searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4388,7 +4400,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1500 will be used. | [optional] 
+ **body** | [**AttributeQuery**](AttributeQuery.md)|  | 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **value** | **String**| Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters. | [optional] 
@@ -4400,11 +4413,10 @@ Name | Type | Description  | Notes
  **recipientIntegrationId** | **String**| Filter results by match with a profile id specified in the coupon&#39;s RecipientIntegrationId field | [optional] 
  **exactMatch** | **Boolean**| Filter results to an exact case-insensitive matching against the coupon code | [optional] [default to false]
  **batchId** | **String**| Filter results by batches of coupons | [optional] 
- **body** | [**AttributeQuery**](AttributeQuery.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -4417,7 +4429,7 @@ Name | Type | Description  | Notes
 
 <a name="setAccountLimits"></a>
 # **setAccountLimits**
-> setAccountLimits(accountId, opts)
+> setAccountLimits(accountId, body)
 
 Set account limits
 
@@ -4425,8 +4437,8 @@ sets account limits
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4434,14 +4446,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var accountId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.AccountLimits() // AccountLimits | 
-};
-apiInstance.setAccountLimits(accountId, opts).then(function() {
+var body = new TalonOne.AccountLimits(); // AccountLimits | 
+
+apiInstance.setAccountLimits(accountId, body).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -4454,7 +4465,7 @@ apiInstance.setAccountLimits(accountId, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **Number**|  | 
- **body** | [**AccountLimits**](AccountLimits.md)|  | [optional] 
+ **body** | [**AccountLimits**](AccountLimits.md)|  | 
 
 ### Return type
 
@@ -4471,7 +4482,7 @@ null (empty response body)
 
 <a name="updateCampaign"></a>
 # **updateCampaign**
-> Campaign updateCampaign(applicationId, campaignId, opts)
+> Campaign updateCampaign(applicationId, campaignId, body)
 
 Update a Campaign
 
@@ -4479,8 +4490,8 @@ Update a Campaign
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4488,16 +4499,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.UpdateCampaign() // UpdateCampaign | 
-};
-apiInstance.updateCampaign(applicationId, campaignId, opts).then(function(data) {
+var body = new TalonOne.UpdateCampaign(); // UpdateCampaign | 
+
+apiInstance.updateCampaign(applicationId, campaignId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4511,7 +4521,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **body** | [**UpdateCampaign**](UpdateCampaign.md)|  | [optional] 
+ **body** | [**UpdateCampaign**](UpdateCampaign.md)|  | 
 
 ### Return type
 
@@ -4528,7 +4538,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCampaignSet"></a>
 # **updateCampaignSet**
-> CampaignSet updateCampaignSet(applicationId, opts)
+> CampaignSet updateCampaignSet(applicationId, body)
 
 Update a Campaign Set
 
@@ -4536,8 +4546,8 @@ Update a Campaign Set
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4545,14 +4555,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.NewCampaignSet() // NewCampaignSet | 
-};
-apiInstance.updateCampaignSet(applicationId, opts).then(function(data) {
+var body = new TalonOne.NewCampaignSet(); // NewCampaignSet | 
+
+apiInstance.updateCampaignSet(applicationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4565,7 +4574,7 @@ apiInstance.updateCampaignSet(applicationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
- **body** | [**NewCampaignSet**](NewCampaignSet.md)|  | [optional] 
+ **body** | [**NewCampaignSet**](NewCampaignSet.md)|  | 
 
 ### Return type
 
@@ -4582,7 +4591,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCoupon"></a>
 # **updateCoupon**
-> Coupon updateCoupon(applicationId, campaignId, couponId, opts)
+> Coupon updateCoupon(applicationId, campaignId, couponId, body)
 
 Update a Coupon
 
@@ -4590,8 +4599,8 @@ Update a Coupon
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4599,7 +4608,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -4607,10 +4616,9 @@ var campaignId = 56; // Number |
 
 var couponId = "couponId_example"; // String | The ID of the coupon code to update
 
-var opts = { 
-  'body': new TalononeApi.UpdateCoupon() // UpdateCoupon | 
-};
-apiInstance.updateCoupon(applicationId, campaignId, couponId, opts).then(function(data) {
+var body = new TalonOne.UpdateCoupon(); // UpdateCoupon | 
+
+apiInstance.updateCoupon(applicationId, campaignId, couponId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4625,7 +4633,7 @@ Name | Type | Description  | Notes
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
  **couponId** | **String**| The ID of the coupon code to update | 
- **body** | [**UpdateCoupon**](UpdateCoupon.md)|  | [optional] 
+ **body** | [**UpdateCoupon**](UpdateCoupon.md)|  | 
 
 ### Return type
 
@@ -4642,7 +4650,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCouponBatch"></a>
 # **updateCouponBatch**
-> updateCouponBatch(applicationId, campaignId, opts)
+> updateCouponBatch(applicationId, campaignId, body)
 
 Update a Batch of Coupons
 
@@ -4650,8 +4658,8 @@ Update a Batch of Coupons
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4659,16 +4667,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.UpdateCouponBatch() // UpdateCouponBatch | 
-};
-apiInstance.updateCouponBatch(applicationId, campaignId, opts).then(function() {
+var body = new TalonOne.UpdateCouponBatch(); // UpdateCouponBatch | 
+
+apiInstance.updateCouponBatch(applicationId, campaignId, body).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -4682,7 +4689,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
- **body** | [**UpdateCouponBatch**](UpdateCouponBatch.md)|  | [optional] 
+ **body** | [**UpdateCouponBatch**](UpdateCouponBatch.md)|  | 
 
 ### Return type
 
@@ -4699,7 +4706,7 @@ null (empty response body)
 
 <a name="updateRuleset"></a>
 # **updateRuleset**
-> Ruleset updateRuleset(applicationId, campaignId, rulesetId, opts)
+> Ruleset updateRuleset(applicationId, campaignId, rulesetId, body)
 
 Update a Ruleset
 
@@ -4707,8 +4714,8 @@ Update a Ruleset
 
 ### Example
 ```javascript
-var TalononeApi = require('talon_one');
-var defaultClient = TalononeApi.ApiClient.instance;
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
 
 // Configure API key authorization: manager_auth
 var manager_auth = defaultClient.authentications['manager_auth'];
@@ -4716,7 +4723,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //manager_auth.apiKeyPrefix = 'Token';
 
-var apiInstance = new TalononeApi.ManagementApi();
+var apiInstance = new TalonOne.ManagementApi();
 
 var applicationId = 56; // Number | 
 
@@ -4724,10 +4731,9 @@ var campaignId = 56; // Number |
 
 var rulesetId = 56; // Number | 
 
-var opts = { 
-  'body': new TalononeApi.NewRuleset() // NewRuleset | 
-};
-apiInstance.updateRuleset(applicationId, campaignId, rulesetId, opts).then(function(data) {
+var body = new TalonOne.NewRuleset(); // NewRuleset | 
+
+apiInstance.updateRuleset(applicationId, campaignId, rulesetId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4742,7 +4748,7 @@ Name | Type | Description  | Notes
  **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
  **rulesetId** | **Number**|  | 
- **body** | [**NewRuleset**](NewRuleset.md)|  | [optional] 
+ **body** | [**NewRuleset**](NewRuleset.md)|  | 
 
 ### Return type
 

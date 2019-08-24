@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse2007
+# TalonOne.InlineResponse2007
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[LoyaltyProgram]**](LoyaltyProgram.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[Referral]**](Referral.md) |  | 
 
 

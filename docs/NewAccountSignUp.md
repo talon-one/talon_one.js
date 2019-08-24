@@ -1,4 +1,4 @@
-# TalononeApi.NewAccountSignUp
+# TalonOne.NewAccountSignUp
 
 ## Properties
 Name | Type | Description | Notes

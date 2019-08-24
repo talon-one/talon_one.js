@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse20014
+# TalonOne.InlineResponse20014
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
+**totalResultSize** | **Number** |  | 
 **data** | [**[CustomerActivityReport]**](CustomerActivityReport.md) |  | 
 
 

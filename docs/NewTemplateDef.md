@@ -1,4 +1,4 @@
-# TalononeApi.NewTemplateDef
+# TalonOne.NewTemplateDef
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.ApplicationApiHealth
+# TalonOne.ApplicationApiHealth
 
 ## Properties
 Name | Type | Description | Notes

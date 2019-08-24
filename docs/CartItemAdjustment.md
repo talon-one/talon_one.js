@@ -1,4 +1,4 @@
-# TalononeApi.CartItemAdjustment
+# TalonOne.CartItemAdjustment
 
 ## Properties
 Name | Type | Description | Notes

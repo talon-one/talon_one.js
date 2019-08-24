@@ -1,4 +1,4 @@
-# TalononeApi.UpdateAccount
+# TalonOne.UpdateAccount
 
 ## Properties
 Name | Type | Description | Notes

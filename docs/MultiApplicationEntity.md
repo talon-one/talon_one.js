@@ -1,4 +1,4 @@
-# TalononeApi.MultiApplicationEntity
+# TalonOne.MultiApplicationEntity
 
 ## Properties
 Name | Type | Description | Notes

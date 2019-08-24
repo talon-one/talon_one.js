@@ -1,4 +1,4 @@
-# TalononeApi.UserEntity
+# TalonOne.UserEntity
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse2004
+# TalonOne.InlineResponse2004
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[Coupon]**](Coupon.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[Ruleset]**](Ruleset.md) |  | 
 
 

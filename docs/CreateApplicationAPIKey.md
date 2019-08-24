@@ -1,4 +1,4 @@
-# TalononeApi.CreateApplicationAPIKey
+# TalonOne.CreateApplicationAPIKey
 
 ## Properties
 Name | Type | Description | Notes

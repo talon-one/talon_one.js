@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse2008
+# TalonOne.InlineResponse2008
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
+**data** | [**[LoyaltyProgram]**](LoyaltyProgram.md) |  | 
 
 

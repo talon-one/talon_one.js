@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse20020
+# TalonOne.InlineResponse20020
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[WebhookActivationLogEntry]**](WebhookActivationLogEntry.md) |  | 
+**data** | [**[Webhook]**](Webhook.md) |  | 
 
 
