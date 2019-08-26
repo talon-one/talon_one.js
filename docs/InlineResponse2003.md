@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse2003
+# TalonOne.InlineResponse2003
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Coupon]**](Coupon.md) |  | 
+**data** | [**[Campaign]**](Campaign.md) |  | 
 
 

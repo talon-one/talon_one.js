@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse20016
+# TalonOne.InlineResponse20016
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
+**data** | [**[ApplicationSession]**](ApplicationSession.md) |  | 
 
 

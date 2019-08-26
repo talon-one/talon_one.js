@@ -1,4 +1,4 @@
-# TalononeApi.CouponRejectionReason
+# TalonOne.CouponRejectionReason
 
 ## Properties
 Name | Type | Description | Notes
@@ -17,6 +17,10 @@ Name | Type | Description | Notes
 * `CouponPartOfNotRunningCampaign` (value: `"CouponPartOfNotRunningCampaign"`)
 
 * `CouponLimitReached` (value: `"CouponLimitReached"`)
+
+* `CampaignLimitReached` (value: `"CampaignLimitReached"`)
+
+* `ProfileLimitReached` (value: `"ProfileLimitReached"`)
 
 * `CouponRecipientDoesNotMatch` (value: `"CouponRecipientDoesNotMatch"`)
 

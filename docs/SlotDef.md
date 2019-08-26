@@ -1,4 +1,4 @@
-# TalononeApi.SlotDef
+# TalonOne.SlotDef
 
 ## Properties
 Name | Type | Description | Notes

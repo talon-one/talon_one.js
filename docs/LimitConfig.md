@@ -1,4 +1,4 @@
-# TalononeApi.LimitConfig
+# TalonOne.LimitConfig
 
 ## Properties
 Name | Type | Description | Notes
@@ -32,6 +32,8 @@ Name | Type | Description | Notes
 * `Referral` (value: `"Referral"`)
 
 * `Profile` (value: `"Profile"`)
+
+* `Identifier` (value: `"Identifier"`)
 
 
 

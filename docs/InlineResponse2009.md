@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse2009
+# TalonOne.InlineResponse2009
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
+**totalResultSize** | **Number** |  | 
 **data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

@@ -1,4 +1,4 @@
-# TalononeApi.ModelExport
+# TalonOne.ModelExport
 
 ## Properties
 Name | Type | Description | Notes

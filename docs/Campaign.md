@@ -1,4 +1,4 @@
-# TalononeApi.Campaign
+# TalonOne.Campaign
 
 ## Properties
 Name | Type | Description | Notes

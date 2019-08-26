@@ -1,4 +1,4 @@
-# TalononeApi.RoleMembership
+# TalonOne.RoleMembership
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.ApplicationEntity
+# TalonOne.ApplicationEntity
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,7 +1,7 @@
 {
   "name": "talon_one",
-  "version": "2.0.0",
-  "description": "Talon.One integration and management sdks",
+  "version": "3.0.0",
+  "description": "Talon.One API SDK for Javascript",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
@@ -11,10 +11,10 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": ">=3.7.0"
+    "superagent": "3.7.0"
   },
   "devDependencies": {
-    "mocha": "~5.2.0",
+    "mocha": "~2.3.4",
     "sinon": "1.17.3",
     "expect.js": "~0.3.1"
   }

@@ -1,4 +1,4 @@
-# TalononeApi.Binding
+# TalonOne.Binding
 
 ## Properties
 Name | Type | Description | Notes

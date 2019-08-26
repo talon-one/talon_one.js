@@ -1,4 +1,4 @@
-# TalononeApi.LoginParams
+# TalonOne.LoginParams
 
 ## Properties
 Name | Type | Description | Notes

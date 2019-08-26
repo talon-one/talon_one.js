@@ -1,4 +1,4 @@
-# TalononeApi.Event
+# TalonOne.Event
 
 ## Properties
 Name | Type | Description | Notes

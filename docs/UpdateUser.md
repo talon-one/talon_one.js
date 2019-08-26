@@ -1,4 +1,4 @@
-# TalononeApi.UpdateUser
+# TalonOne.UpdateUser
 
 ## Properties
 Name | Type | Description | Notes

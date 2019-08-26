@@ -1,4 +1,4 @@
-# TalononeApi.AccountAnalytics
+# TalonOne.AccountAnalytics
 
 ## Properties
 Name | Type | Description | Notes

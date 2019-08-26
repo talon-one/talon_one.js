@@ -1,4 +1,4 @@
-# TalononeApi.Change
+# TalonOne.Change
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.CouponSearch
+# TalonOne.CouponSearch
 
 ## Properties
 Name | Type | Description | Notes

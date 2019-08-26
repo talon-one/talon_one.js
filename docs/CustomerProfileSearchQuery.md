@@ -1,4 +1,4 @@
-# TalononeApi.CustomerProfileSearchQuery
+# TalonOne.CustomerProfileSearchQuery
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.CouponReservations
+# TalonOne.CouponReservations
 
 ## Properties
 Name | Type | Description | Notes

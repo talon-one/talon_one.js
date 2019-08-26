@@ -1,4 +1,4 @@
-# TalononeApi.Meta
+# TalonOne.Meta
 
 ## Properties
 Name | Type | Description | Notes

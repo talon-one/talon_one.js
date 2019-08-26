@@ -1,4 +1,4 @@
-# TalononeApi.UpdateRole
+# TalonOne.UpdateRole
 
 ## Properties
 Name | Type | Description | Notes

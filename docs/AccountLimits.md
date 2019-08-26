@@ -1,4 +1,4 @@
-# TalononeApi.AccountLimits
+# TalonOne.AccountLimits
 
 ## Properties
 Name | Type | Description | Notes

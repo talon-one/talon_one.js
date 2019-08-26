@@ -1,4 +1,4 @@
-# TalononeApi.MiscUpdateUserLatestFeature
+# TalonOne.MiscUpdateUserLatestFeature
 
 ## Properties
 Name | Type | Description | Notes

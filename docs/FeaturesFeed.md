@@ -1,4 +1,4 @@
-# TalononeApi.FeaturesFeed
+# TalonOne.FeaturesFeed
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.CampaignSet
+# TalonOne.CampaignSet
 
 ## Properties
 Name | Type | Description | Notes

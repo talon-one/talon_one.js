@@ -1,4 +1,4 @@
-# TalononeApi.IntegrationEntity
+# TalonOne.IntegrationEntity
 
 ## Properties
 Name | Type | Description | Notes

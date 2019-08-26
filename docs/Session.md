@@ -1,4 +1,4 @@
-# TalononeApi.Session
+# TalonOne.Session
 
 ## Properties
 Name | Type | Description | Notes

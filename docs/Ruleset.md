@@ -1,4 +1,4 @@
-# TalononeApi.Ruleset
+# TalonOne.Ruleset
 
 ## Properties
 Name | Type | Description | Notes

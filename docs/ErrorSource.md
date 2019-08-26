@@ -1,4 +1,4 @@
-# TalononeApi.ErrorSource
+# TalonOne.ErrorSource
 
 ## Properties
 Name | Type | Description | Notes

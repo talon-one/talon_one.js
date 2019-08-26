@@ -1,4 +1,4 @@
-# TalononeApi.NewCustomerProfile
+# TalonOne.NewCustomerProfile
 
 ## Properties
 Name | Type | Description | Notes

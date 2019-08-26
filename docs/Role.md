@@ -1,4 +1,4 @@
-# TalononeApi.Role
+# TalonOne.Role
 
 ## Properties
 Name | Type | Description | Notes

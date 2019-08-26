@@ -1,4 +1,4 @@
-# TalononeApi.APIError
+# TalonOne.APIError
 
 ## Properties
 Name | Type | Description | Notes

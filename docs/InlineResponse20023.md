@@ -1,9 +1,9 @@
-# TalononeApi.InlineResponse20023
+# TalonOne.InlineResponse20023
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[User]**](User.md) |  | 
+**data** | [**[EventType]**](EventType.md) |  | 
 
 

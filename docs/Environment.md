@@ -1,4 +1,4 @@
-# TalononeApi.Environment
+# TalonOne.Environment
 
 ## Properties
 Name | Type | Description | Notes

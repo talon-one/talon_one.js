@@ -1,4 +1,4 @@
-# TalononeApi.AccessLogEntry
+# TalonOne.AccessLogEntry
 
 ## Properties
 Name | Type | Description | Notes

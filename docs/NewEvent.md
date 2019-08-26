@@ -1,4 +1,4 @@
-# TalononeApi.NewEvent
+# TalonOne.NewEvent
 
 ## Properties
 Name | Type | Description | Notes

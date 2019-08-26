@@ -1,4 +1,4 @@
-# TalononeApi.NewWebhook
+# TalonOne.NewWebhook
 
 ## Properties
 Name | Type | Description | Notes

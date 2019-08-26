@@ -1,4 +1,4 @@
-# TalononeApi.LibraryAttribute
+# TalonOne.LibraryAttribute
 
 ## Properties
 Name | Type | Description | Notes

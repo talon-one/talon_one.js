@@ -1,4 +1,4 @@
-# TalononeApi.NewImport
+# TalonOne.NewImport
 
 ## Properties
 Name | Type | Description | Notes

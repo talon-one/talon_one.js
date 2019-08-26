@@ -1,4 +1,4 @@
-# TalononeApi.ApplicationStorageData
+# TalonOne.ApplicationStorageData
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# TalononeApi.ApplicationStorageTuple
+# TalonOne.ApplicationStorageTuple
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **created** | **Date** | The exact moment this entity was created. | 
 **modified** | **Date** | The exact moment this entity was last modified. | 
 **key** | **String** | Key information that will map to a value, e.g. SKU number \&quot;LEV-JN-SL-36-GN\&quot;. | 
+**value** | **Object** |  | 
 **storageId** | **Number** | ID of the storage in which the data resides | 
 
 

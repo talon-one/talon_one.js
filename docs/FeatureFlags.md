@@ -1,4 +1,4 @@
-# TalononeApi.FeatureFlags
+# TalonOne.FeatureFlags
 
 ## Properties
 Name | Type | Description | Notes

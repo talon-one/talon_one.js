@@ -1,4 +1,4 @@
-# TalononeApi.ModelImport
+# TalonOne.ModelImport
 
 ## Properties
 Name | Type | Description | Notes
