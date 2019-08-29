@@ -36,7 +36,7 @@
   /**
    * The NewLoyaltyProgram model module.
    * @module model/NewLoyaltyProgram
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**
@@ -47,8 +47,9 @@
    * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
    * @param title {String} The display title for the Loyalty Program.
    * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m' or '30d'.
+   * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
    */
-  var exports = function(name, title, defaultValidity) {
+  var exports = function(name, title, defaultValidity, allowSubledger) {
     var _this = this;
 
     _this['name'] = name;
@@ -56,6 +57,7 @@
 
 
     _this['defaultValidity'] = defaultValidity;
+    _this['allowSubledger'] = allowSubledger;
   };
 
   /**
@@ -83,6 +85,9 @@
       }
       if (data.hasOwnProperty('defaultValidity')) {
         obj['defaultValidity'] = ApiClient.convertToType(data['defaultValidity'], 'String');
+      }
+      if (data.hasOwnProperty('allowSubledger')) {
+        obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
       }
     }
     return obj;
@@ -113,6 +118,11 @@
    * @member {String} defaultValidity
    */
   exports.prototype['defaultValidity'] = undefined;
+  /**
+   * Indicates if this program supports subledgers inside the program
+   * @member {Boolean} allowSubledger
+   */
+  exports.prototype['allowSubledger'] = undefined;
 
 
 

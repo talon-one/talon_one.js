@@ -36,7 +36,7 @@
   /**
    * The IntegrationEntity model module.
    * @module model/IntegrationEntity
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

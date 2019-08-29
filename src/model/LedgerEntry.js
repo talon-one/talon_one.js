@@ -36,7 +36,7 @@
   /**
    * The LedgerEntry model module.
    * @module model/LedgerEntry
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

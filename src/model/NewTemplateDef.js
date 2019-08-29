@@ -36,7 +36,7 @@
   /**
    * The NewTemplateDef model module.
    * @module model/NewTemplateDef
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

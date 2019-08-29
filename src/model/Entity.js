@@ -36,7 +36,7 @@
   /**
    * The Entity model module.
    * @module model/Entity
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

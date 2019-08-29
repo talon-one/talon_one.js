@@ -36,7 +36,7 @@
   /**
    * The WebhookActivationLogEntry model module.
    * @module model/WebhookActivationLogEntry
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

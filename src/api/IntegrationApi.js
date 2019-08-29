@@ -33,7 +33,7 @@
   /**
    * Integration service.
    * @module api/IntegrationApi
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**
@@ -306,7 +306,7 @@
       var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
-        '/v1/coupon_reservations/coupons/{integrationID}', 'GET',
+        '/v1/coupon_reservations/coupons/{integrationId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );

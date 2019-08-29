@@ -36,7 +36,7 @@
   /**
    * The NewEventType model module.
    * @module model/NewEventType
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

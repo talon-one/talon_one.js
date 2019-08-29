@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property allowSubledger (base name: "allowSubledger")', function() {
+      // uncomment below and update the code to test the property allowSubledger
+      //var instance = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

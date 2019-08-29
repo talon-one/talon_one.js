@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/LoyaltyProgramBalance'], factory);
+    define(['ApiClient', 'model/LoyaltyProgramLedgers'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./LoyaltyProgramBalance'));
+    module.exports = factory(require('../ApiClient'), require('./LoyaltyProgramLedgers'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.Loyalty = factory(root.TalonOne.ApiClient, root.TalonOne.LoyaltyProgramBalance);
+    root.TalonOne.Loyalty = factory(root.TalonOne.ApiClient, root.TalonOne.LoyaltyProgramLedgers);
   }
-}(this, function(ApiClient, LoyaltyProgramBalance) {
+}(this, function(ApiClient, LoyaltyProgramLedgers) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The Loyalty model module.
    * @module model/Loyalty
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**
@@ -44,7 +44,7 @@
    * Customer specific information about loyalty points.
    * @alias module:model/Loyalty
    * @class
-   * @param programs {Object.<String, module:model/LoyaltyProgramBalance>} A map holding information about the loyalty programs balance
+   * @param programs {Object.<String, module:model/LoyaltyProgramLedgers>} A map holding information about the loyalty programs balance
    */
   var exports = function(programs) {
     var _this = this;
@@ -64,7 +64,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('programs')) {
-        obj['programs'] = ApiClient.convertToType(data['programs'], {'String': LoyaltyProgramBalance});
+        obj['programs'] = ApiClient.convertToType(data['programs'], {'String': LoyaltyProgramLedgers});
       }
     }
     return obj;
@@ -72,7 +72,7 @@
 
   /**
    * A map holding information about the loyalty programs balance
-   * @member {Object.<String, module:model/LoyaltyProgramBalance>} programs
+   * @member {Object.<String, module:model/LoyaltyProgramLedgers>} programs
    */
   exports.prototype['programs'] = undefined;
 

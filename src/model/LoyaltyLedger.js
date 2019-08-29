@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/LoyaltyLedgerEntry'], factory);
+    define(['ApiClient', 'model/LoyaltySubLedger'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./LoyaltyLedgerEntry'));
+    module.exports = factory(require('../ApiClient'), require('./LoyaltySubLedger'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.LoyaltyLedger = factory(root.TalonOne.ApiClient, root.TalonOne.LoyaltyLedgerEntry);
+    root.TalonOne.LoyaltyLedger = factory(root.TalonOne.ApiClient, root.TalonOne.LoyaltySubLedger);
   }
-}(this, function(ApiClient, LoyaltyLedgerEntry) {
+}(this, function(ApiClient, LoyaltySubLedger) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The LoyaltyLedger model module.
    * @module model/LoyaltyLedger
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**
@@ -44,16 +44,12 @@
    * Ledger of Balance in Loyalty Program for a Customer
    * @alias module:model/LoyaltyLedger
    * @class
-   * @param total {Number} The current balance in the program.
-   * @param transactions {Array.<module:model/LoyaltyLedgerEntry>} Transactions contains a list of all events that have happened such as additions, subtractions and expiries
+   * @param ledger {module:model/LoyaltySubLedger} The balance of the main ledger in the loyalty program
    */
-  var exports = function(total, transactions) {
+  var exports = function(ledger) {
     var _this = this;
 
-    _this['total'] = total;
-    _this['transactions'] = transactions;
-
-
+    _this['ledger'] = ledger;
 
   };
 
@@ -68,50 +64,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('total')) {
-        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
+      if (data.hasOwnProperty('ledger')) {
+        obj['ledger'] = LoyaltySubLedger.constructFromObject(data['ledger']);
       }
-      if (data.hasOwnProperty('transactions')) {
-        obj['transactions'] = ApiClient.convertToType(data['transactions'], [LoyaltyLedgerEntry]);
-      }
-      if (data.hasOwnProperty('expiringPoints')) {
-        obj['expiringPoints'] = ApiClient.convertToType(data['expiringPoints'], [LoyaltyLedgerEntry]);
-      }
-      if (data.hasOwnProperty('loyaltyProgramId')) {
-        obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
-      }
-      if (data.hasOwnProperty('loyaltyProgramName')) {
-        obj['loyaltyProgramName'] = ApiClient.convertToType(data['loyaltyProgramName'], 'String');
+      if (data.hasOwnProperty('subLedgers')) {
+        obj['subLedgers'] = ApiClient.convertToType(data['subLedgers'], {'String': LoyaltySubLedger});
       }
     }
     return obj;
   }
 
   /**
-   * The current balance in the program.
-   * @member {Number} total
+   * The balance of the main ledger in the loyalty program
+   * @member {module:model/LoyaltySubLedger} ledger
    */
-  exports.prototype['total'] = undefined;
+  exports.prototype['ledger'] = undefined;
   /**
-   * Transactions contains a list of all events that have happened such as additions, subtractions and expiries
-   * @member {Array.<module:model/LoyaltyLedgerEntry>} transactions
+   * A map containing a list of all loyalty subledger balances
+   * @member {Object.<String, module:model/LoyaltySubLedger>} subLedgers
    */
-  exports.prototype['transactions'] = undefined;
-  /**
-   * ExpiringPoints contains a list of all points that will expiry and when
-   * @member {Array.<module:model/LoyaltyLedgerEntry>} expiringPoints
-   */
-  exports.prototype['expiringPoints'] = undefined;
-  /**
-   * The ID of the loyalty program this ledger belongs to.
-   * @member {Number} loyaltyProgramId
-   */
-  exports.prototype['loyaltyProgramId'] = undefined;
-  /**
-   * The name of the loyalty program this ledger belongs to.
-   * @member {String} loyaltyProgramName
-   */
-  exports.prototype['loyaltyProgramName'] = undefined;
+  exports.prototype['subLedgers'] = undefined;
 
 
 

@@ -36,7 +36,7 @@
   /**
    * The ApplicationStorageTuple model module.
    * @module model/ApplicationStorageTuple
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

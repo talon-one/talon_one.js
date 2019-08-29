@@ -56,32 +56,14 @@
       //expect(instance).to.be.a(TalonOne.LoyaltyLedger);
     });
 
-    it('should have the property total (base name: "total")', function() {
-      // uncomment below and update the code to test the property total
+    it('should have the property ledger (base name: "ledger")', function() {
+      // uncomment below and update the code to test the property ledger
       //var instance = new TalonOne.LoyaltyLedger();
       //expect(instance).to.be();
     });
 
-    it('should have the property transactions (base name: "transactions")', function() {
-      // uncomment below and update the code to test the property transactions
-      //var instance = new TalonOne.LoyaltyLedger();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expiringPoints (base name: "expiringPoints")', function() {
-      // uncomment below and update the code to test the property expiringPoints
-      //var instance = new TalonOne.LoyaltyLedger();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property loyaltyProgramId (base name: "loyaltyProgramId")', function() {
-      // uncomment below and update the code to test the property loyaltyProgramId
-      //var instance = new TalonOne.LoyaltyLedger();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property loyaltyProgramName (base name: "loyaltyProgramName")', function() {
-      // uncomment below and update the code to test the property loyaltyProgramName
+    it('should have the property subLedgers (base name: "subLedgers")', function() {
+      // uncomment below and update the code to test the property subLedgers
       //var instance = new TalonOne.LoyaltyLedger();
       //expect(instance).to.be();
     });

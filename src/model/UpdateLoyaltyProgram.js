@@ -36,7 +36,7 @@
   /**
    * The UpdateLoyaltyProgram model module.
    * @module model/UpdateLoyaltyProgram
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -77,6 +78,9 @@
       if (data.hasOwnProperty('defaultValidity')) {
         obj['defaultValidity'] = ApiClient.convertToType(data['defaultValidity'], 'String');
       }
+      if (data.hasOwnProperty('allowSubledger')) {
+        obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -101,6 +105,11 @@
    * @member {String} defaultValidity
    */
   exports.prototype['defaultValidity'] = undefined;
+  /**
+   * Indicates if this program supports subledgers inside the program
+   * @member {Boolean} allowSubledger
+   */
+  exports.prototype['allowSubledger'] = undefined;
 
 
 

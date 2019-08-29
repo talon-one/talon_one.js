@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subLedgerID (base name: "subLedgerID")', function() {
+      // uncomment below and update the code to test the property subLedgerID
+      //var instance = new TalonOne.LoyaltyPoints();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

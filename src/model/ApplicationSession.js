@@ -36,7 +36,7 @@
   /**
    * The ApplicationSession model module.
    * @module model/ApplicationSession
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**

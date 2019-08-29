@@ -36,7 +36,7 @@
   /**
    * The LoyaltyPoints model module.
    * @module model/LoyaltyPoints
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**
@@ -50,6 +50,7 @@
     var _this = this;
 
     _this['points'] = points;
+
 
 
   };
@@ -74,6 +75,9 @@
       if (data.hasOwnProperty('expiryDuration')) {
         obj['expiryDuration'] = ApiClient.convertToType(data['expiryDuration'], 'String');
       }
+      if (data.hasOwnProperty('subLedgerID')) {
+        obj['subLedgerID'] = ApiClient.convertToType(data['subLedgerID'], 'String');
+      }
     }
     return obj;
   }
@@ -93,6 +97,11 @@
    * @member {String} expiryDuration
    */
   exports.prototype['expiryDuration'] = undefined;
+  /**
+   * This specifies if we are adding loyalty points to the main ledger or a subledger
+   * @member {String} subLedgerID
+   */
+  exports.prototype['subLedgerID'] = undefined;
 
 
 

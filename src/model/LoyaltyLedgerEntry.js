@@ -36,7 +36,7 @@
   /**
    * The LoyaltyLedgerEntry model module.
    * @module model/LoyaltyLedgerEntry
-   * @version 3.0.0
+   * @version 3.1.0
    */
 
   /**
@@ -50,8 +50,9 @@
    * @param type {module:model/LoyaltyLedgerEntry.TypeEnum} 
    * @param amount {Number} 
    * @param name {String} A name referencing the condition or effect that added this entry, or the specific name provided in an API call.
+   * @param subLedgerID {String} This specifies if we are adding loyalty points to the main ledger or a subledger
    */
-  var exports = function(created, programID, customerProfileID, type, amount, name) {
+  var exports = function(created, programID, customerProfileID, type, amount, name, subLedgerID) {
     var _this = this;
 
     _this['created'] = created;
@@ -63,6 +64,7 @@
     _this['amount'] = amount;
 
     _this['name'] = name;
+    _this['subLedgerID'] = subLedgerID;
   };
 
   /**
@@ -102,6 +104,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('subLedgerID')) {
+        obj['subLedgerID'] = ApiClient.convertToType(data['subLedgerID'], 'String');
       }
     }
     return obj;
@@ -144,6 +149,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * This specifies if we are adding loyalty points to the main ledger or a subledger
+   * @member {String} subLedgerID
+   */
+  exports.prototype['subLedgerID'] = undefined;
 
 
   /**
