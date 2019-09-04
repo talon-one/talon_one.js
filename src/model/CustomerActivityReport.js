@@ -36,7 +36,7 @@
   /**
    * The CustomerActivityReport model module.
    * @module model/CustomerActivityReport
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

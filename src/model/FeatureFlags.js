@@ -36,7 +36,7 @@
   /**
    * The FeatureFlags model module.
    * @module model/FeatureFlags
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

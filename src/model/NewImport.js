@@ -36,7 +36,7 @@
   /**
    * The NewImport model module.
    * @module model/NewImport
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

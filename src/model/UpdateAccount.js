@@ -36,7 +36,7 @@
   /**
    * The UpdateAccount model module.
    * @module model/UpdateAccount
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The ApplicationApiHealth model module.
    * @module model/ApplicationApiHealth
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

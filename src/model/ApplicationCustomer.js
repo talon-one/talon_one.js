@@ -36,7 +36,7 @@
   /**
    * The ApplicationCustomer model module.
    * @module model/ApplicationCustomer
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**
@@ -51,10 +51,9 @@
    * @param accountId {Number} The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile.
    * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
    * @param totalSales {Number} Sum of all purchases made by this customer
-   * @param loyaltyMemberships {Array.<module:model/LoyaltyMembership>} A list of loyalty programs joined by the customer
    * @param lastActivity {Date} Timestamp of the most recent event received from this customer
    */
-  var exports = function(id, created, integrationId, attributes, accountId, closedSessions, totalSales, loyaltyMemberships, lastActivity) {
+  var exports = function(id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity) {
     var _this = this;
 
     _this['id'] = id;
@@ -64,7 +63,7 @@
     _this['accountId'] = accountId;
     _this['closedSessions'] = closedSessions;
     _this['totalSales'] = totalSales;
-    _this['loyaltyMemberships'] = loyaltyMemberships;
+
     _this['lastActivity'] = lastActivity;
   };
 

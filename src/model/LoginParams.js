@@ -36,7 +36,7 @@
   /**
    * The LoginParams model module.
    * @module model/LoginParams
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

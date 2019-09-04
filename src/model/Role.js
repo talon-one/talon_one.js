@@ -36,7 +36,7 @@
   /**
    * The Role model module.
    * @module model/Role
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**
