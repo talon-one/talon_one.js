@@ -36,7 +36,7 @@
   /**
    * The AttributeQuery model module.
    * @module model/AttributeQuery
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

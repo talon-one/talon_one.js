@@ -36,7 +36,7 @@
   /**
    * The CouponRejectionReason model module.
    * @module model/CouponRejectionReason
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The SlotDef model module.
    * @module model/SlotDef
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

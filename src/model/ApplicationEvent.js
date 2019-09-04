@@ -36,7 +36,7 @@
   /**
    * The ApplicationEvent model module.
    * @module model/ApplicationEvent
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

@@ -1933,7 +1933,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 var apiInstance = new TalonOne.ManagementApi();
 
-var applicationId = 56; // Number | The identifier for the application
+var applicationId = 56; // Number | 
 
 var campaignId = 56; // Number | 
 
@@ -1956,7 +1956,7 @@ apiInstance.getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **applicationId** | **Number**| The identifier for the application | 
+ **applicationId** | **Number**|  | 
  **campaignId** | **Number**|  | 
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
@@ -4433,7 +4433,7 @@ Name | Type | Description  | Notes
 
 Set account limits
 
-sets account limits  
+sets account limits 
 
 ### Example
 ```javascript

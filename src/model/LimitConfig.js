@@ -36,7 +36,7 @@
   /**
    * The LimitConfig model module.
    * @module model/LimitConfig
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**

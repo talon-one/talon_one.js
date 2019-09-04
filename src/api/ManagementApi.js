@@ -33,7 +33,7 @@
   /**
    * Management service.
    * @module api/ManagementApi
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**
@@ -2167,7 +2167,7 @@
     /**
      * Get analytics of campaigns
      * 
-     * @param {Number} applicationId The identifier for the application
+     * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
@@ -2231,7 +2231,7 @@
     /**
      * Get analytics of campaigns
      * 
-     * @param {Number} applicationId The identifier for the application
+     * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
@@ -5132,7 +5132,7 @@
 
     /**
      * Set account limits
-     * sets account limits  
+     * sets account limits 
      * @param {Number} accountId 
      * @param {module:model/AccountLimits} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -5177,7 +5177,7 @@
 
     /**
      * Set account limits
-     * sets account limits  
+     * sets account limits 
      * @param {Number} accountId 
      * @param {module:model/AccountLimits} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

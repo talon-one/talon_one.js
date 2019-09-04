@@ -36,7 +36,7 @@
   /**
    * The InlineResponse20011 model module.
    * @module model/InlineResponse20011
-   * @version 3.1.0
+   * @version 3.1.1
    */
 
   /**
