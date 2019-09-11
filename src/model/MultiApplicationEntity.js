@@ -36,7 +36,7 @@
   /**
    * The MultiApplicationEntity model module.
    * @module model/MultiApplicationEntity
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

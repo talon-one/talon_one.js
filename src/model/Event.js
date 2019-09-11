@@ -36,7 +36,7 @@
   /**
    * The Event model module.
    * @module model/Event
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**
@@ -47,22 +47,21 @@
    * @param id {Number} Unique ID for this entity.
    * @param created {Date} The exact moment this entity was created.
    * @param applicationId {Number} The ID of the application that owns this entity.
-   * @param sessionId {String} The ID of the session that this event occurred in.
    * @param type {String} A string representing the event. Must not be a reserved event name.
    * @param attributes {Object} Arbitrary additional JSON data associated with the event.
    * @param effects {Array.<Object>} An array of \"effects\" that must be applied in response to this event. Example effects include `addItemToCart` or `setDiscount`. 
    * @param ledgerEntries {Array.<module:model/LedgerEntry>} Ledger entries for the event.
    */
-  var exports = function(id, created, applicationId, sessionId, type, attributes, effects, ledgerEntries) {
+  var exports = function(id, created, applicationId, type, attributes, effects, ledgerEntries) {
     var _this = this;
 
     _this['id'] = id;
     _this['created'] = created;
     _this['applicationId'] = applicationId;
 
-    _this['sessionId'] = sessionId;
     _this['type'] = type;
     _this['attributes'] = attributes;
+
     _this['effects'] = effects;
     _this['ledgerEntries'] = ledgerEntries;
 
@@ -91,14 +90,14 @@
       if (data.hasOwnProperty('profileId')) {
         obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
       }
-      if (data.hasOwnProperty('sessionId')) {
-        obj['sessionId'] = ApiClient.convertToType(data['sessionId'], 'String');
-      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('attributes')) {
         obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
+      }
+      if (data.hasOwnProperty('sessionId')) {
+        obj['sessionId'] = ApiClient.convertToType(data['sessionId'], 'String');
       }
       if (data.hasOwnProperty('effects')) {
         obj['effects'] = ApiClient.convertToType(data['effects'], [Object]);
@@ -134,11 +133,6 @@
    */
   exports.prototype['profileId'] = undefined;
   /**
-   * The ID of the session that this event occurred in.
-   * @member {String} sessionId
-   */
-  exports.prototype['sessionId'] = undefined;
-  /**
    * A string representing the event. Must not be a reserved event name.
    * @member {String} type
    */
@@ -148,6 +142,11 @@
    * @member {Object} attributes
    */
   exports.prototype['attributes'] = undefined;
+  /**
+   * The ID of the session that this event occurred in.
+   * @member {String} sessionId
+   */
+  exports.prototype['sessionId'] = undefined;
   /**
    * An array of \"effects\" that must be applied in response to this event. Example effects include `addItemToCart` or `setDiscount`. 
    * @member {Array.<Object>} effects

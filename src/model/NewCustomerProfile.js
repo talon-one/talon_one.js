@@ -36,7 +36,7 @@
   /**
    * The NewCustomerProfile model module.
    * @module model/NewCustomerProfile
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

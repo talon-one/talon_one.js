@@ -36,7 +36,7 @@
   /**
    * The NewEvent model module.
    * @module model/NewEvent
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**
@@ -44,17 +44,17 @@
    * 
    * @alias module:model/NewEvent
    * @class
-   * @param sessionId {String} The ID of the session that this event occurred in.
    * @param type {String} A string representing the event. Must not be a reserved event name.
    * @param attributes {Object} Arbitrary additional JSON data associated with the event.
+   * @param sessionId {String} The ID of the session that this event occurred in.
    */
-  var exports = function(sessionId, type, attributes) {
+  var exports = function(type, attributes, sessionId) {
     var _this = this;
 
 
-    _this['sessionId'] = sessionId;
     _this['type'] = type;
     _this['attributes'] = attributes;
+    _this['sessionId'] = sessionId;
   };
 
   /**
@@ -71,14 +71,14 @@
       if (data.hasOwnProperty('profileId')) {
         obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
       }
-      if (data.hasOwnProperty('sessionId')) {
-        obj['sessionId'] = ApiClient.convertToType(data['sessionId'], 'String');
-      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('attributes')) {
         obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
+      }
+      if (data.hasOwnProperty('sessionId')) {
+        obj['sessionId'] = ApiClient.convertToType(data['sessionId'], 'String');
       }
     }
     return obj;
@@ -90,11 +90,6 @@
    */
   exports.prototype['profileId'] = undefined;
   /**
-   * The ID of the session that this event occurred in.
-   * @member {String} sessionId
-   */
-  exports.prototype['sessionId'] = undefined;
-  /**
    * A string representing the event. Must not be a reserved event name.
    * @member {String} type
    */
@@ -104,6 +99,11 @@
    * @member {Object} attributes
    */
   exports.prototype['attributes'] = undefined;
+  /**
+   * The ID of the session that this event occurred in.
+   * @member {String} sessionId
+   */
+  exports.prototype['sessionId'] = undefined;
 
 
 

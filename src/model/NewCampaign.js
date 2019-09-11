@@ -36,7 +36,7 @@
   /**
    * The NewCampaign model module.
    * @module model/NewCampaign
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

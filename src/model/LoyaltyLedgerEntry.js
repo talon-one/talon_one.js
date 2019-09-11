@@ -36,7 +36,7 @@
   /**
    * The LoyaltyLedgerEntry model module.
    * @module model/LoyaltyLedgerEntry
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

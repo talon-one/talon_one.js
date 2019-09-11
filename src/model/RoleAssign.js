@@ -36,7 +36,7 @@
   /**
    * The RoleAssign model module.
    * @module model/RoleAssign
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

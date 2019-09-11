@@ -36,7 +36,7 @@
   /**
    * The AccountLimits model module.
    * @module model/AccountLimits
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

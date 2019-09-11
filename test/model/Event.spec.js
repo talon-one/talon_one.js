@@ -80,12 +80,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sessionId (base name: "sessionId")', function() {
-      // uncomment below and update the code to test the property sessionId
-      //var instance = new TalonOne.Event();
-      //expect(instance).to.be();
-    });
-
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instance = new TalonOne.Event();
@@ -94,6 +88,12 @@
 
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
+      //var instance = new TalonOne.Event();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sessionId (base name: "sessionId")', function() {
+      // uncomment below and update the code to test the property sessionId
       //var instance = new TalonOne.Event();
       //expect(instance).to.be();
     });

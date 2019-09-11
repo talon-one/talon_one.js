@@ -36,7 +36,7 @@
   /**
    * The NewInvitation model module.
    * @module model/NewInvitation
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

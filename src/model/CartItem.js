@@ -36,7 +36,7 @@
   /**
    * The CartItem model module.
    * @module model/CartItem
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**
