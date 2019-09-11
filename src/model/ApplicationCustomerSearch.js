@@ -36,7 +36,7 @@
   /**
    * The ApplicationCustomerSearch model module.
    * @module model/ApplicationCustomerSearch
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

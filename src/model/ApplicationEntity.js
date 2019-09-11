@@ -36,7 +36,7 @@
   /**
    * The ApplicationEntity model module.
    * @module model/ApplicationEntity
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

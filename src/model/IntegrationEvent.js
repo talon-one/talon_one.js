@@ -25,7 +25,7 @@
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.UpdateAccount = factory(root.TalonOne.ApiClient);
+    root.TalonOne.IntegrationEvent = factory(root.TalonOne.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,65 +34,66 @@
 
 
   /**
-   * The UpdateAccount model module.
-   * @module model/UpdateAccount
+   * The IntegrationEvent model module.
+   * @module model/IntegrationEvent
    * @version 3.1.2
    */
 
   /**
-   * Constructs a new <code>UpdateAccount</code>.
-   * @alias module:model/UpdateAccount
+   * Constructs a new <code>IntegrationEvent</code>.
+   * 
+   * @alias module:model/IntegrationEvent
    * @class
-   * @param companyName {String} Name of your company.
-   * @param billingEmail {String} The billing email address associated with your company account.
+   * @param type {String} A string representing the event. Must not be a reserved event name.
+   * @param attributes {Object} Arbitrary additional JSON data associated with the event.
    */
-  var exports = function(companyName, billingEmail) {
+  var exports = function(type, attributes) {
     var _this = this;
 
 
-    _this['companyName'] = companyName;
-    _this['billingEmail'] = billingEmail;
+    _this['type'] = type;
+    _this['attributes'] = attributes;
   };
 
   /**
-   * Constructs a <code>UpdateAccount</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>IntegrationEvent</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/UpdateAccount} obj Optional instance to populate.
-   * @return {module:model/UpdateAccount} The populated <code>UpdateAccount</code> instance.
+   * @param {module:model/IntegrationEvent} obj Optional instance to populate.
+   * @return {module:model/IntegrationEvent} The populated <code>IntegrationEvent</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('profileId')) {
+        obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
       if (data.hasOwnProperty('attributes')) {
         obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
-      }
-      if (data.hasOwnProperty('companyName')) {
-        obj['companyName'] = ApiClient.convertToType(data['companyName'], 'String');
-      }
-      if (data.hasOwnProperty('billingEmail')) {
-        obj['billingEmail'] = ApiClient.convertToType(data['billingEmail'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Arbitrary properties associated with this campaign
+   * ID of the customers profile as used within this Talon.One account. May be omitted or set to the empty string if the customer does not yet have a known profile ID.
+   * @member {String} profileId
+   */
+  exports.prototype['profileId'] = undefined;
+  /**
+   * A string representing the event. Must not be a reserved event name.
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * Arbitrary additional JSON data associated with the event.
    * @member {Object} attributes
    */
   exports.prototype['attributes'] = undefined;
-  /**
-   * Name of your company.
-   * @member {String} companyName
-   */
-  exports.prototype['companyName'] = undefined;
-  /**
-   * The billing email address associated with your company account.
-   * @member {String} billingEmail
-   */
-  exports.prototype['billingEmail'] = undefined;
 
 
 

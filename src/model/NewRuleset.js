@@ -36,7 +36,7 @@
   /**
    * The NewRuleset model module.
    * @module model/NewRuleset
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

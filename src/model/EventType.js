@@ -36,7 +36,7 @@
   /**
    * The EventType model module.
    * @module model/EventType
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The FuncArgDef model module.
    * @module model/FuncArgDef
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**

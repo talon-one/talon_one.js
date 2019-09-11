@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.NewEvent();
+    instance = new TalonOne.IntegrationEvent();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,34 +49,28 @@
       object[property] = value;
   }
 
-  describe('NewEvent', function() {
-    it('should create an instance of NewEvent', function() {
-      // uncomment below and update the code to test NewEvent
-      //var instance = new TalonOne.NewEvent();
-      //expect(instance).to.be.a(TalonOne.NewEvent);
+  describe('IntegrationEvent', function() {
+    it('should create an instance of IntegrationEvent', function() {
+      // uncomment below and update the code to test IntegrationEvent
+      //var instance = new TalonOne.IntegrationEvent();
+      //expect(instance).to.be.a(TalonOne.IntegrationEvent);
     });
 
     it('should have the property profileId (base name: "profileId")', function() {
       // uncomment below and update the code to test the property profileId
-      //var instance = new TalonOne.NewEvent();
+      //var instance = new TalonOne.IntegrationEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instance = new TalonOne.NewEvent();
+      //var instance = new TalonOne.IntegrationEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
-      //var instance = new TalonOne.NewEvent();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sessionId (base name: "sessionId")', function() {
-      // uncomment below and update the code to test the property sessionId
-      //var instance = new TalonOne.NewEvent();
+      //var instance = new TalonOne.IntegrationEvent();
       //expect(instance).to.be();
     });
 

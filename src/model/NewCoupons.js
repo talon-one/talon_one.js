@@ -36,7 +36,7 @@
   /**
    * The NewCoupons model module.
    * @module model/NewCoupons
-   * @version 3.1.1
+   * @version 3.1.2
    */
 
   /**
