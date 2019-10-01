@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **releaseUpdate** | **Boolean** | Update the user via email | 
 **latestFeature** | **String** | Latest feature the user has been notified. | [optional] 
 **roles** | **[Number]** | Contains a list of all roles a user is a memeber of | [optional] 
+**applicationNotificationSubscriptions** | **Object** |  | [optional] 
 
 
 <a name="StateEnum"></a>

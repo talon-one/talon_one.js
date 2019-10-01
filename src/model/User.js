@@ -36,7 +36,7 @@
   /**
    * The User model module.
    * @module model/User
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
@@ -68,6 +68,7 @@
     _this['name'] = name;
     _this['policy'] = policy;
     _this['releaseUpdate'] = releaseUpdate;
+
 
 
   };
@@ -118,6 +119,9 @@
       }
       if (data.hasOwnProperty('roles')) {
         obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
+      }
+      if (data.hasOwnProperty('applicationNotificationSubscriptions')) {
+        obj['applicationNotificationSubscriptions'] = ApiClient.convertToType(data['applicationNotificationSubscriptions'], Object);
       }
     }
     return obj;
@@ -183,6 +187,10 @@
    * @member {Array.<Number>} roles
    */
   exports.prototype['roles'] = undefined;
+  /**
+   * @member {Object} applicationNotificationSubscriptions
+   */
+  exports.prototype['applicationNotificationSubscriptions'] = undefined;
 
 
   /**

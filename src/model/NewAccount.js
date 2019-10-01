@@ -36,7 +36,7 @@
   /**
    * The NewAccount model module.
    * @module model/NewAccount
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

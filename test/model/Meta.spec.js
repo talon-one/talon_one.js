@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property referralRejectionReason (base name: "referralRejectionReason")', function() {
+      // uncomment below and update the code to test the property referralRejectionReason
+      //var instance = new TalonOne.Meta();
+      //expect(instance).to.be();
+    });
+
     it('should have the property warnings (base name: "warnings")', function() {
       // uncomment below and update the code to test the property warnings
       //var instance = new TalonOne.Meta();

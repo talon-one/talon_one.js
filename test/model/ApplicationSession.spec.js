@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property total (base name: "total")', function() {
+      // uncomment below and update the code to test the property total
+      //var instance = new TalonOne.ApplicationSession();
+      //expect(instance).to.be();
+    });
+
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
       //var instance = new TalonOne.ApplicationSession();

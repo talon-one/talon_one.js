@@ -36,7 +36,7 @@
   /**
    * The ApplicationCustomerEntity model module.
    * @module model/ApplicationCustomerEntity
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

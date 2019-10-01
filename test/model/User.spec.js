@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property applicationNotificationSubscriptions (base name: "applicationNotificationSubscriptions")', function() {
+      // uncomment below and update the code to test the property applicationNotificationSubscriptions
+      //var instance = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

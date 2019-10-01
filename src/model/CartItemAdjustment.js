@@ -36,7 +36,7 @@
   /**
    * The CartItemAdjustment model module.
    * @module model/CartItemAdjustment
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

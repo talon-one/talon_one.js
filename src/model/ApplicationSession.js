@@ -36,7 +36,7 @@
   /**
    * The ApplicationSession model module.
    * @module model/ApplicationSession
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
@@ -49,7 +49,7 @@
    * @param applicationId {Number} The ID of the application that owns this entity.
    * @param integrationId {String} The ID used for this entity in the application system.
    * @param coupon {String} Any coupon code entered.
-   * @param referral {String} Any referal code entered.
+   * @param referral {String} Any referral code entered.
    * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (\"open\"), \"closed\", or \"cancelled\".
    * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
    * @param discounts {Object.<String, Number>} A map of labelled discount values, in the same currency as the session.
@@ -67,6 +67,7 @@
     _this['state'] = state;
     _this['cartItems'] = cartItems;
     _this['discounts'] = discounts;
+
 
   };
 
@@ -111,6 +112,9 @@
       if (data.hasOwnProperty('discounts')) {
         obj['discounts'] = ApiClient.convertToType(data['discounts'], {'String': 'Number'});
       }
+      if (data.hasOwnProperty('total')) {
+        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
+      }
       if (data.hasOwnProperty('attributes')) {
         obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
       }
@@ -149,7 +153,7 @@
    */
   exports.prototype['coupon'] = undefined;
   /**
-   * Any referal code entered.
+   * Any referral code entered.
    * @member {String} referral
    */
   exports.prototype['referral'] = undefined;
@@ -168,6 +172,11 @@
    * @member {Object.<String, Number>} discounts
    */
   exports.prototype['discounts'] = undefined;
+  /**
+   * The total sum of the session before any discounts applied.
+   * @member {Number} total
+   */
+  exports.prototype['total'] = undefined;
   /**
    * Arbitrary properties associated with this item
    * @member {Object} attributes

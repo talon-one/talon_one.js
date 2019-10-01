@@ -36,7 +36,7 @@
   /**
    * The CouponRejectionReason model module.
    * @module model/CouponRejectionReason
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
@@ -111,6 +111,11 @@
      */
     "CouponPartOfNotRunningCampaign": "CouponPartOfNotRunningCampaign",
     /**
+     * value: "CouponValidConditionMissing"
+     * @const
+     */
+    "CouponValidConditionMissing": "CouponValidConditionMissing",
+    /**
      * value: "CouponLimitReached"
      * @const
      */
@@ -144,7 +149,12 @@
      * value: "CouponRejectedByCondition"
      * @const
      */
-    "CouponRejectedByCondition": "CouponRejectedByCondition"  };
+    "CouponRejectedByCondition": "CouponRejectedByCondition",
+    /**
+     * value: "EffectCouldNotBeApplied"
+     * @const
+     */
+    "EffectCouldNotBeApplied": "EffectCouldNotBeApplied"  };
 
 
   return exports;

@@ -36,7 +36,7 @@
   /**
    * The UpdateLoyaltyProgram model module.
    * @module model/UpdateLoyaltyProgram
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CouponRejectionReason'], factory);
+    define(['ApiClient', 'model/CouponRejectionReason', 'model/ReferralRejectionReason'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CouponRejectionReason'));
+    module.exports = factory(require('../ApiClient'), require('./CouponRejectionReason'), require('./ReferralRejectionReason'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.Meta = factory(root.TalonOne.ApiClient, root.TalonOne.CouponRejectionReason);
+    root.TalonOne.Meta = factory(root.TalonOne.ApiClient, root.TalonOne.CouponRejectionReason, root.TalonOne.ReferralRejectionReason);
   }
-}(this, function(ApiClient, CouponRejectionReason) {
+}(this, function(ApiClient, CouponRejectionReason, ReferralRejectionReason) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The Meta model module.
    * @module model/Meta
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('couponRejectionReason')) {
         obj['couponRejectionReason'] = CouponRejectionReason.constructFromObject(data['couponRejectionReason']);
       }
+      if (data.hasOwnProperty('referralRejectionReason')) {
+        obj['referralRejectionReason'] = ReferralRejectionReason.constructFromObject(data['referralRejectionReason']);
+      }
       if (data.hasOwnProperty('warnings')) {
         obj['warnings'] = ApiClient.convertToType(data['warnings'], Object);
       }
@@ -94,6 +98,10 @@
    * @member {module:model/CouponRejectionReason} couponRejectionReason
    */
   exports.prototype['couponRejectionReason'] = undefined;
+  /**
+   * @member {module:model/ReferralRejectionReason} referralRejectionReason
+   */
+  exports.prototype['referralRejectionReason'] = undefined;
   /**
    * @member {Object} warnings
    */
