@@ -36,7 +36,7 @@
   /**
    * The IntegrationEvent model module.
    * @module model/IntegrationEvent
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

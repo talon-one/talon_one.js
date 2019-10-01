@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **description** | **String** | A description of this attribute. | 
 **suggestions** | **[String]** | A list of suggestions for the attribute. | 
 **editable** | **Boolean** | Whether or not this attribute can be edited. | 
-**locked** | **Boolean** | Indicates whether this attribute is in use. If in use only title can be changed and other operations are prohibited. | [default to false]
-**usedAt** | **[String]** | array of rulesets where the attribute is used | 
 
 
 <a name="EntityEnum"></a>

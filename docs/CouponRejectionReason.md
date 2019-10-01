@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 
 * `CouponPartOfNotRunningCampaign` (value: `"CouponPartOfNotRunningCampaign"`)
 
+* `CouponValidConditionMissing` (value: `"CouponValidConditionMissing"`)
+
 * `CouponLimitReached` (value: `"CouponLimitReached"`)
 
 * `CampaignLimitReached` (value: `"CampaignLimitReached"`)
@@ -29,6 +31,8 @@ Name | Type | Description | Notes
 * `CouponStartDateInFuture` (value: `"CouponStartDateInFuture"`)
 
 * `CouponRejectedByCondition` (value: `"CouponRejectedByCondition"`)
+
+* `EffectCouldNotBeApplied` (value: `"EffectCouldNotBeApplied"`)
 
 
 

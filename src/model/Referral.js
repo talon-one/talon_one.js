@@ -36,7 +36,7 @@
   /**
    * The Referral model module.
    * @module model/Referral
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

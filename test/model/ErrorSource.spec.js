@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property resource (base name: "resource")', function() {
+      // uncomment below and update the code to test the property resource
+      //var instance = new TalonOne.ErrorSource();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

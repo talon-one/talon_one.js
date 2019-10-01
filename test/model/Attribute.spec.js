@@ -122,18 +122,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property locked (base name: "locked")', function() {
-      // uncomment below and update the code to test the property locked
-      //var instance = new TalonOne.Attribute();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property usedAt (base name: "usedAt")', function() {
-      // uncomment below and update the code to test the property usedAt
-      //var instance = new TalonOne.Attribute();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

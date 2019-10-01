@@ -36,7 +36,7 @@
   /**
    * The NewAttribute model module.
    * @module model/NewAttribute
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

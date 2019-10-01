@@ -36,7 +36,7 @@
   /**
    * The Webhook model module.
    * @module model/Webhook
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
@@ -54,9 +54,8 @@
    * @param headers {Array.<String>} List of API HTTP headers for this webhook
    * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions
    * @param enabled {Boolean} Enables or disables webhook from showing in rule builder
-   * @param usedAt {Array.<String>} array of rulesets where webhook is used
    */
-  var exports = function(id, created, modified, applicationIds, title, verb, url, headers, params, enabled, usedAt) {
+  var exports = function(id, created, modified, applicationIds, title, verb, url, headers, params, enabled) {
     var _this = this;
 
     _this['id'] = id;
@@ -70,7 +69,6 @@
 
     _this['params'] = params;
     _this['enabled'] = enabled;
-    _this['usedAt'] = usedAt;
   };
 
   /**
@@ -116,9 +114,6 @@
       }
       if (data.hasOwnProperty('enabled')) {
         obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
-      }
-      if (data.hasOwnProperty('usedAt')) {
-        obj['usedAt'] = ApiClient.convertToType(data['usedAt'], ['String']);
       }
     }
     return obj;
@@ -179,11 +174,6 @@
    * @member {Boolean} enabled
    */
   exports.prototype['enabled'] = undefined;
-  /**
-   * array of rulesets where webhook is used
-   * @member {Array.<String>} usedAt
-   */
-  exports.prototype['usedAt'] = undefined;
 
 
   /**

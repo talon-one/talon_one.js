@@ -36,7 +36,7 @@
   /**
    * The ErrorSource model module.
    * @module model/ErrorSource
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('line')) {
         obj['line'] = ApiClient.convertToType(data['line'], 'String');
       }
+      if (data.hasOwnProperty('resource')) {
+        obj['resource'] = ApiClient.convertToType(data['resource'], 'String');
+      }
     }
     return obj;
   }
@@ -92,6 +96,11 @@
    * @member {String} line
    */
   exports.prototype['line'] = undefined;
+  /**
+   * Pointer to the resource that caused this error
+   * @member {String} resource
+   */
+  exports.prototype['resource'] = undefined;
 
 
 

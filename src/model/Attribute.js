@@ -36,7 +36,7 @@
   /**
    * The Attribute model module.
    * @module model/Attribute
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
@@ -54,10 +54,8 @@
    * @param description {String} A description of this attribute.
    * @param suggestions {Array.<String>} A list of suggestions for the attribute.
    * @param editable {Boolean} Whether or not this attribute can be edited.
-   * @param locked {Boolean} Indicates whether this attribute is in use. If in use only title can be changed and other operations are prohibited.
-   * @param usedAt {Array.<String>} array of rulesets where the attribute is used
    */
-  var exports = function(id, created, accountId, entity, name, title, type, description, suggestions, editable, locked, usedAt) {
+  var exports = function(id, created, accountId, entity, name, title, type, description, suggestions, editable) {
     var _this = this;
 
     _this['id'] = id;
@@ -71,8 +69,6 @@
     _this['description'] = description;
     _this['suggestions'] = suggestions;
     _this['editable'] = editable;
-    _this['locked'] = locked;
-    _this['usedAt'] = usedAt;
   };
 
   /**
@@ -118,12 +114,6 @@
       }
       if (data.hasOwnProperty('editable')) {
         obj['editable'] = ApiClient.convertToType(data['editable'], 'Boolean');
-      }
-      if (data.hasOwnProperty('locked')) {
-        obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
-      }
-      if (data.hasOwnProperty('usedAt')) {
-        obj['usedAt'] = ApiClient.convertToType(data['usedAt'], ['String']);
       }
     }
     return obj;
@@ -183,17 +173,6 @@
    * @member {Boolean} editable
    */
   exports.prototype['editable'] = undefined;
-  /**
-   * Indicates whether this attribute is in use. If in use only title can be changed and other operations are prohibited.
-   * @member {Boolean} locked
-   * @default false
-   */
-  exports.prototype['locked'] = false;
-  /**
-   * array of rulesets where the attribute is used
-   * @member {Array.<String>} usedAt
-   */
-  exports.prototype['usedAt'] = undefined;
 
 
   /**

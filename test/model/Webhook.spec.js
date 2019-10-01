@@ -122,12 +122,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property usedAt (base name: "usedAt")', function() {
-      // uncomment below and update the code to test the property usedAt
-      //var instance = new TalonOne.Webhook();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

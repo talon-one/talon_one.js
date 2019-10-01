@@ -36,7 +36,7 @@
   /**
    * The LoyaltySubLedger model module.
    * @module model/LoyaltySubLedger
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**

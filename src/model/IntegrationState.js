@@ -36,7 +36,7 @@
   /**
    * The IntegrationState model module.
    * @module model/IntegrationState
-   * @version 3.1.2
+   * @version 3.2.0
    */
 
   /**
