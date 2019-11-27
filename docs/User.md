@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **latestFeature** | **String** | Latest feature the user has been notified. | [optional] 
 **roles** | **[Number]** | Contains a list of all roles a user is a memeber of | [optional] 
 **applicationNotificationSubscriptions** | **Object** |  | [optional] 
+**authMethod** | **String** | The Authentication method for this user | [optional] 
 
 
 <a name="StateEnum"></a>

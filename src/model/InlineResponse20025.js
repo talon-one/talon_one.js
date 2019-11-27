@@ -36,20 +36,20 @@
   /**
    * The InlineResponse20025 model module.
    * @module model/InlineResponse20025
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
    * Constructs a new <code>InlineResponse20025</code>.
    * @alias module:model/InlineResponse20025
    * @class
-   * @param totalResultSize {Number} 
    * @param data {Array.<module:model/Change>} 
    */
-  var exports = function(totalResultSize, data) {
+  var exports = function(data) {
     var _this = this;
 
-    _this['totalResultSize'] = totalResultSize;
+
+
     _this['data'] = data;
   };
 
@@ -67,6 +67,9 @@
       if (data.hasOwnProperty('totalResultSize')) {
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
+      if (data.hasOwnProperty('hasMore')) {
+        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+      }
       if (data.hasOwnProperty('data')) {
         obj['data'] = ApiClient.convertToType(data['data'], [Change]);
       }
@@ -78,6 +81,10 @@
    * @member {Number} totalResultSize
    */
   exports.prototype['totalResultSize'] = undefined;
+  /**
+   * @member {Boolean} hasMore
+   */
+  exports.prototype['hasMore'] = undefined;
   /**
    * @member {Array.<module:model/Change>} data
    */

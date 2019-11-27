@@ -134,6 +134,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authMethod (base name: "authMethod")', function() {
+      // uncomment below and update the code to test the property authMethod
+      //var instance = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

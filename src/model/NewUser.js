@@ -36,7 +36,7 @@
   /**
    * The NewUser model module.
    * @module model/NewUser
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**

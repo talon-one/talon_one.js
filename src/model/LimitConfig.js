@@ -36,7 +36,7 @@
   /**
    * The LimitConfig model module.
    * @module model/LimitConfig
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
@@ -121,7 +121,12 @@
      * value: "createCoupon"
      * @const
      */
-    "createCoupon": "createCoupon"  };
+    "createCoupon": "createCoupon",
+    /**
+     * value: "setDiscountEffect"
+     * @const
+     */
+    "setDiscountEffect": "setDiscountEffect"  };
 
   /**
    * Allowed values for the <code>entities</code> property.

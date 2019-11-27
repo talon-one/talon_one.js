@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CustomerProfile', 'model/CustomerSession', 'model/Event', 'model/Loyalty'], factory);
+    define(['ApiClient', 'model/Coupon', 'model/CustomerProfile', 'model/CustomerSession', 'model/Event', 'model/Loyalty'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CustomerProfile'), require('./CustomerSession'), require('./Event'), require('./Loyalty'));
+    module.exports = factory(require('../ApiClient'), require('./Coupon'), require('./CustomerProfile'), require('./CustomerSession'), require('./Event'), require('./Loyalty'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.IntegrationState = factory(root.TalonOne.ApiClient, root.TalonOne.CustomerProfile, root.TalonOne.CustomerSession, root.TalonOne.Event, root.TalonOne.Loyalty);
+    root.TalonOne.IntegrationState = factory(root.TalonOne.ApiClient, root.TalonOne.Coupon, root.TalonOne.CustomerProfile, root.TalonOne.CustomerSession, root.TalonOne.Event, root.TalonOne.Loyalty);
   }
-}(this, function(ApiClient, CustomerProfile, CustomerSession, Event, Loyalty) {
+}(this, function(ApiClient, Coupon, CustomerProfile, CustomerSession, Event, Loyalty) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The IntegrationState model module.
    * @module model/IntegrationState
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
@@ -54,6 +54,7 @@
     _this['session'] = session;
     _this['profile'] = profile;
     _this['event'] = event;
+
 
   };
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('loyalty')) {
         obj['loyalty'] = Loyalty.constructFromObject(data['loyalty']);
       }
+      if (data.hasOwnProperty('coupon')) {
+        obj['coupon'] = Coupon.constructFromObject(data['coupon']);
+      }
     }
     return obj;
   }
@@ -100,6 +104,10 @@
    * @member {module:model/Loyalty} loyalty
    */
   exports.prototype['loyalty'] = undefined;
+  /**
+   * @member {module:model/Coupon} coupon
+   */
+  exports.prototype['coupon'] = undefined;
 
 
 

@@ -36,7 +36,7 @@
   /**
    * The NewWebhook model module.
    * @module model/NewWebhook
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**

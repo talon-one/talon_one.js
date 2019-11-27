@@ -36,7 +36,7 @@
   /**
    * The CampaignAnalytics model module.
    * @module model/CampaignAnalytics
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**

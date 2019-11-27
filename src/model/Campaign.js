@@ -36,7 +36,7 @@
   /**
    * The Campaign model module.
    * @module model/Campaign
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
@@ -74,6 +74,8 @@
 
 
     _this['limits'] = limits;
+
+
 
 
 
@@ -150,6 +152,12 @@
       }
       if (data.hasOwnProperty('discountCount')) {
         obj['discountCount'] = ApiClient.convertToType(data['discountCount'], 'Number');
+      }
+      if (data.hasOwnProperty('discountEffectCount')) {
+        obj['discountEffectCount'] = ApiClient.convertToType(data['discountEffectCount'], 'Number');
+      }
+      if (data.hasOwnProperty('couponCreationCount')) {
+        obj['couponCreationCount'] = ApiClient.convertToType(data['couponCreationCount'], 'Number');
       }
       if (data.hasOwnProperty('lastActivity')) {
         obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
@@ -261,6 +269,16 @@
    * @member {Number} discountCount
    */
   exports.prototype['discountCount'] = undefined;
+  /**
+   * Total number of times discounts were redeemed in this campaign.
+   * @member {Number} discountEffectCount
+   */
+  exports.prototype['discountEffectCount'] = undefined;
+  /**
+   * Total number of coupons created by rules in this campaign.
+   * @member {Number} couponCreationCount
+   */
+  exports.prototype['couponCreationCount'] = undefined;
   /**
    * Timestamp of the most recent event received by this campaign.
    * @member {Date} lastActivity

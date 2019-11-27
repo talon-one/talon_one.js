@@ -68,12 +68,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property key (base name: "key")', function() {
-      // uncomment below and update the code to test the property key
-      //var instance = new TalonOne.NewApplication();
-      //expect(instance).to.be();
-    });
-
     it('should have the property timezone (base name: "timezone")', function() {
       // uncomment below and update the code to test the property timezone
       //var instance = new TalonOne.NewApplication();
@@ -100,6 +94,12 @@
 
     it('should have the property limits (base name: "limits")', function() {
       // uncomment below and update the code to test the property limits
+      //var instance = new TalonOne.NewApplication();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property key (base name: "key")', function() {
+      // uncomment below and update the code to test the property key
       //var instance = new TalonOne.NewApplication();
       //expect(instance).to.be();
     });

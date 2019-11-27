@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 
 * `createCoupon` (value: `"createCoupon"`)
 
+* `setDiscountEffect` (value: `"setDiscountEffect"`)
+
 
 
 
