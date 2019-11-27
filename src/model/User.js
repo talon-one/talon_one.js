@@ -36,7 +36,7 @@
   /**
    * The User model module.
    * @module model/User
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
@@ -68,6 +68,7 @@
     _this['name'] = name;
     _this['policy'] = policy;
     _this['releaseUpdate'] = releaseUpdate;
+
 
 
 
@@ -122,6 +123,9 @@
       }
       if (data.hasOwnProperty('applicationNotificationSubscriptions')) {
         obj['applicationNotificationSubscriptions'] = ApiClient.convertToType(data['applicationNotificationSubscriptions'], Object);
+      }
+      if (data.hasOwnProperty('authMethod')) {
+        obj['authMethod'] = ApiClient.convertToType(data['authMethod'], 'String');
       }
     }
     return obj;
@@ -191,6 +195,11 @@
    * @member {Object} applicationNotificationSubscriptions
    */
   exports.prototype['applicationNotificationSubscriptions'] = undefined;
+  /**
+   * The Authentication method for this user
+   * @member {String} authMethod
+   */
+  exports.prototype['authMethod'] = undefined;
 
 
   /**

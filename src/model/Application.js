@@ -36,7 +36,7 @@
   /**
    * The Application model module.
    * @module model/Application
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
@@ -49,12 +49,12 @@
    * @param modified {Date} The exact moment this entity was last modified.
    * @param accountId {Number} The ID of the account that owns this entity.
    * @param name {String} The name of this application.
-   * @param key {String} Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
    * @param timezone {String} A string containing an IANA timezone descriptor.
    * @param currency {String} A string describing a default currency for new customer sessions.
+   * @param key {String} Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
    * @param loyaltyPrograms {Array.<module:model/LoyaltyProgram>} An array containing all the loyalty programs to which this application is subscribed
    */
-  var exports = function(id, created, modified, accountId, name, key, timezone, currency, loyaltyPrograms) {
+  var exports = function(id, created, modified, accountId, name, timezone, currency, key, loyaltyPrograms) {
     var _this = this;
 
     _this['id'] = id;
@@ -63,12 +63,12 @@
     _this['accountId'] = accountId;
     _this['name'] = name;
 
-    _this['key'] = key;
     _this['timezone'] = timezone;
     _this['currency'] = currency;
 
 
 
+    _this['key'] = key;
     _this['loyaltyPrograms'] = loyaltyPrograms;
   };
 
@@ -101,9 +101,6 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('key')) {
-        obj['key'] = ApiClient.convertToType(data['key'], 'String');
-      }
       if (data.hasOwnProperty('timezone')) {
         obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
       }
@@ -118,6 +115,9 @@
       }
       if (data.hasOwnProperty('limits')) {
         obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+      }
+      if (data.hasOwnProperty('key')) {
+        obj['key'] = ApiClient.convertToType(data['key'], 'String');
       }
       if (data.hasOwnProperty('loyaltyPrograms')) {
         obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
@@ -157,11 +157,6 @@
    */
   exports.prototype['description'] = undefined;
   /**
-   * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
-   * @member {String} key
-   */
-  exports.prototype['key'] = undefined;
-  /**
    * A string containing an IANA timezone descriptor.
    * @member {String} timezone
    */
@@ -186,6 +181,11 @@
    * @member {Array.<module:model/LimitConfig>} limits
    */
   exports.prototype['limits'] = undefined;
+  /**
+   * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
+   * @member {String} key
+   */
+  exports.prototype['key'] = undefined;
   /**
    * An array containing all the loyalty programs to which this application is subscribed
    * @member {Array.<module:model/LoyaltyProgram>} loyaltyPrograms

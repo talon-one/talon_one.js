@@ -36,26 +36,26 @@
   /**
    * The NewApplication model module.
    * @module model/NewApplication
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
    * Constructs a new <code>NewApplication</code>.
+   * 
    * @alias module:model/NewApplication
    * @class
    * @param name {String} The name of this application.
-   * @param key {String} Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
    * @param timezone {String} A string containing an IANA timezone descriptor.
    * @param currency {String} A string describing a default currency for new customer sessions.
    */
-  var exports = function(name, key, timezone, currency) {
+  var exports = function(name, timezone, currency) {
     var _this = this;
 
     _this['name'] = name;
 
-    _this['key'] = key;
     _this['timezone'] = timezone;
     _this['currency'] = currency;
+
 
 
 
@@ -78,9 +78,6 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('key')) {
-        obj['key'] = ApiClient.convertToType(data['key'], 'String');
-      }
       if (data.hasOwnProperty('timezone')) {
         obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
       }
@@ -96,6 +93,9 @@
       if (data.hasOwnProperty('limits')) {
         obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
       }
+      if (data.hasOwnProperty('key')) {
+        obj['key'] = ApiClient.convertToType(data['key'], 'String');
+      }
     }
     return obj;
   }
@@ -110,11 +110,6 @@
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
-  /**
-   * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
-   * @member {String} key
-   */
-  exports.prototype['key'] = undefined;
   /**
    * A string containing an IANA timezone descriptor.
    * @member {String} timezone
@@ -140,6 +135,11 @@
    * @member {Array.<module:model/LimitConfig>} limits
    */
   exports.prototype['limits'] = undefined;
+  /**
+   * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
+   * @member {String} key
+   */
+  exports.prototype['key'] = undefined;
 
 
   /**

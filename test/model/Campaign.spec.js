@@ -170,6 +170,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property discountEffectCount (base name: "discountEffectCount")', function() {
+      // uncomment below and update the code to test the property discountEffectCount
+      //var instance = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property couponCreationCount (base name: "couponCreationCount")', function() {
+      // uncomment below and update the code to test the property couponCreationCount
+      //var instance = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lastActivity (base name: "lastActivity")', function() {
       // uncomment below and update the code to test the property lastActivity
       //var instance = new TalonOne.Campaign();

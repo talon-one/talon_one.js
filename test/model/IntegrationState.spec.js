@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property coupon (base name: "coupon")', function() {
+      // uncomment below and update the code to test the property coupon
+      //var instance = new TalonOne.IntegrationState();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

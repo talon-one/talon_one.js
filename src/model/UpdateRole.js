@@ -36,7 +36,7 @@
   /**
    * The UpdateRole model module.
    * @module model/UpdateRole
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**

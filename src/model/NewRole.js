@@ -36,7 +36,7 @@
   /**
    * The NewRole model module.
    * @module model/NewRole
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**

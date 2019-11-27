@@ -2180,7 +2180,12 @@ var apiInstance = new TalonOne.ManagementApi();
 var opts = { 
   'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
-  'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+  'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+  'applicationId': 56, // Number | 
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
+  'withTotalResultSize': true, // Boolean | When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+  'includeOld': true // Boolean | When this flag is set to false, the state without the change will not be returned. The default value is true.
 };
 apiInstance.getChanges(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -2197,6 +2202,11 @@ Name | Type | Description  | Notes
  **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
+ **applicationId** | **Number**|  | [optional] 
+ **createdBefore** | **Date**| Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. | [optional] 
+ **createdAfter** | **Date**| Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. | [optional] 
+ **withTotalResultSize** | **Boolean**| When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query.  | [optional] 
+ **includeOld** | **Boolean**| When this flag is set to false, the state without the change will not be returned. The default value is true. | [optional] 
 
 ### Return type
 

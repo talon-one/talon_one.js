@@ -36,7 +36,7 @@
   /**
    * The Account model module.
    * @module model/Account
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**

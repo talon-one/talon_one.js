@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
+**totalResultSize** | **Number** |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
 **data** | [**[Change]**](Change.md) |  | 
 
 

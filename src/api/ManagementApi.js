@@ -33,7 +33,7 @@
   /**
    * Management service.
    * @module api/ManagementApi
-   * @version 3.2.0
+   * @version 3.3.0
    */
 
   /**
@@ -2462,6 +2462,11 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @param {Number} opts.applicationId 
+     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
+     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
+     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
      */
     this.getChangesWithHttpInfo = function(opts) {
@@ -2475,6 +2480,11 @@
         'pageSize': opts['pageSize'],
         'skip': opts['skip'],
         'sort': opts['sort'],
+        'applicationId': opts['applicationId'],
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
+        'withTotalResultSize': opts['withTotalResultSize'],
+        'includeOld': opts['includeOld'],
       };
       var collectionQueryParams = {
       };
@@ -2502,6 +2512,11 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @param {Number} opts.applicationId 
+     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
+     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
+     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
      */
     this.getChanges = function(opts) {
