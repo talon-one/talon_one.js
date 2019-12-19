@@ -36,7 +36,7 @@
   /**
    * The AccountAnalytics model module.
    * @module model/AccountAnalytics
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -57,8 +57,9 @@
    * @param roles {Number} Total Number of roles inside the account
    * @param webhooks {Number} Total Number of webhooks inside the account
    * @param loyaltyPrograms {Number} Total Number of loyalty programs inside the account
+   * @param activeRules {Number} Total Number of active rules in the account
    */
-  var exports = function(applications, activeCampaigns, campaigns, coupons, activeCoupons, expiredCoupons, customAttributes, referralCodes, activeReferralCodes, expiredReferralCodes, users, roles, webhooks, loyaltyPrograms) {
+  var exports = function(applications, activeCampaigns, campaigns, coupons, activeCoupons, expiredCoupons, customAttributes, referralCodes, activeReferralCodes, expiredReferralCodes, users, roles, webhooks, loyaltyPrograms, activeRules) {
     var _this = this;
 
     _this['applications'] = applications;
@@ -75,6 +76,7 @@
     _this['roles'] = roles;
     _this['webhooks'] = webhooks;
     _this['loyaltyPrograms'] = loyaltyPrograms;
+    _this['activeRules'] = activeRules;
   };
 
   /**
@@ -129,6 +131,9 @@
       }
       if (data.hasOwnProperty('loyaltyPrograms')) {
         obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], 'Number');
+      }
+      if (data.hasOwnProperty('activeRules')) {
+        obj['activeRules'] = ApiClient.convertToType(data['activeRules'], 'Number');
       }
     }
     return obj;
@@ -204,6 +209,11 @@
    * @member {Number} loyaltyPrograms
    */
   exports.prototype['loyaltyPrograms'] = undefined;
+  /**
+   * Total Number of active rules in the account
+   * @member {Number} activeRules
+   */
+  exports.prototype['activeRules'] = undefined;
 
 
 

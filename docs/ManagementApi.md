@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addLoyaltyPoints**](ManagementApi.md#addLoyaltyPoints) | **PUT** /v1/loyalty_programs/{programID}/profile/{integrationID}/add_points | Add points in a certain loyalty program for the specified customer
 [**copyCampaignToApplications**](ManagementApi.md#copyCampaignToApplications) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/copy | Copy the campaign into every specified application
+[**createAttribute**](ManagementApi.md#createAttribute) | **POST** /v1/attributes | Define a new custom attribute
 [**createCampaign**](ManagementApi.md#createCampaign) | **POST** /v1/applications/{applicationId}/campaigns | Create a Campaign
 [**createCoupons**](ManagementApi.md#createCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Create Coupons
 [**createPasswordRecoveryEmail**](ManagementApi.md#createPasswordRecoveryEmail) | **POST** /v1/password_recovery_emails | Request a password reset
@@ -20,7 +21,6 @@ Method | HTTP request | Description
 [**getAccessLogsWithoutTotalCount**](ManagementApi.md#getAccessLogsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/access_logs/no_total | Get access logs for application
 [**getAccount**](ManagementApi.md#getAccount) | **GET** /v1/accounts/{accountId} | Get Account Details
 [**getAccountAnalytics**](ManagementApi.md#getAccountAnalytics) | **GET** /v1/accounts/{accountId}/analytics | Get Account Analytics
-[**getAccountLimits**](ManagementApi.md#getAccountLimits) | **GET** /v1/accounts/{accountId}/limits | Get Account Limits
 [**getAllAccessLogs**](ManagementApi.md#getAllAccessLogs) | **GET** /v1/access_logs | Get all access logs
 [**getAllRoles**](ManagementApi.md#getAllRoles) | **GET** /v1/roles | Get all roles.
 [**getApplication**](ManagementApi.md#getApplication) | **GET** /v1/applications/{applicationId} | Get Application
@@ -35,6 +35,7 @@ Method | HTTP request | Description
 [**getApplicationSessions**](ManagementApi.md#getApplicationSessions) | **GET** /v1/applications/{applicationId}/sessions | List Application Sessions
 [**getApplications**](ManagementApi.md#getApplications) | **GET** /v1/applications | List Applications
 [**getAttribute**](ManagementApi.md#getAttribute) | **GET** /v1/attributes/{attributeId} | Get a custom attribute
+[**getAttributes**](ManagementApi.md#getAttributes) | **GET** /v1/attributes | List custom attributes
 [**getCampaign**](ManagementApi.md#getCampaign) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId} | Get a Campaign
 [**getCampaignAnalytics**](ManagementApi.md#getCampaignAnalytics) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/analytics | Get analytics of campaigns
 [**getCampaignByAttributes**](ManagementApi.md#getCampaignByAttributes) | **POST** /v1/applications/{applicationId}/campaigns_search | Get a list of all campaigns that match the given attributes
@@ -76,7 +77,7 @@ Method | HTTP request | Description
 [**searchCouponsAdvancedApplicationWide**](ManagementApi.md#searchCouponsAdvancedApplicationWide) | **POST** /v1/applications/{applicationId}/coupons_search_advanced | Get a list of the coupons that match the given attributes in all active campaigns of an application
 [**searchCouponsAdvancedApplicationWideWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedApplicationWideWithoutTotalCount) | **POST** /v1/applications/{applicationId}/coupons_search_advanced/no_total | Get a list of the coupons that match the given attributes in all active campaigns of an application
 [**searchCouponsAdvancedWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedWithoutTotalCount) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total | Get a list of the coupons that match the given attributes
-[**setAccountLimits**](ManagementApi.md#setAccountLimits) | **PUT** /v1/accounts/{accountId}/limits | Set account limits
+[**updateAttribute**](ManagementApi.md#updateAttribute) | **PUT** /v1/attributes/{attributeId} | Update a custom attribute
 [**updateCampaign**](ManagementApi.md#updateCampaign) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId} | Update a Campaign
 [**updateCampaignSet**](ManagementApi.md#updateCampaignSet) | **PUT** /v1/applications/{applicationId}/campaign_set | Update a Campaign Set
 [**updateCoupon**](ManagementApi.md#updateCoupon) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Update a Coupon
@@ -196,6 +197,56 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="createAttribute"></a>
+# **createAttribute**
+> Attribute createAttribute(body)
+
+Define a new custom attribute
+
+Defines a new _custom attribute_ in this account. Custom attributes allow you to attach new fields to Talon.One domain objects like campaigns, coupons, customers and so on. These attributes can then be given values when creating / updating these objects, and these values can be used in your campaign rules. For example, you could define a &#x60;zipCode&#x60; field for customer sessions, and add a rule to your campaign that only allows certain ZIP codes.  These attributes are shared across all applications in your account, and are never required. 
+
+### Example
+```javascript
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
+
+// Configure API key authorization: manager_auth
+var manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+var apiInstance = new TalonOne.ManagementApi();
+
+var body = new TalonOne.NewAttribute(); // NewAttribute | 
+
+apiInstance.createAttribute(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**NewAttribute**](NewAttribute.md)|  | 
+
+### Return type
+
+[**Attribute**](Attribute.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="createCampaign"></a>
 # **createCampaign**
 > Campaign createCampaign(applicationId, body)
@@ -255,7 +306,7 @@ Name | Type | Description  | Notes
 
 Create Coupons
 
-Create coupons according to some pattern. Up to 20.000 coupons can be created without a unique prefix. When a unique prefix is provided, up to 200.000 coupns can be created.
+Create coupons according to some pattern. Up to 20.000 coupons can be created without a unique prefix. When a unique prefix is provided, up to 200.000 coupons can be created.
 
 ### Example
 ```javascript
@@ -795,8 +846,8 @@ var rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return re
 var rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp, must be an RFC3339 timestamp string
 
 var opts = { 
-  'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
-  'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
+  'path': "path_example", // String | Only return results where the request path matches the given regular expression.
+  'method': "method_example", // String | Only return results where the request method matches the given regular expression.
   'status': "status_example", // String | Filter results by HTTP status codes.
   'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
@@ -817,8 +868,8 @@ Name | Type | Description  | Notes
  **applicationId** | **Number**|  | 
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
- **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
- **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
+ **path** | **String**| Only return results where the request path matches the given regular expression. | [optional] 
+ **method** | **String**| Only return results where the request method matches the given regular expression. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
  **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
@@ -865,8 +916,8 @@ var rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return re
 var rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp, must be an RFC3339 timestamp string
 
 var opts = { 
-  'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
-  'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
+  'path': "path_example", // String | Only return results where the request path matches the given regular expression.
+  'method': "method_example", // String | Only return results where the request method matches the given regular expression.
   'status': "status_example", // String | Filter results by HTTP status codes.
   'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
@@ -887,8 +938,8 @@ Name | Type | Description  | Notes
  **applicationId** | **Number**|  | 
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
- **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
- **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
+ **path** | **String**| Only return results where the request path matches the given regular expression. | [optional] 
+ **method** | **String**| Only return results where the request method matches the given regular expression. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
  **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
@@ -1007,56 +1058,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getAccountLimits"></a>
-# **getAccountLimits**
-> AccountLimits getAccountLimits(accountId)
-
-Get Account Limits
-
-Returns a list of all account limits set 
-
-### Example
-```javascript
-var TalonOne = require('talon_one');
-var defaultClient = TalonOne.ApiClient.instance;
-
-// Configure API key authorization: manager_auth
-var manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix = 'Token';
-
-var apiInstance = new TalonOne.ManagementApi();
-
-var accountId = 56; // Number | 
-
-apiInstance.getAccountLimits(accountId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **Number**|  | 
-
-### Return type
-
-[**AccountLimits**](AccountLimits.md)
-
-### Authorization
-
-[manager_auth](../README.md#manager_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="getAllAccessLogs"></a>
 # **getAllAccessLogs**
 > InlineResponse2009 getAllAccessLogs(rangeStart, rangeEnd, opts)
@@ -1083,8 +1084,8 @@ var rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return re
 var rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp, must be an RFC3339 timestamp string
 
 var opts = { 
-  'path': "path_example", // String | Only return results where the request path matches the given regular expresssion.
-  'method': "method_example", // String | Only return results where the request method matches the given regular expresssion.
+  'path': "path_example", // String | Only return results where the request path matches the given regular expression.
+  'method': "method_example", // String | Only return results where the request method matches the given regular expression.
   'status': "status_example", // String | Filter results by HTTP status codes.
   'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
@@ -1104,8 +1105,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rangeStart** | **Date**| Only return results from after this timestamp, must be an RFC3339 timestamp string | 
  **rangeEnd** | **Date**| Only return results from before this timestamp, must be an RFC3339 timestamp string | 
- **path** | **String**| Only return results where the request path matches the given regular expresssion. | [optional] 
- **method** | **String**| Only return results where the request method matches the given regular expresssion. | [optional] 
+ **path** | **String**| Only return results where the request path matches the given regular expression. | [optional] 
+ **method** | **String**| Only return results where the request method matches the given regular expression. | [optional] 
  **status** | **String**| Filter results by HTTP status codes. | [optional] 
  **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
  **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
@@ -1126,7 +1127,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllRoles"></a>
 # **getAllRoles**
-> InlineResponse20028 getAllRoles()
+> InlineResponse20029 getAllRoles()
 
 Get all roles.
 
@@ -1155,7 +1156,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -1375,7 +1376,7 @@ Name | Type | Description  | Notes
 
 Get a list of the customer profiles that match the given attributes
 
-Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
 
 ### Example
 ```javascript
@@ -1859,6 +1860,61 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getAttributes"></a>
+# **getAttributes**
+> InlineResponse20020 getAttributes(opts)
+
+List custom attributes
+
+Returns all the defined custom attributes for the account. 
+
+### Example
+```javascript
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
+
+// Configure API key authorization: manager_auth
+var manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+var apiInstance = new TalonOne.ManagementApi();
+
+var opts = { 
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'skip': 56, // Number | Skips the given number of items when paging through large result sets.
+  'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+};
+apiInstance.getAttributes(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
+ **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
+
+### Return type
+
+[**InlineResponse20020**](InlineResponse20020.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getCampaign"></a>
 # **getCampaign**
 > Campaign getCampaign(applicationId, campaignId)
@@ -2158,7 +2214,7 @@ Name | Type | Description  | Notes
 
 <a name="getChanges"></a>
 # **getChanges**
-> InlineResponse20025 getChanges(opts)
+> InlineResponse20026 getChanges(opts)
 
 Get audit log for an account
 
@@ -2210,7 +2266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -2932,7 +2988,7 @@ Name | Type | Description  | Notes
 
 Get a list of the customer profiles that match the given attributes
 
-Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
 
 ### Example
 ```javascript
@@ -2984,7 +3040,7 @@ Name | Type | Description  | Notes
 
 <a name="getEventTypes"></a>
 # **getEventTypes**
-> InlineResponse20023 getEventTypes(opts)
+> InlineResponse20024 getEventTypes(opts)
 
 List Event Types
 
@@ -3032,7 +3088,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -3045,7 +3101,7 @@ Name | Type | Description  | Notes
 
 <a name="getExports"></a>
 # **getExports**
-> InlineResponse20026 getExports(opts)
+> InlineResponse20027 getExports(opts)
 
 Get Exports
 
@@ -3091,7 +3147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -3104,7 +3160,7 @@ Name | Type | Description  | Notes
 
 <a name="getImports"></a>
 # **getImports**
-> InlineResponse20027 getImports(opts)
+> InlineResponse20028 getImports(opts)
 
 Get Imports
 
@@ -3144,7 +3200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -3665,7 +3721,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsers"></a>
 # **getUsers**
-> InlineResponse20024 getUsers(opts)
+> InlineResponse20025 getUsers(opts)
 
 List Users in your account
 
@@ -3707,7 +3763,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -3770,7 +3826,7 @@ Name | Type | Description  | Notes
 
 <a name="getWebhookActivationLogs"></a>
 # **getWebhookActivationLogs**
-> InlineResponse20021 getWebhookActivationLogs(opts)
+> InlineResponse20022 getWebhookActivationLogs(opts)
 
 List Webhook activation Log Entries
 
@@ -3824,7 +3880,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -3837,7 +3893,7 @@ Name | Type | Description  | Notes
 
 <a name="getWebhookLogs"></a>
 # **getWebhookLogs**
-> InlineResponse20022 getWebhookLogs(opts)
+> InlineResponse20023 getWebhookLogs(opts)
 
 List Webhook Log Entries
 
@@ -3893,7 +3949,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -3906,7 +3962,7 @@ Name | Type | Description  | Notes
 
 <a name="getWebhooks"></a>
 # **getWebhooks**
-> InlineResponse20020 getWebhooks(opts)
+> InlineResponse20021 getWebhooks(opts)
 
 List Webhooks
 
@@ -3950,7 +4006,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -4437,13 +4493,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="setAccountLimits"></a>
-# **setAccountLimits**
-> setAccountLimits(accountId, body)
+<a name="updateAttribute"></a>
+# **updateAttribute**
+> Attribute updateAttribute(attributeId, body)
 
-Set account limits
+Update a custom attribute
 
-sets account limits 
+Updates an existing custom attribute. Once created, the only property of a custom attribute that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. E.g. if you have a customer profile attribute with the name &#x60;region&#x60;, and your integration is sending &#x60;attributes.region&#x60; with customer profile updates, changing the name to &#x60;locale&#x60; would cause the integration requests to begin failing.  If you **really** need to change the &#x60;type&#x60; or &#x60;name&#x60; property of a custom attribute, create a new attribute and update any relevant integrations and rules to use the new attribute. Then delete the old attribute when you are confident you have migrated any needed data from the old attribute to the new one. 
 
 ### Example
 ```javascript
@@ -4458,12 +4514,12 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 var apiInstance = new TalonOne.ManagementApi();
 
-var accountId = 56; // Number | 
+var attributeId = 56; // Number | 
 
-var body = new TalonOne.AccountLimits(); // AccountLimits | 
+var body = new TalonOne.NewAttribute(); // NewAttribute | 
 
-apiInstance.setAccountLimits(accountId, body).then(function() {
-  console.log('API called successfully.');
+apiInstance.updateAttribute(attributeId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
@@ -4474,12 +4530,12 @@ apiInstance.setAccountLimits(accountId, body).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **Number**|  | 
- **body** | [**AccountLimits**](AccountLimits.md)|  | 
+ **attributeId** | **Number**|  | 
+ **body** | [**NewAttribute**](NewAttribute.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**Attribute**](Attribute.md)
 
 ### Authorization
 

@@ -36,7 +36,7 @@
   /**
    * The SamlConnection model module.
    * @module model/SamlConnection
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -44,32 +44,30 @@
    * 
    * @alias module:model/SamlConnection
    * @class
-   * @param id {Number} 
-   * @param created {Date} Unix timestamp indicating when the session was first created.
-   * @param accountId {Number} The ID of the account that owns this SAML Service.
    * @param assertionConsumerServiceURL {String} The location where the SAML assertion is sent with a HTTP POST.
+   * @param accountId {Number} The ID of the account that owns this entity.
    * @param name {String} ID of the SAML service.
    * @param enabled {Boolean} Determines if this SAML connection active.
    * @param issuer {String} Identity Provider Entity ID.
    * @param signOnURL {String} Single Sign-On URL.
-   * @param x509certificate {String} X.509 Certificate.
-   * @param audience {String} The application-defined unique identifier that is the intended audience of the SAML assertion.  This is most often the SP Entity ID of your application. When not specified, the ACS URL will be used. 
+   * @param audienceURI {String} The application-defined unique identifier that is the intended audience of the SAML assertion. This is most often the SP Entity ID of your application. When not specified, the ACS URL will be used. 
+   * @param id {Number} Unique ID for this entity.
+   * @param created {Date} The exact moment this entity was created.
    */
-  var exports = function(id, created, accountId, assertionConsumerServiceURL, name, enabled, issuer, signOnURL, x509certificate, audience) {
+  var exports = function(assertionConsumerServiceURL, accountId, name, enabled, issuer, signOnURL, audienceURI, id, created) {
     var _this = this;
 
-    _this['id'] = id;
-    _this['created'] = created;
-    _this['accountId'] = accountId;
     _this['assertionConsumerServiceURL'] = assertionConsumerServiceURL;
+    _this['accountId'] = accountId;
     _this['name'] = name;
     _this['enabled'] = enabled;
     _this['issuer'] = issuer;
     _this['signOnURL'] = signOnURL;
 
 
-    _this['x509certificate'] = x509certificate;
-    _this['audience'] = audience;
+    _this['audienceURI'] = audienceURI;
+    _this['id'] = id;
+    _this['created'] = created;
   };
 
   /**
@@ -83,17 +81,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-      }
-      if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+      if (data.hasOwnProperty('assertionConsumerServiceURL')) {
+        obj['assertionConsumerServiceURL'] = ApiClient.convertToType(data['assertionConsumerServiceURL'], 'String');
       }
       if (data.hasOwnProperty('accountId')) {
         obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
-      }
-      if (data.hasOwnProperty('assertionConsumerServiceURL')) {
-        obj['assertionConsumerServiceURL'] = ApiClient.convertToType(data['assertionConsumerServiceURL'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -113,35 +105,29 @@
       if (data.hasOwnProperty('metadataURL')) {
         obj['metadataURL'] = ApiClient.convertToType(data['metadataURL'], 'String');
       }
-      if (data.hasOwnProperty('x509certificate')) {
-        obj['x509certificate'] = ApiClient.convertToType(data['x509certificate'], 'String');
+      if (data.hasOwnProperty('audienceURI')) {
+        obj['audienceURI'] = ApiClient.convertToType(data['audienceURI'], 'String');
       }
-      if (data.hasOwnProperty('audience')) {
-        obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      }
+      if (data.hasOwnProperty('created')) {
+        obj['created'] = ApiClient.convertToType(data['created'], 'Date');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * Unix timestamp indicating when the session was first created.
-   * @member {Date} created
-   */
-  exports.prototype['created'] = undefined;
-  /**
-   * The ID of the account that owns this SAML Service.
-   * @member {Number} accountId
-   */
-  exports.prototype['accountId'] = undefined;
-  /**
    * The location where the SAML assertion is sent with a HTTP POST.
    * @member {String} assertionConsumerServiceURL
    */
   exports.prototype['assertionConsumerServiceURL'] = undefined;
+  /**
+   * The ID of the account that owns this entity.
+   * @member {Number} accountId
+   */
+  exports.prototype['accountId'] = undefined;
   /**
    * ID of the SAML service.
    * @member {String} name
@@ -173,15 +159,20 @@
    */
   exports.prototype['metadataURL'] = undefined;
   /**
-   * X.509 Certificate.
-   * @member {String} x509certificate
+   * The application-defined unique identifier that is the intended audience of the SAML assertion. This is most often the SP Entity ID of your application. When not specified, the ACS URL will be used. 
+   * @member {String} audienceURI
    */
-  exports.prototype['x509certificate'] = undefined;
+  exports.prototype['audienceURI'] = undefined;
   /**
-   * The application-defined unique identifier that is the intended audience of the SAML assertion.  This is most often the SP Entity ID of your application. When not specified, the ACS URL will be used. 
-   * @member {String} audience
+   * Unique ID for this entity.
+   * @member {Number} id
    */
-  exports.prototype['audience'] = undefined;
+  exports.prototype['id'] = undefined;
+  /**
+   * The exact moment this entity was created.
+   * @member {Date} created
+   */
+  exports.prototype['created'] = undefined;
 
 
 

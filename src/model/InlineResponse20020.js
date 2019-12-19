@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Webhook'], factory);
+    define(['ApiClient', 'model/Attribute'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Webhook'));
+    module.exports = factory(require('../ApiClient'), require('./Attribute'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.InlineResponse20020 = factory(root.TalonOne.ApiClient, root.TalonOne.Webhook);
+    root.TalonOne.InlineResponse20020 = factory(root.TalonOne.ApiClient, root.TalonOne.Attribute);
   }
-}(this, function(ApiClient, Webhook) {
+}(this, function(ApiClient, Attribute) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The InlineResponse20020 model module.
    * @module model/InlineResponse20020
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20020
    * @class
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/Webhook>} 
+   * @param data {Array.<module:model/Attribute>} 
    */
   var exports = function(totalResultSize, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [Webhook]);
+        obj['data'] = ApiClient.convertToType(data['data'], [Attribute]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/Webhook>} data
+   * @member {Array.<module:model/Attribute>} data
    */
   exports.prototype['data'] = undefined;
 

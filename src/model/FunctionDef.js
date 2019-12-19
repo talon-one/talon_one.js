@@ -36,7 +36,7 @@
   /**
    * The FunctionDef model module.
    * @module model/FunctionDef
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The NewAccountSignUp model module.
    * @module model/NewAccountSignUp
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

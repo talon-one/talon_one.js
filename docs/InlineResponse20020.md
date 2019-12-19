@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Webhook]**](Webhook.md) |  | 
+**data** | [**[Attribute]**](Attribute.md) |  | 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/LimitConfig'], factory);
+    define(['ApiClient', 'model/AttributesSettings', 'model/LimitConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./LimitConfig'));
+    module.exports = factory(require('../ApiClient'), require('./AttributesSettings'), require('./LimitConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.NewApplication = factory(root.TalonOne.ApiClient, root.TalonOne.LimitConfig);
+    root.TalonOne.NewApplication = factory(root.TalonOne.ApiClient, root.TalonOne.AttributesSettings, root.TalonOne.LimitConfig);
   }
-}(this, function(ApiClient, LimitConfig) {
+}(this, function(ApiClient, AttributesSettings, LimitConfig) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The NewApplication model module.
    * @module model/NewApplication
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -55,6 +55,7 @@
 
     _this['timezone'] = timezone;
     _this['currency'] = currency;
+
 
 
 
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('limits')) {
         obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+      }
+      if (data.hasOwnProperty('attributesSettings')) {
+        obj['attributesSettings'] = AttributesSettings.constructFromObject(data['attributesSettings']);
       }
       if (data.hasOwnProperty('key')) {
         obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -135,6 +139,10 @@
    * @member {Array.<module:model/LimitConfig>} limits
    */
   exports.prototype['limits'] = undefined;
+  /**
+   * @member {module:model/AttributesSettings} attributesSettings
+   */
+  exports.prototype['attributesSettings'] = undefined;
   /**
    * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
    * @member {String} key

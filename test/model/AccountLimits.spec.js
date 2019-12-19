@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property activeRules (base name: "activeRules")', function() {
+      // uncomment below and update the code to test the property activeRules
+      //var instance = new TalonOne.AccountLimits();
+      //expect(instance).to.be();
+    });
+
     it('should have the property promotionTypes (base name: "promotionTypes")', function() {
       // uncomment below and update the code to test the property promotionTypes
       //var instance = new TalonOne.AccountLimits();

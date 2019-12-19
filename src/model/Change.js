@@ -36,7 +36,7 @@
   /**
    * The Change model module.
    * @module model/Change
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -114,12 +114,12 @@
    */
   exports.prototype['entity'] = undefined;
   /**
-   * Resource before the change occured.
+   * Resource before the change occurred.
    * @member {Object} old
    */
   exports.prototype['old'] = undefined;
   /**
-   * Resource after the change occured.
+   * Resource after the change occurred.
    * @member {Object} new
    */
   exports.prototype['new'] = undefined;

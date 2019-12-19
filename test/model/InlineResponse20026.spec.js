@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property hasMore (base name: "hasMore")', function() {
+      // uncomment below and update the code to test the property hasMore
+      //var instance = new TalonOne.InlineResponse20026();
+      //expect(instance).to.be();
+    });
+
     it('should have the property data (base name: "data")', function() {
       // uncomment below and update the code to test the property data
       //var instance = new TalonOne.InlineResponse20026();

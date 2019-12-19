@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelImport'], factory);
+    define(['ApiClient', 'model/ModelExport'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ModelImport'));
+    module.exports = factory(require('../ApiClient'), require('./ModelExport'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.InlineResponse20027 = factory(root.TalonOne.ApiClient, root.TalonOne.ModelImport);
+    root.TalonOne.InlineResponse20027 = factory(root.TalonOne.ApiClient, root.TalonOne.ModelExport);
   }
-}(this, function(ApiClient, ModelImport) {
+}(this, function(ApiClient, ModelExport) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The InlineResponse20027 model module.
    * @module model/InlineResponse20027
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20027
    * @class
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/ModelImport>} 
+   * @param data {Array.<module:model/ModelExport>} 
    */
   var exports = function(totalResultSize, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [ModelImport]);
+        obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/ModelImport>} data
+   * @member {Array.<module:model/ModelExport>} data
    */
   exports.prototype['data'] = undefined;
 

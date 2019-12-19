@@ -56,26 +56,14 @@
       //expect(instance).to.be.a(TalonOne.SamlConnection);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new TalonOne.SamlConnection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
+    it('should have the property assertionConsumerServiceURL (base name: "assertionConsumerServiceURL")', function() {
+      // uncomment below and update the code to test the property assertionConsumerServiceURL
       //var instance = new TalonOne.SamlConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property accountId (base name: "accountId")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instance = new TalonOne.SamlConnection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property assertionConsumerServiceURL (base name: "assertionConsumerServiceURL")', function() {
-      // uncomment below and update the code to test the property assertionConsumerServiceURL
       //var instance = new TalonOne.SamlConnection();
       //expect(instance).to.be();
     });
@@ -116,14 +104,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property x509certificate (base name: "x509certificate")', function() {
-      // uncomment below and update the code to test the property x509certificate
+    it('should have the property audienceURI (base name: "audienceURI")', function() {
+      // uncomment below and update the code to test the property audienceURI
       //var instance = new TalonOne.SamlConnection();
       //expect(instance).to.be();
     });
 
-    it('should have the property audience (base name: "audience")', function() {
-      // uncomment below and update the code to test the property audience
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new TalonOne.SamlConnection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property created (base name: "created")', function() {
+      // uncomment below and update the code to test the property created
       //var instance = new TalonOne.SamlConnection();
       //expect(instance).to.be();
     });

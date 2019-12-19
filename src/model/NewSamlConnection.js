@@ -36,30 +36,32 @@
   /**
    * The NewSamlConnection model module.
    * @module model/NewSamlConnection
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
    * Constructs a new <code>NewSamlConnection</code>.
-   * A new SAML 2.0 connection.
+   * 
    * @alias module:model/NewSamlConnection
    * @class
+   * @param x509certificate {String} X.509 Certificate.
+   * @param accountId {Number} The ID of the account that owns this entity.
    * @param name {String} ID of the SAML service.
    * @param enabled {Boolean} Determines if this SAML connection active.
    * @param issuer {String} Identity Provider Entity ID.
    * @param signOnURL {String} Single Sign-On URL.
-   * @param x509certificate {String} X.509 Certificate.
    */
-  var exports = function(name, enabled, issuer, signOnURL, x509certificate) {
+  var exports = function(x509certificate, accountId, name, enabled, issuer, signOnURL) {
     var _this = this;
 
+    _this['x509certificate'] = x509certificate;
+    _this['accountId'] = accountId;
     _this['name'] = name;
     _this['enabled'] = enabled;
     _this['issuer'] = issuer;
     _this['signOnURL'] = signOnURL;
 
 
-    _this['x509certificate'] = x509certificate;
 
   };
 
@@ -74,6 +76,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('x509certificate')) {
+        obj['x509certificate'] = ApiClient.convertToType(data['x509certificate'], 'String');
+      }
+      if (data.hasOwnProperty('accountId')) {
+        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -92,16 +100,23 @@
       if (data.hasOwnProperty('metadataURL')) {
         obj['metadataURL'] = ApiClient.convertToType(data['metadataURL'], 'String');
       }
-      if (data.hasOwnProperty('x509certificate')) {
-        obj['x509certificate'] = ApiClient.convertToType(data['x509certificate'], 'String');
-      }
-      if (data.hasOwnProperty('audience')) {
-        obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+      if (data.hasOwnProperty('audienceURI')) {
+        obj['audienceURI'] = ApiClient.convertToType(data['audienceURI'], 'String');
       }
     }
     return obj;
   }
 
+  /**
+   * X.509 Certificate.
+   * @member {String} x509certificate
+   */
+  exports.prototype['x509certificate'] = undefined;
+  /**
+   * The ID of the account that owns this entity.
+   * @member {Number} accountId
+   */
+  exports.prototype['accountId'] = undefined;
   /**
    * ID of the SAML service.
    * @member {String} name
@@ -133,15 +148,10 @@
    */
   exports.prototype['metadataURL'] = undefined;
   /**
-   * X.509 Certificate.
-   * @member {String} x509certificate
+   * The application-defined unique identifier that is the intended audience of the SAML assertion. This is most often the SP Entity ID of your application. When not specified, the ACS URL will be used. 
+   * @member {String} audienceURI
    */
-  exports.prototype['x509certificate'] = undefined;
-  /**
-   * The application-defined unique identifier that is the intended audience of the SAML assertion.  This is most often the SP Entity ID of your application. When not specified, the ACS URL will be used. 
-   * @member {String} audience
-   */
-  exports.prototype['audience'] = undefined;
+  exports.prototype['audienceURI'] = undefined;
 
 
 

@@ -36,7 +36,7 @@
   /**
    * The CouponConstraints model module.
    * @module model/CouponConstraints
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

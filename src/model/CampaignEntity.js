@@ -36,7 +36,7 @@
   /**
    * The CampaignEntity model module.
    * @module model/CampaignEntity
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

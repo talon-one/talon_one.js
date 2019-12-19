@@ -68,6 +68,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new TalonOne.CampaignCopy();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property startTime (base name: "startTime")', function() {
+      // uncomment below and update the code to test the property startTime
+      //var instance = new TalonOne.CampaignCopy();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property endTime (base name: "endTime")', function() {
+      // uncomment below and update the code to test the property endTime
+      //var instance = new TalonOne.CampaignCopy();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new TalonOne.CampaignCopy();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

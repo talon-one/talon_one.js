@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/WebhookLogEntry'], factory);
+    define(['ApiClient', 'model/WebhookActivationLogEntry'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./WebhookLogEntry'));
+    module.exports = factory(require('../ApiClient'), require('./WebhookActivationLogEntry'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.InlineResponse20022 = factory(root.TalonOne.ApiClient, root.TalonOne.WebhookLogEntry);
+    root.TalonOne.InlineResponse20022 = factory(root.TalonOne.ApiClient, root.TalonOne.WebhookActivationLogEntry);
   }
-}(this, function(ApiClient, WebhookLogEntry) {
+}(this, function(ApiClient, WebhookActivationLogEntry) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The InlineResponse20022 model module.
    * @module model/InlineResponse20022
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20022
    * @class
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/WebhookLogEntry>} 
+   * @param data {Array.<module:model/WebhookActivationLogEntry>} 
    */
   var exports = function(totalResultSize, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [WebhookLogEntry]);
+        obj['data'] = ApiClient.convertToType(data['data'], [WebhookActivationLogEntry]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/WebhookLogEntry>} data
+   * @member {Array.<module:model/WebhookActivationLogEntry>} data
    */
   exports.prototype['data'] = undefined;
 

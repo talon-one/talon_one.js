@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/WebhookActivationLogEntry'], factory);
+    define(['ApiClient', 'model/Webhook'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./WebhookActivationLogEntry'));
+    module.exports = factory(require('../ApiClient'), require('./Webhook'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.InlineResponse20021 = factory(root.TalonOne.ApiClient, root.TalonOne.WebhookActivationLogEntry);
+    root.TalonOne.InlineResponse20021 = factory(root.TalonOne.ApiClient, root.TalonOne.Webhook);
   }
-}(this, function(ApiClient, WebhookActivationLogEntry) {
+}(this, function(ApiClient, Webhook) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The InlineResponse20021 model module.
    * @module model/InlineResponse20021
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20021
    * @class
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/WebhookActivationLogEntry>} 
+   * @param data {Array.<module:model/Webhook>} 
    */
   var exports = function(totalResultSize, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [WebhookActivationLogEntry]);
+        obj['data'] = ApiClient.convertToType(data['data'], [Webhook]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/WebhookActivationLogEntry>} data
+   * @member {Array.<module:model/Webhook>} data
    */
   exports.prototype['data'] = undefined;
 
