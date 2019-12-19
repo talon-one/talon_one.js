@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property attributesSettings (base name: "attributesSettings")', function() {
+      // uncomment below and update the code to test the property attributesSettings
+      //var instance = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
       //var instance = new TalonOne.Application();

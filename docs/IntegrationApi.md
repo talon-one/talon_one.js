@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**createReferral**](IntegrationApi.md#createReferral) | **POST** /v1/referrals | Create a referral code for an advocate
 [**deleteCouponReservation**](IntegrationApi.md#deleteCouponReservation) | **DELETE** /v1/coupon_reservations/{couponValue} | Delete coupon reservations
 [**deleteCustomerData**](IntegrationApi.md#deleteCustomerData) | **DELETE** /v1/customer_data/{integrationId} | Delete the personal data of a customer.
+[**getCustomerInventory**](IntegrationApi.md#getCustomerInventory) | **GET** /v1/customer_profiles/{integrationId}/inventory | Get an inventory of all data associated with a specific customer profile.
 [**getReservedCoupons**](IntegrationApi.md#getReservedCoupons) | **GET** /v1/coupon_reservations/coupons/{integrationId} | Get all valid reserved coupons
 [**getReservedCustomers**](IntegrationApi.md#getReservedCustomers) | **GET** /v1/coupon_reservations/customerprofiles/{couponValue} | Get the users that have this coupon reserved
 [**trackEvent**](IntegrationApi.md#trackEvent) | **POST** /v1/events | Track an Event
@@ -235,6 +236,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCustomerInventory"></a>
+# **getCustomerInventory**
+> CustomerInventory getCustomerInventory(integrationId, opts)
+
+Get an inventory of all data associated with a specific customer profile.
+
+Get information regarding entities referencing this customer profile&#39;s integrationId. Currently we support customer profile information and referral codes. In the future, this will be expanded with coupon codes and loyalty points.
+
+### Example
+```javascript
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
+
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: integration_auth
+var integration_auth = defaultClient.authentications['integration_auth'];
+integration_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//integration_auth.apiKeyPrefix = 'Token';
+
+var apiInstance = new TalonOne.IntegrationApi();
+
+var integrationId = "integrationId_example"; // String | The custom identifier for this profile, must be unique within the account.
+
+var opts = { 
+  'profile': null, // Object | optional flag to decide if you would like customer profile information in the response
+  'referrals': null // Object | optional flag to decide if you would like referral information in the response
+};
+apiInstance.getCustomerInventory(integrationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **integrationId** | **String**| The custom identifier for this profile, must be unique within the account. | 
+ **profile** | [**Object**](.md)| optional flag to decide if you would like customer profile information in the response | [optional] 
+ **referrals** | [**Object**](.md)| optional flag to decide if you would like referral information in the response | [optional] 
+
+### Return type
+
+[**CustomerInventory**](CustomerInventory.md)
 
 ### Authorization
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EventType'], factory);
+    define(['ApiClient', 'model/WebhookLogEntry'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EventType'));
+    module.exports = factory(require('../ApiClient'), require('./WebhookLogEntry'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.InlineResponse20023 = factory(root.TalonOne.ApiClient, root.TalonOne.EventType);
+    root.TalonOne.InlineResponse20023 = factory(root.TalonOne.ApiClient, root.TalonOne.WebhookLogEntry);
   }
-}(this, function(ApiClient, EventType) {
+}(this, function(ApiClient, WebhookLogEntry) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The InlineResponse20023 model module.
    * @module model/InlineResponse20023
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse20023
    * @class
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/EventType>} 
+   * @param data {Array.<module:model/WebhookLogEntry>} 
    */
   var exports = function(totalResultSize, data) {
     var _this = this;
@@ -68,7 +68,7 @@
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
+        obj['data'] = ApiClient.convertToType(data['data'], [WebhookLogEntry]);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/EventType>} data
+   * @member {Array.<module:model/WebhookLogEntry>} data
    */
   exports.prototype['data'] = undefined;
 

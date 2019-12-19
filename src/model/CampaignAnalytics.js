@@ -36,7 +36,7 @@
   /**
    * The CampaignAnalytics model module.
    * @module model/CampaignAnalytics
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -45,14 +45,20 @@
    * @alias module:model/CampaignAnalytics
    * @class
    * @param _date {Date} 
-   * @param campaignRevenue {Number} Amount of revenue in this campaign.
-   * @param totalCampaignRevenue {Number} Amount of revenue in this campaign since it began.
+   * @param campaignRevenue {Number} Amount of revenue in this campaign (for coupon or discount sessions).
+   * @param totalCampaignRevenue {Number} Amount of revenue in this campaign since it began (for coupon or discount sessions).
+   * @param campaignRefund {Number} Amount of refunds in this campaign (for coupon or discount sessions).
+   * @param totalCampaignRefund {Number} Amount of refunds in this campaign since it began (for coupon or discount sessions).
    * @param campaignDiscountCosts {Number} Amount of cost caused by discounts given in the campaign.
    * @param totalCampaignDiscountCosts {Number} Amount of cost caused by discounts given in the campaign since it began.
+   * @param campaignRefundedDiscounts {Number} Amount of discounts rolledback due to refund in the campaign.
+   * @param totalCampaignRefundedDiscounts {Number} Amount of discounts rolledback due to refund in the campaign since it began.
    * @param campaignFreeItems {Number} Amount of free items given in the campaign.
    * @param totalCampaignFreeItems {Number} Amount of free items given in the campaign since it began.
-   * @param couponRedemptions {Number} Number of coupon redemptions in the campaign (only accepted referrals on sessions that were closed are considered).
+   * @param couponRedemptions {Number} Number of coupon redemptions in the campaign.
    * @param totalCouponRedemptions {Number} Number of coupon redemptions in the campaign since it began.
+   * @param couponRolledbackRedemptions {Number} Number of coupon redemptions that have been rolled back (due to canceling closed session) in the campaign.
+   * @param totalCouponRolledbackRedemptions {Number} Number of coupon redemptions that have been rolled back (due to canceling closed session) in the campaign since it began.
    * @param referralRedemptions {Number} Number of referral redemptions in the campaign.
    * @param totalReferralRedemptions {Number} Number of referral redemptions in the campaign since it began.
    * @param couponsCreated {Number} Number of coupons created in the campaign by the rule engine.
@@ -60,18 +66,24 @@
    * @param referralsCreated {Number} Number of referrals created in the campaign by the rule engine.
    * @param totalReferralsCreated {Number} Number of referrals created in the campaign by the rule engine since it began.
    */
-  var exports = function(_date, campaignRevenue, totalCampaignRevenue, campaignDiscountCosts, totalCampaignDiscountCosts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated) {
+  var exports = function(_date, campaignRevenue, totalCampaignRevenue, campaignRefund, totalCampaignRefund, campaignDiscountCosts, totalCampaignDiscountCosts, campaignRefundedDiscounts, totalCampaignRefundedDiscounts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, couponRolledbackRedemptions, totalCouponRolledbackRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated) {
     var _this = this;
 
     _this['date'] = _date;
     _this['campaignRevenue'] = campaignRevenue;
     _this['totalCampaignRevenue'] = totalCampaignRevenue;
+    _this['campaignRefund'] = campaignRefund;
+    _this['totalCampaignRefund'] = totalCampaignRefund;
     _this['campaignDiscountCosts'] = campaignDiscountCosts;
     _this['totalCampaignDiscountCosts'] = totalCampaignDiscountCosts;
+    _this['campaignRefundedDiscounts'] = campaignRefundedDiscounts;
+    _this['totalCampaignRefundedDiscounts'] = totalCampaignRefundedDiscounts;
     _this['campaignFreeItems'] = campaignFreeItems;
     _this['totalCampaignFreeItems'] = totalCampaignFreeItems;
     _this['couponRedemptions'] = couponRedemptions;
     _this['totalCouponRedemptions'] = totalCouponRedemptions;
+    _this['couponRolledbackRedemptions'] = couponRolledbackRedemptions;
+    _this['totalCouponRolledbackRedemptions'] = totalCouponRolledbackRedemptions;
     _this['referralRedemptions'] = referralRedemptions;
     _this['totalReferralRedemptions'] = totalReferralRedemptions;
     _this['couponsCreated'] = couponsCreated;
@@ -100,11 +112,23 @@
       if (data.hasOwnProperty('totalCampaignRevenue')) {
         obj['totalCampaignRevenue'] = ApiClient.convertToType(data['totalCampaignRevenue'], 'Number');
       }
+      if (data.hasOwnProperty('campaignRefund')) {
+        obj['campaignRefund'] = ApiClient.convertToType(data['campaignRefund'], 'Number');
+      }
+      if (data.hasOwnProperty('totalCampaignRefund')) {
+        obj['totalCampaignRefund'] = ApiClient.convertToType(data['totalCampaignRefund'], 'Number');
+      }
       if (data.hasOwnProperty('campaignDiscountCosts')) {
         obj['campaignDiscountCosts'] = ApiClient.convertToType(data['campaignDiscountCosts'], 'Number');
       }
       if (data.hasOwnProperty('totalCampaignDiscountCosts')) {
         obj['totalCampaignDiscountCosts'] = ApiClient.convertToType(data['totalCampaignDiscountCosts'], 'Number');
+      }
+      if (data.hasOwnProperty('campaignRefundedDiscounts')) {
+        obj['campaignRefundedDiscounts'] = ApiClient.convertToType(data['campaignRefundedDiscounts'], 'Number');
+      }
+      if (data.hasOwnProperty('totalCampaignRefundedDiscounts')) {
+        obj['totalCampaignRefundedDiscounts'] = ApiClient.convertToType(data['totalCampaignRefundedDiscounts'], 'Number');
       }
       if (data.hasOwnProperty('campaignFreeItems')) {
         obj['campaignFreeItems'] = ApiClient.convertToType(data['campaignFreeItems'], 'Number');
@@ -117,6 +141,12 @@
       }
       if (data.hasOwnProperty('totalCouponRedemptions')) {
         obj['totalCouponRedemptions'] = ApiClient.convertToType(data['totalCouponRedemptions'], 'Number');
+      }
+      if (data.hasOwnProperty('couponRolledbackRedemptions')) {
+        obj['couponRolledbackRedemptions'] = ApiClient.convertToType(data['couponRolledbackRedemptions'], 'Number');
+      }
+      if (data.hasOwnProperty('totalCouponRolledbackRedemptions')) {
+        obj['totalCouponRolledbackRedemptions'] = ApiClient.convertToType(data['totalCouponRolledbackRedemptions'], 'Number');
       }
       if (data.hasOwnProperty('referralRedemptions')) {
         obj['referralRedemptions'] = ApiClient.convertToType(data['referralRedemptions'], 'Number');
@@ -145,15 +175,25 @@
    */
   exports.prototype['date'] = undefined;
   /**
-   * Amount of revenue in this campaign.
+   * Amount of revenue in this campaign (for coupon or discount sessions).
    * @member {Number} campaignRevenue
    */
   exports.prototype['campaignRevenue'] = undefined;
   /**
-   * Amount of revenue in this campaign since it began.
+   * Amount of revenue in this campaign since it began (for coupon or discount sessions).
    * @member {Number} totalCampaignRevenue
    */
   exports.prototype['totalCampaignRevenue'] = undefined;
+  /**
+   * Amount of refunds in this campaign (for coupon or discount sessions).
+   * @member {Number} campaignRefund
+   */
+  exports.prototype['campaignRefund'] = undefined;
+  /**
+   * Amount of refunds in this campaign since it began (for coupon or discount sessions).
+   * @member {Number} totalCampaignRefund
+   */
+  exports.prototype['totalCampaignRefund'] = undefined;
   /**
    * Amount of cost caused by discounts given in the campaign.
    * @member {Number} campaignDiscountCosts
@@ -165,6 +205,16 @@
    */
   exports.prototype['totalCampaignDiscountCosts'] = undefined;
   /**
+   * Amount of discounts rolledback due to refund in the campaign.
+   * @member {Number} campaignRefundedDiscounts
+   */
+  exports.prototype['campaignRefundedDiscounts'] = undefined;
+  /**
+   * Amount of discounts rolledback due to refund in the campaign since it began.
+   * @member {Number} totalCampaignRefundedDiscounts
+   */
+  exports.prototype['totalCampaignRefundedDiscounts'] = undefined;
+  /**
    * Amount of free items given in the campaign.
    * @member {Number} campaignFreeItems
    */
@@ -175,7 +225,7 @@
    */
   exports.prototype['totalCampaignFreeItems'] = undefined;
   /**
-   * Number of coupon redemptions in the campaign (only accepted referrals on sessions that were closed are considered).
+   * Number of coupon redemptions in the campaign.
    * @member {Number} couponRedemptions
    */
   exports.prototype['couponRedemptions'] = undefined;
@@ -184,6 +234,16 @@
    * @member {Number} totalCouponRedemptions
    */
   exports.prototype['totalCouponRedemptions'] = undefined;
+  /**
+   * Number of coupon redemptions that have been rolled back (due to canceling closed session) in the campaign.
+   * @member {Number} couponRolledbackRedemptions
+   */
+  exports.prototype['couponRolledbackRedemptions'] = undefined;
+  /**
+   * Number of coupon redemptions that have been rolled back (due to canceling closed session) in the campaign since it began.
+   * @member {Number} totalCouponRolledbackRedemptions
+   */
+  exports.prototype['totalCouponRolledbackRedemptions'] = undefined;
   /**
    * Number of referral redemptions in the campaign.
    * @member {Number} referralRedemptions

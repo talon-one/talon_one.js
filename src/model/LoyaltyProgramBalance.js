@@ -36,7 +36,7 @@
   /**
    * The LoyaltyProgramBalance model module.
    * @module model/LoyaltyProgramBalance
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

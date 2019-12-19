@@ -36,7 +36,7 @@
   /**
    * The NewPasswordEmail model module.
    * @module model/NewPasswordEmail
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

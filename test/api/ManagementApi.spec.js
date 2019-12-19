@@ -70,6 +70,16 @@
         done();
       });
     });
+    describe('createAttribute', function() {
+      it('should call createAttribute successfully', function(done) {
+        //uncomment below and update the code to test createAttribute
+        //instance.createAttribute(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCampaign', function() {
       it('should call createCampaign successfully', function(done) {
         //uncomment below and update the code to test createCampaign
@@ -210,16 +220,6 @@
         done();
       });
     });
-    describe('getAccountLimits', function() {
-      it('should call getAccountLimits successfully', function(done) {
-        //uncomment below and update the code to test getAccountLimits
-        //instance.getAccountLimits(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getAllAccessLogs', function() {
       it('should call getAllAccessLogs successfully', function(done) {
         //uncomment below and update the code to test getAllAccessLogs
@@ -354,6 +354,16 @@
       it('should call getAttribute successfully', function(done) {
         //uncomment below and update the code to test getAttribute
         //instance.getAttribute(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAttributes', function() {
+      it('should call getAttributes successfully', function(done) {
+        //uncomment below and update the code to test getAttributes
+        //instance.getAttributes(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -770,10 +780,10 @@
         done();
       });
     });
-    describe('setAccountLimits', function() {
-      it('should call setAccountLimits successfully', function(done) {
-        //uncomment below and update the code to test setAccountLimits
-        //instance.setAccountLimits(function(error) {
+    describe('updateAttribute', function() {
+      it('should call updateAttribute successfully', function(done) {
+        //uncomment below and update the code to test updateAttribute
+        //instance.updateAttribute(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

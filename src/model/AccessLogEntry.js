@@ -36,7 +36,7 @@
   /**
    * The AccessLogEntry model module.
    * @module model/AccessLogEntry
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

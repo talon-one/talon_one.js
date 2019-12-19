@@ -36,7 +36,7 @@
   /**
    * The AccountLimits model module.
    * @module model/AccountLimits
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -68,6 +68,7 @@
     _this['webhooks'] = webhooks;
     _this['users'] = users;
     _this['apiVolume'] = apiVolume;
+
     _this['promotionTypes'] = promotionTypes;
   };
 
@@ -111,6 +112,9 @@
       }
       if (data.hasOwnProperty('apiVolume')) {
         obj['apiVolume'] = ApiClient.convertToType(data['apiVolume'], 'Number');
+      }
+      if (data.hasOwnProperty('activeRules')) {
+        obj['activeRules'] = ApiClient.convertToType(data['activeRules'], 'Number');
       }
       if (data.hasOwnProperty('promotionTypes')) {
         obj['promotionTypes'] = ApiClient.convertToType(data['promotionTypes'], ['String']);
@@ -169,6 +173,11 @@
    * @member {Number} apiVolume
    */
   exports.prototype['apiVolume'] = undefined;
+  /**
+   * Total allowed active rulesets
+   * @member {Number} activeRules
+   */
+  exports.prototype['activeRules'] = undefined;
   /**
    * array of rulesets where webhook is used
    * @member {Array.<String>} promotionTypes

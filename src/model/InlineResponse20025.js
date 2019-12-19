@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Change'], factory);
+    define(['ApiClient', 'model/User'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Change'));
+    module.exports = factory(require('../ApiClient'), require('./User'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.InlineResponse20025 = factory(root.TalonOne.ApiClient, root.TalonOne.Change);
+    root.TalonOne.InlineResponse20025 = factory(root.TalonOne.ApiClient, root.TalonOne.User);
   }
-}(this, function(ApiClient, Change) {
+}(this, function(ApiClient, User) {
   'use strict';
 
 
@@ -36,20 +36,20 @@
   /**
    * The InlineResponse20025 model module.
    * @module model/InlineResponse20025
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
    * Constructs a new <code>InlineResponse20025</code>.
    * @alias module:model/InlineResponse20025
    * @class
-   * @param data {Array.<module:model/Change>} 
+   * @param totalResultSize {Number} 
+   * @param data {Array.<module:model/User>} 
    */
-  var exports = function(data) {
+  var exports = function(totalResultSize, data) {
     var _this = this;
 
-
-
+    _this['totalResultSize'] = totalResultSize;
     _this['data'] = data;
   };
 
@@ -67,11 +67,8 @@
       if (data.hasOwnProperty('totalResultSize')) {
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
-      if (data.hasOwnProperty('hasMore')) {
-        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-      }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [Change]);
+        obj['data'] = ApiClient.convertToType(data['data'], [User]);
       }
     }
     return obj;
@@ -82,11 +79,7 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Boolean} hasMore
-   */
-  exports.prototype['hasMore'] = undefined;
-  /**
-   * @member {Array.<module:model/Change>} data
+   * @member {Array.<module:model/User>} data
    */
   exports.prototype['data'] = undefined;
 

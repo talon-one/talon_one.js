@@ -90,6 +90,16 @@
         done();
       });
     });
+    describe('getCustomerInventory', function() {
+      it('should call getCustomerInventory successfully', function(done) {
+        //uncomment below and update the code to test getCustomerInventory
+        //instance.getCustomerInventory(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getReservedCoupons', function() {
       it('should call getReservedCoupons successfully', function(done) {
         //uncomment below and update the code to test getReservedCoupons

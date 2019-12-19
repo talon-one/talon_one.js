@@ -36,7 +36,7 @@
   /**
    * The ApplicationSessionEntity model module.
    * @module model/ApplicationSessionEntity
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Coupon', 'model/CouponReservations', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/IntegrationState', 'model/NewCustomerProfile', 'model/NewCustomerSession', 'model/NewEvent', 'model/NewReferral', 'model/Referral'], factory);
+    define(['ApiClient', 'model/Coupon', 'model/CouponReservations', 'model/CustomerInventory', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/IntegrationState', 'model/NewCustomerProfile', 'model/NewCustomerSession', 'model/NewEvent', 'model/NewReferral', 'model/Referral'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Coupon'), require('../model/CouponReservations'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/IntegrationState'), require('../model/NewCustomerProfile'), require('../model/NewCustomerSession'), require('../model/NewEvent'), require('../model/NewReferral'), require('../model/Referral'));
+    module.exports = factory(require('../ApiClient'), require('../model/Coupon'), require('../model/CouponReservations'), require('../model/CustomerInventory'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/IntegrationState'), require('../model/NewCustomerProfile'), require('../model/NewCustomerSession'), require('../model/NewEvent'), require('../model/NewReferral'), require('../model/Referral'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.IntegrationApi = factory(root.TalonOne.ApiClient, root.TalonOne.Coupon, root.TalonOne.CouponReservations, root.TalonOne.InlineResponse200, root.TalonOne.InlineResponse2001, root.TalonOne.IntegrationState, root.TalonOne.NewCustomerProfile, root.TalonOne.NewCustomerSession, root.TalonOne.NewEvent, root.TalonOne.NewReferral, root.TalonOne.Referral);
+    root.TalonOne.IntegrationApi = factory(root.TalonOne.ApiClient, root.TalonOne.Coupon, root.TalonOne.CouponReservations, root.TalonOne.CustomerInventory, root.TalonOne.InlineResponse200, root.TalonOne.InlineResponse2001, root.TalonOne.IntegrationState, root.TalonOne.NewCustomerProfile, root.TalonOne.NewCustomerSession, root.TalonOne.NewEvent, root.TalonOne.NewReferral, root.TalonOne.Referral);
   }
-}(this, function(ApiClient, Coupon, CouponReservations, InlineResponse200, InlineResponse2001, IntegrationState, NewCustomerProfile, NewCustomerSession, NewEvent, NewReferral, Referral) {
+}(this, function(ApiClient, Coupon, CouponReservations, CustomerInventory, InlineResponse200, InlineResponse2001, IntegrationState, NewCustomerProfile, NewCustomerSession, NewEvent, NewReferral, Referral) {
   'use strict';
 
   /**
    * Integration service.
    * @module api/IntegrationApi
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -267,6 +267,68 @@
      */
     this.deleteCustomerData = function(integrationId) {
       return this.deleteCustomerDataWithHttpInfo(integrationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get an inventory of all data associated with a specific customer profile.
+     * Get information regarding entities referencing this customer profile&#39;s integrationId. Currently we support customer profile information and referral codes. In the future, this will be expanded with coupon codes and loyalty points.
+     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.profile optional flag to decide if you would like customer profile information in the response
+     * @param {Object} opts.referrals optional flag to decide if you would like referral information in the response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerInventory} and HTTP response
+     */
+    this.getCustomerInventoryWithHttpInfo = function(integrationId, opts) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw new Error("Missing the required parameter 'integrationId' when calling getCustomerInventory");
+      }
+
+
+      var pathParams = {
+        'integrationId': integrationId
+      };
+      var queryParams = {
+        'profile': opts['profile'],
+        'referrals': opts['referrals'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key_v1', 'integration_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CustomerInventory;
+
+      return this.apiClient.callApi(
+        '/v1/customer_profiles/{integrationId}/inventory', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get an inventory of all data associated with a specific customer profile.
+     * Get information regarding entities referencing this customer profile&#39;s integrationId. Currently we support customer profile information and referral codes. In the future, this will be expanded with coupon codes and loyalty points.
+     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.profile optional flag to decide if you would like customer profile information in the response
+     * @param {Object} opts.referrals optional flag to decide if you would like referral information in the response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerInventory}
+     */
+    this.getCustomerInventory = function(integrationId, opts) {
+      return this.getCustomerInventoryWithHttpInfo(integrationId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

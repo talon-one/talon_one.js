@@ -36,7 +36,7 @@
   /**
    * The CouponValue model module.
    * @module model/CouponValue
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

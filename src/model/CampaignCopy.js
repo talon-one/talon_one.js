@@ -36,7 +36,7 @@
   /**
    * The CampaignCopy model module.
    * @module model/CampaignCopy
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -50,6 +50,10 @@
 
 
     _this['applicationIds'] = applicationIds;
+
+
+
+
   };
 
   /**
@@ -69,6 +73,18 @@
       if (data.hasOwnProperty('applicationIds')) {
         obj['applicationIds'] = ApiClient.convertToType(data['applicationIds'], ['String']);
       }
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('startTime')) {
+        obj['startTime'] = ApiClient.convertToType(data['startTime'], 'Date');
+      }
+      if (data.hasOwnProperty('endTime')) {
+        obj['endTime'] = ApiClient.convertToType(data['endTime'], 'Date');
+      }
+      if (data.hasOwnProperty('tags')) {
+        obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+      }
     }
     return obj;
   }
@@ -83,6 +99,26 @@
    * @member {Array.<String>} applicationIds
    */
   exports.prototype['applicationIds'] = undefined;
+  /**
+   * A detailed description of the campaign.
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
+  /**
+   * Datetime when the campaign will become active.
+   * @member {Date} startTime
+   */
+  exports.prototype['startTime'] = undefined;
+  /**
+   * Datetime when the campaign will become in-active.
+   * @member {Date} endTime
+   */
+  exports.prototype['endTime'] = undefined;
+  /**
+   * A list of tags for the campaign.
+   * @member {Array.<String>} tags
+   */
+  exports.prototype['tags'] = undefined;
 
 
 

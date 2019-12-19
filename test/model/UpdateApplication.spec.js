@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property attributesSettings (base name: "attributesSettings")', function() {
+      // uncomment below and update the code to test the property attributesSettings
+      //var instance = new TalonOne.UpdateApplication();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

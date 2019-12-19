@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelExport'], factory);
+    define(['ApiClient', 'model/Change'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ModelExport'));
+    module.exports = factory(require('../ApiClient'), require('./Change'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.InlineResponse20026 = factory(root.TalonOne.ApiClient, root.TalonOne.ModelExport);
+    root.TalonOne.InlineResponse20026 = factory(root.TalonOne.ApiClient, root.TalonOne.Change);
   }
-}(this, function(ApiClient, ModelExport) {
+}(this, function(ApiClient, Change) {
   'use strict';
 
 
@@ -36,20 +36,20 @@
   /**
    * The InlineResponse20026 model module.
    * @module model/InlineResponse20026
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
    * Constructs a new <code>InlineResponse20026</code>.
    * @alias module:model/InlineResponse20026
    * @class
-   * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/ModelExport>} 
+   * @param data {Array.<module:model/Change>} 
    */
-  var exports = function(totalResultSize, data) {
+  var exports = function(data) {
     var _this = this;
 
-    _this['totalResultSize'] = totalResultSize;
+
+
     _this['data'] = data;
   };
 
@@ -67,8 +67,11 @@
       if (data.hasOwnProperty('totalResultSize')) {
         obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
       }
+      if (data.hasOwnProperty('hasMore')) {
+        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+      }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
+        obj['data'] = ApiClient.convertToType(data['data'], [Change]);
       }
     }
     return obj;
@@ -79,7 +82,11 @@
    */
   exports.prototype['totalResultSize'] = undefined;
   /**
-   * @member {Array.<module:model/ModelExport>} data
+   * @member {Boolean} hasMore
+   */
+  exports.prototype['hasMore'] = undefined;
+  /**
+   * @member {Array.<module:model/Change>} data
    */
   exports.prototype['data'] = undefined;
 

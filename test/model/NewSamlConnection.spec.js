@@ -56,6 +56,18 @@
       //expect(instance).to.be.a(TalonOne.NewSamlConnection);
     });
 
+    it('should have the property x509certificate (base name: "x509certificate")', function() {
+      // uncomment below and update the code to test the property x509certificate
+      //var instance = new TalonOne.NewSamlConnection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountId (base name: "accountId")', function() {
+      // uncomment below and update the code to test the property accountId
+      //var instance = new TalonOne.NewSamlConnection();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instance = new TalonOne.NewSamlConnection();
@@ -92,14 +104,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property x509certificate (base name: "x509certificate")', function() {
-      // uncomment below and update the code to test the property x509certificate
-      //var instance = new TalonOne.NewSamlConnection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property audience (base name: "audience")', function() {
-      // uncomment below and update the code to test the property audience
+    it('should have the property audienceURI (base name: "audienceURI")', function() {
+      // uncomment below and update the code to test the property audienceURI
       //var instance = new TalonOne.NewSamlConnection();
       //expect(instance).to.be();
     });

@@ -74,6 +74,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignRefund (base name: "campaignRefund")', function() {
+      // uncomment below and update the code to test the property campaignRefund
+      //var instance = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalCampaignRefund (base name: "totalCampaignRefund")', function() {
+      // uncomment below and update the code to test the property totalCampaignRefund
+      //var instance = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
     it('should have the property campaignDiscountCosts (base name: "campaignDiscountCosts")', function() {
       // uncomment below and update the code to test the property campaignDiscountCosts
       //var instance = new TalonOne.CampaignAnalytics();
@@ -82,6 +94,18 @@
 
     it('should have the property totalCampaignDiscountCosts (base name: "totalCampaignDiscountCosts")', function() {
       // uncomment below and update the code to test the property totalCampaignDiscountCosts
+      //var instance = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property campaignRefundedDiscounts (base name: "campaignRefundedDiscounts")', function() {
+      // uncomment below and update the code to test the property campaignRefundedDiscounts
+      //var instance = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalCampaignRefundedDiscounts (base name: "totalCampaignRefundedDiscounts")', function() {
+      // uncomment below and update the code to test the property totalCampaignRefundedDiscounts
       //var instance = new TalonOne.CampaignAnalytics();
       //expect(instance).to.be();
     });
@@ -106,6 +130,18 @@
 
     it('should have the property totalCouponRedemptions (base name: "totalCouponRedemptions")', function() {
       // uncomment below and update the code to test the property totalCouponRedemptions
+      //var instance = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property couponRolledbackRedemptions (base name: "couponRolledbackRedemptions")', function() {
+      // uncomment below and update the code to test the property couponRolledbackRedemptions
+      //var instance = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalCouponRolledbackRedemptions (base name: "totalCouponRolledbackRedemptions")', function() {
+      // uncomment below and update the code to test the property totalCouponRolledbackRedemptions
       //var instance = new TalonOne.CampaignAnalytics();
       //expect(instance).to.be();
     });

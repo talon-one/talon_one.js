@@ -36,7 +36,7 @@
   /**
    * The CampaignSetNode model module.
    * @module model/CampaignSetNode
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**

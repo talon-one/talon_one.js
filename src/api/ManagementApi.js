@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Account', 'model/AccountAnalytics', 'model/AccountLimits', 'model/Application', 'model/ApplicationApiHealth', 'model/ApplicationCustomer', 'model/ApplicationCustomerSearch', 'model/ApplicationSession', 'model/Attribute', 'model/AttributeQuery', 'model/Campaign', 'model/CampaignCopy', 'model/CampaignSearch', 'model/CampaignSet', 'model/Coupon', 'model/CouponSearch', 'model/CustomerActivityReport', 'model/CustomerAnalytics', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20019', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20024', 'model/InlineResponse20025', 'model/InlineResponse20026', 'model/InlineResponse20027', 'model/InlineResponse20028', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/LoginParams', 'model/LoyaltyLedger', 'model/LoyaltyPoints', 'model/LoyaltyProgram', 'model/NewCampaign', 'model/NewCampaignSet', 'model/NewCoupons', 'model/NewPassword', 'model/NewPasswordEmail', 'model/NewRuleset', 'model/Role', 'model/Ruleset', 'model/Session', 'model/UpdateCampaign', 'model/UpdateCoupon', 'model/UpdateCouponBatch', 'model/User', 'model/Webhook'], factory);
+    define(['ApiClient', 'model/Account', 'model/AccountAnalytics', 'model/Application', 'model/ApplicationApiHealth', 'model/ApplicationCustomer', 'model/ApplicationCustomerSearch', 'model/ApplicationSession', 'model/Attribute', 'model/AttributeQuery', 'model/Campaign', 'model/CampaignCopy', 'model/CampaignSearch', 'model/CampaignSet', 'model/Coupon', 'model/CouponSearch', 'model/CustomerActivityReport', 'model/CustomerAnalytics', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20019', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20024', 'model/InlineResponse20025', 'model/InlineResponse20026', 'model/InlineResponse20027', 'model/InlineResponse20028', 'model/InlineResponse20029', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/LoginParams', 'model/LoyaltyLedger', 'model/LoyaltyPoints', 'model/LoyaltyProgram', 'model/NewAttribute', 'model/NewCampaign', 'model/NewCampaignSet', 'model/NewCoupons', 'model/NewPassword', 'model/NewPasswordEmail', 'model/NewRuleset', 'model/Role', 'model/Ruleset', 'model/Session', 'model/UpdateCampaign', 'model/UpdateCoupon', 'model/UpdateCouponBatch', 'model/User', 'model/Webhook'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/AccountAnalytics'), require('../model/AccountLimits'), require('../model/Application'), require('../model/ApplicationApiHealth'), require('../model/ApplicationCustomer'), require('../model/ApplicationCustomerSearch'), require('../model/ApplicationSession'), require('../model/Attribute'), require('../model/AttributeQuery'), require('../model/Campaign'), require('../model/CampaignCopy'), require('../model/CampaignSearch'), require('../model/CampaignSet'), require('../model/Coupon'), require('../model/CouponSearch'), require('../model/CustomerActivityReport'), require('../model/CustomerAnalytics'), require('../model/InlineResponse2001'), require('../model/InlineResponse20010'), require('../model/InlineResponse20011'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponse20015'), require('../model/InlineResponse20016'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponse20019'), require('../model/InlineResponse2002'), require('../model/InlineResponse20020'), require('../model/InlineResponse20021'), require('../model/InlineResponse20022'), require('../model/InlineResponse20023'), require('../model/InlineResponse20024'), require('../model/InlineResponse20025'), require('../model/InlineResponse20026'), require('../model/InlineResponse20027'), require('../model/InlineResponse20028'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2009'), require('../model/LoginParams'), require('../model/LoyaltyLedger'), require('../model/LoyaltyPoints'), require('../model/LoyaltyProgram'), require('../model/NewCampaign'), require('../model/NewCampaignSet'), require('../model/NewCoupons'), require('../model/NewPassword'), require('../model/NewPasswordEmail'), require('../model/NewRuleset'), require('../model/Role'), require('../model/Ruleset'), require('../model/Session'), require('../model/UpdateCampaign'), require('../model/UpdateCoupon'), require('../model/UpdateCouponBatch'), require('../model/User'), require('../model/Webhook'));
+    module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/AccountAnalytics'), require('../model/Application'), require('../model/ApplicationApiHealth'), require('../model/ApplicationCustomer'), require('../model/ApplicationCustomerSearch'), require('../model/ApplicationSession'), require('../model/Attribute'), require('../model/AttributeQuery'), require('../model/Campaign'), require('../model/CampaignCopy'), require('../model/CampaignSearch'), require('../model/CampaignSet'), require('../model/Coupon'), require('../model/CouponSearch'), require('../model/CustomerActivityReport'), require('../model/CustomerAnalytics'), require('../model/InlineResponse2001'), require('../model/InlineResponse20010'), require('../model/InlineResponse20011'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponse20015'), require('../model/InlineResponse20016'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponse20019'), require('../model/InlineResponse2002'), require('../model/InlineResponse20020'), require('../model/InlineResponse20021'), require('../model/InlineResponse20022'), require('../model/InlineResponse20023'), require('../model/InlineResponse20024'), require('../model/InlineResponse20025'), require('../model/InlineResponse20026'), require('../model/InlineResponse20027'), require('../model/InlineResponse20028'), require('../model/InlineResponse20029'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2009'), require('../model/LoginParams'), require('../model/LoyaltyLedger'), require('../model/LoyaltyPoints'), require('../model/LoyaltyProgram'), require('../model/NewAttribute'), require('../model/NewCampaign'), require('../model/NewCampaignSet'), require('../model/NewCoupons'), require('../model/NewPassword'), require('../model/NewPasswordEmail'), require('../model/NewRuleset'), require('../model/Role'), require('../model/Ruleset'), require('../model/Session'), require('../model/UpdateCampaign'), require('../model/UpdateCoupon'), require('../model/UpdateCouponBatch'), require('../model/User'), require('../model/Webhook'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.ManagementApi = factory(root.TalonOne.ApiClient, root.TalonOne.Account, root.TalonOne.AccountAnalytics, root.TalonOne.AccountLimits, root.TalonOne.Application, root.TalonOne.ApplicationApiHealth, root.TalonOne.ApplicationCustomer, root.TalonOne.ApplicationCustomerSearch, root.TalonOne.ApplicationSession, root.TalonOne.Attribute, root.TalonOne.AttributeQuery, root.TalonOne.Campaign, root.TalonOne.CampaignCopy, root.TalonOne.CampaignSearch, root.TalonOne.CampaignSet, root.TalonOne.Coupon, root.TalonOne.CouponSearch, root.TalonOne.CustomerActivityReport, root.TalonOne.CustomerAnalytics, root.TalonOne.InlineResponse2001, root.TalonOne.InlineResponse20010, root.TalonOne.InlineResponse20011, root.TalonOne.InlineResponse20012, root.TalonOne.InlineResponse20013, root.TalonOne.InlineResponse20014, root.TalonOne.InlineResponse20015, root.TalonOne.InlineResponse20016, root.TalonOne.InlineResponse20017, root.TalonOne.InlineResponse20018, root.TalonOne.InlineResponse20019, root.TalonOne.InlineResponse2002, root.TalonOne.InlineResponse20020, root.TalonOne.InlineResponse20021, root.TalonOne.InlineResponse20022, root.TalonOne.InlineResponse20023, root.TalonOne.InlineResponse20024, root.TalonOne.InlineResponse20025, root.TalonOne.InlineResponse20026, root.TalonOne.InlineResponse20027, root.TalonOne.InlineResponse20028, root.TalonOne.InlineResponse2003, root.TalonOne.InlineResponse2004, root.TalonOne.InlineResponse2005, root.TalonOne.InlineResponse2006, root.TalonOne.InlineResponse2007, root.TalonOne.InlineResponse2008, root.TalonOne.InlineResponse2009, root.TalonOne.LoginParams, root.TalonOne.LoyaltyLedger, root.TalonOne.LoyaltyPoints, root.TalonOne.LoyaltyProgram, root.TalonOne.NewCampaign, root.TalonOne.NewCampaignSet, root.TalonOne.NewCoupons, root.TalonOne.NewPassword, root.TalonOne.NewPasswordEmail, root.TalonOne.NewRuleset, root.TalonOne.Role, root.TalonOne.Ruleset, root.TalonOne.Session, root.TalonOne.UpdateCampaign, root.TalonOne.UpdateCoupon, root.TalonOne.UpdateCouponBatch, root.TalonOne.User, root.TalonOne.Webhook);
+    root.TalonOne.ManagementApi = factory(root.TalonOne.ApiClient, root.TalonOne.Account, root.TalonOne.AccountAnalytics, root.TalonOne.Application, root.TalonOne.ApplicationApiHealth, root.TalonOne.ApplicationCustomer, root.TalonOne.ApplicationCustomerSearch, root.TalonOne.ApplicationSession, root.TalonOne.Attribute, root.TalonOne.AttributeQuery, root.TalonOne.Campaign, root.TalonOne.CampaignCopy, root.TalonOne.CampaignSearch, root.TalonOne.CampaignSet, root.TalonOne.Coupon, root.TalonOne.CouponSearch, root.TalonOne.CustomerActivityReport, root.TalonOne.CustomerAnalytics, root.TalonOne.InlineResponse2001, root.TalonOne.InlineResponse20010, root.TalonOne.InlineResponse20011, root.TalonOne.InlineResponse20012, root.TalonOne.InlineResponse20013, root.TalonOne.InlineResponse20014, root.TalonOne.InlineResponse20015, root.TalonOne.InlineResponse20016, root.TalonOne.InlineResponse20017, root.TalonOne.InlineResponse20018, root.TalonOne.InlineResponse20019, root.TalonOne.InlineResponse2002, root.TalonOne.InlineResponse20020, root.TalonOne.InlineResponse20021, root.TalonOne.InlineResponse20022, root.TalonOne.InlineResponse20023, root.TalonOne.InlineResponse20024, root.TalonOne.InlineResponse20025, root.TalonOne.InlineResponse20026, root.TalonOne.InlineResponse20027, root.TalonOne.InlineResponse20028, root.TalonOne.InlineResponse20029, root.TalonOne.InlineResponse2003, root.TalonOne.InlineResponse2004, root.TalonOne.InlineResponse2005, root.TalonOne.InlineResponse2006, root.TalonOne.InlineResponse2007, root.TalonOne.InlineResponse2008, root.TalonOne.InlineResponse2009, root.TalonOne.LoginParams, root.TalonOne.LoyaltyLedger, root.TalonOne.LoyaltyPoints, root.TalonOne.LoyaltyProgram, root.TalonOne.NewAttribute, root.TalonOne.NewCampaign, root.TalonOne.NewCampaignSet, root.TalonOne.NewCoupons, root.TalonOne.NewPassword, root.TalonOne.NewPasswordEmail, root.TalonOne.NewRuleset, root.TalonOne.Role, root.TalonOne.Ruleset, root.TalonOne.Session, root.TalonOne.UpdateCampaign, root.TalonOne.UpdateCoupon, root.TalonOne.UpdateCouponBatch, root.TalonOne.User, root.TalonOne.Webhook);
   }
-}(this, function(ApiClient, Account, AccountAnalytics, AccountLimits, Application, ApplicationApiHealth, ApplicationCustomer, ApplicationCustomerSearch, ApplicationSession, Attribute, AttributeQuery, Campaign, CampaignCopy, CampaignSearch, CampaignSet, Coupon, CouponSearch, CustomerActivityReport, CustomerAnalytics, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20015, InlineResponse20016, InlineResponse20017, InlineResponse20018, InlineResponse20019, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20024, InlineResponse20025, InlineResponse20026, InlineResponse20027, InlineResponse20028, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, LoginParams, LoyaltyLedger, LoyaltyPoints, LoyaltyProgram, NewCampaign, NewCampaignSet, NewCoupons, NewPassword, NewPasswordEmail, NewRuleset, Role, Ruleset, Session, UpdateCampaign, UpdateCoupon, UpdateCouponBatch, User, Webhook) {
+}(this, function(ApiClient, Account, AccountAnalytics, Application, ApplicationApiHealth, ApplicationCustomer, ApplicationCustomerSearch, ApplicationSession, Attribute, AttributeQuery, Campaign, CampaignCopy, CampaignSearch, CampaignSet, Coupon, CouponSearch, CustomerActivityReport, CustomerAnalytics, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20015, InlineResponse20016, InlineResponse20017, InlineResponse20018, InlineResponse20019, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20024, InlineResponse20025, InlineResponse20026, InlineResponse20027, InlineResponse20028, InlineResponse20029, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, LoginParams, LoyaltyLedger, LoyaltyPoints, LoyaltyProgram, NewAttribute, NewCampaign, NewCampaignSet, NewCoupons, NewPassword, NewPasswordEmail, NewRuleset, Role, Ruleset, Session, UpdateCampaign, UpdateCoupon, UpdateCouponBatch, User, Webhook) {
   'use strict';
 
   /**
    * Management service.
    * @module api/ManagementApi
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
@@ -185,6 +185,58 @@
 
 
     /**
+     * Define a new custom attribute
+     * Defines a new _custom attribute_ in this account. Custom attributes allow you to attach new fields to Talon.One domain objects like campaigns, coupons, customers and so on. These attributes can then be given values when creating / updating these objects, and these values can be used in your campaign rules. For example, you could define a &#x60;zipCode&#x60; field for customer sessions, and add a rule to your campaign that only allows certain ZIP codes.  These attributes are shared across all applications in your account, and are never required. 
+     * @param {module:model/NewAttribute} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Attribute} and HTTP response
+     */
+    this.createAttributeWithHttpInfo = function(body) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAttribute");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Attribute;
+
+      return this.apiClient.callApi(
+        '/v1/attributes', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Define a new custom attribute
+     * Defines a new _custom attribute_ in this account. Custom attributes allow you to attach new fields to Talon.One domain objects like campaigns, coupons, customers and so on. These attributes can then be given values when creating / updating these objects, and these values can be used in your campaign rules. For example, you could define a &#x60;zipCode&#x60; field for customer sessions, and add a rule to your campaign that only allows certain ZIP codes.  These attributes are shared across all applications in your account, and are never required. 
+     * @param {module:model/NewAttribute} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Attribute}
+     */
+    this.createAttribute = function(body) {
+      return this.createAttributeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a Campaign
      * 
      * @param {Number} applicationId 
@@ -246,7 +298,7 @@
 
     /**
      * Create Coupons
-     * Create coupons according to some pattern. Up to 20.000 coupons can be created without a unique prefix. When a unique prefix is provided, up to 200.000 coupns can be created.
+     * Create coupons according to some pattern. Up to 20.000 coupons can be created without a unique prefix. When a unique prefix is provided, up to 200.000 coupons can be created.
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/NewCoupons} body 
@@ -302,7 +354,7 @@
 
     /**
      * Create Coupons
-     * Create coupons according to some pattern. Up to 20.000 coupons can be created without a unique prefix. When a unique prefix is provided, up to 200.000 coupns can be created.
+     * Create coupons according to some pattern. Up to 20.000 coupons can be created without a unique prefix. When a unique prefix is provided, up to 200.000 coupons can be created.
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/NewCoupons} body 
@@ -868,8 +920,8 @@
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
+     * @param {String} opts.path Only return results where the request path matches the given regular expression.
+     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
@@ -935,8 +987,8 @@
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
+     * @param {String} opts.path Only return results where the request path matches the given regular expression.
+     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
@@ -958,8 +1010,8 @@
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
+     * @param {String} opts.path Only return results where the request path matches the given regular expression.
+     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
@@ -1025,8 +1077,8 @@
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
+     * @param {String} opts.path Only return results where the request path matches the given regular expression.
+     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
@@ -1148,66 +1200,13 @@
 
 
     /**
-     * Get Account Limits
-     * Returns a list of all account limits set 
-     * @param {Number} accountId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountLimits} and HTTP response
-     */
-    this.getAccountLimitsWithHttpInfo = function(accountId) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getAccountLimits");
-      }
-
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = AccountLimits;
-
-      return this.apiClient.callApi(
-        '/v1/accounts/{accountId}/limits', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Get Account Limits
-     * Returns a list of all account limits set 
-     * @param {Number} accountId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountLimits}
-     */
-    this.getAccountLimits = function(accountId) {
-      return this.getAccountLimitsWithHttpInfo(accountId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Get all access logs
      * Fetches the access logs for the entire account. Sensitive requests (logins) are _always_ filtered from the logs. 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
+     * @param {String} opts.path Only return results where the request path matches the given regular expression.
+     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
@@ -1266,8 +1265,8 @@
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expresssion.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expresssion.
+     * @param {String} opts.path Only return results where the request path matches the given regular expression.
+     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
      * @param {module:model/String} opts.status Filter results by HTTP status codes.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
@@ -1284,7 +1283,7 @@
 
     /**
      * Get all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
      */
     this.getAllRolesWithHttpInfo = function() {
       var postBody = null;
@@ -1304,7 +1303,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20028;
+      var returnType = InlineResponse20029;
 
       return this.apiClient.callApi(
         '/v1/roles', 'GET',
@@ -1315,7 +1314,7 @@
 
     /**
      * Get all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
      */
     this.getAllRoles = function() {
       return this.getAllRolesWithHttpInfo()
@@ -1547,7 +1546,7 @@
 
     /**
      * Get a list of the customer profiles that match the given attributes
-     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20013} and HTTP response
      */
@@ -1585,7 +1584,7 @@
 
     /**
      * Get a list of the customer profiles that match the given attributes
-     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20013}
      */
@@ -2104,6 +2103,63 @@
 
 
     /**
+     * List custom attributes
+     * Returns all the defined custom attributes for the account. 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
+     */
+    this.getAttributesWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'sort': opts['sort'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse20020;
+
+      return this.apiClient.callApi(
+        '/v1/attributes', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List custom attributes
+     * Returns all the defined custom attributes for the account. 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
+     */
+    this.getAttributes = function(opts) {
+      return this.getAttributesWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get a Campaign
      * 
      * @param {Number} applicationId 
@@ -2467,7 +2523,7 @@
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
      * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
      */
     this.getChangesWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -2496,7 +2552,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20025;
+      var returnType = InlineResponse20026;
 
       return this.apiClient.callApi(
         '/v1/changes', 'GET',
@@ -2517,7 +2573,7 @@
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
      * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
      */
     this.getChanges = function(opts) {
       return this.getChangesWithHttpInfo(opts)
@@ -3410,7 +3466,7 @@
 
     /**
      * Get a list of the customer profiles that match the given attributes
-     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
@@ -3454,7 +3510,7 @@
 
     /**
      * Get a list of the customer profiles that match the given attributes
-     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: http://help.talon.one/customer/en/portal/articles/2525263-data-model?b_id&#x3D;14115#customer-profile 
+     * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
@@ -3479,7 +3535,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
      */
     this.getEventTypesWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -3506,7 +3562,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20023;
+      var returnType = InlineResponse20024;
 
       return this.apiClient.callApi(
         '/v1/event_types', 'GET',
@@ -3525,7 +3581,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
      */
     this.getEventTypes = function(opts) {
       return this.getEventTypesWithHttpInfo(opts)
@@ -3544,7 +3600,7 @@
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
      */
     this.getExportsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -3570,7 +3626,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20026;
+      var returnType = InlineResponse20027;
 
       return this.apiClient.callApi(
         '/v1/exports', 'GET',
@@ -3588,7 +3644,7 @@
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
      */
     this.getExports = function(opts) {
       return this.getExportsWithHttpInfo(opts)
@@ -3604,7 +3660,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
      */
     this.getImportsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -3627,7 +3683,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20027;
+      var returnType = InlineResponse20028;
 
       return this.apiClient.callApi(
         '/v1/imports', 'GET',
@@ -3642,7 +3698,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
      */
     this.getImports = function(opts) {
       return this.getImportsWithHttpInfo(opts)
@@ -4246,7 +4302,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
      */
     this.getUsersWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4270,7 +4326,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20024;
+      var returnType = InlineResponse20025;
 
       return this.apiClient.callApi(
         '/v1/users', 'GET',
@@ -4286,7 +4342,7 @@
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
      */
     this.getUsers = function(opts) {
       return this.getUsersWithHttpInfo(opts)
@@ -4362,7 +4418,7 @@
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
      */
     this.getWebhookActivationLogsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4392,7 +4448,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20021;
+      var returnType = InlineResponse20022;
 
       return this.apiClient.callApi(
         '/v1/webhook_activation_logs', 'GET',
@@ -4414,7 +4470,7 @@
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
      */
     this.getWebhookActivationLogs = function(opts) {
       return this.getWebhookActivationLogsWithHttpInfo(opts)
@@ -4438,7 +4494,7 @@
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
      */
     this.getWebhookLogsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4469,7 +4525,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20022;
+      var returnType = InlineResponse20023;
 
       return this.apiClient.callApi(
         '/v1/webhook_logs', 'GET',
@@ -4492,7 +4548,7 @@
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
      */
     this.getWebhookLogs = function(opts) {
       return this.getWebhookLogsWithHttpInfo(opts)
@@ -4510,7 +4566,7 @@
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
      */
     this.getWebhooksWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -4535,7 +4591,7 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse20020;
+      var returnType = InlineResponse20021;
 
       return this.apiClient.callApi(
         '/v1/webhooks', 'GET',
@@ -4552,7 +4608,7 @@
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
      */
     this.getWebhooks = function(opts) {
       return this.getWebhooksWithHttpInfo(opts)
@@ -5146,28 +5202,28 @@
 
 
     /**
-     * Set account limits
-     * sets account limits 
-     * @param {Number} accountId 
-     * @param {module:model/AccountLimits} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * Update a custom attribute
+     * Updates an existing custom attribute. Once created, the only property of a custom attribute that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. E.g. if you have a customer profile attribute with the name &#x60;region&#x60;, and your integration is sending &#x60;attributes.region&#x60; with customer profile updates, changing the name to &#x60;locale&#x60; would cause the integration requests to begin failing.  If you **really** need to change the &#x60;type&#x60; or &#x60;name&#x60; property of a custom attribute, create a new attribute and update any relevant integrations and rules to use the new attribute. Then delete the old attribute when you are confident you have migrated any needed data from the old attribute to the new one. 
+     * @param {Number} attributeId 
+     * @param {module:model/NewAttribute} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Attribute} and HTTP response
      */
-    this.setAccountLimitsWithHttpInfo = function(accountId, body) {
+    this.updateAttributeWithHttpInfo = function(attributeId, body) {
       var postBody = body;
 
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling setAccountLimits");
+      // verify the required parameter 'attributeId' is set
+      if (attributeId === undefined || attributeId === null) {
+        throw new Error("Missing the required parameter 'attributeId' when calling updateAttribute");
       }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling setAccountLimits");
+        throw new Error("Missing the required parameter 'body' when calling updateAttribute");
       }
 
 
       var pathParams = {
-        'accountId': accountId
+        'attributeId': attributeId
       };
       var queryParams = {
       };
@@ -5181,24 +5237,24 @@
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = Attribute;
 
       return this.apiClient.callApi(
-        '/v1/accounts/{accountId}/limits', 'PUT',
+        '/v1/attributes/{attributeId}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Set account limits
-     * sets account limits 
-     * @param {Number} accountId 
-     * @param {module:model/AccountLimits} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Update a custom attribute
+     * Updates an existing custom attribute. Once created, the only property of a custom attribute that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. E.g. if you have a customer profile attribute with the name &#x60;region&#x60;, and your integration is sending &#x60;attributes.region&#x60; with customer profile updates, changing the name to &#x60;locale&#x60; would cause the integration requests to begin failing.  If you **really** need to change the &#x60;type&#x60; or &#x60;name&#x60; property of a custom attribute, create a new attribute and update any relevant integrations and rules to use the new attribute. Then delete the old attribute when you are confident you have migrated any needed data from the old attribute to the new one. 
+     * @param {Number} attributeId 
+     * @param {module:model/NewAttribute} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Attribute}
      */
-    this.setAccountLimits = function(accountId, body) {
-      return this.setAccountLimitsWithHttpInfo(accountId, body)
+    this.updateAttribute = function(attributeId, body) {
+      return this.updateAttributeWithHttpInfo(attributeId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

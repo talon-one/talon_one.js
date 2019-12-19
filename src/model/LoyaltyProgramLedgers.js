@@ -36,7 +36,7 @@
   /**
    * The LoyaltyProgramLedgers model module.
    * @module model/LoyaltyProgramLedgers
-   * @version 3.3.0
+   * @version 3.4.0
    */
 
   /**
