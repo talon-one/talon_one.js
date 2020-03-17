@@ -96,6 +96,105 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ### Integration API
 
+#### V2
+
+```javascript
+const TalonOne = require("talon_one");
+
+const defaultClient = TalonOne.ApiClient.instance;
+defaultClient.basePath = "https://mycompany.talon.one";
+
+// Configure API key authorization: api_key_v1
+const api_key_v1 = defaultClient.authentications["api_key_v1"];
+api_key_v1.apiKey =
+  "dbc644d33aa74d582bd9479c59e16f970fe13bf34a208c39d6c7fa7586968468";
+api_key_v1.apiKeyPrefix = "ApiKey-v1";
+
+// Integration API example to send a session update
+const integrationApi = new TalonOne.IntegrationApi();
+
+// Initializing a customer session object
+const customerSession = TalonOne.NewCustomerSession.constructFromObject({
+  profileId: 'example_prof_id',
+  cartItems: [
+    {
+      name: 'Döner King',
+      sku: 'kd-100',
+      quantity: 1,
+      price: 2.00,
+      category: 'pizzas'
+    },
+    {
+      name: 'Spezi 500ml',
+      sku: 'sp-50',
+      quantity: 1,
+      price: 2,
+      category: 'beverages'
+    },
+    {
+      name: 'Queen Döner',
+      sku: 'qd-100',
+      quantity: 1,
+      price: 2.50,
+      category: 'pizzas'
+    },
+    {
+      name: 'Club Mate 330ml',
+      sku: 'cm-33',
+      quantity: 1,
+      price: 1.80,
+      category: 'beverages'
+    }
+  ],
+  couponCodes: [
+    'Cool-Summer!'
+  ]
+});
+
+// ----------------------------------------------------------------- //
+// Example 1: pass `responseContent` to control response information //
+// ----------------------------------------------------------------- //
+
+//Initializing an integration request wrapping the customer session
+const integrationRequest = new TalonOne.IntegrationRequest(customerSession);
+
+// Optional response contents to attach to the response (Look at ResponseContentEnum for full list of options) 
+integrationRequest.responseContent = ['customerSession', 'customerProfile']
+
+integrationApi
+  .updateCustomerSessionV2("example_integration_v2_id", integrationRequest)
+  .then(
+    function(data) {
+      console.log(JSON.stringify(data, null, 2));
+    },
+    function(error) {
+      console.error(error);
+    }
+  );
+
+
+// ------------------------------------------------------------------ //
+// Example 2: leave `responseContent` empty for bare minimum response //
+// ------------------------------------------------------------------ //
+
+// Initializing an integration request wrapping the customer session
+const integrationRequest2 = new TalonOne.IntegrationRequest(customerSession);
+
+// Leaving `responseContent` unassigned will response with the bare minimum information from api (effects, created coupons and created referrals)
+integrationApi
+  .updateCustomerSessionV2("example_integration_v2_id", integrationRequest)
+  .then(
+    function(data) {
+      console.log(JSON.stringify(data, null, 2));
+    },
+    function(error) {
+      console.error(error);
+    }
+  );
+```
+
+#### V1
+
 ```javascript
 const TalonOne = require("talon_one");
 
