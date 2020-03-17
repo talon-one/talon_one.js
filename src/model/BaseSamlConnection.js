@@ -36,7 +36,7 @@
   /**
    * The BaseSamlConnection model module.
    * @module model/BaseSamlConnection
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

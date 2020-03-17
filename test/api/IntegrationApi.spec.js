@@ -150,6 +150,16 @@
         done();
       });
     });
+    describe('updateCustomerSessionV2', function() {
+      it('should call updateCustomerSessionV2 successfully', function(done) {
+        //uncomment below and update the code to test updateCustomerSessionV2
+        //instance.updateCustomerSessionV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

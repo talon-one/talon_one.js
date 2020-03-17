@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Coupon', 'model/CouponReservations', 'model/CustomerInventory', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/IntegrationState', 'model/NewCustomerProfile', 'model/NewCustomerSession', 'model/NewEvent', 'model/NewReferral', 'model/Referral'], factory);
+    define(['ApiClient', 'model/Coupon', 'model/CouponReservations', 'model/CustomerInventory', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/IntegrationRequest', 'model/IntegrationState', 'model/IntegrationStateV2', 'model/NewCustomerProfile', 'model/NewCustomerSession', 'model/NewEvent', 'model/NewReferral', 'model/Referral'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Coupon'), require('../model/CouponReservations'), require('../model/CustomerInventory'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/IntegrationState'), require('../model/NewCustomerProfile'), require('../model/NewCustomerSession'), require('../model/NewEvent'), require('../model/NewReferral'), require('../model/Referral'));
+    module.exports = factory(require('../ApiClient'), require('../model/Coupon'), require('../model/CouponReservations'), require('../model/CustomerInventory'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/IntegrationRequest'), require('../model/IntegrationState'), require('../model/IntegrationStateV2'), require('../model/NewCustomerProfile'), require('../model/NewCustomerSession'), require('../model/NewEvent'), require('../model/NewReferral'), require('../model/Referral'));
   } else {
     // Browser globals (root is window)
     if (!root.TalonOne) {
       root.TalonOne = {};
     }
-    root.TalonOne.IntegrationApi = factory(root.TalonOne.ApiClient, root.TalonOne.Coupon, root.TalonOne.CouponReservations, root.TalonOne.CustomerInventory, root.TalonOne.InlineResponse200, root.TalonOne.InlineResponse2001, root.TalonOne.IntegrationState, root.TalonOne.NewCustomerProfile, root.TalonOne.NewCustomerSession, root.TalonOne.NewEvent, root.TalonOne.NewReferral, root.TalonOne.Referral);
+    root.TalonOne.IntegrationApi = factory(root.TalonOne.ApiClient, root.TalonOne.Coupon, root.TalonOne.CouponReservations, root.TalonOne.CustomerInventory, root.TalonOne.InlineResponse200, root.TalonOne.InlineResponse2001, root.TalonOne.IntegrationRequest, root.TalonOne.IntegrationState, root.TalonOne.IntegrationStateV2, root.TalonOne.NewCustomerProfile, root.TalonOne.NewCustomerSession, root.TalonOne.NewEvent, root.TalonOne.NewReferral, root.TalonOne.Referral);
   }
-}(this, function(ApiClient, Coupon, CouponReservations, CustomerInventory, InlineResponse200, InlineResponse2001, IntegrationState, NewCustomerProfile, NewCustomerSession, NewEvent, NewReferral, Referral) {
+}(this, function(ApiClient, Coupon, CouponReservations, CustomerInventory, InlineResponse200, InlineResponse2001, IntegrationRequest, IntegrationState, IntegrationStateV2, NewCustomerProfile, NewCustomerSession, NewEvent, NewReferral, Referral) {
   'use strict';
 
   /**
    * Integration service.
    * @module api/IntegrationApi
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
@@ -607,6 +607,66 @@
      */
     this.updateCustomerSession = function(customerSessionId, body) {
       return this.updateCustomerSessionWithHttpInfo(customerSessionId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a Customer Session
+     * Update (or create) a [Customer Session][]. For example, the items in a customers cart are part of a session.  The Talon.One platform supports multiple simultaneous sessions for the same profile, so if you have multiple ways of accessing the same application you have the option of either tracking multiple independent sessions or using the same session across all of them. You should share sessions when application access points share other state, such as the users cart. If two points of access to the application have independent state (e.g. a user can have different items in their cart across the two) they should use independent customer session ID&#39;s.  The &#x60;profileId&#x60; parameter in the request body should correspond to an &#x60;integrationId&#x60; for a customer profile, to track an anonymous session use the empty string (&#x60;\&quot;\&quot;&#x60;) as the &#x60;profileId&#x60;. Note that you do **not** need to create a customer profile first: if the specified profile does not yet exist, an empty profile will be created automatically.  Updating a customer profile will return a response with the requested integration state. This includes the effects that were generated due to triggered campaigns, the created coupons and referral objects, as well as any entity that was requested in the request parameter \&quot;resopnseContent\&quot;.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated.  [Customer Session]: /Getting-Started/entities#customer-session 
+     * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
+     * @param {module:model/IntegrationRequest} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationStateV2} and HTTP response
+     */
+    this.updateCustomerSessionV2WithHttpInfo = function(customerSessionId, body) {
+      var postBody = body;
+
+      // verify the required parameter 'customerSessionId' is set
+      if (customerSessionId === undefined || customerSessionId === null) {
+        throw new Error("Missing the required parameter 'customerSessionId' when calling updateCustomerSessionV2");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateCustomerSessionV2");
+      }
+
+
+      var pathParams = {
+        'customerSessionId': customerSessionId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key_v1', 'integration_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = IntegrationStateV2;
+
+      return this.apiClient.callApi(
+        '/v2/customer_sessions/{customerSessionId}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Update a Customer Session
+     * Update (or create) a [Customer Session][]. For example, the items in a customers cart are part of a session.  The Talon.One platform supports multiple simultaneous sessions for the same profile, so if you have multiple ways of accessing the same application you have the option of either tracking multiple independent sessions or using the same session across all of them. You should share sessions when application access points share other state, such as the users cart. If two points of access to the application have independent state (e.g. a user can have different items in their cart across the two) they should use independent customer session ID&#39;s.  The &#x60;profileId&#x60; parameter in the request body should correspond to an &#x60;integrationId&#x60; for a customer profile, to track an anonymous session use the empty string (&#x60;\&quot;\&quot;&#x60;) as the &#x60;profileId&#x60;. Note that you do **not** need to create a customer profile first: if the specified profile does not yet exist, an empty profile will be created automatically.  Updating a customer profile will return a response with the requested integration state. This includes the effects that were generated due to triggered campaigns, the created coupons and referral objects, as well as any entity that was requested in the request parameter \&quot;resopnseContent\&quot;.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated.  [Customer Session]: /Getting-Started/entities#customer-session 
+     * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
+     * @param {module:model/IntegrationRequest} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationStateV2}
+     */
+    this.updateCustomerSessionV2 = function(customerSessionId, body) {
+      return this.updateCustomerSessionV2WithHttpInfo(customerSessionId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

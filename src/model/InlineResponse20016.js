@@ -36,20 +36,19 @@
   /**
    * The InlineResponse20016 model module.
    * @module model/InlineResponse20016
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
    * Constructs a new <code>InlineResponse20016</code>.
    * @alias module:model/InlineResponse20016
    * @class
-   * @param totalResultSize {Number} 
    * @param data {Array.<module:model/ApplicationSession>} 
    */
-  var exports = function(totalResultSize, data) {
+  var exports = function(data) {
     var _this = this;
 
-    _this['totalResultSize'] = totalResultSize;
+
     _this['data'] = data;
   };
 
@@ -64,8 +63,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('totalResultSize')) {
-        obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+      if (data.hasOwnProperty('hasMore')) {
+        obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
       }
       if (data.hasOwnProperty('data')) {
         obj['data'] = ApiClient.convertToType(data['data'], [ApplicationSession]);
@@ -75,9 +74,9 @@
   }
 
   /**
-   * @member {Number} totalResultSize
+   * @member {Boolean} hasMore
    */
-  exports.prototype['totalResultSize'] = undefined;
+  exports.prototype['hasMore'] = undefined;
   /**
    * @member {Array.<module:model/ApplicationSession>} data
    */

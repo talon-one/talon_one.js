@@ -36,7 +36,7 @@
   /**
    * The AccountAnalytics model module.
    * @module model/AccountAnalytics
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

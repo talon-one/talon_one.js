@@ -36,7 +36,7 @@
   /**
    * The CampaignSetLeafNode model module.
    * @module model/CampaignSetLeafNode
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

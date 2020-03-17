@@ -36,7 +36,7 @@
   /**
    * The Account model module.
    * @module model/Account
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
@@ -49,7 +49,7 @@
    * @param modified {Date} The exact moment this entity was last modified.
    * @param companyName {String} 
    * @param domainName {String} Subdomain Name for yourcompany.talon.one
-   * @param state {module:model/Account.StateEnum} State of the account (trial, active, trial_expired)
+   * @param state {module:model/Account.StateEnum} State of the account (active, deactivated)
    * @param billingEmail {String} The billing email address associated with your company account.
    * @param applicationCount {Number} The current number of Applications in your account.
    * @param userCount {Number} The current number of Campaign Manager Users in your account.
@@ -173,7 +173,7 @@
    */
   exports.prototype['domainName'] = undefined;
   /**
-   * State of the account (trial, active, trial_expired)
+   * State of the account (active, deactivated)
    * @member {module:model/Account.StateEnum} state
    */
   exports.prototype['state'] = undefined;
@@ -246,20 +246,15 @@
    */
   exports.StateEnum = {
     /**
-     * value: "trial"
-     * @const
-     */
-    "trial": "trial",
-    /**
      * value: "active"
      * @const
      */
     "active": "active",
     /**
-     * value: "trial_expired"
+     * value: "deactivated"
      * @const
      */
-    "trial_expired": "trial_expired"  };
+    "deactivated": "deactivated"  };
 
 
   return exports;

@@ -36,7 +36,7 @@
   /**
    * The ApplicationAPIKey model module.
    * @module model/ApplicationAPIKey
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

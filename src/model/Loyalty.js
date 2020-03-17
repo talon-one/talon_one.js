@@ -36,7 +36,7 @@
   /**
    * The Loyalty model module.
    * @module model/Loyalty
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

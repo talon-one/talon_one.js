@@ -36,7 +36,7 @@
   /**
    * The NewSamlConnection model module.
    * @module model/NewSamlConnection
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

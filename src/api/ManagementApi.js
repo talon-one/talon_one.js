@@ -33,7 +33,7 @@
   /**
    * Management service.
    * @module api/ManagementApi
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
@@ -1676,8 +1676,8 @@
      * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
      * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
      * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.effectsQuery Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
-     * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
+     * @param {String} opts.couponCode Coupon code
+     * @param {String} opts.referralCode Referral code
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20017} and HTTP response
@@ -1706,8 +1706,8 @@
         'profile': opts['profile'],
         'customerName': opts['customerName'],
         'customerEmail': opts['customerEmail'],
-        'effectsQuery': opts['effectsQuery'],
-        'attributesQuery': opts['attributesQuery'],
+        'couponCode': opts['couponCode'],
+        'referralCode': opts['referralCode'],
         'ruleQuery': opts['ruleQuery'],
         'campaignQuery': opts['campaignQuery'],
       };
@@ -1745,8 +1745,8 @@
      * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
      * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
      * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.effectsQuery Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
-     * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
+     * @param {String} opts.couponCode Coupon code
+     * @param {String} opts.referralCode Referral code
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20017}
@@ -1774,8 +1774,8 @@
      * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
      * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
      * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.effectsQuery Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
-     * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
+     * @param {String} opts.couponCode Coupon code
+     * @param {String} opts.referralCode Referral code
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20018} and HTTP response
@@ -1804,8 +1804,8 @@
         'profile': opts['profile'],
         'customerName': opts['customerName'],
         'customerEmail': opts['customerEmail'],
-        'effectsQuery': opts['effectsQuery'],
-        'attributesQuery': opts['attributesQuery'],
+        'couponCode': opts['couponCode'],
+        'referralCode': opts['referralCode'],
         'ruleQuery': opts['ruleQuery'],
         'campaignQuery': opts['campaignQuery'],
       };
@@ -1843,8 +1843,8 @@
      * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
      * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
      * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.effectsQuery Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
-     * @param {String} opts.attributesQuery Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
+     * @param {String} opts.couponCode Coupon code
+     * @param {String} opts.referralCode Referral code
      * @param {String} opts.ruleQuery Rule name filter for events
      * @param {String} opts.campaignQuery Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20018}
@@ -1929,6 +1929,9 @@
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
      * @param {module:model/String} opts.state Filter by sessions with this state. Must be exact match.
      * @param {String} opts.coupon Filter by sessions with this coupon. Must be exact match.
+     * @param {String} opts.referral Filter by sessions with this referral. Must be exact match.
+     * @param {String} opts.integrationId Filter by sessions with this integrationId. Must be exact match.
+     * @param {String} opts.customerId Filter by integration ID of the customer for the session
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     this.getApplicationSessionsWithHttpInfo = function(applicationId, opts) {
@@ -1951,6 +1954,9 @@
         'profile': opts['profile'],
         'state': opts['state'],
         'coupon': opts['coupon'],
+        'referral': opts['referral'],
+        'integrationId': opts['integrationId'],
+        'customerId': opts['customerId'],
       };
       var collectionQueryParams = {
       };
@@ -1982,6 +1988,9 @@
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
      * @param {module:model/String} opts.state Filter by sessions with this state. Must be exact match.
      * @param {String} opts.coupon Filter by sessions with this coupon. Must be exact match.
+     * @param {String} opts.referral Filter by sessions with this referral. Must be exact match.
+     * @param {String} opts.integrationId Filter by sessions with this integrationId. Must be exact match.
+     * @param {String} opts.customerId Filter by integration ID of the customer for the session
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     this.getApplicationSessions = function(applicationId, opts) {
@@ -4612,51 +4621,6 @@
      */
     this.getWebhooks = function(opts) {
       return this.getWebhooksWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Trigger refresh on stale analytics.
-     * Should be used to trigger a manual refresh of analytics.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.refreshAnalyticsWithHttpInfo = function() {
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['manager_auth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v1/refresh_analytics', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Trigger refresh on stale analytics.
-     * Should be used to trigger a manual refresh of analytics.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.refreshAnalytics = function() {
-      return this.refreshAnalyticsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

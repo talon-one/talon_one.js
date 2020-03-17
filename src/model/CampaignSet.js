@@ -36,7 +36,7 @@
   /**
    * The CampaignSet model module.
    * @module model/CampaignSet
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

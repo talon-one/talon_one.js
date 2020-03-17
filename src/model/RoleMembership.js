@@ -36,7 +36,7 @@
   /**
    * The RoleMembership model module.
    * @module model/RoleMembership
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

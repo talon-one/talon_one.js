@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**trackEvent**](IntegrationApi.md#trackEvent) | **POST** /v1/events | Track an Event
 [**updateCustomerProfile**](IntegrationApi.md#updateCustomerProfile) | **PUT** /v1/customer_profiles/{integrationId} | Update a Customer Profile
 [**updateCustomerSession**](IntegrationApi.md#updateCustomerSession) | **PUT** /v1/customer_sessions/{customerSessionId} | Update a Customer Session
+[**updateCustomerSessionV2**](IntegrationApi.md#updateCustomerSessionV2) | **PUT** /v2/customer_sessions/{customerSessionId} | Update a Customer Session
 
 
 <a name="createCouponReservation"></a>
@@ -584,6 +585,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**IntegrationState**](IntegrationState.md)
+
+### Authorization
+
+[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateCustomerSessionV2"></a>
+# **updateCustomerSessionV2**
+> IntegrationStateV2 updateCustomerSessionV2(customerSessionId, body)
+
+Update a Customer Session
+
+Update (or create) a [Customer Session][]. For example, the items in a customers cart are part of a session.  The Talon.One platform supports multiple simultaneous sessions for the same profile, so if you have multiple ways of accessing the same application you have the option of either tracking multiple independent sessions or using the same session across all of them. You should share sessions when application access points share other state, such as the users cart. If two points of access to the application have independent state (e.g. a user can have different items in their cart across the two) they should use independent customer session ID&#39;s.  The &#x60;profileId&#x60; parameter in the request body should correspond to an &#x60;integrationId&#x60; for a customer profile, to track an anonymous session use the empty string (&#x60;\&quot;\&quot;&#x60;) as the &#x60;profileId&#x60;. Note that you do **not** need to create a customer profile first: if the specified profile does not yet exist, an empty profile will be created automatically.  Updating a customer profile will return a response with the requested integration state. This includes the effects that were generated due to triggered campaigns, the created coupons and referral objects, as well as any entity that was requested in the request parameter \&quot;resopnseContent\&quot;.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated.  [Customer Session]: /Getting-Started/entities#customer-session 
+
+### Example
+```javascript
+var TalonOne = require('talon_one');
+var defaultClient = TalonOne.ApiClient.instance;
+
+// Configure API key authorization: api_key_v1
+var api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: integration_auth
+var integration_auth = defaultClient.authentications['integration_auth'];
+integration_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//integration_auth.apiKeyPrefix = 'Token';
+
+var apiInstance = new TalonOne.IntegrationApi();
+
+var customerSessionId = "customerSessionId_example"; // String | The custom identifier for this session, must be unique within the account.
+
+var body = new TalonOne.IntegrationRequest(); // IntegrationRequest | 
+
+apiInstance.updateCustomerSessionV2(customerSessionId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerSessionId** | **String**| The custom identifier for this session, must be unique within the account. | 
+ **body** | [**IntegrationRequest**](IntegrationRequest.md)|  | 
+
+### Return type
+
+[**IntegrationStateV2**](IntegrationStateV2.md)
 
 ### Authorization
 

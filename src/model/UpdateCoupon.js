@@ -36,7 +36,7 @@
   /**
    * The UpdateCoupon model module.
    * @module model/UpdateCoupon
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

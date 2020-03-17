@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **modified** | **Date** | The exact moment this entity was last modified. | 
 **companyName** | **String** |  | 
 **domainName** | **String** | Subdomain Name for yourcompany.talon.one | 
-**state** | **String** | State of the account (trial, active, trial_expired) | 
+**state** | **String** | State of the account (active, deactivated) | 
 **billingEmail** | **String** | The billing email address associated with your company account. | 
 **planName** | **String** | The name of your booked plan. | [optional] 
 **planExpires** | **Date** | The point in time at which your current plan expires. | [optional] 
@@ -27,11 +27,9 @@ Name | Type | Description | Notes
 ## Enum: StateEnum
 
 
-* `trial` (value: `"trial"`)
-
 * `active` (value: `"active"`)
 
-* `trial_expired` (value: `"trial_expired"`)
+* `deactivated` (value: `"deactivated"`)
 
 
 

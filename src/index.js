@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/APIError', 'model/AccessLogEntry', 'model/Account', 'model/AccountAnalytics', 'model/AccountEntity', 'model/AccountLimits', 'model/Application', 'model/ApplicationAPIKey', 'model/ApplicationApiHealth', 'model/ApplicationCustomer', 'model/ApplicationCustomerEntity', 'model/ApplicationCustomerSearch', 'model/ApplicationEntity', 'model/ApplicationEvent', 'model/ApplicationSession', 'model/ApplicationSessionEntity', 'model/Attribute', 'model/AttributeQuery', 'model/AttributesMandatory', 'model/AttributesSettings', 'model/BaseSamlConnection', 'model/Binding', 'model/Campaign', 'model/CampaignAnalytics', 'model/CampaignCopy', 'model/CampaignEntity', 'model/CampaignSearch', 'model/CampaignSet', 'model/CampaignSetBranchNode', 'model/CampaignSetLeafNode', 'model/CampaignSetNode', 'model/CartItem', 'model/CartItemAdjustment', 'model/Change', 'model/CodeGeneratorSettings', 'model/Coupon', 'model/CouponConstraints', 'model/CouponRejectionReason', 'model/CouponReservations', 'model/CouponSearch', 'model/CouponValue', 'model/CreateApplicationAPIKey', 'model/CustomerActivityReport', 'model/CustomerAnalytics', 'model/CustomerInventory', 'model/CustomerProfile', 'model/CustomerProfileSearchQuery', 'model/CustomerSession', 'model/EmailEntity', 'model/Entity', 'model/Environment', 'model/ErrorResponse', 'model/ErrorSource', 'model/Event', 'model/EventType', 'model/FeatureFlag', 'model/FeatureFlags', 'model/FeaturesFeed', 'model/FuncArgDef', 'model/FunctionDef', 'model/ImportCoupons', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20019', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20024', 'model/InlineResponse20025', 'model/InlineResponse20026', 'model/InlineResponse20027', 'model/InlineResponse20028', 'model/InlineResponse20029', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/IntegrationEntity', 'model/IntegrationEvent', 'model/IntegrationProfileEntity', 'model/IntegrationState', 'model/LedgerEntry', 'model/LibraryAttribute', 'model/LimitConfig', 'model/LoginParams', 'model/Loyalty', 'model/LoyaltyLedger', 'model/LoyaltyLedgerEntry', 'model/LoyaltyMembership', 'model/LoyaltyPoints', 'model/LoyaltyProgram', 'model/LoyaltyProgramBalance', 'model/LoyaltyProgramLedgers', 'model/LoyaltySubLedger', 'model/ManagerConfig', 'model/Meta', 'model/MiscUpdateUserLatestFeature', 'model/ModelExport', 'model/ModelImport', 'model/MultiApplicationEntity', 'model/MutableEntity', 'model/NewAccount', 'model/NewAccountSignUp', 'model/NewApplication', 'model/NewApplicationAPIKey', 'model/NewAttribute', 'model/NewCampaign', 'model/NewCampaignSet', 'model/NewCoupons', 'model/NewCustomerProfile', 'model/NewCustomerSession', 'model/NewEvent', 'model/NewEventType', 'model/NewFeatureFlags', 'model/NewImport', 'model/NewInvitation', 'model/NewInviteEmail', 'model/NewLoyaltyProgram', 'model/NewPassword', 'model/NewPasswordEmail', 'model/NewReferral', 'model/NewRole', 'model/NewRuleset', 'model/NewSamlConnection', 'model/NewTemplateDef', 'model/NewUser', 'model/NewWebhook', 'model/Notification', 'model/Notifications', 'model/Referral', 'model/ReferralRejectionReason', 'model/Role', 'model/RoleAssign', 'model/RoleMembership', 'model/Rule', 'model/Ruleset', 'model/SamlConnection', 'model/SamlConnectionMetadata', 'model/Session', 'model/SlotDef', 'model/TemplateArgDef', 'model/TemplateDef', 'model/UpdateAccount', 'model/UpdateApplication', 'model/UpdateCampaign', 'model/UpdateCoupon', 'model/UpdateCouponBatch', 'model/UpdateLoyaltyProgram', 'model/UpdateRole', 'model/UpdateUser', 'model/User', 'model/UserEntity', 'model/Webhook', 'model/WebhookActivationLogEntry', 'model/WebhookLogEntry', 'api/IntegrationApi', 'api/ManagementApi'], factory);
+    define(['ApiClient', 'model/APIError', 'model/AcceptCouponEffectProps', 'model/AcceptReferralEffectProps', 'model/AccessLogEntry', 'model/Account', 'model/AccountAnalytics', 'model/AccountEntity', 'model/AccountLimits', 'model/AddFreeItemEffectProps', 'model/AddLoyaltyPointsEffectProps', 'model/AdditionalCost', 'model/Application', 'model/ApplicationAPIKey', 'model/ApplicationApiHealth', 'model/ApplicationCustomer', 'model/ApplicationCustomerEntity', 'model/ApplicationCustomerSearch', 'model/ApplicationEntity', 'model/ApplicationEvent', 'model/ApplicationSession', 'model/ApplicationSessionEntity', 'model/Attribute', 'model/AttributeQuery', 'model/AttributesMandatory', 'model/AttributesSettings', 'model/BaseSamlConnection', 'model/Binding', 'model/Campaign', 'model/CampaignAnalytics', 'model/CampaignCopy', 'model/CampaignEntity', 'model/CampaignSearch', 'model/CampaignSet', 'model/CampaignSetBranchNode', 'model/CampaignSetLeafNode', 'model/CampaignSetNode', 'model/CartItem', 'model/CartItemAdjustment', 'model/Change', 'model/ChangeProfilePassword', 'model/CodeGeneratorSettings', 'model/Coupon', 'model/CouponConstraints', 'model/CouponCreatedEffectProps', 'model/CouponRejectionReason', 'model/CouponReservations', 'model/CouponSearch', 'model/CouponValue', 'model/CreateApplicationAPIKey', 'model/CustomerActivityReport', 'model/CustomerAnalytics', 'model/CustomerInventory', 'model/CustomerProfile', 'model/CustomerProfileSearchQuery', 'model/CustomerSession', 'model/CustomerSessionV2', 'model/DeductLoyaltyPointsEffectProps', 'model/Effect', 'model/EffectEntity', 'model/EffectProps', 'model/EmailEntity', 'model/Entity', 'model/Environment', 'model/ErrorEffectProps', 'model/ErrorResponse', 'model/ErrorSource', 'model/Event', 'model/EventType', 'model/FeatureFlag', 'model/FeatureFlags', 'model/FeaturesFeed', 'model/FuncArgDef', 'model/FunctionDef', 'model/ImportCoupons', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20019', 'model/InlineResponse2002', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse20022', 'model/InlineResponse20023', 'model/InlineResponse20024', 'model/InlineResponse20025', 'model/InlineResponse20026', 'model/InlineResponse20027', 'model/InlineResponse20028', 'model/InlineResponse20029', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/IntegrationEntity', 'model/IntegrationEvent', 'model/IntegrationProfileEntity', 'model/IntegrationRequest', 'model/IntegrationState', 'model/IntegrationStateV2', 'model/LedgerEntry', 'model/LibraryAttribute', 'model/LimitConfig', 'model/LoginParams', 'model/Loyalty', 'model/LoyaltyLedger', 'model/LoyaltyLedgerEntry', 'model/LoyaltyMembership', 'model/LoyaltyPoints', 'model/LoyaltyProgram', 'model/LoyaltyProgramBalance', 'model/LoyaltyProgramLedgers', 'model/LoyaltySubLedger', 'model/ManagerConfig', 'model/Meta', 'model/MiscUpdateUserLatestFeature', 'model/ModelExport', 'model/ModelImport', 'model/MultiApplicationEntity', 'model/MutableEntity', 'model/NewAccount', 'model/NewAccountSignUp', 'model/NewApplication', 'model/NewApplicationAPIKey', 'model/NewAttribute', 'model/NewCampaign', 'model/NewCampaignSet', 'model/NewCoupons', 'model/NewCustomerProfile', 'model/NewCustomerSession', 'model/NewCustomerSessionV2', 'model/NewEvent', 'model/NewEventType', 'model/NewFeatureFlags', 'model/NewImport', 'model/NewInvitation', 'model/NewInviteEmail', 'model/NewLoyaltyProgram', 'model/NewPassword', 'model/NewPasswordEmail', 'model/NewReferral', 'model/NewRole', 'model/NewRuleset', 'model/NewSamlConnection', 'model/NewTemplateDef', 'model/NewUser', 'model/NewWebhook', 'model/Notification', 'model/Notifications', 'model/RedeemReferralEffectProps', 'model/Referral', 'model/ReferralCreatedEffectProps', 'model/ReferralRejectionReason', 'model/RejectCouponEffectProps', 'model/RejectReferralEffectProps', 'model/Role', 'model/RoleAssign', 'model/RoleMembership', 'model/RollbackCouponEffectProps', 'model/RollbackDiscountEffectProps', 'model/Rule', 'model/Ruleset', 'model/SamlConnection', 'model/SamlConnectionMetadata', 'model/SamlLoginEndpoint', 'model/Session', 'model/SetDiscountEffectProps', 'model/SetDiscountPerItemEffectProps', 'model/ShowBundleMetadataEffectProps', 'model/ShowNotificationEffectProps', 'model/SlotDef', 'model/TemplateArgDef', 'model/TemplateDef', 'model/TriggerWebhookEffectProps', 'model/UpdateAccount', 'model/UpdateApplication', 'model/UpdateAttributeEffectProps', 'model/UpdateCampaign', 'model/UpdateCoupon', 'model/UpdateCouponBatch', 'model/UpdateLoyaltyProgram', 'model/UpdateRole', 'model/UpdateUser', 'model/User', 'model/UserEntity', 'model/Webhook', 'model/WebhookActivationLogEntry', 'model/WebhookLogEntry', 'api/IntegrationApi', 'api/ManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/APIError'), require('./model/AccessLogEntry'), require('./model/Account'), require('./model/AccountAnalytics'), require('./model/AccountEntity'), require('./model/AccountLimits'), require('./model/Application'), require('./model/ApplicationAPIKey'), require('./model/ApplicationApiHealth'), require('./model/ApplicationCustomer'), require('./model/ApplicationCustomerEntity'), require('./model/ApplicationCustomerSearch'), require('./model/ApplicationEntity'), require('./model/ApplicationEvent'), require('./model/ApplicationSession'), require('./model/ApplicationSessionEntity'), require('./model/Attribute'), require('./model/AttributeQuery'), require('./model/AttributesMandatory'), require('./model/AttributesSettings'), require('./model/BaseSamlConnection'), require('./model/Binding'), require('./model/Campaign'), require('./model/CampaignAnalytics'), require('./model/CampaignCopy'), require('./model/CampaignEntity'), require('./model/CampaignSearch'), require('./model/CampaignSet'), require('./model/CampaignSetBranchNode'), require('./model/CampaignSetLeafNode'), require('./model/CampaignSetNode'), require('./model/CartItem'), require('./model/CartItemAdjustment'), require('./model/Change'), require('./model/CodeGeneratorSettings'), require('./model/Coupon'), require('./model/CouponConstraints'), require('./model/CouponRejectionReason'), require('./model/CouponReservations'), require('./model/CouponSearch'), require('./model/CouponValue'), require('./model/CreateApplicationAPIKey'), require('./model/CustomerActivityReport'), require('./model/CustomerAnalytics'), require('./model/CustomerInventory'), require('./model/CustomerProfile'), require('./model/CustomerProfileSearchQuery'), require('./model/CustomerSession'), require('./model/EmailEntity'), require('./model/Entity'), require('./model/Environment'), require('./model/ErrorResponse'), require('./model/ErrorSource'), require('./model/Event'), require('./model/EventType'), require('./model/FeatureFlag'), require('./model/FeatureFlags'), require('./model/FeaturesFeed'), require('./model/FuncArgDef'), require('./model/FunctionDef'), require('./model/ImportCoupons'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse20010'), require('./model/InlineResponse20011'), require('./model/InlineResponse20012'), require('./model/InlineResponse20013'), require('./model/InlineResponse20014'), require('./model/InlineResponse20015'), require('./model/InlineResponse20016'), require('./model/InlineResponse20017'), require('./model/InlineResponse20018'), require('./model/InlineResponse20019'), require('./model/InlineResponse2002'), require('./model/InlineResponse20020'), require('./model/InlineResponse20021'), require('./model/InlineResponse20022'), require('./model/InlineResponse20023'), require('./model/InlineResponse20024'), require('./model/InlineResponse20025'), require('./model/InlineResponse20026'), require('./model/InlineResponse20027'), require('./model/InlineResponse20028'), require('./model/InlineResponse20029'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2007'), require('./model/InlineResponse2008'), require('./model/InlineResponse2009'), require('./model/IntegrationEntity'), require('./model/IntegrationEvent'), require('./model/IntegrationProfileEntity'), require('./model/IntegrationState'), require('./model/LedgerEntry'), require('./model/LibraryAttribute'), require('./model/LimitConfig'), require('./model/LoginParams'), require('./model/Loyalty'), require('./model/LoyaltyLedger'), require('./model/LoyaltyLedgerEntry'), require('./model/LoyaltyMembership'), require('./model/LoyaltyPoints'), require('./model/LoyaltyProgram'), require('./model/LoyaltyProgramBalance'), require('./model/LoyaltyProgramLedgers'), require('./model/LoyaltySubLedger'), require('./model/ManagerConfig'), require('./model/Meta'), require('./model/MiscUpdateUserLatestFeature'), require('./model/ModelExport'), require('./model/ModelImport'), require('./model/MultiApplicationEntity'), require('./model/MutableEntity'), require('./model/NewAccount'), require('./model/NewAccountSignUp'), require('./model/NewApplication'), require('./model/NewApplicationAPIKey'), require('./model/NewAttribute'), require('./model/NewCampaign'), require('./model/NewCampaignSet'), require('./model/NewCoupons'), require('./model/NewCustomerProfile'), require('./model/NewCustomerSession'), require('./model/NewEvent'), require('./model/NewEventType'), require('./model/NewFeatureFlags'), require('./model/NewImport'), require('./model/NewInvitation'), require('./model/NewInviteEmail'), require('./model/NewLoyaltyProgram'), require('./model/NewPassword'), require('./model/NewPasswordEmail'), require('./model/NewReferral'), require('./model/NewRole'), require('./model/NewRuleset'), require('./model/NewSamlConnection'), require('./model/NewTemplateDef'), require('./model/NewUser'), require('./model/NewWebhook'), require('./model/Notification'), require('./model/Notifications'), require('./model/Referral'), require('./model/ReferralRejectionReason'), require('./model/Role'), require('./model/RoleAssign'), require('./model/RoleMembership'), require('./model/Rule'), require('./model/Ruleset'), require('./model/SamlConnection'), require('./model/SamlConnectionMetadata'), require('./model/Session'), require('./model/SlotDef'), require('./model/TemplateArgDef'), require('./model/TemplateDef'), require('./model/UpdateAccount'), require('./model/UpdateApplication'), require('./model/UpdateCampaign'), require('./model/UpdateCoupon'), require('./model/UpdateCouponBatch'), require('./model/UpdateLoyaltyProgram'), require('./model/UpdateRole'), require('./model/UpdateUser'), require('./model/User'), require('./model/UserEntity'), require('./model/Webhook'), require('./model/WebhookActivationLogEntry'), require('./model/WebhookLogEntry'), require('./api/IntegrationApi'), require('./api/ManagementApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/APIError'), require('./model/AcceptCouponEffectProps'), require('./model/AcceptReferralEffectProps'), require('./model/AccessLogEntry'), require('./model/Account'), require('./model/AccountAnalytics'), require('./model/AccountEntity'), require('./model/AccountLimits'), require('./model/AddFreeItemEffectProps'), require('./model/AddLoyaltyPointsEffectProps'), require('./model/AdditionalCost'), require('./model/Application'), require('./model/ApplicationAPIKey'), require('./model/ApplicationApiHealth'), require('./model/ApplicationCustomer'), require('./model/ApplicationCustomerEntity'), require('./model/ApplicationCustomerSearch'), require('./model/ApplicationEntity'), require('./model/ApplicationEvent'), require('./model/ApplicationSession'), require('./model/ApplicationSessionEntity'), require('./model/Attribute'), require('./model/AttributeQuery'), require('./model/AttributesMandatory'), require('./model/AttributesSettings'), require('./model/BaseSamlConnection'), require('./model/Binding'), require('./model/Campaign'), require('./model/CampaignAnalytics'), require('./model/CampaignCopy'), require('./model/CampaignEntity'), require('./model/CampaignSearch'), require('./model/CampaignSet'), require('./model/CampaignSetBranchNode'), require('./model/CampaignSetLeafNode'), require('./model/CampaignSetNode'), require('./model/CartItem'), require('./model/CartItemAdjustment'), require('./model/Change'), require('./model/ChangeProfilePassword'), require('./model/CodeGeneratorSettings'), require('./model/Coupon'), require('./model/CouponConstraints'), require('./model/CouponCreatedEffectProps'), require('./model/CouponRejectionReason'), require('./model/CouponReservations'), require('./model/CouponSearch'), require('./model/CouponValue'), require('./model/CreateApplicationAPIKey'), require('./model/CustomerActivityReport'), require('./model/CustomerAnalytics'), require('./model/CustomerInventory'), require('./model/CustomerProfile'), require('./model/CustomerProfileSearchQuery'), require('./model/CustomerSession'), require('./model/CustomerSessionV2'), require('./model/DeductLoyaltyPointsEffectProps'), require('./model/Effect'), require('./model/EffectEntity'), require('./model/EffectProps'), require('./model/EmailEntity'), require('./model/Entity'), require('./model/Environment'), require('./model/ErrorEffectProps'), require('./model/ErrorResponse'), require('./model/ErrorSource'), require('./model/Event'), require('./model/EventType'), require('./model/FeatureFlag'), require('./model/FeatureFlags'), require('./model/FeaturesFeed'), require('./model/FuncArgDef'), require('./model/FunctionDef'), require('./model/ImportCoupons'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse20010'), require('./model/InlineResponse20011'), require('./model/InlineResponse20012'), require('./model/InlineResponse20013'), require('./model/InlineResponse20014'), require('./model/InlineResponse20015'), require('./model/InlineResponse20016'), require('./model/InlineResponse20017'), require('./model/InlineResponse20018'), require('./model/InlineResponse20019'), require('./model/InlineResponse2002'), require('./model/InlineResponse20020'), require('./model/InlineResponse20021'), require('./model/InlineResponse20022'), require('./model/InlineResponse20023'), require('./model/InlineResponse20024'), require('./model/InlineResponse20025'), require('./model/InlineResponse20026'), require('./model/InlineResponse20027'), require('./model/InlineResponse20028'), require('./model/InlineResponse20029'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2007'), require('./model/InlineResponse2008'), require('./model/InlineResponse2009'), require('./model/IntegrationEntity'), require('./model/IntegrationEvent'), require('./model/IntegrationProfileEntity'), require('./model/IntegrationRequest'), require('./model/IntegrationState'), require('./model/IntegrationStateV2'), require('./model/LedgerEntry'), require('./model/LibraryAttribute'), require('./model/LimitConfig'), require('./model/LoginParams'), require('./model/Loyalty'), require('./model/LoyaltyLedger'), require('./model/LoyaltyLedgerEntry'), require('./model/LoyaltyMembership'), require('./model/LoyaltyPoints'), require('./model/LoyaltyProgram'), require('./model/LoyaltyProgramBalance'), require('./model/LoyaltyProgramLedgers'), require('./model/LoyaltySubLedger'), require('./model/ManagerConfig'), require('./model/Meta'), require('./model/MiscUpdateUserLatestFeature'), require('./model/ModelExport'), require('./model/ModelImport'), require('./model/MultiApplicationEntity'), require('./model/MutableEntity'), require('./model/NewAccount'), require('./model/NewAccountSignUp'), require('./model/NewApplication'), require('./model/NewApplicationAPIKey'), require('./model/NewAttribute'), require('./model/NewCampaign'), require('./model/NewCampaignSet'), require('./model/NewCoupons'), require('./model/NewCustomerProfile'), require('./model/NewCustomerSession'), require('./model/NewCustomerSessionV2'), require('./model/NewEvent'), require('./model/NewEventType'), require('./model/NewFeatureFlags'), require('./model/NewImport'), require('./model/NewInvitation'), require('./model/NewInviteEmail'), require('./model/NewLoyaltyProgram'), require('./model/NewPassword'), require('./model/NewPasswordEmail'), require('./model/NewReferral'), require('./model/NewRole'), require('./model/NewRuleset'), require('./model/NewSamlConnection'), require('./model/NewTemplateDef'), require('./model/NewUser'), require('./model/NewWebhook'), require('./model/Notification'), require('./model/Notifications'), require('./model/RedeemReferralEffectProps'), require('./model/Referral'), require('./model/ReferralCreatedEffectProps'), require('./model/ReferralRejectionReason'), require('./model/RejectCouponEffectProps'), require('./model/RejectReferralEffectProps'), require('./model/Role'), require('./model/RoleAssign'), require('./model/RoleMembership'), require('./model/RollbackCouponEffectProps'), require('./model/RollbackDiscountEffectProps'), require('./model/Rule'), require('./model/Ruleset'), require('./model/SamlConnection'), require('./model/SamlConnectionMetadata'), require('./model/SamlLoginEndpoint'), require('./model/Session'), require('./model/SetDiscountEffectProps'), require('./model/SetDiscountPerItemEffectProps'), require('./model/ShowBundleMetadataEffectProps'), require('./model/ShowNotificationEffectProps'), require('./model/SlotDef'), require('./model/TemplateArgDef'), require('./model/TemplateDef'), require('./model/TriggerWebhookEffectProps'), require('./model/UpdateAccount'), require('./model/UpdateApplication'), require('./model/UpdateAttributeEffectProps'), require('./model/UpdateCampaign'), require('./model/UpdateCoupon'), require('./model/UpdateCouponBatch'), require('./model/UpdateLoyaltyProgram'), require('./model/UpdateRole'), require('./model/UpdateUser'), require('./model/User'), require('./model/UserEntity'), require('./model/Webhook'), require('./model/WebhookActivationLogEntry'), require('./model/WebhookLogEntry'), require('./api/IntegrationApi'), require('./api/ManagementApi'));
   }
-}(function(ApiClient, APIError, AccessLogEntry, Account, AccountAnalytics, AccountEntity, AccountLimits, Application, ApplicationAPIKey, ApplicationApiHealth, ApplicationCustomer, ApplicationCustomerEntity, ApplicationCustomerSearch, ApplicationEntity, ApplicationEvent, ApplicationSession, ApplicationSessionEntity, Attribute, AttributeQuery, AttributesMandatory, AttributesSettings, BaseSamlConnection, Binding, Campaign, CampaignAnalytics, CampaignCopy, CampaignEntity, CampaignSearch, CampaignSet, CampaignSetBranchNode, CampaignSetLeafNode, CampaignSetNode, CartItem, CartItemAdjustment, Change, CodeGeneratorSettings, Coupon, CouponConstraints, CouponRejectionReason, CouponReservations, CouponSearch, CouponValue, CreateApplicationAPIKey, CustomerActivityReport, CustomerAnalytics, CustomerInventory, CustomerProfile, CustomerProfileSearchQuery, CustomerSession, EmailEntity, Entity, Environment, ErrorResponse, ErrorSource, Event, EventType, FeatureFlag, FeatureFlags, FeaturesFeed, FuncArgDef, FunctionDef, ImportCoupons, InlineResponse200, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20015, InlineResponse20016, InlineResponse20017, InlineResponse20018, InlineResponse20019, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20024, InlineResponse20025, InlineResponse20026, InlineResponse20027, InlineResponse20028, InlineResponse20029, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, IntegrationEntity, IntegrationEvent, IntegrationProfileEntity, IntegrationState, LedgerEntry, LibraryAttribute, LimitConfig, LoginParams, Loyalty, LoyaltyLedger, LoyaltyLedgerEntry, LoyaltyMembership, LoyaltyPoints, LoyaltyProgram, LoyaltyProgramBalance, LoyaltyProgramLedgers, LoyaltySubLedger, ManagerConfig, Meta, MiscUpdateUserLatestFeature, ModelExport, ModelImport, MultiApplicationEntity, MutableEntity, NewAccount, NewAccountSignUp, NewApplication, NewApplicationAPIKey, NewAttribute, NewCampaign, NewCampaignSet, NewCoupons, NewCustomerProfile, NewCustomerSession, NewEvent, NewEventType, NewFeatureFlags, NewImport, NewInvitation, NewInviteEmail, NewLoyaltyProgram, NewPassword, NewPasswordEmail, NewReferral, NewRole, NewRuleset, NewSamlConnection, NewTemplateDef, NewUser, NewWebhook, Notification, Notifications, Referral, ReferralRejectionReason, Role, RoleAssign, RoleMembership, Rule, Ruleset, SamlConnection, SamlConnectionMetadata, Session, SlotDef, TemplateArgDef, TemplateDef, UpdateAccount, UpdateApplication, UpdateCampaign, UpdateCoupon, UpdateCouponBatch, UpdateLoyaltyProgram, UpdateRole, UpdateUser, User, UserEntity, Webhook, WebhookActivationLogEntry, WebhookLogEntry, IntegrationApi, ManagementApi) {
+}(function(ApiClient, APIError, AcceptCouponEffectProps, AcceptReferralEffectProps, AccessLogEntry, Account, AccountAnalytics, AccountEntity, AccountLimits, AddFreeItemEffectProps, AddLoyaltyPointsEffectProps, AdditionalCost, Application, ApplicationAPIKey, ApplicationApiHealth, ApplicationCustomer, ApplicationCustomerEntity, ApplicationCustomerSearch, ApplicationEntity, ApplicationEvent, ApplicationSession, ApplicationSessionEntity, Attribute, AttributeQuery, AttributesMandatory, AttributesSettings, BaseSamlConnection, Binding, Campaign, CampaignAnalytics, CampaignCopy, CampaignEntity, CampaignSearch, CampaignSet, CampaignSetBranchNode, CampaignSetLeafNode, CampaignSetNode, CartItem, CartItemAdjustment, Change, ChangeProfilePassword, CodeGeneratorSettings, Coupon, CouponConstraints, CouponCreatedEffectProps, CouponRejectionReason, CouponReservations, CouponSearch, CouponValue, CreateApplicationAPIKey, CustomerActivityReport, CustomerAnalytics, CustomerInventory, CustomerProfile, CustomerProfileSearchQuery, CustomerSession, CustomerSessionV2, DeductLoyaltyPointsEffectProps, Effect, EffectEntity, EffectProps, EmailEntity, Entity, Environment, ErrorEffectProps, ErrorResponse, ErrorSource, Event, EventType, FeatureFlag, FeatureFlags, FeaturesFeed, FuncArgDef, FunctionDef, ImportCoupons, InlineResponse200, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20015, InlineResponse20016, InlineResponse20017, InlineResponse20018, InlineResponse20019, InlineResponse2002, InlineResponse20020, InlineResponse20021, InlineResponse20022, InlineResponse20023, InlineResponse20024, InlineResponse20025, InlineResponse20026, InlineResponse20027, InlineResponse20028, InlineResponse20029, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, IntegrationEntity, IntegrationEvent, IntegrationProfileEntity, IntegrationRequest, IntegrationState, IntegrationStateV2, LedgerEntry, LibraryAttribute, LimitConfig, LoginParams, Loyalty, LoyaltyLedger, LoyaltyLedgerEntry, LoyaltyMembership, LoyaltyPoints, LoyaltyProgram, LoyaltyProgramBalance, LoyaltyProgramLedgers, LoyaltySubLedger, ManagerConfig, Meta, MiscUpdateUserLatestFeature, ModelExport, ModelImport, MultiApplicationEntity, MutableEntity, NewAccount, NewAccountSignUp, NewApplication, NewApplicationAPIKey, NewAttribute, NewCampaign, NewCampaignSet, NewCoupons, NewCustomerProfile, NewCustomerSession, NewCustomerSessionV2, NewEvent, NewEventType, NewFeatureFlags, NewImport, NewInvitation, NewInviteEmail, NewLoyaltyProgram, NewPassword, NewPasswordEmail, NewReferral, NewRole, NewRuleset, NewSamlConnection, NewTemplateDef, NewUser, NewWebhook, Notification, Notifications, RedeemReferralEffectProps, Referral, ReferralCreatedEffectProps, ReferralRejectionReason, RejectCouponEffectProps, RejectReferralEffectProps, Role, RoleAssign, RoleMembership, RollbackCouponEffectProps, RollbackDiscountEffectProps, Rule, Ruleset, SamlConnection, SamlConnectionMetadata, SamlLoginEndpoint, Session, SetDiscountEffectProps, SetDiscountPerItemEffectProps, ShowBundleMetadataEffectProps, ShowNotificationEffectProps, SlotDef, TemplateArgDef, TemplateDef, TriggerWebhookEffectProps, UpdateAccount, UpdateApplication, UpdateAttributeEffectProps, UpdateCampaign, UpdateCoupon, UpdateCouponBatch, UpdateLoyaltyProgram, UpdateRole, UpdateUser, User, UserEntity, Webhook, WebhookActivationLogEntry, WebhookLogEntry, IntegrationApi, ManagementApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 3.4.0
+   * @version 4.0.0
    */
   var exports = {
     /**
@@ -66,6 +66,16 @@
      * @property {module:model/APIError}
      */
     APIError: APIError,
+    /**
+     * The AcceptCouponEffectProps model constructor.
+     * @property {module:model/AcceptCouponEffectProps}
+     */
+    AcceptCouponEffectProps: AcceptCouponEffectProps,
+    /**
+     * The AcceptReferralEffectProps model constructor.
+     * @property {module:model/AcceptReferralEffectProps}
+     */
+    AcceptReferralEffectProps: AcceptReferralEffectProps,
     /**
      * The AccessLogEntry model constructor.
      * @property {module:model/AccessLogEntry}
@@ -91,6 +101,21 @@
      * @property {module:model/AccountLimits}
      */
     AccountLimits: AccountLimits,
+    /**
+     * The AddFreeItemEffectProps model constructor.
+     * @property {module:model/AddFreeItemEffectProps}
+     */
+    AddFreeItemEffectProps: AddFreeItemEffectProps,
+    /**
+     * The AddLoyaltyPointsEffectProps model constructor.
+     * @property {module:model/AddLoyaltyPointsEffectProps}
+     */
+    AddLoyaltyPointsEffectProps: AddLoyaltyPointsEffectProps,
+    /**
+     * The AdditionalCost model constructor.
+     * @property {module:model/AdditionalCost}
+     */
+    AdditionalCost: AdditionalCost,
     /**
      * The Application model constructor.
      * @property {module:model/Application}
@@ -232,6 +257,11 @@
      */
     Change: Change,
     /**
+     * The ChangeProfilePassword model constructor.
+     * @property {module:model/ChangeProfilePassword}
+     */
+    ChangeProfilePassword: ChangeProfilePassword,
+    /**
      * The CodeGeneratorSettings model constructor.
      * @property {module:model/CodeGeneratorSettings}
      */
@@ -246,6 +276,11 @@
      * @property {module:model/CouponConstraints}
      */
     CouponConstraints: CouponConstraints,
+    /**
+     * The CouponCreatedEffectProps model constructor.
+     * @property {module:model/CouponCreatedEffectProps}
+     */
+    CouponCreatedEffectProps: CouponCreatedEffectProps,
     /**
      * The CouponRejectionReason model constructor.
      * @property {module:model/CouponRejectionReason}
@@ -302,6 +337,31 @@
      */
     CustomerSession: CustomerSession,
     /**
+     * The CustomerSessionV2 model constructor.
+     * @property {module:model/CustomerSessionV2}
+     */
+    CustomerSessionV2: CustomerSessionV2,
+    /**
+     * The DeductLoyaltyPointsEffectProps model constructor.
+     * @property {module:model/DeductLoyaltyPointsEffectProps}
+     */
+    DeductLoyaltyPointsEffectProps: DeductLoyaltyPointsEffectProps,
+    /**
+     * The Effect model constructor.
+     * @property {module:model/Effect}
+     */
+    Effect: Effect,
+    /**
+     * The EffectEntity model constructor.
+     * @property {module:model/EffectEntity}
+     */
+    EffectEntity: EffectEntity,
+    /**
+     * The EffectProps model constructor.
+     * @property {module:model/EffectProps}
+     */
+    EffectProps: EffectProps,
+    /**
      * The EmailEntity model constructor.
      * @property {module:model/EmailEntity}
      */
@@ -316,6 +376,11 @@
      * @property {module:model/Environment}
      */
     Environment: Environment,
+    /**
+     * The ErrorEffectProps model constructor.
+     * @property {module:model/ErrorEffectProps}
+     */
+    ErrorEffectProps: ErrorEffectProps,
     /**
      * The ErrorResponse model constructor.
      * @property {module:model/ErrorResponse}
@@ -532,10 +597,20 @@
      */
     IntegrationProfileEntity: IntegrationProfileEntity,
     /**
+     * The IntegrationRequest model constructor.
+     * @property {module:model/IntegrationRequest}
+     */
+    IntegrationRequest: IntegrationRequest,
+    /**
      * The IntegrationState model constructor.
      * @property {module:model/IntegrationState}
      */
     IntegrationState: IntegrationState,
+    /**
+     * The IntegrationStateV2 model constructor.
+     * @property {module:model/IntegrationStateV2}
+     */
+    IntegrationStateV2: IntegrationStateV2,
     /**
      * The LedgerEntry model constructor.
      * @property {module:model/LedgerEntry}
@@ -687,6 +762,11 @@
      */
     NewCustomerSession: NewCustomerSession,
     /**
+     * The NewCustomerSessionV2 model constructor.
+     * @property {module:model/NewCustomerSessionV2}
+     */
+    NewCustomerSessionV2: NewCustomerSessionV2,
+    /**
      * The NewEvent model constructor.
      * @property {module:model/NewEvent}
      */
@@ -777,15 +857,35 @@
      */
     Notifications: Notifications,
     /**
+     * The RedeemReferralEffectProps model constructor.
+     * @property {module:model/RedeemReferralEffectProps}
+     */
+    RedeemReferralEffectProps: RedeemReferralEffectProps,
+    /**
      * The Referral model constructor.
      * @property {module:model/Referral}
      */
     Referral: Referral,
     /**
+     * The ReferralCreatedEffectProps model constructor.
+     * @property {module:model/ReferralCreatedEffectProps}
+     */
+    ReferralCreatedEffectProps: ReferralCreatedEffectProps,
+    /**
      * The ReferralRejectionReason model constructor.
      * @property {module:model/ReferralRejectionReason}
      */
     ReferralRejectionReason: ReferralRejectionReason,
+    /**
+     * The RejectCouponEffectProps model constructor.
+     * @property {module:model/RejectCouponEffectProps}
+     */
+    RejectCouponEffectProps: RejectCouponEffectProps,
+    /**
+     * The RejectReferralEffectProps model constructor.
+     * @property {module:model/RejectReferralEffectProps}
+     */
+    RejectReferralEffectProps: RejectReferralEffectProps,
     /**
      * The Role model constructor.
      * @property {module:model/Role}
@@ -801,6 +901,16 @@
      * @property {module:model/RoleMembership}
      */
     RoleMembership: RoleMembership,
+    /**
+     * The RollbackCouponEffectProps model constructor.
+     * @property {module:model/RollbackCouponEffectProps}
+     */
+    RollbackCouponEffectProps: RollbackCouponEffectProps,
+    /**
+     * The RollbackDiscountEffectProps model constructor.
+     * @property {module:model/RollbackDiscountEffectProps}
+     */
+    RollbackDiscountEffectProps: RollbackDiscountEffectProps,
     /**
      * The Rule model constructor.
      * @property {module:model/Rule}
@@ -822,10 +932,35 @@
      */
     SamlConnectionMetadata: SamlConnectionMetadata,
     /**
+     * The SamlLoginEndpoint model constructor.
+     * @property {module:model/SamlLoginEndpoint}
+     */
+    SamlLoginEndpoint: SamlLoginEndpoint,
+    /**
      * The Session model constructor.
      * @property {module:model/Session}
      */
     Session: Session,
+    /**
+     * The SetDiscountEffectProps model constructor.
+     * @property {module:model/SetDiscountEffectProps}
+     */
+    SetDiscountEffectProps: SetDiscountEffectProps,
+    /**
+     * The SetDiscountPerItemEffectProps model constructor.
+     * @property {module:model/SetDiscountPerItemEffectProps}
+     */
+    SetDiscountPerItemEffectProps: SetDiscountPerItemEffectProps,
+    /**
+     * The ShowBundleMetadataEffectProps model constructor.
+     * @property {module:model/ShowBundleMetadataEffectProps}
+     */
+    ShowBundleMetadataEffectProps: ShowBundleMetadataEffectProps,
+    /**
+     * The ShowNotificationEffectProps model constructor.
+     * @property {module:model/ShowNotificationEffectProps}
+     */
+    ShowNotificationEffectProps: ShowNotificationEffectProps,
     /**
      * The SlotDef model constructor.
      * @property {module:model/SlotDef}
@@ -842,6 +977,11 @@
      */
     TemplateDef: TemplateDef,
     /**
+     * The TriggerWebhookEffectProps model constructor.
+     * @property {module:model/TriggerWebhookEffectProps}
+     */
+    TriggerWebhookEffectProps: TriggerWebhookEffectProps,
+    /**
      * The UpdateAccount model constructor.
      * @property {module:model/UpdateAccount}
      */
@@ -851,6 +991,11 @@
      * @property {module:model/UpdateApplication}
      */
     UpdateApplication: UpdateApplication,
+    /**
+     * The UpdateAttributeEffectProps model constructor.
+     * @property {module:model/UpdateAttributeEffectProps}
+     */
+    UpdateAttributeEffectProps: UpdateAttributeEffectProps,
     /**
      * The UpdateCampaign model constructor.
      * @property {module:model/UpdateCampaign}

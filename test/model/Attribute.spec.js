@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subscribedApplicationsIds (base name: "subscribedApplicationsIds")', function() {
+      // uncomment below and update the code to test the property subscribedApplicationsIds
+      //var instance = new TalonOne.Attribute();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

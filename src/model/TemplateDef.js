@@ -36,7 +36,7 @@
   /**
    * The TemplateDef model module.
    * @module model/TemplateDef
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

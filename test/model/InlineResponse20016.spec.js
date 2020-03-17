@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(TalonOne.InlineResponse20016);
     });
 
-    it('should have the property totalResultSize (base name: "totalResultSize")', function() {
-      // uncomment below and update the code to test the property totalResultSize
+    it('should have the property hasMore (base name: "hasMore")', function() {
+      // uncomment below and update the code to test the property hasMore
       //var instance = new TalonOne.InlineResponse20016();
       //expect(instance).to.be();
     });

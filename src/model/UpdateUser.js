@@ -36,21 +36,16 @@
   /**
    * The UpdateUser model module.
    * @module model/UpdateUser
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
    * Constructs a new <code>UpdateUser</code>.
-   * 
    * @alias module:model/UpdateUser
    * @class
-   * @param email {String} The email address associated with your account.
    */
-  var exports = function(email) {
+  var exports = function() {
     var _this = this;
-
-    _this['email'] = email;
-
 
 
 
@@ -72,17 +67,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
-      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
-      }
-      if (data.hasOwnProperty('newPassword')) {
-        obj['newPassword'] = ApiClient.convertToType(data['newPassword'], 'String');
       }
       if (data.hasOwnProperty('policy')) {
         obj['policy'] = ApiClient.convertToType(data['policy'], 'String');
@@ -107,25 +93,10 @@
   }
 
   /**
-   * The email address associated with your account.
-   * @member {String} email
-   */
-  exports.prototype['email'] = undefined;
-  /**
    * Your name.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
-  /**
-   * Your old password.
-   * @member {String} password
-   */
-  exports.prototype['password'] = undefined;
-  /**
-   * Your new password.
-   * @member {String} newPassword
-   */
-  exports.prototype['newPassword'] = undefined;
   /**
    * a blob of acl json
    * @member {String} policy

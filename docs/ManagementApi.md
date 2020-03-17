@@ -70,7 +70,6 @@ Method | HTTP request | Description
 [**getWebhookActivationLogs**](ManagementApi.md#getWebhookActivationLogs) | **GET** /v1/webhook_activation_logs | List Webhook activation Log Entries
 [**getWebhookLogs**](ManagementApi.md#getWebhookLogs) | **GET** /v1/webhook_logs | List Webhook Log Entries
 [**getWebhooks**](ManagementApi.md#getWebhooks) | **GET** /v1/webhooks | List Webhooks
-[**refreshAnalytics**](ManagementApi.md#refreshAnalytics) | **POST** /v1/refresh_analytics | Trigger refresh on stale analytics.
 [**removeLoyaltyPoints**](ManagementApi.md#removeLoyaltyPoints) | **PUT** /v1/loyalty_programs/{programID}/profile/{integrationID}/deduct_points | Deduct points in a certain loyalty program for the specified customer
 [**resetPassword**](ManagementApi.md#resetPassword) | **POST** /v1/reset_password | Reset password
 [**searchCouponsAdvanced**](ManagementApi.md#searchCouponsAdvanced) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced | Get a list of the coupons that match the given attributes
@@ -1512,8 +1511,8 @@ var opts = {
   'profile': "profile_example", // String | Profile integration ID filter for events. Must be exact match.
   'customerName': "customerName_example", // String | Customer name filter for events. Will match substrings case-insensitively.
   'customerEmail': "customerEmail_example", // String | Customer e-mail address filter for events. Will match substrings case-insensitively.
-  'effectsQuery': "effectsQuery_example", // String | Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
-  'attributesQuery': "attributesQuery_example", // String | Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
+  'couponCode': "couponCode_example", // String | Coupon code
+  'referralCode': "referralCode_example", // String | Referral code
   'ruleQuery': "ruleQuery_example", // String | Rule name filter for events
   'campaignQuery': "campaignQuery_example" // String | Campaign name filter for events
 };
@@ -1540,8 +1539,8 @@ Name | Type | Description  | Notes
  **profile** | **String**| Profile integration ID filter for events. Must be exact match. | [optional] 
  **customerName** | **String**| Customer name filter for events. Will match substrings case-insensitively. | [optional] 
  **customerEmail** | **String**| Customer e-mail address filter for events. Will match substrings case-insensitively. | [optional] 
- **effectsQuery** | **String**| Effects filter for events. Will perform a full-text search on the text content of the events effects, if any. | [optional] 
- **attributesQuery** | **String**| Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values. | [optional] 
+ **couponCode** | **String**| Coupon code | [optional] 
+ **referralCode** | **String**| Referral code | [optional] 
  **ruleQuery** | **String**| Rule name filter for events | [optional] 
  **campaignQuery** | **String**| Campaign name filter for events | [optional] 
 
@@ -1592,8 +1591,8 @@ var opts = {
   'profile': "profile_example", // String | Profile integration ID filter for events. Must be exact match.
   'customerName': "customerName_example", // String | Customer name filter for events. Will match substrings case-insensitively.
   'customerEmail': "customerEmail_example", // String | Customer e-mail address filter for events. Will match substrings case-insensitively.
-  'effectsQuery': "effectsQuery_example", // String | Effects filter for events. Will perform a full-text search on the text content of the events effects, if any.
-  'attributesQuery': "attributesQuery_example", // String | Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values.
+  'couponCode': "couponCode_example", // String | Coupon code
+  'referralCode': "referralCode_example", // String | Referral code
   'ruleQuery': "ruleQuery_example", // String | Rule name filter for events
   'campaignQuery': "campaignQuery_example" // String | Campaign name filter for events
 };
@@ -1620,8 +1619,8 @@ Name | Type | Description  | Notes
  **profile** | **String**| Profile integration ID filter for events. Must be exact match. | [optional] 
  **customerName** | **String**| Customer name filter for events. Will match substrings case-insensitively. | [optional] 
  **customerEmail** | **String**| Customer e-mail address filter for events. Will match substrings case-insensitively. | [optional] 
- **effectsQuery** | **String**| Effects filter for events. Will perform a full-text search on the text content of the events effects, if any. | [optional] 
- **attributesQuery** | **String**| Attributes filter for events. Will perform a full-text search on the text content of the events attributes, both keys and values. | [optional] 
+ **couponCode** | **String**| Coupon code | [optional] 
+ **referralCode** | **String**| Referral code | [optional] 
  **ruleQuery** | **String**| Rule name filter for events | [optional] 
  **campaignQuery** | **String**| Campaign name filter for events | [optional] 
 
@@ -1720,7 +1719,10 @@ var opts = {
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'profile': "profile_example", // String | Profile integration ID filter for sessions. Must be exact match.
   'state': "state_example", // String | Filter by sessions with this state. Must be exact match.
-  'coupon': "coupon_example" // String | Filter by sessions with this coupon. Must be exact match.
+  'coupon': "coupon_example", // String | Filter by sessions with this coupon. Must be exact match.
+  'referral': "referral_example", // String | Filter by sessions with this referral. Must be exact match.
+  'integrationId': "integrationId_example", // String | Filter by sessions with this integrationId. Must be exact match.
+  'customerId': "customerId_example" // String | Filter by integration ID of the customer for the session
 };
 apiInstance.getApplicationSessions(applicationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1741,6 +1743,9 @@ Name | Type | Description  | Notes
  **profile** | **String**| Profile integration ID filter for sessions. Must be exact match. | [optional] 
  **state** | **String**| Filter by sessions with this state. Must be exact match. | [optional] 
  **coupon** | **String**| Filter by sessions with this coupon. Must be exact match. | [optional] 
+ **referral** | **String**| Filter by sessions with this referral. Must be exact match. | [optional] 
+ **integrationId** | **String**| Filter by sessions with this integrationId. Must be exact match. | [optional] 
+ **customerId** | **String**| Filter by integration ID of the customer for the session | [optional] 
 
 ### Return type
 
@@ -4007,50 +4012,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse20021**](InlineResponse20021.md)
-
-### Authorization
-
-[manager_auth](../README.md#manager_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="refreshAnalytics"></a>
-# **refreshAnalytics**
-> refreshAnalytics()
-
-Trigger refresh on stale analytics.
-
-Should be used to trigger a manual refresh of analytics.
-
-### Example
-```javascript
-var TalonOne = require('talon_one');
-var defaultClient = TalonOne.ApiClient.instance;
-
-// Configure API key authorization: manager_auth
-var manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix = 'Token';
-
-var apiInstance = new TalonOne.ManagementApi();
-apiInstance.refreshAnalytics().then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

@@ -74,6 +74,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instance = new TalonOne.UpdateAccount();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property planExpires (base name: "planExpires")', function() {
+      // uncomment below and update the code to test the property planExpires
+      //var instance = new TalonOne.UpdateAccount();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

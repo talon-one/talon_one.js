@@ -36,7 +36,7 @@
   /**
    * The UpdateAccount model module.
    * @module model/UpdateAccount
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
@@ -52,6 +52,8 @@
 
     _this['companyName'] = companyName;
     _this['billingEmail'] = billingEmail;
+
+
   };
 
   /**
@@ -74,6 +76,12 @@
       if (data.hasOwnProperty('billingEmail')) {
         obj['billingEmail'] = ApiClient.convertToType(data['billingEmail'], 'String');
       }
+      if (data.hasOwnProperty('state')) {
+        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
+      if (data.hasOwnProperty('planExpires')) {
+        obj['planExpires'] = ApiClient.convertToType(data['planExpires'], 'Date');
+      }
     }
     return obj;
   }
@@ -93,7 +101,34 @@
    * @member {String} billingEmail
    */
   exports.prototype['billingEmail'] = undefined;
+  /**
+   * State of the account (active, deactivated)
+   * @member {module:model/UpdateAccount.StateEnum} state
+   */
+  exports.prototype['state'] = undefined;
+  /**
+   * The point in time at which your current plan expires.
+   * @member {Date} planExpires
+   */
+  exports.prototype['planExpires'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>state</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.StateEnum = {
+    /**
+     * value: "active"
+     * @const
+     */
+    "active": "active",
+    /**
+     * value: "deactivated"
+     * @const
+     */
+    "deactivated": "deactivated"  };
 
 
   return exports;

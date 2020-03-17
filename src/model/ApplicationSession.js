@@ -36,7 +36,7 @@
   /**
    * The ApplicationSession model module.
    * @module model/ApplicationSession
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
@@ -62,6 +62,7 @@
     _this['applicationId'] = applicationId;
 
     _this['integrationId'] = integrationId;
+
     _this['coupon'] = coupon;
     _this['referral'] = referral;
     _this['state'] = state;
@@ -96,6 +97,9 @@
       }
       if (data.hasOwnProperty('integrationId')) {
         obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
+      }
+      if (data.hasOwnProperty('profileintegrationid')) {
+        obj['profileintegrationid'] = ApiClient.convertToType(data['profileintegrationid'], 'String');
       }
       if (data.hasOwnProperty('coupon')) {
         obj['coupon'] = ApiClient.convertToType(data['coupon'], 'String');
@@ -147,6 +151,11 @@
    * @member {String} integrationId
    */
   exports.prototype['integrationId'] = undefined;
+  /**
+   * Integration ID of the customer for the session.
+   * @member {String} profileintegrationid
+   */
+  exports.prototype['profileintegrationid'] = undefined;
   /**
    * Any coupon code entered.
    * @member {String} coupon

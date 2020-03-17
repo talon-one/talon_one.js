@@ -36,7 +36,7 @@
   /**
    * The CodeGeneratorSettings model module.
    * @module model/CodeGeneratorSettings
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

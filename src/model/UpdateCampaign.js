@@ -36,7 +36,7 @@
   /**
    * The UpdateCampaign model module.
    * @module model/UpdateCampaign
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

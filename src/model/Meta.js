@@ -36,7 +36,7 @@
   /**
    * The Meta model module.
    * @module model/Meta
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The Binding model module.
    * @module model/Binding
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

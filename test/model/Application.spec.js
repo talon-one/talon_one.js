@@ -128,12 +128,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property key (base name: "key")', function() {
-      // uncomment below and update the code to test the property key
-      //var instance = new TalonOne.Application();
-      //expect(instance).to.be();
-    });
-
     it('should have the property loyaltyPrograms (base name: "loyaltyPrograms")', function() {
       // uncomment below and update the code to test the property loyaltyPrograms
       //var instance = new TalonOne.Application();

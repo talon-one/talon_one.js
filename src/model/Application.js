@@ -36,7 +36,7 @@
   /**
    * The Application model module.
    * @module model/Application
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
@@ -51,10 +51,9 @@
    * @param name {String} The name of this application.
    * @param timezone {String} A string containing an IANA timezone descriptor.
    * @param currency {String} A string describing a default currency for new customer sessions.
-   * @param key {String} Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
    * @param loyaltyPrograms {Array.<module:model/LoyaltyProgram>} An array containing all the loyalty programs to which this application is subscribed
    */
-  var exports = function(id, created, modified, accountId, name, timezone, currency, key, loyaltyPrograms) {
+  var exports = function(id, created, modified, accountId, name, timezone, currency, loyaltyPrograms) {
     var _this = this;
 
     _this['id'] = id;
@@ -69,7 +68,6 @@
 
 
 
-    _this['key'] = key;
     _this['loyaltyPrograms'] = loyaltyPrograms;
   };
 
@@ -119,9 +117,6 @@
       }
       if (data.hasOwnProperty('attributesSettings')) {
         obj['attributesSettings'] = AttributesSettings.constructFromObject(data['attributesSettings']);
-      }
-      if (data.hasOwnProperty('key')) {
-        obj['key'] = ApiClient.convertToType(data['key'], 'String');
       }
       if (data.hasOwnProperty('loyaltyPrograms')) {
         obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
@@ -189,11 +184,6 @@
    * @member {module:model/AttributesSettings} attributesSettings
    */
   exports.prototype['attributesSettings'] = undefined;
-  /**
-   * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
-   * @member {String} key
-   */
-  exports.prototype['key'] = undefined;
   /**
    * An array containing all the loyalty programs to which this application is subscribed
    * @member {Array.<module:model/LoyaltyProgram>} loyaltyPrograms

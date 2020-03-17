@@ -36,7 +36,7 @@
   /**
    * The ReferralRejectionReason model module.
    * @module model/ReferralRejectionReason
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

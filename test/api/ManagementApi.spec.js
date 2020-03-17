@@ -710,16 +710,6 @@
         done();
       });
     });
-    describe('refreshAnalytics', function() {
-      it('should call refreshAnalytics successfully', function(done) {
-        //uncomment below and update the code to test refreshAnalytics
-        //instance.refreshAnalytics(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('removeLoyaltyPoints', function() {
       it('should call removeLoyaltyPoints successfully', function(done) {
         //uncomment below and update the code to test removeLoyaltyPoints

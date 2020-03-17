@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **attributes** | **Object** | Arbitrary properties associated with this campaign | [optional] 
 **limits** | [**[LimitConfig]**](LimitConfig.md) | Default limits for campaigns created in this application | [optional] 
 **attributesSettings** | [**AttributesSettings**](AttributesSettings.md) |  | [optional] 
-**key** | **String** | Hex key for HMAC-signing API calls as coming from this application (16 hex digits) | 
 **loyaltyPrograms** | [**[LoyaltyProgram]**](LoyaltyProgram.md) | An array containing all the loyalty programs to which this application is subscribed | 
 
 

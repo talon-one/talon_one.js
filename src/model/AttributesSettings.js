@@ -36,7 +36,7 @@
   /**
    * The AttributesSettings model module.
    * @module model/AttributesSettings
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

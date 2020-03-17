@@ -36,7 +36,7 @@
   /**
    * The UserEntity model module.
    * @module model/UserEntity
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**

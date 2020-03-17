@@ -56,26 +56,8 @@
       //expect(instance).to.be.a(TalonOne.UpdateUser);
     });
 
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instance = new TalonOne.UpdateUser();
-      //expect(instance).to.be();
-    });
-
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new TalonOne.UpdateUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property password (base name: "password")', function() {
-      // uncomment below and update the code to test the property password
-      //var instance = new TalonOne.UpdateUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property newPassword (base name: "newPassword")', function() {
-      // uncomment below and update the code to test the property newPassword
       //var instance = new TalonOne.UpdateUser();
       //expect(instance).to.be();
     });

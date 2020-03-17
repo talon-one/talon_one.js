@@ -36,7 +36,7 @@
   /**
    * The NewAttribute model module.
    * @module model/NewAttribute
-   * @version 3.4.0
+   * @version 4.0.0
    */
 
   /**
@@ -45,7 +45,7 @@
    * @alias module:model/NewAttribute
    * @class
    * @param entity {module:model/NewAttribute.EntityEnum} The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an `attributes` object with keys corresponding to the `name` of the custom attributes for that type.
-   * @param name {String} The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload. 
+   * @param name {String} The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload.
    * @param title {String} The human-readable name for the attribute that will be shown in the Campaign Manager. Like `name`, the combination of entity and title must also be unique.
    * @param type {module:model/NewAttribute.TypeEnum} The data type of the attribute, a `time` attribute must be sent as a string that conforms to the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp format.
    * @param description {String} A description of this attribute.
@@ -63,6 +63,7 @@
     _this['description'] = description;
     _this['suggestions'] = suggestions;
     _this['editable'] = editable;
+
   };
 
   /**
@@ -100,6 +101,9 @@
       if (data.hasOwnProperty('editable')) {
         obj['editable'] = ApiClient.convertToType(data['editable'], 'Boolean');
       }
+      if (data.hasOwnProperty('subscribedApplicationsIds')) {
+        obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
+      }
     }
     return obj;
   }
@@ -114,7 +118,7 @@
    */
   exports.prototype['eventType'] = undefined;
   /**
-   * The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload. 
+   * The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
@@ -143,6 +147,11 @@
    * @member {Boolean} editable
    */
   exports.prototype['editable'] = undefined;
+  /**
+   * A list of the IDs of the applications that are subscribed to this attribute
+   * @member {Array.<Number>} subscribedApplicationsIds
+   */
+  exports.prototype['subscribedApplicationsIds'] = undefined;
 
 
   /**

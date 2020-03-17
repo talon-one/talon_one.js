@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property profileintegrationid (base name: "profileintegrationid")', function() {
+      // uncomment below and update the code to test the property profileintegrationid
+      //var instance = new TalonOne.ApplicationSession();
+      //expect(instance).to.be();
+    });
+
     it('should have the property coupon (base name: "coupon")', function() {
       // uncomment below and update the code to test the property coupon
       //var instance = new TalonOne.ApplicationSession();
