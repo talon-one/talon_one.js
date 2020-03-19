@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **policy** | **String** | A blob of ACL JSON | 
 **releaseUpdate** | **Boolean** | Update the user via email | 
 **latestFeature** | **String** | Latest feature the user has been notified. | [optional] 
-**roles** | **[Number]** | Contains a list of all roles a user is a memeber of | [optional] 
+**roles** | **[Number]** | Contains a list of all roles the user is a member of | [optional] 
 **applicationNotificationSubscriptions** | **Object** |  | [optional] 
 **authMethod** | **String** | The Authentication method for this user | [optional] 
 

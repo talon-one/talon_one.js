@@ -48,7 +48,7 @@
    * @param rulesetId {Number} The ID of the ruleset that was active in the campaign when this effect was triggered
    * @param ruleIndex {Number} The position of the rule that triggered this effect within the ruleset
    * @param ruleName {String} The name of the rule that triggered this effect
-   * @param effectType {String} 
+   * @param effectType {String} The type of effect that was triggered
    */
   var exports = function(campaignId, rulesetId, ruleIndex, ruleName, effectType) {
     var _this = this;
@@ -111,6 +111,7 @@
    */
   exports.prototype['ruleName'] = undefined;
   /**
+   * The type of effect that was triggered
    * @member {String} effectType
    */
   exports.prototype['effectType'] = undefined;

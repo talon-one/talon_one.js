@@ -44,7 +44,7 @@
    * Customer specific information about loyalty points.
    * @alias module:model/LoyaltyProgramLedgers
    * @class
-   * @param title {String} Visable name of loyalty program
+   * @param title {String} Visible name of loyalty program
    * @param name {String} Internal name of loyalty program
    * @param ledger {module:model/LoyaltyProgramBalance} The balance of the main ledger in the loyalty program
    */
@@ -85,7 +85,7 @@
   }
 
   /**
-   * Visable name of loyalty program
+   * Visible name of loyalty program
    * @member {String} title
    */
   exports.prototype['title'] = undefined;

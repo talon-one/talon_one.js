@@ -96,7 +96,7 @@
    */
   exports.prototype['acl'] = undefined;
   /**
-   * an array of userids
+   * an array of user identifiers
    * @member {Array.<Number>} users
    */
   exports.prototype['users'] = undefined;

@@ -187,7 +187,7 @@
    */
   exports.prototype['latestFeature'] = undefined;
   /**
-   * Contains a list of all roles a user is a memeber of
+   * Contains a list of all roles the user is a member of
    * @member {Array.<Number>} roles
    */
   exports.prototype['roles'] = undefined;

@@ -112,7 +112,7 @@
    */
   exports.prototype['description'] = undefined;
   /**
-   * A list of userid in this role
+   * A list of user identifiers assigned to this role
    * @member {Array.<Number>} members
    */
   exports.prototype['members'] = undefined;
