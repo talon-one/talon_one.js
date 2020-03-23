@@ -1,6 +1,7 @@
 # TalonOne.AccountAnalytics
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applications** | **Number** | Total Number of Applications inside the account | 

@@ -1,6 +1,7 @@
 # TalonOne.RejectCouponEffectProps
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **String** | The coupon code that was rejected | 

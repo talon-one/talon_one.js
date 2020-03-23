@@ -1,6 +1,7 @@
 # TalonOne.CartItemAdjustment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payFromLoyaltyProgram** | **Number** | Loyalty Program to be used for payment | 

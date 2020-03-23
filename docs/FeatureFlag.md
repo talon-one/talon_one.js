@@ -1,6 +1,7 @@
 # TalonOne.FeatureFlag
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name for the featureflag | 

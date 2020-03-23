@@ -1,6 +1,7 @@
 # TalonOne.User
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 
@@ -15,11 +16,11 @@ Name | Type | Description | Notes
 **releaseUpdate** | **Boolean** | Update the user via email | 
 **latestFeature** | **String** | Latest feature the user has been notified. | [optional] 
 **roles** | **[Number]** | Contains a list of all roles the user is a member of | [optional] 
-**applicationNotificationSubscriptions** | **Object** |  | [optional] 
+**applicationNotificationSubscriptions** | [**Object**](.md) |  | [optional] 
 **authMethod** | **String** | The Authentication method for this user | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

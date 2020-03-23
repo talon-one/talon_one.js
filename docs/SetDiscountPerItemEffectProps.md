@@ -1,6 +1,7 @@
 # TalonOne.SetDiscountPerItemEffectProps
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name/description of this discount | 

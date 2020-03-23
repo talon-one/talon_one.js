@@ -1,6 +1,7 @@
 # TalonOne.Notification
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | id of the notification | 

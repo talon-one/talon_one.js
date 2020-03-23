@@ -1,6 +1,7 @@
 # TalonOne.Role
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | The ID of the role corresponding to the DB row | 

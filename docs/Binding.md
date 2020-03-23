@@ -1,6 +1,7 @@
 # TalonOne.Binding
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | A descriptive name for the value to be bound. | 

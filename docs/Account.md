@@ -1,6 +1,7 @@
 # TalonOne.Account
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 
@@ -20,10 +21,10 @@ Name | Type | Description | Notes
 **userCount** | **Number** | The current number of Campaign Manager Users in your account. | 
 **campaignsActiveCount** | **Number** | The current number of active Campaigns in your account. | 
 **campaignsInactiveCount** | **Number** | The current number of inactive Campaigns in your account. | 
-**attributes** | **Object** | Arbitrary properties associated with this campaign | [optional] 
+**attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

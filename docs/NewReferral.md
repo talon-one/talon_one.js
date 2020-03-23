@@ -1,6 +1,7 @@
 # TalonOne.NewReferral
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaignId** | **Number** | ID of the campaign from which the referral received the referral code. | 

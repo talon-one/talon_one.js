@@ -1,6 +1,7 @@
 # TalonOne.UpdateUser
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | Your name. | [optional] 
@@ -9,10 +10,10 @@ Name | Type | Description | Notes
 **releaseUpdate** | **Boolean** | Update the user via email | [optional] 
 **latestFeature** | **String** | The latest feature you&#39;ve been notified. | [optional] 
 **roles** | **[Number]** | Update | [optional] 
-**applicationNotificationSubscriptions** | **Object** |  | [optional] 
+**applicationNotificationSubscriptions** | [**Object**](.md) |  | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

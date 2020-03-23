@@ -1,6 +1,7 @@
 # TalonOne.LoyaltyPoints
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **points** | **Number** | Amount of loyalty points | 

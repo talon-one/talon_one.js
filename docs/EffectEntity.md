@@ -1,6 +1,7 @@
 # TalonOne.EffectEntity
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaignId** | **Number** | The ID of the campaign that triggered this effect | 

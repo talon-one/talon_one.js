@@ -1,6 +1,7 @@
 # TalonOne.AddLoyaltyPointsEffectProps
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name/description of this loyalty point addition | 

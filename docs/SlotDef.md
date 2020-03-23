@@ -1,6 +1,7 @@
 # TalonOne.SlotDef
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The dot-separated path to this slot for use in Talang. | 

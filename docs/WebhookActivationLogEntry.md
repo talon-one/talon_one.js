@@ -1,6 +1,7 @@
 # TalonOne.WebhookActivationLogEntry
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integrationRequestUuid** | **String** | UUID reference of the integration request that triggered the effect with the webhook | 

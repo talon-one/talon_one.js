@@ -1,6 +1,7 @@
 # TalonOne.NewTemplateDef
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **String** | Campaigner-friendly name for the template that will be shown in the rule editor. | 

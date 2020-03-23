@@ -1,6 +1,7 @@
 # TalonOne.LoyaltyLedgerEntry
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created** | **Date** |  | 
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 **subLedgerID** | **String** | This specifies if we are adding loyalty points to the main ledger or a subledger | 
 
 
-<a name="TypeEnum"></a>
+
 ## Enum: TypeEnum
 
 

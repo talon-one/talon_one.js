@@ -1,6 +1,7 @@
 # TalonOne.AccountLimits
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **liveApplications** | **Number** | Total Number of allowed live applications in the account | 

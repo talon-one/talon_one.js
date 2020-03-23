@@ -1,6 +1,7 @@
 # TalonOne.CampaignSetBranchNode
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** | Indicates the node type | 
@@ -9,7 +10,7 @@ Name | Type | Description | Notes
 **elements** | [**[CampaignSetNode]**](CampaignSetNode.md) | Child elements of this set | 
 
 
-<a name="TypeEnum"></a>
+
 ## Enum: TypeEnum
 
 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 
 
 
-<a name="OperatorEnum"></a>
+
 ## Enum: OperatorEnum
 
 

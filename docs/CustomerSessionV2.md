@@ -1,6 +1,7 @@
 # TalonOne.CustomerSessionV2
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integrationId** | **String** | The ID used for this entity in the application system. | 
@@ -13,14 +14,14 @@ Name | Type | Description | Notes
 **cartItems** | [**[CartItem]**](CartItem.md) | All items the customer will be purchasing in this session | 
 **additionalCosts** | [**{String: AdditionalCost}**](AdditionalCost.md) | Any costs associated with the session that can not be explicitly attributed to cart items. Examples include shipping costs and service fees. | [optional] 
 **identifiers** | **[String]** | Identifiers for the customer, this can be used for limits on values such as device ID. | [optional] 
-**attributes** | **Object** | A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings.  | 
+**attributes** | [**Object**](.md) | A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings.  | 
 **firstSession** | **Boolean** | Indicates whether this is the first session for the customer&#39;s profile. Will always be true for anonymous sessions. | 
 **total** | **Number** | The total sum of cart-items, as well as additional costs, before any discounts applied | 
 **cartItemTotal** | **Number** | The total sum of cart-items before any discounts applied | 
 **additionalCostTotal** | **Number** | The total sum of additional costs before any discounts applied | 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

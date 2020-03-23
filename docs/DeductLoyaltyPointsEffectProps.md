@@ -1,6 +1,7 @@
 # TalonOne.DeductLoyaltyPointsEffectProps
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ruleTitle** | **String** | The title of the rule that contained triggered this points deduction | 

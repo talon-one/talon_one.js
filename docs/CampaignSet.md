@@ -1,6 +1,7 @@
 # TalonOne.CampaignSet
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 

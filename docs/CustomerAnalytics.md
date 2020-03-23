@@ -1,6 +1,7 @@
 # TalonOne.CustomerAnalytics
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acceptedCoupons** | **Number** | Total accepted coupons for this customer | 
