@@ -24,7 +24,7 @@ import Referral from './Referral';
 /**
  * The IntegrationStateV2 model module.
  * @module model/IntegrationStateV2
- * @version 1.0.0
+ * @version 4.0.0
  */
 class IntegrationStateV2 {
     /**

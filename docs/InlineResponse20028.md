@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[ModelImport]**](ModelImport.md) |  | 
+**data** | [**[ModelExport]**](ModelExport.md) |  | 
 
 

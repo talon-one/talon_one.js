@@ -30,7 +30,7 @@ import Referral from '../model/Referral';
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 1.0.0
+* @version 4.0.0
 */
 export default class IntegrationApi {
 

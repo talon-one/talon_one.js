@@ -17,7 +17,7 @@ import Application from './Application';
 /**
  * The InlineResponse2002 model module.
  * @module model/InlineResponse2002
- * @version 1.0.0
+ * @version 4.0.0
  */
 class InlineResponse2002 {
     /**

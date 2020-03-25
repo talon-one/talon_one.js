@@ -18,6 +18,7 @@ import AcceptCouponEffectProps from './model/AcceptCouponEffectProps';
 import AcceptReferralEffectProps from './model/AcceptReferralEffectProps';
 import AccessLogEntry from './model/AccessLogEntry';
 import Account from './model/Account';
+import AccountAdditionalCost from './model/AccountAdditionalCost';
 import AccountAnalytics from './model/AccountAnalytics';
 import AccountEntity from './model/AccountEntity';
 import AccountLimits from './model/AccountLimits';
@@ -109,6 +110,7 @@ import InlineResponse20027 from './model/InlineResponse20027';
 import InlineResponse20028 from './model/InlineResponse20028';
 import InlineResponse20029 from './model/InlineResponse20029';
 import InlineResponse2003 from './model/InlineResponse2003';
+import InlineResponse20030 from './model/InlineResponse20030';
 import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
@@ -143,6 +145,7 @@ import MultiApplicationEntity from './model/MultiApplicationEntity';
 import MutableEntity from './model/MutableEntity';
 import NewAccount from './model/NewAccount';
 import NewAccountSignUp from './model/NewAccountSignUp';
+import NewAdditionalCost from './model/NewAdditionalCost';
 import NewApplication from './model/NewApplication';
 import NewApplicationAPIKey from './model/NewApplicationAPIKey';
 import NewAttribute from './model/NewAttribute';
@@ -241,7 +244,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.0
+* @version 4.0.0
 */
 export {
     /**
@@ -279,6 +282,12 @@ export {
      * @property {module:model/Account}
      */
     Account,
+
+    /**
+     * The AccountAdditionalCost model constructor.
+     * @property {module:model/AccountAdditionalCost}
+     */
+    AccountAdditionalCost,
 
     /**
      * The AccountAnalytics model constructor.
@@ -827,6 +836,12 @@ export {
     InlineResponse2003,
 
     /**
+     * The InlineResponse20030 model constructor.
+     * @property {module:model/InlineResponse20030}
+     */
+    InlineResponse20030,
+
+    /**
      * The InlineResponse2004 model constructor.
      * @property {module:model/InlineResponse2004}
      */
@@ -1029,6 +1044,12 @@ export {
      * @property {module:model/NewAccountSignUp}
      */
     NewAccountSignUp,
+
+    /**
+     * The NewAdditionalCost model constructor.
+     * @property {module:model/NewAdditionalCost}
+     */
+    NewAdditionalCost,
 
     /**
      * The NewApplication model constructor.

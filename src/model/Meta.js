@@ -18,7 +18,7 @@ import ReferralRejectionReason from './ReferralRejectionReason';
 /**
  * The Meta model module.
  * @module model/Meta
- * @version 1.0.0
+ * @version 4.0.0
  */
 class Meta {
     /**

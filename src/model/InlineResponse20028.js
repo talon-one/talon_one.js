@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import ModelImport from './ModelImport';
+import ModelExport from './ModelExport';
 
 /**
  * The InlineResponse20028 model module.
  * @module model/InlineResponse20028
- * @version 1.0.0
+ * @version 4.0.0
  */
 class InlineResponse20028 {
     /**
      * Constructs a new <code>InlineResponse20028</code>.
      * @alias module:model/InlineResponse20028
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/ModelImport>} 
+     * @param data {Array.<module:model/ModelExport>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20028 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ModelImport]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20028 {
 InlineResponse20028.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ModelImport>} data
+ * @member {Array.<module:model/ModelExport>} data
  */
 InlineResponse20028.prototype['data'] = undefined;
 

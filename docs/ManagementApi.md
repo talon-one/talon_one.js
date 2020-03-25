@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addLoyaltyPoints**](ManagementApi.md#addLoyaltyPoints) | **PUT** /v1/loyalty_programs/{programID}/profile/{integrationID}/add_points | Add points in a certain loyalty program for the specified customer
 [**copyCampaignToApplications**](ManagementApi.md#copyCampaignToApplications) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/copy | Copy the campaign into every specified application
+[**createAdditionalCost**](ManagementApi.md#createAdditionalCost) | **POST** /v1/additional_costs | Define a new additional cost
 [**createAttribute**](ManagementApi.md#createAttribute) | **POST** /v1/attributes | Define a new custom attribute
 [**createCampaign**](ManagementApi.md#createCampaign) | **POST** /v1/applications/{applicationId}/campaigns | Create a Campaign
 [**createCoupons**](ManagementApi.md#createCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Create Coupons
@@ -21,6 +22,8 @@ Method | HTTP request | Description
 [**getAccessLogsWithoutTotalCount**](ManagementApi.md#getAccessLogsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/access_logs/no_total | Get access logs for application
 [**getAccount**](ManagementApi.md#getAccount) | **GET** /v1/accounts/{accountId} | Get Account Details
 [**getAccountAnalytics**](ManagementApi.md#getAccountAnalytics) | **GET** /v1/accounts/{accountId}/analytics | Get Account Analytics
+[**getAdditionalCost**](ManagementApi.md#getAdditionalCost) | **GET** /v1/additional_costs/{additionalCostId} | Get an additional cost
+[**getAdditionalCosts**](ManagementApi.md#getAdditionalCosts) | **GET** /v1/additional_costs | List additional costs
 [**getAllAccessLogs**](ManagementApi.md#getAllAccessLogs) | **GET** /v1/access_logs | Get all access logs
 [**getAllRoles**](ManagementApi.md#getAllRoles) | **GET** /v1/roles | Get all roles.
 [**getApplication**](ManagementApi.md#getApplication) | **GET** /v1/applications/{applicationId} | Get Application
@@ -76,6 +79,7 @@ Method | HTTP request | Description
 [**searchCouponsAdvancedApplicationWide**](ManagementApi.md#searchCouponsAdvancedApplicationWide) | **POST** /v1/applications/{applicationId}/coupons_search_advanced | Get a list of the coupons that match the given attributes in all active campaigns of an application
 [**searchCouponsAdvancedApplicationWideWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedApplicationWideWithoutTotalCount) | **POST** /v1/applications/{applicationId}/coupons_search_advanced/no_total | Get a list of the coupons that match the given attributes in all active campaigns of an application
 [**searchCouponsAdvancedWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedWithoutTotalCount) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total | Get a list of the coupons that match the given attributes
+[**updateAdditionalCost**](ManagementApi.md#updateAdditionalCost) | **PUT** /v1/additional_costs/{additionalCostId} | Update an additional cost
 [**updateAttribute**](ManagementApi.md#updateAttribute) | **PUT** /v1/attributes/{attributeId} | Update a custom attribute
 [**updateCampaign**](ManagementApi.md#updateCampaign) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId} | Update a Campaign
 [**updateCampaignSet**](ManagementApi.md#updateCampaignSet) | **PUT** /v1/applications/{applicationId}/campaign_set | Update a Campaign Set
@@ -180,6 +184,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2003**](InlineResponse2003.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createAdditionalCost
+
+> AccountAdditionalCost createAdditionalCost(body)
+
+Define a new additional cost
+
+Defines a new _additional cost_ in this account.  These additional costs are shared across all applications in your account, and are never required. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let body = new TalonOne.NewAdditionalCost(); // NewAdditionalCost | 
+apiInstance.createAdditionalCost(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**NewAdditionalCost**](NewAdditionalCost.md)|  | 
+
+### Return type
+
+[**AccountAdditionalCost**](AccountAdditionalCost.md)
 
 ### Authorization
 
@@ -1015,6 +1069,112 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getAdditionalCost
+
+> AccountAdditionalCost getAdditionalCost(additionalCostId)
+
+Get an additional cost
+
+Returns additional cost for the account by its id. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let additionalCostId = 56; // Number | 
+apiInstance.getAdditionalCost(additionalCostId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **additionalCostId** | **Number**|  | 
+
+### Return type
+
+[**AccountAdditionalCost**](AccountAdditionalCost.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getAdditionalCosts
+
+> InlineResponse20021 getAdditionalCosts(opts)
+
+List additional costs
+
+Returns all the defined additional costs for the account. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let opts = {
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'skip': 56, // Number | Skips the given number of items when paging through large result sets.
+  'sort': "sort_example" // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+};
+apiInstance.getAdditionalCosts(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
+ **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
+
+### Return type
+
+[**InlineResponse20021**](InlineResponse20021.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getAllAccessLogs
 
 > InlineResponse2009 getAllAccessLogs(rangeStart, rangeEnd, opts)
@@ -1083,7 +1243,7 @@ Name | Type | Description  | Notes
 
 ## getAllRoles
 
-> InlineResponse20029 getAllRoles()
+> InlineResponse20030 getAllRoles()
 
 Get all roles.
 
@@ -1113,7 +1273,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**InlineResponse20030**](InlineResponse20030.md)
 
 ### Authorization
 
@@ -2155,7 +2315,7 @@ Name | Type | Description  | Notes
 
 ## getChanges
 
-> InlineResponse20026 getChanges(opts)
+> InlineResponse20027 getChanges(opts)
 
 Get audit log for an account
 
@@ -2207,7 +2367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -2961,7 +3121,7 @@ Name | Type | Description  | Notes
 
 ## getEventTypes
 
-> InlineResponse20024 getEventTypes(opts)
+> InlineResponse20025 getEventTypes(opts)
 
 List Event Types
 
@@ -3009,7 +3169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -3023,7 +3183,7 @@ Name | Type | Description  | Notes
 
 ## getExports
 
-> InlineResponse20027 getExports(opts)
+> InlineResponse20028 getExports(opts)
 
 Get Exports
 
@@ -3069,7 +3229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -3083,7 +3243,7 @@ Name | Type | Description  | Notes
 
 ## getImports
 
-> InlineResponse20028 getImports(opts)
+> InlineResponse20029 getImports(opts)
 
 Get Imports
 
@@ -3123,7 +3283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -3629,7 +3789,7 @@ Name | Type | Description  | Notes
 
 ## getUsers
 
-> InlineResponse20025 getUsers(opts)
+> InlineResponse20026 getUsers(opts)
 
 List Users in your account
 
@@ -3671,7 +3831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -3735,7 +3895,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookActivationLogs
 
-> InlineResponse20022 getWebhookActivationLogs(opts)
+> InlineResponse20023 getWebhookActivationLogs(opts)
 
 List Webhook activation Log Entries
 
@@ -3789,7 +3949,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -3803,7 +3963,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookLogs
 
-> InlineResponse20023 getWebhookLogs(opts)
+> InlineResponse20024 getWebhookLogs(opts)
 
 List Webhook Log Entries
 
@@ -3857,7 +4017,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -3871,7 +4031,7 @@ Name | Type | Description  | Notes
 
 ## getWebhooks
 
-> InlineResponse20021 getWebhooks(opts)
+> InlineResponse20022 getWebhooks(opts)
 
 List Webhooks
 
@@ -3913,7 +4073,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -4336,6 +4496,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2005**](InlineResponse2005.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAdditionalCost
+
+> AccountAdditionalCost updateAdditionalCost(additionalCostId, body)
+
+Update an additional cost
+
+Updates an existing additional cost. Once created, the only property of an additional cost that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let additionalCostId = 56; // Number | 
+let body = new TalonOne.NewAdditionalCost(); // NewAdditionalCost | 
+apiInstance.updateAdditionalCost(additionalCostId, body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **additionalCostId** | **Number**|  | 
+ **body** | [**NewAdditionalCost**](NewAdditionalCost.md)|  | 
+
+### Return type
+
+[**AccountAdditionalCost**](AccountAdditionalCost.md)
 
 ### Authorization
 

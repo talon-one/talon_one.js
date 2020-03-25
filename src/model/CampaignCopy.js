@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignCopy model module.
  * @module model/CampaignCopy
- * @version 1.0.0
+ * @version 4.0.0
  */
 class CampaignCopy {
     /**

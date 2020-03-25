@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('createAdditionalCost', function() {
+      it('should call createAdditionalCost successfully', function(done) {
+        //uncomment below and update the code to test createAdditionalCost
+        //instance.createAdditionalCost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createAttribute', function() {
       it('should call createAttribute successfully', function(done) {
         //uncomment below and update the code to test createAttribute
@@ -212,6 +222,26 @@
       it('should call getAccountAnalytics successfully', function(done) {
         //uncomment below and update the code to test getAccountAnalytics
         //instance.getAccountAnalytics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAdditionalCost', function() {
+      it('should call getAdditionalCost successfully', function(done) {
+        //uncomment below and update the code to test getAdditionalCost
+        //instance.getAdditionalCost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAdditionalCosts', function() {
+      it('should call getAdditionalCosts successfully', function(done) {
+        //uncomment below and update the code to test getAdditionalCosts
+        //instance.getAdditionalCosts(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -762,6 +792,16 @@
       it('should call searchCouponsAdvancedWithoutTotalCount successfully', function(done) {
         //uncomment below and update the code to test searchCouponsAdvancedWithoutTotalCount
         //instance.searchCouponsAdvancedWithoutTotalCount(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateAdditionalCost', function() {
+      it('should call updateAdditionalCost successfully', function(done) {
+        //uncomment below and update the code to test updateAdditionalCost
+        //instance.updateAdditionalCost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

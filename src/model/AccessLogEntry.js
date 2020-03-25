@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessLogEntry model module.
  * @module model/AccessLogEntry
- * @version 1.0.0
+ * @version 4.0.0
  */
 class AccessLogEntry {
     /**

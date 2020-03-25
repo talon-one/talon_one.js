@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The NewWebhook model module.
  * @module model/NewWebhook
- * @version 1.0.0
+ * @version 4.0.0
  */
 class NewWebhook {
     /**

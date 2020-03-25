@@ -17,7 +17,7 @@ import ErrorSource from './ErrorSource';
 /**
  * The APIError model module.
  * @module model/APIError
- * @version 1.0.0
+ * @version 4.0.0
  */
 class APIError {
     /**

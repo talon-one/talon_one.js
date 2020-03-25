@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Attribute model module.
  * @module model/Attribute
- * @version 1.0.0
+ * @version 4.0.0
  */
 class Attribute {
     /**

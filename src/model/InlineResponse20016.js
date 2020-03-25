@@ -17,7 +17,7 @@ import ApplicationSession from './ApplicationSession';
 /**
  * The InlineResponse20016 model module.
  * @module model/InlineResponse20016
- * @version 1.0.0
+ * @version 4.0.0
  */
 class InlineResponse20016 {
     /**

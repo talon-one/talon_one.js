@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Account from '../model/Account';
+import AccountAdditionalCost from '../model/AccountAdditionalCost';
 import AccountAnalytics from '../model/AccountAnalytics';
 import Application from '../model/Application';
 import ApplicationApiHealth from '../model/ApplicationApiHealth';
@@ -52,6 +53,7 @@ import InlineResponse20027 from '../model/InlineResponse20027';
 import InlineResponse20028 from '../model/InlineResponse20028';
 import InlineResponse20029 from '../model/InlineResponse20029';
 import InlineResponse2003 from '../model/InlineResponse2003';
+import InlineResponse20030 from '../model/InlineResponse20030';
 import InlineResponse2004 from '../model/InlineResponse2004';
 import InlineResponse2005 from '../model/InlineResponse2005';
 import InlineResponse2006 from '../model/InlineResponse2006';
@@ -62,6 +64,7 @@ import LoginParams from '../model/LoginParams';
 import LoyaltyLedger from '../model/LoyaltyLedger';
 import LoyaltyPoints from '../model/LoyaltyPoints';
 import LoyaltyProgram from '../model/LoyaltyProgram';
+import NewAdditionalCost from '../model/NewAdditionalCost';
 import NewAttribute from '../model/NewAttribute';
 import NewCampaign from '../model/NewCampaign';
 import NewCampaignSet from '../model/NewCampaignSet';
@@ -81,7 +84,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 1.0.0
+* @version 4.0.0
 */
 export default class ManagementApi {
 
@@ -212,6 +215,53 @@ export default class ManagementApi {
      */
     copyCampaignToApplications(applicationId, campaignId, body) {
       return this.copyCampaignToApplicationsWithHttpInfo(applicationId, campaignId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Define a new additional cost
+     * Defines a new _additional cost_ in this account.  These additional costs are shared across all applications in your account, and are never required. 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountAdditionalCost} and HTTP response
+     */
+    createAdditionalCostWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAdditionalCost");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AccountAdditionalCost;
+      return this.apiClient.callApi(
+        '/v1/additional_costs', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Define a new additional cost
+     * Defines a new _additional cost_ in this account.  These additional costs are shared across all applications in your account, and are never required. 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountAdditionalCost}
+     */
+    createAdditionalCost(body) {
+      return this.createAdditionalCostWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1122,6 +1172,107 @@ export default class ManagementApi {
 
 
     /**
+     * Get an additional cost
+     * Returns additional cost for the account by its id. 
+     * @param {Number} additionalCostId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountAdditionalCost} and HTTP response
+     */
+    getAdditionalCostWithHttpInfo(additionalCostId) {
+      let postBody = null;
+      // verify the required parameter 'additionalCostId' is set
+      if (additionalCostId === undefined || additionalCostId === null) {
+        throw new Error("Missing the required parameter 'additionalCostId' when calling getAdditionalCost");
+      }
+
+      let pathParams = {
+        'additionalCostId': additionalCostId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = AccountAdditionalCost;
+      return this.apiClient.callApi(
+        '/v1/additional_costs/{additionalCostId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get an additional cost
+     * Returns additional cost for the account by its id. 
+     * @param {Number} additionalCostId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountAdditionalCost}
+     */
+    getAdditionalCost(additionalCostId) {
+      return this.getAdditionalCostWithHttpInfo(additionalCostId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List additional costs
+     * Returns all the defined additional costs for the account. 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     */
+    getAdditionalCostsWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'sort': opts['sort']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20021;
+      return this.apiClient.callApi(
+        '/v1/additional_costs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List additional costs
+     * Returns all the defined additional costs for the account. 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     */
+    getAdditionalCosts(opts) {
+      return this.getAdditionalCostsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get all access logs
      * Fetches the access logs for the entire account. Sensitive requests (logins) are _always_ filtered from the logs. 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
@@ -1199,7 +1350,7 @@ export default class ManagementApi {
 
     /**
      * Get all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
      */
     getAllRolesWithHttpInfo() {
       let postBody = null;
@@ -1216,7 +1367,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20029;
+      let returnType = InlineResponse20030;
       return this.apiClient.callApi(
         '/v1/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1226,7 +1377,7 @@ export default class ManagementApi {
 
     /**
      * Get all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
      */
     getAllRoles() {
       return this.getAllRolesWithHttpInfo()
@@ -2331,7 +2482,7 @@ export default class ManagementApi {
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
      * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
      */
     getChangesWithHttpInfo(opts) {
       opts = opts || {};
@@ -2357,7 +2508,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20026;
+      let returnType = InlineResponse20027;
       return this.apiClient.callApi(
         '/v1/changes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2377,7 +2528,7 @@ export default class ManagementApi {
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
      * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
      */
     getChanges(opts) {
       return this.getChangesWithHttpInfo(opts)
@@ -3263,7 +3414,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
      */
     getEventTypesWithHttpInfo(opts) {
       opts = opts || {};
@@ -3287,7 +3438,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20024;
+      let returnType = InlineResponse20025;
       return this.apiClient.callApi(
         '/v1/event_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3305,7 +3456,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
      */
     getEventTypes(opts) {
       return this.getEventTypesWithHttpInfo(opts)
@@ -3324,7 +3475,7 @@ export default class ManagementApi {
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
      */
     getExportsWithHttpInfo(opts) {
       opts = opts || {};
@@ -3347,7 +3498,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20027;
+      let returnType = InlineResponse20028;
       return this.apiClient.callApi(
         '/v1/exports', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3364,7 +3515,7 @@ export default class ManagementApi {
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
      */
     getExports(opts) {
       return this.getExportsWithHttpInfo(opts)
@@ -3380,7 +3531,7 @@ export default class ManagementApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
      */
     getImportsWithHttpInfo(opts) {
       opts = opts || {};
@@ -3400,7 +3551,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20028;
+      let returnType = InlineResponse20029;
       return this.apiClient.callApi(
         '/v1/imports', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3414,7 +3565,7 @@ export default class ManagementApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
      */
     getImports(opts) {
       return this.getImportsWithHttpInfo(opts)
@@ -3956,7 +4107,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
      */
     getUsersWithHttpInfo(opts) {
       opts = opts || {};
@@ -3977,7 +4128,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20025;
+      let returnType = InlineResponse20026;
       return this.apiClient.callApi(
         '/v1/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3992,7 +4143,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
      */
     getUsers(opts) {
       return this.getUsersWithHttpInfo(opts)
@@ -4063,7 +4214,7 @@ export default class ManagementApi {
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
      */
     getWebhookActivationLogsWithHttpInfo(opts) {
       opts = opts || {};
@@ -4090,7 +4241,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20022;
+      let returnType = InlineResponse20023;
       return this.apiClient.callApi(
         '/v1/webhook_activation_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4111,7 +4262,7 @@ export default class ManagementApi {
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
      */
     getWebhookActivationLogs(opts) {
       return this.getWebhookActivationLogsWithHttpInfo(opts)
@@ -4134,7 +4285,7 @@ export default class ManagementApi {
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
      */
     getWebhookLogsWithHttpInfo(opts) {
       opts = opts || {};
@@ -4162,7 +4313,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20023;
+      let returnType = InlineResponse20024;
       return this.apiClient.callApi(
         '/v1/webhook_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4183,7 +4334,7 @@ export default class ManagementApi {
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
      */
     getWebhookLogs(opts) {
       return this.getWebhookLogsWithHttpInfo(opts)
@@ -4200,7 +4351,7 @@ export default class ManagementApi {
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
      */
     getWebhooksWithHttpInfo(opts) {
       opts = opts || {};
@@ -4222,7 +4373,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20021;
+      let returnType = InlineResponse20022;
       return this.apiClient.callApi(
         '/v1/webhooks', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4237,7 +4388,7 @@ export default class ManagementApi {
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
      */
     getWebhooks(opts) {
       return this.getWebhooksWithHttpInfo(opts)
@@ -4739,6 +4890,60 @@ export default class ManagementApi {
      */
     searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts) {
       return this.searchCouponsAdvancedWithoutTotalCountWithHttpInfo(applicationId, campaignId, body, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update an additional cost
+     * Updates an existing additional cost. Once created, the only property of an additional cost that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. 
+     * @param {Number} additionalCostId 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountAdditionalCost} and HTTP response
+     */
+    updateAdditionalCostWithHttpInfo(additionalCostId, body) {
+      let postBody = body;
+      // verify the required parameter 'additionalCostId' is set
+      if (additionalCostId === undefined || additionalCostId === null) {
+        throw new Error("Missing the required parameter 'additionalCostId' when calling updateAdditionalCost");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAdditionalCost");
+      }
+
+      let pathParams = {
+        'additionalCostId': additionalCostId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AccountAdditionalCost;
+      return this.apiClient.callApi(
+        '/v1/additional_costs/{additionalCostId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update an additional cost
+     * Updates an existing additional cost. Once created, the only property of an additional cost that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. 
+     * @param {Number} additionalCostId 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountAdditionalCost}
+     */
+    updateAdditionalCost(additionalCostId, body) {
+      return this.updateAdditionalCostWithHttpInfo(additionalCostId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

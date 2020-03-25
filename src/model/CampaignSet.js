@@ -17,7 +17,7 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The CampaignSet model module.
  * @module model/CampaignSet
- * @version 1.0.0
+ * @version 4.0.0
  */
 class CampaignSet {
     /**

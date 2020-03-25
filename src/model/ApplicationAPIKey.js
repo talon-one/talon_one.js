@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAPIKey model module.
  * @module model/ApplicationAPIKey
- * @version 1.0.0
+ * @version 4.0.0
  */
 class ApplicationAPIKey {
     /**

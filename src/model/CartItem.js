@@ -17,7 +17,7 @@ import CartItemAdjustment from './CartItemAdjustment';
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 1.0.0
+ * @version 4.0.0
  */
 class CartItem {
     /**
