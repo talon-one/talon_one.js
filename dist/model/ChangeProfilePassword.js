@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ChangeProfilePassword model module.
  * @module model/ChangeProfilePassword
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ChangeProfilePassword = /*#__PURE__*/function () {
   /**

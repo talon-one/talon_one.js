@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountEntity model module.
  * @module model/AccountEntity
- * @version 1.0.0
+ * @version 4.0.0
  */
 var AccountEntity = /*#__PURE__*/function () {
   /**

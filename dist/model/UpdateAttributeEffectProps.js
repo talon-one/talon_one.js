@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpdateAttributeEffectProps model module.
  * @module model/UpdateAttributeEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var UpdateAttributeEffectProps = /*#__PURE__*/function () {
   /**

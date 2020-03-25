@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TriggerWebhookEffectProps model module.
  * @module model/TriggerWebhookEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var TriggerWebhookEffectProps = /*#__PURE__*/function () {
   /**

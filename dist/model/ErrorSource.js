@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ErrorSource model module.
  * @module model/ErrorSource
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ErrorSource = /*#__PURE__*/function () {
   /**

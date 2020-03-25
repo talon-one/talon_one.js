@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IntegrationEvent model module.
  * @module model/IntegrationEvent
- * @version 1.0.0
+ * @version 4.0.0
  */
 var IntegrationEvent = /*#__PURE__*/function () {
   /**

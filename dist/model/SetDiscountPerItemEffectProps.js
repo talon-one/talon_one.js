@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var SetDiscountPerItemEffectProps = /*#__PURE__*/function () {
   /**

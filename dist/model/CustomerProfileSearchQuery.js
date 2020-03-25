@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CustomerProfileSearchQuery model module.
  * @module model/CustomerProfileSearchQuery
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CustomerProfileSearchQuery = /*#__PURE__*/function () {
   /**

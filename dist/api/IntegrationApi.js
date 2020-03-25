@@ -44,7 +44,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 1.0.0
+* @version 4.0.0
 */
 var IntegrationApi = /*#__PURE__*/function () {
   /**

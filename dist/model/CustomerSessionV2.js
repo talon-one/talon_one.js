@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CustomerSessionV2 = /*#__PURE__*/function () {
   /**

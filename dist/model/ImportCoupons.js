@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImportCoupons model module.
  * @module model/ImportCoupons
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ImportCoupons = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewSamlConnection model module.
  * @module model/NewSamlConnection
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewSamlConnection = /*#__PURE__*/function () {
   /**

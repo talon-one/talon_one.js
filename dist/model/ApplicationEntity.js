@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ApplicationEntity model module.
  * @module model/ApplicationEntity
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ApplicationEntity = /*#__PURE__*/function () {
   /**

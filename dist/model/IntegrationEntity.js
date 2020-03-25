@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IntegrationEntity model module.
  * @module model/IntegrationEntity
- * @version 1.0.0
+ * @version 4.0.0
  */
 var IntegrationEntity = /*#__PURE__*/function () {
   /**

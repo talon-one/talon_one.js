@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Webhook = _interopRequireDefault(require("./Webhook"));
+var _AccountAdditionalCost = _interopRequireDefault(require("./AccountAdditionalCost"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,14 +20,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 1.0.0
+ * @version 4.0.0
  */
 var InlineResponse20021 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20021</code>.
    * @alias module:model/InlineResponse20021
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/Webhook>} 
+   * @param data {Array.<module:model/AccountAdditionalCost>} 
    */
   function InlineResponse20021(totalResultSize, data) {
     _classCallCheck(this, InlineResponse20021);
@@ -66,7 +66,7 @@ var InlineResponse20021 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_Webhook["default"]]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_AccountAdditionalCost["default"]]);
         }
       }
 
@@ -83,7 +83,7 @@ var InlineResponse20021 = /*#__PURE__*/function () {
 
 InlineResponse20021.prototype['totalResultSize'] = undefined;
 /**
- * @member {Array.<module:model/Webhook>} data
+ * @member {Array.<module:model/AccountAdditionalCost>} data
  */
 
 InlineResponse20021.prototype['data'] = undefined;

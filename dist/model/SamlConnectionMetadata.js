@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SamlConnectionMetadata model module.
  * @module model/SamlConnectionMetadata
- * @version 1.0.0
+ * @version 4.0.0
  */
 var SamlConnectionMetadata = /*#__PURE__*/function () {
   /**

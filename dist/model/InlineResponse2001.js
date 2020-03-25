@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse2001 model module.
  * @module model/InlineResponse2001
- * @version 1.0.0
+ * @version 4.0.0
  */
 var InlineResponse2001 = /*#__PURE__*/function () {
   /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ApplicationSession = /*#__PURE__*/function () {
   /**

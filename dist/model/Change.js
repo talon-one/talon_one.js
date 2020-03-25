@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Change model module.
  * @module model/Change
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Change = /*#__PURE__*/function () {
   /**

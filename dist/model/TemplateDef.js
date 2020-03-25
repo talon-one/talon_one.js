@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDef model module.
  * @module model/TemplateDef
- * @version 1.0.0
+ * @version 4.0.0
  */
 var TemplateDef = /*#__PURE__*/function () {
   /**

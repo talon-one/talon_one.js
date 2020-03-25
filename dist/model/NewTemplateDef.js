@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewTemplateDef model module.
  * @module model/NewTemplateDef
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewTemplateDef = /*#__PURE__*/function () {
   /**

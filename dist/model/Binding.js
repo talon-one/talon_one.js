@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Binding model module.
  * @module model/Binding
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Binding = /*#__PURE__*/function () {
   /**

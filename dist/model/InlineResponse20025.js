@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _User = _interopRequireDefault(require("./User"));
+var _EventType = _interopRequireDefault(require("./EventType"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,14 +20,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20025 model module.
  * @module model/InlineResponse20025
- * @version 1.0.0
+ * @version 4.0.0
  */
 var InlineResponse20025 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20025</code>.
    * @alias module:model/InlineResponse20025
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/User>} 
+   * @param data {Array.<module:model/EventType>} 
    */
   function InlineResponse20025(totalResultSize, data) {
     _classCallCheck(this, InlineResponse20025);
@@ -66,7 +66,7 @@ var InlineResponse20025 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_User["default"]]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_EventType["default"]]);
         }
       }
 
@@ -83,7 +83,7 @@ var InlineResponse20025 = /*#__PURE__*/function () {
 
 InlineResponse20025.prototype['totalResultSize'] = undefined;
 /**
- * @member {Array.<module:model/User>} data
+ * @member {Array.<module:model/EventType>} data
  */
 
 InlineResponse20025.prototype['data'] = undefined;

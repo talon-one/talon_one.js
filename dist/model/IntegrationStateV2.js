@@ -34,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IntegrationStateV2 model module.
  * @module model/IntegrationStateV2
- * @version 1.0.0
+ * @version 4.0.0
  */
 var IntegrationStateV2 = /*#__PURE__*/function () {
   /**

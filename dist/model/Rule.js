@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Rule model module.
  * @module model/Rule
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Rule = /*#__PURE__*/function () {
   /**

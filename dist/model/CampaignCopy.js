@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CampaignCopy model module.
  * @module model/CampaignCopy
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CampaignCopy = /*#__PURE__*/function () {
   /**

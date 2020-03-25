@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttributesSettings model module.
  * @module model/AttributesSettings
- * @version 1.0.0
+ * @version 4.0.0
  */
 var AttributesSettings = /*#__PURE__*/function () {
   /**

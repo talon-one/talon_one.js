@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AcceptReferralEffectProps model module.
  * @module model/AcceptReferralEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var AcceptReferralEffectProps = /*#__PURE__*/function () {
   /**

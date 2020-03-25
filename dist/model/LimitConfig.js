@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LimitConfig model module.
  * @module model/LimitConfig
- * @version 1.0.0
+ * @version 4.0.0
  */
 var LimitConfig = /*#__PURE__*/function () {
   /**

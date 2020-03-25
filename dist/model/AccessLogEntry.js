@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccessLogEntry model module.
  * @module model/AccessLogEntry
- * @version 1.0.0
+ * @version 4.0.0
  */
 var AccessLogEntry = /*#__PURE__*/function () {
   /**

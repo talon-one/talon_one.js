@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _EventType = _interopRequireDefault(require("./EventType"));
+var _WebhookLogEntry = _interopRequireDefault(require("./WebhookLogEntry"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,14 +20,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20024 model module.
  * @module model/InlineResponse20024
- * @version 1.0.0
+ * @version 4.0.0
  */
 var InlineResponse20024 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20024</code>.
    * @alias module:model/InlineResponse20024
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/EventType>} 
+   * @param data {Array.<module:model/WebhookLogEntry>} 
    */
   function InlineResponse20024(totalResultSize, data) {
     _classCallCheck(this, InlineResponse20024);
@@ -66,7 +66,7 @@ var InlineResponse20024 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_EventType["default"]]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_WebhookLogEntry["default"]]);
         }
       }
 
@@ -83,7 +83,7 @@ var InlineResponse20024 = /*#__PURE__*/function () {
 
 InlineResponse20024.prototype['totalResultSize'] = undefined;
 /**
- * @member {Array.<module:model/EventType>} data
+ * @member {Array.<module:model/WebhookLogEntry>} data
  */
 
 InlineResponse20024.prototype['data'] = undefined;

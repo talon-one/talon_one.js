@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ShowNotificationEffectProps model module.
  * @module model/ShowNotificationEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ShowNotificationEffectProps = /*#__PURE__*/function () {
   /**

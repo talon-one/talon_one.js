@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewPasswordEmail model module.
  * @module model/NewPasswordEmail
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewPasswordEmail = /*#__PURE__*/function () {
   /**

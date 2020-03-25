@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FeatureFlags model module.
  * @module model/FeatureFlags
- * @version 1.0.0
+ * @version 4.0.0
  */
 var FeatureFlags = /*#__PURE__*/function () {
   /**

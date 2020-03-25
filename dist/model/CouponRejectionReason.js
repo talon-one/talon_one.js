@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CouponRejectionReason model module.
  * @module model/CouponRejectionReason
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CouponRejectionReason = /*#__PURE__*/function () {
   /**

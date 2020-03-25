@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 1.0.0
+ * @version 4.0.0
  */
 var LoyaltySubLedger = /*#__PURE__*/function () {
   /**

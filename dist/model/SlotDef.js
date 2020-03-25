@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SlotDef model module.
  * @module model/SlotDef
- * @version 1.0.0
+ * @version 4.0.0
  */
 var SlotDef = /*#__PURE__*/function () {
   /**

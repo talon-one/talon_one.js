@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewPassword model module.
  * @module model/NewPassword
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewPassword = /*#__PURE__*/function () {
   /**

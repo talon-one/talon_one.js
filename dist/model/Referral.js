@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Referral model module.
  * @module model/Referral
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Referral = /*#__PURE__*/function () {
   /**

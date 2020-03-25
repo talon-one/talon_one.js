@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CartItem = /*#__PURE__*/function () {
   /**

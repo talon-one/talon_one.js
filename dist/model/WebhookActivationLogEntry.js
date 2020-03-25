@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The WebhookActivationLogEntry model module.
  * @module model/WebhookActivationLogEntry
- * @version 1.0.0
+ * @version 4.0.0
  */
 var WebhookActivationLogEntry = /*#__PURE__*/function () {
   /**

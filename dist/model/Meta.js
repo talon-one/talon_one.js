@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Meta model module.
  * @module model/Meta
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Meta = /*#__PURE__*/function () {
   /**

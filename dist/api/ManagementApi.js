@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Account = _interopRequireDefault(require("../model/Account"));
 
+var _AccountAdditionalCost = _interopRequireDefault(require("../model/AccountAdditionalCost"));
+
 var _AccountAnalytics = _interopRequireDefault(require("../model/AccountAnalytics"));
 
 var _Application = _interopRequireDefault(require("../model/Application"));
@@ -85,17 +87,19 @@ var _InlineResponse22 = _interopRequireDefault(require("../model/InlineResponse2
 
 var _InlineResponse23 = _interopRequireDefault(require("../model/InlineResponse2003"));
 
-var _InlineResponse24 = _interopRequireDefault(require("../model/InlineResponse2004"));
+var _InlineResponse24 = _interopRequireDefault(require("../model/InlineResponse20030"));
 
-var _InlineResponse25 = _interopRequireDefault(require("../model/InlineResponse2005"));
+var _InlineResponse25 = _interopRequireDefault(require("../model/InlineResponse2004"));
 
-var _InlineResponse26 = _interopRequireDefault(require("../model/InlineResponse2006"));
+var _InlineResponse26 = _interopRequireDefault(require("../model/InlineResponse2005"));
 
-var _InlineResponse27 = _interopRequireDefault(require("../model/InlineResponse2007"));
+var _InlineResponse27 = _interopRequireDefault(require("../model/InlineResponse2006"));
 
-var _InlineResponse28 = _interopRequireDefault(require("../model/InlineResponse2008"));
+var _InlineResponse28 = _interopRequireDefault(require("../model/InlineResponse2007"));
 
-var _InlineResponse29 = _interopRequireDefault(require("../model/InlineResponse2009"));
+var _InlineResponse29 = _interopRequireDefault(require("../model/InlineResponse2008"));
+
+var _InlineResponse30 = _interopRequireDefault(require("../model/InlineResponse2009"));
 
 var _LoginParams = _interopRequireDefault(require("../model/LoginParams"));
 
@@ -104,6 +108,8 @@ var _LoyaltyLedger = _interopRequireDefault(require("../model/LoyaltyLedger"));
 var _LoyaltyPoints = _interopRequireDefault(require("../model/LoyaltyPoints"));
 
 var _LoyaltyProgram = _interopRequireDefault(require("../model/LoyaltyProgram"));
+
+var _NewAdditionalCost = _interopRequireDefault(require("../model/NewAdditionalCost"));
 
 var _NewAttribute = _interopRequireDefault(require("../model/NewAttribute"));
 
@@ -146,7 +152,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 1.0.0
+* @version 4.0.0
 */
 var ManagementApi = /*#__PURE__*/function () {
   /**
@@ -271,6 +277,46 @@ var ManagementApi = /*#__PURE__*/function () {
     key: "copyCampaignToApplications",
     value: function copyCampaignToApplications(applicationId, campaignId, body) {
       return this.copyCampaignToApplicationsWithHttpInfo(applicationId, campaignId, body).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+    /**
+     * Define a new additional cost
+     * Defines a new _additional cost_ in this account.  These additional costs are shared across all applications in your account, and are never required. 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountAdditionalCost} and HTTP response
+     */
+
+  }, {
+    key: "createAdditionalCostWithHttpInfo",
+    value: function createAdditionalCostWithHttpInfo(body) {
+      var postBody = body; // verify the required parameter 'body' is set
+
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAdditionalCost");
+      }
+
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _AccountAdditionalCost["default"];
+      return this.apiClient.callApi('/v1/additional_costs', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+    /**
+     * Define a new additional cost
+     * Defines a new _additional cost_ in this account.  These additional costs are shared across all applications in your account, and are never required. 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountAdditionalCost}
+     */
+
+  }, {
+    key: "createAdditionalCost",
+    value: function createAdditionalCost(body) {
+      return this.createAdditionalCostWithHttpInfo(body).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -918,7 +964,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse29["default"];
+      var returnType = _InlineResponse30["default"];
       return this.apiClient.callApi('/v1/applications/{applicationId}/access_logs', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -1106,6 +1152,94 @@ var ManagementApi = /*#__PURE__*/function () {
       });
     }
     /**
+     * Get an additional cost
+     * Returns additional cost for the account by its id. 
+     * @param {Number} additionalCostId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountAdditionalCost} and HTTP response
+     */
+
+  }, {
+    key: "getAdditionalCostWithHttpInfo",
+    value: function getAdditionalCostWithHttpInfo(additionalCostId) {
+      var postBody = null; // verify the required parameter 'additionalCostId' is set
+
+      if (additionalCostId === undefined || additionalCostId === null) {
+        throw new Error("Missing the required parameter 'additionalCostId' when calling getAdditionalCost");
+      }
+
+      var pathParams = {
+        'additionalCostId': additionalCostId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['manager_auth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _AccountAdditionalCost["default"];
+      return this.apiClient.callApi('/v1/additional_costs/{additionalCostId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+    /**
+     * Get an additional cost
+     * Returns additional cost for the account by its id. 
+     * @param {Number} additionalCostId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountAdditionalCost}
+     */
+
+  }, {
+    key: "getAdditionalCost",
+    value: function getAdditionalCost(additionalCostId) {
+      return this.getAdditionalCostWithHttpInfo(additionalCostId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+    /**
+     * List additional costs
+     * Returns all the defined additional costs for the account. 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     */
+
+  }, {
+    key: "getAdditionalCostsWithHttpInfo",
+    value: function getAdditionalCostsWithHttpInfo(opts) {
+      opts = opts || {};
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'sort': opts['sort']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['manager_auth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _InlineResponse14["default"];
+      return this.apiClient.callApi('/v1/additional_costs', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+    /**
+     * List additional costs
+     * Returns all the defined additional costs for the account. 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     */
+
+  }, {
+    key: "getAdditionalCosts",
+    value: function getAdditionalCosts(opts) {
+      return this.getAdditionalCostsWithHttpInfo(opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+    /**
      * Get all access logs
      * Fetches the access logs for the entire account. Sensitive requests (logins) are _always_ filtered from the logs. 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
@@ -1151,7 +1285,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse29["default"];
+      var returnType = _InlineResponse30["default"];
       return this.apiClient.callApi('/v1/access_logs', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -1178,7 +1312,7 @@ var ManagementApi = /*#__PURE__*/function () {
     }
     /**
      * Get all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
      */
 
   }, {
@@ -1192,12 +1326,12 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse22["default"];
+      var returnType = _InlineResponse24["default"];
       return this.apiClient.callApi('/v1/roles', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Get all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
      */
 
   }, {
@@ -2205,7 +2339,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
      * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
      */
 
   }, {
@@ -2229,7 +2363,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse19["default"];
+      var returnType = _InlineResponse20["default"];
       return this.apiClient.callApi('/v1/changes', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -2244,7 +2378,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
      * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
      */
 
   }, {
@@ -2601,7 +2735,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse25["default"];
+      var returnType = _InlineResponse26["default"];
       return this.apiClient.callApi('/v1/applications/{applicationId}/campaigns/{campaignId}/coupons/no_total', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3085,7 +3219,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
      */
 
   }, {
@@ -3107,7 +3241,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse17["default"];
+      var returnType = _InlineResponse18["default"];
       return this.apiClient.callApi('/v1/event_types', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3120,7 +3254,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
      */
 
   }, {
@@ -3139,7 +3273,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
      */
 
   }, {
@@ -3160,7 +3294,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse20["default"];
+      var returnType = _InlineResponse21["default"];
       return this.apiClient.callApi('/v1/exports', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3172,7 +3306,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.applicationId 
      * @param {Number} opts.campaignId 
      * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
      */
 
   }, {
@@ -3188,7 +3322,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
      */
 
   }, {
@@ -3206,7 +3340,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse21["default"];
+      var returnType = _InlineResponse22["default"];
       return this.apiClient.callApi('/v1/imports', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3215,7 +3349,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
      */
 
   }, {
@@ -3331,7 +3465,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse28["default"];
+      var returnType = _InlineResponse29["default"];
       return this.apiClient.callApi('/v1/loyalty_programs', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3398,7 +3532,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse26["default"];
+      var returnType = _InlineResponse27["default"];
       return this.apiClient.callApi('/v1/applications/{applicationId}/campaigns/{campaignId}/referrals', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3477,7 +3611,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse27["default"];
+      var returnType = _InlineResponse28["default"];
       return this.apiClient.callApi('/v1/applications/{applicationId}/campaigns/{campaignId}/referrals/no_total', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3640,7 +3774,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse24["default"];
+      var returnType = _InlineResponse25["default"];
       return this.apiClient.callApi('/v1/applications/{applicationId}/campaigns/{campaignId}/rulesets', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3710,7 +3844,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
      */
 
   }, {
@@ -3729,7 +3863,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse18["default"];
+      var returnType = _InlineResponse19["default"];
       return this.apiClient.callApi('/v1/users', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3739,7 +3873,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
      */
 
   }, {
@@ -3804,7 +3938,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
      */
 
   }, {
@@ -3829,7 +3963,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse15["default"];
+      var returnType = _InlineResponse16["default"];
       return this.apiClient.callApi('/v1/webhook_activation_logs', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3845,7 +3979,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {Number} opts.campaignId Filter results by campaign.
      * @param {Date} opts.createdBefore Only return events created before this date.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
      */
 
   }, {
@@ -3868,7 +4002,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
      */
 
   }, {
@@ -3894,7 +4028,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse16["default"];
+      var returnType = _InlineResponse17["default"];
       return this.apiClient.callApi('/v1/webhook_logs', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3910,7 +4044,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {String} opts.requestUuid Filter results by request UUID.
      * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
      * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
      */
 
   }, {
@@ -3927,7 +4061,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
      */
 
   }, {
@@ -3947,7 +4081,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse14["default"];
+      var returnType = _InlineResponse15["default"];
       return this.apiClient.callApi('/v1/webhooks', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -3957,7 +4091,7 @@ var ManagementApi = /*#__PURE__*/function () {
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
      */
 
   }, {
@@ -4311,7 +4445,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse25["default"];
+      var returnType = _InlineResponse26["default"];
       return this.apiClient.callApi('/v1/applications/{applicationId}/coupons_search_advanced/no_total', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -4408,7 +4542,7 @@ var ManagementApi = /*#__PURE__*/function () {
       var authNames = ['manager_auth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse25["default"];
+      var returnType = _InlineResponse26["default"];
       return this.apiClient.callApi('/v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -4437,6 +4571,55 @@ var ManagementApi = /*#__PURE__*/function () {
     key: "searchCouponsAdvancedWithoutTotalCount",
     value: function searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts) {
       return this.searchCouponsAdvancedWithoutTotalCountWithHttpInfo(applicationId, campaignId, body, opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+    /**
+     * Update an additional cost
+     * Updates an existing additional cost. Once created, the only property of an additional cost that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. 
+     * @param {Number} additionalCostId 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountAdditionalCost} and HTTP response
+     */
+
+  }, {
+    key: "updateAdditionalCostWithHttpInfo",
+    value: function updateAdditionalCostWithHttpInfo(additionalCostId, body) {
+      var postBody = body; // verify the required parameter 'additionalCostId' is set
+
+      if (additionalCostId === undefined || additionalCostId === null) {
+        throw new Error("Missing the required parameter 'additionalCostId' when calling updateAdditionalCost");
+      } // verify the required parameter 'body' is set
+
+
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAdditionalCost");
+      }
+
+      var pathParams = {
+        'additionalCostId': additionalCostId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['manager_auth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _AccountAdditionalCost["default"];
+      return this.apiClient.callApi('/v1/additional_costs/{additionalCostId}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+    /**
+     * Update an additional cost
+     * Updates an existing additional cost. Once created, the only property of an additional cost that can be changed is the title (human readable description). This restriction is in place to prevent accidentally breaking live integrations. 
+     * @param {Number} additionalCostId 
+     * @param {module:model/NewAdditionalCost} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountAdditionalCost}
+     */
+
+  }, {
+    key: "updateAdditionalCost",
+    value: function updateAdditionalCost(additionalCostId, body) {
+      return this.updateAdditionalCostWithHttpInfo(additionalCostId, body).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

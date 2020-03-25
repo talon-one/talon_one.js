@@ -39,6 +39,12 @@ Object.defineProperty(exports, "Account", {
     return _Account["default"];
   }
 });
+Object.defineProperty(exports, "AccountAdditionalCost", {
+  enumerable: true,
+  get: function get() {
+    return _AccountAdditionalCost["default"];
+  }
+});
 Object.defineProperty(exports, "AccountAnalytics", {
   enumerable: true,
   get: function get() {
@@ -585,40 +591,46 @@ Object.defineProperty(exports, "InlineResponse2003", {
     return _InlineResponse24["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2004", {
+Object.defineProperty(exports, "InlineResponse20030", {
   enumerable: true,
   get: function get() {
     return _InlineResponse25["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2005", {
+Object.defineProperty(exports, "InlineResponse2004", {
   enumerable: true,
   get: function get() {
     return _InlineResponse26["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2006", {
+Object.defineProperty(exports, "InlineResponse2005", {
   enumerable: true,
   get: function get() {
     return _InlineResponse27["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2007", {
+Object.defineProperty(exports, "InlineResponse2006", {
   enumerable: true,
   get: function get() {
     return _InlineResponse28["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2008", {
+Object.defineProperty(exports, "InlineResponse2007", {
   enumerable: true,
   get: function get() {
     return _InlineResponse29["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009", {
+Object.defineProperty(exports, "InlineResponse2008", {
   enumerable: true,
   get: function get() {
     return _InlineResponse30["default"];
+  }
+});
+Object.defineProperty(exports, "InlineResponse2009", {
+  enumerable: true,
+  get: function get() {
+    return _InlineResponse31["default"];
   }
 });
 Object.defineProperty(exports, "IntegrationEntity", {
@@ -787,6 +799,12 @@ Object.defineProperty(exports, "NewAccountSignUp", {
   enumerable: true,
   get: function get() {
     return _NewAccountSignUp["default"];
+  }
+});
+Object.defineProperty(exports, "NewAdditionalCost", {
+  enumerable: true,
+  get: function get() {
+    return _NewAdditionalCost["default"];
   }
 });
 Object.defineProperty(exports, "NewApplication", {
@@ -1204,6 +1222,8 @@ var _AccessLogEntry = _interopRequireDefault(require("./model/AccessLogEntry"));
 
 var _Account = _interopRequireDefault(require("./model/Account"));
 
+var _AccountAdditionalCost = _interopRequireDefault(require("./model/AccountAdditionalCost"));
+
 var _AccountAnalytics = _interopRequireDefault(require("./model/AccountAnalytics"));
 
 var _AccountEntity = _interopRequireDefault(require("./model/AccountEntity"));
@@ -1386,17 +1406,19 @@ var _InlineResponse23 = _interopRequireDefault(require("./model/InlineResponse20
 
 var _InlineResponse24 = _interopRequireDefault(require("./model/InlineResponse2003"));
 
-var _InlineResponse25 = _interopRequireDefault(require("./model/InlineResponse2004"));
+var _InlineResponse25 = _interopRequireDefault(require("./model/InlineResponse20030"));
 
-var _InlineResponse26 = _interopRequireDefault(require("./model/InlineResponse2005"));
+var _InlineResponse26 = _interopRequireDefault(require("./model/InlineResponse2004"));
 
-var _InlineResponse27 = _interopRequireDefault(require("./model/InlineResponse2006"));
+var _InlineResponse27 = _interopRequireDefault(require("./model/InlineResponse2005"));
 
-var _InlineResponse28 = _interopRequireDefault(require("./model/InlineResponse2007"));
+var _InlineResponse28 = _interopRequireDefault(require("./model/InlineResponse2006"));
 
-var _InlineResponse29 = _interopRequireDefault(require("./model/InlineResponse2008"));
+var _InlineResponse29 = _interopRequireDefault(require("./model/InlineResponse2007"));
 
-var _InlineResponse30 = _interopRequireDefault(require("./model/InlineResponse2009"));
+var _InlineResponse30 = _interopRequireDefault(require("./model/InlineResponse2008"));
+
+var _InlineResponse31 = _interopRequireDefault(require("./model/InlineResponse2009"));
 
 var _IntegrationEntity = _interopRequireDefault(require("./model/IntegrationEntity"));
 
@@ -1453,6 +1475,8 @@ var _MutableEntity = _interopRequireDefault(require("./model/MutableEntity"));
 var _NewAccount = _interopRequireDefault(require("./model/NewAccount"));
 
 var _NewAccountSignUp = _interopRequireDefault(require("./model/NewAccountSignUp"));
+
+var _NewAdditionalCost = _interopRequireDefault(require("./model/NewAdditionalCost"));
 
 var _NewApplication = _interopRequireDefault(require("./model/NewApplication"));
 

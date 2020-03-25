@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RollbackCouponEffectProps model module.
  * @module model/RollbackCouponEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var RollbackCouponEffectProps = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RedeemReferralEffectProps model module.
  * @module model/RedeemReferralEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var RedeemReferralEffectProps = /*#__PURE__*/function () {
   /**

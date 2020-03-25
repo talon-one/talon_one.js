@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ApplicationApiHealth model module.
  * @module model/ApplicationApiHealth
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ApplicationApiHealth = /*#__PURE__*/function () {
   /**

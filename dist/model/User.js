@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The User model module.
  * @module model/User
- * @version 1.0.0
+ * @version 4.0.0
  */
 var User = /*#__PURE__*/function () {
   /**

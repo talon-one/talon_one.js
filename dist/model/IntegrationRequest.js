@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IntegrationRequest model module.
  * @module model/IntegrationRequest
- * @version 1.0.0
+ * @version 4.0.0
  */
 var IntegrationRequest = /*#__PURE__*/function () {
   /**

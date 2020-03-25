@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LoginParams model module.
  * @module model/LoginParams
- * @version 1.0.0
+ * @version 4.0.0
  */
 var LoginParams = /*#__PURE__*/function () {
   /**

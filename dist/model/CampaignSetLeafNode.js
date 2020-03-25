@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CampaignSetLeafNode model module.
  * @module model/CampaignSetLeafNode
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CampaignSetLeafNode = /*#__PURE__*/function () {
   /**

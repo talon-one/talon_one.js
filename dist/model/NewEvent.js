@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewEvent model module.
  * @module model/NewEvent
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewEvent = /*#__PURE__*/function () {
   /**

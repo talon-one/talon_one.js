@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MutableEntity model module.
  * @module model/MutableEntity
- * @version 1.0.0
+ * @version 4.0.0
  */
 var MutableEntity = /*#__PURE__*/function () {
   /**

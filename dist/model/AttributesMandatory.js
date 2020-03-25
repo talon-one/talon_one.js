@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttributesMandatory model module.
  * @module model/AttributesMandatory
- * @version 1.0.0
+ * @version 4.0.0
  */
 var AttributesMandatory = /*#__PURE__*/function () {
   /**

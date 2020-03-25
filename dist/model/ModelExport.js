@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModelExport model module.
  * @module model/ModelExport
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ModelExport = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewCustomerProfile model module.
  * @module model/NewCustomerProfile
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewCustomerProfile = /*#__PURE__*/function () {
   /**

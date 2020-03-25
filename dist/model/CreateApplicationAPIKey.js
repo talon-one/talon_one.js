@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateApplicationAPIKey model module.
  * @module model/CreateApplicationAPIKey
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CreateApplicationAPIKey = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewImport model module.
  * @module model/NewImport
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewImport = /*#__PURE__*/function () {
   /**

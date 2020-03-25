@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var AddLoyaltyPointsEffectProps = /*#__PURE__*/function () {
   /**

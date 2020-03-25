@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ApplicationSessionEntity model module.
  * @module model/ApplicationSessionEntity
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ApplicationSessionEntity = /*#__PURE__*/function () {
   /**

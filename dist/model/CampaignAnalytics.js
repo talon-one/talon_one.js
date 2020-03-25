@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CampaignAnalytics model module.
  * @module model/CampaignAnalytics
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CampaignAnalytics = /*#__PURE__*/function () {
   /**

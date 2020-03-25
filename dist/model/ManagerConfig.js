@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ManagerConfig model module.
  * @module model/ManagerConfig
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ManagerConfig = /*#__PURE__*/function () {
   /**

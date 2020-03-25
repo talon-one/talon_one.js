@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewCoupons = /*#__PURE__*/function () {
   /**

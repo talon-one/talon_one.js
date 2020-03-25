@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FunctionDef model module.
  * @module model/FunctionDef
- * @version 1.0.0
+ * @version 4.0.0
  */
 var FunctionDef = /*#__PURE__*/function () {
   /**

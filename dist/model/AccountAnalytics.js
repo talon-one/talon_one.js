@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountAnalytics model module.
  * @module model/AccountAnalytics
- * @version 1.0.0
+ * @version 4.0.0
  */
 var AccountAnalytics = /*#__PURE__*/function () {
   /**

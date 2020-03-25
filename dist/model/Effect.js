@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Effect = /*#__PURE__*/function () {
   /**

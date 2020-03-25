@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Role model module.
  * @module model/Role
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Role = /*#__PURE__*/function () {
   /**

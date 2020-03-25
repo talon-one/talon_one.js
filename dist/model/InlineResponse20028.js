@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ModelImport = _interopRequireDefault(require("./ModelImport"));
+var _ModelExport = _interopRequireDefault(require("./ModelExport"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,14 +20,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20028 model module.
  * @module model/InlineResponse20028
- * @version 1.0.0
+ * @version 4.0.0
  */
 var InlineResponse20028 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20028</code>.
    * @alias module:model/InlineResponse20028
    * @param totalResultSize {Number} 
-   * @param data {Array.<module:model/ModelImport>} 
+   * @param data {Array.<module:model/ModelExport>} 
    */
   function InlineResponse20028(totalResultSize, data) {
     _classCallCheck(this, InlineResponse20028);
@@ -66,7 +66,7 @@ var InlineResponse20028 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_ModelImport["default"]]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_ModelExport["default"]]);
         }
       }
 
@@ -83,7 +83,7 @@ var InlineResponse20028 = /*#__PURE__*/function () {
 
 InlineResponse20028.prototype['totalResultSize'] = undefined;
 /**
- * @member {Array.<module:model/ModelImport>} data
+ * @member {Array.<module:model/ModelExport>} data
  */
 
 InlineResponse20028.prototype['data'] = undefined;

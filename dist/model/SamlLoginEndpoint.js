@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SamlLoginEndpoint model module.
  * @module model/SamlLoginEndpoint
- * @version 1.0.0
+ * @version 4.0.0
  */
 var SamlLoginEndpoint = /*#__PURE__*/function () {
   /**

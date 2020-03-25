@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Session model module.
  * @module model/Session
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Session = /*#__PURE__*/function () {
   /**

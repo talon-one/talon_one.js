@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CouponReservations model module.
  * @module model/CouponReservations
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CouponReservations = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FuncArgDef model module.
  * @module model/FuncArgDef
- * @version 1.0.0
+ * @version 4.0.0
  */
 var FuncArgDef = /*#__PURE__*/function () {
   /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewWebhook model module.
  * @module model/NewWebhook
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewWebhook = /*#__PURE__*/function () {
   /**

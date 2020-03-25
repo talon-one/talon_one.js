@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Loyalty model module.
  * @module model/Loyalty
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Loyalty = /*#__PURE__*/function () {
   /**

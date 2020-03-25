@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CouponConstraints model module.
  * @module model/CouponConstraints
- * @version 1.0.0
+ * @version 4.0.0
  */
 var CouponConstraints = /*#__PURE__*/function () {
   /**

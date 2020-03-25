@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RoleMembership model module.
  * @module model/RoleMembership
- * @version 1.0.0
+ * @version 4.0.0
  */
 var RoleMembership = /*#__PURE__*/function () {
   /**

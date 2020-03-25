@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 1.0.0
+ * @version 4.0.0
  */
 var ApplicationCustomer = /*#__PURE__*/function () {
   /**

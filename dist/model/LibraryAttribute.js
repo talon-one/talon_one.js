@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LibraryAttribute model module.
  * @module model/LibraryAttribute
- * @version 1.0.0
+ * @version 4.0.0
  */
 var LibraryAttribute = /*#__PURE__*/function () {
   /**

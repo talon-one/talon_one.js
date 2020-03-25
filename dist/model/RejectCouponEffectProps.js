@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RejectCouponEffectProps model module.
  * @module model/RejectCouponEffectProps
- * @version 1.0.0
+ * @version 4.0.0
  */
 var RejectCouponEffectProps = /*#__PURE__*/function () {
   /**

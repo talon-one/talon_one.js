@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpdateAccount model module.
  * @module model/UpdateAccount
- * @version 1.0.0
+ * @version 4.0.0
  */
 var UpdateAccount = /*#__PURE__*/function () {
   /**

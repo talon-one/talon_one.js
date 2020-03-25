@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewCampaign model module.
  * @module model/NewCampaign
- * @version 1.0.0
+ * @version 4.0.0
  */
 var NewCampaign = /*#__PURE__*/function () {
   /**

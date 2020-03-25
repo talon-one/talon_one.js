@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Entity = /*#__PURE__*/function () {
   /**

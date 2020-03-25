@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Event model module.
  * @module model/Event
- * @version 1.0.0
+ * @version 4.0.0
  */
 var Event = /*#__PURE__*/function () {
   /**
