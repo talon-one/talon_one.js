@@ -600,11 +600,6 @@ let api_key_v1 = defaultClient.authentications['api_key_v1'];
 api_key_v1.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key_v1.apiKeyPrefix = 'Token';
-// Configure API key authorization: integration_auth
-let integration_auth = defaultClient.authentications['integration_auth'];
-integration_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//integration_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.IntegrationApi();
 let customerSessionId = "customerSessionId_example"; // String | The custom identifier for this session, must be unique within the account.
@@ -631,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
+[api_key_v1](../README.md#api_key_v1)
 
 ### HTTP request headers
 

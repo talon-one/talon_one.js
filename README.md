@@ -128,7 +128,7 @@ api_key_v1.apiKeyPrefix = "ApiKey-v1";
 const integrationApi = new TalonOne.IntegrationApi();
 
 // Initializing a customer session object
-const customerSession = TalonOne.NewCustomerSession2.constructFromObject({
+const customerSession = TalonOne.NewCustomerSessionV2.constructFromObject({
   profileId: 'example_prof_id',
   cartItems: [
     {

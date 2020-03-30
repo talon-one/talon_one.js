@@ -586,7 +586,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IntegrationStateV2;
