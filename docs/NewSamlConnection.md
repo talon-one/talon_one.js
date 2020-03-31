@@ -1,6 +1,7 @@
 # TalonOne.NewSamlConnection
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **x509certificate** | **String** | X.509 Certificate. | 

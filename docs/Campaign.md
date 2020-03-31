@@ -1,6 +1,7 @@
 # TalonOne.Campaign
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** | A detailed description of the campaign. | 
 **startTime** | **Date** | Datetime when the campaign will become active. | [optional] 
 **endTime** | **Date** | Datetime when the campaign will become in-active. | [optional] 
-**attributes** | **Object** | Arbitrary properties associated with this campaign | [optional] 
+**attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 **state** | **String** | A disabled or archived campaign is not evaluated for rules or coupons.  | [default to &#39;enabled&#39;]
 **activeRulesetId** | **Number** | ID of Ruleset this campaign applies on customer session evaluation. | [optional] 
 **tags** | **[String]** | A list of tags for the campaign. | 
@@ -30,7 +31,7 @@ Name | Type | Description | Notes
 **updatedBy** | **String** | Name of the user who last updated this campaign if available. | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 
@@ -43,7 +44,7 @@ Name | Type | Description | Notes
 
 
 
-<a name="[FeaturesEnum]"></a>
+
 ## Enum: [FeaturesEnum]
 
 

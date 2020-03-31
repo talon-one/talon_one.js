@@ -1,6 +1,7 @@
 # TalonOne.CustomerInventory
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **profile** | [**CustomerProfile**](CustomerProfile.md) |  | [optional] 

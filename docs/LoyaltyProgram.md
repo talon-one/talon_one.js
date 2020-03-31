@@ -1,6 +1,7 @@
 # TalonOne.LoyaltyProgram
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | The ID of loyalty program. | 

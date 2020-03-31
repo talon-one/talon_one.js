@@ -1,6 +1,7 @@
 # TalonOne.CouponRejectionReason
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaignId** | **Number** |  | 
@@ -8,7 +9,7 @@ Name | Type | Description | Notes
 **reason** | **String** |  | 
 
 
-<a name="ReasonEnum"></a>
+
 ## Enum: ReasonEnum
 
 

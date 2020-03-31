@@ -1,6 +1,7 @@
 # TalonOne.Rule
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **String** | A short description of the rule. | 

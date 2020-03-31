@@ -1,6 +1,7 @@
 # TalonOne.Account
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 
@@ -8,7 +9,7 @@ Name | Type | Description | Notes
 **modified** | **Date** | The exact moment this entity was last modified. | 
 **companyName** | **String** |  | 
 **domainName** | **String** | Subdomain Name for yourcompany.talon.one | 
-**state** | **String** | State of the account (trial, active, trial_expired) | 
+**state** | **String** | State of the account (active, deactivated) | 
 **billingEmail** | **String** | The billing email address associated with your company account. | 
 **planName** | **String** | The name of your booked plan. | [optional] 
 **planExpires** | **Date** | The point in time at which your current plan expires. | [optional] 
@@ -20,18 +21,16 @@ Name | Type | Description | Notes
 **userCount** | **Number** | The current number of Campaign Manager Users in your account. | 
 **campaignsActiveCount** | **Number** | The current number of active Campaigns in your account. | 
 **campaignsInactiveCount** | **Number** | The current number of inactive Campaigns in your account. | 
-**attributes** | **Object** | Arbitrary properties associated with this campaign | [optional] 
+**attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 
-* `trial` (value: `"trial"`)
-
 * `active` (value: `"active"`)
 
-* `trial_expired` (value: `"trial_expired"`)
+* `deactivated` (value: `"deactivated"`)
 
 
 

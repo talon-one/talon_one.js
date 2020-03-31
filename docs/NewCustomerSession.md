@@ -1,6 +1,7 @@
 # TalonOne.NewCustomerSession
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **profileId** | **String** | ID of the customers profile as used within this Talon.One account. May be omitted or set to the empty string if the customer does not yet have a known profile ID. | [optional] 
@@ -10,10 +11,10 @@ Name | Type | Description | Notes
 **cartItems** | [**[CartItem]**](CartItem.md) | Serialized JSON representation. | [optional] 
 **identifiers** | **[String]** | Identifiers for the customer, this can be used for limits on values such as device ID. | [optional] 
 **total** | **Number** | The total sum of the cart in one session. | [optional] 
-**attributes** | **Object** | A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings.  | [optional] 
+**attributes** | [**Object**](.md) | A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings.  | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

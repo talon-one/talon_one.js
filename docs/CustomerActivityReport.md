@@ -1,6 +1,7 @@
 # TalonOne.CustomerActivityReport
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integrationId** | **String** | The ID used for this entity in the application system. | 

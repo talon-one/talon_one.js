@@ -1,6 +1,7 @@
 # TalonOne.Coupon
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 **startDate** | **Date** | Timestamp at which point the coupon becomes valid. | [optional] 
 **expiryDate** | **Date** | Expiry date of the coupon. Coupon never expires if this is omitted, zero, or negative. | [optional] 
 **usageCounter** | **Number** | The number of times this coupon has been successfully used. | 
-**attributes** | **Object** | Arbitrary properties associated with this item | [optional] 
+**attributes** | [**Object**](.md) | Arbitrary properties associated with this item | [optional] 
 **referralId** | **Number** | The integration ID of the referring customer (if any) for whom this coupon was created as an effect. | [optional] 
 **recipientIntegrationId** | **String** | The integration ID of a referred customer profile. | [optional] 
 **importId** | **Number** | The ID of the Import which created this coupon. | [optional] 

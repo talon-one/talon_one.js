@@ -1,6 +1,7 @@
 # TalonOne.CustomerSession
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integrationId** | **String** | The ID used for this entity in the application system. | 
@@ -13,12 +14,12 @@ Name | Type | Description | Notes
 **cartItems** | [**[CartItem]**](CartItem.md) | Serialized JSON representation. | 
 **identifiers** | **[String]** | Identifiers for the customer, this can be used for limits on values such as device ID. | [optional] 
 **total** | **Number** | The total sum of the cart in one session. | 
-**attributes** | **Object** | A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings.  | 
+**attributes** | [**Object**](.md) | A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings.  | 
 **firstSession** | **Boolean** | Indicates whether this is the first session for the customer&#39;s profile. Will always be true for anonymous sessions. | 
 **discounts** | **{String: Number}** | A map of labelled discount values, values will be in the same currency as the application associated with the session. | 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

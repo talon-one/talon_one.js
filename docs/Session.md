@@ -1,6 +1,7 @@
 # TalonOne.Session
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **userId** | **Number** | The ID of the user of this session | 

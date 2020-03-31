@@ -1,6 +1,7 @@
 # TalonOne.CampaignCopy
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | Name of the copied campaign (Defaults to \&quot;Copy of original campaign name\&quot;) | [optional] 

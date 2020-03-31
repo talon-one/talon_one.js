@@ -1,6 +1,7 @@
 # TalonOne.LoyaltyMembership
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **joined** | **Date** | The moment in which the loyalty program was joined. | [optional] 

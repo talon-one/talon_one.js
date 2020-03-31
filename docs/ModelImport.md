@@ -1,6 +1,7 @@
 # TalonOne.ModelImport
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. | 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 **amount** | **Number** | The number of members that imported. | 
 
 
-<a name="EntityEnum"></a>
+
 ## Enum: EntityEnum
 
 

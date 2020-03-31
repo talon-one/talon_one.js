@@ -1,6 +1,7 @@
 # TalonOne.LimitConfig
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **action** | **String** | The limitable action to which this limit will be applied | 
@@ -8,7 +9,7 @@ Name | Type | Description | Notes
 **entities** | **[String]** | The entities that make the address of this limit | 
 
 
-<a name="ActionEnum"></a>
+
 ## Enum: ActionEnum
 
 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 
 
 
-<a name="[EntitiesEnum]"></a>
+
 ## Enum: [EntitiesEnum]
 
 

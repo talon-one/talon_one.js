@@ -1,6 +1,7 @@
 # TalonOne.NewRuleset
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rules** | [**[Rule]**](Rule.md) | Set of rules to apply. | 
