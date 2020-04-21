@@ -12,7 +12,7 @@
     "url": "https://github.com/talon-one/talon_one.js.git"
   },
   "bugs": {
-    "url" : "https://github.com/talon-one/talon_one.js/issues"
+    "url": "https://github.com/talon-one/talon_one.js/issues"
   },
   "engines": {
     "node": ">=4"
