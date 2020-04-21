@@ -165,36 +165,16 @@ const customerSession = TalonOne.NewCustomerSessionV2.constructFromObject({
   ]
 });
 
-// ----------------------------------------------------------------- //
-// Example 1: pass `responseContent` to control response information //
-// ----------------------------------------------------------------- //
-
 //Initializing an integration request wrapping the customer session
 const integrationRequest = new TalonOne.IntegrationRequest(customerSession);
 
-// Optional response contents to attach to the response (Look at ResponseContentEnum for full list of options) 
-integrationRequest.responseContent = ['customerSession', 'customerProfile']
+// Optional list of requested information to be present on the response.
+// See src/model/IntegrationRequest#ResponseContentEnum for full list of supported values
+// integrationRequest.responseContent = [
+//   IntegrationRequest.ResponseContentEnum.customerSession,
+//   IntegrationRequest.ResponseContentEnum.customerProfile
+// ]
 
-integrationApi
-  .updateCustomerSessionV2("example_integration_v2_id", integrationRequest)
-  .then(
-    function(data) {
-      console.log(JSON.stringify(data, null, 2));
-    },
-    function(error) {
-      console.error(error);
-    }
-  );
-
-
-// ------------------------------------------------------------------ //
-// Example 2: leave `responseContent` empty for bare minimum response //
-// ------------------------------------------------------------------ //
-
-// Initializing an integration request wrapping the customer session
-const integrationRequest2 = new TalonOne.IntegrationRequest(customerSession);
-
-// Leaving `responseContent` unassigned will response with the bare minimum information from api (effects, created coupons and created referrals)
 integrationApi
   .updateCustomerSessionV2("example_integration_v2_id", integrationRequest)
   .then(
