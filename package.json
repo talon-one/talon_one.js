@@ -2,6 +2,21 @@
   "name": "talon_one",
   "version": "4.0.0",
   "description": "Talon.One API SDK for Javascript",
+  "homepage": "https://developers.talon.one/SDKs/JavaScript",
+  "author": {
+    "name": "Talon.One Developers",
+    "url": "https://developers.talon.one"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talon-one/talon_one.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/talon-one/talon_one.js/issues"
+  },
+  "engines": {
+    "node": ">=4"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -12,10 +27,10 @@
     "fs": false
   },
   "dependencies": {
-    "@babel/cli": "^7.0.0",
     "superagent": "3.7.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
