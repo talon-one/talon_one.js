@@ -171,8 +171,8 @@ const integrationRequest = new TalonOne.IntegrationRequest(customerSession);
 // Optional list of requested information to be present on the response.
 // See src/model/IntegrationRequest#ResponseContentEnum for full list of supported values
 // integrationRequest.responseContent = [
-//   IntegrationRequest.ResponseContentEnum.customerSession,
-//   IntegrationRequest.ResponseContentEnum.customerProfile
+//   TalonOne.IntegrationRequest.ResponseContentEnum.customerSession,
+//   TalonOne.IntegrationRequest.ResponseContentEnum.customerProfile
 // ]
 
 integrationApi
