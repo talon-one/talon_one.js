@@ -178,11 +178,30 @@ const integrationRequest = new TalonOne.IntegrationRequest(customerSession);
 integrationApi
   .updateCustomerSessionV2("example_integration_v2_id", integrationRequest)
   .then(
-    function(data) {
+    data => {
       console.log(JSON.stringify(data, null, 2));
+
+      // Parsing the returned effects list, please consult https://developers.talon.one/Integration-API/handling-effects-v2 for the full list of effects and their corresponding properties
+      data.effects.forEach(effect => {
+        switch(effect.effectType) {
+          case 'setDiscount':
+            // Initiating right props instance according to the effect type
+            const setDiscountProps = TalonOne.SetDiscountEffectProps.constructFromObject(effect.props)
+            // Initiating the right props class is not a necessity, it is only a suggestion here that could help in case of unexpected returned values from the API
+
+            // Access the specific effect's properties
+            console.log(`Set a discount '${setDiscountProps.name}' of ${setDiscountProps.value}`)
+            break
+          case 'acceptCoupon':
+            // Work with AcceptCouponEffectProps' properties
+            // ...
+          default:
+            throw new Error(`Unhandled effect type from Talon.One integration: ${effect.effectType}`)
+        }
+      })
     },
-    function(error) {
-      console.error(error);
+    err => {
+      console.error(err);
     }
   );
 ```
