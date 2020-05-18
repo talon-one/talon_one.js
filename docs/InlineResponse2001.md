@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Coupon]**](Coupon.md) |  | 
+**data** | [**[Application]**](Application.md) |  | 
 
 

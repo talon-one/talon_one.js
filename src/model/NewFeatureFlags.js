@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewFeatureFlags model module.
  * @module model/NewFeatureFlags
- * @version 4.0.0
+ * @version 4.1.0
  */
 class NewFeatureFlags {
     /**

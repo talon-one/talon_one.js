@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 4.0.0
+ * @version 4.1.0
  */
 class NewCoupons {
     /**
@@ -59,6 +59,9 @@ class NewCoupons {
             if (data.hasOwnProperty('usageLimit')) {
                 obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
             }
+            if (data.hasOwnProperty('discountLimit')) {
+                obj['discountLimit'] = ApiClient.convertToType(data['discountLimit'], 'Number');
+            }
             if (data.hasOwnProperty('startDate')) {
                 obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
             }
@@ -95,6 +98,12 @@ class NewCoupons {
  * @member {Number} usageLimit
  */
 NewCoupons.prototype['usageLimit'] = undefined;
+
+/**
+ * The amount of discounts that can be given with this coupon code. 
+ * @member {Number} discountLimit
+ */
+NewCoupons.prototype['discountLimit'] = undefined;
 
 /**
  * Timestamp at which point the coupon becomes valid.

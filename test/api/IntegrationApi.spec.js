@@ -98,16 +98,6 @@
         done();
       });
     });
-    describe('getReservedCoupons', function() {
-      it('should call getReservedCoupons successfully', function(done) {
-        //uncomment below and update the code to test getReservedCoupons
-        //instance.getReservedCoupons(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getReservedCustomers', function() {
       it('should call getReservedCustomers successfully', function(done) {
         //uncomment below and update the code to test getReservedCustomers
@@ -132,6 +122,16 @@
       it('should call updateCustomerProfile successfully', function(done) {
         //uncomment below and update the code to test updateCustomerProfile
         //instance.updateCustomerProfile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateCustomerProfileV2', function() {
+      it('should call updateCustomerProfileV2 successfully', function(done) {
+        //uncomment below and update the code to test updateCustomerProfileV2
+        //instance.updateCustomerProfileV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

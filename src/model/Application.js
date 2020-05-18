@@ -19,7 +19,7 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 4.0.0
+ * @version 4.1.0
  */
 class Application {
     /**
@@ -99,6 +99,9 @@ class Application {
             }
             if (data.hasOwnProperty('limits')) {
                 obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+            }
+            if (data.hasOwnProperty('campaignPriority')) {
+                obj['campaignPriority'] = ApiClient.convertToType(data['campaignPriority'], 'String');
             }
             if (data.hasOwnProperty('attributesSettings')) {
                 obj['attributesSettings'] = AttributesSettings.constructFromObject(data['attributesSettings']);
@@ -180,6 +183,12 @@ Application.prototype['attributes'] = undefined;
 Application.prototype['limits'] = undefined;
 
 /**
+ * Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive)
+ * @member {module:model/Application.CampaignPriorityEnum} campaignPriority
+ */
+Application.prototype['campaignPriority'] = undefined;
+
+/**
  * @member {module:model/AttributesSettings} attributesSettings
  */
 Application.prototype['attributesSettings'] = undefined;
@@ -218,6 +227,33 @@ Application['CaseSensitivityEnum'] = {
      * @const
      */
     "insensitive-lowercase": "insensitive-lowercase"
+};
+
+
+/**
+ * Allowed values for the <code>campaignPriority</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Application['CampaignPriorityEnum'] = {
+
+    /**
+     * value: "universal"
+     * @const
+     */
+    "universal": "universal",
+
+    /**
+     * value: "stackable"
+     * @const
+     */
+    "stackable": "stackable",
+
+    /**
+     * value: "exclusive"
+     * @const
+     */
+    "exclusive": "exclusive"
 };
 
 

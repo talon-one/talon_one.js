@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property version (base name: "version")', function() {
+      // uncomment below and update the code to test the property version
+      //var instane = new TalonOne.NewCampaignSet();
+      //expect(instance).to.be();
+    });
+
     it('should have the property set (base name: "set")', function() {
       // uncomment below and update the code to test the property set
       //var instane = new TalonOne.NewCampaignSet();

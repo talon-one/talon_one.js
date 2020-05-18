@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
+import Ruleset from './Ruleset';
 
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 4.0.0
+ * @version 4.1.0
  */
 class InlineResponse2003 {
     /**
      * Constructs a new <code>InlineResponse2003</code>.
      * @alias module:model/InlineResponse2003
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Campaign>} 
+     * @param data {Array.<module:model/Ruleset>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2003 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Campaign]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Ruleset]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2003 {
 InlineResponse2003.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Campaign>} data
+ * @member {Array.<module:model/Ruleset>} data
  */
 InlineResponse2003.prototype['data'] = undefined;
 

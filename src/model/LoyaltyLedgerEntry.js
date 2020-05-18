@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 4.0.0
+ * @version 4.1.0
  */
 class LoyaltyLedgerEntry {
     /**
@@ -92,6 +92,9 @@ class LoyaltyLedgerEntry {
             if (data.hasOwnProperty('subLedgerID')) {
                 obj['subLedgerID'] = ApiClient.convertToType(data['subLedgerID'], 'String');
             }
+            if (data.hasOwnProperty('userID')) {
+                obj['userID'] = ApiClient.convertToType(data['userID'], 'Number');
+            }
         }
         return obj;
     }
@@ -150,6 +153,12 @@ LoyaltyLedgerEntry.prototype['name'] = undefined;
  * @member {String} subLedgerID
  */
 LoyaltyLedgerEntry.prototype['subLedgerID'] = undefined;
+
+/**
+ * This is the ID of the user who created this entry, if the addition or subtraction was done manually.
+ * @member {Number} userID
+ */
+LoyaltyLedgerEntry.prototype['userID'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The CampaignSet model module.
  * @module model/CampaignSet
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CampaignSet {
     /**
@@ -27,11 +27,12 @@ class CampaignSet {
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param version {Number} Version of the campaign set
      * @param set {module:model/CampaignSetBranchNode} 
      */
-    constructor(id, created, applicationId, set) { 
+    constructor(id, created, applicationId, version, set) { 
         
-        CampaignSet.initialize(this, id, created, applicationId, set);
+        CampaignSet.initialize(this, id, created, applicationId, version, set);
     }
 
     /**
@@ -39,10 +40,11 @@ class CampaignSet {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, set) { 
+    static initialize(obj, id, created, applicationId, version, set) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
+        obj['version'] = version;
         obj['set'] = set;
     }
 
@@ -65,6 +67,9 @@ class CampaignSet {
             }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
             if (data.hasOwnProperty('set')) {
                 obj['set'] = CampaignSetBranchNode.constructFromObject(data['set']);
@@ -93,6 +98,12 @@ CampaignSet.prototype['created'] = undefined;
  * @member {Number} applicationId
  */
 CampaignSet.prototype['applicationId'] = undefined;
+
+/**
+ * Version of the campaign set
+ * @member {Number} version
+ */
+CampaignSet.prototype['version'] = undefined;
 
 /**
  * @member {module:model/CampaignSetBranchNode} set

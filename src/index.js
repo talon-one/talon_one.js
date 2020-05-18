@@ -67,6 +67,7 @@ import CustomerAnalytics from './model/CustomerAnalytics';
 import CustomerInventory from './model/CustomerInventory';
 import CustomerProfile from './model/CustomerProfile';
 import CustomerProfileSearchQuery from './model/CustomerProfileSearchQuery';
+import CustomerProfileUpdate from './model/CustomerProfileUpdate';
 import CustomerSession from './model/CustomerSession';
 import CustomerSessionV2 from './model/CustomerSessionV2';
 import DeductLoyaltyPointsEffectProps from './model/DeductLoyaltyPointsEffectProps';
@@ -244,7 +245,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.0
+* @version 4.1.0
 */
 export {
     /**
@@ -576,6 +577,12 @@ export {
      * @property {module:model/CustomerProfileSearchQuery}
      */
     CustomerProfileSearchQuery,
+
+    /**
+     * The CustomerProfileUpdate model constructor.
+     * @property {module:model/CustomerProfileUpdate}
+     */
+    CustomerProfileUpdate,
 
     /**
      * The CustomerSession model constructor.

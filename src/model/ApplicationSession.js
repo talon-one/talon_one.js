@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 4.0.0
+ * @version 4.1.0
  */
 class ApplicationSession {
     /**
@@ -33,10 +33,11 @@ class ApplicationSession {
      * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (\"open\"), \"closed\", or \"cancelled\".
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
      * @param discounts {Object.<String, Number>} A map of labelled discount values, in the same currency as the session.
+     * @param total {Number} The total sum of the session before any discounts applied.
      */
-    constructor(id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts) { 
+    constructor(id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, total) { 
         
-        ApplicationSession.initialize(this, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts);
+        ApplicationSession.initialize(this, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, total);
     }
 
     /**
@@ -44,7 +45,7 @@ class ApplicationSession {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts) { 
+    static initialize(obj, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, total) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -54,6 +55,7 @@ class ApplicationSession {
         obj['state'] = state;
         obj['cartItems'] = cartItems;
         obj['discounts'] = discounts;
+        obj['total'] = total;
     }
 
     /**

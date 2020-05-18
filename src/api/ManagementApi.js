@@ -25,7 +25,6 @@ import Attribute from '../model/Attribute';
 import Campaign from '../model/Campaign';
 import CampaignCopy from '../model/CampaignCopy';
 import CampaignSearch from '../model/CampaignSearch';
-import CampaignSet from '../model/CampaignSet';
 import Coupon from '../model/Coupon';
 import CouponSearch from '../model/CouponSearch';
 import CustomerActivityReport from '../model/CustomerActivityReport';
@@ -67,7 +66,6 @@ import LoyaltyProgram from '../model/LoyaltyProgram';
 import NewAdditionalCost from '../model/NewAdditionalCost';
 import NewAttribute from '../model/NewAttribute';
 import NewCampaign from '../model/NewCampaign';
-import NewCampaignSet from '../model/NewCampaignSet';
 import NewCoupons from '../model/NewCoupons';
 import NewPassword from '../model/NewPassword';
 import NewPasswordEmail from '../model/NewPasswordEmail';
@@ -84,7 +82,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 4.0.0
+* @version 4.1.0
 */
 export default class ManagementApi {
 
@@ -166,7 +164,7 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/CampaignCopy} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     copyCampaignToApplicationsWithHttpInfo(applicationId, campaignId, body) {
       let postBody = body;
@@ -197,7 +195,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/copy', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -211,7 +209,7 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/CampaignCopy} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     copyCampaignToApplications(applicationId, campaignId, body) {
       return this.copyCampaignToApplicationsWithHttpInfo(applicationId, campaignId, body)
@@ -375,7 +373,7 @@ export default class ManagementApi {
      * @param {module:model/NewCoupons} body 
      * @param {Object} opts Optional parameters
      * @param {String} opts.silent If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     createCouponsWithHttpInfo(applicationId, campaignId, body, opts) {
       opts = opts || {};
@@ -408,7 +406,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2004;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -424,7 +422,7 @@ export default class ManagementApi {
      * @param {module:model/NewCoupons} body 
      * @param {Object} opts Optional parameters
      * @param {String} opts.silent If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     createCoupons(applicationId, campaignId, body, opts) {
       return this.createCouponsWithHttpInfo(applicationId, campaignId, body, opts)
@@ -2009,7 +2007,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     getApplicationsWithHttpInfo(opts) {
       opts = opts || {};
@@ -2030,7 +2028,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/v1/applications', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2045,7 +2043,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     getApplications(opts) {
       return this.getApplicationsWithHttpInfo(opts)
@@ -2292,7 +2290,7 @@ export default class ManagementApi {
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     getCampaignByAttributesWithHttpInfo(applicationId, body, opts) {
       opts = opts || {};
@@ -2323,7 +2321,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns_search', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2341,56 +2339,10 @@ export default class ManagementApi {
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     getCampaignByAttributes(applicationId, body, opts) {
       return this.getCampaignByAttributesWithHttpInfo(applicationId, body, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List CampaignSet
-     * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CampaignSet} and HTTP response
-     */
-    getCampaignSetWithHttpInfo(applicationId) {
-      let postBody = null;
-      // verify the required parameter 'applicationId' is set
-      if (applicationId === undefined || applicationId === null) {
-        throw new Error("Missing the required parameter 'applicationId' when calling getCampaignSet");
-      }
-
-      let pathParams = {
-        'applicationId': applicationId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['manager_auth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CampaignSet;
-      return this.apiClient.callApi(
-        '/v1/applications/{applicationId}/campaign_set', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * List CampaignSet
-     * @param {Number} applicationId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CampaignSet}
-     */
-    getCampaignSet(applicationId) {
-      return this.getCampaignSetWithHttpInfo(applicationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2409,7 +2361,7 @@ export default class ManagementApi {
      * @param {String} opts.tags Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
      * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     getCampaignsWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -2440,7 +2392,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2460,7 +2412,7 @@ export default class ManagementApi {
      * @param {String} opts.tags Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
      * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     getCampaigns(applicationId, opts) {
       return this.getCampaignsWithHttpInfo(applicationId, opts)
@@ -2559,7 +2511,7 @@ export default class ManagementApi {
      * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getCouponsWithHttpInfo(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -2603,7 +2555,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2004;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2632,7 +2584,7 @@ export default class ManagementApi {
      * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getCoupons(applicationId, campaignId, opts) {
       return this.getCouponsWithHttpInfo(applicationId, campaignId, opts)
@@ -2661,7 +2613,7 @@ export default class ManagementApi {
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getCouponsByAttributesWithHttpInfo(applicationId, campaignId, body, opts) {
       opts = opts || {};
@@ -2705,7 +2657,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2004;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2732,7 +2684,7 @@ export default class ManagementApi {
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getCouponsByAttributes(applicationId, campaignId, body, opts) {
       return this.getCouponsByAttributesWithHttpInfo(applicationId, campaignId, body, opts)
@@ -2761,7 +2713,7 @@ export default class ManagementApi {
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getCouponsByAttributesApplicationWideWithHttpInfo(applicationId, body, opts) {
       opts = opts || {};
@@ -2801,7 +2753,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2004;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/coupons_search', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2828,7 +2780,7 @@ export default class ManagementApi {
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getCouponsByAttributesApplicationWide(applicationId, body, opts) {
       return this.getCouponsByAttributesApplicationWideWithHttpInfo(applicationId, body, opts)
@@ -3995,7 +3947,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     getRulesetsWithHttpInfo(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -4026,7 +3978,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2003;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/rulesets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4042,7 +3994,7 @@ export default class ManagementApi {
      * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     getRulesets(applicationId, campaignId, opts) {
       return this.getRulesetsWithHttpInfo(applicationId, campaignId, opts)
@@ -4523,7 +4475,7 @@ export default class ManagementApi {
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     searchCouponsAdvancedWithHttpInfo(applicationId, campaignId, body, opts) {
       opts = opts || {};
@@ -4567,7 +4519,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2004;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4594,7 +4546,7 @@ export default class ManagementApi {
      * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {String} opts.batchId Filter results by batches of coupons
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     searchCouponsAdvanced(applicationId, campaignId, body, opts) {
       return this.searchCouponsAdvancedWithHttpInfo(applicationId, campaignId, body, opts)
@@ -4623,7 +4575,7 @@ export default class ManagementApi {
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     searchCouponsAdvancedApplicationWideWithHttpInfo(applicationId, body, opts) {
       opts = opts || {};
@@ -4663,7 +4615,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2004;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/coupons_search_advanced', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4690,7 +4642,7 @@ export default class ManagementApi {
      * @param {String} opts.batchId Filter results by batches of coupons
      * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     searchCouponsAdvancedApplicationWide(applicationId, body, opts) {
       return this.searchCouponsAdvancedApplicationWideWithHttpInfo(applicationId, body, opts)
@@ -5057,58 +5009,6 @@ export default class ManagementApi {
      */
     updateCampaign(applicationId, campaignId, body) {
       return this.updateCampaignWithHttpInfo(applicationId, campaignId, body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update a Campaign Set
-     * @param {Number} applicationId 
-     * @param {module:model/NewCampaignSet} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CampaignSet} and HTTP response
-     */
-    updateCampaignSetWithHttpInfo(applicationId, body) {
-      let postBody = body;
-      // verify the required parameter 'applicationId' is set
-      if (applicationId === undefined || applicationId === null) {
-        throw new Error("Missing the required parameter 'applicationId' when calling updateCampaignSet");
-      }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCampaignSet");
-      }
-
-      let pathParams = {
-        'applicationId': applicationId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['manager_auth'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CampaignSet;
-      return this.apiClient.callApi(
-        '/v1/applications/{applicationId}/campaign_set', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update a Campaign Set
-     * @param {Number} applicationId 
-     * @param {module:model/NewCampaignSet} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CampaignSet}
-     */
-    updateCampaignSet(applicationId, body) {
-      return this.updateCampaignSetWithHttpInfo(applicationId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -9,10 +9,10 @@ Method | HTTP request | Description
 [**deleteCouponReservation**](IntegrationApi.md#deleteCouponReservation) | **DELETE** /v1/coupon_reservations/{couponValue} | Delete coupon reservations
 [**deleteCustomerData**](IntegrationApi.md#deleteCustomerData) | **DELETE** /v1/customer_data/{integrationId} | Delete the personal data of a customer.
 [**getCustomerInventory**](IntegrationApi.md#getCustomerInventory) | **GET** /v1/customer_profiles/{integrationId}/inventory | Get an inventory of all data associated with a specific customer profile.
-[**getReservedCoupons**](IntegrationApi.md#getReservedCoupons) | **GET** /v1/coupon_reservations/coupons/{integrationId} | Get all valid reserved coupons
 [**getReservedCustomers**](IntegrationApi.md#getReservedCustomers) | **GET** /v1/coupon_reservations/customerprofiles/{couponValue} | Get the users that have this coupon reserved
 [**trackEvent**](IntegrationApi.md#trackEvent) | **POST** /v1/events | Track an Event
 [**updateCustomerProfile**](IntegrationApi.md#updateCustomerProfile) | **PUT** /v1/customer_profiles/{integrationId} | Update a Customer Profile
+[**updateCustomerProfileV2**](IntegrationApi.md#updateCustomerProfileV2) | **PUT** /v2/customer_profiles/{customerProfileId} | Update a Customer Profile
 [**updateCustomerSession**](IntegrationApi.md#updateCustomerSession) | **PUT** /v1/customer_sessions/{customerSessionId} | Update a Customer Session
 [**updateCustomerSessionV2**](IntegrationApi.md#updateCustomerSessionV2) | **PUT** /v2/customer_sessions/{customerSessionId} | Update a Customer Session
 
@@ -248,7 +248,7 @@ null (empty response body)
 
 Get an inventory of all data associated with a specific customer profile.
 
-Get information regarding entities referencing this customer profile&#39;s integrationId. Currently we support customer profile information and referral codes. In the future, this will be expanded with coupon codes and loyalty points.
+Get information regarding entities referencing this customer profile&#39;s integrationId. Currently we support customer profile information, referral codes and reserved coupons. In the future, this will be expanded with loyalty points.
 
 ### Example
 
@@ -269,8 +269,9 @@ integration_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.IntegrationApi();
 let integrationId = "integrationId_example"; // String | The custom identifier for this profile, must be unique within the account.
 let opts = {
-  'profile': null, // Object | optional flag to decide if you would like customer profile information in the response
-  'referrals': null // Object | optional flag to decide if you would like referral information in the response
+  'profile': true, // Boolean | optional flag to decide if you would like customer profile information in the response
+  'referrals': true, // Boolean | optional flag to decide if you would like referral information in the response
+  'coupons': true // Boolean | optional flag to decide if you would like coupon information in the response
 };
 apiInstance.getCustomerInventory(integrationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -286,67 +287,13 @@ apiInstance.getCustomerInventory(integrationId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **integrationId** | **String**| The custom identifier for this profile, must be unique within the account. | 
- **profile** | [**Object**](.md)| optional flag to decide if you would like customer profile information in the response | [optional] 
- **referrals** | [**Object**](.md)| optional flag to decide if you would like referral information in the response | [optional] 
+ **profile** | **Boolean**| optional flag to decide if you would like customer profile information in the response | [optional] 
+ **referrals** | **Boolean**| optional flag to decide if you would like referral information in the response | [optional] 
+ **coupons** | **Boolean**| optional flag to decide if you would like coupon information in the response | [optional] 
 
 ### Return type
 
 [**CustomerInventory**](CustomerInventory.md)
-
-### Authorization
-
-[api_key_v1](../README.md#api_key_v1), [integration_auth](../README.md#integration_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getReservedCoupons
-
-> InlineResponse2001 getReservedCoupons(integrationId)
-
-Get all valid reserved coupons
-
-Returns all coupons this user is subscribed to that are valid and usable 
-
-### Example
-
-```javascript
-import TalonOne from 'talon_one';
-let defaultClient = TalonOne.ApiClient.instance;
-// Configure API key authorization: api_key_v1
-let api_key_v1 = defaultClient.authentications['api_key_v1'];
-api_key_v1.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key_v1.apiKeyPrefix = 'Token';
-// Configure API key authorization: integration_auth
-let integration_auth = defaultClient.authentications['integration_auth'];
-integration_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//integration_auth.apiKeyPrefix = 'Token';
-
-let apiInstance = new TalonOne.IntegrationApi();
-let integrationId = "integrationId_example"; // String | The custom identifier for this profile, must be unique within the account.
-apiInstance.getReservedCoupons(integrationId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **integrationId** | **String**| The custom identifier for this profile, must be unique within the account. | 
-
-### Return type
-
-[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -415,7 +362,7 @@ Name | Type | Description  | Notes
 
 ## trackEvent
 
-> IntegrationState trackEvent(body)
+> IntegrationState trackEvent(body, opts)
 
 Track an Event
 
@@ -439,7 +386,10 @@ integration_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.IntegrationApi();
 let body = new TalonOne.NewEvent(); // NewEvent | 
-apiInstance.trackEvent(body).then((data) => {
+let opts = {
+  'dry': true // Boolean | Flag to indicate whether to skip persisting the changes or not (Will not persist if set to 'true').
+};
+apiInstance.trackEvent(body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -453,6 +403,7 @@ apiInstance.trackEvent(body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**NewEvent**](NewEvent.md)|  | 
+ **dry** | **Boolean**| Flag to indicate whether to skip persisting the changes or not (Will not persist if set to &#39;true&#39;). | [optional] 
 
 ### Return type
 
@@ -470,7 +421,7 @@ Name | Type | Description  | Notes
 
 ## updateCustomerProfile
 
-> IntegrationState updateCustomerProfile(integrationId, body)
+> IntegrationState updateCustomerProfile(integrationId, body, opts)
 
 Update a Customer Profile
 
@@ -495,7 +446,10 @@ integration_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.IntegrationApi();
 let integrationId = "integrationId_example"; // String | The custom identifier for this profile, must be unique within the account.
 let body = new TalonOne.NewCustomerProfile(); // NewCustomerProfile | 
-apiInstance.updateCustomerProfile(integrationId, body).then((data) => {
+let opts = {
+  'dry': true // Boolean | Flag to indicate whether to skip persisting the changes or not (Will not persist if set to 'true').
+};
+apiInstance.updateCustomerProfile(integrationId, body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -510,6 +464,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **integrationId** | **String**| The custom identifier for this profile, must be unique within the account. | 
  **body** | [**NewCustomerProfile**](NewCustomerProfile.md)|  | 
+ **dry** | **Boolean**| Flag to indicate whether to skip persisting the changes or not (Will not persist if set to &#39;true&#39;). | [optional] 
 
 ### Return type
 
@@ -525,9 +480,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## updateCustomerProfileV2
+
+> CustomerProfileUpdate updateCustomerProfileV2(customerProfileId, body)
+
+Update a Customer Profile
+
+Update (or create) a [Customer Profile][].   The &#x60;integrationId&#x60; may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the &#x60;integrationId&#x60;. It is vital that this ID **not** change over time, so **don&#39;t** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  [Customer Profile]: /Getting-Started/entities#customer-profile 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.IntegrationApi();
+let customerProfileId = "customerProfileId_example"; // String | The custom identifier for this profile, must be unique within the account.
+let body = new TalonOne.NewCustomerProfile(); // NewCustomerProfile | 
+apiInstance.updateCustomerProfileV2(customerProfileId, body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerProfileId** | **String**| The custom identifier for this profile, must be unique within the account. | 
+ **body** | [**NewCustomerProfile**](NewCustomerProfile.md)|  | 
+
+### Return type
+
+[**CustomerProfileUpdate**](CustomerProfileUpdate.md)
+
+### Authorization
+
+[api_key_v1](../README.md#api_key_v1)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateCustomerSession
 
-> IntegrationState updateCustomerSession(customerSessionId, body)
+> IntegrationState updateCustomerSession(customerSessionId, body, opts)
 
 Update a Customer Session
 
@@ -552,7 +559,10 @@ integration_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.IntegrationApi();
 let customerSessionId = "customerSessionId_example"; // String | The custom identifier for this session, must be unique within the account.
 let body = new TalonOne.NewCustomerSession(); // NewCustomerSession | 
-apiInstance.updateCustomerSession(customerSessionId, body).then((data) => {
+let opts = {
+  'dry': true // Boolean | Flag to indicate whether to skip persisting the changes or not (Will not persist if set to 'true').
+};
+apiInstance.updateCustomerSession(customerSessionId, body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -567,6 +577,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerSessionId** | **String**| The custom identifier for this session, must be unique within the account. | 
  **body** | [**NewCustomerSession**](NewCustomerSession.md)|  | 
+ **dry** | **Boolean**| Flag to indicate whether to skip persisting the changes or not (Will not persist if set to &#39;true&#39;). | [optional] 
 
 ### Return type
 
@@ -584,7 +595,7 @@ Name | Type | Description  | Notes
 
 ## updateCustomerSessionV2
 
-> IntegrationStateV2 updateCustomerSessionV2(customerSessionId, body)
+> IntegrationStateV2 updateCustomerSessionV2(customerSessionId, body, opts)
 
 Update a Customer Session
 
@@ -604,7 +615,10 @@ api_key_v1.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.IntegrationApi();
 let customerSessionId = "customerSessionId_example"; // String | The custom identifier for this session, must be unique within the account.
 let body = new TalonOne.IntegrationRequest(); // IntegrationRequest | 
-apiInstance.updateCustomerSessionV2(customerSessionId, body).then((data) => {
+let opts = {
+  'dry': true // Boolean | Flag to indicate whether to skip persisting the changes or not (Will not persist if set to 'true').
+};
+apiInstance.updateCustomerSessionV2(customerSessionId, body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -619,6 +633,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerSessionId** | **String**| The custom identifier for this session, must be unique within the account. | 
  **body** | [**IntegrationRequest**](IntegrationRequest.md)|  | 
+ **dry** | **Boolean**| Flag to indicate whether to skip persisting the changes or not (Will not persist if set to &#39;true&#39;). | [optional] 
 
 ### Return type
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **caseSensitivity** | **String** | A string indicating how should campaigns in this application deal with case sensitivity on coupon codes. | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 **limits** | [**[LimitConfig]**](LimitConfig.md) | Default limits for campaigns created in this application | [optional] 
+**campaignPriority** | **String** | Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive) | [optional] 
 **attributesSettings** | [**AttributesSettings**](AttributesSettings.md) |  | [optional] 
 
 
@@ -23,6 +24,19 @@ Name | Type | Description | Notes
 * `insensitive-uppercase` (value: `"insensitive-uppercase"`)
 
 * `insensitive-lowercase` (value: `"insensitive-lowercase"`)
+
+
+
+
+
+## Enum: CampaignPriorityEnum
+
+
+* `universal` (value: `"universal"`)
+
+* `stackable` (value: `"stackable"`)
+
+* `exclusive` (value: `"exclusive"`)
 
 
 
