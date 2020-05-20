@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAccountSignUp model module.
  * @module model/NewAccountSignUp
- * @version 4.0.0
+ * @version 4.1.0
  */
 class NewAccountSignUp {
     /**

@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSession model module.
  * @module model/CustomerSession
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CustomerSession {
     /**

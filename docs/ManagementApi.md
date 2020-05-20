@@ -42,7 +42,6 @@ Method | HTTP request | Description
 [**getCampaign**](ManagementApi.md#getCampaign) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId} | Get a Campaign
 [**getCampaignAnalytics**](ManagementApi.md#getCampaignAnalytics) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/analytics | Get analytics of campaigns
 [**getCampaignByAttributes**](ManagementApi.md#getCampaignByAttributes) | **POST** /v1/applications/{applicationId}/campaigns_search | Get a list of all campaigns that match the given attributes
-[**getCampaignSet**](ManagementApi.md#getCampaignSet) | **GET** /v1/applications/{applicationId}/campaign_set | List CampaignSet
 [**getCampaigns**](ManagementApi.md#getCampaigns) | **GET** /v1/applications/{applicationId}/campaigns | List your Campaigns
 [**getChanges**](ManagementApi.md#getChanges) | **GET** /v1/changes | Get audit log for an account
 [**getCoupons**](ManagementApi.md#getCoupons) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | List Coupons
@@ -82,7 +81,6 @@ Method | HTTP request | Description
 [**updateAdditionalCost**](ManagementApi.md#updateAdditionalCost) | **PUT** /v1/additional_costs/{additionalCostId} | Update an additional cost
 [**updateAttribute**](ManagementApi.md#updateAttribute) | **PUT** /v1/attributes/{attributeId} | Update a custom attribute
 [**updateCampaign**](ManagementApi.md#updateCampaign) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId} | Update a Campaign
-[**updateCampaignSet**](ManagementApi.md#updateCampaignSet) | **PUT** /v1/applications/{applicationId}/campaign_set | Update a Campaign Set
 [**updateCoupon**](ManagementApi.md#updateCoupon) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Update a Coupon
 [**updateCouponBatch**](ManagementApi.md#updateCouponBatch) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Update a Batch of Coupons
 [**updateRuleset**](ManagementApi.md#updateRuleset) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/rulesets/{rulesetId} | Update a Ruleset
@@ -143,7 +141,7 @@ null (empty response body)
 
 ## copyCampaignToApplications
 
-> InlineResponse2003 copyCampaignToApplications(applicationId, campaignId, body)
+> InlineResponse2002 copyCampaignToApplications(applicationId, campaignId, body)
 
 Copy the campaign into every specified application
 
@@ -183,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -347,7 +345,7 @@ Name | Type | Description  | Notes
 
 ## createCoupons
 
-> InlineResponse2001 createCoupons(applicationId, campaignId, body, opts)
+> InlineResponse2004 createCoupons(applicationId, campaignId, body, opts)
 
 Create Coupons
 
@@ -391,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -1869,7 +1867,7 @@ Name | Type | Description  | Notes
 
 ## getApplications
 
-> InlineResponse2002 getApplications(opts)
+> InlineResponse2001 getApplications(opts)
 
 List Applications
 
@@ -1911,7 +1909,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -2139,7 +2137,7 @@ Name | Type | Description  | Notes
 
 ## getCampaignByAttributes
 
-> InlineResponse2003 getCampaignByAttributes(applicationId, body, opts)
+> InlineResponse2002 getCampaignByAttributes(applicationId, body, opts)
 
 Get a list of all campaigns that match the given attributes
 
@@ -2187,7 +2185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -2199,57 +2197,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getCampaignSet
-
-> CampaignSet getCampaignSet(applicationId)
-
-List CampaignSet
-
-### Example
-
-```javascript
-import TalonOne from 'talon_one';
-let defaultClient = TalonOne.ApiClient.instance;
-// Configure API key authorization: manager_auth
-let manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix = 'Token';
-
-let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | 
-apiInstance.getCampaignSet(applicationId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **applicationId** | **Number**|  | 
-
-### Return type
-
-[**CampaignSet**](CampaignSet.md)
-
-### Authorization
-
-[manager_auth](../README.md#manager_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## getCampaigns
 
-> InlineResponse2003 getCampaigns(applicationId, opts)
+> InlineResponse2002 getCampaigns(applicationId, opts)
 
 List your Campaigns
 
@@ -2301,7 +2251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -2381,7 +2331,7 @@ Name | Type | Description  | Notes
 
 ## getCoupons
 
-> InlineResponse2001 getCoupons(applicationId, campaignId, opts)
+> InlineResponse2004 getCoupons(applicationId, campaignId, opts)
 
 List Coupons
 
@@ -2451,7 +2401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -2465,7 +2415,7 @@ Name | Type | Description  | Notes
 
 ## getCouponsByAttributes
 
-> InlineResponse2001 getCouponsByAttributes(applicationId, campaignId, body, opts)
+> InlineResponse2004 getCouponsByAttributes(applicationId, campaignId, body, opts)
 
 Get a list of the coupons that match the given attributes
 
@@ -2531,7 +2481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -2545,7 +2495,7 @@ Name | Type | Description  | Notes
 
 ## getCouponsByAttributesApplicationWide
 
-> InlineResponse2001 getCouponsByAttributesApplicationWide(applicationId, body, opts)
+> InlineResponse2004 getCouponsByAttributesApplicationWide(applicationId, body, opts)
 
 Get a list of the coupons that match the given attributes in all active campaigns of an application
 
@@ -2611,7 +2561,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -3681,7 +3631,7 @@ Name | Type | Description  | Notes
 
 ## getRulesets
 
-> InlineResponse2004 getRulesets(applicationId, campaignId, opts)
+> InlineResponse2003 getRulesets(applicationId, campaignId, opts)
 
 List Campaign Rulesets
 
@@ -3725,7 +3675,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -4189,7 +4139,7 @@ Name | Type | Description  | Notes
 
 ## searchCouponsAdvanced
 
-> InlineResponse2001 searchCouponsAdvanced(applicationId, campaignId, body, opts)
+> InlineResponse2004 searchCouponsAdvanced(applicationId, campaignId, body, opts)
 
 Get a list of the coupons that match the given attributes
 
@@ -4255,7 +4205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -4269,7 +4219,7 @@ Name | Type | Description  | Notes
 
 ## searchCouponsAdvancedApplicationWide
 
-> InlineResponse2001 searchCouponsAdvancedApplicationWide(applicationId, body, opts)
+> InlineResponse2004 searchCouponsAdvancedApplicationWide(applicationId, body, opts)
 
 Get a list of the coupons that match the given attributes in all active campaigns of an application
 
@@ -4335,7 +4285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -4652,56 +4602,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Campaign**](Campaign.md)
-
-### Authorization
-
-[manager_auth](../README.md#manager_auth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## updateCampaignSet
-
-> CampaignSet updateCampaignSet(applicationId, body)
-
-Update a Campaign Set
-
-### Example
-
-```javascript
-import TalonOne from 'talon_one';
-let defaultClient = TalonOne.ApiClient.instance;
-// Configure API key authorization: manager_auth
-let manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix = 'Token';
-
-let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | 
-let body = new TalonOne.NewCampaignSet(); // NewCampaignSet | 
-apiInstance.updateCampaignSet(applicationId, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **applicationId** | **Number**|  | 
- **body** | [**NewCampaignSet**](NewCampaignSet.md)|  | 
-
-### Return type
-
-[**CampaignSet**](CampaignSet.md)
 
 ### Authorization
 

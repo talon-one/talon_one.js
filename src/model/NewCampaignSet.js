@@ -17,7 +17,7 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The NewCampaignSet model module.
  * @module model/NewCampaignSet
- * @version 4.0.0
+ * @version 4.1.0
  */
 class NewCampaignSet {
     /**
@@ -25,11 +25,12 @@ class NewCampaignSet {
      * 
      * @alias module:model/NewCampaignSet
      * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param version {Number} Version of the campaign set
      * @param set {module:model/CampaignSetBranchNode} 
      */
-    constructor(applicationId, set) { 
+    constructor(applicationId, version, set) { 
         
-        NewCampaignSet.initialize(this, applicationId, set);
+        NewCampaignSet.initialize(this, applicationId, version, set);
     }
 
     /**
@@ -37,8 +38,9 @@ class NewCampaignSet {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applicationId, set) { 
+    static initialize(obj, applicationId, version, set) { 
         obj['applicationId'] = applicationId;
+        obj['version'] = version;
         obj['set'] = set;
     }
 
@@ -56,6 +58,9 @@ class NewCampaignSet {
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
             }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+            }
             if (data.hasOwnProperty('set')) {
                 obj['set'] = CampaignSetBranchNode.constructFromObject(data['set']);
             }
@@ -71,6 +76,12 @@ class NewCampaignSet {
  * @member {Number} applicationId
  */
 NewCampaignSet.prototype['applicationId'] = undefined;
+
+/**
+ * Version of the campaign set
+ * @member {Number} version
+ */
+NewCampaignSet.prototype['version'] = undefined;
 
 /**
  * @member {module:model/CampaignSetBranchNode} set

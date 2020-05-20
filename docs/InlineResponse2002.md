@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Application]**](Application.md) |  | 
+**data** | [**[Campaign]**](Campaign.md) |  | 
 
 

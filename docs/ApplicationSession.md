@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **state** | **String** | Indicating if the customer session is in progress (\&quot;open\&quot;), \&quot;closed\&quot;, or \&quot;cancelled\&quot;. | 
 **cartItems** | [**[CartItem]**](CartItem.md) | Serialized JSON representation. | 
 **discounts** | **{String: Number}** | A map of labelled discount values, in the same currency as the session. | 
-**total** | **Number** | The total sum of the session before any discounts applied. | [optional] 
+**total** | **Number** | The total sum of the session before any discounts applied. | 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this item | [optional] 
 
 

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property discountLimit (base name: "discountLimit")', function() {
+      // uncomment below and update the code to test the property discountLimit
+      //var instane = new TalonOne.Coupon();
+      //expect(instance).to.be();
+    });
+
     it('should have the property startDate (base name: "startDate")', function() {
       // uncomment below and update the code to test the property startDate
       //var instane = new TalonOne.Coupon();
@@ -98,6 +104,18 @@
 
     it('should have the property usageCounter (base name: "usageCounter")', function() {
       // uncomment below and update the code to test the property usageCounter
+      //var instane = new TalonOne.Coupon();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property discountCounter (base name: "discountCounter")', function() {
+      // uncomment below and update the code to test the property discountCounter
+      //var instane = new TalonOne.Coupon();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property discountRemainder (base name: "discountRemainder")', function() {
+      // uncomment below and update the code to test the property discountRemainder
       //var instane = new TalonOne.Coupon();
       //expect(instance).to.be();
     });

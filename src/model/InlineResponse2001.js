@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Coupon from './Coupon';
+import Application from './Application';
 
 /**
  * The InlineResponse2001 model module.
  * @module model/InlineResponse2001
- * @version 4.0.0
+ * @version 4.1.0
  */
 class InlineResponse2001 {
     /**
      * Constructs a new <code>InlineResponse2001</code>.
      * @alias module:model/InlineResponse2001
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Coupon>} 
+     * @param data {Array.<module:model/Application>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2001 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Application]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2001 {
 InlineResponse2001.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Coupon>} data
+ * @member {Array.<module:model/Application>} data
  */
 InlineResponse2001.prototype['data'] = undefined;
 

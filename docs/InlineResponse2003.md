@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Campaign]**](Campaign.md) |  | 
+**data** | [**[Ruleset]**](Ruleset.md) |  | 
 
 

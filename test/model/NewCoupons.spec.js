@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property discountLimit (base name: "discountLimit")', function() {
+      // uncomment below and update the code to test the property discountLimit
+      //var instane = new TalonOne.NewCoupons();
+      //expect(instance).to.be();
+    });
+
     it('should have the property startDate (base name: "startDate")', function() {
       // uncomment below and update the code to test the property startDate
       //var instane = new TalonOne.NewCoupons();

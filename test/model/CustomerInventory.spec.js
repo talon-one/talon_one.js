@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property coupons (base name: "coupons")', function() {
+      // uncomment below and update the code to test the property coupons
+      //var instane = new TalonOne.CustomerInventory();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

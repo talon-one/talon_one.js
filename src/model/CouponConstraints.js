@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponConstraints model module.
  * @module model/CouponConstraints
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CouponConstraints {
     /**
@@ -50,6 +50,9 @@ class CouponConstraints {
             if (data.hasOwnProperty('usageLimit')) {
                 obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
             }
+            if (data.hasOwnProperty('discountLimit')) {
+                obj['discountLimit'] = ApiClient.convertToType(data['discountLimit'], 'Number');
+            }
             if (data.hasOwnProperty('startDate')) {
                 obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
             }
@@ -68,6 +71,12 @@ class CouponConstraints {
  * @member {Number} usageLimit
  */
 CouponConstraints.prototype['usageLimit'] = undefined;
+
+/**
+ * The amount of discounts that can be given with this coupon code. 
+ * @member {Number} discountLimit
+ */
+CouponConstraints.prototype['discountLimit'] = undefined;
 
 /**
  * Timestamp at which point the coupon becomes valid.

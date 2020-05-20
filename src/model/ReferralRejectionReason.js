@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferralRejectionReason model module.
  * @module model/ReferralRejectionReason
- * @version 4.0.0
+ * @version 4.1.0
  */
 class ReferralRejectionReason {
     /**

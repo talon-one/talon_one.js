@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Coupon model module.
  * @module model/Coupon
- * @version 4.0.0
+ * @version 4.1.0
  */
 class Coupon {
     /**
@@ -75,6 +75,9 @@ class Coupon {
             if (data.hasOwnProperty('usageLimit')) {
                 obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
             }
+            if (data.hasOwnProperty('discountLimit')) {
+                obj['discountLimit'] = ApiClient.convertToType(data['discountLimit'], 'Number');
+            }
             if (data.hasOwnProperty('startDate')) {
                 obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
             }
@@ -83,6 +86,12 @@ class Coupon {
             }
             if (data.hasOwnProperty('usageCounter')) {
                 obj['usageCounter'] = ApiClient.convertToType(data['usageCounter'], 'Number');
+            }
+            if (data.hasOwnProperty('discountCounter')) {
+                obj['discountCounter'] = ApiClient.convertToType(data['discountCounter'], 'Number');
+            }
+            if (data.hasOwnProperty('discountRemainder')) {
+                obj['discountRemainder'] = ApiClient.convertToType(data['discountRemainder'], 'Number');
             }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
@@ -140,6 +149,12 @@ Coupon.prototype['value'] = undefined;
 Coupon.prototype['usageLimit'] = undefined;
 
 /**
+ * The amount of discounts that can be given with this coupon code. 
+ * @member {Number} discountLimit
+ */
+Coupon.prototype['discountLimit'] = undefined;
+
+/**
  * Timestamp at which point the coupon becomes valid.
  * @member {Date} startDate
  */
@@ -158,6 +173,18 @@ Coupon.prototype['expiryDate'] = undefined;
 Coupon.prototype['usageCounter'] = undefined;
 
 /**
+ * The amount of discounts given on rules redeeming this coupon. Only usable if a coupon discount budget was set for this coupon.
+ * @member {Number} discountCounter
+ */
+Coupon.prototype['discountCounter'] = undefined;
+
+/**
+ * The remaining discount this coupon can give.
+ * @member {Number} discountRemainder
+ */
+Coupon.prototype['discountRemainder'] = undefined;
+
+/**
  * Arbitrary properties associated with this item
  * @member {Object} attributes
  */
@@ -170,7 +197,7 @@ Coupon.prototype['attributes'] = undefined;
 Coupon.prototype['referralId'] = undefined;
 
 /**
- * The integration ID of a referred customer profile.
+ * The Integration ID of the customer that is allowed to redeem this coupon.
  * @member {String} recipientIntegrationId
  */
 Coupon.prototype['recipientIntegrationId'] = undefined;

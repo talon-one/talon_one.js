@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 4.0.0
+ * @version 4.1.0
  */
 class NewApplication {
     /**
@@ -77,6 +77,9 @@ class NewApplication {
             if (data.hasOwnProperty('limits')) {
                 obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
             }
+            if (data.hasOwnProperty('campaignPriority')) {
+                obj['campaignPriority'] = ApiClient.convertToType(data['campaignPriority'], 'String');
+            }
             if (data.hasOwnProperty('attributesSettings')) {
                 obj['attributesSettings'] = AttributesSettings.constructFromObject(data['attributesSettings']);
             }
@@ -133,6 +136,12 @@ NewApplication.prototype['attributes'] = undefined;
 NewApplication.prototype['limits'] = undefined;
 
 /**
+ * Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive)
+ * @member {module:model/NewApplication.CampaignPriorityEnum} campaignPriority
+ */
+NewApplication.prototype['campaignPriority'] = undefined;
+
+/**
  * @member {module:model/AttributesSettings} attributesSettings
  */
 NewApplication.prototype['attributesSettings'] = undefined;
@@ -171,6 +180,33 @@ NewApplication['CaseSensitivityEnum'] = {
      * @const
      */
     "insensitive-lowercase": "insensitive-lowercase"
+};
+
+
+/**
+ * Allowed values for the <code>campaignPriority</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewApplication['CampaignPriorityEnum'] = {
+
+    /**
+     * value: "universal"
+     * @const
+     */
+    "universal": "universal",
+
+    /**
+     * value: "stackable"
+     * @const
+     */
+    "stackable": "stackable",
+
+    /**
+     * value: "exclusive"
+     * @const
+     */
+    "exclusive": "exclusive"
 };
 
 

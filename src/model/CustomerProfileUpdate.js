@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import Coupon from './Coupon';
+import CustomerProfile from './CustomerProfile';
 
 /**
- * The InlineResponse2005 model module.
- * @module model/InlineResponse2005
+ * The CustomerProfileUpdate model module.
+ * @module model/CustomerProfileUpdate
  * @version 4.1.0
  */
-class InlineResponse2005 {
+class CustomerProfileUpdate {
     /**
-     * Constructs a new <code>InlineResponse2005</code>.
-     * @alias module:model/InlineResponse2005
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/Coupon>} 
+     * Constructs a new <code>CustomerProfileUpdate</code>.
+     * @alias module:model/CustomerProfileUpdate
+     * @param customerProfile {module:model/CustomerProfile} 
      */
-    constructor(hasMore, data) { 
+    constructor(customerProfile) { 
         
-        InlineResponse2005.initialize(this, hasMore, data);
+        CustomerProfileUpdate.initialize(this, customerProfile);
     }
 
     /**
@@ -36,27 +35,23 @@ class InlineResponse2005 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
-        obj['data'] = data;
+    static initialize(obj, customerProfile) { 
+        obj['customerProfile'] = customerProfile;
     }
 
     /**
-     * Constructs a <code>InlineResponse2005</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>CustomerProfileUpdate</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse2005} obj Optional instance to populate.
-     * @return {module:model/InlineResponse2005} The populated <code>InlineResponse2005</code> instance.
+     * @param {module:model/CustomerProfileUpdate} obj Optional instance to populate.
+     * @return {module:model/CustomerProfileUpdate} The populated <code>CustomerProfileUpdate</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineResponse2005();
+            obj = obj || new CustomerProfileUpdate();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
+            if (data.hasOwnProperty('customerProfile')) {
+                obj['customerProfile'] = CustomerProfile.constructFromObject(data['customerProfile']);
             }
         }
         return obj;
@@ -66,19 +61,14 @@ class InlineResponse2005 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {module:model/CustomerProfile} customerProfile
  */
-InlineResponse2005.prototype['hasMore'] = undefined;
-
-/**
- * @member {Array.<module:model/Coupon>} data
- */
-InlineResponse2005.prototype['data'] = undefined;
+CustomerProfileUpdate.prototype['customerProfile'] = undefined;
 
 
 
 
 
 
-export default InlineResponse2005;
+export default CustomerProfileUpdate;
 

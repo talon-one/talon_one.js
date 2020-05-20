@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCouponBatch model module.
  * @module model/UpdateCouponBatch
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UpdateCouponBatch {
     /**
@@ -53,6 +53,9 @@ class UpdateCouponBatch {
             if (data.hasOwnProperty('usageLimit')) {
                 obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
             }
+            if (data.hasOwnProperty('discountLimit')) {
+                obj['discountLimit'] = ApiClient.convertToType(data['discountLimit'], 'Number');
+            }
             if (data.hasOwnProperty('startDate')) {
                 obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
             }
@@ -77,6 +80,12 @@ class UpdateCouponBatch {
  * @member {Number} usageLimit
  */
 UpdateCouponBatch.prototype['usageLimit'] = undefined;
+
+/**
+ * The amount of discounts that can be given with this coupon code. 
+ * @member {Number} discountLimit
+ */
+UpdateCouponBatch.prototype['discountLimit'] = undefined;
 
 /**
  * Timestamp at which point the coupon becomes valid.

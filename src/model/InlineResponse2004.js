@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Ruleset from './Ruleset';
+import Coupon from './Coupon';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 4.0.0
+ * @version 4.1.0
  */
 class InlineResponse2004 {
     /**
      * Constructs a new <code>InlineResponse2004</code>.
      * @alias module:model/InlineResponse2004
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Ruleset>} 
+     * @param data {Array.<module:model/Coupon>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2004 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Ruleset]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2004 {
 InlineResponse2004.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Ruleset>} data
+ * @member {Array.<module:model/Coupon>} data
  */
 InlineResponse2004.prototype['data'] = undefined;
 

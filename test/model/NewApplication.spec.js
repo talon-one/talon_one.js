@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignPriority (base name: "campaignPriority")', function() {
+      // uncomment below and update the code to test the property campaignPriority
+      //var instane = new TalonOne.NewApplication();
+      //expect(instance).to.be();
+    });
+
     it('should have the property attributesSettings (base name: "attributesSettings")', function() {
       // uncomment below and update the code to test the property attributesSettings
       //var instane = new TalonOne.NewApplication();

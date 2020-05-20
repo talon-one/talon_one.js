@@ -12,13 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import Coupon from './Coupon';
 import CustomerProfile from './CustomerProfile';
 import Referral from './Referral';
 
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CustomerInventory {
     /**
@@ -55,6 +56,9 @@ class CustomerInventory {
             if (data.hasOwnProperty('referrals')) {
                 obj['referrals'] = ApiClient.convertToType(data['referrals'], [Referral]);
             }
+            if (data.hasOwnProperty('coupons')) {
+                obj['coupons'] = ApiClient.convertToType(data['coupons'], [Coupon]);
+            }
         }
         return obj;
     }
@@ -71,6 +75,11 @@ CustomerInventory.prototype['profile'] = undefined;
  * @member {Array.<module:model/Referral>} referrals
  */
 CustomerInventory.prototype['referrals'] = undefined;
+
+/**
+ * @member {Array.<module:model/Coupon>} coupons
+ */
+CustomerInventory.prototype['coupons'] = undefined;
 
 
 

@@ -428,16 +428,6 @@
         done();
       });
     });
-    describe('getCampaignSet', function() {
-      it('should call getCampaignSet successfully', function(done) {
-        //uncomment below and update the code to test getCampaignSet
-        //instance.getCampaignSet(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getCampaigns', function() {
       it('should call getCampaigns successfully', function(done) {
         //uncomment below and update the code to test getCampaigns
@@ -822,16 +812,6 @@
       it('should call updateCampaign successfully', function(done) {
         //uncomment below and update the code to test updateCampaign
         //instance.updateCampaign(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateCampaignSet', function() {
-      it('should call updateCampaignSet successfully', function(done) {
-        //uncomment below and update the code to test updateCampaignSet
-        //instance.updateCampaignSet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

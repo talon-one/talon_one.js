@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property userID (base name: "userID")', function() {
+      // uncomment below and update the code to test the property userID
+      //var instane = new TalonOne.LoyaltyLedgerEntry();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
