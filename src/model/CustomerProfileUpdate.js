@@ -17,7 +17,7 @@ import CustomerProfile from './CustomerProfile';
 /**
  * The CustomerProfileUpdate model module.
  * @module model/CustomerProfileUpdate
- * @version 4.1.0
+ * @version 4.1.1
  */
 class CustomerProfileUpdate {
     /**

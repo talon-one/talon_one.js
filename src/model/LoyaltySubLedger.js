@@ -17,7 +17,7 @@ import LoyaltyLedgerEntry from './LoyaltyLedgerEntry';
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 4.1.0
+ * @version 4.1.1
  */
 class LoyaltySubLedger {
     /**

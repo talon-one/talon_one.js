@@ -19,7 +19,7 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Application {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignAnalytics model module.
  * @module model/CampaignAnalytics
- * @version 4.1.0
+ * @version 4.1.1
  */
 class CampaignAnalytics {
     /**

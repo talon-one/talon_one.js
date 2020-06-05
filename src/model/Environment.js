@@ -19,7 +19,7 @@ import TemplateDef from './TemplateDef';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Environment {
     /**

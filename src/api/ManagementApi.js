@@ -82,7 +82,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 4.1.0
+* @version 4.1.1
 */
 export default class ManagementApi {
 
@@ -912,7 +912,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get access logs for application
+     * Get access logs for application (with total count)
      * @param {Number} applicationId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
@@ -971,7 +971,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get access logs for application
+     * Get access logs for application (with total count)
      * @param {Number} applicationId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
@@ -1579,7 +1579,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get a list of the customer profiles that match the given attributes
+     * Get a list of the customer profiles that match the given attributes (with total count)
      * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20013} and HTTP response
@@ -1612,7 +1612,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get a list of the customer profiles that match the given attributes
+     * Get a list of the customer profiles that match the given attributes (with total count)
      * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20013}
@@ -1686,7 +1686,7 @@ export default class ManagementApi {
 
 
     /**
-     * List Applications Events
+     * List Applications Events (with total count)
      * Lists all events recorded for an application. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
@@ -1750,7 +1750,7 @@ export default class ManagementApi {
     }
 
     /**
-     * List Applications Events
+     * List Applications Events (with total count)
      * Lists all events recorded for an application. 
      * @param {Number} applicationId 
      * @param {Object} opts Optional parameters
@@ -2491,7 +2491,7 @@ export default class ManagementApi {
 
 
     /**
-     * List Coupons
+     * List Coupons (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
@@ -2564,7 +2564,7 @@ export default class ManagementApi {
     }
 
     /**
-     * List Coupons
+     * List Coupons (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
@@ -2695,7 +2695,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get a list of the coupons that match the given attributes in all active campaigns of an application
+     * Get a list of the coupons that match the given attributes in all active campaigns of an application (with total count)
      * Gets a list of all the coupons with attributes matching the query criteria Application wide 
      * @param {Number} applicationId 
      * @param {module:model/CouponSearch} body 
@@ -2762,7 +2762,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get a list of the coupons that match the given attributes in all active campaigns of an application
+     * Get a list of the coupons that match the given attributes in all active campaigns of an application (with total count)
      * Gets a list of all the coupons with attributes matching the query criteria Application wide 
      * @param {Number} applicationId 
      * @param {module:model/CouponSearch} body 
@@ -2961,7 +2961,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get Activity Reports for Application Customers
+     * Get Activity Reports for Application Customers (with total count)
      * Fetch summary reports for all application customers based on a time range
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
@@ -3023,7 +3023,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get Activity Reports for Application Customers
+     * Get Activity Reports for Application Customers (with total count)
      * Fetch summary reports for all application customers based on a time range
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
@@ -3668,7 +3668,7 @@ export default class ManagementApi {
 
 
     /**
-     * List Referrals
+     * List Referrals (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
@@ -3727,7 +3727,7 @@ export default class ManagementApi {
     }
 
     /**
-     * List Referrals
+     * List Referrals (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} opts Optional parameters
@@ -4457,7 +4457,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get a list of the coupons that match the given attributes
+     * Get a list of the coupons that match the given attributes (with total count)
      * Gets a list of all the coupons with attributes matching the query criteria 
      * @param {Number} applicationId 
      * @param {Number} campaignId 
@@ -4528,7 +4528,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get a list of the coupons that match the given attributes
+     * Get a list of the coupons that match the given attributes (with total count)
      * Gets a list of all the coupons with attributes matching the query criteria 
      * @param {Number} applicationId 
      * @param {Number} campaignId 
@@ -4557,7 +4557,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get a list of the coupons that match the given attributes in all active campaigns of an application
+     * Get a list of the coupons that match the given attributes in all active campaigns of an application (with total count)
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} body 
@@ -4624,7 +4624,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get a list of the coupons that match the given attributes in all active campaigns of an application
+     * Get a list of the coupons that match the given attributes in all active campaigns of an application (with total count)
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} body 

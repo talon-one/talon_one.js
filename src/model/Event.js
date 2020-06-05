@@ -18,7 +18,7 @@ import Meta from './Meta';
 /**
  * The Event model module.
  * @module model/Event
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Event {
     /**

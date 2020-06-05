@@ -17,7 +17,7 @@ import AttributesMandatory from './AttributesMandatory';
 /**
  * The AttributesSettings model module.
  * @module model/AttributesSettings
- * @version 4.1.0
+ * @version 4.1.1
  */
 class AttributesSettings {
     /**

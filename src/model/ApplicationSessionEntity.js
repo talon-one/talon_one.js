@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationSessionEntity model module.
  * @module model/ApplicationSessionEntity
- * @version 4.1.0
+ * @version 4.1.1
  */
 class ApplicationSessionEntity {
     /**
