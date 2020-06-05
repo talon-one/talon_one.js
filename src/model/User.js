@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 4.1.0
+ * @version 4.1.1
  */
 class User {
     /**

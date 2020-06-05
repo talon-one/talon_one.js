@@ -17,7 +17,7 @@ import Webhook from './Webhook';
 /**
  * The InlineResponse20022 model module.
  * @module model/InlineResponse20022
- * @version 4.1.0
+ * @version 4.1.1
  */
 class InlineResponse20022 {
     /**

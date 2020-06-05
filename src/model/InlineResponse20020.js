@@ -17,7 +17,7 @@ import Attribute from './Attribute';
 /**
  * The InlineResponse20020 model module.
  * @module model/InlineResponse20020
- * @version 4.1.0
+ * @version 4.1.1
  */
 class InlineResponse20020 {
     /**

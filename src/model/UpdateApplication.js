@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateApplication model module.
  * @module model/UpdateApplication
- * @version 4.1.0
+ * @version 4.1.1
  */
 class UpdateApplication {
     /**

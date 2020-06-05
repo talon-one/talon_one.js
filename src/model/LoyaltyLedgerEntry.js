@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 4.1.0
+ * @version 4.1.1
  */
 class LoyaltyLedgerEntry {
     /**
@@ -26,7 +26,7 @@ class LoyaltyLedgerEntry {
      * @param created {Date} 
      * @param programID {Number} 
      * @param customerProfileID {String} 
-     * @param type {module:model/LoyaltyLedgerEntry.TypeEnum} 
+     * @param type {String} The type of the ledger transaction. Possible values are addition, subtraction, expire or expiring (for expiring points ledgers) 
      * @param amount {Number} 
      * @param name {String} A name referencing the condition or effect that added this entry, or the specific name provided in an API call.
      * @param subLedgerID {String} This specifies if we are adding loyalty points to the main ledger or a subledger
@@ -128,7 +128,8 @@ LoyaltyLedgerEntry.prototype['customerSessionID'] = undefined;
 LoyaltyLedgerEntry.prototype['eventID'] = undefined;
 
 /**
- * @member {module:model/LoyaltyLedgerEntry.TypeEnum} type
+ * The type of the ledger transaction. Possible values are addition, subtraction, expire or expiring (for expiring points ledgers) 
+ * @member {String} type
  */
 LoyaltyLedgerEntry.prototype['type'] = undefined;
 
@@ -162,27 +163,6 @@ LoyaltyLedgerEntry.prototype['userID'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyLedgerEntry['TypeEnum'] = {
-
-    /**
-     * value: "addition"
-     * @const
-     */
-    "addition": "addition",
-
-    /**
-     * value: "subtraction"
-     * @const
-     */
-    "subtraction": "subtraction"
-};
 
 
 
