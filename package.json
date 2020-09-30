@@ -13,7 +13,7 @@
   },
   "bugs": {
     "url": "https://github.com/talon-one/talon_one.js/issues",
-    "postinstall": "npm run build",
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": ">=4"
