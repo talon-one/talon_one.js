@@ -12,13 +12,14 @@
     "url": "https://github.com/talon-one/talon_one.js.git"
   },
   "bugs": {
-    "url": "https://github.com/talon-one/talon_one.js/issues"
+    "url": "https://github.com/talon-one/talon_one.js/issues",
+    "postinstall": "npm run build",
   },
   "engines": {
     "node": ">=4"
   },
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepack": "babel src -d dist",
     "test": "mocha --require @babel/register --recursive"
