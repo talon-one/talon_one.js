@@ -22,7 +22,7 @@
   "scripts": {
     "prepack": "babel src -d dist",
     "test": "mocha --require @babel/register --recursive",
-    "postinstall": "babel src -d dist"
+    "postinstall": "npm run prepack"
   },
   "browser": {
     "fs": false
