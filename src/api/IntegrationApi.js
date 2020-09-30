@@ -478,7 +478,7 @@ export default class IntegrationApi {
      * @param {module:model/NewCustomerProfile} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerProfileUpdate} and HTTP response
      */
-    updateCustomerProfileV2WithHttpInfo(customerProfileId, body) {
+    updateCustomerProfileV2WithHttpInfo(customerProfileId, body, opts) {
       let postBody = body;
       // verify the required parameter 'customerProfileId' is set
       if (customerProfileId === undefined || customerProfileId === null) {
@@ -493,6 +493,7 @@ export default class IntegrationApi {
         'customerProfileId': customerProfileId
       };
       let queryParams = {
+        ...opts
       };
       let headerParams = {
       };
@@ -517,10 +518,10 @@ export default class IntegrationApi {
      * @param {module:model/NewCustomerProfile} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerProfileUpdate}
      */
-    updateCustomerProfileV2(customerProfileId, body) {
-      return this.updateCustomerProfileV2WithHttpInfo(customerProfileId, body)
+    updateCustomerProfileV2(customerProfileId, body, opts) {
+      return this.updateCustomerProfileV2WithHttpInfo(customerProfileId, body, opts)
         .then(function(response_and_data) {
-          return response_and_data.data;
+          return response_and_data.response.body; // response_and_data.data is empty
         });
     }
 
