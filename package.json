@@ -21,8 +21,7 @@
   "main": "dist/index.js",
   "scripts": {
     "prepack": "babel src -d dist",
-    "test": "mocha --require @babel/register --recursive",
-    "postinstall": "npm run prepack"
+    "test": "mocha --require @babel/register --recursive"
   },
   "browser": {
     "fs": false
