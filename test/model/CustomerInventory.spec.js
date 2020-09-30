@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loyalty (base name: "loyalty")', function() {
+      // uncomment below and update the code to test the property loyalty
+      //var instane = new TalonOne.CustomerInventory();
+      //expect(instance).to.be();
+    });
+
     it('should have the property referrals (base name: "referrals")', function() {
       // uncomment below and update the code to test the property referrals
       //var instane = new TalonOne.CustomerInventory();

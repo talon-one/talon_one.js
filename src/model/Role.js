@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Role model module.
  * @module model/Role
- * @version 4.1.1
+ * @version 4.2.0
  */
 class Role {
     /**
@@ -58,6 +58,9 @@ class Role {
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
             }
+            if (data.hasOwnProperty('campaignGroupID')) {
+                obj['campaignGroupID'] = ApiClient.convertToType(data['campaignGroupID'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -68,7 +71,7 @@ class Role {
                 obj['members'] = ApiClient.convertToType(data['members'], ['Number']);
             }
             if (data.hasOwnProperty('acl')) {
-                obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
+                obj['acl'] = ApiClient.convertToType(data['acl'], Object);
             }
         }
         return obj;
@@ -90,6 +93,12 @@ Role.prototype['id'] = undefined;
 Role.prototype['accountID'] = undefined;
 
 /**
+ * The ID of the Campaign Group this role was created for.
+ * @member {Number} campaignGroupID
+ */
+Role.prototype['campaignGroupID'] = undefined;
+
+/**
  * Name of the role
  * @member {String} name
  */
@@ -108,8 +117,8 @@ Role.prototype['description'] = undefined;
 Role.prototype['members'] = undefined;
 
 /**
- * Role Policy this should be a stringified blob of json
- * @member {String} acl
+ * Role ACL Policy
+ * @member {Object} acl
  */
 Role.prototype['acl'] = undefined;
 

@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ApplicationSession {
     /**
@@ -27,7 +27,7 @@ class ApplicationSession {
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created. The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param integrationId {String} The ID used for this entity in the application system.
+     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
      * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (\"open\"), \"closed\", or \"cancelled\".
@@ -140,7 +140,7 @@ ApplicationSession.prototype['applicationId'] = undefined;
 ApplicationSession.prototype['profileId'] = undefined;
 
 /**
- * The ID used for this entity in the application system.
+ * The integration ID for this entity sent to and used in the Talon.One system.
  * @member {String} integrationId
  */
 ApplicationSession.prototype['integrationId'] = undefined;

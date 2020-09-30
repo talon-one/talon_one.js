@@ -150,6 +150,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignGroups (base name: "campaignGroups")', function() {
+      // uncomment below and update the code to test the property campaignGroups
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
     it('should have the property couponRedemptionCount (base name: "couponRedemptionCount")', function() {
       // uncomment below and update the code to test the property couponRedemptionCount
       //var instane = new TalonOne.Campaign();

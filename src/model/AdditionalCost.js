@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AdditionalCost model module.
  * @module model/AdditionalCost
- * @version 4.1.1
+ * @version 4.2.0
  */
 class AdditionalCost {
     /**

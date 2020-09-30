@@ -60,14 +60,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property activeCampaigns (base name: "activeCampaigns")', function() {
-      // uncomment below and update the code to test the property activeCampaigns
+    it('should have the property liveApplications (base name: "liveApplications")', function() {
+      // uncomment below and update the code to test the property liveApplications
+      //var instane = new TalonOne.AccountAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sandboxApplications (base name: "sandboxApplications")', function() {
+      // uncomment below and update the code to test the property sandboxApplications
       //var instane = new TalonOne.AccountAnalytics();
       //expect(instance).to.be();
     });
 
     it('should have the property campaigns (base name: "campaigns")', function() {
       // uncomment below and update the code to test the property campaigns
+      //var instane = new TalonOne.AccountAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property activeCampaigns (base name: "activeCampaigns")', function() {
+      // uncomment below and update the code to test the property activeCampaigns
+      //var instane = new TalonOne.AccountAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property liveActiveCampaigns (base name: "liveActiveCampaigns")', function() {
+      // uncomment below and update the code to test the property liveActiveCampaigns
       //var instane = new TalonOne.AccountAnalytics();
       //expect(instance).to.be();
     });
@@ -90,12 +108,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property customAttributes (base name: "customAttributes")', function() {
-      // uncomment below and update the code to test the property customAttributes
-      //var instane = new TalonOne.AccountAnalytics();
-      //expect(instance).to.be();
-    });
-
     it('should have the property referralCodes (base name: "referralCodes")', function() {
       // uncomment below and update the code to test the property referralCodes
       //var instane = new TalonOne.AccountAnalytics();
@@ -114,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property activeRules (base name: "activeRules")', function() {
+      // uncomment below and update the code to test the property activeRules
+      //var instane = new TalonOne.AccountAnalytics();
+      //expect(instance).to.be();
+    });
+
     it('should have the property users (base name: "users")', function() {
       // uncomment below and update the code to test the property users
       //var instane = new TalonOne.AccountAnalytics();
@@ -126,6 +144,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customAttributes (base name: "customAttributes")', function() {
+      // uncomment below and update the code to test the property customAttributes
+      //var instane = new TalonOne.AccountAnalytics();
+      //expect(instance).to.be();
+    });
+
     it('should have the property webhooks (base name: "webhooks")', function() {
       // uncomment below and update the code to test the property webhooks
       //var instane = new TalonOne.AccountAnalytics();
@@ -134,12 +158,6 @@
 
     it('should have the property loyaltyPrograms (base name: "loyaltyPrograms")', function() {
       // uncomment below and update the code to test the property loyaltyPrograms
-      //var instane = new TalonOne.AccountAnalytics();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property activeRules (base name: "activeRules")', function() {
-      // uncomment below and update the code to test the property activeRules
       //var instane = new TalonOne.AccountAnalytics();
       //expect(instance).to.be();
     });

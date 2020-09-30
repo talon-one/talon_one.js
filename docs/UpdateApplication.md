@@ -11,8 +11,12 @@ Name | Type | Description | Notes
 **caseSensitivity** | **String** | A string indicating how should campaigns in this application deal with case sensitivity on coupon codes. | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 **limits** | [**[LimitConfig]**](LimitConfig.md) | Default limits for campaigns created in this application | [optional] 
-**campaignPriority** | **String** | Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive) | [optional] 
+**campaignPriority** | **String** | Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive). If no value is provided, this is set to \&quot;universal\&quot; | [optional] 
+**exclusiveCampaignsStrategy** | **String** | The strategy used when choosing exclusive campaigns for evaluation, can be one of (listOrder, lowestDiscount, highestDiscount). If no value is provided, this is set to \&quot;listOrder\&quot; | [optional] 
+**enableCascadingDiscounts** | **Boolean** | Flag indicating if discounts should cascade for this application | [optional] 
+**enableFlattenedCartItems** | **Boolean** | Flag indicating if cart items of quantity larger than one should be separated into different items of quantity one | [optional] 
 **attributesSettings** | [**AttributesSettings**](AttributesSettings.md) |  | [optional] 
+**sandbox** | **Boolean** | Flag indicating if this is a live or sandbox application | [optional] 
 
 
 
@@ -37,6 +41,19 @@ Name | Type | Description | Notes
 * `stackable` (value: `"stackable"`)
 
 * `exclusive` (value: `"exclusive"`)
+
+
+
+
+
+## Enum: ExclusiveCampaignsStrategyEnum
+
+
+* `listOrder` (value: `"listOrder"`)
+
+* `lowestDiscount` (value: `"lowestDiscount"`)
+
+* `highestDiscount` (value: `"highestDiscount"`)
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferralRejectionReason model module.
  * @module model/ReferralRejectionReason
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ReferralRejectionReason {
     /**
@@ -113,12 +113,6 @@ ReferralRejectionReason['ReasonEnum'] = {
      * @const
      */
     "ReferralPartOfNotRunningCampaign": "ReferralPartOfNotRunningCampaign",
-
-    /**
-     * value: "ReferralValidConditionMissing"
-     * @const
-     */
-    "ReferralValidConditionMissing": "ReferralValidConditionMissing",
 
     /**
      * value: "ReferralLimitReached"

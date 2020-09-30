@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 4.1.1
+ * @version 4.2.0
  */
 class SetDiscountPerItemEffectProps {
     /**
@@ -63,6 +63,9 @@ class SetDiscountPerItemEffectProps {
             if (data.hasOwnProperty('position')) {
                 obj['position'] = ApiClient.convertToType(data['position'], 'Number');
             }
+            if (data.hasOwnProperty('subPosition')) {
+                obj['subPosition'] = ApiClient.convertToType(data['subPosition'], 'Number');
+            }
         }
         return obj;
     }
@@ -87,6 +90,12 @@ SetDiscountPerItemEffectProps.prototype['value'] = undefined;
  * @member {Number} position
  */
 SetDiscountPerItemEffectProps.prototype['position'] = undefined;
+
+/**
+ * The sub-index of the item in an item stack on which this discount should be applied
+ * @member {Number} subPosition
+ */
+SetDiscountPerItemEffectProps.prototype['subPosition'] = undefined;
 
 
 

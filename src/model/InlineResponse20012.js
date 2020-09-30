@@ -17,18 +17,17 @@ import ApplicationCustomer from './ApplicationCustomer';
 /**
  * The InlineResponse20012 model module.
  * @module model/InlineResponse20012
- * @version 4.1.1
+ * @version 4.2.0
  */
 class InlineResponse20012 {
     /**
      * Constructs a new <code>InlineResponse20012</code>.
      * @alias module:model/InlineResponse20012
-     * @param totalResultSize {Number} 
      * @param data {Array.<module:model/ApplicationCustomer>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(data) { 
         
-        InlineResponse20012.initialize(this, totalResultSize, data);
+        InlineResponse20012.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20012 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,6 +53,9 @@ class InlineResponse20012 {
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
             }
@@ -69,6 +70,11 @@ class InlineResponse20012 {
  * @member {Number} totalResultSize
  */
 InlineResponse20012.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20012.prototype['hasMore'] = undefined;
 
 /**
  * @member {Array.<module:model/ApplicationCustomer>} data

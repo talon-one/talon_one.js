@@ -17,14 +17,14 @@ import CartItem from './CartItem';
 /**
  * The CustomerSession model module.
  * @module model/CustomerSession
- * @version 4.1.1
+ * @version 4.2.0
  */
 class CustomerSession {
     /**
      * Constructs a new <code>CustomerSession</code>.
      * 
      * @alias module:model/CustomerSession
-     * @param integrationId {String} The ID used for this entity in the application system.
+     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param profileId {String} ID of the customers profile as used within this Talon.One account. May be omitted or set to the empty string if the customer does not yet have a known profile ID.
@@ -120,7 +120,7 @@ class CustomerSession {
 }
 
 /**
- * The ID used for this entity in the application system.
+ * The integration ID for this entity sent to and used in the Talon.One system.
  * @member {String} integrationId
  */
 CustomerSession.prototype['integrationId'] = undefined;

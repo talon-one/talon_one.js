@@ -17,7 +17,7 @@ import AccountAdditionalCost from './AccountAdditionalCost';
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 4.1.1
+ * @version 4.2.0
  */
 class InlineResponse20021 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyPoints model module.
  * @module model/LoyaltyPoints
- * @version 4.1.1
+ * @version 4.2.0
  */
 class LoyaltyPoints {
     /**
@@ -56,8 +56,11 @@ class LoyaltyPoints {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('expiryDuration')) {
-                obj['expiryDuration'] = ApiClient.convertToType(data['expiryDuration'], 'String');
+            if (data.hasOwnProperty('validityDuration')) {
+                obj['validityDuration'] = ApiClient.convertToType(data['validityDuration'], 'String');
+            }
+            if (data.hasOwnProperty('pendingDuration')) {
+                obj['pendingDuration'] = ApiClient.convertToType(data['pendingDuration'], 'String');
             }
             if (data.hasOwnProperty('subLedgerID')) {
                 obj['subLedgerID'] = ApiClient.convertToType(data['subLedgerID'], 'String');
@@ -82,10 +85,16 @@ LoyaltyPoints.prototype['points'] = undefined;
 LoyaltyPoints.prototype['name'] = undefined;
 
 /**
- * Indicates the duration after which the added loyalty points should expire. The format is a number followed by one letter indicating the unit, like '1h' or '40m' or '30d'.
- * @member {String} expiryDuration
+ * Indicates the duration after which the added loyalty points should expire. The format is a number followed by one letter indicating the time unit, like '1h' or '40m' (defined by Go time package).
+ * @member {String} validityDuration
  */
-LoyaltyPoints.prototype['expiryDuration'] = undefined;
+LoyaltyPoints.prototype['validityDuration'] = undefined;
+
+/**
+ * Indicates the amount of time before the points are considered valid. The format is a number followed by one letter indicating the time unit, like '1h' or '40m' (defined by Go time package).
+ * @member {String} pendingDuration
+ */
+LoyaltyPoints.prototype['pendingDuration'] = undefined;
 
 /**
  * This specifies if we are adding loyalty points to the main ledger or a subledger

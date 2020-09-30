@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.1.1
+ * @version 4.2.0
  */
 class Campaign {
     /**
@@ -117,6 +117,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('limits')) {
                 obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+            }
+            if (data.hasOwnProperty('campaignGroups')) {
+                obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
             }
             if (data.hasOwnProperty('couponRedemptionCount')) {
                 obj['couponRedemptionCount'] = ApiClient.convertToType(data['couponRedemptionCount'], 'Number');
@@ -246,6 +249,12 @@ Campaign.prototype['referralSettings'] = undefined;
  * @member {Array.<module:model/LimitConfig>} limits
  */
 Campaign.prototype['limits'] = undefined;
+
+/**
+ * The IDs of the campaign groups that own this entity.
+ * @member {Array.<Number>} campaignGroups
+ */
+Campaign.prototype['campaignGroups'] = undefined;
 
 /**
  * Number of coupons redeemed in the campaign.

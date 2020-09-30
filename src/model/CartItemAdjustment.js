@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CartItemAdjustment model module.
  * @module model/CartItemAdjustment
- * @version 4.1.1
+ * @version 4.2.0
  */
 class CartItemAdjustment {
     /**

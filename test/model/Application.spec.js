@@ -126,8 +126,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property exclusiveCampaignsStrategy (base name: "exclusiveCampaignsStrategy")', function() {
+      // uncomment below and update the code to test the property exclusiveCampaignsStrategy
+      //var instane = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property enableCascadingDiscounts (base name: "enableCascadingDiscounts")', function() {
+      // uncomment below and update the code to test the property enableCascadingDiscounts
+      //var instane = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property enableFlattenedCartItems (base name: "enableFlattenedCartItems")', function() {
+      // uncomment below and update the code to test the property enableFlattenedCartItems
+      //var instane = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
     it('should have the property attributesSettings (base name: "attributesSettings")', function() {
       // uncomment below and update the code to test the property attributesSettings
+      //var instane = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sandbox (base name: "sandbox")', function() {
+      // uncomment below and update the code to test the property sandbox
       //var instane = new TalonOne.Application();
       //expect(instance).to.be();
     });

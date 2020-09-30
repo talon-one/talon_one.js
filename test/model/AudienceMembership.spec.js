@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.MiscUpdateUserLatestFeature();
+    instance = new TalonOne.AudienceMembership();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,22 @@
       object[property] = value;
   }
 
-  describe('MiscUpdateUserLatestFeature', function() {
-    it('should create an instance of MiscUpdateUserLatestFeature', function() {
-      // uncomment below and update the code to test MiscUpdateUserLatestFeature
-      //var instane = new TalonOne.MiscUpdateUserLatestFeature();
-      //expect(instance).to.be.a(TalonOne.MiscUpdateUserLatestFeature);
+  describe('AudienceMembership', function() {
+    it('should create an instance of AudienceMembership', function() {
+      // uncomment below and update the code to test AudienceMembership
+      //var instane = new TalonOne.AudienceMembership();
+      //expect(instance).to.be.a(TalonOne.AudienceMembership);
     });
 
-    it('should have the property latestFeature (base name: "latestFeature")', function() {
-      // uncomment below and update the code to test the property latestFeature
-      //var instane = new TalonOne.MiscUpdateUserLatestFeature();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new TalonOne.AudienceMembership();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.AudienceMembership();
       //expect(instance).to.be();
     });
 

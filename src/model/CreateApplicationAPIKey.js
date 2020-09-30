@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateApplicationAPIKey model module.
  * @module model/CreateApplicationAPIKey
- * @version 4.1.1
+ * @version 4.2.0
  */
 class CreateApplicationAPIKey {
     /**
@@ -57,6 +57,9 @@ class CreateApplicationAPIKey {
             if (data.hasOwnProperty('expires')) {
                 obj['expires'] = ApiClient.convertToType(data['expires'], 'Date');
             }
+            if (data.hasOwnProperty('platform')) {
+                obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
+            }
         }
         return obj;
     }
@@ -76,8 +79,47 @@ CreateApplicationAPIKey.prototype['title'] = undefined;
  */
 CreateApplicationAPIKey.prototype['expires'] = undefined;
 
+/**
+ * Platform the API key is valid for.
+ * @member {module:model/CreateApplicationAPIKey.PlatformEnum} platform
+ */
+CreateApplicationAPIKey.prototype['platform'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>platform</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CreateApplicationAPIKey['PlatformEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "segment"
+     * @const
+     */
+    "segment": "segment",
+
+    /**
+     * value: "braze"
+     * @const
+     */
+    "braze": "braze",
+
+    /**
+     * value: "mparticle"
+     * @const
+     */
+    "mparticle": "mparticle"
+};
 
 
 

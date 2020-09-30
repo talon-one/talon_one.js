@@ -12,19 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
+import AudienceMembership from './AudienceMembership';
 import LoyaltyMembership from './LoyaltyMembership';
 
 /**
  * The CustomerProfile model module.
  * @module model/CustomerProfile
- * @version 4.1.1
+ * @version 4.2.0
  */
 class CustomerProfile {
     /**
      * Constructs a new <code>CustomerProfile</code>.
      * 
      * @alias module:model/CustomerProfile
-     * @param integrationId {String} The ID used for this entity in the application system.
+     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
      * @param created {Date} The exact moment this entity was created.
      * @param attributes {Object} Arbitrary properties associated with this item
      * @param accountId {Number} The ID of the Talon.One account that owns this profile.
@@ -84,6 +85,9 @@ class CustomerProfile {
             if (data.hasOwnProperty('loyaltyMemberships')) {
                 obj['loyaltyMemberships'] = ApiClient.convertToType(data['loyaltyMemberships'], [LoyaltyMembership]);
             }
+            if (data.hasOwnProperty('audienceMemberships')) {
+                obj['audienceMemberships'] = ApiClient.convertToType(data['audienceMemberships'], [AudienceMembership]);
+            }
             if (data.hasOwnProperty('lastActivity')) {
                 obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
             }
@@ -95,7 +99,7 @@ class CustomerProfile {
 }
 
 /**
- * The ID used for this entity in the application system.
+ * The integration ID for this entity sent to and used in the Talon.One system.
  * @member {String} integrationId
  */
 CustomerProfile.prototype['integrationId'] = undefined;
@@ -135,6 +139,12 @@ CustomerProfile.prototype['totalSales'] = undefined;
  * @member {Array.<module:model/LoyaltyMembership>} loyaltyMemberships
  */
 CustomerProfile.prototype['loyaltyMemberships'] = undefined;
+
+/**
+ * A list of audiences the customer belongs to
+ * @member {Array.<module:model/AudienceMembership>} audienceMemberships
+ */
+CustomerProfile.prototype['audienceMemberships'] = undefined;
 
 /**
  * Timestamp of the most recent event received from this customer

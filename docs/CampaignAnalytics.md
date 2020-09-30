@@ -25,5 +25,9 @@ Name | Type | Description | Notes
 **totalCouponsCreated** | **Number** | Number of coupons created in the campaign by the rule engine since it began. | 
 **referralsCreated** | **Number** | Number of referrals created in the campaign by the rule engine. | 
 **totalReferralsCreated** | **Number** | Number of referrals created in the campaign by the rule engine since it began. | 
+**addedLoyaltyPoints** | **Number** | Number of added loyalty points in the campaign in a specific interval. | 
+**totalAddedLoyaltyPoints** | **Number** | Number of added loyalty points in the campaign since it began. | 
+**deductedLoyaltyPoints** | **Number** | Number of deducted loyalty points in the campaign in a specific interval. | 
+**totalDeductedLoyaltyPoints** | **Number** | Number of deducted loyalty points in the campaign since it began. | 
 
 

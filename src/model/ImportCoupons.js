@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportCoupons model module.
  * @module model/ImportCoupons
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ImportCoupons {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 4.1.1
+ * @version 4.2.0
  */
 class User {
     /**
@@ -31,12 +31,11 @@ class User {
      * @param inviteToken {String} Invite token, empty if the user as already accepted their invite.
      * @param state {module:model/User.StateEnum} Current user state.
      * @param name {String} Full name
-     * @param policy {String} A blob of ACL JSON
-     * @param releaseUpdate {Boolean} Update the user via email
+     * @param policy {Object} User ACL Policy
      */
-    constructor(id, created, modified, email, accountId, inviteToken, state, name, policy, releaseUpdate) { 
+    constructor(id, created, modified, email, accountId, inviteToken, state, name, policy) { 
         
-        User.initialize(this, id, created, modified, email, accountId, inviteToken, state, name, policy, releaseUpdate);
+        User.initialize(this, id, created, modified, email, accountId, inviteToken, state, name, policy);
     }
 
     /**
@@ -44,7 +43,7 @@ class User {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, modified, email, accountId, inviteToken, state, name, policy, releaseUpdate) { 
+    static initialize(obj, id, created, modified, email, accountId, inviteToken, state, name, policy) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['modified'] = modified;
@@ -54,7 +53,6 @@ class User {
         obj['state'] = state;
         obj['name'] = name;
         obj['policy'] = policy;
-        obj['releaseUpdate'] = releaseUpdate;
     }
 
     /**
@@ -93,13 +91,10 @@ class User {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('policy')) {
-                obj['policy'] = ApiClient.convertToType(data['policy'], 'String');
+                obj['policy'] = ApiClient.convertToType(data['policy'], Object);
             }
-            if (data.hasOwnProperty('releaseUpdate')) {
-                obj['releaseUpdate'] = ApiClient.convertToType(data['releaseUpdate'], 'Boolean');
-            }
-            if (data.hasOwnProperty('latestFeature')) {
-                obj['latestFeature'] = ApiClient.convertToType(data['latestFeature'], 'String');
+            if (data.hasOwnProperty('latestFeedTimestamp')) {
+                obj['latestFeedTimestamp'] = ApiClient.convertToType(data['latestFeedTimestamp'], 'Date');
             }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
@@ -166,22 +161,16 @@ User.prototype['state'] = undefined;
 User.prototype['name'] = undefined;
 
 /**
- * A blob of ACL JSON
- * @member {String} policy
+ * User ACL Policy
+ * @member {Object} policy
  */
 User.prototype['policy'] = undefined;
 
 /**
- * Update the user via email
- * @member {Boolean} releaseUpdate
+ * Latest timestamp the user has been notified for feed.
+ * @member {Date} latestFeedTimestamp
  */
-User.prototype['releaseUpdate'] = undefined;
-
-/**
- * Latest feature the user has been notified.
- * @member {String} latestFeature
- */
-User.prototype['latestFeature'] = undefined;
+User.prototype['latestFeedTimestamp'] = undefined;
 
 /**
  * Contains a list of all roles the user is a member of

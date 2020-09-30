@@ -180,6 +180,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property addedLoyaltyPoints (base name: "addedLoyaltyPoints")', function() {
+      // uncomment below and update the code to test the property addedLoyaltyPoints
+      //var instane = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalAddedLoyaltyPoints (base name: "totalAddedLoyaltyPoints")', function() {
+      // uncomment below and update the code to test the property totalAddedLoyaltyPoints
+      //var instane = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property deductedLoyaltyPoints (base name: "deductedLoyaltyPoints")', function() {
+      // uncomment below and update the code to test the property deductedLoyaltyPoints
+      //var instane = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalDeductedLoyaltyPoints (base name: "totalDeductedLoyaltyPoints")', function() {
+      // uncomment below and update the code to test the property totalDeductedLoyaltyPoints
+      //var instane = new TalonOne.CampaignAnalytics();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

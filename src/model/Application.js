@@ -19,7 +19,7 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 4.1.1
+ * @version 4.2.0
  */
 class Application {
     /**
@@ -103,8 +103,20 @@ class Application {
             if (data.hasOwnProperty('campaignPriority')) {
                 obj['campaignPriority'] = ApiClient.convertToType(data['campaignPriority'], 'String');
             }
+            if (data.hasOwnProperty('exclusiveCampaignsStrategy')) {
+                obj['exclusiveCampaignsStrategy'] = ApiClient.convertToType(data['exclusiveCampaignsStrategy'], 'String');
+            }
+            if (data.hasOwnProperty('enableCascadingDiscounts')) {
+                obj['enableCascadingDiscounts'] = ApiClient.convertToType(data['enableCascadingDiscounts'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enableFlattenedCartItems')) {
+                obj['enableFlattenedCartItems'] = ApiClient.convertToType(data['enableFlattenedCartItems'], 'Boolean');
+            }
             if (data.hasOwnProperty('attributesSettings')) {
                 obj['attributesSettings'] = AttributesSettings.constructFromObject(data['attributesSettings']);
+            }
+            if (data.hasOwnProperty('sandbox')) {
+                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
             if (data.hasOwnProperty('loyaltyPrograms')) {
                 obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
@@ -183,15 +195,39 @@ Application.prototype['attributes'] = undefined;
 Application.prototype['limits'] = undefined;
 
 /**
- * Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive)
+ * Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive). If no value is provided, this is set to \"universal\"
  * @member {module:model/Application.CampaignPriorityEnum} campaignPriority
  */
 Application.prototype['campaignPriority'] = undefined;
 
 /**
+ * The strategy used when choosing exclusive campaigns for evaluation, can be one of (listOrder, lowestDiscount, highestDiscount). If no value is provided, this is set to \"listOrder\"
+ * @member {module:model/Application.ExclusiveCampaignsStrategyEnum} exclusiveCampaignsStrategy
+ */
+Application.prototype['exclusiveCampaignsStrategy'] = undefined;
+
+/**
+ * Flag indicating if discounts should cascade for this application
+ * @member {Boolean} enableCascadingDiscounts
+ */
+Application.prototype['enableCascadingDiscounts'] = undefined;
+
+/**
+ * Flag indicating if cart items of quantity larger than one should be separated into different items of quantity one
+ * @member {Boolean} enableFlattenedCartItems
+ */
+Application.prototype['enableFlattenedCartItems'] = undefined;
+
+/**
  * @member {module:model/AttributesSettings} attributesSettings
  */
 Application.prototype['attributesSettings'] = undefined;
+
+/**
+ * Flag indicating if this is a live or sandbox application
+ * @member {Boolean} sandbox
+ */
+Application.prototype['sandbox'] = undefined;
 
 /**
  * An array containing all the loyalty programs to which this application is subscribed
@@ -254,6 +290,33 @@ Application['CampaignPriorityEnum'] = {
      * @const
      */
     "exclusive": "exclusive"
+};
+
+
+/**
+ * Allowed values for the <code>exclusiveCampaignsStrategy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Application['ExclusiveCampaignsStrategyEnum'] = {
+
+    /**
+     * value: "listOrder"
+     * @const
+     */
+    "listOrder": "listOrder",
+
+    /**
+     * value: "lowestDiscount"
+     * @const
+     */
+    "lowestDiscount": "lowestDiscount",
+
+    /**
+     * value: "highestDiscount"
+     * @const
+     */
+    "highestDiscount": "highestDiscount"
 };
 
 

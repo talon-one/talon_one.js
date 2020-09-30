@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectCouponEffectProps model module.
  * @module model/RejectCouponEffectProps
- * @version 4.1.1
+ * @version 4.2.0
  */
 class RejectCouponEffectProps {
     /**

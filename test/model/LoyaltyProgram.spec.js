@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultPending (base name: "defaultPending")', function() {
+      // uncomment below and update the code to test the property defaultPending
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
     it('should have the property allowSubledger (base name: "allowSubledger")', function() {
       // uncomment below and update the code to test the property allowSubledger
       //var instane = new TalonOne.LoyaltyProgram();

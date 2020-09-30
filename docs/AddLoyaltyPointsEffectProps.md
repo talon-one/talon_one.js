@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **subLedgerId** | **String** | The ID of the subledger within the loyalty program where these points were added | 
 **value** | **Number** | The amount of points that were added | 
 **recipientIntegrationId** | **String** | The user for whom these points were added | 
-**expiryCondition** | **String** | The amount of time (in days) these points are valid | 
+**startDate** | **Date** | Date after which points will be valid | [optional] 
+**expiryDate** | **Date** | Date after which points will expire | [optional] 
 
 

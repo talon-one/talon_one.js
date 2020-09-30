@@ -17,7 +17,7 @@ import Change from './Change';
 /**
  * The InlineResponse20027 model module.
  * @module model/InlineResponse20027
- * @version 4.1.1
+ * @version 4.2.0
  */
 class InlineResponse20027 {
     /**

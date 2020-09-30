@@ -18,7 +18,7 @@ import Rule from './Rule';
 /**
  * The Ruleset model module.
  * @module model/Ruleset
- * @version 4.1.1
+ * @version 4.2.0
  */
 class Ruleset {
     /**

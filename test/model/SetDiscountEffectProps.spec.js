@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property scope (base name: "scope")', function() {
+      // uncomment below and update the code to test the property scope
+      //var instane = new TalonOne.SetDiscountEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

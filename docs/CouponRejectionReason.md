@@ -17,8 +17,6 @@ Name | Type | Description | Notes
 
 * `CouponPartOfNotRunningCampaign` (value: `"CouponPartOfNotRunningCampaign"`)
 
-* `CouponValidConditionMissing` (value: `"CouponValidConditionMissing"`)
-
 * `CouponLimitReached` (value: `"CouponLimitReached"`)
 
 * `CampaignLimitReached` (value: `"CampaignLimitReached"`)

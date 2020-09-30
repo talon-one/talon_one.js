@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignGroups (base name: "campaignGroups")', function() {
+      // uncomment below and update the code to test the property campaignGroups
+      //var instane = new TalonOne.NewCampaign();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

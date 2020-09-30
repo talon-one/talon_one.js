@@ -12,20 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import IntegrationStateV2 from './IntegrationStateV2';
 
 /**
- * The MiscUpdateUserLatestFeature model module.
- * @module model/MiscUpdateUserLatestFeature
- * @version 4.1.1
+ * The MultipleCustomerProfileIntegrationResponseV2 model module.
+ * @module model/MultipleCustomerProfileIntegrationResponseV2
+ * @version 4.2.0
  */
-class MiscUpdateUserLatestFeature {
+class MultipleCustomerProfileIntegrationResponseV2 {
     /**
-     * Constructs a new <code>MiscUpdateUserLatestFeature</code>.
-     * @alias module:model/MiscUpdateUserLatestFeature
+     * Constructs a new <code>MultipleCustomerProfileIntegrationResponseV2</code>.
+     * @alias module:model/MultipleCustomerProfileIntegrationResponseV2
      */
     constructor() { 
         
-        MiscUpdateUserLatestFeature.initialize(this);
+        MultipleCustomerProfileIntegrationResponseV2.initialize(this);
     }
 
     /**
@@ -37,18 +38,18 @@ class MiscUpdateUserLatestFeature {
     }
 
     /**
-     * Constructs a <code>MiscUpdateUserLatestFeature</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>MultipleCustomerProfileIntegrationResponseV2</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MiscUpdateUserLatestFeature} obj Optional instance to populate.
-     * @return {module:model/MiscUpdateUserLatestFeature} The populated <code>MiscUpdateUserLatestFeature</code> instance.
+     * @param {module:model/MultipleCustomerProfileIntegrationResponseV2} obj Optional instance to populate.
+     * @return {module:model/MultipleCustomerProfileIntegrationResponseV2} The populated <code>MultipleCustomerProfileIntegrationResponseV2</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new MiscUpdateUserLatestFeature();
+            obj = obj || new MultipleCustomerProfileIntegrationResponseV2();
 
-            if (data.hasOwnProperty('latestFeature')) {
-                obj['latestFeature'] = ApiClient.convertToType(data['latestFeature'], 'String');
+            if (data.hasOwnProperty('integrationStates')) {
+                obj['integrationStates'] = ApiClient.convertToType(data['integrationStates'], [IntegrationStateV2]);
             }
         }
         return obj;
@@ -58,14 +59,14 @@ class MiscUpdateUserLatestFeature {
 }
 
 /**
- * @member {String} latestFeature
+ * @member {Array.<module:model/IntegrationStateV2>} integrationStates
  */
-MiscUpdateUserLatestFeature.prototype['latestFeature'] = undefined;
+MultipleCustomerProfileIntegrationResponseV2.prototype['integrationStates'] = undefined;
 
 
 
 
 
 
-export default MiscUpdateUserLatestFeature;
+export default MultipleCustomerProfileIntegrationResponseV2;
 

@@ -18,7 +18,7 @@ import ReferralRejectionReason from './ReferralRejectionReason';
 /**
  * The Meta model module.
  * @module model/Meta
- * @version 4.1.1
+ * @version 4.2.0
  */
 class Meta {
     /**
@@ -94,6 +94,7 @@ Meta.prototype['couponRejectionReason'] = undefined;
 Meta.prototype['referralRejectionReason'] = undefined;
 
 /**
+ * Contains warnings about possible misuse.
  * @member {Object} warnings
  */
 Meta.prototype['warnings'] = undefined;

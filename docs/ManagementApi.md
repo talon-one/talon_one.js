@@ -61,6 +61,7 @@ Method | HTTP request | Description
 [**getLoyaltyPoints**](ManagementApi.md#getLoyaltyPoints) | **GET** /v1/loyalty_programs/{programID}/profile/{integrationID} | get the Loyalty Ledger for this integrationID
 [**getLoyaltyProgram**](ManagementApi.md#getLoyaltyProgram) | **GET** /v1/loyalty_programs/{programID} | Get a loyalty program
 [**getLoyaltyPrograms**](ManagementApi.md#getLoyaltyPrograms) | **GET** /v1/loyalty_programs | List all loyalty Programs
+[**getLoyaltyStatistics**](ManagementApi.md#getLoyaltyStatistics) | **GET** /v1/loyalty_programs/{programID}/statistics | Get loyalty program statistics by loyalty program ID
 [**getReferrals**](ManagementApi.md#getReferrals) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals | List Referrals (with total count)
 [**getReferralsWithoutTotalCount**](ManagementApi.md#getReferralsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals/no_total | List Referrals
 [**getRole**](ManagementApi.md#getRole) | **GET** /v1/roles/{roleId} | Get information for the specified role.
@@ -1433,7 +1434,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomers
 
-> InlineResponse20012 getApplicationCustomers(applicationId)
+> InlineResponse20012 getApplicationCustomers(applicationId, opts)
 
 List Application Customers
 
@@ -1450,7 +1451,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let applicationId = 56; // Number | 
-apiInstance.getApplicationCustomers(applicationId).then((data) => {
+let opts = {
+  'integrationId': "integrationId_example", // String | Filter results performing an exact matching against the profile integration identifier.
+  'pageSize': 56, // Number | The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+  'skip': 56, // Number | Skips the given number of items when paging through large result sets.
+  'withTotalResultSize': true // Boolean | When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+};
+apiInstance.getApplicationCustomers(applicationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1464,6 +1471,10 @@ apiInstance.getApplicationCustomers(applicationId).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **Number**|  | 
+ **integrationId** | **String**| Filter results performing an exact matching against the profile integration identifier. | [optional] 
+ **pageSize** | **Number**| The number of items to include in this response. When omitted, the maximum value of 1000 will be used. | [optional] 
+ **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
+ **withTotalResultSize** | **Boolean**| When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query.  | [optional] 
 
 ### Return type
 
@@ -1822,10 +1833,11 @@ let opts = {
   'sort': "sort_example", // String | The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
   'profile': "profile_example", // String | Profile integration ID filter for sessions. Must be exact match.
   'state': "state_example", // String | Filter by sessions with this state. Must be exact match.
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created before this date
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created after this date
   'coupon': "coupon_example", // String | Filter by sessions with this coupon. Must be exact match.
   'referral': "referral_example", // String | Filter by sessions with this referral. Must be exact match.
-  'integrationId': "integrationId_example", // String | Filter by sessions with this integrationId. Must be exact match.
-  'customerId': "customerId_example" // String | Filter by integration ID of the customer for the session
+  'integrationId': "integrationId_example" // String | Filter by sessions with this integrationId. Must be exact match.
 };
 apiInstance.getApplicationSessions(applicationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1846,10 +1858,11 @@ Name | Type | Description  | Notes
  **sort** | **String**| The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with &#x60;-&#x60; to sort in descending order. | [optional] 
  **profile** | **String**| Profile integration ID filter for sessions. Must be exact match. | [optional] 
  **state** | **String**| Filter by sessions with this state. Must be exact match. | [optional] 
+ **createdBefore** | **Date**| Only return events created before this date | [optional] 
+ **createdAfter** | **Date**| Only return events created after this date | [optional] 
  **coupon** | **String**| Filter by sessions with this coupon. Must be exact match. | [optional] 
  **referral** | **String**| Filter by sessions with this referral. Must be exact match. | [optional] 
  **integrationId** | **String**| Filter by sessions with this integrationId. Must be exact match. | [optional] 
- **customerId** | **String**| Filter by integration ID of the customer for the session | [optional] 
 
 ### Return type
 
@@ -2224,7 +2237,8 @@ let opts = {
   'name': "name_example", // String | Filter results performing case-insensitive matching against the name of the campaign.
   'tags': "tags_example", // String | Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00") // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
+  'campaignGroupId': 56 // Number | Filter results to campaigns owned by the specified campaign group ID.
 };
 apiInstance.getCampaigns(applicationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2248,6 +2262,7 @@ Name | Type | Description  | Notes
  **tags** | **String**| Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \&quot;name\&quot; query parameter, a logical OR will be performed to search both tags and name for the provided values  | [optional] 
  **createdBefore** | **Date**| Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. | [optional] 
  **createdAfter** | **Date**| Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. | [optional] 
+ **campaignGroupId** | **Number**| Filter results to campaigns owned by the specified campaign group ID. | [optional] 
 
 ### Return type
 
@@ -2913,7 +2928,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerProfile
 
-> ApplicationCustomer getCustomerProfile(applicationId, customerId)
+> ApplicationCustomer getCustomerProfile(customerId)
 
 Get Customer Profile
 
@@ -2929,9 +2944,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | 
 let customerId = 56; // Number | 
-apiInstance.getCustomerProfile(applicationId, customerId).then((data) => {
+apiInstance.getCustomerProfile(customerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2944,7 +2958,6 @@ apiInstance.getCustomerProfile(applicationId, customerId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **applicationId** | **Number**|  | 
  **customerId** | **Number**|  | 
 
 ### Return type
@@ -3378,6 +3391,54 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**InlineResponse2008**](InlineResponse2008.md)
+
+### Authorization
+
+[manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getLoyaltyStatistics
+
+> LoyaltyStatistics getLoyaltyStatistics(programID)
+
+Get loyalty program statistics by loyalty program ID
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let programID = "programID_example"; // String | 
+apiInstance.getLoyaltyStatistics(programID).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **programID** | **String**|  | 
+
+### Return type
+
+[**LoyaltyStatistics**](LoyaltyStatistics.md)
 
 ### Authorization
 
