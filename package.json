@@ -21,7 +21,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepack": "babel src -d dist",
+    "prepack": "babel src -d dist && npm run generate-types",
+    "generate-types": "tsc",
     "test": "mocha --require @babel/register --recursive"
   },
   "browser": {
@@ -53,7 +54,8 @@
     "@babel/register": "^7.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^5.2.0",
-    "sinon": "^7.2.0"
+    "sinon": "^7.2.0",
+    "typescript": "^4.0.3"
   },
   "files": [
     "dist"
