@@ -19,6 +19,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "types",
   "scripts": {
     "prepack": "babel src -d dist",
     "test": "mocha --require @babel/register --recursive"
