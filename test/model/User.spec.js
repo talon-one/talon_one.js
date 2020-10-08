@@ -108,14 +108,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property releaseUpdate (base name: "releaseUpdate")', function() {
-      // uncomment below and update the code to test the property releaseUpdate
-      //var instane = new TalonOne.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property latestFeature (base name: "latestFeature")', function() {
-      // uncomment below and update the code to test the property latestFeature
+    it('should have the property latestFeedTimestamp (base name: "latestFeedTimestamp")', function() {
+      // uncomment below and update the code to test the property latestFeedTimestamp
       //var instane = new TalonOne.User();
       //expect(instance).to.be();
     });

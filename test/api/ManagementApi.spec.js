@@ -618,6 +618,16 @@
         done();
       });
     });
+    describe('getLoyaltyStatistics', function() {
+      it('should call getLoyaltyStatistics successfully', function(done) {
+        //uncomment below and update the code to test getLoyaltyStatistics
+        //instance.getLoyaltyStatistics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getReferrals', function() {
       it('should call getReferrals successfully', function(done) {
         //uncomment below and update the code to test getReferrals

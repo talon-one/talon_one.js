@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignAnalytics model module.
  * @module model/CampaignAnalytics
- * @version 4.1.1
+ * @version 4.2.0
  */
 class CampaignAnalytics {
     /**
@@ -44,10 +44,14 @@ class CampaignAnalytics {
      * @param totalCouponsCreated {Number} Number of coupons created in the campaign by the rule engine since it began.
      * @param referralsCreated {Number} Number of referrals created in the campaign by the rule engine.
      * @param totalReferralsCreated {Number} Number of referrals created in the campaign by the rule engine since it began.
+     * @param addedLoyaltyPoints {Number} Number of added loyalty points in the campaign in a specific interval.
+     * @param totalAddedLoyaltyPoints {Number} Number of added loyalty points in the campaign since it began.
+     * @param deductedLoyaltyPoints {Number} Number of deducted loyalty points in the campaign in a specific interval.
+     * @param totalDeductedLoyaltyPoints {Number} Number of deducted loyalty points in the campaign since it began.
      */
-    constructor(_date, campaignRevenue, totalCampaignRevenue, campaignRefund, totalCampaignRefund, campaignDiscountCosts, totalCampaignDiscountCosts, campaignRefundedDiscounts, totalCampaignRefundedDiscounts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, couponRolledbackRedemptions, totalCouponRolledbackRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated) { 
+    constructor(_date, campaignRevenue, totalCampaignRevenue, campaignRefund, totalCampaignRefund, campaignDiscountCosts, totalCampaignDiscountCosts, campaignRefundedDiscounts, totalCampaignRefundedDiscounts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, couponRolledbackRedemptions, totalCouponRolledbackRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated, addedLoyaltyPoints, totalAddedLoyaltyPoints, deductedLoyaltyPoints, totalDeductedLoyaltyPoints) { 
         
-        CampaignAnalytics.initialize(this, _date, campaignRevenue, totalCampaignRevenue, campaignRefund, totalCampaignRefund, campaignDiscountCosts, totalCampaignDiscountCosts, campaignRefundedDiscounts, totalCampaignRefundedDiscounts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, couponRolledbackRedemptions, totalCouponRolledbackRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated);
+        CampaignAnalytics.initialize(this, _date, campaignRevenue, totalCampaignRevenue, campaignRefund, totalCampaignRefund, campaignDiscountCosts, totalCampaignDiscountCosts, campaignRefundedDiscounts, totalCampaignRefundedDiscounts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, couponRolledbackRedemptions, totalCouponRolledbackRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated, addedLoyaltyPoints, totalAddedLoyaltyPoints, deductedLoyaltyPoints, totalDeductedLoyaltyPoints);
     }
 
     /**
@@ -55,7 +59,7 @@ class CampaignAnalytics {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, _date, campaignRevenue, totalCampaignRevenue, campaignRefund, totalCampaignRefund, campaignDiscountCosts, totalCampaignDiscountCosts, campaignRefundedDiscounts, totalCampaignRefundedDiscounts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, couponRolledbackRedemptions, totalCouponRolledbackRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated) { 
+    static initialize(obj, _date, campaignRevenue, totalCampaignRevenue, campaignRefund, totalCampaignRefund, campaignDiscountCosts, totalCampaignDiscountCosts, campaignRefundedDiscounts, totalCampaignRefundedDiscounts, campaignFreeItems, totalCampaignFreeItems, couponRedemptions, totalCouponRedemptions, couponRolledbackRedemptions, totalCouponRolledbackRedemptions, referralRedemptions, totalReferralRedemptions, couponsCreated, totalCouponsCreated, referralsCreated, totalReferralsCreated, addedLoyaltyPoints, totalAddedLoyaltyPoints, deductedLoyaltyPoints, totalDeductedLoyaltyPoints) { 
         obj['date'] = _date;
         obj['campaignRevenue'] = campaignRevenue;
         obj['totalCampaignRevenue'] = totalCampaignRevenue;
@@ -77,6 +81,10 @@ class CampaignAnalytics {
         obj['totalCouponsCreated'] = totalCouponsCreated;
         obj['referralsCreated'] = referralsCreated;
         obj['totalReferralsCreated'] = totalReferralsCreated;
+        obj['addedLoyaltyPoints'] = addedLoyaltyPoints;
+        obj['totalAddedLoyaltyPoints'] = totalAddedLoyaltyPoints;
+        obj['deductedLoyaltyPoints'] = deductedLoyaltyPoints;
+        obj['totalDeductedLoyaltyPoints'] = totalDeductedLoyaltyPoints;
     }
 
     /**
@@ -152,6 +160,18 @@ class CampaignAnalytics {
             }
             if (data.hasOwnProperty('totalReferralsCreated')) {
                 obj['totalReferralsCreated'] = ApiClient.convertToType(data['totalReferralsCreated'], 'Number');
+            }
+            if (data.hasOwnProperty('addedLoyaltyPoints')) {
+                obj['addedLoyaltyPoints'] = ApiClient.convertToType(data['addedLoyaltyPoints'], 'Number');
+            }
+            if (data.hasOwnProperty('totalAddedLoyaltyPoints')) {
+                obj['totalAddedLoyaltyPoints'] = ApiClient.convertToType(data['totalAddedLoyaltyPoints'], 'Number');
+            }
+            if (data.hasOwnProperty('deductedLoyaltyPoints')) {
+                obj['deductedLoyaltyPoints'] = ApiClient.convertToType(data['deductedLoyaltyPoints'], 'Number');
+            }
+            if (data.hasOwnProperty('totalDeductedLoyaltyPoints')) {
+                obj['totalDeductedLoyaltyPoints'] = ApiClient.convertToType(data['totalDeductedLoyaltyPoints'], 'Number');
             }
         }
         return obj;
@@ -284,6 +304,30 @@ CampaignAnalytics.prototype['referralsCreated'] = undefined;
  * @member {Number} totalReferralsCreated
  */
 CampaignAnalytics.prototype['totalReferralsCreated'] = undefined;
+
+/**
+ * Number of added loyalty points in the campaign in a specific interval.
+ * @member {Number} addedLoyaltyPoints
+ */
+CampaignAnalytics.prototype['addedLoyaltyPoints'] = undefined;
+
+/**
+ * Number of added loyalty points in the campaign since it began.
+ * @member {Number} totalAddedLoyaltyPoints
+ */
+CampaignAnalytics.prototype['totalAddedLoyaltyPoints'] = undefined;
+
+/**
+ * Number of deducted loyalty points in the campaign in a specific interval.
+ * @member {Number} deductedLoyaltyPoints
+ */
+CampaignAnalytics.prototype['deductedLoyaltyPoints'] = undefined;
+
+/**
+ * Number of deducted loyalty points in the campaign since it began.
+ * @member {Number} totalDeductedLoyaltyPoints
+ */
+CampaignAnalytics.prototype['totalDeductedLoyaltyPoints'] = undefined;
 
 
 

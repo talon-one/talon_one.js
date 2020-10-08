@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property audienceMemberships (base name: "audienceMemberships")', function() {
+      // uncomment below and update the code to test the property audienceMemberships
+      //var instane = new TalonOne.ApplicationCustomer();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lastActivity (base name: "lastActivity")', function() {
       // uncomment below and update the code to test the property lastActivity
       //var instane = new TalonOne.ApplicationCustomer();

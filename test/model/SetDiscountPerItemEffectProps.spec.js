@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subPosition (base name: "subPosition")', function() {
+      // uncomment below and update the code to test the property subPosition
+      //var instane = new TalonOne.SetDiscountPerItemEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

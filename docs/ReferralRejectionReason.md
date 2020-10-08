@@ -19,8 +19,6 @@ Name | Type | Description | Notes
 
 * `ReferralPartOfNotRunningCampaign` (value: `"ReferralPartOfNotRunningCampaign"`)
 
-* `ReferralValidConditionMissing` (value: `"ReferralValidConditionMissing"`)
-
 * `ReferralLimitReached` (value: `"ReferralLimitReached"`)
 
 * `CampaignLimitReached` (value: `"CampaignLimitReached"`)

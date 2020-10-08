@@ -11,9 +11,11 @@ Method | HTTP request | Description
 [**getCustomerInventory**](IntegrationApi.md#getCustomerInventory) | **GET** /v1/customer_profiles/{integrationId}/inventory | Get an inventory of all data associated with a specific customer profile.
 [**getReservedCustomers**](IntegrationApi.md#getReservedCustomers) | **GET** /v1/coupon_reservations/customerprofiles/{couponValue} | Get the users that have this coupon reserved
 [**trackEvent**](IntegrationApi.md#trackEvent) | **POST** /v1/events | Track an Event
-[**updateCustomerProfile**](IntegrationApi.md#updateCustomerProfile) | **PUT** /v1/customer_profiles/{integrationId} | Update a Customer Profile
-[**updateCustomerProfileV2**](IntegrationApi.md#updateCustomerProfileV2) | **PUT** /v2/customer_profiles/{customerProfileId} | Update a Customer Profile
-[**updateCustomerSession**](IntegrationApi.md#updateCustomerSession) | **PUT** /v1/customer_sessions/{customerSessionId} | Update a Customer Session
+[**updateCustomerProfile**](IntegrationApi.md#updateCustomerProfile) | **PUT** /v1/customer_profiles/{integrationId} | Update a Customer Profile V1
+[**updateCustomerProfileAudiences**](IntegrationApi.md#updateCustomerProfileAudiences) | **POST** /v2/customer_audiences | Update a Customer Profile Audiences
+[**updateCustomerProfileV2**](IntegrationApi.md#updateCustomerProfileV2) | **PUT** /v2/customer_profiles/{integrationId} | Update a Customer Profile
+[**updateCustomerProfilesV2**](IntegrationApi.md#updateCustomerProfilesV2) | **PUT** /v2/customer_profiles | Update multiple Customer Profiles
+[**updateCustomerSession**](IntegrationApi.md#updateCustomerSession) | **PUT** /v1/customer_sessions/{customerSessionId} | Update a Customer Session V1
 [**updateCustomerSessionV2**](IntegrationApi.md#updateCustomerSessionV2) | **PUT** /v2/customer_sessions/{customerSessionId} | Update a Customer Session
 
 
@@ -271,7 +273,8 @@ let integrationId = "integrationId_example"; // String | The custom identifier f
 let opts = {
   'profile': true, // Boolean | optional flag to decide if you would like customer profile information in the response
   'referrals': true, // Boolean | optional flag to decide if you would like referral information in the response
-  'coupons': true // Boolean | optional flag to decide if you would like coupon information in the response
+  'coupons': true, // Boolean | optional flag to decide if you would like coupon information in the response
+  'loyalty': true // Boolean | optional flag to decide if you would like loyalty information in the response
 };
 apiInstance.getCustomerInventory(integrationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -290,6 +293,7 @@ Name | Type | Description  | Notes
  **profile** | **Boolean**| optional flag to decide if you would like customer profile information in the response | [optional] 
  **referrals** | **Boolean**| optional flag to decide if you would like referral information in the response | [optional] 
  **coupons** | **Boolean**| optional flag to decide if you would like coupon information in the response | [optional] 
+ **loyalty** | **Boolean**| optional flag to decide if you would like loyalty information in the response | [optional] 
 
 ### Return type
 
@@ -423,9 +427,9 @@ Name | Type | Description  | Notes
 
 > IntegrationState updateCustomerProfile(integrationId, body, opts)
 
-Update a Customer Profile
+Update a Customer Profile V1
 
-Update (or create) a [Customer Profile][]. This profile information can then be matched and/or updated by campaign [Rules][].  The &#x60;integrationId&#x60; may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the &#x60;integrationId&#x60;. It is vital that this ID **not** change over time, so **don&#39;t** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#customer-profile [Rules]: /Getting-Started/entities#campaigns-rulesets-and-coupons 
+⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, please migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Profile][]. This profile information can then be matched and/or updated by campaign [Rules][].  The &#x60;integrationId&#x60; may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the &#x60;integrationId&#x60;. It is vital that this ID **not** change over time, so **don&#39;t** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#customer-profile [Rules]: /Getting-Started/entities#campaigns-rulesets-and-coupons 
 
 ### Example
 
@@ -480,13 +484,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateCustomerProfileV2
+## updateCustomerProfileAudiences
 
-> CustomerProfileUpdate updateCustomerProfileV2(customerProfileId, body)
+> updateCustomerProfileAudiences(body)
 
-Update a Customer Profile
+Update a Customer Profile Audiences
 
-Update (or create) a [Customer Profile][].   The &#x60;integrationId&#x60; may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the &#x60;integrationId&#x60;. It is vital that this ID **not** change over time, so **don&#39;t** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  [Customer Profile]: /Getting-Started/entities#customer-profile 
+Update one ore multiple Customer Profiles with the specified Audiences 
 
 ### Example
 
@@ -500,9 +504,63 @@ api_key_v1.apiKey = 'YOUR API KEY';
 //api_key_v1.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.IntegrationApi();
-let customerProfileId = "customerProfileId_example"; // String | The custom identifier for this profile, must be unique within the account.
-let body = new TalonOne.NewCustomerProfile(); // NewCustomerProfile | 
-apiInstance.updateCustomerProfileV2(customerProfileId, body).then((data) => {
+let body = new TalonOne.CustomerProfileAudienceRequest(); // CustomerProfileAudienceRequest | 
+apiInstance.updateCustomerProfileAudiences(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CustomerProfileAudienceRequest**](CustomerProfileAudienceRequest.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key_v1](../README.md#api_key_v1)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## updateCustomerProfileV2
+
+> IntegrationStateV2 updateCustomerProfileV2(integrationId, body, opts)
+
+Update a Customer Profile
+
+Update (or create) a [Customer Profile][].  The &#x60;integrationId&#x60; may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the &#x60;integrationId&#x60;. It is vital that this ID **not** change over time, so **don&#39;t** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  [Customer Profile]: /Getting-Started/entities#customer-profile 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.IntegrationApi();
+let integrationId = "integrationId_example"; // String | The custom identifier for this profile, must be unique within the account.
+let body = new TalonOne.CustomerProfileIntegrationRequestV2(); // CustomerProfileIntegrationRequestV2 | 
+let opts = {
+  'runRuleEngine': true, // Boolean | Flag to indicate whether to run the rule engine (Defaults to false).
+  'dry': true // Boolean | Flag to indicate whether to skip persisting the changes or not (Will not persist if set to 'true'. Only used when 'runRuleEngine' is set to 'true').
+};
+apiInstance.updateCustomerProfileV2(integrationId, body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -515,12 +573,68 @@ apiInstance.updateCustomerProfileV2(customerProfileId, body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerProfileId** | **String**| The custom identifier for this profile, must be unique within the account. | 
- **body** | [**NewCustomerProfile**](NewCustomerProfile.md)|  | 
+ **integrationId** | **String**| The custom identifier for this profile, must be unique within the account. | 
+ **body** | [**CustomerProfileIntegrationRequestV2**](CustomerProfileIntegrationRequestV2.md)|  | 
+ **runRuleEngine** | **Boolean**| Flag to indicate whether to run the rule engine (Defaults to false). | [optional] 
+ **dry** | **Boolean**| Flag to indicate whether to skip persisting the changes or not (Will not persist if set to &#39;true&#39;. Only used when &#39;runRuleEngine&#39; is set to &#39;true&#39;). | [optional] 
 
 ### Return type
 
-[**CustomerProfileUpdate**](CustomerProfileUpdate.md)
+[**IntegrationStateV2**](IntegrationStateV2.md)
+
+### Authorization
+
+[api_key_v1](../README.md#api_key_v1)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateCustomerProfilesV2
+
+> MultipleCustomerProfileIntegrationResponseV2 updateCustomerProfilesV2(body, opts)
+
+Update multiple Customer Profiles
+
+Update (or create) up to 1000 [Customer Profiles][] in 1 request.  The &#x60;integrationId&#x60; may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the &#x60;integrationId&#x60;. It is vital that this ID **not** change over time, so **don&#39;t** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  [Customer Profiles]: /Getting-Started/entities#customer-profile 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.IntegrationApi();
+let body = new TalonOne.MultipleCustomerProfileIntegrationRequest(); // MultipleCustomerProfileIntegrationRequest | 
+let opts = {
+  'silent': "silent_example" // String | If set to 'yes', response will be an empty 204, otherwise a list of the IntegrationStateV2  generated.
+};
+apiInstance.updateCustomerProfilesV2(body, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MultipleCustomerProfileIntegrationRequest**](MultipleCustomerProfileIntegrationRequest.md)|  | 
+ **silent** | **String**| If set to &#39;yes&#39;, response will be an empty 204, otherwise a list of the IntegrationStateV2  generated. | [optional] 
+
+### Return type
+
+[**MultipleCustomerProfileIntegrationResponseV2**](MultipleCustomerProfileIntegrationResponseV2.md)
 
 ### Authorization
 
@@ -536,9 +650,9 @@ Name | Type | Description  | Notes
 
 > IntegrationState updateCustomerSession(customerSessionId, body, opts)
 
-Update a Customer Session
+Update a Customer Session V1
 
-Update (or create) a [Customer Session][]. For example, the items in a customers cart are part of a session.  The Talon.One platform supports multiple simultaneous sessions for the same profile, so if you have multiple ways of accessing the same application you have the option of either tracking multiple independent sessions or using the same session across all of them. You should share sessions when application access points share other state, such as the users cart. If two points of access to the application have independent state (e.g. a user can have different items in their cart across the two) they should use independent customer session ID&#39;s.  The &#x60;profileId&#x60; parameter in the request body should correspond to an &#x60;integrationId&#x60; for a customer profile, to track an anonymous session use the empty string (&#x60;\&quot;\&quot;&#x60;) as the &#x60;profileId&#x60;. Note that you do **not** need to create a customer profile first: if the specified profile does not yet exist, an empty profile will be created automatically.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated.  [Customer Session]: /Getting-Started/entities#customer-session 
+⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, please migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Session][]. For example, the items in a customers cart are part of a session.  The Talon.One platform supports multiple simultaneous sessions for the same profile, so if you have multiple ways of accessing the same application you have the option of either tracking multiple independent sessions or using the same session across all of them. You should share sessions when application access points share other state, such as the users cart. If two points of access to the application have independent state (e.g. a user can have different items in their cart across the two) they should use independent customer session ID&#39;s.  The &#x60;profileId&#x60; parameter in the request body should correspond to an &#x60;integrationId&#x60; for a customer profile, to track an anonymous session use the empty string (&#x60;\&quot;\&quot;&#x60;) as the &#x60;profileId&#x60;. Note that you do **not** need to create a customer profile first: if the specified profile does not yet exist, an empty profile will be created automatically.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated.  [Customer Session]: /Getting-Started/entities#customer-session 
 
 ### Example
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponRejectionReason model module.
  * @module model/CouponRejectionReason
- * @version 4.1.1
+ * @version 4.2.0
  */
 class CouponRejectionReason {
     /**
@@ -107,12 +107,6 @@ CouponRejectionReason['ReasonEnum'] = {
      * @const
      */
     "CouponPartOfNotRunningCampaign": "CouponPartOfNotRunningCampaign",
-
-    /**
-     * value: "CouponValidConditionMissing"
-     * @const
-     */
-    "CouponValidConditionMissing": "CouponValidConditionMissing",
 
     /**
      * value: "CouponLimitReached"

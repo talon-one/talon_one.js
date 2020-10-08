@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ShowNotificationEffectProps model module.
  * @module model/ShowNotificationEffectProps
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ShowNotificationEffectProps {
     /**

@@ -63,6 +63,7 @@ import LoginParams from '../model/LoginParams';
 import LoyaltyLedger from '../model/LoyaltyLedger';
 import LoyaltyPoints from '../model/LoyaltyPoints';
 import LoyaltyProgram from '../model/LoyaltyProgram';
+import LoyaltyStatistics from '../model/LoyaltyStatistics';
 import NewAdditionalCost from '../model/NewAdditionalCost';
 import NewAttribute from '../model/NewAttribute';
 import NewCampaign from '../model/NewCampaign';
@@ -82,7 +83,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 4.1.1
+* @version 4.2.0
 */
 export default class ManagementApi {
 
@@ -1535,9 +1536,15 @@ export default class ManagementApi {
     /**
      * List Application Customers
      * @param {Number} applicationId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.integrationId Filter results performing an exact matching against the profile integration identifier.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
      */
-    getApplicationCustomersWithHttpInfo(applicationId) {
+    getApplicationCustomersWithHttpInfo(applicationId, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'applicationId' is set
       if (applicationId === undefined || applicationId === null) {
@@ -1548,6 +1555,10 @@ export default class ManagementApi {
         'applicationId': applicationId
       };
       let queryParams = {
+        'integrationId': opts['integrationId'],
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'withTotalResultSize': opts['withTotalResultSize']
       };
       let headerParams = {
       };
@@ -1568,10 +1579,15 @@ export default class ManagementApi {
     /**
      * List Application Customers
      * @param {Number} applicationId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.integrationId Filter results performing an exact matching against the profile integration identifier.
+     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
      */
-    getApplicationCustomers(applicationId) {
-      return this.getApplicationCustomersWithHttpInfo(applicationId)
+    getApplicationCustomers(applicationId, opts) {
+      return this.getApplicationCustomersWithHttpInfo(applicationId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1933,10 +1949,11 @@ export default class ManagementApi {
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
      * @param {module:model/String} opts.state Filter by sessions with this state. Must be exact match.
+     * @param {Date} opts.createdBefore Only return events created before this date
+     * @param {Date} opts.createdAfter Only return events created after this date
      * @param {String} opts.coupon Filter by sessions with this coupon. Must be exact match.
      * @param {String} opts.referral Filter by sessions with this referral. Must be exact match.
      * @param {String} opts.integrationId Filter by sessions with this integrationId. Must be exact match.
-     * @param {String} opts.customerId Filter by integration ID of the customer for the session
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     getApplicationSessionsWithHttpInfo(applicationId, opts) {
@@ -1956,10 +1973,11 @@ export default class ManagementApi {
         'sort': opts['sort'],
         'profile': opts['profile'],
         'state': opts['state'],
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
         'coupon': opts['coupon'],
         'referral': opts['referral'],
-        'integrationId': opts['integrationId'],
-        'customerId': opts['customerId']
+        'integrationId': opts['integrationId']
       };
       let headerParams = {
       };
@@ -1986,10 +2004,11 @@ export default class ManagementApi {
      * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
      * @param {module:model/String} opts.state Filter by sessions with this state. Must be exact match.
+     * @param {Date} opts.createdBefore Only return events created before this date
+     * @param {Date} opts.createdAfter Only return events created after this date
      * @param {String} opts.coupon Filter by sessions with this coupon. Must be exact match.
      * @param {String} opts.referral Filter by sessions with this referral. Must be exact match.
      * @param {String} opts.integrationId Filter by sessions with this integrationId. Must be exact match.
-     * @param {String} opts.customerId Filter by integration ID of the customer for the session
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     getApplicationSessions(applicationId, opts) {
@@ -2361,6 +2380,7 @@ export default class ManagementApi {
      * @param {String} opts.tags Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
      * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
+     * @param {Number} opts.campaignGroupId Filter results to campaigns owned by the specified campaign group ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     getCampaignsWithHttpInfo(applicationId, opts) {
@@ -2382,7 +2402,8 @@ export default class ManagementApi {
         'name': opts['name'],
         'tags': opts['tags'],
         'createdBefore': opts['createdBefore'],
-        'createdAfter': opts['createdAfter']
+        'createdAfter': opts['createdAfter'],
+        'campaignGroupId': opts['campaignGroupId']
       };
       let headerParams = {
       };
@@ -2412,6 +2433,7 @@ export default class ManagementApi {
      * @param {String} opts.tags Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
      * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
      * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
+     * @param {Number} opts.campaignGroupId Filter results to campaigns owned by the specified campaign group ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     getCampaigns(applicationId, opts) {
@@ -3201,23 +3223,17 @@ export default class ManagementApi {
 
     /**
      * Get Customer Profile
-     * @param {Number} applicationId 
      * @param {Number} customerId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicationCustomer} and HTTP response
      */
-    getCustomerProfileWithHttpInfo(applicationId, customerId) {
+    getCustomerProfileWithHttpInfo(customerId) {
       let postBody = null;
-      // verify the required parameter 'applicationId' is set
-      if (applicationId === undefined || applicationId === null) {
-        throw new Error("Missing the required parameter 'applicationId' when calling getCustomerProfile");
-      }
       // verify the required parameter 'customerId' is set
       if (customerId === undefined || customerId === null) {
         throw new Error("Missing the required parameter 'customerId' when calling getCustomerProfile");
       }
 
       let pathParams = {
-        'applicationId': applicationId,
         'customerId': customerId
       };
       let queryParams = {
@@ -3240,12 +3256,11 @@ export default class ManagementApi {
 
     /**
      * Get Customer Profile
-     * @param {Number} applicationId 
      * @param {Number} customerId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicationCustomer}
      */
-    getCustomerProfile(applicationId, customerId) {
-      return this.getCustomerProfileWithHttpInfo(applicationId, customerId)
+    getCustomerProfile(customerId) {
+      return this.getCustomerProfileWithHttpInfo(customerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3661,6 +3676,52 @@ export default class ManagementApi {
      */
     getLoyaltyPrograms() {
       return this.getLoyaltyProgramsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get loyalty program statistics by loyalty program ID
+     * @param {String} programID 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoyaltyStatistics} and HTTP response
+     */
+    getLoyaltyStatisticsWithHttpInfo(programID) {
+      let postBody = null;
+      // verify the required parameter 'programID' is set
+      if (programID === undefined || programID === null) {
+        throw new Error("Missing the required parameter 'programID' when calling getLoyaltyStatistics");
+      }
+
+      let pathParams = {
+        'programID': programID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = LoyaltyStatistics;
+      return this.apiClient.callApi(
+        '/v1/loyalty_programs/{programID}/statistics', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get loyalty program statistics by loyalty program ID
+     * @param {String} programID 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoyaltyStatistics}
+     */
+    getLoyaltyStatistics(programID) {
+      return this.getLoyaltyStatisticsWithHttpInfo(programID)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

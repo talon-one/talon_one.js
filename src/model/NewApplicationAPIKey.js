@@ -16,25 +16,25 @@ import ApiClient from '../ApiClient';
 /**
  * The NewApplicationAPIKey model module.
  * @module model/NewApplicationAPIKey
- * @version 4.1.1
+ * @version 4.2.0
  */
 class NewApplicationAPIKey {
     /**
      * Constructs a new <code>NewApplicationAPIKey</code>.
      * 
      * @alias module:model/NewApplicationAPIKey
+     * @param title {String} Title for API Key
+     * @param expires {Date} The date the API key expired
      * @param id {Number} ID of the API Key
      * @param createdBy {Number} ID of user who created
-     * @param title {String} Title for API Key
      * @param accountID {Number} ID of account the key is used for
      * @param applicationID {Number} ID of application the key is used for
      * @param created {Date} The date the API key was created
-     * @param expires {Date} The date the API key expired
      * @param key {String} Raw API Key
      */
-    constructor(id, createdBy, title, accountID, applicationID, created, expires, key) { 
+    constructor(title, expires, id, createdBy, accountID, applicationID, created, key) { 
         
-        NewApplicationAPIKey.initialize(this, id, createdBy, title, accountID, applicationID, created, expires, key);
+        NewApplicationAPIKey.initialize(this, title, expires, id, createdBy, accountID, applicationID, created, key);
     }
 
     /**
@@ -42,14 +42,14 @@ class NewApplicationAPIKey {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, title, accountID, applicationID, created, expires, key) { 
+    static initialize(obj, title, expires, id, createdBy, accountID, applicationID, created, key) { 
+        obj['title'] = title;
+        obj['expires'] = expires;
         obj['id'] = id;
         obj['createdBy'] = createdBy;
-        obj['title'] = title;
         obj['accountID'] = accountID;
         obj['applicationID'] = applicationID;
         obj['created'] = created;
-        obj['expires'] = expires;
         obj['key'] = key;
     }
 
@@ -64,14 +64,20 @@ class NewApplicationAPIKey {
         if (data) {
             obj = obj || new NewApplicationAPIKey();
 
+            if (data.hasOwnProperty('title')) {
+                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            }
+            if (data.hasOwnProperty('expires')) {
+                obj['expires'] = ApiClient.convertToType(data['expires'], 'Date');
+            }
+            if (data.hasOwnProperty('platform')) {
+                obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'Number');
-            }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
@@ -81,9 +87,6 @@ class NewApplicationAPIKey {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
-            }
-            if (data.hasOwnProperty('expires')) {
-                obj['expires'] = ApiClient.convertToType(data['expires'], 'Date');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -96,6 +99,24 @@ class NewApplicationAPIKey {
 }
 
 /**
+ * Title for API Key
+ * @member {String} title
+ */
+NewApplicationAPIKey.prototype['title'] = undefined;
+
+/**
+ * The date the API key expired
+ * @member {Date} expires
+ */
+NewApplicationAPIKey.prototype['expires'] = undefined;
+
+/**
+ * Platform the API key is valid for.
+ * @member {module:model/NewApplicationAPIKey.PlatformEnum} platform
+ */
+NewApplicationAPIKey.prototype['platform'] = undefined;
+
+/**
  * ID of the API Key
  * @member {Number} id
  */
@@ -106,12 +127,6 @@ NewApplicationAPIKey.prototype['id'] = undefined;
  * @member {Number} createdBy
  */
 NewApplicationAPIKey.prototype['createdBy'] = undefined;
-
-/**
- * Title for API Key
- * @member {String} title
- */
-NewApplicationAPIKey.prototype['title'] = undefined;
 
 /**
  * ID of account the key is used for
@@ -132,12 +147,6 @@ NewApplicationAPIKey.prototype['applicationID'] = undefined;
 NewApplicationAPIKey.prototype['created'] = undefined;
 
 /**
- * The date the API key expired
- * @member {Date} expires
- */
-NewApplicationAPIKey.prototype['expires'] = undefined;
-
-/**
  * Raw API Key
  * @member {String} key
  */
@@ -145,6 +154,39 @@ NewApplicationAPIKey.prototype['key'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>platform</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewApplicationAPIKey['PlatformEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "segment"
+     * @const
+     */
+    "segment": "segment",
+
+    /**
+     * value: "braze"
+     * @const
+     */
+    "braze": "braze",
+
+    /**
+     * value: "mparticle"
+     * @const
+     */
+    "mparticle": "mparticle"
+};
 
 
 

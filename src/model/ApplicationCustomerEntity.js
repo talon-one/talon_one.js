@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCustomerEntity model module.
  * @module model/ApplicationCustomerEntity
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ApplicationCustomerEntity {
     /**

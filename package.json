@@ -1,6 +1,6 @@
 {
   "name": "talon_one",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "Talon.One API SDK for Javascript",
   "homepage": "https://developers.talon.one/SDKs/JavaScript",
   "author": {
@@ -19,9 +19,12 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "prepack": "babel src -d dist",
-    "test": "mocha --require @babel/register --recursive"
+    "build": "babel src -d dist",
+    "generate-types": "tsc",
+    "test": "mocha --require @babel/register --recursive",
+    "prepack": "npm run build && npm run generate-types"
   },
   "browser": {
     "fs": false
@@ -52,7 +55,8 @@
     "@babel/register": "^7.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^5.2.0",
-    "sinon": "^7.2.0"
+    "sinon": "^7.2.0",
+    "typescript": "^4.0.3"
   },
   "files": [
     "dist"

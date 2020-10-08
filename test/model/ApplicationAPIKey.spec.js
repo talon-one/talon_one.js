@@ -54,6 +54,24 @@
       //expect(instance).to.be.a(TalonOne.ApplicationAPIKey);
     });
 
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new TalonOne.ApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expires (base name: "expires")', function() {
+      // uncomment below and update the code to test the property expires
+      //var instane = new TalonOne.ApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property platform (base name: "platform")', function() {
+      // uncomment below and update the code to test the property platform
+      //var instane = new TalonOne.ApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new TalonOne.ApplicationAPIKey();
@@ -62,12 +80,6 @@
 
     it('should have the property createdBy (base name: "createdBy")', function() {
       // uncomment below and update the code to test the property createdBy
-      //var instane = new TalonOne.ApplicationAPIKey();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
       //var instane = new TalonOne.ApplicationAPIKey();
       //expect(instance).to.be();
     });
@@ -86,12 +98,6 @@
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new TalonOne.ApplicationAPIKey();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expires (base name: "expires")', function() {
-      // uncomment below and update the code to test the property expires
       //var instane = new TalonOne.ApplicationAPIKey();
       //expect(instance).to.be();
     });

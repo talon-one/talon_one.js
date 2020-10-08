@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignCopy model module.
  * @module model/CampaignCopy
- * @version 4.1.1
+ * @version 4.2.0
  */
 class CampaignCopy {
     /**
      * Constructs a new <code>CampaignCopy</code>.
      * @alias module:model/CampaignCopy
-     * @param applicationIds {Array.<String>} Application IDs of the applications to which a campaign should be copied to
+     * @param applicationIds {Array.<Number>} Application IDs of the applications to which a campaign should be copied to
      */
     constructor(applicationIds) { 
         
@@ -53,7 +53,7 @@ class CampaignCopy {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('applicationIds')) {
-                obj['applicationIds'] = ApiClient.convertToType(data['applicationIds'], ['String']);
+                obj['applicationIds'] = ApiClient.convertToType(data['applicationIds'], ['Number']);
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -82,7 +82,7 @@ CampaignCopy.prototype['name'] = undefined;
 
 /**
  * Application IDs of the applications to which a campaign should be copied to
- * @member {Array.<String>} applicationIds
+ * @member {Array.<Number>} applicationIds
  */
 CampaignCopy.prototype['applicationIds'] = undefined;
 

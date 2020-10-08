@@ -38,12 +38,16 @@ import ApplicationSessionEntity from './model/ApplicationSessionEntity';
 import Attribute from './model/Attribute';
 import AttributesMandatory from './model/AttributesMandatory';
 import AttributesSettings from './model/AttributesSettings';
+import Audience from './model/Audience';
+import AudienceMembership from './model/AudienceMembership';
 import BaseSamlConnection from './model/BaseSamlConnection';
 import Binding from './model/Binding';
 import Campaign from './model/Campaign';
 import CampaignAnalytics from './model/CampaignAnalytics';
 import CampaignCopy from './model/CampaignCopy';
 import CampaignEntity from './model/CampaignEntity';
+import CampaignGroup from './model/CampaignGroup';
+import CampaignGroupEntity from './model/CampaignGroupEntity';
 import CampaignSearch from './model/CampaignSearch';
 import CampaignSet from './model/CampaignSet';
 import CampaignSetBranchNode from './model/CampaignSetBranchNode';
@@ -66,8 +70,10 @@ import CustomerActivityReport from './model/CustomerActivityReport';
 import CustomerAnalytics from './model/CustomerAnalytics';
 import CustomerInventory from './model/CustomerInventory';
 import CustomerProfile from './model/CustomerProfile';
+import CustomerProfileAudienceRequest from './model/CustomerProfileAudienceRequest';
+import CustomerProfileAudienceRequestItem from './model/CustomerProfileAudienceRequestItem';
+import CustomerProfileIntegrationRequestV2 from './model/CustomerProfileIntegrationRequestV2';
 import CustomerProfileSearchQuery from './model/CustomerProfileSearchQuery';
-import CustomerProfileUpdate from './model/CustomerProfileUpdate';
 import CustomerSession from './model/CustomerSession';
 import CustomerSessionV2 from './model/CustomerSessionV2';
 import DeductLoyaltyPointsEffectProps from './model/DeductLoyaltyPointsEffectProps';
@@ -75,6 +81,7 @@ import Effect from './model/Effect';
 import EffectEntity from './model/EffectEntity';
 import EmailEntity from './model/EmailEntity';
 import Entity from './model/Entity';
+import EntityWithTalangVisibleID from './model/EntityWithTalangVisibleID';
 import Environment from './model/Environment';
 import ErrorEffectProps from './model/ErrorEffectProps';
 import ErrorResponse from './model/ErrorResponse';
@@ -84,6 +91,7 @@ import EventType from './model/EventType';
 import FeatureFlag from './model/FeatureFlag';
 import FeatureFlags from './model/FeatureFlags';
 import FeaturesFeed from './model/FeaturesFeed';
+import FeedNotification from './model/FeedNotification';
 import FuncArgDef from './model/FuncArgDef';
 import FunctionDef from './model/FunctionDef';
 import ImportCoupons from './model/ImportCoupons';
@@ -136,13 +144,16 @@ import LoyaltyPoints from './model/LoyaltyPoints';
 import LoyaltyProgram from './model/LoyaltyProgram';
 import LoyaltyProgramBalance from './model/LoyaltyProgramBalance';
 import LoyaltyProgramLedgers from './model/LoyaltyProgramLedgers';
+import LoyaltyStatistics from './model/LoyaltyStatistics';
 import LoyaltySubLedger from './model/LoyaltySubLedger';
 import ManagerConfig from './model/ManagerConfig';
 import Meta from './model/Meta';
-import MiscUpdateUserLatestFeature from './model/MiscUpdateUserLatestFeature';
 import ModelExport from './model/ModelExport';
 import ModelImport from './model/ModelImport';
 import MultiApplicationEntity from './model/MultiApplicationEntity';
+import MultipleCustomerProfileIntegrationRequest from './model/MultipleCustomerProfileIntegrationRequest';
+import MultipleCustomerProfileIntegrationRequestItem from './model/MultipleCustomerProfileIntegrationRequestItem';
+import MultipleCustomerProfileIntegrationResponseV2 from './model/MultipleCustomerProfileIntegrationResponseV2';
 import MutableEntity from './model/MutableEntity';
 import NewAccount from './model/NewAccount';
 import NewAccountSignUp from './model/NewAccountSignUp';
@@ -150,7 +161,9 @@ import NewAdditionalCost from './model/NewAdditionalCost';
 import NewApplication from './model/NewApplication';
 import NewApplicationAPIKey from './model/NewApplicationAPIKey';
 import NewAttribute from './model/NewAttribute';
+import NewAudience from './model/NewAudience';
 import NewCampaign from './model/NewCampaign';
+import NewCampaignGroup from './model/NewCampaignGroup';
 import NewCampaignSet from './model/NewCampaignSet';
 import NewCoupons from './model/NewCoupons';
 import NewCustomerProfile from './model/NewCustomerProfile';
@@ -201,14 +214,18 @@ import TriggerWebhookEffectProps from './model/TriggerWebhookEffectProps';
 import UpdateAccount from './model/UpdateAccount';
 import UpdateApplication from './model/UpdateApplication';
 import UpdateAttributeEffectProps from './model/UpdateAttributeEffectProps';
+import UpdateAudience from './model/UpdateAudience';
 import UpdateCampaign from './model/UpdateCampaign';
+import UpdateCampaignGroup from './model/UpdateCampaignGroup';
 import UpdateCoupon from './model/UpdateCoupon';
 import UpdateCouponBatch from './model/UpdateCouponBatch';
 import UpdateLoyaltyProgram from './model/UpdateLoyaltyProgram';
 import UpdateRole from './model/UpdateRole';
 import UpdateUser from './model/UpdateUser';
+import UpdateUserLatestFeedTimestamp from './model/UpdateUserLatestFeedTimestamp';
 import User from './model/User';
 import UserEntity from './model/UserEntity';
+import UserFeedNotifications from './model/UserFeedNotifications';
 import Webhook from './model/Webhook';
 import WebhookActivationLogEntry from './model/WebhookActivationLogEntry';
 import WebhookLogEntry from './model/WebhookLogEntry';
@@ -245,7 +262,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.1.1
+* @version 4.2.0
 */
 export {
     /**
@@ -405,6 +422,18 @@ export {
     AttributesSettings,
 
     /**
+     * The Audience model constructor.
+     * @property {module:model/Audience}
+     */
+    Audience,
+
+    /**
+     * The AudienceMembership model constructor.
+     * @property {module:model/AudienceMembership}
+     */
+    AudienceMembership,
+
+    /**
      * The BaseSamlConnection model constructor.
      * @property {module:model/BaseSamlConnection}
      */
@@ -439,6 +468,18 @@ export {
      * @property {module:model/CampaignEntity}
      */
     CampaignEntity,
+
+    /**
+     * The CampaignGroup model constructor.
+     * @property {module:model/CampaignGroup}
+     */
+    CampaignGroup,
+
+    /**
+     * The CampaignGroupEntity model constructor.
+     * @property {module:model/CampaignGroupEntity}
+     */
+    CampaignGroupEntity,
 
     /**
      * The CampaignSearch model constructor.
@@ -573,16 +614,28 @@ export {
     CustomerProfile,
 
     /**
+     * The CustomerProfileAudienceRequest model constructor.
+     * @property {module:model/CustomerProfileAudienceRequest}
+     */
+    CustomerProfileAudienceRequest,
+
+    /**
+     * The CustomerProfileAudienceRequestItem model constructor.
+     * @property {module:model/CustomerProfileAudienceRequestItem}
+     */
+    CustomerProfileAudienceRequestItem,
+
+    /**
+     * The CustomerProfileIntegrationRequestV2 model constructor.
+     * @property {module:model/CustomerProfileIntegrationRequestV2}
+     */
+    CustomerProfileIntegrationRequestV2,
+
+    /**
      * The CustomerProfileSearchQuery model constructor.
      * @property {module:model/CustomerProfileSearchQuery}
      */
     CustomerProfileSearchQuery,
-
-    /**
-     * The CustomerProfileUpdate model constructor.
-     * @property {module:model/CustomerProfileUpdate}
-     */
-    CustomerProfileUpdate,
 
     /**
      * The CustomerSession model constructor.
@@ -625,6 +678,12 @@ export {
      * @property {module:model/Entity}
      */
     Entity,
+
+    /**
+     * The EntityWithTalangVisibleID model constructor.
+     * @property {module:model/EntityWithTalangVisibleID}
+     */
+    EntityWithTalangVisibleID,
 
     /**
      * The Environment model constructor.
@@ -679,6 +738,12 @@ export {
      * @property {module:model/FeaturesFeed}
      */
     FeaturesFeed,
+
+    /**
+     * The FeedNotification model constructor.
+     * @property {module:model/FeedNotification}
+     */
+    FeedNotification,
 
     /**
      * The FuncArgDef model constructor.
@@ -993,6 +1058,12 @@ export {
     LoyaltyProgramLedgers,
 
     /**
+     * The LoyaltyStatistics model constructor.
+     * @property {module:model/LoyaltyStatistics}
+     */
+    LoyaltyStatistics,
+
+    /**
      * The LoyaltySubLedger model constructor.
      * @property {module:model/LoyaltySubLedger}
      */
@@ -1011,12 +1082,6 @@ export {
     Meta,
 
     /**
-     * The MiscUpdateUserLatestFeature model constructor.
-     * @property {module:model/MiscUpdateUserLatestFeature}
-     */
-    MiscUpdateUserLatestFeature,
-
-    /**
      * The ModelExport model constructor.
      * @property {module:model/ModelExport}
      */
@@ -1033,6 +1098,24 @@ export {
      * @property {module:model/MultiApplicationEntity}
      */
     MultiApplicationEntity,
+
+    /**
+     * The MultipleCustomerProfileIntegrationRequest model constructor.
+     * @property {module:model/MultipleCustomerProfileIntegrationRequest}
+     */
+    MultipleCustomerProfileIntegrationRequest,
+
+    /**
+     * The MultipleCustomerProfileIntegrationRequestItem model constructor.
+     * @property {module:model/MultipleCustomerProfileIntegrationRequestItem}
+     */
+    MultipleCustomerProfileIntegrationRequestItem,
+
+    /**
+     * The MultipleCustomerProfileIntegrationResponseV2 model constructor.
+     * @property {module:model/MultipleCustomerProfileIntegrationResponseV2}
+     */
+    MultipleCustomerProfileIntegrationResponseV2,
 
     /**
      * The MutableEntity model constructor.
@@ -1077,10 +1160,22 @@ export {
     NewAttribute,
 
     /**
+     * The NewAudience model constructor.
+     * @property {module:model/NewAudience}
+     */
+    NewAudience,
+
+    /**
      * The NewCampaign model constructor.
      * @property {module:model/NewCampaign}
      */
     NewCampaign,
+
+    /**
+     * The NewCampaignGroup model constructor.
+     * @property {module:model/NewCampaignGroup}
+     */
+    NewCampaignGroup,
 
     /**
      * The NewCampaignSet model constructor.
@@ -1383,10 +1478,22 @@ export {
     UpdateAttributeEffectProps,
 
     /**
+     * The UpdateAudience model constructor.
+     * @property {module:model/UpdateAudience}
+     */
+    UpdateAudience,
+
+    /**
      * The UpdateCampaign model constructor.
      * @property {module:model/UpdateCampaign}
      */
     UpdateCampaign,
+
+    /**
+     * The UpdateCampaignGroup model constructor.
+     * @property {module:model/UpdateCampaignGroup}
+     */
+    UpdateCampaignGroup,
 
     /**
      * The UpdateCoupon model constructor.
@@ -1419,6 +1526,12 @@ export {
     UpdateUser,
 
     /**
+     * The UpdateUserLatestFeedTimestamp model constructor.
+     * @property {module:model/UpdateUserLatestFeedTimestamp}
+     */
+    UpdateUserLatestFeedTimestamp,
+
+    /**
      * The User model constructor.
      * @property {module:model/User}
      */
@@ -1429,6 +1542,12 @@ export {
      * @property {module:model/UserEntity}
      */
     UserEntity,
+
+    /**
+     * The UserFeedNotifications model constructor.
+     * @property {module:model/UserFeedNotifications}
+     */
+    UserFeedNotifications,
 
     /**
      * The Webhook model constructor.

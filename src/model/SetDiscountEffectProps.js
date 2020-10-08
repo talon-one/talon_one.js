@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountEffectProps model module.
  * @module model/SetDiscountEffectProps
- * @version 4.1.1
+ * @version 4.2.0
  */
 class SetDiscountEffectProps {
     /**
      * Constructs a new <code>SetDiscountEffectProps</code>.
-     * The properties specific to the \&quot;setDiscount\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set discount\&quot; effect. This is a discount that should be applied globally on the session total.
+     * The properties specific to the \&quot;setDiscount\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set discount\&quot; effect. This is a discount that should be applied on the scope of defined with it.
      * @alias module:model/SetDiscountEffectProps
      * @param name {String} The name/description of this discount
      * @param value {Number} The total monetary value of the discount
@@ -58,6 +58,9 @@ class SetDiscountEffectProps {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number');
             }
+            if (data.hasOwnProperty('scope')) {
+                obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
+            }
         }
         return obj;
     }
@@ -76,6 +79,12 @@ SetDiscountEffectProps.prototype['name'] = undefined;
  * @member {Number} value
  */
 SetDiscountEffectProps.prototype['value'] = undefined;
+
+/**
+ * The scope which the discount was applied on, can be one of (cartItems,additionalCosts,sessionTotal)
+ * @member {String} scope
+ */
+SetDiscountEffectProps.prototype['scope'] = undefined;
 
 
 

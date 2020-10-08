@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLoyaltyProgram model module.
  * @module model/UpdateLoyaltyProgram
- * @version 4.1.1
+ * @version 4.2.0
  */
 class UpdateLoyaltyProgram {
     /**
@@ -60,6 +60,9 @@ class UpdateLoyaltyProgram {
             if (data.hasOwnProperty('defaultValidity')) {
                 obj['defaultValidity'] = ApiClient.convertToType(data['defaultValidity'], 'String');
             }
+            if (data.hasOwnProperty('defaultPending')) {
+                obj['defaultPending'] = ApiClient.convertToType(data['defaultPending'], 'String');
+            }
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
             }
@@ -89,10 +92,16 @@ UpdateLoyaltyProgram.prototype['description'] = undefined;
 UpdateLoyaltyProgram.prototype['subscribedApplications'] = undefined;
 
 /**
- * Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m' or '30d'.
+ * Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
  * @member {String} defaultValidity
  */
 UpdateLoyaltyProgram.prototype['defaultValidity'] = undefined;
+
+/**
+ * Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
+ * @member {String} defaultPending
+ */
+UpdateLoyaltyProgram.prototype['defaultPending'] = undefined;
 
 /**
  * Indicates if this program supports subledgers inside the program

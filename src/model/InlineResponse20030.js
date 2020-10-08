@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The InlineResponse20030 model module.
  * @module model/InlineResponse20030
- * @version 4.1.1
+ * @version 4.2.0
  */
 class InlineResponse20030 {
     /**

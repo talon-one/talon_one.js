@@ -66,8 +66,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property expiryDuration (base name: "expiryDuration")', function() {
-      // uncomment below and update the code to test the property expiryDuration
+    it('should have the property validityDuration (base name: "validityDuration")', function() {
+      // uncomment below and update the code to test the property validityDuration
+      //var instane = new TalonOne.LoyaltyPoints();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pendingDuration (base name: "pendingDuration")', function() {
+      // uncomment below and update the code to test the property pendingDuration
       //var instane = new TalonOne.LoyaltyPoints();
       //expect(instance).to.be();
     });

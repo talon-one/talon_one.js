@@ -12,22 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerProfile from './CustomerProfile';
 
 /**
- * The CustomerProfileUpdate model module.
- * @module model/CustomerProfileUpdate
- * @version 4.1.1
+ * The UpdateUserLatestFeedTimestamp model module.
+ * @module model/UpdateUserLatestFeedTimestamp
+ * @version 4.2.0
  */
-class CustomerProfileUpdate {
+class UpdateUserLatestFeedTimestamp {
     /**
-     * Constructs a new <code>CustomerProfileUpdate</code>.
-     * @alias module:model/CustomerProfileUpdate
-     * @param customerProfile {module:model/CustomerProfile} 
+     * Constructs a new <code>UpdateUserLatestFeedTimestamp</code>.
+     * Updates current user&#39;s latest seen notifications timestamp
+     * @alias module:model/UpdateUserLatestFeedTimestamp
+     * @param newLatestFeedTimestamp {Date} New timestamp to update for the current user
      */
-    constructor(customerProfile) { 
+    constructor(newLatestFeedTimestamp) { 
         
-        CustomerProfileUpdate.initialize(this, customerProfile);
+        UpdateUserLatestFeedTimestamp.initialize(this, newLatestFeedTimestamp);
     }
 
     /**
@@ -35,23 +35,23 @@ class CustomerProfileUpdate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, customerProfile) { 
-        obj['customerProfile'] = customerProfile;
+    static initialize(obj, newLatestFeedTimestamp) { 
+        obj['newLatestFeedTimestamp'] = newLatestFeedTimestamp;
     }
 
     /**
-     * Constructs a <code>CustomerProfileUpdate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>UpdateUserLatestFeedTimestamp</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerProfileUpdate} obj Optional instance to populate.
-     * @return {module:model/CustomerProfileUpdate} The populated <code>CustomerProfileUpdate</code> instance.
+     * @param {module:model/UpdateUserLatestFeedTimestamp} obj Optional instance to populate.
+     * @return {module:model/UpdateUserLatestFeedTimestamp} The populated <code>UpdateUserLatestFeedTimestamp</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new CustomerProfileUpdate();
+            obj = obj || new UpdateUserLatestFeedTimestamp();
 
-            if (data.hasOwnProperty('customerProfile')) {
-                obj['customerProfile'] = CustomerProfile.constructFromObject(data['customerProfile']);
+            if (data.hasOwnProperty('newLatestFeedTimestamp')) {
+                obj['newLatestFeedTimestamp'] = ApiClient.convertToType(data['newLatestFeedTimestamp'], 'Date');
             }
         }
         return obj;
@@ -61,14 +61,15 @@ class CustomerProfileUpdate {
 }
 
 /**
- * @member {module:model/CustomerProfile} customerProfile
+ * New timestamp to update for the current user
+ * @member {Date} newLatestFeedTimestamp
  */
-CustomerProfileUpdate.prototype['customerProfile'] = undefined;
+UpdateUserLatestFeedTimestamp.prototype['newLatestFeedTimestamp'] = undefined;
 
 
 
 
 
 
-export default CustomerProfileUpdate;
+export default UpdateUserLatestFeedTimestamp;
 

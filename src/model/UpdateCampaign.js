@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 4.1.1
+ * @version 4.2.0
  */
 class UpdateCampaign {
     /**
@@ -92,6 +92,9 @@ class UpdateCampaign {
             }
             if (data.hasOwnProperty('limits')) {
                 obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+            }
+            if (data.hasOwnProperty('campaignGroups')) {
+                obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
             }
         }
         return obj;
@@ -170,6 +173,12 @@ UpdateCampaign.prototype['referralSettings'] = undefined;
  * @member {Array.<module:model/LimitConfig>} limits
  */
 UpdateCampaign.prototype['limits'] = undefined;
+
+/**
+ * The IDs of the campaign groups that own this entity.
+ * @member {Array.<Number>} campaignGroups
+ */
+UpdateCampaign.prototype['campaignGroups'] = undefined;
 
 
 

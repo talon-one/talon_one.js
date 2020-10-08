@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 4.1.1
+ * @version 4.2.0
  */
 class NewApplication {
     /**
@@ -80,8 +80,20 @@ class NewApplication {
             if (data.hasOwnProperty('campaignPriority')) {
                 obj['campaignPriority'] = ApiClient.convertToType(data['campaignPriority'], 'String');
             }
+            if (data.hasOwnProperty('exclusiveCampaignsStrategy')) {
+                obj['exclusiveCampaignsStrategy'] = ApiClient.convertToType(data['exclusiveCampaignsStrategy'], 'String');
+            }
+            if (data.hasOwnProperty('enableCascadingDiscounts')) {
+                obj['enableCascadingDiscounts'] = ApiClient.convertToType(data['enableCascadingDiscounts'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enableFlattenedCartItems')) {
+                obj['enableFlattenedCartItems'] = ApiClient.convertToType(data['enableFlattenedCartItems'], 'Boolean');
+            }
             if (data.hasOwnProperty('attributesSettings')) {
                 obj['attributesSettings'] = AttributesSettings.constructFromObject(data['attributesSettings']);
+            }
+            if (data.hasOwnProperty('sandbox')) {
+                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -136,15 +148,39 @@ NewApplication.prototype['attributes'] = undefined;
 NewApplication.prototype['limits'] = undefined;
 
 /**
- * Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive)
+ * Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive). If no value is provided, this is set to \"universal\"
  * @member {module:model/NewApplication.CampaignPriorityEnum} campaignPriority
  */
 NewApplication.prototype['campaignPriority'] = undefined;
 
 /**
+ * The strategy used when choosing exclusive campaigns for evaluation, can be one of (listOrder, lowestDiscount, highestDiscount). If no value is provided, this is set to \"listOrder\"
+ * @member {module:model/NewApplication.ExclusiveCampaignsStrategyEnum} exclusiveCampaignsStrategy
+ */
+NewApplication.prototype['exclusiveCampaignsStrategy'] = undefined;
+
+/**
+ * Flag indicating if discounts should cascade for this application
+ * @member {Boolean} enableCascadingDiscounts
+ */
+NewApplication.prototype['enableCascadingDiscounts'] = undefined;
+
+/**
+ * Flag indicating if cart items of quantity larger than one should be separated into different items of quantity one
+ * @member {Boolean} enableFlattenedCartItems
+ */
+NewApplication.prototype['enableFlattenedCartItems'] = undefined;
+
+/**
  * @member {module:model/AttributesSettings} attributesSettings
  */
 NewApplication.prototype['attributesSettings'] = undefined;
+
+/**
+ * Flag indicating if this is a live or sandbox application
+ * @member {Boolean} sandbox
+ */
+NewApplication.prototype['sandbox'] = undefined;
 
 /**
  * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
@@ -207,6 +243,33 @@ NewApplication['CampaignPriorityEnum'] = {
      * @const
      */
     "exclusive": "exclusive"
+};
+
+
+/**
+ * Allowed values for the <code>exclusiveCampaignsStrategy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewApplication['ExclusiveCampaignsStrategyEnum'] = {
+
+    /**
+     * value: "listOrder"
+     * @const
+     */
+    "listOrder": "listOrder",
+
+    /**
+     * value: "lowestDiscount"
+     * @const
+     */
+    "lowestDiscount": "lowestDiscount",
+
+    /**
+     * value: "highestDiscount"
+     * @const
+     */
+    "highestDiscount": "highestDiscount"
 };
 
 

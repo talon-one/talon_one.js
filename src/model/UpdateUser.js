@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateUser model module.
  * @module model/UpdateUser
- * @version 4.1.1
+ * @version 4.2.0
  */
 class UpdateUser {
     /**
@@ -56,12 +56,6 @@ class UpdateUser {
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
-            if (data.hasOwnProperty('releaseUpdate')) {
-                obj['releaseUpdate'] = ApiClient.convertToType(data['releaseUpdate'], 'Boolean');
-            }
-            if (data.hasOwnProperty('latestFeature')) {
-                obj['latestFeature'] = ApiClient.convertToType(data['latestFeature'], 'String');
-            }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
             }
@@ -92,18 +86,6 @@ UpdateUser.prototype['policy'] = undefined;
  * @member {module:model/UpdateUser.StateEnum} state
  */
 UpdateUser.prototype['state'] = undefined;
-
-/**
- * Update the user via email
- * @member {Boolean} releaseUpdate
- */
-UpdateUser.prototype['releaseUpdate'] = undefined;
-
-/**
- * The latest feature you've been notified.
- * @member {String} latestFeature
- */
-UpdateUser.prototype['latestFeature'] = undefined;
 
 /**
  * Update

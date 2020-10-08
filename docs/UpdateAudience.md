@@ -1,9 +1,9 @@
-# TalonOne.MiscUpdateUserLatestFeature
+# TalonOne.UpdateAudience
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**latestFeature** | **String** |  | [optional] 
+**name** | **String** | The human-friendly display name for this Audience. | 
 
 

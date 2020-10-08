@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 4.1.1
+ * @version 4.2.0
  */
 class NewLoyaltyProgram {
     /**
@@ -25,12 +25,13 @@ class NewLoyaltyProgram {
      * @alias module:model/NewLoyaltyProgram
      * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
      * @param title {String} The display title for the Loyalty Program.
-     * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m' or '30d'.
+     * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
+     * @param defaultPending {String} Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
      * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
      */
-    constructor(name, title, defaultValidity, allowSubledger) { 
+    constructor(name, title, defaultValidity, defaultPending, allowSubledger) { 
         
-        NewLoyaltyProgram.initialize(this, name, title, defaultValidity, allowSubledger);
+        NewLoyaltyProgram.initialize(this, name, title, defaultValidity, defaultPending, allowSubledger);
     }
 
     /**
@@ -38,10 +39,11 @@ class NewLoyaltyProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, title, defaultValidity, allowSubledger) { 
+    static initialize(obj, name, title, defaultValidity, defaultPending, allowSubledger) { 
         obj['name'] = name;
         obj['title'] = title;
         obj['defaultValidity'] = defaultValidity;
+        obj['defaultPending'] = defaultPending;
         obj['allowSubledger'] = allowSubledger;
     }
 
@@ -70,6 +72,9 @@ class NewLoyaltyProgram {
             }
             if (data.hasOwnProperty('defaultValidity')) {
                 obj['defaultValidity'] = ApiClient.convertToType(data['defaultValidity'], 'String');
+            }
+            if (data.hasOwnProperty('defaultPending')) {
+                obj['defaultPending'] = ApiClient.convertToType(data['defaultPending'], 'String');
             }
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
@@ -106,10 +111,16 @@ NewLoyaltyProgram.prototype['description'] = undefined;
 NewLoyaltyProgram.prototype['subscribedApplications'] = undefined;
 
 /**
- * Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m' or '30d'.
+ * Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
  * @member {String} defaultValidity
  */
 NewLoyaltyProgram.prototype['defaultValidity'] = undefined;
+
+/**
+ * Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
+ * @member {String} defaultPending
+ */
+NewLoyaltyProgram.prototype['defaultPending'] = undefined;
 
 /**
  * Indicates if this program supports subledgers inside the program

@@ -17,7 +17,7 @@ import CampaignAnalytics from './CampaignAnalytics';
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 4.1.1
+ * @version 4.2.0
  */
 class InlineResponse20011 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 4.1.1
+ * @version 4.2.0
  */
 class AddLoyaltyPointsEffectProps {
     /**
@@ -28,11 +28,10 @@ class AddLoyaltyPointsEffectProps {
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added
      * @param value {Number} The amount of points that were added
      * @param recipientIntegrationId {String} The user for whom these points were added
-     * @param expiryCondition {String} The amount of time (in days) these points are valid
      */
-    constructor(name, programId, subLedgerId, value, recipientIntegrationId, expiryCondition) { 
+    constructor(name, programId, subLedgerId, value, recipientIntegrationId) { 
         
-        AddLoyaltyPointsEffectProps.initialize(this, name, programId, subLedgerId, value, recipientIntegrationId, expiryCondition);
+        AddLoyaltyPointsEffectProps.initialize(this, name, programId, subLedgerId, value, recipientIntegrationId);
     }
 
     /**
@@ -40,13 +39,12 @@ class AddLoyaltyPointsEffectProps {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, programId, subLedgerId, value, recipientIntegrationId, expiryCondition) { 
+    static initialize(obj, name, programId, subLedgerId, value, recipientIntegrationId) { 
         obj['name'] = name;
         obj['programId'] = programId;
         obj['subLedgerId'] = subLedgerId;
         obj['value'] = value;
         obj['recipientIntegrationId'] = recipientIntegrationId;
-        obj['expiryCondition'] = expiryCondition;
     }
 
     /**
@@ -75,8 +73,11 @@ class AddLoyaltyPointsEffectProps {
             if (data.hasOwnProperty('recipientIntegrationId')) {
                 obj['recipientIntegrationId'] = ApiClient.convertToType(data['recipientIntegrationId'], 'String');
             }
-            if (data.hasOwnProperty('expiryCondition')) {
-                obj['expiryCondition'] = ApiClient.convertToType(data['expiryCondition'], 'String');
+            if (data.hasOwnProperty('startDate')) {
+                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
+            }
+            if (data.hasOwnProperty('expiryDate')) {
+                obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
             }
         }
         return obj;
@@ -116,10 +117,16 @@ AddLoyaltyPointsEffectProps.prototype['value'] = undefined;
 AddLoyaltyPointsEffectProps.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * The amount of time (in days) these points are valid
- * @member {String} expiryCondition
+ * Date after which points will be valid
+ * @member {Date} startDate
  */
-AddLoyaltyPointsEffectProps.prototype['expiryCondition'] = undefined;
+AddLoyaltyPointsEffectProps.prototype['startDate'] = undefined;
+
+/**
+ * Date after which points will expire
+ * @member {Date} expiryDate
+ */
+AddLoyaltyPointsEffectProps.prototype['expiryDate'] = undefined;
 
 
 

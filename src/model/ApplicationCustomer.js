@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import AudienceMembership from './AudienceMembership';
 import LoyaltyMembership from './LoyaltyMembership';
 
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ApplicationCustomer {
     /**
@@ -26,7 +27,7 @@ class ApplicationCustomer {
      * @alias module:model/ApplicationCustomer
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
-     * @param integrationId {String} The ID used for this entity in the application system. The ID used for this entity in the application system.
+     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system. The integration ID for this entity sent to and used in the Talon.One system.
      * @param attributes {Object} Arbitrary properties associated with this item
      * @param accountId {Number} The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile.
      * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
@@ -89,6 +90,9 @@ class ApplicationCustomer {
             if (data.hasOwnProperty('loyaltyMemberships')) {
                 obj['loyaltyMemberships'] = ApiClient.convertToType(data['loyaltyMemberships'], [LoyaltyMembership]);
             }
+            if (data.hasOwnProperty('audienceMemberships')) {
+                obj['audienceMemberships'] = ApiClient.convertToType(data['audienceMemberships'], [AudienceMembership]);
+            }
             if (data.hasOwnProperty('lastActivity')) {
                 obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
             }
@@ -112,7 +116,7 @@ ApplicationCustomer.prototype['id'] = undefined;
 ApplicationCustomer.prototype['created'] = undefined;
 
 /**
- * The ID used for this entity in the application system. The ID used for this entity in the application system.
+ * The integration ID for this entity sent to and used in the Talon.One system. The integration ID for this entity sent to and used in the Talon.One system.
  * @member {String} integrationId
  */
 ApplicationCustomer.prototype['integrationId'] = undefined;
@@ -146,6 +150,12 @@ ApplicationCustomer.prototype['totalSales'] = undefined;
  * @member {Array.<module:model/LoyaltyMembership>} loyaltyMemberships
  */
 ApplicationCustomer.prototype['loyaltyMemberships'] = undefined;
+
+/**
+ * A list of audiences the customer belongs to
+ * @member {Array.<module:model/AudienceMembership>} audienceMemberships
+ */
+ApplicationCustomer.prototype['audienceMemberships'] = undefined;
 
 /**
  * Timestamp of the most recent event received from this customer

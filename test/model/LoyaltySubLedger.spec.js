@@ -60,6 +60,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property totalActivePoints (base name: "totalActivePoints")', function() {
+      // uncomment below and update the code to test the property totalActivePoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalPendingPoints (base name: "totalPendingPoints")', function() {
+      // uncomment below and update the code to test the property totalPendingPoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalSpentPoints (base name: "totalSpentPoints")', function() {
+      // uncomment below and update the code to test the property totalSpentPoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalExpiredPoints (base name: "totalExpiredPoints")', function() {
+      // uncomment below and update the code to test the property totalExpiredPoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
     it('should have the property transactions (base name: "transactions")', function() {
       // uncomment below and update the code to test the property transactions
       //var instane = new TalonOne.LoyaltySubLedger();
@@ -68,6 +92,24 @@
 
     it('should have the property expiringPoints (base name: "expiringPoints")', function() {
       // uncomment below and update the code to test the property expiringPoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property activePoints (base name: "activePoints")', function() {
+      // uncomment below and update the code to test the property activePoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pendingPoints (base name: "pendingPoints")', function() {
+      // uncomment below and update the code to test the property pendingPoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiredPoints (base name: "expiredPoints")', function() {
+      // uncomment below and update the code to test the property expiredPoints
       //var instane = new TalonOne.LoyaltySubLedger();
       //expect(instance).to.be();
     });

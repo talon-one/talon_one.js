@@ -17,18 +17,22 @@ import LoyaltyLedgerEntry from './LoyaltyLedgerEntry';
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 4.1.1
+ * @version 4.2.0
  */
 class LoyaltySubLedger {
     /**
      * Constructs a new <code>LoyaltySubLedger</code>.
      * Ledger of Balance in Loyalty Program for a Customer
      * @alias module:model/LoyaltySubLedger
-     * @param total {Number} 
+     * @param total {Number} ⚠️ Deprecated: Please use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
+     * @param totalActivePoints {Number} Total amount of currently active and available points in the customer's balance
+     * @param totalPendingPoints {Number} Total amount of pending points, which are not active yet but will become active in the future
+     * @param totalSpentPoints {Number} Total amount of points already spent by this customer
+     * @param totalExpiredPoints {Number} Total amount of points, that expired without ever being spent
      */
-    constructor(total) { 
+    constructor(total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints) { 
         
-        LoyaltySubLedger.initialize(this, total);
+        LoyaltySubLedger.initialize(this, total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints);
     }
 
     /**
@@ -36,8 +40,12 @@ class LoyaltySubLedger {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, total) { 
+    static initialize(obj, total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints) { 
         obj['total'] = total;
+        obj['totalActivePoints'] = totalActivePoints;
+        obj['totalPendingPoints'] = totalPendingPoints;
+        obj['totalSpentPoints'] = totalSpentPoints;
+        obj['totalExpiredPoints'] = totalExpiredPoints;
     }
 
     /**
@@ -54,11 +62,32 @@ class LoyaltySubLedger {
             if (data.hasOwnProperty('total')) {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number');
             }
+            if (data.hasOwnProperty('totalActivePoints')) {
+                obj['totalActivePoints'] = ApiClient.convertToType(data['totalActivePoints'], 'Number');
+            }
+            if (data.hasOwnProperty('totalPendingPoints')) {
+                obj['totalPendingPoints'] = ApiClient.convertToType(data['totalPendingPoints'], 'Number');
+            }
+            if (data.hasOwnProperty('totalSpentPoints')) {
+                obj['totalSpentPoints'] = ApiClient.convertToType(data['totalSpentPoints'], 'Number');
+            }
+            if (data.hasOwnProperty('totalExpiredPoints')) {
+                obj['totalExpiredPoints'] = ApiClient.convertToType(data['totalExpiredPoints'], 'Number');
+            }
             if (data.hasOwnProperty('transactions')) {
                 obj['transactions'] = ApiClient.convertToType(data['transactions'], [LoyaltyLedgerEntry]);
             }
             if (data.hasOwnProperty('expiringPoints')) {
                 obj['expiringPoints'] = ApiClient.convertToType(data['expiringPoints'], [LoyaltyLedgerEntry]);
+            }
+            if (data.hasOwnProperty('activePoints')) {
+                obj['activePoints'] = ApiClient.convertToType(data['activePoints'], [LoyaltyLedgerEntry]);
+            }
+            if (data.hasOwnProperty('pendingPoints')) {
+                obj['pendingPoints'] = ApiClient.convertToType(data['pendingPoints'], [LoyaltyLedgerEntry]);
+            }
+            if (data.hasOwnProperty('expiredPoints')) {
+                obj['expiredPoints'] = ApiClient.convertToType(data['expiredPoints'], [LoyaltyLedgerEntry]);
             }
         }
         return obj;
@@ -68,21 +97,64 @@ class LoyaltySubLedger {
 }
 
 /**
+ * ⚠️ Deprecated: Please use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
  * @member {Number} total
  */
 LoyaltySubLedger.prototype['total'] = undefined;
 
 /**
- * Transactions contains a list of all events that have happened such as additions, subtractions and expiries
+ * Total amount of currently active and available points in the customer's balance
+ * @member {Number} totalActivePoints
+ */
+LoyaltySubLedger.prototype['totalActivePoints'] = undefined;
+
+/**
+ * Total amount of pending points, which are not active yet but will become active in the future
+ * @member {Number} totalPendingPoints
+ */
+LoyaltySubLedger.prototype['totalPendingPoints'] = undefined;
+
+/**
+ * Total amount of points already spent by this customer
+ * @member {Number} totalSpentPoints
+ */
+LoyaltySubLedger.prototype['totalSpentPoints'] = undefined;
+
+/**
+ * Total amount of points, that expired without ever being spent
+ * @member {Number} totalExpiredPoints
+ */
+LoyaltySubLedger.prototype['totalExpiredPoints'] = undefined;
+
+/**
+ * List of all events that have happened such as additions, subtractions and expiries
  * @member {Array.<module:model/LoyaltyLedgerEntry>} transactions
  */
 LoyaltySubLedger.prototype['transactions'] = undefined;
 
 /**
- * ExpiringPoints contains a list of all points that will expiry and when
+ * List of all points that will expire
  * @member {Array.<module:model/LoyaltyLedgerEntry>} expiringPoints
  */
 LoyaltySubLedger.prototype['expiringPoints'] = undefined;
+
+/**
+ * List of all currently active points
+ * @member {Array.<module:model/LoyaltyLedgerEntry>} activePoints
+ */
+LoyaltySubLedger.prototype['activePoints'] = undefined;
+
+/**
+ * List of all points pending activation
+ * @member {Array.<module:model/LoyaltyLedgerEntry>} pendingPoints
+ */
+LoyaltySubLedger.prototype['pendingPoints'] = undefined;
+
+/**
+ * List of expired points
+ * @member {Array.<module:model/LoyaltyLedgerEntry>} expiredPoints
+ */
+LoyaltySubLedger.prototype['expiredPoints'] = undefined;
 
 
 

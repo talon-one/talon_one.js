@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignGroupID (base name: "campaignGroupID")', function() {
+      // uncomment below and update the code to test the property campaignGroupID
+      //var instane = new TalonOne.Role();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new TalonOne.Role();

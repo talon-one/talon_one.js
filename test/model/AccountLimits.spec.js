@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property activeRules (base name: "activeRules")', function() {
+      // uncomment below and update the code to test the property activeRules
+      //var instane = new TalonOne.AccountLimits();
+      //expect(instance).to.be();
+    });
+
     it('should have the property liveLoyaltyPrograms (base name: "liveLoyaltyPrograms")', function() {
       // uncomment below and update the code to test the property liveLoyaltyPrograms
       //var instane = new TalonOne.AccountLimits();
@@ -110,12 +116,6 @@
 
     it('should have the property apiVolume (base name: "apiVolume")', function() {
       // uncomment below and update the code to test the property apiVolume
-      //var instane = new TalonOne.AccountLimits();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property activeRules (base name: "activeRules")', function() {
-      // uncomment below and update the code to test the property activeRules
       //var instane = new TalonOne.AccountLimits();
       //expect(instance).to.be();
     });

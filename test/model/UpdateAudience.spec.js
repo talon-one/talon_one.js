@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.CustomerProfileUpdate();
+    instance = new TalonOne.UpdateAudience();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('CustomerProfileUpdate', function() {
-    it('should create an instance of CustomerProfileUpdate', function() {
-      // uncomment below and update the code to test CustomerProfileUpdate
-      //var instane = new TalonOne.CustomerProfileUpdate();
-      //expect(instance).to.be.a(TalonOne.CustomerProfileUpdate);
+  describe('UpdateAudience', function() {
+    it('should create an instance of UpdateAudience', function() {
+      // uncomment below and update the code to test UpdateAudience
+      //var instane = new TalonOne.UpdateAudience();
+      //expect(instance).to.be.a(TalonOne.UpdateAudience);
     });
 
-    it('should have the property customerProfile (base name: "customerProfile")', function() {
-      // uncomment below and update the code to test the property customerProfile
-      //var instane = new TalonOne.CustomerProfileUpdate();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.UpdateAudience();
       //expect(instance).to.be();
     });
 

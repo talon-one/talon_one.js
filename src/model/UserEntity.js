@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserEntity model module.
  * @module model/UserEntity
- * @version 4.1.1
+ * @version 4.2.0
  */
 class UserEntity {
     /**

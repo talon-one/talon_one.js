@@ -84,8 +84,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property expiryCondition (base name: "expiryCondition")', function() {
-      // uncomment below and update the code to test the property expiryCondition
+    it('should have the property startDate (base name: "startDate")', function() {
+      // uncomment below and update the code to test the property startDate
+      //var instane = new TalonOne.AddLoyaltyPointsEffectProps();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiryDate (base name: "expiryDate")', function() {
+      // uncomment below and update the code to test the property expiryDate
       //var instane = new TalonOne.AddLoyaltyPointsEffectProps();
       //expect(instance).to.be();
     });

@@ -16,31 +16,34 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountAnalytics model module.
  * @module model/AccountAnalytics
- * @version 4.1.1
+ * @version 4.2.0
  */
 class AccountAnalytics {
     /**
      * Constructs a new <code>AccountAnalytics</code>.
      * @alias module:model/AccountAnalytics
-     * @param applications {Number} Total Number of Applications inside the account
-     * @param activeCampaigns {Number} Total Number of Active Applications inside the account
-     * @param campaigns {Number} Total Number of campaigns inside the account
-     * @param coupons {Number} Total Number of coupons inside the account
-     * @param activeCoupons {Number} Total Number of active coupons inside the account
-     * @param expiredCoupons {Number} Total Number of expired coupons inside the account
-     * @param customAttributes {Number} Total Number of custom attributes inside the account
-     * @param referralCodes {Number} Total Number of referral codes inside the account
-     * @param activeReferralCodes {Number} Total Number of active referral codes inside the account
-     * @param expiredReferralCodes {Number} Total Number of expired referral codes inside the account
-     * @param users {Number} Total Number of users inside the account
-     * @param roles {Number} Total Number of roles inside the account
-     * @param webhooks {Number} Total Number of webhooks inside the account
-     * @param loyaltyPrograms {Number} Total Number of loyalty programs inside the account
-     * @param activeRules {Number} Total Number of active rules in the account
+     * @param applications {Number} Total number of applications in the account
+     * @param liveApplications {Number} Total number of live applications in the account
+     * @param sandboxApplications {Number} Total number of sandbox applications in the account
+     * @param campaigns {Number} Total number of campaigns in the account
+     * @param activeCampaigns {Number} Total number of active campaigns in the account
+     * @param liveActiveCampaigns {Number} Total number of active campaigns in live applications in the account
+     * @param coupons {Number} Total number of coupons in the account
+     * @param activeCoupons {Number} Total number of active coupons in the account
+     * @param expiredCoupons {Number} Total number of expired coupons in the account
+     * @param referralCodes {Number} Total number of referral codes in the account
+     * @param activeReferralCodes {Number} Total number of active referral codes in the account
+     * @param expiredReferralCodes {Number} Total number of expired referral codes in the account
+     * @param activeRules {Number} Total number of active rules in the account
+     * @param users {Number} Total number of users in the account
+     * @param roles {Number} Total number of roles in the account
+     * @param customAttributes {Number} Total number of custom attributes in the account
+     * @param webhooks {Number} Total number of webhooks in the account
+     * @param loyaltyPrograms {Number} Total number of loyalty programs in the account
      */
-    constructor(applications, activeCampaigns, campaigns, coupons, activeCoupons, expiredCoupons, customAttributes, referralCodes, activeReferralCodes, expiredReferralCodes, users, roles, webhooks, loyaltyPrograms, activeRules) { 
+    constructor(applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms) { 
         
-        AccountAnalytics.initialize(this, applications, activeCampaigns, campaigns, coupons, activeCoupons, expiredCoupons, customAttributes, referralCodes, activeReferralCodes, expiredReferralCodes, users, roles, webhooks, loyaltyPrograms, activeRules);
+        AccountAnalytics.initialize(this, applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms);
     }
 
     /**
@@ -48,22 +51,25 @@ class AccountAnalytics {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applications, activeCampaigns, campaigns, coupons, activeCoupons, expiredCoupons, customAttributes, referralCodes, activeReferralCodes, expiredReferralCodes, users, roles, webhooks, loyaltyPrograms, activeRules) { 
+    static initialize(obj, applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms) { 
         obj['applications'] = applications;
-        obj['activeCampaigns'] = activeCampaigns;
+        obj['liveApplications'] = liveApplications;
+        obj['sandboxApplications'] = sandboxApplications;
         obj['campaigns'] = campaigns;
+        obj['activeCampaigns'] = activeCampaigns;
+        obj['liveActiveCampaigns'] = liveActiveCampaigns;
         obj['coupons'] = coupons;
         obj['activeCoupons'] = activeCoupons;
         obj['expiredCoupons'] = expiredCoupons;
-        obj['customAttributes'] = customAttributes;
         obj['referralCodes'] = referralCodes;
         obj['activeReferralCodes'] = activeReferralCodes;
         obj['expiredReferralCodes'] = expiredReferralCodes;
+        obj['activeRules'] = activeRules;
         obj['users'] = users;
         obj['roles'] = roles;
+        obj['customAttributes'] = customAttributes;
         obj['webhooks'] = webhooks;
         obj['loyaltyPrograms'] = loyaltyPrograms;
-        obj['activeRules'] = activeRules;
     }
 
     /**
@@ -80,11 +86,20 @@ class AccountAnalytics {
             if (data.hasOwnProperty('applications')) {
                 obj['applications'] = ApiClient.convertToType(data['applications'], 'Number');
             }
-            if (data.hasOwnProperty('activeCampaigns')) {
-                obj['activeCampaigns'] = ApiClient.convertToType(data['activeCampaigns'], 'Number');
+            if (data.hasOwnProperty('liveApplications')) {
+                obj['liveApplications'] = ApiClient.convertToType(data['liveApplications'], 'Number');
+            }
+            if (data.hasOwnProperty('sandboxApplications')) {
+                obj['sandboxApplications'] = ApiClient.convertToType(data['sandboxApplications'], 'Number');
             }
             if (data.hasOwnProperty('campaigns')) {
                 obj['campaigns'] = ApiClient.convertToType(data['campaigns'], 'Number');
+            }
+            if (data.hasOwnProperty('activeCampaigns')) {
+                obj['activeCampaigns'] = ApiClient.convertToType(data['activeCampaigns'], 'Number');
+            }
+            if (data.hasOwnProperty('liveActiveCampaigns')) {
+                obj['liveActiveCampaigns'] = ApiClient.convertToType(data['liveActiveCampaigns'], 'Number');
             }
             if (data.hasOwnProperty('coupons')) {
                 obj['coupons'] = ApiClient.convertToType(data['coupons'], 'Number');
@@ -95,9 +110,6 @@ class AccountAnalytics {
             if (data.hasOwnProperty('expiredCoupons')) {
                 obj['expiredCoupons'] = ApiClient.convertToType(data['expiredCoupons'], 'Number');
             }
-            if (data.hasOwnProperty('customAttributes')) {
-                obj['customAttributes'] = ApiClient.convertToType(data['customAttributes'], 'Number');
-            }
             if (data.hasOwnProperty('referralCodes')) {
                 obj['referralCodes'] = ApiClient.convertToType(data['referralCodes'], 'Number');
             }
@@ -107,20 +119,23 @@ class AccountAnalytics {
             if (data.hasOwnProperty('expiredReferralCodes')) {
                 obj['expiredReferralCodes'] = ApiClient.convertToType(data['expiredReferralCodes'], 'Number');
             }
+            if (data.hasOwnProperty('activeRules')) {
+                obj['activeRules'] = ApiClient.convertToType(data['activeRules'], 'Number');
+            }
             if (data.hasOwnProperty('users')) {
                 obj['users'] = ApiClient.convertToType(data['users'], 'Number');
             }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], 'Number');
             }
+            if (data.hasOwnProperty('customAttributes')) {
+                obj['customAttributes'] = ApiClient.convertToType(data['customAttributes'], 'Number');
+            }
             if (data.hasOwnProperty('webhooks')) {
                 obj['webhooks'] = ApiClient.convertToType(data['webhooks'], 'Number');
             }
             if (data.hasOwnProperty('loyaltyPrograms')) {
                 obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], 'Number');
-            }
-            if (data.hasOwnProperty('activeRules')) {
-                obj['activeRules'] = ApiClient.convertToType(data['activeRules'], 'Number');
             }
         }
         return obj;
@@ -130,94 +145,112 @@ class AccountAnalytics {
 }
 
 /**
- * Total Number of Applications inside the account
+ * Total number of applications in the account
  * @member {Number} applications
  */
 AccountAnalytics.prototype['applications'] = undefined;
 
 /**
- * Total Number of Active Applications inside the account
- * @member {Number} activeCampaigns
+ * Total number of live applications in the account
+ * @member {Number} liveApplications
  */
-AccountAnalytics.prototype['activeCampaigns'] = undefined;
+AccountAnalytics.prototype['liveApplications'] = undefined;
 
 /**
- * Total Number of campaigns inside the account
+ * Total number of sandbox applications in the account
+ * @member {Number} sandboxApplications
+ */
+AccountAnalytics.prototype['sandboxApplications'] = undefined;
+
+/**
+ * Total number of campaigns in the account
  * @member {Number} campaigns
  */
 AccountAnalytics.prototype['campaigns'] = undefined;
 
 /**
- * Total Number of coupons inside the account
+ * Total number of active campaigns in the account
+ * @member {Number} activeCampaigns
+ */
+AccountAnalytics.prototype['activeCampaigns'] = undefined;
+
+/**
+ * Total number of active campaigns in live applications in the account
+ * @member {Number} liveActiveCampaigns
+ */
+AccountAnalytics.prototype['liveActiveCampaigns'] = undefined;
+
+/**
+ * Total number of coupons in the account
  * @member {Number} coupons
  */
 AccountAnalytics.prototype['coupons'] = undefined;
 
 /**
- * Total Number of active coupons inside the account
+ * Total number of active coupons in the account
  * @member {Number} activeCoupons
  */
 AccountAnalytics.prototype['activeCoupons'] = undefined;
 
 /**
- * Total Number of expired coupons inside the account
+ * Total number of expired coupons in the account
  * @member {Number} expiredCoupons
  */
 AccountAnalytics.prototype['expiredCoupons'] = undefined;
 
 /**
- * Total Number of custom attributes inside the account
- * @member {Number} customAttributes
- */
-AccountAnalytics.prototype['customAttributes'] = undefined;
-
-/**
- * Total Number of referral codes inside the account
+ * Total number of referral codes in the account
  * @member {Number} referralCodes
  */
 AccountAnalytics.prototype['referralCodes'] = undefined;
 
 /**
- * Total Number of active referral codes inside the account
+ * Total number of active referral codes in the account
  * @member {Number} activeReferralCodes
  */
 AccountAnalytics.prototype['activeReferralCodes'] = undefined;
 
 /**
- * Total Number of expired referral codes inside the account
+ * Total number of expired referral codes in the account
  * @member {Number} expiredReferralCodes
  */
 AccountAnalytics.prototype['expiredReferralCodes'] = undefined;
 
 /**
- * Total Number of users inside the account
+ * Total number of active rules in the account
+ * @member {Number} activeRules
+ */
+AccountAnalytics.prototype['activeRules'] = undefined;
+
+/**
+ * Total number of users in the account
  * @member {Number} users
  */
 AccountAnalytics.prototype['users'] = undefined;
 
 /**
- * Total Number of roles inside the account
+ * Total number of roles in the account
  * @member {Number} roles
  */
 AccountAnalytics.prototype['roles'] = undefined;
 
 /**
- * Total Number of webhooks inside the account
+ * Total number of custom attributes in the account
+ * @member {Number} customAttributes
+ */
+AccountAnalytics.prototype['customAttributes'] = undefined;
+
+/**
+ * Total number of webhooks in the account
  * @member {Number} webhooks
  */
 AccountAnalytics.prototype['webhooks'] = undefined;
 
 /**
- * Total Number of loyalty programs inside the account
+ * Total number of loyalty programs in the account
  * @member {Number} loyaltyPrograms
  */
 AccountAnalytics.prototype['loyaltyPrograms'] = undefined;
-
-/**
- * Total Number of active rules in the account
- * @member {Number} activeRules
- */
-AccountAnalytics.prototype['activeRules'] = undefined;
 
 
 

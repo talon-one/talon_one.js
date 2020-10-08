@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 4.1.1
+ * @version 4.2.0
  */
 class LoyaltyProgram {
     /**
@@ -29,12 +29,13 @@ class LoyaltyProgram {
      * @param title {String} The display title for the Loyalty Program.
      * @param description {String} Description of our Loyalty Program.
      * @param subscribedApplications {Array.<Number>} A list containing the IDs of all applications that are subscribed to this Loyalty Program.
-     * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m' or '30d'.
+     * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
+     * @param defaultPending {String} Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
      * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
      */
-    constructor(id, accountID, name, title, description, subscribedApplications, defaultValidity, allowSubledger) { 
+    constructor(id, accountID, name, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger) { 
         
-        LoyaltyProgram.initialize(this, id, accountID, name, title, description, subscribedApplications, defaultValidity, allowSubledger);
+        LoyaltyProgram.initialize(this, id, accountID, name, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger);
     }
 
     /**
@@ -42,7 +43,7 @@ class LoyaltyProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, accountID, name, title, description, subscribedApplications, defaultValidity, allowSubledger) { 
+    static initialize(obj, id, accountID, name, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger) { 
         obj['id'] = id;
         obj['accountID'] = accountID;
         obj['name'] = name;
@@ -50,6 +51,7 @@ class LoyaltyProgram {
         obj['description'] = description;
         obj['subscribedApplications'] = subscribedApplications;
         obj['defaultValidity'] = defaultValidity;
+        obj['defaultPending'] = defaultPending;
         obj['allowSubledger'] = allowSubledger;
     }
 
@@ -84,6 +86,9 @@ class LoyaltyProgram {
             }
             if (data.hasOwnProperty('defaultValidity')) {
                 obj['defaultValidity'] = ApiClient.convertToType(data['defaultValidity'], 'String');
+            }
+            if (data.hasOwnProperty('defaultPending')) {
+                obj['defaultPending'] = ApiClient.convertToType(data['defaultPending'], 'String');
             }
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
@@ -132,10 +137,16 @@ LoyaltyProgram.prototype['description'] = undefined;
 LoyaltyProgram.prototype['subscribedApplications'] = undefined;
 
 /**
- * Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m' or '30d'.
+ * Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
  * @member {String} defaultValidity
  */
 LoyaltyProgram.prototype['defaultValidity'] = undefined;
+
+/**
+ * Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
+ * @member {String} defaultPending
+ */
+LoyaltyProgram.prototype['defaultPending'] = undefined;
 
 /**
  * Indicates if this program supports subledgers inside the program

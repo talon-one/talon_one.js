@@ -16,23 +16,24 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAPIKey model module.
  * @module model/ApplicationAPIKey
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ApplicationAPIKey {
     /**
      * Constructs a new <code>ApplicationAPIKey</code>.
+     * 
      * @alias module:model/ApplicationAPIKey
+     * @param title {String} Title for API Key
+     * @param expires {Date} The date the API key expired
      * @param id {Number} ID of the API Key
      * @param createdBy {Number} ID of user who created
-     * @param title {String} Title for API Key
      * @param accountID {Number} ID of account the key is used for
      * @param applicationID {Number} ID of application the key is used for
      * @param created {Date} The date the API key was created
-     * @param expires {Date} The date the API key expired
      */
-    constructor(id, createdBy, title, accountID, applicationID, created, expires) { 
+    constructor(title, expires, id, createdBy, accountID, applicationID, created) { 
         
-        ApplicationAPIKey.initialize(this, id, createdBy, title, accountID, applicationID, created, expires);
+        ApplicationAPIKey.initialize(this, title, expires, id, createdBy, accountID, applicationID, created);
     }
 
     /**
@@ -40,14 +41,14 @@ class ApplicationAPIKey {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, title, accountID, applicationID, created, expires) { 
+    static initialize(obj, title, expires, id, createdBy, accountID, applicationID, created) { 
+        obj['title'] = title;
+        obj['expires'] = expires;
         obj['id'] = id;
         obj['createdBy'] = createdBy;
-        obj['title'] = title;
         obj['accountID'] = accountID;
         obj['applicationID'] = applicationID;
         obj['created'] = created;
-        obj['expires'] = expires;
     }
 
     /**
@@ -61,14 +62,20 @@ class ApplicationAPIKey {
         if (data) {
             obj = obj || new ApplicationAPIKey();
 
+            if (data.hasOwnProperty('title')) {
+                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            }
+            if (data.hasOwnProperty('expires')) {
+                obj['expires'] = ApiClient.convertToType(data['expires'], 'Date');
+            }
+            if (data.hasOwnProperty('platform')) {
+                obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'Number');
-            }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
@@ -79,15 +86,30 @@ class ApplicationAPIKey {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
-            if (data.hasOwnProperty('expires')) {
-                obj['expires'] = ApiClient.convertToType(data['expires'], 'Date');
-            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * Title for API Key
+ * @member {String} title
+ */
+ApplicationAPIKey.prototype['title'] = undefined;
+
+/**
+ * The date the API key expired
+ * @member {Date} expires
+ */
+ApplicationAPIKey.prototype['expires'] = undefined;
+
+/**
+ * Platform the API key is valid for.
+ * @member {module:model/ApplicationAPIKey.PlatformEnum} platform
+ */
+ApplicationAPIKey.prototype['platform'] = undefined;
 
 /**
  * ID of the API Key
@@ -100,12 +122,6 @@ ApplicationAPIKey.prototype['id'] = undefined;
  * @member {Number} createdBy
  */
 ApplicationAPIKey.prototype['createdBy'] = undefined;
-
-/**
- * Title for API Key
- * @member {String} title
- */
-ApplicationAPIKey.prototype['title'] = undefined;
 
 /**
  * ID of account the key is used for
@@ -125,14 +141,41 @@ ApplicationAPIKey.prototype['applicationID'] = undefined;
  */
 ApplicationAPIKey.prototype['created'] = undefined;
 
+
+
+
+
 /**
- * The date the API key expired
- * @member {Date} expires
+ * Allowed values for the <code>platform</code> property.
+ * @enum {String}
+ * @readonly
  */
-ApplicationAPIKey.prototype['expires'] = undefined;
+ApplicationAPIKey['PlatformEnum'] = {
 
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
 
+    /**
+     * value: "segment"
+     * @const
+     */
+    "segment": "segment",
 
+    /**
+     * value: "braze"
+     * @const
+     */
+    "braze": "braze",
+
+    /**
+     * value: "mparticle"
+     * @const
+     */
+    "mparticle": "mparticle"
+};
 
 
 

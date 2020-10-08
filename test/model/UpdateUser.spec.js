@@ -72,18 +72,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property releaseUpdate (base name: "releaseUpdate")', function() {
-      // uncomment below and update the code to test the property releaseUpdate
-      //var instane = new TalonOne.UpdateUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property latestFeature (base name: "latestFeature")', function() {
-      // uncomment below and update the code to test the property latestFeature
-      //var instane = new TalonOne.UpdateUser();
-      //expect(instance).to.be();
-    });
-
     it('should have the property roles (base name: "roles")', function() {
       // uncomment below and update the code to test the property roles
       //var instane = new TalonOne.UpdateUser();

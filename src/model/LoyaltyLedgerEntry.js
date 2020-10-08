@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 4.1.1
+ * @version 4.2.0
  */
 class LoyaltyLedgerEntry {
     /**
@@ -83,6 +83,9 @@ class LoyaltyLedgerEntry {
             if (data.hasOwnProperty('amount')) {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
             }
+            if (data.hasOwnProperty('startDate')) {
+                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
+            }
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
             }
@@ -137,6 +140,11 @@ LoyaltyLedgerEntry.prototype['type'] = undefined;
  * @member {Number} amount
  */
 LoyaltyLedgerEntry.prototype['amount'] = undefined;
+
+/**
+ * @member {Date} startDate
+ */
+LoyaltyLedgerEntry.prototype['startDate'] = undefined;
 
 /**
  * @member {Date} expiryDate

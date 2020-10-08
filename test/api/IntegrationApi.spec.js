@@ -128,10 +128,30 @@
         done();
       });
     });
+    describe('updateCustomerProfileAudiences', function() {
+      it('should call updateCustomerProfileAudiences successfully', function(done) {
+        //uncomment below and update the code to test updateCustomerProfileAudiences
+        //instance.updateCustomerProfileAudiences(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateCustomerProfileV2', function() {
       it('should call updateCustomerProfileV2 successfully', function(done) {
         //uncomment below and update the code to test updateCustomerProfileV2
         //instance.updateCustomerProfileV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateCustomerProfilesV2', function() {
+      it('should call updateCustomerProfilesV2 successfully', function(done) {
+        //uncomment below and update the code to test updateCustomerProfilesV2
+        //instance.updateCustomerProfilesV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

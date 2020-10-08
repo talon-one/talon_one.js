@@ -4,20 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**applications** | **Number** | Total Number of Applications inside the account | 
-**activeCampaigns** | **Number** | Total Number of Active Applications inside the account | 
-**campaigns** | **Number** | Total Number of campaigns inside the account | 
-**coupons** | **Number** | Total Number of coupons inside the account | 
-**activeCoupons** | **Number** | Total Number of active coupons inside the account | 
-**expiredCoupons** | **Number** | Total Number of expired coupons inside the account | 
-**customAttributes** | **Number** | Total Number of custom attributes inside the account | 
-**referralCodes** | **Number** | Total Number of referral codes inside the account | 
-**activeReferralCodes** | **Number** | Total Number of active referral codes inside the account | 
-**expiredReferralCodes** | **Number** | Total Number of expired referral codes inside the account | 
-**users** | **Number** | Total Number of users inside the account | 
-**roles** | **Number** | Total Number of roles inside the account | 
-**webhooks** | **Number** | Total Number of webhooks inside the account | 
-**loyaltyPrograms** | **Number** | Total Number of loyalty programs inside the account | 
-**activeRules** | **Number** | Total Number of active rules in the account | 
+**applications** | **Number** | Total number of applications in the account | 
+**liveApplications** | **Number** | Total number of live applications in the account | 
+**sandboxApplications** | **Number** | Total number of sandbox applications in the account | 
+**campaigns** | **Number** | Total number of campaigns in the account | 
+**activeCampaigns** | **Number** | Total number of active campaigns in the account | 
+**liveActiveCampaigns** | **Number** | Total number of active campaigns in live applications in the account | 
+**coupons** | **Number** | Total number of coupons in the account | 
+**activeCoupons** | **Number** | Total number of active coupons in the account | 
+**expiredCoupons** | **Number** | Total number of expired coupons in the account | 
+**referralCodes** | **Number** | Total number of referral codes in the account | 
+**activeReferralCodes** | **Number** | Total number of active referral codes in the account | 
+**expiredReferralCodes** | **Number** | Total number of expired referral codes in the account | 
+**activeRules** | **Number** | Total number of active rules in the account | 
+**users** | **Number** | Total number of users in the account | 
+**roles** | **Number** | Total number of roles in the account | 
+**customAttributes** | **Number** | Total number of custom attributes in the account | 
+**webhooks** | **Number** | Total number of webhooks in the account | 
+**loyaltyPrograms** | **Number** | Total number of loyalty programs in the account | 
 
 
