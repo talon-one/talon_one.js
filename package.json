@@ -21,9 +21,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepack": "babel src -d dist && npm run generate-types",
+    "build": "babel src -d dist",
     "generate-types": "tsc",
-    "test": "mocha --require @babel/register --recursive"
+    "test": "mocha --require @babel/register --recursive",
+    "prepack": "npm run build && npm run generate-types"
   },
   "browser": {
     "fs": false
