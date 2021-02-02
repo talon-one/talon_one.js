@@ -12,12 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import CartItemAdjustment from './CartItemAdjustment';
 
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 4.2.0
+ * @version 4.3.0
  */
 class CartItem {
     /**
@@ -89,9 +88,6 @@ class CartItem {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
-            if (data.hasOwnProperty('adjustment')) {
-                obj['adjustment'] = CartItemAdjustment.constructFromObject(data['adjustment']);
-            }
         }
         return obj;
     }
@@ -159,11 +155,6 @@ CartItem.prototype['position'] = undefined;
  * @member {Object} attributes
  */
 CartItem.prototype['attributes'] = undefined;
-
-/**
- * @member {module:model/CartItemAdjustment} adjustment
- */
-CartItem.prototype['adjustment'] = undefined;
 
 
 

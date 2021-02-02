@@ -17,14 +17,14 @@ import LoyaltyLedgerEntry from './LoyaltyLedgerEntry';
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 4.2.0
+ * @version 4.3.0
  */
 class LoyaltySubLedger {
     /**
      * Constructs a new <code>LoyaltySubLedger</code>.
      * Ledger of Balance in Loyalty Program for a Customer
      * @alias module:model/LoyaltySubLedger
-     * @param total {Number} ⚠️ Deprecated: Please use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
+     * @param total {Number} ⚠️ Deprecated: Use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
      * @param totalActivePoints {Number} Total amount of currently active and available points in the customer's balance
      * @param totalPendingPoints {Number} Total amount of pending points, which are not active yet but will become active in the future
      * @param totalSpentPoints {Number} Total amount of points already spent by this customer
@@ -97,7 +97,7 @@ class LoyaltySubLedger {
 }
 
 /**
- * ⚠️ Deprecated: Please use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
+ * ⚠️ Deprecated: Use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
  * @member {Number} total
  */
 LoyaltySubLedger.prototype['total'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 4.2.0
+ * @version 4.3.0
  */
 class NewCoupons {
     /**
@@ -24,13 +24,11 @@ class NewCoupons {
      * 
      * @alias module:model/NewCoupons
      * @param usageLimit {Number} The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
-     * @param validCharacters {Array.<String>} Set of characters to be used when generating random part of code. Defaults to [A-Z, 0-9] (in terms of RegExp).
-     * @param couponPattern {String} The pattern that will be used to generate coupon codes. The character `#` acts as a placeholder and will be replaced by a random character from the `validCharacters` set. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be at least 1.
      */
-    constructor(usageLimit, validCharacters, couponPattern, numberOfCoupons) { 
+    constructor(usageLimit, numberOfCoupons) { 
         
-        NewCoupons.initialize(this, usageLimit, validCharacters, couponPattern, numberOfCoupons);
+        NewCoupons.initialize(this, usageLimit, numberOfCoupons);
     }
 
     /**
@@ -38,10 +36,8 @@ class NewCoupons {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, usageLimit, validCharacters, couponPattern, numberOfCoupons) { 
+    static initialize(obj, usageLimit, numberOfCoupons) { 
         obj['usageLimit'] = usageLimit;
-        obj['validCharacters'] = validCharacters;
-        obj['couponPattern'] = couponPattern;
         obj['numberOfCoupons'] = numberOfCoupons;
     }
 
@@ -68,12 +64,6 @@ class NewCoupons {
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
             }
-            if (data.hasOwnProperty('validCharacters')) {
-                obj['validCharacters'] = ApiClient.convertToType(data['validCharacters'], ['String']);
-            }
-            if (data.hasOwnProperty('couponPattern')) {
-                obj['couponPattern'] = ApiClient.convertToType(data['couponPattern'], 'String');
-            }
             if (data.hasOwnProperty('numberOfCoupons')) {
                 obj['numberOfCoupons'] = ApiClient.convertToType(data['numberOfCoupons'], 'Number');
             }
@@ -85,6 +75,12 @@ class NewCoupons {
             }
             if (data.hasOwnProperty('recipientIntegrationId')) {
                 obj['recipientIntegrationId'] = ApiClient.convertToType(data['recipientIntegrationId'], 'String');
+            }
+            if (data.hasOwnProperty('validCharacters')) {
+                obj['validCharacters'] = ApiClient.convertToType(data['validCharacters'], ['String']);
+            }
+            if (data.hasOwnProperty('couponPattern')) {
+                obj['couponPattern'] = ApiClient.convertToType(data['couponPattern'], 'String');
             }
         }
         return obj;
@@ -118,18 +114,6 @@ NewCoupons.prototype['startDate'] = undefined;
 NewCoupons.prototype['expiryDate'] = undefined;
 
 /**
- * Set of characters to be used when generating random part of code. Defaults to [A-Z, 0-9] (in terms of RegExp).
- * @member {Array.<String>} validCharacters
- */
-NewCoupons.prototype['validCharacters'] = undefined;
-
-/**
- * The pattern that will be used to generate coupon codes. The character `#` acts as a placeholder and will be replaced by a random character from the `validCharacters` set. 
- * @member {String} couponPattern
- */
-NewCoupons.prototype['couponPattern'] = undefined;
-
-/**
  * The number of new coupon codes to generate for the campaign. Must be at least 1.
  * @member {Number} numberOfCoupons
  */
@@ -152,6 +136,18 @@ NewCoupons.prototype['attributes'] = undefined;
  * @member {String} recipientIntegrationId
  */
 NewCoupons.prototype['recipientIntegrationId'] = undefined;
+
+/**
+ * Set of characters to be used when generating random part of code. Defaults to [A-Z, 0-9] (in terms of RegExp).
+ * @member {Array.<String>} validCharacters
+ */
+NewCoupons.prototype['validCharacters'] = undefined;
+
+/**
+ * The pattern that will be used to generate coupon codes. The character `#` acts as a placeholder and will be replaced by a random character from the `validCharacters` set. 
+ * @member {String} couponPattern
+ */
+NewCoupons.prototype['couponPattern'] = undefined;
 
 
 

@@ -108,6 +108,16 @@
         done();
       });
     });
+    describe('createCouponsForMultipleRecipients', function() {
+      it('should call createCouponsForMultipleRecipients successfully', function(done) {
+        //uncomment below and update the code to test createCouponsForMultipleRecipients
+        //instance.createCouponsForMultipleRecipients(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPasswordRecoveryEmail', function() {
       it('should call createPasswordRecoveryEmail successfully', function(done) {
         //uncomment below and update the code to test createPasswordRecoveryEmail
@@ -182,6 +192,66 @@
       it('should call deleteRuleset successfully', function(done) {
         //uncomment below and update the code to test deleteRuleset
         //instance.deleteRuleset(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('destroySession', function() {
+      it('should call destroySession successfully', function(done) {
+        //uncomment below and update the code to test destroySession
+        //instance.destroySession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportCoupons', function() {
+      it('should call exportCoupons successfully', function(done) {
+        //uncomment below and update the code to test exportCoupons
+        //instance.exportCoupons(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportCustomerSessions', function() {
+      it('should call exportCustomerSessions successfully', function(done) {
+        //uncomment below and update the code to test exportCustomerSessions
+        //instance.exportCustomerSessions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportEffects', function() {
+      it('should call exportEffects successfully', function(done) {
+        //uncomment below and update the code to test exportEffects
+        //instance.exportEffects(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportLoyaltyBalance', function() {
+      it('should call exportLoyaltyBalance successfully', function(done) {
+        //uncomment below and update the code to test exportLoyaltyBalance
+        //instance.exportLoyaltyBalance(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportLoyaltyLedger', function() {
+      it('should call exportLoyaltyLedger successfully', function(done) {
+        //uncomment below and update the code to test exportLoyaltyLedger
+        //instance.exportLoyaltyLedger(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -398,6 +468,16 @@
         done();
       });
     });
+    describe('getAudiences', function() {
+      it('should call getAudiences successfully', function(done) {
+        //uncomment below and update the code to test getAudiences
+        //instance.getAudiences(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCampaign', function() {
       it('should call getCampaign successfully', function(done) {
         //uncomment below and update the code to test getCampaign
@@ -572,16 +652,6 @@
       it('should call getExports successfully', function(done) {
         //uncomment below and update the code to test getExports
         //instance.getExports(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getImports', function() {
-      it('should call getImports successfully', function(done) {
-        //uncomment below and update the code to test getImports
-        //instance.getImports(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

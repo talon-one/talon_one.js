@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCustomerSearch model module.
  * @module model/ApplicationCustomerSearch
- * @version 4.2.0
+ * @version 4.3.0
  */
 class ApplicationCustomerSearch {
     /**

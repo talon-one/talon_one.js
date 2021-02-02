@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property triggeredByCoupon (base name: "triggeredByCoupon")', function() {
+      // uncomment below and update the code to test the property triggeredByCoupon
+      //var instane = new TalonOne.Effect();
+      //expect(instance).to.be();
+    });
+
     it('should have the property props (base name: "props")', function() {
       // uncomment below and update the code to test the property props
       //var instane = new TalonOne.Effect();

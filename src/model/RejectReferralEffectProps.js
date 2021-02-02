@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectReferralEffectProps model module.
  * @module model/RejectReferralEffectProps
- * @version 4.2.0
+ * @version 4.3.0
  */
 class RejectReferralEffectProps {
     /**
@@ -58,6 +58,15 @@ class RejectReferralEffectProps {
             if (data.hasOwnProperty('rejectionReason')) {
                 obj['rejectionReason'] = ApiClient.convertToType(data['rejectionReason'], 'String');
             }
+            if (data.hasOwnProperty('conditionIndex')) {
+                obj['conditionIndex'] = ApiClient.convertToType(data['conditionIndex'], 'Number');
+            }
+            if (data.hasOwnProperty('effectIndex')) {
+                obj['effectIndex'] = ApiClient.convertToType(data['effectIndex'], 'Number');
+            }
+            if (data.hasOwnProperty('details')) {
+                obj['details'] = ApiClient.convertToType(data['details'], 'String');
+            }
         }
         return obj;
     }
@@ -76,6 +85,24 @@ RejectReferralEffectProps.prototype['value'] = undefined;
  * @member {String} rejectionReason
  */
 RejectReferralEffectProps.prototype['rejectionReason'] = undefined;
+
+/**
+ * The index of the condition that caused the rejection of the referral
+ * @member {Number} conditionIndex
+ */
+RejectReferralEffectProps.prototype['conditionIndex'] = undefined;
+
+/**
+ * The index of the effect that caused the rejection of the referral
+ * @member {Number} effectIndex
+ */
+RejectReferralEffectProps.prototype['effectIndex'] = undefined;
+
+/**
+ * More details about the failure
+ * @member {String} details
+ */
+RejectReferralEffectProps.prototype['details'] = undefined;
 
 
 

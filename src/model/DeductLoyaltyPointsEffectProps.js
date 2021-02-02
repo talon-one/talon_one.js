@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeductLoyaltyPointsEffectProps model module.
  * @module model/DeductLoyaltyPointsEffectProps
- * @version 4.2.0
+ * @version 4.3.0
  */
 class DeductLoyaltyPointsEffectProps {
     /**
@@ -27,10 +27,11 @@ class DeductLoyaltyPointsEffectProps {
      * @param programId {Number} The ID of the loyalty program where these points were added
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added
      * @param value {Number} The amount of points that were deducted
+     * @param transactionUUID {String} The identifier of this deduction in the loyalty ledger
      */
-    constructor(ruleTitle, programId, subLedgerId, value) { 
+    constructor(ruleTitle, programId, subLedgerId, value, transactionUUID) { 
         
-        DeductLoyaltyPointsEffectProps.initialize(this, ruleTitle, programId, subLedgerId, value);
+        DeductLoyaltyPointsEffectProps.initialize(this, ruleTitle, programId, subLedgerId, value, transactionUUID);
     }
 
     /**
@@ -38,11 +39,12 @@ class DeductLoyaltyPointsEffectProps {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, ruleTitle, programId, subLedgerId, value) { 
+    static initialize(obj, ruleTitle, programId, subLedgerId, value, transactionUUID) { 
         obj['ruleTitle'] = ruleTitle;
         obj['programId'] = programId;
         obj['subLedgerId'] = subLedgerId;
         obj['value'] = value;
+        obj['transactionUUID'] = transactionUUID;
     }
 
     /**
@@ -67,6 +69,9 @@ class DeductLoyaltyPointsEffectProps {
             }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number');
+            }
+            if (data.hasOwnProperty('transactionUUID')) {
+                obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
             }
         }
         return obj;
@@ -98,6 +103,12 @@ DeductLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
  * @member {Number} value
  */
 DeductLoyaltyPointsEffectProps.prototype['value'] = undefined;
+
+/**
+ * The identifier of this deduction in the loyalty ledger
+ * @member {String} transactionUUID
+ */
+DeductLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
 
 
 

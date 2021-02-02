@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import User from './User';
+import EventType from './EventType';
 
 /**
  * The InlineResponse20026 model module.
  * @module model/InlineResponse20026
- * @version 4.2.0
+ * @version 4.3.0
  */
 class InlineResponse20026 {
     /**
      * Constructs a new <code>InlineResponse20026</code>.
      * @alias module:model/InlineResponse20026
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/User>} 
+     * @param data {Array.<module:model/EventType>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20026 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [User]);
+                obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20026 {
 InlineResponse20026.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/User>} data
+ * @member {Array.<module:model/EventType>} data
  */
 InlineResponse20026.prototype['data'] = undefined;
 

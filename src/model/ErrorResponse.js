@@ -17,7 +17,7 @@ import APIError from './APIError';
 /**
  * The ErrorResponse model module.
  * @module model/ErrorResponse
- * @version 4.2.0
+ * @version 4.3.0
  */
 class ErrorResponse {
     /**

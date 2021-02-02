@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **programId** | **Number** | The ID of the loyalty program where these points were added | 
 **subLedgerId** | **String** | The ID of the subledger within the loyalty program where these points were added | 
 **value** | **Number** | The amount of points that were deducted | 
+**transactionUUID** | **String** | The identifier of this deduction in the loyalty ledger | 
 
 

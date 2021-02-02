@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this item | [optional] 
-**responseContent** | **[String]** | Optional list of requested information to be present on the response related to the customer profile update. Currently supported: \&quot;customerProfile\&quot;, \&quot;triggeredCampaigns\&quot;, \&quot;loyalty\&quot; and \&quot;event\&quot;.  | [optional] 
+**audiencesChanges** | [**ProfileAudiencesChanges**](ProfileAudiencesChanges.md) |  | [optional] 
+**responseContent** | **[String]** | Optional list of requested information to be present on the response related to the customer profile update. Currently supported: \&quot;customerProfile\&quot;, \&quot;triggeredCampaigns\&quot;, \&quot;loyalty\&quot;, \&quot;event\&quot; and \&quot;ruleFailureReasons\&quot;.  | [optional] 
 
 
 
@@ -19,6 +20,8 @@ Name | Type | Description | Notes
 * `loyalty` (value: `"loyalty"`)
 
 * `event` (value: `"event"`)
+
+* `ruleFailureReasons` (value: `"ruleFailureReasons"`)
 
 
 

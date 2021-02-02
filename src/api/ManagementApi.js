@@ -68,6 +68,7 @@ import NewAdditionalCost from '../model/NewAdditionalCost';
 import NewAttribute from '../model/NewAttribute';
 import NewCampaign from '../model/NewCampaign';
 import NewCoupons from '../model/NewCoupons';
+import NewCouponsForMultipleRecipients from '../model/NewCouponsForMultipleRecipients';
 import NewPassword from '../model/NewPassword';
 import NewPasswordEmail from '../model/NewPasswordEmail';
 import NewRuleset from '../model/NewRuleset';
@@ -83,7 +84,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 4.2.0
+* @version 4.3.0
 */
 export default class ManagementApi {
 
@@ -372,8 +373,8 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/NewCoupons} body 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.silent If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     createCouponsWithHttpInfo(applicationId, campaignId, body, opts) {
@@ -421,12 +422,79 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/NewCoupons} body 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.silent If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     createCoupons(applicationId, campaignId, body, opts) {
       return this.createCouponsWithHttpInfo(applicationId, campaignId, body, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create Coupons for Multiple Recipients
+     * Create coupons according to some pattern for up to 1000 recipients.
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
+     * @param {module:model/NewCouponsForMultipleRecipients} body 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     */
+    createCouponsForMultipleRecipientsWithHttpInfo(applicationId, campaignId, body, opts) {
+      opts = opts || {};
+      let postBody = body;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling createCouponsForMultipleRecipients");
+      }
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling createCouponsForMultipleRecipients");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createCouponsForMultipleRecipients");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      let queryParams = {
+        'silent': opts['silent']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2004;
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/coupons_with_recipients', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create Coupons for Multiple Recipients
+     * Create coupons according to some pattern for up to 1000 recipients.
+     * @param {Number} applicationId 
+     * @param {Number} campaignId 
+     * @param {module:model/NewCouponsForMultipleRecipients} body 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] If set to 'yes', response will be an empty 204, otherwise a list of the coupons generated (to to 1000).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     */
+    createCouponsForMultipleRecipients(applicationId, campaignId, body, opts) {
+      return this.createCouponsForMultipleRecipientsWithHttpInfo(applicationId, campaignId, body, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -701,20 +769,20 @@ export default class ManagementApi {
      * Delete Coupons
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteCouponsWithHttpInfo(applicationId, campaignId, opts) {
@@ -768,20 +836,20 @@ export default class ManagementApi {
      * Delete Coupons
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCoupons(applicationId, campaignId, opts) {
@@ -913,17 +981,398 @@ export default class ManagementApi {
 
 
     /**
+     * Destroy a Session
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    destroySessionWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/v1/sessions', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Destroy a Session
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    destroySession() {
+      return this.destroySessionWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Export Coupons to a CSV file
+     * Download a file with the coupons that match the given attributes.
+     * @param {Number} applicationId 
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    exportCouponsWithHttpInfo(applicationId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling exportCoupons");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId
+      };
+      let queryParams = {
+        'campaignId': opts['campaignId'],
+        'sort': opts['sort'],
+        'value': opts['value'],
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
+        'valid': opts['valid'],
+        'usable': opts['usable'],
+        'referralId': opts['referralId'],
+        'recipientIntegrationId': opts['recipientIntegrationId'],
+        'batchId': opts['batchId'],
+        'exactMatch': opts['exactMatch'],
+        'dateFormat': opts['dateFormat'],
+        'campaignState': opts['campaignState']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/csv'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/export_coupons', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Export Coupons to a CSV file
+     * Download a file with the coupons that match the given attributes.
+     * @param {Number} applicationId 
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    exportCoupons(applicationId, opts) {
+      return this.exportCouponsWithHttpInfo(applicationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Export Customer Sessions to a CSV file
+     * Download a file with the customer sessions that match the request.
+     * @param {Number} applicationId 
+     * @param {Object} [opts] Optional parameters
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
+     * @param {String=} [opts.profileIntegrationId] Only return sessions for the customer that matches this customer integration ID.
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @param {module:model/String=} [opts.customerSessionState] Filter results by state.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    exportCustomerSessionsWithHttpInfo(applicationId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling exportCustomerSessions");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId
+      };
+      let queryParams = {
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
+        'profileIntegrationId': opts['profileIntegrationId'],
+        'dateFormat': opts['dateFormat'],
+        'customerSessionState': opts['customerSessionState']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/csv'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/export_customer_sessions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Export Customer Sessions to a CSV file
+     * Download a file with the customer sessions that match the request.
+     * @param {Number} applicationId 
+     * @param {Object} [opts] Optional parameters
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
+     * @param {String=} [opts.profileIntegrationId] Only return sessions for the customer that matches this customer integration ID.
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @param {module:model/String=} [opts.customerSessionState] Filter results by state.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    exportCustomerSessions(applicationId, opts) {
+      return this.exportCustomerSessionsWithHttpInfo(applicationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Export triggered Effects to a CSV file
+     * Download a file with the triggered effects that match the given attributes.
+     * @param {Number} applicationId 
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    exportEffectsWithHttpInfo(applicationId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling exportEffects");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId
+      };
+      let queryParams = {
+        'campaignId': opts['campaignId'],
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
+        'dateFormat': opts['dateFormat']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/csv'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/export_effects', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Export triggered Effects to a CSV file
+     * Download a file with the triggered effects that match the given attributes.
+     * @param {Number} applicationId 
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    exportEffects(applicationId, opts) {
+      return this.exportEffectsWithHttpInfo(applicationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Export customer loyalty balance to a CSV file
+     * Download a file with the balance of each customer in the loyalty program
+     * @param {String} programID 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    exportLoyaltyBalanceWithHttpInfo(programID) {
+      let postBody = null;
+      // verify the required parameter 'programID' is set
+      if (programID === undefined || programID === null) {
+        throw new Error("Missing the required parameter 'programID' when calling exportLoyaltyBalance");
+      }
+
+      let pathParams = {
+        'programID': programID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/csv'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/v1/loyalty_programs/{programID}/export_customer_balance', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Export customer loyalty balance to a CSV file
+     * Download a file with the balance of each customer in the loyalty program
+     * @param {String} programID 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    exportLoyaltyBalance(programID) {
+      return this.exportLoyaltyBalanceWithHttpInfo(programID)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Export a customer's loyalty ledger log to a CSV file
+     * Download a file with a customer's ledger log in the loyalty program
+     * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
+     * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
+     * @param {String} programID 
+     * @param {String} integrationID 
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    exportLoyaltyLedgerWithHttpInfo(rangeStart, rangeEnd, programID, integrationID, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'rangeStart' is set
+      if (rangeStart === undefined || rangeStart === null) {
+        throw new Error("Missing the required parameter 'rangeStart' when calling exportLoyaltyLedger");
+      }
+      // verify the required parameter 'rangeEnd' is set
+      if (rangeEnd === undefined || rangeEnd === null) {
+        throw new Error("Missing the required parameter 'rangeEnd' when calling exportLoyaltyLedger");
+      }
+      // verify the required parameter 'programID' is set
+      if (programID === undefined || programID === null) {
+        throw new Error("Missing the required parameter 'programID' when calling exportLoyaltyLedger");
+      }
+      // verify the required parameter 'integrationID' is set
+      if (integrationID === undefined || integrationID === null) {
+        throw new Error("Missing the required parameter 'integrationID' when calling exportLoyaltyLedger");
+      }
+
+      let pathParams = {
+        'programID': programID,
+        'integrationID': integrationID
+      };
+      let queryParams = {
+        'rangeStart': rangeStart,
+        'rangeEnd': rangeEnd,
+        'dateFormat': opts['dateFormat']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/csv'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/v1/loyalty_programs/{programID}/profile/{integrationID}/export_log', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Export a customer's loyalty ledger log to a CSV file
+     * Download a file with a customer's ledger log in the loyalty program
+     * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
+     * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
+     * @param {String} programID 
+     * @param {String} integrationID 
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    exportLoyaltyLedger(rangeStart, rangeEnd, programID, integrationID, opts) {
+      return this.exportLoyaltyLedgerWithHttpInfo(rangeStart, rangeEnd, programID, integrationID, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get access logs for application (with total count)
      * @param {Number} applicationId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expression.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
+     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
     getAccessLogsWithHttpInfo(applicationId, rangeStart, rangeEnd, opts) {
@@ -976,13 +1425,13 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expression.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
+     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
     getAccessLogs(applicationId, rangeStart, rangeEnd, opts) {
@@ -998,13 +1447,13 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expression.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
+     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20010} and HTTP response
      */
     getAccessLogsWithoutTotalCountWithHttpInfo(applicationId, rangeStart, rangeEnd, opts) {
@@ -1057,13 +1506,13 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expression.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
+     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20010}
      */
     getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts) {
@@ -1221,11 +1670,11 @@ export default class ManagementApi {
     /**
      * List additional costs
      * Returns all the defined additional costs for the account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
      */
     getAdditionalCostsWithHttpInfo(opts) {
       opts = opts || {};
@@ -1246,7 +1695,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20021;
+      let returnType = InlineResponse20022;
       return this.apiClient.callApi(
         '/v1/additional_costs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1257,11 +1706,11 @@ export default class ManagementApi {
     /**
      * List additional costs
      * Returns all the defined additional costs for the account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
      */
     getAdditionalCosts(opts) {
       return this.getAdditionalCostsWithHttpInfo(opts)
@@ -1276,13 +1725,13 @@ export default class ManagementApi {
      * Fetches the access logs for the entire account. Sensitive requests (logins) are _always_ filtered from the logs. 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expression.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
+     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
     getAllAccessLogsWithHttpInfo(rangeStart, rangeEnd, opts) {
@@ -1330,13 +1779,13 @@ export default class ManagementApi {
      * Fetches the access logs for the entire account. Sensitive requests (logins) are _always_ filtered from the logs. 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.path Only return results where the request path matches the given regular expression.
-     * @param {module:model/String} opts.method Only return results where the request method matches the given regular expression.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
+     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
     getAllAccessLogs(rangeStart, rangeEnd, opts) {
@@ -1348,7 +1797,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get all roles.
+     * Get all roles
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
      */
     getAllRolesWithHttpInfo() {
@@ -1375,7 +1824,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get all roles.
+     * Get all roles
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
      */
     getAllRoles() {
@@ -1536,11 +1985,11 @@ export default class ManagementApi {
     /**
      * List Application Customers
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.integrationId Filter results performing an exact matching against the profile integration identifier.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.integrationId] Filter results performing an exact matching against the profile integration identifier.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20012} and HTTP response
      */
     getApplicationCustomersWithHttpInfo(applicationId, opts) {
@@ -1579,11 +2028,11 @@ export default class ManagementApi {
     /**
      * List Application Customers
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.integrationId Filter results performing an exact matching against the profile integration identifier.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.integrationId] Filter results performing an exact matching against the profile integration identifier.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20012}
      */
     getApplicationCustomers(applicationId, opts) {
@@ -1645,10 +2094,10 @@ export default class ManagementApi {
      * List Applications Event Types
      * Get all of the distinct values of the Event `type` property for events recorded in the application.  See also: [Track an event](/integration-api/reference/#trackEvent) 
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20019} and HTTP response
      */
     getApplicationEventTypesWithHttpInfo(applicationId, opts) {
@@ -1687,10 +2136,10 @@ export default class ManagementApi {
      * List Applications Event Types
      * Get all of the distinct values of the Event `type` property for events recorded in the application.  See also: [Track an event](/integration-api/reference/#trackEvent) 
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20019}
      */
     getApplicationEventTypes(applicationId, opts) {
@@ -1705,21 +2154,21 @@ export default class ManagementApi {
      * List Applications Events (with total count)
      * Lists all events recorded for an application. 
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
-     * @param {Date} opts.createdBefore Only return events created before this date
-     * @param {Date} opts.createdAfter Only return events created after this date
-     * @param {String} opts.session Session integration ID filter for events. Must be exact match.
-     * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
-     * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.couponCode Coupon code
-     * @param {String} opts.referralCode Referral code
-     * @param {String} opts.ruleQuery Rule name filter for events
-     * @param {String} opts.campaignQuery Campaign name filter for events
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.type] Comma-separated list of types by which to filter events. Must be exact match(es).
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {String=} [opts.session] Session integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.profile] Profile integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.customerName] Customer name filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.customerEmail] Customer e-mail address filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.couponCode] Coupon code
+     * @param {String=} [opts.referralCode] Referral code
+     * @param {String=} [opts.ruleQuery] Rule name filter for events
+     * @param {String=} [opts.campaignQuery] Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20017} and HTTP response
      */
     getApplicationEventsWithHttpInfo(applicationId, opts) {
@@ -1769,21 +2218,21 @@ export default class ManagementApi {
      * List Applications Events (with total count)
      * Lists all events recorded for an application. 
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
-     * @param {Date} opts.createdBefore Only return events created before this date
-     * @param {Date} opts.createdAfter Only return events created after this date
-     * @param {String} opts.session Session integration ID filter for events. Must be exact match.
-     * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
-     * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.couponCode Coupon code
-     * @param {String} opts.referralCode Referral code
-     * @param {String} opts.ruleQuery Rule name filter for events
-     * @param {String} opts.campaignQuery Campaign name filter for events
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.type] Comma-separated list of types by which to filter events. Must be exact match(es).
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {String=} [opts.session] Session integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.profile] Profile integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.customerName] Customer name filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.customerEmail] Customer e-mail address filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.couponCode] Coupon code
+     * @param {String=} [opts.referralCode] Referral code
+     * @param {String=} [opts.ruleQuery] Rule name filter for events
+     * @param {String=} [opts.campaignQuery] Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20017}
      */
     getApplicationEvents(applicationId, opts) {
@@ -1798,21 +2247,21 @@ export default class ManagementApi {
      * List Applications Events
      * Lists all events recorded for an application. Instead of having the total number of results in the response, this endpoint only if there are more results. 
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
-     * @param {Date} opts.createdBefore Only return events created before this date
-     * @param {Date} opts.createdAfter Only return events created after this date
-     * @param {String} opts.session Session integration ID filter for events. Must be exact match.
-     * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
-     * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.couponCode Coupon code
-     * @param {String} opts.referralCode Referral code
-     * @param {String} opts.ruleQuery Rule name filter for events
-     * @param {String} opts.campaignQuery Campaign name filter for events
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.type] Comma-separated list of types by which to filter events. Must be exact match(es).
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {String=} [opts.session] Session integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.profile] Profile integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.customerName] Customer name filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.customerEmail] Customer e-mail address filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.couponCode] Coupon code
+     * @param {String=} [opts.referralCode] Referral code
+     * @param {String=} [opts.ruleQuery] Rule name filter for events
+     * @param {String=} [opts.campaignQuery] Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20018} and HTTP response
      */
     getApplicationEventsWithoutTotalCountWithHttpInfo(applicationId, opts) {
@@ -1862,21 +2311,21 @@ export default class ManagementApi {
      * List Applications Events
      * Lists all events recorded for an application. Instead of having the total number of results in the response, this endpoint only if there are more results. 
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.type Comma-separated list of types by which to filter events. Must be exact match(es).
-     * @param {Date} opts.createdBefore Only return events created before this date
-     * @param {Date} opts.createdAfter Only return events created after this date
-     * @param {String} opts.session Session integration ID filter for events. Must be exact match.
-     * @param {String} opts.profile Profile integration ID filter for events. Must be exact match.
-     * @param {String} opts.customerName Customer name filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.customerEmail Customer e-mail address filter for events. Will match substrings case-insensitively.
-     * @param {String} opts.couponCode Coupon code
-     * @param {String} opts.referralCode Referral code
-     * @param {String} opts.ruleQuery Rule name filter for events
-     * @param {String} opts.campaignQuery Campaign name filter for events
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.type] Comma-separated list of types by which to filter events. Must be exact match(es).
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {String=} [opts.session] Session integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.profile] Profile integration ID filter for events. Must be exact match.
+     * @param {String=} [opts.customerName] Customer name filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.customerEmail] Customer e-mail address filter for events. Will match substrings case-insensitively.
+     * @param {String=} [opts.couponCode] Coupon code
+     * @param {String=} [opts.referralCode] Referral code
+     * @param {String=} [opts.ruleQuery] Rule name filter for events
+     * @param {String=} [opts.campaignQuery] Campaign name filter for events
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20018}
      */
     getApplicationEventsWithoutTotalCount(applicationId, opts) {
@@ -1943,17 +2392,17 @@ export default class ManagementApi {
     /**
      * List Application Sessions
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
-     * @param {module:model/String} opts.state Filter by sessions with this state. Must be exact match.
-     * @param {Date} opts.createdBefore Only return events created before this date
-     * @param {Date} opts.createdAfter Only return events created after this date
-     * @param {String} opts.coupon Filter by sessions with this coupon. Must be exact match.
-     * @param {String} opts.referral Filter by sessions with this referral. Must be exact match.
-     * @param {String} opts.integrationId Filter by sessions with this integrationId. Must be exact match.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.profile] Profile integration ID filter for sessions. Must be exact match.
+     * @param {module:model/String=} [opts.state] Filter by sessions with this state. Must be exact match.
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {String=} [opts.coupon] Filter by sessions with this coupon. Must be exact match.
+     * @param {String=} [opts.referral] Filter by sessions with this referral. Must be exact match.
+     * @param {String=} [opts.integrationId] Filter by sessions with this integrationId. Must be exact match.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     getApplicationSessionsWithHttpInfo(applicationId, opts) {
@@ -1998,17 +2447,17 @@ export default class ManagementApi {
     /**
      * List Application Sessions
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.profile Profile integration ID filter for sessions. Must be exact match.
-     * @param {module:model/String} opts.state Filter by sessions with this state. Must be exact match.
-     * @param {Date} opts.createdBefore Only return events created before this date
-     * @param {Date} opts.createdAfter Only return events created after this date
-     * @param {String} opts.coupon Filter by sessions with this coupon. Must be exact match.
-     * @param {String} opts.referral Filter by sessions with this referral. Must be exact match.
-     * @param {String} opts.integrationId Filter by sessions with this integrationId. Must be exact match.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.profile] Profile integration ID filter for sessions. Must be exact match.
+     * @param {module:model/String=} [opts.state] Filter by sessions with this state. Must be exact match.
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {String=} [opts.coupon] Filter by sessions with this coupon. Must be exact match.
+     * @param {String=} [opts.referral] Filter by sessions with this referral. Must be exact match.
+     * @param {String=} [opts.integrationId] Filter by sessions with this integrationId. Must be exact match.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     getApplicationSessions(applicationId, opts) {
@@ -2022,10 +2471,10 @@ export default class ManagementApi {
     /**
      * List Applications
      * List all application in the current account.
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     getApplicationsWithHttpInfo(opts) {
@@ -2058,10 +2507,10 @@ export default class ManagementApi {
     /**
      * List Applications
      * List all application in the current account.
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     getApplications(opts) {
@@ -2123,11 +2572,11 @@ export default class ManagementApi {
     /**
      * List custom attributes
      * Returns all the defined custom attributes for the account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
      */
     getAttributesWithHttpInfo(opts) {
       opts = opts || {};
@@ -2148,7 +2597,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20020;
+      let returnType = InlineResponse20021;
       return this.apiClient.callApi(
         '/v1/attributes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2159,14 +2608,70 @@ export default class ManagementApi {
     /**
      * List custom attributes
      * Returns all the defined custom attributes for the account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
      */
     getAttributes(opts) {
       return this.getAttributesWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get all audiences
+     * Get All audiences created in the account. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
+     */
+    getAudiencesWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'sort': opts['sort'],
+        'withTotalResultSize': opts['withTotalResultSize']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20020;
+      return this.apiClient.callApi(
+        '/v1/audiences', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get all audiences
+     * Get All audiences created in the account. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
+     */
+    getAudiences(opts) {
+      return this.getAudiencesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2232,8 +2737,8 @@ export default class ManagementApi {
      * @param {Number} campaignId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.granularity The time interval between the results in the returned time-series.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.granularity] The time interval between the results in the returned time-series.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20011} and HTTP response
      */
     getCampaignAnalyticsWithHttpInfo(applicationId, campaignId, rangeStart, rangeEnd, opts) {
@@ -2287,8 +2792,8 @@ export default class ManagementApi {
      * @param {Number} campaignId 
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
-     * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.granularity The time interval between the results in the returned time-series.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.granularity] The time interval between the results in the returned time-series.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20011}
      */
     getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts) {
@@ -2304,11 +2809,11 @@ export default class ManagementApi {
      * Gets a list of all the campaigns that exactly match a set of attributes. 
      * @param {Number} applicationId 
      * @param {module:model/CampaignSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     getCampaignByAttributesWithHttpInfo(applicationId, body, opts) {
@@ -2353,11 +2858,11 @@ export default class ManagementApi {
      * Gets a list of all the campaigns that exactly match a set of attributes. 
      * @param {Number} applicationId 
      * @param {module:model/CampaignSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     getCampaignByAttributes(applicationId, body, opts) {
@@ -2371,16 +2876,16 @@ export default class ManagementApi {
     /**
      * List your Campaigns
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {String} opts.name Filter results performing case-insensitive matching against the name of the campaign.
-     * @param {String} opts.tags Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
-     * @param {Number} opts.campaignGroupId Filter results to campaigns owned by the specified campaign group ID.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
+     * @param {String=} [opts.name] Filter results performing case-insensitive matching against the name of the campaign.
+     * @param {String=} [opts.tags] Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Number=} [opts.campaignGroupId] Filter results to campaigns owned by the specified campaign group ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     getCampaignsWithHttpInfo(applicationId, opts) {
@@ -2424,16 +2929,16 @@ export default class ManagementApi {
     /**
      * List your Campaigns
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
-     * @param {String} opts.name Filter results performing case-insensitive matching against the name of the campaign.
-     * @param {String} opts.tags Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp.
-     * @param {Number} opts.campaignGroupId Filter results to campaigns owned by the specified campaign group ID.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
+     * @param {String=} [opts.name] Filter results performing case-insensitive matching against the name of the campaign.
+     * @param {String=} [opts.tags] Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Number=} [opts.campaignGroupId] Filter results to campaigns owned by the specified campaign group ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     getCampaigns(applicationId, opts) {
@@ -2447,16 +2952,18 @@ export default class ManagementApi {
     /**
      * Get audit log for an account
      * Get list of changes caused by API calls for an account. Only accessible for admins.
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {Number} opts.applicationId 
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
-     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
-     * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Number=} [opts.applicationId] 
+     * @param {String=} [opts.entityPath] Filter results on a case insensitive matching of the url path of the entity
+     * @param {Number=} [opts.userId] 
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
      */
     getChangesWithHttpInfo(opts) {
       opts = opts || {};
@@ -2469,6 +2976,8 @@ export default class ManagementApi {
         'skip': opts['skip'],
         'sort': opts['sort'],
         'applicationId': opts['applicationId'],
+        'entityPath': opts['entityPath'],
+        'userId': opts['userId'],
         'createdBefore': opts['createdBefore'],
         'createdAfter': opts['createdAfter'],
         'withTotalResultSize': opts['withTotalResultSize'],
@@ -2482,7 +2991,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20027;
+      let returnType = InlineResponse20028;
       return this.apiClient.callApi(
         '/v1/changes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2493,16 +3002,18 @@ export default class ManagementApi {
     /**
      * Get audit log for an account
      * Get list of changes caused by API calls for an account. Only accessible for admins.
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {Number} opts.applicationId 
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp.
-     * @param {Boolean} opts.withTotalResultSize When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
-     * @param {Boolean} opts.includeOld When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Number=} [opts.applicationId] 
+     * @param {String=} [opts.entityPath] Filter results on a case insensitive matching of the url path of the entity
+     * @param {Number=} [opts.userId] 
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result will include the total size of the result, across all pages. This might decrease performance on large data sets. With this flag set to true, hasMore will be be true whenever there is a next page. totalResultSize will always be zero. With this flag set to false, hasMore will always be set to false. totalResultSize will contain the total number of results for this query. 
+     * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
      */
     getChanges(opts) {
       return this.getChangesWithHttpInfo(opts)
@@ -2516,23 +3027,23 @@ export default class ManagementApi {
      * List Coupons (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getCouponsWithHttpInfo(applicationId, campaignId, opts) {
@@ -2589,23 +3100,23 @@ export default class ManagementApi {
      * List Coupons (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.startsBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.expiresBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.startsBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.expiresBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getCoupons(applicationId, campaignId, opts) {
@@ -2622,19 +3133,19 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/CouponSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getCouponsByAttributesWithHttpInfo(applicationId, campaignId, body, opts) {
@@ -2693,19 +3204,19 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {module:model/CouponSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getCouponsByAttributes(applicationId, campaignId, body, opts) {
@@ -2721,20 +3232,20 @@ export default class ManagementApi {
      * Gets a list of all the coupons with attributes matching the query criteria Application wide 
      * @param {Number} applicationId 
      * @param {module:model/CouponSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getCouponsByAttributesApplicationWideWithHttpInfo(applicationId, body, opts) {
@@ -2788,20 +3299,20 @@ export default class ManagementApi {
      * Gets a list of all the coupons with attributes matching the query criteria Application wide 
      * @param {Number} applicationId 
      * @param {module:model/CouponSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getCouponsByAttributesApplicationWide(applicationId, body, opts) {
@@ -2816,19 +3327,19 @@ export default class ManagementApi {
      * List Coupons
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     getCouponsWithoutTotalCountWithHttpInfo(applicationId, campaignId, opts) {
@@ -2881,19 +3392,19 @@ export default class ManagementApi {
      * List Coupons
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     getCouponsWithoutTotalCount(applicationId, campaignId, opts) {
@@ -2911,9 +3422,9 @@ export default class ManagementApi {
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
      * @param {Number} customerId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerActivityReport} and HTTP response
      */
     getCustomerActivityReportWithHttpInfo(rangeStart, rangeEnd, applicationId, customerId, opts) {
@@ -2969,9 +3480,9 @@ export default class ManagementApi {
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
      * @param {Number} customerId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerActivityReport}
      */
     getCustomerActivityReport(rangeStart, rangeEnd, applicationId, customerId, opts) {
@@ -2988,14 +3499,14 @@ export default class ManagementApi {
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.name Only return reports matching the customer name
-     * @param {String} opts.integrationId Only return reports matching the integrationId
-     * @param {String} opts.campaignName Only return reports matching the campaignName
-     * @param {String} opts.advocateName Only return reports matching the current customer referrer name
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.name] Only return reports matching the customer name
+     * @param {String=} [opts.integrationId] Only return reports matching the integrationId
+     * @param {String=} [opts.campaignName] Only return reports matching the campaignName
+     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20014} and HTTP response
      */
     getCustomerActivityReportsWithHttpInfo(rangeStart, rangeEnd, applicationId, opts) {
@@ -3050,14 +3561,14 @@ export default class ManagementApi {
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.name Only return reports matching the customer name
-     * @param {String} opts.integrationId Only return reports matching the integrationId
-     * @param {String} opts.campaignName Only return reports matching the campaignName
-     * @param {String} opts.advocateName Only return reports matching the current customer referrer name
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.name] Only return reports matching the customer name
+     * @param {String=} [opts.integrationId] Only return reports matching the integrationId
+     * @param {String=} [opts.campaignName] Only return reports matching the campaignName
+     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20014}
      */
     getCustomerActivityReports(rangeStart, rangeEnd, applicationId, opts) {
@@ -3074,14 +3585,14 @@ export default class ManagementApi {
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.name Only return reports matching the customer name
-     * @param {String} opts.integrationId Only return reports matching the integrationId
-     * @param {String} opts.campaignName Only return reports matching the campaignName
-     * @param {String} opts.advocateName Only return reports matching the current customer referrer name
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.name] Only return reports matching the customer name
+     * @param {String=} [opts.integrationId] Only return reports matching the integrationId
+     * @param {String=} [opts.campaignName] Only return reports matching the campaignName
+     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20015} and HTTP response
      */
     getCustomerActivityReportsWithoutTotalCountWithHttpInfo(rangeStart, rangeEnd, applicationId, opts) {
@@ -3136,14 +3647,14 @@ export default class ManagementApi {
      * @param {Date} rangeStart Only return results from after this timestamp, must be an RFC3339 timestamp string
      * @param {Date} rangeEnd Only return results from before this timestamp, must be an RFC3339 timestamp string
      * @param {Number} applicationId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.name Only return reports matching the customer name
-     * @param {String} opts.integrationId Only return reports matching the integrationId
-     * @param {String} opts.campaignName Only return reports matching the campaignName
-     * @param {String} opts.advocateName Only return reports matching the current customer referrer name
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.name] Only return reports matching the customer name
+     * @param {String=} [opts.integrationId] Only return reports matching the integrationId
+     * @param {String=} [opts.campaignName] Only return reports matching the campaignName
+     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20015}
      */
     getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts) {
@@ -3159,10 +3670,10 @@ export default class ManagementApi {
      * Fetch analytics for single application customer
      * @param {Number} applicationId 
      * @param {Number} customerId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerAnalytics} and HTTP response
      */
     getCustomerAnalyticsWithHttpInfo(applicationId, customerId, opts) {
@@ -3207,10 +3718,10 @@ export default class ManagementApi {
      * Fetch analytics for single application customer
      * @param {Number} applicationId 
      * @param {Number} customerId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerAnalytics}
      */
     getCustomerAnalytics(applicationId, customerId, opts) {
@@ -3269,9 +3780,9 @@ export default class ManagementApi {
 
     /**
      * List Customer Profiles
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20013} and HTTP response
      */
     getCustomerProfilesWithHttpInfo(opts) {
@@ -3302,9 +3813,9 @@ export default class ManagementApi {
 
     /**
      * List Customer Profiles
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20013}
      */
     getCustomerProfiles(opts) {
@@ -3319,9 +3830,9 @@ export default class ManagementApi {
      * Get a list of the customer profiles that match the given attributes
      * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20013} and HTTP response
      */
     getCustomersByAttributesWithHttpInfo(body, opts) {
@@ -3358,9 +3869,9 @@ export default class ManagementApi {
      * Get a list of the customer profiles that match the given attributes
      * Gets a list of all the customer profiles for the account that exactly match a set of attributes.  The match is successful if all the attributes of the request are found in a profile, even if the profile has more attributes that are not present on the request.  [Customer Profile]: https://help.talon.one/hc/en-us/articles/360005130739-Data-Model#CustomerProfile 
      * @param {module:model/ApplicationCustomerSearch} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20013}
      */
     getCustomersByAttributes(body, opts) {
@@ -3374,14 +3885,14 @@ export default class ManagementApi {
     /**
      * List Event Types
      * Fetch all event type definitions for your account. Each event type can be 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
-     * @param {String} opts.name Filter results to event types with the given name. This parameter implies `includeOldVersions`.
-     * @param {Boolean} opts.includeOldVersions Include all versions of every event type. (default to false)
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.applicationIds] Filter by one or more application ids separated by comma
+     * @param {String=} [opts.name] Filter results to event types with the given name. This parameter implies `includeOldVersions`.
+     * @param {Boolean=} [opts.includeOldVersions] Include all versions of every event type. (default to false)
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
      */
     getEventTypesWithHttpInfo(opts) {
       opts = opts || {};
@@ -3405,7 +3916,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20025;
+      let returnType = InlineResponse20026;
       return this.apiClient.callApi(
         '/v1/event_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3416,14 +3927,14 @@ export default class ManagementApi {
     /**
      * List Event Types
      * Fetch all event type definitions for your account. Each event type can be 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
-     * @param {String} opts.name Filter results to event types with the given name. This parameter implies `includeOldVersions`.
-     * @param {Boolean} opts.includeOldVersions Include all versions of every event type. (default to false)
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.applicationIds] Filter by one or more application ids separated by comma
+     * @param {String=} [opts.name] Filter results to event types with the given name. This parameter implies `includeOldVersions`.
+     * @param {Boolean=} [opts.includeOldVersions] Include all versions of every event type. (default to false)
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
      */
     getEventTypes(opts) {
       return this.getEventTypesWithHttpInfo(opts)
@@ -3436,13 +3947,13 @@ export default class ManagementApi {
     /**
      * Get Exports
      * Get a list of all past exports 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {Number} opts.applicationId 
-     * @param {Number} opts.campaignId 
-     * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {Number=} [opts.applicationId] 
+     * @param {Number=} [opts.campaignId] 
+     * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
      */
     getExportsWithHttpInfo(opts) {
       opts = opts || {};
@@ -3465,7 +3976,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20028;
+      let returnType = InlineResponse20029;
       return this.apiClient.callApi(
         '/v1/exports', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3476,66 +3987,16 @@ export default class ManagementApi {
     /**
      * Get Exports
      * Get a list of all past exports 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {Number} opts.applicationId 
-     * @param {Number} opts.campaignId 
-     * @param {module:model/String} opts.entity The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {Number=} [opts.applicationId] 
+     * @param {Number=} [opts.campaignId] 
+     * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
      */
     getExports(opts) {
       return this.getExportsWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Get Imports
-     * Get a list of all past imports 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
-     */
-    getImportsWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['manager_auth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse20029;
-      return this.apiClient.callApi(
-        '/v1/imports', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Get Imports
-     * Get a list of all past imports 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
-     */
-    getImports(opts) {
-      return this.getImportsWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3732,16 +4193,16 @@ export default class ManagementApi {
      * List Referrals (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
-     * @param {String} opts.advocate Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.code] Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
+     * @param {String=} [opts.advocate] Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     getReferralsWithHttpInfo(applicationId, campaignId, opts) {
@@ -3791,16 +4252,16 @@ export default class ManagementApi {
      * List Referrals (with total count)
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
-     * @param {String} opts.advocate Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.code] Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
+     * @param {String=} [opts.advocate] Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     getReferrals(applicationId, campaignId, opts) {
@@ -3815,16 +4276,16 @@ export default class ManagementApi {
      * List Referrals
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
-     * @param {String} opts.advocate Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.code] Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
+     * @param {String=} [opts.advocate] Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
     getReferralsWithoutTotalCountWithHttpInfo(applicationId, campaignId, opts) {
@@ -3874,16 +4335,16 @@ export default class ManagementApi {
      * List Referrals
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.code Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
-     * @param {String} opts.advocate Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.code] Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiry date is set and in the past. The second matches referrals in which start date is null or in the past and expiry date is null or in the future, the third matches referrals in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
+     * @param {String=} [opts.advocate] Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
     getReferralsWithoutTotalCount(applicationId, campaignId, opts) {
@@ -3895,7 +4356,7 @@ export default class ManagementApi {
 
 
     /**
-     * Get information for the specified role.
+     * Get information for the specified role
      * @param {Number} roleId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Role} and HTTP response
      */
@@ -3928,7 +4389,7 @@ export default class ManagementApi {
     }
 
     /**
-     * Get information for the specified role.
+     * Get information for the specified role
      * @param {Number} roleId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Role}
      */
@@ -4004,10 +4465,10 @@ export default class ManagementApi {
      * List Campaign Rulesets
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     getRulesetsWithHttpInfo(applicationId, campaignId, opts) {
@@ -4051,10 +4512,10 @@ export default class ManagementApi {
      * List Campaign Rulesets
      * @param {Number} applicationId 
      * @param {Number} campaignId 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     getRulesets(applicationId, campaignId, opts) {
@@ -4116,11 +4577,11 @@ export default class ManagementApi {
     /**
      * List Users in your account
      * Retrieve all users in your account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
      */
     getUsersWithHttpInfo(opts) {
       opts = opts || {};
@@ -4141,7 +4602,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20026;
+      let returnType = InlineResponse20027;
       return this.apiClient.callApi(
         '/v1/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4152,11 +4613,11 @@ export default class ManagementApi {
     /**
      * List Users in your account
      * Retrieve all users in your account. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
      */
     getUsers(opts) {
       return this.getUsersWithHttpInfo(opts)
@@ -4217,17 +4678,17 @@ export default class ManagementApi {
     /**
      * List Webhook activation Log Entries
      * Webhook activation log entries would be created as soon as an integration request triggered an effect with a webhook
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.integrationRequestUuid Filter results by integration request UUID.
-     * @param {Number} opts.webhookId Filter results by Webhook.
-     * @param {Number} opts.applicationId 
-     * @param {Number} opts.campaignId Filter results by campaign.
-     * @param {Date} opts.createdBefore Only return events created before this date.
-     * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
+     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.applicationId] 
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any timezone. Talon.One will convert to UTC internally.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
      */
     getWebhookActivationLogsWithHttpInfo(opts) {
       opts = opts || {};
@@ -4254,7 +4715,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20023;
+      let returnType = InlineResponse20024;
       return this.apiClient.callApi(
         '/v1/webhook_activation_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4265,17 +4726,17 @@ export default class ManagementApi {
     /**
      * List Webhook activation Log Entries
      * Webhook activation log entries would be created as soon as an integration request triggered an effect with a webhook
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.integrationRequestUuid Filter results by integration request UUID.
-     * @param {Number} opts.webhookId Filter results by Webhook.
-     * @param {Number} opts.applicationId 
-     * @param {Number} opts.campaignId Filter results by campaign.
-     * @param {Date} opts.createdBefore Only return events created before this date.
-     * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
+     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.applicationId] 
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any timezone. Talon.One will convert to UTC internally.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
      */
     getWebhookActivationLogs(opts) {
       return this.getWebhookActivationLogsWithHttpInfo(opts)
@@ -4287,18 +4748,18 @@ export default class ManagementApi {
 
     /**
      * List Webhook Log Entries
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.webhookId Filter results by Webhook.
-     * @param {Number} opts.applicationId 
-     * @param {Number} opts.campaignId Filter results by campaign.
-     * @param {String} opts.requestUuid Filter results by request UUID.
-     * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
-     * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.applicationId] 
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {String=} [opts.requestUuid] Filter results by request UUID.
+     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any timezone. Talon.One will convert to UTC internally.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
      */
     getWebhookLogsWithHttpInfo(opts) {
       opts = opts || {};
@@ -4326,7 +4787,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20024;
+      let returnType = InlineResponse20025;
       return this.apiClient.callApi(
         '/v1/webhook_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4336,18 +4797,18 @@ export default class ManagementApi {
 
     /**
      * List Webhook Log Entries
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {module:model/String} opts.status Filter results by HTTP status codes.
-     * @param {Number} opts.webhookId Filter results by Webhook.
-     * @param {Number} opts.applicationId 
-     * @param {Number} opts.campaignId Filter results by campaign.
-     * @param {String} opts.requestUuid Filter results by request UUID.
-     * @param {Date} opts.createdBefore Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string.
-     * @param {Date} opts.createdAfter Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
+     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.applicationId] 
+     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {String=} [opts.requestUuid] Filter results by request UUID.
+     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any timezone. Talon.One will convert to UTC internally.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
      */
     getWebhookLogs(opts) {
       return this.getWebhookLogsWithHttpInfo(opts)
@@ -4359,12 +4820,12 @@ export default class ManagementApi {
 
     /**
      * List Webhooks
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.applicationIds] Filter by one or more application ids separated by comma
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
      */
     getWebhooksWithHttpInfo(opts) {
       opts = opts || {};
@@ -4386,7 +4847,7 @@ export default class ManagementApi {
       let authNames = ['manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20022;
+      let returnType = InlineResponse20023;
       return this.apiClient.callApi(
         '/v1/webhooks', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4396,12 +4857,12 @@ export default class ManagementApi {
 
     /**
      * List Webhooks
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applicationIds Filter by one or more application ids separated by comma
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.applicationIds] Filter by one or more application ids separated by comma
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
      */
     getWebhooks(opts) {
       return this.getWebhooksWithHttpInfo(opts)
@@ -4523,19 +4984,19 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     searchCouponsAdvancedWithHttpInfo(applicationId, campaignId, body, opts) {
@@ -4594,19 +5055,19 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     searchCouponsAdvanced(applicationId, campaignId, body, opts) {
@@ -4622,20 +5083,20 @@ export default class ManagementApi {
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     searchCouponsAdvancedApplicationWideWithHttpInfo(applicationId, body, opts) {
@@ -4689,20 +5150,20 @@ export default class ManagementApi {
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     searchCouponsAdvancedApplicationWide(applicationId, body, opts) {
@@ -4718,20 +5179,20 @@ export default class ManagementApi {
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     searchCouponsAdvancedApplicationWideWithoutTotalCountWithHttpInfo(applicationId, body, opts) {
@@ -4785,20 +5246,20 @@ export default class ManagementApi {
      * Gets a list of all the coupons with attributes matching the query criteria in all active campaigns of an application 
      * @param {Number} applicationId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {String} opts.batchId Filter results by batches of coupons
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {module:model/String} opts.campaignState Filter results by the state of the campaign.
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, body, opts) {
@@ -4815,19 +5276,19 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     searchCouponsAdvancedWithoutTotalCountWithHttpInfo(applicationId, campaignId, body, opts) {
@@ -4886,19 +5347,19 @@ export default class ManagementApi {
      * @param {Number} applicationId 
      * @param {Number} campaignId 
      * @param {Object} body 
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
-     * @param {Number} opts.skip Skips the given number of items when paging through large result sets.
-     * @param {String} opts.sort The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
-     * @param {String} opts.value Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
-     * @param {Date} opts.createdBefore Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {Date} opts.createdAfter Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp.
-     * @param {module:model/String} opts.valid Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
-     * @param {module:model/String} opts.usable Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-     * @param {Number} opts.referralId Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
-     * @param {String} opts.recipientIntegrationId Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean} opts.exactMatch Filter results to an exact case-insensitive matching against the coupon code (default to false)
-     * @param {String} opts.batchId Filter results by batches of coupons
+     * @param {Object} [opts] Optional parameters
+     * @param {Number=} [opts.pageSize] The number of items to include in this response. When omitted, the maximum value of 1000 will be used.
+     * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
+     * @param {String=} [opts.sort] The field by which results should be sorted. Sorting defaults to ascending order, prefix the field name with `-` to sort in descending order.
+     * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
+     * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any timezone. Talon.One will convert to UTC internally.
+     * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiry date is set and in the past. The second matches coupons in which start date is null or in the past and expiry date is null or in the future, the third matches coupons in which start date is set and in the future. 
+     * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
+     * @param {Number=} [opts.referralId] Filter the results by matching them with the Id of a referral, that meaning the coupons that had been created as an effect of the usage of a referral code.
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts) {

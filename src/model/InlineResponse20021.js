@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAdditionalCost from './AccountAdditionalCost';
+import Attribute from './Attribute';
 
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 4.2.0
+ * @version 4.3.0
  */
 class InlineResponse20021 {
     /**
      * Constructs a new <code>InlineResponse20021</code>.
      * @alias module:model/InlineResponse20021
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/AccountAdditionalCost>} 
+     * @param data {Array.<module:model/Attribute>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20021 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AccountAdditionalCost]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Attribute]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20021 {
 InlineResponse20021.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/AccountAdditionalCost>} data
+ * @member {Array.<module:model/Attribute>} data
  */
 InlineResponse20021.prototype['data'] = undefined;
 

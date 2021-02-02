@@ -54,7 +54,6 @@ import CampaignSetBranchNode from './model/CampaignSetBranchNode';
 import CampaignSetLeafNode from './model/CampaignSetLeafNode';
 import CampaignSetNode from './model/CampaignSetNode';
 import CartItem from './model/CartItem';
-import CartItemAdjustment from './model/CartItemAdjustment';
 import Change from './model/Change';
 import ChangeProfilePassword from './model/ChangeProfilePassword';
 import CodeGeneratorSettings from './model/CodeGeneratorSettings';
@@ -94,7 +93,6 @@ import FeaturesFeed from './model/FeaturesFeed';
 import FeedNotification from './model/FeedNotification';
 import FuncArgDef from './model/FuncArgDef';
 import FunctionDef from './model/FunctionDef';
-import ImportCoupons from './model/ImportCoupons';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse20010 from './model/InlineResponse20010';
@@ -166,13 +164,13 @@ import NewCampaign from './model/NewCampaign';
 import NewCampaignGroup from './model/NewCampaignGroup';
 import NewCampaignSet from './model/NewCampaignSet';
 import NewCoupons from './model/NewCoupons';
+import NewCouponsForMultipleRecipients from './model/NewCouponsForMultipleRecipients';
 import NewCustomerProfile from './model/NewCustomerProfile';
 import NewCustomerSession from './model/NewCustomerSession';
 import NewCustomerSessionV2 from './model/NewCustomerSessionV2';
 import NewEvent from './model/NewEvent';
 import NewEventType from './model/NewEventType';
 import NewFeatureFlags from './model/NewFeatureFlags';
-import NewImport from './model/NewImport';
 import NewInvitation from './model/NewInvitation';
 import NewInviteEmail from './model/NewInviteEmail';
 import NewLoyaltyProgram from './model/NewLoyaltyProgram';
@@ -186,6 +184,7 @@ import NewTemplateDef from './model/NewTemplateDef';
 import NewUser from './model/NewUser';
 import NewWebhook from './model/NewWebhook';
 import Notification from './model/Notification';
+import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
 import Referral from './model/Referral';
 import ReferralCreatedEffectProps from './model/ReferralCreatedEffectProps';
@@ -195,9 +194,13 @@ import RejectReferralEffectProps from './model/RejectReferralEffectProps';
 import Role from './model/Role';
 import RoleAssign from './model/RoleAssign';
 import RoleMembership from './model/RoleMembership';
+import RollbackAddedLoyaltyPointsEffectProps from './model/RollbackAddedLoyaltyPointsEffectProps';
 import RollbackCouponEffectProps from './model/RollbackCouponEffectProps';
+import RollbackDeductedLoyaltyPointsEffectProps from './model/RollbackDeductedLoyaltyPointsEffectProps';
 import RollbackDiscountEffectProps from './model/RollbackDiscountEffectProps';
+import RollbackReferralEffectProps from './model/RollbackReferralEffectProps';
 import Rule from './model/Rule';
+import RuleFailureReason from './model/RuleFailureReason';
 import Ruleset from './model/Ruleset';
 import SamlConnection from './model/SamlConnection';
 import SamlConnectionMetadata from './model/SamlConnectionMetadata';
@@ -262,7 +265,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.2.0
+* @version 4.3.0
 */
 export {
     /**
@@ -518,12 +521,6 @@ export {
     CartItem,
 
     /**
-     * The CartItemAdjustment model constructor.
-     * @property {module:model/CartItemAdjustment}
-     */
-    CartItemAdjustment,
-
-    /**
      * The Change model constructor.
      * @property {module:model/Change}
      */
@@ -756,12 +753,6 @@ export {
      * @property {module:model/FunctionDef}
      */
     FunctionDef,
-
-    /**
-     * The ImportCoupons model constructor.
-     * @property {module:model/ImportCoupons}
-     */
-    ImportCoupons,
 
     /**
      * The InlineResponse200 model constructor.
@@ -1190,6 +1181,12 @@ export {
     NewCoupons,
 
     /**
+     * The NewCouponsForMultipleRecipients model constructor.
+     * @property {module:model/NewCouponsForMultipleRecipients}
+     */
+    NewCouponsForMultipleRecipients,
+
+    /**
      * The NewCustomerProfile model constructor.
      * @property {module:model/NewCustomerProfile}
      */
@@ -1224,12 +1221,6 @@ export {
      * @property {module:model/NewFeatureFlags}
      */
     NewFeatureFlags,
-
-    /**
-     * The NewImport model constructor.
-     * @property {module:model/NewImport}
-     */
-    NewImport,
 
     /**
      * The NewInvitation model constructor.
@@ -1310,6 +1301,12 @@ export {
     Notification,
 
     /**
+     * The ProfileAudiencesChanges model constructor.
+     * @property {module:model/ProfileAudiencesChanges}
+     */
+    ProfileAudiencesChanges,
+
+    /**
      * The RedeemReferralEffectProps model constructor.
      * @property {module:model/RedeemReferralEffectProps}
      */
@@ -1364,10 +1361,22 @@ export {
     RoleMembership,
 
     /**
+     * The RollbackAddedLoyaltyPointsEffectProps model constructor.
+     * @property {module:model/RollbackAddedLoyaltyPointsEffectProps}
+     */
+    RollbackAddedLoyaltyPointsEffectProps,
+
+    /**
      * The RollbackCouponEffectProps model constructor.
      * @property {module:model/RollbackCouponEffectProps}
      */
     RollbackCouponEffectProps,
+
+    /**
+     * The RollbackDeductedLoyaltyPointsEffectProps model constructor.
+     * @property {module:model/RollbackDeductedLoyaltyPointsEffectProps}
+     */
+    RollbackDeductedLoyaltyPointsEffectProps,
 
     /**
      * The RollbackDiscountEffectProps model constructor.
@@ -1376,10 +1385,22 @@ export {
     RollbackDiscountEffectProps,
 
     /**
+     * The RollbackReferralEffectProps model constructor.
+     * @property {module:model/RollbackReferralEffectProps}
+     */
+    RollbackReferralEffectProps,
+
+    /**
      * The Rule model constructor.
      * @property {module:model/Rule}
      */
     Rule,
+
+    /**
+     * The RuleFailureReason model constructor.
+     * @property {module:model/RuleFailureReason}
+     */
+    RuleFailureReason,
 
     /**
      * The Ruleset model constructor.

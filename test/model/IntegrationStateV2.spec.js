@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ruleFailureReasons (base name: "ruleFailureReasons")', function() {
+      // uncomment below and update the code to test the property ruleFailureReasons
+      //var instane = new TalonOne.IntegrationStateV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdCoupons (base name: "createdCoupons")', function() {
       // uncomment below and update the code to test the property createdCoupons
       //var instane = new TalonOne.IntegrationStateV2();

@@ -66,6 +66,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property conditionIndex (base name: "conditionIndex")', function() {
+      // uncomment below and update the code to test the property conditionIndex
+      //var instane = new TalonOne.RejectReferralEffectProps();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property effectIndex (base name: "effectIndex")', function() {
+      // uncomment below and update the code to test the property effectIndex
+      //var instane = new TalonOne.RejectReferralEffectProps();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
+      //var instane = new TalonOne.RejectReferralEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

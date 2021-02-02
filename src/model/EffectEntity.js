@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 4.2.0
+ * @version 4.3.0
  */
 class EffectEntity {
     /**
@@ -73,6 +73,9 @@ class EffectEntity {
             if (data.hasOwnProperty('effectType')) {
                 obj['effectType'] = ApiClient.convertToType(data['effectType'], 'String');
             }
+            if (data.hasOwnProperty('triggeredByCoupon')) {
+                obj['triggeredByCoupon'] = ApiClient.convertToType(data['triggeredByCoupon'], 'Number');
+            }
         }
         return obj;
     }
@@ -109,6 +112,12 @@ EffectEntity.prototype['ruleName'] = undefined;
  * @member {String} effectType
  */
 EffectEntity.prototype['effectType'] = undefined;
+
+/**
+ * The ID of the coupon that was being evaluated when this effect was triggered
+ * @member {Number} triggeredByCoupon
+ */
+EffectEntity.prototype['triggeredByCoupon'] = undefined;
 
 
 

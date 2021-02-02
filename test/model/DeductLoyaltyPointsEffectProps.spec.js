@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionUUID (base name: "transactionUUID")', function() {
+      // uncomment below and update the code to test the property transactionUUID
+      //var instane = new TalonOne.DeductLoyaltyPointsEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

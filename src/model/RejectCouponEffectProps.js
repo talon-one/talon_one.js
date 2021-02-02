@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectCouponEffectProps model module.
  * @module model/RejectCouponEffectProps
- * @version 4.2.0
+ * @version 4.3.0
  */
 class RejectCouponEffectProps {
     /**
@@ -58,6 +58,15 @@ class RejectCouponEffectProps {
             if (data.hasOwnProperty('rejectionReason')) {
                 obj['rejectionReason'] = ApiClient.convertToType(data['rejectionReason'], 'String');
             }
+            if (data.hasOwnProperty('conditionIndex')) {
+                obj['conditionIndex'] = ApiClient.convertToType(data['conditionIndex'], 'Number');
+            }
+            if (data.hasOwnProperty('effectIndex')) {
+                obj['effectIndex'] = ApiClient.convertToType(data['effectIndex'], 'Number');
+            }
+            if (data.hasOwnProperty('details')) {
+                obj['details'] = ApiClient.convertToType(data['details'], 'String');
+            }
         }
         return obj;
     }
@@ -76,6 +85,24 @@ RejectCouponEffectProps.prototype['value'] = undefined;
  * @member {String} rejectionReason
  */
 RejectCouponEffectProps.prototype['rejectionReason'] = undefined;
+
+/**
+ * The index of the condition that caused the rejection of the coupon
+ * @member {Number} conditionIndex
+ */
+RejectCouponEffectProps.prototype['conditionIndex'] = undefined;
+
+/**
+ * The index of the effect that caused the rejection of the coupon
+ * @member {Number} effectIndex
+ */
+RejectCouponEffectProps.prototype['effectIndex'] = undefined;
+
+/**
+ * More details about the failure
+ * @member {String} details
+ */
+RejectCouponEffectProps.prototype['details'] = undefined;
 
 
 

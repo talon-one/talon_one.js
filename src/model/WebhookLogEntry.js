@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebhookLogEntry model module.
  * @module model/WebhookLogEntry
- * @version 4.2.0
+ * @version 4.3.0
  */
 class WebhookLogEntry {
     /**

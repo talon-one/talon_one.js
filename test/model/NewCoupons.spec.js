@@ -78,18 +78,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property validCharacters (base name: "validCharacters")', function() {
-      // uncomment below and update the code to test the property validCharacters
-      //var instane = new TalonOne.NewCoupons();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property couponPattern (base name: "couponPattern")', function() {
-      // uncomment below and update the code to test the property couponPattern
-      //var instane = new TalonOne.NewCoupons();
-      //expect(instance).to.be();
-    });
-
     it('should have the property numberOfCoupons (base name: "numberOfCoupons")', function() {
       // uncomment below and update the code to test the property numberOfCoupons
       //var instane = new TalonOne.NewCoupons();
@@ -110,6 +98,18 @@
 
     it('should have the property recipientIntegrationId (base name: "recipientIntegrationId")', function() {
       // uncomment below and update the code to test the property recipientIntegrationId
+      //var instane = new TalonOne.NewCoupons();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property validCharacters (base name: "validCharacters")', function() {
+      // uncomment below and update the code to test the property validCharacters
+      //var instane = new TalonOne.NewCoupons();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property couponPattern (base name: "couponPattern")', function() {
+      // uncomment below and update the code to test the property couponPattern
       //var instane = new TalonOne.NewCoupons();
       //expect(instance).to.be();
     });

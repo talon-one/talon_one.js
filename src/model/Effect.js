@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 4.2.0
+ * @version 4.3.0
  */
 class Effect {
     /**
@@ -75,6 +75,9 @@ class Effect {
             if (data.hasOwnProperty('effectType')) {
                 obj['effectType'] = ApiClient.convertToType(data['effectType'], 'String');
             }
+            if (data.hasOwnProperty('triggeredByCoupon')) {
+                obj['triggeredByCoupon'] = ApiClient.convertToType(data['triggeredByCoupon'], 'Number');
+            }
             if (data.hasOwnProperty('props')) {
                 obj['props'] = ApiClient.convertToType(data['props'], Object);
             }
@@ -114,6 +117,12 @@ Effect.prototype['ruleName'] = undefined;
  * @member {String} effectType
  */
 Effect.prototype['effectType'] = undefined;
+
+/**
+ * The ID of the coupon that was being evaluated when this effect was triggered
+ * @member {Number} triggeredByCoupon
+ */
+Effect.prototype['triggeredByCoupon'] = undefined;
 
 /**
  * @member {Object} props

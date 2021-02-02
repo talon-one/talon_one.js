@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import RuleFailureReason from './RuleFailureReason';
 
 /**
  * The ApplicationEvent model module.
  * @module model/ApplicationEvent
- * @version 4.2.0
+ * @version 4.3.0
  */
 class ApplicationEvent {
     /**
@@ -84,6 +85,9 @@ class ApplicationEvent {
             if (data.hasOwnProperty('effects')) {
                 obj['effects'] = ApiClient.convertToType(data['effects'], [Object]);
             }
+            if (data.hasOwnProperty('ruleFailureReasons')) {
+                obj['ruleFailureReasons'] = ApiClient.convertToType(data['ruleFailureReasons'], [RuleFailureReason]);
+            }
         }
         return obj;
     }
@@ -138,6 +142,12 @@ ApplicationEvent.prototype['attributes'] = undefined;
  * @member {Array.<Object>} effects
  */
 ApplicationEvent.prototype['effects'] = undefined;
+
+/**
+ * An array containing the rule failure reasons which happened during this event.
+ * @member {Array.<module:model/RuleFailureReason>} ruleFailureReasons
+ */
+ApplicationEvent.prototype['ruleFailureReasons'] = undefined;
 
 
 

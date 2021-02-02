@@ -17,7 +17,7 @@ import MultipleCustomerProfileIntegrationRequestItem from './MultipleCustomerPro
 /**
  * The MultipleCustomerProfileIntegrationRequest model module.
  * @module model/MultipleCustomerProfileIntegrationRequest
- * @version 4.2.0
+ * @version 4.3.0
  */
 class MultipleCustomerProfileIntegrationRequest {
     /**

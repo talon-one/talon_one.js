@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.2.0
+ * @version 4.3.0
  */
 class Campaign {
     /**
@@ -135,6 +135,21 @@ class Campaign {
             }
             if (data.hasOwnProperty('couponCreationCount')) {
                 obj['couponCreationCount'] = ApiClient.convertToType(data['couponCreationCount'], 'Number');
+            }
+            if (data.hasOwnProperty('referralCreationCount')) {
+                obj['referralCreationCount'] = ApiClient.convertToType(data['referralCreationCount'], 'Number');
+            }
+            if (data.hasOwnProperty('createdLoyaltyPointsCount')) {
+                obj['createdLoyaltyPointsCount'] = ApiClient.convertToType(data['createdLoyaltyPointsCount'], 'Number');
+            }
+            if (data.hasOwnProperty('createdLoyaltyPointsEffectCount')) {
+                obj['createdLoyaltyPointsEffectCount'] = ApiClient.convertToType(data['createdLoyaltyPointsEffectCount'], 'Number');
+            }
+            if (data.hasOwnProperty('redeemedLoyaltyPointsCount')) {
+                obj['redeemedLoyaltyPointsCount'] = ApiClient.convertToType(data['redeemedLoyaltyPointsCount'], 'Number');
+            }
+            if (data.hasOwnProperty('redeemedLoyaltyPointsEffectCount')) {
+                obj['redeemedLoyaltyPointsEffectCount'] = ApiClient.convertToType(data['redeemedLoyaltyPointsEffectCount'], 'Number');
             }
             if (data.hasOwnProperty('lastActivity')) {
                 obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
@@ -285,6 +300,36 @@ Campaign.prototype['discountEffectCount'] = undefined;
  * @member {Number} couponCreationCount
  */
 Campaign.prototype['couponCreationCount'] = undefined;
+
+/**
+ * Total number of referrals created by rules in this campaign.
+ * @member {Number} referralCreationCount
+ */
+Campaign.prototype['referralCreationCount'] = undefined;
+
+/**
+ * Total number of loyalty points created by rules in this campaign.
+ * @member {Number} createdLoyaltyPointsCount
+ */
+Campaign.prototype['createdLoyaltyPointsCount'] = undefined;
+
+/**
+ * Total number of loyalty point creation effects triggered by rules in this campaign.
+ * @member {Number} createdLoyaltyPointsEffectCount
+ */
+Campaign.prototype['createdLoyaltyPointsEffectCount'] = undefined;
+
+/**
+ * Total number of loyalty points redeemed by rules in this campaign.
+ * @member {Number} redeemedLoyaltyPointsCount
+ */
+Campaign.prototype['redeemedLoyaltyPointsCount'] = undefined;
+
+/**
+ * Total number of loyalty point redemption effects triggered by rules in this campaign.
+ * @member {Number} redeemedLoyaltyPointsEffectCount
+ */
+Campaign.prototype['redeemedLoyaltyPointsEffectCount'] = undefined;
 
 /**
  * Timestamp of the most recent event received by this campaign.

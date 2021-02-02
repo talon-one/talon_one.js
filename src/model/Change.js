@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Change model module.
  * @module model/Change
- * @version 4.2.0
+ * @version 4.3.0
  */
 class Change {
     /**
@@ -65,6 +65,9 @@ class Change {
             if (data.hasOwnProperty('userId')) {
                 obj['userId'] = ApiClient.convertToType(data['userId'], 'Number');
             }
+            if (data.hasOwnProperty('applicationId')) {
+                obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
+            }
             if (data.hasOwnProperty('entity')) {
                 obj['entity'] = ApiClient.convertToType(data['entity'], 'String');
             }
@@ -98,6 +101,12 @@ Change.prototype['created'] = undefined;
  * @member {Number} userId
  */
 Change.prototype['userId'] = undefined;
+
+/**
+ * ID of application associated with change
+ * @member {Number} applicationId
+ */
+Change.prototype['applicationId'] = undefined;
 
 /**
  * API endpoint on which the change was initiated.
