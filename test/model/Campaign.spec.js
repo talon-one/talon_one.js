@@ -186,6 +186,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property referralCreationCount (base name: "referralCreationCount")', function() {
+      // uncomment below and update the code to test the property referralCreationCount
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdLoyaltyPointsCount (base name: "createdLoyaltyPointsCount")', function() {
+      // uncomment below and update the code to test the property createdLoyaltyPointsCount
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdLoyaltyPointsEffectCount (base name: "createdLoyaltyPointsEffectCount")', function() {
+      // uncomment below and update the code to test the property createdLoyaltyPointsEffectCount
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property redeemedLoyaltyPointsCount (base name: "redeemedLoyaltyPointsCount")', function() {
+      // uncomment below and update the code to test the property redeemedLoyaltyPointsCount
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property redeemedLoyaltyPointsEffectCount (base name: "redeemedLoyaltyPointsEffectCount")', function() {
+      // uncomment below and update the code to test the property redeemedLoyaltyPointsEffectCount
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lastActivity (base name: "lastActivity")', function() {
       // uncomment below and update the code to test the property lastActivity
       //var instane = new TalonOne.Campaign();

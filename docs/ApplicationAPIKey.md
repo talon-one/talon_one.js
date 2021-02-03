@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 
 * `mparticle` (value: `"mparticle"`)
 
+* `selligent` (value: `"selligent"`)
+
 
 
 

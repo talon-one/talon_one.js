@@ -17,7 +17,7 @@ import FeedNotification from './FeedNotification';
 /**
  * The UserFeedNotifications model module.
  * @module model/UserFeedNotifications
- * @version 4.2.0
+ * @version 4.3.0
  */
 class UserFeedNotifications {
     /**

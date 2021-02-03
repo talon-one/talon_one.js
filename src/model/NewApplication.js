@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 4.2.0
+ * @version 4.3.0
  */
 class NewApplication {
     /**
@@ -82,6 +82,9 @@ class NewApplication {
             }
             if (data.hasOwnProperty('exclusiveCampaignsStrategy')) {
                 obj['exclusiveCampaignsStrategy'] = ApiClient.convertToType(data['exclusiveCampaignsStrategy'], 'String');
+            }
+            if (data.hasOwnProperty('defaultDiscountScope')) {
+                obj['defaultDiscountScope'] = ApiClient.convertToType(data['defaultDiscountScope'], 'String');
             }
             if (data.hasOwnProperty('enableCascadingDiscounts')) {
                 obj['enableCascadingDiscounts'] = ApiClient.convertToType(data['enableCascadingDiscounts'], 'Boolean');
@@ -158,6 +161,12 @@ NewApplication.prototype['campaignPriority'] = undefined;
  * @member {module:model/NewApplication.ExclusiveCampaignsStrategyEnum} exclusiveCampaignsStrategy
  */
 NewApplication.prototype['exclusiveCampaignsStrategy'] = undefined;
+
+/**
+ * The default scope to apply \"setDiscount\" effects on if no scope was provided with the effect.
+ * @member {module:model/NewApplication.DefaultDiscountScopeEnum} defaultDiscountScope
+ */
+NewApplication.prototype['defaultDiscountScope'] = undefined;
 
 /**
  * Flag indicating if discounts should cascade for this application
@@ -270,6 +279,33 @@ NewApplication['ExclusiveCampaignsStrategyEnum'] = {
      * @const
      */
     "highestDiscount": "highestDiscount"
+};
+
+
+/**
+ * Allowed values for the <code>defaultDiscountScope</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewApplication['DefaultDiscountScopeEnum'] = {
+
+    /**
+     * value: "sessionTotal"
+     * @const
+     */
+    "sessionTotal": "sessionTotal",
+
+    /**
+     * value: "cartItems"
+     * @const
+     */
+    "cartItems": "cartItems",
+
+    /**
+     * value: "additionalCosts"
+     * @const
+     */
+    "additionalCosts": "additionalCosts"
 };
 
 

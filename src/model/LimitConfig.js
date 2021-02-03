@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The LimitConfig model module.
  * @module model/LimitConfig
- * @version 4.2.0
+ * @version 4.3.0
  */
 class LimitConfig {
     /**
      * Constructs a new <code>LimitConfig</code>.
      * @alias module:model/LimitConfig
-     * @param action {module:model/LimitConfig.ActionEnum} The limitable action to which this limit will be applied
+     * @param action {String} The limitable action to which this limit will be applied
      * @param limit {Number} The value to set for the limit
      * @param entities {Array.<module:model/LimitConfig.EntitiesEnum>} The entities that make the address of this limit
      */
@@ -71,7 +71,7 @@ class LimitConfig {
 
 /**
  * The limitable action to which this limit will be applied
- * @member {module:model/LimitConfig.ActionEnum} action
+ * @member {String} action
  */
 LimitConfig.prototype['action'] = undefined;
 
@@ -89,45 +89,6 @@ LimitConfig.prototype['entities'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>action</code> property.
- * @enum {String}
- * @readonly
- */
-LimitConfig['ActionEnum'] = {
-
-    /**
-     * value: "redeemCoupon"
-     * @const
-     */
-    "redeemCoupon": "redeemCoupon",
-
-    /**
-     * value: "redeemReferral"
-     * @const
-     */
-    "redeemReferral": "redeemReferral",
-
-    /**
-     * value: "setDiscount"
-     * @const
-     */
-    "setDiscount": "setDiscount",
-
-    /**
-     * value: "createCoupon"
-     * @const
-     */
-    "createCoupon": "createCoupon",
-
-    /**
-     * value: "setDiscountEffect"
-     * @const
-     */
-    "setDiscountEffect": "setDiscountEffect"
-};
 
 
 /**

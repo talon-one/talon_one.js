@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 4.2.0
+ * @version 4.3.0
  */
 class AddLoyaltyPointsEffectProps {
     /**
@@ -28,10 +28,11 @@ class AddLoyaltyPointsEffectProps {
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added
      * @param value {Number} The amount of points that were added
      * @param recipientIntegrationId {String} The user for whom these points were added
+     * @param transactionUUID {String} The identifier of this addition in the loyalty ledger
      */
-    constructor(name, programId, subLedgerId, value, recipientIntegrationId) { 
+    constructor(name, programId, subLedgerId, value, recipientIntegrationId, transactionUUID) { 
         
-        AddLoyaltyPointsEffectProps.initialize(this, name, programId, subLedgerId, value, recipientIntegrationId);
+        AddLoyaltyPointsEffectProps.initialize(this, name, programId, subLedgerId, value, recipientIntegrationId, transactionUUID);
     }
 
     /**
@@ -39,12 +40,13 @@ class AddLoyaltyPointsEffectProps {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, programId, subLedgerId, value, recipientIntegrationId) { 
+    static initialize(obj, name, programId, subLedgerId, value, recipientIntegrationId, transactionUUID) { 
         obj['name'] = name;
         obj['programId'] = programId;
         obj['subLedgerId'] = subLedgerId;
         obj['value'] = value;
         obj['recipientIntegrationId'] = recipientIntegrationId;
+        obj['transactionUUID'] = transactionUUID;
     }
 
     /**
@@ -78,6 +80,9 @@ class AddLoyaltyPointsEffectProps {
             }
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            }
+            if (data.hasOwnProperty('transactionUUID')) {
+                obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
             }
         }
         return obj;
@@ -127,6 +132,12 @@ AddLoyaltyPointsEffectProps.prototype['startDate'] = undefined;
  * @member {Date} expiryDate
  */
 AddLoyaltyPointsEffectProps.prototype['expiryDate'] = undefined;
+
+/**
+ * The identifier of this addition in the loyalty ledger
+ * @member {String} transactionUUID
+ */
+AddLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
 
 
 

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 4.2.0
+ * @version 4.3.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**
@@ -51,6 +52,9 @@ class CustomerProfileIntegrationRequestV2 {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
+            if (data.hasOwnProperty('audiencesChanges')) {
+                obj['audiencesChanges'] = ProfileAudiencesChanges.constructFromObject(data['audiencesChanges']);
+            }
             if (data.hasOwnProperty('responseContent')) {
                 obj['responseContent'] = ApiClient.convertToType(data['responseContent'], ['String']);
             }
@@ -68,7 +72,12 @@ class CustomerProfileIntegrationRequestV2 {
 CustomerProfileIntegrationRequestV2.prototype['attributes'] = undefined;
 
 /**
- * Optional list of requested information to be present on the response related to the customer profile update. Currently supported: \"customerProfile\", \"triggeredCampaigns\", \"loyalty\" and \"event\". 
+ * @member {module:model/ProfileAudiencesChanges} audiencesChanges
+ */
+CustomerProfileIntegrationRequestV2.prototype['audiencesChanges'] = undefined;
+
+/**
+ * Optional list of requested information to be present on the response related to the customer profile update. Currently supported: \"customerProfile\", \"triggeredCampaigns\", \"loyalty\", \"event\" and \"ruleFailureReasons\". 
  * @member {Array.<module:model/CustomerProfileIntegrationRequestV2.ResponseContentEnum>} responseContent
  */
 CustomerProfileIntegrationRequestV2.prototype['responseContent'] = undefined;
@@ -106,7 +115,13 @@ CustomerProfileIntegrationRequestV2['ResponseContentEnum'] = {
      * value: "event"
      * @const
      */
-    "event": "event"
+    "event": "event",
+
+    /**
+     * value: "ruleFailureReasons"
+     * @const
+     */
+    "ruleFailureReasons": "ruleFailureReasons"
 };
 
 

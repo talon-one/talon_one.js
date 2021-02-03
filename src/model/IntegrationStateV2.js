@@ -20,11 +20,12 @@ import Effect from './Effect';
 import Event from './Event';
 import Loyalty from './Loyalty';
 import Referral from './Referral';
+import RuleFailureReason from './RuleFailureReason';
 
 /**
  * The IntegrationStateV2 model module.
  * @module model/IntegrationStateV2
- * @version 4.2.0
+ * @version 4.3.0
  */
 class IntegrationStateV2 {
     /**
@@ -86,6 +87,9 @@ class IntegrationStateV2 {
             if (data.hasOwnProperty('effects')) {
                 obj['effects'] = ApiClient.convertToType(data['effects'], [Effect]);
             }
+            if (data.hasOwnProperty('ruleFailureReasons')) {
+                obj['ruleFailureReasons'] = ApiClient.convertToType(data['ruleFailureReasons'], [RuleFailureReason]);
+            }
             if (data.hasOwnProperty('createdCoupons')) {
                 obj['createdCoupons'] = ApiClient.convertToType(data['createdCoupons'], [Coupon]);
             }
@@ -138,6 +142,11 @@ IntegrationStateV2.prototype['triggeredCampaigns'] = undefined;
  * @member {Array.<module:model/Effect>} effects
  */
 IntegrationStateV2.prototype['effects'] = undefined;
+
+/**
+ * @member {Array.<module:model/RuleFailureReason>} ruleFailureReasons
+ */
+IntegrationStateV2.prototype['ruleFailureReasons'] = undefined;
 
 /**
  * @member {Array.<module:model/Coupon>} createdCoupons

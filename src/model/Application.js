@@ -19,7 +19,7 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 4.2.0
+ * @version 4.3.0
  */
 class Application {
     /**
@@ -105,6 +105,9 @@ class Application {
             }
             if (data.hasOwnProperty('exclusiveCampaignsStrategy')) {
                 obj['exclusiveCampaignsStrategy'] = ApiClient.convertToType(data['exclusiveCampaignsStrategy'], 'String');
+            }
+            if (data.hasOwnProperty('defaultDiscountScope')) {
+                obj['defaultDiscountScope'] = ApiClient.convertToType(data['defaultDiscountScope'], 'String');
             }
             if (data.hasOwnProperty('enableCascadingDiscounts')) {
                 obj['enableCascadingDiscounts'] = ApiClient.convertToType(data['enableCascadingDiscounts'], 'Boolean');
@@ -205,6 +208,12 @@ Application.prototype['campaignPriority'] = undefined;
  * @member {module:model/Application.ExclusiveCampaignsStrategyEnum} exclusiveCampaignsStrategy
  */
 Application.prototype['exclusiveCampaignsStrategy'] = undefined;
+
+/**
+ * The default scope to apply \"setDiscount\" effects on if no scope was provided with the effect.
+ * @member {module:model/Application.DefaultDiscountScopeEnum} defaultDiscountScope
+ */
+Application.prototype['defaultDiscountScope'] = undefined;
 
 /**
  * Flag indicating if discounts should cascade for this application
@@ -317,6 +326,33 @@ Application['ExclusiveCampaignsStrategyEnum'] = {
      * @const
      */
     "highestDiscount": "highestDiscount"
+};
+
+
+/**
+ * Allowed values for the <code>defaultDiscountScope</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Application['DefaultDiscountScopeEnum'] = {
+
+    /**
+     * value: "sessionTotal"
+     * @const
+     */
+    "sessionTotal": "sessionTotal",
+
+    /**
+     * value: "cartItems"
+     * @const
+     */
+    "cartItems": "cartItems",
+
+    /**
+     * value: "additionalCosts"
+     * @const
+     */
+    "additionalCosts": "additionalCosts"
 };
 
 

@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new TalonOne.Binding();
+      //expect(instance).to.be();
+    });
+
     it('should have the property expression (base name: "expression")', function() {
       // uncomment below and update the code to test the property expression
       //var instane = new TalonOne.Binding();

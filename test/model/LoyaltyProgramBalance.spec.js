@@ -60,6 +60,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pendingBalance (base name: "pendingBalance")', function() {
+      // uncomment below and update the code to test the property pendingBalance
+      //var instane = new TalonOne.LoyaltyProgramBalance();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiredBalance (base name: "expiredBalance")', function() {
+      // uncomment below and update the code to test the property expiredBalance
+      //var instane = new TalonOne.LoyaltyProgramBalance();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property spentBalance (base name: "spentBalance")', function() {
+      // uncomment below and update the code to test the property spentBalance
+      //var instane = new TalonOne.LoyaltyProgramBalance();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tentativeCurrentBalance (base name: "tentativeCurrentBalance")', function() {
+      // uncomment below and update the code to test the property tentativeCurrentBalance
+      //var instane = new TalonOne.LoyaltyProgramBalance();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

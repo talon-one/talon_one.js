@@ -10,23 +10,6 @@ Name | Type | Description | Notes
 
 
 
-## Enum: ActionEnum
-
-
-* `redeemCoupon` (value: `"redeemCoupon"`)
-
-* `redeemReferral` (value: `"redeemReferral"`)
-
-* `setDiscount` (value: `"setDiscount"`)
-
-* `createCoupon` (value: `"createCoupon"`)
-
-* `setDiscountEffect` (value: `"setDiscountEffect"`)
-
-
-
-
-
 ## Enum: [EntitiesEnum]
 
 

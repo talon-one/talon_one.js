@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property audiencesChanges (base name: "audiencesChanges")', function() {
+      // uncomment below and update the code to test the property audiencesChanges
+      //var instane = new TalonOne.CustomerProfileIntegrationRequestV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property responseContent (base name: "responseContent")', function() {
       // uncomment below and update the code to test the property responseContent
       //var instane = new TalonOne.CustomerProfileIntegrationRequestV2();

@@ -17,20 +17,21 @@ import LoyaltyProgramBalance from './LoyaltyProgramBalance';
 /**
  * The LoyaltyProgramLedgers model module.
  * @module model/LoyaltyProgramLedgers
- * @version 4.2.0
+ * @version 4.3.0
  */
 class LoyaltyProgramLedgers {
     /**
      * Constructs a new <code>LoyaltyProgramLedgers</code>.
      * Customer specific information about loyalty points.
      * @alias module:model/LoyaltyProgramLedgers
+     * @param id {Number} The internal ID of loyalty program
      * @param title {String} Visible name of loyalty program
      * @param name {String} Internal name of loyalty program
      * @param ledger {module:model/LoyaltyProgramBalance} 
      */
-    constructor(title, name, ledger) { 
+    constructor(id, title, name, ledger) { 
         
-        LoyaltyProgramLedgers.initialize(this, title, name, ledger);
+        LoyaltyProgramLedgers.initialize(this, id, title, name, ledger);
     }
 
     /**
@@ -38,7 +39,8 @@ class LoyaltyProgramLedgers {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, name, ledger) { 
+    static initialize(obj, id, title, name, ledger) { 
+        obj['id'] = id;
         obj['title'] = title;
         obj['name'] = name;
         obj['ledger'] = ledger;
@@ -55,6 +57,9 @@ class LoyaltyProgramLedgers {
         if (data) {
             obj = obj || new LoyaltyProgramLedgers();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
@@ -73,6 +78,12 @@ class LoyaltyProgramLedgers {
 
 
 }
+
+/**
+ * The internal ID of loyalty program
+ * @member {Number} id
+ */
+LoyaltyProgramLedgers.prototype['id'] = undefined;
 
 /**
  * Visible name of loyalty program

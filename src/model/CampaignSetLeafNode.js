@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignSetLeafNode model module.
  * @module model/CampaignSetLeafNode
- * @version 4.2.0
+ * @version 4.3.0
  */
 class CampaignSetLeafNode {
     /**

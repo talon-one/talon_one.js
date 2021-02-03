@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[Attribute]**](Attribute.md) |  | 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[Audience]**](Audience.md) |  | 
 
 

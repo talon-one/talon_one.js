@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAPIKey model module.
  * @module model/ApplicationAPIKey
- * @version 4.2.0
+ * @version 4.3.0
  */
 class ApplicationAPIKey {
     /**
@@ -174,7 +174,13 @@ ApplicationAPIKey['PlatformEnum'] = {
      * value: "mparticle"
      * @const
      */
-    "mparticle": "mparticle"
+    "mparticle": "mparticle",
+
+    /**
+     * value: "selligent"
+     * @const
+     */
+    "selligent": "selligent"
 };
 
 

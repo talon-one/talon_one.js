@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Binding model module.
  * @module model/Binding
- * @version 4.2.0
+ * @version 4.3.0
  */
 class Binding {
     /**
@@ -54,6 +54,9 @@ class Binding {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
             if (data.hasOwnProperty('expression')) {
                 obj['expression'] = ApiClient.convertToType(data['expression'], [Object]);
             }
@@ -69,6 +72,12 @@ class Binding {
  * @member {String} name
  */
 Binding.prototype['name'] = undefined;
+
+/**
+ * The kind of binding. Possible values are cartItemFilter, subledgerBalance.
+ * @member {String} type
+ */
+Binding.prototype['type'] = undefined;
 
 /**
  * A Talang expression that will be evaluated and its result attached to the name of the binding.

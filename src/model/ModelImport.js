@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelImport model module.
  * @module model/ModelImport
- * @version 4.2.0
+ * @version 4.3.0
  */
 class ModelImport {
     /**
@@ -27,7 +27,7 @@ class ModelImport {
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param userId {Number} The ID of the account that owns this entity.
-     * @param entity {module:model/ModelImport.EntityEnum} The name of the entity that was imported.
+     * @param entity {String} The name of the entity that was imported. Possible values are Coupons and LoyaltyPoints.
      * @param amount {Number} The number of members that imported.
      */
     constructor(id, created, accountId, userId, entity, amount) { 
@@ -110,8 +110,8 @@ ModelImport.prototype['accountId'] = undefined;
 ModelImport.prototype['userId'] = undefined;
 
 /**
- * The name of the entity that was imported.
- * @member {module:model/ModelImport.EntityEnum} entity
+ * The name of the entity that was imported. Possible values are Coupons and LoyaltyPoints.
+ * @member {String} entity
  */
 ModelImport.prototype['entity'] = undefined;
 
@@ -123,21 +123,6 @@ ModelImport.prototype['amount'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>entity</code> property.
- * @enum {String}
- * @readonly
- */
-ModelImport['EntityEnum'] = {
-
-    /**
-     * value: "Coupon"
-     * @const
-     */
-    "Coupon": "Coupon"
-};
 
 
 

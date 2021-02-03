@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ruleFailureReasons (base name: "ruleFailureReasons")', function() {
+      // uncomment below and update the code to test the property ruleFailureReasons
+      //var instane = new TalonOne.ApplicationEvent();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

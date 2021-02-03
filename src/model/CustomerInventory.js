@@ -20,7 +20,7 @@ import Referral from './Referral';
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 4.2.0
+ * @version 4.3.0
  */
 class CustomerInventory {
     /**

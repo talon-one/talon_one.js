@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 4.2.0
+ * @version 4.3.0
  */
 class NewLoyaltyProgram {
     /**

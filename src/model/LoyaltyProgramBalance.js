@@ -16,18 +16,22 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramBalance model module.
  * @module model/LoyaltyProgramBalance
- * @version 4.2.0
+ * @version 4.3.0
  */
 class LoyaltyProgramBalance {
     /**
      * Constructs a new <code>LoyaltyProgramBalance</code>.
      * The balance in a Loyalty Program for some Customer.
      * @alias module:model/LoyaltyProgramBalance
-     * @param currentBalance {Number} 
+     * @param currentBalance {Number} Sum of current active points amounts
+     * @param pendingBalance {Number} Sum of pending points amounts
+     * @param expiredBalance {Number} Sum of expired points amounts
+     * @param spentBalance {Number} Sum of spent points amounts
+     * @param tentativeCurrentBalance {Number} Sum of current active points amounts, including additions and deductions on open sessions
      */
-    constructor(currentBalance) { 
+    constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
-        LoyaltyProgramBalance.initialize(this, currentBalance);
+        LoyaltyProgramBalance.initialize(this, currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance);
     }
 
     /**
@@ -35,8 +39,12 @@ class LoyaltyProgramBalance {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, currentBalance) { 
+    static initialize(obj, currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         obj['currentBalance'] = currentBalance;
+        obj['pendingBalance'] = pendingBalance;
+        obj['expiredBalance'] = expiredBalance;
+        obj['spentBalance'] = spentBalance;
+        obj['tentativeCurrentBalance'] = tentativeCurrentBalance;
     }
 
     /**
@@ -53,6 +61,18 @@ class LoyaltyProgramBalance {
             if (data.hasOwnProperty('currentBalance')) {
                 obj['currentBalance'] = ApiClient.convertToType(data['currentBalance'], 'Number');
             }
+            if (data.hasOwnProperty('pendingBalance')) {
+                obj['pendingBalance'] = ApiClient.convertToType(data['pendingBalance'], 'Number');
+            }
+            if (data.hasOwnProperty('expiredBalance')) {
+                obj['expiredBalance'] = ApiClient.convertToType(data['expiredBalance'], 'Number');
+            }
+            if (data.hasOwnProperty('spentBalance')) {
+                obj['spentBalance'] = ApiClient.convertToType(data['spentBalance'], 'Number');
+            }
+            if (data.hasOwnProperty('tentativeCurrentBalance')) {
+                obj['tentativeCurrentBalance'] = ApiClient.convertToType(data['tentativeCurrentBalance'], 'Number');
+            }
         }
         return obj;
     }
@@ -61,9 +81,34 @@ class LoyaltyProgramBalance {
 }
 
 /**
+ * Sum of current active points amounts
  * @member {Number} currentBalance
  */
 LoyaltyProgramBalance.prototype['currentBalance'] = undefined;
+
+/**
+ * Sum of pending points amounts
+ * @member {Number} pendingBalance
+ */
+LoyaltyProgramBalance.prototype['pendingBalance'] = undefined;
+
+/**
+ * Sum of expired points amounts
+ * @member {Number} expiredBalance
+ */
+LoyaltyProgramBalance.prototype['expiredBalance'] = undefined;
+
+/**
+ * Sum of spent points amounts
+ * @member {Number} spentBalance
+ */
+LoyaltyProgramBalance.prototype['spentBalance'] = undefined;
+
+/**
+ * Sum of current active points amounts, including additions and deductions on open sessions
+ * @member {Number} tentativeCurrentBalance
+ */
+LoyaltyProgramBalance.prototype['tentativeCurrentBalance'] = undefined;
 
 
 

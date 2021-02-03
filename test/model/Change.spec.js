@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property applicationId (base name: "applicationId")', function() {
+      // uncomment below and update the code to test the property applicationId
+      //var instane = new TalonOne.Change();
+      //expect(instance).to.be();
+    });
+
     it('should have the property entity (base name: "entity")', function() {
       // uncomment below and update the code to test the property entity
       //var instane = new TalonOne.Change();

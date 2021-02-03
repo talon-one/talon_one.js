@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultDiscountScope (base name: "defaultDiscountScope")', function() {
+      // uncomment below and update the code to test the property defaultDiscountScope
+      //var instane = new TalonOne.NewApplication();
+      //expect(instance).to.be();
+    });
+
     it('should have the property enableCascadingDiscounts (base name: "enableCascadingDiscounts")', function() {
       // uncomment below and update the code to test the property enableCascadingDiscounts
       //var instane = new TalonOne.NewApplication();

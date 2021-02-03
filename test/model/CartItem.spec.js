@@ -120,12 +120,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property adjustment (base name: "adjustment")', function() {
-      // uncomment below and update the code to test the property adjustment
-      //var instane = new TalonOne.CartItem();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));
