@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **discountEffectCount** | **Number** | Total number of times discounts were redeemed in this campaign. | [optional] 
 **couponCreationCount** | **Number** | Total number of coupons created by rules in this campaign. | [optional] 
 **referralCreationCount** | **Number** | Total number of referrals created by rules in this campaign. | [optional] 
+**awardedGiveawaysCount** | **Number** | Total number of giveaways awarded by rules in this campaign. | [optional] 
 **createdLoyaltyPointsCount** | **Number** | Total number of loyalty points created by rules in this campaign. | [optional] 
 **createdLoyaltyPointsEffectCount** | **Number** | Total number of loyalty point creation effects triggered by rules in this campaign. | [optional] 
 **redeemedLoyaltyPointsCount** | **Number** | Total number of loyalty points redeemed by rules in this campaign. | [optional] 
@@ -59,6 +60,8 @@ Name | Type | Description | Notes
 * `referrals` (value: `"referrals"`)
 
 * `loyalty` (value: `"loyalty"`)
+
+* `giveaways` (value: `"giveaways"`)
 
 
 

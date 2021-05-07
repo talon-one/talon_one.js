@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateArgDef model module.
  * @module model/TemplateArgDef
- * @version 4.3.0
+ * @version 10.0.0
  */
 class TemplateArgDef {
     /**
      * Constructs a new <code>TemplateArgDef</code>.
-     * 
      * @alias module:model/TemplateArgDef
      * @param type {module:model/TemplateArgDef.TypeEnum} The type of value this argument expects.
      * @param description {String} A campaigner-friendly description of the argument, this will also be shown in the rule editor.

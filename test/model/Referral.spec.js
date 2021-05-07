@@ -66,6 +66,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property startDate (base name: "startDate")', function() {
+      // uncomment below and update the code to test the property startDate
+      //var instane = new TalonOne.Referral();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiryDate (base name: "expiryDate")', function() {
+      // uncomment below and update the code to test the property expiryDate
+      //var instane = new TalonOne.Referral();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property usageLimit (base name: "usageLimit")', function() {
+      // uncomment below and update the code to test the property usageLimit
+      //var instane = new TalonOne.Referral();
+      //expect(instance).to.be();
+    });
+
     it('should have the property campaignId (base name: "campaignId")', function() {
       // uncomment below and update the code to test the property campaignId
       //var instane = new TalonOne.Referral();
@@ -84,14 +102,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property startDate (base name: "startDate")', function() {
-      // uncomment below and update the code to test the property startDate
+    it('should have the property attributes (base name: "attributes")', function() {
+      // uncomment below and update the code to test the property attributes
       //var instane = new TalonOne.Referral();
       //expect(instance).to.be();
     });
 
-    it('should have the property expiryDate (base name: "expiryDate")', function() {
-      // uncomment below and update the code to test the property expiryDate
+    it('should have the property importId (base name: "importId")', function() {
+      // uncomment below and update the code to test the property importId
       //var instane = new TalonOne.Referral();
       //expect(instance).to.be();
     });
@@ -108,8 +126,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property usageLimit (base name: "usageLimit")', function() {
-      // uncomment below and update the code to test the property usageLimit
+    it('should have the property batchId (base name: "batchId")', function() {
+      // uncomment below and update the code to test the property batchId
       //var instane = new TalonOne.Referral();
       //expect(instance).to.be();
     });

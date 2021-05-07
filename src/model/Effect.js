@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Effect {
     /**
      * Constructs a new <code>Effect</code>.
-     * 
      * @alias module:model/Effect
      * @param campaignId {Number} The ID of the campaign that triggered this effect
      * @param rulesetId {Number} The ID of the ruleset that was active in the campaign when this effect was triggered

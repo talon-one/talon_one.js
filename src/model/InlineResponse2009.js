@@ -17,18 +17,18 @@ import AccessLogEntry from './AccessLogEntry';
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 4.3.0
+ * @version 10.0.0
  */
 class InlineResponse2009 {
     /**
      * Constructs a new <code>InlineResponse2009</code>.
      * @alias module:model/InlineResponse2009
-     * @param totalResultSize {Number} 
+     * @param hasMore {Boolean} 
      * @param data {Array.<module:model/AccessLogEntry>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse2009.initialize(this, totalResultSize, data);
+        InlineResponse2009.initialize(this, hasMore, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse2009 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -52,8 +52,8 @@ class InlineResponse2009 {
         if (data) {
             obj = obj || new InlineResponse2009();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
@@ -66,9 +66,9 @@ class InlineResponse2009 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * @member {Boolean} hasMore
  */
-InlineResponse2009.prototype['totalResultSize'] = undefined;
+InlineResponse2009.prototype['hasMore'] = undefined;
 
 /**
  * @member {Array.<module:model/AccessLogEntry>} data

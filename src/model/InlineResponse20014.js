@@ -17,18 +17,18 @@ import CustomerActivityReport from './CustomerActivityReport';
 /**
  * The InlineResponse20014 model module.
  * @module model/InlineResponse20014
- * @version 4.3.0
+ * @version 10.0.0
  */
 class InlineResponse20014 {
     /**
      * Constructs a new <code>InlineResponse20014</code>.
      * @alias module:model/InlineResponse20014
-     * @param totalResultSize {Number} 
+     * @param hasMore {Boolean} 
      * @param data {Array.<module:model/CustomerActivityReport>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20014.initialize(this, totalResultSize, data);
+        InlineResponse20014.initialize(this, hasMore, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse20014 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -52,8 +52,8 @@ class InlineResponse20014 {
         if (data) {
             obj = obj || new InlineResponse20014();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [CustomerActivityReport]);
@@ -66,9 +66,9 @@ class InlineResponse20014 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * @member {Boolean} hasMore
  */
-InlineResponse20014.prototype['totalResultSize'] = undefined;
+InlineResponse20014.prototype['hasMore'] = undefined;
 
 /**
  * @member {Array.<module:model/CustomerActivityReport>} data

@@ -18,12 +18,11 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CustomerSessionV2 {
     /**
      * Constructs a new <code>CustomerSessionV2</code>.
-     * 
      * @alias module:model/CustomerSessionV2
      * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
      * @param created {Date} The exact moment this entity was created.

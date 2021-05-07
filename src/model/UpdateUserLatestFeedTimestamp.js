@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateUserLatestFeedTimestamp model module.
  * @module model/UpdateUserLatestFeedTimestamp
- * @version 4.3.0
+ * @version 10.0.0
  */
 class UpdateUserLatestFeedTimestamp {
     /**

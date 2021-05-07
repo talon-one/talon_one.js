@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.CartItemAdjustment();
+    instance = new TalonOne.UpdateCustomEffect();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,52 @@
       object[property] = value;
   }
 
-  describe('CartItemAdjustment', function() {
-    it('should create an instance of CartItemAdjustment', function() {
-      // uncomment below and update the code to test CartItemAdjustment
-      //var instane = new TalonOne.CartItemAdjustment();
-      //expect(instance).to.be.a(TalonOne.CartItemAdjustment);
+  describe('UpdateCustomEffect', function() {
+    it('should create an instance of UpdateCustomEffect', function() {
+      // uncomment below and update the code to test UpdateCustomEffect
+      //var instane = new TalonOne.UpdateCustomEffect();
+      //expect(instance).to.be.a(TalonOne.UpdateCustomEffect);
     });
 
-    it('should have the property payFromLoyaltyProgram (base name: "payFromLoyaltyProgram")', function() {
-      // uncomment below and update the code to test the property payFromLoyaltyProgram
-      //var instane = new TalonOne.CartItemAdjustment();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.UpdateCustomEffect();
       //expect(instance).to.be();
     });
 
-    it('should have the property pointPayment (base name: "pointPayment")', function() {
-      // uncomment below and update the code to test the property pointPayment
-      //var instane = new TalonOne.CartItemAdjustment();
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new TalonOne.UpdateCustomEffect();
       //expect(instance).to.be();
     });
 
-    it('should have the property remainingPrice (base name: "remainingPrice")', function() {
-      // uncomment below and update the code to test the property remainingPrice
-      //var instane = new TalonOne.CartItemAdjustment();
+    it('should have the property payload (base name: "payload")', function() {
+      // uncomment below and update the code to test the property payload
+      //var instane = new TalonOne.UpdateCustomEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalonOne.UpdateCustomEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property enabled (base name: "enabled")', function() {
+      // uncomment below and update the code to test the property enabled
+      //var instane = new TalonOne.UpdateCustomEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subscribedApplicationsIds (base name: "subscribedApplicationsIds")', function() {
+      // uncomment below and update the code to test the property subscribedApplicationsIds
+      //var instane = new TalonOne.UpdateCustomEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property params (base name: "params")', function() {
+      // uncomment below and update the code to test the property params
+      //var instane = new TalonOne.UpdateCustomEffect();
       //expect(instance).to.be();
     });
 

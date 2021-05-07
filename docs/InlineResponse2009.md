@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
+**hasMore** | **Boolean** |  | 
 **data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

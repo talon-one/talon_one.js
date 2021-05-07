@@ -17,12 +17,11 @@ import CartItem from './CartItem';
 /**
  * The NewCustomerSession model module.
  * @module model/NewCustomerSession
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewCustomerSession {
     /**
      * Constructs a new <code>NewCustomerSession</code>.
-     * 
      * @alias module:model/NewCustomerSession
      */
     constructor() { 

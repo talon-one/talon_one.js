@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerAnalytics model module.
  * @module model/CustomerAnalytics
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CustomerAnalytics {
     /**
      * Constructs a new <code>CustomerAnalytics</code>.
-     * 
      * @alias module:model/CustomerAnalytics
      * @param acceptedCoupons {Number} Total accepted coupons for this customer
      * @param createdCoupons {Number} Total created coupons for this customer

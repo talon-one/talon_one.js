@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.ImportCoupons();
+    instance = new TalonOne.CustomEffectProps();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,22 @@
       object[property] = value;
   }
 
-  describe('ImportCoupons', function() {
-    it('should create an instance of ImportCoupons', function() {
-      // uncomment below and update the code to test ImportCoupons
-      //var instane = new TalonOne.ImportCoupons();
-      //expect(instance).to.be.a(TalonOne.ImportCoupons);
+  describe('CustomEffectProps', function() {
+    it('should create an instance of CustomEffectProps', function() {
+      // uncomment below and update the code to test CustomEffectProps
+      //var instane = new TalonOne.CustomEffectProps();
+      //expect(instance).to.be.a(TalonOne.CustomEffectProps);
     });
 
-    it('should have the property coupons (base name: "coupons")', function() {
-      // uncomment below and update the code to test the property coupons
-      //var instane = new TalonOne.ImportCoupons();
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new TalonOne.CustomEffectProps();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property payload (base name: "payload")', function() {
+      // uncomment below and update the code to test the property payload
+      //var instane = new TalonOne.CustomEffectProps();
       //expect(instance).to.be();
     });
 

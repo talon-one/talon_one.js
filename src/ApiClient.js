@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 4.3.0
+* @version 10.0.0
 */
 
 /**
@@ -32,9 +32,9 @@ class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default http://localhost
+         * @default http://your_domain.your_region.talon.one
          */
-        this.basePath = 'http://localhost'.replace(/\/+$/, '');
+        this.basePath = 'http://your_domain.your_region.talon.one'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
@@ -42,8 +42,7 @@ class ApiClient {
          */
         this.authentications = {
             'api_key_v1': {type: 'apiKey', 'in': 'header', name: 'Authorization'},
-            'integration_auth': {type: 'apiKey', 'in': 'header', name: 'Content-Signature'},
-            'manager_auth': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
+            'manager_auth': {type: 'bearer'}
         }
 
         /**
@@ -557,7 +556,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "/",
+              'url': "your_domain.your_region.talon.one",
               'description': "No description provided",
             }
       ];

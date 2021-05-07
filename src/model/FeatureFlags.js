@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The FeatureFlags model module.
  * @module model/FeatureFlags
- * @version 4.3.0
+ * @version 10.0.0
  */
 class FeatureFlags {
     /**
      * Constructs a new <code>FeatureFlags</code>.
-     * 
      * @alias module:model/FeatureFlags
      * @param accountId {Number} The ID of the account that owns this entity.
      */

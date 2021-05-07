@@ -16,16 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The NewRole model module.
  * @module model/NewRole
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewRole {
     /**
      * Constructs a new <code>NewRole</code>.
-     * 
      * @alias module:model/NewRole
      * @param name {String} Name of the role
      * @param acl {String} Role Policy this should be a stringified blob of json
-     * @param users {Array.<Number>} An array of userIDs
+     * @param users {Array.<Number>} An array of user identifiers
      */
     constructor(name, acl, users) { 
         
@@ -92,7 +91,7 @@ NewRole.prototype['description'] = undefined;
 NewRole.prototype['acl'] = undefined;
 
 /**
- * An array of userIDs
+ * An array of user identifiers
  * @member {Array.<Number>} users
  */
 NewRole.prototype['users'] = undefined;

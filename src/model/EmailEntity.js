@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailEntity model module.
  * @module model/EmailEntity
- * @version 4.3.0
+ * @version 10.0.0
  */
 class EmailEntity {
     /**
