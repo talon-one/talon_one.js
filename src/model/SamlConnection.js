@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlConnection model module.
  * @module model/SamlConnection
- * @version 4.3.0
+ * @version 10.0.0
  */
 class SamlConnection {
     /**
      * Constructs a new <code>SamlConnection</code>.
-     * 
      * @alias module:model/SamlConnection
      * @param assertionConsumerServiceURL {String} The location where the SAML assertion is sent with a HTTP POST.
      * @param accountId {Number} The ID of the account that owns this entity.

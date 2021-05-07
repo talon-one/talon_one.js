@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAccountSignUp model module.
  * @module model/NewAccountSignUp
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewAccountSignUp {
     /**
      * Constructs a new <code>NewAccountSignUp</code>.
-     * 
      * @alias module:model/NewAccountSignUp
      * @param email {String} The email address associated with your account.
      * @param password {String} The password for your account.

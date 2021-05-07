@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignAnalytics from './CampaignAnalytics';
+import ApplicationCustomer from './ApplicationCustomer';
 
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 4.3.0
+ * @version 10.0.0
  */
 class InlineResponse20011 {
     /**
      * Constructs a new <code>InlineResponse20011</code>.
      * @alias module:model/InlineResponse20011
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/CampaignAnalytics>} 
+     * @param data {Array.<module:model/ApplicationCustomer>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(data) { 
         
-        InlineResponse20011.initialize(this, totalResultSize, data);
+        InlineResponse20011.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20011 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse20011 {
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CampaignAnalytics]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse20011 {
 InlineResponse20011.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/CampaignAnalytics>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20011.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Array.<module:model/ApplicationCustomer>} data
  */
 InlineResponse20011.prototype['data'] = undefined;
 

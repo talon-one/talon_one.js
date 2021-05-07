@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 4.3.0
+ * @version 10.0.0
  */
 class UpdateCoupon {
     /**
      * Constructs a new <code>UpdateCoupon</code>.
-     * 
      * @alias module:model/UpdateCoupon
      */
     constructor() { 

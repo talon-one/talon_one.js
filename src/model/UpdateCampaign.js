@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 4.3.0
+ * @version 10.0.0
  */
 class UpdateCampaign {
     /**
@@ -234,7 +234,13 @@ UpdateCampaign['FeaturesEnum'] = {
      * value: "loyalty"
      * @const
      */
-    "loyalty": "loyalty"
+    "loyalty": "loyalty",
+
+    /**
+     * value: "giveaways"
+     * @const
+     */
+    "giveaways": "giveaways"
 };
 
 

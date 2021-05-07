@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The EventType model module.
  * @module model/EventType
- * @version 4.3.0
+ * @version 10.0.0
  */
 class EventType {
     /**
      * Constructs a new <code>EventType</code>.
-     * 
      * @alias module:model/EventType
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

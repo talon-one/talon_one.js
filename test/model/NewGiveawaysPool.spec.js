@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.InlineResponse20030();
+    instance = new TalonOne.NewGiveawaysPool();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,28 @@
       object[property] = value;
   }
 
-  describe('InlineResponse20030', function() {
-    it('should create an instance of InlineResponse20030', function() {
-      // uncomment below and update the code to test InlineResponse20030
-      //var instane = new TalonOne.InlineResponse20030();
-      //expect(instance).to.be.a(TalonOne.InlineResponse20030);
+  describe('NewGiveawaysPool', function() {
+    it('should create an instance of NewGiveawaysPool', function() {
+      // uncomment below and update the code to test NewGiveawaysPool
+      //var instane = new TalonOne.NewGiveawaysPool();
+      //expect(instance).to.be.a(TalonOne.NewGiveawaysPool);
     });
 
-    it('should have the property totalResultSize (base name: "totalResultSize")', function() {
-      // uncomment below and update the code to test the property totalResultSize
-      //var instane = new TalonOne.InlineResponse20030();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.NewGiveawaysPool();
       //expect(instance).to.be();
     });
 
-    it('should have the property data (base name: "data")', function() {
-      // uncomment below and update the code to test the property data
-      //var instane = new TalonOne.InlineResponse20030();
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalonOne.NewGiveawaysPool();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subscribedApplicationsIds (base name: "subscribedApplicationsIds")', function() {
+      // uncomment below and update the code to test the property subscribedApplicationsIds
+      //var instane = new TalonOne.NewGiveawaysPool();
       //expect(instance).to.be();
     });
 

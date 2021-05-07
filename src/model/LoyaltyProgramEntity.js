@@ -14,19 +14,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The ImportCoupons model module.
- * @module model/ImportCoupons
- * @version 4.2.0
+ * The LoyaltyProgramEntity model module.
+ * @module model/LoyaltyProgramEntity
+ * @version 10.0.0
  */
-class ImportCoupons {
+class LoyaltyProgramEntity {
     /**
-     * Constructs a new <code>ImportCoupons</code>.
-     * @alias module:model/ImportCoupons
-     * @param coupons {String} 
+     * Constructs a new <code>LoyaltyProgramEntity</code>.
+     * @alias module:model/LoyaltyProgramEntity
+     * @param programID {Number} The ID of the loyalty program that owns this entity.
      */
-    constructor(coupons) { 
+    constructor(programID) { 
         
-        ImportCoupons.initialize(this, coupons);
+        LoyaltyProgramEntity.initialize(this, programID);
     }
 
     /**
@@ -34,23 +34,23 @@ class ImportCoupons {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, coupons) { 
-        obj['coupons'] = coupons;
+    static initialize(obj, programID) { 
+        obj['programID'] = programID;
     }
 
     /**
-     * Constructs a <code>ImportCoupons</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>LoyaltyProgramEntity</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ImportCoupons} obj Optional instance to populate.
-     * @return {module:model/ImportCoupons} The populated <code>ImportCoupons</code> instance.
+     * @param {module:model/LoyaltyProgramEntity} obj Optional instance to populate.
+     * @return {module:model/LoyaltyProgramEntity} The populated <code>LoyaltyProgramEntity</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ImportCoupons();
+            obj = obj || new LoyaltyProgramEntity();
 
-            if (data.hasOwnProperty('coupons')) {
-                obj['coupons'] = ApiClient.convertToType(data['coupons'], 'String');
+            if (data.hasOwnProperty('programID')) {
+                obj['programID'] = ApiClient.convertToType(data['programID'], 'Number');
             }
         }
         return obj;
@@ -60,14 +60,15 @@ class ImportCoupons {
 }
 
 /**
- * @member {String} coupons
+ * The ID of the loyalty program that owns this entity.
+ * @member {Number} programID
  */
-ImportCoupons.prototype['coupons'] = undefined;
+LoyaltyProgramEntity.prototype['programID'] = undefined;
 
 
 
 
 
 
-export default ImportCoupons;
+export default LoyaltyProgramEntity;
 

@@ -28,11 +28,13 @@ import AdditionalCost from './model/AdditionalCost';
 import Application from './model/Application';
 import ApplicationAPIKey from './model/ApplicationAPIKey';
 import ApplicationApiHealth from './model/ApplicationApiHealth';
+import ApplicationCampaignStats from './model/ApplicationCampaignStats';
 import ApplicationCustomer from './model/ApplicationCustomer';
 import ApplicationCustomerEntity from './model/ApplicationCustomerEntity';
 import ApplicationCustomerSearch from './model/ApplicationCustomerSearch';
 import ApplicationEntity from './model/ApplicationEntity';
 import ApplicationEvent from './model/ApplicationEvent';
+import ApplicationReferee from './model/ApplicationReferee';
 import ApplicationSession from './model/ApplicationSession';
 import ApplicationSessionEntity from './model/ApplicationSessionEntity';
 import Attribute from './model/Attribute';
@@ -40,6 +42,7 @@ import AttributesMandatory from './model/AttributesMandatory';
 import AttributesSettings from './model/AttributesSettings';
 import Audience from './model/Audience';
 import AudienceMembership from './model/AudienceMembership';
+import AwardGiveawayEffectProps from './model/AwardGiveawayEffectProps';
 import BaseSamlConnection from './model/BaseSamlConnection';
 import Binding from './model/Binding';
 import Campaign from './model/Campaign';
@@ -65,6 +68,8 @@ import CouponReservations from './model/CouponReservations';
 import CouponSearch from './model/CouponSearch';
 import CouponValue from './model/CouponValue';
 import CreateApplicationAPIKey from './model/CreateApplicationAPIKey';
+import CustomEffect from './model/CustomEffect';
+import CustomEffectProps from './model/CustomEffectProps';
 import CustomerActivityReport from './model/CustomerActivityReport';
 import CustomerAnalytics from './model/CustomerAnalytics';
 import CustomerInventory from './model/CustomerInventory';
@@ -93,6 +98,9 @@ import FeaturesFeed from './model/FeaturesFeed';
 import FeedNotification from './model/FeedNotification';
 import FuncArgDef from './model/FuncArgDef';
 import FunctionDef from './model/FunctionDef';
+import Giveaway from './model/Giveaway';
+import GiveawaysPool from './model/GiveawaysPool';
+import ImportEntity from './model/ImportEntity';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse20010 from './model/InlineResponse20010';
@@ -117,19 +125,20 @@ import InlineResponse20027 from './model/InlineResponse20027';
 import InlineResponse20028 from './model/InlineResponse20028';
 import InlineResponse20029 from './model/InlineResponse20029';
 import InlineResponse2003 from './model/InlineResponse2003';
-import InlineResponse20030 from './model/InlineResponse20030';
 import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
 import InlineResponse2008 from './model/InlineResponse2008';
 import InlineResponse2009 from './model/InlineResponse2009';
+import InlineResponse201 from './model/InlineResponse201';
 import IntegrationEntity from './model/IntegrationEntity';
 import IntegrationEvent from './model/IntegrationEvent';
 import IntegrationProfileEntity from './model/IntegrationProfileEntity';
 import IntegrationRequest from './model/IntegrationRequest';
 import IntegrationState from './model/IntegrationState';
 import IntegrationStateV2 from './model/IntegrationStateV2';
+import InventoryCoupon from './model/InventoryCoupon';
 import LedgerEntry from './model/LedgerEntry';
 import LibraryAttribute from './model/LibraryAttribute';
 import LimitConfig from './model/LimitConfig';
@@ -141,9 +150,11 @@ import LoyaltyMembership from './model/LoyaltyMembership';
 import LoyaltyPoints from './model/LoyaltyPoints';
 import LoyaltyProgram from './model/LoyaltyProgram';
 import LoyaltyProgramBalance from './model/LoyaltyProgramBalance';
+import LoyaltyProgramEntity from './model/LoyaltyProgramEntity';
 import LoyaltyProgramLedgers from './model/LoyaltyProgramLedgers';
 import LoyaltyStatistics from './model/LoyaltyStatistics';
 import LoyaltySubLedger from './model/LoyaltySubLedger';
+import LoyaltyTier from './model/LoyaltyTier';
 import ManagerConfig from './model/ManagerConfig';
 import Meta from './model/Meta';
 import ModelExport from './model/ModelExport';
@@ -165,18 +176,22 @@ import NewCampaignGroup from './model/NewCampaignGroup';
 import NewCampaignSet from './model/NewCampaignSet';
 import NewCoupons from './model/NewCoupons';
 import NewCouponsForMultipleRecipients from './model/NewCouponsForMultipleRecipients';
+import NewCustomEffect from './model/NewCustomEffect';
 import NewCustomerProfile from './model/NewCustomerProfile';
 import NewCustomerSession from './model/NewCustomerSession';
 import NewCustomerSessionV2 from './model/NewCustomerSessionV2';
 import NewEvent from './model/NewEvent';
 import NewEventType from './model/NewEventType';
 import NewFeatureFlags from './model/NewFeatureFlags';
+import NewGiveawaysPool from './model/NewGiveawaysPool';
 import NewInvitation from './model/NewInvitation';
 import NewInviteEmail from './model/NewInviteEmail';
 import NewLoyaltyProgram from './model/NewLoyaltyProgram';
+import NewLoyaltyTier from './model/NewLoyaltyTier';
 import NewPassword from './model/NewPassword';
 import NewPasswordEmail from './model/NewPasswordEmail';
 import NewReferral from './model/NewReferral';
+import NewReferralsForMultipleAdvocates from './model/NewReferralsForMultipleAdvocates';
 import NewRole from './model/NewRole';
 import NewRuleset from './model/NewRuleset';
 import NewSamlConnection from './model/NewSamlConnection';
@@ -187,6 +202,7 @@ import Notification from './model/Notification';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
 import Referral from './model/Referral';
+import ReferralConstraints from './model/ReferralConstraints';
 import ReferralCreatedEffectProps from './model/ReferralCreatedEffectProps';
 import ReferralRejectionReason from './model/ReferralRejectionReason';
 import RejectCouponEffectProps from './model/RejectCouponEffectProps';
@@ -222,7 +238,10 @@ import UpdateCampaign from './model/UpdateCampaign';
 import UpdateCampaignGroup from './model/UpdateCampaignGroup';
 import UpdateCoupon from './model/UpdateCoupon';
 import UpdateCouponBatch from './model/UpdateCouponBatch';
+import UpdateCustomEffect from './model/UpdateCustomEffect';
 import UpdateLoyaltyProgram from './model/UpdateLoyaltyProgram';
+import UpdateLoyaltyTier from './model/UpdateLoyaltyTier';
+import UpdateReferral from './model/UpdateReferral';
 import UpdateRole from './model/UpdateRole';
 import UpdateUser from './model/UpdateUser';
 import UpdateUserLatestFeedTimestamp from './model/UpdateUserLatestFeedTimestamp';
@@ -232,6 +251,7 @@ import UserFeedNotifications from './model/UserFeedNotifications';
 import Webhook from './model/Webhook';
 import WebhookActivationLogEntry from './model/WebhookActivationLogEntry';
 import WebhookLogEntry from './model/WebhookLogEntry';
+import WillAwardGiveawayEffectProps from './model/WillAwardGiveawayEffectProps';
 import IntegrationApi from './api/IntegrationApi';
 import ManagementApi from './api/ManagementApi';
 
@@ -265,7 +285,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.3.0
+* @version 10.0.0
 */
 export {
     /**
@@ -365,6 +385,12 @@ export {
     ApplicationApiHealth,
 
     /**
+     * The ApplicationCampaignStats model constructor.
+     * @property {module:model/ApplicationCampaignStats}
+     */
+    ApplicationCampaignStats,
+
+    /**
      * The ApplicationCustomer model constructor.
      * @property {module:model/ApplicationCustomer}
      */
@@ -393,6 +419,12 @@ export {
      * @property {module:model/ApplicationEvent}
      */
     ApplicationEvent,
+
+    /**
+     * The ApplicationReferee model constructor.
+     * @property {module:model/ApplicationReferee}
+     */
+    ApplicationReferee,
 
     /**
      * The ApplicationSession model constructor.
@@ -435,6 +467,12 @@ export {
      * @property {module:model/AudienceMembership}
      */
     AudienceMembership,
+
+    /**
+     * The AwardGiveawayEffectProps model constructor.
+     * @property {module:model/AwardGiveawayEffectProps}
+     */
+    AwardGiveawayEffectProps,
 
     /**
      * The BaseSamlConnection model constructor.
@@ -585,6 +623,18 @@ export {
      * @property {module:model/CreateApplicationAPIKey}
      */
     CreateApplicationAPIKey,
+
+    /**
+     * The CustomEffect model constructor.
+     * @property {module:model/CustomEffect}
+     */
+    CustomEffect,
+
+    /**
+     * The CustomEffectProps model constructor.
+     * @property {module:model/CustomEffectProps}
+     */
+    CustomEffectProps,
 
     /**
      * The CustomerActivityReport model constructor.
@@ -755,6 +805,24 @@ export {
     FunctionDef,
 
     /**
+     * The Giveaway model constructor.
+     * @property {module:model/Giveaway}
+     */
+    Giveaway,
+
+    /**
+     * The GiveawaysPool model constructor.
+     * @property {module:model/GiveawaysPool}
+     */
+    GiveawaysPool,
+
+    /**
+     * The ImportEntity model constructor.
+     * @property {module:model/ImportEntity}
+     */
+    ImportEntity,
+
+    /**
      * The InlineResponse200 model constructor.
      * @property {module:model/InlineResponse200}
      */
@@ -899,12 +967,6 @@ export {
     InlineResponse2003,
 
     /**
-     * The InlineResponse20030 model constructor.
-     * @property {module:model/InlineResponse20030}
-     */
-    InlineResponse20030,
-
-    /**
      * The InlineResponse2004 model constructor.
      * @property {module:model/InlineResponse2004}
      */
@@ -941,6 +1003,12 @@ export {
     InlineResponse2009,
 
     /**
+     * The InlineResponse201 model constructor.
+     * @property {module:model/InlineResponse201}
+     */
+    InlineResponse201,
+
+    /**
      * The IntegrationEntity model constructor.
      * @property {module:model/IntegrationEntity}
      */
@@ -975,6 +1043,12 @@ export {
      * @property {module:model/IntegrationStateV2}
      */
     IntegrationStateV2,
+
+    /**
+     * The InventoryCoupon model constructor.
+     * @property {module:model/InventoryCoupon}
+     */
+    InventoryCoupon,
 
     /**
      * The LedgerEntry model constructor.
@@ -1043,6 +1117,12 @@ export {
     LoyaltyProgramBalance,
 
     /**
+     * The LoyaltyProgramEntity model constructor.
+     * @property {module:model/LoyaltyProgramEntity}
+     */
+    LoyaltyProgramEntity,
+
+    /**
      * The LoyaltyProgramLedgers model constructor.
      * @property {module:model/LoyaltyProgramLedgers}
      */
@@ -1059,6 +1139,12 @@ export {
      * @property {module:model/LoyaltySubLedger}
      */
     LoyaltySubLedger,
+
+    /**
+     * The LoyaltyTier model constructor.
+     * @property {module:model/LoyaltyTier}
+     */
+    LoyaltyTier,
 
     /**
      * The ManagerConfig model constructor.
@@ -1187,6 +1273,12 @@ export {
     NewCouponsForMultipleRecipients,
 
     /**
+     * The NewCustomEffect model constructor.
+     * @property {module:model/NewCustomEffect}
+     */
+    NewCustomEffect,
+
+    /**
      * The NewCustomerProfile model constructor.
      * @property {module:model/NewCustomerProfile}
      */
@@ -1223,6 +1315,12 @@ export {
     NewFeatureFlags,
 
     /**
+     * The NewGiveawaysPool model constructor.
+     * @property {module:model/NewGiveawaysPool}
+     */
+    NewGiveawaysPool,
+
+    /**
      * The NewInvitation model constructor.
      * @property {module:model/NewInvitation}
      */
@@ -1241,6 +1339,12 @@ export {
     NewLoyaltyProgram,
 
     /**
+     * The NewLoyaltyTier model constructor.
+     * @property {module:model/NewLoyaltyTier}
+     */
+    NewLoyaltyTier,
+
+    /**
      * The NewPassword model constructor.
      * @property {module:model/NewPassword}
      */
@@ -1257,6 +1361,12 @@ export {
      * @property {module:model/NewReferral}
      */
     NewReferral,
+
+    /**
+     * The NewReferralsForMultipleAdvocates model constructor.
+     * @property {module:model/NewReferralsForMultipleAdvocates}
+     */
+    NewReferralsForMultipleAdvocates,
 
     /**
      * The NewRole model constructor.
@@ -1317,6 +1427,12 @@ export {
      * @property {module:model/Referral}
      */
     Referral,
+
+    /**
+     * The ReferralConstraints model constructor.
+     * @property {module:model/ReferralConstraints}
+     */
+    ReferralConstraints,
 
     /**
      * The ReferralCreatedEffectProps model constructor.
@@ -1529,10 +1645,28 @@ export {
     UpdateCouponBatch,
 
     /**
+     * The UpdateCustomEffect model constructor.
+     * @property {module:model/UpdateCustomEffect}
+     */
+    UpdateCustomEffect,
+
+    /**
      * The UpdateLoyaltyProgram model constructor.
      * @property {module:model/UpdateLoyaltyProgram}
      */
     UpdateLoyaltyProgram,
+
+    /**
+     * The UpdateLoyaltyTier model constructor.
+     * @property {module:model/UpdateLoyaltyTier}
+     */
+    UpdateLoyaltyTier,
+
+    /**
+     * The UpdateReferral model constructor.
+     * @property {module:model/UpdateReferral}
+     */
+    UpdateReferral,
 
     /**
      * The UpdateRole model constructor.
@@ -1587,6 +1721,12 @@ export {
      * @property {module:model/WebhookLogEntry}
      */
     WebhookLogEntry,
+
+    /**
+     * The WillAwardGiveawayEffectProps model constructor.
+     * @property {module:model/WillAwardGiveawayEffectProps}
+     */
+    WillAwardGiveawayEffectProps,
 
     /**
     * The IntegrationApi service constructor.

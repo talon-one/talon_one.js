@@ -17,7 +17,7 @@ import NewCustomerSessionV2 from './NewCustomerSessionV2';
 /**
  * The IntegrationRequest model module.
  * @module model/IntegrationRequest
- * @version 4.3.0
+ * @version 10.0.0
  */
 class IntegrationRequest {
     /**
@@ -70,7 +70,7 @@ class IntegrationRequest {
 IntegrationRequest.prototype['customerSession'] = undefined;
 
 /**
- * Optional list of requested information to be present on the response related to the customer session update. Currently supported: \"customerSession\", \"customerProfile\", \"coupons\", \"triggeredCampaigns\", \"referral\", \"loyalty\", \"event\" and \"ruleFailureReasons\". 
+ * Optional list of requested information to be present on the response related to the customer session update. Currently supported: \"customerSession\", \"customerProfile\", \"coupons\", \"triggeredCampaigns\", \"referral\", \"loyalty\", \"event\", \"awardedGiveaways\" and \"ruleFailureReasons\". 
  * @member {Array.<module:model/IntegrationRequest.ResponseContentEnum>} responseContent
  */
 IntegrationRequest.prototype['responseContent'] = undefined;
@@ -127,6 +127,12 @@ IntegrationRequest['ResponseContentEnum'] = {
      * @const
      */
     "event": "event",
+
+    /**
+     * value: "awardedGiveaways"
+     * @const
+     */
+    "awardedGiveaways": "awardedGiveaways",
 
     /**
      * value: "ruleFailureReasons"

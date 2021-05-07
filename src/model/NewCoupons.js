@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewCoupons {
     /**
      * Constructs a new <code>NewCoupons</code>.
-     * 
      * @alias module:model/NewCoupons
      * @param usageLimit {Number} The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be at least 1.

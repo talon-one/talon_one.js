@@ -16,24 +16,23 @@ import ApiClient from '../ApiClient';
 /**
  * The Referral model module.
  * @module model/Referral
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Referral {
     /**
      * Constructs a new <code>Referral</code>.
-     * 
      * @alias module:model/Referral
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
+     * @param usageLimit {Number} The number of times a referral code can be used. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
      * @param campaignId {Number} ID of the campaign from which the referral received the referral code.
-     * @param advocateProfileIntegrationId {String} The Integration Id of the Advocate's Profile
+     * @param advocateProfileIntegrationId {String} The Integration ID of the Advocate's Profile.
      * @param code {String} The actual referral code.
      * @param usageCounter {Number} The number of times this referral code has been successfully used.
-     * @param usageLimit {Number} The number of times a referral code can be used. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
      */
-    constructor(id, created, campaignId, advocateProfileIntegrationId, code, usageCounter, usageLimit) { 
+    constructor(id, created, usageLimit, campaignId, advocateProfileIntegrationId, code, usageCounter) { 
         
-        Referral.initialize(this, id, created, campaignId, advocateProfileIntegrationId, code, usageCounter, usageLimit);
+        Referral.initialize(this, id, created, usageLimit, campaignId, advocateProfileIntegrationId, code, usageCounter);
     }
 
     /**
@@ -41,14 +40,14 @@ class Referral {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, campaignId, advocateProfileIntegrationId, code, usageCounter, usageLimit) { 
+    static initialize(obj, id, created, usageLimit, campaignId, advocateProfileIntegrationId, code, usageCounter) { 
         obj['id'] = id;
         obj['created'] = created;
+        obj['usageLimit'] = usageLimit;
         obj['campaignId'] = campaignId;
         obj['advocateProfileIntegrationId'] = advocateProfileIntegrationId;
         obj['code'] = code;
         obj['usageCounter'] = usageCounter;
-        obj['usageLimit'] = usageLimit;
     }
 
     /**
@@ -68,6 +67,15 @@ class Referral {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('startDate')) {
+                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
+            }
+            if (data.hasOwnProperty('expiryDate')) {
+                obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            }
+            if (data.hasOwnProperty('usageLimit')) {
+                obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
+            }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
             }
@@ -77,11 +85,11 @@ class Referral {
             if (data.hasOwnProperty('friendProfileIntegrationId')) {
                 obj['friendProfileIntegrationId'] = ApiClient.convertToType(data['friendProfileIntegrationId'], 'String');
             }
-            if (data.hasOwnProperty('startDate')) {
-                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
-            if (data.hasOwnProperty('expiryDate')) {
-                obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            if (data.hasOwnProperty('importId')) {
+                obj['importId'] = ApiClient.convertToType(data['importId'], 'Number');
             }
             if (data.hasOwnProperty('code')) {
                 obj['code'] = ApiClient.convertToType(data['code'], 'String');
@@ -89,8 +97,8 @@ class Referral {
             if (data.hasOwnProperty('usageCounter')) {
                 obj['usageCounter'] = ApiClient.convertToType(data['usageCounter'], 'Number');
             }
-            if (data.hasOwnProperty('usageLimit')) {
-                obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
+            if (data.hasOwnProperty('batchId')) {
+                obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
             }
         }
         return obj;
@@ -112,13 +120,31 @@ Referral.prototype['id'] = undefined;
 Referral.prototype['created'] = undefined;
 
 /**
+ * Timestamp at which point the referral code becomes valid.
+ * @member {Date} startDate
+ */
+Referral.prototype['startDate'] = undefined;
+
+/**
+ * Expiry date of the referral code. Referral never expires if this is omitted, zero, or negative.
+ * @member {Date} expiryDate
+ */
+Referral.prototype['expiryDate'] = undefined;
+
+/**
+ * The number of times a referral code can be used. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+ * @member {Number} usageLimit
+ */
+Referral.prototype['usageLimit'] = undefined;
+
+/**
  * ID of the campaign from which the referral received the referral code.
  * @member {Number} campaignId
  */
 Referral.prototype['campaignId'] = undefined;
 
 /**
- * The Integration Id of the Advocate's Profile
+ * The Integration ID of the Advocate's Profile.
  * @member {String} advocateProfileIntegrationId
  */
 Referral.prototype['advocateProfileIntegrationId'] = undefined;
@@ -130,16 +156,16 @@ Referral.prototype['advocateProfileIntegrationId'] = undefined;
 Referral.prototype['friendProfileIntegrationId'] = undefined;
 
 /**
- * Timestamp at which point the referral code becomes valid.
- * @member {Date} startDate
+ * Arbitrary properties associated with this item.
+ * @member {Object} attributes
  */
-Referral.prototype['startDate'] = undefined;
+Referral.prototype['attributes'] = undefined;
 
 /**
- * Expiry date of the referral code. Referral never expires if this is omitted, zero, or negative.
- * @member {Date} expiryDate
+ * The ID of the Import which created this referral.
+ * @member {Number} importId
  */
-Referral.prototype['expiryDate'] = undefined;
+Referral.prototype['importId'] = undefined;
 
 /**
  * The actual referral code.
@@ -154,10 +180,10 @@ Referral.prototype['code'] = undefined;
 Referral.prototype['usageCounter'] = undefined;
 
 /**
- * The number of times a referral code can be used. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
- * @member {Number} usageLimit
+ * The ID of the batch the referrals belong to.
+ * @member {String} batchId
  */
-Referral.prototype['usageLimit'] = undefined;
+Referral.prototype['batchId'] = undefined;
 
 
 

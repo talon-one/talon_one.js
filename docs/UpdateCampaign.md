@@ -42,6 +42,8 @@ Name | Type | Description | Notes
 
 * `loyalty` (value: `"loyalty"`)
 
+* `giveaways` (value: `"giveaways"`)
+
 
 
 

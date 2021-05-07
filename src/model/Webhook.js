@@ -17,12 +17,11 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Webhook {
     /**
      * Constructs a new <code>Webhook</code>.
-     * 
      * @alias module:model/Webhook
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

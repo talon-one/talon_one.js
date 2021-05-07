@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewEventType model module.
  * @module model/NewEventType
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewEventType {
     /**
      * Constructs a new <code>NewEventType</code>.
-     * 
      * @alias module:model/NewEventType
      * @param applicationIds {Array.<Number>} The IDs of the applications that are related to this entity.
      * @param title {String} The human-friendly display name for this event type. Use a short, past-tense, description of the event.

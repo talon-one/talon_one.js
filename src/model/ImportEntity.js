@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import Role from './Role';
 
 /**
- * The InlineResponse20030 model module.
- * @module model/InlineResponse20030
- * @version 4.3.0
+ * The ImportEntity model module.
+ * @module model/ImportEntity
+ * @version 10.0.0
  */
-class InlineResponse20030 {
+class ImportEntity {
     /**
-     * Constructs a new <code>InlineResponse20030</code>.
-     * @alias module:model/InlineResponse20030
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Role>} 
+     * Constructs a new <code>ImportEntity</code>.
+     * @alias module:model/ImportEntity
      */
-    constructor(totalResultSize, data) { 
+    constructor() { 
         
-        InlineResponse20030.initialize(this, totalResultSize, data);
+        ImportEntity.initialize(this);
     }
 
     /**
@@ -36,27 +33,22 @@ class InlineResponse20030 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
-        obj['data'] = data;
+    static initialize(obj) { 
     }
 
     /**
-     * Constructs a <code>InlineResponse20030</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ImportEntity</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse20030} obj Optional instance to populate.
-     * @return {module:model/InlineResponse20030} The populated <code>InlineResponse20030</code> instance.
+     * @param {module:model/ImportEntity} obj Optional instance to populate.
+     * @return {module:model/ImportEntity} The populated <code>ImportEntity</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineResponse20030();
+            obj = obj || new ImportEntity();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Role]);
+            if (data.hasOwnProperty('importId')) {
+                obj['importId'] = ApiClient.convertToType(data['importId'], 'Number');
             }
         }
         return obj;
@@ -66,19 +58,15 @@ class InlineResponse20030 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * The ID of the Import which created this referral.
+ * @member {Number} importId
  */
-InlineResponse20030.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/Role>} data
- */
-InlineResponse20030.prototype['data'] = undefined;
+ImportEntity.prototype['importId'] = undefined;
 
 
 
 
 
 
-export default InlineResponse20030;
+export default ImportEntity;
 

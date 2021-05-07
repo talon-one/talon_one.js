@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCouponsForMultipleRecipients model module.
  * @module model/NewCouponsForMultipleRecipients
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewCouponsForMultipleRecipients {
     /**
      * Constructs a new <code>NewCouponsForMultipleRecipients</code>.
-     * 
      * @alias module:model/NewCouponsForMultipleRecipients
      * @param usageLimit {Number} The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
      * @param recipientsIntegrationIds {Array.<String>} The integration IDs for recipients

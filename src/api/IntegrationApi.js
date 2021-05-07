@@ -19,6 +19,7 @@ import CustomerInventory from '../model/CustomerInventory';
 import CustomerProfileAudienceRequest from '../model/CustomerProfileAudienceRequest';
 import CustomerProfileIntegrationRequestV2 from '../model/CustomerProfileIntegrationRequestV2';
 import InlineResponse200 from '../model/InlineResponse200';
+import InlineResponse201 from '../model/InlineResponse201';
 import IntegrationRequest from '../model/IntegrationRequest';
 import IntegrationState from '../model/IntegrationState';
 import IntegrationStateV2 from '../model/IntegrationStateV2';
@@ -28,12 +29,13 @@ import NewCustomerProfile from '../model/NewCustomerProfile';
 import NewCustomerSession from '../model/NewCustomerSession';
 import NewEvent from '../model/NewEvent';
 import NewReferral from '../model/NewReferral';
+import NewReferralsForMultipleAdvocates from '../model/NewReferralsForMultipleAdvocates';
 import Referral from '../model/Referral';
 
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 4.3.0
+* @version 10.0.0
 */
 export default class IntegrationApi {
 
@@ -54,18 +56,18 @@ export default class IntegrationApi {
      * Create a new coupon reservation
      * Creates a coupon reservation for all passed customer profiles on this couponID 
      * @param {String} couponValue The value of a coupon
-     * @param {module:model/CouponReservations} body 
+     * @param {module:model/CouponReservations} couponReservations 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coupon} and HTTP response
      */
-    createCouponReservationWithHttpInfo(couponValue, body) {
-      let postBody = body;
+    createCouponReservationWithHttpInfo(couponValue, couponReservations) {
+      let postBody = couponReservations;
       // verify the required parameter 'couponValue' is set
       if (couponValue === undefined || couponValue === null) {
         throw new Error("Missing the required parameter 'couponValue' when calling createCouponReservation");
       }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createCouponReservation");
+      // verify the required parameter 'couponReservations' is set
+      if (couponReservations === undefined || couponReservations === null) {
+        throw new Error("Missing the required parameter 'couponReservations' when calling createCouponReservation");
       }
 
       let pathParams = {
@@ -78,7 +80,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Coupon;
@@ -93,11 +95,11 @@ export default class IntegrationApi {
      * Create a new coupon reservation
      * Creates a coupon reservation for all passed customer profiles on this couponID 
      * @param {String} couponValue The value of a coupon
-     * @param {module:model/CouponReservations} body 
+     * @param {module:model/CouponReservations} couponReservations 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coupon}
      */
-    createCouponReservation(couponValue, body) {
-      return this.createCouponReservationWithHttpInfo(couponValue, body)
+    createCouponReservation(couponValue, couponReservations) {
+      return this.createCouponReservationWithHttpInfo(couponValue, couponReservations)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -107,14 +109,14 @@ export default class IntegrationApi {
     /**
      * Create a referral code for an advocate
      * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
-     * @param {module:model/NewReferral} body 
+     * @param {module:model/NewReferral} newReferral 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Referral} and HTTP response
      */
-    createReferralWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createReferral");
+    createReferralWithHttpInfo(newReferral) {
+      let postBody = newReferral;
+      // verify the required parameter 'newReferral' is set
+      if (newReferral === undefined || newReferral === null) {
+        throw new Error("Missing the required parameter 'newReferral' when calling createReferral");
       }
 
       let pathParams = {
@@ -126,7 +128,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Referral;
@@ -140,11 +142,64 @@ export default class IntegrationApi {
     /**
      * Create a referral code for an advocate
      * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
-     * @param {module:model/NewReferral} body 
+     * @param {module:model/NewReferral} newReferral 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Referral}
      */
-    createReferral(body) {
-      return this.createReferralWithHttpInfo(body)
+    createReferral(newReferral) {
+      return this.createReferralWithHttpInfo(newReferral)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create referral codes for multiple advocates
+     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * @param {module:model/NewReferralsForMultipleAdvocates} newReferralsForMultipleAdvocates 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] If set to `yes`, response will be an empty 204, otherwise a list of integration states will be generated (up to 1000).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
+     */
+    createReferralsForMultipleAdvocatesWithHttpInfo(newReferralsForMultipleAdvocates, opts) {
+      opts = opts || {};
+      let postBody = newReferralsForMultipleAdvocates;
+      // verify the required parameter 'newReferralsForMultipleAdvocates' is set
+      if (newReferralsForMultipleAdvocates === undefined || newReferralsForMultipleAdvocates === null) {
+        throw new Error("Missing the required parameter 'newReferralsForMultipleAdvocates' when calling createReferralsForMultipleAdvocates");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'silent': opts['silent']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse201;
+      return this.apiClient.callApi(
+        '/v1/referrals_for_multiple_advocates', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create referral codes for multiple advocates
+     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * @param {module:model/NewReferralsForMultipleAdvocates} newReferralsForMultipleAdvocates 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] If set to `yes`, response will be an empty 204, otherwise a list of integration states will be generated (up to 1000).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
+     */
+    createReferralsForMultipleAdvocates(newReferralsForMultipleAdvocates, opts) {
+      return this.createReferralsForMultipleAdvocatesWithHttpInfo(newReferralsForMultipleAdvocates, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -155,18 +210,18 @@ export default class IntegrationApi {
      * Delete coupon reservations
      * Removes all passed customer profiles reservation from this coupon 
      * @param {String} couponValue The value of a coupon
-     * @param {module:model/CouponReservations} body 
+     * @param {module:model/CouponReservations} couponReservations 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCouponReservationWithHttpInfo(couponValue, body) {
-      let postBody = body;
+    deleteCouponReservationWithHttpInfo(couponValue, couponReservations) {
+      let postBody = couponReservations;
       // verify the required parameter 'couponValue' is set
       if (couponValue === undefined || couponValue === null) {
         throw new Error("Missing the required parameter 'couponValue' when calling deleteCouponReservation");
       }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling deleteCouponReservation");
+      // verify the required parameter 'couponReservations' is set
+      if (couponReservations === undefined || couponReservations === null) {
+        throw new Error("Missing the required parameter 'couponReservations' when calling deleteCouponReservation");
       }
 
       let pathParams = {
@@ -179,7 +234,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -194,11 +249,11 @@ export default class IntegrationApi {
      * Delete coupon reservations
      * Removes all passed customer profiles reservation from this coupon 
      * @param {String} couponValue The value of a coupon
-     * @param {module:model/CouponReservations} body 
+     * @param {module:model/CouponReservations} couponReservations 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteCouponReservation(couponValue, body) {
-      return this.deleteCouponReservationWithHttpInfo(couponValue, body)
+    deleteCouponReservation(couponValue, couponReservations) {
+      return this.deleteCouponReservationWithHttpInfo(couponValue, couponReservations)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -228,7 +283,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -262,6 +317,7 @@ export default class IntegrationApi {
      * @param {Boolean=} [opts.referrals] optional flag to decide if you would like referral information in the response
      * @param {Boolean=} [opts.coupons] optional flag to decide if you would like coupon information in the response
      * @param {Boolean=} [opts.loyalty] optional flag to decide if you would like loyalty information in the response
+     * @param {Boolean=} [opts.giveaways] optional flag to decide if you would like giveaways information in the response
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerInventory} and HTTP response
      */
     getCustomerInventoryWithHttpInfo(integrationId, opts) {
@@ -279,14 +335,15 @@ export default class IntegrationApi {
         'profile': opts['profile'],
         'referrals': opts['referrals'],
         'coupons': opts['coupons'],
-        'loyalty': opts['loyalty']
+        'loyalty': opts['loyalty'],
+        'giveaways': opts['giveaways']
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CustomerInventory;
@@ -306,6 +363,7 @@ export default class IntegrationApi {
      * @param {Boolean=} [opts.referrals] optional flag to decide if you would like referral information in the response
      * @param {Boolean=} [opts.coupons] optional flag to decide if you would like coupon information in the response
      * @param {Boolean=} [opts.loyalty] optional flag to decide if you would like loyalty information in the response
+     * @param {Boolean=} [opts.giveaways] optional flag to decide if you would like giveaways information in the response
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerInventory}
      */
     getCustomerInventory(integrationId, opts) {
@@ -339,7 +397,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse200;
@@ -367,17 +425,17 @@ export default class IntegrationApi {
     /**
      * Track an Event
      * Records an arbitrary event in a customer session. For example, an integration might record an event when a user updates their payment information.  The `sessionId` body parameter is required, an event is always part of a session. Much like updating a customer session, if either the profile or the session do not exist, a new empty one will be created. Note that if the specified session already exists, it must belong to the same `profileId` or an error will be returned.  As with customer sessions, you can use an empty string for `profileId` to indicate that this is an anonymous session.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place. 
-     * @param {module:model/NewEvent} body 
+     * @param {module:model/NewEvent} newEvent 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationState} and HTTP response
      */
-    trackEventWithHttpInfo(body, opts) {
+    trackEventWithHttpInfo(newEvent, opts) {
       opts = opts || {};
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling trackEvent");
+      let postBody = newEvent;
+      // verify the required parameter 'newEvent' is set
+      if (newEvent === undefined || newEvent === null) {
+        throw new Error("Missing the required parameter 'newEvent' when calling trackEvent");
       }
 
       let pathParams = {
@@ -390,7 +448,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IntegrationState;
@@ -404,13 +462,13 @@ export default class IntegrationApi {
     /**
      * Track an Event
      * Records an arbitrary event in a customer session. For example, an integration might record an event when a user updates their payment information.  The `sessionId` body parameter is required, an event is always part of a session. Much like updating a customer session, if either the profile or the session do not exist, a new empty one will be created. Note that if the specified session already exists, it must belong to the same `profileId` or an error will be returned.  As with customer sessions, you can use an empty string for `profileId` to indicate that this is an anonymous session.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place. 
-     * @param {module:model/NewEvent} body 
+     * @param {module:model/NewEvent} newEvent 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationState}
      */
-    trackEvent(body, opts) {
-      return this.trackEventWithHttpInfo(body, opts)
+    trackEvent(newEvent, opts) {
+      return this.trackEventWithHttpInfo(newEvent, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -419,23 +477,23 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Profile V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile). This profile information can then be matched and/or updated by campaign [Rules][].  The `integrationId` may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the `integrationId`. It is vital that this ID **not** change over time, so **don't** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#customer-profile [Rules]: /Getting-Started/entities#campaigns-rulesets-and-coupons 
+     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#/customer-profile). This profile information can then be matched and/or updated by campaign [Rules][].  The `integrationId` may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the `integrationId`. It is vital that this ID **not** change over time, so **don't** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#/customer-profile [Rules]: /Getting-Started/entities#/campaigns-rulesets-and-coupons 
      * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
-     * @param {module:model/NewCustomerProfile} body 
+     * @param {module:model/NewCustomerProfile} newCustomerProfile 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationState} and HTTP response
      */
-    updateCustomerProfileWithHttpInfo(integrationId, body, opts) {
+    updateCustomerProfileWithHttpInfo(integrationId, newCustomerProfile, opts) {
       opts = opts || {};
-      let postBody = body;
+      let postBody = newCustomerProfile;
       // verify the required parameter 'integrationId' is set
       if (integrationId === undefined || integrationId === null) {
         throw new Error("Missing the required parameter 'integrationId' when calling updateCustomerProfile");
       }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerProfile");
+      // verify the required parameter 'newCustomerProfile' is set
+      if (newCustomerProfile === undefined || newCustomerProfile === null) {
+        throw new Error("Missing the required parameter 'newCustomerProfile' when calling updateCustomerProfile");
       }
 
       let pathParams = {
@@ -449,7 +507,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IntegrationState;
@@ -462,15 +520,15 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Profile V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile). This profile information can then be matched and/or updated by campaign [Rules][].  The `integrationId` may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the `integrationId`. It is vital that this ID **not** change over time, so **don't** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#customer-profile [Rules]: /Getting-Started/entities#campaigns-rulesets-and-coupons 
+     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#/customer-profile). This profile information can then be matched and/or updated by campaign [Rules][].  The `integrationId` may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the `integrationId`. It is vital that this ID **not** change over time, so **don't** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#/customer-profile [Rules]: /Getting-Started/entities#/campaigns-rulesets-and-coupons 
      * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
-     * @param {module:model/NewCustomerProfile} body 
+     * @param {module:model/NewCustomerProfile} newCustomerProfile 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationState}
      */
-    updateCustomerProfile(integrationId, body, opts) {
-      return this.updateCustomerProfileWithHttpInfo(integrationId, body, opts)
+    updateCustomerProfile(integrationId, newCustomerProfile, opts) {
+      return this.updateCustomerProfileWithHttpInfo(integrationId, newCustomerProfile, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -480,14 +538,14 @@ export default class IntegrationApi {
     /**
      * Update a Customer Profile Audiences
      * Update one ore multiple Customer Profiles with the specified Audiences 
-     * @param {module:model/CustomerProfileAudienceRequest} body 
+     * @param {module:model/CustomerProfileAudienceRequest} customerProfileAudienceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    updateCustomerProfileAudiencesWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerProfileAudiences");
+    updateCustomerProfileAudiencesWithHttpInfo(customerProfileAudienceRequest) {
+      let postBody = customerProfileAudienceRequest;
+      // verify the required parameter 'customerProfileAudienceRequest' is set
+      if (customerProfileAudienceRequest === undefined || customerProfileAudienceRequest === null) {
+        throw new Error("Missing the required parameter 'customerProfileAudienceRequest' when calling updateCustomerProfileAudiences");
       }
 
       let pathParams = {
@@ -499,7 +557,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1'];
+      let authNames = ['manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -513,11 +571,11 @@ export default class IntegrationApi {
     /**
      * Update a Customer Profile Audiences
      * Update one ore multiple Customer Profiles with the specified Audiences 
-     * @param {module:model/CustomerProfileAudienceRequest} body 
+     * @param {module:model/CustomerProfileAudienceRequest} customerProfileAudienceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    updateCustomerProfileAudiences(body) {
-      return this.updateCustomerProfileAudiencesWithHttpInfo(body)
+    updateCustomerProfileAudiences(customerProfileAudienceRequest) {
+      return this.updateCustomerProfileAudiencesWithHttpInfo(customerProfileAudienceRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -526,24 +584,24 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Profile
-     * Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Updating a customer profile returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter. 
+     * Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#/customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Updating a customer profile returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter. 
      * @param {String} integrationId The custom identifier for this profile. Must be unique within the account.
-     * @param {module:model/CustomerProfileIntegrationRequestV2} body 
+     * @param {module:model/CustomerProfileIntegrationRequestV2} customerProfileIntegrationRequestV2 
      * @param {Object} [opts] Optional parameters
      * @param {Boolean=} [opts.runRuleEngine] Indicates whether to run the rule engine. (default to false)
-     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are persisted with `true`. Only used when `runRuleEngine` is set to `true`. 
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`. Only used when `runRuleEngine` is set to `true`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationStateV2} and HTTP response
      */
-    updateCustomerProfileV2WithHttpInfo(integrationId, body, opts) {
+    updateCustomerProfileV2WithHttpInfo(integrationId, customerProfileIntegrationRequestV2, opts) {
       opts = opts || {};
-      let postBody = body;
+      let postBody = customerProfileIntegrationRequestV2;
       // verify the required parameter 'integrationId' is set
       if (integrationId === undefined || integrationId === null) {
         throw new Error("Missing the required parameter 'integrationId' when calling updateCustomerProfileV2");
       }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerProfileV2");
+      // verify the required parameter 'customerProfileIntegrationRequestV2' is set
+      if (customerProfileIntegrationRequestV2 === undefined || customerProfileIntegrationRequestV2 === null) {
+        throw new Error("Missing the required parameter 'customerProfileIntegrationRequestV2' when calling updateCustomerProfileV2");
       }
 
       let pathParams = {
@@ -571,16 +629,16 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Profile
-     * Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Updating a customer profile returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter. 
+     * Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#/customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Updating a customer profile returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter. 
      * @param {String} integrationId The custom identifier for this profile. Must be unique within the account.
-     * @param {module:model/CustomerProfileIntegrationRequestV2} body 
+     * @param {module:model/CustomerProfileIntegrationRequestV2} customerProfileIntegrationRequestV2 
      * @param {Object} [opts] Optional parameters
      * @param {Boolean=} [opts.runRuleEngine] Indicates whether to run the rule engine. (default to false)
-     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are persisted with `true`. Only used when `runRuleEngine` is set to `true`. 
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`. Only used when `runRuleEngine` is set to `true`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationStateV2}
      */
-    updateCustomerProfileV2(integrationId, body, opts) {
-      return this.updateCustomerProfileV2WithHttpInfo(integrationId, body, opts)
+    updateCustomerProfileV2(integrationId, customerProfileIntegrationRequestV2, opts) {
+      return this.updateCustomerProfileV2WithHttpInfo(integrationId, customerProfileIntegrationRequestV2, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -589,18 +647,18 @@ export default class IntegrationApi {
 
     /**
      * Update multiple Customer Profiles
-     * Update (or create) up to 1000 [Customer Profiles](https://developers.talon.one/Getting-Started/entities#customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](https://developers.talon.one/Integration-API/API-Reference#updateCustomerSessionV2). 
-     * @param {module:model/MultipleCustomerProfileIntegrationRequest} body 
+     * Update (or create) up to 1000 [Customer Profiles](https://developers.talon.one/Getting-Started/entities#/customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](https://developers.talon.one/Integration-API/API-Reference#updateCustomerSessionV2). 
+     * @param {module:model/MultipleCustomerProfileIntegrationRequest} multipleCustomerProfileIntegrationRequest 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.silent] If set to `yes`, response will be an empty 204, otherwise a list of integration states will be generated (up to 1000).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MultipleCustomerProfileIntegrationResponseV2} and HTTP response
      */
-    updateCustomerProfilesV2WithHttpInfo(body, opts) {
+    updateCustomerProfilesV2WithHttpInfo(multipleCustomerProfileIntegrationRequest, opts) {
       opts = opts || {};
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerProfilesV2");
+      let postBody = multipleCustomerProfileIntegrationRequest;
+      // verify the required parameter 'multipleCustomerProfileIntegrationRequest' is set
+      if (multipleCustomerProfileIntegrationRequest === undefined || multipleCustomerProfileIntegrationRequest === null) {
+        throw new Error("Missing the required parameter 'multipleCustomerProfileIntegrationRequest' when calling updateCustomerProfilesV2");
       }
 
       let pathParams = {
@@ -626,14 +684,14 @@ export default class IntegrationApi {
 
     /**
      * Update multiple Customer Profiles
-     * Update (or create) up to 1000 [Customer Profiles](https://developers.talon.one/Getting-Started/entities#customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](https://developers.talon.one/Integration-API/API-Reference#updateCustomerSessionV2). 
-     * @param {module:model/MultipleCustomerProfileIntegrationRequest} body 
+     * Update (or create) up to 1000 [Customer Profiles](https://developers.talon.one/Getting-Started/entities#/customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](https://developers.talon.one/Integration-API/API-Reference#updateCustomerSessionV2). 
+     * @param {module:model/MultipleCustomerProfileIntegrationRequest} multipleCustomerProfileIntegrationRequest 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.silent] If set to `yes`, response will be an empty 204, otherwise a list of integration states will be generated (up to 1000).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MultipleCustomerProfileIntegrationResponseV2}
      */
-    updateCustomerProfilesV2(body, opts) {
-      return this.updateCustomerProfilesV2WithHttpInfo(body, opts)
+    updateCustomerProfilesV2(multipleCustomerProfileIntegrationRequest, opts) {
+      return this.updateCustomerProfilesV2WithHttpInfo(multipleCustomerProfileIntegrationRequest, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -642,23 +700,23 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Session V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](https://developers.talon.one/Getting-Started/APIV2).  Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer profile returns a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
+     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](https://developers.talon.one/Getting-Started/APIV2).  Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#/customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer profile returns a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
      * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
-     * @param {module:model/NewCustomerSession} body 
+     * @param {module:model/NewCustomerSession} newCustomerSession 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationState} and HTTP response
      */
-    updateCustomerSessionWithHttpInfo(customerSessionId, body, opts) {
+    updateCustomerSessionWithHttpInfo(customerSessionId, newCustomerSession, opts) {
       opts = opts || {};
-      let postBody = body;
+      let postBody = newCustomerSession;
       // verify the required parameter 'customerSessionId' is set
       if (customerSessionId === undefined || customerSessionId === null) {
         throw new Error("Missing the required parameter 'customerSessionId' when calling updateCustomerSession");
       }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerSession");
+      // verify the required parameter 'newCustomerSession' is set
+      if (newCustomerSession === undefined || newCustomerSession === null) {
+        throw new Error("Missing the required parameter 'newCustomerSession' when calling updateCustomerSession");
       }
 
       let pathParams = {
@@ -672,7 +730,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IntegrationState;
@@ -685,15 +743,15 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Session V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](https://developers.talon.one/Getting-Started/APIV2).  Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer profile returns a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
+     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](https://developers.talon.one/Getting-Started/APIV2).  Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#/customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer profile returns a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
      * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
-     * @param {module:model/NewCustomerSession} body 
+     * @param {module:model/NewCustomerSession} newCustomerSession 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationState}
      */
-    updateCustomerSession(customerSessionId, body, opts) {
-      return this.updateCustomerSessionWithHttpInfo(customerSessionId, body, opts)
+    updateCustomerSession(customerSessionId, newCustomerSession, opts) {
+      return this.updateCustomerSessionWithHttpInfo(customerSessionId, newCustomerSession, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -702,23 +760,23 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Session
-     * Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer session returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
+     * Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#/customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer session returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
      * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
-     * @param {module:model/IntegrationRequest} body 
+     * @param {module:model/IntegrationRequest} integrationRequest 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationStateV2} and HTTP response
      */
-    updateCustomerSessionV2WithHttpInfo(customerSessionId, body, opts) {
+    updateCustomerSessionV2WithHttpInfo(customerSessionId, integrationRequest, opts) {
       opts = opts || {};
-      let postBody = body;
+      let postBody = integrationRequest;
       // verify the required parameter 'customerSessionId' is set
       if (customerSessionId === undefined || customerSessionId === null) {
         throw new Error("Missing the required parameter 'customerSessionId' when calling updateCustomerSessionV2");
       }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerSessionV2");
+      // verify the required parameter 'integrationRequest' is set
+      if (integrationRequest === undefined || integrationRequest === null) {
+        throw new Error("Missing the required parameter 'integrationRequest' when calling updateCustomerSessionV2");
       }
 
       let pathParams = {
@@ -745,15 +803,15 @@ export default class IntegrationApi {
 
     /**
      * Update a Customer Session
-     * Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer session returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
+     * Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#/customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer session returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
      * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
-     * @param {module:model/IntegrationRequest} body 
+     * @param {module:model/IntegrationRequest} integrationRequest 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationStateV2}
      */
-    updateCustomerSessionV2(customerSessionId, body, opts) {
-      return this.updateCustomerSessionV2WithHttpInfo(customerSessionId, body, opts)
+    updateCustomerSessionV2(customerSessionId, integrationRequest, opts) {
+      return this.updateCustomerSessionV2WithHttpInfo(customerSessionId, integrationRequest, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

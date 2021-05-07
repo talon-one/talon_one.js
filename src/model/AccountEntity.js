@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountEntity model module.
  * @module model/AccountEntity
- * @version 4.3.0
+ * @version 10.0.0
  */
 class AccountEntity {
     /**

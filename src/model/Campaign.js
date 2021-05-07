@@ -18,12 +18,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Campaign {
     /**
      * Constructs a new <code>Campaign</code>.
-     * 
      * @alias module:model/Campaign
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
@@ -138,6 +137,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('referralCreationCount')) {
                 obj['referralCreationCount'] = ApiClient.convertToType(data['referralCreationCount'], 'Number');
+            }
+            if (data.hasOwnProperty('awardedGiveawaysCount')) {
+                obj['awardedGiveawaysCount'] = ApiClient.convertToType(data['awardedGiveawaysCount'], 'Number');
             }
             if (data.hasOwnProperty('createdLoyaltyPointsCount')) {
                 obj['createdLoyaltyPointsCount'] = ApiClient.convertToType(data['createdLoyaltyPointsCount'], 'Number');
@@ -308,6 +310,12 @@ Campaign.prototype['couponCreationCount'] = undefined;
 Campaign.prototype['referralCreationCount'] = undefined;
 
 /**
+ * Total number of giveaways awarded by rules in this campaign.
+ * @member {Number} awardedGiveawaysCount
+ */
+Campaign.prototype['awardedGiveawaysCount'] = undefined;
+
+/**
  * Total number of loyalty points created by rules in this campaign.
  * @member {Number} createdLoyaltyPointsCount
  */
@@ -409,7 +417,13 @@ Campaign['FeaturesEnum'] = {
      * value: "loyalty"
      * @const
      */
-    "loyalty": "loyalty"
+    "loyalty": "loyalty",
+
+    /**
+     * value: "giveaways"
+     * @const
+     */
+    "giveaways": "giveaways"
 };
 
 

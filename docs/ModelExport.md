@@ -22,6 +22,10 @@ Name | Type | Description | Notes
 
 * `CustomerSession` (value: `"CustomerSession"`)
 
+* `LoyaltyLedger` (value: `"LoyaltyLedger"`)
+
+* `LoyaltyLedgerLog` (value: `"LoyaltyLedgerLog"`)
+
 
 
 

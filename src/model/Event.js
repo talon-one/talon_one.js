@@ -18,12 +18,11 @@ import Meta from './Meta';
 /**
  * The Event model module.
  * @module model/Event
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Event {
     /**
      * Constructs a new <code>Event</code>.
-     * 
      * @alias module:model/Event
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

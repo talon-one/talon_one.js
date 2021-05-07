@@ -18,12 +18,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewApplication {
     /**
      * Constructs a new <code>NewApplication</code>.
-     * 
      * @alias module:model/NewApplication
      * @param name {String} The name of this application.
      * @param timezone {String} A string containing an IANA timezone descriptor.

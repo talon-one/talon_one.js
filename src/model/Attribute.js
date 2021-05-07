@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Attribute model module.
  * @module model/Attribute
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Attribute {
     /**
      * Constructs a new <code>Attribute</code>.
-     * 
      * @alias module:model/Attribute
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
@@ -239,7 +238,19 @@ Attribute['EntityEnum'] = {
      * value: "Event"
      * @const
      */
-    "Event": "Event"
+    "Event": "Event",
+
+    /**
+     * value: "Giveaway"
+     * @const
+     */
+    "Giveaway": "Giveaway",
+
+    /**
+     * value: "Referral"
+     * @const
+     */
+    "Referral": "Referral"
 };
 
 

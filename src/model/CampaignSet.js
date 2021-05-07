@@ -17,12 +17,11 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The CampaignSet model module.
  * @module model/CampaignSet
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CampaignSet {
     /**
      * Constructs a new <code>CampaignSet</code>.
-     * 
      * @alias module:model/CampaignSet
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

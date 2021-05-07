@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('createReferralsForMultipleAdvocates', function() {
+      it('should call createReferralsForMultipleAdvocates successfully', function(done) {
+        //uncomment below and update the code to test createReferralsForMultipleAdvocates
+        //instance.createReferralsForMultipleAdvocates(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteCouponReservation', function() {
       it('should call deleteCouponReservation successfully', function(done) {
         //uncomment below and update the code to test deleteCouponReservation

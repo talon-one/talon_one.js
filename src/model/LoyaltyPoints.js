@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyPoints model module.
  * @module model/LoyaltyPoints
- * @version 4.3.0
+ * @version 10.0.0
  */
 class LoyaltyPoints {
     /**

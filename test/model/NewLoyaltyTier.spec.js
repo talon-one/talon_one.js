@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.NewImport();
+    instance = new TalonOne.NewLoyaltyTier();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,22 @@
       object[property] = value;
   }
 
-  describe('NewImport', function() {
-    it('should create an instance of NewImport', function() {
-      // uncomment below and update the code to test NewImport
-      //var instane = new TalonOne.NewImport();
-      //expect(instance).to.be.a(TalonOne.NewImport);
+  describe('NewLoyaltyTier', function() {
+    it('should create an instance of NewLoyaltyTier', function() {
+      // uncomment below and update the code to test NewLoyaltyTier
+      //var instane = new TalonOne.NewLoyaltyTier();
+      //expect(instance).to.be.a(TalonOne.NewLoyaltyTier);
     });
 
-    it('should have the property entity (base name: "entity")', function() {
-      // uncomment below and update the code to test the property entity
-      //var instane = new TalonOne.NewImport();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.NewLoyaltyTier();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property minPoints (base name: "minPoints")', function() {
+      // uncomment below and update the code to test the property minPoints
+      //var instane = new TalonOne.NewLoyaltyTier();
       //expect(instance).to.be();
     });
 

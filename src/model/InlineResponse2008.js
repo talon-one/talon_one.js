@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyProgram from './LoyaltyProgram';
+import AccessLogEntry from './AccessLogEntry';
 
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 4.3.0
+ * @version 10.0.0
  */
 class InlineResponse2008 {
     /**
      * Constructs a new <code>InlineResponse2008</code>.
      * @alias module:model/InlineResponse2008
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/LoyaltyProgram>} 
+     * @param data {Array.<module:model/AccessLogEntry>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2008 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyProgram]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2008 {
 InlineResponse2008.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyProgram>} data
+ * @member {Array.<module:model/AccessLogEntry>} data
  */
 InlineResponse2008.prototype['data'] = undefined;
 

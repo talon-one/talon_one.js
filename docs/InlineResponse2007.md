@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[Referral]**](Referral.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[LoyaltyProgram]**](LoyaltyProgram.md) |  | 
 
 

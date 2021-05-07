@@ -17,12 +17,11 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The NewWebhook model module.
  * @module model/NewWebhook
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewWebhook {
     /**
      * Constructs a new <code>NewWebhook</code>.
-     * 
      * @alias module:model/NewWebhook
      * @param applicationIds {Array.<Number>} The IDs of the applications that are related to this entity.
      * @param title {String} Friendly title for this webhook

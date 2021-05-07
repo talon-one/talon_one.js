@@ -18,12 +18,11 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The CustomerProfile model module.
  * @module model/CustomerProfile
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CustomerProfile {
     /**
      * Constructs a new <code>CustomerProfile</code>.
-     * 
      * @alias module:model/CustomerProfile
      * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
      * @param created {Date} The exact moment this entity was created.

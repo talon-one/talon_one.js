@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewApplicationAPIKey model module.
  * @module model/NewApplicationAPIKey
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewApplicationAPIKey {
     /**
      * Constructs a new <code>NewApplicationAPIKey</code>.
-     * 
      * @alias module:model/NewApplicationAPIKey
      * @param title {String} Title for API Key
      * @param expires {Date} The date the API key expired

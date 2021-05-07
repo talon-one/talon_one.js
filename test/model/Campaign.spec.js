@@ -192,6 +192,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property awardedGiveawaysCount (base name: "awardedGiveawaysCount")', function() {
+      // uncomment below and update the code to test the property awardedGiveawaysCount
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdLoyaltyPointsCount (base name: "createdLoyaltyPointsCount")', function() {
       // uncomment below and update the code to test the property createdLoyaltyPointsCount
       //var instane = new TalonOne.Campaign();

@@ -17,12 +17,11 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The ApplicationEvent model module.
  * @module model/ApplicationEvent
- * @version 4.3.0
+ * @version 10.0.0
  */
 class ApplicationEvent {
     /**
      * Constructs a new <code>ApplicationEvent</code>.
-     * 
      * @alias module:model/ApplicationEvent
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

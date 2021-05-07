@@ -18,12 +18,11 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 4.3.0
+ * @version 10.0.0
  */
 class ApplicationCustomer {
     /**
      * Constructs a new <code>ApplicationCustomer</code>.
-     * 
      * @alias module:model/ApplicationCustomer
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.

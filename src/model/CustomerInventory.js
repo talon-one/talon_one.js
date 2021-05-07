@@ -12,15 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-import Coupon from './Coupon';
 import CustomerProfile from './CustomerProfile';
+import Giveaway from './Giveaway';
+import InventoryCoupon from './InventoryCoupon';
 import Loyalty from './Loyalty';
 import Referral from './Referral';
 
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CustomerInventory {
     /**
@@ -61,7 +62,10 @@ class CustomerInventory {
                 obj['referrals'] = ApiClient.convertToType(data['referrals'], [Referral]);
             }
             if (data.hasOwnProperty('coupons')) {
-                obj['coupons'] = ApiClient.convertToType(data['coupons'], [Coupon]);
+                obj['coupons'] = ApiClient.convertToType(data['coupons'], [InventoryCoupon]);
+            }
+            if (data.hasOwnProperty('giveaways')) {
+                obj['giveaways'] = ApiClient.convertToType(data['giveaways'], [Giveaway]);
             }
         }
         return obj;
@@ -86,9 +90,14 @@ CustomerInventory.prototype['loyalty'] = undefined;
 CustomerInventory.prototype['referrals'] = undefined;
 
 /**
- * @member {Array.<module:model/Coupon>} coupons
+ * @member {Array.<module:model/InventoryCoupon>} coupons
  */
 CustomerInventory.prototype['coupons'] = undefined;
+
+/**
+ * @member {Array.<module:model/Giveaway>} giveaways
+ */
+CustomerInventory.prototype['giveaways'] = undefined;
 
 
 

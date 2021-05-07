@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CartItem {
     /**

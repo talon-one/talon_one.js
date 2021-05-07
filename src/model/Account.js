@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Account model module.
  * @module model/Account
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Account {
     /**
      * Constructs a new <code>Account</code>.
-     * 
      * @alias module:model/Account
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

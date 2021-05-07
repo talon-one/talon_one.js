@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property giveaways (base name: "giveaways")', function() {
+      // uncomment below and update the code to test the property giveaways
+      //var instane = new TalonOne.CustomerInventory();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

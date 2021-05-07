@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
+**hasMore** | **Boolean** |  | 
 **data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
 
 

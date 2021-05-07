@@ -198,16 +198,6 @@
         done();
       });
     });
-    describe('destroySession', function() {
-      it('should call destroySession successfully', function(done) {
-        //uncomment below and update the code to test destroySession
-        //instance.destroySession(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('exportCoupons', function() {
       it('should call exportCoupons successfully', function(done) {
         //uncomment below and update the code to test exportCoupons
@@ -808,6 +798,46 @@
         done();
       });
     });
+    describe('importCoupons', function() {
+      it('should call importCoupons successfully', function(done) {
+        //uncomment below and update the code to test importCoupons
+        //instance.importCoupons(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importLoyaltyPoints', function() {
+      it('should call importLoyaltyPoints successfully', function(done) {
+        //uncomment below and update the code to test importLoyaltyPoints
+        //instance.importLoyaltyPoints(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importPoolGiveaways', function() {
+      it('should call importPoolGiveaways successfully', function(done) {
+        //uncomment below and update the code to test importPoolGiveaways
+        //instance.importPoolGiveaways(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importReferrals', function() {
+      it('should call importReferrals successfully', function(done) {
+        //uncomment below and update the code to test importReferrals
+        //instance.importReferrals(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeLoyaltyPoints', function() {
       it('should call removeLoyaltyPoints successfully', function(done) {
         //uncomment below and update the code to test removeLoyaltyPoints
@@ -912,6 +942,16 @@
       it('should call updateCouponBatch successfully', function(done) {
         //uncomment below and update the code to test updateCouponBatch
         //instance.updateCouponBatch(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateReferral', function() {
+      it('should call updateReferral successfully', function(done) {
+        //uncomment below and update the code to test updateReferral
+        //instance.updateReferral(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

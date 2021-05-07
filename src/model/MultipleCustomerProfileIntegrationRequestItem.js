@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The MultipleCustomerProfileIntegrationRequestItem model module.
  * @module model/MultipleCustomerProfileIntegrationRequestItem
- * @version 4.3.0
+ * @version 10.0.0
  */
 class MultipleCustomerProfileIntegrationRequestItem {
     /**
      * Constructs a new <code>MultipleCustomerProfileIntegrationRequestItem</code>.
-     * 
      * @alias module:model/MultipleCustomerProfileIntegrationRequestItem
      * @param integrationId {String} The custom identifier for this profile, must be unique within the account.
      */
