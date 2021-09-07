@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyTier from './LoyaltyTier';
 
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 4.3.0
+ * @version 10.0.0
  */
 class LoyaltyProgram {
     /**
@@ -93,6 +94,9 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
             }
+            if (data.hasOwnProperty('tiers')) {
+                obj['tiers'] = ApiClient.convertToType(data['tiers'], [LoyaltyTier]);
+            }
         }
         return obj;
     }
@@ -153,6 +157,12 @@ LoyaltyProgram.prototype['defaultPending'] = undefined;
  * @member {Boolean} allowSubledger
  */
 LoyaltyProgram.prototype['allowSubledger'] = undefined;
+
+/**
+ * The tiers in this loyalty program
+ * @member {Array.<module:model/LoyaltyTier>} tiers
+ */
+LoyaltyProgram.prototype['tiers'] = undefined;
 
 
 

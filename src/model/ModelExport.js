@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelExport model module.
  * @module model/ModelExport
- * @version 4.3.0
+ * @version 10.0.0
  */
 class ModelExport {
     /**
      * Constructs a new <code>ModelExport</code>.
-     * 
      * @alias module:model/ModelExport
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
@@ -148,7 +147,19 @@ ModelExport['EntityEnum'] = {
      * value: "CustomerSession"
      * @const
      */
-    "CustomerSession": "CustomerSession"
+    "CustomerSession": "CustomerSession",
+
+    /**
+     * value: "LoyaltyLedger"
+     * @const
+     */
+    "LoyaltyLedger": "LoyaltyLedger",
+
+    /**
+     * value: "LoyaltyLedgerLog"
+     * @const
+     */
+    "LoyaltyLedgerLog": "LoyaltyLedgerLog"
 };
 
 

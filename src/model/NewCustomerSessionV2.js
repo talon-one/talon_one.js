@@ -18,12 +18,11 @@ import CartItem from './CartItem';
 /**
  * The NewCustomerSessionV2 model module.
  * @module model/NewCustomerSessionV2
- * @version 4.3.0
+ * @version 10.0.0
  */
 class NewCustomerSessionV2 {
     /**
      * Constructs a new <code>NewCustomerSessionV2</code>.
-     * 
      * @alias module:model/NewCustomerSessionV2
      */
     constructor() { 

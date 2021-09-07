@@ -14,20 +14,21 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The NewImport model module.
- * @module model/NewImport
- * @version 4.2.0
+ * The CustomEffectProps model module.
+ * @module model/CustomEffectProps
+ * @version 10.0.0
  */
-class NewImport {
+class CustomEffectProps {
     /**
-     * Constructs a new <code>NewImport</code>.
-     * 
-     * @alias module:model/NewImport
-     * @param entity {module:model/NewImport.EntityEnum} The name of the entity that was imported.
+     * Constructs a new <code>CustomEffectProps</code>.
+     * Effect containing custom payload.
+     * @alias module:model/CustomEffectProps
+     * @param type {String} The type of the custom effect.
+     * @param payload {Object} The JSON payload of the custom effect.
      */
-    constructor(entity) { 
+    constructor(type, payload) { 
         
-        NewImport.initialize(this, entity);
+        CustomEffectProps.initialize(this, type, payload);
     }
 
     /**
@@ -35,23 +36,27 @@ class NewImport {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, entity) { 
-        obj['entity'] = entity;
+    static initialize(obj, type, payload) { 
+        obj['type'] = type;
+        obj['payload'] = payload;
     }
 
     /**
-     * Constructs a <code>NewImport</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>CustomEffectProps</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/NewImport} obj Optional instance to populate.
-     * @return {module:model/NewImport} The populated <code>NewImport</code> instance.
+     * @param {module:model/CustomEffectProps} obj Optional instance to populate.
+     * @return {module:model/CustomEffectProps} The populated <code>CustomEffectProps</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new NewImport();
+            obj = obj || new CustomEffectProps();
 
-            if (data.hasOwnProperty('entity')) {
-                obj['entity'] = ApiClient.convertToType(data['entity'], 'String');
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('payload')) {
+                obj['payload'] = ApiClient.convertToType(data['payload'], Object);
             }
         }
         return obj;
@@ -61,30 +66,21 @@ class NewImport {
 }
 
 /**
- * The name of the entity that was imported.
- * @member {module:model/NewImport.EntityEnum} entity
+ * The type of the custom effect.
+ * @member {String} type
  */
-NewImport.prototype['entity'] = undefined;
-
-
-
-
+CustomEffectProps.prototype['type'] = undefined;
 
 /**
- * Allowed values for the <code>entity</code> property.
- * @enum {String}
- * @readonly
+ * The JSON payload of the custom effect.
+ * @member {Object} payload
  */
-NewImport['EntityEnum'] = {
-
-    /**
-     * value: "Coupon"
-     * @const
-     */
-    "Coupon": "Coupon"
-};
+CustomEffectProps.prototype['payload'] = undefined;
 
 
 
-export default NewImport;
+
+
+
+export default CustomEffectProps;
 

@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationSession from './ApplicationSession';
+import ApplicationEvent from './ApplicationEvent';
 
 /**
  * The InlineResponse20016 model module.
  * @module model/InlineResponse20016
- * @version 4.3.0
+ * @version 10.0.0
  */
 class InlineResponse20016 {
     /**
      * Constructs a new <code>InlineResponse20016</code>.
      * @alias module:model/InlineResponse20016
-     * @param data {Array.<module:model/ApplicationSession>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/ApplicationEvent>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20016.initialize(this, data);
+        InlineResponse20016.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20016 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -50,11 +52,11 @@ class InlineResponse20016 {
         if (data) {
             obj = obj || new InlineResponse20016();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationSession]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationEvent]);
             }
         }
         return obj;
@@ -64,12 +66,12 @@ class InlineResponse20016 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse20016.prototype['hasMore'] = undefined;
+InlineResponse20016.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationSession>} data
+ * @member {Array.<module:model/ApplicationEvent>} data
  */
 InlineResponse20016.prototype['data'] = undefined;
 

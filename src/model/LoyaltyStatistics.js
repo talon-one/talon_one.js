@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyStatistics model module.
  * @module model/LoyaltyStatistics
- * @version 4.3.0
+ * @version 10.0.0
  */
 class LoyaltyStatistics {
     /**
      * Constructs a new <code>LoyaltyStatistics</code>.
-     * 
      * @alias module:model/LoyaltyStatistics
      * @param totalActivePoints {Number} Total of active points for this loyalty program
      * @param totalPendingPoints {Number} Total of pending points for this loyalty program

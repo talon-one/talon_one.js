@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[LoyaltyProgram]**](LoyaltyProgram.md) |  | 
+**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

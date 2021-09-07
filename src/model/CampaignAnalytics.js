@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignAnalytics model module.
  * @module model/CampaignAnalytics
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CampaignAnalytics {
     /**
      * Constructs a new <code>CampaignAnalytics</code>.
-     * 
      * @alias module:model/CampaignAnalytics
      * @param _date {Date} 
      * @param campaignRevenue {Number} Amount of revenue in this campaign (for coupon or discount sessions).

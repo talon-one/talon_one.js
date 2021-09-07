@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Attribute]**](Attribute.md) |  | 
+**data** | [**[AccountAdditionalCost]**](AccountAdditionalCost.md) |  | 
 
 

@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEvent model module.
  * @module model/IntegrationEvent
- * @version 4.3.0
+ * @version 10.0.0
  */
 class IntegrationEvent {
     /**
      * Constructs a new <code>IntegrationEvent</code>.
-     * 
      * @alias module:model/IntegrationEvent
      * @param type {String} A string representing the event. Must not be a reserved event name.
      * @param attributes {Object} Arbitrary additional JSON data associated with the event.

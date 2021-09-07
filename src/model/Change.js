@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Change model module.
  * @module model/Change
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Change {
     /**
      * Constructs a new <code>Change</code>.
-     * 
      * @alias module:model/Change
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

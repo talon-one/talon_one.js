@@ -17,12 +17,11 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 4.3.0
+ * @version 10.0.0
  */
 class ApplicationSession {
     /**
      * Constructs a new <code>ApplicationSession</code>.
-     * 
      * @alias module:model/ApplicationSession
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created. The exact moment this entity was created.

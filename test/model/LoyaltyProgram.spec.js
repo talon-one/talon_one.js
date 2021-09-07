@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tiers (base name: "tiers")', function() {
+      // uncomment below and update the code to test the property tiers
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

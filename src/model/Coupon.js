@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Coupon model module.
  * @module model/Coupon
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Coupon {
     /**
      * Constructs a new <code>Coupon</code>.
-     * 
      * @alias module:model/Coupon
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.

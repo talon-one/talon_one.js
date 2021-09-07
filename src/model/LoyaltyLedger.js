@@ -17,7 +17,7 @@ import LoyaltySubLedger from './LoyaltySubLedger';
 /**
  * The LoyaltyLedger model module.
  * @module model/LoyaltyLedger
- * @version 4.3.0
+ * @version 10.0.0
  */
 class LoyaltyLedger {
     /**
@@ -25,10 +25,11 @@ class LoyaltyLedger {
      * Ledger of Balance in Loyalty Program for a Customer
      * @alias module:model/LoyaltyLedger
      * @param ledger {module:model/LoyaltySubLedger} 
+     * @param subLedgers {Object.<String, module:model/LoyaltySubLedger>} A map containing a list of all loyalty subledger balances
      */
-    constructor(ledger) { 
+    constructor(ledger, subLedgers) { 
         
-        LoyaltyLedger.initialize(this, ledger);
+        LoyaltyLedger.initialize(this, ledger, subLedgers);
     }
 
     /**
@@ -36,8 +37,9 @@ class LoyaltyLedger {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, ledger) { 
+    static initialize(obj, ledger, subLedgers) { 
         obj['ledger'] = ledger;
+        obj['subLedgers'] = subLedgers;
     }
 
     /**

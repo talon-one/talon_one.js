@@ -17,7 +17,7 @@ import IntegrationStateV2 from './IntegrationStateV2';
 /**
  * The MultipleCustomerProfileIntegrationResponseV2 model module.
  * @module model/MultipleCustomerProfileIntegrationResponseV2
- * @version 4.3.0
+ * @version 10.0.0
  */
 class MultipleCustomerProfileIntegrationResponseV2 {
     /**

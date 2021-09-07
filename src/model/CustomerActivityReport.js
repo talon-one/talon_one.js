@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerActivityReport model module.
  * @module model/CustomerActivityReport
- * @version 4.3.0
+ * @version 10.0.0
  */
 class CustomerActivityReport {
     /**
      * Constructs a new <code>CustomerActivityReport</code>.
-     * 
      * @alias module:model/CustomerActivityReport
      * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
      * @param created {Date} The exact moment this entity was created.

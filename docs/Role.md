@@ -4,12 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | The ID of the role corresponding to the DB row | 
-**accountID** | **Number** | The ID of the Talon.One account that owns this role. | 
+**id** | **Number** | Unique ID for this entity. | 
+**created** | **Date** | The exact moment this entity was created. | 
+**modified** | **Date** | The exact moment this entity was last modified. | 
+**accountId** | **Number** | The ID of the account that owns this entity. | 
 **campaignGroupID** | **Number** | The ID of the Campaign Group this role was created for. | [optional] 
-**name** | **String** | Name of the role | [optional] 
+**name** | **String** | Name of the role | 
 **description** | **String** | Description of the role | [optional] 
 **members** | **[Number]** | A list of user identifiers assigned to this role | [optional] 
-**acl** | [**Object**](.md) | Role ACL Policy | [optional] 
+**acl** | [**Object**](.md) | Role ACL Policy | 
 
 

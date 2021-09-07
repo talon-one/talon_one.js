@@ -90,8 +90,38 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property giveawaysPools (base name: "giveawaysPools")', function() {
+      // uncomment below and update the code to test the property giveawaysPools
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
     it('should have the property variables (base name: "variables")', function() {
       // uncomment below and update the code to test the property variables
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property loyaltyPrograms (base name: "loyaltyPrograms")', function() {
+      // uncomment below and update the code to test the property loyaltyPrograms
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property attributes (base name: "attributes")', function() {
+      // uncomment below and update the code to test the property attributes
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property additionalCosts (base name: "additionalCosts")', function() {
+      // uncomment below and update the code to test the property additionalCosts
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property audiences (base name: "audiences")', function() {
+      // uncomment below and update the code to test the property audiences
       //var instane = new TalonOne.Environment();
       //expect(instance).to.be();
     });

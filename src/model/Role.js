@@ -16,19 +16,22 @@ import ApiClient from '../ApiClient';
 /**
  * The Role model module.
  * @module model/Role
- * @version 4.3.0
+ * @version 10.0.0
  */
 class Role {
     /**
      * Constructs a new <code>Role</code>.
-     * 
      * @alias module:model/Role
-     * @param id {Number} The ID of the role corresponding to the DB row
-     * @param accountID {Number} The ID of the Talon.One account that owns this role.
+     * @param id {Number} Unique ID for this entity.
+     * @param created {Date} The exact moment this entity was created.
+     * @param modified {Date} The exact moment this entity was last modified.
+     * @param accountId {Number} The ID of the account that owns this entity.
+     * @param name {String} Name of the role
+     * @param acl {Object} Role ACL Policy
      */
-    constructor(id, accountID) { 
+    constructor(id, created, modified, accountId, name, acl) { 
         
-        Role.initialize(this, id, accountID);
+        Role.initialize(this, id, created, modified, accountId, name, acl);
     }
 
     /**
@@ -36,9 +39,13 @@ class Role {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, accountID) { 
+    static initialize(obj, id, created, modified, accountId, name, acl) { 
         obj['id'] = id;
-        obj['accountID'] = accountID;
+        obj['created'] = created;
+        obj['modified'] = modified;
+        obj['accountId'] = accountId;
+        obj['name'] = name;
+        obj['acl'] = acl;
     }
 
     /**
@@ -55,8 +62,14 @@ class Role {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('accountID')) {
-                obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
+            if (data.hasOwnProperty('created')) {
+                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('modified')) {
+                obj['modified'] = ApiClient.convertToType(data['modified'], 'Date');
+            }
+            if (data.hasOwnProperty('accountId')) {
+                obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
             }
             if (data.hasOwnProperty('campaignGroupID')) {
                 obj['campaignGroupID'] = ApiClient.convertToType(data['campaignGroupID'], 'Number');
@@ -81,16 +94,28 @@ class Role {
 }
 
 /**
- * The ID of the role corresponding to the DB row
+ * Unique ID for this entity.
  * @member {Number} id
  */
 Role.prototype['id'] = undefined;
 
 /**
- * The ID of the Talon.One account that owns this role.
- * @member {Number} accountID
+ * The exact moment this entity was created.
+ * @member {Date} created
  */
-Role.prototype['accountID'] = undefined;
+Role.prototype['created'] = undefined;
+
+/**
+ * The exact moment this entity was last modified.
+ * @member {Date} modified
+ */
+Role.prototype['modified'] = undefined;
+
+/**
+ * The ID of the account that owns this entity.
+ * @member {Number} accountId
+ */
+Role.prototype['accountId'] = undefined;
 
 /**
  * The ID of the Campaign Group this role was created for.
