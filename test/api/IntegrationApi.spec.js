@@ -48,6 +48,16 @@
   }
 
   describe('IntegrationApi', function() {
+    describe('createAudienceV2', function() {
+      it('should call createAudienceV2 successfully', function(done) {
+        //uncomment below and update the code to test createAudienceV2
+        //instance.createAudienceV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCouponReservation', function() {
       it('should call createCouponReservation successfully', function(done) {
         //uncomment below and update the code to test createCouponReservation
@@ -62,6 +72,36 @@
       it('should call createReferral successfully', function(done) {
         //uncomment below and update the code to test createReferral
         //instance.createReferral(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createReferralsForMultipleAdvocates', function() {
+      it('should call createReferralsForMultipleAdvocates successfully', function(done) {
+        //uncomment below and update the code to test createReferralsForMultipleAdvocates
+        //instance.createReferralsForMultipleAdvocates(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteAudienceMembershipsV2', function() {
+      it('should call deleteAudienceMembershipsV2 successfully', function(done) {
+        //uncomment below and update the code to test deleteAudienceMembershipsV2
+        //instance.deleteAudienceMembershipsV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteAudienceV2', function() {
+      it('should call deleteAudienceV2 successfully', function(done) {
+        //uncomment below and update the code to test deleteAudienceV2
+        //instance.deleteAudienceV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -118,10 +158,20 @@
         done();
       });
     });
-    describe('updateCustomerProfile', function() {
-      it('should call updateCustomerProfile successfully', function(done) {
-        //uncomment below and update the code to test updateCustomerProfile
-        //instance.updateCustomerProfile(function(error) {
+    describe('updateAudienceCustomersAttributes', function() {
+      it('should call updateAudienceCustomersAttributes successfully', function(done) {
+        //uncomment below and update the code to test updateAudienceCustomersAttributes
+        //instance.updateAudienceCustomersAttributes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateAudienceV2', function() {
+      it('should call updateAudienceV2 successfully', function(done) {
+        //uncomment below and update the code to test updateAudienceV2
+        //instance.updateAudienceV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -152,16 +202,6 @@
       it('should call updateCustomerProfilesV2 successfully', function(done) {
         //uncomment below and update the code to test updateCustomerProfilesV2
         //instance.updateCustomerProfilesV2(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateCustomerSession', function() {
-      it('should call updateCustomerSession successfully', function(done) {
-        //uncomment below and update the code to test updateCustomerSession
-        //instance.updateCustomerSession(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

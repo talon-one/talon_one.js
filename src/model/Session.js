@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Session model module.
  * @module model/Session
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Session {
     /**
      * Constructs a new <code>Session</code>.
      * @alias module:model/Session
      * @param userId {Number} The ID of the user of this session
-     * @param token {String} An opaque session identifier
+     * @param token {String} The token to use as a bearer token to query Management API endpoints.
      * @param created {Date} Unix timestamp indicating when the session was first created.
      */
     constructor(userId, token, created) { 
@@ -76,7 +76,7 @@ class Session {
 Session.prototype['userId'] = undefined;
 
 /**
- * An opaque session identifier
+ * The token to use as a bearer token to query Management API endpoints.
  * @member {String} token
  */
 Session.prototype['token'] = undefined;

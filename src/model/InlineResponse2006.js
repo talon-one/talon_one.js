@@ -17,18 +17,18 @@ import Referral from './Referral';
 /**
  * The InlineResponse2006 model module.
  * @module model/InlineResponse2006
- * @version 4.3.0
+ * @version 4.4.0
  */
 class InlineResponse2006 {
     /**
      * Constructs a new <code>InlineResponse2006</code>.
      * @alias module:model/InlineResponse2006
-     * @param totalResultSize {Number} 
+     * @param hasMore {Boolean} 
      * @param data {Array.<module:model/Referral>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse2006.initialize(this, totalResultSize, data);
+        InlineResponse2006.initialize(this, hasMore, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse2006 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -52,8 +52,8 @@ class InlineResponse2006 {
         if (data) {
             obj = obj || new InlineResponse2006();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [Referral]);
@@ -66,9 +66,9 @@ class InlineResponse2006 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * @member {Boolean} hasMore
  */
-InlineResponse2006.prototype['totalResultSize'] = undefined;
+InlineResponse2006.prototype['hasMore'] = undefined;
 
 /**
  * @member {Array.<module:model/Referral>} data

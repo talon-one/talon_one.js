@@ -12,14 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
+import AccountAdditionalCost from './AccountAdditionalCost';
+import Attribute from './Attribute';
+import Audience from './Audience';
 import FunctionDef from './FunctionDef';
+import GiveawaysPool from './GiveawaysPool';
+import LoyaltyProgram from './LoyaltyProgram';
 import SlotDef from './SlotDef';
 import TemplateDef from './TemplateDef';
 
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Environment {
     /**
@@ -32,7 +37,7 @@ class Environment {
      * @param slots {Array.<module:model/SlotDef>} The slots defined for this application.
      * @param functions {Array.<module:model/FunctionDef>} The functions defined for this application.
      * @param templates {Array.<module:model/TemplateDef>} The templates defined for this application.
-     * @param variables {String} 
+     * @param variables {String} A stringified version of the environment's Talang variables scope
      */
     constructor(id, created, applicationId, slots, functions, templates, variables) { 
         
@@ -86,6 +91,21 @@ class Environment {
             if (data.hasOwnProperty('variables')) {
                 obj['variables'] = ApiClient.convertToType(data['variables'], 'String');
             }
+            if (data.hasOwnProperty('giveawaysPools')) {
+                obj['giveawaysPools'] = ApiClient.convertToType(data['giveawaysPools'], [GiveawaysPool]);
+            }
+            if (data.hasOwnProperty('loyaltyPrograms')) {
+                obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], [Attribute]);
+            }
+            if (data.hasOwnProperty('additionalCosts')) {
+                obj['additionalCosts'] = ApiClient.convertToType(data['additionalCosts'], [AccountAdditionalCost]);
+            }
+            if (data.hasOwnProperty('audiences')) {
+                obj['audiences'] = ApiClient.convertToType(data['audiences'], [Audience]);
+            }
         }
         return obj;
     }
@@ -130,9 +150,40 @@ Environment.prototype['functions'] = undefined;
 Environment.prototype['templates'] = undefined;
 
 /**
+ * A stringified version of the environment's Talang variables scope
  * @member {String} variables
  */
 Environment.prototype['variables'] = undefined;
+
+/**
+ * The giveaways pools that the application is subscribed to.
+ * @member {Array.<module:model/GiveawaysPool>} giveawaysPools
+ */
+Environment.prototype['giveawaysPools'] = undefined;
+
+/**
+ * The loyalty programs that the application is subscribed to.
+ * @member {Array.<module:model/LoyaltyProgram>} loyaltyPrograms
+ */
+Environment.prototype['loyaltyPrograms'] = undefined;
+
+/**
+ * The attributes that the application is subscribed to.
+ * @member {Array.<module:model/Attribute>} attributes
+ */
+Environment.prototype['attributes'] = undefined;
+
+/**
+ * The additional costs that the application is subscribed to.
+ * @member {Array.<module:model/AccountAdditionalCost>} additionalCosts
+ */
+Environment.prototype['additionalCosts'] = undefined;
+
+/**
+ * The audiences contained in the account which the application belongs to.
+ * @member {Array.<module:model/Audience>} audiences
+ */
+Environment.prototype['audiences'] = undefined;
 
 
 

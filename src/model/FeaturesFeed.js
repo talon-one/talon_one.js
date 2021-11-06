@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FeaturesFeed model module.
  * @module model/FeaturesFeed
- * @version 4.3.0
+ * @version 4.4.0
  */
 class FeaturesFeed {
     /**

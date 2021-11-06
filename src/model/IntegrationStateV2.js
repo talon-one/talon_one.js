@@ -18,6 +18,7 @@ import CustomerProfile from './CustomerProfile';
 import CustomerSessionV2 from './CustomerSessionV2';
 import Effect from './Effect';
 import Event from './Event';
+import Giveaway from './Giveaway';
 import Loyalty from './Loyalty';
 import Referral from './Referral';
 import RuleFailureReason from './RuleFailureReason';
@@ -25,7 +26,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The IntegrationStateV2 model module.
  * @module model/IntegrationStateV2
- * @version 4.3.0
+ * @version 4.4.0
  */
 class IntegrationStateV2 {
     /**
@@ -96,6 +97,9 @@ class IntegrationStateV2 {
             if (data.hasOwnProperty('createdReferrals')) {
                 obj['createdReferrals'] = ApiClient.convertToType(data['createdReferrals'], [Referral]);
             }
+            if (data.hasOwnProperty('awardedGiveaways')) {
+                obj['awardedGiveaways'] = ApiClient.convertToType(data['awardedGiveaways'], [Giveaway]);
+            }
         }
         return obj;
     }
@@ -157,6 +161,11 @@ IntegrationStateV2.prototype['createdCoupons'] = undefined;
  * @member {Array.<module:model/Referral>} createdReferrals
  */
 IntegrationStateV2.prototype['createdReferrals'] = undefined;
+
+/**
+ * @member {Array.<module:model/Giveaway>} awardedGiveaways
+ */
+IntegrationStateV2.prototype['awardedGiveaways'] = undefined;
 
 
 

@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property period (base name: "period")', function() {
+      // uncomment below and update the code to test the property period
+      //var instane = new TalonOne.LimitConfig();
+      //expect(instance).to.be();
+    });
+
     it('should have the property entities (base name: "entities")', function() {
       // uncomment below and update the code to test the property entities
       //var instane = new TalonOne.LimitConfig();

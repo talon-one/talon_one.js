@@ -144,6 +144,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property updated (base name: "updated")', function() {
+      // uncomment below and update the code to test the property updated
+      //var instane = new TalonOne.CustomerSessionV2();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

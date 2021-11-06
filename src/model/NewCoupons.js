@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewCoupons {
     /**

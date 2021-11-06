@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationCustomer from './ApplicationCustomer';
+import CustomerProfile from './CustomerProfile';
 
 /**
  * The InlineResponse20013 model module.
  * @module model/InlineResponse20013
- * @version 4.3.0
+ * @version 4.4.0
  */
 class InlineResponse20013 {
     /**
      * Constructs a new <code>InlineResponse20013</code>.
      * @alias module:model/InlineResponse20013
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/ApplicationCustomer>} 
+     * @param data {Array.<module:model/CustomerProfile>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20013 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfile]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20013 {
 InlineResponse20013.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationCustomer>} data
+ * @member {Array.<module:model/CustomerProfile>} data
  */
 InlineResponse20013.prototype['data'] = undefined;
 

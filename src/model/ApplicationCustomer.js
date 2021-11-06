@@ -18,15 +18,15 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 4.3.0
+ * @version 4.4.0
  */
 class ApplicationCustomer {
     /**
      * Constructs a new <code>ApplicationCustomer</code>.
      * 
      * @alias module:model/ApplicationCustomer
-     * @param id {Number} Unique ID for this entity.
-     * @param created {Date} The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
+     * @param id {Number} Unique ID for this entity. Unique ID for this entity.
+     * @param created {Date} The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
      * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system. The integration ID for this entity sent to and used in the Talon.One system.
      * @param attributes {Object} Arbitrary properties associated with this item
      * @param accountId {Number} The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile.
@@ -96,6 +96,9 @@ class ApplicationCustomer {
             if (data.hasOwnProperty('lastActivity')) {
                 obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
             }
+            if (data.hasOwnProperty('advocateIntegrationId')) {
+                obj['advocateIntegrationId'] = ApiClient.convertToType(data['advocateIntegrationId'], 'String');
+            }
         }
         return obj;
     }
@@ -104,13 +107,13 @@ class ApplicationCustomer {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Unique ID for this entity.
  * @member {Number} id
  */
 ApplicationCustomer.prototype['id'] = undefined;
 
 /**
- * The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
+ * The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
  * @member {Date} created
  */
 ApplicationCustomer.prototype['created'] = undefined;
@@ -162,6 +165,12 @@ ApplicationCustomer.prototype['audienceMemberships'] = undefined;
  * @member {Date} lastActivity
  */
 ApplicationCustomer.prototype['lastActivity'] = undefined;
+
+/**
+ * The Integration ID of the Customer Profile that referred this Customer in the Application.
+ * @member {String} advocateIntegrationId
+ */
+ApplicationCustomer.prototype['advocateIntegrationId'] = undefined;
 
 
 

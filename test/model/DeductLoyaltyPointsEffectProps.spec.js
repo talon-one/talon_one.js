@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.DeductLoyaltyPointsEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

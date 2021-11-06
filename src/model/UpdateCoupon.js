@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 4.3.0
+ * @version 4.4.0
  */
 class UpdateCoupon {
     /**

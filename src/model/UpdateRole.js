@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 4.3.0
+ * @version 4.4.0
  */
 class UpdateRole {
     /**
@@ -56,8 +56,8 @@ class UpdateRole {
             if (data.hasOwnProperty('acl')) {
                 obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
             }
-            if (data.hasOwnProperty('users')) {
-                obj['users'] = ApiClient.convertToType(data['users'], ['Number']);
+            if (data.hasOwnProperty('members')) {
+                obj['members'] = ApiClient.convertToType(data['members'], ['Number']);
             }
         }
         return obj;
@@ -85,10 +85,10 @@ UpdateRole.prototype['description'] = undefined;
 UpdateRole.prototype['acl'] = undefined;
 
 /**
- * an array of user identifiers
- * @member {Array.<Number>} users
+ * An array of user identifiers
+ * @member {Array.<Number>} members
  */
-UpdateRole.prototype['users'] = undefined;
+UpdateRole.prototype['members'] = undefined;
 
 
 

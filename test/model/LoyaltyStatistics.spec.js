@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.LoyaltyStatistics);
     });
 
+    it('should have the property _date (base name: "date")', function() {
+      // uncomment below and update the code to test the property _date
+      //var instane = new TalonOne.LoyaltyStatistics();
+      //expect(instance).to.be();
+    });
+
     it('should have the property totalActivePoints (base name: "totalActivePoints")', function() {
       // uncomment below and update the code to test the property totalActivePoints
       //var instane = new TalonOne.LoyaltyStatistics();
@@ -74,6 +80,30 @@
 
     it('should have the property totalExpiredPoints (base name: "totalExpiredPoints")', function() {
       // uncomment below and update the code to test the property totalExpiredPoints
+      //var instane = new TalonOne.LoyaltyStatistics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalMembers (base name: "totalMembers")', function() {
+      // uncomment below and update the code to test the property totalMembers
+      //var instane = new TalonOne.LoyaltyStatistics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property newMembers (base name: "newMembers")', function() {
+      // uncomment below and update the code to test the property newMembers
+      //var instane = new TalonOne.LoyaltyStatistics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property spentPoints (base name: "spentPoints")', function() {
+      // uncomment below and update the code to test the property spentPoints
+      //var instane = new TalonOne.LoyaltyStatistics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property earnedPoints (base name: "earnedPoints")', function() {
+      // uncomment below and update the code to test the property earnedPoints
       //var instane = new TalonOne.LoyaltyStatistics();
       //expect(instance).to.be();
     });

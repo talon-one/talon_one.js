@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 
 * `selligent` (value: `"selligent"`)
 
+* `iterable` (value: `"iterable"`)
+
 
 
 

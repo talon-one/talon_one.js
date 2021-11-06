@@ -188,16 +188,6 @@
         done();
       });
     });
-    describe('deleteRuleset', function() {
-      it('should call deleteRuleset successfully', function(done) {
-        //uncomment below and update the code to test deleteRuleset
-        //instance.deleteRuleset(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('destroySession', function() {
       it('should call destroySession successfully', function(done) {
         //uncomment below and update the code to test destroySession
@@ -258,10 +248,10 @@
         done();
       });
     });
-    describe('getAccessLogs', function() {
-      it('should call getAccessLogs successfully', function(done) {
-        //uncomment below and update the code to test getAccessLogs
-        //instance.getAccessLogs(function(error) {
+    describe('exportReferrals', function() {
+      it('should call exportReferrals successfully', function(done) {
+        //uncomment below and update the code to test exportReferrals
+        //instance.exportReferrals(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -368,6 +358,16 @@
         done();
       });
     });
+    describe('getApplicationCustomerFriends', function() {
+      it('should call getApplicationCustomerFriends successfully', function(done) {
+        //uncomment below and update the code to test getApplicationCustomerFriends
+        //instance.getApplicationCustomerFriends(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getApplicationCustomers', function() {
       it('should call getApplicationCustomers successfully', function(done) {
         //uncomment below and update the code to test getApplicationCustomers
@@ -392,16 +392,6 @@
       it('should call getApplicationEventTypes successfully', function(done) {
         //uncomment below and update the code to test getApplicationEventTypes
         //instance.getApplicationEventTypes(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getApplicationEvents', function() {
-      it('should call getApplicationEvents successfully', function(done) {
-        //uncomment below and update the code to test getApplicationEvents
-        //instance.getApplicationEvents(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -528,30 +518,10 @@
         done();
       });
     });
-    describe('getCoupons', function() {
-      it('should call getCoupons successfully', function(done) {
-        //uncomment below and update the code to test getCoupons
-        //instance.getCoupons(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getCouponsByAttributes', function() {
       it('should call getCouponsByAttributes successfully', function(done) {
         //uncomment below and update the code to test getCouponsByAttributes
         //instance.getCouponsByAttributes(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCouponsByAttributesApplicationWide', function() {
-      it('should call getCouponsByAttributesApplicationWide successfully', function(done) {
-        //uncomment below and update the code to test getCouponsByAttributesApplicationWide
-        //instance.getCouponsByAttributesApplicationWide(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -572,16 +542,6 @@
       it('should call getCustomerActivityReport successfully', function(done) {
         //uncomment below and update the code to test getCustomerActivityReport
         //instance.getCustomerActivityReport(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCustomerActivityReports', function() {
-      it('should call getCustomerActivityReports successfully', function(done) {
-        //uncomment below and update the code to test getCustomerActivityReports
-        //instance.getCustomerActivityReports(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -698,16 +658,6 @@
         done();
       });
     });
-    describe('getReferrals', function() {
-      it('should call getReferrals successfully', function(done) {
-        //uncomment below and update the code to test getReferrals
-        //instance.getReferrals(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getReferralsWithoutTotalCount', function() {
       it('should call getReferralsWithoutTotalCount successfully', function(done) {
         //uncomment below and update the code to test getReferralsWithoutTotalCount
@@ -808,6 +758,56 @@
         done();
       });
     });
+    describe('importCollection', function() {
+      it('should call importCollection successfully', function(done) {
+        //uncomment below and update the code to test importCollection
+        //instance.importCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importCoupons', function() {
+      it('should call importCoupons successfully', function(done) {
+        //uncomment below and update the code to test importCoupons
+        //instance.importCoupons(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importLoyaltyPoints', function() {
+      it('should call importLoyaltyPoints successfully', function(done) {
+        //uncomment below and update the code to test importLoyaltyPoints
+        //instance.importLoyaltyPoints(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importPoolGiveaways', function() {
+      it('should call importPoolGiveaways successfully', function(done) {
+        //uncomment below and update the code to test importPoolGiveaways
+        //instance.importPoolGiveaways(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importReferrals', function() {
+      it('should call importReferrals successfully', function(done) {
+        //uncomment below and update the code to test importReferrals
+        //instance.importReferrals(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeLoyaltyPoints', function() {
       it('should call removeLoyaltyPoints successfully', function(done) {
         //uncomment below and update the code to test removeLoyaltyPoints
@@ -822,26 +822,6 @@
       it('should call resetPassword successfully', function(done) {
         //uncomment below and update the code to test resetPassword
         //instance.resetPassword(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchCouponsAdvanced', function() {
-      it('should call searchCouponsAdvanced successfully', function(done) {
-        //uncomment below and update the code to test searchCouponsAdvanced
-        //instance.searchCouponsAdvanced(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchCouponsAdvancedApplicationWide', function() {
-      it('should call searchCouponsAdvancedApplicationWide successfully', function(done) {
-        //uncomment below and update the code to test searchCouponsAdvancedApplicationWide
-        //instance.searchCouponsAdvancedApplicationWide(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -912,6 +892,16 @@
       it('should call updateCouponBatch successfully', function(done) {
         //uncomment below and update the code to test updateCouponBatch
         //instance.updateCouponBatch(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateReferral', function() {
+      it('should call updateReferral successfully', function(done) {
+        //uncomment below and update the code to test updateReferral
+        //instance.updateReferral(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

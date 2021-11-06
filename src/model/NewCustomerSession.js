@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The NewCustomerSession model module.
  * @module model/NewCustomerSession
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewCustomerSession {
     /**
@@ -99,7 +99,7 @@ NewCustomerSession.prototype['coupon'] = undefined;
 NewCustomerSession.prototype['referral'] = undefined;
 
 /**
- * Indicates the current state of the session. All sessions must start in the \"open\" state, after which valid transitions are...  1. open -> closed 2. open -> cancelled 3. closed -> cancelled 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`, after which valid transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled`  For more information, see [Entities](/docs/dev/concepts/entities#customer-session). 
  * @member {module:model/NewCustomerSession.StateEnum} state
  * @default 'open'
  */
@@ -112,7 +112,7 @@ NewCustomerSession.prototype['state'] = 'open';
 NewCustomerSession.prototype['cartItems'] = undefined;
 
 /**
- * Identifiers for the customer, this can be used for limits on values such as device ID.
+ * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. 
  * @member {Array.<String>} identifiers
  */
 NewCustomerSession.prototype['identifiers'] = undefined;

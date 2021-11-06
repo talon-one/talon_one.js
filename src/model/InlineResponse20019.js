@@ -12,22 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
+import ApplicationReferee from './ApplicationReferee';
 
 /**
  * The InlineResponse20019 model module.
  * @module model/InlineResponse20019
- * @version 4.3.0
+ * @version 4.4.0
  */
 class InlineResponse20019 {
     /**
      * Constructs a new <code>InlineResponse20019</code>.
      * @alias module:model/InlineResponse20019
+     * @param hasMore {Boolean} 
      * @param totalResultSize {Number} 
-     * @param data {Array.<String>} 
+     * @param data {Array.<module:model/ApplicationReferee>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, totalResultSize, data) { 
         
-        InlineResponse20019.initialize(this, totalResultSize, data);
+        InlineResponse20019.initialize(this, hasMore, totalResultSize, data);
     }
 
     /**
@@ -35,7 +37,8 @@ class InlineResponse20019 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
+    static initialize(obj, hasMore, totalResultSize, data) { 
+        obj['hasMore'] = hasMore;
         obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
@@ -51,11 +54,14 @@ class InlineResponse20019 {
         if (data) {
             obj = obj || new InlineResponse20019();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationReferee]);
             }
         }
         return obj;
@@ -65,12 +71,17 @@ class InlineResponse20019 {
 }
 
 /**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20019.prototype['hasMore'] = undefined;
+
+/**
  * @member {Number} totalResultSize
  */
 InlineResponse20019.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<String>} data
+ * @member {Array.<module:model/ApplicationReferee>} data
  */
 InlineResponse20019.prototype['data'] = undefined;
 

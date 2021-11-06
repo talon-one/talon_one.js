@@ -18,7 +18,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 4.3.0
+ * @version 4.4.0
  */
 class CustomerSessionV2 {
     /**
@@ -29,17 +29,18 @@ class CustomerSessionV2 {
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param profileId {String} ID of the customers profile as used within this Talon.One account. May be omitted or set to the empty string if the customer does not yet have a known profile ID.
-     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. All sessions must start in the \"open\" state, after which valid transitions are...  1. open -> closed 2. open -> cancelled 3. closed -> cancelled 
+     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`, after which valid transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled`  For more information, see [Entites](/docs/dev/concepts/entities#customer-session). 
      * @param cartItems {Array.<module:model/CartItem>} All items the customer will be purchasing in this session
      * @param attributes {Object} A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings. 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
      * @param total {Number} The total sum of cart-items, as well as additional costs, before any discounts applied
      * @param cartItemTotal {Number} The total sum of cart-items before any discounts applied
      * @param additionalCostTotal {Number} The total sum of additional costs before any discounts applied
+     * @param updated {Date} Timestamp of the most recent event received on this session
      */
-    constructor(integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal) { 
+    constructor(integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
         
-        CustomerSessionV2.initialize(this, integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal);
+        CustomerSessionV2.initialize(this, integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated);
     }
 
     /**
@@ -47,7 +48,7 @@ class CustomerSessionV2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal) { 
+    static initialize(obj, integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
         obj['integrationId'] = integrationId;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -59,6 +60,7 @@ class CustomerSessionV2 {
         obj['total'] = total;
         obj['cartItemTotal'] = cartItemTotal;
         obj['additionalCostTotal'] = additionalCostTotal;
+        obj['updated'] = updated;
     }
 
     /**
@@ -117,6 +119,9 @@ class CustomerSessionV2 {
             if (data.hasOwnProperty('additionalCostTotal')) {
                 obj['additionalCostTotal'] = ApiClient.convertToType(data['additionalCostTotal'], 'Number');
             }
+            if (data.hasOwnProperty('updated')) {
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
+            }
         }
         return obj;
     }
@@ -161,7 +166,7 @@ CustomerSessionV2.prototype['couponCodes'] = undefined;
 CustomerSessionV2.prototype['referralCode'] = undefined;
 
 /**
- * Indicates the current state of the session. All sessions must start in the \"open\" state, after which valid transitions are...  1. open -> closed 2. open -> cancelled 3. closed -> cancelled 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`, after which valid transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled`  For more information, see [Entites](/docs/dev/concepts/entities#customer-session). 
  * @member {module:model/CustomerSessionV2.StateEnum} state
  * @default 'open'
  */
@@ -180,7 +185,7 @@ CustomerSessionV2.prototype['cartItems'] = undefined;
 CustomerSessionV2.prototype['additionalCosts'] = undefined;
 
 /**
- * Identifiers for the customer, this can be used for limits on values such as device ID.
+ * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. 
  * @member {Array.<String>} identifiers
  */
 CustomerSessionV2.prototype['identifiers'] = undefined;
@@ -214,6 +219,12 @@ CustomerSessionV2.prototype['cartItemTotal'] = undefined;
  * @member {Number} additionalCostTotal
  */
 CustomerSessionV2.prototype['additionalCostTotal'] = undefined;
+
+/**
+ * Timestamp of the most recent event received on this session
+ * @member {Date} updated
+ */
+CustomerSessionV2.prototype['updated'] = undefined;
 
 
 

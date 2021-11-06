@@ -12,30 +12,32 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyTier from './LoyaltyTier';
 
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LoyaltyProgram {
     /**
      * Constructs a new <code>LoyaltyProgram</code>.
-     * A Loyalty Program
+     * 
      * @alias module:model/LoyaltyProgram
-     * @param id {Number} The ID of loyalty program.
-     * @param accountID {Number} The ID of the Talon.One account that owns this program.
-     * @param name {String} The internal name for the Loyalty Program.
+     * @param id {Number} The ID of loyalty program. Unique ID for this entity.
+     * @param created {Date} The exact moment this entity was created.
      * @param title {String} The display title for the Loyalty Program.
      * @param description {String} Description of our Loyalty Program.
      * @param subscribedApplications {Array.<Number>} A list containing the IDs of all applications that are subscribed to this Loyalty Program.
      * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
      * @param defaultPending {String} Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
      * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
+     * @param accountID {Number} The ID of the Talon.One account that owns this program.
+     * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
      */
-    constructor(id, accountID, name, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger) { 
+    constructor(id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name) { 
         
-        LoyaltyProgram.initialize(this, id, accountID, name, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger);
+        LoyaltyProgram.initialize(this, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name);
     }
 
     /**
@@ -43,16 +45,17 @@ class LoyaltyProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, accountID, name, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger) { 
+    static initialize(obj, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name) { 
         obj['id'] = id;
-        obj['accountID'] = accountID;
-        obj['name'] = name;
+        obj['created'] = created;
         obj['title'] = title;
         obj['description'] = description;
         obj['subscribedApplications'] = subscribedApplications;
         obj['defaultValidity'] = defaultValidity;
         obj['defaultPending'] = defaultPending;
         obj['allowSubledger'] = allowSubledger;
+        obj['accountID'] = accountID;
+        obj['name'] = name;
     }
 
     /**
@@ -69,11 +72,8 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('accountID')) {
-                obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('created')) {
+                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
@@ -93,6 +93,18 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
             }
+            if (data.hasOwnProperty('timezone')) {
+                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
+            }
+            if (data.hasOwnProperty('accountID')) {
+                obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('tiers')) {
+                obj['tiers'] = ApiClient.convertToType(data['tiers'], [LoyaltyTier]);
+            }
         }
         return obj;
     }
@@ -101,22 +113,16 @@ class LoyaltyProgram {
 }
 
 /**
- * The ID of loyalty program.
+ * The ID of loyalty program. Unique ID for this entity.
  * @member {Number} id
  */
 LoyaltyProgram.prototype['id'] = undefined;
 
 /**
- * The ID of the Talon.One account that owns this program.
- * @member {Number} accountID
+ * The exact moment this entity was created.
+ * @member {Date} created
  */
-LoyaltyProgram.prototype['accountID'] = undefined;
-
-/**
- * The internal name for the Loyalty Program.
- * @member {String} name
- */
-LoyaltyProgram.prototype['name'] = undefined;
+LoyaltyProgram.prototype['created'] = undefined;
 
 /**
  * The display title for the Loyalty Program.
@@ -153,6 +159,30 @@ LoyaltyProgram.prototype['defaultPending'] = undefined;
  * @member {Boolean} allowSubledger
  */
 LoyaltyProgram.prototype['allowSubledger'] = undefined;
+
+/**
+ * A string containing an IANA timezone descriptor.
+ * @member {String} timezone
+ */
+LoyaltyProgram.prototype['timezone'] = undefined;
+
+/**
+ * The ID of the Talon.One account that owns this program.
+ * @member {Number} accountID
+ */
+LoyaltyProgram.prototype['accountID'] = undefined;
+
+/**
+ * The internal name for the Loyalty Program. This is an immutable value.
+ * @member {String} name
+ */
+LoyaltyProgram.prototype['name'] = undefined;
+
+/**
+ * The tiers in this loyalty program
+ * @member {Array.<module:model/LoyaltyTier>} tiers
+ */
+LoyaltyProgram.prototype['tiers'] = undefined;
 
 
 

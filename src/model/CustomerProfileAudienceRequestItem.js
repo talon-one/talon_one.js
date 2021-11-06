@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerProfileAudienceRequestItem model module.
  * @module model/CustomerProfileAudienceRequestItem
- * @version 4.3.0
+ * @version 4.4.0
  */
 class CustomerProfileAudienceRequestItem {
     /**
      * Constructs a new <code>CustomerProfileAudienceRequestItem</code>.
      * @alias module:model/CustomerProfileAudienceRequestItem
      * @param action {module:model/CustomerProfileAudienceRequestItem.ActionEnum} 
-     * @param profileIntegrationId {String} 
-     * @param audienceId {Number} 
+     * @param profileIntegrationId {String} The ID of this audience in the third-party integration.
+     * @param audienceId {Number} The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
      */
     constructor(action, profileIntegrationId, audienceId) { 
         
@@ -75,11 +75,13 @@ class CustomerProfileAudienceRequestItem {
 CustomerProfileAudienceRequestItem.prototype['action'] = undefined;
 
 /**
+ * The ID of this audience in the third-party integration.
  * @member {String} profileIntegrationId
  */
 CustomerProfileAudienceRequestItem.prototype['profileIntegrationId'] = undefined;
 
 /**
+ * The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
  * @member {Number} audienceId
  */
 CustomerProfileAudienceRequestItem.prototype['audienceId'] = undefined;

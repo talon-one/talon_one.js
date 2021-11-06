@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 4.3.0
+ * @version 4.4.0
  */
 class CartItem {
     /**
      * Constructs a new <code>CartItem</code>.
      * @alias module:model/CartItem
-     * @param name {String} 
-     * @param sku {String} 
-     * @param quantity {Number} 
-     * @param price {Number} 
+     * @param name {String} Name of item
+     * @param sku {String} Stock keeping unit of item
+     * @param quantity {Number} Quantity of item. **Important:** If you enabled [cart item flattening](https://help.talon.one/hc/en-us/articles/360016036899-Flattening-Cart-Items), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
+     * @param price {Number} Price of item
      */
     constructor(name, sku, quantity, price) { 
         
@@ -96,32 +96,37 @@ class CartItem {
 }
 
 /**
+ * Name of item
  * @member {String} name
  */
 CartItem.prototype['name'] = undefined;
 
 /**
+ * Stock keeping unit of item
  * @member {String} sku
  */
 CartItem.prototype['sku'] = undefined;
 
 /**
+ * Quantity of item. **Important:** If you enabled [cart item flattening](https://help.talon.one/hc/en-us/articles/360016036899-Flattening-Cart-Items), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
  * @member {Number} quantity
  */
 CartItem.prototype['quantity'] = undefined;
 
 /**
+ * Price of item
  * @member {Number} price
  */
 CartItem.prototype['price'] = undefined;
 
 /**
+ * Type, group or model of the item
  * @member {String} category
  */
 CartItem.prototype['category'] = undefined;
 
 /**
- * Weight of item in mm
+ * Weight of item in grams
  * @member {Number} weight
  */
 CartItem.prototype['weight'] = undefined;
@@ -151,7 +156,7 @@ CartItem.prototype['length'] = undefined;
 CartItem.prototype['position'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item. You can use built-in attributes or create your own. See [Attributes](https://docs.talon.one/docs/dev/concepts/attributes). 
  * @member {Object} attributes
  */
 CartItem.prototype['attributes'] = undefined;

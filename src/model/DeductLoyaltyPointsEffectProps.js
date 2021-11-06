@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeductLoyaltyPointsEffectProps model module.
  * @module model/DeductLoyaltyPointsEffectProps
- * @version 4.3.0
+ * @version 4.4.0
  */
 class DeductLoyaltyPointsEffectProps {
     /**
@@ -28,10 +28,11 @@ class DeductLoyaltyPointsEffectProps {
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added
      * @param value {Number} The amount of points that were deducted
      * @param transactionUUID {String} The identifier of this deduction in the loyalty ledger
+     * @param name {String} The name property gets one of the following two values. It can be the loyalty program name or it can represent a reason for the respective deduction of loyalty points. The latter is an optional value defined in a deduction rule. 
      */
-    constructor(ruleTitle, programId, subLedgerId, value, transactionUUID) { 
+    constructor(ruleTitle, programId, subLedgerId, value, transactionUUID, name) { 
         
-        DeductLoyaltyPointsEffectProps.initialize(this, ruleTitle, programId, subLedgerId, value, transactionUUID);
+        DeductLoyaltyPointsEffectProps.initialize(this, ruleTitle, programId, subLedgerId, value, transactionUUID, name);
     }
 
     /**
@@ -39,12 +40,13 @@ class DeductLoyaltyPointsEffectProps {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, ruleTitle, programId, subLedgerId, value, transactionUUID) { 
+    static initialize(obj, ruleTitle, programId, subLedgerId, value, transactionUUID, name) { 
         obj['ruleTitle'] = ruleTitle;
         obj['programId'] = programId;
         obj['subLedgerId'] = subLedgerId;
         obj['value'] = value;
         obj['transactionUUID'] = transactionUUID;
+        obj['name'] = name;
     }
 
     /**
@@ -72,6 +74,9 @@ class DeductLoyaltyPointsEffectProps {
             }
             if (data.hasOwnProperty('transactionUUID')) {
                 obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
         }
         return obj;
@@ -109,6 +114,12 @@ DeductLoyaltyPointsEffectProps.prototype['value'] = undefined;
  * @member {String} transactionUUID
  */
 DeductLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
+
+/**
+ * The name property gets one of the following two values. It can be the loyalty program name or it can represent a reason for the respective deduction of loyalty points. The latter is an optional value defined in a deduction rule. 
+ * @member {String} name
+ */
+DeductLoyaltyPointsEffectProps.prototype['name'] = undefined;
 
 
 

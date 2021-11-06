@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyProgram from './LoyaltyProgram';
+import AccessLogEntry from './AccessLogEntry';
 
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 4.3.0
+ * @version 4.4.0
  */
 class InlineResponse2008 {
     /**
      * Constructs a new <code>InlineResponse2008</code>.
      * @alias module:model/InlineResponse2008
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/LoyaltyProgram>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/AccessLogEntry>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse2008.initialize(this, totalResultSize, data);
+        InlineResponse2008.initialize(this, hasMore, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse2008 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse2008 {
         if (data) {
             obj = obj || new InlineResponse2008();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyProgram]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse2008 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * @member {Boolean} hasMore
  */
-InlineResponse2008.prototype['totalResultSize'] = undefined;
+InlineResponse2008.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyProgram>} data
+ * @member {Array.<module:model/AccessLogEntry>} data
  */
 InlineResponse2008.prototype['data'] = undefined;
 

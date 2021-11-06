@@ -35,6 +35,10 @@ Name | Type | Description | Notes
 
 * `Event` (value: `"Event"`)
 
+* `Giveaway` (value: `"Giveaway"`)
+
+* `Referral` (value: `"Referral"`)
+
 
 
 

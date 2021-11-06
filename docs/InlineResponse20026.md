@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[EventType]**](EventType.md) |  | 
+**data** | [**[User]**](User.md) |  | 
 
 

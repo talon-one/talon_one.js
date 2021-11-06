@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **ruleFailureReasons** | [**[RuleFailureReason]**](RuleFailureReason.md) |  | [optional] 
 **createdCoupons** | [**[Coupon]**](Coupon.md) |  | 
 **createdReferrals** | [**[Referral]**](Referral.md) |  | 
+**awardedGiveaways** | [**[Giveaway]**](Giveaway.md) |  | [optional] 
 
 

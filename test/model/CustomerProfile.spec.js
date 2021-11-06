@@ -54,14 +54,20 @@
       //expect(instance).to.be.a(TalonOne.CustomerProfile);
     });
 
-    it('should have the property integrationId (base name: "integrationId")', function() {
-      // uncomment below and update the code to test the property integrationId
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new TalonOne.CustomerProfile();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
+      //var instane = new TalonOne.CustomerProfile();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property integrationId (base name: "integrationId")', function() {
+      // uncomment below and update the code to test the property integrationId
       //var instane = new TalonOne.CustomerProfile();
       //expect(instance).to.be();
     });

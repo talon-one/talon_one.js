@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Campaign {
     /**
@@ -29,7 +29,7 @@ class Campaign {
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param userId {Number} The ID of the account that owns this entity.
-     * @param name {String} A friendly name for this campaign.
+     * @param name {String} A user-facing name for this campaign.
      * @param description {String} A detailed description of the campaign.
      * @param state {module:model/Campaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 
      * @param tags {Array.<String>} A list of tags for the campaign.
@@ -139,6 +139,9 @@ class Campaign {
             if (data.hasOwnProperty('referralCreationCount')) {
                 obj['referralCreationCount'] = ApiClient.convertToType(data['referralCreationCount'], 'Number');
             }
+            if (data.hasOwnProperty('awardedGiveawaysCount')) {
+                obj['awardedGiveawaysCount'] = ApiClient.convertToType(data['awardedGiveawaysCount'], 'Number');
+            }
             if (data.hasOwnProperty('createdLoyaltyPointsCount')) {
                 obj['createdLoyaltyPointsCount'] = ApiClient.convertToType(data['createdLoyaltyPointsCount'], 'Number');
             }
@@ -162,6 +165,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('updatedBy')) {
                 obj['updatedBy'] = ApiClient.convertToType(data['updatedBy'], 'String');
+            }
+            if (data.hasOwnProperty('templateId')) {
+                obj['templateId'] = ApiClient.convertToType(data['templateId'], 'Number');
             }
         }
         return obj;
@@ -195,7 +201,7 @@ Campaign.prototype['applicationId'] = undefined;
 Campaign.prototype['userId'] = undefined;
 
 /**
- * A friendly name for this campaign.
+ * A user-facing name for this campaign.
  * @member {String} name
  */
 Campaign.prototype['name'] = undefined;
@@ -207,13 +213,13 @@ Campaign.prototype['name'] = undefined;
 Campaign.prototype['description'] = undefined;
 
 /**
- * Datetime when the campaign will become active.
+ * Timestamp when the campaign will become active.
  * @member {Date} startTime
  */
 Campaign.prototype['startTime'] = undefined;
 
 /**
- * Datetime when the campaign will become in-active.
+ * Timestamp the campaign will become inactive.
  * @member {Date} endTime
  */
 Campaign.prototype['endTime'] = undefined;
@@ -308,6 +314,12 @@ Campaign.prototype['couponCreationCount'] = undefined;
 Campaign.prototype['referralCreationCount'] = undefined;
 
 /**
+ * Total number of giveaways awarded by rules in this campaign.
+ * @member {Number} awardedGiveawaysCount
+ */
+Campaign.prototype['awardedGiveawaysCount'] = undefined;
+
+/**
  * Total number of loyalty points created by rules in this campaign.
  * @member {Number} createdLoyaltyPointsCount
  */
@@ -354,6 +366,12 @@ Campaign.prototype['createdBy'] = undefined;
  * @member {String} updatedBy
  */
 Campaign.prototype['updatedBy'] = undefined;
+
+/**
+ * The ID of the Campaign Template this Campaign was created from.
+ * @member {Number} templateId
+ */
+Campaign.prototype['templateId'] = undefined;
 
 
 
@@ -409,7 +427,13 @@ Campaign['FeaturesEnum'] = {
      * value: "loyalty"
      * @const
      */
-    "loyalty": "loyalty"
+    "loyalty": "loyalty",
+
+    /**
+     * value: "giveaways"
+     * @const
+     */
+    "giveaways": "giveaways"
 };
 
 

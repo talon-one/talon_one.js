@@ -12,26 +12,27 @@
  */
 
 import ApiClient from '../ApiClient';
+import NewLoyaltyTier from './NewLoyaltyTier';
 
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewLoyaltyProgram {
     /**
      * Constructs a new <code>NewLoyaltyProgram</code>.
-     * A new loyalty program
+     * 
      * @alias module:model/NewLoyaltyProgram
-     * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
      * @param title {String} The display title for the Loyalty Program.
      * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
      * @param defaultPending {String} Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
      * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
+     * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
      */
-    constructor(name, title, defaultValidity, defaultPending, allowSubledger) { 
+    constructor(title, defaultValidity, defaultPending, allowSubledger, name) { 
         
-        NewLoyaltyProgram.initialize(this, name, title, defaultValidity, defaultPending, allowSubledger);
+        NewLoyaltyProgram.initialize(this, title, defaultValidity, defaultPending, allowSubledger, name);
     }
 
     /**
@@ -39,12 +40,12 @@ class NewLoyaltyProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, title, defaultValidity, defaultPending, allowSubledger) { 
-        obj['name'] = name;
+    static initialize(obj, title, defaultValidity, defaultPending, allowSubledger, name) { 
         obj['title'] = title;
         obj['defaultValidity'] = defaultValidity;
         obj['defaultPending'] = defaultPending;
         obj['allowSubledger'] = allowSubledger;
+        obj['name'] = name;
     }
 
     /**
@@ -58,9 +59,6 @@ class NewLoyaltyProgram {
         if (data) {
             obj = obj || new NewLoyaltyProgram();
 
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
@@ -79,18 +77,21 @@ class NewLoyaltyProgram {
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
             }
+            if (data.hasOwnProperty('timezone')) {
+                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('tiers')) {
+                obj['tiers'] = ApiClient.convertToType(data['tiers'], [NewLoyaltyTier]);
+            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * The internal name for the Loyalty Program. This is an immutable value.
- * @member {String} name
- */
-NewLoyaltyProgram.prototype['name'] = undefined;
 
 /**
  * The display title for the Loyalty Program.
@@ -127,6 +128,24 @@ NewLoyaltyProgram.prototype['defaultPending'] = undefined;
  * @member {Boolean} allowSubledger
  */
 NewLoyaltyProgram.prototype['allowSubledger'] = undefined;
+
+/**
+ * A string containing an IANA timezone descriptor.
+ * @member {String} timezone
+ */
+NewLoyaltyProgram.prototype['timezone'] = undefined;
+
+/**
+ * The internal name for the Loyalty Program. This is an immutable value.
+ * @member {String} name
+ */
+NewLoyaltyProgram.prototype['name'] = undefined;
+
+/**
+ * The tiers in this loyalty program
+ * @member {Array.<module:model/NewLoyaltyTier>} tiers
+ */
+NewLoyaltyProgram.prototype['tiers'] = undefined;
 
 
 

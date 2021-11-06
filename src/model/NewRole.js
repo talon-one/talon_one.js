@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewRole model module.
  * @module model/NewRole
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewRole {
     /**
@@ -25,11 +25,11 @@ class NewRole {
      * @alias module:model/NewRole
      * @param name {String} Name of the role
      * @param acl {String} Role Policy this should be a stringified blob of json
-     * @param users {Array.<Number>} An array of userIDs
+     * @param members {Array.<Number>} An array of user identifiers
      */
-    constructor(name, acl, users) { 
+    constructor(name, acl, members) { 
         
-        NewRole.initialize(this, name, acl, users);
+        NewRole.initialize(this, name, acl, members);
     }
 
     /**
@@ -37,10 +37,10 @@ class NewRole {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, acl, users) { 
+    static initialize(obj, name, acl, members) { 
         obj['name'] = name;
         obj['acl'] = acl;
-        obj['users'] = users;
+        obj['members'] = members;
     }
 
     /**
@@ -63,8 +63,8 @@ class NewRole {
             if (data.hasOwnProperty('acl')) {
                 obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
             }
-            if (data.hasOwnProperty('users')) {
-                obj['users'] = ApiClient.convertToType(data['users'], ['Number']);
+            if (data.hasOwnProperty('members')) {
+                obj['members'] = ApiClient.convertToType(data['members'], ['Number']);
             }
         }
         return obj;
@@ -92,10 +92,10 @@ NewRole.prototype['description'] = undefined;
 NewRole.prototype['acl'] = undefined;
 
 /**
- * An array of userIDs
- * @member {Array.<Number>} users
+ * An array of user identifiers
+ * @member {Array.<Number>} members
  */
-NewRole.prototype['users'] = undefined;
+NewRole.prototype['members'] = undefined;
 
 
 

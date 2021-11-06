@@ -18,7 +18,7 @@ import Rule from './Rule';
 /**
  * The Ruleset model module.
  * @module model/Ruleset
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Ruleset {
     /**
@@ -27,14 +27,13 @@ class Ruleset {
      * @alias module:model/Ruleset
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
-     * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param userId {Number} The ID of the account that owns this entity.
      * @param rules {Array.<module:model/Rule>} Set of rules to apply.
      * @param bindings {Array.<module:model/Binding>} An array that provides objects with variable names (name) and talang expressions to whose result they are bound (expression) during rule evaluation. The order of the evaluation is decided by the position in the array.
      */
-    constructor(id, created, campaignId, userId, rules, bindings) { 
+    constructor(id, created, userId, rules, bindings) { 
         
-        Ruleset.initialize(this, id, created, campaignId, userId, rules, bindings);
+        Ruleset.initialize(this, id, created, userId, rules, bindings);
     }
 
     /**
@@ -42,10 +41,9 @@ class Ruleset {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, campaignId, userId, rules, bindings) { 
+    static initialize(obj, id, created, userId, rules, bindings) { 
         obj['id'] = id;
         obj['created'] = created;
-        obj['campaignId'] = campaignId;
         obj['userId'] = userId;
         obj['rules'] = rules;
         obj['bindings'] = bindings;
@@ -68,9 +66,6 @@ class Ruleset {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
-            if (data.hasOwnProperty('campaignId')) {
-                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
-            }
             if (data.hasOwnProperty('userId')) {
                 obj['userId'] = ApiClient.convertToType(data['userId'], 'Number');
             }
@@ -85,6 +80,12 @@ class Ruleset {
             }
             if (data.hasOwnProperty('activate')) {
                 obj['activate'] = ApiClient.convertToType(data['activate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('campaignId')) {
+                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
+            if (data.hasOwnProperty('templateId')) {
+                obj['templateId'] = ApiClient.convertToType(data['templateId'], 'Number');
             }
             if (data.hasOwnProperty('activatedAt')) {
                 obj['activatedAt'] = ApiClient.convertToType(data['activatedAt'], 'Date');
@@ -107,12 +108,6 @@ Ruleset.prototype['id'] = undefined;
  * @member {Date} created
  */
 Ruleset.prototype['created'] = undefined;
-
-/**
- * The ID of the campaign that owns this entity.
- * @member {Number} campaignId
- */
-Ruleset.prototype['campaignId'] = undefined;
 
 /**
  * The ID of the account that owns this entity.
@@ -139,10 +134,22 @@ Ruleset.prototype['bindings'] = undefined;
 Ruleset.prototype['rbVersion'] = undefined;
 
 /**
- * A boolean indicating whether this newly created ruleset should also be activated for the campaign owns it
+ * A boolean indicating whether this newly created ruleset should also be activated for the campaign that owns it
  * @member {Boolean} activate
  */
 Ruleset.prototype['activate'] = undefined;
+
+/**
+ * The ID of the campaign that owns this entity.
+ * @member {Number} campaignId
+ */
+Ruleset.prototype['campaignId'] = undefined;
+
+/**
+ * The ID of the campaign template that owns this entity.
+ * @member {Number} templateId
+ */
+Ruleset.prototype['templateId'] = undefined;
 
 /**
  * Timestamp indicating when this Ruleset was activated.

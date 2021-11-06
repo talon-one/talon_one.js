@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LimitConfig model module.
  * @module model/LimitConfig
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LimitConfig {
     /**
@@ -59,6 +59,9 @@ class LimitConfig {
             if (data.hasOwnProperty('limit')) {
                 obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
             }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'String');
+            }
             if (data.hasOwnProperty('entities')) {
                 obj['entities'] = ApiClient.convertToType(data['entities'], ['String']);
             }
@@ -82,6 +85,12 @@ LimitConfig.prototype['action'] = undefined;
 LimitConfig.prototype['limit'] = undefined;
 
 /**
+ * The period on which the budget limit recurs
+ * @member {module:model/LimitConfig.PeriodEnum} period
+ */
+LimitConfig.prototype['period'] = undefined;
+
+/**
  * The entities that make the address of this limit
  * @member {Array.<module:model/LimitConfig.EntitiesEnum>} entities
  */
@@ -89,6 +98,39 @@ LimitConfig.prototype['entities'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>period</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LimitConfig['PeriodEnum'] = {
+
+    /**
+     * value: "daily"
+     * @const
+     */
+    "daily": "daily",
+
+    /**
+     * value: "weekly"
+     * @const
+     */
+    "weekly": "weekly",
+
+    /**
+     * value: "monthly"
+     * @const
+     */
+    "monthly": "monthly",
+
+    /**
+     * value: "yearly"
+     * @const
+     */
+    "yearly": "yearly"
+};
 
 
 /**

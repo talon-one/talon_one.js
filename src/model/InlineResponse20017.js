@@ -12,19 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationEvent from './ApplicationEvent';
 
 /**
  * The InlineResponse20017 model module.
  * @module model/InlineResponse20017
- * @version 4.3.0
+ * @version 4.4.0
  */
 class InlineResponse20017 {
     /**
      * Constructs a new <code>InlineResponse20017</code>.
      * @alias module:model/InlineResponse20017
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/ApplicationEvent>} 
+     * @param data {Array.<String>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +55,7 @@ class InlineResponse20017 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationEvent]);
+                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
             }
         }
         return obj;
@@ -71,7 +70,7 @@ class InlineResponse20017 {
 InlineResponse20017.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationEvent>} data
+ * @member {Array.<String>} data
  */
 InlineResponse20017.prototype['data'] = undefined;
 

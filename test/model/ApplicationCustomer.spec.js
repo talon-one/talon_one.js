@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property advocateIntegrationId (base name: "advocateIntegrationId")', function() {
+      // uncomment below and update the code to test the property advocateIntegrationId
+      //var instane = new TalonOne.ApplicationCustomer();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

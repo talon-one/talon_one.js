@@ -18,13 +18,13 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 4.3.0
+ * @version 4.4.0
  */
 class UpdateCampaign {
     /**
      * Constructs a new <code>UpdateCampaign</code>.
      * @alias module:model/UpdateCampaign
-     * @param name {String} A friendly name for this campaign.
+     * @param name {String} A user-facing name for this campaign.
      * @param tags {Array.<String>} A list of tags for the campaign.
      * @param features {Array.<module:model/UpdateCampaign.FeaturesEnum>} A list of features for the campaign.
      * @param limits {Array.<module:model/LimitConfig>} The set of limits that will operate for this campaign
@@ -104,7 +104,7 @@ class UpdateCampaign {
 }
 
 /**
- * A friendly name for this campaign.
+ * A user-facing name for this campaign.
  * @member {String} name
  */
 UpdateCampaign.prototype['name'] = undefined;
@@ -116,13 +116,13 @@ UpdateCampaign.prototype['name'] = undefined;
 UpdateCampaign.prototype['description'] = undefined;
 
 /**
- * Datetime when the campaign will become active.
+ * Timestamp when the campaign will become active.
  * @member {Date} startTime
  */
 UpdateCampaign.prototype['startTime'] = undefined;
 
 /**
- * Datetime when the campaign will become in-active.
+ * Timestamp when the campaign will become inactive.
  * @member {Date} endTime
  */
 UpdateCampaign.prototype['endTime'] = undefined;
@@ -234,7 +234,13 @@ UpdateCampaign['FeaturesEnum'] = {
      * value: "loyalty"
      * @const
      */
-    "loyalty": "loyalty"
+    "loyalty": "loyalty",
+
+    /**
+     * value: "giveaways"
+     * @const
+     */
+    "giveaways": "giveaways"
 };
 
 

@@ -120,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property awardedGiveaways (base name: "awardedGiveaways")', function() {
+      // uncomment below and update the code to test the property awardedGiveaways
+      //var instane = new TalonOne.IntegrationStateV2();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

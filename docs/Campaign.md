@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **created** | **Date** | The exact moment this entity was created. | 
 **applicationId** | **Number** | The ID of the application that owns this entity. | 
 **userId** | **Number** | The ID of the account that owns this entity. | 
-**name** | **String** | A friendly name for this campaign. | 
+**name** | **String** | A user-facing name for this campaign. | 
 **description** | **String** | A detailed description of the campaign. | 
-**startTime** | **Date** | Datetime when the campaign will become active. | [optional] 
-**endTime** | **Date** | Datetime when the campaign will become in-active. | [optional] 
+**startTime** | **Date** | Timestamp when the campaign will become active. | [optional] 
+**endTime** | **Date** | Timestamp the campaign will become inactive. | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 **state** | **String** | A disabled or archived campaign is not evaluated for rules or coupons.  | [default to &#39;enabled&#39;]
 **activeRulesetId** | **Number** | ID of Ruleset this campaign applies on customer session evaluation. | [optional] 
@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **discountEffectCount** | **Number** | Total number of times discounts were redeemed in this campaign. | [optional] 
 **couponCreationCount** | **Number** | Total number of coupons created by rules in this campaign. | [optional] 
 **referralCreationCount** | **Number** | Total number of referrals created by rules in this campaign. | [optional] 
+**awardedGiveawaysCount** | **Number** | Total number of giveaways awarded by rules in this campaign. | [optional] 
 **createdLoyaltyPointsCount** | **Number** | Total number of loyalty points created by rules in this campaign. | [optional] 
 **createdLoyaltyPointsEffectCount** | **Number** | Total number of loyalty point creation effects triggered by rules in this campaign. | [optional] 
 **redeemedLoyaltyPointsCount** | **Number** | Total number of loyalty points redeemed by rules in this campaign. | [optional] 
@@ -35,6 +36,7 @@ Name | Type | Description | Notes
 **updated** | **Date** | Timestamp of the most recent update to the campaign or any of its elements. | [optional] 
 **createdBy** | **String** | Name of the user who created this campaign if available. | [optional] 
 **updatedBy** | **String** | Name of the user who last updated this campaign if available. | [optional] 
+**templateId** | **Number** | The ID of the Campaign Template this Campaign was created from. | [optional] 
 
 
 
@@ -59,6 +61,8 @@ Name | Type | Description | Notes
 * `referrals` (value: `"referrals"`)
 
 * `loyalty` (value: `"loyalty"`)
+
+* `giveaways` (value: `"giveaways"`)
 
 
 

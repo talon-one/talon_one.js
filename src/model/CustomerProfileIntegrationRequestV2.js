@@ -17,7 +17,7 @@ import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 4.3.0
+ * @version 4.4.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**
@@ -77,7 +77,7 @@ CustomerProfileIntegrationRequestV2.prototype['attributes'] = undefined;
 CustomerProfileIntegrationRequestV2.prototype['audiencesChanges'] = undefined;
 
 /**
- * Optional list of requested information to be present on the response related to the customer profile update. Currently supported: \"customerProfile\", \"triggeredCampaigns\", \"loyalty\", \"event\" and \"ruleFailureReasons\". 
+ * Optional list of requested information to be present on the response related to the customer profile update.  Currently supported: \"customerProfile\", \"triggeredCampaigns\", \"loyalty\", \"event\", \"awardedGiveaways\", \"ruleFailureReasons\".  **Note:** `ruleFailureReasons` is always part of the response when the Application type is `sandbox`. 
  * @member {Array.<module:model/CustomerProfileIntegrationRequestV2.ResponseContentEnum>} responseContent
  */
 CustomerProfileIntegrationRequestV2.prototype['responseContent'] = undefined;
@@ -116,6 +116,12 @@ CustomerProfileIntegrationRequestV2['ResponseContentEnum'] = {
      * @const
      */
     "event": "event",
+
+    /**
+     * value: "awardedGiveaways"
+     * @const
+     */
+    "awardedGiveaways": "awardedGiveaways",
 
     /**
      * value: "ruleFailureReasons"

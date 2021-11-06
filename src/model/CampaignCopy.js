@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignCopy model module.
  * @module model/CampaignCopy
- * @version 4.3.0
+ * @version 4.4.0
  */
 class CampaignCopy {
     /**
@@ -93,13 +93,13 @@ CampaignCopy.prototype['applicationIds'] = undefined;
 CampaignCopy.prototype['description'] = undefined;
 
 /**
- * Datetime when the campaign will become active.
+ * Timestamp when the campaign will become active.
  * @member {Date} startTime
  */
 CampaignCopy.prototype['startTime'] = undefined;
 
 /**
- * Datetime when the campaign will become in-active.
+ * Timestamp when the campaign will become inactive.
  * @member {Date} endTime
  */
 CampaignCopy.prototype['endTime'] = undefined;

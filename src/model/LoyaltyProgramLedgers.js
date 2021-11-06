@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyProgramBalance from './LoyaltyProgramBalance';
+import LedgerInfo from './LedgerInfo';
 
 /**
  * The LoyaltyProgramLedgers model module.
  * @module model/LoyaltyProgramLedgers
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LoyaltyProgramLedgers {
     /**
@@ -27,7 +27,7 @@ class LoyaltyProgramLedgers {
      * @param id {Number} The internal ID of loyalty program
      * @param title {String} Visible name of loyalty program
      * @param name {String} Internal name of loyalty program
-     * @param ledger {module:model/LoyaltyProgramBalance} 
+     * @param ledger {module:model/LedgerInfo} 
      */
     constructor(id, title, name, ledger) { 
         
@@ -67,10 +67,10 @@ class LoyaltyProgramLedgers {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('ledger')) {
-                obj['ledger'] = LoyaltyProgramBalance.constructFromObject(data['ledger']);
+                obj['ledger'] = LedgerInfo.constructFromObject(data['ledger']);
             }
             if (data.hasOwnProperty('subLedgers')) {
-                obj['subLedgers'] = ApiClient.convertToType(data['subLedgers'], {'String': LoyaltyProgramBalance});
+                obj['subLedgers'] = ApiClient.convertToType(data['subLedgers'], {'String': LedgerInfo});
             }
         }
         return obj;
@@ -98,13 +98,13 @@ LoyaltyProgramLedgers.prototype['title'] = undefined;
 LoyaltyProgramLedgers.prototype['name'] = undefined;
 
 /**
- * @member {module:model/LoyaltyProgramBalance} ledger
+ * @member {module:model/LedgerInfo} ledger
  */
 LoyaltyProgramLedgers.prototype['ledger'] = undefined;
 
 /**
- * A map containing a list of all loyalty subledger balances
- * @member {Object.<String, module:model/LoyaltyProgramBalance>} subLedgers
+ * A map containing information about each loyalty subledger
+ * @member {Object.<String, module:model/LedgerInfo>} subLedgers
  */
 LoyaltyProgramLedgers.prototype['subLedgers'] = undefined;
 

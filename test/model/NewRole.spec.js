@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property users (base name: "users")', function() {
-      // uncomment below and update the code to test the property users
+    it('should have the property members (base name: "members")', function() {
+      // uncomment below and update the code to test the property members
       //var instane = new TalonOne.NewRole();
       //expect(instance).to.be();
     });
