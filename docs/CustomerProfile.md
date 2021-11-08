@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **Number** | Unique ID for this entity. | 
+**created** | **Date** | The exact moment this entity was created. The exact moment this entity was created. | 
 **integrationId** | **String** | The integration ID for this entity sent to and used in the Talon.One system. | 
-**created** | **Date** | The exact moment this entity was created. | 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this item | 
 **accountId** | **Number** | The ID of the Talon.One account that owns this profile. | 
 **closedSessions** | **Number** | The total amount of closed sessions by a customer. A closed session is a successful purchase. | 

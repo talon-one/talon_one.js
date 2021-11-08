@@ -18,9 +18,15 @@ Name | Type | Description | Notes
 
 * `Coupon` (value: `"Coupon"`)
 
+* `Referral` (value: `"Referral"`)
+
 * `Effect` (value: `"Effect"`)
 
 * `CustomerSession` (value: `"CustomerSession"`)
+
+* `LoyaltyLedger` (value: `"LoyaltyLedger"`)
+
+* `LoyaltyLedgerLog` (value: `"LoyaltyLedgerLog"`)
 
 
 

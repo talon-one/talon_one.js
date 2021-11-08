@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAPIKey model module.
  * @module model/ApplicationAPIKey
- * @version 4.3.0
+ * @version 4.4.0
  */
 class ApplicationAPIKey {
     /**
@@ -180,7 +180,13 @@ ApplicationAPIKey['PlatformEnum'] = {
      * value: "selligent"
      * @const
      */
-    "selligent": "selligent"
+    "selligent": "selligent",
+
+    /**
+     * value: "iterable"
+     * @const
+     */
+    "iterable": "iterable"
 };
 
 

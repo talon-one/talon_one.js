@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The MultipleCustomerProfileIntegrationRequestItem model module.
  * @module model/MultipleCustomerProfileIntegrationRequestItem
- * @version 4.3.0
+ * @version 4.4.0
  */
 class MultipleCustomerProfileIntegrationRequestItem {
     /**
      * Constructs a new <code>MultipleCustomerProfileIntegrationRequestItem</code>.
      * 
      * @alias module:model/MultipleCustomerProfileIntegrationRequestItem
-     * @param integrationId {String} The custom identifier for this profile, must be unique within the account.
+     * @param integrationId {String} The custom identifier for this profile, must be unique within the account.  To get the `integrationId` of the profile from a `sessionId`, use the [Update customer session](/integration-api/#operation/updateCustomerSessionV2). 
      */
     constructor(integrationId) { 
         
@@ -70,7 +70,7 @@ class MultipleCustomerProfileIntegrationRequestItem {
 MultipleCustomerProfileIntegrationRequestItem.prototype['attributes'] = undefined;
 
 /**
- * The custom identifier for this profile, must be unique within the account.
+ * The custom identifier for this profile, must be unique within the account.  To get the `integrationId` of the profile from a `sessionId`, use the [Update customer session](/integration-api/#operation/updateCustomerSessionV2). 
  * @member {String} integrationId
  */
 MultipleCustomerProfileIntegrationRequestItem.prototype['integrationId'] = undefined;

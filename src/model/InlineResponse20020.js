@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Audience from './Audience';
+import Attribute from './Attribute';
 
 /**
  * The InlineResponse20020 model module.
  * @module model/InlineResponse20020
- * @version 4.3.0
+ * @version 4.4.0
  */
 class InlineResponse20020 {
     /**
      * Constructs a new <code>InlineResponse20020</code>.
      * @alias module:model/InlineResponse20020
-     * @param data {Array.<module:model/Audience>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/Attribute>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20020.initialize(this, data);
+        InlineResponse20020.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20020 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -54,7 +56,7 @@ class InlineResponse20020 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Audience]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Attribute]);
             }
         }
         return obj;
@@ -69,7 +71,7 @@ class InlineResponse20020 {
 InlineResponse20020.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Audience>} data
+ * @member {Array.<module:model/Attribute>} data
  */
 InlineResponse20020.prototype['data'] = undefined;
 

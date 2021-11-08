@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The NewTemplateDef model module.
  * @module model/NewTemplateDef
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewTemplateDef {
     /**

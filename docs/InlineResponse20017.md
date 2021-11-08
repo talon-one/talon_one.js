@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
+**data** | **[String]** |  | 
 
 

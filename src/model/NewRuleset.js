@@ -18,7 +18,7 @@ import Rule from './Rule';
 /**
  * The NewRuleset model module.
  * @module model/NewRuleset
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewRuleset {
     /**
@@ -91,7 +91,7 @@ NewRuleset.prototype['bindings'] = undefined;
 NewRuleset.prototype['rbVersion'] = undefined;
 
 /**
- * A boolean indicating whether this newly created ruleset should also be activated for the campaign owns it
+ * A boolean indicating whether this newly created ruleset should also be activated for the campaign that owns it
  * @member {Boolean} activate
  */
 NewRuleset.prototype['activate'] = undefined;

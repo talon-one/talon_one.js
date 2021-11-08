@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 4.3.0
+* @version 4.4.0
 */
 
 /**
@@ -42,7 +42,6 @@ class ApiClient {
          */
         this.authentications = {
             'api_key_v1': {type: 'apiKey', 'in': 'header', name: 'Authorization'},
-            'integration_auth': {type: 'apiKey', 'in': 'header', name: 'Content-Signature'},
             'manager_auth': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
         }
 

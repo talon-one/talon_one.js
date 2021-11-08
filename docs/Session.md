@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **userId** | **Number** | The ID of the user of this session | 
-**token** | **String** | An opaque session identifier | 
+**token** | **String** | The token to use as a bearer token to query Management API endpoints. | 
 **created** | **Date** | Unix timestamp indicating when the session was first created. | 
 
 

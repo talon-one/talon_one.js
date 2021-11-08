@@ -13,22 +13,23 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyLedgerEntry from './LoyaltyLedgerEntry';
+import Tier from './Tier';
 
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LoyaltySubLedger {
     /**
      * Constructs a new <code>LoyaltySubLedger</code>.
-     * Ledger of Balance in Loyalty Program for a Customer
+     * Ledger of Balance in Loyalty Program for a Customer.
      * @alias module:model/LoyaltySubLedger
-     * @param total {Number} ⚠️ Deprecated: Use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
-     * @param totalActivePoints {Number} Total amount of currently active and available points in the customer's balance
-     * @param totalPendingPoints {Number} Total amount of pending points, which are not active yet but will become active in the future
-     * @param totalSpentPoints {Number} Total amount of points already spent by this customer
-     * @param totalExpiredPoints {Number} Total amount of points, that expired without ever being spent
+     * @param total {Number} ⚠️ Deprecated: Use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance. 
+     * @param totalActivePoints {Number} Total amount of currently active and available points in the customer's balance.
+     * @param totalPendingPoints {Number} Total amount of pending points, which are not active yet but will become active in the future.
+     * @param totalSpentPoints {Number} Total amount of points already spent by this customer.
+     * @param totalExpiredPoints {Number} Total amount of points, that expired without ever being spent.
      */
     constructor(total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints) { 
         
@@ -89,6 +90,9 @@ class LoyaltySubLedger {
             if (data.hasOwnProperty('expiredPoints')) {
                 obj['expiredPoints'] = ApiClient.convertToType(data['expiredPoints'], [LoyaltyLedgerEntry]);
             }
+            if (data.hasOwnProperty('currentTier')) {
+                obj['currentTier'] = Tier.constructFromObject(data['currentTier']);
+            }
         }
         return obj;
     }
@@ -97,64 +101,69 @@ class LoyaltySubLedger {
 }
 
 /**
- * ⚠️ Deprecated: Use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance 
+ * ⚠️ Deprecated: Use 'totalActivePoints' property instead. Total amount of currently active and available points in the customer's balance. 
  * @member {Number} total
  */
 LoyaltySubLedger.prototype['total'] = undefined;
 
 /**
- * Total amount of currently active and available points in the customer's balance
+ * Total amount of currently active and available points in the customer's balance.
  * @member {Number} totalActivePoints
  */
 LoyaltySubLedger.prototype['totalActivePoints'] = undefined;
 
 /**
- * Total amount of pending points, which are not active yet but will become active in the future
+ * Total amount of pending points, which are not active yet but will become active in the future.
  * @member {Number} totalPendingPoints
  */
 LoyaltySubLedger.prototype['totalPendingPoints'] = undefined;
 
 /**
- * Total amount of points already spent by this customer
+ * Total amount of points already spent by this customer.
  * @member {Number} totalSpentPoints
  */
 LoyaltySubLedger.prototype['totalSpentPoints'] = undefined;
 
 /**
- * Total amount of points, that expired without ever being spent
+ * Total amount of points, that expired without ever being spent.
  * @member {Number} totalExpiredPoints
  */
 LoyaltySubLedger.prototype['totalExpiredPoints'] = undefined;
 
 /**
- * List of all events that have happened such as additions, subtractions and expiries
+ * List of all events that have happened such as additions, subtractions and expiries.
  * @member {Array.<module:model/LoyaltyLedgerEntry>} transactions
  */
 LoyaltySubLedger.prototype['transactions'] = undefined;
 
 /**
- * List of all points that will expire
+ * List of all points that will expire.
  * @member {Array.<module:model/LoyaltyLedgerEntry>} expiringPoints
  */
 LoyaltySubLedger.prototype['expiringPoints'] = undefined;
 
 /**
- * List of all currently active points
+ * List of all currently active points.
  * @member {Array.<module:model/LoyaltyLedgerEntry>} activePoints
  */
 LoyaltySubLedger.prototype['activePoints'] = undefined;
 
 /**
- * List of all points pending activation
+ * List of all points pending activation.
  * @member {Array.<module:model/LoyaltyLedgerEntry>} pendingPoints
  */
 LoyaltySubLedger.prototype['pendingPoints'] = undefined;
 
 /**
- * List of expired points
+ * List of expired points.
  * @member {Array.<module:model/LoyaltyLedgerEntry>} expiredPoints
  */
 LoyaltySubLedger.prototype['expiredPoints'] = undefined;
+
+/**
+ * @member {module:model/Tier} currentTier
+ */
+LoyaltySubLedger.prototype['currentTier'] = undefined;
 
 
 

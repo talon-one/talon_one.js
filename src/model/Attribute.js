@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Attribute model module.
  * @module model/Attribute
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Attribute {
     /**
@@ -239,7 +239,19 @@ Attribute['EntityEnum'] = {
      * value: "Event"
      * @const
      */
-    "Event": "Event"
+    "Event": "Event",
+
+    /**
+     * value: "Giveaway"
+     * @const
+     */
+    "Giveaway": "Giveaway",
+
+    /**
+     * value: "Referral"
+     * @const
+     */
+    "Referral": "Referral"
 };
 
 

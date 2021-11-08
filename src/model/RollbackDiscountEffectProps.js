@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackDiscountEffectProps model module.
  * @module model/RollbackDiscountEffectProps
- * @version 4.3.0
+ * @version 4.4.0
  */
 class RollbackDiscountEffectProps {
     /**

@@ -13,27 +13,30 @@
 
 
 import ApiClient from "../ApiClient";
+import Audience from '../model/Audience';
 import Coupon from '../model/Coupon';
 import CouponReservations from '../model/CouponReservations';
 import CustomerInventory from '../model/CustomerInventory';
 import CustomerProfileAudienceRequest from '../model/CustomerProfileAudienceRequest';
 import CustomerProfileIntegrationRequestV2 from '../model/CustomerProfileIntegrationRequestV2';
 import InlineResponse200 from '../model/InlineResponse200';
+import InlineResponse201 from '../model/InlineResponse201';
 import IntegrationRequest from '../model/IntegrationRequest';
 import IntegrationState from '../model/IntegrationState';
 import IntegrationStateV2 from '../model/IntegrationStateV2';
 import MultipleCustomerProfileIntegrationRequest from '../model/MultipleCustomerProfileIntegrationRequest';
 import MultipleCustomerProfileIntegrationResponseV2 from '../model/MultipleCustomerProfileIntegrationResponseV2';
-import NewCustomerProfile from '../model/NewCustomerProfile';
-import NewCustomerSession from '../model/NewCustomerSession';
+import NewAudience from '../model/NewAudience';
 import NewEvent from '../model/NewEvent';
 import NewReferral from '../model/NewReferral';
+import NewReferralsForMultipleAdvocates from '../model/NewReferralsForMultipleAdvocates';
 import Referral from '../model/Referral';
+import UpdateAudience from '../model/UpdateAudience';
 
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 4.3.0
+* @version 4.4.0
 */
 export default class IntegrationApi {
 
@@ -51,8 +54,55 @@ export default class IntegrationApi {
 
 
     /**
-     * Create a new coupon reservation
-     * Creates a coupon reservation for all passed customer profiles on this couponID 
+     * Create audience
+     * Create an Audience. Only use this endpoint to sync existing audiences from other platforms through a 3rd party integration.  Once you create your first audience, new audience-specific rule conditions are enabled in the Rule Builder.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {module:model/NewAudience} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Audience} and HTTP response
+     */
+    createAudienceV2WithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAudienceV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Audience;
+      return this.apiClient.callApi(
+        '/v2/audiences', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create audience
+     * Create an Audience. Only use this endpoint to sync existing audiences from other platforms through a 3rd party integration.  Once you create your first audience, new audience-specific rule conditions are enabled in the Rule Builder.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {module:model/NewAudience} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Audience}
+     */
+    createAudienceV2(body) {
+      return this.createAudienceV2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create coupon reservation
+     * Create a coupon reservation for specified customer profiles on the specified coupon.  Reserving a coupon allows you to associate a coupon code to a given customer(s). You can then list the reserved coupons of a given customer with the [List customer data endpoint](/integration-api/#operation/getCustomerInventory).  If a coupon gets created for a specific user, it will automatically show up in their coupons.  When a user redeems a coupon, a reservation is automatically created after the redemption and the used coupon will be returned in the [List customer data endpoint](/integration-api/#operation/getCustomerInventory).  **Important:** This endpoint doesn't create a **strict** reservation. _Any_ customer can use a reserved coupon code and proceed to checkout.  For example, you can use this endpoint and `List customer data` to create a \"coupon wallet\" by reserving coupon codes for a customer, and then displaying their \"coupon wallet\" when they visit your store. 
      * @param {String} couponValue The value of a coupon
      * @param {module:model/CouponReservations} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coupon} and HTTP response
@@ -78,7 +128,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Coupon;
@@ -90,8 +140,8 @@ export default class IntegrationApi {
     }
 
     /**
-     * Create a new coupon reservation
-     * Creates a coupon reservation for all passed customer profiles on this couponID 
+     * Create coupon reservation
+     * Create a coupon reservation for specified customer profiles on the specified coupon.  Reserving a coupon allows you to associate a coupon code to a given customer(s). You can then list the reserved coupons of a given customer with the [List customer data endpoint](/integration-api/#operation/getCustomerInventory).  If a coupon gets created for a specific user, it will automatically show up in their coupons.  When a user redeems a coupon, a reservation is automatically created after the redemption and the used coupon will be returned in the [List customer data endpoint](/integration-api/#operation/getCustomerInventory).  **Important:** This endpoint doesn't create a **strict** reservation. _Any_ customer can use a reserved coupon code and proceed to checkout.  For example, you can use this endpoint and `List customer data` to create a \"coupon wallet\" by reserving coupon codes for a customer, and then displaying their \"coupon wallet\" when they visit your store. 
      * @param {String} couponValue The value of a coupon
      * @param {module:model/CouponReservations} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coupon}
@@ -105,7 +155,7 @@ export default class IntegrationApi {
 
 
     /**
-     * Create a referral code for an advocate
+     * Create referral code for an advocate
      * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
      * @param {module:model/NewReferral} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Referral} and HTTP response
@@ -126,7 +176,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Referral;
@@ -138,7 +188,7 @@ export default class IntegrationApi {
     }
 
     /**
-     * Create a referral code for an advocate
+     * Create referral code for an advocate
      * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
      * @param {module:model/NewReferral} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Referral}
@@ -152,8 +202,157 @@ export default class IntegrationApi {
 
 
     /**
+     * Create referral codes for multiple advocates
+     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * @param {module:model/NewReferralsForMultipleAdvocates} body 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains essential data such as the updated customer profiles and session-related information.  (default to 'yes')
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
+     */
+    createReferralsForMultipleAdvocatesWithHttpInfo(body, opts) {
+      opts = opts || {};
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createReferralsForMultipleAdvocates");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'silent': opts['silent']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse201;
+      return this.apiClient.callApi(
+        '/v1/referrals_for_multiple_advocates', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create referral codes for multiple advocates
+     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * @param {module:model/NewReferralsForMultipleAdvocates} body 
+     * @param {Object} [opts] Optional parameters
+     * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains essential data such as the updated customer profiles and session-related information.  (default to 'yes')
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
+     */
+    createReferralsForMultipleAdvocates(body, opts) {
+      return this.createReferralsForMultipleAdvocatesWithHttpInfo(body, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete audience memberships
+     * Remove all members from this audience.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteAudienceMembershipsV2WithHttpInfo(audienceId) {
+      let postBody = null;
+      // verify the required parameter 'audienceId' is set
+      if (audienceId === undefined || audienceId === null) {
+        throw new Error("Missing the required parameter 'audienceId' when calling deleteAudienceMembershipsV2");
+      }
+
+      let pathParams = {
+        'audienceId': audienceId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/v2/audiences/{audienceId}/memberships', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete audience memberships
+     * Remove all members from this audience.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteAudienceMembershipsV2(audienceId) {
+      return this.deleteAudienceMembershipsV2WithHttpInfo(audienceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete audience
+     * Delete an audience created by a third-party integration.  **Warning:** This endpoint also removes any associations recorded between a customer profile and this audience.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteAudienceV2WithHttpInfo(audienceId) {
+      let postBody = null;
+      // verify the required parameter 'audienceId' is set
+      if (audienceId === undefined || audienceId === null) {
+        throw new Error("Missing the required parameter 'audienceId' when calling deleteAudienceV2");
+      }
+
+      let pathParams = {
+        'audienceId': audienceId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['manager_auth'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/v2/audiences/{audienceId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete audience
+     * Delete an audience created by a third-party integration.  **Warning:** This endpoint also removes any associations recorded between a customer profile and this audience.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteAudienceV2(audienceId) {
+      return this.deleteAudienceV2WithHttpInfo(audienceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete coupon reservations
-     * Removes all passed customer profiles reservation from this coupon 
+     * Remove all passed customer profiles reservation from this coupon. 
      * @param {String} couponValue The value of a coupon
      * @param {module:model/CouponReservations} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -179,7 +378,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -192,7 +391,7 @@ export default class IntegrationApi {
 
     /**
      * Delete coupon reservations
-     * Removes all passed customer profiles reservation from this coupon 
+     * Remove all passed customer profiles reservation from this coupon. 
      * @param {String} couponValue The value of a coupon
      * @param {module:model/CouponReservations} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -228,7 +427,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -254,14 +453,15 @@ export default class IntegrationApi {
 
 
     /**
-     * Get an inventory of all data associated with a specific customer profile
-     * Get information regarding entities referencing this customer profile's integrationId. Currently we support customer profile information, referral codes and reserved coupons. In the future, this will be expanded with loyalty points.
-     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
+     * List data associated with a specific customer profile
+     * Return the customer inventory regarding entities referencing this customer profile's `integrationId`.  Typical entities returned are: customer profile information, referral codes, loyalty points and reserved coupons. Reserved coupons also include redeemed coupons. 
+     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.  To get the `integrationId` of the profile from a `sessionId`, use the [Update customer session](/integration-api/#operation/updateCustomerSessionV2). 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.profile] optional flag to decide if you would like customer profile information in the response
-     * @param {Boolean=} [opts.referrals] optional flag to decide if you would like referral information in the response
-     * @param {Boolean=} [opts.coupons] optional flag to decide if you would like coupon information in the response
-     * @param {Boolean=} [opts.loyalty] optional flag to decide if you would like loyalty information in the response
+     * @param {Boolean=} [opts.profile] Set to `true` to include customer profile information in the response.
+     * @param {Boolean=} [opts.referrals] Set to `true` to include referral information in the response.
+     * @param {Boolean=} [opts.coupons] Set to `true` to include coupon information in the response.
+     * @param {Boolean=} [opts.loyalty] Set to `true` to include loyalty information in the response.
+     * @param {Boolean=} [opts.giveaways] Set to `true` to include giveaways information in the response.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerInventory} and HTTP response
      */
     getCustomerInventoryWithHttpInfo(integrationId, opts) {
@@ -279,14 +479,15 @@ export default class IntegrationApi {
         'profile': opts['profile'],
         'referrals': opts['referrals'],
         'coupons': opts['coupons'],
-        'loyalty': opts['loyalty']
+        'loyalty': opts['loyalty'],
+        'giveaways': opts['giveaways']
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CustomerInventory;
@@ -298,14 +499,15 @@ export default class IntegrationApi {
     }
 
     /**
-     * Get an inventory of all data associated with a specific customer profile
-     * Get information regarding entities referencing this customer profile's integrationId. Currently we support customer profile information, referral codes and reserved coupons. In the future, this will be expanded with loyalty points.
-     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
+     * List data associated with a specific customer profile
+     * Return the customer inventory regarding entities referencing this customer profile's `integrationId`.  Typical entities returned are: customer profile information, referral codes, loyalty points and reserved coupons. Reserved coupons also include redeemed coupons. 
+     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.  To get the `integrationId` of the profile from a `sessionId`, use the [Update customer session](/integration-api/#operation/updateCustomerSessionV2). 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.profile] optional flag to decide if you would like customer profile information in the response
-     * @param {Boolean=} [opts.referrals] optional flag to decide if you would like referral information in the response
-     * @param {Boolean=} [opts.coupons] optional flag to decide if you would like coupon information in the response
-     * @param {Boolean=} [opts.loyalty] optional flag to decide if you would like loyalty information in the response
+     * @param {Boolean=} [opts.profile] Set to `true` to include customer profile information in the response.
+     * @param {Boolean=} [opts.referrals] Set to `true` to include referral information in the response.
+     * @param {Boolean=} [opts.coupons] Set to `true` to include coupon information in the response.
+     * @param {Boolean=} [opts.loyalty] Set to `true` to include loyalty information in the response.
+     * @param {Boolean=} [opts.giveaways] Set to `true` to include giveaways information in the response.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerInventory}
      */
     getCustomerInventory(integrationId, opts) {
@@ -317,8 +519,8 @@ export default class IntegrationApi {
 
 
     /**
-     * Get the users that have this coupon reserved
-     * Returns all users that have this coupon marked as reserved 
+     * List users that have this coupon reserved
+     * Return all users that have this coupon marked as reserved. 
      * @param {String} couponValue The value of a coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
@@ -339,7 +541,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse200;
@@ -351,8 +553,8 @@ export default class IntegrationApi {
     }
 
     /**
-     * Get the users that have this coupon reserved
-     * Returns all users that have this coupon marked as reserved 
+     * List users that have this coupon reserved
+     * Return all users that have this coupon marked as reserved. 
      * @param {String} couponValue The value of a coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
@@ -369,7 +571,7 @@ export default class IntegrationApi {
      * Records an arbitrary event in a customer session. For example, an integration might record an event when a user updates their payment information.  The `sessionId` body parameter is required, an event is always part of a session. Much like updating a customer session, if either the profile or the session do not exist, a new empty one will be created. Note that if the specified session already exists, it must belong to the same `profileId` or an error will be returned.  As with customer sessions, you can use an empty string for `profileId` to indicate that this is an anonymous session.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place. 
      * @param {module:model/NewEvent} body 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationState} and HTTP response
      */
     trackEventWithHttpInfo(body, opts) {
@@ -390,7 +592,7 @@ export default class IntegrationApi {
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IntegrationState;
@@ -406,7 +608,7 @@ export default class IntegrationApi {
      * Records an arbitrary event in a customer session. For example, an integration might record an event when a user updates their payment information.  The `sessionId` body parameter is required, an event is always part of a session. Much like updating a customer session, if either the profile or the session do not exist, a new empty one will be created. Note that if the specified session already exists, it must belong to the same `profileId` or an error will be returned.  As with customer sessions, you can use an empty string for `profileId` to indicate that this is an anonymous session.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place. 
      * @param {module:model/NewEvent} body 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationState}
      */
     trackEvent(body, opts) {
@@ -418,59 +620,53 @@ export default class IntegrationApi {
 
 
     /**
-     * Update a Customer Profile V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile). This profile information can then be matched and/or updated by campaign [Rules][].  The `integrationId` may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the `integrationId`. It is vital that this ID **not** change over time, so **don't** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#customer-profile [Rules]: /Getting-Started/entities#campaigns-rulesets-and-coupons 
-     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
-     * @param {module:model/NewCustomerProfile} body 
-     * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationState} and HTTP response
+     * Update profile attributes for all customers in audience
+     * Update the specified profile attributes to the provided value for all customers in the specified audience.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    updateCustomerProfileWithHttpInfo(integrationId, body, opts) {
-      opts = opts || {};
+    updateAudienceCustomersAttributesWithHttpInfo(audienceId, body) {
       let postBody = body;
-      // verify the required parameter 'integrationId' is set
-      if (integrationId === undefined || integrationId === null) {
-        throw new Error("Missing the required parameter 'integrationId' when calling updateCustomerProfile");
+      // verify the required parameter 'audienceId' is set
+      if (audienceId === undefined || audienceId === null) {
+        throw new Error("Missing the required parameter 'audienceId' when calling updateAudienceCustomersAttributes");
       }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerProfile");
+        throw new Error("Missing the required parameter 'body' when calling updateAudienceCustomersAttributes");
       }
 
       let pathParams = {
-        'integrationId': integrationId
+        'audienceId': audienceId
       };
       let queryParams = {
-        'dry': opts['dry']
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['api_key_v1', 'integration_auth'];
+      let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = IntegrationState;
+      let accepts = [];
+      let returnType = null;
       return this.apiClient.callApi(
-        '/v1/customer_profiles/{integrationId}', 'PUT',
+        '/v2/audience_customers/{audienceId}/attributes', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Update a Customer Profile V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](/Getting-Started/APIV2).  Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile). This profile information can then be matched and/or updated by campaign [Rules][].  The `integrationId` may be any identifier that will remain stable for the customer. For example, you might use a database ID, an email, or a phone number as the `integrationId`. It is vital that this ID **not** change over time, so **don't** use any identifier that the customer can update themselves. E.g. if your application allows a customer to update their e-mail address, you should instead use a database ID.  Updating a customer profile will return a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  [Customer Profile]: /Getting-Started/entities#customer-profile [Rules]: /Getting-Started/entities#campaigns-rulesets-and-coupons 
-     * @param {String} integrationId The custom identifier for this profile, must be unique within the account.
-     * @param {module:model/NewCustomerProfile} body 
-     * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationState}
+     * Update profile attributes for all customers in audience
+     * Update the specified profile attributes to the provided value for all customers in the specified audience.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    updateCustomerProfile(integrationId, body, opts) {
-      return this.updateCustomerProfileWithHttpInfo(integrationId, body, opts)
+    updateAudienceCustomersAttributes(audienceId, body) {
+      return this.updateAudienceCustomersAttributesWithHttpInfo(audienceId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -478,8 +674,62 @@ export default class IntegrationApi {
 
 
     /**
-     * Update a Customer Profile Audiences
-     * Update one ore multiple Customer Profiles with the specified Audiences 
+     * Update audience
+     * Update an Audience created by a third-party integration.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @param {module:model/UpdateAudience} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Audience} and HTTP response
+     */
+    updateAudienceV2WithHttpInfo(audienceId, body) {
+      let postBody = body;
+      // verify the required parameter 'audienceId' is set
+      if (audienceId === undefined || audienceId === null) {
+        throw new Error("Missing the required parameter 'audienceId' when calling updateAudienceV2");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAudienceV2");
+      }
+
+      let pathParams = {
+        'audienceId': audienceId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Audience;
+      return this.apiClient.callApi(
+        '/v2/audiences/{audienceId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update audience
+     * Update an Audience created by a third-party integration.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
+     * @param {Number} audienceId The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @param {module:model/UpdateAudience} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Audience}
+     */
+    updateAudienceV2(audienceId, body) {
+      return this.updateAudienceV2WithHttpInfo(audienceId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update multiple customer profiles' audiences
+     * Update one or multiple customer profiles with the specified audiences.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
      * @param {module:model/CustomerProfileAudienceRequest} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -511,8 +761,8 @@ export default class IntegrationApi {
     }
 
     /**
-     * Update a Customer Profile Audiences
-     * Update one ore multiple Customer Profiles with the specified Audiences 
+     * Update multiple customer profiles' audiences
+     * Update one or multiple customer profiles with the specified audiences.  **Important:** The authentication requires an mParticle API key instead of a Talon.One API key. 
      * @param {module:model/CustomerProfileAudienceRequest} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -525,13 +775,13 @@ export default class IntegrationApi {
 
 
     /**
-     * Update a Customer Profile
-     * Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Updating a customer profile returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter. 
+     * Update customer profile
+     * Update (or create) a [Customer Profile](/docs/dev/concepts/entities#customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  **Performance tips**  Updating a customer profile returns a response with the requested integration state.  You can use the `responseContent` property to save yourself extra API calls. For example, you can get the customer profile details directly without extra requests.  You can also set `runRuleEngine` to `false` to prevent unwanted rule executions. This allows you to improve response times.  If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. 
      * @param {String} integrationId The custom identifier for this profile. Must be unique within the account.
      * @param {module:model/CustomerProfileIntegrationRequestV2} body 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.runRuleEngine] Indicates whether to run the rule engine. (default to false)
-     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are persisted with `true`. Only used when `runRuleEngine` is set to `true`. 
+     * @param {Boolean=} [opts.runRuleEngine] Indicates whether to run the rule engine. Setting this property to `false` improves response times. (default to false)
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`. Only used when `runRuleEngine` is set to `true`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationStateV2} and HTTP response
      */
     updateCustomerProfileV2WithHttpInfo(integrationId, body, opts) {
@@ -570,13 +820,13 @@ export default class IntegrationApi {
     }
 
     /**
-     * Update a Customer Profile
-     * Update (or create) a [Customer Profile](https://developers.talon.one/Getting-Started/entities#customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Updating a customer profile returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter. 
+     * Update customer profile
+     * Update (or create) a [Customer Profile](/docs/dev/concepts/entities#customer-profile).  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  **Performance tips**  Updating a customer profile returns a response with the requested integration state.  You can use the `responseContent` property to save yourself extra API calls. For example, you can get the customer profile details directly without extra requests.  You can also set `runRuleEngine` to `false` to prevent unwanted rule executions. This allows you to improve response times.  If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. 
      * @param {String} integrationId The custom identifier for this profile. Must be unique within the account.
      * @param {module:model/CustomerProfileIntegrationRequestV2} body 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.runRuleEngine] Indicates whether to run the rule engine. (default to false)
-     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are persisted with `true`. Only used when `runRuleEngine` is set to `true`. 
+     * @param {Boolean=} [opts.runRuleEngine] Indicates whether to run the rule engine. Setting this property to `false` improves response times. (default to false)
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`. Only used when `runRuleEngine` is set to `true`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationStateV2}
      */
     updateCustomerProfileV2(integrationId, body, opts) {
@@ -588,11 +838,11 @@ export default class IntegrationApi {
 
 
     /**
-     * Update multiple Customer Profiles
-     * Update (or create) up to 1000 [Customer Profiles](https://developers.talon.one/Getting-Started/entities#customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](https://developers.talon.one/Integration-API/API-Reference#updateCustomerSessionV2). 
+     * Update multiple customer profiles
+     * Update (or create) up to 1000 [customer profiles](/docs/dev/concepts/entities#customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](/integration-api/#tag/Customer-sessions). 
      * @param {module:model/MultipleCustomerProfileIntegrationRequest} body 
      * @param {Object} [opts] Optional parameters
-     * @param {String=} [opts.silent] If set to `yes`, response will be an empty 204, otherwise a list of integration states will be generated (up to 1000).
+     * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains essential data such as the updated customer profiles and session-related information.  (default to 'yes')
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MultipleCustomerProfileIntegrationResponseV2} and HTTP response
      */
     updateCustomerProfilesV2WithHttpInfo(body, opts) {
@@ -625,11 +875,11 @@ export default class IntegrationApi {
     }
 
     /**
-     * Update multiple Customer Profiles
-     * Update (or create) up to 1000 [Customer Profiles](https://developers.talon.one/Getting-Started/entities#customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](https://developers.talon.one/Integration-API/API-Reference#updateCustomerSessionV2). 
+     * Update multiple customer profiles
+     * Update (or create) up to 1000 [customer profiles](/docs/dev/concepts/entities#customer-profile) in 1 request.  The `integrationId` must be any identifier that remains stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  A customer profile [can be linked to one or more sessions](/integration-api/#tag/Customer-sessions). 
      * @param {module:model/MultipleCustomerProfileIntegrationRequest} body 
      * @param {Object} [opts] Optional parameters
-     * @param {String=} [opts.silent] If set to `yes`, response will be an empty 204, otherwise a list of integration states will be generated (up to 1000).
+     * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains essential data such as the updated customer profiles and session-related information.  (default to 'yes')
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MultipleCustomerProfileIntegrationResponseV2}
      */
     updateCustomerProfilesV2(body, opts) {
@@ -641,72 +891,12 @@ export default class IntegrationApi {
 
 
     /**
-     * Update a Customer Session V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](https://developers.talon.one/Getting-Started/APIV2).  Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer profile returns a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
-     * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
-     * @param {module:model/NewCustomerSession} body 
-     * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationState} and HTTP response
-     */
-    updateCustomerSessionWithHttpInfo(customerSessionId, body, opts) {
-      opts = opts || {};
-      let postBody = body;
-      // verify the required parameter 'customerSessionId' is set
-      if (customerSessionId === undefined || customerSessionId === null) {
-        throw new Error("Missing the required parameter 'customerSessionId' when calling updateCustomerSession");
-      }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateCustomerSession");
-      }
-
-      let pathParams = {
-        'customerSessionId': customerSessionId
-      };
-      let queryParams = {
-        'dry': opts['dry']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['api_key_v1', 'integration_auth'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = IntegrationState;
-      return this.apiClient.callApi(
-        '/v1/customer_sessions/{customerSessionId}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update a Customer Session V1
-     * ⚠️ Deprecation Notice: Support for requests to this endpoint will end on 15.07.2021. We will not remove the endpoint, and it will still be accessible for you to use. For new features support, migrate to [API V2.0](https://developers.talon.one/Getting-Started/APIV2).  Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer profile returns a response with the full integration state. This includes the current state of the customer profile, the customer session, the event that was recorded, and an array of effects that took place.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
-     * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
-     * @param {module:model/NewCustomerSession} body 
-     * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationState}
-     */
-    updateCustomerSession(customerSessionId, body, opts) {
-      return this.updateCustomerSessionWithHttpInfo(customerSessionId, body, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update a Customer Session
-     * Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer session returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
+     * Update customer session
+     * Update or create a [customer session](/docs/dev/concepts/entities#customer-session). For example, use this endpoint to share the content of a customer's cart with Talon.One and to check which promotion rules apply.  **Note:** The currency for the session and the cart items in the session is the same as the Application that owns this session.  **Session management**  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same Application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  See more information and tips about session management in [Entities](/docs/dev/concepts/entities#customer-session).  **Sessions and customer profiles**  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  **Performance tips**  Updating a customer session returns a response with the requested integration state.  You can use the `responseContent` property to save yourself extra API calls. For example, you can get the customer profile details directly without extra requests.  You can also set `runRuleEngine` to `false` to prevent unwanted rule executions. This allows you to improve response times.  If `runRuleEngine` is set to `true`, the response also includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects.  For more information, see the [integration tutorial](https://docs.talon.one/docs/dev/tutorials/integrating-talon-one). 
      * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
      * @param {module:model/IntegrationRequest} body 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationStateV2} and HTTP response
      */
     updateCustomerSessionV2WithHttpInfo(customerSessionId, body, opts) {
@@ -744,12 +934,12 @@ export default class IntegrationApi {
     }
 
     /**
-     * Update a Customer Session
-     * Update (or create) a [Customer Session](https://developers.talon.one/Getting-Started/entities#customer-session). For example, use this endpoint to represent which items are in the customer's cart.  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  Updating a customer session returns a response with the requested integration state. If `runRuleEngine` is set to `true`, the response includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects. - Any entity that was requested in the `responseContent` request parameter.  The currency for the session and the cart items in the session is the same as that of the application with which the session is associated. 
+     * Update customer session
+     * Update or create a [customer session](/docs/dev/concepts/entities#customer-session). For example, use this endpoint to share the content of a customer's cart with Talon.One and to check which promotion rules apply.  **Note:** The currency for the session and the cart items in the session is the same as the Application that owns this session.  **Session management**  The Talon.One platform supports multiple simultaneous sessions for the same profile. If you have multiple ways of accessing the same Application you can either:  - Track multiple independent sessions or, - Use the same session across all of them.  You should share sessions when application access points share other state, such as the user's cart. If two points of access to the application have independent states, for example a user can have different items in their cart across the two) they should use independent customer session ID's.  See more information and tips about session management in [Entities](/docs/dev/concepts/entities#customer-session).  **Sessions and customer profiles**  To link a session to a customer profile, set the `profileId` parameter in the request body to a customer profile's `integrationId`. To track an anonymous session use the empty string (`\"\"`) as the `profileId`. **Note:** You do **not** have to create a customer profile first. If the specified profile does not exist, an empty profile is created automatically.  **Performance tips**  Updating a customer session returns a response with the requested integration state.  You can use the `responseContent` property to save yourself extra API calls. For example, you can get the customer profile details directly without extra requests.  You can also set `runRuleEngine` to `false` to prevent unwanted rule executions. This allows you to improve response times.  If `runRuleEngine` is set to `true`, the response also includes:  - The effects generated by the triggered campaigns. - The created coupons and referral objects.  For more information, see the [integration tutorial](https://docs.talon.one/docs/dev/tutorials/integrating-talon-one). 
      * @param {String} customerSessionId The custom identifier for this session, must be unique within the account.
      * @param {module:model/IntegrationRequest} body 
      * @param {Object} [opts] Optional parameters
-     * @param {Boolean=} [opts.dry] Indicates whether to skip persisting the changes or not (Will not persist if set to 'true').
+     * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationStateV2}
      */
     updateCustomerSessionV2(customerSessionId, body, opts) {

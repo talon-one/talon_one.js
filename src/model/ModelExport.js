@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelExport model module.
  * @module model/ModelExport
- * @version 4.3.0
+ * @version 4.4.0
  */
 class ModelExport {
     /**
@@ -139,6 +139,12 @@ ModelExport['EntityEnum'] = {
     "Coupon": "Coupon",
 
     /**
+     * value: "Referral"
+     * @const
+     */
+    "Referral": "Referral",
+
+    /**
      * value: "Effect"
      * @const
      */
@@ -148,7 +154,19 @@ ModelExport['EntityEnum'] = {
      * value: "CustomerSession"
      * @const
      */
-    "CustomerSession": "CustomerSession"
+    "CustomerSession": "CustomerSession",
+
+    /**
+     * value: "LoyaltyLedger"
+     * @const
+     */
+    "LoyaltyLedger": "LoyaltyLedger",
+
+    /**
+     * value: "LoyaltyLedgerLog"
+     * @const
+     */
+    "LoyaltyLedgerLog": "LoyaltyLedgerLog"
 };
 
 

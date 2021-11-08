@@ -60,8 +60,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property accountID (base name: "accountID")', function() {
-      // uncomment below and update the code to test the property accountID
+    it('should have the property created (base name: "created")', function() {
+      // uncomment below and update the code to test the property created
+      //var instane = new TalonOne.Role();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property modified (base name: "modified")', function() {
+      // uncomment below and update the code to test the property modified
+      //var instane = new TalonOne.Role();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountId (base name: "accountId")', function() {
+      // uncomment below and update the code to test the property accountId
       //var instane = new TalonOne.Role();
       //expect(instance).to.be();
     });

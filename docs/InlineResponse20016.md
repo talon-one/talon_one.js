@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**data** | [**[ApplicationSession]**](ApplicationSession.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
 
 

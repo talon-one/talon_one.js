@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleFailureReason model module.
  * @module model/RuleFailureReason
- * @version 4.3.0
+ * @version 4.4.0
  */
 class RuleFailureReason {
     /**
      * Constructs a new <code>RuleFailureReason</code>.
-     * Details about why a rule failed
+     * Details about why a rule failed.
      * @alias module:model/RuleFailureReason
      * @param campaignID {Number} The ID of the campaign that contains the rule that failed
      * @param campaignName {String} The name of the campaign that contains the rule that failed

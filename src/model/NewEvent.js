@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewEvent model module.
  * @module model/NewEvent
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewEvent {
     /**

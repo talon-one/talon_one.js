@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewApplication {
     /**
@@ -169,13 +169,13 @@ NewApplication.prototype['exclusiveCampaignsStrategy'] = undefined;
 NewApplication.prototype['defaultDiscountScope'] = undefined;
 
 /**
- * Flag indicating if discounts should cascade for this application
+ * Indicates if discounts should cascade for this application
  * @member {Boolean} enableCascadingDiscounts
  */
 NewApplication.prototype['enableCascadingDiscounts'] = undefined;
 
 /**
- * Flag indicating if cart items of quantity larger than one should be separated into different items of quantity one
+ * Indicates if cart items of quantity larger than one should be separated into different items of quantity one
  * @member {Boolean} enableFlattenedCartItems
  */
 NewApplication.prototype['enableFlattenedCartItems'] = undefined;
@@ -186,7 +186,7 @@ NewApplication.prototype['enableFlattenedCartItems'] = undefined;
 NewApplication.prototype['attributesSettings'] = undefined;
 
 /**
- * Flag indicating if this is a live or sandbox application
+ * Indicates if this is a live or sandbox application
  * @member {Boolean} sandbox
  */
 NewApplication.prototype['sandbox'] = undefined;

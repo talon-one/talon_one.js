@@ -18,24 +18,25 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The CustomerProfile model module.
  * @module model/CustomerProfile
- * @version 4.3.0
+ * @version 4.4.0
  */
 class CustomerProfile {
     /**
      * Constructs a new <code>CustomerProfile</code>.
      * 
      * @alias module:model/CustomerProfile
+     * @param id {Number} Unique ID for this entity.
+     * @param created {Date} The exact moment this entity was created. The exact moment this entity was created.
      * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
-     * @param created {Date} The exact moment this entity was created.
      * @param attributes {Object} Arbitrary properties associated with this item
      * @param accountId {Number} The ID of the Talon.One account that owns this profile.
      * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
      * @param totalSales {Number} Sum of all purchases made by this customer
      * @param lastActivity {Date} Timestamp of the most recent event received from this customer
      */
-    constructor(integrationId, created, attributes, accountId, closedSessions, totalSales, lastActivity) { 
+    constructor(id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity) { 
         
-        CustomerProfile.initialize(this, integrationId, created, attributes, accountId, closedSessions, totalSales, lastActivity);
+        CustomerProfile.initialize(this, id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity);
     }
 
     /**
@@ -43,9 +44,10 @@ class CustomerProfile {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, integrationId, created, attributes, accountId, closedSessions, totalSales, lastActivity) { 
-        obj['integrationId'] = integrationId;
+    static initialize(obj, id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity) { 
+        obj['id'] = id;
         obj['created'] = created;
+        obj['integrationId'] = integrationId;
         obj['attributes'] = attributes;
         obj['accountId'] = accountId;
         obj['closedSessions'] = closedSessions;
@@ -64,11 +66,14 @@ class CustomerProfile {
         if (data) {
             obj = obj || new CustomerProfile();
 
-            if (data.hasOwnProperty('integrationId')) {
-                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('integrationId')) {
+                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
             }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
@@ -99,16 +104,22 @@ class CustomerProfile {
 }
 
 /**
+ * Unique ID for this entity.
+ * @member {Number} id
+ */
+CustomerProfile.prototype['id'] = undefined;
+
+/**
+ * The exact moment this entity was created. The exact moment this entity was created.
+ * @member {Date} created
+ */
+CustomerProfile.prototype['created'] = undefined;
+
+/**
  * The integration ID for this entity sent to and used in the Talon.One system.
  * @member {String} integrationId
  */
 CustomerProfile.prototype['integrationId'] = undefined;
-
-/**
- * The exact moment this entity was created.
- * @member {Date} created
- */
-CustomerProfile.prototype['created'] = undefined;
 
 /**
  * Arbitrary properties associated with this item

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 4.3.0
+ * @version 4.4.0
  */
 class EffectEntity {
     /**

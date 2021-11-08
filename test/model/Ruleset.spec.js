@@ -66,12 +66,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property campaignId (base name: "campaignId")', function() {
-      // uncomment below and update the code to test the property campaignId
-      //var instane = new TalonOne.Ruleset();
-      //expect(instance).to.be();
-    });
-
     it('should have the property userId (base name: "userId")', function() {
       // uncomment below and update the code to test the property userId
       //var instane = new TalonOne.Ruleset();
@@ -98,6 +92,18 @@
 
     it('should have the property activate (base name: "activate")', function() {
       // uncomment below and update the code to test the property activate
+      //var instane = new TalonOne.Ruleset();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property campaignId (base name: "campaignId")', function() {
+      // uncomment below and update the code to test the property campaignId
+      //var instane = new TalonOne.Ruleset();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property templateId (base name: "templateId")', function() {
+      // uncomment below and update the code to test the property templateId
       //var instane = new TalonOne.Ruleset();
       //expect(instance).to.be();
     });

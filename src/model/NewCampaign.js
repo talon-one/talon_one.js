@@ -18,13 +18,13 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCampaign model module.
  * @module model/NewCampaign
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewCampaign {
     /**
      * Constructs a new <code>NewCampaign</code>.
      * @alias module:model/NewCampaign
-     * @param name {String} A friendly name for this campaign.
+     * @param name {String} A user-facing name for this campaign.
      * @param state {module:model/NewCampaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 
      * @param tags {Array.<String>} A list of tags for the campaign.
      * @param features {Array.<module:model/NewCampaign.FeaturesEnum>} A list of features for the campaign.
@@ -106,7 +106,7 @@ class NewCampaign {
 }
 
 /**
- * A friendly name for this campaign.
+ * A user-facing name for this campaign.
  * @member {String} name
  */
 NewCampaign.prototype['name'] = undefined;
@@ -118,13 +118,13 @@ NewCampaign.prototype['name'] = undefined;
 NewCampaign.prototype['description'] = undefined;
 
 /**
- * Datetime when the campaign will become active.
+ * Timestamp when the campaign will become active.
  * @member {Date} startTime
  */
 NewCampaign.prototype['startTime'] = undefined;
 
 /**
- * Datetime when the campaign will become in-active.
+ * Timestamp the campaign will become inactive.
  * @member {Date} endTime
  */
 NewCampaign.prototype['endTime'] = undefined;
@@ -236,7 +236,13 @@ NewCampaign['FeaturesEnum'] = {
      * value: "loyalty"
      * @const
      */
-    "loyalty": "loyalty"
+    "loyalty": "loyalty",
+
+    /**
+     * value: "giveaways"
+     * @const
+     */
+    "giveaways": "giveaways"
 };
 
 

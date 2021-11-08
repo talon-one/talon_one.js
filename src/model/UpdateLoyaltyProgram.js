@@ -12,16 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
+import NewLoyaltyTier from './NewLoyaltyTier';
 
 /**
  * The UpdateLoyaltyProgram model module.
  * @module model/UpdateLoyaltyProgram
- * @version 4.3.0
+ * @version 4.4.0
  */
 class UpdateLoyaltyProgram {
     /**
      * Constructs a new <code>UpdateLoyaltyProgram</code>.
-     * Update Loyalty Program
+     * 
      * @alias module:model/UpdateLoyaltyProgram
      */
     constructor() { 
@@ -66,6 +67,12 @@ class UpdateLoyaltyProgram {
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
             }
+            if (data.hasOwnProperty('timezone')) {
+                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
+            }
+            if (data.hasOwnProperty('tiers')) {
+                obj['tiers'] = ApiClient.convertToType(data['tiers'], [NewLoyaltyTier]);
+            }
         }
         return obj;
     }
@@ -108,6 +115,18 @@ UpdateLoyaltyProgram.prototype['defaultPending'] = undefined;
  * @member {Boolean} allowSubledger
  */
 UpdateLoyaltyProgram.prototype['allowSubledger'] = undefined;
+
+/**
+ * A string containing an IANA timezone descriptor.
+ * @member {String} timezone
+ */
+UpdateLoyaltyProgram.prototype['timezone'] = undefined;
+
+/**
+ * The tiers in this loyalty program
+ * @member {Array.<module:model/NewLoyaltyTier>} tiers
+ */
+UpdateLoyaltyProgram.prototype['tiers'] = undefined;
 
 
 

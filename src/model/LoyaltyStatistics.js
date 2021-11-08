@@ -12,25 +12,31 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyDashboardPointsBreakdown from './LoyaltyDashboardPointsBreakdown';
 
 /**
  * The LoyaltyStatistics model module.
  * @module model/LoyaltyStatistics
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LoyaltyStatistics {
     /**
      * Constructs a new <code>LoyaltyStatistics</code>.
      * 
      * @alias module:model/LoyaltyStatistics
-     * @param totalActivePoints {Number} Total of active points for this loyalty program
-     * @param totalPendingPoints {Number} Total of pending points for this loyalty program
-     * @param totalSpentPoints {Number} Total of spent points for this loyalty program
-     * @param totalExpiredPoints {Number} Total of expired points for this loyalty program
+     * @param _date {Date} Date at which data point was collected.
+     * @param totalActivePoints {Number} Total of active points for this loyalty program.
+     * @param totalPendingPoints {Number} Total of pending points for this loyalty program.
+     * @param totalSpentPoints {Number} Total of spent points for this loyalty program.
+     * @param totalExpiredPoints {Number} Total of expired points for this loyalty program.
+     * @param totalMembers {Number} Number of loyalty program members.
+     * @param newMembers {Number} Number of members who joined on this day.
+     * @param spentPoints {module:model/LoyaltyDashboardPointsBreakdown} 
+     * @param earnedPoints {module:model/LoyaltyDashboardPointsBreakdown} 
      */
-    constructor(totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints) { 
+    constructor(_date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalMembers, newMembers, spentPoints, earnedPoints) { 
         
-        LoyaltyStatistics.initialize(this, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints);
+        LoyaltyStatistics.initialize(this, _date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalMembers, newMembers, spentPoints, earnedPoints);
     }
 
     /**
@@ -38,11 +44,16 @@ class LoyaltyStatistics {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints) { 
+    static initialize(obj, _date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalMembers, newMembers, spentPoints, earnedPoints) { 
+        obj['date'] = _date;
         obj['totalActivePoints'] = totalActivePoints;
         obj['totalPendingPoints'] = totalPendingPoints;
         obj['totalSpentPoints'] = totalSpentPoints;
         obj['totalExpiredPoints'] = totalExpiredPoints;
+        obj['totalMembers'] = totalMembers;
+        obj['newMembers'] = newMembers;
+        obj['spentPoints'] = spentPoints;
+        obj['earnedPoints'] = earnedPoints;
     }
 
     /**
@@ -56,6 +67,9 @@ class LoyaltyStatistics {
         if (data) {
             obj = obj || new LoyaltyStatistics();
 
+            if (data.hasOwnProperty('date')) {
+                obj['date'] = ApiClient.convertToType(data['date'], 'Date');
+            }
             if (data.hasOwnProperty('totalActivePoints')) {
                 obj['totalActivePoints'] = ApiClient.convertToType(data['totalActivePoints'], 'Number');
             }
@@ -68,6 +82,18 @@ class LoyaltyStatistics {
             if (data.hasOwnProperty('totalExpiredPoints')) {
                 obj['totalExpiredPoints'] = ApiClient.convertToType(data['totalExpiredPoints'], 'Number');
             }
+            if (data.hasOwnProperty('totalMembers')) {
+                obj['totalMembers'] = ApiClient.convertToType(data['totalMembers'], 'Number');
+            }
+            if (data.hasOwnProperty('newMembers')) {
+                obj['newMembers'] = ApiClient.convertToType(data['newMembers'], 'Number');
+            }
+            if (data.hasOwnProperty('spentPoints')) {
+                obj['spentPoints'] = LoyaltyDashboardPointsBreakdown.constructFromObject(data['spentPoints']);
+            }
+            if (data.hasOwnProperty('earnedPoints')) {
+                obj['earnedPoints'] = LoyaltyDashboardPointsBreakdown.constructFromObject(data['earnedPoints']);
+            }
         }
         return obj;
     }
@@ -76,28 +102,56 @@ class LoyaltyStatistics {
 }
 
 /**
- * Total of active points for this loyalty program
+ * Date at which data point was collected.
+ * @member {Date} date
+ */
+LoyaltyStatistics.prototype['date'] = undefined;
+
+/**
+ * Total of active points for this loyalty program.
  * @member {Number} totalActivePoints
  */
 LoyaltyStatistics.prototype['totalActivePoints'] = undefined;
 
 /**
- * Total of pending points for this loyalty program
+ * Total of pending points for this loyalty program.
  * @member {Number} totalPendingPoints
  */
 LoyaltyStatistics.prototype['totalPendingPoints'] = undefined;
 
 /**
- * Total of spent points for this loyalty program
+ * Total of spent points for this loyalty program.
  * @member {Number} totalSpentPoints
  */
 LoyaltyStatistics.prototype['totalSpentPoints'] = undefined;
 
 /**
- * Total of expired points for this loyalty program
+ * Total of expired points for this loyalty program.
  * @member {Number} totalExpiredPoints
  */
 LoyaltyStatistics.prototype['totalExpiredPoints'] = undefined;
+
+/**
+ * Number of loyalty program members.
+ * @member {Number} totalMembers
+ */
+LoyaltyStatistics.prototype['totalMembers'] = undefined;
+
+/**
+ * Number of members who joined on this day.
+ * @member {Number} newMembers
+ */
+LoyaltyStatistics.prototype['newMembers'] = undefined;
+
+/**
+ * @member {module:model/LoyaltyDashboardPointsBreakdown} spentPoints
+ */
+LoyaltyStatistics.prototype['spentPoints'] = undefined;
+
+/**
+ * @member {module:model/LoyaltyDashboardPointsBreakdown} earnedPoints
+ */
+LoyaltyStatistics.prototype['earnedPoints'] = undefined;
 
 
 

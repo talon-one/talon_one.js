@@ -17,7 +17,7 @@ import FuncArgDef from './FuncArgDef';
 /**
  * The FunctionDef model module.
  * @module model/FunctionDef
- * @version 4.3.0
+ * @version 4.4.0
  */
 class FunctionDef {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedNotification model module.
  * @module model/FeedNotification
- * @version 4.3.0
+ * @version 4.4.0
  */
 class FeedNotification {
     /**

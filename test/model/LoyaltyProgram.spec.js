@@ -60,14 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property accountID (base name: "accountID")', function() {
-      // uncomment below and update the code to test the property accountID
-      //var instane = new TalonOne.LoyaltyProgram();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property created (base name: "created")', function() {
+      // uncomment below and update the code to test the property created
       //var instane = new TalonOne.LoyaltyProgram();
       //expect(instance).to.be();
     });
@@ -104,6 +98,30 @@
 
     it('should have the property allowSubledger (base name: "allowSubledger")', function() {
       // uncomment below and update the code to test the property allowSubledger
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property timezone (base name: "timezone")', function() {
+      // uncomment below and update the code to test the property timezone
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountID (base name: "accountID")', function() {
+      // uncomment below and update the code to test the property accountID
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tiers (base name: "tiers")', function() {
+      // uncomment below and update the code to test the property tiers
       //var instane = new TalonOne.LoyaltyProgram();
       //expect(instance).to.be();
     });

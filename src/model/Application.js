@@ -19,7 +19,7 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Application {
     /**
@@ -216,13 +216,13 @@ Application.prototype['exclusiveCampaignsStrategy'] = undefined;
 Application.prototype['defaultDiscountScope'] = undefined;
 
 /**
- * Flag indicating if discounts should cascade for this application
+ * Indicates if discounts should cascade for this application
  * @member {Boolean} enableCascadingDiscounts
  */
 Application.prototype['enableCascadingDiscounts'] = undefined;
 
 /**
- * Flag indicating if cart items of quantity larger than one should be separated into different items of quantity one
+ * Indicates if cart items of quantity larger than one should be separated into different items of quantity one
  * @member {Boolean} enableFlattenedCartItems
  */
 Application.prototype['enableFlattenedCartItems'] = undefined;
@@ -233,7 +233,7 @@ Application.prototype['enableFlattenedCartItems'] = undefined;
 Application.prototype['attributesSettings'] = undefined;
 
 /**
- * Flag indicating if this is a live or sandbox application
+ * Indicates if this is a live or sandbox application
  * @member {Boolean} sandbox
  */
 Application.prototype['sandbox'] = undefined;

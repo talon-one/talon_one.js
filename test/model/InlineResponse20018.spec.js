@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property totalResultSize (base name: "totalResultSize")', function() {
+      // uncomment below and update the code to test the property totalResultSize
+      //var instane = new TalonOne.InlineResponse20018();
+      //expect(instance).to.be();
+    });
+
     it('should have the property data (base name: "data")', function() {
       // uncomment below and update the code to test the property data
       //var instane = new TalonOne.InlineResponse20018();

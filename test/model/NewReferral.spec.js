@@ -54,6 +54,24 @@
       //expect(instance).to.be.a(TalonOne.NewReferral);
     });
 
+    it('should have the property startDate (base name: "startDate")', function() {
+      // uncomment below and update the code to test the property startDate
+      //var instane = new TalonOne.NewReferral();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiryDate (base name: "expiryDate")', function() {
+      // uncomment below and update the code to test the property expiryDate
+      //var instane = new TalonOne.NewReferral();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property usageLimit (base name: "usageLimit")', function() {
+      // uncomment below and update the code to test the property usageLimit
+      //var instane = new TalonOne.NewReferral();
+      //expect(instance).to.be();
+    });
+
     it('should have the property campaignId (base name: "campaignId")', function() {
       // uncomment below and update the code to test the property campaignId
       //var instane = new TalonOne.NewReferral();
@@ -72,14 +90,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property startDate (base name: "startDate")', function() {
-      // uncomment below and update the code to test the property startDate
-      //var instane = new TalonOne.NewReferral();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expiryDate (base name: "expiryDate")', function() {
-      // uncomment below and update the code to test the property expiryDate
+    it('should have the property attributes (base name: "attributes")', function() {
+      // uncomment below and update the code to test the property attributes
       //var instane = new TalonOne.NewReferral();
       //expect(instance).to.be();
     });

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Effect {
     /**

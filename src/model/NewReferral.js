@@ -16,14 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The NewReferral model module.
  * @module model/NewReferral
- * @version 4.3.0
+ * @version 4.4.0
  */
 class NewReferral {
     /**
      * Constructs a new <code>NewReferral</code>.
+     * 
      * @alias module:model/NewReferral
      * @param campaignId {Number} ID of the campaign from which the referral received the referral code.
-     * @param advocateProfileIntegrationId {String} The Integration Id of the Advocate's Profile
+     * @param advocateProfileIntegrationId {String} The Integration ID of the Advocate's Profile.
      */
     constructor(campaignId, advocateProfileIntegrationId) { 
         
@@ -51,6 +52,15 @@ class NewReferral {
         if (data) {
             obj = obj || new NewReferral();
 
+            if (data.hasOwnProperty('startDate')) {
+                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
+            }
+            if (data.hasOwnProperty('expiryDate')) {
+                obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            }
+            if (data.hasOwnProperty('usageLimit')) {
+                obj['usageLimit'] = ApiClient.convertToType(data['usageLimit'], 'Number');
+            }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
             }
@@ -60,11 +70,8 @@ class NewReferral {
             if (data.hasOwnProperty('friendProfileIntegrationId')) {
                 obj['friendProfileIntegrationId'] = ApiClient.convertToType(data['friendProfileIntegrationId'], 'String');
             }
-            if (data.hasOwnProperty('startDate')) {
-                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
-            }
-            if (data.hasOwnProperty('expiryDate')) {
-                obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
         }
         return obj;
@@ -72,24 +79,6 @@ class NewReferral {
 
 
 }
-
-/**
- * ID of the campaign from which the referral received the referral code.
- * @member {Number} campaignId
- */
-NewReferral.prototype['campaignId'] = undefined;
-
-/**
- * The Integration Id of the Advocate's Profile
- * @member {String} advocateProfileIntegrationId
- */
-NewReferral.prototype['advocateProfileIntegrationId'] = undefined;
-
-/**
- * An optional Integration ID of the Friend's Profile
- * @member {String} friendProfileIntegrationId
- */
-NewReferral.prototype['friendProfileIntegrationId'] = undefined;
 
 /**
  * Timestamp at which point the referral code becomes valid.
@@ -102,6 +91,36 @@ NewReferral.prototype['startDate'] = undefined;
  * @member {Date} expiryDate
  */
 NewReferral.prototype['expiryDate'] = undefined;
+
+/**
+ * The number of times a referral code can be used. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+ * @member {Number} usageLimit
+ */
+NewReferral.prototype['usageLimit'] = undefined;
+
+/**
+ * ID of the campaign from which the referral received the referral code.
+ * @member {Number} campaignId
+ */
+NewReferral.prototype['campaignId'] = undefined;
+
+/**
+ * The Integration ID of the Advocate's Profile.
+ * @member {String} advocateProfileIntegrationId
+ */
+NewReferral.prototype['advocateProfileIntegrationId'] = undefined;
+
+/**
+ * An optional Integration ID of the Friend's Profile
+ * @member {String} friendProfileIntegrationId
+ */
+NewReferral.prototype['friendProfileIntegrationId'] = undefined;
+
+/**
+ * Arbitrary properties associated with this item.
+ * @member {Object} attributes
+ */
+NewReferral.prototype['attributes'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 4.3.0
+ * @version 4.4.0
  */
 class ApplicationSession {
     /**
@@ -30,7 +30,7 @@ class ApplicationSession {
      * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
-     * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (\"open\"), \"closed\", or \"cancelled\".
+     * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (`open`), `closed`, or `cancelled`. For more information about customer sessions, see [Customer sessions](/docs/dev/concepts/entities#customer-session-states) in the docs. 
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
      * @param discounts {Object.<String, Number>} A map of labelled discount values, in the same currency as the session.
      * @param total {Number} The total sum of the session before any discounts applied.
@@ -164,7 +164,7 @@ ApplicationSession.prototype['coupon'] = undefined;
 ApplicationSession.prototype['referral'] = undefined;
 
 /**
- * Indicating if the customer session is in progress (\"open\"), \"closed\", or \"cancelled\".
+ * Indicating if the customer session is in progress (`open`), `closed`, or `cancelled`. For more information about customer sessions, see [Customer sessions](/docs/dev/concepts/entities#customer-session-states) in the docs. 
  * @member {module:model/ApplicationSession.StateEnum} state
  */
 ApplicationSession.prototype['state'] = undefined;

@@ -17,12 +17,12 @@ import LoyaltySubLedger from './LoyaltySubLedger';
 /**
  * The LoyaltyLedger model module.
  * @module model/LoyaltyLedger
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LoyaltyLedger {
     /**
      * Constructs a new <code>LoyaltyLedger</code>.
-     * Ledger of Balance in Loyalty Program for a Customer
+     * Ledger of Balance in Loyalty Program for a Customer.
      * @alias module:model/LoyaltyLedger
      * @param ledger {module:model/LoyaltySubLedger} 
      */
@@ -70,7 +70,7 @@ class LoyaltyLedger {
 LoyaltyLedger.prototype['ledger'] = undefined;
 
 /**
- * A map containing a list of all loyalty subledger balances
+ * A map containing a list of all loyalty subledger balances.
  * @member {Object.<String, module:model/LoyaltySubLedger>} subLedgers
  */
 LoyaltyLedger.prototype['subLedgers'] = undefined;

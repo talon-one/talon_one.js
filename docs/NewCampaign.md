@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | A friendly name for this campaign. | 
+**name** | **String** | A user-facing name for this campaign. | 
 **description** | **String** | A detailed description of the campaign. | [optional] 
-**startTime** | **Date** | Datetime when the campaign will become active. | [optional] 
-**endTime** | **Date** | Datetime when the campaign will become in-active. | [optional] 
+**startTime** | **Date** | Timestamp when the campaign will become active. | [optional] 
+**endTime** | **Date** | Timestamp the campaign will become inactive. | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 **state** | **String** | A disabled or archived campaign is not evaluated for rules or coupons.  | [default to &#39;enabled&#39;]
 **activeRulesetId** | **Number** | ID of Ruleset this campaign applies on customer session evaluation. | [optional] 
@@ -41,6 +41,8 @@ Name | Type | Description | Notes
 * `referrals` (value: `"referrals"`)
 
 * `loyalty` (value: `"loyalty"`)
+
+* `giveaways` (value: `"giveaways"`)
 
 
 
