@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 
 * `ruleFailureReasons` (value: `"ruleFailureReasons"`)
 
+* `previousReturns` (value: `"previousReturns"`)
+
 
 
 

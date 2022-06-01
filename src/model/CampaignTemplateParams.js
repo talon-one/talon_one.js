@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignTemplateParams model module.
  * @module model/CampaignTemplateParams
- * @version 4.4.0
+ * @version 4.5.0
  */
 class CampaignTemplateParams {
     /**
      * Constructs a new <code>CampaignTemplateParams</code>.
      * @alias module:model/CampaignTemplateParams
      * @param name {String} Name of the campaign template parameter.
-     * @param type {String} Can be one of the following three ['string','number','boolean']
+     * @param type {module:model/CampaignTemplateParams.TypeEnum} Defines the type of parameter value.
      * @param description {String} Explains the meaning of this template parameter and the placeholder value that will define it. It is used on campaign creation from this template.
      */
     constructor(name, type, description) { 
@@ -76,8 +76,8 @@ class CampaignTemplateParams {
 CampaignTemplateParams.prototype['name'] = undefined;
 
 /**
- * Can be one of the following three ['string','number','boolean']
- * @member {String} type
+ * Defines the type of parameter value.
+ * @member {module:model/CampaignTemplateParams.TypeEnum} type
  */
 CampaignTemplateParams.prototype['type'] = undefined;
 
@@ -89,6 +89,51 @@ CampaignTemplateParams.prototype['description'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CampaignTemplateParams['TypeEnum'] = {
+
+    /**
+     * value: "string"
+     * @const
+     */
+    "string": "string",
+
+    /**
+     * value: "number"
+     * @const
+     */
+    "number": "number",
+
+    /**
+     * value: "boolean"
+     * @const
+     */
+    "boolean": "boolean",
+
+    /**
+     * value: "percent"
+     * @const
+     */
+    "percent": "percent",
+
+    /**
+     * value: "(list string)"
+     * @const
+     */
+    "(list string)": "(list string)",
+
+    /**
+     * value: "time"
+     * @const
+     */
+    "time": "time"
+};
 
 
 

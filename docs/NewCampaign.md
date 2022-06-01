@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **endTime** | **Date** | Timestamp the campaign will become inactive. | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign | [optional] 
 **state** | **String** | A disabled or archived campaign is not evaluated for rules or coupons.  | [default to &#39;enabled&#39;]
-**activeRulesetId** | **Number** | ID of Ruleset this campaign applies on customer session evaluation. | [optional] 
+**activeRulesetId** | **Number** | [ID of Ruleset](https://docs.talon.one/management-api/#operation/getRulesets) this campaign applies on customer session evaluation.  | [optional] 
 **tags** | **[String]** | A list of tags for the campaign. | 
-**features** | **[String]** | A list of features for the campaign. | 
+**features** | **[String]** | The features enabled in this campaign. | 
 **couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
 **referralSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
-**limits** | [**[LimitConfig]**](LimitConfig.md) | The set of limits that will operate for this campaign | 
-**campaignGroups** | **[Number]** | The IDs of the campaign groups that own this entity. | [optional] 
+**limits** | [**[LimitConfig]**](LimitConfig.md) | The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/) for this campaign.  | 
+**campaignGroups** | **[Number]** | The IDs of the [campaign groups](https://docs.talon.one/docs/product/account/managing-campaign-groups/) this campaign belongs to.  | [optional] 
 
 
 

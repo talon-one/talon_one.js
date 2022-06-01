@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('createAccountCollection', function() {
+      it('should call createAccountCollection successfully', function(done) {
+        //uncomment below and update the code to test createAccountCollection
+        //instance.createAccountCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createAdditionalCost', function() {
       it('should call createAdditionalCost successfully', function(done) {
         //uncomment below and update the code to test createAdditionalCost
@@ -88,10 +98,20 @@
         done();
       });
     });
-    describe('createCampaign', function() {
-      it('should call createCampaign successfully', function(done) {
-        //uncomment below and update the code to test createCampaign
-        //instance.createCampaign(function(error) {
+    describe('createCampaignFromTemplate', function() {
+      it('should call createCampaignFromTemplate successfully', function(done) {
+        //uncomment below and update the code to test createCampaignFromTemplate
+        //instance.createCampaignFromTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createCollection', function() {
+      it('should call createCollection successfully', function(done) {
+        //uncomment below and update the code to test createCollection
+        //instance.createCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -102,6 +122,16 @@
       it('should call createCoupons successfully', function(done) {
         //uncomment below and update the code to test createCoupons
         //instance.createCoupons(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createCouponsAsync', function() {
+      it('should call createCouponsAsync successfully', function(done) {
+        //uncomment below and update the code to test createCouponsAsync
+        //instance.createCouponsAsync(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -128,16 +158,6 @@
         done();
       });
     });
-    describe('createRuleset', function() {
-      it('should call createRuleset successfully', function(done) {
-        //uncomment below and update the code to test createRuleset
-        //instance.createRuleset(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createSession', function() {
       it('should call createSession successfully', function(done) {
         //uncomment below and update the code to test createSession
@@ -148,10 +168,30 @@
         done();
       });
     });
+    describe('deleteAccountCollection', function() {
+      it('should call deleteAccountCollection successfully', function(done) {
+        //uncomment below and update the code to test deleteAccountCollection
+        //instance.deleteAccountCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteCampaign', function() {
       it('should call deleteCampaign successfully', function(done) {
         //uncomment below and update the code to test deleteCampaign
         //instance.deleteCampaign(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteCollection', function() {
+      it('should call deleteCollection successfully', function(done) {
+        //uncomment below and update the code to test deleteCollection
+        //instance.deleteCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -178,6 +218,16 @@
         done();
       });
     });
+    describe('deleteLoyaltyCard', function() {
+      it('should call deleteLoyaltyCard successfully', function(done) {
+        //uncomment below and update the code to test deleteLoyaltyCard
+        //instance.deleteLoyaltyCard(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteReferral', function() {
       it('should call deleteReferral successfully', function(done) {
         //uncomment below and update the code to test deleteReferral
@@ -192,6 +242,26 @@
       it('should call destroySession successfully', function(done) {
         //uncomment below and update the code to test destroySession
         //instance.destroySession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportAccountCollectionItems', function() {
+      it('should call exportAccountCollectionItems successfully', function(done) {
+        //uncomment below and update the code to test exportAccountCollectionItems
+        //instance.exportAccountCollectionItems(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportCollectionItems', function() {
+      it('should call exportCollectionItems successfully', function(done) {
+        //uncomment below and update the code to test exportCollectionItems
+        //instance.exportCollectionItems(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -282,6 +352,16 @@
       it('should call getAccountAnalytics successfully', function(done) {
         //uncomment below and update the code to test getAccountAnalytics
         //instance.getAccountAnalytics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAccountCollection', function() {
+      it('should call getAccountCollection successfully', function(done) {
+        //uncomment below and update the code to test getAccountCollection
+        //instance.getAccountCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -518,10 +598,10 @@
         done();
       });
     });
-    describe('getCouponsByAttributes', function() {
-      it('should call getCouponsByAttributes successfully', function(done) {
-        //uncomment below and update the code to test getCouponsByAttributes
-        //instance.getCouponsByAttributes(function(error) {
+    describe('getCollection', function() {
+      it('should call getCollection successfully', function(done) {
+        //uncomment below and update the code to test getCollection
+        //instance.getCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -758,6 +838,26 @@
         done();
       });
     });
+    describe('importAccountCollection', function() {
+      it('should call importAccountCollection successfully', function(done) {
+        //uncomment below and update the code to test importAccountCollection
+        //instance.importAccountCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('importAllowedList', function() {
+      it('should call importAllowedList successfully', function(done) {
+        //uncomment below and update the code to test importAllowedList
+        //instance.importAllowedList(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('importCollection', function() {
       it('should call importCollection successfully', function(done) {
         //uncomment below and update the code to test importCollection
@@ -808,6 +908,36 @@
         done();
       });
     });
+    describe('listAccountCollections', function() {
+      it('should call listAccountCollections successfully', function(done) {
+        //uncomment below and update the code to test listAccountCollections
+        //instance.listAccountCollections(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listCollections', function() {
+      it('should call listCollections successfully', function(done) {
+        //uncomment below and update the code to test listCollections
+        //instance.listCollections(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listCollectionsInApplication', function() {
+      it('should call listCollectionsInApplication successfully', function(done) {
+        //uncomment below and update the code to test listCollectionsInApplication
+        //instance.listCollectionsInApplication(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeLoyaltyPoints', function() {
       it('should call removeLoyaltyPoints successfully', function(done) {
         //uncomment below and update the code to test removeLoyaltyPoints
@@ -848,6 +978,16 @@
         done();
       });
     });
+    describe('updateAccountCollection', function() {
+      it('should call updateAccountCollection successfully', function(done) {
+        //uncomment below and update the code to test updateAccountCollection
+        //instance.updateAccountCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateAdditionalCost', function() {
       it('should call updateAdditionalCost successfully', function(done) {
         //uncomment below and update the code to test updateAdditionalCost
@@ -878,6 +1018,16 @@
         done();
       });
     });
+    describe('updateCollection', function() {
+      it('should call updateCollection successfully', function(done) {
+        //uncomment below and update the code to test updateCollection
+        //instance.updateCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateCoupon', function() {
       it('should call updateCoupon successfully', function(done) {
         //uncomment below and update the code to test updateCoupon
@@ -902,16 +1052,6 @@
       it('should call updateReferral successfully', function(done) {
         //uncomment below and update the code to test updateReferral
         //instance.updateReferral(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateRuleset', function() {
-      it('should call updateRuleset successfully', function(done) {
-        //uncomment below and update the code to test updateRuleset
-        //instance.updateRuleset(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

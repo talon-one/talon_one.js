@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackAddedLoyaltyPointsEffectProps model module.
  * @module model/RollbackAddedLoyaltyPointsEffectProps
- * @version 4.4.0
+ * @version 4.5.0
  */
 class RollbackAddedLoyaltyPointsEffectProps {
     /**
@@ -73,6 +73,15 @@ class RollbackAddedLoyaltyPointsEffectProps {
             if (data.hasOwnProperty('transactionUUID')) {
                 obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
             }
+            if (data.hasOwnProperty('cartItemPosition')) {
+                obj['cartItemPosition'] = ApiClient.convertToType(data['cartItemPosition'], 'Number');
+            }
+            if (data.hasOwnProperty('cartItemSubPosition')) {
+                obj['cartItemSubPosition'] = ApiClient.convertToType(data['cartItemSubPosition'], 'Number');
+            }
+            if (data.hasOwnProperty('cardIdentifier')) {
+                obj['cardIdentifier'] = ApiClient.convertToType(data['cardIdentifier'], 'String');
+            }
         }
         return obj;
     }
@@ -109,6 +118,24 @@ RollbackAddedLoyaltyPointsEffectProps.prototype['recipientIntegrationId'] = unde
  * @member {String} transactionUUID
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
+
+/**
+ * The index of the item in the cart items for which the loyalty points were rolled back.
+ * @member {Number} cartItemPosition
+ */
+RollbackAddedLoyaltyPointsEffectProps.prototype['cartItemPosition'] = undefined;
+
+/**
+ * The sub-position is returned when [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items) is enabled. It indicates to which item the loyalty points were rolled back, for cart items with `quantity` > 1. 
+ * @member {Number} cartItemSubPosition
+ */
+RollbackAddedLoyaltyPointsEffectProps.prototype['cartItemSubPosition'] = undefined;
+
+/**
+ * The card on which these points were originally added.
+ * @member {String} cardIdentifier
+ */
+RollbackAddedLoyaltyPointsEffectProps.prototype['cardIdentifier'] = undefined;
 
 
 

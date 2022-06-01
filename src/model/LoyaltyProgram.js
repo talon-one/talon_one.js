@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,7 +17,7 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 4.4.0
+ * @version 4.5.0
  */
 class LoyaltyProgram {
     /**
@@ -34,10 +34,12 @@ class LoyaltyProgram {
      * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
      * @param accountID {Number} The ID of the Talon.One account that owns this program.
      * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
+     * @param timezone {String} A string containing an IANA timezone descriptor.
+     * @param cardBased {Boolean} Defines the type of loyalty program: - `true`: the program is a card-based. - `false`: the program is profile-based. 
      */
-    constructor(id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name) { 
+    constructor(id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name, timezone, cardBased) { 
         
-        LoyaltyProgram.initialize(this, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name);
+        LoyaltyProgram.initialize(this, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name, timezone, cardBased);
     }
 
     /**
@@ -45,7 +47,7 @@ class LoyaltyProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name) { 
+    static initialize(obj, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name, timezone, cardBased) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['title'] = title;
@@ -56,6 +58,8 @@ class LoyaltyProgram {
         obj['allowSubledger'] = allowSubledger;
         obj['accountID'] = accountID;
         obj['name'] = name;
+        obj['timezone'] = timezone;
+        obj['cardBased'] = cardBased;
     }
 
     /**
@@ -93,8 +97,8 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('allowSubledger')) {
                 obj['allowSubledger'] = ApiClient.convertToType(data['allowSubledger'], 'Boolean');
             }
-            if (data.hasOwnProperty('timezone')) {
-                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
+            if (data.hasOwnProperty('usersPerCardLimit')) {
+                obj['usersPerCardLimit'] = ApiClient.convertToType(data['usersPerCardLimit'], 'Number');
             }
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
@@ -104,6 +108,12 @@ class LoyaltyProgram {
             }
             if (data.hasOwnProperty('tiers')) {
                 obj['tiers'] = ApiClient.convertToType(data['tiers'], [LoyaltyTier]);
+            }
+            if (data.hasOwnProperty('timezone')) {
+                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
+            }
+            if (data.hasOwnProperty('cardBased')) {
+                obj['cardBased'] = ApiClient.convertToType(data['cardBased'], 'Boolean');
             }
         }
         return obj;
@@ -161,10 +171,10 @@ LoyaltyProgram.prototype['defaultPending'] = undefined;
 LoyaltyProgram.prototype['allowSubledger'] = undefined;
 
 /**
- * A string containing an IANA timezone descriptor.
- * @member {String} timezone
+ * The max amount of user profiles with whom a card can be shared. This can be set to 0 for no limit. This property is only used when `cardBased` is `true`. 
+ * @member {Number} usersPerCardLimit
  */
-LoyaltyProgram.prototype['timezone'] = undefined;
+LoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 
 /**
  * The ID of the Talon.One account that owns this program.
@@ -179,10 +189,23 @@ LoyaltyProgram.prototype['accountID'] = undefined;
 LoyaltyProgram.prototype['name'] = undefined;
 
 /**
- * The tiers in this loyalty program
+ * The tiers in this loyalty program.
  * @member {Array.<module:model/LoyaltyTier>} tiers
  */
 LoyaltyProgram.prototype['tiers'] = undefined;
+
+/**
+ * A string containing an IANA timezone descriptor.
+ * @member {String} timezone
+ */
+LoyaltyProgram.prototype['timezone'] = undefined;
+
+/**
+ * Defines the type of loyalty program: - `true`: the program is a card-based. - `false`: the program is profile-based. 
+ * @member {Boolean} cardBased
+ * @default false
+ */
+LoyaltyProgram.prototype['cardBased'] = false;
 
 
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**programs** | [**{String: LoyaltyProgramLedgers}**](LoyaltyProgramLedgers.md) | A map holding information about the loyalty programs balance | 
+**cards** | [**[LoyaltyCard]**](LoyaltyCard.md) | Displays information about the balances of the loyalty cards. | [optional] 
+**programs** | [**{String: LoyaltyProgramLedgers}**](LoyaltyProgramLedgers.md) | Displays information about point balances in profile-based programs. | 
 
 

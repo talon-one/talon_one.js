@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currentBalance** | **Number** | Sum of current active points amounts | 
-**pendingBalance** | **Number** | Sum of pending points amounts | 
-**expiredBalance** | **Number** | Sum of expired points amounts | 
-**spentBalance** | **Number** | Sum of spent points amounts | 
-**tentativeCurrentBalance** | **Number** | Sum of current active points amounts, including additions and deductions on open sessions | 
+**currentBalance** | **Number** | Sum of currently active points | 
+**pendingBalance** | **Number** | Sum of pending points | 
+**expiredBalance** | **Number** | Sum of expired points | 
+**spentBalance** | **Number** | Sum of spent points | 
+**tentativeCurrentBalance** | **Number** | Sum of currently active points, including points added and deducted in open sessions | 
 
 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Audience model module.
  * @module model/Audience
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Audience {
     /**
@@ -26,13 +26,11 @@ class Audience {
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
-     * @param name {String} The human-friendly display name for this Audience.
-     * @param integration {module:model/Audience.IntegrationEnum} Integration that this audience was created in.
-     * @param integrationId {String} The ID of this Audience in the third-party integration
+     * @param name {String} The human-friendly display name for this audience.
      */
-    constructor(accountId, id, created, name, integration, integrationId) { 
+    constructor(accountId, id, created, name) { 
         
-        Audience.initialize(this, accountId, id, created, name, integration, integrationId);
+        Audience.initialize(this, accountId, id, created, name);
     }
 
     /**
@@ -40,13 +38,11 @@ class Audience {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, accountId, id, created, name, integration, integrationId) { 
+    static initialize(obj, accountId, id, created, name) { 
         obj['accountId'] = accountId;
         obj['id'] = id;
         obj['created'] = created;
         obj['name'] = name;
-        obj['integration'] = integration;
-        obj['integrationId'] = integrationId;
     }
 
     /**
@@ -104,40 +100,25 @@ Audience.prototype['id'] = undefined;
 Audience.prototype['created'] = undefined;
 
 /**
- * The human-friendly display name for this Audience.
+ * The human-friendly display name for this audience.
  * @member {String} name
  */
 Audience.prototype['name'] = undefined;
 
 /**
- * Integration that this audience was created in.
- * @member {module:model/Audience.IntegrationEnum} integration
+ * The 3rd-party platform that this audience was created in. For example, mParticle.
+ * @member {String} integration
  */
 Audience.prototype['integration'] = undefined;
 
 /**
- * The ID of this Audience in the third-party integration
+ * The ID of this audience in the third-party integration.
  * @member {String} integrationId
  */
 Audience.prototype['integrationId'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>integration</code> property.
- * @enum {String}
- * @readonly
- */
-Audience['IntegrationEnum'] = {
-
-    /**
-     * value: "mparticle"
-     * @const
-     */
-    "mparticle": "mparticle"
-};
 
 
 

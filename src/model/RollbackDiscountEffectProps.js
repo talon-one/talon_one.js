@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackDiscountEffectProps model module.
  * @module model/RollbackDiscountEffectProps
- * @version 4.4.0
+ * @version 4.5.0
  */
 class RollbackDiscountEffectProps {
     /**
      * Constructs a new <code>RollbackDiscountEffectProps</code>.
-     * The properties specific to the \&quot;rollbackDiscount\&quot; effect. This gets triggered whenever previously closed session is now cancelled and a setDiscount effect was cancelled on our internal discount limit counters.
+     * The properties specific to the \&quot;rollbackDiscount\&quot; effect. This gets triggered whenever previously closed session is now cancelled or partially returned and a setDiscount effect was cancelled on our internal discount limit counters.
      * @alias module:model/RollbackDiscountEffectProps
      * @param name {String} The name of the \"setDiscount\" effect that was rolled back
-     * @param value {Number} The value of the discount that was rolled back
+     * @param value {Number} The value of the discount that was rolled back.
      */
     constructor(name, value) { 
         
@@ -58,6 +58,21 @@ class RollbackDiscountEffectProps {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number');
             }
+            if (data.hasOwnProperty('cartItemPosition')) {
+                obj['cartItemPosition'] = ApiClient.convertToType(data['cartItemPosition'], 'Number');
+            }
+            if (data.hasOwnProperty('cartItemSubPosition')) {
+                obj['cartItemSubPosition'] = ApiClient.convertToType(data['cartItemSubPosition'], 'Number');
+            }
+            if (data.hasOwnProperty('additionalCostId')) {
+                obj['additionalCostId'] = ApiClient.convertToType(data['additionalCostId'], 'Number');
+            }
+            if (data.hasOwnProperty('additionalCost')) {
+                obj['additionalCost'] = ApiClient.convertToType(data['additionalCost'], 'String');
+            }
+            if (data.hasOwnProperty('scope')) {
+                obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
+            }
         }
         return obj;
     }
@@ -72,10 +87,40 @@ class RollbackDiscountEffectProps {
 RollbackDiscountEffectProps.prototype['name'] = undefined;
 
 /**
- * The value of the discount that was rolled back
+ * The value of the discount that was rolled back.
  * @member {Number} value
  */
 RollbackDiscountEffectProps.prototype['value'] = undefined;
+
+/**
+ * The index of the item in the cart items for which the discount was rolled back.
+ * @member {Number} cartItemPosition
+ */
+RollbackDiscountEffectProps.prototype['cartItemPosition'] = undefined;
+
+/**
+ * The index of the item unit in its line item. It is only used for cart items with `quantity` > 1 and is only returned when cart item flattening is enabled. 
+ * @member {Number} cartItemSubPosition
+ */
+RollbackDiscountEffectProps.prototype['cartItemSubPosition'] = undefined;
+
+/**
+ * The ID of the additional cost that was rolled back
+ * @member {Number} additionalCostId
+ */
+RollbackDiscountEffectProps.prototype['additionalCostId'] = undefined;
+
+/**
+ * The name of the additional cost that was rolled back
+ * @member {String} additionalCost
+ */
+RollbackDiscountEffectProps.prototype['additionalCost'] = undefined;
+
+/**
+ * The scope of the rolled back discount - For a discount per session, it can be one of `cartItems`, `additionalCosts` or `sessionTotal` - For a discount per item, it can be one of `price`, `additionalCosts` or `itemTotal` 
+ * @member {String} scope
+ */
+RollbackDiscountEffectProps.prototype['scope'] = undefined;
 
 
 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import WebhookLogEntry from './WebhookLogEntry';
+import Webhook from './Webhook';
 
 /**
  * The InlineResponse20024 model module.
  * @module model/InlineResponse20024
- * @version 4.4.0
+ * @version 4.5.0
  */
 class InlineResponse20024 {
     /**
      * Constructs a new <code>InlineResponse20024</code>.
      * @alias module:model/InlineResponse20024
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/WebhookLogEntry>} 
+     * @param data {Array.<module:model/Webhook>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20024 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WebhookLogEntry]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Webhook]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20024 {
 InlineResponse20024.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/WebhookLogEntry>} data
+ * @member {Array.<module:model/Webhook>} data
  */
 InlineResponse20024.prototype['data'] = undefined;
 

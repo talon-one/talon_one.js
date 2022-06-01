@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewApplicationAPIKey model module.
  * @module model/NewApplicationAPIKey
- * @version 4.4.0
+ * @version 4.5.0
  */
 class NewApplicationAPIKey {
     /**
@@ -30,7 +30,7 @@ class NewApplicationAPIKey {
      * @param accountID {Number} ID of account the key is used for
      * @param applicationID {Number} ID of application the key is used for
      * @param created {Date} The date the API key was created
-     * @param key {String} Raw API Key
+     * @param key {String} The API key
      */
     constructor(title, expires, id, createdBy, accountID, applicationID, created, key) { 
         
@@ -111,7 +111,7 @@ NewApplicationAPIKey.prototype['title'] = undefined;
 NewApplicationAPIKey.prototype['expires'] = undefined;
 
 /**
- * Platform the API key is valid for.
+ * The third-party platform the API key is valid for. Use `none` for a generic API key to be used from your own integration layer. 
  * @member {module:model/NewApplicationAPIKey.PlatformEnum} platform
  */
 NewApplicationAPIKey.prototype['platform'] = undefined;
@@ -147,7 +147,7 @@ NewApplicationAPIKey.prototype['applicationID'] = undefined;
 NewApplicationAPIKey.prototype['created'] = undefined;
 
 /**
- * Raw API Key
+ * The API key
  * @member {String} key
  */
 NewApplicationAPIKey.prototype['key'] = undefined;
@@ -197,7 +197,19 @@ NewApplicationAPIKey['PlatformEnum'] = {
      * value: "iterable"
      * @const
      */
-    "iterable": "iterable"
+    "iterable": "iterable",
+
+    /**
+     * value: "customer_engagement"
+     * @const
+     */
+    "customer_engagement": "customer_engagement",
+
+    /**
+     * value: "customer_data"
+     * @const
+     */
+    "customer_data": "customer_data"
 };
 
 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 4.4.0
+ * @version 4.5.0
  */
 class SetDiscountPerItemEffectProps {
     /**
      * Constructs a new <code>SetDiscountPerItemEffectProps</code>.
-     * The properties specific to the \&quot;setDiscountPerItem\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set per item discount\&quot; effect. This is a discount that should be applied on a specific item.
+     * The properties specific to the &#x60;setDiscountPerItem&#x60; effect, triggered whenever a validated rule contained a \&quot;set per item discount\&quot; effect. This is a discount that will be applied either on a specific item, on a specific item + additional cost or on all additional costs per item. This depends on the chosen scope. 
      * @alias module:model/SetDiscountPerItemEffectProps
-     * @param name {String} The name/description of this discount
-     * @param value {Number} The total monetary value of the discount
-     * @param position {Number} The index of the item in the cart items list on which this discount should be applied
+     * @param name {String} The name of the discount. Contains a hashtag character indicating the index of the position of the item the discount applies to. It is identical to the value of the `position` property. 
+     * @param value {Number} The total monetary value of the discount.
+     * @param position {Number} The index of the item in the cart items list on which this discount should be applied.
      */
     constructor(name, value, position) { 
         
@@ -66,6 +66,18 @@ class SetDiscountPerItemEffectProps {
             if (data.hasOwnProperty('subPosition')) {
                 obj['subPosition'] = ApiClient.convertToType(data['subPosition'], 'Number');
             }
+            if (data.hasOwnProperty('desiredValue')) {
+                obj['desiredValue'] = ApiClient.convertToType(data['desiredValue'], 'Number');
+            }
+            if (data.hasOwnProperty('scope')) {
+                obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
+            }
+            if (data.hasOwnProperty('totalDiscount')) {
+                obj['totalDiscount'] = ApiClient.convertToType(data['totalDiscount'], 'Number');
+            }
+            if (data.hasOwnProperty('desiredTotalDiscount')) {
+                obj['desiredTotalDiscount'] = ApiClient.convertToType(data['desiredTotalDiscount'], 'Number');
+            }
         }
         return obj;
     }
@@ -74,28 +86,52 @@ class SetDiscountPerItemEffectProps {
 }
 
 /**
- * The name/description of this discount
+ * The name of the discount. Contains a hashtag character indicating the index of the position of the item the discount applies to. It is identical to the value of the `position` property. 
  * @member {String} name
  */
 SetDiscountPerItemEffectProps.prototype['name'] = undefined;
 
 /**
- * The total monetary value of the discount
+ * The total monetary value of the discount.
  * @member {Number} value
  */
 SetDiscountPerItemEffectProps.prototype['value'] = undefined;
 
 /**
- * The index of the item in the cart items list on which this discount should be applied
+ * The index of the item in the cart items list on which this discount should be applied.
  * @member {Number} position
  */
 SetDiscountPerItemEffectProps.prototype['position'] = undefined;
 
 /**
- * The sub-index of the item in an item stack on which this discount should be applied
+ * Only used when [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items) is enabled. Indicates which item the discount applies to for cart items with `quantity` > 1. 
  * @member {Number} subPosition
  */
 SetDiscountPerItemEffectProps.prototype['subPosition'] = undefined;
+
+/**
+ * The original value of the discount
+ * @member {Number} desiredValue
+ */
+SetDiscountPerItemEffectProps.prototype['desiredValue'] = undefined;
+
+/**
+ * The scope of the discount: - `additionalCosts`: The discount applies to all the additional costs of the item. - `itemTotal`: The discount applies to the price of the item + the additional costs of the item. - `price`: The discount applies to the price of the item. 
+ * @member {String} scope
+ */
+SetDiscountPerItemEffectProps.prototype['scope'] = undefined;
+
+/**
+ * The total discount given if this effect is a result of a prorated discount
+ * @member {Number} totalDiscount
+ */
+SetDiscountPerItemEffectProps.prototype['totalDiscount'] = undefined;
+
+/**
+ * The original total discount to give if this effect is a result of a prorated discount
+ * @member {Number} desiredTotalDiscount
+ */
+SetDiscountPerItemEffectProps.prototype['desiredTotalDiscount'] = undefined;
 
 
 

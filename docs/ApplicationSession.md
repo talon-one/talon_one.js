@@ -14,7 +14,8 @@ Name | Type | Description | Notes
 **referral** | **String** | Any referral code entered. | 
 **state** | **String** | Indicating if the customer session is in progress (&#x60;open&#x60;), &#x60;closed&#x60;, or &#x60;cancelled&#x60;. For more information about customer sessions, see [Customer sessions](/docs/dev/concepts/entities#customer-session-states) in the docs.  | 
 **cartItems** | [**[CartItem]**](CartItem.md) | Serialized JSON representation. | 
-**discounts** | **{String: Number}** | A map of labelled discount values, in the same currency as the session. | 
+**discounts** | **{String: Number}** | **API V1 only.** A map of labeled discount values, in the same currency as the session.  If you are using the V2 endpoints, refer to the &#x60;totalDiscounts&#x60; property instead.  | 
+**totalDiscounts** | **Number** | The total sum of the discounts applied to this session. | 
 **total** | **Number** | The total sum of the session before any discounts applied. | 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this item | [optional] 
 
@@ -26,6 +27,8 @@ Name | Type | Description | Notes
 * `open` (value: `"open"`)
 
 * `closed` (value: `"closed"`)
+
+* `partially_returned` (value: `"partially_returned"`)
 
 * `cancelled` (value: `"cancelled"`)
 

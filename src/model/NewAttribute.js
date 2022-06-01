@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAttribute model module.
  * @module model/NewAttribute
- * @version 4.4.0
+ * @version 4.5.0
  */
 class NewAttribute {
     /**
@@ -83,6 +83,12 @@ class NewAttribute {
             if (data.hasOwnProperty('suggestions')) {
                 obj['suggestions'] = ApiClient.convertToType(data['suggestions'], ['String']);
             }
+            if (data.hasOwnProperty('hasAllowedList')) {
+                obj['hasAllowedList'] = ApiClient.convertToType(data['hasAllowedList'], 'Boolean');
+            }
+            if (data.hasOwnProperty('restrictedBySuggestions')) {
+                obj['restrictedBySuggestions'] = ApiClient.convertToType(data['restrictedBySuggestions'], 'Boolean');
+            }
             if (data.hasOwnProperty('editable')) {
                 obj['editable'] = ApiClient.convertToType(data['editable'], 'Boolean');
             }
@@ -136,6 +142,20 @@ NewAttribute.prototype['description'] = undefined;
  * @member {Array.<String>} suggestions
  */
 NewAttribute.prototype['suggestions'] = undefined;
+
+/**
+ * Whether or not this attribute has an allowed list of values associated with it.
+ * @member {Boolean} hasAllowedList
+ * @default false
+ */
+NewAttribute.prototype['hasAllowedList'] = false;
+
+/**
+ * Whether or not this attribute's value is restricted by suggestions (`suggestions` property) or by an allowed list of value (`hasAllowedList` property). 
+ * @member {Boolean} restrictedBySuggestions
+ * @default false
+ */
+NewAttribute.prototype['restrictedBySuggestions'] = false;
 
 /**
  * Whether or not this attribute can be edited.

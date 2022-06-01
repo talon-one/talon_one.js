@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **attributes** | [**[Attribute]**](Attribute.md) | The attributes that the application is subscribed to. | [optional] 
 **additionalCosts** | [**[AccountAdditionalCost]**](AccountAdditionalCost.md) | The additional costs that the application is subscribed to. | [optional] 
 **audiences** | [**[Audience]**](Audience.md) | The audiences contained in the account which the application belongs to. | [optional] 
+**collections** | [**[Collection]**](Collection.md) | The account-level collections that the application is subscribed to. | [optional] 
 
 

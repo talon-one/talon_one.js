@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 4.4.0
+ * @version 4.5.0
  */
 class ApplicationSession {
     /**
@@ -32,12 +32,13 @@ class ApplicationSession {
      * @param referral {String} Any referral code entered.
      * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (`open`), `closed`, or `cancelled`. For more information about customer sessions, see [Customer sessions](/docs/dev/concepts/entities#customer-session-states) in the docs. 
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
-     * @param discounts {Object.<String, Number>} A map of labelled discount values, in the same currency as the session.
+     * @param discounts {Object.<String, Number>} **API V1 only.** A map of labeled discount values, in the same currency as the session.  If you are using the V2 endpoints, refer to the `totalDiscounts` property instead. 
+     * @param totalDiscounts {Number} The total sum of the discounts applied to this session.
      * @param total {Number} The total sum of the session before any discounts applied.
      */
-    constructor(id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, total) { 
+    constructor(id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total) { 
         
-        ApplicationSession.initialize(this, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, total);
+        ApplicationSession.initialize(this, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total);
     }
 
     /**
@@ -45,7 +46,7 @@ class ApplicationSession {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, total) { 
+    static initialize(obj, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -55,6 +56,7 @@ class ApplicationSession {
         obj['state'] = state;
         obj['cartItems'] = cartItems;
         obj['discounts'] = discounts;
+        obj['totalDiscounts'] = totalDiscounts;
         obj['total'] = total;
     }
 
@@ -101,6 +103,9 @@ class ApplicationSession {
             }
             if (data.hasOwnProperty('discounts')) {
                 obj['discounts'] = ApiClient.convertToType(data['discounts'], {'String': 'Number'});
+            }
+            if (data.hasOwnProperty('totalDiscounts')) {
+                obj['totalDiscounts'] = ApiClient.convertToType(data['totalDiscounts'], 'Number');
             }
             if (data.hasOwnProperty('total')) {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number');
@@ -176,10 +181,16 @@ ApplicationSession.prototype['state'] = undefined;
 ApplicationSession.prototype['cartItems'] = undefined;
 
 /**
- * A map of labelled discount values, in the same currency as the session.
+ * **API V1 only.** A map of labeled discount values, in the same currency as the session.  If you are using the V2 endpoints, refer to the `totalDiscounts` property instead. 
  * @member {Object.<String, Number>} discounts
  */
 ApplicationSession.prototype['discounts'] = undefined;
+
+/**
+ * The total sum of the discounts applied to this session.
+ * @member {Number} totalDiscounts
+ */
+ApplicationSession.prototype['totalDiscounts'] = undefined;
 
 /**
  * The total sum of the session before any discounts applied.
@@ -215,6 +226,12 @@ ApplicationSession['StateEnum'] = {
      * @const
      */
     "closed": "closed",
+
+    /**
+     * value: "partially_returned"
+     * @const
+     */
+    "partially_returned": "partially_returned",
 
     /**
      * value: "cancelled"

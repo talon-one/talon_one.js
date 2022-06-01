@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import LimitConfig from './LimitConfig';
 
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 4.4.0
+ * @version 4.5.0
  */
 class UpdateCoupon {
     /**
@@ -60,6 +61,9 @@ class UpdateCoupon {
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
             }
+            if (data.hasOwnProperty('limits')) {
+                obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+            }
             if (data.hasOwnProperty('recipientIntegrationId')) {
                 obj['recipientIntegrationId'] = ApiClient.convertToType(data['recipientIntegrationId'], 'String');
             }
@@ -74,7 +78,7 @@ class UpdateCoupon {
 }
 
 /**
- * The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+ * The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
  * @member {Number} usageLimit
  */
 UpdateCoupon.prototype['usageLimit'] = undefined;
@@ -96,6 +100,12 @@ UpdateCoupon.prototype['startDate'] = undefined;
  * @member {Date} expiryDate
  */
 UpdateCoupon.prototype['expiryDate'] = undefined;
+
+/**
+ * Limits configuration for a coupon. These limits will override the limits set from the campaign.  **Note:** Only usable when creating a single coupon which is not tied to a specific recipient. Only per-profile limits are allowed to be configured. 
+ * @member {Array.<module:model/LimitConfig>} limits
+ */
+UpdateCoupon.prototype['limits'] = undefined;
 
 /**
  * The integration ID for this coupon's beneficiary's profile

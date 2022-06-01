@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,18 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
+import LimitConfig from './LimitConfig';
 
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 4.4.0
+ * @version 4.5.0
  */
 class NewCoupons {
     /**
      * Constructs a new <code>NewCoupons</code>.
      * 
      * @alias module:model/NewCoupons
-     * @param usageLimit {Number} The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+     * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be at least 1.
      */
     constructor(usageLimit, numberOfCoupons) { 
@@ -64,6 +65,9 @@ class NewCoupons {
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
             }
+            if (data.hasOwnProperty('limits')) {
+                obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+            }
             if (data.hasOwnProperty('numberOfCoupons')) {
                 obj['numberOfCoupons'] = ApiClient.convertToType(data['numberOfCoupons'], 'Number');
             }
@@ -90,7 +94,7 @@ class NewCoupons {
 }
 
 /**
- * The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+ * The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
  * @member {Number} usageLimit
  */
 NewCoupons.prototype['usageLimit'] = undefined;
@@ -114,13 +118,19 @@ NewCoupons.prototype['startDate'] = undefined;
 NewCoupons.prototype['expiryDate'] = undefined;
 
 /**
+ * Limits configuration for a coupon. These limits will override the limits set from the campaign.  **Note:** Only usable when creating a single coupon which is not tied to a specific recipient. Only per-profile limits are allowed to be configured. 
+ * @member {Array.<module:model/LimitConfig>} limits
+ */
+NewCoupons.prototype['limits'] = undefined;
+
+/**
  * The number of new coupon codes to generate for the campaign. Must be at least 1.
  * @member {Number} numberOfCoupons
  */
 NewCoupons.prototype['numberOfCoupons'] = undefined;
 
 /**
- * A unique prefix to prepend to all generated coupons.
+ * **DEPRECATED** To create more than 20,000 coupons in one request, use [Create coupons asynchronously endpoint](https://docs.talon.one/management-api/#operation/createCouponsAsync). 
  * @member {String} uniquePrefix
  */
 NewCoupons.prototype['uniquePrefix'] = undefined;
@@ -138,13 +148,13 @@ NewCoupons.prototype['attributes'] = undefined;
 NewCoupons.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * Set of characters to be used when generating random part of code. Defaults to [A-Z, 0-9] (in terms of RegExp).
+ * List of characters used to generate the random parts of a code. By default, the list of characters is equivalent to the `[A-Z, 0-9]` regular expression. 
  * @member {Array.<String>} validCharacters
  */
 NewCoupons.prototype['validCharacters'] = undefined;
 
 /**
- * The pattern that will be used to generate coupon codes. The character `#` acts as a placeholder and will be replaced by a random character from the `validCharacters` set. 
+ * The pattern used to generate coupon codes. The character `#` is a placeholder and is replaced by a random character from the `validCharacters` set. 
  * @member {String} couponPattern
  */
 NewCoupons.prototype['couponPattern'] = undefined;

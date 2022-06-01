@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 4.4.0
+ * @version 4.5.0
  */
 class CouponCreationJob {
     /**
@@ -29,21 +29,21 @@ class CouponCreationJob {
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param usageLimit {Number} The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+     * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be between 20,001 and 5,000,000.
      * @param attributes {Object} Arbitrary properties associated with coupons
      * @param batchId {String} The batch ID coupons created by this job will bear
-     * @param status {String} The current status of this request. The value should be either 'pending', 'completed' or 'failed'
+     * @param status {String} The current status of this request. The value should be either 'pending', 'completed', 'failed' or 'coupon pattern full'
      * @param createdAmount {Number} The number of coupon codes that were already created for this request
      * @param failCount {Number} The number of times this job failed
      * @param errors {Array.<String>} An array of individual problems encountered during the request.
      * @param createdBy {Number} ID of the user who created this effect.
      * @param communicated {Boolean} Whether or not the user that created this job was notified of its final state
-     * @param batchExecutionCount {Number} The number of times an attempt to create a batch of coupons was made during the processing of the job
+     * @param chunkExecutionCount {Number} The number of times an attempt to create a chunk of coupons was made during the processing of the job
      */
-    constructor(id, created, campaignId, applicationId, accountId, usageLimit, numberOfCoupons, attributes, batchId, status, createdAmount, failCount, errors, createdBy, communicated, batchExecutionCount) { 
+    constructor(id, created, campaignId, applicationId, accountId, usageLimit, numberOfCoupons, attributes, batchId, status, createdAmount, failCount, errors, createdBy, communicated, chunkExecutionCount) { 
         
-        CouponCreationJob.initialize(this, id, created, campaignId, applicationId, accountId, usageLimit, numberOfCoupons, attributes, batchId, status, createdAmount, failCount, errors, createdBy, communicated, batchExecutionCount);
+        CouponCreationJob.initialize(this, id, created, campaignId, applicationId, accountId, usageLimit, numberOfCoupons, attributes, batchId, status, createdAmount, failCount, errors, createdBy, communicated, chunkExecutionCount);
     }
 
     /**
@@ -51,7 +51,7 @@ class CouponCreationJob {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, campaignId, applicationId, accountId, usageLimit, numberOfCoupons, attributes, batchId, status, createdAmount, failCount, errors, createdBy, communicated, batchExecutionCount) { 
+    static initialize(obj, id, created, campaignId, applicationId, accountId, usageLimit, numberOfCoupons, attributes, batchId, status, createdAmount, failCount, errors, createdBy, communicated, chunkExecutionCount) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['campaignId'] = campaignId;
@@ -67,7 +67,7 @@ class CouponCreationJob {
         obj['errors'] = errors;
         obj['createdBy'] = createdBy;
         obj['communicated'] = communicated;
-        obj['batchExecutionCount'] = batchExecutionCount;
+        obj['chunkExecutionCount'] = chunkExecutionCount;
     }
 
     /**
@@ -138,8 +138,11 @@ class CouponCreationJob {
             if (data.hasOwnProperty('communicated')) {
                 obj['communicated'] = ApiClient.convertToType(data['communicated'], 'Boolean');
             }
-            if (data.hasOwnProperty('batchExecutionCount')) {
-                obj['batchExecutionCount'] = ApiClient.convertToType(data['batchExecutionCount'], 'Number');
+            if (data.hasOwnProperty('chunkExecutionCount')) {
+                obj['chunkExecutionCount'] = ApiClient.convertToType(data['chunkExecutionCount'], 'Number');
+            }
+            if (data.hasOwnProperty('chunkSize')) {
+                obj['chunkSize'] = ApiClient.convertToType(data['chunkSize'], 'Number');
             }
         }
         return obj;
@@ -179,7 +182,7 @@ CouponCreationJob.prototype['applicationId'] = undefined;
 CouponCreationJob.prototype['accountId'] = undefined;
 
 /**
- * The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+ * The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
  * @member {Number} usageLimit
  */
 CouponCreationJob.prototype['usageLimit'] = undefined;
@@ -226,7 +229,7 @@ CouponCreationJob.prototype['attributes'] = undefined;
 CouponCreationJob.prototype['batchId'] = undefined;
 
 /**
- * The current status of this request. The value should be either 'pending', 'completed' or 'failed'
+ * The current status of this request. The value should be either 'pending', 'completed', 'failed' or 'coupon pattern full'
  * @member {String} status
  */
 CouponCreationJob.prototype['status'] = undefined;
@@ -262,10 +265,16 @@ CouponCreationJob.prototype['createdBy'] = undefined;
 CouponCreationJob.prototype['communicated'] = undefined;
 
 /**
- * The number of times an attempt to create a batch of coupons was made during the processing of the job
- * @member {Number} batchExecutionCount
+ * The number of times an attempt to create a chunk of coupons was made during the processing of the job
+ * @member {Number} chunkExecutionCount
  */
-CouponCreationJob.prototype['batchExecutionCount'] = undefined;
+CouponCreationJob.prototype['chunkExecutionCount'] = undefined;
+
+/**
+ * The number of coupons that will be created in a single transactions. Coupons will be created in chunks until arriving at the requested amount.
+ * @member {Number} chunkSize
+ */
+CouponCreationJob.prototype['chunkSize'] = undefined;
 
 
 

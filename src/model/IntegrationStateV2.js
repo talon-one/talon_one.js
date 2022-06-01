@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -19,14 +19,16 @@ import CustomerSessionV2 from './CustomerSessionV2';
 import Effect from './Effect';
 import Event from './Event';
 import Giveaway from './Giveaway';
+import InventoryReferral from './InventoryReferral';
 import Loyalty from './Loyalty';
+import ModelReturn from './ModelReturn';
 import Referral from './Referral';
 import RuleFailureReason from './RuleFailureReason';
 
 /**
  * The IntegrationStateV2 model module.
  * @module model/IntegrationStateV2
- * @version 4.4.0
+ * @version 4.5.0
  */
 class IntegrationStateV2 {
     /**
@@ -77,7 +79,7 @@ class IntegrationStateV2 {
                 obj['loyalty'] = Loyalty.constructFromObject(data['loyalty']);
             }
             if (data.hasOwnProperty('referral')) {
-                obj['referral'] = Referral.constructFromObject(data['referral']);
+                obj['referral'] = InventoryReferral.constructFromObject(data['referral']);
             }
             if (data.hasOwnProperty('coupons')) {
                 obj['coupons'] = ApiClient.convertToType(data['coupons'], [Coupon]);
@@ -99,6 +101,12 @@ class IntegrationStateV2 {
             }
             if (data.hasOwnProperty('awardedGiveaways')) {
                 obj['awardedGiveaways'] = ApiClient.convertToType(data['awardedGiveaways'], [Giveaway]);
+            }
+            if (data.hasOwnProperty('return')) {
+                obj['return'] = ModelReturn.constructFromObject(data['return']);
+            }
+            if (data.hasOwnProperty('previousReturns')) {
+                obj['previousReturns'] = ApiClient.convertToType(data['previousReturns'], [ModelReturn]);
             }
         }
         return obj;
@@ -128,7 +136,7 @@ IntegrationStateV2.prototype['event'] = undefined;
 IntegrationStateV2.prototype['loyalty'] = undefined;
 
 /**
- * @member {module:model/Referral} referral
+ * @member {module:model/InventoryReferral} referral
  */
 IntegrationStateV2.prototype['referral'] = undefined;
 
@@ -166,6 +174,16 @@ IntegrationStateV2.prototype['createdReferrals'] = undefined;
  * @member {Array.<module:model/Giveaway>} awardedGiveaways
  */
 IntegrationStateV2.prototype['awardedGiveaways'] = undefined;
+
+/**
+ * @member {module:model/ModelReturn} return
+ */
+IntegrationStateV2.prototype['return'] = undefined;
+
+/**
+ * @member {Array.<module:model/ModelReturn>} previousReturns
+ */
+IntegrationStateV2.prototype['previousReturns'] = undefined;
 
 
 

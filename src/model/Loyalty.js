@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,19 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyCard from './LoyaltyCard';
 import LoyaltyProgramLedgers from './LoyaltyProgramLedgers';
 
 /**
  * The Loyalty model module.
  * @module model/Loyalty
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Loyalty {
     /**
      * Constructs a new <code>Loyalty</code>.
      * Customer specific information about loyalty points.
      * @alias module:model/Loyalty
-     * @param programs {Object.<String, module:model/LoyaltyProgramLedgers>} A map holding information about the loyalty programs balance
+     * @param programs {Object.<String, module:model/LoyaltyProgramLedgers>} Displays information about point balances in profile-based programs.
      */
     constructor(programs) { 
         
@@ -51,6 +52,9 @@ class Loyalty {
         if (data) {
             obj = obj || new Loyalty();
 
+            if (data.hasOwnProperty('cards')) {
+                obj['cards'] = ApiClient.convertToType(data['cards'], [LoyaltyCard]);
+            }
             if (data.hasOwnProperty('programs')) {
                 obj['programs'] = ApiClient.convertToType(data['programs'], {'String': LoyaltyProgramLedgers});
             }
@@ -62,7 +66,13 @@ class Loyalty {
 }
 
 /**
- * A map holding information about the loyalty programs balance
+ * Displays information about the balances of the loyalty cards.
+ * @member {Array.<module:model/LoyaltyCard>} cards
+ */
+Loyalty.prototype['cards'] = undefined;
+
+/**
+ * Displays information about point balances in profile-based programs.
  * @member {Object.<String, module:model/LoyaltyProgramLedgers>} programs
  */
 Loyalty.prototype['programs'] = undefined;
