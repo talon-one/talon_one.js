@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,7 +18,7 @@ import Meta from './Meta';
 /**
  * The Event model module.
  * @module model/Event
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Event {
     /**
@@ -30,7 +30,7 @@ class Event {
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param type {String} A string representing the event. Must not be a reserved event name.
      * @param attributes {Object} Arbitrary additional JSON data associated with the event.
-     * @param effects {Array.<Object>} An array of \"effects\" that must be applied in response to this event. Example effects include `addItemToCart` or `setDiscount`. 
+     * @param effects {Array.<Object>} An array of \"effects\" that must be applied in response to this event. See the list of [effects](/docs/dev/integration-api/api-effects). 
      * @param ledgerEntries {Array.<module:model/LedgerEntry>} Ledger entries for the event.
      */
     constructor(id, created, applicationId, type, attributes, effects, ledgerEntries) { 
@@ -120,7 +120,7 @@ Event.prototype['created'] = undefined;
 Event.prototype['applicationId'] = undefined;
 
 /**
- * ID of the customers profile as used within this Talon.One account. May be omitted or set to the empty string if the customer does not yet have a known profile ID.
+ * ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
  * @member {String} profileId
  */
 Event.prototype['profileId'] = undefined;
@@ -144,7 +144,7 @@ Event.prototype['attributes'] = undefined;
 Event.prototype['sessionId'] = undefined;
 
 /**
- * An array of \"effects\" that must be applied in response to this event. Example effects include `addItemToCart` or `setDiscount`. 
+ * An array of \"effects\" that must be applied in response to this event. See the list of [effects](/docs/dev/integration-api/api-effects). 
  * @member {Array.<Object>} effects
  */
 Event.prototype['effects'] = undefined;

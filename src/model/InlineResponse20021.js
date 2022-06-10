@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,23 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAdditionalCost from './AccountAdditionalCost';
+import ApplicationReferee from './ApplicationReferee';
 
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 4.4.0
+ * @version 4.5.0
  */
 class InlineResponse20021 {
     /**
      * Constructs a new <code>InlineResponse20021</code>.
      * @alias module:model/InlineResponse20021
+     * @param hasMore {Boolean} 
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/AccountAdditionalCost>} 
+     * @param data {Array.<module:model/ApplicationReferee>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, totalResultSize, data) { 
         
-        InlineResponse20021.initialize(this, totalResultSize, data);
+        InlineResponse20021.initialize(this, hasMore, totalResultSize, data);
     }
 
     /**
@@ -36,7 +37,8 @@ class InlineResponse20021 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
+    static initialize(obj, hasMore, totalResultSize, data) { 
+        obj['hasMore'] = hasMore;
         obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
@@ -52,11 +54,14 @@ class InlineResponse20021 {
         if (data) {
             obj = obj || new InlineResponse20021();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AccountAdditionalCost]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationReferee]);
             }
         }
         return obj;
@@ -66,12 +71,17 @@ class InlineResponse20021 {
 }
 
 /**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20021.prototype['hasMore'] = undefined;
+
+/**
  * @member {Number} totalResultSize
  */
 InlineResponse20021.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/AccountAdditionalCost>} data
+ * @member {Array.<module:model/ApplicationReferee>} data
  */
 InlineResponse20021.prototype['data'] = undefined;
 

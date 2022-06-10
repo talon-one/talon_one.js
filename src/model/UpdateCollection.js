@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,18 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCollection model module.
  * @module model/UpdateCollection
- * @version 4.4.0
+ * @version 4.5.0
  */
 class UpdateCollection {
     /**
      * Constructs a new <code>UpdateCollection</code>.
-     * 
      * @alias module:model/UpdateCollection
-     * @param name {String} The name of this collection.
      */
-    constructor(name) { 
+    constructor() { 
         
-        UpdateCollection.initialize(this, name);
+        UpdateCollection.initialize(this);
     }
 
     /**
@@ -35,8 +33,7 @@ class UpdateCollection {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
-        obj['name'] = name;
+    static initialize(obj) { 
     }
 
     /**
@@ -50,11 +47,11 @@ class UpdateCollection {
         if (data) {
             obj = obj || new UpdateCollection();
 
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('subscribedApplicationsIds')) {
+                obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
             }
         }
         return obj;
@@ -64,16 +61,16 @@ class UpdateCollection {
 }
 
 /**
- * The name of this collection.
- * @member {String} name
- */
-UpdateCollection.prototype['name'] = undefined;
-
-/**
  * A short description of the purpose of this collection.
  * @member {String} description
  */
 UpdateCollection.prototype['description'] = undefined;
+
+/**
+ * A list of the IDs of the Applications where this collection is enabled.
+ * @member {Array.<Number>} subscribedApplicationsIds
+ */
+UpdateCollection.prototype['subscribedApplicationsIds'] = undefined;
 
 
 

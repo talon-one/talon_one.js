@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccessLogEntry from './AccessLogEntry';
+import CollectionWithoutPayload from './CollectionWithoutPayload';
 
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 4.4.0
+ * @version 4.5.0
  */
 class InlineResponse2008 {
     /**
      * Constructs a new <code>InlineResponse2008</code>.
      * @alias module:model/InlineResponse2008
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/AccessLogEntry>} 
+     * @param data {Array.<module:model/CollectionWithoutPayload>} 
      */
-    constructor(hasMore, data) { 
+    constructor(data) { 
         
-        InlineResponse2008.initialize(this, hasMore, data);
+        InlineResponse2008.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse2008 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse2008 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CollectionWithoutPayload]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse2008 {
 InlineResponse2008.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/AccessLogEntry>} data
+ * @member {Number} totalResultSize
+ */
+InlineResponse2008.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/CollectionWithoutPayload>} data
  */
 InlineResponse2008.prototype['data'] = undefined;
 

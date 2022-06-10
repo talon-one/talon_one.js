@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **limits** | [**[TemplateLimitConfig]**](TemplateLimitConfig.md) | The set of limits that will operate for this campaign template | [optional] 
 **templateParams** | [**[CampaignTemplateParams]**](CampaignTemplateParams.md) | Template parameters are fields which can be used to replace values in a rule. | [optional] 
 **applicationsIds** | **[Number]** | A list of the IDs of the applications that are subscribed to this campaign template A list of the IDs of the applications that are subscribed to this campaign template | 
+**campaignCollections** | [**[CampaignTemplateCollection]**](CampaignTemplateCollection.md) | The campaign collections from the blueprint campaign for the template. | [optional] 
 **updated** | **Date** | Timestamp of the most recent update to the campaign template or any of its elements. | [optional] 
 **updatedBy** | **String** | Name of the user who last updated this campaign template if available. | [optional] 
 **validApplicationIds** | **[Number]** | The IDs of the applications that are related to this entity. | 

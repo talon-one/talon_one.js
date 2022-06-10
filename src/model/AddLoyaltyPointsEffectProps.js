@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 4.4.0
+ * @version 4.5.0
  */
 class AddLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>AddLoyaltyPointsEffectProps</code>.
-     * The properties specific to the \&quot;addLoyaltyPoints\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;add loyalty\&quot; effect. These points are automatically stored and managed inside Talon.One.
+     * The properties specific to the \&quot;addLoyaltyPoints\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;add loyalty\&quot; effect. These points are automatically stored and managed inside Talon.One. 
      * @alias module:model/AddLoyaltyPointsEffectProps
-     * @param name {String} The name/description of this loyalty point addition
-     * @param programId {Number} The ID of the loyalty program where these points were added
-     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added
-     * @param value {Number} The amount of points that were added
-     * @param recipientIntegrationId {String} The user for whom these points were added
-     * @param transactionUUID {String} The identifier of this addition in the loyalty ledger
+     * @param name {String} The name/description of this loyalty point addition.
+     * @param programId {Number} The ID of the loyalty program where these points were added.
+     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added.
+     * @param value {Number} The amount of points that were added.
+     * @param recipientIntegrationId {String} The user for whom these points were added.
+     * @param transactionUUID {String} The identifier of this addition in the loyalty ledger.
      */
     constructor(name, programId, subLedgerId, value, recipientIntegrationId, transactionUUID) { 
         
@@ -72,6 +72,9 @@ class AddLoyaltyPointsEffectProps {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number');
             }
+            if (data.hasOwnProperty('desiredValue')) {
+                obj['desiredValue'] = ApiClient.convertToType(data['desiredValue'], 'Number');
+            }
             if (data.hasOwnProperty('recipientIntegrationId')) {
                 obj['recipientIntegrationId'] = ApiClient.convertToType(data['recipientIntegrationId'], 'String');
             }
@@ -84,6 +87,15 @@ class AddLoyaltyPointsEffectProps {
             if (data.hasOwnProperty('transactionUUID')) {
                 obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
             }
+            if (data.hasOwnProperty('cartItemPosition')) {
+                obj['cartItemPosition'] = ApiClient.convertToType(data['cartItemPosition'], 'Number');
+            }
+            if (data.hasOwnProperty('cartItemSubPosition')) {
+                obj['cartItemSubPosition'] = ApiClient.convertToType(data['cartItemSubPosition'], 'Number');
+            }
+            if (data.hasOwnProperty('cardIdentifier')) {
+                obj['cardIdentifier'] = ApiClient.convertToType(data['cardIdentifier'], 'String');
+            }
         }
         return obj;
     }
@@ -92,52 +104,76 @@ class AddLoyaltyPointsEffectProps {
 }
 
 /**
- * The name/description of this loyalty point addition
+ * The name/description of this loyalty point addition.
  * @member {String} name
  */
 AddLoyaltyPointsEffectProps.prototype['name'] = undefined;
 
 /**
- * The ID of the loyalty program where these points were added
+ * The ID of the loyalty program where these points were added.
  * @member {Number} programId
  */
 AddLoyaltyPointsEffectProps.prototype['programId'] = undefined;
 
 /**
- * The ID of the subledger within the loyalty program where these points were added
+ * The ID of the subledger within the loyalty program where these points were added.
  * @member {String} subLedgerId
  */
 AddLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
 
 /**
- * The amount of points that were added
+ * The amount of points that were added.
  * @member {Number} value
  */
 AddLoyaltyPointsEffectProps.prototype['value'] = undefined;
 
 /**
- * The user for whom these points were added
+ * The original amount of loyalty points to be awarded.
+ * @member {Number} desiredValue
+ */
+AddLoyaltyPointsEffectProps.prototype['desiredValue'] = undefined;
+
+/**
+ * The user for whom these points were added.
  * @member {String} recipientIntegrationId
  */
 AddLoyaltyPointsEffectProps.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * Date after which points will be valid
+ * Date after which points will be valid.
  * @member {Date} startDate
  */
 AddLoyaltyPointsEffectProps.prototype['startDate'] = undefined;
 
 /**
- * Date after which points will expire
+ * Date after which points will expire.
  * @member {Date} expiryDate
  */
 AddLoyaltyPointsEffectProps.prototype['expiryDate'] = undefined;
 
 /**
- * The identifier of this addition in the loyalty ledger
+ * The identifier of this addition in the loyalty ledger.
  * @member {String} transactionUUID
  */
 AddLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
+
+/**
+ * The index of the item in the cart items list on which the loyal points addition should be applied.
+ * @member {Number} cartItemPosition
+ */
+AddLoyaltyPointsEffectProps.prototype['cartItemPosition'] = undefined;
+
+/**
+ * The sub position is triggered when application flattening is enabled. It indicates to which item the loyalty points addition applies, for cart items with `quantity` > 1. 
+ * @member {Number} cartItemSubPosition
+ */
+AddLoyaltyPointsEffectProps.prototype['cartItemSubPosition'] = undefined;
+
+/**
+ * The card on which these points were added.
+ * @member {String} cardIdentifier
+ */
+AddLoyaltyPointsEffectProps.prototype['cardIdentifier'] = undefined;
 
 
 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -33,9 +33,11 @@ import ApplicationCustomer from './model/ApplicationCustomer';
 import ApplicationCustomerEntity from './model/ApplicationCustomerEntity';
 import ApplicationEntity from './model/ApplicationEntity';
 import ApplicationEvent from './model/ApplicationEvent';
+import ApplicationNotification from './model/ApplicationNotification';
 import ApplicationReferee from './model/ApplicationReferee';
 import ApplicationSession from './model/ApplicationSession';
 import ApplicationSessionEntity from './model/ApplicationSessionEntity';
+import AsyncCouponCreationResponse from './model/AsyncCouponCreationResponse';
 import Attribute from './model/Attribute';
 import AttributesMandatory from './model/AttributesMandatory';
 import AttributesSettings from './model/AttributesSettings';
@@ -45,28 +47,46 @@ import AwardGiveawayEffectProps from './model/AwardGiveawayEffectProps';
 import BaseLoyaltyProgram from './model/BaseLoyaltyProgram';
 import BaseSamlConnection from './model/BaseSamlConnection';
 import Binding from './model/Binding';
+import BulkApplicationNotification from './model/BulkApplicationNotification';
+import BulkCampaignNotification from './model/BulkCampaignNotification';
 import Campaign from './model/Campaign';
 import CampaignAnalytics from './model/CampaignAnalytics';
+import CampaignCollection from './model/CampaignCollection';
+import CampaignCollectionWithoutPayload from './model/CampaignCollectionWithoutPayload';
 import CampaignCopy from './model/CampaignCopy';
+import CampaignCreatedNotification from './model/CampaignCreatedNotification';
+import CampaignDeletedNotification from './model/CampaignDeletedNotification';
+import CampaignEditedNotification from './model/CampaignEditedNotification';
 import CampaignEntity from './model/CampaignEntity';
 import CampaignGroup from './model/CampaignGroup';
 import CampaignGroupEntity from './model/CampaignGroupEntity';
+import CampaignNotification from './model/CampaignNotification';
+import CampaignPrioritiesChangedNotification from './model/CampaignPrioritiesChangedNotification';
+import CampaignPrioritiesV2 from './model/CampaignPrioritiesV2';
+import CampaignRulesetChangedNotification from './model/CampaignRulesetChangedNotification';
 import CampaignSearch from './model/CampaignSearch';
 import CampaignSet from './model/CampaignSet';
 import CampaignSetBranchNode from './model/CampaignSetBranchNode';
+import CampaignSetIDs from './model/CampaignSetIDs';
 import CampaignSetLeafNode from './model/CampaignSetLeafNode';
 import CampaignSetNode from './model/CampaignSetNode';
+import CampaignSetV2 from './model/CampaignSetV2';
+import CampaignStateChangedNotification from './model/CampaignStateChangedNotification';
 import CampaignTemplate from './model/CampaignTemplate';
+import CampaignTemplateCollection from './model/CampaignTemplateCollection';
 import CampaignTemplateParams from './model/CampaignTemplateParams';
 import CartItem from './model/CartItem';
+import Catalog from './model/Catalog';
 import Change from './model/Change';
 import ChangeProfilePassword from './model/ChangeProfilePassword';
 import CodeGeneratorSettings from './model/CodeGeneratorSettings';
 import Collection from './model/Collection';
+import CollectionWithoutPayload from './model/CollectionWithoutPayload';
 import Coupon from './model/Coupon';
 import CouponConstraints from './model/CouponConstraints';
 import CouponCreatedEffectProps from './model/CouponCreatedEffectProps';
 import CouponCreationJob from './model/CouponCreationJob';
+import CouponLimitConfigs from './model/CouponLimitConfigs';
 import CouponRejectionReason from './model/CouponRejectionReason';
 import CouponReservations from './model/CouponReservations';
 import CouponSearch from './model/CouponSearch';
@@ -95,9 +115,11 @@ import EntityWithTalangVisibleID from './model/EntityWithTalangVisibleID';
 import Environment from './model/Environment';
 import ErrorEffectProps from './model/ErrorEffectProps';
 import ErrorResponse from './model/ErrorResponse';
+import ErrorResponseWithStatus from './model/ErrorResponseWithStatus';
 import ErrorSource from './model/ErrorSource';
 import Event from './model/Event';
 import EventType from './model/EventType';
+import EventV2 from './model/EventV2';
 import FeatureFlag from './model/FeatureFlag';
 import FeaturesFeed from './model/FeaturesFeed';
 import FeedNotification from './model/FeedNotification';
@@ -130,6 +152,8 @@ import InlineResponse20027 from './model/InlineResponse20027';
 import InlineResponse20028 from './model/InlineResponse20028';
 import InlineResponse20029 from './model/InlineResponse20029';
 import InlineResponse2003 from './model/InlineResponse2003';
+import InlineResponse20030 from './model/InlineResponse20030';
+import InlineResponse20031 from './model/InlineResponse20031';
 import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
@@ -137,13 +161,16 @@ import InlineResponse2007 from './model/InlineResponse2007';
 import InlineResponse2008 from './model/InlineResponse2008';
 import InlineResponse2009 from './model/InlineResponse2009';
 import InlineResponse201 from './model/InlineResponse201';
+import IntegrationCustomerSessionResponse from './model/IntegrationCustomerSessionResponse';
 import IntegrationEntity from './model/IntegrationEntity';
 import IntegrationEvent from './model/IntegrationEvent';
+import IntegrationEventV2Request from './model/IntegrationEventV2Request';
 import IntegrationProfileEntity from './model/IntegrationProfileEntity';
 import IntegrationRequest from './model/IntegrationRequest';
 import IntegrationState from './model/IntegrationState';
 import IntegrationStateV2 from './model/IntegrationStateV2';
 import InventoryCoupon from './model/InventoryCoupon';
+import InventoryReferral from './model/InventoryReferral';
 import LedgerEntry from './model/LedgerEntry';
 import LedgerInfo from './model/LedgerInfo';
 import LibraryAttribute from './model/LibraryAttribute';
@@ -151,6 +178,9 @@ import LimitConfig from './model/LimitConfig';
 import LimitCounter from './model/LimitCounter';
 import LoginParams from './model/LoginParams';
 import Loyalty from './model/Loyalty';
+import LoyaltyCard from './model/LoyaltyCard';
+import LoyaltyCardProfileRegistration from './model/LoyaltyCardProfileRegistration';
+import LoyaltyCardRegistration from './model/LoyaltyCardRegistration';
 import LoyaltyDashboardData from './model/LoyaltyDashboardData';
 import LoyaltyDashboardPointsBreakdown from './model/LoyaltyDashboardPointsBreakdown';
 import LoyaltyLedger from './model/LoyaltyLedger';
@@ -161,6 +191,8 @@ import LoyaltyProgram from './model/LoyaltyProgram';
 import LoyaltyProgramBalance from './model/LoyaltyProgramBalance';
 import LoyaltyProgramEntity from './model/LoyaltyProgramEntity';
 import LoyaltyProgramLedgers from './model/LoyaltyProgramLedgers';
+import LoyaltyProjection from './model/LoyaltyProjection';
+import LoyaltyProjectionData from './model/LoyaltyProjectionData';
 import LoyaltyStatistics from './model/LoyaltyStatistics';
 import LoyaltySubLedger from './model/LoyaltySubLedger';
 import LoyaltyTier from './model/LoyaltyTier';
@@ -168,10 +200,13 @@ import ManagerConfig from './model/ManagerConfig';
 import Meta from './model/Meta';
 import ModelExport from './model/ModelExport';
 import ModelImport from './model/ModelImport';
+import ModelReturn from './model/ModelReturn';
 import MultiApplicationEntity from './model/MultiApplicationEntity';
+import MultipleAttribute from './model/MultipleAttribute';
 import MultipleCustomerProfileIntegrationRequest from './model/MultipleCustomerProfileIntegrationRequest';
 import MultipleCustomerProfileIntegrationRequestItem from './model/MultipleCustomerProfileIntegrationRequestItem';
 import MultipleCustomerProfileIntegrationResponseV2 from './model/MultipleCustomerProfileIntegrationResponseV2';
+import MultipleNewAttribute from './model/MultipleNewAttribute';
 import MutableEntity from './model/MutableEntity';
 import NewAccount from './model/NewAccount';
 import NewAccountSignUp from './model/NewAccountSignUp';
@@ -181,9 +216,12 @@ import NewApplicationAPIKey from './model/NewApplicationAPIKey';
 import NewAttribute from './model/NewAttribute';
 import NewAudience from './model/NewAudience';
 import NewCampaign from './model/NewCampaign';
+import NewCampaignCollection from './model/NewCampaignCollection';
 import NewCampaignGroup from './model/NewCampaignGroup';
 import NewCampaignSet from './model/NewCampaignSet';
+import NewCampaignSetV2 from './model/NewCampaignSetV2';
 import NewCampaignTemplate from './model/NewCampaignTemplate';
+import NewCatalog from './model/NewCatalog';
 import NewCollection from './model/NewCollection';
 import NewCouponCreationJob from './model/NewCouponCreationJob';
 import NewCoupons from './model/NewCoupons';
@@ -199,10 +237,12 @@ import NewInvitation from './model/NewInvitation';
 import NewInviteEmail from './model/NewInviteEmail';
 import NewLoyaltyProgram from './model/NewLoyaltyProgram';
 import NewLoyaltyTier from './model/NewLoyaltyTier';
+import NewNotificationWebhook from './model/NewNotificationWebhook';
 import NewPassword from './model/NewPassword';
 import NewPasswordEmail from './model/NewPasswordEmail';
 import NewReferral from './model/NewReferral';
 import NewReferralsForMultipleAdvocates from './model/NewReferralsForMultipleAdvocates';
+import NewReturn from './model/NewReturn';
 import NewRole from './model/NewRole';
 import NewRuleset from './model/NewRuleset';
 import NewSamlConnection from './model/NewSamlConnection';
@@ -210,6 +250,7 @@ import NewTemplateDef from './model/NewTemplateDef';
 import NewUser from './model/NewUser';
 import NewWebhook from './model/NewWebhook';
 import Notification from './model/Notification';
+import NotificationWebhook from './model/NotificationWebhook';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
 import Referral from './model/Referral';
@@ -218,6 +259,8 @@ import ReferralCreatedEffectProps from './model/ReferralCreatedEffectProps';
 import ReferralRejectionReason from './model/ReferralRejectionReason';
 import RejectCouponEffectProps from './model/RejectCouponEffectProps';
 import RejectReferralEffectProps from './model/RejectReferralEffectProps';
+import ReturnIntegrationRequest from './model/ReturnIntegrationRequest';
+import ReturnedCartItem from './model/ReturnedCartItem';
 import Role from './model/Role';
 import RoleAssign from './model/RoleAssign';
 import RoleMembership from './model/RoleMembership';
@@ -235,6 +278,7 @@ import SamlLoginEndpoint from './model/SamlLoginEndpoint';
 import Session from './model/Session';
 import SetDiscountEffectProps from './model/SetDiscountEffectProps';
 import SetDiscountPerAdditionalCostEffectProps from './model/SetDiscountPerAdditionalCostEffectProps';
+import SetDiscountPerAdditionalCostPerItemEffectProps from './model/SetDiscountPerAdditionalCostPerItemEffectProps';
 import SetDiscountPerItemEffectProps from './model/SetDiscountPerItemEffectProps';
 import ShowBundleMetadataEffectProps from './model/ShowBundleMetadataEffectProps';
 import ShowNotificationEffectProps from './model/ShowNotificationEffectProps';
@@ -249,12 +293,15 @@ import UpdateApplication from './model/UpdateApplication';
 import UpdateAttributeEffectProps from './model/UpdateAttributeEffectProps';
 import UpdateAudience from './model/UpdateAudience';
 import UpdateCampaign from './model/UpdateCampaign';
+import UpdateCampaignCollection from './model/UpdateCampaignCollection';
 import UpdateCampaignGroup from './model/UpdateCampaignGroup';
 import UpdateCampaignTemplate from './model/UpdateCampaignTemplate';
+import UpdateCatalog from './model/UpdateCatalog';
 import UpdateCollection from './model/UpdateCollection';
 import UpdateCoupon from './model/UpdateCoupon';
 import UpdateCouponBatch from './model/UpdateCouponBatch';
 import UpdateCustomEffect from './model/UpdateCustomEffect';
+import UpdateLoyaltyCard from './model/UpdateLoyaltyCard';
 import UpdateLoyaltyProgram from './model/UpdateLoyaltyProgram';
 import UpdateReferral from './model/UpdateReferral';
 import UpdateReferralBatch from './model/UpdateReferralBatch';
@@ -301,7 +348,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.4.0
+* @version 4.5.0
 */
 export {
     /**
@@ -431,6 +478,12 @@ export {
     ApplicationEvent,
 
     /**
+     * The ApplicationNotification model constructor.
+     * @property {module:model/ApplicationNotification}
+     */
+    ApplicationNotification,
+
+    /**
      * The ApplicationReferee model constructor.
      * @property {module:model/ApplicationReferee}
      */
@@ -447,6 +500,12 @@ export {
      * @property {module:model/ApplicationSessionEntity}
      */
     ApplicationSessionEntity,
+
+    /**
+     * The AsyncCouponCreationResponse model constructor.
+     * @property {module:model/AsyncCouponCreationResponse}
+     */
+    AsyncCouponCreationResponse,
 
     /**
      * The Attribute model constructor.
@@ -503,6 +562,18 @@ export {
     Binding,
 
     /**
+     * The BulkApplicationNotification model constructor.
+     * @property {module:model/BulkApplicationNotification}
+     */
+    BulkApplicationNotification,
+
+    /**
+     * The BulkCampaignNotification model constructor.
+     * @property {module:model/BulkCampaignNotification}
+     */
+    BulkCampaignNotification,
+
+    /**
      * The Campaign model constructor.
      * @property {module:model/Campaign}
      */
@@ -515,10 +586,40 @@ export {
     CampaignAnalytics,
 
     /**
+     * The CampaignCollection model constructor.
+     * @property {module:model/CampaignCollection}
+     */
+    CampaignCollection,
+
+    /**
+     * The CampaignCollectionWithoutPayload model constructor.
+     * @property {module:model/CampaignCollectionWithoutPayload}
+     */
+    CampaignCollectionWithoutPayload,
+
+    /**
      * The CampaignCopy model constructor.
      * @property {module:model/CampaignCopy}
      */
     CampaignCopy,
+
+    /**
+     * The CampaignCreatedNotification model constructor.
+     * @property {module:model/CampaignCreatedNotification}
+     */
+    CampaignCreatedNotification,
+
+    /**
+     * The CampaignDeletedNotification model constructor.
+     * @property {module:model/CampaignDeletedNotification}
+     */
+    CampaignDeletedNotification,
+
+    /**
+     * The CampaignEditedNotification model constructor.
+     * @property {module:model/CampaignEditedNotification}
+     */
+    CampaignEditedNotification,
 
     /**
      * The CampaignEntity model constructor.
@@ -539,6 +640,30 @@ export {
     CampaignGroupEntity,
 
     /**
+     * The CampaignNotification model constructor.
+     * @property {module:model/CampaignNotification}
+     */
+    CampaignNotification,
+
+    /**
+     * The CampaignPrioritiesChangedNotification model constructor.
+     * @property {module:model/CampaignPrioritiesChangedNotification}
+     */
+    CampaignPrioritiesChangedNotification,
+
+    /**
+     * The CampaignPrioritiesV2 model constructor.
+     * @property {module:model/CampaignPrioritiesV2}
+     */
+    CampaignPrioritiesV2,
+
+    /**
+     * The CampaignRulesetChangedNotification model constructor.
+     * @property {module:model/CampaignRulesetChangedNotification}
+     */
+    CampaignRulesetChangedNotification,
+
+    /**
      * The CampaignSearch model constructor.
      * @property {module:model/CampaignSearch}
      */
@@ -557,6 +682,12 @@ export {
     CampaignSetBranchNode,
 
     /**
+     * The CampaignSetIDs model constructor.
+     * @property {module:model/CampaignSetIDs}
+     */
+    CampaignSetIDs,
+
+    /**
      * The CampaignSetLeafNode model constructor.
      * @property {module:model/CampaignSetLeafNode}
      */
@@ -569,10 +700,28 @@ export {
     CampaignSetNode,
 
     /**
+     * The CampaignSetV2 model constructor.
+     * @property {module:model/CampaignSetV2}
+     */
+    CampaignSetV2,
+
+    /**
+     * The CampaignStateChangedNotification model constructor.
+     * @property {module:model/CampaignStateChangedNotification}
+     */
+    CampaignStateChangedNotification,
+
+    /**
      * The CampaignTemplate model constructor.
      * @property {module:model/CampaignTemplate}
      */
     CampaignTemplate,
+
+    /**
+     * The CampaignTemplateCollection model constructor.
+     * @property {module:model/CampaignTemplateCollection}
+     */
+    CampaignTemplateCollection,
 
     /**
      * The CampaignTemplateParams model constructor.
@@ -585,6 +734,12 @@ export {
      * @property {module:model/CartItem}
      */
     CartItem,
+
+    /**
+     * The Catalog model constructor.
+     * @property {module:model/Catalog}
+     */
+    Catalog,
 
     /**
      * The Change model constructor.
@@ -611,6 +766,12 @@ export {
     Collection,
 
     /**
+     * The CollectionWithoutPayload model constructor.
+     * @property {module:model/CollectionWithoutPayload}
+     */
+    CollectionWithoutPayload,
+
+    /**
      * The Coupon model constructor.
      * @property {module:model/Coupon}
      */
@@ -633,6 +794,12 @@ export {
      * @property {module:model/CouponCreationJob}
      */
     CouponCreationJob,
+
+    /**
+     * The CouponLimitConfigs model constructor.
+     * @property {module:model/CouponLimitConfigs}
+     */
+    CouponLimitConfigs,
 
     /**
      * The CouponRejectionReason model constructor.
@@ -803,6 +970,12 @@ export {
     ErrorResponse,
 
     /**
+     * The ErrorResponseWithStatus model constructor.
+     * @property {module:model/ErrorResponseWithStatus}
+     */
+    ErrorResponseWithStatus,
+
+    /**
      * The ErrorSource model constructor.
      * @property {module:model/ErrorSource}
      */
@@ -819,6 +992,12 @@ export {
      * @property {module:model/EventType}
      */
     EventType,
+
+    /**
+     * The EventV2 model constructor.
+     * @property {module:model/EventV2}
+     */
+    EventV2,
 
     /**
      * The FeatureFlag model constructor.
@@ -1013,6 +1192,18 @@ export {
     InlineResponse2003,
 
     /**
+     * The InlineResponse20030 model constructor.
+     * @property {module:model/InlineResponse20030}
+     */
+    InlineResponse20030,
+
+    /**
+     * The InlineResponse20031 model constructor.
+     * @property {module:model/InlineResponse20031}
+     */
+    InlineResponse20031,
+
+    /**
      * The InlineResponse2004 model constructor.
      * @property {module:model/InlineResponse2004}
      */
@@ -1055,6 +1246,12 @@ export {
     InlineResponse201,
 
     /**
+     * The IntegrationCustomerSessionResponse model constructor.
+     * @property {module:model/IntegrationCustomerSessionResponse}
+     */
+    IntegrationCustomerSessionResponse,
+
+    /**
      * The IntegrationEntity model constructor.
      * @property {module:model/IntegrationEntity}
      */
@@ -1065,6 +1262,12 @@ export {
      * @property {module:model/IntegrationEvent}
      */
     IntegrationEvent,
+
+    /**
+     * The IntegrationEventV2Request model constructor.
+     * @property {module:model/IntegrationEventV2Request}
+     */
+    IntegrationEventV2Request,
 
     /**
      * The IntegrationProfileEntity model constructor.
@@ -1095,6 +1298,12 @@ export {
      * @property {module:model/InventoryCoupon}
      */
     InventoryCoupon,
+
+    /**
+     * The InventoryReferral model constructor.
+     * @property {module:model/InventoryReferral}
+     */
+    InventoryReferral,
 
     /**
      * The LedgerEntry model constructor.
@@ -1137,6 +1346,24 @@ export {
      * @property {module:model/Loyalty}
      */
     Loyalty,
+
+    /**
+     * The LoyaltyCard model constructor.
+     * @property {module:model/LoyaltyCard}
+     */
+    LoyaltyCard,
+
+    /**
+     * The LoyaltyCardProfileRegistration model constructor.
+     * @property {module:model/LoyaltyCardProfileRegistration}
+     */
+    LoyaltyCardProfileRegistration,
+
+    /**
+     * The LoyaltyCardRegistration model constructor.
+     * @property {module:model/LoyaltyCardRegistration}
+     */
+    LoyaltyCardRegistration,
 
     /**
      * The LoyaltyDashboardData model constructor.
@@ -1199,6 +1426,18 @@ export {
     LoyaltyProgramLedgers,
 
     /**
+     * The LoyaltyProjection model constructor.
+     * @property {module:model/LoyaltyProjection}
+     */
+    LoyaltyProjection,
+
+    /**
+     * The LoyaltyProjectionData model constructor.
+     * @property {module:model/LoyaltyProjectionData}
+     */
+    LoyaltyProjectionData,
+
+    /**
      * The LoyaltyStatistics model constructor.
      * @property {module:model/LoyaltyStatistics}
      */
@@ -1241,10 +1480,22 @@ export {
     ModelImport,
 
     /**
+     * The ModelReturn model constructor.
+     * @property {module:model/ModelReturn}
+     */
+    ModelReturn,
+
+    /**
      * The MultiApplicationEntity model constructor.
      * @property {module:model/MultiApplicationEntity}
      */
     MultiApplicationEntity,
+
+    /**
+     * The MultipleAttribute model constructor.
+     * @property {module:model/MultipleAttribute}
+     */
+    MultipleAttribute,
 
     /**
      * The MultipleCustomerProfileIntegrationRequest model constructor.
@@ -1263,6 +1514,12 @@ export {
      * @property {module:model/MultipleCustomerProfileIntegrationResponseV2}
      */
     MultipleCustomerProfileIntegrationResponseV2,
+
+    /**
+     * The MultipleNewAttribute model constructor.
+     * @property {module:model/MultipleNewAttribute}
+     */
+    MultipleNewAttribute,
 
     /**
      * The MutableEntity model constructor.
@@ -1319,6 +1576,12 @@ export {
     NewCampaign,
 
     /**
+     * The NewCampaignCollection model constructor.
+     * @property {module:model/NewCampaignCollection}
+     */
+    NewCampaignCollection,
+
+    /**
      * The NewCampaignGroup model constructor.
      * @property {module:model/NewCampaignGroup}
      */
@@ -1331,10 +1594,22 @@ export {
     NewCampaignSet,
 
     /**
+     * The NewCampaignSetV2 model constructor.
+     * @property {module:model/NewCampaignSetV2}
+     */
+    NewCampaignSetV2,
+
+    /**
      * The NewCampaignTemplate model constructor.
      * @property {module:model/NewCampaignTemplate}
      */
     NewCampaignTemplate,
+
+    /**
+     * The NewCatalog model constructor.
+     * @property {module:model/NewCatalog}
+     */
+    NewCatalog,
 
     /**
      * The NewCollection model constructor.
@@ -1427,6 +1702,12 @@ export {
     NewLoyaltyTier,
 
     /**
+     * The NewNotificationWebhook model constructor.
+     * @property {module:model/NewNotificationWebhook}
+     */
+    NewNotificationWebhook,
+
+    /**
      * The NewPassword model constructor.
      * @property {module:model/NewPassword}
      */
@@ -1449,6 +1730,12 @@ export {
      * @property {module:model/NewReferralsForMultipleAdvocates}
      */
     NewReferralsForMultipleAdvocates,
+
+    /**
+     * The NewReturn model constructor.
+     * @property {module:model/NewReturn}
+     */
+    NewReturn,
 
     /**
      * The NewRole model constructor.
@@ -1491,6 +1778,12 @@ export {
      * @property {module:model/Notification}
      */
     Notification,
+
+    /**
+     * The NotificationWebhook model constructor.
+     * @property {module:model/NotificationWebhook}
+     */
+    NotificationWebhook,
 
     /**
      * The ProfileAudiencesChanges model constructor.
@@ -1539,6 +1832,18 @@ export {
      * @property {module:model/RejectReferralEffectProps}
      */
     RejectReferralEffectProps,
+
+    /**
+     * The ReturnIntegrationRequest model constructor.
+     * @property {module:model/ReturnIntegrationRequest}
+     */
+    ReturnIntegrationRequest,
+
+    /**
+     * The ReturnedCartItem model constructor.
+     * @property {module:model/ReturnedCartItem}
+     */
+    ReturnedCartItem,
 
     /**
      * The Role model constructor.
@@ -1643,6 +1948,12 @@ export {
     SetDiscountPerAdditionalCostEffectProps,
 
     /**
+     * The SetDiscountPerAdditionalCostPerItemEffectProps model constructor.
+     * @property {module:model/SetDiscountPerAdditionalCostPerItemEffectProps}
+     */
+    SetDiscountPerAdditionalCostPerItemEffectProps,
+
+    /**
      * The SetDiscountPerItemEffectProps model constructor.
      * @property {module:model/SetDiscountPerItemEffectProps}
      */
@@ -1727,6 +2038,12 @@ export {
     UpdateCampaign,
 
     /**
+     * The UpdateCampaignCollection model constructor.
+     * @property {module:model/UpdateCampaignCollection}
+     */
+    UpdateCampaignCollection,
+
+    /**
      * The UpdateCampaignGroup model constructor.
      * @property {module:model/UpdateCampaignGroup}
      */
@@ -1737,6 +2054,12 @@ export {
      * @property {module:model/UpdateCampaignTemplate}
      */
     UpdateCampaignTemplate,
+
+    /**
+     * The UpdateCatalog model constructor.
+     * @property {module:model/UpdateCatalog}
+     */
+    UpdateCatalog,
 
     /**
      * The UpdateCollection model constructor.
@@ -1761,6 +2084,12 @@ export {
      * @property {module:model/UpdateCustomEffect}
      */
     UpdateCustomEffect,
+
+    /**
+     * The UpdateLoyaltyCard model constructor.
+     * @property {module:model/UpdateLoyaltyCard}
+     */
+    UpdateLoyaltyCard,
 
     /**
      * The UpdateLoyaltyProgram model constructor.

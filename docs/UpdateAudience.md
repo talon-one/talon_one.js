@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The human-friendly display name for this Audience. | 
+**name** | **String** | The human-friendly display name for this audience. | 
 
 

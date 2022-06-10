@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,21 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateLimitConfig model module.
  * @module model/TemplateLimitConfig
- * @version 4.4.0
+ * @version 4.5.0
  */
 class TemplateLimitConfig {
     /**
      * Constructs a new <code>TemplateLimitConfig</code>.
      * 
      * @alias module:model/TemplateLimitConfig
-     * @param action {String} The limitable action to which this limit will be applied
-     * @param limit {Number} The value to set for the limit
-     * @param entities {Array.<module:model/TemplateLimitConfig.EntitiesEnum>} The entities that make the address of this limit
-     * @param description {String} The description of this budget configuration
+     * @param action {String} The limitable action to which this limit applies. For example: - `setDiscount` - `setDiscountEffect` - `redeemCoupon` - `createCoupon` 
+     * @param limit {Number} The value to set for the limit.
+     * @param entities {Array.<module:model/TemplateLimitConfig.EntitiesEnum>} The entity that this limit applies to.
      */
-    constructor(action, limit, entities, description) { 
+    constructor(action, limit, entities) { 
         
-        TemplateLimitConfig.initialize(this, action, limit, entities, description);
+        TemplateLimitConfig.initialize(this, action, limit, entities);
     }
 
     /**
@@ -38,11 +37,10 @@ class TemplateLimitConfig {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, action, limit, entities, description) { 
+    static initialize(obj, action, limit, entities) { 
         obj['action'] = action;
         obj['limit'] = limit;
         obj['entities'] = entities;
-        obj['description'] = description;
     }
 
     /**
@@ -68,9 +66,6 @@ class TemplateLimitConfig {
             if (data.hasOwnProperty('entities')) {
                 obj['entities'] = ApiClient.convertToType(data['entities'], ['String']);
             }
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
         }
         return obj;
     }
@@ -79,34 +74,28 @@ class TemplateLimitConfig {
 }
 
 /**
- * The limitable action to which this limit will be applied
+ * The limitable action to which this limit applies. For example: - `setDiscount` - `setDiscountEffect` - `redeemCoupon` - `createCoupon` 
  * @member {String} action
  */
 TemplateLimitConfig.prototype['action'] = undefined;
 
 /**
- * The value to set for the limit
+ * The value to set for the limit.
  * @member {Number} limit
  */
 TemplateLimitConfig.prototype['limit'] = undefined;
 
 /**
- * The period on which the budget limit recurs
+ * The period on which the budget limit recurs.
  * @member {module:model/TemplateLimitConfig.PeriodEnum} period
  */
 TemplateLimitConfig.prototype['period'] = undefined;
 
 /**
- * The entities that make the address of this limit
+ * The entity that this limit applies to.
  * @member {Array.<module:model/TemplateLimitConfig.EntitiesEnum>} entities
  */
 TemplateLimitConfig.prototype['entities'] = undefined;
-
-/**
- * The description of this budget configuration
- * @member {String} description
- */
-TemplateLimitConfig.prototype['description'] = undefined;
 
 
 

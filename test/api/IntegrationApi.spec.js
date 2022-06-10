@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -138,6 +138,16 @@
         done();
       });
     });
+    describe('getCustomerSession', function() {
+      it('should call getCustomerSession successfully', function(done) {
+        //uncomment below and update the code to test getCustomerSession
+        //instance.getCustomerSession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getReservedCustomers', function() {
       it('should call getReservedCustomers successfully', function(done) {
         //uncomment below and update the code to test getReservedCustomers
@@ -148,10 +158,30 @@
         done();
       });
     });
+    describe('returnCartItems', function() {
+      it('should call returnCartItems successfully', function(done) {
+        //uncomment below and update the code to test returnCartItems
+        //instance.returnCartItems(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('trackEvent', function() {
       it('should call trackEvent successfully', function(done) {
         //uncomment below and update the code to test trackEvent
         //instance.trackEvent(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('trackEventV2', function() {
+      it('should call trackEventV2 successfully', function(done) {
+        //uncomment below and update the code to test trackEventV2
+        //instance.trackEventV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateApplication model module.
  * @module model/UpdateApplication
- * @version 4.4.0
+ * @version 4.5.0
  */
 class UpdateApplication {
     /**
@@ -26,7 +26,7 @@ class UpdateApplication {
      * @alias module:model/UpdateApplication
      * @param name {String} The name of this application.
      * @param timezone {String} A string containing an IANA timezone descriptor.
-     * @param currency {String} A string describing a default currency for new customer sessions.
+     * @param currency {String} The default currency for new customer sessions.
      */
     constructor(name, timezone, currency) { 
         
@@ -97,6 +97,12 @@ class UpdateApplication {
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
+            if (data.hasOwnProperty('enablePartialDiscounts')) {
+                obj['enablePartialDiscounts'] = ApiClient.convertToType(data['enablePartialDiscounts'], 'Boolean');
+            }
+            if (data.hasOwnProperty('defaultDiscountAdditionalCostPerItemScope')) {
+                obj['defaultDiscountAdditionalCostPerItemScope'] = ApiClient.convertToType(data['defaultDiscountAdditionalCostPerItemScope'], 'String');
+            }
         }
         return obj;
     }
@@ -123,55 +129,57 @@ UpdateApplication.prototype['description'] = undefined;
 UpdateApplication.prototype['timezone'] = undefined;
 
 /**
- * A string describing a default currency for new customer sessions.
+ * The default currency for new customer sessions.
  * @member {String} currency
  */
 UpdateApplication.prototype['currency'] = undefined;
 
 /**
- * A string indicating how should campaigns in this application deal with case sensitivity on coupon codes.
+ * The case sensitivity behavior to check coupon codes in the campaigns of this Application.
  * @member {module:model/UpdateApplication.CaseSensitivityEnum} caseSensitivity
  */
 UpdateApplication.prototype['caseSensitivity'] = undefined;
 
 /**
- * Arbitrary properties associated with this campaign
+ * Arbitrary properties associated with this campaign.
  * @member {Object} attributes
  */
 UpdateApplication.prototype['attributes'] = undefined;
 
 /**
- * Default limits for campaigns created in this application
+ * Default limits for campaigns created in this application.
  * @member {Array.<module:model/LimitConfig>} limits
  */
 UpdateApplication.prototype['limits'] = undefined;
 
 /**
- * Default priority for campaigns created in this application, can be one of (universal, stackable, exclusive). If no value is provided, this is set to \"universal\"
+ * Default [priority](https://docs.talon.one/docs/product/applications/setting-up-campaign-priorities) for campaigns created in this Application. 
  * @member {module:model/UpdateApplication.CampaignPriorityEnum} campaignPriority
+ * @default 'universal'
  */
-UpdateApplication.prototype['campaignPriority'] = undefined;
+UpdateApplication.prototype['campaignPriority'] = 'universal';
 
 /**
- * The strategy used when choosing exclusive campaigns for evaluation, can be one of (listOrder, lowestDiscount, highestDiscount). If no value is provided, this is set to \"listOrder\"
+ * The strategy used when choosing exclusive campaigns for evaluation.
  * @member {module:model/UpdateApplication.ExclusiveCampaignsStrategyEnum} exclusiveCampaignsStrategy
+ * @default 'listOrder'
  */
-UpdateApplication.prototype['exclusiveCampaignsStrategy'] = undefined;
+UpdateApplication.prototype['exclusiveCampaignsStrategy'] = 'listOrder';
 
 /**
- * The default scope to apply \"setDiscount\" effects on if no scope was provided with the effect.
+ * The default scope to apply `setDiscount` effects on if no scope was provided with the effect. 
  * @member {module:model/UpdateApplication.DefaultDiscountScopeEnum} defaultDiscountScope
  */
 UpdateApplication.prototype['defaultDiscountScope'] = undefined;
 
 /**
- * Indicates if discounts should cascade for this application
+ * Indicates if discounts should cascade for this Application.
  * @member {Boolean} enableCascadingDiscounts
  */
 UpdateApplication.prototype['enableCascadingDiscounts'] = undefined;
 
 /**
- * Indicates if cart items of quantity larger than one should be separated into different items of quantity one
+ * Indicates if cart items of quantity larger than one should be separated into different items of quantity one. See [the docs](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items). 
  * @member {Boolean} enableFlattenedCartItems
  */
 UpdateApplication.prototype['enableFlattenedCartItems'] = undefined;
@@ -182,10 +190,22 @@ UpdateApplication.prototype['enableFlattenedCartItems'] = undefined;
 UpdateApplication.prototype['attributesSettings'] = undefined;
 
 /**
- * Indicates if this is a live or sandbox application
+ * Indicates if this is a live or sandbox Application.
  * @member {Boolean} sandbox
  */
 UpdateApplication.prototype['sandbox'] = undefined;
+
+/**
+ * Indicates if this Application supports partial discounts.
+ * @member {Boolean} enablePartialDiscounts
+ */
+UpdateApplication.prototype['enablePartialDiscounts'] = undefined;
+
+/**
+ * The default scope to apply `setDiscountPerItem` effects on if no scope was provided with the effect. 
+ * @member {module:model/UpdateApplication.DefaultDiscountAdditionalCostPerItemScopeEnum} defaultDiscountAdditionalCostPerItemScope
+ */
+UpdateApplication.prototype['defaultDiscountAdditionalCostPerItemScope'] = undefined;
 
 
 
@@ -290,6 +310,33 @@ UpdateApplication['DefaultDiscountScopeEnum'] = {
      * @const
      */
     "cartItems": "cartItems",
+
+    /**
+     * value: "additionalCosts"
+     * @const
+     */
+    "additionalCosts": "additionalCosts"
+};
+
+
+/**
+ * Allowed values for the <code>defaultDiscountAdditionalCostPerItemScope</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateApplication['DefaultDiscountAdditionalCostPerItemScopeEnum'] = {
+
+    /**
+     * value: "price"
+     * @const
+     */
+    "price": "price",
+
+    /**
+     * value: "itemTotal"
+     * @const
+     */
+    "itemTotal": "itemTotal",
 
     /**
      * value: "additionalCosts"

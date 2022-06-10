@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -15,13 +15,13 @@ import ApiClient from '../ApiClient';
 import CustomerProfile from './CustomerProfile';
 import Giveaway from './Giveaway';
 import InventoryCoupon from './InventoryCoupon';
+import InventoryReferral from './InventoryReferral';
 import Loyalty from './Loyalty';
-import Referral from './Referral';
 
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 4.4.0
+ * @version 4.5.0
  */
 class CustomerInventory {
     /**
@@ -59,7 +59,7 @@ class CustomerInventory {
                 obj['loyalty'] = Loyalty.constructFromObject(data['loyalty']);
             }
             if (data.hasOwnProperty('referrals')) {
-                obj['referrals'] = ApiClient.convertToType(data['referrals'], [Referral]);
+                obj['referrals'] = ApiClient.convertToType(data['referrals'], [InventoryReferral]);
             }
             if (data.hasOwnProperty('coupons')) {
                 obj['coupons'] = ApiClient.convertToType(data['coupons'], [InventoryCoupon]);
@@ -85,11 +85,12 @@ CustomerInventory.prototype['profile'] = undefined;
 CustomerInventory.prototype['loyalty'] = undefined;
 
 /**
- * @member {Array.<module:model/Referral>} referrals
+ * @member {Array.<module:model/InventoryReferral>} referrals
  */
 CustomerInventory.prototype['referrals'] = undefined;
 
 /**
+ * The coupons reserved by this profile. This array includes hard and soft reservations. See each coupon's `reservation` property. 
  * @member {Array.<module:model/InventoryCoupon>} coupons
  */
 CustomerInventory.prototype['coupons'] = undefined;

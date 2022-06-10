@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created** | **Date** |  | 
 **programID** | **Number** |  | 
-**customerProfileID** | **String** |  | 
+**customerProfileID** | **String** |  | [optional] 
+**cardID** | **Number** |  | [optional] 
 **customerSessionID** | **String** |  | [optional] 
 **eventID** | **Number** |  | [optional] 
 **type** | **String** | The type of the ledger transaction. Possible values are addition, subtraction, expire or expiring (for expiring points ledgers)  | 

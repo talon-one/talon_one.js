@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,29 +18,30 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 4.4.0
+ * @version 4.5.0
  */
 class CustomerSessionV2 {
     /**
      * Constructs a new <code>CustomerSessionV2</code>.
      * 
      * @alias module:model/CustomerSessionV2
+     * @param id {Number} Unique ID for this entity.
+     * @param created {Date} The exact moment this entity was created. The exact moment this entity was created.
      * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
-     * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param profileId {String} ID of the customers profile as used within this Talon.One account. May be omitted or set to the empty string if the customer does not yet have a known profile ID.
+     * @param profileId {String} ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
      * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`, after which valid transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled`  For more information, see [Entites](/docs/dev/concepts/entities#customer-session). 
-     * @param cartItems {Array.<module:model/CartItem>} All items the customer will be purchasing in this session
-     * @param attributes {Object} A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings. 
+     * @param cartItems {Array.<module:model/CartItem>} The items to add to this sessions. - If cart item flattening is disabled: **Do not exceed 1000 items** (regardless of their `quantity`) per request. - If cart item flattening is enabled: **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
+     * @param attributes {Object} A key-value map of the sessions attributes. If you use custom attributes, they must be created in the Campaign Manager before you set them with this property. For more information, see [Attributes](https://docs.talon.one/docs/dev/concepts/attributes). 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
      * @param total {Number} The total sum of cart-items, as well as additional costs, before any discounts applied
      * @param cartItemTotal {Number} The total sum of cart-items before any discounts applied
      * @param additionalCostTotal {Number} The total sum of additional costs before any discounts applied
      * @param updated {Date} Timestamp of the most recent event received on this session
      */
-    constructor(integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
+    constructor(id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
         
-        CustomerSessionV2.initialize(this, integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated);
+        CustomerSessionV2.initialize(this, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated);
     }
 
     /**
@@ -48,9 +49,10 @@ class CustomerSessionV2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, integrationId, created, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
-        obj['integrationId'] = integrationId;
+    static initialize(obj, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
+        obj['id'] = id;
         obj['created'] = created;
+        obj['integrationId'] = integrationId;
         obj['applicationId'] = applicationId;
         obj['profileId'] = profileId;
         obj['state'] = state;
@@ -74,11 +76,14 @@ class CustomerSessionV2 {
         if (data) {
             obj = obj || new CustomerSessionV2();
 
-            if (data.hasOwnProperty('integrationId')) {
-                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('integrationId')) {
+                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
             }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
@@ -91,6 +96,9 @@ class CustomerSessionV2 {
             }
             if (data.hasOwnProperty('referralCode')) {
                 obj['referralCode'] = ApiClient.convertToType(data['referralCode'], 'String');
+            }
+            if (data.hasOwnProperty('loyaltyCards')) {
+                obj['loyaltyCards'] = ApiClient.convertToType(data['loyaltyCards'], ['String']);
             }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -130,16 +138,22 @@ class CustomerSessionV2 {
 }
 
 /**
+ * Unique ID for this entity.
+ * @member {Number} id
+ */
+CustomerSessionV2.prototype['id'] = undefined;
+
+/**
+ * The exact moment this entity was created. The exact moment this entity was created.
+ * @member {Date} created
+ */
+CustomerSessionV2.prototype['created'] = undefined;
+
+/**
  * The integration ID for this entity sent to and used in the Talon.One system.
  * @member {String} integrationId
  */
 CustomerSessionV2.prototype['integrationId'] = undefined;
-
-/**
- * The exact moment this entity was created.
- * @member {Date} created
- */
-CustomerSessionV2.prototype['created'] = undefined;
 
 /**
  * The ID of the application that owns this entity.
@@ -148,22 +162,28 @@ CustomerSessionV2.prototype['created'] = undefined;
 CustomerSessionV2.prototype['applicationId'] = undefined;
 
 /**
- * ID of the customers profile as used within this Talon.One account. May be omitted or set to the empty string if the customer does not yet have a known profile ID.
+ * ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
  * @member {String} profileId
  */
 CustomerSessionV2.prototype['profileId'] = undefined;
 
 /**
- * Any coupon codes entered.
+ * Any coupon codes entered.  **Important**: If you [create a coupon budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a coupon code by the time you close it. 
  * @member {Array.<String>} couponCodes
  */
 CustomerSessionV2.prototype['couponCodes'] = undefined;
 
 /**
- * Any referral code entered.
+ * Any referral code entered.  **Important**: If you [create a referral budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a referral code by the time you close it. 
  * @member {String} referralCode
  */
 CustomerSessionV2.prototype['referralCode'] = undefined;
+
+/**
+ * Any loyalty cards used.
+ * @member {Array.<String>} loyaltyCards
+ */
+CustomerSessionV2.prototype['loyaltyCards'] = undefined;
 
 /**
  * Indicates the current state of the session. Sessions can be created as `open` or `closed`, after which valid transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled`  For more information, see [Entites](/docs/dev/concepts/entities#customer-session). 
@@ -173,25 +193,25 @@ CustomerSessionV2.prototype['referralCode'] = undefined;
 CustomerSessionV2.prototype['state'] = 'open';
 
 /**
- * All items the customer will be purchasing in this session
+ * The items to add to this sessions. - If cart item flattening is disabled: **Do not exceed 1000 items** (regardless of their `quantity`) per request. - If cart item flattening is enabled: **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
  * @member {Array.<module:model/CartItem>} cartItems
  */
 CustomerSessionV2.prototype['cartItems'] = undefined;
 
 /**
- * Any costs associated with the session that can not be explicitly attributed to cart items. Examples include shipping costs and service fees.
+ * Any costs associated with the session that can not be explicitly attributed to cart items. Examples include shipping costs and service fees. [Create them in the Campaign Manager](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs/#creating-additional-costs) before setting them with this property. 
  * @member {Object.<String, module:model/AdditionalCost>} additionalCosts
  */
 CustomerSessionV2.prototype['additionalCosts'] = undefined;
 
 /**
- * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. 
+ * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. See the [tutorial](https://docs.talon.one/docs/dev/tutorials/using-identifiers/).  **Important**: If you [create a unique identifier budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains an identifier by the time you close it. 
  * @member {Array.<String>} identifiers
  */
 CustomerSessionV2.prototype['identifiers'] = undefined;
 
 /**
- * A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings. 
+ * A key-value map of the sessions attributes. If you use custom attributes, they must be created in the Campaign Manager before you set them with this property. For more information, see [Attributes](https://docs.talon.one/docs/dev/concepts/attributes). 
  * @member {Object} attributes
  */
 CustomerSessionV2.prototype['attributes'] = undefined;
@@ -248,6 +268,12 @@ CustomerSessionV2['StateEnum'] = {
      * @const
      */
     "closed": "closed",
+
+    /**
+     * value: "partially_returned"
+     * @const
+     */
+    "partially_returned": "partially_returned",
 
     /**
      * value: "cancelled"

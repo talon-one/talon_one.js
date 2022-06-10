@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[CampaignAnalytics]**](CampaignAnalytics.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

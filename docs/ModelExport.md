@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 
 * `LoyaltyLedgerLog` (value: `"LoyaltyLedgerLog"`)
 
+* `Collection` (value: `"Collection"`)
+
 
 
 

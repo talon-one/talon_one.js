@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **accountId** | **Number** | The ID of the Talon.One account that owns this profile. | 
 **closedSessions** | **Number** | The total amount of closed sessions by a customer. A closed session is a successful purchase. | 
 **totalSales** | **Number** | Sum of all purchases made by this customer | 
-**loyaltyMemberships** | [**[LoyaltyMembership]**](LoyaltyMembership.md) | A list of loyalty programs joined by the customer | [optional] 
+**loyaltyMemberships** | [**[LoyaltyMembership]**](LoyaltyMembership.md) | **DEPRECATED** A list of loyalty programs joined by the customer.  | [optional] 
 **audienceMemberships** | [**[AudienceMembership]**](AudienceMembership.md) | A list of audiences the customer belongs to | [optional] 
-**lastActivity** | **Date** | Timestamp of the most recent event received from this customer | 
+**lastActivity** | **Date** | Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api/#operation/createCouponReservation) for a customer doesn&#39;t impact this field.  | 
 
 

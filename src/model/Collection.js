@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Collection model module.
  * @module model/Collection
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Collection {
     /**
@@ -26,15 +26,13 @@ class Collection {
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param name {String} The name of this collection.
      * @param createdBy {Number} ID of the user who created this effect.
      */
-    constructor(id, created, accountId, applicationId, campaignId, modified, name, createdBy) { 
+    constructor(id, created, accountId, modified, name, createdBy) { 
         
-        Collection.initialize(this, id, created, accountId, applicationId, campaignId, modified, name, createdBy);
+        Collection.initialize(this, id, created, accountId, modified, name, createdBy);
     }
 
     /**
@@ -42,12 +40,10 @@ class Collection {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, accountId, applicationId, campaignId, modified, name, createdBy) { 
+    static initialize(obj, id, created, accountId, modified, name, createdBy) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['accountId'] = accountId;
-        obj['applicationId'] = applicationId;
-        obj['campaignId'] = campaignId;
         obj['modified'] = modified;
         obj['name'] = name;
         obj['createdBy'] = createdBy;
@@ -73,29 +69,32 @@ class Collection {
             if (data.hasOwnProperty('accountId')) {
                 obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
             }
-            if (data.hasOwnProperty('applicationId')) {
-                obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
-            }
-            if (data.hasOwnProperty('campaignId')) {
-                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
-            }
             if (data.hasOwnProperty('modified')) {
                 obj['modified'] = ApiClient.convertToType(data['modified'], 'Date');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('payload')) {
-                obj['payload'] = ApiClient.convertToType(data['payload'], ['String']);
+            if (data.hasOwnProperty('subscribedApplicationsIds')) {
+                obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('modifiedBy')) {
                 obj['modifiedBy'] = ApiClient.convertToType(data['modifiedBy'], 'Number');
             }
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'Number');
+            }
+            if (data.hasOwnProperty('applicationId')) {
+                obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignId')) {
+                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
+            if (data.hasOwnProperty('payload')) {
+                obj['payload'] = ApiClient.convertToType(data['payload'], ['String']);
             }
         }
         return obj;
@@ -123,28 +122,10 @@ Collection.prototype['created'] = undefined;
 Collection.prototype['accountId'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
- * @member {Number} applicationId
- */
-Collection.prototype['applicationId'] = undefined;
-
-/**
- * The ID of the campaign that owns this entity.
- * @member {Number} campaignId
- */
-Collection.prototype['campaignId'] = undefined;
-
-/**
  * The exact moment this entity was last modified.
  * @member {Date} modified
  */
 Collection.prototype['modified'] = undefined;
-
-/**
- * The name of this collection.
- * @member {String} name
- */
-Collection.prototype['name'] = undefined;
 
 /**
  * A short description of the purpose of this collection.
@@ -153,10 +134,16 @@ Collection.prototype['name'] = undefined;
 Collection.prototype['description'] = undefined;
 
 /**
- * Payload contains limited amount of collection items
- * @member {Array.<String>} payload
+ * A list of the IDs of the Applications where this collection is enabled.
+ * @member {Array.<Number>} subscribedApplicationsIds
  */
-Collection.prototype['payload'] = undefined;
+Collection.prototype['subscribedApplicationsIds'] = undefined;
+
+/**
+ * The name of this collection.
+ * @member {String} name
+ */
+Collection.prototype['name'] = undefined;
 
 /**
  * ID of the user who last updated this effect if available.
@@ -169,6 +156,24 @@ Collection.prototype['modifiedBy'] = undefined;
  * @member {Number} createdBy
  */
 Collection.prototype['createdBy'] = undefined;
+
+/**
+ * The ID of the Application that owns this entity.
+ * @member {Number} applicationId
+ */
+Collection.prototype['applicationId'] = undefined;
+
+/**
+ * The ID of the campaign that owns this entity.
+ * @member {Number} campaignId
+ */
+Collection.prototype['campaignId'] = undefined;
+
+/**
+ * The content of the collection.
+ * @member {Array.<String>} payload
+ */
+Collection.prototype['payload'] = undefined;
 
 
 

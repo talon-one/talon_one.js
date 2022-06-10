@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCampaign model module.
  * @module model/NewCampaign
- * @version 4.4.0
+ * @version 4.5.0
  */
 class NewCampaign {
     /**
@@ -27,8 +27,8 @@ class NewCampaign {
      * @param name {String} A user-facing name for this campaign.
      * @param state {module:model/NewCampaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 
      * @param tags {Array.<String>} A list of tags for the campaign.
-     * @param features {Array.<module:model/NewCampaign.FeaturesEnum>} A list of features for the campaign.
-     * @param limits {Array.<module:model/LimitConfig>} The set of limits that will operate for this campaign
+     * @param features {Array.<module:model/NewCampaign.FeaturesEnum>} The features enabled in this campaign.
+     * @param limits {Array.<module:model/LimitConfig>} The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/) for this campaign. 
      */
     constructor(name, state, tags, features, limits) { 
         
@@ -143,7 +143,7 @@ NewCampaign.prototype['attributes'] = undefined;
 NewCampaign.prototype['state'] = 'enabled';
 
 /**
- * ID of Ruleset this campaign applies on customer session evaluation.
+ * [ID of Ruleset](https://docs.talon.one/management-api/#operation/getRulesets) this campaign applies on customer session evaluation. 
  * @member {Number} activeRulesetId
  */
 NewCampaign.prototype['activeRulesetId'] = undefined;
@@ -155,7 +155,7 @@ NewCampaign.prototype['activeRulesetId'] = undefined;
 NewCampaign.prototype['tags'] = undefined;
 
 /**
- * A list of features for the campaign.
+ * The features enabled in this campaign.
  * @member {Array.<module:model/NewCampaign.FeaturesEnum>} features
  */
 NewCampaign.prototype['features'] = undefined;
@@ -171,13 +171,13 @@ NewCampaign.prototype['couponSettings'] = undefined;
 NewCampaign.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign
+ * The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/) for this campaign. 
  * @member {Array.<module:model/LimitConfig>} limits
  */
 NewCampaign.prototype['limits'] = undefined;
 
 /**
- * The IDs of the campaign groups that own this entity.
+ * The IDs of the [campaign groups](https://docs.talon.one/docs/product/account/managing-campaign-groups/) this campaign belongs to. 
  * @member {Array.<Number>} campaignGroups
  */
 NewCampaign.prototype['campaignGroups'] = undefined;

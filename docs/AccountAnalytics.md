@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **roles** | **Number** | Total number of roles in the account | 
 **customAttributes** | **Number** | Total number of custom attributes in the account | 
 **webhooks** | **Number** | Total number of webhooks in the account | 
-**loyaltyPrograms** | **Number** | Total number of loyalty programs in the account | 
+**loyaltyPrograms** | **Number** | Total number of all loyalty programs in the account | 
+**liveLoyaltyPrograms** | **Number** | Total number of live loyalty programs in the account | 
 
 

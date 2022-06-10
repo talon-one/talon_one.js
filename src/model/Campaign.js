@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Campaign {
     /**
@@ -33,8 +33,8 @@ class Campaign {
      * @param description {String} A detailed description of the campaign.
      * @param state {module:model/Campaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 
      * @param tags {Array.<String>} A list of tags for the campaign.
-     * @param features {Array.<module:model/Campaign.FeaturesEnum>} A list of features for the campaign.
-     * @param limits {Array.<module:model/LimitConfig>} The set of limits that will operate for this campaign
+     * @param features {Array.<module:model/Campaign.FeaturesEnum>} The features enabled in this campaign.
+     * @param limits {Array.<module:model/LimitConfig>} The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/) for this campaign. 
      */
     constructor(id, created, applicationId, userId, name, description, state, tags, features, limits) { 
         
@@ -136,8 +136,14 @@ class Campaign {
             if (data.hasOwnProperty('couponCreationCount')) {
                 obj['couponCreationCount'] = ApiClient.convertToType(data['couponCreationCount'], 'Number');
             }
+            if (data.hasOwnProperty('customEffectCount')) {
+                obj['customEffectCount'] = ApiClient.convertToType(data['customEffectCount'], 'Number');
+            }
             if (data.hasOwnProperty('referralCreationCount')) {
                 obj['referralCreationCount'] = ApiClient.convertToType(data['referralCreationCount'], 'Number');
+            }
+            if (data.hasOwnProperty('addFreeItemEffectCount')) {
+                obj['addFreeItemEffectCount'] = ApiClient.convertToType(data['addFreeItemEffectCount'], 'Number');
             }
             if (data.hasOwnProperty('awardedGiveawaysCount')) {
                 obj['awardedGiveawaysCount'] = ApiClient.convertToType(data['awardedGiveawaysCount'], 'Number');
@@ -153,6 +159,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('redeemedLoyaltyPointsEffectCount')) {
                 obj['redeemedLoyaltyPointsEffectCount'] = ApiClient.convertToType(data['redeemedLoyaltyPointsEffectCount'], 'Number');
+            }
+            if (data.hasOwnProperty('callApiEffectCount')) {
+                obj['callApiEffectCount'] = ApiClient.convertToType(data['callApiEffectCount'], 'Number');
             }
             if (data.hasOwnProperty('lastActivity')) {
                 obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
@@ -238,7 +247,7 @@ Campaign.prototype['attributes'] = undefined;
 Campaign.prototype['state'] = 'enabled';
 
 /**
- * ID of Ruleset this campaign applies on customer session evaluation.
+ * [ID of Ruleset](https://docs.talon.one/management-api/#operation/getRulesets) this campaign applies on customer session evaluation. 
  * @member {Number} activeRulesetId
  */
 Campaign.prototype['activeRulesetId'] = undefined;
@@ -250,7 +259,7 @@ Campaign.prototype['activeRulesetId'] = undefined;
 Campaign.prototype['tags'] = undefined;
 
 /**
- * A list of features for the campaign.
+ * The features enabled in this campaign.
  * @member {Array.<module:model/Campaign.FeaturesEnum>} features
  */
 Campaign.prototype['features'] = undefined;
@@ -266,13 +275,13 @@ Campaign.prototype['couponSettings'] = undefined;
 Campaign.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign
+ * The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/) for this campaign. 
  * @member {Array.<module:model/LimitConfig>} limits
  */
 Campaign.prototype['limits'] = undefined;
 
 /**
- * The IDs of the campaign groups that own this entity.
+ * The IDs of the [campaign groups](https://docs.talon.one/docs/product/account/managing-campaign-groups/) this campaign belongs to. 
  * @member {Array.<Number>} campaignGroups
  */
 Campaign.prototype['campaignGroups'] = undefined;
@@ -308,10 +317,22 @@ Campaign.prototype['discountEffectCount'] = undefined;
 Campaign.prototype['couponCreationCount'] = undefined;
 
 /**
+ * Total number of custom effects triggered by rules in this campaign.
+ * @member {Number} customEffectCount
+ */
+Campaign.prototype['customEffectCount'] = undefined;
+
+/**
  * Total number of referrals created by rules in this campaign.
  * @member {Number} referralCreationCount
  */
 Campaign.prototype['referralCreationCount'] = undefined;
+
+/**
+ * Total number of times triggering add free item effext is allowed in this campaign.
+ * @member {Number} addFreeItemEffectCount
+ */
+Campaign.prototype['addFreeItemEffectCount'] = undefined;
 
 /**
  * Total number of giveaways awarded by rules in this campaign.
@@ -344,13 +365,19 @@ Campaign.prototype['redeemedLoyaltyPointsCount'] = undefined;
 Campaign.prototype['redeemedLoyaltyPointsEffectCount'] = undefined;
 
 /**
+ * Total number of webhook triggered by rules in this campaign.
+ * @member {Number} callApiEffectCount
+ */
+Campaign.prototype['callApiEffectCount'] = undefined;
+
+/**
  * Timestamp of the most recent event received by this campaign.
  * @member {Date} lastActivity
  */
 Campaign.prototype['lastActivity'] = undefined;
 
 /**
- * Timestamp of the most recent update to the campaign or any of its elements.
+ * Timestamp of the most recent update to the campaign's property. Updates to external entities used in this campaign are **not** registered by this property, such as collection or coupon updates. 
  * @member {Date} updated
  */
 Campaign.prototype['updated'] = undefined;

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import LimitConfig from './LimitConfig';
 
 /**
  * The InventoryCoupon model module.
  * @module model/InventoryCoupon
- * @version 4.4.0
+ * @version 4.5.0
  */
 class InventoryCoupon {
     /**
@@ -26,11 +27,11 @@ class InventoryCoupon {
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
-     * @param value {String} The actual coupon code.
-     * @param usageLimit {Number} The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+     * @param value {String} The coupon code.
+     * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param usageCounter {Number} The number of times this coupon has been successfully used.
      * @param profileRedemptionCount {Number} The number of times the coupon was redeemed by the profile.
-     * @param state {String} Can be either active, used, expired, pending or disabled. active: reserved coupons that are neither pending nor used nor expired, and have a non-exhausted limit counter. used: coupons that are not pending, and have reached their redemption limit or were redeemed by the profile before expiration. expired: all non-pending, non-active, non-used coupons that were not redeemed by the profile. pending: coupons that have a start date in the future. disabled: coupons of non-active campaigns. 
+     * @param state {String} Can be:  - `active`: The coupon can be used. It is a reserved coupon that is neither pending, used nor expired, and has a non-exhausted limit counter. - `used`: The coupon has been redeemed and cannot be used again. It is not pending and has reached its redemption limit or was redeemed by the profile before expiration. - `expired`: The coupon was never redeemed and it is now expired. It is non-pending, non-active and non-used by the profile. - `pending`: The coupon will be usable in the future. - `disabled`: The coupon is part of a non-active campaign. 
      */
     constructor(id, created, campaignId, value, usageLimit, usageCounter, profileRedemptionCount, state) { 
         
@@ -87,6 +88,9 @@ class InventoryCoupon {
             }
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            }
+            if (data.hasOwnProperty('limits')) {
+                obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
             }
             if (data.hasOwnProperty('usageCounter')) {
                 obj['usageCounter'] = ApiClient.convertToType(data['usageCounter'], 'Number');
@@ -147,13 +151,13 @@ InventoryCoupon.prototype['created'] = undefined;
 InventoryCoupon.prototype['campaignId'] = undefined;
 
 /**
- * The actual coupon code.
+ * The coupon code.
  * @member {String} value
  */
 InventoryCoupon.prototype['value'] = undefined;
 
 /**
- * The number of times a coupon code can be redeemed. This can be set to 0 for no limit, but any campaign usage limits will still apply. 
+ * The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
  * @member {Number} usageLimit
  */
 InventoryCoupon.prototype['usageLimit'] = undefined;
@@ -177,6 +181,12 @@ InventoryCoupon.prototype['startDate'] = undefined;
 InventoryCoupon.prototype['expiryDate'] = undefined;
 
 /**
+ * Limits configuration for a coupon. These limits will override the limits set from the campaign.  **Note:** Only usable when creating a single coupon which is not tied to a specific recipient. Only per-profile limits are allowed to be configured. 
+ * @member {Array.<module:model/LimitConfig>} limits
+ */
+InventoryCoupon.prototype['limits'] = undefined;
+
+/**
  * The number of times this coupon has been successfully used.
  * @member {Number} usageCounter
  */
@@ -195,7 +205,7 @@ InventoryCoupon.prototype['discountCounter'] = undefined;
 InventoryCoupon.prototype['discountRemainder'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Custom attributes associated with this coupon.
  * @member {Object} attributes
  */
 InventoryCoupon.prototype['attributes'] = undefined;
@@ -219,10 +229,11 @@ InventoryCoupon.prototype['recipientIntegrationId'] = undefined;
 InventoryCoupon.prototype['importId'] = undefined;
 
 /**
- * This value controls what reservations mean to a coupon. If set to true the coupon reservation is used to mark it as a favorite, if set to false the coupon reservation is used as a requirement of usage. This value defaults to true if not specified.
+ * Defines the type of reservation: - `true`: The reservation is a soft reservation. Any customer can use the coupon. This is done via the [Create coupon reservation endpoint](/integration-api/#operation/createCouponReservation). - `false`: The reservation is a hard reservation. Only the associated customer (`recipientIntegrationId`) can use the coupon. This is done via the Campaign Manager when you create a coupon for a given `recipientIntegrationId`, the [Create coupons endpoint](/management-api/#operation/createCoupons) or [Create coupons for multiple recipients endpoint](/management-api/#operation/createCouponsForMultipleRecipients). 
  * @member {Boolean} reservation
+ * @default true
  */
-InventoryCoupon.prototype['reservation'] = undefined;
+InventoryCoupon.prototype['reservation'] = true;
 
 /**
  * The id of the batch the coupon belongs to.
@@ -237,7 +248,7 @@ InventoryCoupon.prototype['batchId'] = undefined;
 InventoryCoupon.prototype['profileRedemptionCount'] = undefined;
 
 /**
- * Can be either active, used, expired, pending or disabled. active: reserved coupons that are neither pending nor used nor expired, and have a non-exhausted limit counter. used: coupons that are not pending, and have reached their redemption limit or were redeemed by the profile before expiration. expired: all non-pending, non-active, non-used coupons that were not redeemed by the profile. pending: coupons that have a start date in the future. disabled: coupons of non-active campaigns. 
+ * Can be:  - `active`: The coupon can be used. It is a reserved coupon that is neither pending, used nor expired, and has a non-exhausted limit counter. - `used`: The coupon has been redeemed and cannot be used again. It is not pending and has reached its redemption limit or was redeemed by the profile before expiration. - `expired`: The coupon was never redeemed and it is now expired. It is non-pending, non-active and non-used by the profile. - `pending`: The coupon will be usable in the future. - `disabled`: The coupon is part of a non-active campaign. 
  * @member {String} state
  */
 InventoryCoupon.prototype['state'] = undefined;

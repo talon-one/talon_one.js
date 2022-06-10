@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 4.4.0
+ * @version 4.5.0
  */
 class LoyaltyLedgerEntry {
     /**
@@ -25,15 +25,14 @@ class LoyaltyLedgerEntry {
      * @alias module:model/LoyaltyLedgerEntry
      * @param created {Date} 
      * @param programID {Number} 
-     * @param customerProfileID {String} 
      * @param type {String} The type of the ledger transaction. Possible values are addition, subtraction, expire or expiring (for expiring points ledgers) 
      * @param amount {Number} 
      * @param name {String} A name referencing the condition or effect that added this entry, or the specific name provided in an API call.
      * @param subLedgerID {String} This specifies if we are adding loyalty points to the main ledger or a subledger
      */
-    constructor(created, programID, customerProfileID, type, amount, name, subLedgerID) { 
+    constructor(created, programID, type, amount, name, subLedgerID) { 
         
-        LoyaltyLedgerEntry.initialize(this, created, programID, customerProfileID, type, amount, name, subLedgerID);
+        LoyaltyLedgerEntry.initialize(this, created, programID, type, amount, name, subLedgerID);
     }
 
     /**
@@ -41,10 +40,9 @@ class LoyaltyLedgerEntry {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, created, programID, customerProfileID, type, amount, name, subLedgerID) { 
+    static initialize(obj, created, programID, type, amount, name, subLedgerID) { 
         obj['created'] = created;
         obj['programID'] = programID;
-        obj['customerProfileID'] = customerProfileID;
         obj['type'] = type;
         obj['amount'] = amount;
         obj['name'] = name;
@@ -70,6 +68,9 @@ class LoyaltyLedgerEntry {
             }
             if (data.hasOwnProperty('customerProfileID')) {
                 obj['customerProfileID'] = ApiClient.convertToType(data['customerProfileID'], 'String');
+            }
+            if (data.hasOwnProperty('cardID')) {
+                obj['cardID'] = ApiClient.convertToType(data['cardID'], 'Number');
             }
             if (data.hasOwnProperty('customerSessionID')) {
                 obj['customerSessionID'] = ApiClient.convertToType(data['customerSessionID'], 'String');
@@ -119,6 +120,11 @@ LoyaltyLedgerEntry.prototype['programID'] = undefined;
  * @member {String} customerProfileID
  */
 LoyaltyLedgerEntry.prototype['customerProfileID'] = undefined;
+
+/**
+ * @member {Number} cardID
+ */
+LoyaltyLedgerEntry.prototype['cardID'] = undefined;
 
 /**
  * @member {String} customerSessionID

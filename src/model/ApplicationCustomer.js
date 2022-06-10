@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 4.4.0
+ * @version 4.5.0
  */
 class ApplicationCustomer {
     /**
@@ -32,7 +32,7 @@ class ApplicationCustomer {
      * @param accountId {Number} The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile.
      * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
      * @param totalSales {Number} Sum of all purchases made by this customer
-     * @param lastActivity {Date} Timestamp of the most recent event received from this customer
+     * @param lastActivity {Date} Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api/#operation/createCouponReservation) for a customer doesn't impact this field. 
      */
     constructor(id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity) { 
         
@@ -149,7 +149,7 @@ ApplicationCustomer.prototype['closedSessions'] = undefined;
 ApplicationCustomer.prototype['totalSales'] = undefined;
 
 /**
- * A list of loyalty programs joined by the customer
+ * **DEPRECATED** A list of loyalty programs joined by the customer. 
  * @member {Array.<module:model/LoyaltyMembership>} loyaltyMemberships
  */
 ApplicationCustomer.prototype['loyaltyMemberships'] = undefined;
@@ -161,7 +161,7 @@ ApplicationCustomer.prototype['loyaltyMemberships'] = undefined;
 ApplicationCustomer.prototype['audienceMemberships'] = undefined;
 
 /**
- * Timestamp of the most recent event received from this customer
+ * Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api/#operation/createCouponReservation) for a customer doesn't impact this field. 
  * @member {Date} lastActivity
  */
 ApplicationCustomer.prototype['lastActivity'] = undefined;

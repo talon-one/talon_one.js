@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **Number** | ⚠️ Deprecated: Use &#39;totalActivePoints&#39; property instead. Total amount of currently active and available points in the customer&#39;s balance.  | 
+**total** | **Number** | **DEPRECATED** Use &#x60;totalActivePoints&#x60;&#x60; property instead. Total amount of currently active and available points in the customer&#39;s balance.  | 
 **totalActivePoints** | **Number** | Total amount of currently active and available points in the customer&#39;s balance. | 
 **totalPendingPoints** | **Number** | Total amount of pending points, which are not active yet but will become active in the future. | 
 **totalSpentPoints** | **Number** | Total amount of points already spent by this customer. | 

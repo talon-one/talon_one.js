@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **referralSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
 **limits** | [**[TemplateLimitConfig]**](TemplateLimitConfig.md) | The set of limits that will operate for this campaign template | [optional] 
 **templateParams** | [**[CampaignTemplateParams]**](CampaignTemplateParams.md) | Template parameters are fields which can be used to replace values in a rule. | [optional] 
+**campaignCollections** | [**[CampaignTemplateCollection]**](CampaignTemplateCollection.md) | The campaign collections from the blueprint campaign for the template. | [optional] 
 
 
 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * The Talon.One API is used to manage applications and campaigns, as well as to integrate with your application. The operations in the _Integration API_ section are used to integrate with our platform, while the other operations are used to manage applications and campaigns.  ### Where is the API?  The API is available at the same hostname as these docs. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerProfile][] operation is `https://mycompany.talon.one/v1/customer_profiles/id`  [updateCustomerProfile]: #operation--v1-customer_profiles--integrationId--put 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import AdditionalCost from './AdditionalCost';
 
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 4.4.0
+ * @version 4.5.0
  */
 class CartItem {
     /**
@@ -24,7 +25,7 @@ class CartItem {
      * @alias module:model/CartItem
      * @param name {String} Name of item
      * @param sku {String} Stock keeping unit of item
-     * @param quantity {Number} Quantity of item. **Important:** If you enabled [cart item flattening](https://help.talon.one/hc/en-us/articles/360016036899-Flattening-Cart-Items), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
+     * @param quantity {Number} Quantity of item. **Important:** If you enabled [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
      * @param price {Number} Price of item
      */
     constructor(name, sku, quantity, price) { 
@@ -64,6 +65,12 @@ class CartItem {
             if (data.hasOwnProperty('quantity')) {
                 obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
             }
+            if (data.hasOwnProperty('returnedQuantity')) {
+                obj['returnedQuantity'] = ApiClient.convertToType(data['returnedQuantity'], 'Number');
+            }
+            if (data.hasOwnProperty('remainingQuantity')) {
+                obj['remainingQuantity'] = ApiClient.convertToType(data['remainingQuantity'], 'Number');
+            }
             if (data.hasOwnProperty('price')) {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number');
             }
@@ -88,6 +95,9 @@ class CartItem {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
+            if (data.hasOwnProperty('additionalCosts')) {
+                obj['additionalCosts'] = ApiClient.convertToType(data['additionalCosts'], {'String': AdditionalCost});
+            }
         }
         return obj;
     }
@@ -108,10 +118,22 @@ CartItem.prototype['name'] = undefined;
 CartItem.prototype['sku'] = undefined;
 
 /**
- * Quantity of item. **Important:** If you enabled [cart item flattening](https://help.talon.one/hc/en-us/articles/360016036899-Flattening-Cart-Items), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
+ * Quantity of item. **Important:** If you enabled [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
  * @member {Number} quantity
  */
 CartItem.prototype['quantity'] = undefined;
+
+/**
+ * Number of returned items, calculated internally based on returns of this item.
+ * @member {Number} returnedQuantity
+ */
+CartItem.prototype['returnedQuantity'] = undefined;
+
+/**
+ * Remaining quantity of the item, calculated internally based on returns of this item.
+ * @member {Number} remainingQuantity
+ */
+CartItem.prototype['remainingQuantity'] = undefined;
 
 /**
  * Price of item
@@ -160,6 +182,12 @@ CartItem.prototype['position'] = undefined;
  * @member {Object} attributes
  */
 CartItem.prototype['attributes'] = undefined;
+
+/**
+ * Any additional costs associated with the cart item 
+ * @member {Object.<String, module:model/AdditionalCost>} additionalCosts
+ */
+CartItem.prototype['additionalCosts'] = undefined;
 
 
 
