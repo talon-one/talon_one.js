@@ -1,10 +1,10 @@
-# TalonOne.InlineResponse2006
+# TalonOne.InlineResponse20034
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Coupon]**](Coupon.md) |  | 
+**data** | [**[Role]**](Role.md) |  | 
 
 

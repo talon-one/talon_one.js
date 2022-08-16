@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
+import Application from './Application';
 
 /**
  * The InlineResponse2002 model module.
@@ -24,7 +24,7 @@ class InlineResponse2002 {
      * Constructs a new <code>InlineResponse2002</code>.
      * @alias module:model/InlineResponse2002
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Campaign>} 
+     * @param data {Array.<module:model/Application>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2002 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Campaign]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Application]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2002 {
 InlineResponse2002.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Campaign>} data
+ * @member {Array.<module:model/Application>} data
  */
 InlineResponse2002.prototype['data'] = undefined;
 

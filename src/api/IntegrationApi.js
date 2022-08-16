@@ -24,13 +24,13 @@ import CustomerProfileIntegrationRequestV2 from '../model/CustomerProfileIntegra
 import ErrorResponse from '../model/ErrorResponse';
 import ErrorResponseWithStatus from '../model/ErrorResponseWithStatus';
 import InlineResponse200 from '../model/InlineResponse200';
+import InlineResponse2001 from '../model/InlineResponse2001';
 import InlineResponse201 from '../model/InlineResponse201';
 import IntegrationCustomerSessionResponse from '../model/IntegrationCustomerSessionResponse';
 import IntegrationEventV2Request from '../model/IntegrationEventV2Request';
 import IntegrationRequest from '../model/IntegrationRequest';
 import IntegrationState from '../model/IntegrationState';
 import IntegrationStateV2 from '../model/IntegrationStateV2';
-import LedgerTransactionLogEntryIntegrationAPI from '../model/LedgerTransactionLogEntryIntegrationAPI';
 import MultipleCustomerProfileIntegrationRequest from '../model/MultipleCustomerProfileIntegrationRequest';
 import MultipleCustomerProfileIntegrationResponseV2 from '../model/MultipleCustomerProfileIntegrationResponseV2';
 import NewAudience from '../model/NewAudience';
@@ -587,7 +587,7 @@ export default class IntegrationApi {
      * @param {Date=} [opts.endDate] Only return results older than this timestamp. It must be an RFC3339 timestamp string.
      * @param {Number=} [opts.pageSize] The number of items in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LedgerTransactionLogEntryIntegrationAPI} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     getLoyaltyTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts) {
       opts = opts || {};
@@ -619,7 +619,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = LedgerTransactionLogEntryIntegrationAPI;
+      let returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/transactions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -637,7 +637,7 @@ export default class IntegrationApi {
      * @param {Date=} [opts.endDate] Only return results older than this timestamp. It must be an RFC3339 timestamp string.
      * @param {Number=} [opts.pageSize] The number of items in this response. When omitted, the maximum value of 1000 will be used.
      * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LedgerTransactionLogEntryIntegrationAPI}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     getLoyaltyTransactions(loyaltyProgramId, integrationId, opts) {
       return this.getLoyaltyTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts)

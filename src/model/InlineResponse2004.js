@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Ruleset from './Ruleset';
+import NotificationWebhook from './NotificationWebhook';
 
 /**
  * The InlineResponse2004 model module.
@@ -24,7 +24,7 @@ class InlineResponse2004 {
      * Constructs a new <code>InlineResponse2004</code>.
      * @alias module:model/InlineResponse2004
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Ruleset>} 
+     * @param data {Array.<module:model/NotificationWebhook>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2004 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Ruleset]);
+                obj['data'] = ApiClient.convertToType(data['data'], [NotificationWebhook]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2004 {
 InlineResponse2004.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Ruleset>} data
+ * @member {Array.<module:model/NotificationWebhook>} data
  */
 InlineResponse2004.prototype['data'] = undefined;
 

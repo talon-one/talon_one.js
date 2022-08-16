@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**hasMore** | **Boolean** |  | 
 **totalResultSize** | **Number** |  | 
-**data** | [**[Attribute]**](Attribute.md) |  | 
+**data** | [**[ApplicationReferee]**](ApplicationReferee.md) |  | 
 
 

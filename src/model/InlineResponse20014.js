@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignAnalytics from './CampaignAnalytics';
+import AccessLogEntry from './AccessLogEntry';
 
 /**
  * The InlineResponse20014 model module.
@@ -24,7 +24,7 @@ class InlineResponse20014 {
      * Constructs a new <code>InlineResponse20014</code>.
      * @alias module:model/InlineResponse20014
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/CampaignAnalytics>} 
+     * @param data {Array.<module:model/AccessLogEntry>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20014 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CampaignAnalytics]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20014 {
 InlineResponse20014.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/CampaignAnalytics>} data
+ * @member {Array.<module:model/AccessLogEntry>} data
  */
 InlineResponse20014.prototype['data'] = undefined;
 

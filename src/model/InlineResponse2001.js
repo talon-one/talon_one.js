@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Application from './Application';
+import LedgerTransactionLogEntryIntegrationAPI from './LedgerTransactionLogEntryIntegrationAPI';
 
 /**
  * The InlineResponse2001 model module.
@@ -23,12 +23,12 @@ class InlineResponse2001 {
     /**
      * Constructs a new <code>InlineResponse2001</code>.
      * @alias module:model/InlineResponse2001
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Application>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/LedgerTransactionLogEntryIntegrationAPI>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse2001.initialize(this, totalResultSize, data);
+        InlineResponse2001.initialize(this, hasMore, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse2001 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse2001 {
         if (data) {
             obj = obj || new InlineResponse2001();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Application]);
+                obj['data'] = ApiClient.convertToType(data['data'], [LedgerTransactionLogEntryIntegrationAPI]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse2001 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * @member {Boolean} hasMore
  */
-InlineResponse2001.prototype['totalResultSize'] = undefined;
+InlineResponse2001.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/Application>} data
+ * @member {Array.<module:model/LedgerTransactionLogEntryIntegrationAPI>} data
  */
 InlineResponse2001.prototype['data'] = undefined;
 

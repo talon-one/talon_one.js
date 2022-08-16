@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Audience from './Audience';
+import Role from './Role';
 
 /**
- * The InlineResponse20023 model module.
- * @module model/InlineResponse20023
+ * The InlineResponse20034 model module.
+ * @module model/InlineResponse20034
  * @version 4.6.0
  */
-class InlineResponse20023 {
+class InlineResponse20034 {
     /**
-     * Constructs a new <code>InlineResponse20023</code>.
-     * @alias module:model/InlineResponse20023
-     * @param data {Array.<module:model/Audience>} 
+     * Constructs a new <code>InlineResponse20034</code>.
+     * @alias module:model/InlineResponse20034
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/Role>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20023.initialize(this, data);
+        InlineResponse20034.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,29 +36,27 @@ class InlineResponse20023 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
     /**
-     * Constructs a <code>InlineResponse20023</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse20034</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse20023} obj Optional instance to populate.
-     * @return {module:model/InlineResponse20023} The populated <code>InlineResponse20023</code> instance.
+     * @param {module:model/InlineResponse20034} obj Optional instance to populate.
+     * @return {module:model/InlineResponse20034} The populated <code>InlineResponse20034</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineResponse20023();
+            obj = obj || new InlineResponse20034();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Audience]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Role]);
             }
         }
         return obj;
@@ -67,24 +66,19 @@ class InlineResponse20023 {
 }
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20023.prototype['hasMore'] = undefined;
-
-/**
  * @member {Number} totalResultSize
  */
-InlineResponse20023.prototype['totalResultSize'] = undefined;
+InlineResponse20034.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Audience>} data
+ * @member {Array.<module:model/Role>} data
  */
-InlineResponse20023.prototype['data'] = undefined;
+InlineResponse20034.prototype['data'] = undefined;
 
 
 
 
 
 
-export default InlineResponse20023;
+export default InlineResponse20034;
 

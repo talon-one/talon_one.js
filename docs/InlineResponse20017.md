@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
+**data** | [**[ApplicationCustomer]**](ApplicationCustomer.md) |  | 
 
 

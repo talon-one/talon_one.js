@@ -555,6 +555,7 @@ Class | Method | HTTP request | Description
  - [TalonOne.InlineResponse20031](docs/InlineResponse20031.md)
  - [TalonOne.InlineResponse20032](docs/InlineResponse20032.md)
  - [TalonOne.InlineResponse20033](docs/InlineResponse20033.md)
+ - [TalonOne.InlineResponse20034](docs/InlineResponse20034.md)
  - [TalonOne.InlineResponse2004](docs/InlineResponse2004.md)
  - [TalonOne.InlineResponse2005](docs/InlineResponse2005.md)
  - [TalonOne.InlineResponse2006](docs/InlineResponse2006.md)

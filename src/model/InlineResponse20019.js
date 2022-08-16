@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationSession from './ApplicationSession';
+import CustomerActivityReport from './CustomerActivityReport';
 
 /**
  * The InlineResponse20019 model module.
@@ -23,11 +23,12 @@ class InlineResponse20019 {
     /**
      * Constructs a new <code>InlineResponse20019</code>.
      * @alias module:model/InlineResponse20019
-     * @param data {Array.<module:model/ApplicationSession>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/CustomerActivityReport>} 
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20019.initialize(this, data);
+        InlineResponse20019.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20019 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -54,7 +56,7 @@ class InlineResponse20019 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationSession]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerActivityReport]);
             }
         }
         return obj;
@@ -69,7 +71,7 @@ class InlineResponse20019 {
 InlineResponse20019.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationSession>} data
+ * @member {Array.<module:model/CustomerActivityReport>} data
  */
 InlineResponse20019.prototype['data'] = undefined;
 

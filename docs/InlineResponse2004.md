@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Ruleset]**](Ruleset.md) |  | 
+**data** | [**[NotificationWebhook]**](NotificationWebhook.md) |  | 
 
 

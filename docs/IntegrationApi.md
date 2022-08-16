@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyTransactions
 
-> LedgerTransactionLogEntryIntegrationAPI getLoyaltyTransactions(loyaltyProgramId, integrationId, opts)
+> InlineResponse2001 getLoyaltyTransactions(loyaltyProgramId, integrationId, opts)
 
 Get loyalty ledger transaction logs
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LedgerTransactionLogEntryIntegrationAPI**](LedgerTransactionLogEntryIntegrationAPI.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

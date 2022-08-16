@@ -169,7 +169,7 @@ null (empty response body)
 
 ## copyCampaignToApplications
 
-> InlineResponse2002 copyCampaignToApplications(applicationId, campaignId, body)
+> InlineResponse2003 copyCampaignToApplications(applicationId, campaignId, body)
 
 Copy the campaign into the specified application
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ## createCoupons
 
-> InlineResponse2005 createCoupons(applicationId, campaignId, body, opts)
+> InlineResponse2006 createCoupons(applicationId, campaignId, body, opts)
 
 Create coupons
 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 
 ## createCouponsForMultipleRecipients
 
-> InlineResponse2005 createCouponsForMultipleRecipients(applicationId, campaignId, body, opts)
+> InlineResponse2006 createCouponsForMultipleRecipients(applicationId, campaignId, body, opts)
 
 Create coupons for multiple recipients
 
@@ -635,7 +635,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -1723,7 +1723,7 @@ Name | Type | Description  | Notes
 
 ## getAccessLogsWithoutTotalCount
 
-> InlineResponse20012 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
+> InlineResponse20013 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
 
 Get access logs for Application
 
@@ -1777,7 +1777,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -1991,7 +1991,7 @@ Name | Type | Description  | Notes
 
 ## getAdditionalCosts
 
-> InlineResponse20025 getAdditionalCosts(opts)
+> InlineResponse20026 getAdditionalCosts(opts)
 
 List additional costs
 
@@ -2033,7 +2033,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -2047,7 +2047,7 @@ Name | Type | Description  | Notes
 
 ## getAllAccessLogs
 
-> InlineResponse20013 getAllAccessLogs(rangeStart, rangeEnd, opts)
+> InlineResponse20014 getAllAccessLogs(rangeStart, rangeEnd, opts)
 
 List access logs
 
@@ -2099,7 +2099,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -2113,7 +2113,7 @@ Name | Type | Description  | Notes
 
 ## getAllRoles
 
-> InlineResponse20033 getAllRoles()
+> InlineResponse20034 getAllRoles()
 
 List roles
 
@@ -2145,7 +2145,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**InlineResponse20034**](InlineResponse20034.md)
 
 ### Authorization
 
@@ -2311,7 +2311,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomerFriends
 
-> InlineResponse20023 getApplicationCustomerFriends(applicationId, integrationId, opts)
+> InlineResponse20024 getApplicationCustomerFriends(applicationId, integrationId, opts)
 
 List friends referred by customer profile
 
@@ -2359,7 +2359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -2373,7 +2373,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomers
 
-> InlineResponse20015 getApplicationCustomers(applicationId, opts)
+> InlineResponse20016 getApplicationCustomers(applicationId, opts)
 
 List application&#39;s customers
 
@@ -2419,7 +2419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -2433,7 +2433,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomersByAttributes
 
-> InlineResponse20016 getApplicationCustomersByAttributes(applicationId, body, opts)
+> InlineResponse20017 getApplicationCustomersByAttributes(applicationId, body, opts)
 
 List application customers matching the given attributes
 
@@ -2479,7 +2479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -2493,7 +2493,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationEventTypes
 
-> InlineResponse20021 getApplicationEventTypes(applicationId, opts)
+> InlineResponse20022 getApplicationEventTypes(applicationId, opts)
 
 List Applications event types
 
@@ -2537,7 +2537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -2551,7 +2551,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationEventsWithoutTotalCount
 
-> InlineResponse20020 getApplicationEventsWithoutTotalCount(applicationId, opts)
+> InlineResponse20021 getApplicationEventsWithoutTotalCount(applicationId, opts)
 
 List Applications events
 
@@ -2617,7 +2617,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -2683,7 +2683,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationSessions
 
-> InlineResponse20019 getApplicationSessions(applicationId, opts)
+> InlineResponse20020 getApplicationSessions(applicationId, opts)
 
 List Application sessions
 
@@ -2741,7 +2741,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -2755,7 +2755,7 @@ Name | Type | Description  | Notes
 
 ## getApplications
 
-> InlineResponse2001 getApplications(opts)
+> InlineResponse2002 getApplications(opts)
 
 List applications
 
@@ -2797,7 +2797,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -2861,7 +2861,7 @@ Name | Type | Description  | Notes
 
 ## getAttributes
 
-> InlineResponse20024 getAttributes(opts)
+> InlineResponse20025 getAttributes(opts)
 
 List custom attributes
 
@@ -2905,7 +2905,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -2919,7 +2919,7 @@ Name | Type | Description  | Notes
 
 ## getAudiences
 
-> InlineResponse20022 getAudiences(opts)
+> InlineResponse20023 getAudiences(opts)
 
 List audiences
 
@@ -2963,7 +2963,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -3029,7 +3029,7 @@ Name | Type | Description  | Notes
 
 ## getCampaignAnalytics
 
-> InlineResponse20014 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
+> InlineResponse20015 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
 
 Get analytics of campaigns
 
@@ -3075,7 +3075,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -3089,7 +3089,7 @@ Name | Type | Description  | Notes
 
 ## getCampaignByAttributes
 
-> InlineResponse2002 getCampaignByAttributes(applicationId, body, opts)
+> InlineResponse2003 getCampaignByAttributes(applicationId, body, opts)
 
 List campaigns that match the given attributes
 
@@ -3137,7 +3137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -3151,7 +3151,7 @@ Name | Type | Description  | Notes
 
 ## getCampaigns
 
-> InlineResponse2002 getCampaigns(applicationId, opts)
+> InlineResponse2003 getCampaigns(applicationId, opts)
 
 List campaigns
 
@@ -3209,7 +3209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -3223,7 +3223,7 @@ Name | Type | Description  | Notes
 
 ## getChanges
 
-> InlineResponse20031 getChanges(opts)
+> InlineResponse20032 getChanges(opts)
 
 Get audit logs for an account
 
@@ -3279,7 +3279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**InlineResponse20032**](InlineResponse20032.md)
 
 ### Authorization
 
@@ -3347,7 +3347,7 @@ Name | Type | Description  | Notes
 
 ## getCollectionItems
 
-> InlineResponse20010 getCollectionItems(collectionId, opts)
+> InlineResponse20011 getCollectionItems(collectionId, opts)
 
 Get collection items
 
@@ -3389,7 +3389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -3403,7 +3403,7 @@ Name | Type | Description  | Notes
 
 ## getCouponsWithoutTotalCount
 
-> InlineResponse2006 getCouponsWithoutTotalCount(applicationId, campaignId, opts)
+> InlineResponse2007 getCouponsWithoutTotalCount(applicationId, campaignId, opts)
 
 List coupons
 
@@ -3467,7 +3467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -3543,7 +3543,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerActivityReportsWithoutTotalCount
 
-> InlineResponse20018 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
+> InlineResponse20019 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
 
 Get Activity Reports for Application Customers
 
@@ -3599,7 +3599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -3723,7 +3723,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerProfiles
 
-> InlineResponse20017 getCustomerProfiles(opts)
+> InlineResponse20018 getCustomerProfiles(opts)
 
 List customer profiles
 
@@ -3763,7 +3763,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -3777,7 +3777,7 @@ Name | Type | Description  | Notes
 
 ## getCustomersByAttributes
 
-> InlineResponse20017 getCustomersByAttributes(body, opts)
+> InlineResponse20018 getCustomersByAttributes(body, opts)
 
 List customer profiles matching the given attributes
 
@@ -3819,7 +3819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -3833,7 +3833,7 @@ Name | Type | Description  | Notes
 
 ## getEventTypes
 
-> InlineResponse20029 getEventTypes(opts)
+> InlineResponse20030 getEventTypes(opts)
 
 List event types
 
@@ -3879,7 +3879,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**InlineResponse20030**](InlineResponse20030.md)
 
 ### Authorization
 
@@ -3893,7 +3893,7 @@ Name | Type | Description  | Notes
 
 ## getExports
 
-> InlineResponse20032 getExports(opts)
+> InlineResponse20033 getExports(opts)
 
 Get exports
 
@@ -3939,7 +3939,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**InlineResponse20033**](InlineResponse20033.md)
 
 ### Authorization
 
@@ -4055,7 +4055,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyPrograms
 
-> InlineResponse2008 getLoyaltyPrograms()
+> InlineResponse2009 getLoyaltyPrograms()
 
 List loyalty programs
 
@@ -4087,7 +4087,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -4203,7 +4203,7 @@ Name | Type | Description  | Notes
 
 ## getNotificationWebhooks
 
-> InlineResponse2003 getNotificationWebhooks(applicationId)
+> InlineResponse2004 getNotificationWebhooks(applicationId)
 
 List notification webhooks
 
@@ -4239,7 +4239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -4253,7 +4253,7 @@ Name | Type | Description  | Notes
 
 ## getReferralsWithoutTotalCount
 
-> InlineResponse2007 getReferralsWithoutTotalCount(applicationId, campaignId, opts)
+> InlineResponse2008 getReferralsWithoutTotalCount(applicationId, campaignId, opts)
 
 List referrals
 
@@ -4311,7 +4311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -4429,7 +4429,7 @@ Name | Type | Description  | Notes
 
 ## getRulesets
 
-> InlineResponse2004 getRulesets(applicationId, campaignId, opts)
+> InlineResponse2005 getRulesets(applicationId, campaignId, opts)
 
 List campaign rulesets
 
@@ -4475,7 +4475,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -4539,7 +4539,7 @@ Name | Type | Description  | Notes
 
 ## getUsers
 
-> InlineResponse20030 getUsers(opts)
+> InlineResponse20031 getUsers(opts)
 
 List users in account
 
@@ -4581,7 +4581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**InlineResponse20031**](InlineResponse20031.md)
 
 ### Authorization
 
@@ -4645,7 +4645,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookActivationLogs
 
-> InlineResponse20027 getWebhookActivationLogs(opts)
+> InlineResponse20028 getWebhookActivationLogs(opts)
 
 List webhook activation log entries
 
@@ -4699,7 +4699,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -4713,7 +4713,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookLogs
 
-> InlineResponse20028 getWebhookLogs(opts)
+> InlineResponse20029 getWebhookLogs(opts)
 
 List webhook log entries
 
@@ -4769,7 +4769,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -4783,7 +4783,7 @@ Name | Type | Description  | Notes
 
 ## getWebhooks
 
-> InlineResponse20026 getWebhooks(opts)
+> InlineResponse20027 getWebhooks(opts)
 
 List webhooks
 
@@ -4827,7 +4827,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -5227,7 +5227,7 @@ Name | Type | Description  | Notes
 
 ## listAccountCollections
 
-> InlineResponse2009 listAccountCollections(opts)
+> InlineResponse20010 listAccountCollections(opts)
 
 List collections in account
 
@@ -5273,7 +5273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -5287,7 +5287,7 @@ Name | Type | Description  | Notes
 
 ## listCollections
 
-> InlineResponse20011 listCollections(applicationId, campaignId, opts)
+> InlineResponse20012 listCollections(applicationId, campaignId, opts)
 
 List collections
 
@@ -5337,7 +5337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -5351,7 +5351,7 @@ Name | Type | Description  | Notes
 
 ## listCollectionsInApplication
 
-> InlineResponse20011 listCollectionsInApplication(applicationId, opts)
+> InlineResponse20012 listCollectionsInApplication(applicationId, opts)
 
 List collections in application
 
@@ -5399,7 +5399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -5517,7 +5517,7 @@ Name | Type | Description  | Notes
 
 ## searchCouponsAdvancedApplicationWideWithoutTotalCount
 
-> InlineResponse2006 searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, body, opts)
+> InlineResponse2007 searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, body, opts)
 
 List coupons that match the given attributes (without total count)
 
@@ -5583,7 +5583,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -5597,7 +5597,7 @@ Name | Type | Description  | Notes
 
 ## searchCouponsAdvancedWithoutTotalCount
 
-> InlineResponse2006 searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts)
+> InlineResponse2007 searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts)
 
 List coupons that match the given attributes in campaign (without total count)
 
@@ -5663,7 +5663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 

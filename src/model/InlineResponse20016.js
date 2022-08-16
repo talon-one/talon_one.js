@@ -23,12 +23,11 @@ class InlineResponse20016 {
     /**
      * Constructs a new <code>InlineResponse20016</code>.
      * @alias module:model/InlineResponse20016
-     * @param hasMore {Boolean} 
      * @param data {Array.<module:model/ApplicationCustomer>} 
      */
-    constructor(hasMore, data) { 
+    constructor(data) { 
         
-        InlineResponse20016.initialize(this, hasMore, data);
+        InlineResponse20016.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20016 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -52,6 +50,9 @@ class InlineResponse20016 {
         if (data) {
             obj = obj || new InlineResponse20016();
 
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
@@ -64,6 +65,11 @@ class InlineResponse20016 {
 
 
 }
+
+/**
+ * @member {Number} totalResultSize
+ */
+InlineResponse20016.prototype['totalResultSize'] = undefined;
 
 /**
  * @member {Boolean} hasMore

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.InlineResponse2006();
+    instance = new TalonOne.InlineResponse20034();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,22 @@
       object[property] = value;
   }
 
-  describe('InlineResponse2006', function() {
-    it('should create an instance of InlineResponse2006', function() {
-      // uncomment below and update the code to test InlineResponse2006
-      //var instane = new TalonOne.InlineResponse2006();
-      //expect(instance).to.be.a(TalonOne.InlineResponse2006);
+  describe('InlineResponse20034', function() {
+    it('should create an instance of InlineResponse20034', function() {
+      // uncomment below and update the code to test InlineResponse20034
+      //var instane = new TalonOne.InlineResponse20034();
+      //expect(instance).to.be.a(TalonOne.InlineResponse20034);
     });
 
     it('should have the property totalResultSize (base name: "totalResultSize")', function() {
       // uncomment below and update the code to test the property totalResultSize
-      //var instane = new TalonOne.InlineResponse2006();
+      //var instane = new TalonOne.InlineResponse20034();
       //expect(instance).to.be();
     });
 
     it('should have the property data (base name: "data")', function() {
       // uncomment below and update the code to test the property data
-      //var instane = new TalonOne.InlineResponse2006();
+      //var instane = new TalonOne.InlineResponse20034();
       //expect(instance).to.be();
     });
 
