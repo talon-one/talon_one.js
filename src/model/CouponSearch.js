@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponSearch model module.
  * @module model/CouponSearch
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CouponSearch {
     /**
      * Constructs a new <code>CouponSearch</code>.
      * @alias module:model/CouponSearch
-     * @param attributes {Object} Properties to match against a coupon. All provided attributes will be exactly matched against attributes
+     * @param attributes {Object} Properties to match against a coupon. All provided attributes will be exactly matched against attributes.
      */
     constructor(attributes) { 
         
@@ -60,7 +60,7 @@ class CouponSearch {
 }
 
 /**
- * Properties to match against a coupon. All provided attributes will be exactly matched against attributes
+ * Properties to match against a coupon. All provided attributes will be exactly matched against attributes.
  * @member {Object} attributes
  */
 CouponSearch.prototype['attributes'] = undefined;

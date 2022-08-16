@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The TriggerWebhookEffectProps model module.
  * @module model/TriggerWebhookEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class TriggerWebhookEffectProps {
     /**
      * Constructs a new <code>TriggerWebhookEffectProps</code>.
      * The properties specific to the \&quot;triggerWebhook\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;trigger webhook\&quot; effect. This is communicated as an FYI and should usually not require action on your side.
      * @alias module:model/TriggerWebhookEffectProps
-     * @param webhookId {Number} The ID of the webhook that was triggered
-     * @param webhookName {String} The name of the webhook that was triggered
+     * @param webhookId {Number} The ID of the webhook that was triggered.
+     * @param webhookName {String} The name of the webhook that was triggered.
      */
     constructor(webhookId, webhookName) { 
         
@@ -66,13 +66,13 @@ class TriggerWebhookEffectProps {
 }
 
 /**
- * The ID of the webhook that was triggered
+ * The ID of the webhook that was triggered.
  * @member {Number} webhookId
  */
 TriggerWebhookEffectProps.prototype['webhookId'] = undefined;
 
 /**
- * The name of the webhook that was triggered
+ * The name of the webhook that was triggered.
  * @member {String} webhookName
  */
 TriggerWebhookEffectProps.prototype['webhookName'] = undefined;

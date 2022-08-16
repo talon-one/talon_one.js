@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import WebhookActivationLogEntry from './WebhookActivationLogEntry';
+import AccountAdditionalCost from './AccountAdditionalCost';
 
 /**
  * The InlineResponse20025 model module.
  * @module model/InlineResponse20025
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20025 {
     /**
      * Constructs a new <code>InlineResponse20025</code>.
      * @alias module:model/InlineResponse20025
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/WebhookActivationLogEntry>} 
+     * @param data {Array.<module:model/AccountAdditionalCost>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20025 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WebhookActivationLogEntry]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccountAdditionalCost]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20025 {
 InlineResponse20025.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/WebhookActivationLogEntry>} data
+ * @member {Array.<module:model/AccountAdditionalCost>} data
  */
 InlineResponse20025.prototype['data'] = undefined;
 

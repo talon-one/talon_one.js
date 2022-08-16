@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackCouponEffectProps model module.
  * @module model/RollbackCouponEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RollbackCouponEffectProps {
     /**
      * Constructs a new <code>RollbackCouponEffectProps</code>.
      * The properties specific to the \&quot;rollbackCoupon\&quot; effect. This gets triggered whenever previously closed session is now cancelled and a coupon redemption was cancelled on our internal usage limit counters.
      * @alias module:model/RollbackCouponEffectProps
-     * @param value {String} The coupon code whose usage has been rolled back
+     * @param value {String} The coupon code whose usage has been rolled back.
      */
     constructor(value) { 
         
@@ -61,7 +61,7 @@ class RollbackCouponEffectProps {
 }
 
 /**
- * The coupon code whose usage has been rolled back
+ * The coupon code whose usage has been rolled back.
  * @member {String} value
  */
 RollbackCouponEffectProps.prototype['value'] = undefined;

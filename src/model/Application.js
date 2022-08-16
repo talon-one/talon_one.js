@@ -19,21 +19,21 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Application {
     /**
      * Constructs a new <code>Application</code>.
      * 
      * @alias module:model/Application
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param name {String} The name of this application.
      * @param timezone {String} A string containing an IANA timezone descriptor.
      * @param currency {String} The default currency for new customer sessions.
-     * @param loyaltyPrograms {Array.<module:model/LoyaltyProgram>} An array containing all the loyalty programs to which this application is subscribed
+     * @param loyaltyPrograms {Array.<module:model/LoyaltyProgram>} An array containing all the loyalty programs to which this application is subscribed.
      */
     constructor(id, created, modified, accountId, name, timezone, currency, loyaltyPrograms) { 
         
@@ -138,7 +138,7 @@ class Application {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Application.prototype['id'] = undefined;
@@ -259,7 +259,7 @@ Application.prototype['enablePartialDiscounts'] = undefined;
 Application.prototype['defaultDiscountAdditionalCostPerItemScope'] = undefined;
 
 /**
- * An array containing all the loyalty programs to which this application is subscribed
+ * An array containing all the loyalty programs to which this application is subscribed.
  * @member {Array.<module:model/LoyaltyProgram>} loyaltyPrograms
  */
 Application.prototype['loyaltyPrograms'] = undefined;

@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The Account model module.
  * @module model/Account
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Account {
     /**
      * Constructs a new <code>Account</code>.
      * 
      * @alias module:model/Account
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param companyName {String} 
-     * @param domainName {String} Subdomain Name for yourcompany.talon.one
-     * @param state {module:model/Account.StateEnum} State of the account (active, deactivated)
+     * @param domainName {String} Subdomain Name for yourcompany.talon.one.
+     * @param state {module:model/Account.StateEnum} State of the account (active, deactivated).
      * @param billingEmail {String} The billing email address associated with your company account.
      * @param applicationCount {Number} The current number of Applications in your account.
      * @param userCount {Number} The current number of Campaign Manager Users in your account.
@@ -132,7 +132,7 @@ class Account {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Account.prototype['id'] = undefined;
@@ -155,13 +155,13 @@ Account.prototype['modified'] = undefined;
 Account.prototype['companyName'] = undefined;
 
 /**
- * Subdomain Name for yourcompany.talon.one
+ * Subdomain Name for yourcompany.talon.one.
  * @member {String} domainName
  */
 Account.prototype['domainName'] = undefined;
 
 /**
- * State of the account (active, deactivated)
+ * State of the account (active, deactivated).
  * @member {module:model/Account.StateEnum} state
  */
 Account.prototype['state'] = undefined;
@@ -233,7 +233,7 @@ Account.prototype['campaignsActiveCount'] = undefined;
 Account.prototype['campaignsInactiveCount'] = undefined;
 
 /**
- * Arbitrary properties associated with this campaign
+ * Arbitrary properties associated with this campaign.
  * @member {Object} attributes
  */
 Account.prototype['attributes'] = undefined;

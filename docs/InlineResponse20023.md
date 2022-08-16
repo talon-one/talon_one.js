@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**hasMore** | **Boolean** |  | 
 **totalResultSize** | **Number** |  | 
-**data** | [**[AccountAdditionalCost]**](AccountAdditionalCost.md) |  | 
+**data** | [**[ApplicationReferee]**](ApplicationReferee.md) |  | 
 
 

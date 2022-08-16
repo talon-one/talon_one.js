@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignSetLeafNode model module.
  * @module model/CampaignSetLeafNode
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignSetLeafNode {
     /**
      * Constructs a new <code>CampaignSetLeafNode</code>.
      * @alias module:model/CampaignSetLeafNode
-     * @param type {module:model/CampaignSetLeafNode.TypeEnum} Indicates the node type
+     * @param type {module:model/CampaignSetLeafNode.TypeEnum} Indicates the node type.
      * @param campaignId {Number} ID of the campaign
      */
     constructor(type, campaignId) { 
@@ -65,7 +65,7 @@ class CampaignSetLeafNode {
 }
 
 /**
- * Indicates the node type
+ * Indicates the node type.
  * @member {module:model/CampaignSetLeafNode.TypeEnum} type
  */
 CampaignSetLeafNode.prototype['type'] = undefined;

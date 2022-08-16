@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The NewRole model module.
  * @module model/NewRole
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewRole {
     /**
      * Constructs a new <code>NewRole</code>.
      * 
      * @alias module:model/NewRole
-     * @param name {String} Name of the role
-     * @param acl {String} Role Policy this should be a stringified blob of json
-     * @param members {Array.<Number>} An array of user identifiers
+     * @param name {String} Name of the role.
+     * @param acl {String} Role Policy this should be a stringified blob of json.
+     * @param members {Array.<Number>} An array of user identifiers.
      */
     constructor(name, acl, members) { 
         
@@ -74,25 +74,25 @@ class NewRole {
 }
 
 /**
- * Name of the role
+ * Name of the role.
  * @member {String} name
  */
 NewRole.prototype['name'] = undefined;
 
 /**
- * Description of the role
+ * Description of the role.
  * @member {String} description
  */
 NewRole.prototype['description'] = undefined;
 
 /**
- * Role Policy this should be a stringified blob of json
+ * Role Policy this should be a stringified blob of json.
  * @member {String} acl
  */
 NewRole.prototype['acl'] = undefined;
 
 /**
- * An array of user identifiers
+ * An array of user identifiers.
  * @member {Array.<Number>} members
  */
 NewRole.prototype['members'] = undefined;

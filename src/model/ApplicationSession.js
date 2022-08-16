@@ -17,20 +17,20 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ApplicationSession {
     /**
      * Constructs a new <code>ApplicationSession</code>.
      * 
      * @alias module:model/ApplicationSession
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created. The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
+     * @param integrationId {String} The integration ID set by your integration layer.
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
-     * @param state {module:model/ApplicationSession.StateEnum} Indicating if the customer session is in progress (`open`), `closed`, or `cancelled`. For more information about customer sessions, see [Customer sessions](/docs/dev/concepts/entities#customer-session-states) in the docs. 
+     * @param state {module:model/ApplicationSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
      * @param discounts {Object.<String, Number>} **API V1 only.** A map of labeled discount values, in the same currency as the session.  If you are using the V2 endpoints, refer to the `totalDiscounts` property instead. 
      * @param totalDiscounts {Number} The total sum of the discounts applied to this session.
@@ -121,7 +121,7 @@ class ApplicationSession {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 ApplicationSession.prototype['id'] = undefined;
@@ -145,7 +145,7 @@ ApplicationSession.prototype['applicationId'] = undefined;
 ApplicationSession.prototype['profileId'] = undefined;
 
 /**
- * The integration ID for this entity sent to and used in the Talon.One system.
+ * The integration ID set by your integration layer.
  * @member {String} integrationId
  */
 ApplicationSession.prototype['integrationId'] = undefined;
@@ -169,7 +169,7 @@ ApplicationSession.prototype['coupon'] = undefined;
 ApplicationSession.prototype['referral'] = undefined;
 
 /**
- * Indicating if the customer session is in progress (`open`), `closed`, or `cancelled`. For more information about customer sessions, see [Customer sessions](/docs/dev/concepts/entities#customer-session-states) in the docs. 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
  * @member {module:model/ApplicationSession.StateEnum} state
  */
 ApplicationSession.prototype['state'] = undefined;
@@ -199,7 +199,7 @@ ApplicationSession.prototype['totalDiscounts'] = undefined;
 ApplicationSession.prototype['total'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 ApplicationSession.prototype['attributes'] = undefined;

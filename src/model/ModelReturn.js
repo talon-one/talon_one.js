@@ -17,18 +17,18 @@ import ReturnedCartItem from './ReturnedCartItem';
 /**
  * The ModelReturn model module.
  * @module model/ModelReturn
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ModelReturn {
     /**
      * Constructs a new <code>ModelReturn</code>.
      * 
      * @alias module:model/ModelReturn
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param returnedCartItems {Array.<module:model/ReturnedCartItem>} List of cart items to be returned
+     * @param returnedCartItems {Array.<module:model/ReturnedCartItem>} List of cart items to be returned.
      * @param eventId {Number} The event ID of that was generated for this return.
      * @param sessionId {Number} The internal ID of the session this return was requested on.
      * @param sessionIntegrationId {String} The integration ID of the session this return was requested on.
@@ -106,7 +106,7 @@ class ModelReturn {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 ModelReturn.prototype['id'] = undefined;
@@ -130,7 +130,7 @@ ModelReturn.prototype['applicationId'] = undefined;
 ModelReturn.prototype['accountId'] = undefined;
 
 /**
- * List of cart items to be returned
+ * List of cart items to be returned.
  * @member {Array.<module:model/ReturnedCartItem>} returnedCartItems
  */
 ModelReturn.prototype['returnedCartItems'] = undefined;

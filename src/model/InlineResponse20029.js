@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Change from './Change';
+import EventType from './EventType';
 
 /**
  * The InlineResponse20029 model module.
  * @module model/InlineResponse20029
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20029 {
     /**
      * Constructs a new <code>InlineResponse20029</code>.
      * @alias module:model/InlineResponse20029
-     * @param data {Array.<module:model/Change>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/EventType>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20029.initialize(this, data);
+        InlineResponse20029.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20029 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse20029 {
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Change]);
+                obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
             }
         }
         return obj;
@@ -72,12 +71,7 @@ class InlineResponse20029 {
 InlineResponse20029.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20029.prototype['hasMore'] = undefined;
-
-/**
- * @member {Array.<module:model/Change>} data
+ * @member {Array.<module:model/EventType>} data
  */
 InlineResponse20029.prototype['data'] = undefined;
 

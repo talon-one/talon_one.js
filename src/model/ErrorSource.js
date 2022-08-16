@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorSource model module.
  * @module model/ErrorSource
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ErrorSource {
     /**
@@ -86,7 +86,7 @@ ErrorSource.prototype['parameter'] = undefined;
 ErrorSource.prototype['line'] = undefined;
 
 /**
- * Pointer to the resource that caused this error
+ * Pointer to the resource that caused this error.
  * @member {String} resource
  */
 ErrorSource.prototype['resource'] = undefined;

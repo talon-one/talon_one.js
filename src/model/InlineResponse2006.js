@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Referral from './Referral';
+import Coupon from './Coupon';
 
 /**
  * The InlineResponse2006 model module.
  * @module model/InlineResponse2006
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse2006 {
     /**
      * Constructs a new <code>InlineResponse2006</code>.
      * @alias module:model/InlineResponse2006
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/Referral>} 
+     * @param data {Array.<module:model/Coupon>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2006 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Referral]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2006 {
 InlineResponse2006.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/Referral>} data
+ * @member {Array.<module:model/Coupon>} data
  */
 InlineResponse2006.prototype['data'] = undefined;
 

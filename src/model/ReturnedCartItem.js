@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReturnedCartItem model module.
  * @module model/ReturnedCartItem
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ReturnedCartItem {
     /**

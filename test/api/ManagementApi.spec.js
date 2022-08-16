@@ -148,6 +148,16 @@
         done();
       });
     });
+    describe('createNotificationWebhook', function() {
+      it('should call createNotificationWebhook successfully', function(done) {
+        //uncomment below and update the code to test createNotificationWebhook
+        //instance.createNotificationWebhook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPasswordRecoveryEmail', function() {
       it('should call createPasswordRecoveryEmail successfully', function(done) {
         //uncomment below and update the code to test createPasswordRecoveryEmail
@@ -218,10 +228,10 @@
         done();
       });
     });
-    describe('deleteLoyaltyCard', function() {
-      it('should call deleteLoyaltyCard successfully', function(done) {
-        //uncomment below and update the code to test deleteLoyaltyCard
-        //instance.deleteLoyaltyCard(function(error) {
+    describe('deleteNotificationWebhook', function() {
+      it('should call deleteNotificationWebhook successfully', function(done) {
+        //uncomment below and update the code to test deleteNotificationWebhook
+        //instance.deleteNotificationWebhook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -608,6 +618,16 @@
         done();
       });
     });
+    describe('getCollectionItems', function() {
+      it('should call getCollectionItems successfully', function(done) {
+        //uncomment below and update the code to test getCollectionItems
+        //instance.getCollectionItems(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCouponsWithoutTotalCount', function() {
       it('should call getCouponsWithoutTotalCount successfully', function(done) {
         //uncomment below and update the code to test getCouponsWithoutTotalCount
@@ -732,6 +752,26 @@
       it('should call getLoyaltyStatistics successfully', function(done) {
         //uncomment below and update the code to test getLoyaltyStatistics
         //instance.getLoyaltyStatistics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getNotificationWebhook', function() {
+      it('should call getNotificationWebhook successfully', function(done) {
+        //uncomment below and update the code to test getNotificationWebhook
+        //instance.getNotificationWebhook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getNotificationWebhooks', function() {
+      it('should call getNotificationWebhooks successfully', function(done) {
+        //uncomment below and update the code to test getNotificationWebhooks
+        //instance.getNotificationWebhooks(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1042,6 +1082,16 @@
       it('should call updateCouponBatch successfully', function(done) {
         //uncomment below and update the code to test updateCouponBatch
         //instance.updateCouponBatch(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateNotificationWebhook', function() {
+      it('should call updateNotificationWebhook successfully', function(done) {
+        //uncomment below and update the code to test updateNotificationWebhook
+        //instance.updateNotificationWebhook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

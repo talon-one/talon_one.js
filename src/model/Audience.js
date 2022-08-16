@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Audience model module.
  * @module model/Audience
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Audience {
     /**
@@ -24,7 +24,7 @@ class Audience {
      * 
      * @alias module:model/Audience
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param name {String} The human-friendly display name for this audience.
      */
@@ -68,11 +68,20 @@ class Audience {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('sandbox')) {
+                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('integration')) {
                 obj['integration'] = ApiClient.convertToType(data['integration'], 'String');
             }
             if (data.hasOwnProperty('integrationId')) {
                 obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
+            }
+            if (data.hasOwnProperty('createdIn3rdParty')) {
+                obj['createdIn3rdParty'] = ApiClient.convertToType(data['createdIn3rdParty'], 'Boolean');
             }
         }
         return obj;
@@ -88,7 +97,7 @@ class Audience {
 Audience.prototype['accountId'] = undefined;
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Audience.prototype['id'] = undefined;
@@ -106,16 +115,34 @@ Audience.prototype['created'] = undefined;
 Audience.prototype['name'] = undefined;
 
 /**
- * The 3rd-party platform that this audience was created in. For example, mParticle.
+ * Indicates if this is a live or sandbox Application.
+ * @member {Boolean} sandbox
+ */
+Audience.prototype['sandbox'] = undefined;
+
+/**
+ * A description of the audience.
+ * @member {String} description
+ */
+Audience.prototype['description'] = undefined;
+
+/**
+ * The Talon.One-supported [3rd-party platform](https://docs.talon.one/docs/dev/technology-partners/overview) that this audience was created in.  For example, `mParticle`, `Segment`, `Selligent`, `Braze`, or `Iterable`.  **Note:** If you do not integrate with any of these platforms, do not use this property. 
  * @member {String} integration
  */
 Audience.prototype['integration'] = undefined;
 
 /**
- * The ID of this audience in the third-party integration.
+ * The ID of this audience in the third-party integration.  **Note:** To create an audience that doesn't come from a 3rd party platform, do not use this property. 
  * @member {String} integrationId
  */
 Audience.prototype['integrationId'] = undefined;
+
+/**
+ * Determines if this audience is a 3rd party audience or not.
+ * @member {Boolean} createdIn3rdParty
+ */
+Audience.prototype['createdIn3rdParty'] = undefined;
 
 
 

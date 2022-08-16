@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Change model module.
  * @module model/Change
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Change {
     /**
      * Constructs a new <code>Change</code>.
      * 
      * @alias module:model/Change
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param userId {Number} The ID of the account that owns this entity.
      * @param entity {String} API endpoint on which the change was initiated.
@@ -85,7 +85,7 @@ class Change {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Change.prototype['id'] = undefined;
@@ -103,7 +103,7 @@ Change.prototype['created'] = undefined;
 Change.prototype['userId'] = undefined;
 
 /**
- * ID of application associated with change
+ * ID of application associated with change.
  * @member {Number} applicationId
  */
 Change.prototype['applicationId'] = undefined;

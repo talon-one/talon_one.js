@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewGiveawaysPool model module.
  * @module model/NewGiveawaysPool
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewGiveawaysPool {
     /**
@@ -78,7 +78,7 @@ NewGiveawaysPool.prototype['name'] = undefined;
 NewGiveawaysPool.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that this giveaways pool is enabled for
+ * A list of the IDs of the applications that this giveaways pool is enabled for.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 NewGiveawaysPool.prototype['subscribedApplicationsIds'] = undefined;

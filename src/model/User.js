@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 4.5.0
+ * @version 4.6.0
  */
 class User {
     /**
      * Constructs a new <code>User</code>.
      * 
      * @alias module:model/User
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param email {String} The email address associated with your account.
@@ -113,7 +113,7 @@ class User {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 User.prototype['id'] = undefined;
@@ -173,7 +173,7 @@ User.prototype['policy'] = undefined;
 User.prototype['latestFeedTimestamp'] = undefined;
 
 /**
- * Contains a list of all roles the user is a member of
+ * Contains a list of all roles the user is a member of.
  * @member {Array.<Number>} roles
  */
 User.prototype['roles'] = undefined;
@@ -184,7 +184,7 @@ User.prototype['roles'] = undefined;
 User.prototype['applicationNotificationSubscriptions'] = undefined;
 
 /**
- * The Authentication method for this user
+ * The Authentication method for this user.
  * @member {String} authMethod
  */
 User.prototype['authMethod'] = undefined;

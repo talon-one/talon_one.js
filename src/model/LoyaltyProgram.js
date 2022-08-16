@@ -17,21 +17,21 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyProgram {
     /**
      * Constructs a new <code>LoyaltyProgram</code>.
      * 
      * @alias module:model/LoyaltyProgram
-     * @param id {Number} The ID of loyalty program. Unique ID for this entity.
+     * @param id {Number} The ID of loyalty program. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param title {String} The display title for the Loyalty Program.
      * @param description {String} Description of our Loyalty Program.
      * @param subscribedApplications {Array.<Number>} A list containing the IDs of all applications that are subscribed to this Loyalty Program.
      * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
      * @param defaultPending {String} Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
-     * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
+     * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program.
      * @param accountID {Number} The ID of the Talon.One account that owns this program.
      * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
      * @param timezone {String} A string containing an IANA timezone descriptor.
@@ -123,7 +123,7 @@ class LoyaltyProgram {
 }
 
 /**
- * The ID of loyalty program. Unique ID for this entity.
+ * The ID of loyalty program. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 LoyaltyProgram.prototype['id'] = undefined;
@@ -165,7 +165,7 @@ LoyaltyProgram.prototype['defaultValidity'] = undefined;
 LoyaltyProgram.prototype['defaultPending'] = undefined;
 
 /**
- * Indicates if this program supports subledgers inside the program
+ * Indicates if this program supports subledgers inside the program.
  * @member {Boolean} allowSubledger
  */
 LoyaltyProgram.prototype['allowSubledger'] = undefined;

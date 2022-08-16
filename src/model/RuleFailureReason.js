@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleFailureReason model module.
  * @module model/RuleFailureReason
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RuleFailureReason {
     /**
      * Constructs a new <code>RuleFailureReason</code>.
      * Details about why a rule failed.
      * @alias module:model/RuleFailureReason
-     * @param campaignID {Number} The ID of the campaign that contains the rule that failed
-     * @param campaignName {String} The name of the campaign that contains the rule that failed
-     * @param rulesetID {Number} The ID of the ruleset that contains the rule that failed
-     * @param ruleIndex {Number} The index of the rule that failed within the ruleset
-     * @param ruleName {String} The name of the rule that failed within the ruleset
+     * @param campaignID {Number} The ID of the campaign that contains the rule that failed.
+     * @param campaignName {String} The name of the campaign that contains the rule that failed.
+     * @param rulesetID {Number} The ID of the ruleset that contains the rule that failed.
+     * @param ruleIndex {Number} The index of the rule that failed within the ruleset.
+     * @param ruleName {String} The name of the rule that failed within the ruleset.
      */
     constructor(campaignID, campaignName, rulesetID, ruleIndex, ruleName) { 
         
@@ -102,73 +102,73 @@ class RuleFailureReason {
 }
 
 /**
- * The ID of the campaign that contains the rule that failed
+ * The ID of the campaign that contains the rule that failed.
  * @member {Number} campaignID
  */
 RuleFailureReason.prototype['campaignID'] = undefined;
 
 /**
- * The name of the campaign that contains the rule that failed
+ * The name of the campaign that contains the rule that failed.
  * @member {String} campaignName
  */
 RuleFailureReason.prototype['campaignName'] = undefined;
 
 /**
- * The ID of the ruleset that contains the rule that failed
+ * The ID of the ruleset that contains the rule that failed.
  * @member {Number} rulesetID
  */
 RuleFailureReason.prototype['rulesetID'] = undefined;
 
 /**
- * The ID of the coupon that was being evaluated at the time of the rule failure
+ * The ID of the coupon that was being evaluated at the time of the rule failure.
  * @member {Number} couponID
  */
 RuleFailureReason.prototype['couponID'] = undefined;
 
 /**
- * The value of the coupon that was being evaluated at the time of the rule failure
+ * The code of the coupon that was being evaluated at the time of the rule failure.
  * @member {String} couponValue
  */
 RuleFailureReason.prototype['couponValue'] = undefined;
 
 /**
- * The ID of the referral that was being evaluated at the time of the rule failure
+ * The ID of the referral that was being evaluated at the time of the rule failure.
  * @member {Number} referralID
  */
 RuleFailureReason.prototype['referralID'] = undefined;
 
 /**
- * The value of the referral that was being evaluated at the time of the rule failure
+ * The code of the referral that was being evaluated at the time of the rule failure.
  * @member {String} referralValue
  */
 RuleFailureReason.prototype['referralValue'] = undefined;
 
 /**
- * The index of the rule that failed within the ruleset
+ * The index of the rule that failed within the ruleset.
  * @member {Number} ruleIndex
  */
 RuleFailureReason.prototype['ruleIndex'] = undefined;
 
 /**
- * The name of the rule that failed within the ruleset
+ * The name of the rule that failed within the ruleset.
  * @member {String} ruleName
  */
 RuleFailureReason.prototype['ruleName'] = undefined;
 
 /**
- * The index of the condition that failed
+ * The index of the condition that failed.
  * @member {Number} conditionIndex
  */
 RuleFailureReason.prototype['conditionIndex'] = undefined;
 
 /**
- * The index of the effect that failed
+ * The index of the effect that failed.
  * @member {Number} effectIndex
  */
 RuleFailureReason.prototype['effectIndex'] = undefined;
 
 /**
- * More details about the failure
+ * More details about the failure.
  * @member {String} details
  */
 RuleFailureReason.prototype['details'] = undefined;

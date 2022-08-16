@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAttribute model module.
  * @module model/NewAttribute
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewAttribute {
     /**
@@ -95,6 +95,12 @@ class NewAttribute {
             if (data.hasOwnProperty('subscribedApplicationsIds')) {
                 obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
             }
+            if (data.hasOwnProperty('subscribedCatalogsIds')) {
+                obj['subscribedCatalogsIds'] = ApiClient.convertToType(data['subscribedCatalogsIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('allowedSubscriptions')) {
+                obj['allowedSubscriptions'] = ApiClient.convertToType(data['allowedSubscriptions'], ['String']);
+            }
         }
         return obj;
     }
@@ -164,10 +170,22 @@ NewAttribute.prototype['restrictedBySuggestions'] = false;
 NewAttribute.prototype['editable'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this attribute
+ * A list of the IDs of the applications where this attribute is available.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 NewAttribute.prototype['subscribedApplicationsIds'] = undefined;
+
+/**
+ * A list of the IDs of the catalogs where this attribute is available.
+ * @member {Array.<Number>} subscribedCatalogsIds
+ */
+NewAttribute.prototype['subscribedCatalogsIds'] = undefined;
+
+/**
+ * A list of allowed subscription types for this attribute.  **Note:** This only applies to attributes associated with the `CartItem` entity. 
+ * @member {Array.<module:model/NewAttribute.AllowedSubscriptionsEnum>} allowedSubscriptions
+ */
+NewAttribute.prototype['allowedSubscriptions'] = undefined;
 
 
 
@@ -302,6 +320,27 @@ NewAttribute['TypeEnum'] = {
      * @const
      */
     "(list location)": "(list location)"
+};
+
+
+/**
+ * Allowed values for the <code>allowedSubscriptions</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewAttribute['AllowedSubscriptionsEnum'] = {
+
+    /**
+     * value: "application"
+     * @const
+     */
+    "application": "application",
+
+    /**
+     * value: "catalog"
+     * @const
+     */
+    "catalog": "catalog"
 };
 
 

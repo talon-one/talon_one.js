@@ -17,13 +17,13 @@ import ReturnedCartItem from './ReturnedCartItem';
 /**
  * The NewReturn model module.
  * @module model/NewReturn
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewReturn {
     /**
      * Constructs a new <code>NewReturn</code>.
      * @alias module:model/NewReturn
-     * @param returnedCartItems {Array.<module:model/ReturnedCartItem>} List of cart items to be returned
+     * @param returnedCartItems {Array.<module:model/ReturnedCartItem>} List of cart items to be returned.
      */
     constructor(returnedCartItems) { 
         
@@ -61,7 +61,7 @@ class NewReturn {
 }
 
 /**
- * List of cart items to be returned
+ * List of cart items to be returned.
  * @member {Array.<module:model/ReturnedCartItem>} returnedCartItems
  */
 NewReturn.prototype['returnedCartItems'] = undefined;

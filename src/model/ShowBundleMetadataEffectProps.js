@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The ShowBundleMetadataEffectProps model module.
  * @module model/ShowBundleMetadataEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ShowBundleMetadataEffectProps {
     /**
      * Constructs a new <code>ShowBundleMetadataEffectProps</code>.
-     * The properties specific to the \&quot;ShowBundleMetadata\&quot; effect. This effect contains information that allows you to associate the discounts from a rule in a bundle campaign with specific cart items. This way you can distinguish from \&quot;normal\&quot; discounts that were not the result of a product bundle.
+     * This effect is **deprecated**. The properties specific to the \&quot;ShowBundleMetadata\&quot; effect. This effect contains information that allows you to associate the discounts from a rule in a bundle campaign with specific cart items. This way you can distinguish from \&quot;normal\&quot; discounts that were not the result of a product bundle. 
      * @alias module:model/ShowBundleMetadataEffectProps
-     * @param description {String} Description of the product bundle
-     * @param bundleAttributes {Array.<String>} The cart item attributes that determined which items are being bundled together
-     * @param itemsIndices {Array.<Number>} The indices in the cart items array of the bundled items
+     * @param description {String} Description of the product bundle.
+     * @param bundleAttributes {Array.<String>} The cart item attributes that determined which items are being bundled together.
+     * @param itemsIndices {Array.<Number>} The indices in the cart items array of the bundled items.
      */
     constructor(description, bundleAttributes, itemsIndices) { 
         
@@ -71,19 +71,19 @@ class ShowBundleMetadataEffectProps {
 }
 
 /**
- * Description of the product bundle
+ * Description of the product bundle.
  * @member {String} description
  */
 ShowBundleMetadataEffectProps.prototype['description'] = undefined;
 
 /**
- * The cart item attributes that determined which items are being bundled together
+ * The cart item attributes that determined which items are being bundled together.
  * @member {Array.<String>} bundleAttributes
  */
 ShowBundleMetadataEffectProps.prototype['bundleAttributes'] = undefined;
 
 /**
- * The indices in the cart items array of the bundled items
+ * The indices in the cart items array of the bundled items.
  * @member {Array.<Number>} itemsIndices
  */
 ShowBundleMetadataEffectProps.prototype['itemsIndices'] = undefined;

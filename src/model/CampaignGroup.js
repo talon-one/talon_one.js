@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignGroup model module.
  * @module model/CampaignGroup
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignGroup {
     /**
      * Constructs a new <code>CampaignGroup</code>.
      * 
      * @alias module:model/CampaignGroup
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param accountId {Number} The ID of the account that owns this entity.
@@ -90,7 +90,7 @@ class CampaignGroup {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 CampaignGroup.prototype['id'] = undefined;
@@ -126,13 +126,13 @@ CampaignGroup.prototype['name'] = undefined;
 CampaignGroup.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that this campaign group is enabled for
+ * A list of the IDs of the applications that this campaign group is enabled for.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 CampaignGroup.prototype['subscribedApplicationsIds'] = undefined;
 
 /**
- * A list of the IDs of the campaigns that this campaign group owns
+ * A list of the IDs of the campaigns that this campaign group owns.
  * @member {Array.<Number>} campaignIds
  */
 CampaignGroup.prototype['campaignIds'] = undefined;

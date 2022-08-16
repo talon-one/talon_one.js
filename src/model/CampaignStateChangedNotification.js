@@ -17,7 +17,7 @@ import Campaign from './Campaign';
 /**
  * The CampaignStateChangedNotification model module.
  * @module model/CampaignStateChangedNotification
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignStateChangedNotification {
     /**

@@ -17,16 +17,16 @@ import LedgerInfo from './LedgerInfo';
 /**
  * The LoyaltyProgramLedgers model module.
  * @module model/LoyaltyProgramLedgers
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyProgramLedgers {
     /**
      * Constructs a new <code>LoyaltyProgramLedgers</code>.
      * Customer specific information about loyalty points.
      * @alias module:model/LoyaltyProgramLedgers
-     * @param id {Number} The internal ID of loyalty program
-     * @param title {String} Visible name of loyalty program
-     * @param name {String} Internal name of loyalty program
+     * @param id {Number} The internal ID of loyalty program.
+     * @param title {String} Visible name of loyalty program.
+     * @param name {String} Internal name of loyalty program.
      * @param ledger {module:model/LedgerInfo} 
      */
     constructor(id, title, name, ledger) { 
@@ -80,19 +80,19 @@ class LoyaltyProgramLedgers {
 }
 
 /**
- * The internal ID of loyalty program
+ * The internal ID of loyalty program.
  * @member {Number} id
  */
 LoyaltyProgramLedgers.prototype['id'] = undefined;
 
 /**
- * Visible name of loyalty program
+ * Visible name of loyalty program.
  * @member {String} title
  */
 LoyaltyProgramLedgers.prototype['title'] = undefined;
 
 /**
- * Internal name of loyalty program
+ * Internal name of loyalty program.
  * @member {String} name
  */
 LoyaltyProgramLedgers.prototype['name'] = undefined;
@@ -103,7 +103,7 @@ LoyaltyProgramLedgers.prototype['name'] = undefined;
 LoyaltyProgramLedgers.prototype['ledger'] = undefined;
 
 /**
- * A map containing information about each loyalty subledger
+ * A map containing information about each loyalty subledger.
  * @member {Object.<String, module:model/LedgerInfo>} subLedgers
  */
 LoyaltyProgramLedgers.prototype['subLedgers'] = undefined;

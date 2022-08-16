@@ -17,14 +17,14 @@ import LimitConfig from './LimitConfig';
 /**
  * The Coupon model module.
  * @module model/Coupon
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Coupon {
     /**
      * Constructs a new <code>Coupon</code>.
      * 
      * @alias module:model/Coupon
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param value {String} The coupon code.
@@ -123,7 +123,7 @@ class Coupon {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Coupon.prototype['id'] = undefined;

@@ -18,20 +18,20 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ApplicationCustomer {
     /**
      * Constructs a new <code>ApplicationCustomer</code>.
      * 
      * @alias module:model/ApplicationCustomer
-     * @param id {Number} Unique ID for this entity. Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
-     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system. The integration ID for this entity sent to and used in the Talon.One system.
-     * @param attributes {Object} Arbitrary properties associated with this item
+     * @param integrationId {String} The integration ID set by your integration layer. The integration ID set by your integration layer.
+     * @param attributes {Object} Arbitrary properties associated with this item.
      * @param accountId {Number} The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile.
      * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
-     * @param totalSales {Number} Sum of all purchases made by this customer
+     * @param totalSales {Number} Sum of all purchases made by this customer.
      * @param lastActivity {Date} Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api/#operation/createCouponReservation) for a customer doesn't impact this field. 
      */
     constructor(id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity) { 
@@ -107,7 +107,7 @@ class ApplicationCustomer {
 }
 
 /**
- * Unique ID for this entity. Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 ApplicationCustomer.prototype['id'] = undefined;
@@ -119,13 +119,13 @@ ApplicationCustomer.prototype['id'] = undefined;
 ApplicationCustomer.prototype['created'] = undefined;
 
 /**
- * The integration ID for this entity sent to and used in the Talon.One system. The integration ID for this entity sent to and used in the Talon.One system.
+ * The integration ID set by your integration layer. The integration ID set by your integration layer.
  * @member {String} integrationId
  */
 ApplicationCustomer.prototype['integrationId'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 ApplicationCustomer.prototype['attributes'] = undefined;
@@ -143,7 +143,7 @@ ApplicationCustomer.prototype['accountId'] = undefined;
 ApplicationCustomer.prototype['closedSessions'] = undefined;
 
 /**
- * Sum of all purchases made by this customer
+ * Sum of all purchases made by this customer.
  * @member {Number} totalSales
  */
 ApplicationCustomer.prototype['totalSales'] = undefined;
@@ -155,7 +155,7 @@ ApplicationCustomer.prototype['totalSales'] = undefined;
 ApplicationCustomer.prototype['loyaltyMemberships'] = undefined;
 
 /**
- * A list of audiences the customer belongs to
+ * A list of audiences the customer belongs to.
  * @member {Array.<module:model/AudienceMembership>} audienceMemberships
  */
 ApplicationCustomer.prototype['audienceMemberships'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCatalog model module.
  * @module model/UpdateCatalog
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateCatalog {
     /**
@@ -64,13 +64,13 @@ class UpdateCatalog {
 }
 
 /**
- * A description of this cart items catalog.
+ * A description of this cart item catalog.
  * @member {String} description
  */
 UpdateCatalog.prototype['description'] = undefined;
 
 /**
- * Name of this cart items catalog.
+ * Name of this cart item catalog.
  * @member {String} name
  */
 UpdateCatalog.prototype['name'] = undefined;

@@ -17,7 +17,7 @@ import CampaignNotification from './CampaignNotification';
 /**
  * The BulkCampaignNotification model module.
  * @module model/BulkCampaignNotification
- * @version 4.5.0
+ * @version 4.6.0
  */
 class BulkCampaignNotification {
     /**

@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 4.5.0
+ * @version 4.6.0
  */
 class EffectEntity {
     /**
      * Constructs a new <code>EffectEntity</code>.
-     * Definition of all properties that are present on all effects, independent of their type
+     * Definition of all properties that are present on all effects, independent of their type.
      * @alias module:model/EffectEntity
-     * @param campaignId {Number} The ID of the campaign that triggered this effect
-     * @param rulesetId {Number} The ID of the ruleset that was active in the campaign when this effect was triggered
-     * @param ruleIndex {Number} The position of the rule that triggered this effect within the ruleset
-     * @param ruleName {String} The name of the rule that triggered this effect
-     * @param effectType {String} The type of effect that was triggered
+     * @param campaignId {Number} The ID of the campaign that triggered this effect.
+     * @param rulesetId {Number} The ID of the ruleset that was active in the campaign when this effect was triggered.
+     * @param ruleIndex {Number} The position of the rule that triggered this effect within the ruleset.
+     * @param ruleName {String} The name of the rule that triggered this effect.
+     * @param effectType {String} The type of effect that was triggered.
      */
     constructor(campaignId, rulesetId, ruleIndex, ruleName, effectType) { 
         
@@ -76,6 +76,9 @@ class EffectEntity {
             if (data.hasOwnProperty('triggeredByCoupon')) {
                 obj['triggeredByCoupon'] = ApiClient.convertToType(data['triggeredByCoupon'], 'Number');
             }
+            if (data.hasOwnProperty('triggeredForCatalogItem')) {
+                obj['triggeredForCatalogItem'] = ApiClient.convertToType(data['triggeredForCatalogItem'], 'Number');
+            }
         }
         return obj;
     }
@@ -84,40 +87,46 @@ class EffectEntity {
 }
 
 /**
- * The ID of the campaign that triggered this effect
+ * The ID of the campaign that triggered this effect.
  * @member {Number} campaignId
  */
 EffectEntity.prototype['campaignId'] = undefined;
 
 /**
- * The ID of the ruleset that was active in the campaign when this effect was triggered
+ * The ID of the ruleset that was active in the campaign when this effect was triggered.
  * @member {Number} rulesetId
  */
 EffectEntity.prototype['rulesetId'] = undefined;
 
 /**
- * The position of the rule that triggered this effect within the ruleset
+ * The position of the rule that triggered this effect within the ruleset.
  * @member {Number} ruleIndex
  */
 EffectEntity.prototype['ruleIndex'] = undefined;
 
 /**
- * The name of the rule that triggered this effect
+ * The name of the rule that triggered this effect.
  * @member {String} ruleName
  */
 EffectEntity.prototype['ruleName'] = undefined;
 
 /**
- * The type of effect that was triggered
+ * The type of effect that was triggered.
  * @member {String} effectType
  */
 EffectEntity.prototype['effectType'] = undefined;
 
 /**
- * The ID of the coupon that was being evaluated when this effect was triggered
+ * The ID of the coupon that was being evaluated when this effect was triggered.
  * @member {Number} triggeredByCoupon
  */
 EffectEntity.prototype['triggeredByCoupon'] = undefined;
+
+/**
+ * The ID of the catalog item that was being evaluated when this effect was triggered.
+ * @member {Number} triggeredForCatalogItem
+ */
+EffectEntity.prototype['triggeredForCatalogItem'] = undefined;
 
 
 

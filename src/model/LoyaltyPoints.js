@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyPoints model module.
  * @module model/LoyaltyPoints
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyPoints {
     /**
      * Constructs a new <code>LoyaltyPoints</code>.
-     * Points to add or deduct
+     * Points to add or deduct.
      * @alias module:model/LoyaltyPoints
-     * @param points {Number} Amount of loyalty points
+     * @param points {Number} Amount of loyalty points.
      */
     constructor(points) { 
         
@@ -73,13 +73,13 @@ class LoyaltyPoints {
 }
 
 /**
- * Amount of loyalty points
+ * Amount of loyalty points.
  * @member {Number} points
  */
 LoyaltyPoints.prototype['points'] = undefined;
 
 /**
- * Allows to specify a name for the addition or deduction
+ * Allows to specify a name/reason for the point addition or deduction.
  * @member {String} name
  */
 LoyaltyPoints.prototype['name'] = undefined;
@@ -97,7 +97,7 @@ LoyaltyPoints.prototype['validityDuration'] = undefined;
 LoyaltyPoints.prototype['pendingDuration'] = undefined;
 
 /**
- * This specifies if we are adding loyalty points to the main ledger or a subledger
+ * This specifies if we are adding loyalty points to the main ledger or a subledger.
  * @member {String} subLedgerID
  */
 LoyaltyPoints.prototype['subLedgerID'] = undefined;

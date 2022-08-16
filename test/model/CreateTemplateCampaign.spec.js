@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignGroups (base name: "campaignGroups")', function() {
+      // uncomment below and update the code to test the property campaignGroups
+      //var instane = new TalonOne.CreateTemplateCampaign();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
       //var instane = new TalonOne.CreateTemplateCampaign();

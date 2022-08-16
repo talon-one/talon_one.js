@@ -16,17 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The WebhookActivationLogEntry model module.
  * @module model/WebhookActivationLogEntry
- * @version 4.5.0
+ * @version 4.6.0
  */
 class WebhookActivationLogEntry {
     /**
      * Constructs a new <code>WebhookActivationLogEntry</code>.
-     * Log of activated webhooks
+     * Log of activated webhooks.
      * @alias module:model/WebhookActivationLogEntry
-     * @param integrationRequestUuid {String} UUID reference of the integration request that triggered the effect with the webhook
-     * @param webhookId {Number} ID of the webhook that triggered the request
-     * @param applicationId {Number} ID of the application that triggered the webhook
-     * @param campaignId {Number} ID of the campaign that triggered the webhook
+     * @param integrationRequestUuid {String} UUID reference of the integration request that triggered the effect with the webhook.
+     * @param webhookId {Number} ID of the webhook that triggered the request.
+     * @param applicationId {Number} ID of the application that triggered the webhook.
+     * @param campaignId {Number} ID of the campaign that triggered the webhook.
      * @param created {Date} Timestamp of request
      */
     constructor(integrationRequestUuid, webhookId, applicationId, campaignId, created) { 
@@ -81,25 +81,25 @@ class WebhookActivationLogEntry {
 }
 
 /**
- * UUID reference of the integration request that triggered the effect with the webhook
+ * UUID reference of the integration request that triggered the effect with the webhook.
  * @member {String} integrationRequestUuid
  */
 WebhookActivationLogEntry.prototype['integrationRequestUuid'] = undefined;
 
 /**
- * ID of the webhook that triggered the request
+ * ID of the webhook that triggered the request.
  * @member {Number} webhookId
  */
 WebhookActivationLogEntry.prototype['webhookId'] = undefined;
 
 /**
- * ID of the application that triggered the webhook
+ * ID of the application that triggered the webhook.
  * @member {Number} applicationId
  */
 WebhookActivationLogEntry.prototype['applicationId'] = undefined;
 
 /**
- * ID of the campaign that triggered the webhook
+ * ID of the campaign that triggered the webhook.
  * @member {Number} campaignId
  */
 WebhookActivationLogEntry.prototype['campaignId'] = undefined;

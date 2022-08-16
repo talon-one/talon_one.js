@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCampaignGroup model module.
  * @module model/UpdateCampaignGroup
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateCampaignGroup {
     /**
@@ -82,13 +82,13 @@ UpdateCampaignGroup.prototype['name'] = undefined;
 UpdateCampaignGroup.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that this campaign group is enabled for
+ * A list of the IDs of the applications that this campaign group is enabled for.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 UpdateCampaignGroup.prototype['subscribedApplicationsIds'] = undefined;
 
 /**
- * A list of the IDs of the campaigns that this campaign group owns
+ * A list of the IDs of the campaigns that this campaign group owns.
  * @member {Array.<Number>} campaignIds
  */
 UpdateCampaignGroup.prototype['campaignIds'] = undefined;

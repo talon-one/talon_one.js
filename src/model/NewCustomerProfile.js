@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCustomerProfile model module.
  * @module model/NewCustomerProfile
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCustomerProfile {
     /**
@@ -58,7 +58,7 @@ class NewCustomerProfile {
 }
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 NewCustomerProfile.prototype['attributes'] = undefined;

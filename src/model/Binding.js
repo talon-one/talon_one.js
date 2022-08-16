@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Binding model module.
  * @module model/Binding
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Binding {
     /**

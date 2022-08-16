@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The NotificationWebhook model module.
  * @module model/NotificationWebhook
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NotificationWebhook {
     /**
      * Constructs a new <code>NotificationWebhook</code>.
      * 
      * @alias module:model/NotificationWebhook
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param url {String} API url for this notification webhook
-     * @param headers {Array.<String>} List of API HTTP headers for this notification webhook
+     * @param url {String} API url for this notification webhook.
+     * @param headers {Array.<String>} List of API HTTP headers for this notification webhook.
      */
     constructor(id, created, modified, applicationId, url, headers) { 
         
@@ -86,7 +86,7 @@ class NotificationWebhook {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 NotificationWebhook.prototype['id'] = undefined;
@@ -110,13 +110,13 @@ NotificationWebhook.prototype['modified'] = undefined;
 NotificationWebhook.prototype['applicationId'] = undefined;
 
 /**
- * API url for this notification webhook
+ * API url for this notification webhook.
  * @member {String} url
  */
 NotificationWebhook.prototype['url'] = undefined;
 
 /**
- * List of API HTTP headers for this notification webhook
+ * List of API HTTP headers for this notification webhook.
  * @member {Array.<String>} headers
  */
 NotificationWebhook.prototype['headers'] = undefined;

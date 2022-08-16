@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **sandbox** | **Boolean** | Indicates if this is a live or sandbox Application. | [optional] 
 **enablePartialDiscounts** | **Boolean** | Indicates if this Application supports partial discounts. | [optional] 
 **defaultDiscountAdditionalCostPerItemScope** | **String** | The default scope to apply &#x60;setDiscountPerItem&#x60; effects on if no scope was provided with the effect.  | [optional] 
-**key** | **String** | Hex key for HMAC-signing API calls as coming from this application (16 hex digits) | [optional] 
+**key** | **String** | Hex key for HMAC-signing API calls as coming from this application (16 hex digits). | [optional] 
 
 
 

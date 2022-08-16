@@ -17,15 +17,15 @@ import FeedNotification from './FeedNotification';
 /**
  * The UserFeedNotifications model module.
  * @module model/UserFeedNotifications
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UserFeedNotifications {
     /**
      * Constructs a new <code>UserFeedNotifications</code>.
-     * notifications to notify CAMA user about
+     * Notifications to notify CAMA user about.
      * @alias module:model/UserFeedNotifications
-     * @param lastUpdate {Date} Timestamp of the last request for this list
-     * @param notifications {Array.<module:model/FeedNotification>} List of all notifications to notify the user about
+     * @param lastUpdate {Date} Timestamp of the last request for this list.
+     * @param notifications {Array.<module:model/FeedNotification>} List of all notifications to notify the user about.
      */
     constructor(lastUpdate, notifications) { 
         
@@ -67,13 +67,13 @@ class UserFeedNotifications {
 }
 
 /**
- * Timestamp of the last request for this list
+ * Timestamp of the last request for this list.
  * @member {Date} lastUpdate
  */
 UserFeedNotifications.prototype['lastUpdate'] = undefined;
 
 /**
- * List of all notifications to notify the user about
+ * List of all notifications to notify the user about.
  * @member {Array.<module:model/FeedNotification>} notifications
  */
 UserFeedNotifications.prototype['notifications'] = undefined;

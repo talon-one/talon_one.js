@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyLedgerEntry {
     /**
@@ -28,7 +28,7 @@ class LoyaltyLedgerEntry {
      * @param type {String} The type of the ledger transaction. Possible values are addition, subtraction, expire or expiring (for expiring points ledgers) 
      * @param amount {Number} 
      * @param name {String} A name referencing the condition or effect that added this entry, or the specific name provided in an API call.
-     * @param subLedgerID {String} This specifies if we are adding loyalty points to the main ledger or a subledger
+     * @param subLedgerID {String} This specifies if we are adding loyalty points to the main ledger or a subledger.
      */
     constructor(created, programID, type, amount, name, subLedgerID) { 
         
@@ -164,7 +164,7 @@ LoyaltyLedgerEntry.prototype['expiryDate'] = undefined;
 LoyaltyLedgerEntry.prototype['name'] = undefined;
 
 /**
- * This specifies if we are adding loyalty points to the main ledger or a subledger
+ * This specifies if we are adding loyalty points to the main ledger or a subledger.
  * @member {String} subLedgerID
  */
 LoyaltyLedgerEntry.prototype['subLedgerID'] = undefined;

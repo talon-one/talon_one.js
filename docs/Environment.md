@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. | 
+**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
 **created** | **Date** | The exact moment this entity was created. | 
 **applicationId** | **Number** | The ID of the application that owns this entity. | 
 **slots** | [**[SlotDef]**](SlotDef.md) | The slots defined for this application. | 
 **functions** | [**[FunctionDef]**](FunctionDef.md) | The functions defined for this application. | 
 **templates** | [**[TemplateDef]**](TemplateDef.md) | The templates defined for this application. | 
-**variables** | **String** | A stringified version of the environment&#39;s Talang variables scope | 
+**variables** | **String** | A stringified version of the environment&#39;s Talang variables scope. | 
 **giveawaysPools** | [**[GiveawaysPool]**](GiveawaysPool.md) | The giveaways pools that the application is subscribed to. | [optional] 
 **loyaltyPrograms** | [**[LoyaltyProgram]**](LoyaltyProgram.md) | The loyalty programs that the application is subscribed to. | [optional] 
 **attributes** | [**[Attribute]**](Attribute.md) | The attributes that the application is subscribed to. | [optional] 

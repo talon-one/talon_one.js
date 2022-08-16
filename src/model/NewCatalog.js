@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCatalog model module.
  * @module model/NewCatalog
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCatalog {
     /**
      * Constructs a new <code>NewCatalog</code>.
      * 
      * @alias module:model/NewCatalog
-     * @param name {String} The cart items catalog name.
-     * @param description {String} A description of this cart items catalog.
+     * @param name {String} The cart item catalog name.
+     * @param description {String} A description of this cart item catalog.
      */
     constructor(name, description) { 
         
@@ -69,13 +69,13 @@ class NewCatalog {
 }
 
 /**
- * The cart items catalog name.
+ * The cart item catalog name.
  * @member {String} name
  */
 NewCatalog.prototype['name'] = undefined;
 
 /**
- * A description of this cart items catalog.
+ * A description of this cart item catalog.
  * @member {String} description
  */
 NewCatalog.prototype['description'] = undefined;

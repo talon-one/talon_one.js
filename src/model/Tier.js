@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Tier model module.
  * @module model/Tier
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Tier {
     /**
      * Constructs a new <code>Tier</code>.
      * @alias module:model/Tier
-     * @param id {Number} The internal ID of the tier
-     * @param name {String} The name of the tier
+     * @param id {Number} The internal ID of the tier.
+     * @param name {String} The name of the tier.
      */
     constructor(id, name) { 
         
@@ -65,13 +65,13 @@ class Tier {
 }
 
 /**
- * The internal ID of the tier
+ * The internal ID of the tier.
  * @member {Number} id
  */
 Tier.prototype['id'] = undefined;
 
 /**
- * The name of the tier
+ * The name of the tier.
  * @member {String} name
  */
 Tier.prototype['name'] = undefined;

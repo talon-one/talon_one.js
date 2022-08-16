@@ -21,7 +21,7 @@ import Loyalty from './Loyalty';
 /**
  * The IntegrationState model module.
  * @module model/IntegrationState
- * @version 4.5.0
+ * @version 4.6.0
  */
 class IntegrationState {
     /**

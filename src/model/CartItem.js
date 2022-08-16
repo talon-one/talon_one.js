@@ -17,16 +17,16 @@ import AdditionalCost from './AdditionalCost';
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CartItem {
     /**
      * Constructs a new <code>CartItem</code>.
      * @alias module:model/CartItem
-     * @param name {String} Name of item
-     * @param sku {String} Stock keeping unit of item
+     * @param name {String} Name of item.
+     * @param sku {String} Stock keeping unit of item.
      * @param quantity {Number} Quantity of item. **Important:** If you enabled [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
-     * @param price {Number} Price of item
+     * @param price {Number} Price of the item in the currency defined by your Application. This field is required if this item is not part of a [catalog](https://docs.talon.one/docs/product/account/dev-tools/managing-cart-item-catalogs/). If it is part of a catalog, setting a price here overrides the price from the catalog. 
      */
     constructor(name, sku, quantity, price) { 
         
@@ -98,6 +98,9 @@ class CartItem {
             if (data.hasOwnProperty('additionalCosts')) {
                 obj['additionalCosts'] = ApiClient.convertToType(data['additionalCosts'], {'String': AdditionalCost});
             }
+            if (data.hasOwnProperty('catalogItemID')) {
+                obj['catalogItemID'] = ApiClient.convertToType(data['catalogItemID'], 'Number');
+            }
         }
         return obj;
     }
@@ -106,13 +109,13 @@ class CartItem {
 }
 
 /**
- * Name of item
+ * Name of item.
  * @member {String} name
  */
 CartItem.prototype['name'] = undefined;
 
 /**
- * Stock keeping unit of item
+ * Stock keeping unit of item.
  * @member {String} sku
  */
 CartItem.prototype['sku'] = undefined;
@@ -136,58 +139,64 @@ CartItem.prototype['returnedQuantity'] = undefined;
 CartItem.prototype['remainingQuantity'] = undefined;
 
 /**
- * Price of item
+ * Price of the item in the currency defined by your Application. This field is required if this item is not part of a [catalog](https://docs.talon.one/docs/product/account/dev-tools/managing-cart-item-catalogs/). If it is part of a catalog, setting a price here overrides the price from the catalog. 
  * @member {Number} price
  */
 CartItem.prototype['price'] = undefined;
 
 /**
- * Type, group or model of the item
+ * Type, group or model of the item.
  * @member {String} category
  */
 CartItem.prototype['category'] = undefined;
 
 /**
- * Weight of item in grams
+ * Weight of item in grams.
  * @member {Number} weight
  */
 CartItem.prototype['weight'] = undefined;
 
 /**
- * Height of item in mm
+ * Height of item in mm.
  * @member {Number} height
  */
 CartItem.prototype['height'] = undefined;
 
 /**
- * Width of item in mm
+ * Width of item in mm.
  * @member {Number} width
  */
 CartItem.prototype['width'] = undefined;
 
 /**
- * Length of item in mm
+ * Length of item in mm.
  * @member {Number} length
  */
 CartItem.prototype['length'] = undefined;
 
 /**
- * Position of the Cart Item in the Cart (calculated internally)
+ * Position of the Cart Item in the Cart (calculated internally).
  * @member {Number} position
  */
 CartItem.prototype['position'] = undefined;
 
 /**
- * Arbitrary properties associated with this item. You can use built-in attributes or create your own. See [Attributes](https://docs.talon.one/docs/dev/concepts/attributes). 
+ * Use this property to set a value for the attributes of your choice. [Attributes](https://docs.talon.one/docs/dev/concepts/attributes) represent any information to attach to this cart item.  Custom _cart item_ attributes must be created in the Campaign Manager before you set them with this property. 
  * @member {Object} attributes
  */
 CartItem.prototype['attributes'] = undefined;
 
 /**
- * Any additional costs associated with the cart item 
+ * Use this property to set a value for the additional costs of this item, such as a shipping cost. They must be created in the Campaign Manager before you set them with this property. See [Managing additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs/). 
  * @member {Object.<String, module:model/AdditionalCost>} additionalCosts
  */
 CartItem.prototype['additionalCosts'] = undefined;
+
+/**
+ * The [catalog item ID](https://docs.talon.one/docs/product/account/dev-tools/managing-cart-item-catalogs/#synchronizing-cart-item-catalogs).
+ * @member {Number} catalogItemID
+ */
+CartItem.prototype['catalogItemID'] = undefined;
 
 
 

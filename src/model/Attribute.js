@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Attribute model module.
  * @module model/Attribute
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Attribute {
     /**
      * Constructs a new <code>Attribute</code>.
      * 
      * @alias module:model/Attribute
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param entity {module:model/Attribute.EntityEnum} The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an `attributes` object with keys corresponding to the `name` of the custom attributes for that type.
@@ -110,6 +110,12 @@ class Attribute {
             if (data.hasOwnProperty('subscribedApplicationsIds')) {
                 obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
             }
+            if (data.hasOwnProperty('subscribedCatalogsIds')) {
+                obj['subscribedCatalogsIds'] = ApiClient.convertToType(data['subscribedCatalogsIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('allowedSubscriptions')) {
+                obj['allowedSubscriptions'] = ApiClient.convertToType(data['allowedSubscriptions'], ['String']);
+            }
             if (data.hasOwnProperty('eventTypeId')) {
                 obj['eventTypeId'] = ApiClient.convertToType(data['eventTypeId'], 'Number');
             }
@@ -121,7 +127,7 @@ class Attribute {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Attribute.prototype['id'] = undefined;
@@ -200,10 +206,22 @@ Attribute.prototype['restrictedBySuggestions'] = false;
 Attribute.prototype['editable'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this attribute
+ * A list of the IDs of the applications where this attribute is available.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 Attribute.prototype['subscribedApplicationsIds'] = undefined;
+
+/**
+ * A list of the IDs of the catalogs where this attribute is available.
+ * @member {Array.<Number>} subscribedCatalogsIds
+ */
+Attribute.prototype['subscribedCatalogsIds'] = undefined;
+
+/**
+ * A list of allowed subscription types for this attribute.  **Note:** This only applies to attributes associated with the `CartItem` entity. 
+ * @member {Array.<module:model/Attribute.AllowedSubscriptionsEnum>} allowedSubscriptions
+ */
+Attribute.prototype['allowedSubscriptions'] = undefined;
 
 /**
  * @member {Number} eventTypeId
@@ -343,6 +361,27 @@ Attribute['TypeEnum'] = {
      * @const
      */
     "(list location)": "(list location)"
+};
+
+
+/**
+ * Allowed values for the <code>allowedSubscriptions</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Attribute['AllowedSubscriptionsEnum'] = {
+
+    /**
+     * value: "application"
+     * @const
+     */
+    "application": "application",
+
+    /**
+     * value: "catalog"
+     * @const
+     */
+    "catalog": "catalog"
 };
 
 

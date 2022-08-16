@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The AcceptCouponEffectProps model module.
  * @module model/AcceptCouponEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AcceptCouponEffectProps {
     /**
      * Constructs a new <code>AcceptCouponEffectProps</code>.
      * The properties specific to the \&quot;acceptCoupon\&quot; effect. This gets triggered whenever the coupon is valid and all other conditions in the rules of its campaign are met.
      * @alias module:model/AcceptCouponEffectProps
-     * @param value {String} The coupon code that was accepted
+     * @param value {String} The coupon code that was accepted.
      */
     constructor(value) { 
         
@@ -61,7 +61,7 @@ class AcceptCouponEffectProps {
 }
 
 /**
- * The coupon code that was accepted
+ * The coupon code that was accepted.
  * @member {String} value
  */
 AcceptCouponEffectProps.prototype['value'] = undefined;

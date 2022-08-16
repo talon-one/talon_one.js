@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The NewCouponCreationJob model module.
  * @module model/NewCouponCreationJob
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCouponCreationJob {
     /**
@@ -26,7 +26,7 @@ class NewCouponCreationJob {
      * @alias module:model/NewCouponCreationJob
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be between 20,001 and 5,000,000.
-     * @param attributes {Object} Arbitrary properties associated with coupons
+     * @param attributes {Object} Arbitrary properties associated with coupons.
      */
     constructor(usageLimit, numberOfCoupons, attributes) { 
         
@@ -119,7 +119,7 @@ NewCouponCreationJob.prototype['numberOfCoupons'] = undefined;
 NewCouponCreationJob.prototype['couponSettings'] = undefined;
 
 /**
- * Arbitrary properties associated with coupons
+ * Arbitrary properties associated with coupons.
  * @member {Object} attributes
  */
 NewCouponCreationJob.prototype['attributes'] = undefined;

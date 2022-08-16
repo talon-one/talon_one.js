@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateApplicationAPIKey model module.
  * @module model/CreateApplicationAPIKey
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CreateApplicationAPIKey {
     /**
      * Constructs a new <code>CreateApplicationAPIKey</code>.
      * @alias module:model/CreateApplicationAPIKey
-     * @param title {String} Title for API Key
-     * @param expires {Date} The date the API key expired
+     * @param title {String} Title for API Key.
+     * @param expires {Date} The date the API key expired.
      */
     constructor(title, expires) { 
         
@@ -68,13 +68,13 @@ class CreateApplicationAPIKey {
 }
 
 /**
- * Title for API Key
+ * Title for API Key.
  * @member {String} title
  */
 CreateApplicationAPIKey.prototype['title'] = undefined;
 
 /**
- * The date the API key expired
+ * The date the API key expired.
  * @member {Date} expires
  */
 CreateApplicationAPIKey.prototype['expires'] = undefined;
@@ -142,7 +142,13 @@ CreateApplicationAPIKey['PlatformEnum'] = {
      * value: "customer_data"
      * @const
      */
-    "customer_data": "customer_data"
+    "customer_data": "customer_data",
+
+    /**
+     * value: "salesforce"
+     * @const
+     */
+    "salesforce": "salesforce"
 };
 
 

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomEffectProps model module.
  * @module model/CustomEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CustomEffectProps {
     /**
      * Constructs a new <code>CustomEffectProps</code>.
      * Effect containing custom payload.
      * @alias module:model/CustomEffectProps
-     * @param effectId {Number} The ID of the custom effect that was triggered
+     * @param effectId {Number} The ID of the custom effect that was triggered.
      * @param name {String} The type of the custom effect.
      * @param payload {Object} The JSON payload of the custom effect.
      */
@@ -71,7 +71,7 @@ class CustomEffectProps {
 }
 
 /**
- * The ID of the custom effect that was triggered
+ * The ID of the custom effect that was triggered.
  * @member {Number} effectId
  */
 CustomEffectProps.prototype['effectId'] = undefined;

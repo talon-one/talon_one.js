@@ -17,14 +17,14 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The TemplateDef model module.
  * @module model/TemplateDef
- * @version 4.5.0
+ * @version 4.6.0
  */
 class TemplateDef {
     /**
      * Constructs a new <code>TemplateDef</code>.
      * 
      * @alias module:model/TemplateDef
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param title {String} Campaigner-friendly name for the template that will be shown in the rule editor.
@@ -110,7 +110,7 @@ class TemplateDef {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 TemplateDef.prototype['id'] = undefined;

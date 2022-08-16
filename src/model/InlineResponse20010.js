@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccessLogEntry from './AccessLogEntry';
+import CollectionItem from './CollectionItem';
 
 /**
  * The InlineResponse20010 model module.
  * @module model/InlineResponse20010
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20010 {
     /**
      * Constructs a new <code>InlineResponse20010</code>.
      * @alias module:model/InlineResponse20010
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/AccessLogEntry>} 
+     * @param data {Array.<module:model/CollectionItem>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20010 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CollectionItem]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20010 {
 InlineResponse20010.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/AccessLogEntry>} data
+ * @member {Array.<module:model/CollectionItem>} data
  */
 InlineResponse20010.prototype['data'] = undefined;
 

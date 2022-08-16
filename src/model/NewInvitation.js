@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The NewInvitation model module.
  * @module model/NewInvitation
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewInvitation {
     /**
      * Constructs a new <code>NewInvitation</code>.
-     * Parameters for inviting a new user
+     * Parameters for inviting a new user.
      * @alias module:model/NewInvitation
      * @param email {String} 
      * @param acl {String} The `Access Control List` json defining the role of the user. This represents the actual access control on the user level. Use one of the following: - normal user: `{\"Role\": 0}` - admin: `{\"Role\": 127}` 
@@ -89,7 +89,7 @@ NewInvitation.prototype['email'] = undefined;
 NewInvitation.prototype['acl'] = undefined;
 
 /**
- * An array of roleIDs to assign the new user to
+ * An array of roleIDs to assign the new user to.
  * @member {Array.<Number>} roles
  */
 NewInvitation.prototype['roles'] = undefined;

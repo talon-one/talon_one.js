@@ -18,26 +18,26 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CustomerSessionV2 {
     /**
      * Constructs a new <code>CustomerSessionV2</code>.
      * 
      * @alias module:model/CustomerSessionV2
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created. The exact moment this entity was created.
-     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
+     * @param integrationId {String} The integration ID set by your integration layer.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param profileId {String} ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
-     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`, after which valid transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled`  For more information, see [Entites](/docs/dev/concepts/entities#customer-session). 
+     * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
+     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
      * @param cartItems {Array.<module:model/CartItem>} The items to add to this sessions. - If cart item flattening is disabled: **Do not exceed 1000 items** (regardless of their `quantity`) per request. - If cart item flattening is enabled: **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
-     * @param attributes {Object} A key-value map of the sessions attributes. If you use custom attributes, they must be created in the Campaign Manager before you set them with this property. For more information, see [Attributes](https://docs.talon.one/docs/dev/concepts/attributes). 
+     * @param attributes {Object} Use this property to set a value for the attributes of your choice. Attributes represent any information to attach to your session, like the shipping city.  You can use [built-in attributes](https://docs.talon.one/docs/dev/concepts/attributes#built-in-attributes) or [custom ones](https://docs.talon.one/docs/dev/concepts/attributes#custom-attributes). Custom attributes must be created in the Campaign Manager before you set them with this property. 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
-     * @param total {Number} The total sum of cart-items, as well as additional costs, before any discounts applied
-     * @param cartItemTotal {Number} The total sum of cart-items before any discounts applied
-     * @param additionalCostTotal {Number} The total sum of additional costs before any discounts applied
-     * @param updated {Date} Timestamp of the most recent event received on this session
+     * @param total {Number} The total sum of cart-items, as well as additional costs, before any discounts applied.
+     * @param cartItemTotal {Number} The total sum of cart-items before any discounts applied.
+     * @param additionalCostTotal {Number} The total sum of additional costs before any discounts applied.
+     * @param updated {Date} Timestamp of the most recent event received on this session.
      */
     constructor(id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
         
@@ -138,7 +138,7 @@ class CustomerSessionV2 {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 CustomerSessionV2.prototype['id'] = undefined;
@@ -150,7 +150,7 @@ CustomerSessionV2.prototype['id'] = undefined;
 CustomerSessionV2.prototype['created'] = undefined;
 
 /**
- * The integration ID for this entity sent to and used in the Talon.One system.
+ * The integration ID set by your integration layer.
  * @member {String} integrationId
  */
 CustomerSessionV2.prototype['integrationId'] = undefined;
@@ -162,7 +162,7 @@ CustomerSessionV2.prototype['integrationId'] = undefined;
 CustomerSessionV2.prototype['applicationId'] = undefined;
 
 /**
- * ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
+ * ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
  * @member {String} profileId
  */
 CustomerSessionV2.prototype['profileId'] = undefined;
@@ -186,7 +186,7 @@ CustomerSessionV2.prototype['referralCode'] = undefined;
 CustomerSessionV2.prototype['loyaltyCards'] = undefined;
 
 /**
- * Indicates the current state of the session. Sessions can be created as `open` or `closed`, after which valid transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled`  For more information, see [Entites](/docs/dev/concepts/entities#customer-session). 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
  * @member {module:model/CustomerSessionV2.StateEnum} state
  * @default 'open'
  */
@@ -199,7 +199,7 @@ CustomerSessionV2.prototype['state'] = 'open';
 CustomerSessionV2.prototype['cartItems'] = undefined;
 
 /**
- * Any costs associated with the session that can not be explicitly attributed to cart items. Examples include shipping costs and service fees. [Create them in the Campaign Manager](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs/#creating-additional-costs) before setting them with this property. 
+ * Use this property to set a value for the additional costs of this session, such as a shipping cost.  They must be created in the Campaign Manager before you set them with this property. See [Managing additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs/). 
  * @member {Object.<String, module:model/AdditionalCost>} additionalCosts
  */
 CustomerSessionV2.prototype['additionalCosts'] = undefined;
@@ -211,7 +211,7 @@ CustomerSessionV2.prototype['additionalCosts'] = undefined;
 CustomerSessionV2.prototype['identifiers'] = undefined;
 
 /**
- * A key-value map of the sessions attributes. If you use custom attributes, they must be created in the Campaign Manager before you set them with this property. For more information, see [Attributes](https://docs.talon.one/docs/dev/concepts/attributes). 
+ * Use this property to set a value for the attributes of your choice. Attributes represent any information to attach to your session, like the shipping city.  You can use [built-in attributes](https://docs.talon.one/docs/dev/concepts/attributes#built-in-attributes) or [custom ones](https://docs.talon.one/docs/dev/concepts/attributes#custom-attributes). Custom attributes must be created in the Campaign Manager before you set them with this property. 
  * @member {Object} attributes
  */
 CustomerSessionV2.prototype['attributes'] = undefined;
@@ -223,25 +223,25 @@ CustomerSessionV2.prototype['attributes'] = undefined;
 CustomerSessionV2.prototype['firstSession'] = undefined;
 
 /**
- * The total sum of cart-items, as well as additional costs, before any discounts applied
+ * The total sum of cart-items, as well as additional costs, before any discounts applied.
  * @member {Number} total
  */
 CustomerSessionV2.prototype['total'] = undefined;
 
 /**
- * The total sum of cart-items before any discounts applied
+ * The total sum of cart-items before any discounts applied.
  * @member {Number} cartItemTotal
  */
 CustomerSessionV2.prototype['cartItemTotal'] = undefined;
 
 /**
- * The total sum of additional costs before any discounts applied
+ * The total sum of additional costs before any discounts applied.
  * @member {Number} additionalCostTotal
  */
 CustomerSessionV2.prototype['additionalCostTotal'] = undefined;
 
 /**
- * Timestamp of the most recent event received on this session
+ * Timestamp of the most recent event received on this session.
  * @member {Date} updated
  */
 CustomerSessionV2.prototype['updated'] = undefined;

@@ -78,6 +78,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sandbox (base name: "sandbox")', function() {
+      // uncomment below and update the code to test the property sandbox
+      //var instane = new TalonOne.Audience();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalonOne.Audience();
+      //expect(instance).to.be();
+    });
+
     it('should have the property integration (base name: "integration")', function() {
       // uncomment below and update the code to test the property integration
       //var instane = new TalonOne.Audience();
@@ -86,6 +98,12 @@
 
     it('should have the property integrationId (base name: "integrationId")', function() {
       // uncomment below and update the code to test the property integrationId
+      //var instane = new TalonOne.Audience();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdIn3rdParty (base name: "createdIn3rdParty")', function() {
+      // uncomment below and update the code to test the property createdIn3rdParty
       //var instane = new TalonOne.Audience();
       //expect(instance).to.be();
     });

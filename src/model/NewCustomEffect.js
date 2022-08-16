@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The NewCustomEffect model module.
  * @module model/NewCustomEffect
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCustomEffect {
     /**
@@ -124,7 +124,7 @@ NewCustomEffect.prototype['description'] = undefined;
 NewCustomEffect.prototype['enabled'] = undefined;
 
 /**
- * Array of template argument definitions
+ * Array of template argument definitions.
  * @member {Array.<module:model/TemplateArgDef>} params
  */
 NewCustomEffect.prototype['params'] = undefined;

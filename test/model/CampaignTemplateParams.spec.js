@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property attributeId (base name: "attributeId")', function() {
+      // uncomment below and update the code to test the property attributeId
+      //var instane = new TalonOne.CampaignTemplateParams();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

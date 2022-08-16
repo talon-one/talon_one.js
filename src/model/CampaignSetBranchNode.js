@@ -17,16 +17,16 @@ import CampaignSetNode from './CampaignSetNode';
 /**
  * The CampaignSetBranchNode model module.
  * @module model/CampaignSetBranchNode
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignSetBranchNode {
     /**
      * Constructs a new <code>CampaignSetBranchNode</code>.
      * @alias module:model/CampaignSetBranchNode
-     * @param type {module:model/CampaignSetBranchNode.TypeEnum} Indicates the node type
+     * @param type {module:model/CampaignSetBranchNode.TypeEnum} Indicates the node type.
      * @param name {String} Name of the set
-     * @param operator {module:model/CampaignSetBranchNode.OperatorEnum} How does the set operates on its elements
-     * @param elements {Array.<module:model/CampaignSetNode>} Child elements of this set
+     * @param operator {module:model/CampaignSetBranchNode.OperatorEnum} How does the set operates on its elements.
+     * @param elements {Array.<module:model/CampaignSetNode>} Child elements of this set.
      */
     constructor(type, name, operator, elements) { 
         
@@ -76,7 +76,7 @@ class CampaignSetBranchNode {
 }
 
 /**
- * Indicates the node type
+ * Indicates the node type.
  * @member {module:model/CampaignSetBranchNode.TypeEnum} type
  */
 CampaignSetBranchNode.prototype['type'] = undefined;
@@ -88,13 +88,13 @@ CampaignSetBranchNode.prototype['type'] = undefined;
 CampaignSetBranchNode.prototype['name'] = undefined;
 
 /**
- * How does the set operates on its elements
+ * How does the set operates on its elements.
  * @member {module:model/CampaignSetBranchNode.OperatorEnum} operator
  */
 CampaignSetBranchNode.prototype['operator'] = undefined;
 
 /**
- * Child elements of this set
+ * Child elements of this set.
  * @member {Array.<module:model/CampaignSetNode>} elements
  */
 CampaignSetBranchNode.prototype['elements'] = undefined;

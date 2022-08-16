@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationProfileEntity model module.
  * @module model/IntegrationProfileEntity
- * @version 4.5.0
+ * @version 4.6.0
  */
 class IntegrationProfileEntity {
     /**
@@ -58,7 +58,7 @@ class IntegrationProfileEntity {
 }
 
 /**
- * ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
+ * ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
  * @member {String} profileId
  */
 IntegrationProfileEntity.prototype['profileId'] = undefined;

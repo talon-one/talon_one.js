@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The NewCampaignTemplate model module.
  * @module model/NewCampaignTemplate
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCampaignTemplate {
     /**
@@ -98,6 +98,9 @@ class NewCampaignTemplate {
             if (data.hasOwnProperty('campaignCollections')) {
                 obj['campaignCollections'] = ApiClient.convertToType(data['campaignCollections'], [CampaignTemplateCollection]);
             }
+            if (data.hasOwnProperty('defaultCampaignGroupId')) {
+                obj['defaultCampaignGroupId'] = ApiClient.convertToType(data['defaultCampaignGroupId'], 'Number');
+            }
         }
         return obj;
     }
@@ -164,7 +167,7 @@ NewCampaignTemplate.prototype['couponSettings'] = undefined;
 NewCampaignTemplate.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign template
+ * The set of limits that will operate for this campaign template.
  * @member {Array.<module:model/TemplateLimitConfig>} limits
  */
 NewCampaignTemplate.prototype['limits'] = undefined;
@@ -180,6 +183,12 @@ NewCampaignTemplate.prototype['templateParams'] = undefined;
  * @member {Array.<module:model/CampaignTemplateCollection>} campaignCollections
  */
 NewCampaignTemplate.prototype['campaignCollections'] = undefined;
+
+/**
+ * The default campaignGroupId.
+ * @member {Number} defaultCampaignGroupId
+ */
+NewCampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
 
 
 

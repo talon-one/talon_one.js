@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAssign model module.
  * @module model/RoleAssign
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RoleAssign {
     /**
      * Constructs a new <code>RoleAssign</code>.
      * 
      * @alias module:model/RoleAssign
-     * @param users {Array.<Number>} An array of userIDs
-     * @param roles {Array.<Number>} An array of roleIDs
+     * @param users {Array.<Number>} An array of userIDs.
+     * @param roles {Array.<Number>} An array of roleIDs.
      */
     constructor(users, roles) { 
         
@@ -66,13 +66,13 @@ class RoleAssign {
 }
 
 /**
- * An array of userIDs
+ * An array of userIDs.
  * @member {Array.<Number>} users
  */
 RoleAssign.prototype['users'] = undefined;
 
 /**
- * An array of roleIDs
+ * An array of roleIDs.
  * @member {Array.<Number>} roles
  */
 RoleAssign.prototype['roles'] = undefined;

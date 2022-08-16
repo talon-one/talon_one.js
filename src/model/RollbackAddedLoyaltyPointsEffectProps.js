@@ -16,17 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackAddedLoyaltyPointsEffectProps model module.
  * @module model/RollbackAddedLoyaltyPointsEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RollbackAddedLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>RollbackAddedLoyaltyPointsEffectProps</code>.
      * The properties specific to the \&quot;rollbackAddedLoyaltyPoints\&quot; effect. This gets triggered whenever previously a closed session with an addLoyaltyPoints effect is cancelled.
      * @alias module:model/RollbackAddedLoyaltyPointsEffectProps
-     * @param programId {Number} The ID of the loyalty program where the points were originally added
-     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were originally added
-     * @param value {Number} The amount of points that were rolled back
-     * @param recipientIntegrationId {String} The user for whom these points were originally added
+     * @param programId {Number} The ID of the loyalty program where the points were originally added.
+     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were originally added.
+     * @param value {Number} The amount of points that were rolled back.
+     * @param recipientIntegrationId {String} The user for whom these points were originally added.
      * @param transactionUUID {String} The identifier of 'deduction' entry added to the ledger as the `addLoyaltyPoints` effect is rolled back.
      */
     constructor(programId, subLedgerId, value, recipientIntegrationId, transactionUUID) { 
@@ -90,25 +90,25 @@ class RollbackAddedLoyaltyPointsEffectProps {
 }
 
 /**
- * The ID of the loyalty program where the points were originally added
+ * The ID of the loyalty program where the points were originally added.
  * @member {Number} programId
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['programId'] = undefined;
 
 /**
- * The ID of the subledger within the loyalty program where these points were originally added
+ * The ID of the subledger within the loyalty program where these points were originally added.
  * @member {String} subLedgerId
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
 
 /**
- * The amount of points that were rolled back
+ * The amount of points that were rolled back.
  * @member {Number} value
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['value'] = undefined;
 
 /**
- * The user for whom these points were originally added
+ * The user for whom these points were originally added.
  * @member {String} recipientIntegrationId
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['recipientIntegrationId'] = undefined;

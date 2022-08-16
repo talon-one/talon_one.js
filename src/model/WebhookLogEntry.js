@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The WebhookLogEntry model module.
  * @module model/WebhookLogEntry
- * @version 4.5.0
+ * @version 4.6.0
  */
 class WebhookLogEntry {
     /**
      * Constructs a new <code>WebhookLogEntry</code>.
-     * Log of webhook api calls
+     * Log of webhook api calls.
      * @alias module:model/WebhookLogEntry
-     * @param id {String} UUID reference of the webhook request
-     * @param integrationRequestUuid {String} UUID reference of the integration request linked to this webhook request
-     * @param webhookId {Number} ID of the webhook that triggered the request
+     * @param id {String} UUID reference of the webhook request.
+     * @param integrationRequestUuid {String} UUID reference of the integration request linked to this webhook request.
+     * @param webhookId {Number} ID of the webhook that triggered the request.
      * @param url {String} Target url of request
      * @param request {String} Request message
      * @param requestTime {Date} Timestamp of request
@@ -98,25 +98,25 @@ class WebhookLogEntry {
 }
 
 /**
- * UUID reference of the webhook request
+ * UUID reference of the webhook request.
  * @member {String} id
  */
 WebhookLogEntry.prototype['id'] = undefined;
 
 /**
- * UUID reference of the integration request linked to this webhook request
+ * UUID reference of the integration request linked to this webhook request.
  * @member {String} integrationRequestUuid
  */
 WebhookLogEntry.prototype['integrationRequestUuid'] = undefined;
 
 /**
- * ID of the webhook that triggered the request
+ * ID of the webhook that triggered the request.
  * @member {Number} webhookId
  */
 WebhookLogEntry.prototype['webhookId'] = undefined;
 
 /**
- * ID of the application that triggered the webhook
+ * ID of the application that triggered the webhook.
  * @member {Number} applicationId
  */
 WebhookLogEntry.prototype['applicationId'] = undefined;
@@ -140,7 +140,7 @@ WebhookLogEntry.prototype['request'] = undefined;
 WebhookLogEntry.prototype['response'] = undefined;
 
 /**
- * HTTP status code of response
+ * HTTP status code of response.
  * @member {Number} status
  */
 WebhookLogEntry.prototype['status'] = undefined;

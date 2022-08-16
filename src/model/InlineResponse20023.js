@@ -12,23 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAdditionalCost from './AccountAdditionalCost';
+import ApplicationReferee from './ApplicationReferee';
 
 /**
  * The InlineResponse20023 model module.
  * @module model/InlineResponse20023
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20023 {
     /**
      * Constructs a new <code>InlineResponse20023</code>.
      * @alias module:model/InlineResponse20023
+     * @param hasMore {Boolean} 
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/AccountAdditionalCost>} 
+     * @param data {Array.<module:model/ApplicationReferee>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, totalResultSize, data) { 
         
-        InlineResponse20023.initialize(this, totalResultSize, data);
+        InlineResponse20023.initialize(this, hasMore, totalResultSize, data);
     }
 
     /**
@@ -36,7 +37,8 @@ class InlineResponse20023 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
+    static initialize(obj, hasMore, totalResultSize, data) { 
+        obj['hasMore'] = hasMore;
         obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
@@ -52,11 +54,14 @@ class InlineResponse20023 {
         if (data) {
             obj = obj || new InlineResponse20023();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AccountAdditionalCost]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationReferee]);
             }
         }
         return obj;
@@ -66,12 +71,17 @@ class InlineResponse20023 {
 }
 
 /**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20023.prototype['hasMore'] = undefined;
+
+/**
  * @member {Number} totalResultSize
  */
 InlineResponse20023.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/AccountAdditionalCost>} data
+ * @member {Array.<module:model/ApplicationReferee>} data
  */
 InlineResponse20023.prototype['data'] = undefined;
 

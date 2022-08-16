@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import Collection from './Collection';
+import CollectionWithoutPayload from './CollectionWithoutPayload';
 
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse2009 {
     /**
      * Constructs a new <code>InlineResponse2009</code>.
      * @alias module:model/InlineResponse2009
-     * @param data {Array.<module:model/Collection>} 
+     * @param data {Array.<module:model/CollectionWithoutPayload>} 
      */
     constructor(data) { 
         
@@ -57,7 +57,7 @@ class InlineResponse2009 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Collection]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CollectionWithoutPayload]);
             }
         }
         return obj;
@@ -77,7 +77,7 @@ InlineResponse2009.prototype['hasMore'] = undefined;
 InlineResponse2009.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Collection>} data
+ * @member {Array.<module:model/CollectionWithoutPayload>} data
  */
 InlineResponse2009.prototype['data'] = undefined;
 

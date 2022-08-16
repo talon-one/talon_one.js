@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The NewLoyaltyTier model module.
  * @module model/NewLoyaltyTier
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewLoyaltyTier {
     /**
      * Constructs a new <code>NewLoyaltyTier</code>.
-     * A tier in a loyalty program
+     * A tier in a loyalty program.
      * @alias module:model/NewLoyaltyTier
      * @param name {String} The name of the tier
-     * @param minPoints {Number} The minimum amount of points required to be eligible for the tier
+     * @param minPoints {Number} The minimum amount of points required to be eligible for the tier.
      */
     constructor(name, minPoints) { 
         
@@ -72,7 +72,7 @@ class NewLoyaltyTier {
 NewLoyaltyTier.prototype['name'] = undefined;
 
 /**
- * The minimum amount of points required to be eligible for the tier
+ * The minimum amount of points required to be eligible for the tier.
  * @member {Number} minPoints
  */
 NewLoyaltyTier.prototype['minPoints'] = undefined;

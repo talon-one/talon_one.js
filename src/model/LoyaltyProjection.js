@@ -17,7 +17,7 @@ import LoyaltyProjectionData from './LoyaltyProjectionData';
 /**
  * The LoyaltyProjection model module.
  * @module model/LoyaltyProjection
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyProjection {
     /**

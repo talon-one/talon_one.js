@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Campaign {
     /**
@@ -234,7 +234,7 @@ Campaign.prototype['startTime'] = undefined;
 Campaign.prototype['endTime'] = undefined;
 
 /**
- * Arbitrary properties associated with this campaign
+ * Arbitrary properties associated with this campaign.
  * @member {Object} attributes
  */
 Campaign.prototype['attributes'] = undefined;

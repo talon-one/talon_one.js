@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCampaignStats model module.
  * @module model/ApplicationCampaignStats
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ApplicationCampaignStats {
     /**
      * Constructs a new <code>ApplicationCampaignStats</code>.
-     * Provides statistics regarding an application&#39;s campaigns
+     * Provides statistics regarding an application&#39;s campaigns.
      * @alias module:model/ApplicationCampaignStats
-     * @param draft {Number} Number of draft campaigns
-     * @param disabled {Number} Number of disabled campaigns
-     * @param scheduled {Number} Number of scheduled campaigns
-     * @param running {Number} Number of running campaigns
-     * @param expired {Number} Number of expired campaigns
-     * @param archived {Number} Number of archived campaigns
+     * @param draft {Number} Number of draft campaigns.
+     * @param disabled {Number} Number of disabled campaigns.
+     * @param scheduled {Number} Number of scheduled campaigns.
+     * @param running {Number} Number of running campaigns.
+     * @param expired {Number} Number of expired campaigns.
+     * @param archived {Number} Number of archived campaigns.
      */
     constructor(draft, disabled, scheduled, running, expired, archived) { 
         
@@ -86,37 +86,37 @@ class ApplicationCampaignStats {
 }
 
 /**
- * Number of draft campaigns
+ * Number of draft campaigns.
  * @member {Number} draft
  */
 ApplicationCampaignStats.prototype['draft'] = undefined;
 
 /**
- * Number of disabled campaigns
+ * Number of disabled campaigns.
  * @member {Number} disabled
  */
 ApplicationCampaignStats.prototype['disabled'] = undefined;
 
 /**
- * Number of scheduled campaigns
+ * Number of scheduled campaigns.
  * @member {Number} scheduled
  */
 ApplicationCampaignStats.prototype['scheduled'] = undefined;
 
 /**
- * Number of running campaigns
+ * Number of running campaigns.
  * @member {Number} running
  */
 ApplicationCampaignStats.prototype['running'] = undefined;
 
 /**
- * Number of expired campaigns
+ * Number of expired campaigns.
  * @member {Number} expired
  */
 ApplicationCampaignStats.prototype['expired'] = undefined;
 
 /**
- * Number of archived campaigns
+ * Number of archived campaigns.
  * @member {Number} archived
  */
 ApplicationCampaignStats.prototype['archived'] = undefined;

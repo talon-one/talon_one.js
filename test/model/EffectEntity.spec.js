@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property triggeredForCatalogItem (base name: "triggeredForCatalogItem")', function() {
+      // uncomment below and update the code to test the property triggeredForCatalogItem
+      //var instane = new TalonOne.EffectEntity();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

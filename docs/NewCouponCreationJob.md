@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **expiryDate** | **Date** | Expiry date of the coupon. Coupon never expires if this is omitted, zero, or negative. | [optional] 
 **numberOfCoupons** | **Number** | The number of new coupon codes to generate for the campaign. Must be between 20,001 and 5,000,000. | 
 **couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
-**attributes** | [**Object**](.md) | Arbitrary properties associated with coupons | 
+**attributes** | [**Object**](.md) | Arbitrary properties associated with coupons. | 
 
 

@@ -17,29 +17,29 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CouponCreationJob {
     /**
      * Constructs a new <code>CouponCreationJob</code>.
      * 
      * @alias module:model/CouponCreationJob
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be between 20,001 and 5,000,000.
-     * @param attributes {Object} Arbitrary properties associated with coupons
-     * @param batchId {String} The batch ID coupons created by this job will bear
-     * @param status {String} The current status of this request. The value should be either 'pending', 'completed', 'failed' or 'coupon pattern full'
-     * @param createdAmount {Number} The number of coupon codes that were already created for this request
-     * @param failCount {Number} The number of times this job failed
+     * @param attributes {Object} Arbitrary properties associated with coupons.
+     * @param batchId {String} The batch ID coupons created by this job will bear.
+     * @param status {String} The current status of this request. Possible values: - `pending` - `completed` - `failed` - `coupon pattern full` 
+     * @param createdAmount {Number} The number of coupon codes that were already created for this request.
+     * @param failCount {Number} The number of times this job failed.
      * @param errors {Array.<String>} An array of individual problems encountered during the request.
      * @param createdBy {Number} ID of the user who created this effect.
-     * @param communicated {Boolean} Whether or not the user that created this job was notified of its final state
-     * @param chunkExecutionCount {Number} The number of times an attempt to create a chunk of coupons was made during the processing of the job
+     * @param communicated {Boolean} Whether or not the user that created this job was notified of its final state.
+     * @param chunkExecutionCount {Number} The number of times an attempt to create a chunk of coupons was made during the processing of the job.
      */
     constructor(id, created, campaignId, applicationId, accountId, usageLimit, numberOfCoupons, attributes, batchId, status, createdAmount, failCount, errors, createdBy, communicated, chunkExecutionCount) { 
         
@@ -152,7 +152,7 @@ class CouponCreationJob {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 CouponCreationJob.prototype['id'] = undefined;
@@ -217,31 +217,31 @@ CouponCreationJob.prototype['numberOfCoupons'] = undefined;
 CouponCreationJob.prototype['couponSettings'] = undefined;
 
 /**
- * Arbitrary properties associated with coupons
+ * Arbitrary properties associated with coupons.
  * @member {Object} attributes
  */
 CouponCreationJob.prototype['attributes'] = undefined;
 
 /**
- * The batch ID coupons created by this job will bear
+ * The batch ID coupons created by this job will bear.
  * @member {String} batchId
  */
 CouponCreationJob.prototype['batchId'] = undefined;
 
 /**
- * The current status of this request. The value should be either 'pending', 'completed', 'failed' or 'coupon pattern full'
+ * The current status of this request. Possible values: - `pending` - `completed` - `failed` - `coupon pattern full` 
  * @member {String} status
  */
 CouponCreationJob.prototype['status'] = undefined;
 
 /**
- * The number of coupon codes that were already created for this request
+ * The number of coupon codes that were already created for this request.
  * @member {Number} createdAmount
  */
 CouponCreationJob.prototype['createdAmount'] = undefined;
 
 /**
- * The number of times this job failed
+ * The number of times this job failed.
  * @member {Number} failCount
  */
 CouponCreationJob.prototype['failCount'] = undefined;
@@ -259,13 +259,13 @@ CouponCreationJob.prototype['errors'] = undefined;
 CouponCreationJob.prototype['createdBy'] = undefined;
 
 /**
- * Whether or not the user that created this job was notified of its final state
+ * Whether or not the user that created this job was notified of its final state.
  * @member {Boolean} communicated
  */
 CouponCreationJob.prototype['communicated'] = undefined;
 
 /**
- * The number of times an attempt to create a chunk of coupons was made during the processing of the job
+ * The number of times an attempt to create a chunk of coupons was made during the processing of the job.
  * @member {Number} chunkExecutionCount
  */
 CouponCreationJob.prototype['chunkExecutionCount'] = undefined;

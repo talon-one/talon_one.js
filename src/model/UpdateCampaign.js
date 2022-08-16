@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateCampaign {
     /**
@@ -27,7 +27,7 @@ class UpdateCampaign {
      * @param name {String} A user-facing name for this campaign.
      * @param tags {Array.<String>} A list of tags for the campaign.
      * @param features {Array.<module:model/UpdateCampaign.FeaturesEnum>} A list of features for the campaign.
-     * @param limits {Array.<module:model/LimitConfig>} The set of limits that will operate for this campaign
+     * @param limits {Array.<module:model/LimitConfig>} The set of limits that will operate for this campaign.
      */
     constructor(name, tags, features, limits) { 
         
@@ -128,7 +128,7 @@ UpdateCampaign.prototype['startTime'] = undefined;
 UpdateCampaign.prototype['endTime'] = undefined;
 
 /**
- * Arbitrary properties associated with this campaign
+ * Arbitrary properties associated with this campaign.
  * @member {Object} attributes
  */
 UpdateCampaign.prototype['attributes'] = undefined;
@@ -169,7 +169,7 @@ UpdateCampaign.prototype['couponSettings'] = undefined;
 UpdateCampaign.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign
+ * The set of limits that will operate for this campaign.
  * @member {Array.<module:model/LimitConfig>} limits
  */
 UpdateCampaign.prototype['limits'] = undefined;

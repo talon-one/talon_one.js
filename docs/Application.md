@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. | 
+**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
 **created** | **Date** | The exact moment this entity was created. | 
 **modified** | **Date** | The exact moment this entity was last modified. | 
 **accountId** | **Number** | The ID of the account that owns this entity. | 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **sandbox** | **Boolean** | Indicates if this is a live or sandbox Application. | [optional] 
 **enablePartialDiscounts** | **Boolean** | Indicates if this Application supports partial discounts. | [optional] 
 **defaultDiscountAdditionalCostPerItemScope** | **String** | The default scope to apply &#x60;setDiscountPerItem&#x60; effects on if no scope was provided with the effect.  | [optional] 
-**loyaltyPrograms** | [**[LoyaltyProgram]**](LoyaltyProgram.md) | An array containing all the loyalty programs to which this application is subscribed | 
+**loyaltyPrograms** | [**[LoyaltyProgram]**](LoyaltyProgram.md) | An array containing all the loyalty programs to which this application is subscribed. | 
 
 
 

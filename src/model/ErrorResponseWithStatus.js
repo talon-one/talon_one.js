@@ -17,7 +17,7 @@ import APIError from './APIError';
 /**
  * The ErrorResponseWithStatus model module.
  * @module model/ErrorResponseWithStatus
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ErrorResponseWithStatus {
     /**

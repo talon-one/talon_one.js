@@ -102,6 +102,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bundleIndex (base name: "bundleIndex")', function() {
+      // uncomment below and update the code to test the property bundleIndex
+      //var instane = new TalonOne.SetDiscountPerItemEffectProps();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bundleName (base name: "bundleName")', function() {
+      // uncomment below and update the code to test the property bundleName
+      //var instane = new TalonOne.SetDiscountPerItemEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelImport model module.
  * @module model/ModelImport
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ModelImport {
     /**
      * Constructs a new <code>ModelImport</code>.
      * 
      * @alias module:model/ModelImport
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param userId {Number} The ID of the account that owns this entity.
@@ -86,7 +86,7 @@ class ModelImport {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 ModelImport.prototype['id'] = undefined;

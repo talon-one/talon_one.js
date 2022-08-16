@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The NewNotificationWebhook model module.
  * @module model/NewNotificationWebhook
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewNotificationWebhook {
     /**
      * Constructs a new <code>NewNotificationWebhook</code>.
      * @alias module:model/NewNotificationWebhook
-     * @param url {String} API url for this notification webhook
-     * @param headers {Array.<String>} List of API HTTP headers for this notification webhook
+     * @param url {String} API url for this notification webhook.
+     * @param headers {Array.<String>} List of API HTTP headers for this notification webhook.
      */
     constructor(url, headers) { 
         
@@ -65,13 +65,13 @@ class NewNotificationWebhook {
 }
 
 /**
- * API url for this notification webhook
+ * API url for this notification webhook.
  * @member {String} url
  */
 NewNotificationWebhook.prototype['url'] = undefined;
 
 /**
- * List of API HTTP headers for this notification webhook
+ * List of API HTTP headers for this notification webhook.
  * @member {Array.<String>} headers
  */
 NewNotificationWebhook.prototype['headers'] = undefined;

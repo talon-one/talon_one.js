@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountEffectProps model module.
  * @module model/SetDiscountEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class SetDiscountEffectProps {
     /**
      * Constructs a new <code>SetDiscountEffectProps</code>.
      * The properties specific to the \&quot;setDiscount\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set discount\&quot; effect. This is a discount that should be applied on the scope of defined with it.
      * @alias module:model/SetDiscountEffectProps
-     * @param name {String} The name/description of this discount
-     * @param value {Number} The total monetary value of the discount
+     * @param name {String} The name/description of this discount.
+     * @param value {Number} The total monetary value of the discount.
      */
     constructor(name, value) { 
         
@@ -72,25 +72,25 @@ class SetDiscountEffectProps {
 }
 
 /**
- * The name/description of this discount
+ * The name/description of this discount.
  * @member {String} name
  */
 SetDiscountEffectProps.prototype['name'] = undefined;
 
 /**
- * The total monetary value of the discount
+ * The total monetary value of the discount.
  * @member {Number} value
  */
 SetDiscountEffectProps.prototype['value'] = undefined;
 
 /**
- * The scope which the discount was applied on, can be one of (cartItems,additionalCosts,sessionTotal)
+ * The scope which the discount was applied on, can be one of (cartItems,additionalCosts,sessionTotal).
  * @member {String} scope
  */
 SetDiscountEffectProps.prototype['scope'] = undefined;
 
 /**
- * The original value of the discount
+ * The original value of the discount.
  * @member {Number} desiredValue
  */
 SetDiscountEffectProps.prototype['desiredValue'] = undefined;

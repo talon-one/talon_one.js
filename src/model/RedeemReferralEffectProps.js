@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The RedeemReferralEffectProps model module.
  * @module model/RedeemReferralEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RedeemReferralEffectProps {
     /**
      * Constructs a new <code>RedeemReferralEffectProps</code>.
-     * The properties specific to the \&quot;redeemReferral\&quot; effect. This gets triggered whenever the referral code is valid, and a rule was triggered that contains a \&quot;redeem referral\&quot; effect.
+     * This effect is **deprecated**. The properties specific to the \&quot;redeemReferral\&quot; effect. This gets triggered whenever the referral code is valid, and a rule was triggered that contains a \&quot;redeem referral\&quot; effect. 
      * @alias module:model/RedeemReferralEffectProps
-     * @param id {Number} The id of the referral code that was redeemed
-     * @param value {String} The referral code that was redeemed
+     * @param id {Number} The id of the referral code that was redeemed.
+     * @param value {String} The referral code that was redeemed.
      */
     constructor(id, value) { 
         
@@ -66,13 +66,13 @@ class RedeemReferralEffectProps {
 }
 
 /**
- * The id of the referral code that was redeemed
+ * The id of the referral code that was redeemed.
  * @member {Number} id
  */
 RedeemReferralEffectProps.prototype['id'] = undefined;
 
 /**
- * The referral code that was redeemed
+ * The referral code that was redeemed.
  * @member {String} value
  */
 RedeemReferralEffectProps.prototype['value'] = undefined;

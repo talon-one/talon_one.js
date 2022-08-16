@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Webhook from './Webhook';
+import Attribute from './Attribute';
 
 /**
  * The InlineResponse20024 model module.
  * @module model/InlineResponse20024
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20024 {
     /**
      * Constructs a new <code>InlineResponse20024</code>.
      * @alias module:model/InlineResponse20024
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Webhook>} 
+     * @param data {Array.<module:model/Attribute>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20024 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Webhook]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Attribute]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20024 {
 InlineResponse20024.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Webhook>} data
+ * @member {Array.<module:model/Attribute>} data
  */
 InlineResponse20024.prototype['data'] = undefined;
 

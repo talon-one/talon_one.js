@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAdditionalCost model module.
  * @module model/NewAdditionalCost
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewAdditionalCost {
     /**
@@ -95,7 +95,7 @@ NewAdditionalCost.prototype['title'] = undefined;
 NewAdditionalCost.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this additional cost
+ * A list of the IDs of the applications that are subscribed to this additional cost.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 NewAdditionalCost.prototype['subscribedApplicationsIds'] = undefined;

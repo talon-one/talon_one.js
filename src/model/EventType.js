@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The EventType model module.
  * @module model/EventType
- * @version 4.5.0
+ * @version 4.6.0
  */
 class EventType {
     /**
      * Constructs a new <code>EventType</code>.
      * 
      * @alias module:model/EventType
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param title {String} The human-friendly display name for this event type. Use a short, past-tense, description of the event.
      * @param name {String} The machine-friendly canonical name for this event type. This will be used in URLs, and cannot be changed after an event type has been created.
@@ -79,7 +79,7 @@ class EventType {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 EventType.prototype['id'] = undefined;

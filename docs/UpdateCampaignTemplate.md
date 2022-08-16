@@ -15,10 +15,11 @@ Name | Type | Description | Notes
 **features** | **[String]** | A list of features for the campaign template. | [optional] 
 **couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
 **referralSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
-**limits** | [**[TemplateLimitConfig]**](TemplateLimitConfig.md) | The set of limits that will operate for this campaign template | [optional] 
+**limits** | [**[TemplateLimitConfig]**](TemplateLimitConfig.md) | The set of limits that will operate for this campaign template. | [optional] 
 **templateParams** | [**[CampaignTemplateParams]**](CampaignTemplateParams.md) | Template parameters are fields which can be used to replace values in a rule. | [optional] 
-**applicationsIds** | **[Number]** | A list of the IDs of the applications that are subscribed to this campaign template | 
+**applicationsIds** | **[Number]** | A list of the IDs of the applications that are subscribed to this campaign template. | 
 **campaignCollections** | [**[CampaignTemplateCollection]**](CampaignTemplateCollection.md) | The campaign collections from the blueprint campaign for the template. | [optional] 
+**defaultCampaignGroupId** | **Number** | The default campaignGroupId. | [optional] 
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateUser model module.
  * @module model/UpdateUser
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateUser {
     /**
@@ -70,13 +70,13 @@ class UpdateUser {
 }
 
 /**
- * Your name.
+ * The user name.
  * @member {String} name
  */
 UpdateUser.prototype['name'] = undefined;
 
 /**
- * a blob of acl json
+ * ACL Json.
  * @member {String} policy
  */
 UpdateUser.prototype['policy'] = undefined;
@@ -88,7 +88,7 @@ UpdateUser.prototype['policy'] = undefined;
 UpdateUser.prototype['state'] = undefined;
 
 /**
- * Update
+ * List of roles to assign to the user.
  * @member {Array.<Number>} roles
  */
 UpdateUser.prototype['roles'] = undefined;

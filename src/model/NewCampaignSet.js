@@ -17,7 +17,7 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The NewCampaignSet model module.
  * @module model/NewCampaignSet
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCampaignSet {
     /**
@@ -25,7 +25,7 @@ class NewCampaignSet {
      * 
      * @alias module:model/NewCampaignSet
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param version {Number} Version of the campaign set
+     * @param version {Number} Version of the campaign set.
      * @param set {module:model/CampaignSetBranchNode} 
      */
     constructor(applicationId, version, set) { 
@@ -78,7 +78,7 @@ class NewCampaignSet {
 NewCampaignSet.prototype['applicationId'] = undefined;
 
 /**
- * Version of the campaign set
+ * Version of the campaign set.
  * @member {Number} version
  */
 NewCampaignSet.prototype['version'] = undefined;

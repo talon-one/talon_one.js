@@ -17,7 +17,7 @@ import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**
@@ -66,7 +66,7 @@ class CustomerProfileIntegrationRequestV2 {
 }
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 CustomerProfileIntegrationRequestV2.prototype['attributes'] = undefined;
@@ -77,7 +77,7 @@ CustomerProfileIntegrationRequestV2.prototype['attributes'] = undefined;
 CustomerProfileIntegrationRequestV2.prototype['audiencesChanges'] = undefined;
 
 /**
- * Optional list of requested information to be present on the response related to the customer profile update.  Currently supported: \"customerProfile\", \"triggeredCampaigns\", \"loyalty\", \"event\", \"awardedGiveaways\", \"ruleFailureReasons\".  **Note:** `ruleFailureReasons` is always part of the response when the Application type is `sandbox`. 
+ * Optional list of extra data that you want to get in the response. Use this property to get as much data as you need in one request instead of sending extra requests to other endpoints.  **Note:** `ruleFailureReasons` is always part of the response when the [Application type](https://docs.talon.one/docs/product/applications/overview#application-types) is `sandbox`. 
  * @member {Array.<module:model/CustomerProfileIntegrationRequestV2.ResponseContentEnum>} responseContent
  */
 CustomerProfileIntegrationRequestV2.prototype['responseContent'] = undefined;

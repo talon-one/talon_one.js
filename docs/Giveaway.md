@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. | 
+**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
 **created** | **Date** | The exact moment this entity was created. | 
 **code** | **String** | The code value of this giveaway. | 
 **poolId** | **Number** | The ID of the pool to return giveaway codes from. | 

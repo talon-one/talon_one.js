@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewReferral model module.
  * @module model/NewReferral
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewReferral {
     /**
@@ -111,7 +111,7 @@ NewReferral.prototype['campaignId'] = undefined;
 NewReferral.prototype['advocateProfileIntegrationId'] = undefined;
 
 /**
- * An optional Integration ID of the Friend's Profile
+ * An optional Integration ID of the Friend's Profile.
  * @member {String} friendProfileIntegrationId
  */
 NewReferral.prototype['friendProfileIntegrationId'] = undefined;

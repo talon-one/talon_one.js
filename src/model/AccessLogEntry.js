@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessLogEntry model module.
  * @module model/AccessLogEntry
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AccessLogEntry {
     /**
      * Constructs a new <code>AccessLogEntry</code>.
-     * Log of application accesses
+     * Log of application accesses.
      * @alias module:model/AccessLogEntry
-     * @param uuid {String} UUID reference of request
-     * @param status {Number} HTTP status code of response
-     * @param method {String} HTTP method of request
+     * @param uuid {String} UUID reference of request.
+     * @param status {Number} HTTP status code of response.
+     * @param method {String} HTTP method of request.
      * @param requestUri {String} target URI of request
      * @param time {Date} timestamp of request
      * @param requestPayload {String} payload of request
@@ -91,19 +91,19 @@ class AccessLogEntry {
 }
 
 /**
- * UUID reference of request
+ * UUID reference of request.
  * @member {String} uuid
  */
 AccessLogEntry.prototype['uuid'] = undefined;
 
 /**
- * HTTP status code of response
+ * HTTP status code of response.
  * @member {Number} status
  */
 AccessLogEntry.prototype['status'] = undefined;
 
 /**
- * HTTP method of request
+ * HTTP method of request.
  * @member {String} method
  */
 AccessLogEntry.prototype['method'] = undefined;

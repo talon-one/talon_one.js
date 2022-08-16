@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateArgDef model module.
  * @module model/TemplateArgDef
- * @version 4.5.0
+ * @version 4.6.0
  */
 class TemplateArgDef {
     /**

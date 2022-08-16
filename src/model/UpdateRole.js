@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateRole {
     /**
@@ -67,25 +67,25 @@ class UpdateRole {
 }
 
 /**
- * Name of the role
+ * Name of the role.
  * @member {String} name
  */
 UpdateRole.prototype['name'] = undefined;
 
 /**
- * Description of the role
+ * Description of the role.
  * @member {String} description
  */
 UpdateRole.prototype['description'] = undefined;
 
 /**
- * Role Policy this should be a stringified blob of json
+ * Role Policy this should be a stringified blob of json.
  * @member {String} acl
  */
 UpdateRole.prototype['acl'] = undefined;
 
 /**
- * An array of user identifiers
+ * An array of user identifiers.
  * @member {Array.<Number>} members
  */
 UpdateRole.prototype['members'] = undefined;
