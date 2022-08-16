@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The FeatureFlag model module.
  * @module model/FeatureFlag
- * @version 4.5.0
+ * @version 4.6.0
  */
 class FeatureFlag {
     /**
      * Constructs a new <code>FeatureFlag</code>.
      * @alias module:model/FeatureFlag
-     * @param name {String} The name for the featureflag
-     * @param value {String} The value for the featureflag
+     * @param name {String} The name for the featureflag.
+     * @param value {String} The value for the featureflag.
      */
     constructor(name, value) { 
         
@@ -71,13 +71,13 @@ class FeatureFlag {
 }
 
 /**
- * The name for the featureflag
+ * The name for the featureflag.
  * @member {String} name
  */
 FeatureFlag.prototype['name'] = undefined;
 
 /**
- * The value for the featureflag
+ * The value for the featureflag.
  * @member {String} value
  */
 FeatureFlag.prototype['value'] = undefined;

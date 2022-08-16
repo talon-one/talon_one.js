@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateCoupon {
     /**
@@ -108,13 +108,13 @@ UpdateCoupon.prototype['expiryDate'] = undefined;
 UpdateCoupon.prototype['limits'] = undefined;
 
 /**
- * The integration ID for this coupon's beneficiary's profile
+ * The integration ID for this coupon's beneficiary's profile.
  * @member {String} recipientIntegrationId
  */
 UpdateCoupon.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 UpdateCoupon.prototype['attributes'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class SetDiscountPerItemEffectProps {
     /**
@@ -78,6 +78,12 @@ class SetDiscountPerItemEffectProps {
             if (data.hasOwnProperty('desiredTotalDiscount')) {
                 obj['desiredTotalDiscount'] = ApiClient.convertToType(data['desiredTotalDiscount'], 'Number');
             }
+            if (data.hasOwnProperty('bundleIndex')) {
+                obj['bundleIndex'] = ApiClient.convertToType(data['bundleIndex'], 'Number');
+            }
+            if (data.hasOwnProperty('bundleName')) {
+                obj['bundleName'] = ApiClient.convertToType(data['bundleName'], 'String');
+            }
         }
         return obj;
     }
@@ -110,7 +116,7 @@ SetDiscountPerItemEffectProps.prototype['position'] = undefined;
 SetDiscountPerItemEffectProps.prototype['subPosition'] = undefined;
 
 /**
- * The original value of the discount
+ * The original value of the discount.
  * @member {Number} desiredValue
  */
 SetDiscountPerItemEffectProps.prototype['desiredValue'] = undefined;
@@ -122,16 +128,28 @@ SetDiscountPerItemEffectProps.prototype['desiredValue'] = undefined;
 SetDiscountPerItemEffectProps.prototype['scope'] = undefined;
 
 /**
- * The total discount given if this effect is a result of a prorated discount
+ * The total discount given if this effect is a result of a prorated discount.
  * @member {Number} totalDiscount
  */
 SetDiscountPerItemEffectProps.prototype['totalDiscount'] = undefined;
 
 /**
- * The original total discount to give if this effect is a result of a prorated discount
+ * The original total discount to give if this effect is a result of a prorated discount.
  * @member {Number} desiredTotalDiscount
  */
 SetDiscountPerItemEffectProps.prototype['desiredTotalDiscount'] = undefined;
+
+/**
+ * The position of the bundle in a list of item bundles created from the same bundle definition.
+ * @member {Number} bundleIndex
+ */
+SetDiscountPerItemEffectProps.prototype['bundleIndex'] = undefined;
+
+/**
+ * The name of the bundle binding.
+ * @member {String} bundleName
+ */
+SetDiscountPerItemEffectProps.prototype['bundleName'] = undefined;
 
 
 

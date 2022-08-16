@@ -16,20 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAPIKey model module.
  * @module model/ApplicationAPIKey
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ApplicationAPIKey {
     /**
      * Constructs a new <code>ApplicationAPIKey</code>.
      * 
      * @alias module:model/ApplicationAPIKey
-     * @param title {String} Title for API Key
-     * @param expires {Date} The date the API key expired
-     * @param id {Number} ID of the API Key
-     * @param createdBy {Number} ID of user who created
-     * @param accountID {Number} ID of account the key is used for
-     * @param applicationID {Number} ID of application the key is used for
-     * @param created {Date} The date the API key was created
+     * @param title {String} Title for API Key.
+     * @param expires {Date} The date the API key expired.
+     * @param id {Number} ID of the API Key.
+     * @param createdBy {Number} ID of user who created.
+     * @param accountID {Number} ID of account the key is used for.
+     * @param applicationID {Number} ID of application the key is used for.
+     * @param created {Date} The date the API key was created.
      */
     constructor(title, expires, id, createdBy, accountID, applicationID, created) { 
         
@@ -94,13 +94,13 @@ class ApplicationAPIKey {
 }
 
 /**
- * Title for API Key
+ * Title for API Key.
  * @member {String} title
  */
 ApplicationAPIKey.prototype['title'] = undefined;
 
 /**
- * The date the API key expired
+ * The date the API key expired.
  * @member {Date} expires
  */
 ApplicationAPIKey.prototype['expires'] = undefined;
@@ -112,31 +112,31 @@ ApplicationAPIKey.prototype['expires'] = undefined;
 ApplicationAPIKey.prototype['platform'] = undefined;
 
 /**
- * ID of the API Key
+ * ID of the API Key.
  * @member {Number} id
  */
 ApplicationAPIKey.prototype['id'] = undefined;
 
 /**
- * ID of user who created
+ * ID of user who created.
  * @member {Number} createdBy
  */
 ApplicationAPIKey.prototype['createdBy'] = undefined;
 
 /**
- * ID of account the key is used for
+ * ID of account the key is used for.
  * @member {Number} accountID
  */
 ApplicationAPIKey.prototype['accountID'] = undefined;
 
 /**
- * ID of application the key is used for
+ * ID of application the key is used for.
  * @member {Number} applicationID
  */
 ApplicationAPIKey.prototype['applicationID'] = undefined;
 
 /**
- * The date the API key was created
+ * The date the API key was created.
  * @member {Date} created
  */
 ApplicationAPIKey.prototype['created'] = undefined;
@@ -198,7 +198,13 @@ ApplicationAPIKey['PlatformEnum'] = {
      * value: "customer_data"
      * @const
      */
-    "customer_data": "customer_data"
+    "customer_data": "customer_data",
+
+    /**
+     * value: "salesforce"
+     * @const
+     */
+    "salesforce": "salesforce"
 };
 
 

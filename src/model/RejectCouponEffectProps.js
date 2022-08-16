@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectCouponEffectProps model module.
  * @module model/RejectCouponEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RejectCouponEffectProps {
     /**
      * Constructs a new <code>RejectCouponEffectProps</code>.
      * The properties specific to the \&quot;rejectCoupon\&quot; effect. This gets triggered whenever the coupon was rejected. See rejectionReason for more info on why.
      * @alias module:model/RejectCouponEffectProps
-     * @param value {String} The coupon code that was rejected
-     * @param rejectionReason {String} The reason why this coupon was rejected
+     * @param value {String} The coupon code that was rejected.
+     * @param rejectionReason {String} The reason why this coupon was rejected.
      */
     constructor(value, rejectionReason) { 
         
@@ -75,31 +75,31 @@ class RejectCouponEffectProps {
 }
 
 /**
- * The coupon code that was rejected
+ * The coupon code that was rejected.
  * @member {String} value
  */
 RejectCouponEffectProps.prototype['value'] = undefined;
 
 /**
- * The reason why this coupon was rejected
+ * The reason why this coupon was rejected.
  * @member {String} rejectionReason
  */
 RejectCouponEffectProps.prototype['rejectionReason'] = undefined;
 
 /**
- * The index of the condition that caused the rejection of the coupon
+ * The index of the condition that caused the rejection of the coupon.
  * @member {Number} conditionIndex
  */
 RejectCouponEffectProps.prototype['conditionIndex'] = undefined;
 
 /**
- * The index of the effect that caused the rejection of the coupon
+ * The index of the effect that caused the rejection of the coupon.
  * @member {Number} effectIndex
  */
 RejectCouponEffectProps.prototype['effectIndex'] = undefined;
 
 /**
- * More details about the failure
+ * More details about the failure.
  * @member {String} details
  */
 RejectCouponEffectProps.prototype['details'] = undefined;

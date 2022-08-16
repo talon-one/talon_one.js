@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateUserLatestFeedTimestamp model module.
  * @module model/UpdateUserLatestFeedTimestamp
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateUserLatestFeedTimestamp {
     /**
      * Constructs a new <code>UpdateUserLatestFeedTimestamp</code>.
-     * Updates current user&#39;s latest seen notifications timestamp
+     * Updates current user&#39;s latest seen notifications timestamp.
      * @alias module:model/UpdateUserLatestFeedTimestamp
-     * @param newLatestFeedTimestamp {Date} New timestamp to update for the current user
+     * @param newLatestFeedTimestamp {Date} New timestamp to update for the current user.
      */
     constructor(newLatestFeedTimestamp) { 
         
@@ -61,7 +61,7 @@ class UpdateUserLatestFeedTimestamp {
 }
 
 /**
- * New timestamp to update for the current user
+ * New timestamp to update for the current user.
  * @member {Date} newLatestFeedTimestamp
  */
 UpdateUserLatestFeedTimestamp.prototype['newLatestFeedTimestamp'] = undefined;

@@ -16,20 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerAnalytics model module.
  * @module model/CustomerAnalytics
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CustomerAnalytics {
     /**
      * Constructs a new <code>CustomerAnalytics</code>.
-     * 
+     * A summary report of customer activity for a given time range.
      * @alias module:model/CustomerAnalytics
-     * @param acceptedCoupons {Number} Total accepted coupons for this customer
-     * @param createdCoupons {Number} Total created coupons for this customer
-     * @param freeItems {Number} Total free items given to this customer
-     * @param totalOrders {Number} Total orders made by this customer
-     * @param totalDiscountedOrders {Number} Total orders made by this customer that had a discount
-     * @param totalRevenue {Number} Total Revenue across all closed sessions
-     * @param totalDiscounts {Number} The sum of discounts that were given across all closed sessions
+     * @param acceptedCoupons {Number} Total accepted coupons for this customer.
+     * @param createdCoupons {Number} Total created coupons for this customer.
+     * @param freeItems {Number} Total free items given to this customer.
+     * @param totalOrders {Number} Total orders made by this customer.
+     * @param totalDiscountedOrders {Number} Total orders made by this customer that had a discount.
+     * @param totalRevenue {Number} Total Revenue across all closed sessions.
+     * @param totalDiscounts {Number} The sum of discounts that were given across all closed sessions.
      */
     constructor(acceptedCoupons, createdCoupons, freeItems, totalOrders, totalDiscountedOrders, totalRevenue, totalDiscounts) { 
         
@@ -91,43 +91,43 @@ class CustomerAnalytics {
 }
 
 /**
- * Total accepted coupons for this customer
+ * Total accepted coupons for this customer.
  * @member {Number} acceptedCoupons
  */
 CustomerAnalytics.prototype['acceptedCoupons'] = undefined;
 
 /**
- * Total created coupons for this customer
+ * Total created coupons for this customer.
  * @member {Number} createdCoupons
  */
 CustomerAnalytics.prototype['createdCoupons'] = undefined;
 
 /**
- * Total free items given to this customer
+ * Total free items given to this customer.
  * @member {Number} freeItems
  */
 CustomerAnalytics.prototype['freeItems'] = undefined;
 
 /**
- * Total orders made by this customer
+ * Total orders made by this customer.
  * @member {Number} totalOrders
  */
 CustomerAnalytics.prototype['totalOrders'] = undefined;
 
 /**
- * Total orders made by this customer that had a discount
+ * Total orders made by this customer that had a discount.
  * @member {Number} totalDiscountedOrders
  */
 CustomerAnalytics.prototype['totalDiscountedOrders'] = undefined;
 
 /**
- * Total Revenue across all closed sessions
+ * Total Revenue across all closed sessions.
  * @member {Number} totalRevenue
  */
 CustomerAnalytics.prototype['totalRevenue'] = undefined;
 
 /**
- * The sum of discounts that were given across all closed sessions
+ * The sum of discounts that were given across all closed sessions.
  * @member {Number} totalDiscounts
  */
 CustomerAnalytics.prototype['totalDiscounts'] = undefined;

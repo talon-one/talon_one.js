@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateReferral model module.
  * @module model/UpdateReferral
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateReferral {
     /**
@@ -70,7 +70,7 @@ class UpdateReferral {
 }
 
 /**
- * An optional Integration ID of the Friend's Profile
+ * An optional Integration ID of the Friend's Profile.
  * @member {String} friendProfileIntegrationId
  */
 UpdateReferral.prototype['friendProfileIntegrationId'] = undefined;
@@ -94,7 +94,7 @@ UpdateReferral.prototype['expiryDate'] = undefined;
 UpdateReferral.prototype['usageLimit'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 UpdateReferral.prototype['attributes'] = undefined;

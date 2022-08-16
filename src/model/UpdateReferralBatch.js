@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateReferralBatch model module.
  * @module model/UpdateReferralBatch
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateReferralBatch {
     /**
@@ -72,7 +72,7 @@ class UpdateReferralBatch {
 }
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 UpdateReferralBatch.prototype['attributes'] = undefined;

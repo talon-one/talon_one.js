@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The NewWebhook model module.
  * @module model/NewWebhook
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewWebhook {
     /**
@@ -25,12 +25,12 @@ class NewWebhook {
      * 
      * @alias module:model/NewWebhook
      * @param applicationIds {Array.<Number>} The IDs of the applications that are related to this entity.
-     * @param title {String} Friendly title for this webhook
-     * @param verb {module:model/NewWebhook.VerbEnum} API method for this webhook
-     * @param url {String} API url (supports templating using parameters) for this webhook
-     * @param headers {Array.<String>} List of API HTTP headers for this webhook
-     * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions
-     * @param enabled {Boolean} Enables or disables webhook from showing in rule builder
+     * @param title {String} Friendly title for this webhook.
+     * @param verb {module:model/NewWebhook.VerbEnum} API method for this webhook.
+     * @param url {String} API url (supports templating using parameters) for this webhook.
+     * @param headers {Array.<String>} List of API HTTP headers for this webhook.
+     * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions.
+     * @param enabled {Boolean} Enables or disables webhook from showing in rule builder.
      */
     constructor(applicationIds, title, verb, url, headers, params, enabled) { 
         
@@ -101,43 +101,43 @@ class NewWebhook {
 NewWebhook.prototype['applicationIds'] = undefined;
 
 /**
- * Friendly title for this webhook
+ * Friendly title for this webhook.
  * @member {String} title
  */
 NewWebhook.prototype['title'] = undefined;
 
 /**
- * API method for this webhook
+ * API method for this webhook.
  * @member {module:model/NewWebhook.VerbEnum} verb
  */
 NewWebhook.prototype['verb'] = undefined;
 
 /**
- * API url (supports templating using parameters) for this webhook
+ * API url (supports templating using parameters) for this webhook.
  * @member {String} url
  */
 NewWebhook.prototype['url'] = undefined;
 
 /**
- * List of API HTTP headers for this webhook
+ * List of API HTTP headers for this webhook.
  * @member {Array.<String>} headers
  */
 NewWebhook.prototype['headers'] = undefined;
 
 /**
- * API payload (supports templating using parameters) for this webhook
+ * API payload (supports templating using parameters) for this webhook.
  * @member {String} payload
  */
 NewWebhook.prototype['payload'] = undefined;
 
 /**
- * Array of template argument definitions
+ * Array of template argument definitions.
  * @member {Array.<module:model/TemplateArgDef>} params
  */
 NewWebhook.prototype['params'] = undefined;
 
 /**
- * Enables or disables webhook from showing in rule builder
+ * Enables or disables webhook from showing in rule builder.
  * @member {Boolean} enabled
  */
 NewWebhook.prototype['enabled'] = undefined;

@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackDeductedLoyaltyPointsEffectProps model module.
  * @module model/RollbackDeductedLoyaltyPointsEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RollbackDeductedLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>RollbackDeductedLoyaltyPointsEffectProps</code>.
      * The properties specific to the \&quot;rollbackDeductedLoyaltyPoints\&quot; effect. This effect is triggered whenever a previously closed session is cancelled and a deductLoyaltyPoints effect was revoked.
      * @alias module:model/RollbackDeductedLoyaltyPointsEffectProps
-     * @param programId {Number} The ID of the loyalty program where these points were reimbursed
-     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were reimbursed
-     * @param value {Number} The amount of reimbursed points that were added
-     * @param recipientIntegrationId {String} The user for whom these points were reimbursed
-     * @param transactionUUID {String} The identifier of 'addition' entries added to the ledger as the `deductLoyaltyPoints` effect is rolled back
+     * @param programId {Number} The ID of the loyalty program where these points were reimbursed.
+     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were reimbursed.
+     * @param value {Number} The amount of reimbursed points that were added.
+     * @param recipientIntegrationId {String} The user for whom these points were reimbursed.
+     * @param transactionUUID {String} The identifier of 'addition' entries added to the ledger as the `deductLoyaltyPoints` effect is rolled back.
      */
     constructor(programId, subLedgerId, value, recipientIntegrationId, transactionUUID) { 
         
@@ -90,43 +90,43 @@ class RollbackDeductedLoyaltyPointsEffectProps {
 }
 
 /**
- * The ID of the loyalty program where these points were reimbursed
+ * The ID of the loyalty program where these points were reimbursed.
  * @member {Number} programId
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['programId'] = undefined;
 
 /**
- * The ID of the subledger within the loyalty program where these points were reimbursed
+ * The ID of the subledger within the loyalty program where these points were reimbursed.
  * @member {String} subLedgerId
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
 
 /**
- * The amount of reimbursed points that were added
+ * The amount of reimbursed points that were added.
  * @member {Number} value
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['value'] = undefined;
 
 /**
- * The user for whom these points were reimbursed
+ * The user for whom these points were reimbursed.
  * @member {String} recipientIntegrationId
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * Date after which the reimbursed points will be valid
+ * Date after which the reimbursed points will be valid.
  * @member {Date} startDate
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['startDate'] = undefined;
 
 /**
- * Date after which the reimbursed points will expire
+ * Date after which the reimbursed points will expire.
  * @member {Date} expiryDate
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['expiryDate'] = undefined;
 
 /**
- * The identifier of 'addition' entries added to the ledger as the `deductLoyaltyPoints` effect is rolled back
+ * The identifier of 'addition' entries added to the ledger as the `deductLoyaltyPoints` effect is rolled back.
  * @member {String} transactionUUID
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;

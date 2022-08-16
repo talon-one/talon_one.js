@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integrationIDs** | **[String]** | List of Integration IDs | 
+**integrationIDs** | **[String]** | List of customer integration IDs. | 
 
 

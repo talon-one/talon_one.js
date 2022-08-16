@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignSearch model module.
  * @module model/CampaignSearch
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignSearch {
     /**
      * Constructs a new <code>CampaignSearch</code>.
      * @alias module:model/CampaignSearch
-     * @param attributes {Object} Properties to match against a campaign. All provided attributes will be exactly matched against campaign attributes
+     * @param attributes {Object} Properties to match against a campaign. All provided attributes will be exactly matched against campaign attributes.
      */
     constructor(attributes) { 
         
@@ -60,7 +60,7 @@ class CampaignSearch {
 }
 
 /**
- * Properties to match against a campaign. All provided attributes will be exactly matched against campaign attributes
+ * Properties to match against a campaign. All provided attributes will be exactly matched against campaign attributes.
  * @member {Object} attributes
  */
 CampaignSearch.prototype['attributes'] = undefined;

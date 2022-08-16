@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The UpdateCampaignTemplate model module.
  * @module model/UpdateCampaignTemplate
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateCampaignTemplate {
     /**
@@ -30,7 +30,7 @@ class UpdateCampaignTemplate {
      * @param description {String} Customer-facing text that explains the objective of the template.
      * @param instructions {String} Customer-facing text that explains how to use the template. For example, you can use this property to explain the available attributes of this template, and how they can be modified when a user uses this template to create a new campaign.
      * @param state {module:model/UpdateCampaignTemplate.StateEnum} Only Campaign Templates in 'available' state may be used to create Campaigns.
-     * @param applicationsIds {Array.<Number>} A list of the IDs of the applications that are subscribed to this campaign template
+     * @param applicationsIds {Array.<Number>} A list of the IDs of the applications that are subscribed to this campaign template.
      */
     constructor(name, description, instructions, state, applicationsIds) { 
         
@@ -106,6 +106,9 @@ class UpdateCampaignTemplate {
             if (data.hasOwnProperty('campaignCollections')) {
                 obj['campaignCollections'] = ApiClient.convertToType(data['campaignCollections'], [CampaignTemplateCollection]);
             }
+            if (data.hasOwnProperty('defaultCampaignGroupId')) {
+                obj['defaultCampaignGroupId'] = ApiClient.convertToType(data['defaultCampaignGroupId'], 'Number');
+            }
         }
         return obj;
     }
@@ -178,7 +181,7 @@ UpdateCampaignTemplate.prototype['couponSettings'] = undefined;
 UpdateCampaignTemplate.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign template
+ * The set of limits that will operate for this campaign template.
  * @member {Array.<module:model/TemplateLimitConfig>} limits
  */
 UpdateCampaignTemplate.prototype['limits'] = undefined;
@@ -190,7 +193,7 @@ UpdateCampaignTemplate.prototype['limits'] = undefined;
 UpdateCampaignTemplate.prototype['templateParams'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this campaign template
+ * A list of the IDs of the applications that are subscribed to this campaign template.
  * @member {Array.<Number>} applicationsIds
  */
 UpdateCampaignTemplate.prototype['applicationsIds'] = undefined;
@@ -200,6 +203,12 @@ UpdateCampaignTemplate.prototype['applicationsIds'] = undefined;
  * @member {Array.<module:model/CampaignTemplateCollection>} campaignCollections
  */
 UpdateCampaignTemplate.prototype['campaignCollections'] = undefined;
+
+/**
+ * The default campaignGroupId.
+ * @member {Number} defaultCampaignGroupId
+ */
+UpdateCampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
 
 
 

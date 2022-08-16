@@ -17,7 +17,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewLoyaltyProgram {
     /**
@@ -27,7 +27,7 @@ class NewLoyaltyProgram {
      * @param title {String} The display title for the Loyalty Program.
      * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
      * @param defaultPending {String} Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
-     * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program
+     * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program.
      * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
      * @param timezone {String} A string containing an IANA timezone descriptor.
      * @param cardBased {Boolean} Defines the type of loyalty program: - `true`: the program is a card-based. - `false`: the program is profile-based. 
@@ -134,7 +134,7 @@ NewLoyaltyProgram.prototype['defaultValidity'] = undefined;
 NewLoyaltyProgram.prototype['defaultPending'] = undefined;
 
 /**
- * Indicates if this program supports subledgers inside the program
+ * Indicates if this program supports subledgers inside the program.
  * @member {Boolean} allowSubledger
  */
 NewLoyaltyProgram.prototype['allowSubledger'] = undefined;
@@ -152,7 +152,7 @@ NewLoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 NewLoyaltyProgram.prototype['name'] = undefined;
 
 /**
- * The tiers in this loyalty program
+ * The tiers in this loyalty program.
  * @member {Array.<module:model/NewLoyaltyTier>} tiers
  */
 NewLoyaltyProgram.prototype['tiers'] = undefined;

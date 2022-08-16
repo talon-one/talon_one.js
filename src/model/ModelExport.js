@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelExport model module.
  * @module model/ModelExport
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ModelExport {
     /**
      * Constructs a new <code>ModelExport</code>.
      * 
      * @alias module:model/ModelExport
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param userId {Number} The ID of the account that owns this entity.
      * @param entity {module:model/ModelExport.EntityEnum} The name of the entity that was exported.
-     * @param filter {Object} Map of keys and values that were used to filter the exported rows
+     * @param filter {Object} Map of keys and values that were used to filter the exported rows.
      */
     constructor(id, created, accountId, userId, entity, filter) { 
         
@@ -86,7 +86,7 @@ class ModelExport {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 ModelExport.prototype['id'] = undefined;
@@ -116,7 +116,7 @@ ModelExport.prototype['userId'] = undefined;
 ModelExport.prototype['entity'] = undefined;
 
 /**
- * Map of keys and values that were used to filter the exported rows
+ * Map of keys and values that were used to filter the exported rows.
  * @member {Object} filter
  */
 ModelExport.prototype['filter'] = undefined;

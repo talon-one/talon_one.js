@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccount model module.
  * @module model/UpdateAccount
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateAccount {
     /**
@@ -74,7 +74,7 @@ class UpdateAccount {
 }
 
 /**
- * Arbitrary properties associated with this campaign
+ * Arbitrary properties associated with this campaign.
  * @member {Object} attributes
  */
 UpdateAccount.prototype['attributes'] = undefined;
@@ -92,7 +92,7 @@ UpdateAccount.prototype['companyName'] = undefined;
 UpdateAccount.prototype['billingEmail'] = undefined;
 
 /**
- * State of the account (active, deactivated)
+ * State of the account (active, deactivated).
  * @member {module:model/UpdateAccount.StateEnum} state
  */
 UpdateAccount.prototype['state'] = undefined;

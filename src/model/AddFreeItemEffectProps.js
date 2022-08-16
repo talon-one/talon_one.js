@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The AddFreeItemEffectProps model module.
  * @module model/AddFreeItemEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AddFreeItemEffectProps {
     /**
      * Constructs a new <code>AddFreeItemEffectProps</code>.
      * The properties specific to the \&quot;addFreeItem\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;add free item\&quot; effect.
      * @alias module:model/AddFreeItemEffectProps
-     * @param sku {String} SKU of the item that needs to be added
-     * @param name {String} The name/description of the effect
+     * @param sku {String} SKU of the item that needs to be added.
+     * @param name {String} The name/description of the effect.
      */
     constructor(sku, name) { 
         
@@ -66,13 +66,13 @@ class AddFreeItemEffectProps {
 }
 
 /**
- * SKU of the item that needs to be added
+ * SKU of the item that needs to be added.
  * @member {String} sku
  */
 AddFreeItemEffectProps.prototype['sku'] = undefined;
 
 /**
- * The name/description of the effect
+ * The name/description of the effect.
  * @member {String} name
  */
 AddFreeItemEffectProps.prototype['name'] = undefined;

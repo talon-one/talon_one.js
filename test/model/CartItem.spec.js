@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property catalogItemID (base name: "catalogItemID")', function() {
+      // uncomment below and update the code to test the property catalogItemID
+      //var instane = new TalonOne.CartItem();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

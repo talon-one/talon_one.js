@@ -17,23 +17,23 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Webhook {
     /**
      * Constructs a new <code>Webhook</code>.
      * 
      * @alias module:model/Webhook
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param applicationIds {Array.<Number>} The IDs of the applications that are related to this entity. The IDs of the applications that are related to this entity.
-     * @param title {String} Friendly title for this webhook
-     * @param verb {module:model/Webhook.VerbEnum} API method for this webhook
-     * @param url {String} API url (supports templating using parameters) for this webhook
-     * @param headers {Array.<String>} List of API HTTP headers for this webhook
-     * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions
-     * @param enabled {Boolean} Enables or disables webhook from showing in rule builder
+     * @param title {String} Friendly title for this webhook.
+     * @param verb {module:model/Webhook.VerbEnum} API method for this webhook.
+     * @param url {String} API url (supports templating using parameters) for this webhook.
+     * @param headers {Array.<String>} List of API HTTP headers for this webhook.
+     * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions.
+     * @param enabled {Boolean} Enables or disables webhook from showing in rule builder.
      */
     constructor(id, created, modified, applicationIds, title, verb, url, headers, params, enabled) { 
         
@@ -110,7 +110,7 @@ class Webhook {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Webhook.prototype['id'] = undefined;
@@ -134,43 +134,43 @@ Webhook.prototype['modified'] = undefined;
 Webhook.prototype['applicationIds'] = undefined;
 
 /**
- * Friendly title for this webhook
+ * Friendly title for this webhook.
  * @member {String} title
  */
 Webhook.prototype['title'] = undefined;
 
 /**
- * API method for this webhook
+ * API method for this webhook.
  * @member {module:model/Webhook.VerbEnum} verb
  */
 Webhook.prototype['verb'] = undefined;
 
 /**
- * API url (supports templating using parameters) for this webhook
+ * API url (supports templating using parameters) for this webhook.
  * @member {String} url
  */
 Webhook.prototype['url'] = undefined;
 
 /**
- * List of API HTTP headers for this webhook
+ * List of API HTTP headers for this webhook.
  * @member {Array.<String>} headers
  */
 Webhook.prototype['headers'] = undefined;
 
 /**
- * API payload (supports templating using parameters) for this webhook
+ * API payload (supports templating using parameters) for this webhook.
  * @member {String} payload
  */
 Webhook.prototype['payload'] = undefined;
 
 /**
- * Array of template argument definitions
+ * Array of template argument definitions.
  * @member {Array.<module:model/TemplateArgDef>} params
  */
 Webhook.prototype['params'] = undefined;
 
 /**
- * Enables or disables webhook from showing in rule builder
+ * Enables or disables webhook from showing in rule builder.
  * @member {Boolean} enabled
  */
 Webhook.prototype['enabled'] = undefined;

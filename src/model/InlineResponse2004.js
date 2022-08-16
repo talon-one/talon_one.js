@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Coupon from './Coupon';
+import NotificationWebhook from './NotificationWebhook';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse2004 {
     /**
      * Constructs a new <code>InlineResponse2004</code>.
      * @alias module:model/InlineResponse2004
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Coupon>} 
+     * @param data {Array.<module:model/NotificationWebhook>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2004 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
+                obj['data'] = ApiClient.convertToType(data['data'], [NotificationWebhook]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2004 {
 InlineResponse2004.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Coupon>} data
+ * @member {Array.<module:model/NotificationWebhook>} data
  */
 InlineResponse2004.prototype['data'] = undefined;
 

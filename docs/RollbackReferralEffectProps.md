@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **String** | The referral code whose usage has been rolled back | 
+**value** | **String** | The referral code whose usage has been rolled back. | 
 
 

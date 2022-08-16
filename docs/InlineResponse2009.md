@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**totalResultSize** | **Number** |  | [optional] 
-**data** | [**[Collection]**](Collection.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[LoyaltyProgram]**](LoyaltyProgram.md) |  | 
 
 

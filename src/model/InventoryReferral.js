@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The InventoryReferral model module.
  * @module model/InventoryReferral
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InventoryReferral {
     /**
      * Constructs a new <code>InventoryReferral</code>.
      * 
      * @alias module:model/InventoryReferral
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param usageLimit {Number} The number of times a referral code can be used. `0` means no limit but any campaign usage limits will still apply. 
      * @param campaignId {Number} ID of the campaign from which the referral received the referral code.
@@ -114,7 +114,7 @@ class InventoryReferral {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 InventoryReferral.prototype['id'] = undefined;
@@ -156,7 +156,7 @@ InventoryReferral.prototype['campaignId'] = undefined;
 InventoryReferral.prototype['advocateProfileIntegrationId'] = undefined;
 
 /**
- * An optional Integration ID of the Friend's Profile
+ * An optional Integration ID of the Friend's Profile.
  * @member {String} friendProfileIntegrationId
  */
 InventoryReferral.prototype['friendProfileIntegrationId'] = undefined;

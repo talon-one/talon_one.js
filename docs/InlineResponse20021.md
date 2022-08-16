@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**totalResultSize** | **Number** |  | 
-**data** | [**[ApplicationReferee]**](ApplicationReferee.md) |  | 
+**data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
 
 

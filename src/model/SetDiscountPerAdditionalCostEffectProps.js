@@ -16,17 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerAdditionalCostEffectProps model module.
  * @module model/SetDiscountPerAdditionalCostEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class SetDiscountPerAdditionalCostEffectProps {
     /**
      * Constructs a new <code>SetDiscountPerAdditionalCostEffectProps</code>.
      * The properties specific to the \&quot;setDiscountPerAdditionalCost\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set per additional cost discount\&quot; effect. This is a discount that should be applied on a specific additional cost.
      * @alias module:model/SetDiscountPerAdditionalCostEffectProps
-     * @param name {String} The name/description of this discount
-     * @param additionalCostId {Number} The ID of the additional cost
-     * @param additionalCost {String} The name of the additional cost
-     * @param value {Number} The total monetary value of the discount
+     * @param name {String} The name/description of this discount.
+     * @param additionalCostId {Number} The ID of the additional cost.
+     * @param additionalCost {String} The name of the additional cost.
+     * @param value {Number} The total monetary value of the discount.
      */
     constructor(name, additionalCostId, additionalCost, value) { 
         
@@ -79,31 +79,31 @@ class SetDiscountPerAdditionalCostEffectProps {
 }
 
 /**
- * The name/description of this discount
+ * The name/description of this discount.
  * @member {String} name
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['name'] = undefined;
 
 /**
- * The ID of the additional cost
+ * The ID of the additional cost.
  * @member {Number} additionalCostId
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['additionalCostId'] = undefined;
 
 /**
- * The name of the additional cost
+ * The name of the additional cost.
  * @member {String} additionalCost
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['additionalCost'] = undefined;
 
 /**
- * The total monetary value of the discount
+ * The total monetary value of the discount.
  * @member {Number} value
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['value'] = undefined;
 
 /**
- * The original value of the discount
+ * The original value of the discount.
  * @member {Number} desiredValue
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['desiredValue'] = undefined;

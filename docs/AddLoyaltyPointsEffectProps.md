@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name/description of this loyalty point addition. | 
+**name** | **String** | The reason of the point addition. | 
 **programId** | **Number** | The ID of the loyalty program where these points were added. | 
 **subLedgerId** | **String** | The ID of the subledger within the loyalty program where these points were added. | 
 **value** | **Number** | The amount of points that were added. | 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignTemplateParams model module.
  * @module model/CampaignTemplateParams
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignTemplateParams {
     /**
@@ -62,6 +62,9 @@ class CampaignTemplateParams {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('attributeId')) {
+                obj['attributeId'] = ApiClient.convertToType(data['attributeId'], 'Number');
+            }
         }
         return obj;
     }
@@ -86,6 +89,12 @@ CampaignTemplateParams.prototype['type'] = undefined;
  * @member {String} description
  */
 CampaignTemplateParams.prototype['description'] = undefined;
+
+/**
+ * ID of the corresponding attribute.
+ * @member {Number} attributeId
+ */
+CampaignTemplateParams.prototype['attributeId'] = undefined;
 
 
 

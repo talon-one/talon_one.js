@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[CustomerActivityReport]**](CustomerActivityReport.md) |  | 
+**totalResultSize** | **Number** |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
+**data** | [**[ApplicationCustomer]**](ApplicationCustomer.md) |  | 
 
 

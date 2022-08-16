@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCoupons {
     /**
@@ -136,13 +136,13 @@ NewCoupons.prototype['numberOfCoupons'] = undefined;
 NewCoupons.prototype['uniquePrefix'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 NewCoupons.prototype['attributes'] = undefined;
 
 /**
- * The integration ID for this coupon's beneficiary's profile
+ * The integration ID for this coupon's beneficiary's profile.
  * @member {String} recipientIntegrationId
  */
 NewCoupons.prototype['recipientIntegrationId'] = undefined;

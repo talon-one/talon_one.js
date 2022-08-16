@@ -17,7 +17,7 @@ import Attribute from './Attribute';
 /**
  * The MultipleAttribute model module.
  * @module model/MultipleAttribute
- * @version 4.5.0
+ * @version 4.6.0
  */
 class MultipleAttribute {
     /**

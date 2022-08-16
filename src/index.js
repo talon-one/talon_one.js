@@ -23,6 +23,7 @@ import AccountAnalytics from './model/AccountAnalytics';
 import AccountEntity from './model/AccountEntity';
 import AccountLimits from './model/AccountLimits';
 import AddFreeItemEffectProps from './model/AddFreeItemEffectProps';
+import AddItemCatalogAction from './model/AddItemCatalogAction';
 import AddLoyaltyPointsEffectProps from './model/AddLoyaltyPointsEffectProps';
 import AdditionalCost from './model/AdditionalCost';
 import Application from './model/Application';
@@ -42,6 +43,8 @@ import Attribute from './model/Attribute';
 import AttributesMandatory from './model/AttributesMandatory';
 import AttributesSettings from './model/AttributesSettings';
 import Audience from './model/Audience';
+import AudienceAnalytics from './model/AudienceAnalytics';
+import AudienceIntegrationID from './model/AudienceIntegrationID';
 import AudienceMembership from './model/AudienceMembership';
 import AwardGiveawayEffectProps from './model/AwardGiveawayEffectProps';
 import BaseLoyaltyProgram from './model/BaseLoyaltyProgram';
@@ -50,6 +53,7 @@ import Binding from './model/Binding';
 import BulkApplicationNotification from './model/BulkApplicationNotification';
 import BulkCampaignNotification from './model/BulkCampaignNotification';
 import Campaign from './model/Campaign';
+import CampaignActivationRequest from './model/CampaignActivationRequest';
 import CampaignAnalytics from './model/CampaignAnalytics';
 import CampaignCollection from './model/CampaignCollection';
 import CampaignCollectionWithoutPayload from './model/CampaignCollectionWithoutPayload';
@@ -75,12 +79,19 @@ import CampaignStateChangedNotification from './model/CampaignStateChangedNotifi
 import CampaignTemplate from './model/CampaignTemplate';
 import CampaignTemplateCollection from './model/CampaignTemplateCollection';
 import CampaignTemplateParams from './model/CampaignTemplateParams';
+import CardLedgerTransactionLogEntry from './model/CardLedgerTransactionLogEntry';
+import CardLedgerTransactionLogEntryIntegrationAPI from './model/CardLedgerTransactionLogEntryIntegrationAPI';
 import CartItem from './model/CartItem';
 import Catalog from './model/Catalog';
+import CatalogAction from './model/CatalogAction';
+import CatalogActionFilter from './model/CatalogActionFilter';
+import CatalogItem from './model/CatalogItem';
+import CatalogSyncRequest from './model/CatalogSyncRequest';
 import Change from './model/Change';
 import ChangeProfilePassword from './model/ChangeProfilePassword';
 import CodeGeneratorSettings from './model/CodeGeneratorSettings';
 import Collection from './model/Collection';
+import CollectionItem from './model/CollectionItem';
 import CollectionWithoutPayload from './model/CollectionWithoutPayload';
 import Coupon from './model/Coupon';
 import CouponConstraints from './model/CouponConstraints';
@@ -92,6 +103,7 @@ import CouponReservations from './model/CouponReservations';
 import CouponSearch from './model/CouponSearch';
 import CouponValue from './model/CouponValue';
 import CreateApplicationAPIKey from './model/CreateApplicationAPIKey';
+import CreateManagementKey from './model/CreateManagementKey';
 import CreateTemplateCampaign from './model/CreateTemplateCampaign';
 import CreateTemplateCampaignResponse from './model/CreateTemplateCampaignResponse';
 import CustomEffect from './model/CustomEffect';
@@ -110,6 +122,7 @@ import DeductLoyaltyPointsEffectProps from './model/DeductLoyaltyPointsEffectPro
 import Effect from './model/Effect';
 import EffectEntity from './model/EffectEntity';
 import EmailEntity from './model/EmailEntity';
+import Endpoint from './model/Endpoint';
 import Entity from './model/Entity';
 import EntityWithTalangVisibleID from './model/EntityWithTalangVisibleID';
 import Environment from './model/Environment';
@@ -154,6 +167,9 @@ import InlineResponse20029 from './model/InlineResponse20029';
 import InlineResponse2003 from './model/InlineResponse2003';
 import InlineResponse20030 from './model/InlineResponse20030';
 import InlineResponse20031 from './model/InlineResponse20031';
+import InlineResponse20032 from './model/InlineResponse20032';
+import InlineResponse20033 from './model/InlineResponse20033';
+import InlineResponse20034 from './model/InlineResponse20034';
 import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
@@ -171,13 +187,17 @@ import IntegrationState from './model/IntegrationState';
 import IntegrationStateV2 from './model/IntegrationStateV2';
 import InventoryCoupon from './model/InventoryCoupon';
 import InventoryReferral from './model/InventoryReferral';
+import ItemAttribute from './model/ItemAttribute';
 import LedgerEntry from './model/LedgerEntry';
 import LedgerInfo from './model/LedgerInfo';
+import LedgerTransactionLogEntryIntegrationAPI from './model/LedgerTransactionLogEntryIntegrationAPI';
 import LibraryAttribute from './model/LibraryAttribute';
 import LimitConfig from './model/LimitConfig';
 import LimitCounter from './model/LimitCounter';
 import LoginParams from './model/LoginParams';
 import Loyalty from './model/Loyalty';
+import LoyaltyBalance from './model/LoyaltyBalance';
+import LoyaltyBalances from './model/LoyaltyBalances';
 import LoyaltyCard from './model/LoyaltyCard';
 import LoyaltyCardProfileRegistration from './model/LoyaltyCardProfileRegistration';
 import LoyaltyCardRegistration from './model/LoyaltyCardRegistration';
@@ -185,6 +205,7 @@ import LoyaltyDashboardData from './model/LoyaltyDashboardData';
 import LoyaltyDashboardPointsBreakdown from './model/LoyaltyDashboardPointsBreakdown';
 import LoyaltyLedger from './model/LoyaltyLedger';
 import LoyaltyLedgerEntry from './model/LoyaltyLedgerEntry';
+import LoyaltyLedgerTransactions from './model/LoyaltyLedgerTransactions';
 import LoyaltyMembership from './model/LoyaltyMembership';
 import LoyaltyPoints from './model/LoyaltyPoints';
 import LoyaltyProgram from './model/LoyaltyProgram';
@@ -196,6 +217,7 @@ import LoyaltyProjectionData from './model/LoyaltyProjectionData';
 import LoyaltyStatistics from './model/LoyaltyStatistics';
 import LoyaltySubLedger from './model/LoyaltySubLedger';
 import LoyaltyTier from './model/LoyaltyTier';
+import ManagementKey from './model/ManagementKey';
 import ManagerConfig from './model/ManagerConfig';
 import Meta from './model/Meta';
 import ModelExport from './model/ModelExport';
@@ -203,10 +225,13 @@ import ModelImport from './model/ModelImport';
 import ModelReturn from './model/ModelReturn';
 import MultiApplicationEntity from './model/MultiApplicationEntity';
 import MultipleAttribute from './model/MultipleAttribute';
+import MultipleAudiences from './model/MultipleAudiences';
+import MultipleAudiencesItem from './model/MultipleAudiencesItem';
 import MultipleCustomerProfileIntegrationRequest from './model/MultipleCustomerProfileIntegrationRequest';
 import MultipleCustomerProfileIntegrationRequestItem from './model/MultipleCustomerProfileIntegrationRequestItem';
 import MultipleCustomerProfileIntegrationResponseV2 from './model/MultipleCustomerProfileIntegrationResponseV2';
 import MultipleNewAttribute from './model/MultipleNewAttribute';
+import MultipleNewAudiences from './model/MultipleNewAudiences';
 import MutableEntity from './model/MutableEntity';
 import NewAccount from './model/NewAccount';
 import NewAccountSignUp from './model/NewAccountSignUp';
@@ -233,10 +258,13 @@ import NewCustomerSessionV2 from './model/NewCustomerSessionV2';
 import NewEvent from './model/NewEvent';
 import NewEventType from './model/NewEventType';
 import NewGiveawaysPool from './model/NewGiveawaysPool';
+import NewInternalAudience from './model/NewInternalAudience';
 import NewInvitation from './model/NewInvitation';
 import NewInviteEmail from './model/NewInviteEmail';
 import NewLoyaltyProgram from './model/NewLoyaltyProgram';
 import NewLoyaltyTier from './model/NewLoyaltyTier';
+import NewManagementKey from './model/NewManagementKey';
+import NewMultipleAudiencesItem from './model/NewMultipleAudiencesItem';
 import NewNotificationWebhook from './model/NewNotificationWebhook';
 import NewPassword from './model/NewPassword';
 import NewPasswordEmail from './model/NewPasswordEmail';
@@ -251,6 +279,8 @@ import NewUser from './model/NewUser';
 import NewWebhook from './model/NewWebhook';
 import Notification from './model/Notification';
 import NotificationWebhook from './model/NotificationWebhook';
+import PatchItemCatalogAction from './model/PatchItemCatalogAction';
+import PatchManyItemsCatalogAction from './model/PatchManyItemsCatalogAction';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
 import Referral from './model/Referral';
@@ -259,6 +289,8 @@ import ReferralCreatedEffectProps from './model/ReferralCreatedEffectProps';
 import ReferralRejectionReason from './model/ReferralRejectionReason';
 import RejectCouponEffectProps from './model/RejectCouponEffectProps';
 import RejectReferralEffectProps from './model/RejectReferralEffectProps';
+import RemoveItemCatalogAction from './model/RemoveItemCatalogAction';
+import RemoveManyItemsCatalogAction from './model/RemoveManyItemsCatalogAction';
 import ReturnIntegrationRequest from './model/ReturnIntegrationRequest';
 import ReturnedCartItem from './model/ReturnedCartItem';
 import Role from './model/Role';
@@ -348,7 +380,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.5.0
+* @version 4.6.0
 */
 export {
     /**
@@ -416,6 +448,12 @@ export {
      * @property {module:model/AddFreeItemEffectProps}
      */
     AddFreeItemEffectProps,
+
+    /**
+     * The AddItemCatalogAction model constructor.
+     * @property {module:model/AddItemCatalogAction}
+     */
+    AddItemCatalogAction,
 
     /**
      * The AddLoyaltyPointsEffectProps model constructor.
@@ -532,6 +570,18 @@ export {
     Audience,
 
     /**
+     * The AudienceAnalytics model constructor.
+     * @property {module:model/AudienceAnalytics}
+     */
+    AudienceAnalytics,
+
+    /**
+     * The AudienceIntegrationID model constructor.
+     * @property {module:model/AudienceIntegrationID}
+     */
+    AudienceIntegrationID,
+
+    /**
      * The AudienceMembership model constructor.
      * @property {module:model/AudienceMembership}
      */
@@ -578,6 +628,12 @@ export {
      * @property {module:model/Campaign}
      */
     Campaign,
+
+    /**
+     * The CampaignActivationRequest model constructor.
+     * @property {module:model/CampaignActivationRequest}
+     */
+    CampaignActivationRequest,
 
     /**
      * The CampaignAnalytics model constructor.
@@ -730,6 +786,18 @@ export {
     CampaignTemplateParams,
 
     /**
+     * The CardLedgerTransactionLogEntry model constructor.
+     * @property {module:model/CardLedgerTransactionLogEntry}
+     */
+    CardLedgerTransactionLogEntry,
+
+    /**
+     * The CardLedgerTransactionLogEntryIntegrationAPI model constructor.
+     * @property {module:model/CardLedgerTransactionLogEntryIntegrationAPI}
+     */
+    CardLedgerTransactionLogEntryIntegrationAPI,
+
+    /**
      * The CartItem model constructor.
      * @property {module:model/CartItem}
      */
@@ -740,6 +808,30 @@ export {
      * @property {module:model/Catalog}
      */
     Catalog,
+
+    /**
+     * The CatalogAction model constructor.
+     * @property {module:model/CatalogAction}
+     */
+    CatalogAction,
+
+    /**
+     * The CatalogActionFilter model constructor.
+     * @property {module:model/CatalogActionFilter}
+     */
+    CatalogActionFilter,
+
+    /**
+     * The CatalogItem model constructor.
+     * @property {module:model/CatalogItem}
+     */
+    CatalogItem,
+
+    /**
+     * The CatalogSyncRequest model constructor.
+     * @property {module:model/CatalogSyncRequest}
+     */
+    CatalogSyncRequest,
 
     /**
      * The Change model constructor.
@@ -764,6 +856,12 @@ export {
      * @property {module:model/Collection}
      */
     Collection,
+
+    /**
+     * The CollectionItem model constructor.
+     * @property {module:model/CollectionItem}
+     */
+    CollectionItem,
 
     /**
      * The CollectionWithoutPayload model constructor.
@@ -830,6 +928,12 @@ export {
      * @property {module:model/CreateApplicationAPIKey}
      */
     CreateApplicationAPIKey,
+
+    /**
+     * The CreateManagementKey model constructor.
+     * @property {module:model/CreateManagementKey}
+     */
+    CreateManagementKey,
 
     /**
      * The CreateTemplateCampaign model constructor.
@@ -938,6 +1042,12 @@ export {
      * @property {module:model/EmailEntity}
      */
     EmailEntity,
+
+    /**
+     * The Endpoint model constructor.
+     * @property {module:model/Endpoint}
+     */
+    Endpoint,
 
     /**
      * The Entity model constructor.
@@ -1204,6 +1314,24 @@ export {
     InlineResponse20031,
 
     /**
+     * The InlineResponse20032 model constructor.
+     * @property {module:model/InlineResponse20032}
+     */
+    InlineResponse20032,
+
+    /**
+     * The InlineResponse20033 model constructor.
+     * @property {module:model/InlineResponse20033}
+     */
+    InlineResponse20033,
+
+    /**
+     * The InlineResponse20034 model constructor.
+     * @property {module:model/InlineResponse20034}
+     */
+    InlineResponse20034,
+
+    /**
      * The InlineResponse2004 model constructor.
      * @property {module:model/InlineResponse2004}
      */
@@ -1306,6 +1434,12 @@ export {
     InventoryReferral,
 
     /**
+     * The ItemAttribute model constructor.
+     * @property {module:model/ItemAttribute}
+     */
+    ItemAttribute,
+
+    /**
      * The LedgerEntry model constructor.
      * @property {module:model/LedgerEntry}
      */
@@ -1316,6 +1450,12 @@ export {
      * @property {module:model/LedgerInfo}
      */
     LedgerInfo,
+
+    /**
+     * The LedgerTransactionLogEntryIntegrationAPI model constructor.
+     * @property {module:model/LedgerTransactionLogEntryIntegrationAPI}
+     */
+    LedgerTransactionLogEntryIntegrationAPI,
 
     /**
      * The LibraryAttribute model constructor.
@@ -1346,6 +1486,18 @@ export {
      * @property {module:model/Loyalty}
      */
     Loyalty,
+
+    /**
+     * The LoyaltyBalance model constructor.
+     * @property {module:model/LoyaltyBalance}
+     */
+    LoyaltyBalance,
+
+    /**
+     * The LoyaltyBalances model constructor.
+     * @property {module:model/LoyaltyBalances}
+     */
+    LoyaltyBalances,
 
     /**
      * The LoyaltyCard model constructor.
@@ -1388,6 +1540,12 @@ export {
      * @property {module:model/LoyaltyLedgerEntry}
      */
     LoyaltyLedgerEntry,
+
+    /**
+     * The LoyaltyLedgerTransactions model constructor.
+     * @property {module:model/LoyaltyLedgerTransactions}
+     */
+    LoyaltyLedgerTransactions,
 
     /**
      * The LoyaltyMembership model constructor.
@@ -1456,6 +1614,12 @@ export {
     LoyaltyTier,
 
     /**
+     * The ManagementKey model constructor.
+     * @property {module:model/ManagementKey}
+     */
+    ManagementKey,
+
+    /**
      * The ManagerConfig model constructor.
      * @property {module:model/ManagerConfig}
      */
@@ -1498,6 +1662,18 @@ export {
     MultipleAttribute,
 
     /**
+     * The MultipleAudiences model constructor.
+     * @property {module:model/MultipleAudiences}
+     */
+    MultipleAudiences,
+
+    /**
+     * The MultipleAudiencesItem model constructor.
+     * @property {module:model/MultipleAudiencesItem}
+     */
+    MultipleAudiencesItem,
+
+    /**
      * The MultipleCustomerProfileIntegrationRequest model constructor.
      * @property {module:model/MultipleCustomerProfileIntegrationRequest}
      */
@@ -1520,6 +1696,12 @@ export {
      * @property {module:model/MultipleNewAttribute}
      */
     MultipleNewAttribute,
+
+    /**
+     * The MultipleNewAudiences model constructor.
+     * @property {module:model/MultipleNewAudiences}
+     */
+    MultipleNewAudiences,
 
     /**
      * The MutableEntity model constructor.
@@ -1678,6 +1860,12 @@ export {
     NewGiveawaysPool,
 
     /**
+     * The NewInternalAudience model constructor.
+     * @property {module:model/NewInternalAudience}
+     */
+    NewInternalAudience,
+
+    /**
      * The NewInvitation model constructor.
      * @property {module:model/NewInvitation}
      */
@@ -1700,6 +1888,18 @@ export {
      * @property {module:model/NewLoyaltyTier}
      */
     NewLoyaltyTier,
+
+    /**
+     * The NewManagementKey model constructor.
+     * @property {module:model/NewManagementKey}
+     */
+    NewManagementKey,
+
+    /**
+     * The NewMultipleAudiencesItem model constructor.
+     * @property {module:model/NewMultipleAudiencesItem}
+     */
+    NewMultipleAudiencesItem,
 
     /**
      * The NewNotificationWebhook model constructor.
@@ -1786,6 +1986,18 @@ export {
     NotificationWebhook,
 
     /**
+     * The PatchItemCatalogAction model constructor.
+     * @property {module:model/PatchItemCatalogAction}
+     */
+    PatchItemCatalogAction,
+
+    /**
+     * The PatchManyItemsCatalogAction model constructor.
+     * @property {module:model/PatchManyItemsCatalogAction}
+     */
+    PatchManyItemsCatalogAction,
+
+    /**
      * The ProfileAudiencesChanges model constructor.
      * @property {module:model/ProfileAudiencesChanges}
      */
@@ -1832,6 +2044,18 @@ export {
      * @property {module:model/RejectReferralEffectProps}
      */
     RejectReferralEffectProps,
+
+    /**
+     * The RemoveItemCatalogAction model constructor.
+     * @property {module:model/RemoveItemCatalogAction}
+     */
+    RemoveItemCatalogAction,
+
+    /**
+     * The RemoveManyItemsCatalogAction model constructor.
+     * @property {module:model/RemoveManyItemsCatalogAction}
+     */
+    RemoveManyItemsCatalogAction,
 
     /**
      * The ReturnIntegrationRequest model constructor.

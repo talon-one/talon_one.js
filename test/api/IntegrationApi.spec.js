@@ -148,6 +148,16 @@
         done();
       });
     });
+    describe('getLoyaltyTransactions', function() {
+      it('should call getLoyaltyTransactions successfully', function(done) {
+        //uncomment below and update the code to test getLoyaltyTransactions
+        //instance.getLoyaltyTransactions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getReservedCustomers', function() {
       it('should call getReservedCustomers successfully', function(done) {
         //uncomment below and update the code to test getReservedCustomers
@@ -162,6 +172,16 @@
       it('should call returnCartItems successfully', function(done) {
         //uncomment below and update the code to test returnCartItems
         //instance.returnCartItems(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('syncCatalog', function() {
+      it('should call syncCatalog successfully', function(done) {
+        //uncomment below and update the code to test syncCatalog
+        //instance.syncCatalog(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -16,21 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The NewApplicationAPIKey model module.
  * @module model/NewApplicationAPIKey
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewApplicationAPIKey {
     /**
      * Constructs a new <code>NewApplicationAPIKey</code>.
      * 
      * @alias module:model/NewApplicationAPIKey
-     * @param title {String} Title for API Key
-     * @param expires {Date} The date the API key expired
-     * @param id {Number} ID of the API Key
-     * @param createdBy {Number} ID of user who created
-     * @param accountID {Number} ID of account the key is used for
-     * @param applicationID {Number} ID of application the key is used for
-     * @param created {Date} The date the API key was created
-     * @param key {String} The API key
+     * @param title {String} Title for API Key.
+     * @param expires {Date} The date the API key expired.
+     * @param id {Number} ID of the API Key.
+     * @param createdBy {Number} ID of user who created.
+     * @param accountID {Number} ID of account the key is used for.
+     * @param applicationID {Number} ID of application the key is used for.
+     * @param created {Date} The date the API key was created.
+     * @param key {String} The API key.
      */
     constructor(title, expires, id, createdBy, accountID, applicationID, created, key) { 
         
@@ -99,13 +99,13 @@ class NewApplicationAPIKey {
 }
 
 /**
- * Title for API Key
+ * Title for API Key.
  * @member {String} title
  */
 NewApplicationAPIKey.prototype['title'] = undefined;
 
 /**
- * The date the API key expired
+ * The date the API key expired.
  * @member {Date} expires
  */
 NewApplicationAPIKey.prototype['expires'] = undefined;
@@ -117,37 +117,37 @@ NewApplicationAPIKey.prototype['expires'] = undefined;
 NewApplicationAPIKey.prototype['platform'] = undefined;
 
 /**
- * ID of the API Key
+ * ID of the API Key.
  * @member {Number} id
  */
 NewApplicationAPIKey.prototype['id'] = undefined;
 
 /**
- * ID of user who created
+ * ID of user who created.
  * @member {Number} createdBy
  */
 NewApplicationAPIKey.prototype['createdBy'] = undefined;
 
 /**
- * ID of account the key is used for
+ * ID of account the key is used for.
  * @member {Number} accountID
  */
 NewApplicationAPIKey.prototype['accountID'] = undefined;
 
 /**
- * ID of application the key is used for
+ * ID of application the key is used for.
  * @member {Number} applicationID
  */
 NewApplicationAPIKey.prototype['applicationID'] = undefined;
 
 /**
- * The date the API key was created
+ * The date the API key was created.
  * @member {Date} created
  */
 NewApplicationAPIKey.prototype['created'] = undefined;
 
 /**
- * The API key
+ * The API key.
  * @member {String} key
  */
 NewApplicationAPIKey.prototype['key'] = undefined;
@@ -209,7 +209,13 @@ NewApplicationAPIKey['PlatformEnum'] = {
      * value: "customer_data"
      * @const
      */
-    "customer_data": "customer_data"
+    "customer_data": "customer_data",
+
+    /**
+     * value: "salesforce"
+     * @const
+     */
+    "salesforce": "salesforce"
 };
 
 

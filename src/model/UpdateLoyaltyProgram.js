@@ -17,7 +17,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The UpdateLoyaltyProgram model module.
  * @module model/UpdateLoyaltyProgram
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateLoyaltyProgram {
     /**
@@ -111,7 +111,7 @@ UpdateLoyaltyProgram.prototype['defaultValidity'] = undefined;
 UpdateLoyaltyProgram.prototype['defaultPending'] = undefined;
 
 /**
- * Indicates if this program supports subledgers inside the program
+ * Indicates if this program supports subledgers inside the program.
  * @member {Boolean} allowSubledger
  */
 UpdateLoyaltyProgram.prototype['allowSubledger'] = undefined;
@@ -123,7 +123,7 @@ UpdateLoyaltyProgram.prototype['allowSubledger'] = undefined;
 UpdateLoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 
 /**
- * The tiers in this loyalty program
+ * The tiers in this loyalty program.
  * @member {Array.<module:model/NewLoyaltyTier>} tiers
  */
 UpdateLoyaltyProgram.prototype['tiers'] = undefined;

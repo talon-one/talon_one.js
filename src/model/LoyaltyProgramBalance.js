@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramBalance model module.
  * @module model/LoyaltyProgramBalance
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyProgramBalance {
     /**
      * Constructs a new <code>LoyaltyProgramBalance</code>.
      * The balance in a Loyalty Program for some Customer.
      * @alias module:model/LoyaltyProgramBalance
-     * @param currentBalance {Number} Sum of currently active points
-     * @param pendingBalance {Number} Sum of pending points
-     * @param expiredBalance {Number} Sum of expired points
-     * @param spentBalance {Number} Sum of spent points
-     * @param tentativeCurrentBalance {Number} Sum of currently active points, including points added and deducted in open sessions
+     * @param currentBalance {Number} Sum of currently active points.
+     * @param pendingBalance {Number} Sum of pending points.
+     * @param expiredBalance {Number} Sum of expired points.
+     * @param spentBalance {Number} Sum of spent points.
+     * @param tentativeCurrentBalance {Number} Sum of currently active points, including points added and deducted in open sessions.
      */
     constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
@@ -81,31 +81,31 @@ class LoyaltyProgramBalance {
 }
 
 /**
- * Sum of currently active points
+ * Sum of currently active points.
  * @member {Number} currentBalance
  */
 LoyaltyProgramBalance.prototype['currentBalance'] = undefined;
 
 /**
- * Sum of pending points
+ * Sum of pending points.
  * @member {Number} pendingBalance
  */
 LoyaltyProgramBalance.prototype['pendingBalance'] = undefined;
 
 /**
- * Sum of expired points
+ * Sum of expired points.
  * @member {Number} expiredBalance
  */
 LoyaltyProgramBalance.prototype['expiredBalance'] = undefined;
 
 /**
- * Sum of spent points
+ * Sum of spent points.
  * @member {Number} spentBalance
  */
 LoyaltyProgramBalance.prototype['spentBalance'] = undefined;
 
 /**
- * Sum of currently active points, including points added and deducted in open sessions
+ * Sum of currently active points, including points added and deducted in open sessions.
  * @member {Number} tentativeCurrentBalance
  */
 LoyaltyProgramBalance.prototype['tentativeCurrentBalance'] = undefined;

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountAdditionalCost model module.
  * @module model/AccountAdditionalCost
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AccountAdditionalCost {
     /**
      * Constructs a new <code>AccountAdditionalCost</code>.
      * 
      * @alias module:model/AccountAdditionalCost
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param name {String} The additional cost name that will be used in API requests and Talang. E.g. if `name == \"shipping\"` then you would set the shipping additional cost by including an `additionalCosts.shipping` property in your request payload.
@@ -92,7 +92,7 @@ class AccountAdditionalCost {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 AccountAdditionalCost.prototype['id'] = undefined;
@@ -128,7 +128,7 @@ AccountAdditionalCost.prototype['title'] = undefined;
 AccountAdditionalCost.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this additional cost
+ * A list of the IDs of the applications that are subscribed to this additional cost.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 AccountAdditionalCost.prototype['subscribedApplicationsIds'] = undefined;

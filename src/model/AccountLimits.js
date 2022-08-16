@@ -16,24 +16,24 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountLimits model module.
  * @module model/AccountLimits
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AccountLimits {
     /**
      * Constructs a new <code>AccountLimits</code>.
      * @alias module:model/AccountLimits
-     * @param liveApplications {Number} Total number of allowed live applications in the account
-     * @param sandboxApplications {Number} Total number of allowed sandbox applications in the account
-     * @param activeCampaigns {Number} Total number of allowed active campaigns in live applications in the account
-     * @param coupons {Number} Total number of allowed coupons in the account
-     * @param referralCodes {Number} Total number of allowed referral codes in the account
-     * @param activeRules {Number} Total number of allowed active rulesets in the account
-     * @param liveLoyaltyPrograms {Number} Total number of allowed live loyalty programs in the account
-     * @param sandboxLoyaltyPrograms {Number} Total number of allowed sandbox loyalty programs in the account
-     * @param webhooks {Number} Total number of allowed webhooks in the account
-     * @param users {Number} Total number of allowed users in the account
-     * @param apiVolume {Number} Allowed volume of API requests to the account
-     * @param promotionTypes {Array.<String>} Array of promotion types that are employed in the account
+     * @param liveApplications {Number} Total number of allowed live applications in the account.
+     * @param sandboxApplications {Number} Total number of allowed sandbox applications in the account.
+     * @param activeCampaigns {Number} Total number of allowed active campaigns in live applications in the account.
+     * @param coupons {Number} Total number of allowed coupons in the account.
+     * @param referralCodes {Number} Total number of allowed referral codes in the account.
+     * @param activeRules {Number} Total number of allowed active rulesets in the account.
+     * @param liveLoyaltyPrograms {Number} Total number of allowed live loyalty programs in the account.
+     * @param sandboxLoyaltyPrograms {Number} Total number of allowed sandbox loyalty programs in the account.
+     * @param webhooks {Number} Total number of allowed webhooks in the account.
+     * @param users {Number} Total number of allowed users in the account.
+     * @param apiVolume {Number} Allowed volume of API requests to the account.
+     * @param promotionTypes {Array.<String>} Array of promotion types that are employed in the account.
      */
     constructor(liveApplications, sandboxApplications, activeCampaigns, coupons, referralCodes, activeRules, liveLoyaltyPrograms, sandboxLoyaltyPrograms, webhooks, users, apiVolume, promotionTypes) { 
         
@@ -115,73 +115,73 @@ class AccountLimits {
 }
 
 /**
- * Total number of allowed live applications in the account
+ * Total number of allowed live applications in the account.
  * @member {Number} liveApplications
  */
 AccountLimits.prototype['liveApplications'] = undefined;
 
 /**
- * Total number of allowed sandbox applications in the account
+ * Total number of allowed sandbox applications in the account.
  * @member {Number} sandboxApplications
  */
 AccountLimits.prototype['sandboxApplications'] = undefined;
 
 /**
- * Total number of allowed active campaigns in live applications in the account
+ * Total number of allowed active campaigns in live applications in the account.
  * @member {Number} activeCampaigns
  */
 AccountLimits.prototype['activeCampaigns'] = undefined;
 
 /**
- * Total number of allowed coupons in the account
+ * Total number of allowed coupons in the account.
  * @member {Number} coupons
  */
 AccountLimits.prototype['coupons'] = undefined;
 
 /**
- * Total number of allowed referral codes in the account
+ * Total number of allowed referral codes in the account.
  * @member {Number} referralCodes
  */
 AccountLimits.prototype['referralCodes'] = undefined;
 
 /**
- * Total number of allowed active rulesets in the account
+ * Total number of allowed active rulesets in the account.
  * @member {Number} activeRules
  */
 AccountLimits.prototype['activeRules'] = undefined;
 
 /**
- * Total number of allowed live loyalty programs in the account
+ * Total number of allowed live loyalty programs in the account.
  * @member {Number} liveLoyaltyPrograms
  */
 AccountLimits.prototype['liveLoyaltyPrograms'] = undefined;
 
 /**
- * Total number of allowed sandbox loyalty programs in the account
+ * Total number of allowed sandbox loyalty programs in the account.
  * @member {Number} sandboxLoyaltyPrograms
  */
 AccountLimits.prototype['sandboxLoyaltyPrograms'] = undefined;
 
 /**
- * Total number of allowed webhooks in the account
+ * Total number of allowed webhooks in the account.
  * @member {Number} webhooks
  */
 AccountLimits.prototype['webhooks'] = undefined;
 
 /**
- * Total number of allowed users in the account
+ * Total number of allowed users in the account.
  * @member {Number} users
  */
 AccountLimits.prototype['users'] = undefined;
 
 /**
- * Allowed volume of API requests to the account
+ * Allowed volume of API requests to the account.
  * @member {Number} apiVolume
  */
 AccountLimits.prototype['apiVolume'] = undefined;
 
 /**
- * Array of promotion types that are employed in the account
+ * Array of promotion types that are employed in the account.
  * @member {Array.<String>} promotionTypes
  */
 AccountLimits.prototype['promotionTypes'] = undefined;

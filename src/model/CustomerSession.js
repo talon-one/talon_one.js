@@ -17,26 +17,26 @@ import CartItem from './CartItem';
 /**
  * The CustomerSession model module.
  * @module model/CustomerSession
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CustomerSession {
     /**
      * Constructs a new <code>CustomerSession</code>.
      * 
      * @alias module:model/CustomerSession
-     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
+     * @param integrationId {String} The integration ID set by your integration layer.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param profileId {String} ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
+     * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
-     * @param state {module:model/CustomerSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Entities](/docs/dev/concepts/entities#customer-session). 
+     * @param state {module:model/CustomerSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
      * @param total {Number} The total sum of the cart in one session.
      * @param attributes {Object} A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings. 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
      * @param discounts {Object.<String, Number>} A map of labelled discount values, values will be in the same currency as the application associated with the session.
-     * @param updated {Date} Timestamp of the most recent event received on this session
+     * @param updated {Date} Timestamp of the most recent event received on this session.
      */
     constructor(integrationId, created, applicationId, profileId, coupon, referral, state, cartItems, total, attributes, firstSession, discounts, updated) { 
         
@@ -125,7 +125,7 @@ class CustomerSession {
 }
 
 /**
- * The integration ID for this entity sent to and used in the Talon.One system.
+ * The integration ID set by your integration layer.
  * @member {String} integrationId
  */
 CustomerSession.prototype['integrationId'] = undefined;
@@ -143,7 +143,7 @@ CustomerSession.prototype['created'] = undefined;
 CustomerSession.prototype['applicationId'] = undefined;
 
 /**
- * ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
+ * ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
  * @member {String} profileId
  */
 CustomerSession.prototype['profileId'] = undefined;
@@ -161,7 +161,7 @@ CustomerSession.prototype['coupon'] = undefined;
 CustomerSession.prototype['referral'] = undefined;
 
 /**
- * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Entities](/docs/dev/concepts/entities#customer-session). 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
  * @member {module:model/CustomerSession.StateEnum} state
  * @default 'open'
  */
@@ -204,7 +204,7 @@ CustomerSession.prototype['firstSession'] = undefined;
 CustomerSession.prototype['discounts'] = undefined;
 
 /**
- * Timestamp of the most recent event received on this session
+ * Timestamp of the most recent event received on this session.
  * @member {Date} updated
  */
 CustomerSession.prototype['updated'] = undefined;

@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 4.5.0
+* @version 4.6.0
 */
 
 /**
@@ -32,9 +32,9 @@ class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default http://localhost
+         * @default https://yourbaseurl.talon.one
          */
-        this.basePath = 'http://localhost'.replace(/\/+$/, '');
+        this.basePath = 'https://yourbaseurl.talon.one'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
@@ -556,7 +556,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "/",
+              'url': "https://yourbaseurl.talon.one/",
               'description': "No description provided",
             }
       ];

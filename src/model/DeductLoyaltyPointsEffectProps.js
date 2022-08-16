@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The DeductLoyaltyPointsEffectProps model module.
  * @module model/DeductLoyaltyPointsEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class DeductLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>DeductLoyaltyPointsEffectProps</code>.
      * The properties specific to the \&quot;deductLoyaltyPoints\&quot; effect. This gets triggered whenever a validated rule contained a condition to only trigger when the given number of loyalty points could be deduced. These points are automatically stored and managed inside Talon.One.
      * @alias module:model/DeductLoyaltyPointsEffectProps
-     * @param ruleTitle {String} The title of the rule that contained triggered this points deduction
-     * @param programId {Number} The ID of the loyalty program where these points were added
-     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added
-     * @param value {Number} The amount of points that were deducted
-     * @param transactionUUID {String} The identifier of this deduction in the loyalty ledger
+     * @param ruleTitle {String} The title of the rule that contained triggered this points deduction.
+     * @param programId {Number} The ID of the loyalty program where these points were added.
+     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added.
+     * @param value {Number} The amount of points that were deducted.
+     * @param transactionUUID {String} The identifier of this deduction in the loyalty ledger.
      * @param name {String} The name property gets one of the following two values. It can be the loyalty program name or it can represent a reason for the respective deduction of loyalty points. The latter is an optional value defined in a deduction rule. 
      */
     constructor(ruleTitle, programId, subLedgerId, value, transactionUUID, name) { 
@@ -89,31 +89,31 @@ class DeductLoyaltyPointsEffectProps {
 }
 
 /**
- * The title of the rule that contained triggered this points deduction
+ * The title of the rule that contained triggered this points deduction.
  * @member {String} ruleTitle
  */
 DeductLoyaltyPointsEffectProps.prototype['ruleTitle'] = undefined;
 
 /**
- * The ID of the loyalty program where these points were added
+ * The ID of the loyalty program where these points were added.
  * @member {Number} programId
  */
 DeductLoyaltyPointsEffectProps.prototype['programId'] = undefined;
 
 /**
- * The ID of the subledger within the loyalty program where these points were added
+ * The ID of the subledger within the loyalty program where these points were added.
  * @member {String} subLedgerId
  */
 DeductLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
 
 /**
- * The amount of points that were deducted
+ * The amount of points that were deducted.
  * @member {Number} value
  */
 DeductLoyaltyPointsEffectProps.prototype['value'] = undefined;
 
 /**
- * The identifier of this deduction in the loyalty ledger
+ * The identifier of this deduction in the loyalty ledger.
  * @member {String} transactionUUID
  */
 DeductLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;

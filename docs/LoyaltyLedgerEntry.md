@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **startDate** | **Date** |  | [optional] 
 **expiryDate** | **Date** |  | [optional] 
 **name** | **String** | A name referencing the condition or effect that added this entry, or the specific name provided in an API call. | 
-**subLedgerID** | **String** | This specifies if we are adding loyalty points to the main ledger or a subledger | 
+**subLedgerID** | **String** | This specifies if we are adding loyalty points to the main ledger or a subledger. | 
 **userID** | **Number** | This is the ID of the user who created this entry, if the addition or subtraction was done manually. | [optional] 
 
 

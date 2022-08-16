@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import CollectionWithoutPayload from './CollectionWithoutPayload';
+import Referral from './Referral';
 
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse2008 {
     /**
      * Constructs a new <code>InlineResponse2008</code>.
      * @alias module:model/InlineResponse2008
-     * @param data {Array.<module:model/CollectionWithoutPayload>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/Referral>} 
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse2008.initialize(this, data);
+        InlineResponse2008.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse2008 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse2008 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CollectionWithoutPayload]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Referral]);
             }
         }
         return obj;
@@ -72,12 +71,7 @@ class InlineResponse2008 {
 InlineResponse2008.prototype['hasMore'] = undefined;
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse2008.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/CollectionWithoutPayload>} data
+ * @member {Array.<module:model/Referral>} data
  */
 InlineResponse2008.prototype['data'] = undefined;
 

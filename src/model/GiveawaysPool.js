@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GiveawaysPool model module.
  * @module model/GiveawaysPool
- * @version 4.5.0
+ * @version 4.6.0
  */
 class GiveawaysPool {
     /**
      * Constructs a new <code>GiveawaysPool</code>.
-     * 
+     * Giveaways pools is an entity for managing multiple similar giveaways.
      * @alias module:model/GiveawaysPool
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param name {String} The name of this giveaways pool.
@@ -93,7 +93,7 @@ class GiveawaysPool {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 GiveawaysPool.prototype['id'] = undefined;
@@ -123,7 +123,7 @@ GiveawaysPool.prototype['name'] = undefined;
 GiveawaysPool.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that this giveaways pool is enabled for
+ * A list of the IDs of the applications that this giveaways pool is enabled for.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 GiveawaysPool.prototype['subscribedApplicationsIds'] = undefined;

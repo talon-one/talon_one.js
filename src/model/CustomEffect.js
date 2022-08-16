@@ -17,14 +17,14 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The CustomEffect model module.
  * @module model/CustomEffect
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CustomEffect {
     /**
      * Constructs a new <code>CustomEffect</code>.
      * 
      * @alias module:model/CustomEffect
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param modified {Date} The exact moment this entity was last modified.
@@ -116,7 +116,7 @@ class CustomEffect {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 CustomEffect.prototype['id'] = undefined;
@@ -176,7 +176,7 @@ CustomEffect.prototype['description'] = undefined;
 CustomEffect.prototype['enabled'] = undefined;
 
 /**
- * Array of template argument definitions
+ * Array of template argument definitions.
  * @member {Array.<module:model/TemplateArgDef>} params
  */
 CustomEffect.prototype['params'] = undefined;

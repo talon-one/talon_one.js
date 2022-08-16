@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The AcceptReferralEffectProps model module.
  * @module model/AcceptReferralEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AcceptReferralEffectProps {
     /**
      * Constructs a new <code>AcceptReferralEffectProps</code>.
      * The properties specific to the \&quot;acceptReferral\&quot; effect. TThis gets triggered whenever the referral code is valid and all other conditions in the rules of its campaign are met.
      * @alias module:model/AcceptReferralEffectProps
-     * @param value {String} The referral code that was accepted
+     * @param value {String} The referral code that was accepted.
      */
     constructor(value) { 
         
@@ -61,7 +61,7 @@ class AcceptReferralEffectProps {
 }
 
 /**
- * The referral code that was accepted
+ * The referral code that was accepted.
  * @member {String} value
  */
 AcceptReferralEffectProps.prototype['value'] = undefined;

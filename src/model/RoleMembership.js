@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleMembership model module.
  * @module model/RoleMembership
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RoleMembership {
     /**
      * Constructs a new <code>RoleMembership</code>.
      * @alias module:model/RoleMembership
-     * @param roleID {Number} ID of role
-     * @param userID {Number} ID of User
+     * @param roleID {Number} ID of role.
+     * @param userID {Number} ID of User.
      */
     constructor(roleID, userID) { 
         
@@ -65,13 +65,13 @@ class RoleMembership {
 }
 
 /**
- * ID of role
+ * ID of role.
  * @member {Number} RoleID
  */
 RoleMembership.prototype['RoleID'] = undefined;
 
 /**
- * ID of User
+ * ID of User.
  * @member {Number} UserID
  */
 RoleMembership.prototype['UserID'] = undefined;

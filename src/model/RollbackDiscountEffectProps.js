@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackDiscountEffectProps model module.
  * @module model/RollbackDiscountEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RollbackDiscountEffectProps {
     /**
      * Constructs a new <code>RollbackDiscountEffectProps</code>.
      * The properties specific to the \&quot;rollbackDiscount\&quot; effect. This gets triggered whenever previously closed session is now cancelled or partially returned and a setDiscount effect was cancelled on our internal discount limit counters.
      * @alias module:model/RollbackDiscountEffectProps
-     * @param name {String} The name of the \"setDiscount\" effect that was rolled back
+     * @param name {String} The name of the \"setDiscount\" effect that was rolled back.
      * @param value {Number} The value of the discount that was rolled back.
      */
     constructor(name, value) { 
@@ -81,7 +81,7 @@ class RollbackDiscountEffectProps {
 }
 
 /**
- * The name of the \"setDiscount\" effect that was rolled back
+ * The name of the \"setDiscount\" effect that was rolled back.
  * @member {String} name
  */
 RollbackDiscountEffectProps.prototype['name'] = undefined;
@@ -105,13 +105,13 @@ RollbackDiscountEffectProps.prototype['cartItemPosition'] = undefined;
 RollbackDiscountEffectProps.prototype['cartItemSubPosition'] = undefined;
 
 /**
- * The ID of the additional cost that was rolled back
+ * The ID of the additional cost that was rolled back.
  * @member {Number} additionalCostId
  */
 RollbackDiscountEffectProps.prototype['additionalCostId'] = undefined;
 
 /**
- * The name of the additional cost that was rolled back
+ * The name of the additional cost that was rolled back.
  * @member {String} additionalCost
  */
 RollbackDiscountEffectProps.prototype['additionalCost'] = undefined;

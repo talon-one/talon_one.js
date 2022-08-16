@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyCardProfileRegistration model module.
  * @module model/LoyaltyCardProfileRegistration
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyCardProfileRegistration {
     /**
      * Constructs a new <code>LoyaltyCardProfileRegistration</code>.
      * @alias module:model/LoyaltyCardProfileRegistration
      * @param integrationId {String} Integration ID of the customer associated with the card.
-     * @param timestamp {Date} Timestamp of the registration to the card
+     * @param timestamp {Date} Timestamp of the registration to the card.
      */
     constructor(integrationId, timestamp) { 
         
@@ -71,7 +71,7 @@ class LoyaltyCardProfileRegistration {
 LoyaltyCardProfileRegistration.prototype['integrationId'] = undefined;
 
 /**
- * Timestamp of the registration to the card
+ * Timestamp of the registration to the card.
  * @member {Date} timestamp
  */
 LoyaltyCardProfileRegistration.prototype['timestamp'] = undefined;

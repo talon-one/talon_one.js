@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AddLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>AddLoyaltyPointsEffectProps</code>.
      * The properties specific to the \&quot;addLoyaltyPoints\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;add loyalty\&quot; effect. These points are automatically stored and managed inside Talon.One. 
      * @alias module:model/AddLoyaltyPointsEffectProps
-     * @param name {String} The name/description of this loyalty point addition.
+     * @param name {String} The reason of the point addition.
      * @param programId {Number} The ID of the loyalty program where these points were added.
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added.
      * @param value {Number} The amount of points that were added.
@@ -104,7 +104,7 @@ class AddLoyaltyPointsEffectProps {
 }
 
 /**
- * The name/description of this loyalty point addition.
+ * The reason of the point addition.
  * @member {String} name
  */
 AddLoyaltyPointsEffectProps.prototype['name'] = undefined;

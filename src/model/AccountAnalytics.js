@@ -16,31 +16,31 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountAnalytics model module.
  * @module model/AccountAnalytics
- * @version 4.5.0
+ * @version 4.6.0
  */
 class AccountAnalytics {
     /**
      * Constructs a new <code>AccountAnalytics</code>.
      * @alias module:model/AccountAnalytics
-     * @param applications {Number} Total number of applications in the account
-     * @param liveApplications {Number} Total number of live applications in the account
-     * @param sandboxApplications {Number} Total number of sandbox applications in the account
-     * @param campaigns {Number} Total number of campaigns in the account
-     * @param activeCampaigns {Number} Total number of active campaigns in the account
-     * @param liveActiveCampaigns {Number} Total number of active campaigns in live applications in the account
-     * @param coupons {Number} Total number of coupons in the account
-     * @param activeCoupons {Number} Total number of active coupons in the account
-     * @param expiredCoupons {Number} Total number of expired coupons in the account
-     * @param referralCodes {Number} Total number of referral codes in the account
-     * @param activeReferralCodes {Number} Total number of active referral codes in the account
-     * @param expiredReferralCodes {Number} Total number of expired referral codes in the account
-     * @param activeRules {Number} Total number of active rules in the account
-     * @param users {Number} Total number of users in the account
-     * @param roles {Number} Total number of roles in the account
-     * @param customAttributes {Number} Total number of custom attributes in the account
-     * @param webhooks {Number} Total number of webhooks in the account
-     * @param loyaltyPrograms {Number} Total number of all loyalty programs in the account
-     * @param liveLoyaltyPrograms {Number} Total number of live loyalty programs in the account
+     * @param applications {Number} Total number of applications in the account.
+     * @param liveApplications {Number} Total number of live applications in the account.
+     * @param sandboxApplications {Number} Total number of sandbox applications in the account.
+     * @param campaigns {Number} Total number of campaigns in the account.
+     * @param activeCampaigns {Number} Total number of active campaigns in the account.
+     * @param liveActiveCampaigns {Number} Total number of active campaigns in live applications in the account.
+     * @param coupons {Number} Total number of coupons in the account.
+     * @param activeCoupons {Number} Total number of active coupons in the account.
+     * @param expiredCoupons {Number} Total number of expired coupons in the account.
+     * @param referralCodes {Number} Total number of referral codes in the account.
+     * @param activeReferralCodes {Number} Total number of active referral codes in the account.
+     * @param expiredReferralCodes {Number} Total number of expired referral codes in the account.
+     * @param activeRules {Number} Total number of active rules in the account.
+     * @param users {Number} Total number of users in the account.
+     * @param roles {Number} Total number of roles in the account.
+     * @param customAttributes {Number} Total number of custom attributes in the account.
+     * @param webhooks {Number} Total number of webhooks in the account.
+     * @param loyaltyPrograms {Number} Total number of all loyalty programs in the account.
+     * @param liveLoyaltyPrograms {Number} Total number of live loyalty programs in the account.
      */
     constructor(applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms, liveLoyaltyPrograms) { 
         
@@ -150,115 +150,115 @@ class AccountAnalytics {
 }
 
 /**
- * Total number of applications in the account
+ * Total number of applications in the account.
  * @member {Number} applications
  */
 AccountAnalytics.prototype['applications'] = undefined;
 
 /**
- * Total number of live applications in the account
+ * Total number of live applications in the account.
  * @member {Number} liveApplications
  */
 AccountAnalytics.prototype['liveApplications'] = undefined;
 
 /**
- * Total number of sandbox applications in the account
+ * Total number of sandbox applications in the account.
  * @member {Number} sandboxApplications
  */
 AccountAnalytics.prototype['sandboxApplications'] = undefined;
 
 /**
- * Total number of campaigns in the account
+ * Total number of campaigns in the account.
  * @member {Number} campaigns
  */
 AccountAnalytics.prototype['campaigns'] = undefined;
 
 /**
- * Total number of active campaigns in the account
+ * Total number of active campaigns in the account.
  * @member {Number} activeCampaigns
  */
 AccountAnalytics.prototype['activeCampaigns'] = undefined;
 
 /**
- * Total number of active campaigns in live applications in the account
+ * Total number of active campaigns in live applications in the account.
  * @member {Number} liveActiveCampaigns
  */
 AccountAnalytics.prototype['liveActiveCampaigns'] = undefined;
 
 /**
- * Total number of coupons in the account
+ * Total number of coupons in the account.
  * @member {Number} coupons
  */
 AccountAnalytics.prototype['coupons'] = undefined;
 
 /**
- * Total number of active coupons in the account
+ * Total number of active coupons in the account.
  * @member {Number} activeCoupons
  */
 AccountAnalytics.prototype['activeCoupons'] = undefined;
 
 /**
- * Total number of expired coupons in the account
+ * Total number of expired coupons in the account.
  * @member {Number} expiredCoupons
  */
 AccountAnalytics.prototype['expiredCoupons'] = undefined;
 
 /**
- * Total number of referral codes in the account
+ * Total number of referral codes in the account.
  * @member {Number} referralCodes
  */
 AccountAnalytics.prototype['referralCodes'] = undefined;
 
 /**
- * Total number of active referral codes in the account
+ * Total number of active referral codes in the account.
  * @member {Number} activeReferralCodes
  */
 AccountAnalytics.prototype['activeReferralCodes'] = undefined;
 
 /**
- * Total number of expired referral codes in the account
+ * Total number of expired referral codes in the account.
  * @member {Number} expiredReferralCodes
  */
 AccountAnalytics.prototype['expiredReferralCodes'] = undefined;
 
 /**
- * Total number of active rules in the account
+ * Total number of active rules in the account.
  * @member {Number} activeRules
  */
 AccountAnalytics.prototype['activeRules'] = undefined;
 
 /**
- * Total number of users in the account
+ * Total number of users in the account.
  * @member {Number} users
  */
 AccountAnalytics.prototype['users'] = undefined;
 
 /**
- * Total number of roles in the account
+ * Total number of roles in the account.
  * @member {Number} roles
  */
 AccountAnalytics.prototype['roles'] = undefined;
 
 /**
- * Total number of custom attributes in the account
+ * Total number of custom attributes in the account.
  * @member {Number} customAttributes
  */
 AccountAnalytics.prototype['customAttributes'] = undefined;
 
 /**
- * Total number of webhooks in the account
+ * Total number of webhooks in the account.
  * @member {Number} webhooks
  */
 AccountAnalytics.prototype['webhooks'] = undefined;
 
 /**
- * Total number of all loyalty programs in the account
+ * Total number of all loyalty programs in the account.
  * @member {Number} loyaltyPrograms
  */
 AccountAnalytics.prototype['loyaltyPrograms'] = undefined;
 
 /**
- * Total number of live loyalty programs in the account
+ * Total number of live loyalty programs in the account.
  * @member {Number} liveLoyaltyPrograms
  */
 AccountAnalytics.prototype['liveLoyaltyPrograms'] = undefined;

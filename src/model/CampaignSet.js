@@ -17,17 +17,17 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The CampaignSet model module.
  * @module model/CampaignSet
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignSet {
     /**
      * Constructs a new <code>CampaignSet</code>.
      * 
      * @alias module:model/CampaignSet
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param version {Number} Version of the campaign set
+     * @param version {Number} Version of the campaign set.
      * @param set {module:model/CampaignSetBranchNode} 
      */
     constructor(id, created, applicationId, version, set) { 
@@ -82,7 +82,7 @@ class CampaignSet {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 CampaignSet.prototype['id'] = undefined;
@@ -100,7 +100,7 @@ CampaignSet.prototype['created'] = undefined;
 CampaignSet.prototype['applicationId'] = undefined;
 
 /**
- * Version of the campaign set
+ * Version of the campaign set.
  * @member {Number} version
  */
 CampaignSet.prototype['version'] = undefined;

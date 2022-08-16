@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponReservations model module.
  * @module model/CouponReservations
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CouponReservations {
     /**
      * Constructs a new <code>CouponReservations</code>.
      * @alias module:model/CouponReservations
-     * @param integrationIDs {Array.<String>} List of Integration IDs
+     * @param integrationIDs {Array.<String>} List of customer integration IDs.
      */
     constructor(integrationIDs) { 
         
@@ -60,7 +60,7 @@ class CouponReservations {
 }
 
 /**
- * List of Integration IDs
+ * List of customer integration IDs.
  * @member {Array.<String>} integrationIDs
  */
 CouponReservations.prototype['integrationIDs'] = undefined;

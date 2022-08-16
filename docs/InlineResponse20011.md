@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[CollectionItem]**](CollectionItem.md) |  | 
 
 

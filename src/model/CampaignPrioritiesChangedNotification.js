@@ -17,7 +17,7 @@ import Application from './Application';
 /**
  * The CampaignPrioritiesChangedNotification model module.
  * @module model/CampaignPrioritiesChangedNotification
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignPrioritiesChangedNotification {
     /**

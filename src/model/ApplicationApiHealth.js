@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationApiHealth model module.
  * @module model/ApplicationApiHealth
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ApplicationApiHealth {
     /**
      * Constructs a new <code>ApplicationApiHealth</code>.
-     * Report of health of the API connection of an application
+     * Report of health of the API connection of an application.
      * @alias module:model/ApplicationApiHealth
-     * @param summary {module:model/ApplicationApiHealth.SummaryEnum} One-word summary of the health of the API connection of an application
-     * @param lastUsed {Date} time of last request relevant to the API health test
+     * @param summary {module:model/ApplicationApiHealth.SummaryEnum} One-word summary of the health of the API connection of an application.
+     * @param lastUsed {Date} time of last request relevant to the API health test.
      */
     constructor(summary, lastUsed) { 
         
@@ -66,13 +66,13 @@ class ApplicationApiHealth {
 }
 
 /**
- * One-word summary of the health of the API connection of an application
+ * One-word summary of the health of the API connection of an application.
  * @member {module:model/ApplicationApiHealth.SummaryEnum} summary
  */
 ApplicationApiHealth.prototype['summary'] = undefined;
 
 /**
- * time of last request relevant to the API health test
+ * time of last request relevant to the API health test.
  * @member {Date} lastUsed
  */
 ApplicationApiHealth.prototype['lastUsed'] = undefined;

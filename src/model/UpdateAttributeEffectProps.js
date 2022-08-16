@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAttributeEffectProps model module.
  * @module model/UpdateAttributeEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class UpdateAttributeEffectProps {
     /**
      * Constructs a new <code>UpdateAttributeEffectProps</code>.
      * The properties specific to the \&quot;updateAttribute\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;update an attribute\&quot; effect.
      * @alias module:model/UpdateAttributeEffectProps
-     * @param path {String} The exact path of the attribute that was updated
-     * @param value {Object} The new value of this attribute. Value can be any of the following types (time, string, number, location, boolean) or a list of any of those types
+     * @param path {String} The exact path of the attribute that was updated.
+     * @param value {Object} The new value of this attribute. The value can be of the following types: - boolean - location - number - string - time - list of any of those types 
      */
     constructor(path, value) { 
         
@@ -66,13 +66,13 @@ class UpdateAttributeEffectProps {
 }
 
 /**
- * The exact path of the attribute that was updated
+ * The exact path of the attribute that was updated.
  * @member {String} path
  */
 UpdateAttributeEffectProps.prototype['path'] = undefined;
 
 /**
- * The new value of this attribute. Value can be any of the following types (time, string, number, location, boolean) or a list of any of those types
+ * The new value of this attribute. The value can be of the following types: - boolean - location - number - string - time - list of any of those types 
  * @member {Object} value
  */
 UpdateAttributeEffectProps.prototype['value'] = undefined;

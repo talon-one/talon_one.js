@@ -17,7 +17,7 @@ import CampaignPrioritiesV2 from './CampaignPrioritiesV2';
 /**
  * The NewCampaignSetV2 model module.
  * @module model/NewCampaignSetV2
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCampaignSetV2 {
     /**
@@ -25,7 +25,7 @@ class NewCampaignSetV2 {
      * 
      * @alias module:model/NewCampaignSetV2
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param version {Number} Version of the campaign set
+     * @param version {Number} Version of the campaign set.
      * @param set {module:model/CampaignPrioritiesV2} 
      */
     constructor(applicationId, version, set) { 
@@ -78,7 +78,7 @@ class NewCampaignSetV2 {
 NewCampaignSetV2.prototype['applicationId'] = undefined;
 
 /**
- * Version of the campaign set
+ * Version of the campaign set.
  * @member {Number} version
  */
 NewCampaignSetV2.prototype['version'] = undefined;

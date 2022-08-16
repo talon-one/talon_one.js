@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEntity model module.
  * @module model/IntegrationEntity
- * @version 4.5.0
+ * @version 4.6.0
  */
 class IntegrationEntity {
     /**
      * Constructs a new <code>IntegrationEntity</code>.
      * @alias module:model/IntegrationEntity
-     * @param integrationId {String} The integration ID for this entity sent to and used in the Talon.One system.
+     * @param integrationId {String} The integration ID set by your integration layer.
      * @param created {Date} The exact moment this entity was created.
      */
     constructor(integrationId, created) { 
@@ -65,7 +65,7 @@ class IntegrationEntity {
 }
 
 /**
- * The integration ID for this entity sent to and used in the Talon.One system.
+ * The integration ID set by your integration layer.
  * @member {String} integrationId
  */
 IntegrationEntity.prototype['integrationId'] = undefined;

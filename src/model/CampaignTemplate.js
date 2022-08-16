@@ -20,14 +20,14 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignTemplate {
     /**
      * Constructs a new <code>CampaignTemplate</code>.
      * 
      * @alias module:model/CampaignTemplate
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param userId {Number} The ID of the account that owns this entity.
@@ -35,7 +35,7 @@ class CampaignTemplate {
      * @param description {String} Customer-facing text that explains the objective of the template.
      * @param instructions {String} Customer-facing text that explains how to use the template. For example, you can use this property to explain the available attributes of this template, and how they can be modified when a user uses this template to create a new campaign.
      * @param state {module:model/CampaignTemplate.StateEnum} Only Campaign Templates in 'available' state may be used to create Campaigns.
-     * @param applicationsIds {Array.<Number>} A list of the IDs of the applications that are subscribed to this campaign template A list of the IDs of the applications that are subscribed to this campaign template
+     * @param applicationsIds {Array.<Number>} A list of the IDs of the applications that are subscribed to this campaign template. A list of the IDs of the applications that are subscribed to this campaign template.
      * @param validApplicationIds {Array.<Number>} The IDs of the applications that are related to this entity.
      */
     constructor(id, created, accountId, userId, name, description, instructions, state, applicationsIds, validApplicationIds) { 
@@ -129,6 +129,9 @@ class CampaignTemplate {
             if (data.hasOwnProperty('campaignCollections')) {
                 obj['campaignCollections'] = ApiClient.convertToType(data['campaignCollections'], [CampaignTemplateCollection]);
             }
+            if (data.hasOwnProperty('defaultCampaignGroupId')) {
+                obj['defaultCampaignGroupId'] = ApiClient.convertToType(data['defaultCampaignGroupId'], 'Number');
+            }
             if (data.hasOwnProperty('updated')) {
                 obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
             }
@@ -146,7 +149,7 @@ class CampaignTemplate {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 CampaignTemplate.prototype['id'] = undefined;
@@ -234,7 +237,7 @@ CampaignTemplate.prototype['couponSettings'] = undefined;
 CampaignTemplate.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign template
+ * The set of limits that will operate for this campaign template.
  * @member {Array.<module:model/TemplateLimitConfig>} limits
  */
 CampaignTemplate.prototype['limits'] = undefined;
@@ -246,7 +249,7 @@ CampaignTemplate.prototype['limits'] = undefined;
 CampaignTemplate.prototype['templateParams'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this campaign template A list of the IDs of the applications that are subscribed to this campaign template
+ * A list of the IDs of the applications that are subscribed to this campaign template. A list of the IDs of the applications that are subscribed to this campaign template.
  * @member {Array.<Number>} applicationsIds
  */
 CampaignTemplate.prototype['applicationsIds'] = undefined;
@@ -256,6 +259,12 @@ CampaignTemplate.prototype['applicationsIds'] = undefined;
  * @member {Array.<module:model/CampaignTemplateCollection>} campaignCollections
  */
 CampaignTemplate.prototype['campaignCollections'] = undefined;
+
+/**
+ * The default campaignGroupId.
+ * @member {Number} defaultCampaignGroupId
+ */
+CampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
 
 /**
  * Timestamp of the most recent update to the campaign template or any of its elements.

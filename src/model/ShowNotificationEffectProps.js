@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The ShowNotificationEffectProps model module.
  * @module model/ShowNotificationEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ShowNotificationEffectProps {
     /**
      * Constructs a new <code>ShowNotificationEffectProps</code>.
      * The properties specific to the \&quot;showNotification\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;show notification\&quot; effect.
      * @alias module:model/ShowNotificationEffectProps
-     * @param notificationType {String} The type of notification that should be shown (e.g. error/warning/info)
-     * @param title {String} Title of the notification
-     * @param body {String} Body of the notification
+     * @param notificationType {String} The type of notification that should be shown (e.g. error/warning/info).
+     * @param title {String} Title of the notification.
+     * @param body {String} Body of the notification.
      */
     constructor(notificationType, title, body) { 
         
@@ -71,19 +71,19 @@ class ShowNotificationEffectProps {
 }
 
 /**
- * The type of notification that should be shown (e.g. error/warning/info)
+ * The type of notification that should be shown (e.g. error/warning/info).
  * @member {String} notificationType
  */
 ShowNotificationEffectProps.prototype['notificationType'] = undefined;
 
 /**
- * Title of the notification
+ * Title of the notification.
  * @member {String} title
  */
 ShowNotificationEffectProps.prototype['title'] = undefined;
 
 /**
- * Body of the notification
+ * Body of the notification.
  * @member {String} body
  */
 ShowNotificationEffectProps.prototype['body'] = undefined;

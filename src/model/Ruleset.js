@@ -18,14 +18,14 @@ import Rule from './Rule';
 /**
  * The Ruleset model module.
  * @module model/Ruleset
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Ruleset {
     /**
      * Constructs a new <code>Ruleset</code>.
      * 
      * @alias module:model/Ruleset
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param userId {Number} The ID of the account that owns this entity.
      * @param rules {Array.<module:model/Rule>} Set of rules to apply.
@@ -98,7 +98,7 @@ class Ruleset {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Ruleset.prototype['id'] = undefined;

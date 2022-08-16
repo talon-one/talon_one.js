@@ -120,6 +120,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subscribedCatalogsIds (base name: "subscribedCatalogsIds")', function() {
+      // uncomment below and update the code to test the property subscribedCatalogsIds
+      //var instane = new TalonOne.NewAttribute();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property allowedSubscriptions (base name: "allowedSubscriptions")', function() {
+      // uncomment below and update the code to test the property allowedSubscriptions
+      //var instane = new TalonOne.NewAttribute();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

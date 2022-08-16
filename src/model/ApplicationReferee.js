@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationReferee model module.
  * @module model/ApplicationReferee
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ApplicationReferee {
     /**
@@ -24,11 +24,11 @@ class ApplicationReferee {
      * 
      * @alias module:model/ApplicationReferee
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param sessionId {String} Integration ID of the session in which the customer redeemed the referral
-     * @param advocateIntegrationId {String} Integration ID of the Advocate's Profile
-     * @param friendIntegrationId {String} Integration ID of the Friend's Profile
+     * @param sessionId {String} Integration ID of the session in which the customer redeemed the referral.
+     * @param advocateIntegrationId {String} Integration ID of the Advocate's Profile.
+     * @param friendIntegrationId {String} Integration ID of the Friend's Profile.
      * @param code {String} Advocate's referral code.
-     * @param created {Date} Timestamp of the moment the customer redeemed the referral
+     * @param created {Date} Timestamp of the moment the customer redeemed the referral.
      */
     constructor(applicationId, sessionId, advocateIntegrationId, friendIntegrationId, code, created) { 
         
@@ -92,19 +92,19 @@ class ApplicationReferee {
 ApplicationReferee.prototype['applicationId'] = undefined;
 
 /**
- * Integration ID of the session in which the customer redeemed the referral
+ * Integration ID of the session in which the customer redeemed the referral.
  * @member {String} sessionId
  */
 ApplicationReferee.prototype['sessionId'] = undefined;
 
 /**
- * Integration ID of the Advocate's Profile
+ * Integration ID of the Advocate's Profile.
  * @member {String} advocateIntegrationId
  */
 ApplicationReferee.prototype['advocateIntegrationId'] = undefined;
 
 /**
- * Integration ID of the Friend's Profile
+ * Integration ID of the Friend's Profile.
  * @member {String} friendIntegrationId
  */
 ApplicationReferee.prototype['friendIntegrationId'] = undefined;
@@ -116,7 +116,7 @@ ApplicationReferee.prototype['friendIntegrationId'] = undefined;
 ApplicationReferee.prototype['code'] = undefined;
 
 /**
- * Timestamp of the moment the customer redeemed the referral
+ * Timestamp of the moment the customer redeemed the referral.
  * @member {Date} created
  */
 ApplicationReferee.prototype['created'] = undefined;

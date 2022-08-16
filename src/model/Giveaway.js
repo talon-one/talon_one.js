@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Giveaway model module.
  * @module model/Giveaway
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Giveaway {
     /**
      * Constructs a new <code>Giveaway</code>.
      * 
      * @alias module:model/Giveaway
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param code {String} The code value of this giveaway.
      * @param poolId {Number} The ID of the pool to return giveaway codes from.
@@ -91,7 +91,7 @@ class Giveaway {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Giveaway.prototype['id'] = undefined;

@@ -16,22 +16,22 @@ import ApiClient from '../ApiClient';
 /**
  * The LedgerEntry model module.
  * @module model/LedgerEntry
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LedgerEntry {
     /**
      * Constructs a new <code>LedgerEntry</code>.
      * 
      * @alias module:model/LedgerEntry
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
-     * @param profileId {String} ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
+     * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
      * @param accountId {Number} The ID of the Talon.One account that owns this profile.
-     * @param loyaltyProgramId {Number} ID of the ledger
-     * @param eventId {Number} ID of the related event
-     * @param amount {Number} Amount of loyalty points
-     * @param reason {String} reason for awarding/deducting points
-     * @param expiryDate {Date} Expiry date of the points
+     * @param loyaltyProgramId {Number} ID of the ledger.
+     * @param eventId {Number} ID of the related event.
+     * @param amount {Number} Amount of loyalty points.
+     * @param reason {String} reason for awarding/deducting points.
+     * @param expiryDate {Date} Expiry date of the points.
      */
     constructor(id, created, profileId, accountId, loyaltyProgramId, eventId, amount, reason, expiryDate) { 
         
@@ -104,7 +104,7 @@ class LedgerEntry {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 LedgerEntry.prototype['id'] = undefined;
@@ -116,7 +116,7 @@ LedgerEntry.prototype['id'] = undefined;
 LedgerEntry.prototype['created'] = undefined;
 
 /**
- * ID of the customers profile as used within this Talon.One account.  **Note:** If the customer does not yet have a known profileId, we recommend you use a guest profileId. 
+ * ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
  * @member {String} profileId
  */
 LedgerEntry.prototype['profileId'] = undefined;
@@ -128,37 +128,37 @@ LedgerEntry.prototype['profileId'] = undefined;
 LedgerEntry.prototype['accountId'] = undefined;
 
 /**
- * ID of the ledger
+ * ID of the ledger.
  * @member {Number} loyaltyProgramId
  */
 LedgerEntry.prototype['loyaltyProgramId'] = undefined;
 
 /**
- * ID of the related event
+ * ID of the related event.
  * @member {Number} eventId
  */
 LedgerEntry.prototype['eventId'] = undefined;
 
 /**
- * Amount of loyalty points
+ * Amount of loyalty points.
  * @member {Number} amount
  */
 LedgerEntry.prototype['amount'] = undefined;
 
 /**
- * reason for awarding/deducting points
+ * reason for awarding/deducting points.
  * @member {String} reason
  */
 LedgerEntry.prototype['reason'] = undefined;
 
 /**
- * Expiry date of the points
+ * Expiry date of the points.
  * @member {Date} expiryDate
  */
 LedgerEntry.prototype['expiryDate'] = undefined;
 
 /**
- * The ID of the balancing ledgerEntry
+ * The ID of the balancing ledgerEntry.
  * @member {Number} referenceId
  */
 LedgerEntry.prototype['referenceId'] = undefined;

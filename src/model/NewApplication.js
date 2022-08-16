@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewApplication {
     /**
@@ -212,7 +212,7 @@ NewApplication.prototype['enablePartialDiscounts'] = undefined;
 NewApplication.prototype['defaultDiscountAdditionalCostPerItemScope'] = undefined;
 
 /**
- * Hex key for HMAC-signing API calls as coming from this application (16 hex digits)
+ * Hex key for HMAC-signing API calls as coming from this application (16 hex digits).
  * @member {String} key
  */
 NewApplication.prototype['key'] = undefined;

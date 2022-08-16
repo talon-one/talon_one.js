@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackReferralEffectProps model module.
  * @module model/RollbackReferralEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RollbackReferralEffectProps {
     /**
      * Constructs a new <code>RollbackReferralEffectProps</code>.
      * The properties specific to the \&quot;rollbackReferral\&quot; effect. This gets triggered whenever previously closed session is now cancelled and a referral redemption was cancelled on our internal usage limit counters.
      * @alias module:model/RollbackReferralEffectProps
-     * @param value {String} The referral code whose usage has been rolled back
+     * @param value {String} The referral code whose usage has been rolled back.
      */
     constructor(value) { 
         
@@ -61,7 +61,7 @@ class RollbackReferralEffectProps {
 }
 
 /**
- * The referral code whose usage has been rolled back
+ * The referral code whose usage has been rolled back.
  * @member {String} value
  */
 RollbackReferralEffectProps.prototype['value'] = undefined;

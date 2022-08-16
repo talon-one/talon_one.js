@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseLoyaltyProgram model module.
  * @module model/BaseLoyaltyProgram
- * @version 4.5.0
+ * @version 4.6.0
  */
 class BaseLoyaltyProgram {
     /**
@@ -106,7 +106,7 @@ BaseLoyaltyProgram.prototype['defaultValidity'] = undefined;
 BaseLoyaltyProgram.prototype['defaultPending'] = undefined;
 
 /**
- * Indicates if this program supports subledgers inside the program
+ * Indicates if this program supports subledgers inside the program.
  * @member {Boolean} allowSubledger
  */
 BaseLoyaltyProgram.prototype['allowSubledger'] = undefined;

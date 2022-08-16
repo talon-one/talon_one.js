@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property effects (base name: "effects")', function() {
+      // uncomment below and update the code to test the property effects
+      //var instane = new TalonOne.IntegrationCustomerSessionResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

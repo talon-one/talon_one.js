@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCouponsForMultipleRecipients model module.
  * @module model/NewCouponsForMultipleRecipients
- * @version 4.5.0
+ * @version 4.6.0
  */
 class NewCouponsForMultipleRecipients {
     /**
@@ -24,7 +24,7 @@ class NewCouponsForMultipleRecipients {
      * 
      * @alias module:model/NewCouponsForMultipleRecipients
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
-     * @param recipientsIntegrationIds {Array.<String>} The integration IDs for recipients
+     * @param recipientsIntegrationIds {Array.<String>} The integration IDs for recipients.
      */
     constructor(usageLimit, recipientsIntegrationIds) { 
         
@@ -108,13 +108,13 @@ NewCouponsForMultipleRecipients.prototype['startDate'] = undefined;
 NewCouponsForMultipleRecipients.prototype['expiryDate'] = undefined;
 
 /**
- * Arbitrary properties associated with this item
+ * Arbitrary properties associated with this item.
  * @member {Object} attributes
  */
 NewCouponsForMultipleRecipients.prototype['attributes'] = undefined;
 
 /**
- * The integration IDs for recipients
+ * The integration IDs for recipients.
  * @member {Array.<String>} recipientsIntegrationIds
  */
 NewCouponsForMultipleRecipients.prototype['recipientsIntegrationIds'] = undefined;

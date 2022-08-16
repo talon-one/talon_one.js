@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The Catalog model module.
  * @module model/Catalog
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Catalog {
     /**
      * Constructs a new <code>Catalog</code>.
      * 
      * @alias module:model/Catalog
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param modified {Date} The exact moment this entity was last modified.
-     * @param name {String} The cart items catalog name.
-     * @param description {String} A description of this cart items catalog.
+     * @param name {String} The cart item catalog name.
+     * @param description {String} A description of this cart item catalog.
      * @param version {Number} The current version of this catalog.
      * @param createdBy {Number} The ID of user who created this catalog.
      */
@@ -99,7 +99,7 @@ class Catalog {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Catalog.prototype['id'] = undefined;
@@ -123,13 +123,13 @@ Catalog.prototype['accountId'] = undefined;
 Catalog.prototype['modified'] = undefined;
 
 /**
- * The cart items catalog name.
+ * The cart item catalog name.
  * @member {String} name
  */
 Catalog.prototype['name'] = undefined;
 
 /**
- * A description of this cart items catalog.
+ * A description of this cart item catalog.
  * @member {String} description
  */
 Catalog.prototype['description'] = undefined;

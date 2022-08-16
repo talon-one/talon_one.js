@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import Audience from './Audience';
+import ApplicationSession from './ApplicationSession';
 
 /**
  * The InlineResponse20020 model module.
  * @module model/InlineResponse20020
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20020 {
     /**
      * Constructs a new <code>InlineResponse20020</code>.
      * @alias module:model/InlineResponse20020
-     * @param data {Array.<module:model/Audience>} 
+     * @param data {Array.<module:model/ApplicationSession>} 
      */
     constructor(data) { 
         
@@ -53,11 +53,8 @@ class InlineResponse20020 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Audience]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationSession]);
             }
         }
         return obj;
@@ -72,12 +69,7 @@ class InlineResponse20020 {
 InlineResponse20020.prototype['hasMore'] = undefined;
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20020.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/Audience>} data
+ * @member {Array.<module:model/ApplicationSession>} data
  */
 InlineResponse20020.prototype['data'] = undefined;
 

@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectReferralEffectProps model module.
  * @module model/RejectReferralEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class RejectReferralEffectProps {
     /**
      * Constructs a new <code>RejectReferralEffectProps</code>.
      * The properties specific to the \&quot;rejectReferral\&quot; effect. This gets triggered whenever the referral code was rejected. See rejectionReason for more info on why.
      * @alias module:model/RejectReferralEffectProps
-     * @param value {String} The referral code that was rejected
-     * @param rejectionReason {String} The reason why this referral code was rejected
+     * @param value {String} The referral code that was rejected.
+     * @param rejectionReason {String} The reason why this referral code was rejected.
      */
     constructor(value, rejectionReason) { 
         
@@ -75,31 +75,31 @@ class RejectReferralEffectProps {
 }
 
 /**
- * The referral code that was rejected
+ * The referral code that was rejected.
  * @member {String} value
  */
 RejectReferralEffectProps.prototype['value'] = undefined;
 
 /**
- * The reason why this referral code was rejected
+ * The reason why this referral code was rejected.
  * @member {String} rejectionReason
  */
 RejectReferralEffectProps.prototype['rejectionReason'] = undefined;
 
 /**
- * The index of the condition that caused the rejection of the referral
+ * The index of the condition that caused the rejection of the referral.
  * @member {Number} conditionIndex
  */
 RejectReferralEffectProps.prototype['conditionIndex'] = undefined;
 
 /**
- * The index of the effect that caused the rejection of the referral
+ * The index of the effect that caused the rejection of the referral.
  * @member {Number} effectIndex
  */
 RejectReferralEffectProps.prototype['effectIndex'] = undefined;
 
 /**
- * More details about the failure
+ * More details about the failure.
  * @member {String} details
  */
 RejectReferralEffectProps.prototype['details'] = undefined;

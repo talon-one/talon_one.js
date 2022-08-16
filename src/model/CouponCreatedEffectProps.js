@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponCreatedEffectProps model module.
  * @module model/CouponCreatedEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CouponCreatedEffectProps {
     /**
      * Constructs a new <code>CouponCreatedEffectProps</code>.
      * The properties specific to the \&quot;couponCreated\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;create coupon\&quot; effect, and a coupon was created for a customer. See \&quot;createdCoupons\&quot; on the response for all details of this coupon.
      * @alias module:model/CouponCreatedEffectProps
-     * @param value {String} The coupon code that was created
-     * @param profileId {String} The integration identifier of the customer for whom this coupon was created
+     * @param value {String} The coupon code that was created.
+     * @param profileId {String} The integration identifier of the customer for whom this coupon was created.
      */
     constructor(value, profileId) { 
         
@@ -66,13 +66,13 @@ class CouponCreatedEffectProps {
 }
 
 /**
- * The coupon code that was created
+ * The coupon code that was created.
  * @member {String} value
  */
 CouponCreatedEffectProps.prototype['value'] = undefined;
 
 /**
- * The integration identifier of the customer for whom this coupon was created
+ * The integration identifier of the customer for whom this coupon was created.
  * @member {String} profileId
  */
 CouponCreatedEffectProps.prototype['profileId'] = undefined;

@@ -12,19 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import Attribute from './Attribute';
 
 /**
  * The InlineResponse20022 model module.
  * @module model/InlineResponse20022
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20022 {
     /**
      * Constructs a new <code>InlineResponse20022</code>.
      * @alias module:model/InlineResponse20022
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Attribute>} 
+     * @param data {Array.<String>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +55,7 @@ class InlineResponse20022 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Attribute]);
+                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
             }
         }
         return obj;
@@ -71,7 +70,7 @@ class InlineResponse20022 {
 InlineResponse20022.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Attribute>} data
+ * @member {Array.<String>} data
  */
 InlineResponse20022.prototype['data'] = undefined;
 

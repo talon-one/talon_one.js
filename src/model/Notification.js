@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The Notification model module.
  * @module model/Notification
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Notification {
     /**
      * Constructs a new <code>Notification</code>.
      * @alias module:model/Notification
-     * @param id {Number} id of the notification
-     * @param name {String} name of the notification
-     * @param description {String} description of the notification
+     * @param id {Number} id of the notification.
+     * @param name {String} name of the notification.
+     * @param description {String} description of the notification.
      */
     constructor(id, name, description) { 
         
@@ -70,19 +70,19 @@ class Notification {
 }
 
 /**
- * id of the notification
+ * id of the notification.
  * @member {Number} id
  */
 Notification.prototype['id'] = undefined;
 
 /**
- * name of the notification
+ * name of the notification.
  * @member {String} name
  */
 Notification.prototype['name'] = undefined;
 
 /**
- * description of the notification
+ * description of the notification.
  * @member {String} description
  */
 Notification.prototype['description'] = undefined;

@@ -18,18 +18,18 @@ import Tier from './Tier';
 /**
  * The LedgerInfo model module.
  * @module model/LedgerInfo
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LedgerInfo {
     /**
      * Constructs a new <code>LedgerInfo</code>.
      * 
      * @alias module:model/LedgerInfo
-     * @param currentBalance {Number} Sum of currently active points
-     * @param pendingBalance {Number} Sum of pending points
-     * @param expiredBalance {Number} Sum of expired points
-     * @param spentBalance {Number} Sum of spent points
-     * @param tentativeCurrentBalance {Number} Sum of currently active points, including points added and deducted in open sessions
+     * @param currentBalance {Number} Sum of currently active points.
+     * @param pendingBalance {Number} Sum of pending points.
+     * @param expiredBalance {Number} Sum of expired points.
+     * @param spentBalance {Number} Sum of spent points.
+     * @param tentativeCurrentBalance {Number} Sum of currently active points, including points added and deducted in open sessions.
      */
     constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
@@ -92,31 +92,31 @@ class LedgerInfo {
 }
 
 /**
- * Sum of currently active points
+ * Sum of currently active points.
  * @member {Number} currentBalance
  */
 LedgerInfo.prototype['currentBalance'] = undefined;
 
 /**
- * Sum of pending points
+ * Sum of pending points.
  * @member {Number} pendingBalance
  */
 LedgerInfo.prototype['pendingBalance'] = undefined;
 
 /**
- * Sum of expired points
+ * Sum of expired points.
  * @member {Number} expiredBalance
  */
 LedgerInfo.prototype['expiredBalance'] = undefined;
 
 /**
- * Sum of spent points
+ * Sum of spent points.
  * @member {Number} spentBalance
  */
 LedgerInfo.prototype['spentBalance'] = undefined;
 
 /**
- * Sum of currently active points, including points added and deducted in open sessions
+ * Sum of currently active points, including points added and deducted in open sessions.
  * @member {Number} tentativeCurrentBalance
  */
 LedgerInfo.prototype['tentativeCurrentBalance'] = undefined;

@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The Role model module.
  * @module model/Role
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Role {
     /**
      * Constructs a new <code>Role</code>.
      * 
      * @alias module:model/Role
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param modified {Date} The exact moment this entity was last modified.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param name {String} Name of the role
-     * @param acl {Object} Role ACL Policy
+     * @param name {String} Name of the role.
+     * @param acl {Object} Role ACL Policy.
      */
     constructor(id, created, modified, accountId, name, acl) { 
         
@@ -95,7 +95,7 @@ class Role {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Role.prototype['id'] = undefined;
@@ -125,25 +125,25 @@ Role.prototype['accountId'] = undefined;
 Role.prototype['campaignGroupID'] = undefined;
 
 /**
- * Name of the role
+ * Name of the role.
  * @member {String} name
  */
 Role.prototype['name'] = undefined;
 
 /**
- * Description of the role
+ * Description of the role.
  * @member {String} description
  */
 Role.prototype['description'] = undefined;
 
 /**
- * A list of user identifiers assigned to this role
+ * A list of user identifiers assigned to this role.
  * @member {Array.<Number>} members
  */
 Role.prototype['members'] = undefined;
 
 /**
- * Role ACL Policy
+ * Role ACL Policy.
  * @member {Object} acl
  */
 Role.prototype['acl'] = undefined;

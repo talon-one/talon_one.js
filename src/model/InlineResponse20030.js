@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import ModelExport from './ModelExport';
+import EventType from './EventType';
 
 /**
  * The InlineResponse20030 model module.
  * @module model/InlineResponse20030
- * @version 4.5.0
+ * @version 4.6.0
  */
 class InlineResponse20030 {
     /**
      * Constructs a new <code>InlineResponse20030</code>.
      * @alias module:model/InlineResponse20030
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/ModelExport>} 
+     * @param data {Array.<module:model/EventType>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20030 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
+                obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20030 {
 InlineResponse20030.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ModelExport>} data
+ * @member {Array.<module:model/EventType>} data
  */
 InlineResponse20030.prototype['data'] = undefined;
 

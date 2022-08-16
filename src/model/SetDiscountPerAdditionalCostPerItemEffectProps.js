@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerAdditionalCostPerItemEffectProps model module.
  * @module model/SetDiscountPerAdditionalCostPerItemEffectProps
- * @version 4.5.0
+ * @version 4.6.0
  */
 class SetDiscountPerAdditionalCostPerItemEffectProps {
     /**
      * Constructs a new <code>SetDiscountPerAdditionalCostPerItemEffectProps</code>.
      * The properties specific to the \&quot;setDiscountPerAdditionalCostPerItem\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set discount per additional cost per item\&quot; effect. This is a discount that should be applied on a specific additional cost in a specific item.
      * @alias module:model/SetDiscountPerAdditionalCostPerItemEffectProps
-     * @param name {String} The name/description of this discount
-     * @param additionalCostId {Number} The ID of the additional cost
-     * @param value {Number} The total monetary value of the discount
+     * @param name {String} The name/description of this discount.
+     * @param additionalCostId {Number} The ID of the additional cost.
+     * @param value {Number} The total monetary value of the discount.
      * @param position {Number} The index of the item in the cart item list containing the additional cost to be discounted.
-     * @param additionalCost {String} The name of the additional cost
+     * @param additionalCost {String} The name of the additional cost.
      */
     constructor(name, additionalCostId, value, position, additionalCost) { 
         
@@ -87,19 +87,19 @@ class SetDiscountPerAdditionalCostPerItemEffectProps {
 }
 
 /**
- * The name/description of this discount
+ * The name/description of this discount.
  * @member {String} name
  */
 SetDiscountPerAdditionalCostPerItemEffectProps.prototype['name'] = undefined;
 
 /**
- * The ID of the additional cost
+ * The ID of the additional cost.
  * @member {Number} additionalCostId
  */
 SetDiscountPerAdditionalCostPerItemEffectProps.prototype['additionalCostId'] = undefined;
 
 /**
- * The total monetary value of the discount
+ * The total monetary value of the discount.
  * @member {Number} value
  */
 SetDiscountPerAdditionalCostPerItemEffectProps.prototype['value'] = undefined;
@@ -117,7 +117,7 @@ SetDiscountPerAdditionalCostPerItemEffectProps.prototype['position'] = undefined
 SetDiscountPerAdditionalCostPerItemEffectProps.prototype['subPosition'] = undefined;
 
 /**
- * The name of the additional cost
+ * The name of the additional cost.
  * @member {String} additionalCost
  */
 SetDiscountPerAdditionalCostPerItemEffectProps.prototype['additionalCost'] = undefined;

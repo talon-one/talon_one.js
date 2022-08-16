@@ -17,17 +17,17 @@ import CampaignPrioritiesV2 from './CampaignPrioritiesV2';
 /**
  * The CampaignSetV2 model module.
  * @module model/CampaignSetV2
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CampaignSetV2 {
     /**
      * Constructs a new <code>CampaignSetV2</code>.
      * 
      * @alias module:model/CampaignSetV2
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
-     * @param version {Number} Version of the campaign set
+     * @param version {Number} Version of the campaign set.
      * @param set {module:model/CampaignPrioritiesV2} 
      */
     constructor(id, created, applicationId, version, set) { 
@@ -82,7 +82,7 @@ class CampaignSetV2 {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 CampaignSetV2.prototype['id'] = undefined;
@@ -100,7 +100,7 @@ CampaignSetV2.prototype['created'] = undefined;
 CampaignSetV2.prototype['applicationId'] = undefined;
 
 /**
- * Version of the campaign set
+ * Version of the campaign set.
  * @member {Number} version
  */
 CampaignSetV2.prototype['version'] = undefined;

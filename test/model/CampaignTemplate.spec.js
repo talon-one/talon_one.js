@@ -168,6 +168,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultCampaignGroupId (base name: "defaultCampaignGroupId")', function() {
+      // uncomment below and update the code to test the property defaultCampaignGroupId
+      //var instane = new TalonOne.CampaignTemplate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property updated (base name: "updated")', function() {
       // uncomment below and update the code to test the property updated
       //var instane = new TalonOne.CampaignTemplate();

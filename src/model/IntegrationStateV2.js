@@ -28,7 +28,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The IntegrationStateV2 model module.
  * @module model/IntegrationStateV2
- * @version 4.5.0
+ * @version 4.6.0
  */
 class IntegrationStateV2 {
     /**

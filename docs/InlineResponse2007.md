@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[LoyaltyProgram]**](LoyaltyProgram.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[Coupon]**](Coupon.md) |  | 
 
 

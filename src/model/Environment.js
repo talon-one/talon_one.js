@@ -25,20 +25,20 @@ import TemplateDef from './TemplateDef';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 4.5.0
+ * @version 4.6.0
  */
 class Environment {
     /**
      * Constructs a new <code>Environment</code>.
      * 
      * @alias module:model/Environment
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param slots {Array.<module:model/SlotDef>} The slots defined for this application.
      * @param functions {Array.<module:model/FunctionDef>} The functions defined for this application.
      * @param templates {Array.<module:model/TemplateDef>} The templates defined for this application.
-     * @param variables {String} A stringified version of the environment's Talang variables scope
+     * @param variables {String} A stringified version of the environment's Talang variables scope.
      */
     constructor(id, created, applicationId, slots, functions, templates, variables) { 
         
@@ -118,7 +118,7 @@ class Environment {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 Environment.prototype['id'] = undefined;
@@ -154,7 +154,7 @@ Environment.prototype['functions'] = undefined;
 Environment.prototype['templates'] = undefined;
 
 /**
- * A stringified version of the environment's Talang variables scope
+ * A stringified version of the environment's Talang variables scope.
  * @member {String} variables
  */
 Environment.prototype['variables'] = undefined;

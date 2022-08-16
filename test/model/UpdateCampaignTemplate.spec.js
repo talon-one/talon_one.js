@@ -144,6 +144,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultCampaignGroupId (base name: "defaultCampaignGroupId")', function() {
+      // uncomment below and update the code to test the property defaultCampaignGroupId
+      //var instane = new TalonOne.UpdateCampaignTemplate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

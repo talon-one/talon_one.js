@@ -14,7 +14,9 @@ Name | Type | Description | Notes
 **hasAllowedList** | **Boolean** | Whether or not this attribute has an allowed list of values associated with it. | [optional] [default to false]
 **restrictedBySuggestions** | **Boolean** | Whether or not this attribute&#39;s value is restricted by suggestions (&#x60;suggestions&#x60; property) or by an allowed list of value (&#x60;hasAllowedList&#x60; property).  | [optional] [default to false]
 **editable** | **Boolean** | Whether or not this attribute can be edited. | 
-**subscribedApplicationsIds** | **[Number]** | A list of the IDs of the applications that are subscribed to this attribute | [optional] 
+**subscribedApplicationsIds** | **[Number]** | A list of the IDs of the applications where this attribute is available. | [optional] 
+**subscribedCatalogsIds** | **[Number]** | A list of the IDs of the catalogs where this attribute is available. | [optional] 
+**allowedSubscriptions** | **[String]** | A list of allowed subscription types for this attribute.  **Note:** This only applies to attributes associated with the &#x60;CartItem&#x60; entity.  | [optional] 
 
 
 
@@ -65,6 +67,17 @@ Name | Type | Description | Notes
 * `location` (value: `"location"`)
 
 * `(list location)` (value: `"(list location)"`)
+
+
+
+
+
+## Enum: [AllowedSubscriptionsEnum]
+
+
+* `application` (value: `"application"`)
+
+* `catalog` (value: `"catalog"`)
 
 
 

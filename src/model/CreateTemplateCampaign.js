@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The CreateTemplateCampaign model module.
  * @module model/CreateTemplateCampaign
- * @version 4.5.0
+ * @version 4.6.0
  */
 class CreateTemplateCampaign {
     /**
@@ -71,6 +71,9 @@ class CreateTemplateCampaign {
             if (data.hasOwnProperty('limitOverrides')) {
                 obj['limitOverrides'] = ApiClient.convertToType(data['limitOverrides'], [LimitConfig]);
             }
+            if (data.hasOwnProperty('campaignGroups')) {
+                obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -116,6 +119,12 @@ CreateTemplateCampaign.prototype['templateParamValues'] = undefined;
  * @member {Array.<module:model/LimitConfig>} limitOverrides
  */
 CreateTemplateCampaign.prototype['limitOverrides'] = undefined;
+
+/**
+ * The IDs of the [campaign groups](https://docs.talon.one/docs/product/account/managing-campaign-groups/) this campaign belongs to. 
+ * @member {Array.<Number>} campaignGroups
+ */
+CreateTemplateCampaign.prototype['campaignGroups'] = undefined;
 
 /**
  * A list of tags for the campaign. If the campaign template has tags, they will be overridden by this list.

@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyTier model module.
  * @module model/LoyaltyTier
- * @version 4.5.0
+ * @version 4.6.0
  */
 class LoyaltyTier {
     /**
      * Constructs a new <code>LoyaltyTier</code>.
      * 
      * @alias module:model/LoyaltyTier
-     * @param id {Number} Unique ID for this entity.
+     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param created {Date} The exact moment this entity was created.
      * @param programID {Number} The ID of the loyalty program that owns this entity.
      * @param name {String} The name of the tier
-     * @param minPoints {Number} The minimum amount of points required to be eligible for the tier
+     * @param minPoints {Number} The minimum amount of points required to be eligible for the tier.
      */
     constructor(id, created, programID, name, minPoints) { 
         
@@ -81,7 +81,7 @@ class LoyaltyTier {
 }
 
 /**
- * Unique ID for this entity.
+ * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
  * @member {Number} id
  */
 LoyaltyTier.prototype['id'] = undefined;
@@ -105,7 +105,7 @@ LoyaltyTier.prototype['programID'] = undefined;
 LoyaltyTier.prototype['name'] = undefined;
 
 /**
- * The minimum amount of points required to be eligible for the tier
+ * The minimum amount of points required to be eligible for the tier.
  * @member {Number} minPoints
  */
 LoyaltyTier.prototype['minPoints'] = undefined;

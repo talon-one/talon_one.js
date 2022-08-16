@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import CustomerSessionV2 from './CustomerSessionV2';
+import Effect from './Effect';
 
 /**
  * The IntegrationCustomerSessionResponse model module.
  * @module model/IntegrationCustomerSessionResponse
- * @version 4.5.0
+ * @version 4.6.0
  */
 class IntegrationCustomerSessionResponse {
     /**
@@ -51,6 +52,9 @@ class IntegrationCustomerSessionResponse {
             if (data.hasOwnProperty('customerSession')) {
                 obj['customerSession'] = CustomerSessionV2.constructFromObject(data['customerSession']);
             }
+            if (data.hasOwnProperty('effects')) {
+                obj['effects'] = ApiClient.convertToType(data['effects'], [Effect]);
+            }
         }
         return obj;
     }
@@ -62,6 +66,11 @@ class IntegrationCustomerSessionResponse {
  * @member {module:model/CustomerSessionV2} customerSession
  */
 IntegrationCustomerSessionResponse.prototype['customerSession'] = undefined;
+
+/**
+ * @member {Array.<module:model/Effect>} effects
+ */
+IntegrationCustomerSessionResponse.prototype['effects'] = undefined;
 
 
 

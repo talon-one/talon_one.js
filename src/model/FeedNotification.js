@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedNotification model module.
  * @module model/FeedNotification
- * @version 4.5.0
+ * @version 4.6.0
  */
 class FeedNotification {
     /**
      * Constructs a new <code>FeedNotification</code>.
-     * A feed notification for CAMA users
+     * A feed notification for CAMA users.
      * @alias module:model/FeedNotification
-     * @param title {String} Title of the feed notification
-     * @param created {Date} Timestamp of the moment this feed notification was created
-     * @param updated {Date} Timestamp of the moment this feed notification was last updated
-     * @param articleUrl {String} URL to the feed notification in the help center
-     * @param type {module:model/FeedNotification.TypeEnum} The type of the feed notification
-     * @param body {String} Body of the feed notification
+     * @param title {String} Title of the feed notification.
+     * @param created {Date} Timestamp of the moment this feed notification was created.
+     * @param updated {Date} Timestamp of the moment this feed notification was last updated.
+     * @param articleUrl {String} URL to the feed notification in the help center.
+     * @param type {module:model/FeedNotification.TypeEnum} The type of the feed notification.
+     * @param body {String} Body of the feed notification.
      */
     constructor(title, created, updated, articleUrl, type, body) { 
         
@@ -86,37 +86,37 @@ class FeedNotification {
 }
 
 /**
- * Title of the feed notification
+ * Title of the feed notification.
  * @member {String} title
  */
 FeedNotification.prototype['title'] = undefined;
 
 /**
- * Timestamp of the moment this feed notification was created
+ * Timestamp of the moment this feed notification was created.
  * @member {Date} created
  */
 FeedNotification.prototype['created'] = undefined;
 
 /**
- * Timestamp of the moment this feed notification was last updated
+ * Timestamp of the moment this feed notification was last updated.
  * @member {Date} updated
  */
 FeedNotification.prototype['updated'] = undefined;
 
 /**
- * URL to the feed notification in the help center
+ * URL to the feed notification in the help center.
  * @member {String} articleUrl
  */
 FeedNotification.prototype['articleUrl'] = undefined;
 
 /**
- * The type of the feed notification
+ * The type of the feed notification.
  * @member {module:model/FeedNotification.TypeEnum} type
  */
 FeedNotification.prototype['type'] = undefined;
 
 /**
- * Body of the feed notification
+ * Body of the feed notification.
  * @member {String} body
  */
 FeedNotification.prototype['body'] = undefined;

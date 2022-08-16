@@ -17,7 +17,7 @@ import NewReturn from './NewReturn';
 /**
  * The ReturnIntegrationRequest model module.
  * @module model/ReturnIntegrationRequest
- * @version 4.5.0
+ * @version 4.6.0
  */
 class ReturnIntegrationRequest {
     /**
@@ -70,7 +70,7 @@ class ReturnIntegrationRequest {
 ReturnIntegrationRequest.prototype['return'] = undefined;
 
 /**
- * Optional list of requested information to be present on the response related to the return request. 
+ * Optional list of extra data that you want to get in the response. Use this property to get as much data as you need in one request instead of sending extra requests to other endpoints.  **Note:** `ruleFailureReasons` is always part of the response when the [Application type](https://docs.talon.one/docs/product/applications/overview#application-types) is `sandbox`. 
  * @member {Array.<module:model/ReturnIntegrationRequest.ResponseContentEnum>} responseContent
  */
 ReturnIntegrationRequest.prototype['responseContent'] = undefined;
