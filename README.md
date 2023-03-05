@@ -199,6 +199,7 @@ integrationApi
           case 'acceptCoupon':
             // Work with AcceptCouponEffectProps' properties
             // ...
+            break
           default:
             throw new Error(`Unhandled effect type from Talon.One integration: ${effect.effectType}`)
         }
