@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,17 +17,17 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The CustomEffect model module.
  * @module model/CustomEffect
- * @version 4.6.0
+ * @version 5.0.0
  */
 class CustomEffect {
     /**
      * Constructs a new <code>CustomEffect</code>.
      * 
      * @alias module:model/CustomEffect
-     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param created {Date} The exact moment this entity was created.
+     * @param id {Number} Internal ID of this entity.
+     * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param modified {Date} The exact moment this entity was last modified.
+     * @param modified {Date} The time this entity was last modified.
      * @param applicationIds {Array.<Number>} The IDs of the applications that are related to this entity.
      * @param name {String} The name of this effect.
      * @param title {String} The title of this effect.
@@ -84,6 +84,9 @@ class CustomEffect {
             if (data.hasOwnProperty('applicationIds')) {
                 obj['applicationIds'] = ApiClient.convertToType(data['applicationIds'], ['Number']);
             }
+            if (data.hasOwnProperty('isPerItem')) {
+                obj['isPerItem'] = ApiClient.convertToType(data['isPerItem'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -116,13 +119,13 @@ class CustomEffect {
 }
 
 /**
- * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
+ * Internal ID of this entity.
  * @member {Number} id
  */
 CustomEffect.prototype['id'] = undefined;
 
 /**
- * The exact moment this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 CustomEffect.prototype['created'] = undefined;
@@ -134,7 +137,7 @@ CustomEffect.prototype['created'] = undefined;
 CustomEffect.prototype['accountId'] = undefined;
 
 /**
- * The exact moment this entity was last modified.
+ * The time this entity was last modified.
  * @member {Date} modified
  */
 CustomEffect.prototype['modified'] = undefined;
@@ -144,6 +147,12 @@ CustomEffect.prototype['modified'] = undefined;
  * @member {Array.<Number>} applicationIds
  */
 CustomEffect.prototype['applicationIds'] = undefined;
+
+/**
+ * Indicates if this effect is per item or not.
+ * @member {Boolean} isPerItem
+ */
+CustomEffect.prototype['isPerItem'] = undefined;
 
 /**
  * The name of this effect.

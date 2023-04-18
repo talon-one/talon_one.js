@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applicationIds** | **[Number]** | The IDs of the applications that are related to this entity. | 
-**title** | **String** | Friendly title for this webhook. | 
+**title** | **String** | Name or title for this webhook. | 
 **verb** | **String** | API method for this webhook. | 
 **url** | **String** | API url (supports templating using parameters) for this webhook. | 
 **headers** | **[String]** | List of API HTTP headers for this webhook. | 

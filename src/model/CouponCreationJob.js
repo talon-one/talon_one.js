@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,20 +17,20 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 4.6.0
+ * @version 5.0.0
  */
 class CouponCreationJob {
     /**
      * Constructs a new <code>CouponCreationJob</code>.
      * 
      * @alias module:model/CouponCreationJob
-     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param created {Date} The exact moment this entity was created.
+     * @param id {Number} Internal ID of this entity.
+     * @param created {Date} The time this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
-     * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be between 20,001 and 5,000,000.
+     * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign.
      * @param attributes {Object} Arbitrary properties associated with coupons.
      * @param batchId {String} The batch ID coupons created by this job will bear.
      * @param status {String} The current status of this request. Possible values: - `pending` - `completed` - `failed` - `coupon pattern full` 
@@ -102,6 +102,9 @@ class CouponCreationJob {
             if (data.hasOwnProperty('discountLimit')) {
                 obj['discountLimit'] = ApiClient.convertToType(data['discountLimit'], 'Number');
             }
+            if (data.hasOwnProperty('reservationLimit')) {
+                obj['reservationLimit'] = ApiClient.convertToType(data['reservationLimit'], 'Number');
+            }
             if (data.hasOwnProperty('startDate')) {
                 obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
             }
@@ -152,13 +155,13 @@ class CouponCreationJob {
 }
 
 /**
- * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
+ * Internal ID of this entity.
  * @member {Number} id
  */
 CouponCreationJob.prototype['id'] = undefined;
 
 /**
- * The exact moment this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 CouponCreationJob.prototype['created'] = undefined;
@@ -188,10 +191,16 @@ CouponCreationJob.prototype['accountId'] = undefined;
 CouponCreationJob.prototype['usageLimit'] = undefined;
 
 /**
- * The amount of discounts that can be given with this coupon code. 
+ * The total discount value that the code can give. Typically used to represent a gift card value. 
  * @member {Number} discountLimit
  */
 CouponCreationJob.prototype['discountLimit'] = undefined;
+
+/**
+ * The number of reservations that can be made with this coupon code. 
+ * @member {Number} reservationLimit
+ */
+CouponCreationJob.prototype['reservationLimit'] = undefined;
 
 /**
  * Timestamp at which point the coupon becomes valid.
@@ -200,13 +209,13 @@ CouponCreationJob.prototype['discountLimit'] = undefined;
 CouponCreationJob.prototype['startDate'] = undefined;
 
 /**
- * Expiry date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
  * @member {Date} expiryDate
  */
 CouponCreationJob.prototype['expiryDate'] = undefined;
 
 /**
- * The number of new coupon codes to generate for the campaign. Must be between 20,001 and 5,000,000.
+ * The number of new coupon codes to generate for the campaign.
  * @member {Number} numberOfCoupons
  */
 CouponCreationJob.prototype['numberOfCoupons'] = undefined;

@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[User]**](User.md) |  | 
+**data** | [**[AccountAdditionalCost]**](AccountAdditionalCost.md) |  | 
 
 

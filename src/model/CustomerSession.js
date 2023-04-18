@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSession model module.
  * @module model/CustomerSession
- * @version 4.6.0
+ * @version 5.0.0
  */
 class CustomerSession {
     /**
@@ -25,12 +25,12 @@ class CustomerSession {
      * 
      * @alias module:model/CustomerSession
      * @param integrationId {String} The integration ID set by your integration layer.
-     * @param created {Date} The exact moment this entity was created.
+     * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
-     * @param state {module:model/CustomerSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
+     * @param state {module:model/CustomerSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session). 
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
      * @param total {Number} The total sum of the cart in one session.
      * @param attributes {Object} A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings. 
@@ -131,7 +131,7 @@ class CustomerSession {
 CustomerSession.prototype['integrationId'] = undefined;
 
 /**
- * The exact moment this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 CustomerSession.prototype['created'] = undefined;
@@ -161,7 +161,7 @@ CustomerSession.prototype['coupon'] = undefined;
 CustomerSession.prototype['referral'] = undefined;
 
 /**
- * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](/docs/dev/concepts/entities#customer-session). 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session). 
  * @member {module:model/CustomerSession.StateEnum} state
  * @default 'open'
  */
@@ -174,7 +174,7 @@ CustomerSession.prototype['state'] = 'open';
 CustomerSession.prototype['cartItems'] = undefined;
 
 /**
- * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. See the [tutorial](https://docs.talon.one/docs/dev/tutorials/using-identifiers/). 
+ * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. See the [tutorial](https://docs.talon.one/docs/dev/tutorials/using-identifiers). 
  * @member {Array.<String>} identifiers
  */
 CustomerSession.prototype['identifiers'] = undefined;

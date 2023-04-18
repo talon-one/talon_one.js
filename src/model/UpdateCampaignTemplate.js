@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The UpdateCampaignTemplate model module.
  * @module model/UpdateCampaignTemplate
- * @version 4.6.0
+ * @version 5.0.0
  */
 class UpdateCampaignTemplate {
     /**
@@ -29,8 +29,8 @@ class UpdateCampaignTemplate {
      * @param name {String} The campaign template name.
      * @param description {String} Customer-facing text that explains the objective of the template.
      * @param instructions {String} Customer-facing text that explains how to use the template. For example, you can use this property to explain the available attributes of this template, and how they can be modified when a user uses this template to create a new campaign.
-     * @param state {module:model/UpdateCampaignTemplate.StateEnum} Only Campaign Templates in 'available' state may be used to create Campaigns.
-     * @param applicationsIds {Array.<Number>} A list of the IDs of the applications that are subscribed to this campaign template.
+     * @param state {module:model/UpdateCampaignTemplate.StateEnum} Only campaign templates in 'available' state may be used to create campaigns.
+     * @param applicationsIds {Array.<Number>} A list of IDs of the Applications that are subscribed to this campaign template.
      */
     constructor(name, description, instructions, state, applicationsIds) { 
         
@@ -135,25 +135,25 @@ UpdateCampaignTemplate.prototype['description'] = undefined;
 UpdateCampaignTemplate.prototype['instructions'] = undefined;
 
 /**
- * The Campaign Attributes that Campaigns created from this template will have by default.
+ * The campaign attributes that campaigns created from this template will have by default.
  * @member {Object} campaignAttributes
  */
 UpdateCampaignTemplate.prototype['campaignAttributes'] = undefined;
 
 /**
- * The Campaign Attributes that Coupons created from this template will have by default.
+ * The campaign attributes that coupons created from this template will have by default.
  * @member {Object} couponAttributes
  */
 UpdateCampaignTemplate.prototype['couponAttributes'] = undefined;
 
 /**
- * Only Campaign Templates in 'available' state may be used to create Campaigns.
+ * Only campaign templates in 'available' state may be used to create campaigns.
  * @member {module:model/UpdateCampaignTemplate.StateEnum} state
  */
 UpdateCampaignTemplate.prototype['state'] = undefined;
 
 /**
- * The ID of the Ruleset this Campaign Template will use.
+ * The ID of the ruleset this campaign template will use.
  * @member {Number} activeRulesetId
  */
 UpdateCampaignTemplate.prototype['activeRulesetId'] = undefined;
@@ -181,19 +181,19 @@ UpdateCampaignTemplate.prototype['couponSettings'] = undefined;
 UpdateCampaignTemplate.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign template.
+ * The set of limits that operate for this campaign template.
  * @member {Array.<module:model/TemplateLimitConfig>} limits
  */
 UpdateCampaignTemplate.prototype['limits'] = undefined;
 
 /**
- * Template parameters are fields which can be used to replace values in a rule.
+ * Fields which can be used to replace values in a rule.
  * @member {Array.<module:model/CampaignTemplateParams>} templateParams
  */
 UpdateCampaignTemplate.prototype['templateParams'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this campaign template.
+ * A list of IDs of the Applications that are subscribed to this campaign template.
  * @member {Array.<Number>} applicationsIds
  */
 UpdateCampaignTemplate.prototype['applicationsIds'] = undefined;
@@ -205,7 +205,7 @@ UpdateCampaignTemplate.prototype['applicationsIds'] = undefined;
 UpdateCampaignTemplate.prototype['campaignCollections'] = undefined;
 
 /**
- * The default campaignGroupId.
+ * The default campaign group ID.
  * @member {Number} defaultCampaignGroupId
  */
 UpdateCampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
@@ -270,7 +270,13 @@ UpdateCampaignTemplate['FeaturesEnum'] = {
      * value: "giveaways"
      * @const
      */
-    "giveaways": "giveaways"
+    "giveaways": "giveaways",
+
+    /**
+     * value: "strikethrough"
+     * @const
+     */
+    "strikethrough": "strikethrough"
 };
 
 

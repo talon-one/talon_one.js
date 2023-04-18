@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CodeGeneratorSettings model module.
  * @module model/CodeGeneratorSettings
- * @version 4.6.0
+ * @version 5.0.0
  */
 class CodeGeneratorSettings {
     /**
      * Constructs a new <code>CodeGeneratorSettings</code>.
      * @alias module:model/CodeGeneratorSettings
-     * @param validCharacters {Array.<String>} List of characters used to generate the random parts of a code. Defaults to a list equivalent to the `[A-Z, 0-9]` regexp. 
+     * @param validCharacters {Array.<String>} List of characters used to generate the random parts of a code. 
      * @param couponPattern {String} The pattern used to generate coupon codes. The character `#` is a placeholder and is replaced by a random character from the `validCharacters` set. 
      */
     constructor(validCharacters, couponPattern) { 
@@ -65,7 +65,7 @@ class CodeGeneratorSettings {
 }
 
 /**
- * List of characters used to generate the random parts of a code. Defaults to a list equivalent to the `[A-Z, 0-9]` regexp. 
+ * List of characters used to generate the random parts of a code. 
  * @member {Array.<String>} validCharacters
  */
 CodeGeneratorSettings.prototype['validCharacters'] = undefined;

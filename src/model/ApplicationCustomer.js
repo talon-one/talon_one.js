@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,21 +18,21 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 4.6.0
+ * @version 5.0.0
  */
 class ApplicationCustomer {
     /**
      * Constructs a new <code>ApplicationCustomer</code>.
      * 
      * @alias module:model/ApplicationCustomer
-     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param created {Date} The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
+     * @param id {Number} Internal ID of this entity. Internal ID of this entity.
+     * @param created {Date} The time this entity was created. The time this entity was created. The time this entity was created. The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer. The integration ID set by your integration layer.
      * @param attributes {Object} Arbitrary properties associated with this item.
      * @param accountId {Number} The ID of the Talon.One account that owns this profile. The ID of the Talon.One account that owns this profile.
      * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
-     * @param totalSales {Number} Sum of all purchases made by this customer.
-     * @param lastActivity {Date} Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api/#operation/createCouponReservation) for a customer doesn't impact this field. 
+     * @param totalSales {Number} The total amount of money spent by the customer **before** discounts are applied.  The total sales amount excludes the following: - Cancelled or reopened sessions. - Returned items. 
+     * @param lastActivity {Date} Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn't impact this field. 
      */
     constructor(id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity) { 
         
@@ -96,6 +96,9 @@ class ApplicationCustomer {
             if (data.hasOwnProperty('lastActivity')) {
                 obj['lastActivity'] = ApiClient.convertToType(data['lastActivity'], 'Date');
             }
+            if (data.hasOwnProperty('sandbox')) {
+                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
+            }
             if (data.hasOwnProperty('advocateIntegrationId')) {
                 obj['advocateIntegrationId'] = ApiClient.convertToType(data['advocateIntegrationId'], 'String');
             }
@@ -107,13 +110,13 @@ class ApplicationCustomer {
 }
 
 /**
- * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
+ * Internal ID of this entity. Internal ID of this entity.
  * @member {Number} id
  */
 ApplicationCustomer.prototype['id'] = undefined;
 
 /**
- * The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created. The exact moment this entity was created.
+ * The time this entity was created. The time this entity was created. The time this entity was created. The time this entity was created.
  * @member {Date} created
  */
 ApplicationCustomer.prototype['created'] = undefined;
@@ -143,7 +146,7 @@ ApplicationCustomer.prototype['accountId'] = undefined;
 ApplicationCustomer.prototype['closedSessions'] = undefined;
 
 /**
- * Sum of all purchases made by this customer.
+ * The total amount of money spent by the customer **before** discounts are applied.  The total sales amount excludes the following: - Cancelled or reopened sessions. - Returned items. 
  * @member {Number} totalSales
  */
 ApplicationCustomer.prototype['totalSales'] = undefined;
@@ -155,16 +158,22 @@ ApplicationCustomer.prototype['totalSales'] = undefined;
 ApplicationCustomer.prototype['loyaltyMemberships'] = undefined;
 
 /**
- * A list of audiences the customer belongs to.
+ * The audiences the customer belongs to.
  * @member {Array.<module:model/AudienceMembership>} audienceMemberships
  */
 ApplicationCustomer.prototype['audienceMemberships'] = undefined;
 
 /**
- * Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api/#operation/createCouponReservation) for a customer doesn't impact this field. 
+ * Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn't impact this field. 
  * @member {Date} lastActivity
  */
 ApplicationCustomer.prototype['lastActivity'] = undefined;
+
+/**
+ * Shows whether the customer is part of a sandbox or live Application. See the [docs](https://docs.talon.one/docs/product/applications/overview#application-environments). 
+ * @member {Boolean} sandbox
+ */
+ApplicationCustomer.prototype['sandbox'] = undefined;
 
 /**
  * The Integration ID of the Customer Profile that referred this Customer in the Application.

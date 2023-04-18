@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
-**created** | **Date** | The exact moment this entity was created. | 
+**id** | **Number** | Internal ID of this entity. | 
+**created** | **Date** | The time this entity was created. | 
 **startDate** | **Date** | Timestamp at which point the referral code becomes valid. | [optional] 
-**expiryDate** | **Date** | Expiry date of the referral code. Referral never expires if this is omitted, zero, or negative. | [optional] 
+**expiryDate** | **Date** | Expiration date of the referral code. Referral never expires if this is omitted, zero, or negative. | [optional] 
 **usageLimit** | **Number** | The number of times a referral code can be used. &#x60;0&#x60; means no limit but any campaign usage limits will still apply.  | 
 **campaignId** | **Number** | ID of the campaign from which the referral received the referral code. | 
 **advocateProfileIntegrationId** | **String** | The Integration ID of the Advocate&#39;s Profile. | 

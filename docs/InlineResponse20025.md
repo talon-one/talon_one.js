@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[Attribute]**](Attribute.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**data** | [**[ApplicationSession]**](ApplicationSession.md) |  | 
 
 

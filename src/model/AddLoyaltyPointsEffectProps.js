@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 4.6.0
+ * @version 5.0.0
  */
 class AddLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>AddLoyaltyPointsEffectProps</code>.
      * The properties specific to the \&quot;addLoyaltyPoints\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;add loyalty\&quot; effect. These points are automatically stored and managed inside Talon.One. 
      * @alias module:model/AddLoyaltyPointsEffectProps
-     * @param name {String} The reason of the point addition.
+     * @param name {String} The name / description of this loyalty point addition.
      * @param programId {Number} The ID of the loyalty program where these points were added.
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added.
      * @param value {Number} The amount of points that were added.
@@ -96,6 +96,12 @@ class AddLoyaltyPointsEffectProps {
             if (data.hasOwnProperty('cardIdentifier')) {
                 obj['cardIdentifier'] = ApiClient.convertToType(data['cardIdentifier'], 'String');
             }
+            if (data.hasOwnProperty('bundleIndex')) {
+                obj['bundleIndex'] = ApiClient.convertToType(data['bundleIndex'], 'Number');
+            }
+            if (data.hasOwnProperty('bundleName')) {
+                obj['bundleName'] = ApiClient.convertToType(data['bundleName'], 'String');
+            }
         }
         return obj;
     }
@@ -104,7 +110,7 @@ class AddLoyaltyPointsEffectProps {
 }
 
 /**
- * The reason of the point addition.
+ * The name / description of this loyalty point addition.
  * @member {String} name
  */
 AddLoyaltyPointsEffectProps.prototype['name'] = undefined;
@@ -170,10 +176,22 @@ AddLoyaltyPointsEffectProps.prototype['cartItemPosition'] = undefined;
 AddLoyaltyPointsEffectProps.prototype['cartItemSubPosition'] = undefined;
 
 /**
- * The card on which these points were added.
+ * The alphanumeric identifier of the loyalty card. 
  * @member {String} cardIdentifier
  */
 AddLoyaltyPointsEffectProps.prototype['cardIdentifier'] = undefined;
+
+/**
+ * The position of the bundle in a list of item bundles created from the same bundle definition.
+ * @member {Number} bundleIndex
+ */
+AddLoyaltyPointsEffectProps.prototype['bundleIndex'] = undefined;
+
+/**
+ * The name of the bundle definition.
+ * @member {String} bundleName
+ */
+AddLoyaltyPointsEffectProps.prototype['bundleName'] = undefined;
 
 
 

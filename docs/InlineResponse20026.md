@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[AccountAdditionalCost]**](AccountAdditionalCost.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
 
 

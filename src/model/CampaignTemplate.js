@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -20,23 +20,23 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 4.6.0
+ * @version 5.0.0
  */
 class CampaignTemplate {
     /**
      * Constructs a new <code>CampaignTemplate</code>.
      * 
      * @alias module:model/CampaignTemplate
-     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param created {Date} The exact moment this entity was created.
+     * @param id {Number} Internal ID of this entity.
+     * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param userId {Number} The ID of the account that owns this entity.
+     * @param userId {Number} The ID of the user associated with this entity.
      * @param name {String} The campaign template name.
      * @param description {String} Customer-facing text that explains the objective of the template.
      * @param instructions {String} Customer-facing text that explains how to use the template. For example, you can use this property to explain the available attributes of this template, and how they can be modified when a user uses this template to create a new campaign.
-     * @param state {module:model/CampaignTemplate.StateEnum} Only Campaign Templates in 'available' state may be used to create Campaigns.
-     * @param applicationsIds {Array.<Number>} A list of the IDs of the applications that are subscribed to this campaign template. A list of the IDs of the applications that are subscribed to this campaign template.
-     * @param validApplicationIds {Array.<Number>} The IDs of the applications that are related to this entity.
+     * @param state {module:model/CampaignTemplate.StateEnum} Only campaign templates in 'available' state may be used to create campaigns.
+     * @param applicationsIds {Array.<Number>} A list of IDs of the Applications that are subscribed to this campaign template.
+     * @param validApplicationIds {Array.<Number>} The IDs of the Applications that are related to this entity.
      */
     constructor(id, created, accountId, userId, name, description, instructions, state, applicationsIds, validApplicationIds) { 
         
@@ -149,13 +149,13 @@ class CampaignTemplate {
 }
 
 /**
- * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
+ * Internal ID of this entity.
  * @member {Number} id
  */
 CampaignTemplate.prototype['id'] = undefined;
 
 /**
- * The exact moment this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 CampaignTemplate.prototype['created'] = undefined;
@@ -167,7 +167,7 @@ CampaignTemplate.prototype['created'] = undefined;
 CampaignTemplate.prototype['accountId'] = undefined;
 
 /**
- * The ID of the account that owns this entity.
+ * The ID of the user associated with this entity.
  * @member {Number} userId
  */
 CampaignTemplate.prototype['userId'] = undefined;
@@ -191,25 +191,25 @@ CampaignTemplate.prototype['description'] = undefined;
 CampaignTemplate.prototype['instructions'] = undefined;
 
 /**
- * The Campaign Attributes that Campaigns created from this template will have by default.
+ * The campaign attributes that campaigns created from this template will have by default.
  * @member {Object} campaignAttributes
  */
 CampaignTemplate.prototype['campaignAttributes'] = undefined;
 
 /**
- * The Campaign Attributes that Coupons created from this template will have by default.
+ * The campaign attributes that coupons created from this template will have by default.
  * @member {Object} couponAttributes
  */
 CampaignTemplate.prototype['couponAttributes'] = undefined;
 
 /**
- * Only Campaign Templates in 'available' state may be used to create Campaigns.
+ * Only campaign templates in 'available' state may be used to create campaigns.
  * @member {module:model/CampaignTemplate.StateEnum} state
  */
 CampaignTemplate.prototype['state'] = undefined;
 
 /**
- * The ID of the Ruleset this Campaign Template will use.
+ * The ID of the ruleset this campaign template will use.
  * @member {Number} activeRulesetId
  */
 CampaignTemplate.prototype['activeRulesetId'] = undefined;
@@ -237,19 +237,19 @@ CampaignTemplate.prototype['couponSettings'] = undefined;
 CampaignTemplate.prototype['referralSettings'] = undefined;
 
 /**
- * The set of limits that will operate for this campaign template.
+ * The set of limits that operate for this campaign template.
  * @member {Array.<module:model/TemplateLimitConfig>} limits
  */
 CampaignTemplate.prototype['limits'] = undefined;
 
 /**
- * Template parameters are fields which can be used to replace values in a rule.
+ * Fields which can be used to replace values in a rule.
  * @member {Array.<module:model/CampaignTemplateParams>} templateParams
  */
 CampaignTemplate.prototype['templateParams'] = undefined;
 
 /**
- * A list of the IDs of the applications that are subscribed to this campaign template. A list of the IDs of the applications that are subscribed to this campaign template.
+ * A list of IDs of the Applications that are subscribed to this campaign template.
  * @member {Array.<Number>} applicationsIds
  */
 CampaignTemplate.prototype['applicationsIds'] = undefined;
@@ -261,7 +261,7 @@ CampaignTemplate.prototype['applicationsIds'] = undefined;
 CampaignTemplate.prototype['campaignCollections'] = undefined;
 
 /**
- * The default campaignGroupId.
+ * The default campaign group ID.
  * @member {Number} defaultCampaignGroupId
  */
 CampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
@@ -273,13 +273,13 @@ CampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
 CampaignTemplate.prototype['updated'] = undefined;
 
 /**
- * Name of the user who last updated this campaign template if available.
+ * Name of the user who last updated this campaign template, if available.
  * @member {String} updatedBy
  */
 CampaignTemplate.prototype['updatedBy'] = undefined;
 
 /**
- * The IDs of the applications that are related to this entity.
+ * The IDs of the Applications that are related to this entity.
  * @member {Array.<Number>} validApplicationIds
  */
 CampaignTemplate.prototype['validApplicationIds'] = undefined;
@@ -344,7 +344,13 @@ CampaignTemplate['FeaturesEnum'] = {
      * value: "giveaways"
      * @const
      */
-    "giveaways": "giveaways"
+    "giveaways": "giveaways",
+
+    /**
+     * value: "strikethrough"
+     * @const
+     */
+    "strikethrough": "strikethrough"
 };
 
 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 4.6.0
+ * @version 5.0.0
  */
 class UpdateCoupon {
     /**
@@ -55,6 +55,9 @@ class UpdateCoupon {
             if (data.hasOwnProperty('discountLimit')) {
                 obj['discountLimit'] = ApiClient.convertToType(data['discountLimit'], 'Number');
             }
+            if (data.hasOwnProperty('reservationLimit')) {
+                obj['reservationLimit'] = ApiClient.convertToType(data['reservationLimit'], 'Number');
+            }
             if (data.hasOwnProperty('startDate')) {
                 obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
             }
@@ -70,6 +73,9 @@ class UpdateCoupon {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
+            if (data.hasOwnProperty('isReservationMandatory')) {
+                obj['isReservationMandatory'] = ApiClient.convertToType(data['isReservationMandatory'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -84,10 +90,16 @@ class UpdateCoupon {
 UpdateCoupon.prototype['usageLimit'] = undefined;
 
 /**
- * The amount of discounts that can be given with this coupon code. 
+ * The total discount value that the code can give. Typically used to represent a gift card value. 
  * @member {Number} discountLimit
  */
 UpdateCoupon.prototype['discountLimit'] = undefined;
+
+/**
+ * The number of reservations that can be made with this coupon code. 
+ * @member {Number} reservationLimit
+ */
+UpdateCoupon.prototype['reservationLimit'] = undefined;
 
 /**
  * Timestamp at which point the coupon becomes valid.
@@ -96,7 +108,7 @@ UpdateCoupon.prototype['discountLimit'] = undefined;
 UpdateCoupon.prototype['startDate'] = undefined;
 
 /**
- * Expiry date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
  * @member {Date} expiryDate
  */
 UpdateCoupon.prototype['expiryDate'] = undefined;
@@ -118,6 +130,13 @@ UpdateCoupon.prototype['recipientIntegrationId'] = undefined;
  * @member {Object} attributes
  */
 UpdateCoupon.prototype['attributes'] = undefined;
+
+/**
+ * Whether the reservation effect actually created a new reservation.
+ * @member {Boolean} isReservationMandatory
+ * @default true
+ */
+UpdateCoupon.prototype['isReservationMandatory'] = true;
 
 
 

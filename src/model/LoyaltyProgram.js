@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,29 +17,30 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 4.6.0
+ * @version 5.0.0
  */
 class LoyaltyProgram {
     /**
      * Constructs a new <code>LoyaltyProgram</code>.
      * 
      * @alias module:model/LoyaltyProgram
-     * @param id {Number} The ID of loyalty program. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param created {Date} The exact moment this entity was created.
+     * @param id {Number} The ID of loyalty program. Internal ID of this entity.
+     * @param created {Date} The time this entity was created.
      * @param title {String} The display title for the Loyalty Program.
      * @param description {String} Description of our Loyalty Program.
      * @param subscribedApplications {Array.<Number>} A list containing the IDs of all applications that are subscribed to this Loyalty Program.
-     * @param defaultValidity {String} Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
-     * @param defaultPending {String} Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
+     * @param defaultValidity {String} The default duration after which new loyalty points should expire. Can be 'unlimited' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
+     * @param defaultPending {String} The default duration of the pending time after which points should be valid. Can be 'immediate' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
      * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program.
+     * @param sandbox {Boolean} Indicates if this program is a live or sandbox program. Programs of a given type can only be connected to Applications of the same type.
      * @param accountID {Number} The ID of the Talon.One account that owns this program.
      * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
      * @param timezone {String} A string containing an IANA timezone descriptor.
      * @param cardBased {Boolean} Defines the type of loyalty program: - `true`: the program is a card-based. - `false`: the program is profile-based. 
      */
-    constructor(id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name, timezone, cardBased) { 
+    constructor(id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, sandbox, accountID, name, timezone, cardBased) { 
         
-        LoyaltyProgram.initialize(this, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name, timezone, cardBased);
+        LoyaltyProgram.initialize(this, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, sandbox, accountID, name, timezone, cardBased);
     }
 
     /**
@@ -47,7 +48,7 @@ class LoyaltyProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, accountID, name, timezone, cardBased) { 
+    static initialize(obj, id, created, title, description, subscribedApplications, defaultValidity, defaultPending, allowSubledger, sandbox, accountID, name, timezone, cardBased) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['title'] = title;
@@ -56,6 +57,7 @@ class LoyaltyProgram {
         obj['defaultValidity'] = defaultValidity;
         obj['defaultPending'] = defaultPending;
         obj['allowSubledger'] = allowSubledger;
+        obj['sandbox'] = sandbox;
         obj['accountID'] = accountID;
         obj['name'] = name;
         obj['timezone'] = timezone;
@@ -100,6 +102,9 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('usersPerCardLimit')) {
                 obj['usersPerCardLimit'] = ApiClient.convertToType(data['usersPerCardLimit'], 'Number');
             }
+            if (data.hasOwnProperty('sandbox')) {
+                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
+            }
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
             }
@@ -123,13 +128,13 @@ class LoyaltyProgram {
 }
 
 /**
- * The ID of loyalty program. Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
+ * The ID of loyalty program. Internal ID of this entity.
  * @member {Number} id
  */
 LoyaltyProgram.prototype['id'] = undefined;
 
 /**
- * The exact moment this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 LoyaltyProgram.prototype['created'] = undefined;
@@ -153,13 +158,13 @@ LoyaltyProgram.prototype['description'] = undefined;
 LoyaltyProgram.prototype['subscribedApplications'] = undefined;
 
 /**
- * Indicates the default duration after which new loyalty points should expire. The format is a number, followed by one letter indicating the unit; like '1h' or '40m'.
+ * The default duration after which new loyalty points should expire. Can be 'unlimited' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
  * @member {String} defaultValidity
  */
 LoyaltyProgram.prototype['defaultValidity'] = undefined;
 
 /**
- * Indicates the default duration for the pending time, after which points will be valid. The format is a number followed by a duration unit, like '1h' or '40m'.
+ * The default duration of the pending time after which points should be valid. Can be 'immediate' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
  * @member {String} defaultPending
  */
 LoyaltyProgram.prototype['defaultPending'] = undefined;
@@ -175,6 +180,12 @@ LoyaltyProgram.prototype['allowSubledger'] = undefined;
  * @member {Number} usersPerCardLimit
  */
 LoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
+
+/**
+ * Indicates if this program is a live or sandbox program. Programs of a given type can only be connected to Applications of the same type.
+ * @member {Boolean} sandbox
+ */
+LoyaltyProgram.prototype['sandbox'] = undefined;
 
 /**
  * The ID of the Talon.One account that owns this program.

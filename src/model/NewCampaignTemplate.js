@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The NewCampaignTemplate model module.
  * @module model/NewCampaignTemplate
- * @version 4.6.0
+ * @version 5.0.0
  */
 class NewCampaignTemplate {
     /**
@@ -127,13 +127,13 @@ NewCampaignTemplate.prototype['description'] = undefined;
 NewCampaignTemplate.prototype['instructions'] = undefined;
 
 /**
- * The Campaign Attributes that Campaigns created from this template will have by default.
+ * The campaign attributes that campaigns created from this template will have by default.
  * @member {Object} campaignAttributes
  */
 NewCampaignTemplate.prototype['campaignAttributes'] = undefined;
 
 /**
- * The Campaign Attributes that Coupons created from this template will have by default.
+ * The campaign attributes that coupons created from this template will have by default.
  * @member {Object} couponAttributes
  */
 NewCampaignTemplate.prototype['couponAttributes'] = undefined;
@@ -173,7 +173,7 @@ NewCampaignTemplate.prototype['referralSettings'] = undefined;
 NewCampaignTemplate.prototype['limits'] = undefined;
 
 /**
- * Template parameters are fields which can be used to replace values in a rule.
+ * Fields which can be used to replace values in a rule.
  * @member {Array.<module:model/CampaignTemplateParams>} templateParams
  */
 NewCampaignTemplate.prototype['templateParams'] = undefined;
@@ -185,7 +185,7 @@ NewCampaignTemplate.prototype['templateParams'] = undefined;
 NewCampaignTemplate.prototype['campaignCollections'] = undefined;
 
 /**
- * The default campaignGroupId.
+ * The default campaign group ID.
  * @member {Number} defaultCampaignGroupId
  */
 NewCampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
@@ -250,7 +250,13 @@ NewCampaignTemplate['FeaturesEnum'] = {
      * value: "giveaways"
      * @const
      */
-    "giveaways": "giveaways"
+    "giveaways": "giveaways",
+
+    /**
+     * value: "strikethrough"
+     * @const
+     */
+    "strikethrough": "strikethrough"
 };
 
 

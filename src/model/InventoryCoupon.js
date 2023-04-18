@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,19 +17,19 @@ import LimitConfig from './LimitConfig';
 /**
  * The InventoryCoupon model module.
  * @module model/InventoryCoupon
- * @version 4.6.0
+ * @version 5.0.0
  */
 class InventoryCoupon {
     /**
      * Constructs a new <code>InventoryCoupon</code>.
      * 
      * @alias module:model/InventoryCoupon
-     * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param created {Date} The exact moment this entity was created.
+     * @param id {Number} Internal ID of this entity.
+     * @param created {Date} The time this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param value {String} The coupon code.
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
-     * @param usageCounter {Number} The number of times this coupon has been successfully used.
+     * @param usageCounter {Number} The number of times the coupon has been successfully redeemed.
      * @param profileRedemptionCount {Number} The number of times the coupon was redeemed by the profile.
      * @param state {String} Can be:  - `active`: The coupon can be used. It is a reserved coupon that is neither pending, used nor expired, and has a non-exhausted limit counter. - `used`: The coupon has been redeemed and cannot be used again. It is not pending and has reached its redemption limit or was redeemed by the profile before expiration. - `expired`: The coupon was never redeemed and it is now expired. It is non-pending, non-active and non-used by the profile. - `pending`: The coupon will be usable in the future. - `disabled`: The coupon is part of a non-active campaign. 
      */
@@ -83,6 +83,9 @@ class InventoryCoupon {
             if (data.hasOwnProperty('discountLimit')) {
                 obj['discountLimit'] = ApiClient.convertToType(data['discountLimit'], 'Number');
             }
+            if (data.hasOwnProperty('reservationLimit')) {
+                obj['reservationLimit'] = ApiClient.convertToType(data['reservationLimit'], 'Number');
+            }
             if (data.hasOwnProperty('startDate')) {
                 obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
             }
@@ -100,6 +103,9 @@ class InventoryCoupon {
             }
             if (data.hasOwnProperty('discountRemainder')) {
                 obj['discountRemainder'] = ApiClient.convertToType(data['discountRemainder'], 'Number');
+            }
+            if (data.hasOwnProperty('reservationCounter')) {
+                obj['reservationCounter'] = ApiClient.convertToType(data['reservationCounter'], 'Number');
             }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
@@ -119,6 +125,9 @@ class InventoryCoupon {
             if (data.hasOwnProperty('batchId')) {
                 obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
             }
+            if (data.hasOwnProperty('isReservationMandatory')) {
+                obj['isReservationMandatory'] = ApiClient.convertToType(data['isReservationMandatory'], 'Boolean');
+            }
             if (data.hasOwnProperty('profileRedemptionCount')) {
                 obj['profileRedemptionCount'] = ApiClient.convertToType(data['profileRedemptionCount'], 'Number');
             }
@@ -133,13 +142,13 @@ class InventoryCoupon {
 }
 
 /**
- * Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
+ * Internal ID of this entity.
  * @member {Number} id
  */
 InventoryCoupon.prototype['id'] = undefined;
 
 /**
- * The exact moment this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 InventoryCoupon.prototype['created'] = undefined;
@@ -163,10 +172,16 @@ InventoryCoupon.prototype['value'] = undefined;
 InventoryCoupon.prototype['usageLimit'] = undefined;
 
 /**
- * The amount of discounts that can be given with this coupon code. 
+ * The total discount value that the code can give. Typically used to represent a gift card value. 
  * @member {Number} discountLimit
  */
 InventoryCoupon.prototype['discountLimit'] = undefined;
+
+/**
+ * The number of reservations that can be made with this coupon code. 
+ * @member {Number} reservationLimit
+ */
+InventoryCoupon.prototype['reservationLimit'] = undefined;
 
 /**
  * Timestamp at which point the coupon becomes valid.
@@ -175,7 +190,7 @@ InventoryCoupon.prototype['discountLimit'] = undefined;
 InventoryCoupon.prototype['startDate'] = undefined;
 
 /**
- * Expiry date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
  * @member {Date} expiryDate
  */
 InventoryCoupon.prototype['expiryDate'] = undefined;
@@ -187,7 +202,7 @@ InventoryCoupon.prototype['expiryDate'] = undefined;
 InventoryCoupon.prototype['limits'] = undefined;
 
 /**
- * The number of times this coupon has been successfully used.
+ * The number of times the coupon has been successfully redeemed.
  * @member {Number} usageCounter
  */
 InventoryCoupon.prototype['usageCounter'] = undefined;
@@ -203,6 +218,12 @@ InventoryCoupon.prototype['discountCounter'] = undefined;
  * @member {Number} discountRemainder
  */
 InventoryCoupon.prototype['discountRemainder'] = undefined;
+
+/**
+ * The number of times this coupon has been reserved.
+ * @member {Number} reservationCounter
+ */
+InventoryCoupon.prototype['reservationCounter'] = undefined;
 
 /**
  * Custom attributes associated with this coupon.
@@ -229,7 +250,7 @@ InventoryCoupon.prototype['recipientIntegrationId'] = undefined;
 InventoryCoupon.prototype['importId'] = undefined;
 
 /**
- * Defines the type of reservation: - `true`: The reservation is a soft reservation. Any customer can use the coupon. This is done via the [Create coupon reservation endpoint](/integration-api/#operation/createCouponReservation). - `false`: The reservation is a hard reservation. Only the associated customer (`recipientIntegrationId`) can use the coupon. This is done via the Campaign Manager when you create a coupon for a given `recipientIntegrationId`, the [Create coupons endpoint](/management-api/#operation/createCoupons) or [Create coupons for multiple recipients endpoint](/management-api/#operation/createCouponsForMultipleRecipients). 
+ * Defines the type of reservation: - `true`: The reservation is a soft reservation. Any customer can use the coupon. This is done via the [Create coupon reservation](https://docs.talon.one/integration-api#operation/createCouponReservation) endpoint. - `false`: The reservation is a hard reservation. Only the associated customer (`recipientIntegrationId`) can use the coupon. This is done via the Campaign Manager when you create a coupon for a given `recipientIntegrationId`, the [Create coupons](https://docs.talon.one/management-api#operation/createCoupons) endpoint or [Create coupons for multiple recipients](https://docs.talon.one/management-api#operation/createCouponsForMultipleRecipients) endpoint. 
  * @member {Boolean} reservation
  * @default true
  */
@@ -240,6 +261,13 @@ InventoryCoupon.prototype['reservation'] = true;
  * @member {String} batchId
  */
 InventoryCoupon.prototype['batchId'] = undefined;
+
+/**
+ * Whether the reservation effect actually created a new reservation.
+ * @member {Boolean} isReservationMandatory
+ * @default true
+ */
+InventoryCoupon.prototype['isReservationMandatory'] = true;
 
 /**
  * The number of times the coupon was redeemed by the profile.

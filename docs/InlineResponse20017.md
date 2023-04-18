@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[ApplicationCustomer]**](ApplicationCustomer.md) |  | 
+**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

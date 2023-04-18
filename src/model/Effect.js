@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 4.6.0
+ * @version 5.0.0
  */
 class Effect {
     /**
@@ -27,8 +27,8 @@ class Effect {
      * @param rulesetId {Number} The ID of the ruleset that was active in the campaign when this effect was triggered.
      * @param ruleIndex {Number} The position of the rule that triggered this effect within the ruleset.
      * @param ruleName {String} The name of the rule that triggered this effect.
-     * @param effectType {String} The type of effect that was triggered.
-     * @param props {Object} 
+     * @param effectType {String} The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
+     * @param props {Object} The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
      */
     constructor(campaignId, rulesetId, ruleIndex, ruleName, effectType, props) { 
         
@@ -116,7 +116,7 @@ Effect.prototype['ruleIndex'] = undefined;
 Effect.prototype['ruleName'] = undefined;
 
 /**
- * The type of effect that was triggered.
+ * The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
  * @member {String} effectType
  */
 Effect.prototype['effectType'] = undefined;
@@ -134,6 +134,7 @@ Effect.prototype['triggeredByCoupon'] = undefined;
 Effect.prototype['triggeredForCatalogItem'] = undefined;
 
 /**
+ * The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
  * @member {Object} props
  */
 Effect.prototype['props'] = undefined;

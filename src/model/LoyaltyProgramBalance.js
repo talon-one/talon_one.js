@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramBalance model module.
  * @module model/LoyaltyProgramBalance
- * @version 4.6.0
+ * @version 5.0.0
  */
 class LoyaltyProgramBalance {
     /**
@@ -25,9 +25,9 @@ class LoyaltyProgramBalance {
      * @alias module:model/LoyaltyProgramBalance
      * @param currentBalance {Number} Sum of currently active points.
      * @param pendingBalance {Number} Sum of pending points.
-     * @param expiredBalance {Number} Sum of expired points.
-     * @param spentBalance {Number} Sum of spent points.
-     * @param tentativeCurrentBalance {Number} Sum of currently active points, including points added and deducted in open sessions.
+     * @param expiredBalance {Number} **DEPRECATED** Value is shown as 0. 
+     * @param spentBalance {Number} **DEPRECATED** Value is shown as 0. 
+     * @param tentativeCurrentBalance {Number} Sum of the tentative active points (including additions and deductions) inside the currently open session. The `currentBalance` is updated to this value when you close the session, and the effects are applied.
      */
     constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
@@ -73,6 +73,9 @@ class LoyaltyProgramBalance {
             if (data.hasOwnProperty('tentativeCurrentBalance')) {
                 obj['tentativeCurrentBalance'] = ApiClient.convertToType(data['tentativeCurrentBalance'], 'Number');
             }
+            if (data.hasOwnProperty('tentativePendingBalance')) {
+                obj['tentativePendingBalance'] = ApiClient.convertToType(data['tentativePendingBalance'], 'Number');
+            }
         }
         return obj;
     }
@@ -93,22 +96,28 @@ LoyaltyProgramBalance.prototype['currentBalance'] = undefined;
 LoyaltyProgramBalance.prototype['pendingBalance'] = undefined;
 
 /**
- * Sum of expired points.
+ * **DEPRECATED** Value is shown as 0. 
  * @member {Number} expiredBalance
  */
 LoyaltyProgramBalance.prototype['expiredBalance'] = undefined;
 
 /**
- * Sum of spent points.
+ * **DEPRECATED** Value is shown as 0. 
  * @member {Number} spentBalance
  */
 LoyaltyProgramBalance.prototype['spentBalance'] = undefined;
 
 /**
- * Sum of currently active points, including points added and deducted in open sessions.
+ * Sum of the tentative active points (including additions and deductions) inside the currently open session. The `currentBalance` is updated to this value when you close the session, and the effects are applied.
  * @member {Number} tentativeCurrentBalance
  */
 LoyaltyProgramBalance.prototype['tentativeCurrentBalance'] = undefined;
+
+/**
+ * Sum of pending points (including additions and deductions) inside the currently open session. The `pendingBalance` is updated to this value when you close the session, and the effects are applied.
+ * @member {Number} tentativePendingBalance
+ */
+LoyaltyProgramBalance.prototype['tentativePendingBalance'] = undefined;
 
 
 

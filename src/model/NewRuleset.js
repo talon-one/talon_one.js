@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,7 +18,7 @@ import Rule from './Rule';
 /**
  * The NewRuleset model module.
  * @module model/NewRuleset
- * @version 4.6.0
+ * @version 5.0.0
  */
 class NewRuleset {
     /**
@@ -56,6 +56,9 @@ class NewRuleset {
             if (data.hasOwnProperty('rules')) {
                 obj['rules'] = ApiClient.convertToType(data['rules'], [Rule]);
             }
+            if (data.hasOwnProperty('strikethroughRules')) {
+                obj['strikethroughRules'] = ApiClient.convertToType(data['strikethroughRules'], [Rule]);
+            }
             if (data.hasOwnProperty('bindings')) {
                 obj['bindings'] = ApiClient.convertToType(data['bindings'], [Binding]);
             }
@@ -77,6 +80,12 @@ class NewRuleset {
  * @member {Array.<module:model/Rule>} rules
  */
 NewRuleset.prototype['rules'] = undefined;
+
+/**
+ * Set of rules to apply for strikethrough.
+ * @member {Array.<module:model/Rule>} strikethroughRules
+ */
+NewRuleset.prototype['strikethroughRules'] = undefined;
 
 /**
  * An array that provides objects with variable names (name) and talang expressions to whose result they are bound (expression) during rule evaluation. The order of the evaluation is decided by the position in the array.

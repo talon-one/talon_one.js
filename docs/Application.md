@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
-**created** | **Date** | The exact moment this entity was created. | 
-**modified** | **Date** | The exact moment this entity was last modified. | 
+**id** | **Number** | Internal ID of this entity. | 
+**created** | **Date** | The time this entity was created. | 
+**modified** | **Date** | The time this entity was last modified. | 
 **accountId** | **Number** | The ID of the account that owns this entity. | 
 **name** | **String** | The name of this application. | 
 **description** | **String** | A longer description of the application. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **exclusiveCampaignsStrategy** | **String** | The strategy used when choosing exclusive campaigns for evaluation. | [optional] [default to &#39;listOrder&#39;]
 **defaultDiscountScope** | **String** | The default scope to apply &#x60;setDiscount&#x60; effects on if no scope was provided with the effect.  | [optional] 
 **enableCascadingDiscounts** | **Boolean** | Indicates if discounts should cascade for this Application. | [optional] 
-**enableFlattenedCartItems** | **Boolean** | Indicates if cart items of quantity larger than one should be separated into different items of quantity one. See [the docs](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items).  | [optional] 
+**enableFlattenedCartItems** | **Boolean** | Indicates if cart items of quantity larger than one should be separated into different items of quantity one. See the [docs](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening).  | [optional] 
 **attributesSettings** | [**AttributesSettings**](AttributesSettings.md) |  | [optional] 
 **sandbox** | **Boolean** | Indicates if this is a live or sandbox Application. | [optional] 
 **enablePartialDiscounts** | **Boolean** | Indicates if this Application supports partial discounts. | [optional] 

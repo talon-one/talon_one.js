@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[CustomerActivityReport]**](CustomerActivityReport.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[CampaignAnalytics]**](CampaignAnalytics.md) |  | 
 
 

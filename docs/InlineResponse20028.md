@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[WebhookActivationLogEntry]**](WebhookActivationLogEntry.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[Audience]**](Audience.md) |  | 
 
 

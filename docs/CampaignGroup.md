@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
-**created** | **Date** | The exact moment this entity was created. | 
-**modified** | **Date** | The exact moment this entity was last modified. | 
+**id** | **Number** | Internal ID of this entity. | 
+**created** | **Date** | The time this entity was created. | 
+**modified** | **Date** | The time this entity was last modified. | 
 **accountId** | **Number** | The ID of the account that owns this entity. | 
 **name** | **String** | The name of this campaign group. | 
 **description** | **String** | A longer description of the campaign group. | [optional] 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CardLedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/CardLedgerTransactionLogEntryIntegrationAPI
- * @version 4.6.0
+ * @version 5.0.0
  */
 class CardLedgerTransactionLogEntryIntegrationAPI {
     /**
@@ -25,19 +25,18 @@ class CardLedgerTransactionLogEntryIntegrationAPI {
      * @alias module:model/CardLedgerTransactionLogEntryIntegrationAPI
      * @param created {Date} Date and time the loyalty card transaction occurred.
      * @param programId {Number} ID of the loyalty program.
-     * @param cardIdentifier {String} Identifier of the loyalty card.
-     * @param customerSessionId {String} ID of the customer session where the transaction occurred.
-     * @param type {module:model/CardLedgerTransactionLogEntryIntegrationAPI.TypeEnum} Type of transaction. Possible values are:   - `addition`: Points were added.   - `subtraction`: Points were subtracted. 
+     * @param cardIdentifier {String} The alphanumeric identifier of the loyalty card. 
+     * @param type {module:model/CardLedgerTransactionLogEntryIntegrationAPI.TypeEnum} Type of transaction. Possible values:   - `addition`: Signifies added points.   - `subtraction`: Signifies deducted points. 
      * @param name {String} Name or reason of the loyalty ledger transaction.
-     * @param startDate {String} Date when points become active. Possible values are:   - `immediate`: Points are active immediately.   - `timestamp value`: Points become active from the given date. 
+     * @param startDate {String} When points become active. Possible values:   - `immediate`: Points are active immediately.   - a timestamp value: Points become active at a given date and time. 
      * @param expiryDate {String} Date when points expire. Possible values are:   - `unlimited`: Points have no expiration date.   - `timestamp value`: Points expire on the given date. 
      * @param subledgerId {String} ID of the subledger.
      * @param amount {Number} Amount of loyalty points added or deducted in the transaction.
      * @param id {Number} ID of the loyalty ledger transaction.
      */
-    constructor(created, programId, cardIdentifier, customerSessionId, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+    constructor(created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id) { 
         
-        CardLedgerTransactionLogEntryIntegrationAPI.initialize(this, created, programId, cardIdentifier, customerSessionId, type, name, startDate, expiryDate, subledgerId, amount, id);
+        CardLedgerTransactionLogEntryIntegrationAPI.initialize(this, created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id);
     }
 
     /**
@@ -45,11 +44,10 @@ class CardLedgerTransactionLogEntryIntegrationAPI {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, created, programId, cardIdentifier, customerSessionId, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+    static initialize(obj, created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id) { 
         obj['created'] = created;
         obj['programId'] = programId;
         obj['cardIdentifier'] = cardIdentifier;
-        obj['customerSessionId'] = customerSessionId;
         obj['type'] = type;
         obj['name'] = name;
         obj['startDate'] = startDate;
@@ -129,7 +127,7 @@ CardLedgerTransactionLogEntryIntegrationAPI.prototype['created'] = undefined;
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['programId'] = undefined;
 
 /**
- * Identifier of the loyalty card.
+ * The alphanumeric identifier of the loyalty card. 
  * @member {String} cardIdentifier
  */
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['cardIdentifier'] = undefined;
@@ -141,7 +139,7 @@ CardLedgerTransactionLogEntryIntegrationAPI.prototype['cardIdentifier'] = undefi
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['customerSessionId'] = undefined;
 
 /**
- * Type of transaction. Possible values are:   - `addition`: Points were added.   - `subtraction`: Points were subtracted. 
+ * Type of transaction. Possible values:   - `addition`: Signifies added points.   - `subtraction`: Signifies deducted points. 
  * @member {module:model/CardLedgerTransactionLogEntryIntegrationAPI.TypeEnum} type
  */
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['type'] = undefined;
@@ -153,7 +151,7 @@ CardLedgerTransactionLogEntryIntegrationAPI.prototype['type'] = undefined;
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['name'] = undefined;
 
 /**
- * Date when points become active. Possible values are:   - `immediate`: Points are active immediately.   - `timestamp value`: Points become active from the given date. 
+ * When points become active. Possible values:   - `immediate`: Points are active immediately.   - a timestamp value: Points become active at a given date and time. 
  * @member {String} startDate
  */
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['startDate'] = undefined;

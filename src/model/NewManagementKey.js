@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -17,7 +17,7 @@ import Endpoint from './Endpoint';
 /**
  * The NewManagementKey model module.
  * @module model/NewManagementKey
- * @version 4.6.0
+ * @version 5.0.0
  */
 class NewManagementKey {
     /**
@@ -74,6 +74,9 @@ class NewManagementKey {
             if (data.hasOwnProperty('endpoints')) {
                 obj['endpoints'] = ApiClient.convertToType(data['endpoints'], [Endpoint]);
             }
+            if (data.hasOwnProperty('allowedApplicationIds')) {
+                obj['allowedApplicationIds'] = ApiClient.convertToType(data['allowedApplicationIds'], ['Number']);
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
@@ -113,6 +116,12 @@ NewManagementKey.prototype['expiryDate'] = undefined;
  * @member {Array.<module:model/Endpoint>} endpoints
  */
 NewManagementKey.prototype['endpoints'] = undefined;
+
+/**
+ * A list of Application IDs that you can access with the management key. An empty or missing list means the management key can be used for all Applications in the account. 
+ * @member {Array.<Number>} allowedApplicationIds
+ */
+NewManagementKey.prototype['allowedApplicationIds'] = undefined;
 
 /**
  * ID of the management key.

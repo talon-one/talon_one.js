@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewReferralsForMultipleAdvocates model module.
  * @module model/NewReferralsForMultipleAdvocates
- * @version 4.6.0
+ * @version 5.0.0
  */
 class NewReferralsForMultipleAdvocates {
     /**
@@ -92,7 +92,7 @@ class NewReferralsForMultipleAdvocates {
 NewReferralsForMultipleAdvocates.prototype['startDate'] = undefined;
 
 /**
- * Expiry date of the referral code. Referral never expires if this is omitted, zero, or negative.
+ * Expiration date of the referral code. Referral never expires if this is omitted, zero, or negative.
  * @member {Date} expiryDate
  */
 NewReferralsForMultipleAdvocates.prototype['expiryDate'] = undefined;
@@ -116,7 +116,7 @@ NewReferralsForMultipleAdvocates.prototype['campaignId'] = undefined;
 NewReferralsForMultipleAdvocates.prototype['advocateProfileIntegrationIds'] = undefined;
 
 /**
- * Arbitrary properties associated with this item.
+ * Arbitrary properties associated with this referral code.
  * @member {Object} attributes
  */
 NewReferralsForMultipleAdvocates.prototype['attributes'] = undefined;

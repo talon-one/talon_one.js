@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationCustomer from './ApplicationCustomer';
+import AccessLogEntry from './AccessLogEntry';
 
 /**
  * The InlineResponse20017 model module.
  * @module model/InlineResponse20017
- * @version 4.6.0
+ * @version 5.0.0
  */
 class InlineResponse20017 {
     /**
      * Constructs a new <code>InlineResponse20017</code>.
      * @alias module:model/InlineResponse20017
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/ApplicationCustomer>} 
+     * @param data {Array.<module:model/AccessLogEntry>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20017 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20017 {
 InlineResponse20017.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationCustomer>} data
+ * @member {Array.<module:model/AccessLogEntry>} data
  */
 InlineResponse20017.prototype['data'] = undefined;
 

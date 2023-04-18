@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSession](https://docs.talon.one/integration-api/#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 4.6.0
+ * @version 5.0.0
  */
 class SetDiscountPerItemEffectProps {
     /**
@@ -110,7 +110,7 @@ SetDiscountPerItemEffectProps.prototype['value'] = undefined;
 SetDiscountPerItemEffectProps.prototype['position'] = undefined;
 
 /**
- * Only used when [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation/#flattened-cart-items) is enabled. Indicates which item the discount applies to for cart items with `quantity` > 1. 
+ * Only used when [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening) is enabled. Indicates which item the discount applies to for cart items with `quantity` > 1. 
  * @member {Number} subPosition
  */
 SetDiscountPerItemEffectProps.prototype['subPosition'] = undefined;
@@ -146,7 +146,7 @@ SetDiscountPerItemEffectProps.prototype['desiredTotalDiscount'] = undefined;
 SetDiscountPerItemEffectProps.prototype['bundleIndex'] = undefined;
 
 /**
- * The name of the bundle binding.
+ * The name of the bundle definition.
  * @member {String} bundleName
  */
 SetDiscountPerItemEffectProps.prototype['bundleName'] = undefined;
