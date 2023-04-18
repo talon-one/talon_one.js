@@ -218,45 +218,24 @@ const TalonOne = require("talon_one");
 const defaultClient = TalonOne.ApiClient.instance;
 defaultClient.basePath = "https://mycompany.talon.one";
 
-// Configure API key authorization: manager_auth
-const managerAuth = defaultClient.authentications["manager_auth"];
-managerAuth.apiKeyPrefix = "Bearer";
+// Configure API key authorization: management_key
+const management_key = defaultClient.authentications["management_key"];
+management_key.apiKey =
+  "2f0dce055da01ae595005d7d79154bae7448d319d5fc7c5b2951fadd6ba1ea07";
+management_key.apiKeyPrefix = "ManagementKey-v1";
 
 // Management API example to load application with id 7
-const managerApi = new TalonOne.ManagementApi();
+const managementApi = new TalonOne.ManagementApi();
 
-/**
- * // Using `constructFromObject`:
- * const loginParams = TalonOne.LoginParams.constructFromObject({
- *   email: "admin@talon.one",
- *   password: "$hhhD0ntT3ll!"
- * });
- */
-
-const loginParams = new TalonOne.LoginParams(
-  "admin@talon.one",
-  "$hhhD0ntT3ll!"
-);
-
-managerApi.createSession(loginParams).then(
+// Calling `getApplication` function with the desired id (7)
+managementApi.getApplication(7).then(
   function(data) {
-    // Save token in the configuration for future management API calls
-    managerAuth.apiKey = data.token;
-
-    // Calling `getApplication` function with the desired id (7)
-    managerApi.getApplication(7).then(
-      function(data) {
-        console.log(
-          "API called successfully. Returned data:\n" + JSON.stringify(data)
-        );
-      },
-      function(error) {
-        console.error("Error while fetching the application:\n" + error);
-      }
+    console.log(
+      "API called successfully. Returned data:\n" + JSON.stringify(data)
     );
   },
   function(error) {
-    console.error("Error while login:\n" + error);
+    console.error("Error while fetching the application:\n" + error);
   }
 );
 ```
