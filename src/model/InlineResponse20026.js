@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 
  * 
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationEvent from './ApplicationEvent';
+import ApplicationSession from './ApplicationSession';
 
 /**
  * The InlineResponse20026 model module.
@@ -23,12 +23,11 @@ class InlineResponse20026 {
     /**
      * Constructs a new <code>InlineResponse20026</code>.
      * @alias module:model/InlineResponse20026
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/ApplicationEvent>} 
+     * @param data {Array.<module:model/ApplicationSession>} 
      */
-    constructor(hasMore, data) { 
+    constructor(data) { 
         
-        InlineResponse20026.initialize(this, hasMore, data);
+        InlineResponse20026.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20026 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -56,7 +54,7 @@ class InlineResponse20026 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationEvent]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationSession]);
             }
         }
         return obj;
@@ -71,7 +69,7 @@ class InlineResponse20026 {
 InlineResponse20026.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationEvent>} data
+ * @member {Array.<module:model/ApplicationSession>} data
  */
 InlineResponse20026.prototype['data'] = undefined;
 

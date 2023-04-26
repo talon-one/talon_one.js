@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 
  * 
@@ -27,13 +27,13 @@ class Webhook {
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
-     * @param applicationIds {Array.<Number>} The IDs of the applications that are related to this entity. The IDs of the applications that are related to this entity.
+     * @param applicationIds {Array.<Number>} The IDs of the Applications that are related to this entity. The IDs of the Applications that are related to this entity.
      * @param title {String} Name or title for this webhook.
      * @param verb {module:model/Webhook.VerbEnum} API method for this webhook.
-     * @param url {String} API url (supports templating using parameters) for this webhook.
+     * @param url {String} API URL (supports templating using parameters) for this webhook.
      * @param headers {Array.<String>} List of API HTTP headers for this webhook.
      * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions.
-     * @param enabled {Boolean} Enables or disables webhook from showing in rule builder.
+     * @param enabled {Boolean} Enables or disables webhook from showing in the Rule Builder.
      */
     constructor(id, created, modified, applicationIds, title, verb, url, headers, params, enabled) { 
         
@@ -128,7 +128,7 @@ Webhook.prototype['created'] = undefined;
 Webhook.prototype['modified'] = undefined;
 
 /**
- * The IDs of the applications that are related to this entity. The IDs of the applications that are related to this entity.
+ * The IDs of the Applications that are related to this entity. The IDs of the Applications that are related to this entity.
  * @member {Array.<Number>} applicationIds
  */
 Webhook.prototype['applicationIds'] = undefined;
@@ -146,7 +146,7 @@ Webhook.prototype['title'] = undefined;
 Webhook.prototype['verb'] = undefined;
 
 /**
- * API url (supports templating using parameters) for this webhook.
+ * API URL (supports templating using parameters) for this webhook.
  * @member {String} url
  */
 Webhook.prototype['url'] = undefined;
@@ -170,7 +170,7 @@ Webhook.prototype['payload'] = undefined;
 Webhook.prototype['params'] = undefined;
 
 /**
- * Enables or disables webhook from showing in rule builder.
+ * Enables or disables webhook from showing in the Rule Builder.
  * @member {Boolean} enabled
  */
 Webhook.prototype['enabled'] = undefined;

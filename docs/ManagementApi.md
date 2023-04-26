@@ -4,7 +4,7 @@ All URIs are relative to *https://yourbaseurl.talon.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addLoyaltyCardPoints**](ManagementApi.md#addLoyaltyCardPoints) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/add_points | Add points to card in a given loyalty program
+[**addLoyaltyCardPoints**](ManagementApi.md#addLoyaltyCardPoints) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/add_points | Add points to card
 [**addLoyaltyPoints**](ManagementApi.md#addLoyaltyPoints) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/add_points | Add points to customer profile
 [**copyCampaignToApplications**](ManagementApi.md#copyCampaignToApplications) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/copy | Copy the campaign into the specified Application
 [**createAccountCollection**](ManagementApi.md#createAccountCollection) | **POST** /v1/collections | Create account-level collection
@@ -18,13 +18,13 @@ Method | HTTP request | Description
 [**createNotificationWebhook**](ManagementApi.md#createNotificationWebhook) | **POST** /v1/applications/{applicationId}/notification_webhooks | Create notification about campaign-related changes
 [**createPasswordRecoveryEmail**](ManagementApi.md#createPasswordRecoveryEmail) | **POST** /v1/password_recovery_emails | Request a password reset
 [**createSession**](ManagementApi.md#createSession) | **POST** /v1/sessions | Create session
-[**deductLoyaltyCardPoints**](ManagementApi.md#deductLoyaltyCardPoints) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/deduct_points | Deduct points from card in a given loyalty program.
+[**deductLoyaltyCardPoints**](ManagementApi.md#deductLoyaltyCardPoints) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/deduct_points | Deduct points from card
 [**deleteAccountCollection**](ManagementApi.md#deleteAccountCollection) | **DELETE** /v1/collections/{collectionId} | Delete account-level collection
 [**deleteCampaign**](ManagementApi.md#deleteCampaign) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId} | Delete campaign
 [**deleteCollection**](ManagementApi.md#deleteCollection) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId} | Delete collection
 [**deleteCoupon**](ManagementApi.md#deleteCoupon) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Delete coupon
 [**deleteCoupons**](ManagementApi.md#deleteCoupons) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Delete coupons
-[**deleteLoyaltyCard**](ManagementApi.md#deleteLoyaltyCard) | **DELETE** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier} | Delete loyalty card
+[**deleteLoyaltyCard**](ManagementApi.md#deleteLoyaltyCard) | **DELETE** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId} | Delete loyalty card
 [**deleteNotificationWebhook**](ManagementApi.md#deleteNotificationWebhook) | **DELETE** /v1/applications/{applicationId}/notification_webhooks/{notificationWebhookId} | Delete notification about campaign-related changes
 [**deleteReferral**](ManagementApi.md#deleteReferral) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals/{referralId} | Delete referral
 [**destroySession**](ManagementApi.md#destroySession) | **DELETE** /v1/sessions | Destroy session
@@ -35,8 +35,8 @@ Method | HTTP request | Description
 [**exportEffects**](ManagementApi.md#exportEffects) | **GET** /v1/applications/{applicationId}/export_effects | Export triggered effects
 [**exportLoyaltyBalance**](ManagementApi.md#exportLoyaltyBalance) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/export_customer_balance | Export customer loyalty balance to CSV
 [**exportLoyaltyBalances**](ManagementApi.md#exportLoyaltyBalances) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/export_customer_balances | Export customer loyalty balances
-[**exportLoyaltyCardBalances**](ManagementApi.md#exportLoyaltyCardBalances) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/export_card_balances | Export loyalty card transaction logs to CSV
-[**exportLoyaltyCardLedger**](ManagementApi.md#exportLoyaltyCardLedger) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/export_log | Export a loyalty card ledger log
+[**exportLoyaltyCardBalances**](ManagementApi.md#exportLoyaltyCardBalances) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/export_card_balances | Export all card transaction logs
+[**exportLoyaltyCardLedger**](ManagementApi.md#exportLoyaltyCardLedger) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/export_log | Export card&#39;s ledger log
 [**exportLoyaltyLedger**](ManagementApi.md#exportLoyaltyLedger) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/export_log | Export customer&#39;s transaction logs
 [**exportReferrals**](ManagementApi.md#exportReferrals) | **GET** /v1/applications/{applicationId}/export_referrals | Export referrals
 [**getAccessLogsWithoutTotalCount**](ManagementApi.md#getAccessLogsWithoutTotalCount) | **GET** /v1/applications/{applicationId}/access_logs/no_total | Get access logs for Application
@@ -78,8 +78,8 @@ Method | HTTP request | Description
 [**getCustomersByAttributes**](ManagementApi.md#getCustomersByAttributes) | **POST** /v1/customer_search/no_total | List customer profiles matching the given attributes
 [**getEventTypes**](ManagementApi.md#getEventTypes) | **GET** /v1/event_types | List event types
 [**getExports**](ManagementApi.md#getExports) | **GET** /v1/exports | Get exports
-[**getLoyaltyCard**](ManagementApi.md#getLoyaltyCard) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier} | Get loyalty card
-[**getLoyaltyCardTransactionLogs**](ManagementApi.md#getLoyaltyCardTransactionLogs) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/logs | Get loyalty card transaction logs
+[**getLoyaltyCard**](ManagementApi.md#getLoyaltyCard) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId} | Get loyalty card
+[**getLoyaltyCardTransactionLogs**](ManagementApi.md#getLoyaltyCardTransactionLogs) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/logs | List card&#39;s transactions
 [**getLoyaltyCards**](ManagementApi.md#getLoyaltyCards) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards | List loyalty cards
 [**getLoyaltyPoints**](ManagementApi.md#getLoyaltyPoints) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId} | Get customer&#39;s full loyalty ledger
 [**getLoyaltyProgram**](ManagementApi.md#getLoyaltyProgram) | **GET** /v1/loyalty_programs/{loyaltyProgramId} | Get loyalty program
@@ -115,7 +115,7 @@ Method | HTTP request | Description
 [**resetPassword**](ManagementApi.md#resetPassword) | **POST** /v1/reset_password | Reset password
 [**searchCouponsAdvancedApplicationWideWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedApplicationWideWithoutTotalCount) | **POST** /v1/applications/{applicationId}/coupons_search_advanced/no_total | List coupons that match the given attributes (without total count)
 [**searchCouponsAdvancedWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedWithoutTotalCount) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total | List coupons that match the given attributes in campaign (without total count)
-[**transferLoyaltyCard**](ManagementApi.md#transferLoyaltyCard) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/transfer | Transfer loyalty card data
+[**transferLoyaltyCard**](ManagementApi.md#transferLoyaltyCard) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/transfer | Transfer card data
 [**updateAccountCollection**](ManagementApi.md#updateAccountCollection) | **PUT** /v1/collections/{collectionId} | Update account-level collection
 [**updateAdditionalCost**](ManagementApi.md#updateAdditionalCost) | **PUT** /v1/additional_costs/{additionalCostId} | Update additional cost
 [**updateAttribute**](ManagementApi.md#updateAttribute) | **PUT** /v1/attributes/{attributeId} | Update custom attribute
@@ -123,7 +123,7 @@ Method | HTTP request | Description
 [**updateCollection**](ManagementApi.md#updateCollection) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId} | Update collection description
 [**updateCoupon**](ManagementApi.md#updateCoupon) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Update coupon
 [**updateCouponBatch**](ManagementApi.md#updateCouponBatch) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Update coupons
-[**updateLoyaltyCard**](ManagementApi.md#updateLoyaltyCard) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier} | Update loyalty card status
+[**updateLoyaltyCard**](ManagementApi.md#updateLoyaltyCard) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId} | Update loyalty card status
 [**updateNotificationWebhook**](ManagementApi.md#updateNotificationWebhook) | **PUT** /v1/applications/{applicationId}/notification_webhooks/{notificationWebhookId} | Update notification about campaign-related changes
 [**updateReferral**](ManagementApi.md#updateReferral) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/referrals/{referralId} | Update referral
 
@@ -131,9 +131,9 @@ Method | HTTP request | Description
 
 ## addLoyaltyCardPoints
 
-> addLoyaltyCardPoints(loyaltyProgramId, loyaltyCardIdentifier, body)
+> addLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, body)
 
-Add points to card in a given loyalty program
+Add points to card
 
 Add points to the given loyalty card in the specified card-based loyalty program. 
 
@@ -155,9 +155,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.AddLoyaltyPoints(); // AddLoyaltyPoints | body
-apiInstance.addLoyaltyCardPoints(loyaltyProgramId, loyaltyCardIdentifier, body).then(() => {
+apiInstance.addLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, body).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -171,7 +171,7 @@ apiInstance.addLoyaltyCardPoints(loyaltyProgramId, loyaltyCardIdentifier, body).
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
  **body** | [**AddLoyaltyPoints**](AddLoyaltyPoints.md)| body | 
 
 ### Return type
@@ -249,7 +249,7 @@ null (empty response body)
 
 ## copyCampaignToApplications
 
-> InlineResponse2003 copyCampaignToApplications(applicationId, campaignId, body)
+> InlineResponse2004 copyCampaignToApplications(applicationId, campaignId, body)
 
 Copy the campaign into the specified Application
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 
 ## createCoupons
 
-> InlineResponse2006 createCoupons(applicationId, campaignId, body, opts)
+> InlineResponse2007 createCoupons(applicationId, campaignId, body, opts)
 
 Create coupons
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 
 ## createCouponsForMultipleRecipients
 
-> InlineResponse2006 createCouponsForMultipleRecipients(applicationId, campaignId, body, opts)
+> InlineResponse2007 createCouponsForMultipleRecipients(applicationId, campaignId, body, opts)
 
 Create coupons for multiple recipients
 
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -941,9 +941,9 @@ Name | Type | Description  | Notes
 
 ## deductLoyaltyCardPoints
 
-> deductLoyaltyCardPoints(loyaltyProgramId, loyaltyCardIdentifier, body)
+> deductLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, body)
 
-Deduct points from card in a given loyalty program.
+Deduct points from card
 
 Deduct points from the given loyalty card in the specified card-based loyalty program. 
 
@@ -965,9 +965,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.DeductLoyaltyPoints(); // DeductLoyaltyPoints | body
-apiInstance.deductLoyaltyCardPoints(loyaltyProgramId, loyaltyCardIdentifier, body).then(() => {
+apiInstance.deductLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, body).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -981,7 +981,7 @@ apiInstance.deductLoyaltyCardPoints(loyaltyProgramId, loyaltyCardIdentifier, bod
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
  **body** | [**DeductLoyaltyPoints**](DeductLoyaltyPoints.md)| body | 
 
 ### Return type
@@ -1315,7 +1315,7 @@ null (empty response body)
 
 ## deleteLoyaltyCard
 
-> deleteLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier)
+> deleteLoyaltyCard(loyaltyProgramId, loyaltyCardId)
 
 Delete loyalty card
 
@@ -1339,8 +1339,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
-apiInstance.deleteLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier).then(() => {
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+apiInstance.deleteLoyaltyCard(loyaltyProgramId, loyaltyCardId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1354,7 +1354,7 @@ apiInstance.deleteLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier).then(() =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
 
 ### Return type
 
@@ -1988,7 +1988,7 @@ Name | Type | Description  | Notes
 
 > String exportLoyaltyCardBalances(loyaltyProgramId, opts)
 
-Export loyalty card transaction logs to CSV
+Export all card transaction logs
 
 Download a CSV file containing the balances of all cards in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file contains the following columns: - &#x60;loyaltyProgramID&#x60;: The ID of the loyalty program. - &#x60;loyaltySubledger&#x60;: The name of the subdleger, when applicatble. - &#x60;cardIdentifier&#x60;: The alphanumeric identifier of the loyalty card. - &#x60;cardState&#x60;:The state of the loyalty card. It can be &#x60;active&#x60; or &#x60;inactive&#x60;. - &#x60;currentBalance&#x60;: The current point balance. - &#x60;pendingBalance&#x60;: The number of pending points. - &#x60;expiredBalance&#x60;: The number of expired points. - &#x60;spentBalance&#x60;: The number of spent points. 
 
@@ -2045,9 +2045,9 @@ Name | Type | Description  | Notes
 
 ## exportLoyaltyCardLedger
 
-> String exportLoyaltyCardLedger(loyaltyProgramId, loyaltyCardIdentifier, rangeStart, rangeEnd, opts)
+> String exportLoyaltyCardLedger(loyaltyProgramId, loyaltyCardId, rangeStart, rangeEnd, opts)
 
-Export a loyalty card ledger log
+Export card&#39;s ledger log
 
 Download a CSV file containing a loyalty card ledger log of the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/). 
 
@@ -2069,13 +2069,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp. This must be an RFC3339 timestamp string.
 let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp. This must be an RFC3339 timestamp string.
 let opts = {
   'dateFormat': "dateFormat_example" // String | Determines the format of dates in the export document.
 };
-apiInstance.exportLoyaltyCardLedger(loyaltyProgramId, loyaltyCardIdentifier, rangeStart, rangeEnd, opts).then((data) => {
+apiInstance.exportLoyaltyCardLedger(loyaltyProgramId, loyaltyCardId, rangeStart, rangeEnd, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2089,7 +2089,7 @@ apiInstance.exportLoyaltyCardLedger(loyaltyProgramId, loyaltyCardIdentifier, ran
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
  **rangeStart** | **Date**| Only return results from after this timestamp. This must be an RFC3339 timestamp string. | 
  **rangeEnd** | **Date**| Only return results from before this timestamp. This must be an RFC3339 timestamp string. | 
  **dateFormat** | **String**| Determines the format of dates in the export document. | [optional] 
@@ -2246,7 +2246,7 @@ Name | Type | Description  | Notes
 
 ## getAccessLogsWithoutTotalCount
 
-> InlineResponse20017 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
+> InlineResponse20018 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
 
 Get access logs for Application
 
@@ -2305,7 +2305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -2539,7 +2539,7 @@ Name | Type | Description  | Notes
 
 ## getAdditionalCosts
 
-> InlineResponse20031 getAdditionalCosts(opts)
+> InlineResponse20032 getAdditionalCosts(opts)
 
 List additional costs
 
@@ -2586,7 +2586,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**InlineResponse20032**](InlineResponse20032.md)
 
 ### Authorization
 
@@ -2600,7 +2600,7 @@ Name | Type | Description  | Notes
 
 ## getAllAccessLogs
 
-> InlineResponse20018 getAllAccessLogs(rangeStart, rangeEnd, opts)
+> InlineResponse20019 getAllAccessLogs(rangeStart, rangeEnd, opts)
 
 List access logs
 
@@ -2657,7 +2657,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -2671,7 +2671,7 @@ Name | Type | Description  | Notes
 
 ## getAllRoles
 
-> InlineResponse20039 getAllRoles()
+> InlineResponse20040 getAllRoles()
 
 List roles
 
@@ -2708,7 +2708,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20039**](InlineResponse20039.md)
+[**InlineResponse20040**](InlineResponse20040.md)
 
 ### Authorization
 
@@ -2889,7 +2889,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomerFriends
 
-> InlineResponse20029 getApplicationCustomerFriends(applicationId, integrationId, opts)
+> InlineResponse20030 getApplicationCustomerFriends(applicationId, integrationId, opts)
 
 List friends referred by customer profile
 
@@ -2942,7 +2942,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**InlineResponse20030**](InlineResponse20030.md)
 
 ### Authorization
 
@@ -2956,7 +2956,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomers
 
-> InlineResponse20020 getApplicationCustomers(applicationId, opts)
+> InlineResponse20021 getApplicationCustomers(applicationId, opts)
 
 List application&#39;s customers
 
@@ -3007,7 +3007,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -3021,7 +3021,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomersByAttributes
 
-> InlineResponse20021 getApplicationCustomersByAttributes(applicationId, body, opts)
+> InlineResponse20022 getApplicationCustomersByAttributes(applicationId, body, opts)
 
 List application customers matching the given attributes
 
@@ -3072,7 +3072,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -3086,7 +3086,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationEventTypes
 
-> InlineResponse20027 getApplicationEventTypes(applicationId, opts)
+> InlineResponse20028 getApplicationEventTypes(applicationId, opts)
 
 List Applications event types
 
@@ -3135,7 +3135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -3149,7 +3149,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationEventsWithoutTotalCount
 
-> InlineResponse20026 getApplicationEventsWithoutTotalCount(applicationId, opts)
+> InlineResponse20027 getApplicationEventsWithoutTotalCount(applicationId, opts)
 
 List Applications events
 
@@ -3220,7 +3220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -3291,7 +3291,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationSessions
 
-> InlineResponse20025 getApplicationSessions(applicationId, opts)
+> InlineResponse20026 getApplicationSessions(applicationId, opts)
 
 List Application sessions
 
@@ -3354,7 +3354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -3368,7 +3368,7 @@ Name | Type | Description  | Notes
 
 ## getApplications
 
-> InlineResponse2002 getApplications(opts)
+> InlineResponse2003 getApplications(opts)
 
 List Applications
 
@@ -3415,7 +3415,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -3484,7 +3484,7 @@ Name | Type | Description  | Notes
 
 ## getAttributes
 
-> InlineResponse20030 getAttributes(opts)
+> InlineResponse20031 getAttributes(opts)
 
 List custom attributes
 
@@ -3533,7 +3533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**InlineResponse20031**](InlineResponse20031.md)
 
 ### Authorization
 
@@ -3547,7 +3547,7 @@ Name | Type | Description  | Notes
 
 ## getAudiences
 
-> InlineResponse20028 getAudiences(opts)
+> InlineResponse20029 getAudiences(opts)
 
 List audiences
 
@@ -3596,7 +3596,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -3667,7 +3667,7 @@ Name | Type | Description  | Notes
 
 ## getCampaignAnalytics
 
-> InlineResponse20019 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
+> InlineResponse20020 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
 
 Get analytics of campaigns
 
@@ -3718,7 +3718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -3732,7 +3732,7 @@ Name | Type | Description  | Notes
 
 ## getCampaignByAttributes
 
-> InlineResponse2003 getCampaignByAttributes(applicationId, body, opts)
+> InlineResponse2004 getCampaignByAttributes(applicationId, body, opts)
 
 List campaigns that match the given attributes
 
@@ -3785,7 +3785,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -3799,7 +3799,7 @@ Name | Type | Description  | Notes
 
 ## getCampaignTemplates
 
-> InlineResponse2009 getCampaignTemplates(opts)
+> InlineResponse20010 getCampaignTemplates(opts)
 
 List campaign templates
 
@@ -3854,7 +3854,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -3868,7 +3868,7 @@ Name | Type | Description  | Notes
 
 ## getCampaigns
 
-> InlineResponse2003 getCampaigns(applicationId, opts)
+> InlineResponse2004 getCampaigns(applicationId, opts)
 
 List campaigns
 
@@ -3931,7 +3931,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -3945,7 +3945,7 @@ Name | Type | Description  | Notes
 
 ## getChanges
 
-> InlineResponse20037 getChanges(opts)
+> InlineResponse20038 getChanges(opts)
 
 Get audit logs for an account
 
@@ -4008,7 +4008,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](InlineResponse20037.md)
+[**InlineResponse20038**](InlineResponse20038.md)
 
 ### Authorization
 
@@ -4081,7 +4081,7 @@ Name | Type | Description  | Notes
 
 ## getCollectionItems
 
-> InlineResponse20015 getCollectionItems(collectionId, opts)
+> InlineResponse20016 getCollectionItems(collectionId, opts)
 
 Get collection items
 
@@ -4128,7 +4128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -4142,7 +4142,7 @@ Name | Type | Description  | Notes
 
 ## getCouponsWithoutTotalCount
 
-> InlineResponse2007 getCouponsWithoutTotalCount(applicationId, campaignId, opts)
+> InlineResponse2008 getCouponsWithoutTotalCount(applicationId, campaignId, opts)
 
 List coupons
 
@@ -4211,7 +4211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -4292,7 +4292,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerActivityReportsWithoutTotalCount
 
-> InlineResponse20024 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
+> InlineResponse20025 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
 
 Get Activity Reports for Application Customers
 
@@ -4353,7 +4353,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -4487,7 +4487,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerProfiles
 
-> InlineResponse20023 getCustomerProfiles(opts)
+> InlineResponse20024 getCustomerProfiles(opts)
 
 List customer profiles
 
@@ -4534,7 +4534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -4548,7 +4548,7 @@ Name | Type | Description  | Notes
 
 ## getCustomersByAttributes
 
-> InlineResponse20022 getCustomersByAttributes(body, opts)
+> InlineResponse20023 getCustomersByAttributes(body, opts)
 
 List customer profiles matching the given attributes
 
@@ -4597,7 +4597,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -4611,7 +4611,7 @@ Name | Type | Description  | Notes
 
 ## getEventTypes
 
-> InlineResponse20035 getEventTypes(opts)
+> InlineResponse20036 getEventTypes(opts)
 
 List event types
 
@@ -4662,7 +4662,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**InlineResponse20036**](InlineResponse20036.md)
 
 ### Authorization
 
@@ -4676,7 +4676,7 @@ Name | Type | Description  | Notes
 
 ## getExports
 
-> InlineResponse20038 getExports(opts)
+> InlineResponse20039 getExports(opts)
 
 Get exports
 
@@ -4727,7 +4727,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20038**](InlineResponse20038.md)
+[**InlineResponse20039**](InlineResponse20039.md)
 
 ### Authorization
 
@@ -4741,7 +4741,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyCard
 
-> LoyaltyCard getLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier)
+> LoyaltyCard getLoyaltyCard(loyaltyProgramId, loyaltyCardId)
 
 Get loyalty card
 
@@ -4765,8 +4765,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
-apiInstance.getLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier).then((data) => {
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+apiInstance.getLoyaltyCard(loyaltyProgramId, loyaltyCardId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4780,7 +4780,7 @@ apiInstance.getLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier).then((data) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
 
 ### Return type
 
@@ -4798,9 +4798,9 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyCardTransactionLogs
 
-> InlineResponse20013 getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardIdentifier, opts)
+> InlineResponse20014 getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardId, opts)
 
-Get loyalty card transaction logs
+List card&#39;s transactions
 
 Retrieve the transaction logs for the given [loyalty card](https://docs.talon.one/docs/product/loyalty-programs/loyalty-cards/loyalty-card-overview) within the specified [card-based loyalty program](https://docs.talon.one/docs/product/loyalty-programs/overview#loyalty-program-types) with filtering options applied. If no filtering options are applied, the last 50 loyalty transactions for the given loyalty card are returned. 
 
@@ -4822,7 +4822,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let opts = {
   'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
@@ -4830,7 +4830,7 @@ let opts = {
   'skip': 56, // Number | Skips the given number of items when paging through large result sets.
   'subledgerId': "subledgerId_example" // String | The ID of the subledger by which we filter the data.
 };
-apiInstance.getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardIdentifier, opts).then((data) => {
+apiInstance.getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4844,7 +4844,7 @@ apiInstance.getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardIdentifie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
  **startDate** | **Date**| Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
  **endDate** | **Date**| Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
  **pageSize** | **Number**| The number of items in this response. | [optional] [default to 1000]
@@ -4853,7 +4853,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -4867,7 +4867,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyCards
 
-> InlineResponse20012 getLoyaltyCards(loyaltyProgramId, opts)
+> InlineResponse20013 getLoyaltyCards(loyaltyProgramId, opts)
 
 List loyalty cards
 
@@ -4920,7 +4920,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -5046,7 +5046,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyProgramTransactions
 
-> InlineResponse20011 getLoyaltyProgramTransactions(loyaltyProgramId, opts)
+> InlineResponse20012 getLoyaltyProgramTransactions(loyaltyProgramId, opts)
 
 List loyalty program transactions
 
@@ -5101,7 +5101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -5115,7 +5115,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyPrograms
 
-> InlineResponse20010 getLoyaltyPrograms()
+> InlineResponse20011 getLoyaltyPrograms()
 
 List loyalty programs
 
@@ -5152,7 +5152,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -5278,7 +5278,7 @@ Name | Type | Description  | Notes
 
 ## getNotificationWebhooks
 
-> InlineResponse2004 getNotificationWebhooks(applicationId)
+> InlineResponse2005 getNotificationWebhooks(applicationId)
 
 List notifications about campaign-related changes
 
@@ -5319,7 +5319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -5333,7 +5333,7 @@ Name | Type | Description  | Notes
 
 ## getReferralsWithoutTotalCount
 
-> InlineResponse2008 getReferralsWithoutTotalCount(applicationId, campaignId, opts)
+> InlineResponse2009 getReferralsWithoutTotalCount(applicationId, campaignId, opts)
 
 List referrals
 
@@ -5396,7 +5396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -5524,7 +5524,7 @@ Name | Type | Description  | Notes
 
 ## getRulesets
 
-> InlineResponse2005 getRulesets(applicationId, campaignId, opts)
+> InlineResponse2006 getRulesets(applicationId, campaignId, opts)
 
 List campaign rulesets
 
@@ -5575,7 +5575,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -5644,7 +5644,7 @@ Name | Type | Description  | Notes
 
 ## getUsers
 
-> InlineResponse20036 getUsers(opts)
+> InlineResponse20037 getUsers(opts)
 
 List users in account
 
@@ -5691,7 +5691,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20036**](InlineResponse20036.md)
+[**InlineResponse20037**](InlineResponse20037.md)
 
 ### Authorization
 
@@ -5760,7 +5760,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookActivationLogs
 
-> InlineResponse20033 getWebhookActivationLogs(opts)
+> InlineResponse20034 getWebhookActivationLogs(opts)
 
 List webhook activation log entries
 
@@ -5819,7 +5819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**InlineResponse20034**](InlineResponse20034.md)
 
 ### Authorization
 
@@ -5833,7 +5833,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookLogs
 
-> InlineResponse20034 getWebhookLogs(opts)
+> InlineResponse20035 getWebhookLogs(opts)
 
 List webhook log entries
 
@@ -5894,7 +5894,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**InlineResponse20035**](InlineResponse20035.md)
 
 ### Authorization
 
@@ -5908,7 +5908,7 @@ Name | Type | Description  | Notes
 
 ## getWebhooks
 
-> InlineResponse20032 getWebhooks(opts)
+> InlineResponse20033 getWebhooks(opts)
 
 List webhooks
 
@@ -5957,7 +5957,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**InlineResponse20033**](InlineResponse20033.md)
 
 ### Authorization
 
@@ -6451,7 +6451,7 @@ Name | Type | Description  | Notes
 
 ## listAccountCollections
 
-> InlineResponse20014 listAccountCollections(opts)
+> InlineResponse20015 listAccountCollections(opts)
 
 List collections in account
 
@@ -6502,7 +6502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -6516,7 +6516,7 @@ Name | Type | Description  | Notes
 
 ## listCollections
 
-> InlineResponse20016 listCollections(applicationId, campaignId, opts)
+> InlineResponse20017 listCollections(applicationId, campaignId, opts)
 
 List collections
 
@@ -6571,7 +6571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -6585,7 +6585,7 @@ Name | Type | Description  | Notes
 
 ## listCollectionsInApplication
 
-> InlineResponse20016 listCollectionsInApplication(applicationId, opts)
+> InlineResponse20017 listCollectionsInApplication(applicationId, opts)
 
 List collections in application
 
@@ -6638,7 +6638,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -6880,7 +6880,7 @@ Name | Type | Description  | Notes
 
 ## searchCouponsAdvancedApplicationWideWithoutTotalCount
 
-> InlineResponse2007 searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, body, opts)
+> InlineResponse2008 searchCouponsAdvancedApplicationWideWithoutTotalCount(applicationId, body, opts)
 
 List coupons that match the given attributes (without total count)
 
@@ -6951,7 +6951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -6965,7 +6965,7 @@ Name | Type | Description  | Notes
 
 ## searchCouponsAdvancedWithoutTotalCount
 
-> InlineResponse2007 searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts)
+> InlineResponse2008 searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts)
 
 List coupons that match the given attributes in campaign (without total count)
 
@@ -7036,7 +7036,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -7050,11 +7050,11 @@ Name | Type | Description  | Notes
 
 ## transferLoyaltyCard
 
-> transferLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier, body)
+> transferLoyaltyCard(loyaltyProgramId, loyaltyCardId, body)
 
-Transfer loyalty card data
+Transfer card data
 
-Transfer card data, such as linked customers, loyalty balances and transactions, from a given loyalty card to a new, automatically created loyalty card.  **Important:**  - The original card is automatically blocked once the new card is created, and it cannot be activated again. - The default status of the new card is _active_. 
+Transfer loyalty card data, such as linked customers, loyalty balances and transactions, from a given loyalty card to a new, automatically created loyalty card.  **Important:**  - The original card is automatically blocked once the new card is created, and it cannot be activated again. - The default status of the new card is _active_. 
 
 ### Example
 
@@ -7074,9 +7074,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.TransferLoyaltyCard(); // TransferLoyaltyCard | body
-apiInstance.transferLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier, body).then(() => {
+apiInstance.transferLoyaltyCard(loyaltyProgramId, loyaltyCardId, body).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -7090,7 +7090,7 @@ apiInstance.transferLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier, body).t
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
  **body** | [**TransferLoyaltyCard**](TransferLoyaltyCard.md)| body | 
 
 ### Return type
@@ -7520,7 +7520,7 @@ null (empty response body)
 
 ## updateLoyaltyCard
 
-> LoyaltyCard updateLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier, body)
+> LoyaltyCard updateLoyaltyCard(loyaltyProgramId, loyaltyCardId, body)
 
 Update loyalty card status
 
@@ -7544,9 +7544,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new TalonOne.ManagementApi();
 let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-let loyaltyCardIdentifier = "loyaltyCardIdentifier_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.UpdateLoyaltyCard(); // UpdateLoyaltyCard | body
-apiInstance.updateLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier, body).then((data) => {
+apiInstance.updateLoyaltyCard(loyaltyProgramId, loyaltyCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7560,7 +7560,7 @@ apiInstance.updateLoyaltyCard(loyaltyProgramId, loyaltyCardIdentifier, body).the
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
- **loyaltyCardIdentifier** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
+ **loyaltyCardId** | **String**| Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint.  | 
  **body** | [**UpdateLoyaltyCard**](UpdateLoyaltyCard.md)| body | 
 
 ### Return type

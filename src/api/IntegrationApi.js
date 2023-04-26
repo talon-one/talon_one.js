@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 
  * 
@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import Audience from '../model/Audience';
-import CardLedgerTransactionLogEntryIntegrationAPI from '../model/CardLedgerTransactionLogEntryIntegrationAPI';
 import Catalog from '../model/Catalog';
 import CatalogSyncRequest from '../model/CatalogSyncRequest';
 import Coupon from '../model/Coupon';
@@ -26,6 +25,7 @@ import ErrorResponse from '../model/ErrorResponse';
 import ErrorResponseWithStatus from '../model/ErrorResponseWithStatus';
 import InlineResponse200 from '../model/InlineResponse200';
 import InlineResponse2001 from '../model/InlineResponse2001';
+import InlineResponse2002 from '../model/InlineResponse2002';
 import InlineResponse201 from '../model/InlineResponse201';
 import IntegrationCustomerSessionResponse from '../model/IntegrationCustomerSessionResponse';
 import IntegrationEventV2Request from '../model/IntegrationEventV2Request';
@@ -42,6 +42,7 @@ import NewEvent from '../model/NewEvent';
 import NewReferral from '../model/NewReferral';
 import NewReferralsForMultipleAdvocates from '../model/NewReferralsForMultipleAdvocates';
 import Referral from '../model/Referral';
+import ReopenSessionResponse from '../model/ReopenSessionResponse';
 import ReturnIntegrationRequest from '../model/ReturnIntegrationRequest';
 import UpdateAudience from '../model/UpdateAudience';
 
@@ -640,29 +641,29 @@ export default class IntegrationApi {
 
 
     /**
-     * Get loyalty balances for a loyalty card
+     * Get card's point balances
      * Retrieve loyalty balances for the given loyalty card in the specified loyalty program with filtering options applied. If no filtering options are applied, all loyalty balances for the given loyalty card are returned. 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-     * @param {String} loyaltyCardIdentifier Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+     * @param {String} loyaltyCardId Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {Date=} [opts.endDate] Used to return balances only for entries older than this timestamp. The expired, active, and pending points are relative to this timestamp.  **Note:** It must be an RFC3339 timestamp string. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoyaltyBalances} and HTTP response
      */
-    getLoyaltyCardBalancesWithHttpInfo(loyaltyProgramId, loyaltyCardIdentifier, opts) {
+    getLoyaltyCardBalancesWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'loyaltyProgramId' is set
       if (loyaltyProgramId === undefined || loyaltyProgramId === null) {
         throw new Error("Missing the required parameter 'loyaltyProgramId' when calling getLoyaltyCardBalances");
       }
-      // verify the required parameter 'loyaltyCardIdentifier' is set
-      if (loyaltyCardIdentifier === undefined || loyaltyCardIdentifier === null) {
-        throw new Error("Missing the required parameter 'loyaltyCardIdentifier' when calling getLoyaltyCardBalances");
+      // verify the required parameter 'loyaltyCardId' is set
+      if (loyaltyCardId === undefined || loyaltyCardId === null) {
+        throw new Error("Missing the required parameter 'loyaltyCardId' when calling getLoyaltyCardBalances");
       }
 
       let pathParams = {
         'loyaltyProgramId': loyaltyProgramId,
-        'loyaltyCardIdentifier': loyaltyCardIdentifier
+        'loyaltyCardId': loyaltyCardId
       };
       let queryParams = {
         'endDate': opts['endDate']
@@ -677,23 +678,23 @@ export default class IntegrationApi {
       let accepts = ['application/json'];
       let returnType = LoyaltyBalances;
       return this.apiClient.callApi(
-        '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/balances', 'GET',
+        '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/balances', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Get loyalty balances for a loyalty card
+     * Get card's point balances
      * Retrieve loyalty balances for the given loyalty card in the specified loyalty program with filtering options applied. If no filtering options are applied, all loyalty balances for the given loyalty card are returned. 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-     * @param {String} loyaltyCardIdentifier Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+     * @param {String} loyaltyCardId Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {Date=} [opts.endDate] Used to return balances only for entries older than this timestamp. The expired, active, and pending points are relative to this timestamp.  **Note:** It must be an RFC3339 timestamp string. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoyaltyBalances}
      */
-    getLoyaltyCardBalances(loyaltyProgramId, loyaltyCardIdentifier, opts) {
-      return this.getLoyaltyCardBalancesWithHttpInfo(loyaltyProgramId, loyaltyCardIdentifier, opts)
+    getLoyaltyCardBalances(loyaltyProgramId, loyaltyCardId, opts) {
+      return this.getLoyaltyCardBalancesWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -701,33 +702,33 @@ export default class IntegrationApi {
 
 
     /**
-     * Get loyalty card transaction logs
+     * List card's transactions
      * Retrieve loyalty transaction logs for the given loyalty card in the specified loyalty program with filtering options applied. If no filtering options are applied, the last 50 loyalty transactions for the given loyalty card are returned. 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-     * @param {String} loyaltyCardIdentifier Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+     * @param {String} loyaltyCardId Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
      * @param {Number=} [opts.pageSize] The number of items in this response. (default to 1000)
      * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CardLedgerTransactionLogEntryIntegrationAPI} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
-    getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardIdentifier, opts) {
+    getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'loyaltyProgramId' is set
       if (loyaltyProgramId === undefined || loyaltyProgramId === null) {
         throw new Error("Missing the required parameter 'loyaltyProgramId' when calling getLoyaltyCardTransactions");
       }
-      // verify the required parameter 'loyaltyCardIdentifier' is set
-      if (loyaltyCardIdentifier === undefined || loyaltyCardIdentifier === null) {
-        throw new Error("Missing the required parameter 'loyaltyCardIdentifier' when calling getLoyaltyCardTransactions");
+      // verify the required parameter 'loyaltyCardId' is set
+      if (loyaltyCardId === undefined || loyaltyCardId === null) {
+        throw new Error("Missing the required parameter 'loyaltyCardId' when calling getLoyaltyCardTransactions");
       }
 
       let pathParams = {
         'loyaltyProgramId': loyaltyProgramId,
-        'loyaltyCardIdentifier': loyaltyCardIdentifier
+        'loyaltyCardId': loyaltyCardId
       };
       let queryParams = {
         'subledgerId': opts['subledgerId'],
@@ -744,29 +745,29 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = CardLedgerTransactionLogEntryIntegrationAPI;
+      let returnType = InlineResponse2001;
       return this.apiClient.callApi(
-        '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/transactions', 'GET',
+        '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/transactions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Get loyalty card transaction logs
+     * List card's transactions
      * Retrieve loyalty transaction logs for the given loyalty card in the specified loyalty program with filtering options applied. If no filtering options are applied, the last 50 loyalty transactions for the given loyalty card are returned. 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-     * @param {String} loyaltyCardIdentifier Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+     * @param {String} loyaltyCardId Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
      * @param {Number=} [opts.pageSize] The number of items in this response. (default to 1000)
      * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CardLedgerTransactionLogEntryIntegrationAPI}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
-    getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardIdentifier, opts) {
-      return this.getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardIdentifier, opts)
+    getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardId, opts) {
+      return this.getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -784,7 +785,7 @@ export default class IntegrationApi {
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
      * @param {Number=} [opts.pageSize] The number of items in this response. (default to 50)
      * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     getLoyaltyProgramProfileTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts) {
       opts = opts || {};
@@ -817,7 +818,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/transactions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -836,7 +837,7 @@ export default class IntegrationApi {
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
      * @param {Number=} [opts.pageSize] The number of items in this response. (default to 50)
      * @param {Number=} [opts.skip] Skips the given number of items when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     getLoyaltyProgramProfileTransactions(loyaltyProgramId, integrationId, opts) {
       return this.getLoyaltyProgramProfileTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts)
@@ -895,22 +896,22 @@ export default class IntegrationApi {
 
 
     /**
-     * Link customer profile to loyalty card
+     * Link customer profile to card
      * [Loyalty cards](https://docs.talon.one/docs/product/loyalty-programs/loyalty-cards/loyalty-card-overview) allow customers to collect and spend loyalty points within a [card-based loyalty program](https://docs.talon.one/docs/product/loyalty-programs/overview#loyalty-program-types). They are useful to gamify loyalty programs and can be used with or without customer profiles linked to them.  Link a customer profile to a given loyalty card for the card to be set as **Registered**. This affects how it can be used. See the [docs](https://docs.talon.one/docs/product/loyalty-programs/loyalty-cards/managing-loyalty-cards#linking-customer-profiles-to-a-loyalty-card).  **Note:** You can link as many customer profiles to a given loyalty card as the [**card user limit**](https://docs.talon.one/docs/product/loyalty-programs/creating-loyalty-programs#creating-card-based-loyalty-programs) allows. 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-     * @param {String} loyaltyCardIdentifier Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+     * @param {String} loyaltyCardId Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
      * @param {module:model/LoyaltyCardRegistration} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoyaltyCard} and HTTP response
      */
-    linkLoyaltyCardToProfileWithHttpInfo(loyaltyProgramId, loyaltyCardIdentifier, body) {
+    linkLoyaltyCardToProfileWithHttpInfo(loyaltyProgramId, loyaltyCardId, body) {
       let postBody = body;
       // verify the required parameter 'loyaltyProgramId' is set
       if (loyaltyProgramId === undefined || loyaltyProgramId === null) {
         throw new Error("Missing the required parameter 'loyaltyProgramId' when calling linkLoyaltyCardToProfile");
       }
-      // verify the required parameter 'loyaltyCardIdentifier' is set
-      if (loyaltyCardIdentifier === undefined || loyaltyCardIdentifier === null) {
-        throw new Error("Missing the required parameter 'loyaltyCardIdentifier' when calling linkLoyaltyCardToProfile");
+      // verify the required parameter 'loyaltyCardId' is set
+      if (loyaltyCardId === undefined || loyaltyCardId === null) {
+        throw new Error("Missing the required parameter 'loyaltyCardId' when calling linkLoyaltyCardToProfile");
       }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -919,7 +920,7 @@ export default class IntegrationApi {
 
       let pathParams = {
         'loyaltyProgramId': loyaltyProgramId,
-        'loyaltyCardIdentifier': loyaltyCardIdentifier
+        'loyaltyCardId': loyaltyCardId
       };
       let queryParams = {
       };
@@ -933,22 +934,22 @@ export default class IntegrationApi {
       let accepts = ['application/json'];
       let returnType = LoyaltyCard;
       return this.apiClient.callApi(
-        '/v2/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardIdentifier}/link_profile', 'POST',
+        '/v2/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/link_profile', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Link customer profile to loyalty card
+     * Link customer profile to card
      * [Loyalty cards](https://docs.talon.one/docs/product/loyalty-programs/loyalty-cards/loyalty-card-overview) allow customers to collect and spend loyalty points within a [card-based loyalty program](https://docs.talon.one/docs/product/loyalty-programs/overview#loyalty-program-types). They are useful to gamify loyalty programs and can be used with or without customer profiles linked to them.  Link a customer profile to a given loyalty card for the card to be set as **Registered**. This affects how it can be used. See the [docs](https://docs.talon.one/docs/product/loyalty-programs/loyalty-cards/managing-loyalty-cards#linking-customer-profiles-to-a-loyalty-card).  **Note:** You can link as many customer profiles to a given loyalty card as the [**card user limit**](https://docs.talon.one/docs/product/loyalty-programs/creating-loyalty-programs#creating-card-based-loyalty-programs) allows. 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
-     * @param {String} loyaltyCardIdentifier Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
+     * @param {String} loyaltyCardId Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
      * @param {module:model/LoyaltyCardRegistration} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoyaltyCard}
      */
-    linkLoyaltyCardToProfile(loyaltyProgramId, loyaltyCardIdentifier, body) {
-      return this.linkLoyaltyCardToProfileWithHttpInfo(loyaltyProgramId, loyaltyCardIdentifier, body)
+    linkLoyaltyCardToProfile(loyaltyProgramId, loyaltyCardId, body) {
+      return this.linkLoyaltyCardToProfileWithHttpInfo(loyaltyProgramId, loyaltyCardId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -959,7 +960,7 @@ export default class IntegrationApi {
      * Reopen customer session
      * Reopen a closed [customer session](https://docs.talon.one/docs/dev/concepts/entities#customer-session). For example, if a session has been completed but still needs to be edited, you can reopen it with this endpoint. A reopen session is treated like a standard open session.  When reopening a session: - The `talon_session_reopened` event is triggered. You can see it in the **Events** view in the Campaign Manager. - The session state is updated to `open`. - Modified budgets and triggered effects when the session was closed are rolled back except for the list below.  <details>   <summary><strong>Effects and budgets unimpacted by a session reopening</strong></summary>   <div>     <p>The following effects and budgets are left the way they were once the session was originally closed:</p>     <ul>       <li>Add free item effect</li>       <li>Any <strong>not pending</strong> pending loyalty points.</li>       <li>Award giveaway</li>       <li>Coupon and referral creation</li>       <li>Coupon reservation</li>       <li>Custom effect</li>       <li>Update attribute value</li>       <li>Update cart item attribute value</li>     </ul>   </div> <p>To see an example of roll back, see the <a href=\"https://docs.talon.one/docs/dev/tutorials/rolling-back-effects\">Cancelling a session with campaign budgets tutorial</a>.</p> </details>  **Note:** If your order workflow requires you to create a new session instead of reopening a session, use the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint to cancel a closed session and create a new one. 
      * @param {String} customerSessionId The `integration ID` of the customer session. You set this ID when you create a customer session.  You can see existing customer session integration IDs in the Campaign Manager's **Sessions** menu, or via the [List Application session](https://docs.talon.one/management-api#operation/getApplicationSessions) endpoint. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationStateV2} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ReopenSessionResponse} and HTTP response
      */
     reopenCustomerSessionWithHttpInfo(customerSessionId) {
       let postBody = null;
@@ -981,7 +982,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = IntegrationStateV2;
+      let returnType = ReopenSessionResponse;
       return this.apiClient.callApi(
         '/v2/customer_sessions/{customerSessionId}/reopen', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -993,7 +994,7 @@ export default class IntegrationApi {
      * Reopen customer session
      * Reopen a closed [customer session](https://docs.talon.one/docs/dev/concepts/entities#customer-session). For example, if a session has been completed but still needs to be edited, you can reopen it with this endpoint. A reopen session is treated like a standard open session.  When reopening a session: - The `talon_session_reopened` event is triggered. You can see it in the **Events** view in the Campaign Manager. - The session state is updated to `open`. - Modified budgets and triggered effects when the session was closed are rolled back except for the list below.  <details>   <summary><strong>Effects and budgets unimpacted by a session reopening</strong></summary>   <div>     <p>The following effects and budgets are left the way they were once the session was originally closed:</p>     <ul>       <li>Add free item effect</li>       <li>Any <strong>not pending</strong> pending loyalty points.</li>       <li>Award giveaway</li>       <li>Coupon and referral creation</li>       <li>Coupon reservation</li>       <li>Custom effect</li>       <li>Update attribute value</li>       <li>Update cart item attribute value</li>     </ul>   </div> <p>To see an example of roll back, see the <a href=\"https://docs.talon.one/docs/dev/tutorials/rolling-back-effects\">Cancelling a session with campaign budgets tutorial</a>.</p> </details>  **Note:** If your order workflow requires you to create a new session instead of reopening a session, use the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint to cancel a closed session and create a new one. 
      * @param {String} customerSessionId The `integration ID` of the customer session. You set this ID when you create a customer session.  You can see existing customer session integration IDs in the Campaign Manager's **Sessions** menu, or via the [List Application session](https://docs.talon.one/management-api#operation/getApplicationSessions) endpoint. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationStateV2}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ReopenSessionResponse}
      */
     reopenCustomerSession(customerSessionId) {
       return this.reopenCustomerSessionWithHttpInfo(customerSessionId)

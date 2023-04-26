@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you are reading this page at `https://mycompany.talon.one/docs/api/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://mycompany.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
  *
  * The version of the OpenAPI document: 
  * 
@@ -198,6 +198,7 @@ import InlineResponse20037 from './model/InlineResponse20037';
 import InlineResponse20038 from './model/InlineResponse20038';
 import InlineResponse20039 from './model/InlineResponse20039';
 import InlineResponse2004 from './model/InlineResponse2004';
+import InlineResponse20040 from './model/InlineResponse20040';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
@@ -293,6 +294,7 @@ import NewLoyaltyTier from './model/NewLoyaltyTier';
 import NewManagementKey from './model/NewManagementKey';
 import NewMultipleAudiencesItem from './model/NewMultipleAudiencesItem';
 import NewNotificationWebhook from './model/NewNotificationWebhook';
+import NewOutgoingIntegrationWebhook from './model/NewOutgoingIntegrationWebhook';
 import NewPassword from './model/NewPassword';
 import NewPasswordEmail from './model/NewPasswordEmail';
 import NewPicklist from './model/NewPicklist';
@@ -327,6 +329,7 @@ import RejectCouponEffectProps from './model/RejectCouponEffectProps';
 import RejectReferralEffectProps from './model/RejectReferralEffectProps';
 import RemoveItemCatalogAction from './model/RemoveItemCatalogAction';
 import RemoveManyItemsCatalogAction from './model/RemoveManyItemsCatalogAction';
+import ReopenSessionResponse from './model/ReopenSessionResponse';
 import ReserveCouponEffectProps from './model/ReserveCouponEffectProps';
 import ReturnIntegrationRequest from './model/ReturnIntegrationRequest';
 import ReturnedCartItem from './model/ReturnedCartItem';
@@ -358,6 +361,7 @@ import ShowBundleMetadataEffectProps from './model/ShowBundleMetadataEffectProps
 import ShowNotificationEffectProps from './model/ShowNotificationEffectProps';
 import SlotDef from './model/SlotDef';
 import StrikethroughChangedItem from './model/StrikethroughChangedItem';
+import StrikethroughCustomEffectPerItemProps from './model/StrikethroughCustomEffectPerItemProps';
 import StrikethroughEffect from './model/StrikethroughEffect';
 import StrikethroughLabelingNotification from './model/StrikethroughLabelingNotification';
 import StrikethroughSetDiscountPerItemEffectProps from './model/StrikethroughSetDiscountPerItemEffectProps';
@@ -1551,6 +1555,12 @@ export {
     InlineResponse2004,
 
     /**
+     * The InlineResponse20040 model constructor.
+     * @property {module:model/InlineResponse20040}
+     */
+    InlineResponse20040,
+
+    /**
      * The InlineResponse2005 model constructor.
      * @property {module:model/InlineResponse2005}
      */
@@ -2121,6 +2131,12 @@ export {
     NewNotificationWebhook,
 
     /**
+     * The NewOutgoingIntegrationWebhook model constructor.
+     * @property {module:model/NewOutgoingIntegrationWebhook}
+     */
+    NewOutgoingIntegrationWebhook,
+
+    /**
      * The NewPassword model constructor.
      * @property {module:model/NewPassword}
      */
@@ -2325,6 +2341,12 @@ export {
     RemoveManyItemsCatalogAction,
 
     /**
+     * The ReopenSessionResponse model constructor.
+     * @property {module:model/ReopenSessionResponse}
+     */
+    ReopenSessionResponse,
+
+    /**
      * The ReserveCouponEffectProps model constructor.
      * @property {module:model/ReserveCouponEffectProps}
      */
@@ -2509,6 +2531,12 @@ export {
      * @property {module:model/StrikethroughChangedItem}
      */
     StrikethroughChangedItem,
+
+    /**
+     * The StrikethroughCustomEffectPerItemProps model constructor.
+     * @property {module:model/StrikethroughCustomEffectPerItemProps}
+     */
+    StrikethroughCustomEffectPerItemProps,
 
     /**
      * The StrikethroughEffect model constructor.

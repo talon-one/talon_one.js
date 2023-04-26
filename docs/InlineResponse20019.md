@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[CampaignAnalytics]**](CampaignAnalytics.md) |  | 
+**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

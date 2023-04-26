@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**applicationIds** | **[Number]** | The IDs of the applications that are related to this entity. | 
+**applicationIds** | **[Number]** | The IDs of the Applications that are related to this entity. | 
 **isPerItem** | **Boolean** | Indicates if this effect is per item or not. | [optional] 
 **name** | **String** | The name of this effect. | 
 **title** | **String** | The title of this effect. | 
