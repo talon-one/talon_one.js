@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**data** | [**[ApplicationSession]**](ApplicationSession.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[CampaignAnalytics]**](CampaignAnalytics.md) |  | 
 
 

@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 
 * `time` (value: `"time"`)
 
+* `(list string)` (value: `"(list string)"`)
+
 
 
 

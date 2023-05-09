@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 
 * `EffectCouldNotBeApplied` (value: `"EffectCouldNotBeApplied"`)
 
+* `ReferralPartOfNotTriggeredCampaign` (value: `"ReferralPartOfNotTriggeredCampaign"`)
+
 
 
 

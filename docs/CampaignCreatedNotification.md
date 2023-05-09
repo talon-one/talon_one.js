@@ -5,5 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaign** | [**Campaign**](Campaign.md) |  | 
+**ruleset** | [**Ruleset**](Ruleset.md) |  | [optional] 
+**priority** | [**PriorityPosition**](PriorityPosition.md) |  | 
 
 

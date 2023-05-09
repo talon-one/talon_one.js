@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[ModelExport]**](ModelExport.md) |  | 
+**data** | [**[Webhook]**](Webhook.md) |  | 
 
 

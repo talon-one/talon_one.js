@@ -17,8 +17,6 @@ Name | Type | Description | Notes
 
 * `CouponPartOfNotRunningCampaign` (value: `"CouponPartOfNotRunningCampaign"`)
 
-* `CouponLimitReached` (value: `"CouponLimitReached"`)
-
 * `CampaignLimitReached` (value: `"CampaignLimitReached"`)
 
 * `ProfileLimitReached` (value: `"ProfileLimitReached"`)
@@ -32,6 +30,12 @@ Name | Type | Description | Notes
 * `CouponRejectedByCondition` (value: `"CouponRejectedByCondition"`)
 
 * `EffectCouldNotBeApplied` (value: `"EffectCouldNotBeApplied"`)
+
+* `CouponPartOfNotTriggeredCampaign` (value: `"CouponPartOfNotTriggeredCampaign"`)
+
+* `CouponReservationRequired` (value: `"CouponReservationRequired"`)
+
+* `ProfileRequired` (value: `"ProfileRequired"`)
 
 
 

@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Role]**](Role.md) |  | 
+**data** | [**[WebhookActivationLogEntry]**](WebhookActivationLogEntry.md) |  | 
 
 

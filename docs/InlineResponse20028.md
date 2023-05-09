@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[WebhookActivationLogEntry]**](WebhookActivationLogEntry.md) |  | 
+**data** | **[String]** |  | 
 
 

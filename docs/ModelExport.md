@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
-**created** | **Date** | The exact moment this entity was created. | 
+**id** | **Number** | Internal ID of this entity. | 
+**created** | **Date** | The time this entity was created. | 
 **accountId** | **Number** | The ID of the account that owns this entity. | 
-**userId** | **Number** | The ID of the account that owns this entity. | 
+**userId** | **Number** | The ID of the user associated with this entity. | 
 **entity** | **String** | The name of the entity that was exported. | 
 **filter** | [**Object**](.md) | Map of keys and values that were used to filter the exported rows. | 
 

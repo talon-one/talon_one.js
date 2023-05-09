@@ -44,6 +44,8 @@ Name | Type | Description | Notes
 
 * `giveaways` (value: `"giveaways"`)
 
+* `strikethrough` (value: `"strikethrough"`)
+
 
 
 

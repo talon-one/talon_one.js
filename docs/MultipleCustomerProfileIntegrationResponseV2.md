@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integrationStates** | [**[IntegrationStateV2]**](IntegrationStateV2.md) |  | [optional] 
+**integrationStates** | [**[CustomerProfileUpdateV2Response]**](CustomerProfileUpdateV2Response.md) |  | [optional] 
 
 

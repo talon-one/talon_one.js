@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
-**created** | **Date** | The exact moment this entity was created. | 
-**modified** | **Date** | The exact moment this entity was last modified. | 
+**id** | **Number** | Internal ID of this entity. | 
+**created** | **Date** | The time this entity was created. | 
+**modified** | **Date** | The time this entity was last modified. | 
 **applicationId** | **Number** | The ID of the application that owns this entity. | 
-**url** | **String** | API url for this notification webhook. | 
-**headers** | **[String]** | List of API HTTP headers for this notification webhook. | 
+**url** | **String** | API URL for the given webhook-based notification. | 
+**headers** | **[String]** | List of API HTTP headers for the given webhook-based notification. | 
 
 

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** | A unique identifier for the rule. | [optional] 
+**parentId** | **String** | The ID of the rule that was copied to create this rule. | [optional] 
 **title** | **String** | A short description of the rule. | 
 **description** | **String** | A longer, more detailed description of the rule. | [optional] 
 **bindings** | [**[Binding]**](Binding.md) | An array that provides objects with variable names (name) and talang expressions to whose result they are bound (expression) during rule evaluation. The order of the evaluation is decided by the position in the array. | [optional] 
