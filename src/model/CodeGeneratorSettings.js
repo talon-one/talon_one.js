@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CodeGeneratorSettings model module.
  * @module model/CodeGeneratorSettings
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CodeGeneratorSettings {
     /**

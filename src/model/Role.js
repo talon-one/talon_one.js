@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Role model module.
  * @module model/Role
- * @version 5.0.0
+ * @version 5.0.1
  */
 class Role {
     /**
@@ -119,7 +119,7 @@ Role.prototype['modified'] = undefined;
 Role.prototype['accountId'] = undefined;
 
 /**
- * The ID of the [Campaign Group](https://docs.talon.one/docs/product/account/managing-campaign-groups) this role was created for. 
+ * The ID of the [Campaign Group](https://docs.talon.one/docs/product/account/account-settings/managing-campaign-groups) this role was created for. 
  * @member {Number} campaignGroupID
  */
 Role.prototype['campaignGroupID'] = undefined;

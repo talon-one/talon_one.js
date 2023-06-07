@@ -17,7 +17,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The UpdateLoyaltyProgram model module.
  * @module model/UpdateLoyaltyProgram
- * @version 5.0.0
+ * @version 5.0.1
  */
 class UpdateLoyaltyProgram {
     /**
@@ -72,6 +72,12 @@ class UpdateLoyaltyProgram {
             }
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tiersExpireIn')) {
+                obj['tiersExpireIn'] = ApiClient.convertToType(data['tiersExpireIn'], 'String');
+            }
+            if (data.hasOwnProperty('tiersDowngradePolicy')) {
+                obj['tiersDowngradePolicy'] = ApiClient.convertToType(data['tiersDowngradePolicy'], 'String');
             }
             if (data.hasOwnProperty('tiers')) {
                 obj['tiers'] = ApiClient.convertToType(data['tiers'], [NewLoyaltyTier]);
@@ -132,6 +138,18 @@ UpdateLoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 UpdateLoyaltyProgram.prototype['sandbox'] = undefined;
 
 /**
+ * The duration is an **integer** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
+ * @member {String} tiersExpireIn
+ */
+UpdateLoyaltyProgram.prototype['tiersExpireIn'] = undefined;
+
+/**
+ * Customers's tier downgrade policy.  - `one_down`: Once the tier expires and if the user doesn't have enough points to stay in the tier, the user is downgraded one tier down.  - `balance_based`: Once the tier expires, the user's tier is evaluated based on the amount of active points the user has at this instant. 
+ * @member {module:model/UpdateLoyaltyProgram.TiersDowngradePolicyEnum} tiersDowngradePolicy
+ */
+UpdateLoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
+
+/**
  * The tiers in this loyalty program.
  * @member {Array.<module:model/NewLoyaltyTier>} tiers
  */
@@ -139,6 +157,27 @@ UpdateLoyaltyProgram.prototype['tiers'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>tiersDowngradePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateLoyaltyProgram['TiersDowngradePolicyEnum'] = {
+
+    /**
+     * value: "one_down"
+     * @const
+     */
+    "one_down": "one_down",
+
+    /**
+     * value: "balance_based"
+     * @const
+     */
+    "balance_based": "balance_based"
+};
 
 
 

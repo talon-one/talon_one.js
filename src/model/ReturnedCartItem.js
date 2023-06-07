@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReturnedCartItem model module.
  * @module model/ReturnedCartItem
- * @version 5.0.0
+ * @version 5.0.1
  */
 class ReturnedCartItem {
     /**
@@ -69,7 +69,7 @@ class ReturnedCartItem {
 ReturnedCartItem.prototype['position'] = undefined;
 
 /**
- * Number of cart items to return. It is only available when [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening) is enabled. If cart item flattening is disabled, the cart item can only be returned in its entirety. 
+ * Number of cart items to return. It is only available when [cart item flattening](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening) is enabled. If cart item flattening is disabled, the cart item can only be returned in its entirety. 
  * @member {Number} quantity
  */
 ReturnedCartItem.prototype['quantity'] = undefined;

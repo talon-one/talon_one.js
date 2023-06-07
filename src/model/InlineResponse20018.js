@@ -17,7 +17,7 @@ import AccessLogEntry from './AccessLogEntry';
 /**
  * The InlineResponse20018 model module.
  * @module model/InlineResponse20018
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse20018 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountDashboardStatisticLoyaltyPoints model module.
  * @module model/AccountDashboardStatisticLoyaltyPoints
- * @version 5.0.0
+ * @version 5.0.1
  */
 class AccountDashboardStatisticLoyaltyPoints {
     /**

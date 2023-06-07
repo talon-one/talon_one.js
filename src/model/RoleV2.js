@@ -17,16 +17,21 @@ import RoleV2Permissions from './RoleV2Permissions';
 /**
  * The RoleV2 model module.
  * @module model/RoleV2
- * @version 5.0.0
+ * @version 5.0.1
  */
 class RoleV2 {
     /**
      * Constructs a new <code>RoleV2</code>.
+     * 
      * @alias module:model/RoleV2
+     * @param id {Number} Internal ID of this entity.
+     * @param created {Date} The time this entity was created.
+     * @param modified {Date} The time this entity was last modified.
+     * @param accountId {Number} The ID of the account that owns this entity.
      */
-    constructor() { 
+    constructor(id, created, modified, accountId) { 
         
-        RoleV2.initialize(this);
+        RoleV2.initialize(this, id, created, modified, accountId);
     }
 
     /**
@@ -34,7 +39,11 @@ class RoleV2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, id, created, modified, accountId) { 
+        obj['id'] = id;
+        obj['created'] = created;
+        obj['modified'] = modified;
+        obj['accountId'] = accountId;
     }
 
     /**
@@ -48,6 +57,18 @@ class RoleV2 {
         if (data) {
             obj = obj || new RoleV2();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('created')) {
+                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('modified')) {
+                obj['modified'] = ApiClient.convertToType(data['modified'], 'Date');
+            }
+            if (data.hasOwnProperty('accountId')) {
+                obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -69,6 +90,30 @@ class RoleV2 {
 
 
 }
+
+/**
+ * Internal ID of this entity.
+ * @member {Number} id
+ */
+RoleV2.prototype['id'] = undefined;
+
+/**
+ * The time this entity was created.
+ * @member {Date} created
+ */
+RoleV2.prototype['created'] = undefined;
+
+/**
+ * The time this entity was last modified.
+ * @member {Date} modified
+ */
+RoleV2.prototype['modified'] = undefined;
+
+/**
+ * The ID of the account that owns this entity.
+ * @member {Number} accountId
+ */
+RoleV2.prototype['accountId'] = undefined;
 
 /**
  * Name of the role.
@@ -94,7 +139,7 @@ RoleV2.prototype['isAdmin'] = undefined;
 RoleV2.prototype['permissions'] = undefined;
 
 /**
- * An array of user identifiers.
+ * A list of user identifiers the role is assigned to.
  * @member {Array.<Number>} members
  */
 RoleV2.prototype['members'] = undefined;

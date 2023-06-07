@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 5.0.0
+ * @version 5.0.1
  */
 class SetDiscountPerItemEffectProps {
     /**
@@ -110,7 +110,7 @@ SetDiscountPerItemEffectProps.prototype['value'] = undefined;
 SetDiscountPerItemEffectProps.prototype['position'] = undefined;
 
 /**
- * Only used when [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening) is enabled. Indicates which item the discount applies to for cart items with `quantity` > 1. 
+ * Only used when [cart item flattening](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening) is enabled. Indicates which item the discount applies to for cart items with `quantity` > 1. 
  * @member {Number} subPosition
  */
 SetDiscountPerItemEffectProps.prototype['subPosition'] = undefined;

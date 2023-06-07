@@ -17,14 +17,14 @@ import AdditionalCost from './AdditionalCost';
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CartItem {
     /**
      * Constructs a new <code>CartItem</code>.
      * @alias module:model/CartItem
      * @param sku {String} Stock keeping unit of item.
-     * @param quantity {Number} Quantity of item. **Important:** If you enabled [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
+     * @param quantity {Number} Quantity of item. **Important:** If you enabled [cart item flattening](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
      */
     constructor(sku, quantity) { 
         
@@ -117,7 +117,7 @@ CartItem.prototype['name'] = undefined;
 CartItem.prototype['sku'] = undefined;
 
 /**
- * Quantity of item. **Important:** If you enabled [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
+ * Quantity of item. **Important:** If you enabled [cart item flattening](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening), the quantity is always one and the same cart item might receive multiple per-item discounts. Ensure you can process multiple discounts on one cart item correctly. 
  * @member {Number} quantity
  */
 CartItem.prototype['quantity'] = undefined;

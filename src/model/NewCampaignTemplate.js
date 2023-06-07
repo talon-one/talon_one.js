@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The NewCampaignTemplate model module.
  * @module model/NewCampaignTemplate
- * @version 5.0.0
+ * @version 5.0.1
  */
 class NewCampaignTemplate {
     /**

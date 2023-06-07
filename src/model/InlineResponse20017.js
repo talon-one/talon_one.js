@@ -17,7 +17,7 @@ import Collection from './Collection';
 /**
  * The InlineResponse20017 model module.
  * @module model/InlineResponse20017
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse20017 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LedgerEntry model module.
  * @module model/LedgerEntry
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LedgerEntry {
     /**

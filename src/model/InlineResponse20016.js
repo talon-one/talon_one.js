@@ -17,7 +17,7 @@ import CollectionItem from './CollectionItem';
 /**
  * The InlineResponse20016 model module.
  * @module model/InlineResponse20016
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse20016 {
     /**

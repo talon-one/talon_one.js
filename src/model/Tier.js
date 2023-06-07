@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Tier model module.
  * @module model/Tier
- * @version 5.0.0
+ * @version 5.0.1
  */
 class Tier {
     /**
@@ -57,6 +57,12 @@ class Tier {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('expiryDate')) {
+                obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            }
+            if (data.hasOwnProperty('downgradePolicy')) {
+                obj['downgradePolicy'] = ApiClient.convertToType(data['downgradePolicy'], 'String');
+            }
         }
         return obj;
     }
@@ -76,8 +82,41 @@ Tier.prototype['id'] = undefined;
  */
 Tier.prototype['name'] = undefined;
 
+/**
+ * Date when tier level expires in the RFC3339 format (in the Loyalty Program's timezone).
+ * @member {Date} expiryDate
+ */
+Tier.prototype['expiryDate'] = undefined;
+
+/**
+ * Customers's tier downgrade policy. - `one_down`: Once the tier expires and if the user doesn't have enough points to stay in the tier, the user is downgraded one tier down. - `balance_based`: Once the tier expires, the user's tier is evaluated based on the amount of active points the user has at this instant. 
+ * @member {module:model/Tier.DowngradePolicyEnum} downgradePolicy
+ */
+Tier.prototype['downgradePolicy'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>downgradePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Tier['DowngradePolicyEnum'] = {
+
+    /**
+     * value: "one_down"
+     * @const
+     */
+    "one_down": "one_down",
+
+    /**
+     * value: "balance_based"
+     * @const
+     */
+    "balance_based": "balance_based"
+};
 
 
 

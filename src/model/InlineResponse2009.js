@@ -17,7 +17,7 @@ import Referral from './Referral';
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse2009 {
     /**

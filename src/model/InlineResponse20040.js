@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Role from './Role';
+import ModelExport from './ModelExport';
 
 /**
  * The InlineResponse20040 model module.
  * @module model/InlineResponse20040
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse20040 {
     /**
      * Constructs a new <code>InlineResponse20040</code>.
      * @alias module:model/InlineResponse20040
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Role>} 
+     * @param data {Array.<module:model/ModelExport>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20040 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Role]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20040 {
 InlineResponse20040.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Role>} data
+ * @member {Array.<module:model/ModelExport>} data
  */
 InlineResponse20040.prototype['data'] = undefined;
 

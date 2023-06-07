@@ -114,6 +114,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tiersExpireIn (base name: "tiersExpireIn")', function() {
+      // uncomment below and update the code to test the property tiersExpireIn
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tiersDowngradePolicy (base name: "tiersDowngradePolicy")', function() {
+      // uncomment below and update the code to test the property tiersDowngradePolicy
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
     it('should have the property accountID (base name: "accountID")', function() {
       // uncomment below and update the code to test the property accountID
       //var instane = new TalonOne.LoyaltyProgram();
@@ -140,6 +152,18 @@
 
     it('should have the property cardBased (base name: "cardBased")', function() {
       // uncomment below and update the code to test the property cardBased
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property canUpdateTiers (base name: "canUpdateTiers")', function() {
+      // uncomment below and update the code to test the property canUpdateTiers
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property canUpgradeToAdvancedTiers (base name: "canUpgradeToAdvancedTiers")', function() {
+      // uncomment below and update the code to test the property canUpgradeToAdvancedTiers
       //var instane = new TalonOne.LoyaltyProgram();
       //expect(instance).to.be();
     });

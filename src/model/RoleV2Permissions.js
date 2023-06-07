@@ -13,12 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import RoleV2PermissionSet from './RoleV2PermissionSet';
-import RoleV2PermissionsRoles from './RoleV2PermissionsRoles';
+import RoleV2RolesGroup from './RoleV2RolesGroup';
 
 /**
  * The RoleV2Permissions model module.
  * @module model/RoleV2Permissions
- * @version 5.0.0
+ * @version 5.0.1
  */
 class RoleV2Permissions {
     /**
@@ -53,7 +53,7 @@ class RoleV2Permissions {
                 obj['permissionSets'] = ApiClient.convertToType(data['permissionSets'], [RoleV2PermissionSet]);
             }
             if (data.hasOwnProperty('roles')) {
-                obj['roles'] = RoleV2PermissionsRoles.constructFromObject(data['roles']);
+                obj['roles'] = RoleV2RolesGroup.constructFromObject(data['roles']);
             }
         }
         return obj;
@@ -63,13 +63,13 @@ class RoleV2Permissions {
 }
 
 /**
- * List of grouped operation IDs to use as a reference in the roles section. Each group of operation IDs has a name.
+ * List of grouped logical operations to use as a reference in the roles section. Each group of logical operations has a name.
  * @member {Array.<module:model/RoleV2PermissionSet>} permissionSets
  */
 RoleV2Permissions.prototype['permissionSets'] = undefined;
 
 /**
- * @member {module:model/RoleV2PermissionsRoles} roles
+ * @member {module:model/RoleV2RolesGroup} roles
  */
 RoleV2Permissions.prototype['roles'] = undefined;
 

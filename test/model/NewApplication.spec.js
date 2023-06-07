@@ -96,18 +96,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property campaignPriority (base name: "campaignPriority")', function() {
-      // uncomment below and update the code to test the property campaignPriority
-      //var instane = new TalonOne.NewApplication();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property exclusiveCampaignsStrategy (base name: "exclusiveCampaignsStrategy")', function() {
-      // uncomment below and update the code to test the property exclusiveCampaignsStrategy
-      //var instane = new TalonOne.NewApplication();
-      //expect(instance).to.be();
-    });
-
     it('should have the property defaultDiscountScope (base name: "defaultDiscountScope")', function() {
       // uncomment below and update the code to test the property defaultDiscountScope
       //var instane = new TalonOne.NewApplication();

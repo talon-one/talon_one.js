@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignSearch model module.
  * @module model/CampaignSearch
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CampaignSearch {
     /**

@@ -57,6 +57,7 @@ import AudienceCustomer from './model/AudienceCustomer';
 import AudienceIntegrationID from './model/AudienceIntegrationID';
 import AudienceMembership from './model/AudienceMembership';
 import AwardGiveawayEffectProps from './model/AwardGiveawayEffectProps';
+import BaseCampaign from './model/BaseCampaign';
 import BaseLoyaltyProgram from './model/BaseLoyaltyProgram';
 import BaseNotification from './model/BaseNotification';
 import BaseNotificationEntity from './model/BaseNotificationEntity';
@@ -76,19 +77,18 @@ import CampaignCreatedNotification from './model/CampaignCreatedNotification';
 import CampaignDeletedNotification from './model/CampaignDeletedNotification';
 import CampaignEditedNotification from './model/CampaignEditedNotification';
 import CampaignEntity from './model/CampaignEntity';
+import CampaignEvaluationGroup from './model/CampaignEvaluationGroup';
+import CampaignEvaluationPosition from './model/CampaignEvaluationPosition';
+import CampaignEvaluationTreeChangedNotification from './model/CampaignEvaluationTreeChangedNotification';
 import CampaignGroup from './model/CampaignGroup';
 import CampaignGroupEntity from './model/CampaignGroupEntity';
 import CampaignNotification from './model/CampaignNotification';
-import CampaignPrioritiesChangedNotification from './model/CampaignPrioritiesChangedNotification';
-import CampaignPrioritiesV2 from './model/CampaignPrioritiesV2';
 import CampaignRulesetChangedNotification from './model/CampaignRulesetChangedNotification';
 import CampaignSearch from './model/CampaignSearch';
 import CampaignSet from './model/CampaignSet';
 import CampaignSetBranchNode from './model/CampaignSetBranchNode';
-import CampaignSetIDs from './model/CampaignSetIDs';
 import CampaignSetLeafNode from './model/CampaignSetLeafNode';
 import CampaignSetNode from './model/CampaignSetNode';
-import CampaignSetV2 from './model/CampaignSetV2';
 import CampaignStateChangedNotification from './model/CampaignStateChangedNotification';
 import CampaignTemplate from './model/CampaignTemplate';
 import CampaignTemplateCollection from './model/CampaignTemplateCollection';
@@ -156,12 +156,12 @@ import ExpiringPointsNotificationPolicy from './model/ExpiringPointsNotification
 import ExpiringPointsNotificationTrigger from './model/ExpiringPointsNotificationTrigger';
 import FeatureFlag from './model/FeatureFlag';
 import FeaturesFeed from './model/FeaturesFeed';
-import FeedNotification from './model/FeedNotification';
 import FrontendState from './model/FrontendState';
 import FuncArgDef from './model/FuncArgDef';
 import FunctionDef from './model/FunctionDef';
 import Giveaway from './model/Giveaway';
 import GiveawaysPool from './model/GiveawaysPool';
+import IdentifiableEntity from './model/IdentifiableEntity';
 import ImportEntity from './model/ImportEntity';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
@@ -199,6 +199,7 @@ import InlineResponse20038 from './model/InlineResponse20038';
 import InlineResponse20039 from './model/InlineResponse20039';
 import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse20040 from './model/InlineResponse20040';
+import InlineResponse20041 from './model/InlineResponse20041';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
@@ -240,6 +241,7 @@ import LoyaltyProgram from './model/LoyaltyProgram';
 import LoyaltyProgramBalance from './model/LoyaltyProgramBalance';
 import LoyaltyProgramEntity from './model/LoyaltyProgramEntity';
 import LoyaltyProgramLedgers from './model/LoyaltyProgramLedgers';
+import LoyaltyProgramSubledgers from './model/LoyaltyProgramSubledgers';
 import LoyaltyProgramTransaction from './model/LoyaltyProgramTransaction';
 import LoyaltyStatistics from './model/LoyaltyStatistics';
 import LoyaltySubLedger from './model/LoyaltySubLedger';
@@ -270,9 +272,9 @@ import NewAudience from './model/NewAudience';
 import NewBaseNotification from './model/NewBaseNotification';
 import NewCampaign from './model/NewCampaign';
 import NewCampaignCollection from './model/NewCampaignCollection';
+import NewCampaignEvaluationGroup from './model/NewCampaignEvaluationGroup';
 import NewCampaignGroup from './model/NewCampaignGroup';
 import NewCampaignSet from './model/NewCampaignSet';
-import NewCampaignSetV2 from './model/NewCampaignSetV2';
 import NewCampaignTemplate from './model/NewCampaignTemplate';
 import NewCatalog from './model/NewCatalog';
 import NewCollection from './model/NewCollection';
@@ -302,6 +304,7 @@ import NewReferral from './model/NewReferral';
 import NewReferralsForMultipleAdvocates from './model/NewReferralsForMultipleAdvocates';
 import NewReturn from './model/NewReturn';
 import NewRole from './model/NewRole';
+import NewRoleV2 from './model/NewRoleV2';
 import NewRuleset from './model/NewRuleset';
 import NewSamlConnection from './model/NewSamlConnection';
 import NewTemplateDef from './model/NewTemplateDef';
@@ -311,14 +314,15 @@ import Notification from './model/Notification';
 import NotificationWebhook from './model/NotificationWebhook';
 import OutgoingIntegrationBrazePolicy from './model/OutgoingIntegrationBrazePolicy';
 import OutgoingIntegrationConfiguration from './model/OutgoingIntegrationConfiguration';
+import OutgoingIntegrationTemplate from './model/OutgoingIntegrationTemplate';
+import OutgoingIntegrationTemplateWithConfigurationDetails from './model/OutgoingIntegrationTemplateWithConfigurationDetails';
+import OutgoingIntegrationTemplates from './model/OutgoingIntegrationTemplates';
 import OutgoingIntegrationType from './model/OutgoingIntegrationType';
 import OutgoingIntegrationTypes from './model/OutgoingIntegrationTypes';
-import OutgoingIntegrationWebhookTemplate from './model/OutgoingIntegrationWebhookTemplate';
-import OutgoingIntegrationWebhookTemplates from './model/OutgoingIntegrationWebhookTemplates';
 import PatchItemCatalogAction from './model/PatchItemCatalogAction';
 import PatchManyItemsCatalogAction from './model/PatchManyItemsCatalogAction';
+import PendingPointsNotificationPolicy from './model/PendingPointsNotificationPolicy';
 import Picklist from './model/Picklist';
-import PriorityPosition from './model/PriorityPosition';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
 import Referral from './model/Referral';
@@ -338,9 +342,10 @@ import RoleAssign from './model/RoleAssign';
 import RoleMembership from './model/RoleMembership';
 import RoleV2 from './model/RoleV2';
 import RoleV2ApplicationDetails from './model/RoleV2ApplicationDetails';
+import RoleV2Base from './model/RoleV2Base';
 import RoleV2PermissionSet from './model/RoleV2PermissionSet';
 import RoleV2Permissions from './model/RoleV2Permissions';
-import RoleV2PermissionsRoles from './model/RoleV2PermissionsRoles';
+import RoleV2RolesGroup from './model/RoleV2RolesGroup';
 import RollbackAddedLoyaltyPointsEffectProps from './model/RollbackAddedLoyaltyPointsEffectProps';
 import RollbackCouponEffectProps from './model/RollbackCouponEffectProps';
 import RollbackDeductedLoyaltyPointsEffectProps from './model/RollbackDeductedLoyaltyPointsEffectProps';
@@ -380,6 +385,7 @@ import UpdateAttributeEffectProps from './model/UpdateAttributeEffectProps';
 import UpdateAudience from './model/UpdateAudience';
 import UpdateCampaign from './model/UpdateCampaign';
 import UpdateCampaignCollection from './model/UpdateCampaignCollection';
+import UpdateCampaignEvaluationGroup from './model/UpdateCampaignEvaluationGroup';
 import UpdateCampaignGroup from './model/UpdateCampaignGroup';
 import UpdateCampaignTemplate from './model/UpdateCampaignTemplate';
 import UpdateCatalog from './model/UpdateCatalog';
@@ -394,13 +400,12 @@ import UpdateReferral from './model/UpdateReferral';
 import UpdateReferralBatch from './model/UpdateReferralBatch';
 import UpdateRole from './model/UpdateRole';
 import UpdateUser from './model/UpdateUser';
-import UpdateUserLatestFeedTimestamp from './model/UpdateUserLatestFeedTimestamp';
 import User from './model/User';
 import UserEntity from './model/UserEntity';
-import UserFeedNotifications from './model/UserFeedNotifications';
 import Webhook from './model/Webhook';
 import WebhookActivationLogEntry from './model/WebhookActivationLogEntry';
 import WebhookLogEntry from './model/WebhookLogEntry';
+import WebhookWithOutgoingIntegrationDetails from './model/WebhookWithOutgoingIntegrationDetails';
 import WillAwardGiveawayEffectProps from './model/WillAwardGiveawayEffectProps';
 import IntegrationApi from './api/IntegrationApi';
 import ManagementApi from './api/ManagementApi';
@@ -435,7 +440,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.0
+* @version 5.0.1
 */
 export {
     /**
@@ -709,6 +714,12 @@ export {
     AwardGiveawayEffectProps,
 
     /**
+     * The BaseCampaign model constructor.
+     * @property {module:model/BaseCampaign}
+     */
+    BaseCampaign,
+
+    /**
      * The BaseLoyaltyProgram model constructor.
      * @property {module:model/BaseLoyaltyProgram}
      */
@@ -823,6 +834,24 @@ export {
     CampaignEntity,
 
     /**
+     * The CampaignEvaluationGroup model constructor.
+     * @property {module:model/CampaignEvaluationGroup}
+     */
+    CampaignEvaluationGroup,
+
+    /**
+     * The CampaignEvaluationPosition model constructor.
+     * @property {module:model/CampaignEvaluationPosition}
+     */
+    CampaignEvaluationPosition,
+
+    /**
+     * The CampaignEvaluationTreeChangedNotification model constructor.
+     * @property {module:model/CampaignEvaluationTreeChangedNotification}
+     */
+    CampaignEvaluationTreeChangedNotification,
+
+    /**
      * The CampaignGroup model constructor.
      * @property {module:model/CampaignGroup}
      */
@@ -839,18 +868,6 @@ export {
      * @property {module:model/CampaignNotification}
      */
     CampaignNotification,
-
-    /**
-     * The CampaignPrioritiesChangedNotification model constructor.
-     * @property {module:model/CampaignPrioritiesChangedNotification}
-     */
-    CampaignPrioritiesChangedNotification,
-
-    /**
-     * The CampaignPrioritiesV2 model constructor.
-     * @property {module:model/CampaignPrioritiesV2}
-     */
-    CampaignPrioritiesV2,
 
     /**
      * The CampaignRulesetChangedNotification model constructor.
@@ -877,12 +894,6 @@ export {
     CampaignSetBranchNode,
 
     /**
-     * The CampaignSetIDs model constructor.
-     * @property {module:model/CampaignSetIDs}
-     */
-    CampaignSetIDs,
-
-    /**
      * The CampaignSetLeafNode model constructor.
      * @property {module:model/CampaignSetLeafNode}
      */
@@ -893,12 +904,6 @@ export {
      * @property {module:model/CampaignSetNode}
      */
     CampaignSetNode,
-
-    /**
-     * The CampaignSetV2 model constructor.
-     * @property {module:model/CampaignSetV2}
-     */
-    CampaignSetV2,
 
     /**
      * The CampaignStateChangedNotification model constructor.
@@ -1303,12 +1308,6 @@ export {
     FeaturesFeed,
 
     /**
-     * The FeedNotification model constructor.
-     * @property {module:model/FeedNotification}
-     */
-    FeedNotification,
-
-    /**
      * The FrontendState model constructor.
      * @property {module:model/FrontendState}
      */
@@ -1337,6 +1336,12 @@ export {
      * @property {module:model/GiveawaysPool}
      */
     GiveawaysPool,
+
+    /**
+     * The IdentifiableEntity model constructor.
+     * @property {module:model/IdentifiableEntity}
+     */
+    IdentifiableEntity,
 
     /**
      * The ImportEntity model constructor.
@@ -1559,6 +1564,12 @@ export {
      * @property {module:model/InlineResponse20040}
      */
     InlineResponse20040,
+
+    /**
+     * The InlineResponse20041 model constructor.
+     * @property {module:model/InlineResponse20041}
+     */
+    InlineResponse20041,
 
     /**
      * The InlineResponse2005 model constructor.
@@ -1807,6 +1818,12 @@ export {
     LoyaltyProgramLedgers,
 
     /**
+     * The LoyaltyProgramSubledgers model constructor.
+     * @property {module:model/LoyaltyProgramSubledgers}
+     */
+    LoyaltyProgramSubledgers,
+
+    /**
      * The LoyaltyProgramTransaction model constructor.
      * @property {module:model/LoyaltyProgramTransaction}
      */
@@ -1987,6 +2004,12 @@ export {
     NewCampaignCollection,
 
     /**
+     * The NewCampaignEvaluationGroup model constructor.
+     * @property {module:model/NewCampaignEvaluationGroup}
+     */
+    NewCampaignEvaluationGroup,
+
+    /**
      * The NewCampaignGroup model constructor.
      * @property {module:model/NewCampaignGroup}
      */
@@ -1997,12 +2020,6 @@ export {
      * @property {module:model/NewCampaignSet}
      */
     NewCampaignSet,
-
-    /**
-     * The NewCampaignSetV2 model constructor.
-     * @property {module:model/NewCampaignSetV2}
-     */
-    NewCampaignSetV2,
 
     /**
      * The NewCampaignTemplate model constructor.
@@ -2179,6 +2196,12 @@ export {
     NewRole,
 
     /**
+     * The NewRoleV2 model constructor.
+     * @property {module:model/NewRoleV2}
+     */
+    NewRoleV2,
+
+    /**
      * The NewRuleset model constructor.
      * @property {module:model/NewRuleset}
      */
@@ -2233,6 +2256,24 @@ export {
     OutgoingIntegrationConfiguration,
 
     /**
+     * The OutgoingIntegrationTemplate model constructor.
+     * @property {module:model/OutgoingIntegrationTemplate}
+     */
+    OutgoingIntegrationTemplate,
+
+    /**
+     * The OutgoingIntegrationTemplateWithConfigurationDetails model constructor.
+     * @property {module:model/OutgoingIntegrationTemplateWithConfigurationDetails}
+     */
+    OutgoingIntegrationTemplateWithConfigurationDetails,
+
+    /**
+     * The OutgoingIntegrationTemplates model constructor.
+     * @property {module:model/OutgoingIntegrationTemplates}
+     */
+    OutgoingIntegrationTemplates,
+
+    /**
      * The OutgoingIntegrationType model constructor.
      * @property {module:model/OutgoingIntegrationType}
      */
@@ -2243,18 +2284,6 @@ export {
      * @property {module:model/OutgoingIntegrationTypes}
      */
     OutgoingIntegrationTypes,
-
-    /**
-     * The OutgoingIntegrationWebhookTemplate model constructor.
-     * @property {module:model/OutgoingIntegrationWebhookTemplate}
-     */
-    OutgoingIntegrationWebhookTemplate,
-
-    /**
-     * The OutgoingIntegrationWebhookTemplates model constructor.
-     * @property {module:model/OutgoingIntegrationWebhookTemplates}
-     */
-    OutgoingIntegrationWebhookTemplates,
 
     /**
      * The PatchItemCatalogAction model constructor.
@@ -2269,16 +2298,16 @@ export {
     PatchManyItemsCatalogAction,
 
     /**
+     * The PendingPointsNotificationPolicy model constructor.
+     * @property {module:model/PendingPointsNotificationPolicy}
+     */
+    PendingPointsNotificationPolicy,
+
+    /**
      * The Picklist model constructor.
      * @property {module:model/Picklist}
      */
     Picklist,
-
-    /**
-     * The PriorityPosition model constructor.
-     * @property {module:model/PriorityPosition}
-     */
-    PriorityPosition,
 
     /**
      * The ProfileAudiencesChanges model constructor.
@@ -2395,6 +2424,12 @@ export {
     RoleV2ApplicationDetails,
 
     /**
+     * The RoleV2Base model constructor.
+     * @property {module:model/RoleV2Base}
+     */
+    RoleV2Base,
+
+    /**
      * The RoleV2PermissionSet model constructor.
      * @property {module:model/RoleV2PermissionSet}
      */
@@ -2407,10 +2442,10 @@ export {
     RoleV2Permissions,
 
     /**
-     * The RoleV2PermissionsRoles model constructor.
-     * @property {module:model/RoleV2PermissionsRoles}
+     * The RoleV2RolesGroup model constructor.
+     * @property {module:model/RoleV2RolesGroup}
      */
-    RoleV2PermissionsRoles,
+    RoleV2RolesGroup,
 
     /**
      * The RollbackAddedLoyaltyPointsEffectProps model constructor.
@@ -2647,6 +2682,12 @@ export {
     UpdateCampaignCollection,
 
     /**
+     * The UpdateCampaignEvaluationGroup model constructor.
+     * @property {module:model/UpdateCampaignEvaluationGroup}
+     */
+    UpdateCampaignEvaluationGroup,
+
+    /**
      * The UpdateCampaignGroup model constructor.
      * @property {module:model/UpdateCampaignGroup}
      */
@@ -2731,12 +2772,6 @@ export {
     UpdateUser,
 
     /**
-     * The UpdateUserLatestFeedTimestamp model constructor.
-     * @property {module:model/UpdateUserLatestFeedTimestamp}
-     */
-    UpdateUserLatestFeedTimestamp,
-
-    /**
      * The User model constructor.
      * @property {module:model/User}
      */
@@ -2747,12 +2782,6 @@ export {
      * @property {module:model/UserEntity}
      */
     UserEntity,
-
-    /**
-     * The UserFeedNotifications model constructor.
-     * @property {module:model/UserFeedNotifications}
-     */
-    UserFeedNotifications,
 
     /**
      * The Webhook model constructor.
@@ -2771,6 +2800,12 @@ export {
      * @property {module:model/WebhookLogEntry}
      */
     WebhookLogEntry,
+
+    /**
+     * The WebhookWithOutgoingIntegrationDetails model constructor.
+     * @property {module:model/WebhookWithOutgoingIntegrationDetails}
+     */
+    WebhookWithOutgoingIntegrationDetails,
 
     /**
      * The WillAwardGiveawayEffectProps model constructor.

@@ -78,6 +78,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property groupId (base name: "groupId")', function() {
+      // uncomment below and update the code to test the property groupId
+      //var instane = new TalonOne.CampaignSetBranchNode();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property locked (base name: "locked")', function() {
+      // uncomment below and update the code to test the property locked
+      //var instane = new TalonOne.CampaignSetBranchNode();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalonOne.CampaignSetBranchNode();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property evaluationMode (base name: "evaluationMode")', function() {
+      // uncomment below and update the code to test the property evaluationMode
+      //var instane = new TalonOne.CampaignSetBranchNode();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

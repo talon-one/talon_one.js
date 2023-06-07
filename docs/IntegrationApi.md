@@ -23,8 +23,7 @@ Method | HTTP request | Description
 [**reopenCustomerSession**](IntegrationApi.md#reopenCustomerSession) | **PUT** /v2/customer_sessions/{customerSessionId}/reopen | Reopen customer session
 [**returnCartItems**](IntegrationApi.md#returnCartItems) | **POST** /v2/customer_sessions/{customerSessionId}/returns | Return cart items
 [**syncCatalog**](IntegrationApi.md#syncCatalog) | **PUT** /v1/catalogs/{catalogId}/sync | Sync cart item catalog
-[**trackEvent**](IntegrationApi.md#trackEvent) | **POST** /v1/events | Track event
-[**trackEventV2**](IntegrationApi.md#trackEventV2) | **POST** /v2/events | Track event V2
+[**trackEventV2**](IntegrationApi.md#trackEventV2) | **POST** /v2/events | Track event
 [**updateAudienceCustomersAttributes**](IntegrationApi.md#updateAudienceCustomersAttributes) | **PUT** /v2/audience_customers/{audienceId}/attributes | Update profile attributes for all customers in audience
 [**updateAudienceV2**](IntegrationApi.md#updateAudienceV2) | **PUT** /v2/audiences/{audienceId} | Update audience name
 [**updateCustomerProfileAudiences**](IntegrationApi.md#updateCustomerProfileAudiences) | **POST** /v2/customer_audiences | Update multiple customer profiles&#39; audiences
@@ -412,7 +411,7 @@ api_key_v1.apiKey = 'YOUR API KEY';
 //api_key_v1.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.IntegrationApi();
-let integrationId = "integrationId_example"; // String | The integration ID of the customer profile. You can get the `integrationId` of a profile using: - A customer session integration Id with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
+let integrationId = "integrationId_example"; // String | The integration ID of the customer profile. You can get the `integrationId` of a profile using: - A customer session integration ID with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
 apiInstance.deleteCustomerData(integrationId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -426,7 +425,7 @@ apiInstance.deleteCustomerData(integrationId).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationId** | **String**| The integration ID of the customer profile. You can get the &#x60;integrationId&#x60; of a profile using: - A customer session integration Id with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application&#39;s customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint.  | 
+ **integrationId** | **String**| The integration ID of the customer profile. You can get the &#x60;integrationId&#x60; of a profile using: - A customer session integration ID with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application&#39;s customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint.  | 
 
 ### Return type
 
@@ -462,7 +461,7 @@ api_key_v1.apiKey = 'YOUR API KEY';
 //api_key_v1.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.IntegrationApi();
-let integrationId = "integrationId_example"; // String | The integration ID of the customer profile. You can get the `integrationId` of a profile using: - A customer session integration Id with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
+let integrationId = "integrationId_example"; // String | The integration ID of the customer profile. You can get the `integrationId` of a profile using: - A customer session integration ID with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
 let opts = {
   'profile': true, // Boolean | Set to `true` to include customer profile information in the response.
   'referrals': true, // Boolean | Set to `true` to include referral information in the response.
@@ -483,7 +482,7 @@ apiInstance.getCustomerInventory(integrationId, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationId** | **String**| The integration ID of the customer profile. You can get the &#x60;integrationId&#x60; of a profile using: - A customer session integration Id with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application&#39;s customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint.  | 
+ **integrationId** | **String**| The integration ID of the customer profile. You can get the &#x60;integrationId&#x60; of a profile using: - A customer session integration ID with the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint. - The Management API with the [List application&#39;s customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint.  | 
  **profile** | **Boolean**| Set to &#x60;true&#x60; to include customer profile information in the response. | [optional] 
  **referrals** | **Boolean**| Set to &#x60;true&#x60; to include referral information in the response. | [optional] 
  **coupons** | **Boolean**| Set to &#x60;true&#x60; to include coupon information in the response. | [optional] 
@@ -693,7 +692,7 @@ let opts = {
   'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
   'pageSize': 1000, // Number | The number of items in this response.
-  'skip': 56 // Number | Skips the given number of items when paging through large result sets.
+  'skip': 56 // Number | The number of items to skip when paging through large result sets.
 };
 apiInstance.getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -714,7 +713,7 @@ Name | Type | Description  | Notes
  **startDate** | **Date**| Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
  **endDate** | **Date**| Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
  **pageSize** | **Number**| The number of items in this response. | [optional] [default to 1000]
- **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
+ **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
 
 ### Return type
 
@@ -757,7 +756,7 @@ let opts = {
   'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string. 
   'pageSize': 50, // Number | The number of items in this response.
-  'skip': 56 // Number | Skips the given number of items when paging through large result sets.
+  'skip': 56 // Number | The number of items to skip when paging through large result sets.
 };
 apiInstance.getLoyaltyProgramProfileTransactions(loyaltyProgramId, integrationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -778,7 +777,7 @@ Name | Type | Description  | Notes
  **startDate** | **Date**| Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
  **endDate** | **Date**| Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
  **pageSize** | **Number**| The number of items in this response. | [optional] [default to 50]
- **skip** | **Number**| Skips the given number of items when paging through large result sets. | [optional] 
+ **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
 
 ### Return type
 
@@ -954,7 +953,7 @@ Name | Type | Description  | Notes
 
 Return cart items
 
-Create a new return request for the specified cart items.  This endpoint automatically changes the session state from &#x60;closed&#x60; to &#x60;partially_returned&#x60;.  Its behavior depends on whether [cart item flattening](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening) is enabled for the Application.  **Note:** This will roll back any effects associated with these cart items. For more information, see [our documentation on session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session-states) and [this tutorial](https://docs.talon.one/docs/dev/tutorials/partially-returning-a-session). 
+Create a new return request for the specified cart items.  This endpoint automatically changes the session state from &#x60;closed&#x60; to &#x60;partially_returned&#x60;.  Its behavior depends on whether [cart item flattening](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening) is enabled for the Application.  **Note:** This will roll back any effects associated with these cart items. For more information, see [our documentation on session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session-states) and [this tutorial](https://docs.talon.one/docs/dev/tutorials/partially-returning-a-session). 
 
 ### Example
 
@@ -1056,67 +1055,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## trackEvent
-
-> IntegrationState trackEvent(body, opts)
-
-Track event
-
-&lt;div class&#x3D;\&quot;redoc-section\&quot;&gt;   &lt;p class&#x3D;\&quot;title\&quot;&gt;Deprecation warning&lt;/p&gt;   &lt;p&gt;This endpoint is DEPRECATED and will be sunset on March 31st 2023.   Use &lt;a href&#x3D;\&quot;https://docs.talon.one/integration-api#tag/Events/operation/trackEventV2\&quot;&gt;Track Event V2&lt;/a&gt; instead.&lt;/p&gt;   &lt;p&gt;See &lt;a href&#x3D;\&quot;https://docs.talon.one/docs/dev/tutorials/migrating-to-v2\&quot;&gt;Migrating to V2&lt;/a&gt;.&lt;/p&gt; &lt;/div&gt;  Triggers a custom event in a customer session. You can then check this event in your rules.  Before using this endpoint, create your event as a custom attribute of type &#x60;event&#x60;.  An event is always part of a session. If either the profile or the session does not exist, a new empty profile/session is created. If the specified session already exists, it must belong to the same &#x60;profileId&#x60; or an error will be returned. 
-
-### Example
-
-```javascript
-import TalonOne from 'talon_one';
-let defaultClient = TalonOne.ApiClient.instance;
-// Configure API key authorization: api_key_v1
-let api_key_v1 = defaultClient.authentications['api_key_v1'];
-api_key_v1.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key_v1.apiKeyPrefix = 'Token';
-
-let apiInstance = new TalonOne.IntegrationApi();
-let body = new TalonOne.NewEvent(); // NewEvent | body
-let opts = {
-  'dry': true // Boolean | Indicates whether to persist the changes. Changes are ignored when `dry=true`. 
-};
-apiInstance.trackEvent(body, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**NewEvent**](NewEvent.md)| body | 
- **dry** | **Boolean**| Indicates whether to persist the changes. Changes are ignored when &#x60;dry&#x3D;true&#x60;.  | [optional] 
-
-### Return type
-
-[**IntegrationState**](IntegrationState.md)
-
-### Authorization
-
-[api_key_v1](../README.md#api_key_v1)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## trackEventV2
 
 > IntegrationStateV2 trackEventV2(body, opts)
 
-Track event V2
+Track event
 
-Triggers a custom event. You can build a condition around this event in your rules.  Talon.One offers a set of [built-in events](https://docs.talon.one/docs/dev/concepts/events). Ensure you do not create a custom event when you can use a built-in event.  For example, use this endpoint to trigger an event when a customer shares a link to a product. See the [tutorial](https://docs.talon.one/docs/product/tutorials/referrals/incentivizing-product-link-sharing).  **Important:** - &#x60;profileId&#x60; is required. An event V2 is associated with a customer profile. - Before using this endpoint, create your event as a custom attribute of type &#x60;event&#x60;. See the [Developer docs](https://docs.talon.one/docs/dev/concepts/events#creating-a-custom-event).  When you successfully sent an event to Talon.One, you can list received events in the **Events** view in the Campaign Manager. 
+Triggers a custom event. You can build a condition around this event in your rules.  Talon.One offers a set of [built-in events](https://docs.talon.one/docs/dev/concepts/events). Ensure you do not create a custom event when you can use a built-in event.  For example, use this endpoint to trigger an event when a customer shares a link to a product. See the [tutorial](https://docs.talon.one/docs/product/tutorials/referrals/incentivizing-product-link-sharing).  **Important:** - &#x60;profileId&#x60; is required. An event is associated with a customer profile. - Before using this endpoint, create your event as a custom attribute of type &#x60;event&#x60;. See the [Developer docs](https://docs.talon.one/docs/dev/concepts/events#creating-a-custom-event). - We recommend sending requests sequentially. See [Managing parallel requests](https://docs.talon.one/docs/dev/getting-started/integration-tutorial#managing-parallel-requests).  When you successfully sent an event to Talon.One, you can list received events in the **Events** view in the Campaign Manager. 
 
 ### Example
 
@@ -1326,7 +1271,7 @@ null (empty response body)
 
 Update customer profile
 
-Update or create a [Customer Profile](https://docs.talon.one/docs/dev/concepts/entities#customer-profile). This endpoint triggers the Rule Builder.  You can use this endpoint to: - Set attributes on the given customer profile. Ensure you create the attributes in the Campaign Manager, first. - Modify the audience the customer profile is a member of.  &lt;div class&#x3D;\&quot;redoc-section\&quot;&gt;   &lt;p class&#x3D;\&quot;title\&quot;&gt;Performance tips&lt;/p&gt;    Updating a customer profile returns a response with the requested integration state.    You can use the &#x60;responseContent&#x60; property to save yourself extra API calls. For example, you can get   the customer profile details directly without extra requests. &lt;/div&gt; 
+Update or create a [Customer Profile](https://docs.talon.one/docs/dev/concepts/entities#customer-profile). This endpoint triggers the Rule Builder.  You can use this endpoint to: - Set attributes on the given customer profile. Ensure you create the attributes in the Campaign Manager, first. - Modify the audience the customer profile is a member of.  &lt;div class&#x3D;\&quot;redoc-section\&quot;&gt;   &lt;p class&#x3D;\&quot;title\&quot;&gt;Performance tips&lt;/p&gt;    - Updating a customer profile returns a response with the requested integration state.   - You can use the &#x60;responseContent&#x60; property to save yourself extra API calls. For example, you can get     the customer profile details directly without extra requests.   - We recommend sending requests sequentially.     See [Managing parallel requests](https://docs.talon.one/docs/dev/getting-started/integration-tutorial#managing-parallel-requests). &lt;/div&gt; 
 
 ### Example
 
@@ -1438,7 +1383,7 @@ Name | Type | Description  | Notes
 
 Update customer session
 
-Update or create a [customer session](https://docs.talon.one/docs/dev/concepts/entities#customer-session). The endpoint responds with the potential promotion rule [effects](https://docs.talon.one/docs/dev/integration-api/api-effects) that match the current cart. For example, use this endpoint to share the contents of a customer&#39;s cart with Talon.One.  **Note:** The currency for the session and the cart items in the session is the currency set for the Application that owns this session.  ### Session management  To use this endpoint, start by learning about [customer sessions](https://docs.talon.one/docs/dev/concepts/entities#customer-session) and their states and refer to the &#x60;state&#x60; parameter documentation the request body schema docs below.  ### Sessions and customer profiles  - To link a session to a customer profile, set the &#x60;profileId&#x60; parameter in the request body to a customer profile&#39;s &#x60;integrationId&#x60;. - While you can create an anonymous session with &#x60;profileId&#x3D;\&quot;\&quot;&#x60;, we recommend you use a guest ID instead. - A profile can be linked to simultaneous sessions in different Applications. Either:   - Use unique session integration IDs or,   - Use the same session integration ID across all of the Applications.  **Note:** If the specified profile does not exist, an empty profile is **created automatically**. You can update it with [Update customer profile](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/updateCustomerProfileV2).  &lt;div class&#x3D;\&quot;redoc-section\&quot;&gt;   &lt;p class&#x3D;\&quot;title\&quot;&gt;Performance tips&lt;/p&gt;    Updating a customer session returns a response with the new integration state. Use the &#x60;responseContent&#x60; property to save yourself extra API calls.   For example, you can get the customer profile details directly without extra requests. &lt;/div&gt;  For more information, see: - The introductory video in [Getting started](https://docs.talon.one/docs/dev/getting-started/overview). - The [integration tutorial](https://docs.talon.one/docs/dev/tutorials/integrating-talon-one). 
+Update or create a [customer session](https://docs.talon.one/docs/dev/concepts/entities#customer-session). The endpoint responds with the potential promotion rule [effects](https://docs.talon.one/docs/dev/integration-api/api-effects) that match the current cart. For example, use this endpoint to share the contents of a customer&#39;s cart with Talon.One.  **Note:** The currency for the session and the cart items in the session is the currency set for the Application that owns this session.  ### Session management  To use this endpoint, start by learning about [customer sessions](https://docs.talon.one/docs/dev/concepts/entities#customer-session) and their states and refer to the &#x60;state&#x60; parameter documentation the request body schema docs below.  ### Sessions and customer profiles  - To link a session to a customer profile, set the &#x60;profileId&#x60; parameter in the request body to a customer profile&#39;s &#x60;integrationId&#x60;. - While you can create an anonymous session with &#x60;profileId&#x3D;\&quot;\&quot;&#x60;, we recommend you use a guest ID instead. - A profile can be linked to simultaneous sessions in different Applications. Either:   - Use unique session integration IDs or,   - Use the same session integration ID across all of the Applications.  **Note:** If the specified profile does not exist, an empty profile is **created automatically**.   You can update it with [Update customer profile](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/updateCustomerProfileV2).  &lt;div class&#x3D;\&quot;redoc-section\&quot;&gt;   &lt;p class&#x3D;\&quot;title\&quot;&gt;Performance tips&lt;/p&gt;    - Updating a customer session returns a response with the new integration state. Use the &#x60;responseContent&#x60; property to save yourself extra API calls.     For example, you can get the customer profile details directly without extra requests.   - We recommend sending requests sequentially. See [Managing parallel requests](https://docs.talon.one/docs/dev/getting-started/integration-tutorial#managing-parallel-requests). &lt;/div&gt;  For more information, see: - The introductory video in [Getting started](https://docs.talon.one/docs/dev/getting-started/overview). - The [integration tutorial](https://docs.talon.one/docs/dev/tutorials/integrating-talon-one). 
 
 ### Example
 

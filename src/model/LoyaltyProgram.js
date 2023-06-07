@@ -17,7 +17,7 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoyaltyProgram {
     /**
@@ -105,6 +105,12 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
+            if (data.hasOwnProperty('tiersExpireIn')) {
+                obj['tiersExpireIn'] = ApiClient.convertToType(data['tiersExpireIn'], 'String');
+            }
+            if (data.hasOwnProperty('tiersDowngradePolicy')) {
+                obj['tiersDowngradePolicy'] = ApiClient.convertToType(data['tiersDowngradePolicy'], 'String');
+            }
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
             }
@@ -119,6 +125,12 @@ class LoyaltyProgram {
             }
             if (data.hasOwnProperty('cardBased')) {
                 obj['cardBased'] = ApiClient.convertToType(data['cardBased'], 'Boolean');
+            }
+            if (data.hasOwnProperty('canUpdateTiers')) {
+                obj['canUpdateTiers'] = ApiClient.convertToType(data['canUpdateTiers'], 'Boolean');
+            }
+            if (data.hasOwnProperty('canUpgradeToAdvancedTiers')) {
+                obj['canUpgradeToAdvancedTiers'] = ApiClient.convertToType(data['canUpgradeToAdvancedTiers'], 'Boolean');
             }
         }
         return obj;
@@ -188,6 +200,18 @@ LoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 LoyaltyProgram.prototype['sandbox'] = undefined;
 
 /**
+ * The duration is an **integer** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
+ * @member {String} tiersExpireIn
+ */
+LoyaltyProgram.prototype['tiersExpireIn'] = undefined;
+
+/**
+ * Customers's tier downgrade policy.  - `one_down`: Once the tier expires and if the user doesn't have enough points to stay in the tier, the user is downgraded one tier down.  - `balance_based`: Once the tier expires, the user's tier is evaluated based on the amount of active points the user has at this instant. 
+ * @member {module:model/LoyaltyProgram.TiersDowngradePolicyEnum} tiersDowngradePolicy
+ */
+LoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
+
+/**
  * The ID of the Talon.One account that owns this program.
  * @member {Number} accountID
  */
@@ -218,8 +242,43 @@ LoyaltyProgram.prototype['timezone'] = undefined;
  */
 LoyaltyProgram.prototype['cardBased'] = false;
 
+/**
+ * True if it is possible to change tiers definition.
+ * @member {Boolean} canUpdateTiers
+ * @default false
+ */
+LoyaltyProgram.prototype['canUpdateTiers'] = false;
+
+/**
+ * True if it is possible to introduce tiersExpireIn and tiersDowngradePolicy.
+ * @member {Boolean} canUpgradeToAdvancedTiers
+ * @default false
+ */
+LoyaltyProgram.prototype['canUpgradeToAdvancedTiers'] = false;
 
 
+
+
+
+/**
+ * Allowed values for the <code>tiersDowngradePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoyaltyProgram['TiersDowngradePolicyEnum'] = {
+
+    /**
+     * value: "one_down"
+     * @const
+     */
+    "one_down": "one_down",
+
+    /**
+     * value: "balance_based"
+     * @const
+     */
+    "balance_based": "balance_based"
+};
 
 
 

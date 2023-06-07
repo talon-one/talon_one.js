@@ -17,7 +17,7 @@ import NewReturn from './NewReturn';
 /**
  * The ReturnIntegrationRequest model module.
  * @module model/ReturnIntegrationRequest
- * @version 5.0.0
+ * @version 5.0.1
  */
 class ReturnIntegrationRequest {
     /**

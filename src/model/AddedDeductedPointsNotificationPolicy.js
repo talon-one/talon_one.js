@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddedDeductedPointsNotificationPolicy model module.
  * @module model/AddedDeductedPointsNotificationPolicy
- * @version 5.0.0
+ * @version 5.0.1
  */
 class AddedDeductedPointsNotificationPolicy {
     /**

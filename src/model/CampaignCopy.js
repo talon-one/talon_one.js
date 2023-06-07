@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignCopy model module.
  * @module model/CampaignCopy
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CampaignCopy {
     /**
@@ -67,6 +67,9 @@ class CampaignCopy {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
+            if (data.hasOwnProperty('evaluationGroupId')) {
+                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
+            }
         }
         return obj;
     }
@@ -109,6 +112,12 @@ CampaignCopy.prototype['endTime'] = undefined;
  * @member {Array.<String>} tags
  */
 CampaignCopy.prototype['tags'] = undefined;
+
+/**
+ * The ID of the campaign evaluation group the campaign belongs to.
+ * @member {Number} evaluationGroupId
+ */
+CampaignCopy.prototype['evaluationGroupId'] = undefined;
 
 
 

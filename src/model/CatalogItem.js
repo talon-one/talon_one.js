@@ -17,7 +17,7 @@ import ItemAttribute from './ItemAttribute';
 /**
  * The CatalogItem model module.
  * @module model/CatalogItem
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CatalogItem {
     /**

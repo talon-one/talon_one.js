@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseNotificationWebhook model module.
  * @module model/BaseNotificationWebhook
- * @version 5.0.0
+ * @version 5.0.1
  */
 class BaseNotificationWebhook {
     /**

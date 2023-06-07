@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExpiringPointsNotificationTrigger model module.
  * @module model/ExpiringPointsNotificationTrigger
- * @version 5.0.0
+ * @version 5.0.1
  */
 class ExpiringPointsNotificationTrigger {
     /**

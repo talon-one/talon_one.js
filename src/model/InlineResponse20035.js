@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import WebhookLogEntry from './WebhookLogEntry';
+import WebhookActivationLogEntry from './WebhookActivationLogEntry';
 
 /**
  * The InlineResponse20035 model module.
  * @module model/InlineResponse20035
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse20035 {
     /**
      * Constructs a new <code>InlineResponse20035</code>.
      * @alias module:model/InlineResponse20035
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/WebhookLogEntry>} 
+     * @param data {Array.<module:model/WebhookActivationLogEntry>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20035 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WebhookLogEntry]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WebhookActivationLogEntry]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20035 {
 InlineResponse20035.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/WebhookLogEntry>} data
+ * @member {Array.<module:model/WebhookActivationLogEntry>} data
  */
 InlineResponse20035.prototype['data'] = undefined;
 

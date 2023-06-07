@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 5.0.0
+ * @version 5.0.1
  */
 class Campaign {
     /**
@@ -231,7 +231,7 @@ Campaign.prototype['description'] = undefined;
 Campaign.prototype['startTime'] = undefined;
 
 /**
- * Timestamp the campaign will become inactive.
+ * Timestamp when the campaign will become inactive.
  * @member {Date} endTime
  */
 Campaign.prototype['endTime'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EntityWithTalangVisibleID model module.
  * @module model/EntityWithTalangVisibleID
- * @version 5.0.0
+ * @version 5.0.1
  */
 class EntityWithTalangVisibleID {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ShowBundleMetadataEffectProps model module.
  * @module model/ShowBundleMetadataEffectProps
- * @version 5.0.0
+ * @version 5.0.1
  */
 class ShowBundleMetadataEffectProps {
     /**

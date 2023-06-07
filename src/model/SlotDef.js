@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SlotDef model module.
  * @module model/SlotDef
- * @version 5.0.0
+ * @version 5.0.1
  */
 class SlotDef {
     /**

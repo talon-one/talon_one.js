@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MultipleCustomerProfileIntegrationRequestItem model module.
  * @module model/MultipleCustomerProfileIntegrationRequestItem
- * @version 5.0.0
+ * @version 5.0.1
  */
 class MultipleCustomerProfileIntegrationRequestItem {
     /**

@@ -17,7 +17,7 @@ import NewCustomerSessionV2 from './NewCustomerSessionV2';
 /**
  * The IntegrationRequest model module.
  * @module model/IntegrationRequest
- * @version 5.0.0
+ * @version 5.0.1
  */
 class IntegrationRequest {
     /**
@@ -70,7 +70,7 @@ class IntegrationRequest {
 IntegrationRequest.prototype['customerSession'] = undefined;
 
 /**
- * Extends the response with the chosen data entities. Use this property to get as much data as you need in one _Update customer session_ request instead of sending extra requests to other endpoints. 
+ * Extends the response with the chosen data entities. Use this property to get as much data as you need in one _Update customer session_ request instead of sending extra requests to other endpoints.  **Note:** To retrieve loyalty card details, your request must include a loyalty card ID. 
  * @member {Array.<module:model/IntegrationRequest.ResponseContentEnum>} responseContent
  */
 IntegrationRequest.prototype['responseContent'] = undefined;

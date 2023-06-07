@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property operationIds (base name: "operationIds")', function() {
-      // uncomment below and update the code to test the property operationIds
+    it('should have the property logicalOperations (base name: "logicalOperations")', function() {
+      // uncomment below and update the code to test the property logicalOperations
       //var instane = new TalonOne.RoleV2PermissionSet();
       //expect(instance).to.be();
     });
