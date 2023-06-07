@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventV2 model module.
  * @module model/EventV2
- * @version 5.0.0
+ * @version 5.0.1
  */
 class EventV2 {
     /**

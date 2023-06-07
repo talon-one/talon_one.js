@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddItemCatalogAction model module.
  * @module model/AddItemCatalogAction
- * @version 5.0.0
+ * @version 5.0.1
  */
 class AddItemCatalogAction {
     /**

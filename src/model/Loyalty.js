@@ -18,12 +18,12 @@ import LoyaltyProgramLedgers from './LoyaltyProgramLedgers';
 /**
  * The Loyalty model module.
  * @module model/Loyalty
- * @version 5.0.0
+ * @version 5.0.1
  */
 class Loyalty {
     /**
      * Constructs a new <code>Loyalty</code>.
-     * Customer specific information about loyalty points.
+     * Customer-specific information about loyalty points.
      * @alias module:model/Loyalty
      * @param programs {Object.<String, module:model/LoyaltyProgramLedgers>} Displays information about point balances in profile-based programs.
      */

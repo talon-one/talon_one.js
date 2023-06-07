@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewInternalAudience model module.
  * @module model/NewInternalAudience
- * @version 5.0.0
+ * @version 5.0.1
  */
 class NewInternalAudience {
     /**

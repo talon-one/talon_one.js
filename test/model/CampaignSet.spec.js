@@ -54,20 +54,14 @@
       //expect(instance).to.be.a(TalonOne.CampaignSet);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new TalonOne.CampaignSet();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
-      //var instane = new TalonOne.CampaignSet();
-      //expect(instance).to.be();
-    });
-
     it('should have the property applicationId (base name: "applicationId")', function() {
       // uncomment below and update the code to test the property applicationId
+      //var instane = new TalonOne.CampaignSet();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new TalonOne.CampaignSet();
       //expect(instance).to.be();
     });

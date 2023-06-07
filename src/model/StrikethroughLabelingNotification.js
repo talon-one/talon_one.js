@@ -18,7 +18,7 @@ import StrikethroughTrigger from './StrikethroughTrigger';
 /**
  * The StrikethroughLabelingNotification model module.
  * @module model/StrikethroughLabelingNotification
- * @version 5.0.0
+ * @version 5.0.1
  */
 class StrikethroughLabelingNotification {
     /**

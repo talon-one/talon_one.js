@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import ModelExport from './ModelExport';
+import Change from './Change';
 
 /**
  * The InlineResponse20039 model module.
  * @module model/InlineResponse20039
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse20039 {
     /**
      * Constructs a new <code>InlineResponse20039</code>.
      * @alias module:model/InlineResponse20039
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/ModelExport>} 
+     * @param data {Array.<module:model/Change>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(data) { 
         
-        InlineResponse20039.initialize(this, totalResultSize, data);
+        InlineResponse20039.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20039 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse20039 {
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Change]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse20039 {
 InlineResponse20039.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ModelExport>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20039.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Array.<module:model/Change>} data
  */
 InlineResponse20039.prototype['data'] = undefined;
 

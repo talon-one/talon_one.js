@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignNotification model module.
  * @module model/CampaignNotification
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CampaignNotification {
     /**

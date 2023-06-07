@@ -18,7 +18,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The ApplicationEvent model module.
  * @module model/ApplicationEvent
- * @version 5.0.0
+ * @version 5.0.1
  */
 class ApplicationEvent {
     /**

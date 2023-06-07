@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewReferral model module.
  * @module model/NewReferral
- * @version 5.0.0
+ * @version 5.0.1
  */
 class NewReferral {
     /**

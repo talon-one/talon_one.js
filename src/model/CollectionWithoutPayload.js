@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CollectionWithoutPayload model module.
  * @module model/CollectionWithoutPayload
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CollectionWithoutPayload {
     /**

@@ -13,13 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import Campaign from './Campaign';
-import PriorityPosition from './PriorityPosition';
+import CampaignEvaluationPosition from './CampaignEvaluationPosition';
 import Ruleset from './Ruleset';
 
 /**
  * The CampaignCreatedNotification model module.
  * @module model/CampaignCreatedNotification
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CampaignCreatedNotification {
     /**
@@ -27,11 +27,11 @@ class CampaignCreatedNotification {
      * A notification regarding a campaign that was created.
      * @alias module:model/CampaignCreatedNotification
      * @param campaign {module:model/Campaign} 
-     * @param priority {module:model/PriorityPosition} 
+     * @param evaluationPosition {module:model/CampaignEvaluationPosition} 
      */
-    constructor(campaign, priority) { 
+    constructor(campaign, evaluationPosition) { 
         
-        CampaignCreatedNotification.initialize(this, campaign, priority);
+        CampaignCreatedNotification.initialize(this, campaign, evaluationPosition);
     }
 
     /**
@@ -39,9 +39,9 @@ class CampaignCreatedNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaign, priority) { 
+    static initialize(obj, campaign, evaluationPosition) { 
         obj['campaign'] = campaign;
-        obj['priority'] = priority;
+        obj['evaluationPosition'] = evaluationPosition;
     }
 
     /**
@@ -61,8 +61,8 @@ class CampaignCreatedNotification {
             if (data.hasOwnProperty('ruleset')) {
                 obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
             }
-            if (data.hasOwnProperty('priority')) {
-                obj['priority'] = PriorityPosition.constructFromObject(data['priority']);
+            if (data.hasOwnProperty('evaluationPosition')) {
+                obj['evaluationPosition'] = CampaignEvaluationPosition.constructFromObject(data['evaluationPosition']);
             }
         }
         return obj;
@@ -82,9 +82,9 @@ CampaignCreatedNotification.prototype['campaign'] = undefined;
 CampaignCreatedNotification.prototype['ruleset'] = undefined;
 
 /**
- * @member {module:model/PriorityPosition} priority
+ * @member {module:model/CampaignEvaluationPosition} evaluationPosition
  */
-CampaignCreatedNotification.prototype['priority'] = undefined;
+CampaignCreatedNotification.prototype['evaluationPosition'] = undefined;
 
 
 

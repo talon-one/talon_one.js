@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property evaluationGroupId (base name: "evaluationGroupId")', function() {
+      // uncomment below and update the code to test the property evaluationGroupId
+      //var instane = new TalonOne.CreateTemplateCampaign();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

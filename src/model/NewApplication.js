@@ -18,12 +18,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 5.0.0
+ * @version 5.0.1
  */
 class NewApplication {
     /**
      * Constructs a new <code>NewApplication</code>.
-     * 
      * @alias module:model/NewApplication
      * @param name {String} The name of this application.
      * @param timezone {String} A string containing an IANA timezone descriptor.
@@ -76,12 +75,6 @@ class NewApplication {
             }
             if (data.hasOwnProperty('limits')) {
                 obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
-            }
-            if (data.hasOwnProperty('campaignPriority')) {
-                obj['campaignPriority'] = ApiClient.convertToType(data['campaignPriority'], 'String');
-            }
-            if (data.hasOwnProperty('exclusiveCampaignsStrategy')) {
-                obj['exclusiveCampaignsStrategy'] = ApiClient.convertToType(data['exclusiveCampaignsStrategy'], 'String');
             }
             if (data.hasOwnProperty('defaultDiscountScope')) {
                 obj['defaultDiscountScope'] = ApiClient.convertToType(data['defaultDiscountScope'], 'String');
@@ -157,20 +150,6 @@ NewApplication.prototype['attributes'] = undefined;
 NewApplication.prototype['limits'] = undefined;
 
 /**
- * Default [priority](https://docs.talon.one/docs/product/applications/setting-up-campaign-priorities) for campaigns created in this Application. 
- * @member {module:model/NewApplication.CampaignPriorityEnum} campaignPriority
- * @default 'universal'
- */
-NewApplication.prototype['campaignPriority'] = 'universal';
-
-/**
- * The strategy used when choosing exclusive campaigns for evaluation.
- * @member {module:model/NewApplication.ExclusiveCampaignsStrategyEnum} exclusiveCampaignsStrategy
- * @default 'listOrder'
- */
-NewApplication.prototype['exclusiveCampaignsStrategy'] = 'listOrder';
-
-/**
  * The default scope to apply `setDiscount` effects on if no scope was provided with the effect. 
  * @member {module:model/NewApplication.DefaultDiscountScopeEnum} defaultDiscountScope
  */
@@ -183,7 +162,7 @@ NewApplication.prototype['defaultDiscountScope'] = undefined;
 NewApplication.prototype['enableCascadingDiscounts'] = undefined;
 
 /**
- * Indicates if cart items of quantity larger than one should be separated into different items of quantity one. See the [docs](https://docs.talon.one/docs/product/campaigns/campaign-evaluation#flattening). 
+ * Indicates if cart items of quantity larger than one should be separated into different items of quantity one. See [the docs](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening). 
  * @member {Boolean} enableFlattenedCartItems
  */
 NewApplication.prototype['enableFlattenedCartItems'] = undefined;
@@ -245,60 +224,6 @@ NewApplication['CaseSensitivityEnum'] = {
      * @const
      */
     "insensitive-lowercase": "insensitive-lowercase"
-};
-
-
-/**
- * Allowed values for the <code>campaignPriority</code> property.
- * @enum {String}
- * @readonly
- */
-NewApplication['CampaignPriorityEnum'] = {
-
-    /**
-     * value: "universal"
-     * @const
-     */
-    "universal": "universal",
-
-    /**
-     * value: "stackable"
-     * @const
-     */
-    "stackable": "stackable",
-
-    /**
-     * value: "exclusive"
-     * @const
-     */
-    "exclusive": "exclusive"
-};
-
-
-/**
- * Allowed values for the <code>exclusiveCampaignsStrategy</code> property.
- * @enum {String}
- * @readonly
- */
-NewApplication['ExclusiveCampaignsStrategyEnum'] = {
-
-    /**
-     * value: "listOrder"
-     * @const
-     */
-    "listOrder": "listOrder",
-
-    /**
-     * value: "lowestDiscount"
-     * @const
-     */
-    "lowestDiscount": "lowestDiscount",
-
-    /**
-     * value: "highestDiscount"
-     * @const
-     */
-    "highestDiscount": "highestDiscount"
 };
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2ApplicationDetails model module.
  * @module model/RoleV2ApplicationDetails
- * @version 5.0.0
+ * @version 5.0.1
  */
 class RoleV2ApplicationDetails {
     /**
@@ -64,19 +64,19 @@ class RoleV2ApplicationDetails {
 }
 
 /**
- * Name of the Application-level permission set.
+ * Name of the Application-related permission set for the given Application.
  * @member {String} application
  */
 RoleV2ApplicationDetails.prototype['application'] = undefined;
 
 /**
- * Name of the campaign-level permission set.
+ * Name of the campaign-related permission set for the given Application.
  * @member {String} campaign
  */
 RoleV2ApplicationDetails.prototype['campaign'] = undefined;
 
 /**
- * Name of the draft campaign-level permission set.
+ * Name of the draft campaign-related permission set for the given Application.
  * @member {String} draftCampaign
  */
 RoleV2ApplicationDetails.prototype['draftCampaign'] = undefined;

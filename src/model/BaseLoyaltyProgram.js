@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseLoyaltyProgram model module.
  * @module model/BaseLoyaltyProgram
- * @version 5.0.0
+ * @version 5.0.1
  */
 class BaseLoyaltyProgram {
     /**
@@ -70,6 +70,12 @@ class BaseLoyaltyProgram {
             }
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tiersExpireIn')) {
+                obj['tiersExpireIn'] = ApiClient.convertToType(data['tiersExpireIn'], 'String');
+            }
+            if (data.hasOwnProperty('tiersDowngradePolicy')) {
+                obj['tiersDowngradePolicy'] = ApiClient.convertToType(data['tiersDowngradePolicy'], 'String');
             }
         }
         return obj;
@@ -126,8 +132,41 @@ BaseLoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
  */
 BaseLoyaltyProgram.prototype['sandbox'] = undefined;
 
+/**
+ * The duration is an **integer** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
+ * @member {String} tiersExpireIn
+ */
+BaseLoyaltyProgram.prototype['tiersExpireIn'] = undefined;
+
+/**
+ * Customers's tier downgrade policy.  - `one_down`: Once the tier expires and if the user doesn't have enough points to stay in the tier, the user is downgraded one tier down.  - `balance_based`: Once the tier expires, the user's tier is evaluated based on the amount of active points the user has at this instant. 
+ * @member {module:model/BaseLoyaltyProgram.TiersDowngradePolicyEnum} tiersDowngradePolicy
+ */
+BaseLoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>tiersDowngradePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+BaseLoyaltyProgram['TiersDowngradePolicyEnum'] = {
+
+    /**
+     * value: "one_down"
+     * @const
+     */
+    "one_down": "one_down",
+
+    /**
+     * value: "balance_based"
+     * @const
+     */
+    "balance_based": "balance_based"
+};
 
 
 

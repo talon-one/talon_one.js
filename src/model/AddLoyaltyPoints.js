@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPoints model module.
  * @module model/AddLoyaltyPoints
- * @version 5.0.0
+ * @version 5.0.1
  */
 class AddLoyaltyPoints {
     /**
@@ -94,7 +94,7 @@ AddLoyaltyPoints.prototype['points'] = undefined;
 AddLoyaltyPoints.prototype['name'] = undefined;
 
 /**
- * The time format is either: - `immediate` or, - an **integer** followed by one letter indicating the time unit.  Examples: `immediate`, `30s`, `40m`, `1h`, `5D`, `7W`, `10M`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks and months. Signifies the end of the day, week, or month.  If passed, `validUntil` should be omitted. 
+ * The time format is either: - `immediate` or, - an **integer** followed by one letter indicating the time unit.  Examples: `immediate`, `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year.  If passed, `validUntil` should be omitted. 
  * @member {String} validityDuration
  */
 AddLoyaltyPoints.prototype['validityDuration'] = undefined;
@@ -106,7 +106,7 @@ AddLoyaltyPoints.prototype['validityDuration'] = undefined;
 AddLoyaltyPoints.prototype['validUntil'] = undefined;
 
 /**
- * The amount of time before the points are considered valid.  The time format is either: - `immediate` or, - an **integer** followed by one letter indicating the time unit.  Examples: `immediate`, `30s`, `40m`, `1h`, `5D`, `7W`, `10M`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks and months. Signifies the end of the day, week, or month. 
+ * The amount of time before the points are considered valid.  The time format is either: - `immediate` or, - an **integer** followed by one letter indicating the time unit.  Examples: `immediate`, `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
  * @member {String} pendingDuration
  */
 AddLoyaltyPoints.prototype['pendingDuration'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OutgoingIntegrationConfiguration model module.
  * @module model/OutgoingIntegrationConfiguration
- * @version 5.0.0
+ * @version 5.0.1
  */
 class OutgoingIntegrationConfiguration {
     /**
@@ -25,7 +25,7 @@ class OutgoingIntegrationConfiguration {
      * @param id {Number} Unique ID for this entity.
      * @param accountId {Number} The ID of the account to which this configuration belongs.
      * @param typeId {Number} The outgoing integration type ID.
-     * @param policy {Object} 
+     * @param policy {Object} The outgoing integration policy specific to each integration type.
      */
     constructor(id, accountId, typeId, policy) { 
         
@@ -93,6 +93,7 @@ OutgoingIntegrationConfiguration.prototype['accountId'] = undefined;
 OutgoingIntegrationConfiguration.prototype['typeId'] = undefined;
 
 /**
+ * The outgoing integration policy specific to each integration type.
  * @member {Object} policy
  */
 OutgoingIntegrationConfiguration.prototype['policy'] = undefined;

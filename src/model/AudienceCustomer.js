@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The AudienceCustomer model module.
  * @module model/AudienceCustomer
- * @version 5.0.0
+ * @version 5.0.1
  */
 class AudienceCustomer {
     /**

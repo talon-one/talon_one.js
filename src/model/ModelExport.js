@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelExport model module.
  * @module model/ModelExport
- * @version 5.0.0
+ * @version 5.0.1
  */
 class ModelExport {
     /**

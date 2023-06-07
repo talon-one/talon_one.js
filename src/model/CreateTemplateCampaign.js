@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The CreateTemplateCampaign model module.
  * @module model/CreateTemplateCampaign
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CreateTemplateCampaign {
     /**
@@ -77,6 +77,9 @@ class CreateTemplateCampaign {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
+            if (data.hasOwnProperty('evaluationGroupId')) {
+                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
+            }
         }
         return obj;
     }
@@ -121,7 +124,7 @@ CreateTemplateCampaign.prototype['templateParamValues'] = undefined;
 CreateTemplateCampaign.prototype['limitOverrides'] = undefined;
 
 /**
- * The IDs of the [campaign groups](https://docs.talon.one/docs/product/account/managing-campaign-groups) this campaign belongs to. 
+ * The IDs of the [campaign groups](https://docs.talon.one/docs/product/account/account-settings/managing-campaign-groups) this campaign belongs to. 
  * @member {Array.<Number>} campaignGroups
  */
 CreateTemplateCampaign.prototype['campaignGroups'] = undefined;
@@ -131,6 +134,12 @@ CreateTemplateCampaign.prototype['campaignGroups'] = undefined;
  * @member {Array.<String>} tags
  */
 CreateTemplateCampaign.prototype['tags'] = undefined;
+
+/**
+ * The ID of the campaign evaluation group the campaign belongs to.
+ * @member {Number} evaluationGroupId
+ */
+CreateTemplateCampaign.prototype['evaluationGroupId'] = undefined;
 
 
 

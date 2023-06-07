@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleFailureReason model module.
  * @module model/RuleFailureReason
- * @version 5.0.0
+ * @version 5.0.1
  */
 class RuleFailureReason {
     /**

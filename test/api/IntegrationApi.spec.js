@@ -238,16 +238,6 @@
         done();
       });
     });
-    describe('trackEvent', function() {
-      it('should call trackEvent successfully', function(done) {
-        //uncomment below and update the code to test trackEvent
-        //instance.trackEvent(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('trackEventV2', function() {
       it('should call trackEventV2 successfully', function(done) {
         //uncomment below and update the code to test trackEventV2

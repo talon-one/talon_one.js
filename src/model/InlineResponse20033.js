@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Webhook from './Webhook';
+import AccountAdditionalCost from './AccountAdditionalCost';
 
 /**
  * The InlineResponse20033 model module.
  * @module model/InlineResponse20033
- * @version 5.0.0
+ * @version 5.0.1
  */
 class InlineResponse20033 {
     /**
      * Constructs a new <code>InlineResponse20033</code>.
      * @alias module:model/InlineResponse20033
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Webhook>} 
+     * @param data {Array.<module:model/AccountAdditionalCost>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20033 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Webhook]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccountAdditionalCost]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20033 {
 InlineResponse20033.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Webhook>} data
+ * @member {Array.<module:model/AccountAdditionalCost>} data
  */
 InlineResponse20033.prototype['data'] = undefined;
 

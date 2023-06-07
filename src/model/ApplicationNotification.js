@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationNotification model module.
  * @module model/ApplicationNotification
- * @version 5.0.0
+ * @version 5.0.1
  */
 class ApplicationNotification {
     /**
      * Constructs a new <code>ApplicationNotification</code>.
      * @alias module:model/ApplicationNotification
-     * @param event {String} Event type. It can be one of the following: ['campaign_priorities_changed'] 
+     * @param event {String} Event type. It can be one of the following: ['campaign_evaluation_tree_changed'] 
      */
     constructor(event) { 
         
@@ -60,7 +60,7 @@ class ApplicationNotification {
 }
 
 /**
- * Event type. It can be one of the following: ['campaign_priorities_changed'] 
+ * Event type. It can be one of the following: ['campaign_evaluation_tree_changed'] 
  * @member {String} event
  */
 ApplicationNotification.prototype['event'] = undefined;

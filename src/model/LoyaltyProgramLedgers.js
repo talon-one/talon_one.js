@@ -17,12 +17,12 @@ import LedgerInfo from './LedgerInfo';
 /**
  * The LoyaltyProgramLedgers model module.
  * @module model/LoyaltyProgramLedgers
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoyaltyProgramLedgers {
     /**
      * Constructs a new <code>LoyaltyProgramLedgers</code>.
-     * Customer specific information about loyalty points.
+     * Customer-specific information about loyalty points.
      * @alias module:model/LoyaltyProgramLedgers
      * @param id {Number} The internal ID of loyalty program.
      * @param title {String} Visible name of loyalty program.

@@ -17,22 +17,21 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The CampaignSet model module.
  * @module model/CampaignSet
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CampaignSet {
     /**
      * Constructs a new <code>CampaignSet</code>.
      * 
      * @alias module:model/CampaignSet
-     * @param id {Number} Internal ID of this entity.
-     * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param id {Number} Internal ID of this entity.
      * @param version {Number} Version of the campaign set.
      * @param set {module:model/CampaignSetBranchNode} 
      */
-    constructor(id, created, applicationId, version, set) { 
+    constructor(applicationId, id, version, set) { 
         
-        CampaignSet.initialize(this, id, created, applicationId, version, set);
+        CampaignSet.initialize(this, applicationId, id, version, set);
     }
 
     /**
@@ -40,10 +39,9 @@ class CampaignSet {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, version, set) { 
-        obj['id'] = id;
-        obj['created'] = created;
+    static initialize(obj, applicationId, id, version, set) { 
         obj['applicationId'] = applicationId;
+        obj['id'] = id;
         obj['version'] = version;
         obj['set'] = set;
     }
@@ -59,14 +57,11 @@ class CampaignSet {
         if (data) {
             obj = obj || new CampaignSet();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
-            if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
-            }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -85,22 +80,16 @@ class CampaignSet {
 }
 
 /**
- * Internal ID of this entity.
- * @member {Number} id
- */
-CampaignSet.prototype['id'] = undefined;
-
-/**
- * The time this entity was created.
- * @member {Date} created
- */
-CampaignSet.prototype['created'] = undefined;
-
-/**
  * The ID of the application that owns this entity.
  * @member {Number} applicationId
  */
 CampaignSet.prototype['applicationId'] = undefined;
+
+/**
+ * Internal ID of this entity.
+ * @member {Number} id
+ */
+CampaignSet.prototype['id'] = undefined;
 
 /**
  * Version of the campaign set.

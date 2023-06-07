@@ -18,11 +18,12 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCampaign model module.
  * @module model/NewCampaign
- * @version 5.0.0
+ * @version 5.0.1
  */
 class NewCampaign {
     /**
      * Constructs a new <code>NewCampaign</code>.
+     * 
      * @alias module:model/NewCampaign
      * @param name {String} A user-facing name for this campaign.
      * @param state {module:model/NewCampaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 
@@ -98,6 +99,9 @@ class NewCampaign {
             if (data.hasOwnProperty('campaignGroups')) {
                 obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
             }
+            if (data.hasOwnProperty('evaluationGroupId')) {
+                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
+            }
         }
         return obj;
     }
@@ -124,7 +128,7 @@ NewCampaign.prototype['description'] = undefined;
 NewCampaign.prototype['startTime'] = undefined;
 
 /**
- * Timestamp the campaign will become inactive.
+ * Timestamp when the campaign will become inactive.
  * @member {Date} endTime
  */
 NewCampaign.prototype['endTime'] = undefined;
@@ -181,6 +185,12 @@ NewCampaign.prototype['limits'] = undefined;
  * @member {Array.<Number>} campaignGroups
  */
 NewCampaign.prototype['campaignGroups'] = undefined;
+
+/**
+ * The ID of the campaign evaluation group the campaign belongs to.
+ * @member {Number} evaluationGroupId
+ */
+NewCampaign.prototype['evaluationGroupId'] = undefined;
 
 
 

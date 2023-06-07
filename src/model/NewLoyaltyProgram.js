@@ -17,7 +17,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 5.0.0
+ * @version 5.0.1
  */
 class NewLoyaltyProgram {
     /**
@@ -89,6 +89,12 @@ class NewLoyaltyProgram {
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
+            if (data.hasOwnProperty('tiersExpireIn')) {
+                obj['tiersExpireIn'] = ApiClient.convertToType(data['tiersExpireIn'], 'String');
+            }
+            if (data.hasOwnProperty('tiersDowngradePolicy')) {
+                obj['tiersDowngradePolicy'] = ApiClient.convertToType(data['tiersDowngradePolicy'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -157,6 +163,18 @@ NewLoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 NewLoyaltyProgram.prototype['sandbox'] = undefined;
 
 /**
+ * The duration is an **integer** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
+ * @member {String} tiersExpireIn
+ */
+NewLoyaltyProgram.prototype['tiersExpireIn'] = undefined;
+
+/**
+ * Customers's tier downgrade policy.  - `one_down`: Once the tier expires and if the user doesn't have enough points to stay in the tier, the user is downgraded one tier down.  - `balance_based`: Once the tier expires, the user's tier is evaluated based on the amount of active points the user has at this instant. 
+ * @member {module:model/NewLoyaltyProgram.TiersDowngradePolicyEnum} tiersDowngradePolicy
+ */
+NewLoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
+
+/**
  * The internal name for the Loyalty Program. This is an immutable value.
  * @member {String} name
  */
@@ -183,6 +201,27 @@ NewLoyaltyProgram.prototype['cardBased'] = false;
 
 
 
+
+
+/**
+ * Allowed values for the <code>tiersDowngradePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewLoyaltyProgram['TiersDowngradePolicyEnum'] = {
+
+    /**
+     * value: "one_down"
+     * @const
+     */
+    "one_down": "one_down",
+
+    /**
+     * value: "balance_based"
+     * @const
+     */
+    "balance_based": "balance_based"
+};
 
 
 

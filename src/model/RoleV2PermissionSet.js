@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2PermissionSet model module.
  * @module model/RoleV2PermissionSet
- * @version 5.0.0
+ * @version 5.0.1
  */
 class RoleV2PermissionSet {
     /**
      * Constructs a new <code>RoleV2PermissionSet</code>.
      * @alias module:model/RoleV2PermissionSet
      * @param name {String} Name of the permission set.
-     * @param operationIds {Array.<String>} 
+     * @param logicalOperations {Array.<String>} List of logical operations in the permission set. Each logical operation must be shown under the `x-logicalPermissionOperation` tag on an endpoint level. 
      */
-    constructor(name, operationIds) { 
+    constructor(name, logicalOperations) { 
         
-        RoleV2PermissionSet.initialize(this, name, operationIds);
+        RoleV2PermissionSet.initialize(this, name, logicalOperations);
     }
 
     /**
@@ -35,9 +35,9 @@ class RoleV2PermissionSet {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, operationIds) { 
+    static initialize(obj, name, logicalOperations) { 
         obj['name'] = name;
-        obj['operationIds'] = operationIds;
+        obj['logicalOperations'] = logicalOperations;
     }
 
     /**
@@ -54,8 +54,8 @@ class RoleV2PermissionSet {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('operationIds')) {
-                obj['operationIds'] = ApiClient.convertToType(data['operationIds'], ['String']);
+            if (data.hasOwnProperty('logicalOperations')) {
+                obj['logicalOperations'] = ApiClient.convertToType(data['logicalOperations'], ['String']);
             }
         }
         return obj;
@@ -71,9 +71,10 @@ class RoleV2PermissionSet {
 RoleV2PermissionSet.prototype['name'] = undefined;
 
 /**
- * @member {Array.<String>} operationIds
+ * List of logical operations in the permission set. Each logical operation must be shown under the `x-logicalPermissionOperation` tag on an endpoint level. 
+ * @member {Array.<String>} logicalOperations
  */
-RoleV2PermissionSet.prototype['operationIds'] = undefined;
+RoleV2PermissionSet.prototype['logicalOperations'] = undefined;
 
 
 

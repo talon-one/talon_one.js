@@ -66,8 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property priority (base name: "priority")', function() {
-      // uncomment below and update the code to test the property priority
+    it('should have the property evaluationPosition (base name: "evaluationPosition")', function() {
+      // uncomment below and update the code to test the property evaluationPosition
       //var instane = new TalonOne.CampaignCreatedNotification();
       //expect(instance).to.be();
     });

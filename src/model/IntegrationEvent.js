@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEvent model module.
  * @module model/IntegrationEvent
- * @version 5.0.0
+ * @version 5.0.1
  */
 class IntegrationEvent {
     /**

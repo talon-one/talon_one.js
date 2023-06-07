@@ -17,20 +17,23 @@ import CampaignSetNode from './CampaignSetNode';
 /**
  * The CampaignSetBranchNode model module.
  * @module model/CampaignSetBranchNode
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CampaignSetBranchNode {
     /**
      * Constructs a new <code>CampaignSetBranchNode</code>.
      * @alias module:model/CampaignSetBranchNode
      * @param type {module:model/CampaignSetBranchNode.TypeEnum} Indicates the node type.
-     * @param name {String} Name of the set
-     * @param operator {module:model/CampaignSetBranchNode.OperatorEnum} How does the set operates on its elements.
+     * @param name {String} Name of the set.
+     * @param operator {module:model/CampaignSetBranchNode.OperatorEnum} An indicator of how the set operates on its elements.
      * @param elements {Array.<module:model/CampaignSetNode>} Child elements of this set.
+     * @param groupId {Number} The ID of the campaign set.
+     * @param locked {Boolean} An indicator of whether the campaign set is locked for modification.
+     * @param evaluationMode {module:model/CampaignSetBranchNode.EvaluationModeEnum} 
      */
-    constructor(type, name, operator, elements) { 
+    constructor(type, name, operator, elements, groupId, locked, evaluationMode) { 
         
-        CampaignSetBranchNode.initialize(this, type, name, operator, elements);
+        CampaignSetBranchNode.initialize(this, type, name, operator, elements, groupId, locked, evaluationMode);
     }
 
     /**
@@ -38,11 +41,14 @@ class CampaignSetBranchNode {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, name, operator, elements) { 
+    static initialize(obj, type, name, operator, elements, groupId, locked, evaluationMode) { 
         obj['type'] = type;
         obj['name'] = name;
         obj['operator'] = operator;
         obj['elements'] = elements;
+        obj['groupId'] = groupId;
+        obj['locked'] = locked;
+        obj['evaluationMode'] = evaluationMode;
     }
 
     /**
@@ -68,6 +74,18 @@ class CampaignSetBranchNode {
             if (data.hasOwnProperty('elements')) {
                 obj['elements'] = ApiClient.convertToType(data['elements'], [CampaignSetNode]);
             }
+            if (data.hasOwnProperty('groupId')) {
+                obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Number');
+            }
+            if (data.hasOwnProperty('locked')) {
+                obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('evaluationMode')) {
+                obj['evaluationMode'] = ApiClient.convertToType(data['evaluationMode'], 'String');
+            }
         }
         return obj;
     }
@@ -82,13 +100,13 @@ class CampaignSetBranchNode {
 CampaignSetBranchNode.prototype['type'] = undefined;
 
 /**
- * Name of the set
+ * Name of the set.
  * @member {String} name
  */
 CampaignSetBranchNode.prototype['name'] = undefined;
 
 /**
- * How does the set operates on its elements.
+ * An indicator of how the set operates on its elements.
  * @member {module:model/CampaignSetBranchNode.OperatorEnum} operator
  */
 CampaignSetBranchNode.prototype['operator'] = undefined;
@@ -98,6 +116,29 @@ CampaignSetBranchNode.prototype['operator'] = undefined;
  * @member {Array.<module:model/CampaignSetNode>} elements
  */
 CampaignSetBranchNode.prototype['elements'] = undefined;
+
+/**
+ * The ID of the campaign set.
+ * @member {Number} groupId
+ */
+CampaignSetBranchNode.prototype['groupId'] = undefined;
+
+/**
+ * An indicator of whether the campaign set is locked for modification.
+ * @member {Boolean} locked
+ */
+CampaignSetBranchNode.prototype['locked'] = undefined;
+
+/**
+ * A description of the campaign set.
+ * @member {String} description
+ */
+CampaignSetBranchNode.prototype['description'] = undefined;
+
+/**
+ * @member {module:model/CampaignSetBranchNode.EvaluationModeEnum} evaluationMode
+ */
+CampaignSetBranchNode.prototype['evaluationMode'] = undefined;
 
 
 
@@ -136,6 +177,39 @@ CampaignSetBranchNode['OperatorEnum'] = {
      * @const
      */
     "FIRST": "FIRST"
+};
+
+
+/**
+ * Allowed values for the <code>evaluationMode</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CampaignSetBranchNode['EvaluationModeEnum'] = {
+
+    /**
+     * value: "stackable"
+     * @const
+     */
+    "stackable": "stackable",
+
+    /**
+     * value: "listOrder"
+     * @const
+     */
+    "listOrder": "listOrder",
+
+    /**
+     * value: "lowestDiscount"
+     * @const
+     */
+    "lowestDiscount": "lowestDiscount",
+
+    /**
+     * value: "highestDiscount"
+     * @const
+     */
+    "highestDiscount": "highestDiscount"
 };
 
 

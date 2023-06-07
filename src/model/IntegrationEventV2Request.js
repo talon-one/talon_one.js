@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEventV2Request model module.
  * @module model/IntegrationEventV2Request
- * @version 5.0.0
+ * @version 5.0.1
  */
 class IntegrationEventV2Request {
     /**

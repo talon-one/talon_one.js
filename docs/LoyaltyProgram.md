@@ -14,10 +14,25 @@ Name | Type | Description | Notes
 **allowSubledger** | **Boolean** | Indicates if this program supports subledgers inside the program. | 
 **usersPerCardLimit** | **Number** | The max amount of user profiles with whom a card can be shared. This can be set to 0 for no limit. This property is only used when &#x60;cardBased&#x60; is &#x60;true&#x60;.  | [optional] 
 **sandbox** | **Boolean** | Indicates if this program is a live or sandbox program. Programs of a given type can only be connected to Applications of the same type. | 
+**tiersExpireIn** | **String** | The duration is an **integer** followed by one letter indicating the time unit.  Examples: &#x60;30s&#x60;, &#x60;40m&#x60;, &#x60;1h&#x60;, &#x60;5D&#x60;, &#x60;7W&#x60;, &#x60;10M&#x60;, &#x60;15Y&#x60;.  Available units:  - &#x60;s&#x60;: seconds - &#x60;m&#x60;: minutes - &#x60;h&#x60;: hours - &#x60;D&#x60;: days - &#x60;W&#x60;: weeks - &#x60;M&#x60;: months - &#x60;Y&#x60;: years  You can round certain units up or down: - &#x60;_D&#x60; for rounding down days only. Signifies the start of the day. - &#x60;_U&#x60; for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year.  | [optional] 
+**tiersDowngradePolicy** | **String** | Customers&#39;s tier downgrade policy.  - &#x60;one_down&#x60;: Once the tier expires and if the user doesn&#39;t have enough points to stay in the tier, the user is downgraded one tier down.  - &#x60;balance_based&#x60;: Once the tier expires, the user&#39;s tier is evaluated based on the amount of active points the user has at this instant.  | [optional] 
 **accountID** | **Number** | The ID of the Talon.One account that owns this program. | 
 **name** | **String** | The internal name for the Loyalty Program. This is an immutable value. | 
 **tiers** | [**[LoyaltyTier]**](LoyaltyTier.md) | The tiers in this loyalty program. | [optional] 
 **timezone** | **String** | A string containing an IANA timezone descriptor. | 
 **cardBased** | **Boolean** | Defines the type of loyalty program: - &#x60;true&#x60;: the program is a card-based. - &#x60;false&#x60;: the program is profile-based.  | [default to false]
+**canUpdateTiers** | **Boolean** | True if it is possible to change tiers definition. | [optional] [default to false]
+**canUpgradeToAdvancedTiers** | **Boolean** | True if it is possible to introduce tiersExpireIn and tiersDowngradePolicy. | [optional] [default to false]
+
+
+
+## Enum: TiersDowngradePolicyEnum
+
+
+* `one_down` (value: `"one_down"`)
+
+* `balance_based` (value: `"balance_based"`)
+
+
 
 

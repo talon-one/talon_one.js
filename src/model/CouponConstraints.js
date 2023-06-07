@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponConstraints model module.
  * @module model/CouponConstraints
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CouponConstraints {
     /**

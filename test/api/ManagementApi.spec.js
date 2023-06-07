@@ -388,6 +388,16 @@
         done();
       });
     });
+    describe('exportPoolGiveaways', function() {
+      it('should call exportPoolGiveaways successfully', function(done) {
+        //uncomment below and update the code to test exportPoolGiveaways
+        //instance.exportPoolGiveaways(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('exportReferrals', function() {
       it('should call exportReferrals successfully', function(done) {
         //uncomment below and update the code to test exportReferrals
@@ -1038,6 +1048,16 @@
         done();
       });
     });
+    describe('importLoyaltyCustomersTiers', function() {
+      it('should call importLoyaltyCustomersTiers successfully', function(done) {
+        //uncomment below and update the code to test importLoyaltyCustomersTiers
+        //instance.importLoyaltyCustomersTiers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('importLoyaltyPoints', function() {
       it('should call importLoyaltyPoints successfully', function(done) {
         //uncomment below and update the code to test importLoyaltyPoints
@@ -1078,6 +1098,16 @@
         done();
       });
     });
+    describe('listCatalogItems', function() {
+      it('should call listCatalogItems successfully', function(done) {
+        //uncomment below and update the code to test listCatalogItems
+        //instance.listCatalogItems(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listCollections', function() {
       it('should call listCollections successfully', function(done) {
         //uncomment below and update the code to test listCollections
@@ -1112,6 +1142,16 @@
       it('should call postCatalogsStrikethroughNotification successfully', function(done) {
         //uncomment below and update the code to test postCatalogsStrikethroughNotification
         //instance.postCatalogsStrikethroughNotification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postPendingPointsNotification', function() {
+      it('should call postPendingPointsNotification successfully', function(done) {
+        //uncomment below and update the code to test postPendingPointsNotification
+        //instance.postPendingPointsNotification(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

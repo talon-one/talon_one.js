@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 5.0.0
+ * @version 5.0.1
  */
 class UpdateCampaign {
     /**
@@ -141,7 +141,7 @@ UpdateCampaign.prototype['attributes'] = undefined;
 UpdateCampaign.prototype['state'] = 'enabled';
 
 /**
- * ID of Ruleset this campaign applies on customer session evaluation.
+ * [ID of Ruleset](https://docs.talon.one/management-api#operation/getRulesets) this campaign applies on customer session evaluation. 
  * @member {Number} activeRulesetId
  */
 UpdateCampaign.prototype['activeRulesetId'] = undefined;
@@ -175,7 +175,7 @@ UpdateCampaign.prototype['referralSettings'] = undefined;
 UpdateCampaign.prototype['limits'] = undefined;
 
 /**
- * The IDs of the campaign groups that own this entity.
+ * The IDs of the [campaign groups](https://docs.talon.one/docs/product/account/account-settings/managing-campaign-groups) this campaign belongs to. 
  * @member {Array.<Number>} campaignGroups
  */
 UpdateCampaign.prototype['campaignGroups'] = undefined;

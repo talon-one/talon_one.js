@@ -18,7 +18,7 @@ import Effect from './Effect';
 /**
  * The IntegrationCustomerSessionResponse model module.
  * @module model/IntegrationCustomerSessionResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class IntegrationCustomerSessionResponse {
     /**
