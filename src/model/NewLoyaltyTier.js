@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewLoyaltyTier model module.
  * @module model/NewLoyaltyTier
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewLoyaltyTier {
     /**

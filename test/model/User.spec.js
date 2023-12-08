@@ -132,6 +132,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isAdmin (base name: "isAdmin")', function() {
+      // uncomment below and update the code to test the property isAdmin
+      //var instane = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastSignedIn (base name: "lastSignedIn")', function() {
+      // uncomment below and update the code to test the property lastSignedIn
+      //var instane = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastAccessed (base name: "lastAccessed")', function() {
+      // uncomment below and update the code to test the property lastAccessed
+      //var instane = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

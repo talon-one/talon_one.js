@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Catalog model module.
  * @module model/Catalog
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Catalog {
     /**

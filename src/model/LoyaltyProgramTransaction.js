@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramTransaction model module.
  * @module model/LoyaltyProgramTransaction
- * @version 5.0.1
+ * @version 6.0.0
  */
 class LoyaltyProgramTransaction {
     /**
@@ -202,13 +202,13 @@ LoyaltyProgramTransaction.prototype['customerSessionId'] = undefined;
 LoyaltyProgramTransaction.prototype['importId'] = undefined;
 
 /**
- * ID of the user who manually added or deducted points. Applies only for manual transactions.
+ * ID of the user who manually added or deducted points. Applies only to manual transactions.
  * @member {Number} userId
  */
 LoyaltyProgramTransaction.prototype['userId'] = undefined;
 
 /**
- * The email of the user who manually added or deducted points. Applies only for manual transactions.
+ * The email of the Campaign Manager account that manually added or deducted points. Applies only to manual transactions.
  * @member {String} userEmail
  */
 LoyaltyProgramTransaction.prototype['userEmail'] = undefined;

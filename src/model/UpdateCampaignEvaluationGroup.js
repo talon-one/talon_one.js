@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCampaignEvaluationGroup model module.
  * @module model/UpdateCampaignEvaluationGroup
- * @version 5.0.1
+ * @version 6.0.0
  */
 class UpdateCampaignEvaluationGroup {
     /**
@@ -25,12 +25,13 @@ class UpdateCampaignEvaluationGroup {
      * @alias module:model/UpdateCampaignEvaluationGroup
      * @param name {String} The name of the campaign evaluation group.
      * @param parentId {Number} The ID of the parent group that contains the campaign evaluation group.
-     * @param evaluationMode {module:model/UpdateCampaignEvaluationGroup.EvaluationModeEnum} 
+     * @param evaluationMode {module:model/UpdateCampaignEvaluationGroup.EvaluationModeEnum} The mode by which campaigns in the campaign evaluation group are evaluated.
+     * @param evaluationScope {module:model/UpdateCampaignEvaluationGroup.EvaluationScopeEnum} The evaluation scope of the campaign evaluation group.
      * @param locked {Boolean} An indicator of whether the campaign evaluation group is locked for modification.
      */
-    constructor(name, parentId, evaluationMode, locked) { 
+    constructor(name, parentId, evaluationMode, evaluationScope, locked) { 
         
-        UpdateCampaignEvaluationGroup.initialize(this, name, parentId, evaluationMode, locked);
+        UpdateCampaignEvaluationGroup.initialize(this, name, parentId, evaluationMode, evaluationScope, locked);
     }
 
     /**
@@ -38,10 +39,11 @@ class UpdateCampaignEvaluationGroup {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, parentId, evaluationMode, locked) { 
+    static initialize(obj, name, parentId, evaluationMode, evaluationScope, locked) { 
         obj['name'] = name;
         obj['parentId'] = parentId;
         obj['evaluationMode'] = evaluationMode;
+        obj['evaluationScope'] = evaluationScope;
         obj['locked'] = locked;
     }
 
@@ -67,6 +69,9 @@ class UpdateCampaignEvaluationGroup {
             }
             if (data.hasOwnProperty('evaluationMode')) {
                 obj['evaluationMode'] = ApiClient.convertToType(data['evaluationMode'], 'String');
+            }
+            if (data.hasOwnProperty('evaluationScope')) {
+                obj['evaluationScope'] = ApiClient.convertToType(data['evaluationScope'], 'String');
             }
             if (data.hasOwnProperty('locked')) {
                 obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
@@ -97,9 +102,16 @@ UpdateCampaignEvaluationGroup.prototype['parentId'] = undefined;
 UpdateCampaignEvaluationGroup.prototype['description'] = undefined;
 
 /**
+ * The mode by which campaigns in the campaign evaluation group are evaluated.
  * @member {module:model/UpdateCampaignEvaluationGroup.EvaluationModeEnum} evaluationMode
  */
 UpdateCampaignEvaluationGroup.prototype['evaluationMode'] = undefined;
+
+/**
+ * The evaluation scope of the campaign evaluation group.
+ * @member {module:model/UpdateCampaignEvaluationGroup.EvaluationScopeEnum} evaluationScope
+ */
+UpdateCampaignEvaluationGroup.prototype['evaluationScope'] = undefined;
 
 /**
  * An indicator of whether the campaign evaluation group is locked for modification.
@@ -141,6 +153,27 @@ UpdateCampaignEvaluationGroup['EvaluationModeEnum'] = {
      * @const
      */
     "highestDiscount": "highestDiscount"
+};
+
+
+/**
+ * Allowed values for the <code>evaluationScope</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateCampaignEvaluationGroup['EvaluationScopeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "session"
+     * @const
+     */
+    "session": "session"
 };
 
 

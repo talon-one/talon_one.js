@@ -18,7 +18,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The ApplicationEvent model module.
  * @module model/ApplicationEvent
- * @version 5.0.1
+ * @version 6.0.0
  */
 class ApplicationEvent {
     /**
@@ -74,6 +74,12 @@ class ApplicationEvent {
             if (data.hasOwnProperty('profileId')) {
                 obj['profileId'] = ApiClient.convertToType(data['profileId'], 'Number');
             }
+            if (data.hasOwnProperty('storeId')) {
+                obj['storeId'] = ApiClient.convertToType(data['storeId'], 'Number');
+            }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
+            }
             if (data.hasOwnProperty('sessionId')) {
                 obj['sessionId'] = ApiClient.convertToType(data['sessionId'], 'Number');
             }
@@ -119,6 +125,18 @@ ApplicationEvent.prototype['applicationId'] = undefined;
  * @member {Number} profileId
  */
 ApplicationEvent.prototype['profileId'] = undefined;
+
+/**
+ * The ID of the store.
+ * @member {Number} storeId
+ */
+ApplicationEvent.prototype['storeId'] = undefined;
+
+/**
+ * The integration ID of the store. You choose this ID when you create a store.
+ * @member {String} storeIntegrationId
+ */
+ApplicationEvent.prototype['storeIntegrationId'] = undefined;
 
 /**
  * The globally unique Talon.One ID of the session that contains this event.

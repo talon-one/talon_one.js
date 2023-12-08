@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2ApplicationDetails model module.
  * @module model/RoleV2ApplicationDetails
- * @version 5.0.1
+ * @version 6.0.0
  */
 class RoleV2ApplicationDetails {
     /**
@@ -56,6 +56,9 @@ class RoleV2ApplicationDetails {
             if (data.hasOwnProperty('draftCampaign')) {
                 obj['draftCampaign'] = ApiClient.convertToType(data['draftCampaign'], 'String');
             }
+            if (data.hasOwnProperty('tools')) {
+                obj['tools'] = ApiClient.convertToType(data['tools'], 'String');
+            }
         }
         return obj;
     }
@@ -80,6 +83,12 @@ RoleV2ApplicationDetails.prototype['campaign'] = undefined;
  * @member {String} draftCampaign
  */
 RoleV2ApplicationDetails.prototype['draftCampaign'] = undefined;
+
+/**
+ * Name of the tools-related permission set.
+ * @member {String} tools
+ */
+RoleV2ApplicationDetails.prototype['tools'] = undefined;
 
 
 

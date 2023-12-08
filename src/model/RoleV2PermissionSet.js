@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2PermissionSet model module.
  * @module model/RoleV2PermissionSet
- * @version 5.0.1
+ * @version 6.0.0
  */
 class RoleV2PermissionSet {
     /**
      * Constructs a new <code>RoleV2PermissionSet</code>.
      * @alias module:model/RoleV2PermissionSet
      * @param name {String} Name of the permission set.
-     * @param logicalOperations {Array.<String>} List of logical operations in the permission set. Each logical operation must be shown under the `x-logicalPermissionOperation` tag on an endpoint level. 
+     * @param logicalOperations {Array.<String>} List of logical operations in the permission set. Each logical operation must be shown under the `x-permission` tag on an endpoint level. 
      */
     constructor(name, logicalOperations) { 
         
@@ -71,7 +71,7 @@ class RoleV2PermissionSet {
 RoleV2PermissionSet.prototype['name'] = undefined;
 
 /**
- * List of logical operations in the permission set. Each logical operation must be shown under the `x-logicalPermissionOperation` tag on an endpoint level. 
+ * List of logical operations in the permission set. Each logical operation must be shown under the `x-permission` tag on an endpoint level. 
  * @member {Array.<String>} logicalOperations
  */
 RoleV2PermissionSet.prototype['logicalOperations'] = undefined;

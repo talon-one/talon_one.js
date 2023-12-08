@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LibraryAttribute model module.
  * @module model/LibraryAttribute
- * @version 5.0.1
+ * @version 6.0.0
  */
 class LibraryAttribute {
     /**

@@ -12,13 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import CampaignBudget from './CampaignBudget';
 import CodeGeneratorSettings from './CodeGeneratorSettings';
 import LimitConfig from './LimitConfig';
 
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Campaign {
     /**
@@ -35,10 +36,12 @@ class Campaign {
      * @param tags {Array.<String>} A list of tags for the campaign.
      * @param features {Array.<module:model/Campaign.FeaturesEnum>} The features enabled in this campaign.
      * @param limits {Array.<module:model/LimitConfig>} The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets) for this campaign. 
+     * @param type {module:model/Campaign.TypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
+     * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
      */
-    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits) { 
+    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets) { 
         
-        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits);
+        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets);
     }
 
     /**
@@ -46,7 +49,7 @@ class Campaign {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits) { 
+    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -57,6 +60,8 @@ class Campaign {
         obj['tags'] = tags;
         obj['features'] = features;
         obj['limits'] = limits;
+        obj['type'] = type;
+        obj['budgets'] = budgets;
     }
 
     /**
@@ -120,6 +125,18 @@ class Campaign {
             }
             if (data.hasOwnProperty('campaignGroups')) {
                 obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
+            }
+            if (data.hasOwnProperty('evaluationGroupId')) {
+                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('linkedStoreIds')) {
+                obj['linkedStoreIds'] = ApiClient.convertToType(data['linkedStoreIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('budgets')) {
+                obj['budgets'] = ApiClient.convertToType(data['budgets'], [CampaignBudget]);
             }
             if (data.hasOwnProperty('couponRedemptionCount')) {
                 obj['couponRedemptionCount'] = ApiClient.convertToType(data['couponRedemptionCount'], 'Number');
@@ -290,91 +307,116 @@ Campaign.prototype['limits'] = undefined;
 Campaign.prototype['campaignGroups'] = undefined;
 
 /**
- * Number of coupons redeemed in the campaign.
+ * The ID of the campaign evaluation group the campaign belongs to.
+ * @member {Number} evaluationGroupId
+ */
+Campaign.prototype['evaluationGroupId'] = undefined;
+
+/**
+ * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
+ * @member {module:model/Campaign.TypeEnum} type
+ * @default 'advanced'
+ */
+Campaign.prototype['type'] = 'advanced';
+
+/**
+ * A list of store IDs that you want to link to the campaign.  **Note:** Campaigns with linked store IDs will only be evaluated when there is a [customer session update](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) that references a linked store. 
+ * @member {Array.<Number>} linkedStoreIds
+ */
+Campaign.prototype['linkedStoreIds'] = undefined;
+
+/**
+ * A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
+ * @member {Array.<module:model/CampaignBudget>} budgets
+ */
+Campaign.prototype['budgets'] = undefined;
+
+/**
+ * This property is **deprecated**. The count should be available under *budgets* property. Number of coupons redeemed in the campaign. 
  * @member {Number} couponRedemptionCount
  */
 Campaign.prototype['couponRedemptionCount'] = undefined;
 
 /**
- * Number of referral codes redeemed in the campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Number of referral codes redeemed in the campaign. 
  * @member {Number} referralRedemptionCount
  */
 Campaign.prototype['referralRedemptionCount'] = undefined;
 
 /**
- * Total amount of discounts redeemed in the campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total amount of discounts redeemed in the campaign. 
  * @member {Number} discountCount
  */
 Campaign.prototype['discountCount'] = undefined;
 
 /**
- * Total number of times discounts were redeemed in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of times discounts were redeemed in this campaign. 
  * @member {Number} discountEffectCount
  */
 Campaign.prototype['discountEffectCount'] = undefined;
 
 /**
- * Total number of coupons created by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of coupons created by rules in this campaign. 
  * @member {Number} couponCreationCount
  */
 Campaign.prototype['couponCreationCount'] = undefined;
 
 /**
- * Total number of custom effects triggered by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of custom effects triggered by rules in this campaign. 
  * @member {Number} customEffectCount
  */
 Campaign.prototype['customEffectCount'] = undefined;
 
 /**
- * Total number of referrals created by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of referrals created by rules in this campaign. 
  * @member {Number} referralCreationCount
  */
 Campaign.prototype['referralCreationCount'] = undefined;
 
 /**
- * Total number of times triggering add free item effext is allowed in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of times the [add free item effect](https://docs.talon.one/docs/dev/integration-api/api-effects#addfreeitem) can be triggered in this campaign. 
  * @member {Number} addFreeItemEffectCount
  */
 Campaign.prototype['addFreeItemEffectCount'] = undefined;
 
 /**
- * Total number of giveaways awarded by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of giveaways awarded by rules in this campaign. 
  * @member {Number} awardedGiveawaysCount
  */
 Campaign.prototype['awardedGiveawaysCount'] = undefined;
 
 /**
- * Total number of loyalty points created by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of loyalty points created by rules in this campaign. 
  * @member {Number} createdLoyaltyPointsCount
  */
 Campaign.prototype['createdLoyaltyPointsCount'] = undefined;
 
 /**
- * Total number of loyalty point creation effects triggered by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of loyalty point creation effects triggered by rules in this campaign. 
  * @member {Number} createdLoyaltyPointsEffectCount
  */
 Campaign.prototype['createdLoyaltyPointsEffectCount'] = undefined;
 
 /**
- * Total number of loyalty points redeemed by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of loyalty points redeemed by rules in this campaign. 
  * @member {Number} redeemedLoyaltyPointsCount
  */
 Campaign.prototype['redeemedLoyaltyPointsCount'] = undefined;
 
 /**
- * Total number of loyalty point redemption effects triggered by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of loyalty point redemption effects triggered by rules in this campaign. 
  * @member {Number} redeemedLoyaltyPointsEffectCount
  */
 Campaign.prototype['redeemedLoyaltyPointsEffectCount'] = undefined;
 
 /**
- * Total number of webhook triggered by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of webhooks triggered by rules in this campaign. 
  * @member {Number} callApiEffectCount
  */
 Campaign.prototype['callApiEffectCount'] = undefined;
 
 /**
- * Total number of reserve coupon effects triggered by rules in this campaign.
+ * This property is **deprecated**. The count should be available under *budgets* property. Total number of reserve coupon effects triggered by rules in this campaign. 
  * @member {Number} reservecouponEffectCount
  */
 Campaign.prototype['reservecouponEffectCount'] = undefined;
@@ -476,6 +518,27 @@ Campaign['FeaturesEnum'] = {
      * @const
      */
     "strikethrough": "strikethrough"
+};
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Campaign['TypeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "advanced"
+     * @const
+     */
+    "advanced": "advanced"
 };
 
 

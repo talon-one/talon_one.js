@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **effectType** | **String** | The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects). | 
 **triggeredByCoupon** | **Number** | The ID of the coupon that was being evaluated when this effect was triggered. | [optional] 
 **triggeredForCatalogItem** | **Number** | The ID of the catalog item that was being evaluated when this effect was triggered. | [optional] 
+**conditionIndex** | **Number** | The index of the condition that was triggered. | [optional] 
 **props** | [**Object**](.md) | The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects). | 
 
 

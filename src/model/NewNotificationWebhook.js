@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewNotificationWebhook model module.
  * @module model/NewNotificationWebhook
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewNotificationWebhook {
     /**
@@ -57,6 +57,9 @@ class NewNotificationWebhook {
             if (data.hasOwnProperty('headers')) {
                 obj['headers'] = ApiClient.convertToType(data['headers'], ['String']);
             }
+            if (data.hasOwnProperty('enabled')) {
+                obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -75,6 +78,13 @@ NewNotificationWebhook.prototype['url'] = undefined;
  * @member {Array.<String>} headers
  */
 NewNotificationWebhook.prototype['headers'] = undefined;
+
+/**
+ * Indicates whether the notification is activated.
+ * @member {Boolean} enabled
+ * @default true
+ */
+NewNotificationWebhook.prototype['enabled'] = true;
 
 
 

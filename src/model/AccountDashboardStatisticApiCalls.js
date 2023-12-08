@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountDashboardStatisticApiCalls model module.
  * @module model/AccountDashboardStatisticApiCalls
- * @version 5.0.1
+ * @version 6.0.0
  */
 class AccountDashboardStatisticApiCalls {
     /**

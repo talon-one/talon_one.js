@@ -18,7 +18,7 @@ import Meta from './Meta';
 /**
  * The Event model module.
  * @module model/Event
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Event {
     /**
@@ -76,6 +76,9 @@ class Event {
             if (data.hasOwnProperty('profileId')) {
                 obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
             }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
+            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -124,6 +127,12 @@ Event.prototype['applicationId'] = undefined;
  * @member {String} profileId
  */
 Event.prototype['profileId'] = undefined;
+
+/**
+ * The integration ID of the store. You choose this ID when you create a store.
+ * @member {String} storeIntegrationId
+ */
+Event.prototype['storeIntegrationId'] = undefined;
 
 /**
  * A string representing the event. Must not be a reserved event name.

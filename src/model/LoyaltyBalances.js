@@ -17,7 +17,7 @@ import LoyaltyBalance from './LoyaltyBalance';
 /**
  * The LoyaltyBalances model module.
  * @module model/LoyaltyBalances
- * @version 5.0.1
+ * @version 6.0.0
  */
 class LoyaltyBalances {
     /**

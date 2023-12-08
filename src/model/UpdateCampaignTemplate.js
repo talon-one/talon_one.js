@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The UpdateCampaignTemplate model module.
  * @module model/UpdateCampaignTemplate
- * @version 5.0.1
+ * @version 6.0.0
  */
 class UpdateCampaignTemplate {
     /**
@@ -108,6 +108,9 @@ class UpdateCampaignTemplate {
             }
             if (data.hasOwnProperty('defaultCampaignGroupId')) {
                 obj['defaultCampaignGroupId'] = ApiClient.convertToType(data['defaultCampaignGroupId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignType')) {
+                obj['campaignType'] = ApiClient.convertToType(data['campaignType'], 'String');
             }
         }
         return obj;
@@ -210,6 +213,13 @@ UpdateCampaignTemplate.prototype['campaignCollections'] = undefined;
  */
 UpdateCampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
 
+/**
+ * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
+ * @member {module:model/UpdateCampaignTemplate.CampaignTypeEnum} campaignType
+ * @default 'advanced'
+ */
+UpdateCampaignTemplate.prototype['campaignType'] = 'advanced';
+
 
 
 
@@ -277,6 +287,27 @@ UpdateCampaignTemplate['FeaturesEnum'] = {
      * @const
      */
     "strikethrough": "strikethrough"
+};
+
+
+/**
+ * Allowed values for the <code>campaignType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateCampaignTemplate['CampaignTypeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "advanced"
+     * @const
+     */
+    "advanced": "advanced"
 };
 
 

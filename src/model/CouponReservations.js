@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponReservations model module.
  * @module model/CouponReservations
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CouponReservations {
     /**

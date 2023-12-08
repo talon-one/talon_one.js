@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **subledgerId** | **String** | ID of the subledger. | 
 **customerSessionId** | **String** | ID of the customer session where the transaction occurred. | [optional] 
 **importId** | **Number** | ID of the import where the transaction occurred. | [optional] 
-**userId** | **Number** | ID of the user who manually added or deducted points. Applies only for manual transactions. | [optional] 
-**userEmail** | **String** | The email of the user who manually added or deducted points. Applies only for manual transactions. | [optional] 
+**userId** | **Number** | ID of the user who manually added or deducted points. Applies only to manual transactions. | [optional] 
+**userEmail** | **String** | The email of the Campaign Manager account that manually added or deducted points. Applies only to manual transactions. | [optional] 
 **rulesetId** | **Number** | ID of the ruleset containing the rule that triggered the effect. Applies only for transactions that resulted from a customer session. | [optional] 
 **ruleName** | **String** | Name of the rule that triggered the effect. Applies only for transactions that resulted from a customer session. | [optional] 
 

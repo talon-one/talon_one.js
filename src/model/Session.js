@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Session model module.
  * @module model/Session
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Session {
     /**

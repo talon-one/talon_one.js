@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyCard from './LoyaltyCard';
+import LoyaltyProgramTransaction from './LoyaltyProgramTransaction';
 
 /**
  * The InlineResponse20013 model module.
  * @module model/InlineResponse20013
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse20013 {
     /**
      * Constructs a new <code>InlineResponse20013</code>.
      * @alias module:model/InlineResponse20013
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/LoyaltyCard>} 
+     * @param data {Array.<module:model/LoyaltyProgramTransaction>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20013 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyCard]);
+                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyProgramTransaction]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20013 {
 InlineResponse20013.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyCard>} data
+ * @member {Array.<module:model/LoyaltyProgramTransaction>} data
  */
 InlineResponse20013.prototype['data'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountLimits model module.
  * @module model/AccountLimits
- * @version 5.0.1
+ * @version 6.0.0
  */
 class AccountLimits {
     /**

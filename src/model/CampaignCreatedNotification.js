@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
 import CampaignEvaluationPosition from './CampaignEvaluationPosition';
+import CampaignStateNotification from './CampaignStateNotification';
 import Ruleset from './Ruleset';
 
 /**
  * The CampaignCreatedNotification model module.
  * @module model/CampaignCreatedNotification
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CampaignCreatedNotification {
     /**
      * Constructs a new <code>CampaignCreatedNotification</code>.
      * A notification regarding a campaign that was created.
      * @alias module:model/CampaignCreatedNotification
-     * @param campaign {module:model/Campaign} 
+     * @param campaign {module:model/CampaignStateNotification} 
      * @param evaluationPosition {module:model/CampaignEvaluationPosition} 
      */
     constructor(campaign, evaluationPosition) { 
@@ -56,7 +56,7 @@ class CampaignCreatedNotification {
             obj = obj || new CampaignCreatedNotification();
 
             if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = ApiClient.convertToType(data['campaign'], Campaign);
+                obj['campaign'] = CampaignStateNotification.constructFromObject(data['campaign']);
             }
             if (data.hasOwnProperty('ruleset')) {
                 obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
@@ -72,7 +72,7 @@ class CampaignCreatedNotification {
 }
 
 /**
- * @member {module:model/Campaign} campaign
+ * @member {module:model/CampaignStateNotification} campaign
  */
 CampaignCreatedNotification.prototype['campaign'] = undefined;
 

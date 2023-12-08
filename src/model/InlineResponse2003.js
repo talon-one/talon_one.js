@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Application from './Application';
+import CardLedgerPointsEntryIntegrationAPI from './CardLedgerPointsEntryIntegrationAPI';
 
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse2003 {
     /**
      * Constructs a new <code>InlineResponse2003</code>.
      * @alias module:model/InlineResponse2003
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Application>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/CardLedgerPointsEntryIntegrationAPI>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse2003.initialize(this, totalResultSize, data);
+        InlineResponse2003.initialize(this, hasMore, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse2003 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse2003 {
         if (data) {
             obj = obj || new InlineResponse2003();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Application]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CardLedgerPointsEntryIntegrationAPI]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse2003 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * @member {Boolean} hasMore
  */
-InlineResponse2003.prototype['totalResultSize'] = undefined;
+InlineResponse2003.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/Application>} data
+ * @member {Array.<module:model/CardLedgerPointsEntryIntegrationAPI>} data
  */
 InlineResponse2003.prototype['data'] = undefined;
 

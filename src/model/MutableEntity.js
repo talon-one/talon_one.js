@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutableEntity model module.
  * @module model/MutableEntity
- * @version 5.0.1
+ * @version 6.0.0
  */
 class MutableEntity {
     /**

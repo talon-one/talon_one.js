@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import Attribute from './Attribute';
+import ApplicationReferee from './ApplicationReferee';
 
 /**
  * The InlineResponse20031 model module.
  * @module model/InlineResponse20031
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse20031 {
     /**
      * Constructs a new <code>InlineResponse20031</code>.
      * @alias module:model/InlineResponse20031
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Attribute>} 
+     * @param data {Array.<module:model/ApplicationReferee>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(data) { 
         
-        InlineResponse20031.initialize(this, totalResultSize, data);
+        InlineResponse20031.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20031 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -52,11 +50,14 @@ class InlineResponse20031 {
         if (data) {
             obj = obj || new InlineResponse20031();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Attribute]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationReferee]);
             }
         }
         return obj;
@@ -66,12 +67,17 @@ class InlineResponse20031 {
 }
 
 /**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20031.prototype['hasMore'] = undefined;
+
+/**
  * @member {Number} totalResultSize
  */
 InlineResponse20031.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Attribute>} data
+ * @member {Array.<module:model/ApplicationReferee>} data
  */
 InlineResponse20031.prototype['data'] = undefined;
 

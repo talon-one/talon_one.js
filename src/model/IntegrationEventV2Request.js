@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEventV2Request model module.
  * @module model/IntegrationEventV2Request
- * @version 5.0.1
+ * @version 6.0.0
  */
 class IntegrationEventV2Request {
     /**
      * Constructs a new <code>IntegrationEventV2Request</code>.
      * 
      * @alias module:model/IntegrationEventV2Request
-     * @param type {String} A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+     * @param type {String} A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
      */
     constructor(type) { 
         
@@ -53,6 +53,9 @@ class IntegrationEventV2Request {
             if (data.hasOwnProperty('profileId')) {
                 obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
             }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
+            }
             if (data.hasOwnProperty('evaluableCampaignIds')) {
                 obj['evaluableCampaignIds'] = ApiClient.convertToType(data['evaluableCampaignIds'], ['Number']);
             }
@@ -79,19 +82,25 @@ class IntegrationEventV2Request {
 IntegrationEventV2Request.prototype['profileId'] = undefined;
 
 /**
+ * The integration ID of the store. You choose this ID when you create a store.
+ * @member {String} storeIntegrationId
+ */
+IntegrationEventV2Request.prototype['storeIntegrationId'] = undefined;
+
+/**
  * When using the `dry` query parameter, use this property to list the campaign to be evaluated by the Rule Engine.  These campaigns will be evaluated, even if they are disabled, allowing you to test specific campaigns before activating them. 
  * @member {Array.<Number>} evaluableCampaignIds
  */
 IntegrationEventV2Request.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+ * A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
  * @member {String} type
  */
 IntegrationEventV2Request.prototype['type'] = undefined;
 
 /**
- * Arbitrary additional JSON properties associated with the event. They must be created in the Campaign Manager before setting them with this property. See [creating custom attributes](https://docs.talon.one/docs/product/account/dev-tools/managing-attributes#creating-custom-attributes).
+ * Arbitrary additional JSON properties associated with the event. They must be created in the Campaign Manager before setting them with this property. See [creating custom attributes](https://docs.talon.one/docs/product/account/dev-tools/managing-attributes#creating-a-custom-attribute).
  * @member {Object} attributes
  */
 IntegrationEventV2Request.prototype['attributes'] = undefined;

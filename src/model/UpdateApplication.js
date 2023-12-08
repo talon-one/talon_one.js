@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateApplication model module.
  * @module model/UpdateApplication
- * @version 5.0.1
+ * @version 6.0.0
  */
 class UpdateApplication {
     /**
@@ -162,7 +162,7 @@ UpdateApplication.prototype['defaultDiscountScope'] = undefined;
 UpdateApplication.prototype['enableCascadingDiscounts'] = undefined;
 
 /**
- * Indicates if cart items of quantity larger than one should be separated into different items of quantity one. See the [docs](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening). 
+ * Indicates if cart items of quantity larger than one should be separated into different items of quantity one. 
  * @member {Boolean} enableFlattenedCartItems
  */
 UpdateApplication.prototype['enableFlattenedCartItems'] = undefined;

@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewCoupons {
     /**
@@ -91,6 +91,9 @@ class NewCoupons {
             }
             if (data.hasOwnProperty('isReservationMandatory')) {
                 obj['isReservationMandatory'] = ApiClient.convertToType(data['isReservationMandatory'], 'Boolean');
+            }
+            if (data.hasOwnProperty('implicitlyReserved')) {
+                obj['implicitlyReserved'] = ApiClient.convertToType(data['implicitlyReserved'], 'Boolean');
             }
         }
         return obj;
@@ -177,6 +180,12 @@ NewCoupons.prototype['couponPattern'] = undefined;
  * @default true
  */
 NewCoupons.prototype['isReservationMandatory'] = true;
+
+/**
+ * An indication of whether the coupon is implicitly reserved for all customers.
+ * @member {Boolean} implicitlyReserved
+ */
+NewCoupons.prototype['implicitlyReserved'] = undefined;
 
 
 

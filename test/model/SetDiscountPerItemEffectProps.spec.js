@@ -114,6 +114,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property targetedItemPosition (base name: "targetedItemPosition")', function() {
+      // uncomment below and update the code to test the property targetedItemPosition
+      //var instane = new TalonOne.SetDiscountPerItemEffectProps();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property targetedItemSubPosition (base name: "targetedItemSubPosition")', function() {
+      // uncomment below and update the code to test the property targetedItemSubPosition
+      //var instane = new TalonOne.SetDiscountPerItemEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

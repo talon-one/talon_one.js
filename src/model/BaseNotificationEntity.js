@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseNotificationEntity model module.
  * @module model/BaseNotificationEntity
- * @version 5.0.1
+ * @version 6.0.0
  */
 class BaseNotificationEntity {
     /**
@@ -52,6 +52,9 @@ class BaseNotificationEntity {
             if (data.hasOwnProperty('policy')) {
                 obj['policy'] = ApiClient.convertToType(data['policy'], Object);
             }
+            if (data.hasOwnProperty('enabled')) {
+                obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -63,6 +66,13 @@ class BaseNotificationEntity {
  * @member {Object} policy
  */
 BaseNotificationEntity.prototype['policy'] = undefined;
+
+/**
+ * Indicates whether the notification is activated.
+ * @member {Boolean} enabled
+ * @default true
+ */
+BaseNotificationEntity.prototype['enabled'] = true;
 
 
 

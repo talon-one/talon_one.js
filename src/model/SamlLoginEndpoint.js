@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlLoginEndpoint model module.
  * @module model/SamlLoginEndpoint
- * @version 5.0.1
+ * @version 6.0.0
  */
 class SamlLoginEndpoint {
     /**
      * Constructs a new <code>SamlLoginEndpoint</code>.
      * @alias module:model/SamlLoginEndpoint
+     * @param id {Number} ID of the SAML login endpoint.
      * @param name {String} ID of the SAML service.
      * @param loginURL {String} Single Sign-On URL.
      */
-    constructor(name, loginURL) { 
+    constructor(id, name, loginURL) { 
         
-        SamlLoginEndpoint.initialize(this, name, loginURL);
+        SamlLoginEndpoint.initialize(this, id, name, loginURL);
     }
 
     /**
@@ -35,7 +36,8 @@ class SamlLoginEndpoint {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, loginURL) { 
+    static initialize(obj, id, name, loginURL) { 
+        obj['id'] = id;
         obj['name'] = name;
         obj['loginURL'] = loginURL;
     }
@@ -51,6 +53,9 @@ class SamlLoginEndpoint {
         if (data) {
             obj = obj || new SamlLoginEndpoint();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -63,6 +68,12 @@ class SamlLoginEndpoint {
 
 
 }
+
+/**
+ * ID of the SAML login endpoint.
+ * @member {Number} id
+ */
+SamlLoginEndpoint.prototype['id'] = undefined;
 
 /**
  * ID of the SAML service.

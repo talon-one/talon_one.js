@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 5.0.1
+ * @version 6.0.0
  */
 class SetDiscountPerItemEffectProps {
     /**
@@ -84,6 +84,12 @@ class SetDiscountPerItemEffectProps {
             if (data.hasOwnProperty('bundleName')) {
                 obj['bundleName'] = ApiClient.convertToType(data['bundleName'], 'String');
             }
+            if (data.hasOwnProperty('targetedItemPosition')) {
+                obj['targetedItemPosition'] = ApiClient.convertToType(data['targetedItemPosition'], 'Number');
+            }
+            if (data.hasOwnProperty('targetedItemSubPosition')) {
+                obj['targetedItemSubPosition'] = ApiClient.convertToType(data['targetedItemSubPosition'], 'Number');
+            }
         }
         return obj;
     }
@@ -110,7 +116,7 @@ SetDiscountPerItemEffectProps.prototype['value'] = undefined;
 SetDiscountPerItemEffectProps.prototype['position'] = undefined;
 
 /**
- * Only used when [cart item flattening](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening) is enabled. Indicates which item the discount applies to for cart items with `quantity` > 1. 
+ * For cart items with `quantity` > 1, the sub position indicates which item the discount applies to. 
  * @member {Number} subPosition
  */
 SetDiscountPerItemEffectProps.prototype['subPosition'] = undefined;
@@ -150,6 +156,18 @@ SetDiscountPerItemEffectProps.prototype['bundleIndex'] = undefined;
  * @member {String} bundleName
  */
 SetDiscountPerItemEffectProps.prototype['bundleName'] = undefined;
+
+/**
+ * The index of the targeted bundle item on which the applied discount is based.
+ * @member {Number} targetedItemPosition
+ */
+SetDiscountPerItemEffectProps.prototype['targetedItemPosition'] = undefined;
+
+/**
+ * The sub-position of the targeted bundle item on which the applied discount is based. 
+ * @member {Number} targetedItemSubPosition
+ */
+SetDiscountPerItemEffectProps.prototype['targetedItemSubPosition'] = undefined;
 
 
 

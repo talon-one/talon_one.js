@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **live** | **Number** | Number of campaigns that are active and live (across all Applications). | 
-**endingSoon** | **Number** | Campaigns with a schedule ending in 7 days or with only 10% of budget left. | 
+**endingSoon** | **Number** | Campaigns scheduled to expire sometime in the next 7 days. | 
+**lowOnBudget** | **Number** | Campaigns with less than 10% of budget left. | 
 
 

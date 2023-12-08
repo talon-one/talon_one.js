@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **webhooks** | **Number** | Total number of webhooks in the account. | 
 **loyaltyPrograms** | **Number** | Total number of all loyalty programs in the account. | 
 **liveLoyaltyPrograms** | **Number** | Total number of live loyalty programs in the account. | 
+**lastUpdatedAt** | **Date** | The point in time when the analytics numbers were updated last. | 
 
 

@@ -25,5 +25,6 @@ Name | Type | Description | Notes
 **reservation** | **Boolean** | Defines the type of reservation: - &#x60;true&#x60;: The reservation is a soft reservation. Any customer can use the coupon. This is done via the [Create coupon reservation](https://docs.talon.one/integration-api#operation/createCouponReservation) endpoint. - &#x60;false&#x60;: The reservation is a hard reservation. Only the associated customer (&#x60;recipientIntegrationId&#x60;) can use the coupon. This is done via the Campaign Manager when you create a coupon for a given &#x60;recipientIntegrationId&#x60;, the [Create coupons](https://docs.talon.one/management-api#operation/createCoupons) endpoint or [Create coupons for multiple recipients](https://docs.talon.one/management-api#operation/createCouponsForMultipleRecipients) endpoint.  | [optional] [default to true]
 **batchId** | **String** | The id of the batch the coupon belongs to. | [optional] 
 **isReservationMandatory** | **Boolean** | Whether the reservation effect actually created a new reservation. | [optional] [default to true]
+**implicitlyReserved** | **Boolean** | An indication of whether the coupon is implicitly reserved for all customers. | [optional] 
 
 

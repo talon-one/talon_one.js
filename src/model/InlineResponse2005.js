@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import NotificationWebhook from './NotificationWebhook';
+import Application from './Application';
 
 /**
  * The InlineResponse2005 model module.
  * @module model/InlineResponse2005
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse2005 {
     /**
      * Constructs a new <code>InlineResponse2005</code>.
      * @alias module:model/InlineResponse2005
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/NotificationWebhook>} 
+     * @param data {Array.<module:model/Application>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2005 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [NotificationWebhook]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Application]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2005 {
 InlineResponse2005.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/NotificationWebhook>} data
+ * @member {Array.<module:model/Application>} data
  */
 InlineResponse2005.prototype['data'] = undefined;
 

@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignType (base name: "campaignType")', function() {
+      // uncomment below and update the code to test the property campaignType
+      //var instane = new TalonOne.NewCampaignTemplate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

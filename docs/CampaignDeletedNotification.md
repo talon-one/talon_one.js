@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign** | [**Campaign**](Campaign.md) |  | 
+**campaign** | [**CampaignStateNotification**](CampaignStateNotification.md) |  | 
 **deletedAt** | **Date** | Time when the campaign was deleted. | 
 
 

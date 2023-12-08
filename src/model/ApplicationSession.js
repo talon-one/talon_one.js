@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 5.0.1
+ * @version 6.0.0
  */
 class ApplicationSession {
     /**
@@ -26,19 +26,19 @@ class ApplicationSession {
      * @alias module:model/ApplicationSession
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created. The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
      * @param integrationId {String} The integration ID set by your integration layer.
+     * @param applicationId {Number} The ID of the application that owns this entity.
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
-     * @param state {module:model/ApplicationSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session). 
+     * @param state {module:model/ApplicationSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
      * @param discounts {Object.<String, Number>} **API V1 only.** A map of labeled discount values, in the same currency as the session.  If you are using the V2 endpoints, refer to the `totalDiscounts` property instead. 
      * @param totalDiscounts {Number} The total sum of the discounts applied to this session.
      * @param total {Number} The total sum of the session before any discounts applied.
      */
-    constructor(id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total) { 
+    constructor(id, created, integrationId, applicationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total) { 
         
-        ApplicationSession.initialize(this, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total);
+        ApplicationSession.initialize(this, id, created, integrationId, applicationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total);
     }
 
     /**
@@ -46,11 +46,11 @@ class ApplicationSession {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, integrationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total) { 
+    static initialize(obj, id, created, integrationId, applicationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total) { 
         obj['id'] = id;
         obj['created'] = created;
-        obj['applicationId'] = applicationId;
         obj['integrationId'] = integrationId;
+        obj['applicationId'] = applicationId;
         obj['coupon'] = coupon;
         obj['referral'] = referral;
         obj['state'] = state;
@@ -77,14 +77,17 @@ class ApplicationSession {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('integrationId')) {
+                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
+            }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
+            }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
             }
             if (data.hasOwnProperty('profileId')) {
                 obj['profileId'] = ApiClient.convertToType(data['profileId'], 'Number');
-            }
-            if (data.hasOwnProperty('integrationId')) {
-                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
             }
             if (data.hasOwnProperty('profileintegrationid')) {
                 obj['profileintegrationid'] = ApiClient.convertToType(data['profileintegrationid'], 'String');
@@ -133,6 +136,18 @@ ApplicationSession.prototype['id'] = undefined;
 ApplicationSession.prototype['created'] = undefined;
 
 /**
+ * The integration ID set by your integration layer.
+ * @member {String} integrationId
+ */
+ApplicationSession.prototype['integrationId'] = undefined;
+
+/**
+ * The integration ID of the store. You choose this ID when you create a store.
+ * @member {String} storeIntegrationId
+ */
+ApplicationSession.prototype['storeIntegrationId'] = undefined;
+
+/**
  * The ID of the application that owns this entity.
  * @member {Number} applicationId
  */
@@ -143,12 +158,6 @@ ApplicationSession.prototype['applicationId'] = undefined;
  * @member {Number} profileId
  */
 ApplicationSession.prototype['profileId'] = undefined;
-
-/**
- * The integration ID set by your integration layer.
- * @member {String} integrationId
- */
-ApplicationSession.prototype['integrationId'] = undefined;
 
 /**
  * Integration ID of the customer for the session.
@@ -169,7 +178,7 @@ ApplicationSession.prototype['coupon'] = undefined;
 ApplicationSession.prototype['referral'] = undefined;
 
 /**
- * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session). 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
  * @member {module:model/ApplicationSession.StateEnum} state
  */
 ApplicationSession.prototype['state'] = undefined;

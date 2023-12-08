@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PendingPointsNotificationPolicy model module.
  * @module model/PendingPointsNotificationPolicy
- * @version 5.0.1
+ * @version 6.0.0
  */
 class PendingPointsNotificationPolicy {
     /**

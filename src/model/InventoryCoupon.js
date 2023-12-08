@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The InventoryCoupon model module.
  * @module model/InventoryCoupon
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InventoryCoupon {
     /**
@@ -127,6 +127,9 @@ class InventoryCoupon {
             }
             if (data.hasOwnProperty('isReservationMandatory')) {
                 obj['isReservationMandatory'] = ApiClient.convertToType(data['isReservationMandatory'], 'Boolean');
+            }
+            if (data.hasOwnProperty('implicitlyReserved')) {
+                obj['implicitlyReserved'] = ApiClient.convertToType(data['implicitlyReserved'], 'Boolean');
             }
             if (data.hasOwnProperty('profileRedemptionCount')) {
                 obj['profileRedemptionCount'] = ApiClient.convertToType(data['profileRedemptionCount'], 'Number');
@@ -268,6 +271,12 @@ InventoryCoupon.prototype['batchId'] = undefined;
  * @default true
  */
 InventoryCoupon.prototype['isReservationMandatory'] = true;
+
+/**
+ * An indication of whether the coupon is implicitly reserved for all customers.
+ * @member {Boolean} implicitlyReserved
+ */
+InventoryCoupon.prototype['implicitlyReserved'] = undefined;
 
 /**
  * The number of times the coupon was redeemed by the profile.

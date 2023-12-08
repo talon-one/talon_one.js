@@ -37,6 +37,8 @@ Name | Type | Description | Notes
 
 * `salesforce` (value: `"salesforce"`)
 
+* `emarsys` (value: `"emarsys"`)
+
 
 
 

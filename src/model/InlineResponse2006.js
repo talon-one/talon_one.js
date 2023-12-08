@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Ruleset from './Ruleset';
+import Campaign from './Campaign';
 
 /**
  * The InlineResponse2006 model module.
  * @module model/InlineResponse2006
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse2006 {
     /**
      * Constructs a new <code>InlineResponse2006</code>.
      * @alias module:model/InlineResponse2006
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Ruleset>} 
+     * @param data {Array.<module:model/Campaign>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2006 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Ruleset]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Campaign]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2006 {
 InlineResponse2006.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Ruleset>} data
+ * @member {Array.<module:model/Campaign>} data
  */
 InlineResponse2006.prototype['data'] = undefined;
 

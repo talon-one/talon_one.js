@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isAdmin (base name: "isAdmin")', function() {
+      // uncomment below and update the code to test the property isAdmin
+      //var instane = new TalonOne.NewInvitation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property roles (base name: "roles")', function() {
       // uncomment below and update the code to test the property roles
       //var instane = new TalonOne.NewInvitation();

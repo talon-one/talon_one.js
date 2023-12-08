@@ -168,10 +168,30 @@
         done();
       });
     });
+    describe('getLoyaltyCardPoints', function() {
+      it('should call getLoyaltyCardPoints successfully', function(done) {
+        //uncomment below and update the code to test getLoyaltyCardPoints
+        //instance.getLoyaltyCardPoints(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getLoyaltyCardTransactions', function() {
       it('should call getLoyaltyCardTransactions successfully', function(done) {
         //uncomment below and update the code to test getLoyaltyCardTransactions
         //instance.getLoyaltyCardTransactions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getLoyaltyProgramProfilePoints', function() {
+      it('should call getLoyaltyProgramProfilePoints successfully', function(done) {
+        //uncomment below and update the code to test getLoyaltyProgramProfilePoints
+        //instance.getLoyaltyProgramProfilePoints(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlConnectionMetadata model module.
  * @module model/SamlConnectionMetadata
- * @version 5.0.1
+ * @version 6.0.0
  */
 class SamlConnectionMetadata {
     /**

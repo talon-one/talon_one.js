@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 5.0.1
+ * @version 6.0.0
  */
 class UpdateCoupon {
     /**
@@ -75,6 +75,9 @@ class UpdateCoupon {
             }
             if (data.hasOwnProperty('isReservationMandatory')) {
                 obj['isReservationMandatory'] = ApiClient.convertToType(data['isReservationMandatory'], 'Boolean');
+            }
+            if (data.hasOwnProperty('implicitlyReserved')) {
+                obj['implicitlyReserved'] = ApiClient.convertToType(data['implicitlyReserved'], 'Boolean');
             }
         }
         return obj;
@@ -137,6 +140,12 @@ UpdateCoupon.prototype['attributes'] = undefined;
  * @default true
  */
 UpdateCoupon.prototype['isReservationMandatory'] = true;
+
+/**
+ * An indication of whether the coupon is implicitly reserved for all customers.
+ * @member {Boolean} implicitlyReserved
+ */
+UpdateCoupon.prototype['implicitlyReserved'] = undefined;
 
 
 

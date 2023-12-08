@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lowOnBudget (base name: "lowOnBudget")', function() {
+      // uncomment below and update the code to test the property lowOnBudget
+      //var instane = new TalonOne.AccountDashboardStatisticCampaigns();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

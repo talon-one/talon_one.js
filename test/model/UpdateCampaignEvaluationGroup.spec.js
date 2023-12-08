@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property evaluationScope (base name: "evaluationScope")', function() {
+      // uncomment below and update the code to test the property evaluationScope
+      //var instane = new TalonOne.UpdateCampaignEvaluationGroup();
+      //expect(instance).to.be();
+    });
+
     it('should have the property locked (base name: "locked")', function() {
       // uncomment below and update the code to test the property locked
       //var instane = new TalonOne.UpdateCampaignEvaluationGroup();

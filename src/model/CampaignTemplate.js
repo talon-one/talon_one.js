@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CampaignTemplate {
     /**
@@ -36,11 +36,12 @@ class CampaignTemplate {
      * @param instructions {String} Customer-facing text that explains how to use the template. For example, you can use this property to explain the available attributes of this template, and how they can be modified when a user uses this template to create a new campaign.
      * @param state {module:model/CampaignTemplate.StateEnum} Only campaign templates in 'available' state may be used to create campaigns.
      * @param applicationsIds {Array.<Number>} A list of IDs of the Applications that are subscribed to this campaign template.
+     * @param campaignType {module:model/CampaignTemplate.CampaignTypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
      * @param validApplicationIds {Array.<Number>} The IDs of the Applications that are related to this entity.
      */
-    constructor(id, created, accountId, userId, name, description, instructions, state, applicationsIds, validApplicationIds) { 
+    constructor(id, created, accountId, userId, name, description, instructions, state, applicationsIds, campaignType, validApplicationIds) { 
         
-        CampaignTemplate.initialize(this, id, created, accountId, userId, name, description, instructions, state, applicationsIds, validApplicationIds);
+        CampaignTemplate.initialize(this, id, created, accountId, userId, name, description, instructions, state, applicationsIds, campaignType, validApplicationIds);
     }
 
     /**
@@ -48,7 +49,7 @@ class CampaignTemplate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, accountId, userId, name, description, instructions, state, applicationsIds, validApplicationIds) { 
+    static initialize(obj, id, created, accountId, userId, name, description, instructions, state, applicationsIds, campaignType, validApplicationIds) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['accountId'] = accountId;
@@ -58,6 +59,7 @@ class CampaignTemplate {
         obj['instructions'] = instructions;
         obj['state'] = state;
         obj['applicationsIds'] = applicationsIds;
+        obj['campaignType'] = campaignType;
         obj['validApplicationIds'] = validApplicationIds;
     }
 
@@ -131,6 +133,9 @@ class CampaignTemplate {
             }
             if (data.hasOwnProperty('defaultCampaignGroupId')) {
                 obj['defaultCampaignGroupId'] = ApiClient.convertToType(data['defaultCampaignGroupId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignType')) {
+                obj['campaignType'] = ApiClient.convertToType(data['campaignType'], 'String');
             }
             if (data.hasOwnProperty('updated')) {
                 obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
@@ -267,6 +272,13 @@ CampaignTemplate.prototype['campaignCollections'] = undefined;
 CampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
 
 /**
+ * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
+ * @member {module:model/CampaignTemplate.CampaignTypeEnum} campaignType
+ * @default 'advanced'
+ */
+CampaignTemplate.prototype['campaignType'] = 'advanced';
+
+/**
  * Timestamp of the most recent update to the campaign template or any of its elements.
  * @member {Date} updated
  */
@@ -351,6 +363,27 @@ CampaignTemplate['FeaturesEnum'] = {
      * @const
      */
     "strikethrough": "strikethrough"
+};
+
+
+/**
+ * Allowed values for the <code>campaignType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CampaignTemplate['CampaignTypeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "advanced"
+     * @const
+     */
+    "advanced": "advanced"
 };
 
 

@@ -19,7 +19,7 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Application {
     /**
@@ -213,7 +213,7 @@ Application.prototype['defaultDiscountScope'] = undefined;
 Application.prototype['enableCascadingDiscounts'] = undefined;
 
 /**
- * Indicates if cart items of quantity larger than one should be separated into different items of quantity one. See the [docs](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening). 
+ * Indicates if cart items of quantity larger than one should be separated into different items of quantity one. 
  * @member {Boolean} enableFlattenedCartItems
  */
 Application.prototype['enableFlattenedCartItems'] = undefined;

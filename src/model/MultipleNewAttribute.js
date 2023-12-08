@@ -17,7 +17,7 @@ import NewAttribute from './NewAttribute';
 /**
  * The MultipleNewAttribute model module.
  * @module model/MultipleNewAttribute
- * @version 5.0.1
+ * @version 6.0.0
  */
 class MultipleNewAttribute {
     /**

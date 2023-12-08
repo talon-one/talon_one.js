@@ -53,6 +53,8 @@ Name | Type | Description | Notes
 
 * `Session` (value: `"Session"`)
 
+* `Store` (value: `"Store"`)
+
 
 
 

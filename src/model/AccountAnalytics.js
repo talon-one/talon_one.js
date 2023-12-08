@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountAnalytics model module.
  * @module model/AccountAnalytics
- * @version 5.0.1
+ * @version 6.0.0
  */
 class AccountAnalytics {
     /**
@@ -41,10 +41,11 @@ class AccountAnalytics {
      * @param webhooks {Number} Total number of webhooks in the account.
      * @param loyaltyPrograms {Number} Total number of all loyalty programs in the account.
      * @param liveLoyaltyPrograms {Number} Total number of live loyalty programs in the account.
+     * @param lastUpdatedAt {Date} The point in time when the analytics numbers were updated last.
      */
-    constructor(applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms, liveLoyaltyPrograms) { 
+    constructor(applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms, liveLoyaltyPrograms, lastUpdatedAt) { 
         
-        AccountAnalytics.initialize(this, applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms, liveLoyaltyPrograms);
+        AccountAnalytics.initialize(this, applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms, liveLoyaltyPrograms, lastUpdatedAt);
     }
 
     /**
@@ -52,7 +53,7 @@ class AccountAnalytics {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms, liveLoyaltyPrograms) { 
+    static initialize(obj, applications, liveApplications, sandboxApplications, campaigns, activeCampaigns, liveActiveCampaigns, coupons, activeCoupons, expiredCoupons, referralCodes, activeReferralCodes, expiredReferralCodes, activeRules, users, roles, customAttributes, webhooks, loyaltyPrograms, liveLoyaltyPrograms, lastUpdatedAt) { 
         obj['applications'] = applications;
         obj['liveApplications'] = liveApplications;
         obj['sandboxApplications'] = sandboxApplications;
@@ -72,6 +73,7 @@ class AccountAnalytics {
         obj['webhooks'] = webhooks;
         obj['loyaltyPrograms'] = loyaltyPrograms;
         obj['liveLoyaltyPrograms'] = liveLoyaltyPrograms;
+        obj['lastUpdatedAt'] = lastUpdatedAt;
     }
 
     /**
@@ -141,6 +143,9 @@ class AccountAnalytics {
             }
             if (data.hasOwnProperty('liveLoyaltyPrograms')) {
                 obj['liveLoyaltyPrograms'] = ApiClient.convertToType(data['liveLoyaltyPrograms'], 'Number');
+            }
+            if (data.hasOwnProperty('lastUpdatedAt')) {
+                obj['lastUpdatedAt'] = ApiClient.convertToType(data['lastUpdatedAt'], 'Date');
             }
         }
         return obj;
@@ -262,6 +267,12 @@ AccountAnalytics.prototype['loyaltyPrograms'] = undefined;
  * @member {Number} liveLoyaltyPrograms
  */
 AccountAnalytics.prototype['liveLoyaltyPrograms'] = undefined;
+
+/**
+ * The point in time when the analytics numbers were updated last.
+ * @member {Date} lastUpdatedAt
+ */
+AccountAnalytics.prototype['lastUpdatedAt'] = undefined;
 
 
 

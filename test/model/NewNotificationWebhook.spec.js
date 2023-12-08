@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enabled (base name: "enabled")', function() {
+      // uncomment below and update the code to test the property enabled
+      //var instane = new TalonOne.NewNotificationWebhook();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

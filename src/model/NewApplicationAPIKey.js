@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewApplicationAPIKey model module.
  * @module model/NewApplicationAPIKey
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewApplicationAPIKey {
     /**
@@ -215,7 +215,13 @@ NewApplicationAPIKey['PlatformEnum'] = {
      * value: "salesforce"
      * @const
      */
-    "salesforce": "salesforce"
+    "salesforce": "salesforce",
+
+    /**
+     * value: "emarsys"
+     * @const
+     */
+    "emarsys": "emarsys"
 };
 
 

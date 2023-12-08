@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEvent model module.
  * @module model/IntegrationEvent
- * @version 5.0.1
+ * @version 6.0.0
  */
 class IntegrationEvent {
     /**
@@ -55,6 +55,9 @@ class IntegrationEvent {
             if (data.hasOwnProperty('profileId')) {
                 obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
             }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
+            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -73,6 +76,12 @@ class IntegrationEvent {
  * @member {String} profileId
  */
 IntegrationEvent.prototype['profileId'] = undefined;
+
+/**
+ * The integration ID of the store. You choose this ID when you create a store.
+ * @member {String} storeIntegrationId
+ */
+IntegrationEvent.prototype['storeIntegrationId'] = undefined;
 
 /**
  * A string representing the event. Must not be a reserved event name.

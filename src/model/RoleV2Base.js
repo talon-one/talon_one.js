@@ -17,7 +17,7 @@ import RoleV2Permissions from './RoleV2Permissions';
 /**
  * The RoleV2Base model module.
  * @module model/RoleV2Base
- * @version 5.0.1
+ * @version 6.0.0
  */
 class RoleV2Base {
     /**
@@ -54,9 +54,6 @@ class RoleV2Base {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('isAdmin')) {
-                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
-            }
             if (data.hasOwnProperty('permissions')) {
                 obj['permissions'] = RoleV2Permissions.constructFromObject(data['permissions']);
             }
@@ -81,12 +78,6 @@ RoleV2Base.prototype['name'] = undefined;
  * @member {String} description
  */
 RoleV2Base.prototype['description'] = undefined;
-
-/**
- * Indicates whether the role grants admin permissions.
- * @member {Boolean} isAdmin
- */
-RoleV2Base.prototype['isAdmin'] = undefined;
 
 /**
  * @member {module:model/RoleV2Permissions} permissions
