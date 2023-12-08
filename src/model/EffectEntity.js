@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 5.0.1
+ * @version 6.0.0
  */
 class EffectEntity {
     /**
@@ -79,6 +79,9 @@ class EffectEntity {
             if (data.hasOwnProperty('triggeredForCatalogItem')) {
                 obj['triggeredForCatalogItem'] = ApiClient.convertToType(data['triggeredForCatalogItem'], 'Number');
             }
+            if (data.hasOwnProperty('conditionIndex')) {
+                obj['conditionIndex'] = ApiClient.convertToType(data['conditionIndex'], 'Number');
+            }
         }
         return obj;
     }
@@ -127,6 +130,12 @@ EffectEntity.prototype['triggeredByCoupon'] = undefined;
  * @member {Number} triggeredForCatalogItem
  */
 EffectEntity.prototype['triggeredForCatalogItem'] = undefined;
+
+/**
+ * The index of the condition that was triggered.
+ * @member {Number} conditionIndex
+ */
+EffectEntity.prototype['conditionIndex'] = undefined;
 
 
 

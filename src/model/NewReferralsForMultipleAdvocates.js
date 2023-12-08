@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewReferralsForMultipleAdvocates model module.
  * @module model/NewReferralsForMultipleAdvocates
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewReferralsForMultipleAdvocates {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Change model module.
  * @module model/Change
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Change {
     /**

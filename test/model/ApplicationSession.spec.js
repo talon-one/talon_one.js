@@ -66,6 +66,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property integrationId (base name: "integrationId")', function() {
+      // uncomment below and update the code to test the property integrationId
+      //var instane = new TalonOne.ApplicationSession();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storeIntegrationId (base name: "storeIntegrationId")', function() {
+      // uncomment below and update the code to test the property storeIntegrationId
+      //var instane = new TalonOne.ApplicationSession();
+      //expect(instance).to.be();
+    });
+
     it('should have the property applicationId (base name: "applicationId")', function() {
       // uncomment below and update the code to test the property applicationId
       //var instane = new TalonOne.ApplicationSession();
@@ -74,12 +86,6 @@
 
     it('should have the property profileId (base name: "profileId")', function() {
       // uncomment below and update the code to test the property profileId
-      //var instane = new TalonOne.ApplicationSession();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property integrationId (base name: "integrationId")', function() {
-      // uncomment below and update the code to test the property integrationId
       //var instane = new TalonOne.ApplicationSession();
       //expect(instance).to.be();
     });

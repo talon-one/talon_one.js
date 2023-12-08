@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CollectionItem model module.
  * @module model/CollectionItem
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CollectionItem {
     /**

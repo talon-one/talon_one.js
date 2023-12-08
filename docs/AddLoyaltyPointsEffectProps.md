@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **expiryDate** | **Date** | Date after which points will expire. | [optional] 
 **transactionUUID** | **String** | The identifier of this addition in the loyalty ledger. | 
 **cartItemPosition** | **Number** | The index of the item in the cart items list on which the loyal points addition should be applied. | [optional] 
-**cartItemSubPosition** | **Number** | The sub position is triggered when application flattening is enabled. It indicates to which item the loyalty points addition applies, for cart items with &#x60;quantity&#x60; &gt; 1.  | [optional] 
+**cartItemSubPosition** | **Number** | For cart items with &#x60;quantity&#x60; &gt; 1, the sub position indicates to which item the loyalty points addition is applied.  | [optional] 
 **cardIdentifier** | **String** | The alphanumeric identifier of the loyalty card.  | [optional] 
 **bundleIndex** | **Number** | The position of the bundle in a list of item bundles created from the same bundle definition. | [optional] 
 **bundleName** | **String** | The name of the bundle definition. | [optional] 

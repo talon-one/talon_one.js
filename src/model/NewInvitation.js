@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewInvitation model module.
  * @module model/NewInvitation
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewInvitation {
     /**
@@ -24,11 +24,10 @@ class NewInvitation {
      * Parameters for inviting a new user.
      * @alias module:model/NewInvitation
      * @param email {String} 
-     * @param acl {String} The `Access Control List` json defining the role of the user.  This represents the access control on the user level. Use one of the following: - normal user: `{\"Role\": 0}` - admin: `{\"Role\": 127}` 
      */
-    constructor(email, acl) { 
+    constructor(email) { 
         
-        NewInvitation.initialize(this, email, acl);
+        NewInvitation.initialize(this, email);
     }
 
     /**
@@ -36,9 +35,8 @@ class NewInvitation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, email, acl) { 
+    static initialize(obj, email) { 
         obj['email'] = email;
-        obj['acl'] = acl;
     }
 
     /**
@@ -60,6 +58,9 @@ class NewInvitation {
             }
             if (data.hasOwnProperty('acl')) {
                 obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
+            }
+            if (data.hasOwnProperty('isAdmin')) {
+                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
             }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
@@ -89,7 +90,13 @@ NewInvitation.prototype['email'] = undefined;
 NewInvitation.prototype['acl'] = undefined;
 
 /**
- * An array of roleIDs to assign the new user to.
+ * An indication of whether the user has admin permissions. We recommend using this flag over using the `acl` with value `{\"Role\": 127}`. 
+ * @member {Boolean} isAdmin
+ */
+NewInvitation.prototype['isAdmin'] = undefined;
+
+/**
+ * An array of role IDs to assign to the new user.
  * @member {Array.<Number>} roles
  */
 NewInvitation.prototype['roles'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OutgoingIntegrationType model module.
  * @module model/OutgoingIntegrationType
- * @version 5.0.1
+ * @version 6.0.0
  */
 class OutgoingIntegrationType {
     /**

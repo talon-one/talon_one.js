@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughCustomEffectPerItemProps model module.
  * @module model/StrikethroughCustomEffectPerItemProps
- * @version 5.0.1
+ * @version 6.0.0
  */
 class StrikethroughCustomEffectPerItemProps {
     /**

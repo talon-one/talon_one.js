@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The CreateTemplateCampaign model module.
  * @module model/CreateTemplateCampaign
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CreateTemplateCampaign {
     /**
@@ -80,6 +80,9 @@ class CreateTemplateCampaign {
             if (data.hasOwnProperty('evaluationGroupId')) {
                 obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
             }
+            if (data.hasOwnProperty('linkedStoreIds')) {
+                obj['linkedStoreIds'] = ApiClient.convertToType(data['linkedStoreIds'], ['Number']);
+            }
         }
         return obj;
     }
@@ -140,6 +143,12 @@ CreateTemplateCampaign.prototype['tags'] = undefined;
  * @member {Number} evaluationGroupId
  */
 CreateTemplateCampaign.prototype['evaluationGroupId'] = undefined;
+
+/**
+ * A list of store IDs that are linked to the campaign.  **Note:** Campaigns with linked store IDs will only be evaluated when there is a [customer session update](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) that references a linked store. 
+ * @member {Array.<Number>} linkedStoreIds
+ */
+CreateTemplateCampaign.prototype['linkedStoreIds'] = undefined;
 
 
 

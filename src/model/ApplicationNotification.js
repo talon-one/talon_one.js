@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationNotification model module.
  * @module model/ApplicationNotification
- * @version 5.0.1
+ * @version 6.0.0
  */
 class ApplicationNotification {
     /**

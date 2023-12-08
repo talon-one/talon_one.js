@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property linkedStoreIds (base name: "linkedStoreIds")', function() {
+      // uncomment below and update the code to test the property linkedStoreIds
+      //var instane = new TalonOne.CreateTemplateCampaign();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

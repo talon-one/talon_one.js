@@ -17,7 +17,7 @@ import NewNotificationWebhook from './NewNotificationWebhook';
 /**
  * The NewBaseNotification model module.
  * @module model/NewBaseNotification
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewBaseNotification {
     /**
@@ -56,6 +56,9 @@ class NewBaseNotification {
             if (data.hasOwnProperty('policy')) {
                 obj['policy'] = ApiClient.convertToType(data['policy'], Object);
             }
+            if (data.hasOwnProperty('enabled')) {
+                obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('webhook')) {
                 obj['webhook'] = NewNotificationWebhook.constructFromObject(data['webhook']);
             }
@@ -70,6 +73,13 @@ class NewBaseNotification {
  * @member {Object} policy
  */
 NewBaseNotification.prototype['policy'] = undefined;
+
+/**
+ * Indicates whether the notification is activated.
+ * @member {Boolean} enabled
+ * @default true
+ */
+NewBaseNotification.prototype['enabled'] = true;
 
 /**
  * @member {module:model/NewNotificationWebhook} webhook

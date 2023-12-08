@@ -17,7 +17,7 @@ import CampaignSetNode from './CampaignSetNode';
 /**
  * The CampaignSetBranchNode model module.
  * @module model/CampaignSetBranchNode
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CampaignSetBranchNode {
     /**
@@ -29,11 +29,12 @@ class CampaignSetBranchNode {
      * @param elements {Array.<module:model/CampaignSetNode>} Child elements of this set.
      * @param groupId {Number} The ID of the campaign set.
      * @param locked {Boolean} An indicator of whether the campaign set is locked for modification.
-     * @param evaluationMode {module:model/CampaignSetBranchNode.EvaluationModeEnum} 
+     * @param evaluationMode {module:model/CampaignSetBranchNode.EvaluationModeEnum} The mode by which campaigns in the campaign evaluation group are evaluated.
+     * @param evaluationScope {module:model/CampaignSetBranchNode.EvaluationScopeEnum} The evaluation scope of the campaign evaluation group.
      */
-    constructor(type, name, operator, elements, groupId, locked, evaluationMode) { 
+    constructor(type, name, operator, elements, groupId, locked, evaluationMode, evaluationScope) { 
         
-        CampaignSetBranchNode.initialize(this, type, name, operator, elements, groupId, locked, evaluationMode);
+        CampaignSetBranchNode.initialize(this, type, name, operator, elements, groupId, locked, evaluationMode, evaluationScope);
     }
 
     /**
@@ -41,7 +42,7 @@ class CampaignSetBranchNode {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, name, operator, elements, groupId, locked, evaluationMode) { 
+    static initialize(obj, type, name, operator, elements, groupId, locked, evaluationMode, evaluationScope) { 
         obj['type'] = type;
         obj['name'] = name;
         obj['operator'] = operator;
@@ -49,6 +50,7 @@ class CampaignSetBranchNode {
         obj['groupId'] = groupId;
         obj['locked'] = locked;
         obj['evaluationMode'] = evaluationMode;
+        obj['evaluationScope'] = evaluationScope;
     }
 
     /**
@@ -85,6 +87,9 @@ class CampaignSetBranchNode {
             }
             if (data.hasOwnProperty('evaluationMode')) {
                 obj['evaluationMode'] = ApiClient.convertToType(data['evaluationMode'], 'String');
+            }
+            if (data.hasOwnProperty('evaluationScope')) {
+                obj['evaluationScope'] = ApiClient.convertToType(data['evaluationScope'], 'String');
             }
         }
         return obj;
@@ -136,9 +141,16 @@ CampaignSetBranchNode.prototype['locked'] = undefined;
 CampaignSetBranchNode.prototype['description'] = undefined;
 
 /**
+ * The mode by which campaigns in the campaign evaluation group are evaluated.
  * @member {module:model/CampaignSetBranchNode.EvaluationModeEnum} evaluationMode
  */
 CampaignSetBranchNode.prototype['evaluationMode'] = undefined;
+
+/**
+ * The evaluation scope of the campaign evaluation group.
+ * @member {module:model/CampaignSetBranchNode.EvaluationScopeEnum} evaluationScope
+ */
+CampaignSetBranchNode.prototype['evaluationScope'] = undefined;
 
 
 
@@ -210,6 +222,27 @@ CampaignSetBranchNode['EvaluationModeEnum'] = {
      * @const
      */
     "highestDiscount": "highestDiscount"
+};
+
+
+/**
+ * Allowed values for the <code>evaluationScope</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CampaignSetBranchNode['EvaluationScopeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "session"
+     * @const
+     */
+    "session": "session"
 };
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseNotificationWebhook model module.
  * @module model/BaseNotificationWebhook
- * @version 5.0.1
+ * @version 6.0.0
  */
 class BaseNotificationWebhook {
     /**
@@ -73,6 +73,9 @@ class BaseNotificationWebhook {
             if (data.hasOwnProperty('headers')) {
                 obj['headers'] = ApiClient.convertToType(data['headers'], ['String']);
             }
+            if (data.hasOwnProperty('enabled')) {
+                obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -109,6 +112,13 @@ BaseNotificationWebhook.prototype['url'] = undefined;
  * @member {Array.<String>} headers
  */
 BaseNotificationWebhook.prototype['headers'] = undefined;
+
+/**
+ * Indicates whether the notification is activated.
+ * @member {Boolean} enabled
+ * @default true
+ */
+BaseNotificationWebhook.prototype['enabled'] = true;
 
 
 

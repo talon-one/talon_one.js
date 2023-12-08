@@ -19,7 +19,7 @@ import Ruleset from './Ruleset';
 /**
  * The CreateTemplateCampaignResponse model module.
  * @module model/CreateTemplateCampaignResponse
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CreateTemplateCampaignResponse {
     /**

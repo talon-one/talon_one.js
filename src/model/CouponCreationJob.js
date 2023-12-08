@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CouponCreationJob {
     /**

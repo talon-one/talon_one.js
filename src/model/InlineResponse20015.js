@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import CollectionWithoutPayload from './CollectionWithoutPayload';
+import CardLedgerTransactionLogEntry from './CardLedgerTransactionLogEntry';
 
 /**
  * The InlineResponse20015 model module.
  * @module model/InlineResponse20015
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse20015 {
     /**
      * Constructs a new <code>InlineResponse20015</code>.
      * @alias module:model/InlineResponse20015
-     * @param data {Array.<module:model/CollectionWithoutPayload>} 
+     * @param hasMore {Boolean} true means there is more data in the source collection to request..
+     * @param data {Array.<module:model/CardLedgerTransactionLogEntry>} List of loyalty card transaction logs.
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20015.initialize(this, data);
+        InlineResponse20015.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20015 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse20015 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CollectionWithoutPayload]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CardLedgerTransactionLogEntry]);
             }
         }
         return obj;
@@ -67,17 +66,14 @@ class InlineResponse20015 {
 }
 
 /**
+ * true means there is more data in the source collection to request..
  * @member {Boolean} hasMore
  */
 InlineResponse20015.prototype['hasMore'] = undefined;
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20015.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/CollectionWithoutPayload>} data
+ * List of loyalty card transaction logs.
+ * @member {Array.<module:model/CardLedgerTransactionLogEntry>} data
  */
 InlineResponse20015.prototype['data'] = undefined;
 

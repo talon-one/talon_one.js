@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackAddedLoyaltyPointsEffectProps model module.
  * @module model/RollbackAddedLoyaltyPointsEffectProps
- * @version 5.0.1
+ * @version 6.0.0
  */
 class RollbackAddedLoyaltyPointsEffectProps {
     /**
@@ -126,7 +126,7 @@ RollbackAddedLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
 RollbackAddedLoyaltyPointsEffectProps.prototype['cartItemPosition'] = undefined;
 
 /**
- * The sub-position is returned when [cart item flattening](https://docs.talon.one/docs/product/campaigns/managing-general-settings#flattening) is enabled. It indicates to which item the loyalty points were rolled back, for cart items with `quantity` > 1. 
+ * For cart items with `quantity` > 1, the sub-position indicates to which item the loyalty points were rolled back. 
  * @member {Number} cartItemSubPosition
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['cartItemSubPosition'] = undefined;

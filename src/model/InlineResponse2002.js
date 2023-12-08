@@ -17,7 +17,7 @@ import LedgerTransactionLogEntryIntegrationAPI from './LedgerTransactionLogEntry
 /**
  * The InlineResponse2002 model module.
  * @module model/InlineResponse2002
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse2002 {
     /**

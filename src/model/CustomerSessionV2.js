@@ -18,7 +18,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CustomerSessionV2 {
     /**
@@ -30,13 +30,13 @@ class CustomerSessionV2 {
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
-     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session). 
-     * @param cartItems {Array.<module:model/CartItem>} The items to add to this sessions. - If cart item flattening is disabled: **Do not exceed 1000 items** (regardless of their `quantity`) per request. - If cart item flattening is enabled: **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
+     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
+     * @param cartItems {Array.<module:model/CartItem>} The items to add to this session. **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
      * @param attributes {Object} Use this property to set a value for the attributes of your choice. Attributes represent any information to attach to your session, like the shipping city.  You can use [built-in attributes](https://docs.talon.one/docs/dev/concepts/attributes#built-in-attributes) or [custom ones](https://docs.talon.one/docs/dev/concepts/attributes#custom-attributes). Custom attributes must be created in the Campaign Manager before you set them with this property. 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
-     * @param total {Number} The total sum of cart-items, as well as additional costs, before any discounts applied.
-     * @param cartItemTotal {Number} The total sum of cart-items before any discounts applied.
-     * @param additionalCostTotal {Number} The total sum of additional costs before any discounts applied.
+     * @param total {Number} The total value of cart items and additional costs in the session, before any discounts are applied.
+     * @param cartItemTotal {Number} The total value of cart items, before any discounts are applied.
+     * @param additionalCostTotal {Number} The total value of additional costs, before any discounts are applied.
      * @param updated {Date} Timestamp of the most recent event received on this session.
      */
     constructor(id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
@@ -90,6 +90,9 @@ class CustomerSessionV2 {
             }
             if (data.hasOwnProperty('profileId')) {
                 obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
+            }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
             }
             if (data.hasOwnProperty('evaluableCampaignIds')) {
                 obj['evaluableCampaignIds'] = ApiClient.convertToType(data['evaluableCampaignIds'], ['Number']);
@@ -171,6 +174,12 @@ CustomerSessionV2.prototype['applicationId'] = undefined;
 CustomerSessionV2.prototype['profileId'] = undefined;
 
 /**
+ * The integration ID of the store. You choose this ID when you create a store.
+ * @member {String} storeIntegrationId
+ */
+CustomerSessionV2.prototype['storeIntegrationId'] = undefined;
+
+/**
  * When using the `dry` query parameter, use this property to list the campaign to be evaluated by the Rule Engine.  These campaigns will be evaluated, even if they are disabled, allowing you to test specific campaigns before activating them. 
  * @member {Array.<Number>} evaluableCampaignIds
  */
@@ -195,14 +204,14 @@ CustomerSessionV2.prototype['referralCode'] = undefined;
 CustomerSessionV2.prototype['loyaltyCards'] = undefined;
 
 /**
- * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities#customer-session). 
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
  * @member {module:model/CustomerSessionV2.StateEnum} state
  * @default 'open'
  */
 CustomerSessionV2.prototype['state'] = 'open';
 
 /**
- * The items to add to this sessions. - If cart item flattening is disabled: **Do not exceed 1000 items** (regardless of their `quantity`) per request. - If cart item flattening is enabled: **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
+ * The items to add to this session. **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
  * @member {Array.<module:model/CartItem>} cartItems
  */
 CustomerSessionV2.prototype['cartItems'] = undefined;
@@ -232,19 +241,19 @@ CustomerSessionV2.prototype['attributes'] = undefined;
 CustomerSessionV2.prototype['firstSession'] = undefined;
 
 /**
- * The total sum of cart-items, as well as additional costs, before any discounts applied.
+ * The total value of cart items and additional costs in the session, before any discounts are applied.
  * @member {Number} total
  */
 CustomerSessionV2.prototype['total'] = undefined;
 
 /**
- * The total sum of cart-items before any discounts applied.
+ * The total value of cart items, before any discounts are applied.
  * @member {Number} cartItemTotal
  */
 CustomerSessionV2.prototype['cartItemTotal'] = undefined;
 
 /**
- * The total sum of additional costs before any discounts applied.
+ * The total value of additional costs, before any discounts are applied.
  * @member {Number} additionalCostTotal
  */
 CustomerSessionV2.prototype['additionalCostTotal'] = undefined;

@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The IntegrationCoupon model module.
  * @module model/IntegrationCoupon
- * @version 5.0.1
+ * @version 6.0.0
  */
 class IntegrationCoupon {
     /**
@@ -125,6 +125,9 @@ class IntegrationCoupon {
             }
             if (data.hasOwnProperty('isReservationMandatory')) {
                 obj['isReservationMandatory'] = ApiClient.convertToType(data['isReservationMandatory'], 'Boolean');
+            }
+            if (data.hasOwnProperty('implicitlyReserved')) {
+                obj['implicitlyReserved'] = ApiClient.convertToType(data['implicitlyReserved'], 'Boolean');
             }
             if (data.hasOwnProperty('profileRedemptionCount')) {
                 obj['profileRedemptionCount'] = ApiClient.convertToType(data['profileRedemptionCount'], 'Number');
@@ -263,6 +266,12 @@ IntegrationCoupon.prototype['batchId'] = undefined;
  * @default true
  */
 IntegrationCoupon.prototype['isReservationMandatory'] = true;
+
+/**
+ * An indication of whether the coupon is implicitly reserved for all customers.
+ * @member {Boolean} implicitlyReserved
+ */
+IntegrationCoupon.prototype['implicitlyReserved'] = undefined;
 
 /**
  * The number of times the coupon was redeemed by the profile.

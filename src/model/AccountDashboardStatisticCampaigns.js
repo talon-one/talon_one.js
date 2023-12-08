@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountDashboardStatisticCampaigns model module.
  * @module model/AccountDashboardStatisticCampaigns
- * @version 5.0.1
+ * @version 6.0.0
  */
 class AccountDashboardStatisticCampaigns {
     /**
      * Constructs a new <code>AccountDashboardStatisticCampaigns</code>.
      * @alias module:model/AccountDashboardStatisticCampaigns
      * @param live {Number} Number of campaigns that are active and live (across all Applications).
-     * @param endingSoon {Number} Campaigns with a schedule ending in 7 days or with only 10% of budget left.
+     * @param endingSoon {Number} Campaigns scheduled to expire sometime in the next 7 days.
+     * @param lowOnBudget {Number} Campaigns with less than 10% of budget left.
      */
-    constructor(live, endingSoon) { 
+    constructor(live, endingSoon, lowOnBudget) { 
         
-        AccountDashboardStatisticCampaigns.initialize(this, live, endingSoon);
+        AccountDashboardStatisticCampaigns.initialize(this, live, endingSoon, lowOnBudget);
     }
 
     /**
@@ -35,9 +36,10 @@ class AccountDashboardStatisticCampaigns {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, live, endingSoon) { 
+    static initialize(obj, live, endingSoon, lowOnBudget) { 
         obj['live'] = live;
         obj['endingSoon'] = endingSoon;
+        obj['lowOnBudget'] = lowOnBudget;
     }
 
     /**
@@ -57,6 +59,9 @@ class AccountDashboardStatisticCampaigns {
             if (data.hasOwnProperty('endingSoon')) {
                 obj['endingSoon'] = ApiClient.convertToType(data['endingSoon'], 'Number');
             }
+            if (data.hasOwnProperty('lowOnBudget')) {
+                obj['lowOnBudget'] = ApiClient.convertToType(data['lowOnBudget'], 'Number');
+            }
         }
         return obj;
     }
@@ -71,10 +76,16 @@ class AccountDashboardStatisticCampaigns {
 AccountDashboardStatisticCampaigns.prototype['live'] = undefined;
 
 /**
- * Campaigns with a schedule ending in 7 days or with only 10% of budget left.
+ * Campaigns scheduled to expire sometime in the next 7 days.
  * @member {Number} endingSoon
  */
 AccountDashboardStatisticCampaigns.prototype['endingSoon'] = undefined;
+
+/**
+ * Campaigns with less than 10% of budget left.
+ * @member {Number} lowOnBudget
+ */
+AccountDashboardStatisticCampaigns.prototype['lowOnBudget'] = undefined;
 
 
 

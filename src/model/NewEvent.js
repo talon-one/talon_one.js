@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewEvent model module.
  * @module model/NewEvent
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewEvent {
     /**
@@ -57,6 +57,9 @@ class NewEvent {
             if (data.hasOwnProperty('profileId')) {
                 obj['profileId'] = ApiClient.convertToType(data['profileId'], 'String');
             }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
+            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -78,6 +81,12 @@ class NewEvent {
  * @member {String} profileId
  */
 NewEvent.prototype['profileId'] = undefined;
+
+/**
+ * The integration ID of the store. You choose this ID when you create a store.
+ * @member {String} storeIntegrationId
+ */
+NewEvent.prototype['storeIntegrationId'] = undefined;
 
 /**
  * A string representing the event. Must not be a reserved event name.

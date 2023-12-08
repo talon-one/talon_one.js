@@ -17,7 +17,7 @@ import BaseNotificationWebhook from './BaseNotificationWebhook';
 /**
  * The BaseNotification model module.
  * @module model/BaseNotification
- * @version 5.0.1
+ * @version 6.0.0
  */
 class BaseNotification {
     /**
@@ -27,10 +27,11 @@ class BaseNotification {
      * @param policy {Object} 
      * @param webhook {module:model/BaseNotificationWebhook} 
      * @param id {Number} Unique ID for this entity.
+     * @param type {module:model/BaseNotification.TypeEnum} The notification type.
      */
-    constructor(policy, webhook, id) { 
+    constructor(policy, webhook, id, type) { 
         
-        BaseNotification.initialize(this, policy, webhook, id);
+        BaseNotification.initialize(this, policy, webhook, id, type);
     }
 
     /**
@@ -38,10 +39,11 @@ class BaseNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, policy, webhook, id) { 
+    static initialize(obj, policy, webhook, id, type) { 
         obj['policy'] = policy;
         obj['webhook'] = webhook;
         obj['id'] = id;
+        obj['type'] = type;
     }
 
     /**
@@ -58,11 +60,17 @@ class BaseNotification {
             if (data.hasOwnProperty('policy')) {
                 obj['policy'] = ApiClient.convertToType(data['policy'], Object);
             }
+            if (data.hasOwnProperty('enabled')) {
+                obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('webhook')) {
                 obj['webhook'] = BaseNotificationWebhook.constructFromObject(data['webhook']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
         }
         return obj;
@@ -77,6 +85,13 @@ class BaseNotification {
 BaseNotification.prototype['policy'] = undefined;
 
 /**
+ * Indicates whether the notification is activated.
+ * @member {Boolean} enabled
+ * @default true
+ */
+BaseNotification.prototype['enabled'] = true;
+
+/**
  * @member {module:model/BaseNotificationWebhook} webhook
  */
 BaseNotification.prototype['webhook'] = undefined;
@@ -87,8 +102,77 @@ BaseNotification.prototype['webhook'] = undefined;
  */
 BaseNotification.prototype['id'] = undefined;
 
+/**
+ * The notification type.
+ * @member {module:model/BaseNotification.TypeEnum} type
+ */
+BaseNotification.prototype['type'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+BaseNotification['TypeEnum'] = {
+
+    /**
+     * value: "campaign"
+     * @const
+     */
+    "campaign": "campaign",
+
+    /**
+     * value: "loyalty_added_deducted_points"
+     * @const
+     */
+    "loyalty_added_deducted_points": "loyalty_added_deducted_points",
+
+    /**
+     * value: "coupon"
+     * @const
+     */
+    "coupon": "coupon",
+
+    /**
+     * value: "expiring_points"
+     * @const
+     */
+    "expiring_points": "expiring_points",
+
+    /**
+     * value: "pending_to_active_points"
+     * @const
+     */
+    "pending_to_active_points": "pending_to_active_points",
+
+    /**
+     * value: "strikethrough_pricing"
+     * @const
+     */
+    "strikethrough_pricing": "strikethrough_pricing",
+
+    /**
+     * value: "tier_downgrade"
+     * @const
+     */
+    "tier_downgrade": "tier_downgrade",
+
+    /**
+     * value: "tier_upgrade"
+     * @const
+     */
+    "tier_upgrade": "tier_upgrade",
+
+    /**
+     * value: "tier_will_downgrade"
+     * @const
+     */
+    "tier_will_downgrade": "tier_will_downgrade"
+};
 
 
 

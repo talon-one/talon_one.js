@@ -17,7 +17,7 @@ import RoleV2ApplicationDetails from './RoleV2ApplicationDetails';
 /**
  * The RoleV2RolesGroup model module.
  * @module model/RoleV2RolesGroup
- * @version 5.0.1
+ * @version 6.0.0
  */
 class RoleV2RolesGroup {
     /**

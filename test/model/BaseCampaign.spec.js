@@ -132,6 +132,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property evaluationGroupId (base name: "evaluationGroupId")', function() {
+      // uncomment below and update the code to test the property evaluationGroupId
+      //var instane = new TalonOne.BaseCampaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new TalonOne.BaseCampaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property linkedStoreIds (base name: "linkedStoreIds")', function() {
+      // uncomment below and update the code to test the property linkedStoreIds
+      //var instane = new TalonOne.BaseCampaign();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

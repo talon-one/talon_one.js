@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **groupId** | **Number** | The ID of the campaign set. | 
 **locked** | **Boolean** | An indicator of whether the campaign set is locked for modification. | 
 **description** | **String** | A description of the campaign set. | [optional] 
-**evaluationMode** | **String** |  | 
+**evaluationMode** | **String** | The mode by which campaigns in the campaign evaluation group are evaluated. | 
+**evaluationScope** | **String** | The evaluation scope of the campaign evaluation group. | 
 
 
 
@@ -45,6 +46,17 @@ Name | Type | Description | Notes
 * `lowestDiscount` (value: `"lowestDiscount"`)
 
 * `highestDiscount` (value: `"highestDiscount"`)
+
+
+
+
+
+## Enum: EvaluationScopeEnum
+
+
+* `cartItem` (value: `"cartItem"`)
+
+* `session` (value: `"session"`)
 
 
 

@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property implicitlyReserved (base name: "implicitlyReserved")', function() {
+      // uncomment below and update the code to test the property implicitlyReserved
+      //var instane = new TalonOne.NewCoupons();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

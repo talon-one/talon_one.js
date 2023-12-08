@@ -156,6 +156,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property evaluationGroupId (base name: "evaluationGroupId")', function() {
+      // uncomment below and update the code to test the property evaluationGroupId
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property linkedStoreIds (base name: "linkedStoreIds")', function() {
+      // uncomment below and update the code to test the property linkedStoreIds
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property budgets (base name: "budgets")', function() {
+      // uncomment below and update the code to test the property budgets
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
     it('should have the property couponRedemptionCount (base name: "couponRedemptionCount")', function() {
       // uncomment below and update the code to test the property couponRedemptionCount
       //var instane = new TalonOne.Campaign();

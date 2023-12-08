@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
 **totalResultSize** | **Number** |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
 **data** | [**[ApplicationCustomer]**](ApplicationCustomer.md) |  | 
 
 

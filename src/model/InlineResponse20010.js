@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignTemplate from './CampaignTemplate';
+import Referral from './Referral';
 
 /**
  * The InlineResponse20010 model module.
  * @module model/InlineResponse20010
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse20010 {
     /**
      * Constructs a new <code>InlineResponse20010</code>.
      * @alias module:model/InlineResponse20010
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/CampaignTemplate>} 
+     * @param data {Array.<module:model/Referral>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20010 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CampaignTemplate]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Referral]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20010 {
 InlineResponse20010.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/CampaignTemplate>} data
+ * @member {Array.<module:model/Referral>} data
  */
 InlineResponse20010.prototype['data'] = undefined;
 

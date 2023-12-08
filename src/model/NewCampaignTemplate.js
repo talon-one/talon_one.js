@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The NewCampaignTemplate model module.
  * @module model/NewCampaignTemplate
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewCampaignTemplate {
     /**
@@ -30,10 +30,11 @@ class NewCampaignTemplate {
      * @param description {String} Customer-facing text that explains the objective of the template.
      * @param instructions {String} Customer-facing text that explains how to use the template. For example, you can use this property to explain the available attributes of this template, and how they can be modified when a user uses this template to create a new campaign.
      * @param state {module:model/NewCampaignTemplate.StateEnum} Only Campaign Templates in 'available' state may be used to create Campaigns.
+     * @param campaignType {module:model/NewCampaignTemplate.CampaignTypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
      */
-    constructor(name, description, instructions, state) { 
+    constructor(name, description, instructions, state, campaignType) { 
         
-        NewCampaignTemplate.initialize(this, name, description, instructions, state);
+        NewCampaignTemplate.initialize(this, name, description, instructions, state, campaignType);
     }
 
     /**
@@ -41,11 +42,12 @@ class NewCampaignTemplate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, description, instructions, state) { 
+    static initialize(obj, name, description, instructions, state, campaignType) { 
         obj['name'] = name;
         obj['description'] = description;
         obj['instructions'] = instructions;
         obj['state'] = state;
+        obj['campaignType'] = campaignType;
     }
 
     /**
@@ -100,6 +102,9 @@ class NewCampaignTemplate {
             }
             if (data.hasOwnProperty('defaultCampaignGroupId')) {
                 obj['defaultCampaignGroupId'] = ApiClient.convertToType(data['defaultCampaignGroupId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignType')) {
+                obj['campaignType'] = ApiClient.convertToType(data['campaignType'], 'String');
             }
         }
         return obj;
@@ -190,6 +195,13 @@ NewCampaignTemplate.prototype['campaignCollections'] = undefined;
  */
 NewCampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
 
+/**
+ * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
+ * @member {module:model/NewCampaignTemplate.CampaignTypeEnum} campaignType
+ * @default 'advanced'
+ */
+NewCampaignTemplate.prototype['campaignType'] = 'advanced';
+
 
 
 
@@ -257,6 +269,27 @@ NewCampaignTemplate['FeaturesEnum'] = {
      * @const
      */
     "strikethrough": "strikethrough"
+};
+
+
+/**
+ * Allowed values for the <code>campaignType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewCampaignTemplate['CampaignTypeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "advanced"
+     * @const
+     */
+    "advanced": "advanced"
 };
 
 

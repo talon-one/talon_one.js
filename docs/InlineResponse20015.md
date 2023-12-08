@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**totalResultSize** | **Number** |  | [optional] 
-**data** | [**[CollectionWithoutPayload]**](CollectionWithoutPayload.md) |  | 
+**hasMore** | **Boolean** | true means there is more data in the source collection to request.. | 
+**data** | [**[CardLedgerTransactionLogEntry]**](CardLedgerTransactionLogEntry.md) | List of loyalty card transaction logs. | 
 
 

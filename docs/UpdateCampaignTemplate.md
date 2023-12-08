@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **applicationsIds** | **[Number]** | A list of IDs of the Applications that are subscribed to this campaign template. | 
 **campaignCollections** | [**[CampaignTemplateCollection]**](CampaignTemplateCollection.md) | The campaign collections from the blueprint campaign for the template. | [optional] 
 **defaultCampaignGroupId** | **Number** | The default campaign group ID. | [optional] 
+**campaignType** | **String** | The campaign type. Possible type values:   - &#x60;cartItem&#x60;: Type of campaign that can apply effects only to cart items.   - &#x60;advanced&#x60;: Type of campaign that can apply effects to customer sessions and cart items.  | [optional] [default to &#39;advanced&#39;]
 
 
 
@@ -48,6 +49,17 @@ Name | Type | Description | Notes
 * `giveaways` (value: `"giveaways"`)
 
 * `strikethrough` (value: `"strikethrough"`)
+
+
+
+
+
+## Enum: CampaignTypeEnum
+
+
+* `cartItem` (value: `"cartItem"`)
+
+* `advanced` (value: `"advanced"`)
 
 
 

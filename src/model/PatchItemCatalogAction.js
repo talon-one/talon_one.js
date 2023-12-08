@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PatchItemCatalogAction model module.
  * @module model/PatchItemCatalogAction
- * @version 5.0.1
+ * @version 6.0.0
  */
 class PatchItemCatalogAction {
     /**

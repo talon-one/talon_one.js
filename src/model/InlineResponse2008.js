@@ -17,18 +17,18 @@ import Coupon from './Coupon';
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse2008 {
     /**
      * Constructs a new <code>InlineResponse2008</code>.
      * @alias module:model/InlineResponse2008
-     * @param hasMore {Boolean} 
+     * @param totalResultSize {Number} 
      * @param data {Array.<module:model/Coupon>} 
      */
-    constructor(hasMore, data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse2008.initialize(this, hasMore, data);
+        InlineResponse2008.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse2008 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -52,8 +52,8 @@ class InlineResponse2008 {
         if (data) {
             obj = obj || new InlineResponse2008();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
@@ -66,9 +66,9 @@ class InlineResponse2008 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse2008.prototype['hasMore'] = undefined;
+InlineResponse2008.prototype['totalResultSize'] = undefined;
 
 /**
  * @member {Array.<module:model/Coupon>} data

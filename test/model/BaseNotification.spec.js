@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enabled (base name: "enabled")', function() {
+      // uncomment below and update the code to test the property enabled
+      //var instane = new TalonOne.BaseNotification();
+      //expect(instance).to.be();
+    });
+
     it('should have the property webhook (base name: "webhook")', function() {
       // uncomment below and update the code to test the property webhook
       //var instane = new TalonOne.BaseNotification();
@@ -68,6 +74,12 @@
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
+      //var instane = new TalonOne.BaseNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new TalonOne.BaseNotification();
       //expect(instance).to.be();
     });

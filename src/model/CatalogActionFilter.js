@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CatalogActionFilter model module.
  * @module model/CatalogActionFilter
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CatalogActionFilter {
     /**

@@ -78,6 +78,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storeId (base name: "storeId")', function() {
+      // uncomment below and update the code to test the property storeId
+      //var instane = new TalonOne.ApplicationEvent();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storeIntegrationId (base name: "storeIntegrationId")', function() {
+      // uncomment below and update the code to test the property storeIntegrationId
+      //var instane = new TalonOne.ApplicationEvent();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sessionId (base name: "sessionId")', function() {
       // uncomment below and update the code to test the property sessionId
       //var instane = new TalonOne.ApplicationEvent();

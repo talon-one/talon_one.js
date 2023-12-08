@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Effect {
     /**
@@ -81,6 +81,9 @@ class Effect {
             if (data.hasOwnProperty('triggeredForCatalogItem')) {
                 obj['triggeredForCatalogItem'] = ApiClient.convertToType(data['triggeredForCatalogItem'], 'Number');
             }
+            if (data.hasOwnProperty('conditionIndex')) {
+                obj['conditionIndex'] = ApiClient.convertToType(data['conditionIndex'], 'Number');
+            }
             if (data.hasOwnProperty('props')) {
                 obj['props'] = ApiClient.convertToType(data['props'], Object);
             }
@@ -132,6 +135,12 @@ Effect.prototype['triggeredByCoupon'] = undefined;
  * @member {Number} triggeredForCatalogItem
  */
 Effect.prototype['triggeredForCatalogItem'] = undefined;
+
+/**
+ * The index of the condition that was triggered.
+ * @member {Number} conditionIndex
+ */
+Effect.prototype['conditionIndex'] = undefined;
 
 /**
  * The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).

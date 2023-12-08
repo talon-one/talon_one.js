@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property implicitlyReserved (base name: "implicitlyReserved")', function() {
+      // uncomment below and update the code to test the property implicitlyReserved
+      //var instane = new TalonOne.IntegrationCoupon();
+      //expect(instance).to.be();
+    });
+
     it('should have the property profileRedemptionCount (base name: "profileRedemptionCount")', function() {
       // uncomment below and update the code to test the property profileRedemptionCount
       //var instane = new TalonOne.IntegrationCoupon();

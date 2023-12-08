@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[WebhookWithOutgoingIntegrationDetails]**](WebhookWithOutgoingIntegrationDetails.md) |  | 
+**data** | [**[AccountAdditionalCost]**](AccountAdditionalCost.md) |  | 
 
 

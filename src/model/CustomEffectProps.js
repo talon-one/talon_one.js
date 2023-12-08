@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomEffectProps model module.
  * @module model/CustomEffectProps
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CustomEffectProps {
     /**
@@ -101,7 +101,7 @@ CustomEffectProps.prototype['name'] = undefined;
 CustomEffectProps.prototype['cartItemPosition'] = undefined;
 
 /**
- * When cart item flattening is enabled, the sub position indicates to which item unit the custom effect is applied, for cart items with quantity > 1. 
+ * For cart items with quantity > 1, the sub position indicates to which item unit the custom effect is applied. 
  * @member {Number} cartItemSubPosition
  */
 CustomEffectProps.prototype['cartItemSubPosition'] = undefined;

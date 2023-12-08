@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyDashboardPointsBreakdown model module.
  * @module model/LoyaltyDashboardPointsBreakdown
- * @version 5.0.1
+ * @version 6.0.0
  */
 class LoyaltyDashboardPointsBreakdown {
     /**

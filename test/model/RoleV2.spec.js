@@ -90,12 +90,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property isAdmin (base name: "isAdmin")', function() {
-      // uncomment below and update the code to test the property isAdmin
-      //var instane = new TalonOne.RoleV2();
-      //expect(instance).to.be();
-    });
-
     it('should have the property permissions (base name: "permissions")', function() {
       // uncomment below and update the code to test the property permissions
       //var instane = new TalonOne.RoleV2();

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Attribute model module.
  * @module model/Attribute
- * @version 5.0.1
+ * @version 6.0.0
  */
 class Attribute {
     /**
@@ -297,7 +297,13 @@ Attribute['EntityEnum'] = {
      * value: "Referral"
      * @const
      */
-    "Referral": "Referral"
+    "Referral": "Referral",
+
+    /**
+     * value: "Store"
+     * @const
+     */
+    "Store": "Store"
 };
 
 

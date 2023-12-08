@@ -158,16 +158,6 @@
         done();
       });
     });
-    describe('createNotificationWebhook', function() {
-      it('should call createNotificationWebhook successfully', function(done) {
-        //uncomment below and update the code to test createNotificationWebhook
-        //instance.createNotificationWebhook(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createPasswordRecoveryEmail', function() {
       it('should call createPasswordRecoveryEmail successfully', function(done) {
         //uncomment below and update the code to test createPasswordRecoveryEmail
@@ -182,6 +172,16 @@
       it('should call createSession successfully', function(done) {
         //uncomment below and update the code to test createSession
         //instance.createSession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createStore', function() {
+      it('should call createStore successfully', function(done) {
+        //uncomment below and update the code to test createStore
+        //instance.createStore(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -258,20 +258,20 @@
         done();
       });
     });
-    describe('deleteNotificationWebhook', function() {
-      it('should call deleteNotificationWebhook successfully', function(done) {
-        //uncomment below and update the code to test deleteNotificationWebhook
-        //instance.deleteNotificationWebhook(function(error) {
+    describe('deleteReferral', function() {
+      it('should call deleteReferral successfully', function(done) {
+        //uncomment below and update the code to test deleteReferral
+        //instance.deleteReferral(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteReferral', function() {
-      it('should call deleteReferral successfully', function(done) {
-        //uncomment below and update the code to test deleteReferral
-        //instance.deleteReferral(function(error) {
+    describe('deleteStore', function() {
+      it('should call deleteStore successfully', function(done) {
+        //uncomment below and update the code to test deleteStore
+        //instance.deleteStore(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -322,6 +322,16 @@
       it('should call exportCustomerSessions successfully', function(done) {
         //uncomment below and update the code to test exportCustomerSessions
         //instance.exportCustomerSessions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportCustomersTiers', function() {
+      it('should call exportCustomersTiers successfully', function(done) {
+        //uncomment below and update the code to test exportCustomersTiers
+        //instance.exportCustomersTiers(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -878,26 +888,6 @@
         done();
       });
     });
-    describe('getNotificationWebhook', function() {
-      it('should call getNotificationWebhook successfully', function(done) {
-        //uncomment below and update the code to test getNotificationWebhook
-        //instance.getNotificationWebhook(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getNotificationWebhooks', function() {
-      it('should call getNotificationWebhooks successfully', function(done) {
-        //uncomment below and update the code to test getNotificationWebhooks
-        //instance.getNotificationWebhooks(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getReferralsWithoutTotalCount', function() {
       it('should call getReferralsWithoutTotalCount successfully', function(done) {
         //uncomment below and update the code to test getReferralsWithoutTotalCount
@@ -932,6 +922,16 @@
       it('should call getRulesets successfully', function(done) {
         //uncomment below and update the code to test getRulesets
         //instance.getRulesets(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getStore', function() {
+      it('should call getStore successfully', function(done) {
+        //uncomment below and update the code to test getStore
+        //instance.getStore(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1128,6 +1128,26 @@
         done();
       });
     });
+    describe('listStores', function() {
+      it('should call listStores successfully', function(done) {
+        //uncomment below and update the code to test listStores
+        //instance.listStores(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('notificationActivation', function() {
+      it('should call notificationActivation successfully', function(done) {
+        //uncomment below and update the code to test notificationActivation
+        //instance.notificationActivation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postAddedDeductedPointsNotification', function() {
       it('should call postAddedDeductedPointsNotification successfully', function(done) {
         //uncomment below and update the code to test postAddedDeductedPointsNotification
@@ -1288,20 +1308,20 @@
         done();
       });
     });
-    describe('updateNotificationWebhook', function() {
-      it('should call updateNotificationWebhook successfully', function(done) {
-        //uncomment below and update the code to test updateNotificationWebhook
-        //instance.updateNotificationWebhook(function(error) {
+    describe('updateReferral', function() {
+      it('should call updateReferral successfully', function(done) {
+        //uncomment below and update the code to test updateReferral
+        //instance.updateReferral(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateReferral', function() {
-      it('should call updateReferral successfully', function(done) {
-        //uncomment below and update the code to test updateReferral
-        //instance.updateReferral(function(error) {
+    describe('updateStore', function() {
+      it('should call updateStore successfully', function(done) {
+        //uncomment below and update the code to test updateStore
+        //instance.updateStore(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

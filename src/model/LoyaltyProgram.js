@@ -17,7 +17,7 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 5.0.1
+ * @version 6.0.0
  */
 class LoyaltyProgram {
     /**
@@ -200,7 +200,7 @@ LoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 LoyaltyProgram.prototype['sandbox'] = undefined;
 
 /**
- * The duration is an **integer** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
+ * The amount of time until the expiration of every tier, starting from the date when the customer joined the considered tier for the first time.  The time format is an **integer** followed by one letter indicating the time unit. Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
  * @member {String} tiersExpireIn
  */
 LoyaltyProgram.prototype['tiersExpireIn'] = undefined;
@@ -243,14 +243,14 @@ LoyaltyProgram.prototype['timezone'] = undefined;
 LoyaltyProgram.prototype['cardBased'] = false;
 
 /**
- * True if it is possible to change tiers definition.
+ * `True` if the tier definitions can be updated. 
  * @member {Boolean} canUpdateTiers
  * @default false
  */
 LoyaltyProgram.prototype['canUpdateTiers'] = false;
 
 /**
- * True if it is possible to introduce tiersExpireIn and tiersDowngradePolicy.
+ * `True` if the program can be upgraded to use the `tiersExpireIn` and `tiersDowngradePolicy` properties. 
  * @member {Boolean} canUpgradeToAdvancedTiers
  * @default false
  */

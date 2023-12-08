@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **accountId** | **Number** | The ID of the account that owns this entity. | 
 **name** | **String** | Name of the role. | [optional] 
 **description** | **String** | Description of the role. | [optional] 
-**isAdmin** | **Boolean** | Indicates whether the role grants admin permissions. | [optional] 
 **permissions** | [**RoleV2Permissions**](RoleV2Permissions.md) |  | [optional] 
 **members** | **[Number]** | A list of user identifiers the role is assigned to. | [optional] 
 

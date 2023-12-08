@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyCardRegistration model module.
  * @module model/LoyaltyCardRegistration
- * @version 5.0.1
+ * @version 6.0.0
  */
 class LoyaltyCardRegistration {
     /**

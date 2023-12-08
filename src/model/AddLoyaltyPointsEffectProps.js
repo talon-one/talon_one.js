@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 5.0.1
+ * @version 6.0.0
  */
 class AddLoyaltyPointsEffectProps {
     /**
@@ -170,7 +170,7 @@ AddLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
 AddLoyaltyPointsEffectProps.prototype['cartItemPosition'] = undefined;
 
 /**
- * The sub position is triggered when application flattening is enabled. It indicates to which item the loyalty points addition applies, for cart items with `quantity` > 1. 
+ * For cart items with `quantity` > 1, the sub position indicates to which item the loyalty points addition is applied. 
  * @member {Number} cartItemSubPosition
  */
 AddLoyaltyPointsEffectProps.prototype['cartItemSubPosition'] = undefined;

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storeIntegrationId (base name: "storeIntegrationId")', function() {
+      // uncomment below and update the code to test the property storeIntegrationId
+      //var instane = new TalonOne.CustomerSessionV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property evaluableCampaignIds (base name: "evaluableCampaignIds")', function() {
       // uncomment below and update the code to test the property evaluableCampaignIds
       //var instane = new TalonOne.CustomerSessionV2();

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateUser model module.
  * @module model/UpdateUser
- * @version 5.0.1
+ * @version 6.0.0
  */
 class UpdateUser {
     /**
@@ -62,6 +62,9 @@ class UpdateUser {
             if (data.hasOwnProperty('applicationNotificationSubscriptions')) {
                 obj['applicationNotificationSubscriptions'] = ApiClient.convertToType(data['applicationNotificationSubscriptions'], Object);
             }
+            if (data.hasOwnProperty('isAdmin')) {
+                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -97,6 +100,12 @@ UpdateUser.prototype['roles'] = undefined;
  * @member {Object} applicationNotificationSubscriptions
  */
 UpdateUser.prototype['applicationNotificationSubscriptions'] = undefined;
+
+/**
+ * An indication of whether the user has admin permissions.
+ * @member {Boolean} isAdmin
+ */
+UpdateUser.prototype['isAdmin'] = undefined;
 
 
 

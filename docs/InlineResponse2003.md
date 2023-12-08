@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[Application]**](Application.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[CardLedgerPointsEntryIntegrationAPI]**](CardLedgerPointsEntryIntegrationAPI.md) |  | 
 
 

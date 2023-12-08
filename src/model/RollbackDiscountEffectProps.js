@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackDiscountEffectProps model module.
  * @module model/RollbackDiscountEffectProps
- * @version 5.0.1
+ * @version 6.0.0
  */
 class RollbackDiscountEffectProps {
     /**
@@ -99,7 +99,7 @@ RollbackDiscountEffectProps.prototype['value'] = undefined;
 RollbackDiscountEffectProps.prototype['cartItemPosition'] = undefined;
 
 /**
- * The index of the item unit in its line item. It is only used for cart items with `quantity` > 1 and is only returned when cart item flattening is enabled. 
+ * For cart items with `quantity` > 1, the subposition returns the index of the item unit in its line item. 
  * @member {Number} cartItemSubPosition
  */
 RollbackDiscountEffectProps.prototype['cartItemSubPosition'] = undefined;

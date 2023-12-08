@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
+import CampaignStateNotification from './CampaignStateNotification';
 import Ruleset from './Ruleset';
 
 /**
  * The CampaignEditedNotification model module.
  * @module model/CampaignEditedNotification
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CampaignEditedNotification {
     /**
      * Constructs a new <code>CampaignEditedNotification</code>.
      * A notification regarding a campaign which was edited.
      * @alias module:model/CampaignEditedNotification
-     * @param campaign {module:model/Campaign} 
-     * @param oldCampaign {module:model/Campaign} 
+     * @param campaign {module:model/CampaignStateNotification} 
+     * @param oldCampaign {module:model/CampaignStateNotification} 
      */
     constructor(campaign, oldCampaign) { 
         
@@ -55,10 +55,10 @@ class CampaignEditedNotification {
             obj = obj || new CampaignEditedNotification();
 
             if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = ApiClient.convertToType(data['campaign'], Campaign);
+                obj['campaign'] = CampaignStateNotification.constructFromObject(data['campaign']);
             }
             if (data.hasOwnProperty('oldCampaign')) {
-                obj['oldCampaign'] = ApiClient.convertToType(data['oldCampaign'], Campaign);
+                obj['oldCampaign'] = CampaignStateNotification.constructFromObject(data['oldCampaign']);
             }
             if (data.hasOwnProperty('ruleset')) {
                 obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
@@ -71,12 +71,12 @@ class CampaignEditedNotification {
 }
 
 /**
- * @member {module:model/Campaign} campaign
+ * @member {module:model/CampaignStateNotification} campaign
  */
 CampaignEditedNotification.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/Campaign} oldCampaign
+ * @member {module:model/CampaignStateNotification} oldCampaign
  */
 CampaignEditedNotification.prototype['oldCampaign'] = undefined;
 

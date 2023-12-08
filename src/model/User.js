@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 5.0.1
+ * @version 6.0.0
  */
 class User {
     /**
@@ -105,6 +105,15 @@ class User {
             if (data.hasOwnProperty('authMethod')) {
                 obj['authMethod'] = ApiClient.convertToType(data['authMethod'], 'String');
             }
+            if (data.hasOwnProperty('isAdmin')) {
+                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
+            }
+            if (data.hasOwnProperty('lastSignedIn')) {
+                obj['lastSignedIn'] = ApiClient.convertToType(data['lastSignedIn'], 'Date');
+            }
+            if (data.hasOwnProperty('lastAccessed')) {
+                obj['lastAccessed'] = ApiClient.convertToType(data['lastAccessed'], 'Date');
+            }
         }
         return obj;
     }
@@ -188,6 +197,24 @@ User.prototype['applicationNotificationSubscriptions'] = undefined;
  * @member {String} authMethod
  */
 User.prototype['authMethod'] = undefined;
+
+/**
+ * An indication of whether the user has admin permissions.
+ * @member {Boolean} isAdmin
+ */
+User.prototype['isAdmin'] = undefined;
+
+/**
+ * Date and time when the user last signed in to Talon.One.
+ * @member {Date} lastSignedIn
+ */
+User.prototype['lastSignedIn'] = undefined;
+
+/**
+ * Date and time of the user's last activity after signing in to Talon.One.
+ * @member {Date} lastAccessed
+ */
+User.prototype['lastAccessed'] = undefined;
 
 
 

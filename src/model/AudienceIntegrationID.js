@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AudienceIntegrationID model module.
  * @module model/AudienceIntegrationID
- * @version 5.0.1
+ * @version 6.0.0
  */
 class AudienceIntegrationID {
     /**

@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[NotificationWebhook]**](NotificationWebhook.md) |  | 
+**data** | [**[Application]**](Application.md) |  | 
 
 

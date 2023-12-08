@@ -17,7 +17,7 @@ import ApplicationCustomer from './ApplicationCustomer';
 /**
  * The InlineResponse20022 model module.
  * @module model/InlineResponse20022
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse20022 {
     /**
@@ -50,11 +50,11 @@ class InlineResponse20022 {
         if (data) {
             obj = obj || new InlineResponse20022();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
@@ -67,14 +67,14 @@ class InlineResponse20022 {
 }
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20022.prototype['hasMore'] = undefined;
-
-/**
  * @member {Number} totalResultSize
  */
 InlineResponse20022.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20022.prototype['hasMore'] = undefined;
 
 /**
  * @member {Array.<module:model/ApplicationCustomer>} data

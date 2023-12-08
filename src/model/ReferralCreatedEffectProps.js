@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferralCreatedEffectProps model module.
  * @module model/ReferralCreatedEffectProps
- * @version 5.0.1
+ * @version 6.0.0
  */
 class ReferralCreatedEffectProps {
     /**

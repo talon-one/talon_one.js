@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Collection from './Collection';
+import CollectionItem from './CollectionItem';
 
 /**
  * The InlineResponse20017 model module.
  * @module model/InlineResponse20017
- * @version 5.0.1
+ * @version 6.0.0
  */
 class InlineResponse20017 {
     /**
      * Constructs a new <code>InlineResponse20017</code>.
      * @alias module:model/InlineResponse20017
-     * @param data {Array.<module:model/Collection>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/CollectionItem>} 
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20017.initialize(this, data);
+        InlineResponse20017.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20017 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse20017 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Collection]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CollectionItem]);
             }
         }
         return obj;
@@ -72,12 +71,7 @@ class InlineResponse20017 {
 InlineResponse20017.prototype['hasMore'] = undefined;
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20017.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/Collection>} data
+ * @member {Array.<module:model/CollectionItem>} data
  */
 InlineResponse20017.prototype['data'] = undefined;
 

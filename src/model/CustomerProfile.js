@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The CustomerProfile model module.
  * @module model/CustomerProfile
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CustomerProfile {
     /**
@@ -32,7 +32,7 @@ class CustomerProfile {
      * @param accountId {Number} The ID of the Talon.One account that owns this profile.
      * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
      * @param totalSales {Number} The total amount of money spent by the customer **before** discounts are applied.  The total sales amount excludes the following: - Cancelled or reopened sessions. - Returned items. 
-     * @param lastActivity {Date} Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn't impact this field. 
+     * @param lastActivity {Date} Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the Rule Engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn't impact this field. 
      */
     constructor(id, created, integrationId, attributes, accountId, closedSessions, totalSales, lastActivity) { 
         
@@ -161,7 +161,7 @@ CustomerProfile.prototype['loyaltyMemberships'] = undefined;
 CustomerProfile.prototype['audienceMemberships'] = undefined;
 
 /**
- * Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the rule-engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn't impact this field. 
+ * Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the Rule Engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn't impact this field. 
  * @member {Date} lastActivity
  */
 CustomerProfile.prototype['lastActivity'] = undefined;

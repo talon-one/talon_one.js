@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCampaignGroup model module.
  * @module model/UpdateCampaignGroup
- * @version 5.0.1
+ * @version 6.0.0
  */
 class UpdateCampaignGroup {
     /**
      * Constructs a new <code>UpdateCampaignGroup</code>.
      * 
      * @alias module:model/UpdateCampaignGroup
-     * @param name {String} The name of this campaign group.
+     * @param name {String} The name of this campaign access group.
      */
     constructor(name) { 
         
@@ -70,25 +70,25 @@ class UpdateCampaignGroup {
 }
 
 /**
- * The name of this campaign group.
+ * The name of this campaign access group.
  * @member {String} name
  */
 UpdateCampaignGroup.prototype['name'] = undefined;
 
 /**
- * A longer description of the campaign group.
+ * A longer description of the campaign access group.
  * @member {String} description
  */
 UpdateCampaignGroup.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that this campaign group is enabled for.
+ * A list of IDs of the Applications that this campaign access group is enabled for.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 UpdateCampaignGroup.prototype['subscribedApplicationsIds'] = undefined;
 
 /**
- * A list of the IDs of the campaigns that this campaign group owns.
+ * A list of IDs of the campaigns that are part of the campaign access group.
  * @member {Array.<Number>} campaignIds
  */
 UpdateCampaignGroup.prototype['campaignIds'] = undefined;

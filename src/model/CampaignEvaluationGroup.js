@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignEvaluationGroup model module.
  * @module model/CampaignEvaluationGroup
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CampaignEvaluationGroup {
     /**
@@ -26,13 +26,14 @@ class CampaignEvaluationGroup {
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param name {String} The name of the campaign evaluation group.
      * @param parentId {Number} The ID of the parent group that contains the campaign evaluation group.
-     * @param evaluationMode {module:model/CampaignEvaluationGroup.EvaluationModeEnum} 
+     * @param evaluationMode {module:model/CampaignEvaluationGroup.EvaluationModeEnum} The mode by which campaigns in the campaign evaluation group are evaluated.
+     * @param evaluationScope {module:model/CampaignEvaluationGroup.EvaluationScopeEnum} The evaluation scope of the campaign evaluation group.
      * @param locked {Boolean} An indicator of whether the campaign evaluation group is locked for modification.
      * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      */
-    constructor(applicationId, name, parentId, evaluationMode, locked, id) { 
+    constructor(applicationId, name, parentId, evaluationMode, evaluationScope, locked, id) { 
         
-        CampaignEvaluationGroup.initialize(this, applicationId, name, parentId, evaluationMode, locked, id);
+        CampaignEvaluationGroup.initialize(this, applicationId, name, parentId, evaluationMode, evaluationScope, locked, id);
     }
 
     /**
@@ -40,11 +41,12 @@ class CampaignEvaluationGroup {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applicationId, name, parentId, evaluationMode, locked, id) { 
+    static initialize(obj, applicationId, name, parentId, evaluationMode, evaluationScope, locked, id) { 
         obj['applicationId'] = applicationId;
         obj['name'] = name;
         obj['parentId'] = parentId;
         obj['evaluationMode'] = evaluationMode;
+        obj['evaluationScope'] = evaluationScope;
         obj['locked'] = locked;
         obj['id'] = id;
     }
@@ -74,6 +76,9 @@ class CampaignEvaluationGroup {
             }
             if (data.hasOwnProperty('evaluationMode')) {
                 obj['evaluationMode'] = ApiClient.convertToType(data['evaluationMode'], 'String');
+            }
+            if (data.hasOwnProperty('evaluationScope')) {
+                obj['evaluationScope'] = ApiClient.convertToType(data['evaluationScope'], 'String');
             }
             if (data.hasOwnProperty('locked')) {
                 obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
@@ -113,9 +118,16 @@ CampaignEvaluationGroup.prototype['parentId'] = undefined;
 CampaignEvaluationGroup.prototype['description'] = undefined;
 
 /**
+ * The mode by which campaigns in the campaign evaluation group are evaluated.
  * @member {module:model/CampaignEvaluationGroup.EvaluationModeEnum} evaluationMode
  */
 CampaignEvaluationGroup.prototype['evaluationMode'] = undefined;
+
+/**
+ * The evaluation scope of the campaign evaluation group.
+ * @member {module:model/CampaignEvaluationGroup.EvaluationScopeEnum} evaluationScope
+ */
+CampaignEvaluationGroup.prototype['evaluationScope'] = undefined;
 
 /**
  * An indicator of whether the campaign evaluation group is locked for modification.
@@ -163,6 +175,27 @@ CampaignEvaluationGroup['EvaluationModeEnum'] = {
      * @const
      */
     "highestDiscount": "highestDiscount"
+};
+
+
+/**
+ * Allowed values for the <code>evaluationScope</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CampaignEvaluationGroup['EvaluationScopeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "session"
+     * @const
+     */
+    "session": "session"
 };
 
 

@@ -43,6 +43,8 @@ Name | Type | Description | Notes
 
 * `Referral` (value: `"Referral"`)
 
+* `Store` (value: `"Store"`)
+
 
 
 

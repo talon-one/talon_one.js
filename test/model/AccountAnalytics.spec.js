@@ -168,6 +168,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lastUpdatedAt (base name: "lastUpdatedAt")', function() {
+      // uncomment below and update the code to test the property lastUpdatedAt
+      //var instane = new TalonOne.AccountAnalytics();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

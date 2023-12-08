@@ -17,7 +17,7 @@ import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**

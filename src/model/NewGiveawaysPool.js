@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewGiveawaysPool model module.
  * @module model/NewGiveawaysPool
- * @version 5.0.1
+ * @version 6.0.0
  */
 class NewGiveawaysPool {
     /**

@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 5.0.1
+ * @version 6.0.0
  */
 class UpdateCampaign {
     /**
@@ -95,6 +95,15 @@ class UpdateCampaign {
             }
             if (data.hasOwnProperty('campaignGroups')) {
                 obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
+            }
+            if (data.hasOwnProperty('evaluationGroupId')) {
+                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('linkedStoreIds')) {
+                obj['linkedStoreIds'] = ApiClient.convertToType(data['linkedStoreIds'], ['Number']);
             }
         }
         return obj;
@@ -180,6 +189,25 @@ UpdateCampaign.prototype['limits'] = undefined;
  */
 UpdateCampaign.prototype['campaignGroups'] = undefined;
 
+/**
+ * The ID of the campaign evaluation group the campaign belongs to.
+ * @member {Number} evaluationGroupId
+ */
+UpdateCampaign.prototype['evaluationGroupId'] = undefined;
+
+/**
+ * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
+ * @member {module:model/UpdateCampaign.TypeEnum} type
+ * @default 'advanced'
+ */
+UpdateCampaign.prototype['type'] = 'advanced';
+
+/**
+ * A list of store IDs that you want to link to the campaign.  **Note:** Campaigns with linked store IDs will only be evaluated when there is a [customer session update](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) that references a linked store. 
+ * @member {Array.<Number>} linkedStoreIds
+ */
+UpdateCampaign.prototype['linkedStoreIds'] = undefined;
+
 
 
 
@@ -247,6 +275,27 @@ UpdateCampaign['FeaturesEnum'] = {
      * @const
      */
     "strikethrough": "strikethrough"
+};
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateCampaign['TypeEnum'] = {
+
+    /**
+     * value: "cartItem"
+     * @const
+     */
+    "cartItem": "cartItem",
+
+    /**
+     * value: "advanced"
+     * @const
+     */
+    "advanced": "advanced"
 };
 
 

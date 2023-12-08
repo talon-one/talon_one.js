@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignGroupEntity model module.
  * @module model/CampaignGroupEntity
- * @version 5.0.1
+ * @version 6.0.0
  */
 class CampaignGroupEntity {
     /**
