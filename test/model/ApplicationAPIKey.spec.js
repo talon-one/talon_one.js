@@ -72,6 +72,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new TalonOne.ApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property timeOffset (base name: "timeOffset")', function() {
+      // uncomment below and update the code to test the property timeOffset
+      //var instane = new TalonOne.ApplicationAPIKey();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new TalonOne.ApplicationAPIKey();

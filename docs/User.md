@@ -7,19 +7,19 @@ Name | Type | Description | Notes
 **id** | **Number** | Internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
 **modified** | **Date** | The time this entity was last modified. | 
-**email** | **String** | The email address associated with your account. | 
+**email** | **String** | The email address associated with the user profile. | 
 **accountId** | **Number** | The ID of the account that owns this entity. | 
-**inviteToken** | **String** | Invite token, empty if the user as already accepted their invite. | 
-**state** | **String** | Current user state. | 
-**name** | **String** | Full name | 
-**policy** | [**Object**](.md) | User ACL Policy | 
-**latestFeedTimestamp** | **Date** | Latest timestamp the user has been notified for feed. | [optional] 
-**roles** | **[Number]** | Contains a list of all roles the user is a member of. | [optional] 
-**applicationNotificationSubscriptions** | [**Object**](.md) |  | [optional] 
-**authMethod** | **String** | The Authentication method for this user. | [optional] 
-**isAdmin** | **Boolean** | An indication of whether the user has admin permissions. | [optional] 
-**lastSignedIn** | **Date** | Date and time when the user last signed in to Talon.One. | [optional] 
-**lastAccessed** | **Date** | Date and time of the user&#39;s last activity after signing in to Talon.One. | [optional] 
+**name** | **String** | Name of the user. | 
+**state** | **String** | State of the user. | 
+**inviteToken** | **String** | Invitation token of the user.  **Note**: If the user has already accepted their invitation, this is &#x60;null&#x60;.  | 
+**isAdmin** | **Boolean** | Indicates whether the user is an &#x60;admin&#x60;. | [optional] 
+**policy** | [**Object**](.md) | Access level of the user. | 
+**roles** | **[Number]** | A list of the IDs of the roles assigned to the user. | [optional] 
+**authMethod** | **String** | Authentication method for this user. | [optional] 
+**applicationNotificationSubscriptions** | [**Object**](.md) | Application notifications that the user is subscribed to. | [optional] 
+**lastSignedIn** | **Date** | Timestamp when the user last signed in to Talon.One. | [optional] 
+**lastAccessed** | **Date** | Timestamp of the user&#39;s last activity after signing in to Talon.One. | [optional] 
+**latestFeedTimestamp** | **Date** | Timestamp when the user was notified for feed. | [optional] 
 
 
 

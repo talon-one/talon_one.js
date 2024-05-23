@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MultiApplicationEntity model module.
  * @module model/MultiApplicationEntity
- * @version 6.0.0
+ * @version 7.0.0
  */
 class MultiApplicationEntity {
     /**

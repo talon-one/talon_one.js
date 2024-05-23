@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAPIKey model module.
  * @module model/ApplicationAPIKey
- * @version 6.0.0
+ * @version 7.0.0
  */
 class ApplicationAPIKey {
     /**
      * Constructs a new <code>ApplicationAPIKey</code>.
      * 
      * @alias module:model/ApplicationAPIKey
-     * @param title {String} Title for API Key.
-     * @param expires {Date} The date the API key expired.
+     * @param title {String} Title of the API key.
+     * @param expires {Date} The date the API key expires.
      * @param id {Number} ID of the API Key.
      * @param createdBy {Number} ID of user who created.
      * @param accountID {Number} ID of account the key is used for.
@@ -71,6 +71,12 @@ class ApplicationAPIKey {
             if (data.hasOwnProperty('platform')) {
                 obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('timeOffset')) {
+                obj['timeOffset'] = ApiClient.convertToType(data['timeOffset'], 'Number');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
@@ -94,13 +100,13 @@ class ApplicationAPIKey {
 }
 
 /**
- * Title for API Key.
+ * Title of the API key.
  * @member {String} title
  */
 ApplicationAPIKey.prototype['title'] = undefined;
 
 /**
- * The date the API key expired.
+ * The date the API key expires.
  * @member {Date} expires
  */
 ApplicationAPIKey.prototype['expires'] = undefined;
@@ -110,6 +116,18 @@ ApplicationAPIKey.prototype['expires'] = undefined;
  * @member {module:model/ApplicationAPIKey.PlatformEnum} platform
  */
 ApplicationAPIKey.prototype['platform'] = undefined;
+
+/**
+ * The API key type. Can be empty or `staging`.  Staging API keys can only be used for dry requests with the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint, [Update customer profile](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/updateCustomerProfileV2) endpoint, and [Track event](https://docs.talon.one/integration-api#tag/Events/operation/trackEventV2) endpoint.  When using the _Update customer profile_ endpoint with a staging API key, the query parameter `runRuleEngine` must be `true`. 
+ * @member {module:model/ApplicationAPIKey.TypeEnum} type
+ */
+ApplicationAPIKey.prototype['type'] = undefined;
+
+/**
+ * A time offset in nanoseconds associated with the API key. When making a request using the API key, rule evaluation is based on a date that is calculated by adding the offset to the current date. 
+ * @member {Number} timeOffset
+ */
+ApplicationAPIKey.prototype['timeOffset'] = undefined;
 
 /**
  * ID of the API Key.
@@ -211,6 +229,21 @@ ApplicationAPIKey['PlatformEnum'] = {
      * @const
      */
     "emarsys": "emarsys"
+};
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+ApplicationAPIKey['TypeEnum'] = {
+
+    /**
+     * value: "staging"
+     * @const
+     */
+    "staging": "staging"
 };
 
 

@@ -21,7 +21,11 @@ Name | Type | Description | Notes
 
 * `coupon` (value: `"coupon"`)
 
+* `expiring_coupons` (value: `"expiring_coupons"`)
+
 * `expiring_points` (value: `"expiring_points"`)
+
+* `card_expiring_points` (value: `"card_expiring_points"`)
 
 * `pending_to_active_points` (value: `"pending_to_active_points"`)
 

@@ -17,7 +17,7 @@ import TierWillDowngradeNotificationTrigger from './TierWillDowngradeNotificatio
 /**
  * The TierWillDowngradeNotificationPolicy model module.
  * @module model/TierWillDowngradeNotificationPolicy
- * @version 6.0.0
+ * @version 7.0.0
  */
 class TierWillDowngradeNotificationPolicy {
     /**
@@ -55,6 +55,9 @@ class TierWillDowngradeNotificationPolicy {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('batchingEnabled')) {
+                obj['batchingEnabled'] = ApiClient.convertToType(data['batchingEnabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('triggers')) {
                 obj['triggers'] = ApiClient.convertToType(data['triggers'], [TierWillDowngradeNotificationTrigger]);
             }
@@ -70,6 +73,13 @@ class TierWillDowngradeNotificationPolicy {
  * @member {String} name
  */
 TierWillDowngradeNotificationPolicy.prototype['name'] = undefined;
+
+/**
+ * Indicates whether batching is activated.
+ * @member {Boolean} batchingEnabled
+ * @default true
+ */
+TierWillDowngradeNotificationPolicy.prototype['batchingEnabled'] = true;
 
 /**
  * @member {Array.<module:model/TierWillDowngradeNotificationTrigger>} triggers

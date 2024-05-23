@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import ModelExport from './ModelExport';
+import User from './User';
 
 /**
  * The InlineResponse20041 model module.
  * @module model/InlineResponse20041
- * @version 6.0.0
+ * @version 7.0.0
  */
 class InlineResponse20041 {
     /**
      * Constructs a new <code>InlineResponse20041</code>.
      * @alias module:model/InlineResponse20041
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/ModelExport>} 
+     * @param data {Array.<module:model/User>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20041 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
+                obj['data'] = ApiClient.convertToType(data['data'], [User]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20041 {
 InlineResponse20041.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ModelExport>} data
+ * @member {Array.<module:model/User>} data
  */
 InlineResponse20041.prototype['data'] = undefined;
 

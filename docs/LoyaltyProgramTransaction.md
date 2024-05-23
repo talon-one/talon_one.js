@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | ID of the loyalty ledger transaction. | 
 **programId** | **Number** | ID of the loyalty program. | 
+**campaignId** | **Number** | ID of the campaign. | [optional] 
 **created** | **Date** | Date and time the loyalty transaction occurred. | 
 **type** | **String** | Type of transaction. Possible values:   - &#x60;addition&#x60;: Signifies added points.   - &#x60;subtraction&#x60;: Signifies deducted points.  | 
 **amount** | **Number** | Amount of loyalty points added or deducted in the transaction. | 

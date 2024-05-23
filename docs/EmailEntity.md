@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **String** | The email address associated with your account. | 
+**email** | **String** | The email address associated with the user profile. | 
 
 

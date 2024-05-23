@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignEvaluationGroup model module.
  * @module model/CampaignEvaluationGroup
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CampaignEvaluationGroup {
     /**

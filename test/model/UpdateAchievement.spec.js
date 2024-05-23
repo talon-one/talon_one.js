@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.UpdateAchievement);
     });
 
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new TalonOne.UpdateAchievement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
       //var instane = new TalonOne.UpdateAchievement();
@@ -62,6 +68,24 @@
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
+      //var instane = new TalonOne.UpdateAchievement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property target (base name: "target")', function() {
+      // uncomment below and update the code to test the property target
+      //var instane = new TalonOne.UpdateAchievement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property period (base name: "period")', function() {
+      // uncomment below and update the code to test the property period
+      //var instane = new TalonOne.UpdateAchievement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property periodEndOverride (base name: "periodEndOverride")', function() {
+      // uncomment below and update the code to test the property periodEndOverride
       //var instane = new TalonOne.UpdateAchievement();
       //expect(instance).to.be();
     });

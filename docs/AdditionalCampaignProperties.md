@@ -25,5 +25,21 @@ Name | Type | Description | Notes
 **createdBy** | **String** | Name of the user who created this campaign if available. | [optional] 
 **updatedBy** | **String** | Name of the user who last updated this campaign if available. | [optional] 
 **templateId** | **Number** | The ID of the Campaign Template this Campaign was created from. | [optional] 
+**frontendState** | **String** | A campaign state described exactly as in the Campaign Manager. | 
+
+
+
+## Enum: FrontendStateEnum
+
+
+* `expired` (value: `"expired"`)
+
+* `scheduled` (value: `"scheduled"`)
+
+* `running` (value: `"running"`)
+
+* `draft` (value: `"draft"`)
+
+
 
 

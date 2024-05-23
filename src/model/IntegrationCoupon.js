@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The IntegrationCoupon model module.
  * @module model/IntegrationCoupon
- * @version 6.0.0
+ * @version 7.0.0
  */
 class IntegrationCoupon {
     /**
@@ -263,9 +263,9 @@ IntegrationCoupon.prototype['batchId'] = undefined;
 /**
  * Whether the reservation effect actually created a new reservation.
  * @member {Boolean} isReservationMandatory
- * @default true
+ * @default false
  */
-IntegrationCoupon.prototype['isReservationMandatory'] = true;
+IntegrationCoupon.prototype['isReservationMandatory'] = false;
 
 /**
  * An indication of whether the coupon is implicitly reserved for all customers.

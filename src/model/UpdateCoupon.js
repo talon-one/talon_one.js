@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 6.0.0
+ * @version 7.0.0
  */
 class UpdateCoupon {
     /**
@@ -137,9 +137,9 @@ UpdateCoupon.prototype['attributes'] = undefined;
 /**
  * Whether the reservation effect actually created a new reservation.
  * @member {Boolean} isReservationMandatory
- * @default true
+ * @default false
  */
-UpdateCoupon.prototype['isReservationMandatory'] = true;
+UpdateCoupon.prototype['isReservationMandatory'] = false;
 
 /**
  * An indication of whether the coupon is implicitly reserved for all customers.

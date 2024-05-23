@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponsNotificationPolicy model module.
  * @module model/CouponsNotificationPolicy
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CouponsNotificationPolicy {
     /**
@@ -57,6 +57,9 @@ class CouponsNotificationPolicy {
             if (data.hasOwnProperty('scopes')) {
                 obj['scopes'] = ApiClient.convertToType(data['scopes'], ['String']);
             }
+            if (data.hasOwnProperty('batchingEnabled')) {
+                obj['batchingEnabled'] = ApiClient.convertToType(data['batchingEnabled'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -74,6 +77,13 @@ CouponsNotificationPolicy.prototype['name'] = undefined;
  * @member {Array.<module:model/CouponsNotificationPolicy.ScopesEnum>} scopes
  */
 CouponsNotificationPolicy.prototype['scopes'] = undefined;
+
+/**
+ * Indicates whether batching is activated.
+ * @member {Boolean} batchingEnabled
+ * @default true
+ */
+CouponsNotificationPolicy.prototype['batchingEnabled'] = true;
 
 
 

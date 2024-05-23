@@ -17,7 +17,7 @@ import BaseNotificationWebhook from './BaseNotificationWebhook';
 /**
  * The BaseNotification model module.
  * @module model/BaseNotification
- * @version 6.0.0
+ * @version 7.0.0
  */
 class BaseNotification {
     /**
@@ -138,10 +138,22 @@ BaseNotification['TypeEnum'] = {
     "coupon": "coupon",
 
     /**
+     * value: "expiring_coupons"
+     * @const
+     */
+    "expiring_coupons": "expiring_coupons",
+
+    /**
      * value: "expiring_points"
      * @const
      */
     "expiring_points": "expiring_points",
+
+    /**
+     * value: "card_expiring_points"
+     * @const
+     */
+    "card_expiring_points": "card_expiring_points",
 
     /**
      * value: "pending_to_active_points"

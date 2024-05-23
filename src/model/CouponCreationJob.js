@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CouponCreationJob {
     /**
@@ -33,7 +33,7 @@ class CouponCreationJob {
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign.
      * @param attributes {Object} Arbitrary properties associated with coupons.
      * @param batchId {String} The batch ID coupons created by this job will bear.
-     * @param status {String} The current status of this request. Possible values: - `pending` - `completed` - `failed` - `coupon pattern full` 
+     * @param status {String} The current status of this request. Possible values: - `pending verification` - `pending` - `completed` - `failed` - `coupon pattern full` 
      * @param createdAmount {Number} The number of coupon codes that were already created for this request.
      * @param failCount {Number} The number of times this job failed.
      * @param errors {Array.<String>} An array of individual problems encountered during the request.
@@ -238,7 +238,7 @@ CouponCreationJob.prototype['attributes'] = undefined;
 CouponCreationJob.prototype['batchId'] = undefined;
 
 /**
- * The current status of this request. Possible values: - `pending` - `completed` - `failed` - `coupon pattern full` 
+ * The current status of this request. Possible values: - `pending verification` - `pending` - `completed` - `failed` - `coupon pattern full` 
  * @member {String} status
  */
 CouponCreationJob.prototype['status'] = undefined;

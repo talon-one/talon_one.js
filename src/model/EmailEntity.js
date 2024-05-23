@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailEntity model module.
  * @module model/EmailEntity
- * @version 6.0.0
+ * @version 7.0.0
  */
 class EmailEntity {
     /**
      * Constructs a new <code>EmailEntity</code>.
      * @alias module:model/EmailEntity
-     * @param email {String} The email address associated with your account.
+     * @param email {String} The email address associated with the user profile.
      */
     constructor(email) { 
         
@@ -60,7 +60,7 @@ class EmailEntity {
 }
 
 /**
- * The email address associated with your account.
+ * The email address associated with the user profile.
  * @member {String} email
  */
 EmailEntity.prototype['email'] = undefined;

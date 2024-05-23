@@ -50,6 +50,8 @@ Name | Type | Description | Notes
 
 * `strikethrough` (value: `"strikethrough"`)
 
+* `achievements` (value: `"achievements"`)
+
 
 
 

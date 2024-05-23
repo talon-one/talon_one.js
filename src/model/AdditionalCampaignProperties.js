@@ -17,17 +17,18 @@ import CampaignBudget from './CampaignBudget';
 /**
  * The AdditionalCampaignProperties model module.
  * @module model/AdditionalCampaignProperties
- * @version 6.0.0
+ * @version 7.0.0
  */
 class AdditionalCampaignProperties {
     /**
      * Constructs a new <code>AdditionalCampaignProperties</code>.
      * @alias module:model/AdditionalCampaignProperties
      * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
+     * @param frontendState {module:model/AdditionalCampaignProperties.FrontendStateEnum} A campaign state described exactly as in the Campaign Manager.
      */
-    constructor(budgets) { 
+    constructor(budgets, frontendState) { 
         
-        AdditionalCampaignProperties.initialize(this, budgets);
+        AdditionalCampaignProperties.initialize(this, budgets, frontendState);
     }
 
     /**
@@ -35,8 +36,9 @@ class AdditionalCampaignProperties {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, budgets) { 
+    static initialize(obj, budgets, frontendState) { 
         obj['budgets'] = budgets;
+        obj['frontendState'] = frontendState;
     }
 
     /**
@@ -112,6 +114,9 @@ class AdditionalCampaignProperties {
             }
             if (data.hasOwnProperty('templateId')) {
                 obj['templateId'] = ApiClient.convertToType(data['templateId'], 'Number');
+            }
+            if (data.hasOwnProperty('frontendState')) {
+                obj['frontendState'] = ApiClient.convertToType(data['frontendState'], 'String');
             }
         }
         return obj;
@@ -246,8 +251,47 @@ AdditionalCampaignProperties.prototype['updatedBy'] = undefined;
  */
 AdditionalCampaignProperties.prototype['templateId'] = undefined;
 
+/**
+ * A campaign state described exactly as in the Campaign Manager.
+ * @member {module:model/AdditionalCampaignProperties.FrontendStateEnum} frontendState
+ */
+AdditionalCampaignProperties.prototype['frontendState'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>frontendState</code> property.
+ * @enum {String}
+ * @readonly
+ */
+AdditionalCampaignProperties['FrontendStateEnum'] = {
+
+    /**
+     * value: "expired"
+     * @const
+     */
+    "expired": "expired",
+
+    /**
+     * value: "scheduled"
+     * @const
+     */
+    "scheduled": "scheduled",
+
+    /**
+     * value: "running"
+     * @const
+     */
+    "running": "running",
+
+    /**
+     * value: "draft"
+     * @const
+     */
+    "draft": "draft"
+};
 
 
 

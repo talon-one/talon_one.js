@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.AchievementAdditionalProperties);
     });
 
+    it('should have the property campaignId (base name: "campaignId")', function() {
+      // uncomment below and update the code to test the property campaignId
+      //var instane = new TalonOne.AchievementAdditionalProperties();
+      //expect(instance).to.be();
+    });
+
     it('should have the property userId (base name: "userId")', function() {
       // uncomment below and update the code to test the property userId
       //var instane = new TalonOne.AchievementAdditionalProperties();
@@ -62,6 +68,12 @@
 
     it('should have the property createdBy (base name: "createdBy")', function() {
       // uncomment below and update the code to test the property createdBy
+      //var instane = new TalonOne.AchievementAdditionalProperties();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property hasProgress (base name: "hasProgress")', function() {
+      // uncomment below and update the code to test the property hasProgress
       //var instane = new TalonOne.AchievementAdditionalProperties();
       //expect(instance).to.be();
     });

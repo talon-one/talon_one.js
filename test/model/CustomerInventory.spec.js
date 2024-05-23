@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property achievements (base name: "achievements")', function() {
+      // uncomment below and update the code to test the property achievements
+      //var instane = new TalonOne.CustomerInventory();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

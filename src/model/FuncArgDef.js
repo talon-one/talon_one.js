@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The FuncArgDef model module.
  * @module model/FuncArgDef
- * @version 6.0.0
+ * @version 7.0.0
  */
 class FuncArgDef {
     /**
      * Constructs a new <code>FuncArgDef</code>.
      * @alias module:model/FuncArgDef
      * @param type {module:model/FuncArgDef.TypeEnum} The type of value this argument expects.
-     * @param description {String} A campaigner-friendly description of the argument, this will also be shown in the rule editor.
      */
-    constructor(type, description) { 
+    constructor(type) { 
         
-        FuncArgDef.initialize(this, type, description);
+        FuncArgDef.initialize(this, type);
     }
 
     /**
@@ -35,9 +34,8 @@ class FuncArgDef {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, description) { 
+    static initialize(obj, type) { 
         obj['type'] = type;
-        obj['description'] = description;
     }
 
     /**

@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 6.0.0
+ * @version 7.0.0
  */
 class UpdateCampaign {
     /**
@@ -274,7 +274,13 @@ UpdateCampaign['FeaturesEnum'] = {
      * value: "strikethrough"
      * @const
      */
-    "strikethrough": "strikethrough"
+    "strikethrough": "strikethrough",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements"
 };
 
 

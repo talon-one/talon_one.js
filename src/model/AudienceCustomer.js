@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The AudienceCustomer model module.
  * @module model/AudienceCustomer
- * @version 6.0.0
+ * @version 7.0.0
  */
 class AudienceCustomer {
     /**
@@ -173,7 +173,7 @@ AudienceCustomer.prototype['audienceMemberships'] = undefined;
 AudienceCustomer.prototype['lastActivity'] = undefined;
 
 /**
- * Shows whether the customer is part of a sandbox or live Application. See the [docs](https://docs.talon.one/docs/product/applications/overview#application-environments). 
+ * An indicator of whether the customer is part of a sandbox or live Application. See the [docs](https://docs.talon.one/docs/product/applications/overview#application-environments). 
  * @member {Boolean} sandbox
  */
 AudienceCustomer.prototype['sandbox'] = undefined;

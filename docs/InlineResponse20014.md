@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[LoyaltyCard]**](LoyaltyCard.md) |  | 
+**data** | [**[LoyaltyProgramTransaction]**](LoyaltyProgramTransaction.md) |  | 
 
 

@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import WebhookWithOutgoingIntegrationDetails from './WebhookWithOutgoingIntegrationDetails';
+import CatalogItem from './CatalogItem';
 
 /**
  * The InlineResponse20035 model module.
  * @module model/InlineResponse20035
- * @version 6.0.0
+ * @version 7.0.0
  */
 class InlineResponse20035 {
     /**
      * Constructs a new <code>InlineResponse20035</code>.
      * @alias module:model/InlineResponse20035
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} 
+     * @param data {Array.<module:model/CatalogItem>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(data) { 
         
-        InlineResponse20035.initialize(this, totalResultSize, data);
+        InlineResponse20035.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20035 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -52,11 +50,14 @@ class InlineResponse20035 {
         if (data) {
             obj = obj || new InlineResponse20035();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WebhookWithOutgoingIntegrationDetails]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CatalogItem]);
             }
         }
         return obj;
@@ -66,12 +67,17 @@ class InlineResponse20035 {
 }
 
 /**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20035.prototype['hasMore'] = undefined;
+
+/**
  * @member {Number} totalResultSize
  */
 InlineResponse20035.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} data
+ * @member {Array.<module:model/CatalogItem>} data
  */
 InlineResponse20035.prototype['data'] = undefined;
 

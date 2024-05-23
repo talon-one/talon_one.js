@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAccountSignUp model module.
  * @module model/NewAccountSignUp
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewAccountSignUp {
     /**
      * Constructs a new <code>NewAccountSignUp</code>.
      * 
      * @alias module:model/NewAccountSignUp
-     * @param email {String} The email address associated with your account.
+     * @param email {String} The email address associated with the user profile.
      * @param password {String} The password for your account.
      * @param companyName {String} 
      */
@@ -71,7 +71,7 @@ class NewAccountSignUp {
 }
 
 /**
- * The email address associated with your account.
+ * The email address associated with the user profile.
  * @member {String} email
  */
 NewAccountSignUp.prototype['email'] = undefined;

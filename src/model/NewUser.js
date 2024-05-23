@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The NewUser model module.
  * @module model/NewUser
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewUser {
     /**
      * Constructs a new <code>NewUser</code>.
      * 
      * @alias module:model/NewUser
-     * @param email {String} The email address associated with your account.
+     * @param email {String} The email address associated with the user profile.
      * @param password {String} The password for your account.
      * @param inviteToken {String} 
      */
@@ -74,7 +74,7 @@ class NewUser {
 }
 
 /**
- * The email address associated with your account.
+ * The email address associated with the user profile.
  * @member {String} email
  */
 NewUser.prototype['email'] = undefined;

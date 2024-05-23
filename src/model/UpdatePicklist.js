@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePicklist model module.
  * @module model/UpdatePicklist
- * @version 6.0.0
+ * @version 7.0.0
  */
 class UpdatePicklist {
     /**
      * Constructs a new <code>UpdatePicklist</code>.
      * 
      * @alias module:model/UpdatePicklist
-     * @param type {module:model/UpdatePicklist.TypeEnum} The type of allowed values in the picklist. If type time is chosen, it must be an RFC3339 timestamp string.
+     * @param type {module:model/UpdatePicklist.TypeEnum} The type of allowed values in the picklist. If the type `time` is chosen, it must be an RFC3339 timestamp string.
      * @param values {Array.<String>} The list of allowed values provided by this picklist.
      */
     constructor(type, values) { 
@@ -66,7 +66,7 @@ class UpdatePicklist {
 }
 
 /**
- * The type of allowed values in the picklist. If type time is chosen, it must be an RFC3339 timestamp string.
+ * The type of allowed values in the picklist. If the type `time` is chosen, it must be an RFC3339 timestamp string.
  * @member {module:model/UpdatePicklist.TypeEnum} type
  */
 UpdatePicklist.prototype['type'] = undefined;

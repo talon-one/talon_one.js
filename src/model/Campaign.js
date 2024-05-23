@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 6.0.0
+ * @version 7.0.0
  */
 class Campaign {
     /**
@@ -38,10 +38,11 @@ class Campaign {
      * @param limits {Array.<module:model/LimitConfig>} The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets) for this campaign. 
      * @param type {module:model/Campaign.TypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
      * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
+     * @param frontendState {module:model/Campaign.FrontendStateEnum} A campaign state described exactly as in the Campaign Manager.
      */
-    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets) { 
+    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState) { 
         
-        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets);
+        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState);
     }
 
     /**
@@ -49,7 +50,7 @@ class Campaign {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets) { 
+    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -62,6 +63,7 @@ class Campaign {
         obj['limits'] = limits;
         obj['type'] = type;
         obj['budgets'] = budgets;
+        obj['frontendState'] = frontendState;
     }
 
     /**
@@ -125,9 +127,6 @@ class Campaign {
             }
             if (data.hasOwnProperty('campaignGroups')) {
                 obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
-            }
-            if (data.hasOwnProperty('evaluationGroupId')) {
-                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -197,6 +196,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('templateId')) {
                 obj['templateId'] = ApiClient.convertToType(data['templateId'], 'Number');
+            }
+            if (data.hasOwnProperty('frontendState')) {
+                obj['frontendState'] = ApiClient.convertToType(data['frontendState'], 'String');
             }
         }
         return obj;
@@ -305,12 +307,6 @@ Campaign.prototype['limits'] = undefined;
  * @member {Array.<Number>} campaignGroups
  */
 Campaign.prototype['campaignGroups'] = undefined;
-
-/**
- * The ID of the campaign evaluation group the campaign belongs to.
- * @member {Number} evaluationGroupId
- */
-Campaign.prototype['evaluationGroupId'] = undefined;
 
 /**
  * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
@@ -451,6 +447,12 @@ Campaign.prototype['updatedBy'] = undefined;
  */
 Campaign.prototype['templateId'] = undefined;
 
+/**
+ * A campaign state described exactly as in the Campaign Manager.
+ * @member {module:model/Campaign.FrontendStateEnum} frontendState
+ */
+Campaign.prototype['frontendState'] = undefined;
+
 
 
 
@@ -517,7 +519,13 @@ Campaign['FeaturesEnum'] = {
      * value: "strikethrough"
      * @const
      */
-    "strikethrough": "strikethrough"
+    "strikethrough": "strikethrough",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements"
 };
 
 
@@ -539,6 +547,39 @@ Campaign['TypeEnum'] = {
      * @const
      */
     "advanced": "advanced"
+};
+
+
+/**
+ * Allowed values for the <code>frontendState</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Campaign['FrontendStateEnum'] = {
+
+    /**
+     * value: "expired"
+     * @const
+     */
+    "expired": "expired",
+
+    /**
+     * value: "scheduled"
+     * @const
+     */
+    "scheduled": "scheduled",
+
+    /**
+     * value: "running"
+     * @const
+     */
+    "running": "running",
+
+    /**
+     * value: "draft"
+     * @const
+     */
+    "draft": "draft"
 };
 
 

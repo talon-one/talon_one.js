@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementAdditionalProperties model module.
  * @module model/AchievementAdditionalProperties
- * @version 6.0.0
+ * @version 7.0.0
  */
 class AchievementAdditionalProperties {
     /**
      * Constructs a new <code>AchievementAdditionalProperties</code>.
      * @alias module:model/AchievementAdditionalProperties
+     * @param campaignId {Number} ID of the campaign, to which the achievement belongs to
      * @param userId {Number} ID of the user that created this achievement.
      * @param createdBy {String} Name of the user that created the achievement.  **Note**: This is not available if the user has been deleted. 
      */
-    constructor(userId, createdBy) { 
+    constructor(campaignId, userId, createdBy) { 
         
-        AchievementAdditionalProperties.initialize(this, userId, createdBy);
+        AchievementAdditionalProperties.initialize(this, campaignId, userId, createdBy);
     }
 
     /**
@@ -35,7 +36,8 @@ class AchievementAdditionalProperties {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, userId, createdBy) { 
+    static initialize(obj, campaignId, userId, createdBy) { 
+        obj['campaignId'] = campaignId;
         obj['userId'] = userId;
         obj['createdBy'] = createdBy;
     }
@@ -51,11 +53,17 @@ class AchievementAdditionalProperties {
         if (data) {
             obj = obj || new AchievementAdditionalProperties();
 
+            if (data.hasOwnProperty('campaignId')) {
+                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
             if (data.hasOwnProperty('userId')) {
                 obj['userId'] = ApiClient.convertToType(data['userId'], 'Number');
             }
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
+            }
+            if (data.hasOwnProperty('hasProgress')) {
+                obj['hasProgress'] = ApiClient.convertToType(data['hasProgress'], 'Boolean');
             }
         }
         return obj;
@@ -63,6 +71,12 @@ class AchievementAdditionalProperties {
 
 
 }
+
+/**
+ * ID of the campaign, to which the achievement belongs to
+ * @member {Number} campaignId
+ */
+AchievementAdditionalProperties.prototype['campaignId'] = undefined;
 
 /**
  * ID of the user that created this achievement.
@@ -75,6 +89,12 @@ AchievementAdditionalProperties.prototype['userId'] = undefined;
  * @member {String} createdBy
  */
 AchievementAdditionalProperties.prototype['createdBy'] = undefined;
+
+/**
+ * Indicates if a customer has made progress in the achievement.
+ * @member {Boolean} hasProgress
+ */
+AchievementAdditionalProperties.prototype['hasProgress'] = undefined;
 
 
 

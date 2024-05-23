@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangeProfilePassword model module.
  * @module model/ChangeProfilePassword
- * @version 6.0.0
+ * @version 7.0.0
  */
 class ChangeProfilePassword {
     /**

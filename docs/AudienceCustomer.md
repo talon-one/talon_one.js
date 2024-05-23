@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **loyaltyMemberships** | [**[LoyaltyMembership]**](LoyaltyMembership.md) | **DEPRECATED** A list of loyalty programs joined by the customer.  | [optional] 
 **audienceMemberships** | [**[AudienceMembership]**](AudienceMembership.md) | The audiences the customer belongs to. | [optional] 
 **lastActivity** | **Date** | Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the Rule Engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn&#39;t impact this field.  | 
-**sandbox** | **Boolean** | Shows whether the customer is part of a sandbox or live Application. See the [docs](https://docs.talon.one/docs/product/applications/overview#application-environments).  | [optional] 
+**sandbox** | **Boolean** | An indicator of whether the customer is part of a sandbox or live Application. See the [docs](https://docs.talon.one/docs/product/applications/overview#application-environments).  | [optional] 
 **connectedApplicationsIds** | **[Number]** | A list of the IDs of the Applications that are connected to this customer profile. | [optional] 
 **connectedAudiences** | **[Number]** | A list of the IDs of the audiences that are connected to this customer profile. | [optional] 
 

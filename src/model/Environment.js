@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AccountAdditionalCost from './AccountAdditionalCost';
+import Achievement from './Achievement';
 import Attribute from './Attribute';
 import Audience from './Audience';
 import Collection from './Collection';
@@ -25,7 +26,7 @@ import TemplateDef from './TemplateDef';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 6.0.0
+ * @version 7.0.0
  */
 class Environment {
     /**
@@ -97,6 +98,9 @@ class Environment {
             }
             if (data.hasOwnProperty('loyaltyPrograms')) {
                 obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
+            }
+            if (data.hasOwnProperty('achievements')) {
+                obj['achievements'] = ApiClient.convertToType(data['achievements'], [Achievement]);
             }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], [Attribute]);
@@ -170,6 +174,12 @@ Environment.prototype['giveawaysPools'] = undefined;
  * @member {Array.<module:model/LoyaltyProgram>} loyaltyPrograms
  */
 Environment.prototype['loyaltyPrograms'] = undefined;
+
+/**
+ * The achievements, linked to the campaigns, belonging to the application.
+ * @member {Array.<module:model/Achievement>} achievements
+ */
+Environment.prototype['achievements'] = undefined;
 
 /**
  * The attributes that the application is subscribed to.

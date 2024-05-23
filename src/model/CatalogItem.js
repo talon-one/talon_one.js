@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import ItemAttribute from './ItemAttribute';
+import Product from './Product';
 
 /**
  * The CatalogItem model module.
  * @module model/CatalogItem
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CatalogItem {
     /**
@@ -80,6 +81,9 @@ class CatalogItem {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], [ItemAttribute]);
             }
+            if (data.hasOwnProperty('product')) {
+                obj['product'] = Product.constructFromObject(data['product']);
+            }
         }
         return obj;
     }
@@ -127,6 +131,11 @@ CatalogItem.prototype['version'] = undefined;
  * @member {Array.<module:model/ItemAttribute>} attributes
  */
 CatalogItem.prototype['attributes'] = undefined;
+
+/**
+ * @member {module:model/Product} product
+ */
+CatalogItem.prototype['product'] = undefined;
 
 
 

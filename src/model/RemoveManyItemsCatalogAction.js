@@ -17,7 +17,7 @@ import CatalogActionFilter from './CatalogActionFilter';
 /**
  * The RemoveManyItemsCatalogAction model module.
  * @module model/RemoveManyItemsCatalogAction
- * @version 6.0.0
+ * @version 7.0.0
  */
 class RemoveManyItemsCatalogAction {
     /**

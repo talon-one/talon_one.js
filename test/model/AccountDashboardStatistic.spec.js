@@ -78,12 +78,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property apiCalls (base name: "apiCalls")', function() {
-      // uncomment below and update the code to test the property apiCalls
-      //var instane = new TalonOne.AccountDashboardStatistic();
-      //expect(instance).to.be();
-    });
-
     it('should have the property campaigns (base name: "campaigns")', function() {
       // uncomment below and update the code to test the property campaigns
       //var instane = new TalonOne.AccountDashboardStatistic();

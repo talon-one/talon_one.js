@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/LedgerTransactionLogEntryIntegrationAPI
- * @version 6.0.0
+ * @version 7.0.0
  */
 class LedgerTransactionLogEntryIntegrationAPI {
     /**

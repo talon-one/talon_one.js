@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlLoginEndpoint model module.
  * @module model/SamlLoginEndpoint
- * @version 6.0.0
+ * @version 7.0.0
  */
 class SamlLoginEndpoint {
     /**
@@ -24,7 +24,7 @@ class SamlLoginEndpoint {
      * @alias module:model/SamlLoginEndpoint
      * @param id {Number} ID of the SAML login endpoint.
      * @param name {String} ID of the SAML service.
-     * @param loginURL {String} Single Sign-On URL.
+     * @param loginURL {String} The single sign-on URL.
      */
     constructor(id, name, loginURL) { 
         
@@ -82,7 +82,7 @@ SamlLoginEndpoint.prototype['id'] = undefined;
 SamlLoginEndpoint.prototype['name'] = undefined;
 
 /**
- * Single Sign-On URL.
+ * The single sign-on URL.
  * @member {String} loginURL
  */
 SamlLoginEndpoint.prototype['loginURL'] = undefined;

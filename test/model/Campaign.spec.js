@@ -156,12 +156,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property evaluationGroupId (base name: "evaluationGroupId")', function() {
-      // uncomment below and update the code to test the property evaluationGroupId
-      //var instane = new TalonOne.Campaign();
-      //expect(instance).to.be();
-    });
-
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instane = new TalonOne.Campaign();
@@ -296,6 +290,12 @@
 
     it('should have the property templateId (base name: "templateId")', function() {
       // uncomment below and update the code to test the property templateId
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property frontendState (base name: "frontendState")', function() {
+      // uncomment below and update the code to test the property frontendState
       //var instane = new TalonOne.Campaign();
       //expect(instance).to.be();
     });

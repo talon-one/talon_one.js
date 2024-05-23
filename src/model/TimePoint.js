@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The TimePoint model module.
  * @module model/TimePoint
- * @version 6.0.0
+ * @version 7.0.0
  */
 class TimePoint {
     /**
      * Constructs a new <code>TimePoint</code>.
-     * The absolute duration after which the achievement is reset for a particular customer profile.
+     * The absolute duration after which the achievement ends and resets for a particular customer profile.  **Note**: The duration follows the time zone of the Application this achievement belongs to. 
      * @alias module:model/TimePoint
-     * @param hour {Number} The achievement is reset at this hour.
-     * @param minute {Number} The achievement is reset at this minute.
-     * @param second {Number} The achievement is reset at this second.
+     * @param hour {Number} The achievement ends and resets at this hour.
+     * @param minute {Number} The achievement ends and resets at this minute.
+     * @param second {Number} The achievement ends and resets at this second.
      */
     constructor(hour, minute, second) { 
         
@@ -80,37 +80,37 @@ class TimePoint {
 }
 
 /**
- * The achievement is reset in this month.  **Note**: Only applicable if the period is set to `Y`. 
+ * The achievement ends and resets in this month.  **Note**: Only applicable if the period is set to `Y`. 
  * @member {Number} month
  */
 TimePoint.prototype['month'] = undefined;
 
 /**
- * The achievement is reset on this day of the month.  **Note**: Only applicable if the period is set to `Y` or `M`. 
+ * The achievement ends and resets on this day of the month.  **Note**: Only applicable if the period is set to `Y` or `M`. 
  * @member {Number} dayOfMonth
  */
 TimePoint.prototype['dayOfMonth'] = undefined;
 
 /**
- * The achievement is reset on this day of the week. `1` represents `Monday` and `7` represents `Sunday`.  **Note**: Only applicable if the period is set to `W`. 
+ * The achievement ends and resets on this day of the week. `1` represents `Monday` and `7` represents `Sunday`.  **Note**: Only applicable if the period is set to `W`. 
  * @member {Number} dayOfWeek
  */
 TimePoint.prototype['dayOfWeek'] = undefined;
 
 /**
- * The achievement is reset at this hour.
+ * The achievement ends and resets at this hour.
  * @member {Number} hour
  */
 TimePoint.prototype['hour'] = undefined;
 
 /**
- * The achievement is reset at this minute.
+ * The achievement ends and resets at this minute.
  * @member {Number} minute
  */
 TimePoint.prototype['minute'] = undefined;
 
 /**
- * The achievement is reset at this second.
+ * The achievement ends and resets at this second.
  * @member {Number} second
  */
 TimePoint.prototype['second'] = undefined;

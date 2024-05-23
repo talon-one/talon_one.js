@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property frontendState (base name: "frontendState")', function() {
+      // uncomment below and update the code to test the property frontendState
+      //var instane = new TalonOne.AdditionalCampaignProperties();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

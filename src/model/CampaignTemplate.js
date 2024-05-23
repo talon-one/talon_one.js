@@ -20,7 +20,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CampaignTemplate {
     /**
@@ -362,7 +362,13 @@ CampaignTemplate['FeaturesEnum'] = {
      * value: "strikethrough"
      * @const
      */
-    "strikethrough": "strikethrough"
+    "strikethrough": "strikethrough",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements"
 };
 
 

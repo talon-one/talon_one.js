@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign** | [**CampaignStateNotification**](CampaignStateNotification.md) |  | 
+**campaign** | [**Campaign**](Campaign.md) |  | 
 **ruleset** | [**Ruleset**](Ruleset.md) |  | [optional] 
 **evaluationPosition** | [**CampaignEvaluationPosition**](CampaignEvaluationPosition.md) |  | 
 

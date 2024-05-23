@@ -17,7 +17,7 @@ import MultipleAudiencesItem from './MultipleAudiencesItem';
 /**
  * The MultipleAudiences model module.
  * @module model/MultipleAudiences
- * @version 6.0.0
+ * @version 7.0.0
  */
 class MultipleAudiences {
     /**

@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property product (base name: "product")', function() {
+      // uncomment below and update the code to test the property product
+      //var instane = new TalonOne.PatchItemCatalogAction();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createIfNotExists (base name: "createIfNotExists")', function() {
       // uncomment below and update the code to test the property createIfNotExists
       //var instane = new TalonOne.PatchItemCatalogAction();

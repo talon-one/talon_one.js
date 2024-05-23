@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The NewInviteEmail model module.
  * @module model/NewInviteEmail
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewInviteEmail {
     /**
      * Constructs a new <code>NewInviteEmail</code>.
      * @alias module:model/NewInviteEmail
-     * @param email {String} 
-     * @param token {String} 
+     * @param email {String} Email address of the user.
+     * @param token {String} Invitation token of the user.
      */
     constructor(email, token) { 
         
@@ -65,11 +65,13 @@ class NewInviteEmail {
 }
 
 /**
+ * Email address of the user.
  * @member {String} email
  */
 NewInviteEmail.prototype['email'] = undefined;
 
 /**
+ * Invitation token of the user.
  * @member {String} token
  */
 NewInviteEmail.prototype['token'] = undefined;

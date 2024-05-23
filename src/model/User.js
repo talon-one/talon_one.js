@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 6.0.0
+ * @version 7.0.0
  */
 class User {
     /**
@@ -26,16 +26,16 @@ class User {
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
-     * @param email {String} The email address associated with your account.
+     * @param email {String} The email address associated with the user profile.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param inviteToken {String} Invite token, empty if the user as already accepted their invite.
-     * @param state {module:model/User.StateEnum} Current user state.
-     * @param name {String} Full name
-     * @param policy {Object} User ACL Policy
+     * @param name {String} Name of the user.
+     * @param state {module:model/User.StateEnum} State of the user.
+     * @param inviteToken {String} Invitation token of the user.  **Note**: If the user has already accepted their invitation, this is `null`. 
+     * @param policy {Object} Access level of the user.
      */
-    constructor(id, created, modified, email, accountId, inviteToken, state, name, policy) { 
+    constructor(id, created, modified, email, accountId, name, state, inviteToken, policy) { 
         
-        User.initialize(this, id, created, modified, email, accountId, inviteToken, state, name, policy);
+        User.initialize(this, id, created, modified, email, accountId, name, state, inviteToken, policy);
     }
 
     /**
@@ -43,15 +43,15 @@ class User {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, modified, email, accountId, inviteToken, state, name, policy) { 
+    static initialize(obj, id, created, modified, email, accountId, name, state, inviteToken, policy) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['modified'] = modified;
         obj['email'] = email;
         obj['accountId'] = accountId;
-        obj['inviteToken'] = inviteToken;
-        obj['state'] = state;
         obj['name'] = name;
+        obj['state'] = state;
+        obj['inviteToken'] = inviteToken;
         obj['policy'] = policy;
     }
 
@@ -81,38 +81,38 @@ class User {
             if (data.hasOwnProperty('accountId')) {
                 obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
             }
-            if (data.hasOwnProperty('inviteToken')) {
-                obj['inviteToken'] = ApiClient.convertToType(data['inviteToken'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('inviteToken')) {
+                obj['inviteToken'] = ApiClient.convertToType(data['inviteToken'], 'String');
+            }
+            if (data.hasOwnProperty('isAdmin')) {
+                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
             }
             if (data.hasOwnProperty('policy')) {
                 obj['policy'] = ApiClient.convertToType(data['policy'], Object);
             }
-            if (data.hasOwnProperty('latestFeedTimestamp')) {
-                obj['latestFeedTimestamp'] = ApiClient.convertToType(data['latestFeedTimestamp'], 'Date');
-            }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
-            }
-            if (data.hasOwnProperty('applicationNotificationSubscriptions')) {
-                obj['applicationNotificationSubscriptions'] = ApiClient.convertToType(data['applicationNotificationSubscriptions'], Object);
             }
             if (data.hasOwnProperty('authMethod')) {
                 obj['authMethod'] = ApiClient.convertToType(data['authMethod'], 'String');
             }
-            if (data.hasOwnProperty('isAdmin')) {
-                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
+            if (data.hasOwnProperty('applicationNotificationSubscriptions')) {
+                obj['applicationNotificationSubscriptions'] = ApiClient.convertToType(data['applicationNotificationSubscriptions'], Object);
             }
             if (data.hasOwnProperty('lastSignedIn')) {
                 obj['lastSignedIn'] = ApiClient.convertToType(data['lastSignedIn'], 'Date');
             }
             if (data.hasOwnProperty('lastAccessed')) {
                 obj['lastAccessed'] = ApiClient.convertToType(data['lastAccessed'], 'Date');
+            }
+            if (data.hasOwnProperty('latestFeedTimestamp')) {
+                obj['latestFeedTimestamp'] = ApiClient.convertToType(data['latestFeedTimestamp'], 'Date');
             }
         }
         return obj;
@@ -140,7 +140,7 @@ User.prototype['created'] = undefined;
 User.prototype['modified'] = undefined;
 
 /**
- * The email address associated with your account.
+ * The email address associated with the user profile.
  * @member {String} email
  */
 User.prototype['email'] = undefined;
@@ -152,69 +152,70 @@ User.prototype['email'] = undefined;
 User.prototype['accountId'] = undefined;
 
 /**
- * Invite token, empty if the user as already accepted their invite.
- * @member {String} inviteToken
- */
-User.prototype['inviteToken'] = undefined;
-
-/**
- * Current user state.
- * @member {module:model/User.StateEnum} state
- */
-User.prototype['state'] = undefined;
-
-/**
- * Full name
+ * Name of the user.
  * @member {String} name
  */
 User.prototype['name'] = undefined;
 
 /**
- * User ACL Policy
- * @member {Object} policy
+ * State of the user.
+ * @member {module:model/User.StateEnum} state
  */
-User.prototype['policy'] = undefined;
+User.prototype['state'] = undefined;
 
 /**
- * Latest timestamp the user has been notified for feed.
- * @member {Date} latestFeedTimestamp
+ * Invitation token of the user.  **Note**: If the user has already accepted their invitation, this is `null`. 
+ * @member {String} inviteToken
  */
-User.prototype['latestFeedTimestamp'] = undefined;
+User.prototype['inviteToken'] = undefined;
 
 /**
- * Contains a list of all roles the user is a member of.
- * @member {Array.<Number>} roles
- */
-User.prototype['roles'] = undefined;
-
-/**
- * @member {Object} applicationNotificationSubscriptions
- */
-User.prototype['applicationNotificationSubscriptions'] = undefined;
-
-/**
- * The Authentication method for this user.
- * @member {String} authMethod
- */
-User.prototype['authMethod'] = undefined;
-
-/**
- * An indication of whether the user has admin permissions.
+ * Indicates whether the user is an `admin`.
  * @member {Boolean} isAdmin
  */
 User.prototype['isAdmin'] = undefined;
 
 /**
- * Date and time when the user last signed in to Talon.One.
+ * Access level of the user.
+ * @member {Object} policy
+ */
+User.prototype['policy'] = undefined;
+
+/**
+ * A list of the IDs of the roles assigned to the user.
+ * @member {Array.<Number>} roles
+ */
+User.prototype['roles'] = undefined;
+
+/**
+ * Authentication method for this user.
+ * @member {String} authMethod
+ */
+User.prototype['authMethod'] = undefined;
+
+/**
+ * Application notifications that the user is subscribed to.
+ * @member {Object} applicationNotificationSubscriptions
+ */
+User.prototype['applicationNotificationSubscriptions'] = undefined;
+
+/**
+ * Timestamp when the user last signed in to Talon.One.
  * @member {Date} lastSignedIn
  */
 User.prototype['lastSignedIn'] = undefined;
 
 /**
- * Date and time of the user's last activity after signing in to Talon.One.
+ * Timestamp of the user's last activity after signing in to Talon.One.
  * @member {Date} lastAccessed
  */
 User.prototype['lastAccessed'] = undefined;
+
+/**
+ * Timestamp when the user was notified for feed.
+ * @member {Date} latestFeedTimestamp
+ */
+User.prototype['latestFeedTimestamp'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Picklist model module.
  * @module model/Picklist
- * @version 6.0.0
+ * @version 7.0.0
  */
 class Picklist {
     /**
@@ -25,7 +25,7 @@ class Picklist {
      * @alias module:model/Picklist
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
-     * @param type {module:model/Picklist.TypeEnum} The type of allowed values in the picklist. If type time is chosen, it must be an RFC3339 timestamp string.
+     * @param type {module:model/Picklist.TypeEnum} The type of allowed values in the picklist. If the type `time` is chosen, it must be an RFC3339 timestamp string.
      * @param values {Array.<String>} The list of allowed values provided by this picklist.
      * @param createdBy {Number} ID of the user who created this effect.
      */
@@ -102,7 +102,7 @@ Picklist.prototype['id'] = undefined;
 Picklist.prototype['created'] = undefined;
 
 /**
- * The type of allowed values in the picklist. If type time is chosen, it must be an RFC3339 timestamp string.
+ * The type of allowed values in the picklist. If the type `time` is chosen, it must be an RFC3339 timestamp string.
  * @member {module:model/Picklist.TypeEnum} type
  */
 Picklist.prototype['type'] = undefined;

@@ -17,7 +17,7 @@ import LoyaltyLedgerEntry from './LoyaltyLedgerEntry';
 /**
  * The LoyaltyLedgerTransactions model module.
  * @module model/LoyaltyLedgerTransactions
- * @version 6.0.0
+ * @version 7.0.0
  */
 class LoyaltyLedgerTransactions {
     /**
@@ -63,7 +63,7 @@ class LoyaltyLedgerTransactions {
 }
 
 /**
- * true means there is more data in the source collection to request.
+ * If `true`, it means that there is more data to request in the source collection.
  * @member {Boolean} hasMore
  */
 LoyaltyLedgerTransactions.prototype['hasMore'] = undefined;

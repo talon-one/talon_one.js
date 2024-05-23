@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The LoginParams model module.
  * @module model/LoginParams
- * @version 6.0.0
+ * @version 7.0.0
  */
 class LoginParams {
     /**
      * Constructs a new <code>LoginParams</code>.
      * 
      * @alias module:model/LoginParams
-     * @param email {String} The email address associated with your account.
+     * @param email {String} The email address associated with the user profile.
      * @param password {String} The password for your account.
      */
     constructor(email, password) { 
@@ -66,7 +66,7 @@ class LoginParams {
 }
 
 /**
- * The email address associated with your account.
+ * The email address associated with the user profile.
  * @member {String} email
  */
 LoginParams.prototype['email'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseNotificationEntity model module.
  * @module model/BaseNotificationEntity
- * @version 6.0.0
+ * @version 7.0.0
  */
 class BaseNotificationEntity {
     /**

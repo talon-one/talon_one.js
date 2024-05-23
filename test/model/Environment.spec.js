@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property achievements (base name: "achievements")', function() {
+      // uncomment below and update the code to test the property achievements
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
       //var instane = new TalonOne.Environment();

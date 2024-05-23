@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The NotificationTest model module.
  * @module model/NotificationTest
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NotificationTest {
     /**
      * Constructs a new <code>NotificationTest</code>.
      * @alias module:model/NotificationTest
      * @param httpResponse {String} The returned http response.
-     * @param httpStatus {String} The returned http status code and status message.
+     * @param httpStatus {Number} The returned http status code.
      */
     constructor(httpResponse, httpStatus) { 
         
@@ -55,7 +55,7 @@ class NotificationTest {
                 obj['httpResponse'] = ApiClient.convertToType(data['httpResponse'], 'String');
             }
             if (data.hasOwnProperty('httpStatus')) {
-                obj['httpStatus'] = ApiClient.convertToType(data['httpStatus'], 'String');
+                obj['httpStatus'] = ApiClient.convertToType(data['httpStatus'], 'Number');
             }
         }
         return obj;
@@ -71,8 +71,8 @@ class NotificationTest {
 NotificationTest.prototype['httpResponse'] = undefined;
 
 /**
- * The returned http status code and status message.
- * @member {String} httpStatus
+ * The returned http status code.
+ * @member {Number} httpStatus
  */
 NotificationTest.prototype['httpStatus'] = undefined;
 

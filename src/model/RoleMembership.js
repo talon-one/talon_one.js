@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleMembership model module.
  * @module model/RoleMembership
- * @version 6.0.0
+ * @version 7.0.0
  */
 class RoleMembership {
     /**
