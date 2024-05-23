@@ -84,8 +84,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property inviteToken (base name: "inviteToken")', function() {
-      // uncomment below and update the code to test the property inviteToken
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new TalonOne.User();
       //expect(instance).to.be();
     });
@@ -96,8 +96,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property inviteToken (base name: "inviteToken")', function() {
+      // uncomment below and update the code to test the property inviteToken
+      //var instane = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isAdmin (base name: "isAdmin")', function() {
+      // uncomment below and update the code to test the property isAdmin
       //var instane = new TalonOne.User();
       //expect(instance).to.be();
     });
@@ -108,20 +114,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property latestFeedTimestamp (base name: "latestFeedTimestamp")', function() {
-      // uncomment below and update the code to test the property latestFeedTimestamp
-      //var instane = new TalonOne.User();
-      //expect(instance).to.be();
-    });
-
     it('should have the property roles (base name: "roles")', function() {
       // uncomment below and update the code to test the property roles
-      //var instane = new TalonOne.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property applicationNotificationSubscriptions (base name: "applicationNotificationSubscriptions")', function() {
-      // uncomment below and update the code to test the property applicationNotificationSubscriptions
       //var instane = new TalonOne.User();
       //expect(instance).to.be();
     });
@@ -132,8 +126,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property isAdmin (base name: "isAdmin")', function() {
-      // uncomment below and update the code to test the property isAdmin
+    it('should have the property applicationNotificationSubscriptions (base name: "applicationNotificationSubscriptions")', function() {
+      // uncomment below and update the code to test the property applicationNotificationSubscriptions
       //var instane = new TalonOne.User();
       //expect(instance).to.be();
     });
@@ -146,6 +140,12 @@
 
     it('should have the property lastAccessed (base name: "lastAccessed")', function() {
       // uncomment below and update the code to test the property lastAccessed
+      //var instane = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property latestFeedTimestamp (base name: "latestFeedTimestamp")', function() {
+      // uncomment below and update the code to test the property latestFeedTimestamp
       //var instane = new TalonOne.User();
       //expect(instance).to.be();
     });

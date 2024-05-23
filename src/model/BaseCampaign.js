@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The BaseCampaign model module.
  * @module model/BaseCampaign
- * @version 6.0.0
+ * @version 7.0.0
  */
 class BaseCampaign {
     /**
@@ -97,9 +97,6 @@ class BaseCampaign {
             }
             if (data.hasOwnProperty('campaignGroups')) {
                 obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
-            }
-            if (data.hasOwnProperty('evaluationGroupId')) {
-                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -192,12 +189,6 @@ BaseCampaign.prototype['limits'] = undefined;
 BaseCampaign.prototype['campaignGroups'] = undefined;
 
 /**
- * The ID of the campaign evaluation group the campaign belongs to.
- * @member {Number} evaluationGroupId
- */
-BaseCampaign.prototype['evaluationGroupId'] = undefined;
-
-/**
  * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
  * @member {module:model/BaseCampaign.TypeEnum} type
  * @default 'advanced'
@@ -276,7 +267,13 @@ BaseCampaign['FeaturesEnum'] = {
      * value: "strikethrough"
      * @const
      */
-    "strikethrough": "strikethrough"
+    "strikethrough": "strikethrough",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements"
 };
 
 

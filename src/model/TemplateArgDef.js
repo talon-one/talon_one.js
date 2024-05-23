@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateArgDef model module.
  * @module model/TemplateArgDef
- * @version 6.0.0
+ * @version 7.0.0
  */
 class TemplateArgDef {
     /**
@@ -24,13 +24,12 @@ class TemplateArgDef {
      * 
      * @alias module:model/TemplateArgDef
      * @param type {module:model/TemplateArgDef.TypeEnum} The type of value this argument expects.
-     * @param description {String} A campaigner-friendly description of the argument, this will also be shown in the rule editor.
      * @param title {String} A campaigner friendly name for the argument, this will be shown in the rule editor.
      * @param ui {Object} Arbitrary metadata that may be used to render an input for this argument.
      */
-    constructor(type, description, title, ui) { 
+    constructor(type, title, ui) { 
         
-        TemplateArgDef.initialize(this, type, description, title, ui);
+        TemplateArgDef.initialize(this, type, title, ui);
     }
 
     /**
@@ -38,9 +37,8 @@ class TemplateArgDef {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, description, title, ui) { 
+    static initialize(obj, type, title, ui) { 
         obj['type'] = type;
-        obj['description'] = description;
         obj['title'] = title;
         obj['ui'] = ui;
     }

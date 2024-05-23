@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignGroup model module.
  * @module model/CampaignGroup
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CampaignGroup {
     /**
@@ -27,7 +27,7 @@ class CampaignGroup {
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param name {String} The name of this campaign access group.
+     * @param name {String} The name of the campaign access group.
      */
     constructor(id, created, modified, accountId, name) { 
         
@@ -114,7 +114,7 @@ CampaignGroup.prototype['modified'] = undefined;
 CampaignGroup.prototype['accountId'] = undefined;
 
 /**
- * The name of this campaign access group.
+ * The name of the campaign access group.
  * @member {String} name
  */
 CampaignGroup.prototype['name'] = undefined;

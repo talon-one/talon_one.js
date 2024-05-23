@@ -17,7 +17,7 @@ import RoleV2Permissions from './RoleV2Permissions';
 /**
  * The NewRoleV2 model module.
  * @module model/NewRoleV2
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewRoleV2 {
     /**
@@ -90,7 +90,7 @@ NewRoleV2.prototype['description'] = undefined;
 NewRoleV2.prototype['permissions'] = undefined;
 
 /**
- * A list of user identifiers the role is assigned to.
+ * A list of user IDs the role is assigned to.
  * @member {Array.<Number>} members
  */
 NewRoleV2.prototype['members'] = undefined;

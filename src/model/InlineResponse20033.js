@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import CatalogItem from './CatalogItem';
+import ApplicationReferee from './ApplicationReferee';
 
 /**
  * The InlineResponse20033 model module.
  * @module model/InlineResponse20033
- * @version 6.0.0
+ * @version 7.0.0
  */
 class InlineResponse20033 {
     /**
      * Constructs a new <code>InlineResponse20033</code>.
      * @alias module:model/InlineResponse20033
-     * @param data {Array.<module:model/CatalogItem>} 
+     * @param data {Array.<module:model/ApplicationReferee>} 
      */
     constructor(data) { 
         
@@ -57,7 +57,7 @@ class InlineResponse20033 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CatalogItem]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationReferee]);
             }
         }
         return obj;
@@ -77,7 +77,7 @@ InlineResponse20033.prototype['hasMore'] = undefined;
 InlineResponse20033.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/CatalogItem>} data
+ * @member {Array.<module:model/ApplicationReferee>} data
  */
 InlineResponse20033.prototype['data'] = undefined;
 

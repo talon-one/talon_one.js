@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | Notification name. | 
 **scopes** | **[String]** |  | 
+**batchingEnabled** | **Boolean** | Indicates whether batching is activated. | [optional] [default to true]
 
 
 

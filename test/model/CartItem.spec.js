@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property product (base name: "product")', function() {
+      // uncomment below and update the code to test the property product
+      //var instane = new TalonOne.CartItem();
+      //expect(instance).to.be();
+    });
+
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
       //var instane = new TalonOne.CartItem();

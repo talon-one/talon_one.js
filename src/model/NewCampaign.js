@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCampaign model module.
  * @module model/NewCampaign
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewCampaign {
     /**
@@ -99,14 +99,14 @@ class NewCampaign {
             if (data.hasOwnProperty('campaignGroups')) {
                 obj['campaignGroups'] = ApiClient.convertToType(data['campaignGroups'], ['Number']);
             }
-            if (data.hasOwnProperty('evaluationGroupId')) {
-                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('linkedStoreIds')) {
                 obj['linkedStoreIds'] = ApiClient.convertToType(data['linkedStoreIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('evaluationGroupId')) {
+                obj['evaluationGroupId'] = ApiClient.convertToType(data['evaluationGroupId'], 'Number');
             }
         }
         return obj;
@@ -193,12 +193,6 @@ NewCampaign.prototype['limits'] = undefined;
 NewCampaign.prototype['campaignGroups'] = undefined;
 
 /**
- * The ID of the campaign evaluation group the campaign belongs to.
- * @member {Number} evaluationGroupId
- */
-NewCampaign.prototype['evaluationGroupId'] = undefined;
-
-/**
  * The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
  * @member {module:model/NewCampaign.TypeEnum} type
  * @default 'advanced'
@@ -210,6 +204,12 @@ NewCampaign.prototype['type'] = 'advanced';
  * @member {Array.<Number>} linkedStoreIds
  */
 NewCampaign.prototype['linkedStoreIds'] = undefined;
+
+/**
+ * The ID of the campaign evaluation group the campaign belongs to.
+ * @member {Number} evaluationGroupId
+ */
+NewCampaign.prototype['evaluationGroupId'] = undefined;
 
 
 
@@ -277,7 +277,13 @@ NewCampaign['FeaturesEnum'] = {
      * value: "strikethrough"
      * @const
      */
-    "strikethrough": "strikethrough"
+    "strikethrough": "strikethrough",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements"
 };
 
 

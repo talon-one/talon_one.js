@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with coupons. | 
 **batchId** | **String** | The batch ID coupons created by this job will bear. | 
-**status** | **String** | The current status of this request. Possible values: - &#x60;pending&#x60; - &#x60;completed&#x60; - &#x60;failed&#x60; - &#x60;coupon pattern full&#x60;  | 
+**status** | **String** | The current status of this request. Possible values: - &#x60;pending verification&#x60; - &#x60;pending&#x60; - &#x60;completed&#x60; - &#x60;failed&#x60; - &#x60;coupon pattern full&#x60;  | 
 **createdAmount** | **Number** | The number of coupon codes that were already created for this request. | 
 **failCount** | **Number** | The number of times this job failed. | 
 **errors** | **[String]** | An array of individual problems encountered during the request. | 

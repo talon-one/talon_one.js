@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **remainingQuantity** | **Number** | Remaining quantity of the item, calculated internally based on returns of this item. | [optional] 
 **price** | **Number** | Price of the item in the currency defined by your Application. This field is required if this item is not part of a [catalog](https://docs.talon.one/docs/product/account/dev-tools/managing-cart-item-catalogs). If it is part of a catalog, setting a price here overrides the price from the catalog.  | [optional] 
 **category** | **String** | Type, group or model of the item. | [optional] 
+**product** | [**Product**](Product.md) |  | [optional] 
 **weight** | **Number** | Weight of item in grams. | [optional] 
 **height** | **Number** | Height of item in mm. | [optional] 
 **width** | **Number** | Width of item in mm. | [optional] 

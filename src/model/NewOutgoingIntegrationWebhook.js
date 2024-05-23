@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewOutgoingIntegrationWebhook model module.
  * @module model/NewOutgoingIntegrationWebhook
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewOutgoingIntegrationWebhook {
     /**

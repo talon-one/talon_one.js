@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import AdditionalCost from './AdditionalCost';
+import Product from './Product';
 
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CartItem {
     /**
@@ -72,6 +73,9 @@ class CartItem {
             }
             if (data.hasOwnProperty('category')) {
                 obj['category'] = ApiClient.convertToType(data['category'], 'String');
+            }
+            if (data.hasOwnProperty('product')) {
+                obj['product'] = Product.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('weight')) {
                 obj['weight'] = ApiClient.convertToType(data['weight'], 'Number');
@@ -145,6 +149,11 @@ CartItem.prototype['price'] = undefined;
  * @member {String} category
  */
 CartItem.prototype['category'] = undefined;
+
+/**
+ * @member {module:model/Product} product
+ */
+CartItem.prototype['product'] = undefined;
 
 /**
  * Weight of item in grams.

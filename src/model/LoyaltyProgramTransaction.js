@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramTransaction model module.
  * @module model/LoyaltyProgramTransaction
- * @version 6.0.0
+ * @version 7.0.0
  */
 class LoyaltyProgramTransaction {
     /**
@@ -70,6 +70,9 @@ class LoyaltyProgramTransaction {
             }
             if (data.hasOwnProperty('programId')) {
                 obj['programId'] = ApiClient.convertToType(data['programId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignId')) {
+                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
@@ -134,6 +137,12 @@ LoyaltyProgramTransaction.prototype['id'] = undefined;
  * @member {Number} programId
  */
 LoyaltyProgramTransaction.prototype['programId'] = undefined;
+
+/**
+ * ID of the campaign.
+ * @member {Number} campaignId
+ */
+LoyaltyProgramTransaction.prototype['campaignId'] = undefined;
 
 /**
  * Date and time the loyalty transaction occurred.

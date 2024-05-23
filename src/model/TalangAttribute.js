@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TalangAttribute model module.
  * @module model/TalangAttribute
- * @version 6.0.0
+ * @version 7.0.0
  */
 class TalangAttribute {
     /**
@@ -264,7 +264,13 @@ TalangAttribute['EntityEnum'] = {
      * value: "Store"
      * @const
      */
-    "Store": "Store"
+    "Store": "Store",
+
+    /**
+     * value: "Achievements"
+     * @const
+     */
+    "Achievements": "Achievements"
 };
 
 

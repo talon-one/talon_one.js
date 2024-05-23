@@ -12,16 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
+import Product from './Product';
 
 /**
  * The AddItemCatalogAction model module.
  * @module model/AddItemCatalogAction
- * @version 6.0.0
+ * @version 7.0.0
  */
 class AddItemCatalogAction {
     /**
      * Constructs a new <code>AddItemCatalogAction</code>.
-     * The specific properties of the \&quot;ADD\&quot; catalog sync action.
+     * The specific properties of the \&quot;ADD\&quot; catalog sync action. 
      * @alias module:model/AddItemCatalogAction
      * @param sku {String} The unique SKU of the item to add.
      */
@@ -59,6 +60,9 @@ class AddItemCatalogAction {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
+            if (data.hasOwnProperty('product')) {
+                obj['product'] = Product.constructFromObject(data['product']);
+            }
             if (data.hasOwnProperty('replaceIfExists')) {
                 obj['replaceIfExists'] = ApiClient.convertToType(data['replaceIfExists'], 'Boolean');
             }
@@ -88,7 +92,12 @@ AddItemCatalogAction.prototype['price'] = undefined;
 AddItemCatalogAction.prototype['attributes'] = undefined;
 
 /**
- * Indicates whether to replace the attributes of the item if the same SKU exists.
+ * @member {module:model/Product} product
+ */
+AddItemCatalogAction.prototype['product'] = undefined;
+
+/**
+ * Indicates whether to replace the attributes of the item if the same SKU exists.  **Note**: When set to `true`:   - If you do not provide a new `price` value, the existing `price` value is retained.   - If you do not provide a new `product` value, the `product` value is set to `null`. 
  * @member {Boolean} replaceIfExists
  * @default false
  */

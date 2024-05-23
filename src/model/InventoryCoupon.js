@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The InventoryCoupon model module.
  * @module model/InventoryCoupon
- * @version 6.0.0
+ * @version 7.0.0
  */
 class InventoryCoupon {
     /**
@@ -31,7 +31,7 @@ class InventoryCoupon {
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param usageCounter {Number} The number of times the coupon has been successfully redeemed.
      * @param profileRedemptionCount {Number} The number of times the coupon was redeemed by the profile.
-     * @param state {String} Can be:  - `active`: The coupon can be used. It is a reserved coupon that is neither pending, used nor expired, and has a non-exhausted limit counter. - `used`: The coupon has been redeemed and cannot be used again. It is not pending and has reached its redemption limit or was redeemed by the profile before expiration. - `expired`: The coupon was never redeemed and it is now expired. It is non-pending, non-active and non-used by the profile. - `pending`: The coupon will be usable in the future. - `disabled`: The coupon is part of a non-active campaign. 
+     * @param state {String} Can be:  - `active`: The coupon can be used. It is a reserved coupon that is not pending, used, or expired, and it has a non-exhausted limit counter.    **Note:** This coupon state is returned for [scheduled campaigns](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-schedule), but the coupon cannot be used until the campaign is **running**. - `used`: The coupon has been redeemed and cannot be used again. It is not pending and has reached its redemption limit or was redeemed by the profile before expiration. - `expired`: The coupon was never redeemed, and it is now expired. It is non-pending, non-active, and non-used by the profile. - `pending`: The coupon will be usable in the future. - `disabled`: The coupon is part of a non-active campaign. 
      */
     constructor(id, created, campaignId, value, usageLimit, usageCounter, profileRedemptionCount, state) { 
         
@@ -268,9 +268,9 @@ InventoryCoupon.prototype['batchId'] = undefined;
 /**
  * Whether the reservation effect actually created a new reservation.
  * @member {Boolean} isReservationMandatory
- * @default true
+ * @default false
  */
-InventoryCoupon.prototype['isReservationMandatory'] = true;
+InventoryCoupon.prototype['isReservationMandatory'] = false;
 
 /**
  * An indication of whether the coupon is implicitly reserved for all customers.
@@ -285,7 +285,7 @@ InventoryCoupon.prototype['implicitlyReserved'] = undefined;
 InventoryCoupon.prototype['profileRedemptionCount'] = undefined;
 
 /**
- * Can be:  - `active`: The coupon can be used. It is a reserved coupon that is neither pending, used nor expired, and has a non-exhausted limit counter. - `used`: The coupon has been redeemed and cannot be used again. It is not pending and has reached its redemption limit or was redeemed by the profile before expiration. - `expired`: The coupon was never redeemed and it is now expired. It is non-pending, non-active and non-used by the profile. - `pending`: The coupon will be usable in the future. - `disabled`: The coupon is part of a non-active campaign. 
+ * Can be:  - `active`: The coupon can be used. It is a reserved coupon that is not pending, used, or expired, and it has a non-exhausted limit counter.    **Note:** This coupon state is returned for [scheduled campaigns](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-schedule), but the coupon cannot be used until the campaign is **running**. - `used`: The coupon has been redeemed and cannot be used again. It is not pending and has reached its redemption limit or was redeemed by the profile before expiration. - `expired`: The coupon was never redeemed, and it is now expired. It is non-pending, non-active, and non-used by the profile. - `pending`: The coupon will be usable in the future. - `disabled`: The coupon is part of a non-active campaign. 
  * @member {String} state
  */
 InventoryCoupon.prototype['state'] = undefined;

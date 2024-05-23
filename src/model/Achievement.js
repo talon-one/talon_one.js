@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The Achievement model module.
  * @module model/Achievement
- * @version 6.0.0
+ * @version 7.0.0
  */
 class Achievement {
     /**
@@ -29,14 +29,15 @@ class Achievement {
      * @param name {String} The internal name of the achievement used in API requests.  **Note**: The name should start with a letter. This cannot be changed after the achievement has been created. 
      * @param title {String} The display name for the achievement in the Campaign Manager.
      * @param description {String} A description of the achievement.
-     * @param target {Number} The maximum number of times a specific action must be completed by a customer profile over a defined period of time.
-     * @param period {String} The relative duration after which the achievement is reset for a particular customer profile.  **Note**: The `period` does not start when the achievement is created.  The period is a **positive real number** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can also round certain units down to the beginning of period and up to the end of period.: - `_D` for rounding down days only. Signifies the start of the day. Example: `30D_D` - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. Example: `23W_U`  **Note**: You can either use the round down and round up option or set an absolute period. 
+     * @param target {Number} The required number of actions or the transactional milestone to complete the achievement.
+     * @param period {String} The relative duration after which the achievement ends and resets for a particular customer profile.  **Note**: The `period` does not start when the achievement is created.  The period is a **positive real number** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can also round certain units down to the beginning of period and up to the end of period.: - `_D` for rounding down days only. Signifies the start of the day. Example: `30D_D` - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. Example: `23W_U`  **Note**: You can either use the round down and round up option or set an absolute period. 
+     * @param campaignId {Number} ID of the campaign, to which the achievement belongs to
      * @param userId {Number} ID of the user that created this achievement.
      * @param createdBy {String} Name of the user that created the achievement.  **Note**: This is not available if the user has been deleted. 
      */
-    constructor(id, created, name, title, description, target, period, userId, createdBy) { 
+    constructor(id, created, name, title, description, target, period, campaignId, userId, createdBy) { 
         
-        Achievement.initialize(this, id, created, name, title, description, target, period, userId, createdBy);
+        Achievement.initialize(this, id, created, name, title, description, target, period, campaignId, userId, createdBy);
     }
 
     /**
@@ -44,7 +45,7 @@ class Achievement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, name, title, description, target, period, userId, createdBy) { 
+    static initialize(obj, id, created, name, title, description, target, period, campaignId, userId, createdBy) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['name'] = name;
@@ -52,6 +53,7 @@ class Achievement {
         obj['description'] = description;
         obj['target'] = target;
         obj['period'] = period;
+        obj['campaignId'] = campaignId;
         obj['userId'] = userId;
         obj['createdBy'] = createdBy;
     }
@@ -91,11 +93,17 @@ class Achievement {
             if (data.hasOwnProperty('periodEndOverride')) {
                 obj['periodEndOverride'] = TimePoint.constructFromObject(data['periodEndOverride']);
             }
+            if (data.hasOwnProperty('campaignId')) {
+                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
             if (data.hasOwnProperty('userId')) {
                 obj['userId'] = ApiClient.convertToType(data['userId'], 'Number');
             }
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
+            }
+            if (data.hasOwnProperty('hasProgress')) {
+                obj['hasProgress'] = ApiClient.convertToType(data['hasProgress'], 'Boolean');
             }
         }
         return obj;
@@ -135,13 +143,13 @@ Achievement.prototype['title'] = undefined;
 Achievement.prototype['description'] = undefined;
 
 /**
- * The maximum number of times a specific action must be completed by a customer profile over a defined period of time.
+ * The required number of actions or the transactional milestone to complete the achievement.
  * @member {Number} target
  */
 Achievement.prototype['target'] = undefined;
 
 /**
- * The relative duration after which the achievement is reset for a particular customer profile.  **Note**: The `period` does not start when the achievement is created.  The period is a **positive real number** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can also round certain units down to the beginning of period and up to the end of period.: - `_D` for rounding down days only. Signifies the start of the day. Example: `30D_D` - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. Example: `23W_U`  **Note**: You can either use the round down and round up option or set an absolute period. 
+ * The relative duration after which the achievement ends and resets for a particular customer profile.  **Note**: The `period` does not start when the achievement is created.  The period is a **positive real number** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can also round certain units down to the beginning of period and up to the end of period.: - `_D` for rounding down days only. Signifies the start of the day. Example: `30D_D` - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. Example: `23W_U`  **Note**: You can either use the round down and round up option or set an absolute period. 
  * @member {String} period
  */
 Achievement.prototype['period'] = undefined;
@@ -150,6 +158,12 @@ Achievement.prototype['period'] = undefined;
  * @member {module:model/TimePoint} periodEndOverride
  */
 Achievement.prototype['periodEndOverride'] = undefined;
+
+/**
+ * ID of the campaign, to which the achievement belongs to
+ * @member {Number} campaignId
+ */
+Achievement.prototype['campaignId'] = undefined;
 
 /**
  * ID of the user that created this achievement.
@@ -162,6 +176,12 @@ Achievement.prototype['userId'] = undefined;
  * @member {String} createdBy
  */
 Achievement.prototype['createdBy'] = undefined;
+
+/**
+ * Indicates if a customer has made progress in the achievement.
+ * @member {Boolean} hasProgress
+ */
+Achievement.prototype['hasProgress'] = undefined;
 
 
 

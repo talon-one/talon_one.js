@@ -17,7 +17,7 @@ import LedgerInfo from './LedgerInfo';
 /**
  * The LoyaltyProgramLedgers model module.
  * @module model/LoyaltyProgramLedgers
- * @version 6.0.0
+ * @version 7.0.0
  */
 class LoyaltyProgramLedgers {
     /**
@@ -66,6 +66,9 @@ class LoyaltyProgramLedgers {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('joinDate')) {
+                obj['joinDate'] = ApiClient.convertToType(data['joinDate'], 'Date');
+            }
             if (data.hasOwnProperty('ledger')) {
                 obj['ledger'] = LedgerInfo.constructFromObject(data['ledger']);
             }
@@ -96,6 +99,12 @@ LoyaltyProgramLedgers.prototype['title'] = undefined;
  * @member {String} name
  */
 LoyaltyProgramLedgers.prototype['name'] = undefined;
+
+/**
+ * The date on which the customer joined the loyalty program in RFC3339.  **Note**: This is in the loyalty program's time zone. 
+ * @member {Date} joinDate
+ */
+LoyaltyProgramLedgers.prototype['joinDate'] = undefined;
 
 /**
  * @member {module:model/LedgerInfo} ledger

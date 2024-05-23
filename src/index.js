@@ -21,7 +21,6 @@ import Account from './model/Account';
 import AccountAdditionalCost from './model/AccountAdditionalCost';
 import AccountAnalytics from './model/AccountAnalytics';
 import AccountDashboardStatistic from './model/AccountDashboardStatistic';
-import AccountDashboardStatisticApiCalls from './model/AccountDashboardStatisticApiCalls';
 import AccountDashboardStatisticCampaigns from './model/AccountDashboardStatisticCampaigns';
 import AccountDashboardStatisticDiscount from './model/AccountDashboardStatisticDiscount';
 import AccountDashboardStatisticLoyaltyPoints from './model/AccountDashboardStatisticLoyaltyPoints';
@@ -31,6 +30,7 @@ import AccountEntity from './model/AccountEntity';
 import AccountLimits from './model/AccountLimits';
 import Achievement from './model/Achievement';
 import AchievementAdditionalProperties from './model/AchievementAdditionalProperties';
+import AchievementProgress from './model/AchievementProgress';
 import AddFreeItemEffectProps from './model/AddFreeItemEffectProps';
 import AddItemCatalogAction from './model/AddItemCatalogAction';
 import AddLoyaltyPoints from './model/AddLoyaltyPoints';
@@ -41,7 +41,19 @@ import AdditionalCampaignProperties from './model/AdditionalCampaignProperties';
 import AdditionalCost from './model/AdditionalCost';
 import Application from './model/Application';
 import ApplicationAPIKey from './model/ApplicationAPIKey';
+import ApplicationAnalyticsDataPoint from './model/ApplicationAnalyticsDataPoint';
+import ApplicationAnalyticsDataPointAvgItemsPerSession from './model/ApplicationAnalyticsDataPointAvgItemsPerSession';
+import ApplicationAnalyticsDataPointAvgSessionValue from './model/ApplicationAnalyticsDataPointAvgSessionValue';
+import ApplicationAnalyticsDataPointSessionsCount from './model/ApplicationAnalyticsDataPointSessionsCount';
+import ApplicationAnalyticsDataPointTotalRevenue from './model/ApplicationAnalyticsDataPointTotalRevenue';
 import ApplicationApiHealth from './model/ApplicationApiHealth';
+import ApplicationCampaignAnalytics from './model/ApplicationCampaignAnalytics';
+import ApplicationCampaignAnalyticsAvgItemsPerSession from './model/ApplicationCampaignAnalyticsAvgItemsPerSession';
+import ApplicationCampaignAnalyticsAvgSessionValue from './model/ApplicationCampaignAnalyticsAvgSessionValue';
+import ApplicationCampaignAnalyticsCouponsCount from './model/ApplicationCampaignAnalyticsCouponsCount';
+import ApplicationCampaignAnalyticsSessionsCount from './model/ApplicationCampaignAnalyticsSessionsCount';
+import ApplicationCampaignAnalyticsTotalDiscounts from './model/ApplicationCampaignAnalyticsTotalDiscounts';
+import ApplicationCampaignAnalyticsTotalRevenue from './model/ApplicationCampaignAnalyticsTotalRevenue';
 import ApplicationCampaignStats from './model/ApplicationCampaignStats';
 import ApplicationCustomer from './model/ApplicationCustomer';
 import ApplicationCustomerEntity from './model/ApplicationCustomerEntity';
@@ -63,7 +75,6 @@ import AudienceIntegrationID from './model/AudienceIntegrationID';
 import AudienceMembership from './model/AudienceMembership';
 import AwardGiveawayEffectProps from './model/AwardGiveawayEffectProps';
 import BaseCampaign from './model/BaseCampaign';
-import BaseCampaignForNotification from './model/BaseCampaignForNotification';
 import BaseLoyaltyProgram from './model/BaseLoyaltyProgram';
 import BaseNotification from './model/BaseNotification';
 import BaseNotificationEntity from './model/BaseNotificationEntity';
@@ -88,7 +99,6 @@ import CampaignEntity from './model/CampaignEntity';
 import CampaignEvaluationGroup from './model/CampaignEvaluationGroup';
 import CampaignEvaluationPosition from './model/CampaignEvaluationPosition';
 import CampaignEvaluationTreeChangedNotification from './model/CampaignEvaluationTreeChangedNotification';
-import CampaignForNotification from './model/CampaignForNotification';
 import CampaignGroup from './model/CampaignGroup';
 import CampaignGroupEntity from './model/CampaignGroupEntity';
 import CampaignNotification from './model/CampaignNotification';
@@ -100,10 +110,11 @@ import CampaignSetBranchNode from './model/CampaignSetBranchNode';
 import CampaignSetLeafNode from './model/CampaignSetLeafNode';
 import CampaignSetNode from './model/CampaignSetNode';
 import CampaignStateChangedNotification from './model/CampaignStateChangedNotification';
-import CampaignStateNotification from './model/CampaignStateNotification';
 import CampaignTemplate from './model/CampaignTemplate';
 import CampaignTemplateCollection from './model/CampaignTemplateCollection';
 import CampaignTemplateParams from './model/CampaignTemplateParams';
+import CardExpiringPointsNotificationPolicy from './model/CardExpiringPointsNotificationPolicy';
+import CardExpiringPointsNotificationTrigger from './model/CardExpiringPointsNotificationTrigger';
 import CardLedgerPointsEntryIntegrationAPI from './model/CardLedgerPointsEntryIntegrationAPI';
 import CardLedgerTransactionLogEntry from './model/CardLedgerTransactionLogEntry';
 import CardLedgerTransactionLogEntryIntegrationAPI from './model/CardLedgerTransactionLogEntryIntegrationAPI';
@@ -150,8 +161,10 @@ import CustomerProfileSearchQuery from './model/CustomerProfileSearchQuery';
 import CustomerProfileUpdateV2Response from './model/CustomerProfileUpdateV2Response';
 import CustomerSession from './model/CustomerSession';
 import CustomerSessionV2 from './model/CustomerSessionV2';
+import DeactivateUserRequest from './model/DeactivateUserRequest';
 import DeductLoyaltyPoints from './model/DeductLoyaltyPoints';
 import DeductLoyaltyPointsEffectProps from './model/DeductLoyaltyPointsEffectProps';
+import DeleteUserRequest from './model/DeleteUserRequest';
 import Effect from './model/Effect';
 import EffectEntity from './model/EffectEntity';
 import EmailEntity from './model/EmailEntity';
@@ -167,16 +180,20 @@ import EvaluableCampaignIds from './model/EvaluableCampaignIds';
 import Event from './model/Event';
 import EventType from './model/EventType';
 import EventV2 from './model/EventV2';
+import ExpiringCouponsNotificationPolicy from './model/ExpiringCouponsNotificationPolicy';
+import ExpiringCouponsNotificationTrigger from './model/ExpiringCouponsNotificationTrigger';
 import ExpiringPointsNotificationPolicy from './model/ExpiringPointsNotificationPolicy';
 import ExpiringPointsNotificationTrigger from './model/ExpiringPointsNotificationTrigger';
 import FeatureFlag from './model/FeatureFlag';
 import FeaturesFeed from './model/FeaturesFeed';
 import FuncArgDef from './model/FuncArgDef';
 import FunctionDef from './model/FunctionDef';
+import GetIntegrationCouponRequest from './model/GetIntegrationCouponRequest';
 import Giveaway from './model/Giveaway';
 import GiveawaysPool from './model/GiveawaysPool';
 import IdentifiableEntity from './model/IdentifiableEntity';
 import ImportEntity from './model/ImportEntity';
+import IncreaseAchievementProgressEffectProps from './model/IncreaseAchievementProgressEffectProps';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse20010 from './model/InlineResponse20010';
@@ -216,6 +233,10 @@ import InlineResponse20040 from './model/InlineResponse20040';
 import InlineResponse20041 from './model/InlineResponse20041';
 import InlineResponse20042 from './model/InlineResponse20042';
 import InlineResponse20043 from './model/InlineResponse20043';
+import InlineResponse20044 from './model/InlineResponse20044';
+import InlineResponse20045 from './model/InlineResponse20045';
+import InlineResponse20046 from './model/InlineResponse20046';
+import InlineResponse20047 from './model/InlineResponse20047';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
@@ -265,6 +286,10 @@ import LoyaltySubLedger from './model/LoyaltySubLedger';
 import LoyaltyTier from './model/LoyaltyTier';
 import ManagementKey from './model/ManagementKey';
 import ManagerConfig from './model/ManagerConfig';
+import MessageLogEntries from './model/MessageLogEntries';
+import MessageLogEntry from './model/MessageLogEntry';
+import MessageLogRequest from './model/MessageLogRequest';
+import MessageLogResponse from './model/MessageLogResponse';
 import Meta from './model/Meta';
 import ModelExport from './model/ModelExport';
 import ModelImport from './model/ModelImport';
@@ -331,6 +356,7 @@ import NewUser from './model/NewUser';
 import NewWebhook from './model/NewWebhook';
 import Notification from './model/Notification';
 import NotificationActivation from './model/NotificationActivation';
+import NotificationListItem from './model/NotificationListItem';
 import NotificationTest from './model/NotificationTest';
 import OneTimeCode from './model/OneTimeCode';
 import OutgoingIntegrationBrazePolicy from './model/OutgoingIntegrationBrazePolicy';
@@ -347,6 +373,7 @@ import PatchItemCatalogAction from './model/PatchItemCatalogAction';
 import PatchManyItemsCatalogAction from './model/PatchManyItemsCatalogAction';
 import PendingPointsNotificationPolicy from './model/PendingPointsNotificationPolicy';
 import Picklist from './model/Picklist';
+import Product from './model/Product';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
 import Referral from './model/Referral';
@@ -381,6 +408,7 @@ import RuleFailureReason from './model/RuleFailureReason';
 import Ruleset from './model/Ruleset';
 import SSOConfig from './model/SSOConfig';
 import SamlConnection from './model/SamlConnection';
+import SamlConnectionInternal from './model/SamlConnectionInternal';
 import SamlConnectionMetadata from './model/SamlConnectionMetadata';
 import SamlLoginEndpoint from './model/SamlLoginEndpoint';
 import Session from './model/Session';
@@ -416,6 +444,7 @@ import TwoFAConfig from './model/TwoFAConfig';
 import UpdateAccount from './model/UpdateAccount';
 import UpdateAchievement from './model/UpdateAchievement';
 import UpdateApplication from './model/UpdateApplication';
+import UpdateApplicationAPIKey from './model/UpdateApplicationAPIKey';
 import UpdateAttributeEffectProps from './model/UpdateAttributeEffectProps';
 import UpdateAudience from './model/UpdateAudience';
 import UpdateCampaign from './model/UpdateCampaign';
@@ -476,7 +505,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 6.0.0
+* @version 7.0.0
 */
 export {
     /**
@@ -534,12 +563,6 @@ export {
     AccountDashboardStatistic,
 
     /**
-     * The AccountDashboardStatisticApiCalls model constructor.
-     * @property {module:model/AccountDashboardStatisticApiCalls}
-     */
-    AccountDashboardStatisticApiCalls,
-
-    /**
      * The AccountDashboardStatisticCampaigns model constructor.
      * @property {module:model/AccountDashboardStatisticCampaigns}
      */
@@ -592,6 +615,12 @@ export {
      * @property {module:model/AchievementAdditionalProperties}
      */
     AchievementAdditionalProperties,
+
+    /**
+     * The AchievementProgress model constructor.
+     * @property {module:model/AchievementProgress}
+     */
+    AchievementProgress,
 
     /**
      * The AddFreeItemEffectProps model constructor.
@@ -654,10 +683,82 @@ export {
     ApplicationAPIKey,
 
     /**
+     * The ApplicationAnalyticsDataPoint model constructor.
+     * @property {module:model/ApplicationAnalyticsDataPoint}
+     */
+    ApplicationAnalyticsDataPoint,
+
+    /**
+     * The ApplicationAnalyticsDataPointAvgItemsPerSession model constructor.
+     * @property {module:model/ApplicationAnalyticsDataPointAvgItemsPerSession}
+     */
+    ApplicationAnalyticsDataPointAvgItemsPerSession,
+
+    /**
+     * The ApplicationAnalyticsDataPointAvgSessionValue model constructor.
+     * @property {module:model/ApplicationAnalyticsDataPointAvgSessionValue}
+     */
+    ApplicationAnalyticsDataPointAvgSessionValue,
+
+    /**
+     * The ApplicationAnalyticsDataPointSessionsCount model constructor.
+     * @property {module:model/ApplicationAnalyticsDataPointSessionsCount}
+     */
+    ApplicationAnalyticsDataPointSessionsCount,
+
+    /**
+     * The ApplicationAnalyticsDataPointTotalRevenue model constructor.
+     * @property {module:model/ApplicationAnalyticsDataPointTotalRevenue}
+     */
+    ApplicationAnalyticsDataPointTotalRevenue,
+
+    /**
      * The ApplicationApiHealth model constructor.
      * @property {module:model/ApplicationApiHealth}
      */
     ApplicationApiHealth,
+
+    /**
+     * The ApplicationCampaignAnalytics model constructor.
+     * @property {module:model/ApplicationCampaignAnalytics}
+     */
+    ApplicationCampaignAnalytics,
+
+    /**
+     * The ApplicationCampaignAnalyticsAvgItemsPerSession model constructor.
+     * @property {module:model/ApplicationCampaignAnalyticsAvgItemsPerSession}
+     */
+    ApplicationCampaignAnalyticsAvgItemsPerSession,
+
+    /**
+     * The ApplicationCampaignAnalyticsAvgSessionValue model constructor.
+     * @property {module:model/ApplicationCampaignAnalyticsAvgSessionValue}
+     */
+    ApplicationCampaignAnalyticsAvgSessionValue,
+
+    /**
+     * The ApplicationCampaignAnalyticsCouponsCount model constructor.
+     * @property {module:model/ApplicationCampaignAnalyticsCouponsCount}
+     */
+    ApplicationCampaignAnalyticsCouponsCount,
+
+    /**
+     * The ApplicationCampaignAnalyticsSessionsCount model constructor.
+     * @property {module:model/ApplicationCampaignAnalyticsSessionsCount}
+     */
+    ApplicationCampaignAnalyticsSessionsCount,
+
+    /**
+     * The ApplicationCampaignAnalyticsTotalDiscounts model constructor.
+     * @property {module:model/ApplicationCampaignAnalyticsTotalDiscounts}
+     */
+    ApplicationCampaignAnalyticsTotalDiscounts,
+
+    /**
+     * The ApplicationCampaignAnalyticsTotalRevenue model constructor.
+     * @property {module:model/ApplicationCampaignAnalyticsTotalRevenue}
+     */
+    ApplicationCampaignAnalyticsTotalRevenue,
 
     /**
      * The ApplicationCampaignStats model constructor.
@@ -784,12 +885,6 @@ export {
      * @property {module:model/BaseCampaign}
      */
     BaseCampaign,
-
-    /**
-     * The BaseCampaignForNotification model constructor.
-     * @property {module:model/BaseCampaignForNotification}
-     */
-    BaseCampaignForNotification,
 
     /**
      * The BaseLoyaltyProgram model constructor.
@@ -936,12 +1031,6 @@ export {
     CampaignEvaluationTreeChangedNotification,
 
     /**
-     * The CampaignForNotification model constructor.
-     * @property {module:model/CampaignForNotification}
-     */
-    CampaignForNotification,
-
-    /**
      * The CampaignGroup model constructor.
      * @property {module:model/CampaignGroup}
      */
@@ -1008,12 +1097,6 @@ export {
     CampaignStateChangedNotification,
 
     /**
-     * The CampaignStateNotification model constructor.
-     * @property {module:model/CampaignStateNotification}
-     */
-    CampaignStateNotification,
-
-    /**
      * The CampaignTemplate model constructor.
      * @property {module:model/CampaignTemplate}
      */
@@ -1030,6 +1113,18 @@ export {
      * @property {module:model/CampaignTemplateParams}
      */
     CampaignTemplateParams,
+
+    /**
+     * The CardExpiringPointsNotificationPolicy model constructor.
+     * @property {module:model/CardExpiringPointsNotificationPolicy}
+     */
+    CardExpiringPointsNotificationPolicy,
+
+    /**
+     * The CardExpiringPointsNotificationTrigger model constructor.
+     * @property {module:model/CardExpiringPointsNotificationTrigger}
+     */
+    CardExpiringPointsNotificationTrigger,
 
     /**
      * The CardLedgerPointsEntryIntegrationAPI model constructor.
@@ -1308,6 +1403,12 @@ export {
     CustomerSessionV2,
 
     /**
+     * The DeactivateUserRequest model constructor.
+     * @property {module:model/DeactivateUserRequest}
+     */
+    DeactivateUserRequest,
+
+    /**
      * The DeductLoyaltyPoints model constructor.
      * @property {module:model/DeductLoyaltyPoints}
      */
@@ -1318,6 +1419,12 @@ export {
      * @property {module:model/DeductLoyaltyPointsEffectProps}
      */
     DeductLoyaltyPointsEffectProps,
+
+    /**
+     * The DeleteUserRequest model constructor.
+     * @property {module:model/DeleteUserRequest}
+     */
+    DeleteUserRequest,
 
     /**
      * The Effect model constructor.
@@ -1410,6 +1517,18 @@ export {
     EventV2,
 
     /**
+     * The ExpiringCouponsNotificationPolicy model constructor.
+     * @property {module:model/ExpiringCouponsNotificationPolicy}
+     */
+    ExpiringCouponsNotificationPolicy,
+
+    /**
+     * The ExpiringCouponsNotificationTrigger model constructor.
+     * @property {module:model/ExpiringCouponsNotificationTrigger}
+     */
+    ExpiringCouponsNotificationTrigger,
+
+    /**
      * The ExpiringPointsNotificationPolicy model constructor.
      * @property {module:model/ExpiringPointsNotificationPolicy}
      */
@@ -1446,6 +1565,12 @@ export {
     FunctionDef,
 
     /**
+     * The GetIntegrationCouponRequest model constructor.
+     * @property {module:model/GetIntegrationCouponRequest}
+     */
+    GetIntegrationCouponRequest,
+
+    /**
      * The Giveaway model constructor.
      * @property {module:model/Giveaway}
      */
@@ -1468,6 +1593,12 @@ export {
      * @property {module:model/ImportEntity}
      */
     ImportEntity,
+
+    /**
+     * The IncreaseAchievementProgressEffectProps model constructor.
+     * @property {module:model/IncreaseAchievementProgressEffectProps}
+     */
+    IncreaseAchievementProgressEffectProps,
 
     /**
      * The InlineResponse200 model constructor.
@@ -1702,6 +1833,30 @@ export {
      * @property {module:model/InlineResponse20043}
      */
     InlineResponse20043,
+
+    /**
+     * The InlineResponse20044 model constructor.
+     * @property {module:model/InlineResponse20044}
+     */
+    InlineResponse20044,
+
+    /**
+     * The InlineResponse20045 model constructor.
+     * @property {module:model/InlineResponse20045}
+     */
+    InlineResponse20045,
+
+    /**
+     * The InlineResponse20046 model constructor.
+     * @property {module:model/InlineResponse20046}
+     */
+    InlineResponse20046,
+
+    /**
+     * The InlineResponse20047 model constructor.
+     * @property {module:model/InlineResponse20047}
+     */
+    InlineResponse20047,
 
     /**
      * The InlineResponse2005 model constructor.
@@ -1996,6 +2151,30 @@ export {
      * @property {module:model/ManagerConfig}
      */
     ManagerConfig,
+
+    /**
+     * The MessageLogEntries model constructor.
+     * @property {module:model/MessageLogEntries}
+     */
+    MessageLogEntries,
+
+    /**
+     * The MessageLogEntry model constructor.
+     * @property {module:model/MessageLogEntry}
+     */
+    MessageLogEntry,
+
+    /**
+     * The MessageLogRequest model constructor.
+     * @property {module:model/MessageLogRequest}
+     */
+    MessageLogRequest,
+
+    /**
+     * The MessageLogResponse model constructor.
+     * @property {module:model/MessageLogResponse}
+     */
+    MessageLogResponse,
 
     /**
      * The Meta model constructor.
@@ -2394,6 +2573,12 @@ export {
     NotificationActivation,
 
     /**
+     * The NotificationListItem model constructor.
+     * @property {module:model/NotificationListItem}
+     */
+    NotificationListItem,
+
+    /**
      * The NotificationTest model constructor.
      * @property {module:model/NotificationTest}
      */
@@ -2488,6 +2673,12 @@ export {
      * @property {module:model/Picklist}
      */
     Picklist,
+
+    /**
+     * The Product model constructor.
+     * @property {module:model/Product}
+     */
+    Product,
 
     /**
      * The ProfileAudiencesChanges model constructor.
@@ -2692,6 +2883,12 @@ export {
      * @property {module:model/SamlConnection}
      */
     SamlConnection,
+
+    /**
+     * The SamlConnectionInternal model constructor.
+     * @property {module:model/SamlConnectionInternal}
+     */
+    SamlConnectionInternal,
 
     /**
      * The SamlConnectionMetadata model constructor.
@@ -2902,6 +3099,12 @@ export {
      * @property {module:model/UpdateApplication}
      */
     UpdateApplication,
+
+    /**
+     * The UpdateApplicationAPIKey model constructor.
+     * @property {module:model/UpdateApplicationAPIKey}
+     */
+    UpdateApplicationAPIKey,
 
     /**
      * The UpdateAttributeEffectProps model constructor.

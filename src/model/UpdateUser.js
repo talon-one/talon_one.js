@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateUser model module.
  * @module model/UpdateUser
- * @version 6.0.0
+ * @version 7.0.0
  */
 class UpdateUser {
     /**
@@ -50,20 +50,20 @@ class UpdateUser {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('policy')) {
-                obj['policy'] = ApiClient.convertToType(data['policy'], 'String');
-            }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
+            }
+            if (data.hasOwnProperty('isAdmin')) {
+                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
+            }
+            if (data.hasOwnProperty('policy')) {
+                obj['policy'] = ApiClient.convertToType(data['policy'], 'String');
             }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
             }
             if (data.hasOwnProperty('applicationNotificationSubscriptions')) {
                 obj['applicationNotificationSubscriptions'] = ApiClient.convertToType(data['applicationNotificationSubscriptions'], Object);
-            }
-            if (data.hasOwnProperty('isAdmin')) {
-                obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
             }
         }
         return obj;
@@ -73,39 +73,40 @@ class UpdateUser {
 }
 
 /**
- * The user name.
+ * Name of the user.
  * @member {String} name
  */
 UpdateUser.prototype['name'] = undefined;
 
 /**
- * The `Access Control List` json defining the role of the user. This represents the access control on the user level.
- * @member {String} policy
- */
-UpdateUser.prototype['policy'] = undefined;
-
-/**
- * New state (\"deactivated\" or \"active\") for the user. Only usable by admins for the user.
+ * The state of the user.   - `deactivated`: The user has been deactivated.   - `active`: The user is active.  **Note**: Only `admin` users can update the state of another user. 
  * @member {module:model/UpdateUser.StateEnum} state
  */
 UpdateUser.prototype['state'] = undefined;
 
 /**
- * List of roles to assign to the user.
+ * Indicates whether the user is an `admin`.
+ * @member {Boolean} isAdmin
+ */
+UpdateUser.prototype['isAdmin'] = undefined;
+
+/**
+ * Indicates the access level of the user.
+ * @member {String} policy
+ */
+UpdateUser.prototype['policy'] = undefined;
+
+/**
+ * A list of the IDs of the roles assigned to the user.  **Note**: Use the [List roles](https://docs.talon.one/management-api#tag/Roles/operation/getAllRoles) endpoint to find the ID of a role. 
  * @member {Array.<Number>} roles
  */
 UpdateUser.prototype['roles'] = undefined;
 
 /**
+ * Application notifications that the user is subscribed to.
  * @member {Object} applicationNotificationSubscriptions
  */
 UpdateUser.prototype['applicationNotificationSubscriptions'] = undefined;
-
-/**
- * An indication of whether the user has admin permissions.
- * @member {Boolean} isAdmin
- */
-UpdateUser.prototype['isAdmin'] = undefined;
 
 
 

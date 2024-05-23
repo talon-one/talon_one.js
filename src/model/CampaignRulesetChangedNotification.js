@@ -12,20 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignStateNotification from './CampaignStateNotification';
+import Campaign from './Campaign';
 import Ruleset from './Ruleset';
 
 /**
  * The CampaignRulesetChangedNotification model module.
  * @module model/CampaignRulesetChangedNotification
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CampaignRulesetChangedNotification {
     /**
      * Constructs a new <code>CampaignRulesetChangedNotification</code>.
      * A notification regarding a campaign whose ruleset was changed.
      * @alias module:model/CampaignRulesetChangedNotification
-     * @param campaign {module:model/CampaignStateNotification} 
+     * @param campaign {module:model/Campaign} 
      */
     constructor(campaign) { 
         
@@ -53,7 +53,7 @@ class CampaignRulesetChangedNotification {
             obj = obj || new CampaignRulesetChangedNotification();
 
             if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = CampaignStateNotification.constructFromObject(data['campaign']);
+                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
             }
             if (data.hasOwnProperty('oldRuleset')) {
                 obj['oldRuleset'] = Ruleset.constructFromObject(data['oldRuleset']);
@@ -69,7 +69,7 @@ class CampaignRulesetChangedNotification {
 }
 
 /**
- * @member {module:model/CampaignStateNotification} campaign
+ * @member {module:model/Campaign} campaign
  */
 CampaignRulesetChangedNotification.prototype['campaign'] = undefined;
 

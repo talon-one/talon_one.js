@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCampaignGroup model module.
  * @module model/UpdateCampaignGroup
- * @version 6.0.0
+ * @version 7.0.0
  */
 class UpdateCampaignGroup {
     /**
      * Constructs a new <code>UpdateCampaignGroup</code>.
      * 
      * @alias module:model/UpdateCampaignGroup
-     * @param name {String} The name of this campaign access group.
+     * @param name {String} The name of the campaign access group.
      */
     constructor(name) { 
         
@@ -70,7 +70,7 @@ class UpdateCampaignGroup {
 }
 
 /**
- * The name of this campaign access group.
+ * The name of the campaign access group.
  * @member {String} name
  */
 UpdateCampaignGroup.prototype['name'] = undefined;

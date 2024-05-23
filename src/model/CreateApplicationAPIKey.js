@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateApplicationAPIKey model module.
  * @module model/CreateApplicationAPIKey
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CreateApplicationAPIKey {
     /**
      * Constructs a new <code>CreateApplicationAPIKey</code>.
      * @alias module:model/CreateApplicationAPIKey
-     * @param title {String} Title for API Key.
-     * @param expires {Date} The date the API key expired.
+     * @param title {String} Title of the API key.
+     * @param expires {Date} The date the API key expires.
      */
     constructor(title, expires) { 
         
@@ -60,6 +60,12 @@ class CreateApplicationAPIKey {
             if (data.hasOwnProperty('platform')) {
                 obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('timeOffset')) {
+                obj['timeOffset'] = ApiClient.convertToType(data['timeOffset'], 'Number');
+            }
         }
         return obj;
     }
@@ -68,13 +74,13 @@ class CreateApplicationAPIKey {
 }
 
 /**
- * Title for API Key.
+ * Title of the API key.
  * @member {String} title
  */
 CreateApplicationAPIKey.prototype['title'] = undefined;
 
 /**
- * The date the API key expired.
+ * The date the API key expires.
  * @member {Date} expires
  */
 CreateApplicationAPIKey.prototype['expires'] = undefined;
@@ -84,6 +90,18 @@ CreateApplicationAPIKey.prototype['expires'] = undefined;
  * @member {module:model/CreateApplicationAPIKey.PlatformEnum} platform
  */
 CreateApplicationAPIKey.prototype['platform'] = undefined;
+
+/**
+ * The API key type. Can be empty or `staging`.  Staging API keys can only be used for dry requests with the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint, [Update customer profile](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/updateCustomerProfileV2) endpoint, and [Track event](https://docs.talon.one/integration-api#tag/Events/operation/trackEventV2) endpoint.  When using the _Update customer profile_ endpoint with a staging API key, the query parameter `runRuleEngine` must be `true`. 
+ * @member {module:model/CreateApplicationAPIKey.TypeEnum} type
+ */
+CreateApplicationAPIKey.prototype['type'] = undefined;
+
+/**
+ * A time offset in nanoseconds associated with the API key. When making a request using the API key, rule evaluation is based on a date that is calculated by adding the offset to the current date. 
+ * @member {Number} timeOffset
+ */
+CreateApplicationAPIKey.prototype['timeOffset'] = undefined;
 
 
 
@@ -155,6 +173,21 @@ CreateApplicationAPIKey['PlatformEnum'] = {
      * @const
      */
     "emarsys": "emarsys"
+};
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CreateApplicationAPIKey['TypeEnum'] = {
+
+    /**
+     * value: "staging"
+     * @const
+     */
+    "staging": "staging"
 };
 
 

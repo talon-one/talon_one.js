@@ -17,7 +17,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewLoyaltyProgram {
     /**
@@ -89,11 +89,17 @@ class NewLoyaltyProgram {
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
+            if (data.hasOwnProperty('tiersExpirationPolicy')) {
+                obj['tiersExpirationPolicy'] = ApiClient.convertToType(data['tiersExpirationPolicy'], 'String');
+            }
             if (data.hasOwnProperty('tiersExpireIn')) {
                 obj['tiersExpireIn'] = ApiClient.convertToType(data['tiersExpireIn'], 'String');
             }
             if (data.hasOwnProperty('tiersDowngradePolicy')) {
                 obj['tiersDowngradePolicy'] = ApiClient.convertToType(data['tiersDowngradePolicy'], 'String');
+            }
+            if (data.hasOwnProperty('programJoinPolicy')) {
+                obj['programJoinPolicy'] = ApiClient.convertToType(data['programJoinPolicy'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -163,7 +169,13 @@ NewLoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 NewLoyaltyProgram.prototype['sandbox'] = undefined;
 
 /**
- * The amount of time until the expiration of every tier, starting from the date when the customer joined the considered tier for the first time.  The time format is an **integer** followed by one letter indicating the time unit. Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
+ * The policy that defines which date is used to calculate the expiration date of a customer's current tier.  - `tier_start_date`: The tier expiration date is calculated based on when the customer joined the current tier.  - `program_join_date`: The tier expiration date is calculated based on when the customer joined the loyalty program. 
+ * @member {module:model/NewLoyaltyProgram.TiersExpirationPolicyEnum} tiersExpirationPolicy
+ */
+NewLoyaltyProgram.prototype['tiersExpirationPolicy'] = undefined;
+
+/**
+ * The amount of time after which the tier expires.  The time format is an **integer** followed by one letter indicating the time unit. Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
  * @member {String} tiersExpireIn
  */
 NewLoyaltyProgram.prototype['tiersExpireIn'] = undefined;
@@ -173,6 +185,12 @@ NewLoyaltyProgram.prototype['tiersExpireIn'] = undefined;
  * @member {module:model/NewLoyaltyProgram.TiersDowngradePolicyEnum} tiersDowngradePolicy
  */
 NewLoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
+
+/**
+ * The policy that defines when the customer joins the loyalty program.   - `not_join`: The customer does not join the loyalty program but can still earn and spend loyalty points.       **Note**: The customer does not have a program join date.   - `points_activated`: The customer joins the loyalty program only when their earned loyalty points become active for the first time.   - `points_earned`: The customer joins the loyalty program when they earn loyalty points for the first time. 
+ * @member {module:model/NewLoyaltyProgram.ProgramJoinPolicyEnum} programJoinPolicy
+ */
+NewLoyaltyProgram.prototype['programJoinPolicy'] = undefined;
 
 /**
  * The internal name for the Loyalty Program. This is an immutable value.
@@ -204,6 +222,27 @@ NewLoyaltyProgram.prototype['cardBased'] = false;
 
 
 /**
+ * Allowed values for the <code>tiersExpirationPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewLoyaltyProgram['TiersExpirationPolicyEnum'] = {
+
+    /**
+     * value: "tier_start_date"
+     * @const
+     */
+    "tier_start_date": "tier_start_date",
+
+    /**
+     * value: "program_join_date"
+     * @const
+     */
+    "program_join_date": "program_join_date"
+};
+
+
+/**
  * Allowed values for the <code>tiersDowngradePolicy</code> property.
  * @enum {String}
  * @readonly
@@ -221,6 +260,33 @@ NewLoyaltyProgram['TiersDowngradePolicyEnum'] = {
      * @const
      */
     "balance_based": "balance_based"
+};
+
+
+/**
+ * Allowed values for the <code>programJoinPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewLoyaltyProgram['ProgramJoinPolicyEnum'] = {
+
+    /**
+     * value: "not_join"
+     * @const
+     */
+    "not_join": "not_join",
+
+    /**
+     * value: "points_activated"
+     * @const
+     */
+    "points_activated": "points_activated",
+
+    /**
+     * value: "points_earned"
+     * @const
+     */
+    "points_earned": "points_earned"
 };
 
 

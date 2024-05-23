@@ -55,6 +55,8 @@ Name | Type | Description | Notes
 
 * `Store` (value: `"Store"`)
 
+* `Achievements` (value: `"Achievements"`)
+
 
 
 

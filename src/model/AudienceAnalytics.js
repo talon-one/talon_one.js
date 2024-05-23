@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The AudienceAnalytics model module.
  * @module model/AudienceAnalytics
- * @version 6.0.0
+ * @version 7.0.0
  */
 class AudienceAnalytics {
     /**
      * Constructs a new <code>AudienceAnalytics</code>.
-     * The audiences and their members count.
+     * The audiences and their member count.
      * @alias module:model/AudienceAnalytics
      */
     constructor() { 
@@ -68,7 +68,7 @@ class AudienceAnalytics {
 AudienceAnalytics.prototype['audienceId'] = undefined;
 
 /**
- * The count of members under a single audience.
+ * The member count of the audience.
  * @member {Number} membersCount
  */
 AudienceAnalytics.prototype['membersCount'] = undefined;

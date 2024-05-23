@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AchievementProgress from './AchievementProgress';
 import CustomerProfile from './CustomerProfile';
 import Giveaway from './Giveaway';
 import InventoryCoupon from './InventoryCoupon';
@@ -21,7 +22,7 @@ import Loyalty from './Loyalty';
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CustomerInventory {
     /**
@@ -67,6 +68,9 @@ class CustomerInventory {
             if (data.hasOwnProperty('giveaways')) {
                 obj['giveaways'] = ApiClient.convertToType(data['giveaways'], [Giveaway]);
             }
+            if (data.hasOwnProperty('achievements')) {
+                obj['achievements'] = ApiClient.convertToType(data['achievements'], [AchievementProgress]);
+            }
         }
         return obj;
     }
@@ -99,6 +103,11 @@ CustomerInventory.prototype['coupons'] = undefined;
  * @member {Array.<module:model/Giveaway>} giveaways
  */
 CustomerInventory.prototype['giveaways'] = undefined;
+
+/**
+ * @member {Array.<module:model/AchievementProgress>} achievements
+ */
+CustomerInventory.prototype['achievements'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Coupon model module.
  * @module model/Coupon
- * @version 6.0.0
+ * @version 7.0.0
  */
 class Coupon {
     /**
@@ -258,9 +258,9 @@ Coupon.prototype['batchId'] = undefined;
 /**
  * Whether the reservation effect actually created a new reservation.
  * @member {Boolean} isReservationMandatory
- * @default true
+ * @default false
  */
-Coupon.prototype['isReservationMandatory'] = true;
+Coupon.prototype['isReservationMandatory'] = false;
 
 /**
  * An indication of whether the coupon is implicitly reserved for all customers.

@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 6.0.0
+ * @version 7.0.0
  */
 class ApplicationSession {
     /**

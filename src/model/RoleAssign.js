@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAssign model module.
  * @module model/RoleAssign
- * @version 6.0.0
+ * @version 7.0.0
  */
 class RoleAssign {
     /**

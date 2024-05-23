@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewCoupons {
     /**
@@ -177,9 +177,9 @@ NewCoupons.prototype['couponPattern'] = undefined;
 /**
  * Whether the reservation effect actually created a new reservation.
  * @member {Boolean} isReservationMandatory
- * @default true
+ * @default false
  */
-NewCoupons.prototype['isReservationMandatory'] = true;
+NewCoupons.prototype['isReservationMandatory'] = false;
 
 /**
  * An indication of whether the coupon is implicitly reserved for all customers.

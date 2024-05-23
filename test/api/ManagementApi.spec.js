@@ -88,6 +88,16 @@
         done();
       });
     });
+    describe('createAchievement', function() {
+      it('should call createAchievement successfully', function(done) {
+        //uncomment below and update the code to test createAchievement
+        //instance.createAchievement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createAdditionalCost', function() {
       it('should call createAdditionalCost successfully', function(done) {
         //uncomment below and update the code to test createAdditionalCost
@@ -158,6 +168,26 @@
         done();
       });
     });
+    describe('createInviteEmail', function() {
+      it('should call createInviteEmail successfully', function(done) {
+        //uncomment below and update the code to test createInviteEmail
+        //instance.createInviteEmail(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createInviteV2', function() {
+      it('should call createInviteV2 successfully', function(done) {
+        //uncomment below and update the code to test createInviteV2
+        //instance.createInviteV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPasswordRecoveryEmail', function() {
       it('should call createPasswordRecoveryEmail successfully', function(done) {
         //uncomment below and update the code to test createPasswordRecoveryEmail
@@ -188,6 +218,16 @@
         done();
       });
     });
+    describe('deactivateUserByEmail', function() {
+      it('should call deactivateUserByEmail successfully', function(done) {
+        //uncomment below and update the code to test deactivateUserByEmail
+        //instance.deactivateUserByEmail(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deductLoyaltyCardPoints', function() {
       it('should call deductLoyaltyCardPoints successfully', function(done) {
         //uncomment below and update the code to test deductLoyaltyCardPoints
@@ -202,6 +242,16 @@
       it('should call deleteAccountCollection successfully', function(done) {
         //uncomment below and update the code to test deleteAccountCollection
         //instance.deleteAccountCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteAchievement', function() {
+      it('should call deleteAchievement successfully', function(done) {
+        //uncomment below and update the code to test deleteAchievement
+        //instance.deleteAchievement(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -278,6 +328,26 @@
         done();
       });
     });
+    describe('deleteUser', function() {
+      it('should call deleteUser successfully', function(done) {
+        //uncomment below and update the code to test deleteUser
+        //instance.deleteUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteUserByEmail', function() {
+      it('should call deleteUserByEmail successfully', function(done) {
+        //uncomment below and update the code to test deleteUserByEmail
+        //instance.deleteUserByEmail(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('destroySession', function() {
       it('should call destroySession successfully', function(done) {
         //uncomment below and update the code to test destroySession
@@ -292,6 +362,26 @@
       it('should call exportAccountCollectionItems successfully', function(done) {
         //uncomment below and update the code to test exportAccountCollectionItems
         //instance.exportAccountCollectionItems(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportAchievements', function() {
+      it('should call exportAchievements successfully', function(done) {
+        //uncomment below and update the code to test exportAchievements
+        //instance.exportAchievements(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportAudiencesMemberships', function() {
+      it('should call exportAudiencesMemberships successfully', function(done) {
+        //uncomment below and update the code to test exportAudiencesMemberships
+        //instance.exportAudiencesMemberships(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -452,6 +542,16 @@
       it('should call getAccountCollection successfully', function(done) {
         //uncomment below and update the code to test getAccountCollection
         //instance.getAccountCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAchievement', function() {
+      it('should call getAchievement successfully', function(done) {
+        //uncomment below and update the code to test getAchievement
+        //instance.getAchievement(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -628,10 +728,30 @@
         done();
       });
     });
+    describe('getAudienceMemberships', function() {
+      it('should call getAudienceMemberships successfully', function(done) {
+        //uncomment below and update the code to test getAudienceMemberships
+        //instance.getAudienceMemberships(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getAudiences', function() {
       it('should call getAudiences successfully', function(done) {
         //uncomment below and update the code to test getAudiences
         //instance.getAudiences(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAudiencesAnalytics', function() {
+      it('should call getAudiencesAnalytics successfully', function(done) {
+        //uncomment below and update the code to test getAudiencesAnalytics
+        //instance.getAudiencesAnalytics(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -662,6 +782,26 @@
       it('should call getCampaignByAttributes successfully', function(done) {
         //uncomment below and update the code to test getCampaignByAttributes
         //instance.getCampaignByAttributes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCampaignGroup', function() {
+      it('should call getCampaignGroup successfully', function(done) {
+        //uncomment below and update the code to test getCampaignGroup
+        //instance.getCampaignGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCampaignGroups', function() {
+      it('should call getCampaignGroups successfully', function(done) {
+        //uncomment below and update the code to test getCampaignGroups
+        //instance.getCampaignGroups(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -762,6 +902,16 @@
       it('should call getCustomerProfile successfully', function(done) {
         //uncomment below and update the code to test getCustomerProfile
         //instance.getCustomerProfile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCustomerProfileAchievementProgress', function() {
+      it('should call getCustomerProfileAchievementProgress successfully', function(done) {
+        //uncomment below and update the code to test getCustomerProfileAchievementProgress
+        //instance.getCustomerProfileAchievementProgress(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1018,6 +1168,16 @@
         done();
       });
     });
+    describe('importAudiencesMemberships', function() {
+      it('should call importAudiencesMemberships successfully', function(done) {
+        //uncomment below and update the code to test importAudiencesMemberships
+        //instance.importAudiencesMemberships(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('importCollection', function() {
       it('should call importCollection successfully', function(done) {
         //uncomment below and update the code to test importCollection
@@ -1092,6 +1252,16 @@
       it('should call listAccountCollections successfully', function(done) {
         //uncomment below and update the code to test listAccountCollections
         //instance.listAccountCollections(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listAchievements', function() {
+      it('should call listAchievements successfully', function(done) {
+        //uncomment below and update the code to test listAchievements
+        //instance.listAchievements(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1238,6 +1408,16 @@
         done();
       });
     });
+    describe('updateAchievement', function() {
+      it('should call updateAchievement successfully', function(done) {
+        //uncomment below and update the code to test updateAchievement
+        //instance.updateAchievement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateAdditionalCost', function() {
       it('should call updateAdditionalCost successfully', function(done) {
         //uncomment below and update the code to test updateAdditionalCost
@@ -1318,10 +1498,30 @@
         done();
       });
     });
+    describe('updateRoleV2', function() {
+      it('should call updateRoleV2 successfully', function(done) {
+        //uncomment below and update the code to test updateRoleV2
+        //instance.updateRoleV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateStore', function() {
       it('should call updateStore successfully', function(done) {
         //uncomment below and update the code to test updateStore
         //instance.updateStore(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateUser', function() {
+      it('should call updateUser successfully', function(done) {
+        //uncomment below and update the code to test updateUser
+        //instance.updateUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

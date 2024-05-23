@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountDashboardStatisticApiCalls from './AccountDashboardStatisticApiCalls';
 import AccountDashboardStatisticCampaigns from './AccountDashboardStatisticCampaigns';
 import AccountDashboardStatisticDiscount from './AccountDashboardStatisticDiscount';
 import AccountDashboardStatisticLoyaltyPoints from './AccountDashboardStatisticLoyaltyPoints';
@@ -22,7 +21,7 @@ import AccountDashboardStatisticRevenue from './AccountDashboardStatisticRevenue
 /**
  * The AccountDashboardStatistic model module.
  * @module model/AccountDashboardStatistic
- * @version 6.0.0
+ * @version 7.0.0
  */
 class AccountDashboardStatistic {
     /**
@@ -67,9 +66,6 @@ class AccountDashboardStatistic {
             if (data.hasOwnProperty('referrals')) {
                 obj['referrals'] = ApiClient.convertToType(data['referrals'], [AccountDashboardStatisticReferrals]);
             }
-            if (data.hasOwnProperty('apiCalls')) {
-                obj['apiCalls'] = ApiClient.convertToType(data['apiCalls'], [AccountDashboardStatisticApiCalls]);
-            }
             if (data.hasOwnProperty('campaigns')) {
                 obj['campaigns'] = AccountDashboardStatisticCampaigns.constructFromObject(data['campaigns']);
             }
@@ -103,12 +99,6 @@ AccountDashboardStatistic.prototype['loyaltyPoints'] = undefined;
  * @member {Array.<module:model/AccountDashboardStatisticReferrals>} referrals
  */
 AccountDashboardStatistic.prototype['referrals'] = undefined;
-
-/**
- * Aggregated statistic for the number of account API calls.
- * @member {Array.<module:model/AccountDashboardStatisticApiCalls>} apiCalls
- */
-AccountDashboardStatistic.prototype['apiCalls'] = undefined;
 
 /**
  * @member {module:model/AccountDashboardStatisticCampaigns} campaigns

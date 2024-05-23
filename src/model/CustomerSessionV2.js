@@ -18,7 +18,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CustomerSessionV2 {
     /**
@@ -198,7 +198,7 @@ CustomerSessionV2.prototype['couponCodes'] = undefined;
 CustomerSessionV2.prototype['referralCode'] = undefined;
 
 /**
- * Any loyalty cards used.
+ * Identifier of a loyalty card.
  * @member {Array.<String>} loyaltyCards
  */
 CustomerSessionV2.prototype['loyaltyCards'] = undefined;

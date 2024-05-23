@@ -12,20 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignForNotification from './CampaignForNotification';
+import Campaign from './Campaign';
 import Ruleset from './Ruleset';
 
 /**
  * The CampaignStateChangedNotification model module.
  * @module model/CampaignStateChangedNotification
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CampaignStateChangedNotification {
     /**
      * Constructs a new <code>CampaignStateChangedNotification</code>.
      * A notification regarding a campaign whose state changed.
      * @alias module:model/CampaignStateChangedNotification
-     * @param campaign {module:model/CampaignForNotification} 
+     * @param campaign {module:model/Campaign} 
      * @param oldState {String} The campaign's old state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'draft', 'archived'] 
      * @param newState {String} The campaign's new state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'draft', 'archived'] 
      */
@@ -57,7 +57,7 @@ class CampaignStateChangedNotification {
             obj = obj || new CampaignStateChangedNotification();
 
             if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = CampaignForNotification.constructFromObject(data['campaign']);
+                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
             }
             if (data.hasOwnProperty('oldState')) {
                 obj['oldState'] = ApiClient.convertToType(data['oldState'], 'String');
@@ -76,7 +76,7 @@ class CampaignStateChangedNotification {
 }
 
 /**
- * @member {module:model/CampaignForNotification} campaign
+ * @member {module:model/Campaign} campaign
  */
 CampaignStateChangedNotification.prototype['campaign'] = undefined;
 

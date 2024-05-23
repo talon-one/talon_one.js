@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The NewInvitation model module.
  * @module model/NewInvitation
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewInvitation {
     /**
      * Constructs a new <code>NewInvitation</code>.
      * Parameters for inviting a new user.
      * @alias module:model/NewInvitation
-     * @param email {String} 
+     * @param email {String} Email address of the user.
      */
     constructor(email) { 
         
@@ -56,14 +56,14 @@ class NewInvitation {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
-            if (data.hasOwnProperty('acl')) {
-                obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
-            }
             if (data.hasOwnProperty('isAdmin')) {
                 obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'Boolean');
             }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], ['Number']);
+            }
+            if (data.hasOwnProperty('acl')) {
+                obj['acl'] = ApiClient.convertToType(data['acl'], 'String');
             }
         }
         return obj;
@@ -73,33 +73,34 @@ class NewInvitation {
 }
 
 /**
- * Name of the user being invited.
+ * Name of the user.
  * @member {String} name
  */
 NewInvitation.prototype['name'] = undefined;
 
 /**
+ * Email address of the user.
  * @member {String} email
  */
 NewInvitation.prototype['email'] = undefined;
 
 /**
- * The `Access Control List` json defining the role of the user.  This represents the access control on the user level. Use one of the following: - normal user: `{\"Role\": 0}` - admin: `{\"Role\": 127}` 
- * @member {String} acl
- */
-NewInvitation.prototype['acl'] = undefined;
-
-/**
- * An indication of whether the user has admin permissions. We recommend using this flag over using the `acl` with value `{\"Role\": 127}`. 
+ * Indicates whether the user is an `admin`.
  * @member {Boolean} isAdmin
  */
 NewInvitation.prototype['isAdmin'] = undefined;
 
 /**
- * An array of role IDs to assign to the new user.
+ * A list of the IDs of the roles assigned to the user.
  * @member {Array.<Number>} roles
  */
 NewInvitation.prototype['roles'] = undefined;
+
+/**
+ * Indicates the access level of the user.
+ * @member {String} acl
+ */
+NewInvitation.prototype['acl'] = undefined;
 
 
 

@@ -18,7 +18,7 @@ import RoleV2RolesGroup from './RoleV2RolesGroup';
 /**
  * The RoleV2Permissions model module.
  * @module model/RoleV2Permissions
- * @version 6.0.0
+ * @version 7.0.0
  */
 class RoleV2Permissions {
     /**
@@ -63,7 +63,7 @@ class RoleV2Permissions {
 }
 
 /**
- * List of grouped logical operations to use as a reference in the roles section. Each group of logical operations has a name.
+ * List of grouped logical operations referenced by roles.
  * @member {Array.<module:model/RoleV2PermissionSet>} permissionSets
  */
 RoleV2Permissions.prototype['permissionSets'] = undefined;

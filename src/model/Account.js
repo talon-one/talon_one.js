@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Account model module.
  * @module model/Account
- * @version 6.0.0
+ * @version 7.0.0
  */
 class Account {
     /**

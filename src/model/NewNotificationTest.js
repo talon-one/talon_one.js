@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewNotificationTest model module.
  * @module model/NewNotificationTest
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewNotificationTest {
     /**
@@ -59,10 +59,10 @@ class NewNotificationTest {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('queryParams')) {
-                obj['queryParams'] = ApiClient.convertToType(data['queryParams'], ['String']);
+                obj['queryParams'] = ApiClient.convertToType(data['queryParams'], {'String': 'String'});
             }
             if (data.hasOwnProperty('headers')) {
-                obj['headers'] = ApiClient.convertToType(data['headers'], ['String']);
+                obj['headers'] = ApiClient.convertToType(data['headers'], {'String': 'String'});
             }
             if (data.hasOwnProperty('verb')) {
                 obj['verb'] = ApiClient.convertToType(data['verb'], 'String');
@@ -88,13 +88,13 @@ NewNotificationTest.prototype['type'] = undefined;
 
 /**
  * Array of query parameters.
- * @member {Array.<String>} queryParams
+ * @member {Object.<String, String>} queryParams
  */
 NewNotificationTest.prototype['queryParams'] = undefined;
 
 /**
  * List of API HTTP headers for the given webhook-based notification.
- * @member {Array.<String>} headers
+ * @member {Object.<String, String>} headers
  */
 NewNotificationTest.prototype['headers'] = undefined;
 
@@ -146,6 +146,12 @@ NewNotificationTest['TypeEnum'] = {
     "coupon": "coupon",
 
     /**
+     * value: "expiring_coupons"
+     * @const
+     */
+    "expiring_coupons": "expiring_coupons",
+
+    /**
      * value: "expiring_points"
      * @const
      */
@@ -179,7 +185,13 @@ NewNotificationTest['TypeEnum'] = {
      * value: "tier_will_downgrade"
      * @const
      */
-    "tier_will_downgrade": "tier_will_downgrade"
+    "tier_will_downgrade": "tier_will_downgrade",
+
+    /**
+     * value: "card_expiring_points"
+     * @const
+     */
+    "card_expiring_points": "card_expiring_points"
 };
 
 

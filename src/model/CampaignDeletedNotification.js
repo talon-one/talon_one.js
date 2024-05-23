@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignStateNotification from './CampaignStateNotification';
+import Campaign from './Campaign';
 
 /**
  * The CampaignDeletedNotification model module.
  * @module model/CampaignDeletedNotification
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CampaignDeletedNotification {
     /**
      * Constructs a new <code>CampaignDeletedNotification</code>.
      * A notification regarding a campaign that was deleted.
      * @alias module:model/CampaignDeletedNotification
-     * @param campaign {module:model/CampaignStateNotification} 
+     * @param campaign {module:model/Campaign} 
      * @param deletedAt {Date} Time when the campaign was deleted.
      */
     constructor(campaign, deletedAt) { 
@@ -54,7 +54,7 @@ class CampaignDeletedNotification {
             obj = obj || new CampaignDeletedNotification();
 
             if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = CampaignStateNotification.constructFromObject(data['campaign']);
+                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
             }
             if (data.hasOwnProperty('deletedAt')) {
                 obj['deletedAt'] = ApiClient.convertToType(data['deletedAt'], 'Date');
@@ -67,7 +67,7 @@ class CampaignDeletedNotification {
 }
 
 /**
- * @member {module:model/CampaignStateNotification} campaign
+ * @member {module:model/Campaign} campaign
  */
 CampaignDeletedNotification.prototype['campaign'] = undefined;
 

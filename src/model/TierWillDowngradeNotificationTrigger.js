@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierWillDowngradeNotificationTrigger model module.
  * @module model/TierWillDowngradeNotificationTrigger
- * @version 6.0.0
+ * @version 7.0.0
  */
 class TierWillDowngradeNotificationTrigger {
     /**

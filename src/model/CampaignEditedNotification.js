@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignStateNotification from './CampaignStateNotification';
+import Campaign from './Campaign';
 import Ruleset from './Ruleset';
 
 /**
  * The CampaignEditedNotification model module.
  * @module model/CampaignEditedNotification
- * @version 6.0.0
+ * @version 7.0.0
  */
 class CampaignEditedNotification {
     /**
      * Constructs a new <code>CampaignEditedNotification</code>.
      * A notification regarding a campaign which was edited.
      * @alias module:model/CampaignEditedNotification
-     * @param campaign {module:model/CampaignStateNotification} 
-     * @param oldCampaign {module:model/CampaignStateNotification} 
+     * @param campaign {module:model/Campaign} 
+     * @param oldCampaign {module:model/Campaign} 
      */
     constructor(campaign, oldCampaign) { 
         
@@ -55,10 +55,10 @@ class CampaignEditedNotification {
             obj = obj || new CampaignEditedNotification();
 
             if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = CampaignStateNotification.constructFromObject(data['campaign']);
+                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
             }
             if (data.hasOwnProperty('oldCampaign')) {
-                obj['oldCampaign'] = CampaignStateNotification.constructFromObject(data['oldCampaign']);
+                obj['oldCampaign'] = Campaign.constructFromObject(data['oldCampaign']);
             }
             if (data.hasOwnProperty('ruleset')) {
                 obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
@@ -71,12 +71,12 @@ class CampaignEditedNotification {
 }
 
 /**
- * @member {module:model/CampaignStateNotification} campaign
+ * @member {module:model/Campaign} campaign
  */
 CampaignEditedNotification.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/CampaignStateNotification} oldCampaign
+ * @member {module:model/Campaign} oldCampaign
  */
 CampaignEditedNotification.prototype['oldCampaign'] = undefined;
 

@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignId (base name: "campaignId")', function() {
+      // uncomment below and update the code to test the property campaignId
+      //var instane = new TalonOne.LoyaltyProgramTransaction();
+      //expect(instance).to.be();
+    });
+
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
       //var instane = new TalonOne.LoyaltyProgramTransaction();

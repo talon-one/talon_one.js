@@ -12,16 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
+import Product from './Product';
 
 /**
  * The PatchItemCatalogAction model module.
  * @module model/PatchItemCatalogAction
- * @version 6.0.0
+ * @version 7.0.0
  */
 class PatchItemCatalogAction {
     /**
      * Constructs a new <code>PatchItemCatalogAction</code>.
-     * The specific properties of the \&quot;PATCH\&quot; catalog sync action.
+     * The specific properties of the \&quot;PATCH\&quot; catalog sync action.  **Note:**   - If you do not provide a new &#x60;price&#x60; value, the existing &#x60;price&#x60; value is retained.   - If you do not provide a new &#x60;product&#x60; value, the &#x60;product&#x60; value is set to &#x60;null&#x60;. 
      * @alias module:model/PatchItemCatalogAction
      * @param sku {String} The unique SKU of the item to patch.
      */
@@ -59,6 +60,9 @@ class PatchItemCatalogAction {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
+            if (data.hasOwnProperty('product')) {
+                obj['product'] = Product.constructFromObject(data['product']);
+            }
             if (data.hasOwnProperty('createIfNotExists')) {
                 obj['createIfNotExists'] = ApiClient.convertToType(data['createIfNotExists'], 'Boolean');
             }
@@ -86,6 +90,11 @@ PatchItemCatalogAction.prototype['price'] = undefined;
  * @member {Object} attributes
  */
 PatchItemCatalogAction.prototype['attributes'] = undefined;
+
+/**
+ * @member {module:model/Product} product
+ */
+PatchItemCatalogAction.prototype['product'] = undefined;
 
 /**
  * Indicates whether to create an item if the SKU does not exist.

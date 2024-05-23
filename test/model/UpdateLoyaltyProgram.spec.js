@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tiersExpirationPolicy (base name: "tiersExpirationPolicy")', function() {
+      // uncomment below and update the code to test the property tiersExpirationPolicy
+      //var instane = new TalonOne.UpdateLoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tiersExpireIn (base name: "tiersExpireIn")', function() {
       // uncomment below and update the code to test the property tiersExpireIn
       //var instane = new TalonOne.UpdateLoyaltyProgram();
@@ -110,6 +116,12 @@
 
     it('should have the property tiersDowngradePolicy (base name: "tiersDowngradePolicy")', function() {
       // uncomment below and update the code to test the property tiersDowngradePolicy
+      //var instane = new TalonOne.UpdateLoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property programJoinPolicy (base name: "programJoinPolicy")', function() {
+      // uncomment below and update the code to test the property programJoinPolicy
       //var instane = new TalonOne.UpdateLoyaltyProgram();
       //expect(instance).to.be();
     });

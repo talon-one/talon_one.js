@@ -16,17 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangeLoyaltyTierLevelEffectProps model module.
  * @module model/ChangeLoyaltyTierLevelEffectProps
- * @version 6.0.0
+ * @version 7.0.0
  */
 class ChangeLoyaltyTierLevelEffectProps {
     /**
      * Constructs a new <code>ChangeLoyaltyTierLevelEffectProps</code>.
-     * The properties specific to the \&quot;changeLoyaltyTierLevel\&quot; effect. This is triggered whenever the user&#39;s loyalty tier is upgraded or downgraded due to a validated rule that contained an \&quot;add loyalty points\&quot; effect. 
+     * The properties specific to the \&quot;changeLoyaltyTierLevel\&quot; effect. This is triggered whenever the user&#39;s loyalty tier is upgraded due to a validated rule that contained an \&quot;addLoyaltyPoints\&quot; effect. 
      * @alias module:model/ChangeLoyaltyTierLevelEffectProps
-     * @param ruleTitle {String} The title of the rule that triggered the tier upgrade or downgrade.
+     * @param ruleTitle {String} The title of the rule that triggered the tier upgrade.
      * @param programId {Number} The ID of the loyalty program where these points were added.
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added.
-     * @param newTierName {String} The name of the tier to which the user has been upgraded or downgraded.
+     * @param newTierName {String} The name of the tier to which the user has been upgraded.
      */
     constructor(ruleTitle, programId, subLedgerId, newTierName) { 
         
@@ -82,7 +82,7 @@ class ChangeLoyaltyTierLevelEffectProps {
 }
 
 /**
- * The title of the rule that triggered the tier upgrade or downgrade.
+ * The title of the rule that triggered the tier upgrade.
  * @member {String} ruleTitle
  */
 ChangeLoyaltyTierLevelEffectProps.prototype['ruleTitle'] = undefined;
@@ -100,13 +100,13 @@ ChangeLoyaltyTierLevelEffectProps.prototype['programId'] = undefined;
 ChangeLoyaltyTierLevelEffectProps.prototype['subLedgerId'] = undefined;
 
 /**
- * The name of the tier from which the user was upgraded or downgraded.
+ * The name of the tier from which the user was upgraded.
  * @member {String} previousTierName
  */
 ChangeLoyaltyTierLevelEffectProps.prototype['previousTierName'] = undefined;
 
 /**
- * The name of the tier to which the user has been upgraded or downgraded.
+ * The name of the tier to which the user has been upgraded.
  * @member {String} newTierName
  */
 ChangeLoyaltyTierLevelEffectProps.prototype['newTierName'] = undefined;

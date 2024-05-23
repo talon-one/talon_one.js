@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **variables** | **String** | A stringified version of the environment&#39;s Talang variables scope. | 
 **giveawaysPools** | [**[GiveawaysPool]**](GiveawaysPool.md) | The giveaways pools that the application is subscribed to. | [optional] 
 **loyaltyPrograms** | [**[LoyaltyProgram]**](LoyaltyProgram.md) | The loyalty programs that the application is subscribed to. | [optional] 
+**achievements** | [**[Achievement]**](Achievement.md) | The achievements, linked to the campaigns, belonging to the application. | [optional] 
 **attributes** | [**[Attribute]**](Attribute.md) | The attributes that the application is subscribed to. | [optional] 
 **additionalCosts** | [**[AccountAdditionalCost]**](AccountAdditionalCost.md) | The additional costs that the application is subscribed to. | [optional] 
 **audiences** | [**[Audience]**](Audience.md) | The audiences contained in the account which the application belongs to. | [optional] 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** | The notification type. | 
-**queryParams** | **[String]** | Array of query parameters. | [optional] 
-**headers** | **[String]** | List of API HTTP headers for the given webhook-based notification. | [optional] 
+**queryParams** | **{String: String}** | Array of query parameters. | [optional] 
+**headers** | **{String: String}** | List of API HTTP headers for the given webhook-based notification. | [optional] 
 **verb** | **String** | API method for this notification. | 
 **url** | **String** | API URL for the given notification. | 
 **payload** | **String** | API payload of this notification. | 
@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 
 * `coupon` (value: `"coupon"`)
 
+* `expiring_coupons` (value: `"expiring_coupons"`)
+
 * `expiring_points` (value: `"expiring_points"`)
 
 * `pending_to_active_points` (value: `"pending_to_active_points"`)
@@ -33,6 +35,8 @@ Name | Type | Description | Notes
 * `tier_upgrade` (value: `"tier_upgrade"`)
 
 * `tier_will_downgrade` (value: `"tier_will_downgrade"`)
+
+* `card_expiring_points` (value: `"card_expiring_points"`)
 
 
 

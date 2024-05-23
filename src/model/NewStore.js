@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewStore model module.
  * @module model/NewStore
- * @version 6.0.0
+ * @version 7.0.0
  */
 class NewStore {
     /**
@@ -25,7 +25,7 @@ class NewStore {
      * @alias module:model/NewStore
      * @param name {String} The name of the store.
      * @param description {String} The description of the store.
-     * @param integrationId {String} The integration ID of the store. You choose this ID when you create a store.
+     * @param integrationId {String} The integration ID of the store. You choose this ID when you create a store.  **Note**: You cannot edit the `integrationId` after the store has been created. 
      */
     constructor(name, description, integrationId) { 
         
@@ -92,7 +92,7 @@ NewStore.prototype['description'] = undefined;
 NewStore.prototype['attributes'] = undefined;
 
 /**
- * The integration ID of the store. You choose this ID when you create a store.
+ * The integration ID of the store. You choose this ID when you create a store.  **Note**: You cannot edit the `integrationId` after the store has been created. 
  * @member {String} integrationId
  */
 NewStore.prototype['integrationId'] = undefined;

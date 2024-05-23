@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property batchingEnabled (base name: "batchingEnabled")', function() {
+      // uncomment below and update the code to test the property batchingEnabled
+      //var instane = new TalonOne.TierWillDowngradeNotificationPolicy();
+      //expect(instance).to.be();
+    });
+
     it('should have the property triggers (base name: "triggers")', function() {
       // uncomment below and update the code to test the property triggers
       //var instane = new TalonOne.TierWillDowngradeNotificationPolicy();

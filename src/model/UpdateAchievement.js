@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import TimePoint from './TimePoint';
 
 /**
  * The UpdateAchievement model module.
  * @module model/UpdateAchievement
- * @version 6.0.0
+ * @version 7.0.0
  */
 class UpdateAchievement {
     /**
@@ -47,11 +48,23 @@ class UpdateAchievement {
         if (data) {
             obj = obj || new UpdateAchievement();
 
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], 'Number');
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'String');
+            }
+            if (data.hasOwnProperty('periodEndOverride')) {
+                obj['periodEndOverride'] = TimePoint.constructFromObject(data['periodEndOverride']);
             }
         }
         return obj;
@@ -59,6 +72,12 @@ class UpdateAchievement {
 
 
 }
+
+/**
+ * The internal name of the achievement used in API requests. 
+ * @member {String} name
+ */
+UpdateAchievement.prototype['name'] = undefined;
 
 /**
  * The display name for the achievement in the Campaign Manager.
@@ -71,6 +90,23 @@ UpdateAchievement.prototype['title'] = undefined;
  * @member {String} description
  */
 UpdateAchievement.prototype['description'] = undefined;
+
+/**
+ * The required number of actions or the transactional milestone to complete the achievement.
+ * @member {Number} target
+ */
+UpdateAchievement.prototype['target'] = undefined;
+
+/**
+ * The relative duration after which the achievement ends and resets for a particular customer profile. 
+ * @member {String} period
+ */
+UpdateAchievement.prototype['period'] = undefined;
+
+/**
+ * @member {module:model/TimePoint} periodEndOverride
+ */
+UpdateAchievement.prototype['periodEndOverride'] = undefined;
 
 
 

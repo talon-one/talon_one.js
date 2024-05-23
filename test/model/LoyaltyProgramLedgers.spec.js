@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property joinDate (base name: "joinDate")', function() {
+      // uncomment below and update the code to test the property joinDate
+      //var instane = new TalonOne.LoyaltyProgramLedgers();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ledger (base name: "ledger")', function() {
       // uncomment below and update the code to test the property ledger
       //var instane = new TalonOne.LoyaltyProgramLedgers();

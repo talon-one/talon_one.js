@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignTemplate from './CampaignTemplate';
+import CampaignGroup from './CampaignGroup';
 
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 6.0.0
+ * @version 7.0.0
  */
 class InlineResponse20011 {
     /**
      * Constructs a new <code>InlineResponse20011</code>.
      * @alias module:model/InlineResponse20011
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/CampaignTemplate>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/CampaignGroup>} 
      */
-    constructor(hasMore, data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20011.initialize(this, hasMore, data);
+        InlineResponse20011.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse20011 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse20011 {
         if (data) {
             obj = obj || new InlineResponse20011();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CampaignTemplate]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CampaignGroup]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse20011 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse20011.prototype['hasMore'] = undefined;
+InlineResponse20011.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/CampaignTemplate>} data
+ * @member {Array.<module:model/CampaignGroup>} data
  */
 InlineResponse20011.prototype['data'] = undefined;
 
