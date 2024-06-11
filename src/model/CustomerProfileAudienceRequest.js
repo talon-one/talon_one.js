@@ -17,7 +17,7 @@ import CustomerProfileAudienceRequestItem from './CustomerProfileAudienceRequest
 /**
  * The CustomerProfileAudienceRequest model module.
  * @module model/CustomerProfileAudienceRequest
- * @version 7.0.0
+ * @version 8.0.0
  */
 class CustomerProfileAudienceRequest {
     /**

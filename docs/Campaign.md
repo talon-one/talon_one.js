@@ -102,6 +102,10 @@ Name | Type | Description | Notes
 
 * `draft` (value: `"draft"`)
 
+* `disabled` (value: `"disabled"`)
+
+* `archived` (value: `"archived"`)
+
 
 
 

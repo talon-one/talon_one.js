@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 7.0.0
+ * @version 8.0.0
  */
 class Campaign {
     /**
@@ -579,7 +579,19 @@ Campaign['FrontendStateEnum'] = {
      * value: "draft"
      * @const
      */
-    "draft": "draft"
+    "draft": "draft",
+
+    /**
+     * value: "disabled"
+     * @const
+     */
+    "disabled": "disabled",
+
+    /**
+     * value: "archived"
+     * @const
+     */
+    "archived": "archived"
 };
 
 

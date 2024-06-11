@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramSubledgers model module.
  * @module model/LoyaltyProgramSubledgers
- * @version 7.0.0
+ * @version 8.0.0
  */
 class LoyaltyProgramSubledgers {
     /**

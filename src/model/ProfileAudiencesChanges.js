@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProfileAudiencesChanges model module.
  * @module model/ProfileAudiencesChanges
- * @version 7.0.0
+ * @version 8.0.0
  */
 class ProfileAudiencesChanges {
     /**

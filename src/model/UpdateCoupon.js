@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 7.0.0
+ * @version 8.0.0
  */
 class UpdateCoupon {
     /**
@@ -135,7 +135,7 @@ UpdateCoupon.prototype['recipientIntegrationId'] = undefined;
 UpdateCoupon.prototype['attributes'] = undefined;
 
 /**
- * Whether the reservation effect actually created a new reservation.
+ * An indication of whether the code can be redeemed only if it has been reserved first.
  * @member {Boolean} isReservationMandatory
  * @default false
  */

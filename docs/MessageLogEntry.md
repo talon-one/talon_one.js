@@ -12,8 +12,7 @@ Name | Type | Description | Notes
 **request** | [**MessageLogRequest**](MessageLogRequest.md) |  | [optional] 
 **response** | [**MessageLogResponse**](MessageLogResponse.md) |  | [optional] 
 **createdAt** | **Date** | Timestamp when the log entry was created. | 
-**entityType** | **String** | The entity type the log is related to.  | [optional] 
-**url** | **String** | The target URL of the request. | [optional] 
+**entityType** | **String** | The entity type the notification is related to.  | [optional] 
 **applicationId** | **Number** | Identifier of the Application. | [optional] 
 **loyaltyProgramId** | **Number** | Identifier of the loyalty program. | [optional] 
 
@@ -25,8 +24,6 @@ Name | Type | Description | Notes
 * `application` (value: `"application"`)
 
 * `loyalty_program` (value: `"loyalty_program"`)
-
-* `webhook` (value: `"webhook"`)
 
 
 

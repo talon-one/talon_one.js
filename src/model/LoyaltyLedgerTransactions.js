@@ -17,7 +17,7 @@ import LoyaltyLedgerEntry from './LoyaltyLedgerEntry';
 /**
  * The LoyaltyLedgerTransactions model module.
  * @module model/LoyaltyLedgerTransactions
- * @version 7.0.0
+ * @version 8.0.0
  */
 class LoyaltyLedgerTransactions {
     /**

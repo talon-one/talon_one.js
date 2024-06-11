@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Role]**](Role.md) |  | 
+**data** | [**[RoleV2]**](RoleV2.md) |  | 
 
 

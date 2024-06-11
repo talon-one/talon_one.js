@@ -48,6 +48,16 @@
   }
 
   describe('ManagementApi', function() {
+    describe('activateUserByEmail', function() {
+      it('should call activateUserByEmail successfully', function(done) {
+        //uncomment below and update the code to test activateUserByEmail
+        //instance.activateUserByEmail(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('addLoyaltyCardPoints', function() {
       it('should call addLoyaltyCardPoints successfully', function(done) {
         //uncomment below and update the code to test addLoyaltyCardPoints
@@ -588,16 +598,6 @@
         done();
       });
     });
-    describe('getAllRoles', function() {
-      it('should call getAllRoles successfully', function(done) {
-        //uncomment below and update the code to test getAllRoles
-        //instance.getAllRoles(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getApplication', function() {
       it('should call getApplication successfully', function(done) {
         //uncomment below and update the code to test getApplication
@@ -1048,10 +1048,10 @@
         done();
       });
     });
-    describe('getRole', function() {
-      it('should call getRole successfully', function(done) {
-        //uncomment below and update the code to test getRole
-        //instance.getRole(function(error) {
+    describe('getRoleV2', function() {
+      it('should call getRoleV2 successfully', function(done) {
+        //uncomment below and update the code to test getRoleV2
+        //instance.getRoleV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1248,6 +1248,16 @@
         done();
       });
     });
+    describe('inviteUserExternal', function() {
+      it('should call inviteUserExternal successfully', function(done) {
+        //uncomment below and update the code to test inviteUserExternal
+        //instance.inviteUserExternal(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listAccountCollections', function() {
       it('should call listAccountCollections successfully', function(done) {
         //uncomment below and update the code to test listAccountCollections
@@ -1262,6 +1272,16 @@
       it('should call listAchievements successfully', function(done) {
         //uncomment below and update the code to test listAchievements
         //instance.listAchievements(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listAllRolesV2', function() {
+      it('should call listAllRolesV2 successfully', function(done) {
+        //uncomment below and update the code to test listAllRolesV2
+        //instance.listAllRolesV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

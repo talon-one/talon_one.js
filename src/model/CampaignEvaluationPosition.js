@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignEvaluationPosition model module.
  * @module model/CampaignEvaluationPosition
- * @version 7.0.0
+ * @version 8.0.0
  */
 class CampaignEvaluationPosition {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttributesMandatory model module.
  * @module model/AttributesMandatory
- * @version 7.0.0
+ * @version 8.0.0
  */
 class AttributesMandatory {
     /**

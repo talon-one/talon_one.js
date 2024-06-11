@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAnalyticsDataPointSessionsCount model module.
  * @module model/ApplicationAnalyticsDataPointSessionsCount
- * @version 7.0.0
+ * @version 8.0.0
  */
 class ApplicationAnalyticsDataPointSessionsCount {
     /**

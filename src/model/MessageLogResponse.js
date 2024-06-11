@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MessageLogResponse model module.
  * @module model/MessageLogResponse
- * @version 7.0.0
+ * @version 8.0.0
  */
 class MessageLogResponse {
     /**

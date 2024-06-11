@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EvaluableCampaignIds model module.
  * @module model/EvaluableCampaignIds
- * @version 7.0.0
+ * @version 8.0.0
  */
 class EvaluableCampaignIds {
     /**

@@ -17,7 +17,7 @@ import ModelExport from './ModelExport';
 /**
  * The InlineResponse20043 model module.
  * @module model/InlineResponse20043
- * @version 7.0.0
+ * @version 8.0.0
  */
 class InlineResponse20043 {
     /**

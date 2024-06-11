@@ -17,7 +17,7 @@ import CatalogItem from './CatalogItem';
 /**
  * The InlineResponse20035 model module.
  * @module model/InlineResponse20035
- * @version 7.0.0
+ * @version 8.0.0
  */
 class InlineResponse20035 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NotificationTest model module.
  * @module model/NotificationTest
- * @version 7.0.0
+ * @version 8.0.0
  */
 class NotificationTest {
     /**

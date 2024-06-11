@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewPicklist model module.
  * @module model/NewPicklist
- * @version 7.0.0
+ * @version 8.0.0
  */
 class NewPicklist {
     /**

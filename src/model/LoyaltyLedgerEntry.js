@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 7.0.0
+ * @version 8.0.0
  */
 class LoyaltyLedgerEntry {
     /**
