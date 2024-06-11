@@ -17,7 +17,7 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 7.0.0
+ * @version 8.0.0
  */
 class LoyaltyProgram {
     /**

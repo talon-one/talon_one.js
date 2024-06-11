@@ -31,6 +31,7 @@ import AccountLimits from './model/AccountLimits';
 import Achievement from './model/Achievement';
 import AchievementAdditionalProperties from './model/AchievementAdditionalProperties';
 import AchievementProgress from './model/AchievementProgress';
+import ActivateUserRequest from './model/ActivateUserRequest';
 import AddFreeItemEffectProps from './model/AddFreeItemEffectProps';
 import AddItemCatalogAction from './model/AddItemCatalogAction';
 import AddLoyaltyPoints from './model/AddLoyaltyPoints';
@@ -268,6 +269,7 @@ import Loyalty from './model/Loyalty';
 import LoyaltyBalance from './model/LoyaltyBalance';
 import LoyaltyBalances from './model/LoyaltyBalances';
 import LoyaltyCard from './model/LoyaltyCard';
+import LoyaltyCardBalances from './model/LoyaltyCardBalances';
 import LoyaltyCardProfileRegistration from './model/LoyaltyCardProfileRegistration';
 import LoyaltyCardRegistration from './model/LoyaltyCardRegistration';
 import LoyaltyDashboardData from './model/LoyaltyDashboardData';
@@ -329,6 +331,7 @@ import NewCustomerSession from './model/NewCustomerSession';
 import NewCustomerSessionV2 from './model/NewCustomerSessionV2';
 import NewEvent from './model/NewEvent';
 import NewEventType from './model/NewEventType';
+import NewExternalInvitation from './model/NewExternalInvitation';
 import NewGiveawaysPool from './model/NewGiveawaysPool';
 import NewInternalAudience from './model/NewInternalAudience';
 import NewInvitation from './model/NewInvitation';
@@ -505,7 +508,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 7.0.0
+* @version 8.0.0
 */
 export {
     /**
@@ -621,6 +624,12 @@ export {
      * @property {module:model/AchievementProgress}
      */
     AchievementProgress,
+
+    /**
+     * The ActivateUserRequest model constructor.
+     * @property {module:model/ActivateUserRequest}
+     */
+    ActivateUserRequest,
 
     /**
      * The AddFreeItemEffectProps model constructor.
@@ -2045,6 +2054,12 @@ export {
     LoyaltyCard,
 
     /**
+     * The LoyaltyCardBalances model constructor.
+     * @property {module:model/LoyaltyCardBalances}
+     */
+    LoyaltyCardBalances,
+
+    /**
      * The LoyaltyCardProfileRegistration model constructor.
      * @property {module:model/LoyaltyCardProfileRegistration}
      */
@@ -2409,6 +2424,12 @@ export {
      * @property {module:model/NewEventType}
      */
     NewEventType,
+
+    /**
+     * The NewExternalInvitation model constructor.
+     * @property {module:model/NewExternalInvitation}
+     */
+    NewExternalInvitation,
 
     /**
      * The NewGiveawaysPool model constructor.

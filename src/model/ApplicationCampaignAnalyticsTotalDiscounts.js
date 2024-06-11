@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCampaignAnalyticsTotalDiscounts model module.
  * @module model/ApplicationCampaignAnalyticsTotalDiscounts
- * @version 7.0.0
+ * @version 8.0.0
  */
 class ApplicationCampaignAnalyticsTotalDiscounts {
     /**

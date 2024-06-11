@@ -22,7 +22,7 @@ import ApplicationCampaignAnalyticsTotalRevenue from './ApplicationCampaignAnaly
 /**
  * The ApplicationCampaignAnalytics model module.
  * @module model/ApplicationCampaignAnalytics
- * @version 7.0.0
+ * @version 8.0.0
  */
 class ApplicationCampaignAnalytics {
     /**

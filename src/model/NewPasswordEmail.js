@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewPasswordEmail model module.
  * @module model/NewPasswordEmail
- * @version 7.0.0
+ * @version 8.0.0
  */
 class NewPasswordEmail {
     /**

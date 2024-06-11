@@ -17,7 +17,7 @@ import LedgerPointsEntryIntegrationAPI from './LedgerPointsEntryIntegrationAPI';
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 7.0.0
+ * @version 8.0.0
  */
 class InlineResponse2004 {
     /**

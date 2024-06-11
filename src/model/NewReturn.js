@@ -17,7 +17,7 @@ import ReturnedCartItem from './ReturnedCartItem';
 /**
  * The NewReturn model module.
  * @module model/NewReturn
- * @version 7.0.0
+ * @version 8.0.0
  */
 class NewReturn {
     /**

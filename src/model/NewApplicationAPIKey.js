@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewApplicationAPIKey model module.
  * @module model/NewApplicationAPIKey
- * @version 7.0.0
+ * @version 8.0.0
  */
 class NewApplicationAPIKey {
     /**

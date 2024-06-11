@@ -18,7 +18,7 @@ import Product from './Product';
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 7.0.0
+ * @version 8.0.0
  */
 class CartItem {
     /**

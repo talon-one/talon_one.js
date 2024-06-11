@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponsNotificationPolicy model module.
  * @module model/CouponsNotificationPolicy
- * @version 7.0.0
+ * @version 8.0.0
  */
 class CouponsNotificationPolicy {
     /**

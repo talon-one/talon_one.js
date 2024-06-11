@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LimitConfig model module.
  * @module model/LimitConfig
- * @version 7.0.0
+ * @version 8.0.0
  */
 class LimitConfig {
     /**

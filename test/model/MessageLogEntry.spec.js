@@ -108,12 +108,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property url (base name: "url")', function() {
-      // uncomment below and update the code to test the property url
-      //var instane = new TalonOne.MessageLogEntry();
-      //expect(instance).to.be();
-    });
-
     it('should have the property applicationId (base name: "applicationId")', function() {
       // uncomment below and update the code to test the property applicationId
       //var instane = new TalonOne.MessageLogEntry();

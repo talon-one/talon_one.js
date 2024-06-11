@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 7.0.0
+ * @version 8.0.0
  */
 class NewCoupons {
     /**
@@ -175,7 +175,7 @@ NewCoupons.prototype['validCharacters'] = undefined;
 NewCoupons.prototype['couponPattern'] = undefined;
 
 /**
- * Whether the reservation effect actually created a new reservation.
+ * An indication of whether the code can be redeemed only if it has been reserved first.
  * @member {Boolean} isReservationMandatory
  * @default false
  */

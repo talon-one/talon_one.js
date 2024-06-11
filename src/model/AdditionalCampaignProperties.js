@@ -17,7 +17,7 @@ import CampaignBudget from './CampaignBudget';
 /**
  * The AdditionalCampaignProperties model module.
  * @module model/AdditionalCampaignProperties
- * @version 7.0.0
+ * @version 8.0.0
  */
 class AdditionalCampaignProperties {
     /**
@@ -290,7 +290,19 @@ AdditionalCampaignProperties['FrontendStateEnum'] = {
      * value: "draft"
      * @const
      */
-    "draft": "draft"
+    "draft": "draft",
+
+    /**
+     * value: "disabled"
+     * @const
+     */
+    "disabled": "disabled",
+
+    /**
+     * value: "archived"
+     * @const
+     */
+    "archived": "archived"
 };
 
 

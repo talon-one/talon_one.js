@@ -17,7 +17,7 @@ import Campaign from './Campaign';
 /**
  * The CampaignDeletedNotification model module.
  * @module model/CampaignDeletedNotification
- * @version 7.0.0
+ * @version 8.0.0
  */
 class CampaignDeletedNotification {
     /**

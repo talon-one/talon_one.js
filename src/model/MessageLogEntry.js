@@ -18,7 +18,7 @@ import MessageLogResponse from './MessageLogResponse';
 /**
  * The MessageLogEntry model module.
  * @module model/MessageLogEntry
- * @version 7.0.0
+ * @version 8.0.0
  */
 class MessageLogEntry {
     /**
@@ -83,9 +83,6 @@ class MessageLogEntry {
             if (data.hasOwnProperty('entityType')) {
                 obj['entityType'] = ApiClient.convertToType(data['entityType'], 'String');
             }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
-            }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
             }
@@ -146,16 +143,10 @@ MessageLogEntry.prototype['response'] = undefined;
 MessageLogEntry.prototype['createdAt'] = undefined;
 
 /**
- * The entity type the log is related to. 
+ * The entity type the notification is related to. 
  * @member {module:model/MessageLogEntry.EntityTypeEnum} entityType
  */
 MessageLogEntry.prototype['entityType'] = undefined;
-
-/**
- * The target URL of the request.
- * @member {String} url
- */
-MessageLogEntry.prototype['url'] = undefined;
 
 /**
  * Identifier of the Application.
@@ -190,13 +181,7 @@ MessageLogEntry['EntityTypeEnum'] = {
      * value: "loyalty_program"
      * @const
      */
-    "loyalty_program": "loyalty_program",
-
-    /**
-     * value: "webhook"
-     * @const
-     */
-    "webhook": "webhook"
+    "loyalty_program": "loyalty_program"
 };
 
 

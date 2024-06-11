@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CatalogsStrikethroughNotificationPolicy model module.
  * @module model/CatalogsStrikethroughNotificationPolicy
- * @version 7.0.0
+ * @version 8.0.0
  */
 class CatalogsStrikethroughNotificationPolicy {
     /**

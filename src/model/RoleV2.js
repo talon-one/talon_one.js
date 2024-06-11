@@ -17,7 +17,7 @@ import RoleV2Permissions from './RoleV2Permissions';
 /**
  * The RoleV2 model module.
  * @module model/RoleV2
- * @version 7.0.0
+ * @version 8.0.0
  */
 class RoleV2 {
     /**

@@ -22,7 +22,7 @@ import Loyalty from './Loyalty';
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 7.0.0
+ * @version 8.0.0
  */
 class CustomerInventory {
     /**
@@ -94,7 +94,7 @@ CustomerInventory.prototype['loyalty'] = undefined;
 CustomerInventory.prototype['referrals'] = undefined;
 
 /**
- * The coupons reserved by this profile. This array includes hard and soft reservations. See each coupon's `reservation` property. 
+ * The coupons reserved by this profile. This array includes hard and soft reservations. 
  * @member {Array.<module:model/InventoryCoupon>} coupons
  */
 CustomerInventory.prototype['coupons'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IncreaseAchievementProgressEffectProps model module.
  * @module model/IncreaseAchievementProgressEffectProps
- * @version 7.0.0
+ * @version 8.0.0
  */
 class IncreaseAchievementProgressEffectProps {
     /**
