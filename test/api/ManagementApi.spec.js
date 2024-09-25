@@ -128,6 +128,16 @@
         done();
       });
     });
+    describe('createBatchLoyaltyCards', function() {
+      it('should call createBatchLoyaltyCards successfully', function(done) {
+        //uncomment below and update the code to test createBatchLoyaltyCards
+        //instance.createBatchLoyaltyCards(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCampaignFromTemplate', function() {
       it('should call createCampaignFromTemplate successfully', function(done) {
         //uncomment below and update the code to test createCampaignFromTemplate
@@ -162,6 +172,16 @@
       it('should call createCouponsAsync successfully', function(done) {
         //uncomment below and update the code to test createCouponsAsync
         //instance.createCouponsAsync(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createCouponsDeletionJob', function() {
+      it('should call createCouponsDeletionJob successfully', function(done) {
+        //uncomment below and update the code to test createCouponsDeletionJob
+        //instance.createCouponsDeletionJob(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -368,6 +388,16 @@
         done();
       });
     });
+    describe('disconnectCampaignStores', function() {
+      it('should call disconnectCampaignStores successfully', function(done) {
+        //uncomment below and update the code to test disconnectCampaignStores
+        //instance.disconnectCampaignStores(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('exportAccountCollectionItems', function() {
       it('should call exportAccountCollectionItems successfully', function(done) {
         //uncomment below and update the code to test exportAccountCollectionItems
@@ -392,6 +422,16 @@
       it('should call exportAudiencesMemberships successfully', function(done) {
         //uncomment below and update the code to test exportAudiencesMemberships
         //instance.exportAudiencesMemberships(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportCampaignStores', function() {
+      it('should call exportCampaignStores successfully', function(done) {
+        //uncomment below and update the code to test exportCampaignStores
+        //instance.exportCampaignStores(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -482,6 +522,16 @@
       it('should call exportLoyaltyCardLedger successfully', function(done) {
         //uncomment below and update the code to test exportLoyaltyCardLedger
         //instance.exportLoyaltyCardLedger(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportLoyaltyCards', function() {
+      it('should call exportLoyaltyCards successfully', function(done) {
+        //uncomment below and update the code to test exportLoyaltyCards
+        //instance.exportLoyaltyCards(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1178,6 +1228,16 @@
         done();
       });
     });
+    describe('importCampaignStores', function() {
+      it('should call importCampaignStores successfully', function(done) {
+        //uncomment below and update the code to test importCampaignStores
+        //instance.importCampaignStores(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('importCollection', function() {
       it('should call importCollection successfully', function(done) {
         //uncomment below and update the code to test importCollection
@@ -1338,6 +1398,16 @@
         done();
       });
     });
+    describe('oktaEventHandlerChallenge', function() {
+      it('should call oktaEventHandlerChallenge successfully', function(done) {
+        //uncomment below and update the code to test oktaEventHandlerChallenge
+        //instance.oktaEventHandlerChallenge(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postAddedDeductedPointsNotification', function() {
       it('should call postAddedDeductedPointsNotification successfully', function(done) {
         //uncomment below and update the code to test postAddedDeductedPointsNotification
@@ -1382,6 +1452,96 @@
       it('should call resetPassword successfully', function(done) {
         //uncomment below and update the code to test resetPassword
         //instance.resetPassword(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimCreateUser', function() {
+      it('should call scimCreateUser successfully', function(done) {
+        //uncomment below and update the code to test scimCreateUser
+        //instance.scimCreateUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimDeleteUser', function() {
+      it('should call scimDeleteUser successfully', function(done) {
+        //uncomment below and update the code to test scimDeleteUser
+        //instance.scimDeleteUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimGetResourceTypes', function() {
+      it('should call scimGetResourceTypes successfully', function(done) {
+        //uncomment below and update the code to test scimGetResourceTypes
+        //instance.scimGetResourceTypes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimGetSchemas', function() {
+      it('should call scimGetSchemas successfully', function(done) {
+        //uncomment below and update the code to test scimGetSchemas
+        //instance.scimGetSchemas(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimGetServiceProviderConfig', function() {
+      it('should call scimGetServiceProviderConfig successfully', function(done) {
+        //uncomment below and update the code to test scimGetServiceProviderConfig
+        //instance.scimGetServiceProviderConfig(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimGetUser', function() {
+      it('should call scimGetUser successfully', function(done) {
+        //uncomment below and update the code to test scimGetUser
+        //instance.scimGetUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimGetUsers', function() {
+      it('should call scimGetUsers successfully', function(done) {
+        //uncomment below and update the code to test scimGetUsers
+        //instance.scimGetUsers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimPatchUser', function() {
+      it('should call scimPatchUser successfully', function(done) {
+        //uncomment below and update the code to test scimPatchUser
+        //instance.scimPatchUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimReplaceUserAttributes', function() {
+      it('should call scimReplaceUserAttributes successfully', function(done) {
+        //uncomment below and update the code to test scimReplaceUserAttributes
+        //instance.scimReplaceUserAttributes(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

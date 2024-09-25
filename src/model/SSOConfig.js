@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SSOConfig model module.
  * @module model/SSOConfig
- * @version 8.0.0
+ * @version 9.0.0
  */
 class SSOConfig {
     /**
@@ -52,6 +52,9 @@ class SSOConfig {
             if (data.hasOwnProperty('enforced')) {
                 obj['enforced'] = ApiClient.convertToType(data['enforced'], 'Boolean');
             }
+            if (data.hasOwnProperty('newAcsUrl')) {
+                obj['newAcsUrl'] = ApiClient.convertToType(data['newAcsUrl'], 'String');
+            }
         }
         return obj;
     }
@@ -64,6 +67,12 @@ class SSOConfig {
  * @member {Boolean} enforced
  */
 SSOConfig.prototype['enforced'] = undefined;
+
+/**
+ * Assertion Consumer Service (ACS) URL for setting up a new SAML connection with an identity provider like Okta or Microsoft Entra ID. 
+ * @member {String} newAcsUrl
+ */
+SSOConfig.prototype['newAcsUrl'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IncreaseAchievementProgressEffectProps model module.
  * @module model/IncreaseAchievementProgressEffectProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class IncreaseAchievementProgressEffectProps {
     /**
@@ -27,7 +27,7 @@ class IncreaseAchievementProgressEffectProps {
      * @param achievementName {String} The name of the achievement.
      * @param delta {Number} The value by which the customer's current progress in the achievement is increased.
      * @param value {Number} The current progress of the customer in the achievement.
-     * @param target {Number} The required number of actions or the transactional milestone to complete the achievement.
+     * @param target {Number} The target value to complete the achievement.
      * @param isJustCompleted {Boolean} Indicates if the customer has completed the achievement in the current session.
      */
     constructor(achievementId, achievementName, delta, value, target, isJustCompleted) { 
@@ -119,7 +119,7 @@ IncreaseAchievementProgressEffectProps.prototype['delta'] = undefined;
 IncreaseAchievementProgressEffectProps.prototype['value'] = undefined;
 
 /**
- * The required number of actions or the transactional milestone to complete the achievement.
+ * The target value to complete the achievement.
  * @member {Number} target
  */
 IncreaseAchievementProgressEffectProps.prototype['target'] = undefined;

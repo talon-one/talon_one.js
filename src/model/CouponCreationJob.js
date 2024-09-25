@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CouponCreationJob {
     /**
@@ -209,7 +209,7 @@ CouponCreationJob.prototype['reservationLimit'] = undefined;
 CouponCreationJob.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted.
  * @member {Date} expiryDate
  */
 CouponCreationJob.prototype['expiryDate'] = undefined;

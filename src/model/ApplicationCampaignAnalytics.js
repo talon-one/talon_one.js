@@ -12,26 +12,29 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationCampaignAnalyticsAvgItemsPerSession from './ApplicationCampaignAnalyticsAvgItemsPerSession';
-import ApplicationCampaignAnalyticsAvgSessionValue from './ApplicationCampaignAnalyticsAvgSessionValue';
-import ApplicationCampaignAnalyticsCouponsCount from './ApplicationCampaignAnalyticsCouponsCount';
-import ApplicationCampaignAnalyticsSessionsCount from './ApplicationCampaignAnalyticsSessionsCount';
-import ApplicationCampaignAnalyticsTotalDiscounts from './ApplicationCampaignAnalyticsTotalDiscounts';
-import ApplicationCampaignAnalyticsTotalRevenue from './ApplicationCampaignAnalyticsTotalRevenue';
+import AnalyticsDataPointWithTrend from './AnalyticsDataPointWithTrend';
+import AnalyticsDataPointWithTrendAndInfluencedRate from './AnalyticsDataPointWithTrendAndInfluencedRate';
+import AnalyticsDataPointWithTrendAndUplift from './AnalyticsDataPointWithTrendAndUplift';
 
 /**
  * The ApplicationCampaignAnalytics model module.
  * @module model/ApplicationCampaignAnalytics
- * @version 8.0.0
+ * @version 9.0.0
  */
 class ApplicationCampaignAnalytics {
     /**
      * Constructs a new <code>ApplicationCampaignAnalytics</code>.
      * @alias module:model/ApplicationCampaignAnalytics
+     * @param startTime {Date} The start of the aggregation time frame in UTC.
+     * @param endTime {Date} The end of the aggregation time frame in UTC.
+     * @param campaignId {Number} The ID of the campaign.
+     * @param campaignName {String} The name of the campaign.
+     * @param campaignTags {Array.<String>} A list of tags for the campaign.
+     * @param campaignState {module:model/ApplicationCampaignAnalytics.CampaignStateEnum} The state of the campaign.  **Note:** A disabled or archived campaign is not evaluated for rules or coupons. 
      */
-    constructor() { 
+    constructor(startTime, endTime, campaignId, campaignName, campaignTags, campaignState) { 
         
-        ApplicationCampaignAnalytics.initialize(this);
+        ApplicationCampaignAnalytics.initialize(this, startTime, endTime, campaignId, campaignName, campaignTags, campaignState);
     }
 
     /**
@@ -39,7 +42,13 @@ class ApplicationCampaignAnalytics {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, startTime, endTime, campaignId, campaignName, campaignTags, campaignState) { 
+        obj['startTime'] = startTime;
+        obj['endTime'] = endTime;
+        obj['campaignId'] = campaignId;
+        obj['campaignName'] = campaignName;
+        obj['campaignTags'] = campaignTags;
+        obj['campaignState'] = campaignState;
     }
 
     /**
@@ -71,32 +80,23 @@ class ApplicationCampaignAnalytics {
             if (data.hasOwnProperty('campaignState')) {
                 obj['campaignState'] = ApiClient.convertToType(data['campaignState'], 'String');
             }
-            if (data.hasOwnProperty('campaignActiveRulesetId')) {
-                obj['campaignActiveRulesetId'] = ApiClient.convertToType(data['campaignActiveRulesetId'], 'Number');
-            }
-            if (data.hasOwnProperty('campaignStartTime')) {
-                obj['campaignStartTime'] = ApiClient.convertToType(data['campaignStartTime'], 'Date');
-            }
-            if (data.hasOwnProperty('campaignEndTime')) {
-                obj['campaignEndTime'] = ApiClient.convertToType(data['campaignEndTime'], 'Date');
-            }
             if (data.hasOwnProperty('totalRevenue')) {
-                obj['totalRevenue'] = ApplicationCampaignAnalyticsTotalRevenue.constructFromObject(data['totalRevenue']);
+                obj['totalRevenue'] = AnalyticsDataPointWithTrendAndInfluencedRate.constructFromObject(data['totalRevenue']);
             }
             if (data.hasOwnProperty('sessionsCount')) {
-                obj['sessionsCount'] = ApplicationCampaignAnalyticsSessionsCount.constructFromObject(data['sessionsCount']);
+                obj['sessionsCount'] = AnalyticsDataPointWithTrendAndInfluencedRate.constructFromObject(data['sessionsCount']);
             }
             if (data.hasOwnProperty('avgItemsPerSession')) {
-                obj['avgItemsPerSession'] = ApplicationCampaignAnalyticsAvgItemsPerSession.constructFromObject(data['avgItemsPerSession']);
+                obj['avgItemsPerSession'] = AnalyticsDataPointWithTrendAndUplift.constructFromObject(data['avgItemsPerSession']);
             }
             if (data.hasOwnProperty('avgSessionValue')) {
-                obj['avgSessionValue'] = ApplicationCampaignAnalyticsAvgSessionValue.constructFromObject(data['avgSessionValue']);
+                obj['avgSessionValue'] = AnalyticsDataPointWithTrendAndUplift.constructFromObject(data['avgSessionValue']);
             }
             if (data.hasOwnProperty('totalDiscounts')) {
-                obj['totalDiscounts'] = ApplicationCampaignAnalyticsTotalDiscounts.constructFromObject(data['totalDiscounts']);
+                obj['totalDiscounts'] = AnalyticsDataPointWithTrend.constructFromObject(data['totalDiscounts']);
             }
             if (data.hasOwnProperty('couponsCount')) {
-                obj['couponsCount'] = ApplicationCampaignAnalyticsCouponsCount.constructFromObject(data['couponsCount']);
+                obj['couponsCount'] = AnalyticsDataPointWithTrend.constructFromObject(data['couponsCount']);
             }
         }
         return obj;
@@ -138,55 +138,36 @@ ApplicationCampaignAnalytics.prototype['campaignTags'] = undefined;
 /**
  * The state of the campaign.  **Note:** A disabled or archived campaign is not evaluated for rules or coupons. 
  * @member {module:model/ApplicationCampaignAnalytics.CampaignStateEnum} campaignState
- * @default 'enabled'
  */
-ApplicationCampaignAnalytics.prototype['campaignState'] = 'enabled';
+ApplicationCampaignAnalytics.prototype['campaignState'] = undefined;
 
 /**
- * The [ID of the ruleset](https://docs.talon.one/management-api#operation/getRulesets) this campaign applies on customer session evaluation. 
- * @member {Number} campaignActiveRulesetId
- */
-ApplicationCampaignAnalytics.prototype['campaignActiveRulesetId'] = undefined;
-
-/**
- * Date and time when the campaign becomes active.
- * @member {Date} campaignStartTime
- */
-ApplicationCampaignAnalytics.prototype['campaignStartTime'] = undefined;
-
-/**
- * Date and time when the campaign becomes inactive.
- * @member {Date} campaignEndTime
- */
-ApplicationCampaignAnalytics.prototype['campaignEndTime'] = undefined;
-
-/**
- * @member {module:model/ApplicationCampaignAnalyticsTotalRevenue} totalRevenue
+ * @member {module:model/AnalyticsDataPointWithTrendAndInfluencedRate} totalRevenue
  */
 ApplicationCampaignAnalytics.prototype['totalRevenue'] = undefined;
 
 /**
- * @member {module:model/ApplicationCampaignAnalyticsSessionsCount} sessionsCount
+ * @member {module:model/AnalyticsDataPointWithTrendAndInfluencedRate} sessionsCount
  */
 ApplicationCampaignAnalytics.prototype['sessionsCount'] = undefined;
 
 /**
- * @member {module:model/ApplicationCampaignAnalyticsAvgItemsPerSession} avgItemsPerSession
+ * @member {module:model/AnalyticsDataPointWithTrendAndUplift} avgItemsPerSession
  */
 ApplicationCampaignAnalytics.prototype['avgItemsPerSession'] = undefined;
 
 /**
- * @member {module:model/ApplicationCampaignAnalyticsAvgSessionValue} avgSessionValue
+ * @member {module:model/AnalyticsDataPointWithTrendAndUplift} avgSessionValue
  */
 ApplicationCampaignAnalytics.prototype['avgSessionValue'] = undefined;
 
 /**
- * @member {module:model/ApplicationCampaignAnalyticsTotalDiscounts} totalDiscounts
+ * @member {module:model/AnalyticsDataPointWithTrend} totalDiscounts
  */
 ApplicationCampaignAnalytics.prototype['totalDiscounts'] = undefined;
 
 /**
- * @member {module:model/ApplicationCampaignAnalyticsCouponsCount} couponsCount
+ * @member {module:model/AnalyticsDataPointWithTrend} couponsCount
  */
 ApplicationCampaignAnalytics.prototype['couponsCount'] = undefined;
 
@@ -202,10 +183,22 @@ ApplicationCampaignAnalytics.prototype['couponsCount'] = undefined;
 ApplicationCampaignAnalytics['CampaignStateEnum'] = {
 
     /**
-     * value: "enabled"
+     * value: "expired"
      * @const
      */
-    "enabled": "enabled",
+    "expired": "expired",
+
+    /**
+     * value: "scheduled"
+     * @const
+     */
+    "scheduled": "scheduled",
+
+    /**
+     * value: "running"
+     * @const
+     */
+    "running": "running",
 
     /**
      * value: "disabled"

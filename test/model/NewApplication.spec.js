@@ -144,6 +144,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enableCampaignStateManagement (base name: "enableCampaignStateManagement")', function() {
+      // uncomment below and update the code to test the property enableCampaignStateManagement
+      //var instane = new TalonOne.NewApplication();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

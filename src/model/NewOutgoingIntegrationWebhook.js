@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewOutgoingIntegrationWebhook model module.
  * @module model/NewOutgoingIntegrationWebhook
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewOutgoingIntegrationWebhook {
     /**
@@ -54,6 +54,9 @@ class NewOutgoingIntegrationWebhook {
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('applicationIds')) {
                 obj['applicationIds'] = ApiClient.convertToType(data['applicationIds'], ['Number']);
             }
@@ -69,6 +72,12 @@ class NewOutgoingIntegrationWebhook {
  * @member {String} title
  */
 NewOutgoingIntegrationWebhook.prototype['title'] = undefined;
+
+/**
+ * A description of the webhook.
+ * @member {String} description
+ */
+NewOutgoingIntegrationWebhook.prototype['description'] = undefined;
 
 /**
  * IDs of the Applications to which a webhook must be linked.

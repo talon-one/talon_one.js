@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectCouponEffectProps model module.
  * @module model/RejectCouponEffectProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class RejectCouponEffectProps {
     /**
@@ -67,6 +67,9 @@ class RejectCouponEffectProps {
             if (data.hasOwnProperty('details')) {
                 obj['details'] = ApiClient.convertToType(data['details'], 'String');
             }
+            if (data.hasOwnProperty('campaignExclusionReason')) {
+                obj['campaignExclusionReason'] = ApiClient.convertToType(data['campaignExclusionReason'], 'String');
+            }
         }
         return obj;
     }
@@ -103,6 +106,12 @@ RejectCouponEffectProps.prototype['effectIndex'] = undefined;
  * @member {String} details
  */
 RejectCouponEffectProps.prototype['details'] = undefined;
+
+/**
+ * The reason why the campaign was not applied.
+ * @member {String} campaignExclusionReason
+ */
+RejectCouponEffectProps.prototype['campaignExclusionReason'] = undefined;
 
 
 

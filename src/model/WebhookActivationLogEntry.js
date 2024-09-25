@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebhookActivationLogEntry model module.
  * @module model/WebhookActivationLogEntry
- * @version 8.0.0
+ * @version 9.0.0
  */
 class WebhookActivationLogEntry {
     /**

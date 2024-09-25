@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponConstraints model module.
  * @module model/CouponConstraints
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CouponConstraints {
     /**
@@ -94,7 +94,7 @@ CouponConstraints.prototype['reservationLimit'] = undefined;
 CouponConstraints.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted.
  * @member {Date} expiryDate
  */
 CouponConstraints.prototype['expiryDate'] = undefined;

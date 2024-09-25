@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **Date** | Timestamp when the response was received. | 
-**response** | **Blob** | Raw response data. | 
-**status** | **Number** | HTTP status code of the response. | 
+**createdAt** | **Date** | Timestamp when the response was received. | [optional] 
+**response** | **Blob** | Raw response data. | [optional] 
+**status** | **Number** | HTTP status code of the response. | [optional] 
 
 

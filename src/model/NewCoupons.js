@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewCoupons {
     /**
@@ -127,7 +127,7 @@ NewCoupons.prototype['reservationLimit'] = undefined;
 NewCoupons.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted.
  * @member {Date} expiryDate
  */
 NewCoupons.prototype['expiryDate'] = undefined;

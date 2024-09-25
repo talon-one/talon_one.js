@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Effect {
     /**
@@ -84,6 +84,18 @@ class Effect {
             if (data.hasOwnProperty('conditionIndex')) {
                 obj['conditionIndex'] = ApiClient.convertToType(data['conditionIndex'], 'Number');
             }
+            if (data.hasOwnProperty('evaluationGroupID')) {
+                obj['evaluationGroupID'] = ApiClient.convertToType(data['evaluationGroupID'], 'Number');
+            }
+            if (data.hasOwnProperty('evaluationGroupMode')) {
+                obj['evaluationGroupMode'] = ApiClient.convertToType(data['evaluationGroupMode'], 'String');
+            }
+            if (data.hasOwnProperty('campaignRevisionId')) {
+                obj['campaignRevisionId'] = ApiClient.convertToType(data['campaignRevisionId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignRevisionVersionId')) {
+                obj['campaignRevisionVersionId'] = ApiClient.convertToType(data['campaignRevisionVersionId'], 'Number');
+            }
             if (data.hasOwnProperty('props')) {
                 obj['props'] = ApiClient.convertToType(data['props'], Object);
             }
@@ -141,6 +153,30 @@ Effect.prototype['triggeredForCatalogItem'] = undefined;
  * @member {Number} conditionIndex
  */
 Effect.prototype['conditionIndex'] = undefined;
+
+/**
+ * The ID of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation).
+ * @member {Number} evaluationGroupID
+ */
+Effect.prototype['evaluationGroupID'] = undefined;
+
+/**
+ * The evaluation mode of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation).
+ * @member {String} evaluationGroupMode
+ */
+Effect.prototype['evaluationGroupMode'] = undefined;
+
+/**
+ * The revision ID of the campaign that was used when triggering the effect.
+ * @member {Number} campaignRevisionId
+ */
+Effect.prototype['campaignRevisionId'] = undefined;
+
+/**
+ * The revision version ID of the campaign that was used when triggering the effect.
+ * @member {Number} campaignRevisionVersionId
+ */
+Effect.prototype['campaignRevisionVersionId'] = undefined;
 
 /**
  * The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).

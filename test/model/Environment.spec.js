@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property applicationCartItemFilters (base name: "applicationCartItemFilters")', function() {
+      // uncomment below and update the code to test the property applicationCartItemFilters
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

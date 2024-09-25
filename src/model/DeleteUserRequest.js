@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteUserRequest model module.
  * @module model/DeleteUserRequest
- * @version 8.0.0
+ * @version 9.0.0
  */
 class DeleteUserRequest {
     /**

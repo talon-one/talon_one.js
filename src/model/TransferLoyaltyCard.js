@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransferLoyaltyCard model module.
  * @module model/TransferLoyaltyCard
- * @version 8.0.0
+ * @version 9.0.0
  */
 class TransferLoyaltyCard {
     /**
@@ -52,6 +52,9 @@ class TransferLoyaltyCard {
             if (data.hasOwnProperty('newCardIdentifier')) {
                 obj['newCardIdentifier'] = ApiClient.convertToType(data['newCardIdentifier'], 'String');
             }
+            if (data.hasOwnProperty('blockReason')) {
+                obj['blockReason'] = ApiClient.convertToType(data['blockReason'], 'String');
+            }
         }
         return obj;
     }
@@ -64,6 +67,12 @@ class TransferLoyaltyCard {
  * @member {String} newCardIdentifier
  */
 TransferLoyaltyCard.prototype['newCardIdentifier'] = undefined;
+
+/**
+ * Reason for transferring and blocking the loyalty card. 
+ * @member {String} blockReason
+ */
+TransferLoyaltyCard.prototype['blockReason'] = undefined;
 
 
 

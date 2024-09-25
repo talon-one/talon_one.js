@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property blockReason (base name: "blockReason")', function() {
+      // uncomment below and update the code to test the property blockReason
+      //var instane = new TalonOne.TransferLoyaltyCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

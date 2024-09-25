@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAttribute model module.
  * @module model/NewAttribute
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewAttribute {
     /**
@@ -197,12 +197,6 @@ NewAttribute.prototype['allowedSubscriptions'] = undefined;
  * @readonly
  */
 NewAttribute['EntityEnum'] = {
-
-    /**
-     * value: "Account"
-     * @const
-     */
-    "Account": "Account",
 
     /**
      * value: "Application"

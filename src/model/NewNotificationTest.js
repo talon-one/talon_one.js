@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewNotificationTest model module.
  * @module model/NewNotificationTest
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewNotificationTest {
     /**
@@ -138,6 +138,12 @@ NewNotificationTest['TypeEnum'] = {
      * @const
      */
     "loyalty_added_deducted_points": "loyalty_added_deducted_points",
+
+    /**
+     * value: "card_added_deducted_points"
+     * @const
+     */
+    "card_added_deducted_points": "card_added_deducted_points",
 
     /**
      * value: "coupon"

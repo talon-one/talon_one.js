@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectReferralEffectProps model module.
  * @module model/RejectReferralEffectProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class RejectReferralEffectProps {
     /**
@@ -67,6 +67,9 @@ class RejectReferralEffectProps {
             if (data.hasOwnProperty('details')) {
                 obj['details'] = ApiClient.convertToType(data['details'], 'String');
             }
+            if (data.hasOwnProperty('campaignExclusionReason')) {
+                obj['campaignExclusionReason'] = ApiClient.convertToType(data['campaignExclusionReason'], 'String');
+            }
         }
         return obj;
     }
@@ -103,6 +106,12 @@ RejectReferralEffectProps.prototype['effectIndex'] = undefined;
  * @member {String} details
  */
 RejectReferralEffectProps.prototype['details'] = undefined;
+
+/**
+ * The reason why the campaign was not applied.
+ * @member {String} campaignExclusionReason
+ */
+RejectReferralEffectProps.prototype['campaignExclusionReason'] = undefined;
 
 
 

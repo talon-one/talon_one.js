@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCouponsForMultipleRecipients model module.
  * @module model/NewCouponsForMultipleRecipients
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewCouponsForMultipleRecipients {
     /**
@@ -111,7 +111,7 @@ NewCouponsForMultipleRecipients.prototype['reservationLimit'] = undefined;
 NewCouponsForMultipleRecipients.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted.
  * @member {Date} expiryDate
  */
 NewCouponsForMultipleRecipients.prototype['expiryDate'] = undefined;

@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalonOne.NewOutgoingIntegrationWebhook();
+      //expect(instance).to.be();
+    });
+
     it('should have the property applicationIds (base name: "applicationIds")', function() {
       // uncomment below and update the code to test the property applicationIds
       //var instane = new TalonOne.NewOutgoingIntegrationWebhook();

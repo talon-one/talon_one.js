@@ -17,7 +17,7 @@ import RoleV2 from './RoleV2';
 /**
  * The InlineResponse20044 model module.
  * @module model/InlineResponse20044
- * @version 8.0.0
+ * @version 9.0.0
  */
 class InlineResponse20044 {
     /**

@@ -144,6 +144,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultCartItemFilterId (base name: "defaultCartItemFilterId")', function() {
+      // uncomment below and update the code to test the property defaultCartItemFilterId
+      //var instane = new TalonOne.UpdateApplication();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property enableCampaignStateManagement (base name: "enableCampaignStateManagement")', function() {
+      // uncomment below and update the code to test the property enableCampaignStateManagement
+      //var instane = new TalonOne.UpdateApplication();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerAdditionalCostPerItemEffectProps model module.
  * @module model/SetDiscountPerAdditionalCostPerItemEffectProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class SetDiscountPerAdditionalCostPerItemEffectProps {
     /**

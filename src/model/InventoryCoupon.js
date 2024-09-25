@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The InventoryCoupon model module.
  * @module model/InventoryCoupon
- * @version 8.0.0
+ * @version 9.0.0
  */
 class InventoryCoupon {
     /**
@@ -193,7 +193,7 @@ InventoryCoupon.prototype['reservationLimit'] = undefined;
 InventoryCoupon.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted.
  * @member {Date} expiryDate
  */
 InventoryCoupon.prototype['expiryDate'] = undefined;

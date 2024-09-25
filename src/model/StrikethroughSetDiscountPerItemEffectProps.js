@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughSetDiscountPerItemEffectProps model module.
  * @module model/StrikethroughSetDiscountPerItemEffectProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class StrikethroughSetDiscountPerItemEffectProps {
     /**

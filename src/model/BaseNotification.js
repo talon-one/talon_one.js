@@ -17,14 +17,14 @@ import BaseNotificationWebhook from './BaseNotificationWebhook';
 /**
  * The BaseNotification model module.
  * @module model/BaseNotification
- * @version 8.0.0
+ * @version 9.0.0
  */
 class BaseNotification {
     /**
      * Constructs a new <code>BaseNotification</code>.
      * 
      * @alias module:model/BaseNotification
-     * @param policy {Object} 
+     * @param policy {Object} Indicates which notification properties to apply.
      * @param webhook {module:model/BaseNotificationWebhook} 
      * @param id {Number} Unique ID for this entity.
      * @param type {module:model/BaseNotification.TypeEnum} The notification type.
@@ -80,6 +80,7 @@ class BaseNotification {
 }
 
 /**
+ * Indicates which notification properties to apply.
  * @member {Object} policy
  */
 BaseNotification.prototype['policy'] = undefined;
@@ -130,6 +131,12 @@ BaseNotification['TypeEnum'] = {
      * @const
      */
     "loyalty_added_deducted_points": "loyalty_added_deducted_points",
+
+    /**
+     * value: "card_added_deducted_points"
+     * @const
+     */
+    "card_added_deducted_points": "card_added_deducted_points",
 
     /**
      * value: "coupon"

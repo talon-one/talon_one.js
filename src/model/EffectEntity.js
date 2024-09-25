@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 8.0.0
+ * @version 9.0.0
  */
 class EffectEntity {
     /**
@@ -82,6 +82,18 @@ class EffectEntity {
             if (data.hasOwnProperty('conditionIndex')) {
                 obj['conditionIndex'] = ApiClient.convertToType(data['conditionIndex'], 'Number');
             }
+            if (data.hasOwnProperty('evaluationGroupID')) {
+                obj['evaluationGroupID'] = ApiClient.convertToType(data['evaluationGroupID'], 'Number');
+            }
+            if (data.hasOwnProperty('evaluationGroupMode')) {
+                obj['evaluationGroupMode'] = ApiClient.convertToType(data['evaluationGroupMode'], 'String');
+            }
+            if (data.hasOwnProperty('campaignRevisionId')) {
+                obj['campaignRevisionId'] = ApiClient.convertToType(data['campaignRevisionId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignRevisionVersionId')) {
+                obj['campaignRevisionVersionId'] = ApiClient.convertToType(data['campaignRevisionVersionId'], 'Number');
+            }
         }
         return obj;
     }
@@ -136,6 +148,30 @@ EffectEntity.prototype['triggeredForCatalogItem'] = undefined;
  * @member {Number} conditionIndex
  */
 EffectEntity.prototype['conditionIndex'] = undefined;
+
+/**
+ * The ID of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation).
+ * @member {Number} evaluationGroupID
+ */
+EffectEntity.prototype['evaluationGroupID'] = undefined;
+
+/**
+ * The evaluation mode of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation).
+ * @member {String} evaluationGroupMode
+ */
+EffectEntity.prototype['evaluationGroupMode'] = undefined;
+
+/**
+ * The revision ID of the campaign that was used when triggering the effect.
+ * @member {Number} campaignRevisionId
+ */
+EffectEntity.prototype['campaignRevisionId'] = undefined;
+
+/**
+ * The revision version ID of the campaign that was used when triggering the effect.
+ * @member {Number} campaignRevisionVersionId
+ */
+EffectEntity.prototype['campaignRevisionVersionId'] = undefined;
 
 
 

@@ -12,24 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationAnalyticsDataPointAvgItemsPerSession from './ApplicationAnalyticsDataPointAvgItemsPerSession';
-import ApplicationAnalyticsDataPointAvgSessionValue from './ApplicationAnalyticsDataPointAvgSessionValue';
-import ApplicationAnalyticsDataPointSessionsCount from './ApplicationAnalyticsDataPointSessionsCount';
-import ApplicationAnalyticsDataPointTotalRevenue from './ApplicationAnalyticsDataPointTotalRevenue';
+import AnalyticsDataPoint from './AnalyticsDataPoint';
 
 /**
  * The ApplicationAnalyticsDataPoint model module.
  * @module model/ApplicationAnalyticsDataPoint
- * @version 8.0.0
+ * @version 9.0.0
  */
 class ApplicationAnalyticsDataPoint {
     /**
      * Constructs a new <code>ApplicationAnalyticsDataPoint</code>.
      * @alias module:model/ApplicationAnalyticsDataPoint
+     * @param startTime {Date} The start of the aggregation time frame in UTC.
+     * @param endTime {Date} The end of the aggregation time frame in UTC.
      */
-    constructor() { 
+    constructor(startTime, endTime) { 
         
-        ApplicationAnalyticsDataPoint.initialize(this);
+        ApplicationAnalyticsDataPoint.initialize(this, startTime, endTime);
     }
 
     /**
@@ -37,7 +36,9 @@ class ApplicationAnalyticsDataPoint {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, startTime, endTime) { 
+        obj['startTime'] = startTime;
+        obj['endTime'] = endTime;
     }
 
     /**
@@ -58,16 +59,16 @@ class ApplicationAnalyticsDataPoint {
                 obj['endTime'] = ApiClient.convertToType(data['endTime'], 'Date');
             }
             if (data.hasOwnProperty('totalRevenue')) {
-                obj['totalRevenue'] = ApplicationAnalyticsDataPointTotalRevenue.constructFromObject(data['totalRevenue']);
+                obj['totalRevenue'] = AnalyticsDataPoint.constructFromObject(data['totalRevenue']);
             }
             if (data.hasOwnProperty('sessionsCount')) {
-                obj['sessionsCount'] = ApplicationAnalyticsDataPointSessionsCount.constructFromObject(data['sessionsCount']);
+                obj['sessionsCount'] = AnalyticsDataPoint.constructFromObject(data['sessionsCount']);
             }
             if (data.hasOwnProperty('avgItemsPerSession')) {
-                obj['avgItemsPerSession'] = ApplicationAnalyticsDataPointAvgItemsPerSession.constructFromObject(data['avgItemsPerSession']);
+                obj['avgItemsPerSession'] = AnalyticsDataPoint.constructFromObject(data['avgItemsPerSession']);
             }
             if (data.hasOwnProperty('avgSessionValue')) {
-                obj['avgSessionValue'] = ApplicationAnalyticsDataPointAvgSessionValue.constructFromObject(data['avgSessionValue']);
+                obj['avgSessionValue'] = AnalyticsDataPoint.constructFromObject(data['avgSessionValue']);
             }
             if (data.hasOwnProperty('totalDiscounts')) {
                 obj['totalDiscounts'] = ApiClient.convertToType(data['totalDiscounts'], 'Number');
@@ -95,22 +96,22 @@ ApplicationAnalyticsDataPoint.prototype['startTime'] = undefined;
 ApplicationAnalyticsDataPoint.prototype['endTime'] = undefined;
 
 /**
- * @member {module:model/ApplicationAnalyticsDataPointTotalRevenue} totalRevenue
+ * @member {module:model/AnalyticsDataPoint} totalRevenue
  */
 ApplicationAnalyticsDataPoint.prototype['totalRevenue'] = undefined;
 
 /**
- * @member {module:model/ApplicationAnalyticsDataPointSessionsCount} sessionsCount
+ * @member {module:model/AnalyticsDataPoint} sessionsCount
  */
 ApplicationAnalyticsDataPoint.prototype['sessionsCount'] = undefined;
 
 /**
- * @member {module:model/ApplicationAnalyticsDataPointAvgItemsPerSession} avgItemsPerSession
+ * @member {module:model/AnalyticsDataPoint} avgItemsPerSession
  */
 ApplicationAnalyticsDataPoint.prototype['avgItemsPerSession'] = undefined;
 
 /**
- * @member {module:model/ApplicationAnalyticsDataPointAvgSessionValue} avgSessionValue
+ * @member {module:model/AnalyticsDataPoint} avgSessionValue
  */
 ApplicationAnalyticsDataPoint.prototype['avgSessionValue'] = undefined;
 

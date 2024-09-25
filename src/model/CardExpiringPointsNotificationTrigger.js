@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CardExpiringPointsNotificationTrigger model module.
  * @module model/CardExpiringPointsNotificationTrigger
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CardExpiringPointsNotificationTrigger {
     /**

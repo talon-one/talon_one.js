@@ -16,20 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The MessageLogResponse model module.
  * @module model/MessageLogResponse
- * @version 8.0.0
+ * @version 9.0.0
  */
 class MessageLogResponse {
     /**
      * Constructs a new <code>MessageLogResponse</code>.
      * Details of the response.
      * @alias module:model/MessageLogResponse
-     * @param createdAt {Date} Timestamp when the response was received.
-     * @param response {Blob} Raw response data.
-     * @param status {Number} HTTP status code of the response.
      */
-    constructor(createdAt, response, status) { 
+    constructor() { 
         
-        MessageLogResponse.initialize(this, createdAt, response, status);
+        MessageLogResponse.initialize(this);
     }
 
     /**
@@ -37,10 +34,7 @@ class MessageLogResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, createdAt, response, status) { 
-        obj['createdAt'] = createdAt;
-        obj['response'] = response;
-        obj['status'] = status;
+    static initialize(obj) { 
     }
 
     /**

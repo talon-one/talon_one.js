@@ -102,8 +102,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property programJoinPolicy (base name: "programJoinPolicy")', function() {
+      // uncomment below and update the code to test the property programJoinPolicy
+      //var instane = new TalonOne.UpdateLoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tiersExpirationPolicy (base name: "tiersExpirationPolicy")', function() {
       // uncomment below and update the code to test the property tiersExpirationPolicy
+      //var instane = new TalonOne.UpdateLoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tierCycleStartDate (base name: "tierCycleStartDate")', function() {
+      // uncomment below and update the code to test the property tierCycleStartDate
       //var instane = new TalonOne.UpdateLoyaltyProgram();
       //expect(instance).to.be();
     });
@@ -120,8 +132,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property programJoinPolicy (base name: "programJoinPolicy")', function() {
-      // uncomment below and update the code to test the property programJoinPolicy
+    it('should have the property cardCodeSettings (base name: "cardCodeSettings")', function() {
+      // uncomment below and update the code to test the property cardCodeSettings
       //var instane = new TalonOne.UpdateLoyaltyProgram();
       //expect(instance).to.be();
     });

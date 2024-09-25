@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateReferral model module.
  * @module model/UpdateReferral
- * @version 8.0.0
+ * @version 9.0.0
  */
 class UpdateReferral {
     /**
@@ -82,7 +82,7 @@ UpdateReferral.prototype['friendProfileIntegrationId'] = undefined;
 UpdateReferral.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the referral code. Referral never expires if this is omitted, zero, or negative.
+ * Expiration date of the referral code. Referral never expires if this is omitted.
  * @member {Date} expiryDate
  */
 UpdateReferral.prototype['expiryDate'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponRejectionReason model module.
  * @module model/CouponRejectionReason
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CouponRejectionReason {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Attribute model module.
  * @module model/Attribute
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Attribute {
     /**
@@ -238,12 +238,6 @@ Attribute.prototype['eventTypeId'] = undefined;
  * @readonly
  */
 Attribute['EntityEnum'] = {
-
-    /**
-     * value: "Account"
-     * @const
-     */
-    "Account": "Account",
 
     /**
      * value: "Application"

@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **discountLimit** | **Number** | The total discount value that the code can give. Typically used to represent a gift card value.  | [optional] 
 **reservationLimit** | **Number** | The number of reservations that can be made with this coupon code.  | [optional] 
 **startDate** | **Date** | Timestamp at which point the coupon becomes valid. | [optional] 
-**expiryDate** | **Date** | Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative. | [optional] 
+**expiryDate** | **Date** | Expiration date of the coupon. Coupon never expires if this is omitted. | [optional] 
 
 

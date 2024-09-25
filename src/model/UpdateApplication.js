@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateApplication model module.
  * @module model/UpdateApplication
- * @version 8.0.0
+ * @version 9.0.0
  */
 class UpdateApplication {
     /**
@@ -99,6 +99,12 @@ class UpdateApplication {
             }
             if (data.hasOwnProperty('defaultEvaluationGroupId')) {
                 obj['defaultEvaluationGroupId'] = ApiClient.convertToType(data['defaultEvaluationGroupId'], 'Number');
+            }
+            if (data.hasOwnProperty('defaultCartItemFilterId')) {
+                obj['defaultCartItemFilterId'] = ApiClient.convertToType(data['defaultCartItemFilterId'], 'Number');
+            }
+            if (data.hasOwnProperty('enableCampaignStateManagement')) {
+                obj['enableCampaignStateManagement'] = ApiClient.convertToType(data['enableCampaignStateManagement'], 'Boolean');
             }
         }
         return obj;
@@ -195,6 +201,18 @@ UpdateApplication.prototype['defaultDiscountAdditionalCostPerItemScope'] = undef
  * @member {Number} defaultEvaluationGroupId
  */
 UpdateApplication.prototype['defaultEvaluationGroupId'] = undefined;
+
+/**
+ * The ID of the default Cart-Item-Filter for this application.
+ * @member {Number} defaultCartItemFilterId
+ */
+UpdateApplication.prototype['defaultCartItemFilterId'] = undefined;
+
+/**
+ * Indicates whether the campaign staging and revisions feature is enabled for the Application.  **Important:** After this feature is enabled, it cannot be disabled. 
+ * @member {Boolean} enableCampaignStateManagement
+ */
+UpdateApplication.prototype['enableCampaignStateManagement'] = undefined;
 
 
 

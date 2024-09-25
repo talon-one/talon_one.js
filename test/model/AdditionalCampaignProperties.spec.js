@@ -186,6 +186,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storesImported (base name: "storesImported")', function() {
+      // uncomment below and update the code to test the property storesImported
+      //var instane = new TalonOne.AdditionalCampaignProperties();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
