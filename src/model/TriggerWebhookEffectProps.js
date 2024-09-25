@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TriggerWebhookEffectProps model module.
  * @module model/TriggerWebhookEffectProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class TriggerWebhookEffectProps {
     /**

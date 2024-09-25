@@ -168,6 +168,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultCartItemFilterId (base name: "defaultCartItemFilterId")', function() {
+      // uncomment below and update the code to test the property defaultCartItemFilterId
+      //var instane = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property enableCampaignStateManagement (base name: "enableCampaignStateManagement")', function() {
+      // uncomment below and update the code to test the property enableCampaignStateManagement
+      //var instane = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
     it('should have the property loyaltyPrograms (base name: "loyaltyPrograms")', function() {
       // uncomment below and update the code to test the property loyaltyPrograms
       //var instane = new TalonOne.Application();

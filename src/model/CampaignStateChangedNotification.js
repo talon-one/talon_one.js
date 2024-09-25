@@ -18,7 +18,7 @@ import Ruleset from './Ruleset';
 /**
  * The CampaignStateChangedNotification model module.
  * @module model/CampaignStateChangedNotification
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CampaignStateChangedNotification {
     /**
@@ -26,8 +26,8 @@ class CampaignStateChangedNotification {
      * A notification regarding a campaign whose state changed.
      * @alias module:model/CampaignStateChangedNotification
      * @param campaign {module:model/Campaign} 
-     * @param oldState {String} The campaign's old state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'draft', 'archived'] 
-     * @param newState {String} The campaign's new state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'draft', 'archived'] 
+     * @param oldState {String} The campaign's old state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
+     * @param newState {String} The campaign's new state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
      */
     constructor(campaign, oldState, newState) { 
         
@@ -81,13 +81,13 @@ class CampaignStateChangedNotification {
 CampaignStateChangedNotification.prototype['campaign'] = undefined;
 
 /**
- * The campaign's old state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'draft', 'archived'] 
+ * The campaign's old state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
  * @member {String} oldState
  */
 CampaignStateChangedNotification.prototype['oldState'] = undefined;
 
 /**
- * The campaign's new state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'draft', 'archived'] 
+ * The campaign's new state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
  * @member {String} newState
  */
 CampaignStateChangedNotification.prototype['newState'] = undefined;

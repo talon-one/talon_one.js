@@ -17,7 +17,7 @@ import BaseNotification from './BaseNotification';
 /**
  * The BaseNotifications model module.
  * @module model/BaseNotifications
- * @version 8.0.0
+ * @version 9.0.0
  */
 class BaseNotifications {
     /**

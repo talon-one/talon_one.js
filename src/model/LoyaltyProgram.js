@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import CodeGeneratorSettings from './CodeGeneratorSettings';
 import LoyaltyTier from './LoyaltyTier';
 
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 8.0.0
+ * @version 9.0.0
  */
 class LoyaltyProgram {
     /**
@@ -105,8 +106,14 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
+            if (data.hasOwnProperty('programJoinPolicy')) {
+                obj['programJoinPolicy'] = ApiClient.convertToType(data['programJoinPolicy'], 'String');
+            }
             if (data.hasOwnProperty('tiersExpirationPolicy')) {
                 obj['tiersExpirationPolicy'] = ApiClient.convertToType(data['tiersExpirationPolicy'], 'String');
+            }
+            if (data.hasOwnProperty('tierCycleStartDate')) {
+                obj['tierCycleStartDate'] = ApiClient.convertToType(data['tierCycleStartDate'], 'Date');
             }
             if (data.hasOwnProperty('tiersExpireIn')) {
                 obj['tiersExpireIn'] = ApiClient.convertToType(data['tiersExpireIn'], 'String');
@@ -114,8 +121,8 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('tiersDowngradePolicy')) {
                 obj['tiersDowngradePolicy'] = ApiClient.convertToType(data['tiersDowngradePolicy'], 'String');
             }
-            if (data.hasOwnProperty('programJoinPolicy')) {
-                obj['programJoinPolicy'] = ApiClient.convertToType(data['programJoinPolicy'], 'String');
+            if (data.hasOwnProperty('cardCodeSettings')) {
+                obj['cardCodeSettings'] = CodeGeneratorSettings.constructFromObject(data['cardCodeSettings']);
             }
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
@@ -138,8 +145,14 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('canUpdateJoinPolicy')) {
                 obj['canUpdateJoinPolicy'] = ApiClient.convertToType(data['canUpdateJoinPolicy'], 'Boolean');
             }
+            if (data.hasOwnProperty('canUpdateTierExpirationPolicy')) {
+                obj['canUpdateTierExpirationPolicy'] = ApiClient.convertToType(data['canUpdateTierExpirationPolicy'], 'Boolean');
+            }
             if (data.hasOwnProperty('canUpgradeToAdvancedTiers')) {
                 obj['canUpgradeToAdvancedTiers'] = ApiClient.convertToType(data['canUpgradeToAdvancedTiers'], 'Boolean');
+            }
+            if (data.hasOwnProperty('canUpdateSubledgers')) {
+                obj['canUpdateSubledgers'] = ApiClient.convertToType(data['canUpdateSubledgers'], 'Boolean');
             }
         }
         return obj;
@@ -209,28 +222,39 @@ LoyaltyProgram.prototype['usersPerCardLimit'] = undefined;
 LoyaltyProgram.prototype['sandbox'] = undefined;
 
 /**
- * The policy that defines which date is used to calculate the expiration date of a customer's current tier.  - `tier_start_date`: The tier expiration date is calculated based on when the customer joined the current tier.  - `program_join_date`: The tier expiration date is calculated based on when the customer joined the loyalty program. 
+ * The policy that defines when the customer joins the loyalty program.   - `not_join`: The customer does not join the loyalty program but can still earn and spend loyalty points.       **Note**: The customer does not have a program join date.   - `points_activated`: The customer joins the loyalty program only when their earned loyalty points become active for the first time.   - `points_earned`: The customer joins the loyalty program when they earn loyalty points for the first time. 
+ * @member {module:model/LoyaltyProgram.ProgramJoinPolicyEnum} programJoinPolicy
+ */
+LoyaltyProgram.prototype['programJoinPolicy'] = undefined;
+
+/**
+ * The policy that defines how tier expiration, used to reevaluate the customer's current tier, is determined.  - `tier_start_date`: The tier expiration is relative to when the customer joined the current tier.  - `program_join_date`: The tier expiration is relative to when the customer joined the loyalty program.  - `customer_attribute`: The tier expiration is determined by a custom customer attribute.  - `absolute_expiration`: The tier is reevaluated at the start of each tier cycle. For this policy, it is required to provide a `tierCycleStartDate`. 
  * @member {module:model/LoyaltyProgram.TiersExpirationPolicyEnum} tiersExpirationPolicy
  */
 LoyaltyProgram.prototype['tiersExpirationPolicy'] = undefined;
 
 /**
- * The amount of time after which the tier expires.  The time format is an **integer** followed by one letter indicating the time unit. Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
+ * Timestamp at which the tier cycle starts for all customers in the loyalty program.  **Note**: This is only required when the tier expiration policy is set to `absolute_expiration`. 
+ * @member {Date} tierCycleStartDate
+ */
+LoyaltyProgram.prototype['tierCycleStartDate'] = undefined;
+
+/**
+ * The amount of time after which the tier expires and is reevaluated.  The time format is an **integer** followed by one letter indicating the time unit. Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
  * @member {String} tiersExpireIn
  */
 LoyaltyProgram.prototype['tiersExpireIn'] = undefined;
 
 /**
- * Customers's tier downgrade policy.  - `one_down`: Once the tier expires and if the user doesn't have enough points to stay in the tier, the user is downgraded one tier down.  - `balance_based`: Once the tier expires, the user's tier is evaluated based on the amount of active points the user has at this instant. 
+ * The policy that defines how customer tiers are downgraded in the loyalty program after tier reevaluation.  - `one_down`: If the customer doesn't have enough points to stay in the current tier, they are downgraded by one tier.  - `balance_based`: The customer's tier is reevaluated based on the amount of active points they have at the moment. 
  * @member {module:model/LoyaltyProgram.TiersDowngradePolicyEnum} tiersDowngradePolicy
  */
 LoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
 
 /**
- * The policy that defines when the customer joins the loyalty program.   - `not_join`: The customer does not join the loyalty program but can still earn and spend loyalty points.       **Note**: The customer does not have a program join date.   - `points_activated`: The customer joins the loyalty program only when their earned loyalty points become active for the first time.   - `points_earned`: The customer joins the loyalty program when they earn loyalty points for the first time. 
- * @member {module:model/LoyaltyProgram.ProgramJoinPolicyEnum} programJoinPolicy
+ * @member {module:model/CodeGeneratorSettings} cardCodeSettings
  */
-LoyaltyProgram.prototype['programJoinPolicy'] = undefined;
+LoyaltyProgram.prototype['cardCodeSettings'] = undefined;
 
 /**
  * The ID of the Talon.One account that owns this program.
@@ -271,10 +295,16 @@ LoyaltyProgram.prototype['cardBased'] = false;
 LoyaltyProgram.prototype['canUpdateTiers'] = false;
 
 /**
- * Indicates whether the program join policy can be updated. The join policy can be updated when this value is set to `true`. 
+ * `True` if the program join policy can be updated. 
  * @member {Boolean} canUpdateJoinPolicy
  */
 LoyaltyProgram.prototype['canUpdateJoinPolicy'] = undefined;
+
+/**
+ * `True` if the tier expiration policy can be updated. 
+ * @member {Boolean} canUpdateTierExpirationPolicy
+ */
+LoyaltyProgram.prototype['canUpdateTierExpirationPolicy'] = undefined;
 
 /**
  * `True` if the program can be upgraded to use the `tiersExpireIn` and `tiersDowngradePolicy` properties. 
@@ -283,50 +313,15 @@ LoyaltyProgram.prototype['canUpdateJoinPolicy'] = undefined;
  */
 LoyaltyProgram.prototype['canUpgradeToAdvancedTiers'] = false;
 
-
-
-
-
 /**
- * Allowed values for the <code>tiersExpirationPolicy</code> property.
- * @enum {String}
- * @readonly
+ * `True` if the `allowSubledger` property can be updated in the loyalty program. 
+ * @member {Boolean} canUpdateSubledgers
+ * @default false
  */
-LoyaltyProgram['TiersExpirationPolicyEnum'] = {
-
-    /**
-     * value: "tier_start_date"
-     * @const
-     */
-    "tier_start_date": "tier_start_date",
-
-    /**
-     * value: "program_join_date"
-     * @const
-     */
-    "program_join_date": "program_join_date"
-};
+LoyaltyProgram.prototype['canUpdateSubledgers'] = false;
 
 
-/**
- * Allowed values for the <code>tiersDowngradePolicy</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyProgram['TiersDowngradePolicyEnum'] = {
 
-    /**
-     * value: "one_down"
-     * @const
-     */
-    "one_down": "one_down",
-
-    /**
-     * value: "balance_based"
-     * @const
-     */
-    "balance_based": "balance_based"
-};
 
 
 /**
@@ -353,6 +348,60 @@ LoyaltyProgram['ProgramJoinPolicyEnum'] = {
      * @const
      */
     "points_earned": "points_earned"
+};
+
+
+/**
+ * Allowed values for the <code>tiersExpirationPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoyaltyProgram['TiersExpirationPolicyEnum'] = {
+
+    /**
+     * value: "tier_start_date"
+     * @const
+     */
+    "tier_start_date": "tier_start_date",
+
+    /**
+     * value: "program_join_date"
+     * @const
+     */
+    "program_join_date": "program_join_date",
+
+    /**
+     * value: "customer_attribute"
+     * @const
+     */
+    "customer_attribute": "customer_attribute",
+
+    /**
+     * value: "absolute_expiration"
+     * @const
+     */
+    "absolute_expiration": "absolute_expiration"
+};
+
+
+/**
+ * Allowed values for the <code>tiersDowngradePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoyaltyProgram['TiersDowngradePolicyEnum'] = {
+
+    /**
+     * value: "one_down"
+     * @const
+     */
+    "one_down": "one_down",
+
+    /**
+     * value: "balance_based"
+     * @const
+     */
+    "balance_based": "balance_based"
 };
 
 

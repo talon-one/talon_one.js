@@ -150,6 +150,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property additionalAttributes (base name: "additionalAttributes")', function() {
+      // uncomment below and update the code to test the property additionalAttributes
+      //var instane = new TalonOne.User();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

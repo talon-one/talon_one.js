@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Campaign {
     /**
@@ -39,10 +39,11 @@ class Campaign {
      * @param type {module:model/Campaign.TypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
      * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
      * @param frontendState {module:model/Campaign.FrontendStateEnum} A campaign state described exactly as in the Campaign Manager.
+     * @param storesImported {Boolean} Indicates whether the linked stores were imported via a CSV file.
      */
-    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState) { 
+    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState, storesImported) { 
         
-        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState);
+        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState, storesImported);
     }
 
     /**
@@ -50,7 +51,7 @@ class Campaign {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState) { 
+    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState, storesImported) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -64,6 +65,7 @@ class Campaign {
         obj['type'] = type;
         obj['budgets'] = budgets;
         obj['frontendState'] = frontendState;
+        obj['storesImported'] = storesImported;
     }
 
     /**
@@ -199,6 +201,27 @@ class Campaign {
             }
             if (data.hasOwnProperty('frontendState')) {
                 obj['frontendState'] = ApiClient.convertToType(data['frontendState'], 'String');
+            }
+            if (data.hasOwnProperty('storesImported')) {
+                obj['storesImported'] = ApiClient.convertToType(data['storesImported'], 'Boolean');
+            }
+            if (data.hasOwnProperty('activeRevisionId')) {
+                obj['activeRevisionId'] = ApiClient.convertToType(data['activeRevisionId'], 'Number');
+            }
+            if (data.hasOwnProperty('activeRevisionVersionId')) {
+                obj['activeRevisionVersionId'] = ApiClient.convertToType(data['activeRevisionVersionId'], 'Number');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+            }
+            if (data.hasOwnProperty('currentRevisionId')) {
+                obj['currentRevisionId'] = ApiClient.convertToType(data['currentRevisionId'], 'Number');
+            }
+            if (data.hasOwnProperty('currentRevisionVersionId')) {
+                obj['currentRevisionVersionId'] = ApiClient.convertToType(data['currentRevisionVersionId'], 'Number');
+            }
+            if (data.hasOwnProperty('stageRevision')) {
+                obj['stageRevision'] = ApiClient.convertToType(data['stageRevision'], 'Boolean');
             }
         }
         return obj;
@@ -453,6 +476,49 @@ Campaign.prototype['templateId'] = undefined;
  */
 Campaign.prototype['frontendState'] = undefined;
 
+/**
+ * Indicates whether the linked stores were imported via a CSV file.
+ * @member {Boolean} storesImported
+ */
+Campaign.prototype['storesImported'] = undefined;
+
+/**
+ * ID of the revision that was last activated on this campaign. 
+ * @member {Number} activeRevisionId
+ */
+Campaign.prototype['activeRevisionId'] = undefined;
+
+/**
+ * ID of the revision version that is active on the campaign. 
+ * @member {Number} activeRevisionVersionId
+ */
+Campaign.prototype['activeRevisionVersionId'] = undefined;
+
+/**
+ * Incrementing number representing how many revisions have been activated on this campaign, starts from 0 for a new campaign. 
+ * @member {Number} version
+ */
+Campaign.prototype['version'] = undefined;
+
+/**
+ * ID of the revision currently being modified for the campaign. 
+ * @member {Number} currentRevisionId
+ */
+Campaign.prototype['currentRevisionId'] = undefined;
+
+/**
+ * ID of the latest version applied on the current revision. 
+ * @member {Number} currentRevisionVersionId
+ */
+Campaign.prototype['currentRevisionVersionId'] = undefined;
+
+/**
+ * Flag for determining whether we use current revision when sending requests with staging API key. 
+ * @member {Boolean} stageRevision
+ * @default false
+ */
+Campaign.prototype['stageRevision'] = false;
+
 
 
 
@@ -574,12 +640,6 @@ Campaign['FrontendStateEnum'] = {
      * @const
      */
     "running": "running",
-
-    /**
-     * value: "draft"
-     * @const
-     */
-    "draft": "draft",
 
     /**
      * value: "disabled"

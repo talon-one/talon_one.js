@@ -45,6 +45,13 @@ Name | Type | Description | Notes
 **updatedBy** | **String** | Name of the user who last updated this campaign if available. | [optional] 
 **templateId** | **Number** | The ID of the Campaign Template this Campaign was created from. | [optional] 
 **frontendState** | **String** | A campaign state described exactly as in the Campaign Manager. | 
+**storesImported** | **Boolean** | Indicates whether the linked stores were imported via a CSV file. | 
+**activeRevisionId** | **Number** | ID of the revision that was last activated on this campaign.  | [optional] 
+**activeRevisionVersionId** | **Number** | ID of the revision version that is active on the campaign.  | [optional] 
+**version** | **Number** | Incrementing number representing how many revisions have been activated on this campaign, starts from 0 for a new campaign.  | [optional] 
+**currentRevisionId** | **Number** | ID of the revision currently being modified for the campaign.  | [optional] 
+**currentRevisionVersionId** | **Number** | ID of the latest version applied on the current revision.  | [optional] 
+**stageRevision** | **Boolean** | Flag for determining whether we use current revision when sending requests with staging API key.  | [optional] [default to false]
 
 
 
@@ -99,8 +106,6 @@ Name | Type | Description | Notes
 * `scheduled` (value: `"scheduled"`)
 
 * `running` (value: `"running"`)
-
-* `draft` (value: `"draft"`)
 
 * `disabled` (value: `"disabled"`)
 

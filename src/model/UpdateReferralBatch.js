@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateReferralBatch model module.
  * @module model/UpdateReferralBatch
- * @version 8.0.0
+ * @version 9.0.0
  */
 class UpdateReferralBatch {
     /**
@@ -90,7 +90,7 @@ UpdateReferralBatch.prototype['batchID'] = undefined;
 UpdateReferralBatch.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the referral code. Referral never expires if this is omitted, zero, or negative.
+ * Expiration date of the referral code. Referral never expires if this is omitted.
  * @member {Date} expiryDate
  */
 UpdateReferralBatch.prototype['expiryDate'] = undefined;

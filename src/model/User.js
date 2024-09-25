@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 8.0.0
+ * @version 9.0.0
  */
 class User {
     /**
@@ -113,6 +113,9 @@ class User {
             }
             if (data.hasOwnProperty('latestFeedTimestamp')) {
                 obj['latestFeedTimestamp'] = ApiClient.convertToType(data['latestFeedTimestamp'], 'Date');
+            }
+            if (data.hasOwnProperty('additionalAttributes')) {
+                obj['additionalAttributes'] = ApiClient.convertToType(data['additionalAttributes'], Object);
             }
         }
         return obj;
@@ -216,6 +219,12 @@ User.prototype['lastAccessed'] = undefined;
  * @member {Date} latestFeedTimestamp
  */
 User.prototype['latestFeedTimestamp'] = undefined;
+
+/**
+ * Additional user attributes, created and used by external identity providers.
+ * @member {Object} additionalAttributes
+ */
+User.prototype['additionalAttributes'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Tier model module.
  * @module model/Tier
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Tier {
     /**
@@ -57,6 +57,9 @@ class Tier {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('startDate')) {
+                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
+            }
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
             }
@@ -83,13 +86,19 @@ Tier.prototype['id'] = undefined;
 Tier.prototype['name'] = undefined;
 
 /**
+ * Date and time when the customer moved to this tier. This value uses the loyalty program's time zone setting.
+ * @member {Date} startDate
+ */
+Tier.prototype['startDate'] = undefined;
+
+/**
  * Date when tier level expires in the RFC3339 format (in the Loyalty Program's timezone).
  * @member {Date} expiryDate
  */
 Tier.prototype['expiryDate'] = undefined;
 
 /**
- * Customers's tier downgrade policy. - `one_down`: Once the tier expires and if the user doesn't have enough points to stay in the tier, the user is downgraded one tier down. - `balance_based`: Once the tier expires, the user's tier is evaluated based on the amount of active points the user has at this instant. 
+ * The policy that defines how customer tiers are downgraded in the loyalty program after tier reevaluation.  - `one_down`: If the customer doesn't have enough points to stay in the current tier, they are downgraded by one tier.  - `balance_based`: The customer's tier is reevaluated based on the amount of active points they have at the moment. 
  * @member {module:model/Tier.DowngradePolicyEnum} downgradePolicy
  */
 Tier.prototype['downgradePolicy'] = undefined;

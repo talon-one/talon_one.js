@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseNotificationEntity model module.
  * @module model/BaseNotificationEntity
- * @version 8.0.0
+ * @version 9.0.0
  */
 class BaseNotificationEntity {
     /**
      * Constructs a new <code>BaseNotificationEntity</code>.
      * @alias module:model/BaseNotificationEntity
-     * @param policy {Object} 
+     * @param policy {Object} Indicates which notification properties to apply.
      */
     constructor(policy) { 
         
@@ -63,6 +63,7 @@ class BaseNotificationEntity {
 }
 
 /**
+ * Indicates which notification properties to apply.
  * @member {Object} policy
  */
 BaseNotificationEntity.prototype['policy'] = undefined;

@@ -102,6 +102,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property evaluationGroupID (base name: "evaluationGroupID")', function() {
+      // uncomment below and update the code to test the property evaluationGroupID
+      //var instane = new TalonOne.Effect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property evaluationGroupMode (base name: "evaluationGroupMode")', function() {
+      // uncomment below and update the code to test the property evaluationGroupMode
+      //var instane = new TalonOne.Effect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property campaignRevisionId (base name: "campaignRevisionId")', function() {
+      // uncomment below and update the code to test the property campaignRevisionId
+      //var instane = new TalonOne.Effect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property campaignRevisionVersionId (base name: "campaignRevisionVersionId")', function() {
+      // uncomment below and update the code to test the property campaignRevisionVersionId
+      //var instane = new TalonOne.Effect();
+      //expect(instance).to.be();
+    });
+
     it('should have the property props (base name: "props")', function() {
       // uncomment below and update the code to test the property props
       //var instane = new TalonOne.Effect();

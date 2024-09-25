@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**policy** | [**Object**](.md) |  | 
+**policy** | [**Object**](.md) | Indicates which notification properties to apply. | 
 **enabled** | **Boolean** | Indicates whether the notification is activated. | [optional] [default to true]
 **webhook** | [**BaseNotificationWebhook**](BaseNotificationWebhook.md) |  | 
 **id** | **Number** | Unique ID for this entity. | 
@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 * `campaign` (value: `"campaign"`)
 
 * `loyalty_added_deducted_points` (value: `"loyalty_added_deducted_points"`)
+
+* `card_added_deducted_points` (value: `"card_added_deducted_points"`)
 
 * `coupon` (value: `"coupon"`)
 

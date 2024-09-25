@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property newAcsUrl (base name: "newAcsUrl")', function() {
+      // uncomment below and update the code to test the property newAcsUrl
+      //var instane = new TalonOne.SSOConfig();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

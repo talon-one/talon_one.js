@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwardGiveawayEffectProps model module.
  * @module model/AwardGiveawayEffectProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class AwardGiveawayEffectProps {
     /**

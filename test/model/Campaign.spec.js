@@ -300,6 +300,48 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storesImported (base name: "storesImported")', function() {
+      // uncomment below and update the code to test the property storesImported
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property activeRevisionId (base name: "activeRevisionId")', function() {
+      // uncomment below and update the code to test the property activeRevisionId
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property activeRevisionVersionId (base name: "activeRevisionVersionId")', function() {
+      // uncomment below and update the code to test the property activeRevisionVersionId
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property version (base name: "version")', function() {
+      // uncomment below and update the code to test the property version
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property currentRevisionId (base name: "currentRevisionId")', function() {
+      // uncomment below and update the code to test the property currentRevisionId
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property currentRevisionVersionId (base name: "currentRevisionVersionId")', function() {
+      // uncomment below and update the code to test the property currentRevisionVersionId
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property stageRevision (base name: "stageRevision")', function() {
+      // uncomment below and update the code to test the property stageRevision
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -90,24 +90,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property campaignActiveRulesetId (base name: "campaignActiveRulesetId")', function() {
-      // uncomment below and update the code to test the property campaignActiveRulesetId
-      //var instane = new TalonOne.ApplicationCampaignAnalytics();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property campaignStartTime (base name: "campaignStartTime")', function() {
-      // uncomment below and update the code to test the property campaignStartTime
-      //var instane = new TalonOne.ApplicationCampaignAnalytics();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property campaignEndTime (base name: "campaignEndTime")', function() {
-      // uncomment below and update the code to test the property campaignEndTime
-      //var instane = new TalonOne.ApplicationCampaignAnalytics();
-      //expect(instance).to.be();
-    });
-
     it('should have the property totalRevenue (base name: "totalRevenue")', function() {
       // uncomment below and update the code to test the property totalRevenue
       //var instane = new TalonOne.ApplicationCampaignAnalytics();

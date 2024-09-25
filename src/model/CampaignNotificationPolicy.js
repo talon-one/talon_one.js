@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignNotificationPolicy model module.
  * @module model/CampaignNotificationPolicy
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CampaignNotificationPolicy {
     /**
@@ -52,6 +52,9 @@ class CampaignNotificationPolicy {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('batchingEnabled')) {
+                obj['batchingEnabled'] = ApiClient.convertToType(data['batchingEnabled'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -64,6 +67,13 @@ class CampaignNotificationPolicy {
  * @member {String} name
  */
 CampaignNotificationPolicy.prototype['name'] = undefined;
+
+/**
+ * Indicates whether batching is activated.
+ * @member {Boolean} batchingEnabled
+ * @default true
+ */
+CampaignNotificationPolicy.prototype['batchingEnabled'] = true;
 
 
 

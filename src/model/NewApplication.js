@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewApplication {
     /**
@@ -99,6 +99,9 @@ class NewApplication {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('enableCampaignStateManagement')) {
+                obj['enableCampaignStateManagement'] = ApiClient.convertToType(data['enableCampaignStateManagement'], 'Boolean');
             }
         }
         return obj;
@@ -195,6 +198,12 @@ NewApplication.prototype['defaultDiscountAdditionalCostPerItemScope'] = undefine
  * @member {String} key
  */
 NewApplication.prototype['key'] = undefined;
+
+/**
+ * Indicates whether the campaign staging and revisions feature is enabled for the Application.  **Important:** After this feature is enabled, it cannot be disabled. 
+ * @member {Boolean} enableCampaignStateManagement
+ */
+NewApplication.prototype['enableCampaignStateManagement'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import CampaignBudget from './CampaignBudget';
 /**
  * The AdditionalCampaignProperties model module.
  * @module model/AdditionalCampaignProperties
- * @version 8.0.0
+ * @version 9.0.0
  */
 class AdditionalCampaignProperties {
     /**
@@ -25,10 +25,11 @@ class AdditionalCampaignProperties {
      * @alias module:model/AdditionalCampaignProperties
      * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
      * @param frontendState {module:model/AdditionalCampaignProperties.FrontendStateEnum} A campaign state described exactly as in the Campaign Manager.
+     * @param storesImported {Boolean} Indicates whether the linked stores were imported via a CSV file.
      */
-    constructor(budgets, frontendState) { 
+    constructor(budgets, frontendState, storesImported) { 
         
-        AdditionalCampaignProperties.initialize(this, budgets, frontendState);
+        AdditionalCampaignProperties.initialize(this, budgets, frontendState, storesImported);
     }
 
     /**
@@ -36,9 +37,10 @@ class AdditionalCampaignProperties {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, budgets, frontendState) { 
+    static initialize(obj, budgets, frontendState, storesImported) { 
         obj['budgets'] = budgets;
         obj['frontendState'] = frontendState;
+        obj['storesImported'] = storesImported;
     }
 
     /**
@@ -117,6 +119,9 @@ class AdditionalCampaignProperties {
             }
             if (data.hasOwnProperty('frontendState')) {
                 obj['frontendState'] = ApiClient.convertToType(data['frontendState'], 'String');
+            }
+            if (data.hasOwnProperty('storesImported')) {
+                obj['storesImported'] = ApiClient.convertToType(data['storesImported'], 'Boolean');
             }
         }
         return obj;
@@ -257,6 +262,12 @@ AdditionalCampaignProperties.prototype['templateId'] = undefined;
  */
 AdditionalCampaignProperties.prototype['frontendState'] = undefined;
 
+/**
+ * Indicates whether the linked stores were imported via a CSV file.
+ * @member {Boolean} storesImported
+ */
+AdditionalCampaignProperties.prototype['storesImported'] = undefined;
+
 
 
 
@@ -285,12 +296,6 @@ AdditionalCampaignProperties['FrontendStateEnum'] = {
      * @const
      */
     "running": "running",
-
-    /**
-     * value: "draft"
-     * @const
-     */
-    "draft": "draft",
 
     /**
      * value: "disabled"

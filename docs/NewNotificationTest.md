@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 
 * `loyalty_added_deducted_points` (value: `"loyalty_added_deducted_points"`)
 
+* `card_added_deducted_points` (value: `"card_added_deducted_points"`)
+
 * `coupon` (value: `"coupon"`)
 
 * `expiring_coupons` (value: `"expiring_coupons"`)

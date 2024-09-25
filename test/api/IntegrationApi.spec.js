@@ -128,6 +128,16 @@
         done();
       });
     });
+    describe('generateLoyaltyCard', function() {
+      it('should call generateLoyaltyCard successfully', function(done) {
+        //uncomment below and update the code to test generateLoyaltyCard
+        //instance.generateLoyaltyCard(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCustomerInventory', function() {
       it('should call getCustomerInventory successfully', function(done) {
         //uncomment below and update the code to test getCustomerInventory

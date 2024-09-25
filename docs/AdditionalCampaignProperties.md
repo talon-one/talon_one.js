@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **updatedBy** | **String** | Name of the user who last updated this campaign if available. | [optional] 
 **templateId** | **Number** | The ID of the Campaign Template this Campaign was created from. | [optional] 
 **frontendState** | **String** | A campaign state described exactly as in the Campaign Manager. | 
+**storesImported** | **Boolean** | Indicates whether the linked stores were imported via a CSV file. | 
 
 
 
@@ -37,8 +38,6 @@ Name | Type | Description | Notes
 * `scheduled` (value: `"scheduled"`)
 
 * `running` (value: `"running"`)
-
-* `draft` (value: `"draft"`)
 
 * `disabled` (value: `"disabled"`)
 

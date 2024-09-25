@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewStore model module.
  * @module model/NewStore
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewStore {
     /**

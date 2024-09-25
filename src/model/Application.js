@@ -19,7 +19,7 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Application {
     /**
@@ -123,6 +123,12 @@ class Application {
             }
             if (data.hasOwnProperty('defaultEvaluationGroupId')) {
                 obj['defaultEvaluationGroupId'] = ApiClient.convertToType(data['defaultEvaluationGroupId'], 'Number');
+            }
+            if (data.hasOwnProperty('defaultCartItemFilterId')) {
+                obj['defaultCartItemFilterId'] = ApiClient.convertToType(data['defaultCartItemFilterId'], 'Number');
+            }
+            if (data.hasOwnProperty('enableCampaignStateManagement')) {
+                obj['enableCampaignStateManagement'] = ApiClient.convertToType(data['enableCampaignStateManagement'], 'Boolean');
             }
             if (data.hasOwnProperty('loyaltyPrograms')) {
                 obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
@@ -246,6 +252,18 @@ Application.prototype['defaultDiscountAdditionalCostPerItemScope'] = undefined;
  * @member {Number} defaultEvaluationGroupId
  */
 Application.prototype['defaultEvaluationGroupId'] = undefined;
+
+/**
+ * The ID of the default Cart-Item-Filter for this application.
+ * @member {Number} defaultCartItemFilterId
+ */
+Application.prototype['defaultCartItemFilterId'] = undefined;
+
+/**
+ * Indicates whether the campaign staging and revisions feature is enabled for the Application.  **Important:** After this feature is enabled, it cannot be disabled. 
+ * @member {Boolean} enableCampaignStateManagement
+ */
+Application.prototype['enableCampaignStateManagement'] = undefined;
 
 /**
  * An array containing all the loyalty programs to which this application is subscribed.

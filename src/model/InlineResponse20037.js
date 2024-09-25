@@ -17,7 +17,7 @@ import WebhookWithOutgoingIntegrationDetails from './WebhookWithOutgoingIntegrat
 /**
  * The InlineResponse20037 model module.
  * @module model/InlineResponse20037
- * @version 8.0.0
+ * @version 9.0.0
  */
 class InlineResponse20037 {
     /**

@@ -23,8 +23,6 @@ Name | Type | Description | Notes
 ## Enum: EntityEnum
 
 
-* `Account` (value: `"Account"`)
-
 * `Application` (value: `"Application"`)
 
 * `Campaign` (value: `"Campaign"`)

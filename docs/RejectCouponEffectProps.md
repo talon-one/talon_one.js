@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **conditionIndex** | **Number** | The index of the condition that caused the rejection of the coupon. | [optional] 
 **effectIndex** | **Number** | The index of the effect that caused the rejection of the coupon. | [optional] 
 **details** | **String** | More details about the failure. | [optional] 
+**campaignExclusionReason** | **String** | The reason why the campaign was not applied. | [optional] 
 
 

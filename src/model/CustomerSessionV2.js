@@ -18,7 +18,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CustomerSessionV2 {
     /**
@@ -186,13 +186,13 @@ CustomerSessionV2.prototype['storeIntegrationId'] = undefined;
 CustomerSessionV2.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * Any coupon codes entered.  **Important**: If you [create a coupon budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a coupon code by the time you close it. 
+ * Any coupon codes entered.  **Important - for requests only**:  - If you [create a coupon budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a coupon code by the time you close it. - In requests where `dry=false`, providing an empty array discards any previous coupons. To avoid this, provide `\"couponCodes\": null` or omit the parameter entirely. 
  * @member {Array.<String>} couponCodes
  */
 CustomerSessionV2.prototype['couponCodes'] = undefined;
 
 /**
- * Any referral code entered.  **Important**: If you [create a referral budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a referral code by the time you close it. 
+ * Any referral code entered.  **Important - for requests only**:  - If you [create a referral budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a referral code by the time you close it. - In requests where `dry=false`, providing an empty value discards the previous referral code. To avoid this, provide `\"referralCode\": null` or omit the parameter entirely. 
  * @member {String} referralCode
  */
 CustomerSessionV2.prototype['referralCode'] = undefined;

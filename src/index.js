@@ -40,21 +40,17 @@ import AddToAudienceEffectProps from './model/AddToAudienceEffectProps';
 import AddedDeductedPointsNotificationPolicy from './model/AddedDeductedPointsNotificationPolicy';
 import AdditionalCampaignProperties from './model/AdditionalCampaignProperties';
 import AdditionalCost from './model/AdditionalCost';
+import AnalyticsDataPoint from './model/AnalyticsDataPoint';
+import AnalyticsDataPointWithTrend from './model/AnalyticsDataPointWithTrend';
+import AnalyticsDataPointWithTrendAndInfluencedRate from './model/AnalyticsDataPointWithTrendAndInfluencedRate';
+import AnalyticsDataPointWithTrendAndUplift from './model/AnalyticsDataPointWithTrendAndUplift';
 import Application from './model/Application';
 import ApplicationAPIKey from './model/ApplicationAPIKey';
 import ApplicationAnalyticsDataPoint from './model/ApplicationAnalyticsDataPoint';
-import ApplicationAnalyticsDataPointAvgItemsPerSession from './model/ApplicationAnalyticsDataPointAvgItemsPerSession';
-import ApplicationAnalyticsDataPointAvgSessionValue from './model/ApplicationAnalyticsDataPointAvgSessionValue';
-import ApplicationAnalyticsDataPointSessionsCount from './model/ApplicationAnalyticsDataPointSessionsCount';
-import ApplicationAnalyticsDataPointTotalRevenue from './model/ApplicationAnalyticsDataPointTotalRevenue';
 import ApplicationApiHealth from './model/ApplicationApiHealth';
+import ApplicationCIF from './model/ApplicationCIF';
+import ApplicationCIFExpression from './model/ApplicationCIFExpression';
 import ApplicationCampaignAnalytics from './model/ApplicationCampaignAnalytics';
-import ApplicationCampaignAnalyticsAvgItemsPerSession from './model/ApplicationCampaignAnalyticsAvgItemsPerSession';
-import ApplicationCampaignAnalyticsAvgSessionValue from './model/ApplicationCampaignAnalyticsAvgSessionValue';
-import ApplicationCampaignAnalyticsCouponsCount from './model/ApplicationCampaignAnalyticsCouponsCount';
-import ApplicationCampaignAnalyticsSessionsCount from './model/ApplicationCampaignAnalyticsSessionsCount';
-import ApplicationCampaignAnalyticsTotalDiscounts from './model/ApplicationCampaignAnalyticsTotalDiscounts';
-import ApplicationCampaignAnalyticsTotalRevenue from './model/ApplicationCampaignAnalyticsTotalRevenue';
 import ApplicationCampaignStats from './model/ApplicationCampaignStats';
 import ApplicationCustomer from './model/ApplicationCustomer';
 import ApplicationCustomerEntity from './model/ApplicationCustomerEntity';
@@ -66,6 +62,7 @@ import ApplicationSession from './model/ApplicationSession';
 import ApplicationSessionEntity from './model/ApplicationSessionEntity';
 import ApplicationStoreEntity from './model/ApplicationStoreEntity';
 import AsyncCouponCreationResponse from './model/AsyncCouponCreationResponse';
+import AsyncCouponDeletionJobResponse from './model/AsyncCouponDeletionJobResponse';
 import Attribute from './model/Attribute';
 import AttributesMandatory from './model/AttributesMandatory';
 import AttributesSettings from './model/AttributesSettings';
@@ -91,6 +88,7 @@ import CampaignActivationRequest from './model/CampaignActivationRequest';
 import CampaignAnalytics from './model/CampaignAnalytics';
 import CampaignBudget from './model/CampaignBudget';
 import CampaignCollection from './model/CampaignCollection';
+import CampaignCollectionEditedNotification from './model/CampaignCollectionEditedNotification';
 import CampaignCollectionWithoutPayload from './model/CampaignCollectionWithoutPayload';
 import CampaignCopy from './model/CampaignCopy';
 import CampaignCreatedNotification from './model/CampaignCreatedNotification';
@@ -111,9 +109,12 @@ import CampaignSetBranchNode from './model/CampaignSetBranchNode';
 import CampaignSetLeafNode from './model/CampaignSetLeafNode';
 import CampaignSetNode from './model/CampaignSetNode';
 import CampaignStateChangedNotification from './model/CampaignStateChangedNotification';
+import CampaignStoreBudget from './model/CampaignStoreBudget';
 import CampaignTemplate from './model/CampaignTemplate';
 import CampaignTemplateCollection from './model/CampaignTemplateCollection';
 import CampaignTemplateParams from './model/CampaignTemplateParams';
+import CampaignVersions from './model/CampaignVersions';
+import CardAddedDeductedPointsNotificationPolicy from './model/CardAddedDeductedPointsNotificationPolicy';
 import CardExpiringPointsNotificationPolicy from './model/CardExpiringPointsNotificationPolicy';
 import CardExpiringPointsNotificationTrigger from './model/CardExpiringPointsNotificationTrigger';
 import CardLedgerPointsEntryIntegrationAPI from './model/CardLedgerPointsEntryIntegrationAPI';
@@ -137,6 +138,8 @@ import Coupon from './model/Coupon';
 import CouponConstraints from './model/CouponConstraints';
 import CouponCreatedEffectProps from './model/CouponCreatedEffectProps';
 import CouponCreationJob from './model/CouponCreationJob';
+import CouponDeletionFilters from './model/CouponDeletionFilters';
+import CouponDeletionJob from './model/CouponDeletionJob';
 import CouponLimitConfigs from './model/CouponLimitConfigs';
 import CouponRejectionReason from './model/CouponRejectionReason';
 import CouponReservations from './model/CouponReservations';
@@ -189,6 +192,12 @@ import FeatureFlag from './model/FeatureFlag';
 import FeaturesFeed from './model/FeaturesFeed';
 import FuncArgDef from './model/FuncArgDef';
 import FunctionDef from './model/FunctionDef';
+import GenerateCampaignDescription from './model/GenerateCampaignDescription';
+import GenerateCampaignTags from './model/GenerateCampaignTags';
+import GenerateItemFilterDescription from './model/GenerateItemFilterDescription';
+import GenerateLoyaltyCard from './model/GenerateLoyaltyCard';
+import GenerateRuleTitle from './model/GenerateRuleTitle';
+import GenerateRuleTitleRule from './model/GenerateRuleTitleRule';
 import GetIntegrationCouponRequest from './model/GetIntegrationCouponRequest';
 import Giveaway from './model/Giveaway';
 import GiveawaysPool from './model/GiveawaysPool';
@@ -267,9 +276,13 @@ import LimitCounter from './model/LimitCounter';
 import LoginParams from './model/LoginParams';
 import Loyalty from './model/Loyalty';
 import LoyaltyBalance from './model/LoyaltyBalance';
+import LoyaltyBalanceWithTier from './model/LoyaltyBalanceWithTier';
 import LoyaltyBalances from './model/LoyaltyBalances';
+import LoyaltyBalancesWithTiers from './model/LoyaltyBalancesWithTiers';
 import LoyaltyCard from './model/LoyaltyCard';
 import LoyaltyCardBalances from './model/LoyaltyCardBalances';
+import LoyaltyCardBatch from './model/LoyaltyCardBatch';
+import LoyaltyCardBatchResponse from './model/LoyaltyCardBatchResponse';
 import LoyaltyCardProfileRegistration from './model/LoyaltyCardProfileRegistration';
 import LoyaltyCardRegistration from './model/LoyaltyCardRegistration';
 import LoyaltyDashboardData from './model/LoyaltyDashboardData';
@@ -282,7 +295,6 @@ import LoyaltyProgram from './model/LoyaltyProgram';
 import LoyaltyProgramBalance from './model/LoyaltyProgramBalance';
 import LoyaltyProgramEntity from './model/LoyaltyProgramEntity';
 import LoyaltyProgramLedgers from './model/LoyaltyProgramLedgers';
-import LoyaltyProgramSubledgers from './model/LoyaltyProgramSubledgers';
 import LoyaltyProgramTransaction from './model/LoyaltyProgramTransaction';
 import LoyaltySubLedger from './model/LoyaltySubLedger';
 import LoyaltyTier from './model/LoyaltyTier';
@@ -309,8 +321,11 @@ import MutableEntity from './model/MutableEntity';
 import NewAccount from './model/NewAccount';
 import NewAccountSignUp from './model/NewAccountSignUp';
 import NewAdditionalCost from './model/NewAdditionalCost';
+import NewAppWideCouponDeletionJob from './model/NewAppWideCouponDeletionJob';
 import NewApplication from './model/NewApplication';
 import NewApplicationAPIKey from './model/NewApplicationAPIKey';
+import NewApplicationCIF from './model/NewApplicationCIF';
+import NewApplicationCIFExpression from './model/NewApplicationCIFExpression';
 import NewAttribute from './model/NewAttribute';
 import NewAudience from './model/NewAudience';
 import NewBaseNotification from './model/NewBaseNotification';
@@ -323,6 +338,7 @@ import NewCampaignTemplate from './model/NewCampaignTemplate';
 import NewCatalog from './model/NewCatalog';
 import NewCollection from './model/NewCollection';
 import NewCouponCreationJob from './model/NewCouponCreationJob';
+import NewCouponDeletionJob from './model/NewCouponDeletionJob';
 import NewCoupons from './model/NewCoupons';
 import NewCouponsForMultipleRecipients from './model/NewCouponsForMultipleRecipients';
 import NewCustomEffect from './model/NewCustomEffect';
@@ -349,6 +365,7 @@ import NewPicklist from './model/NewPicklist';
 import NewReferral from './model/NewReferral';
 import NewReferralsForMultipleAdvocates from './model/NewReferralsForMultipleAdvocates';
 import NewReturn from './model/NewReturn';
+import NewRevisionVersion from './model/NewRevisionVersion';
 import NewRole from './model/NewRole';
 import NewRoleV2 from './model/NewRoleV2';
 import NewRuleset from './model/NewRuleset';
@@ -361,6 +378,10 @@ import Notification from './model/Notification';
 import NotificationActivation from './model/NotificationActivation';
 import NotificationListItem from './model/NotificationListItem';
 import NotificationTest from './model/NotificationTest';
+import OktaEvent from './model/OktaEvent';
+import OktaEventPayload from './model/OktaEventPayload';
+import OktaEventPayloadData from './model/OktaEventPayloadData';
+import OktaEventTarget from './model/OktaEventTarget';
 import OneTimeCode from './model/OneTimeCode';
 import OutgoingIntegrationBrazePolicy from './model/OutgoingIntegrationBrazePolicy';
 import OutgoingIntegrationCleverTapPolicy from './model/OutgoingIntegrationCleverTapPolicy';
@@ -378,6 +399,7 @@ import PendingPointsNotificationPolicy from './model/PendingPointsNotificationPo
 import Picklist from './model/Picklist';
 import Product from './model/Product';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
+import ProjectedTier from './model/ProjectedTier';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
 import Referral from './model/Referral';
 import ReferralConstraints from './model/ReferralConstraints';
@@ -392,6 +414,9 @@ import ReopenSessionResponse from './model/ReopenSessionResponse';
 import ReserveCouponEffectProps from './model/ReserveCouponEffectProps';
 import ReturnIntegrationRequest from './model/ReturnIntegrationRequest';
 import ReturnedCartItem from './model/ReturnedCartItem';
+import Revision from './model/Revision';
+import RevisionActivation from './model/RevisionActivation';
+import RevisionVersion from './model/RevisionVersion';
 import Role from './model/Role';
 import RoleAssign from './model/RoleAssign';
 import RoleMembership from './model/RoleMembership';
@@ -405,6 +430,7 @@ import RollbackAddedLoyaltyPointsEffectProps from './model/RollbackAddedLoyaltyP
 import RollbackCouponEffectProps from './model/RollbackCouponEffectProps';
 import RollbackDeductedLoyaltyPointsEffectProps from './model/RollbackDeductedLoyaltyPointsEffectProps';
 import RollbackDiscountEffectProps from './model/RollbackDiscountEffectProps';
+import RollbackIncreasedAchievementProgressEffectProps from './model/RollbackIncreasedAchievementProgressEffectProps';
 import RollbackReferralEffectProps from './model/RollbackReferralEffectProps';
 import Rule from './model/Rule';
 import RuleFailureReason from './model/RuleFailureReason';
@@ -414,6 +440,22 @@ import SamlConnection from './model/SamlConnection';
 import SamlConnectionInternal from './model/SamlConnectionInternal';
 import SamlConnectionMetadata from './model/SamlConnectionMetadata';
 import SamlLoginEndpoint from './model/SamlLoginEndpoint';
+import ScimBaseUser from './model/ScimBaseUser';
+import ScimBaseUserName from './model/ScimBaseUserName';
+import ScimNewUser from './model/ScimNewUser';
+import ScimPatchOperation from './model/ScimPatchOperation';
+import ScimPatchRequest from './model/ScimPatchRequest';
+import ScimResource from './model/ScimResource';
+import ScimResourceTypesListResponse from './model/ScimResourceTypesListResponse';
+import ScimSchemaResource from './model/ScimSchemaResource';
+import ScimSchemasListResponse from './model/ScimSchemasListResponse';
+import ScimServiceProviderConfigResponse from './model/ScimServiceProviderConfigResponse';
+import ScimServiceProviderConfigResponseBulk from './model/ScimServiceProviderConfigResponseBulk';
+import ScimServiceProviderConfigResponseChangePassword from './model/ScimServiceProviderConfigResponseChangePassword';
+import ScimServiceProviderConfigResponseFilter from './model/ScimServiceProviderConfigResponseFilter';
+import ScimServiceProviderConfigResponsePatch from './model/ScimServiceProviderConfigResponsePatch';
+import ScimUser from './model/ScimUser';
+import ScimUsersListResponse from './model/ScimUsersListResponse';
 import Session from './model/Session';
 import SetDiscountEffectProps from './model/SetDiscountEffectProps';
 import SetDiscountPerAdditionalCostEffectProps from './model/SetDiscountPerAdditionalCostEffectProps';
@@ -448,6 +490,7 @@ import UpdateAccount from './model/UpdateAccount';
 import UpdateAchievement from './model/UpdateAchievement';
 import UpdateApplication from './model/UpdateApplication';
 import UpdateApplicationAPIKey from './model/UpdateApplicationAPIKey';
+import UpdateApplicationCIF from './model/UpdateApplicationCIF';
 import UpdateAttributeEffectProps from './model/UpdateAttributeEffectProps';
 import UpdateAudience from './model/UpdateAudience';
 import UpdateCampaign from './model/UpdateCampaign';
@@ -508,7 +551,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 8.0.0
+* @version 9.0.0
 */
 export {
     /**
@@ -680,6 +723,30 @@ export {
     AdditionalCost,
 
     /**
+     * The AnalyticsDataPoint model constructor.
+     * @property {module:model/AnalyticsDataPoint}
+     */
+    AnalyticsDataPoint,
+
+    /**
+     * The AnalyticsDataPointWithTrend model constructor.
+     * @property {module:model/AnalyticsDataPointWithTrend}
+     */
+    AnalyticsDataPointWithTrend,
+
+    /**
+     * The AnalyticsDataPointWithTrendAndInfluencedRate model constructor.
+     * @property {module:model/AnalyticsDataPointWithTrendAndInfluencedRate}
+     */
+    AnalyticsDataPointWithTrendAndInfluencedRate,
+
+    /**
+     * The AnalyticsDataPointWithTrendAndUplift model constructor.
+     * @property {module:model/AnalyticsDataPointWithTrendAndUplift}
+     */
+    AnalyticsDataPointWithTrendAndUplift,
+
+    /**
      * The Application model constructor.
      * @property {module:model/Application}
      */
@@ -698,76 +765,28 @@ export {
     ApplicationAnalyticsDataPoint,
 
     /**
-     * The ApplicationAnalyticsDataPointAvgItemsPerSession model constructor.
-     * @property {module:model/ApplicationAnalyticsDataPointAvgItemsPerSession}
-     */
-    ApplicationAnalyticsDataPointAvgItemsPerSession,
-
-    /**
-     * The ApplicationAnalyticsDataPointAvgSessionValue model constructor.
-     * @property {module:model/ApplicationAnalyticsDataPointAvgSessionValue}
-     */
-    ApplicationAnalyticsDataPointAvgSessionValue,
-
-    /**
-     * The ApplicationAnalyticsDataPointSessionsCount model constructor.
-     * @property {module:model/ApplicationAnalyticsDataPointSessionsCount}
-     */
-    ApplicationAnalyticsDataPointSessionsCount,
-
-    /**
-     * The ApplicationAnalyticsDataPointTotalRevenue model constructor.
-     * @property {module:model/ApplicationAnalyticsDataPointTotalRevenue}
-     */
-    ApplicationAnalyticsDataPointTotalRevenue,
-
-    /**
      * The ApplicationApiHealth model constructor.
      * @property {module:model/ApplicationApiHealth}
      */
     ApplicationApiHealth,
 
     /**
+     * The ApplicationCIF model constructor.
+     * @property {module:model/ApplicationCIF}
+     */
+    ApplicationCIF,
+
+    /**
+     * The ApplicationCIFExpression model constructor.
+     * @property {module:model/ApplicationCIFExpression}
+     */
+    ApplicationCIFExpression,
+
+    /**
      * The ApplicationCampaignAnalytics model constructor.
      * @property {module:model/ApplicationCampaignAnalytics}
      */
     ApplicationCampaignAnalytics,
-
-    /**
-     * The ApplicationCampaignAnalyticsAvgItemsPerSession model constructor.
-     * @property {module:model/ApplicationCampaignAnalyticsAvgItemsPerSession}
-     */
-    ApplicationCampaignAnalyticsAvgItemsPerSession,
-
-    /**
-     * The ApplicationCampaignAnalyticsAvgSessionValue model constructor.
-     * @property {module:model/ApplicationCampaignAnalyticsAvgSessionValue}
-     */
-    ApplicationCampaignAnalyticsAvgSessionValue,
-
-    /**
-     * The ApplicationCampaignAnalyticsCouponsCount model constructor.
-     * @property {module:model/ApplicationCampaignAnalyticsCouponsCount}
-     */
-    ApplicationCampaignAnalyticsCouponsCount,
-
-    /**
-     * The ApplicationCampaignAnalyticsSessionsCount model constructor.
-     * @property {module:model/ApplicationCampaignAnalyticsSessionsCount}
-     */
-    ApplicationCampaignAnalyticsSessionsCount,
-
-    /**
-     * The ApplicationCampaignAnalyticsTotalDiscounts model constructor.
-     * @property {module:model/ApplicationCampaignAnalyticsTotalDiscounts}
-     */
-    ApplicationCampaignAnalyticsTotalDiscounts,
-
-    /**
-     * The ApplicationCampaignAnalyticsTotalRevenue model constructor.
-     * @property {module:model/ApplicationCampaignAnalyticsTotalRevenue}
-     */
-    ApplicationCampaignAnalyticsTotalRevenue,
 
     /**
      * The ApplicationCampaignStats model constructor.
@@ -834,6 +853,12 @@ export {
      * @property {module:model/AsyncCouponCreationResponse}
      */
     AsyncCouponCreationResponse,
+
+    /**
+     * The AsyncCouponDeletionJobResponse model constructor.
+     * @property {module:model/AsyncCouponDeletionJobResponse}
+     */
+    AsyncCouponDeletionJobResponse,
 
     /**
      * The Attribute model constructor.
@@ -986,6 +1011,12 @@ export {
     CampaignCollection,
 
     /**
+     * The CampaignCollectionEditedNotification model constructor.
+     * @property {module:model/CampaignCollectionEditedNotification}
+     */
+    CampaignCollectionEditedNotification,
+
+    /**
      * The CampaignCollectionWithoutPayload model constructor.
      * @property {module:model/CampaignCollectionWithoutPayload}
      */
@@ -1106,6 +1137,12 @@ export {
     CampaignStateChangedNotification,
 
     /**
+     * The CampaignStoreBudget model constructor.
+     * @property {module:model/CampaignStoreBudget}
+     */
+    CampaignStoreBudget,
+
+    /**
      * The CampaignTemplate model constructor.
      * @property {module:model/CampaignTemplate}
      */
@@ -1122,6 +1159,18 @@ export {
      * @property {module:model/CampaignTemplateParams}
      */
     CampaignTemplateParams,
+
+    /**
+     * The CampaignVersions model constructor.
+     * @property {module:model/CampaignVersions}
+     */
+    CampaignVersions,
+
+    /**
+     * The CardAddedDeductedPointsNotificationPolicy model constructor.
+     * @property {module:model/CardAddedDeductedPointsNotificationPolicy}
+     */
+    CardAddedDeductedPointsNotificationPolicy,
 
     /**
      * The CardExpiringPointsNotificationPolicy model constructor.
@@ -1260,6 +1309,18 @@ export {
      * @property {module:model/CouponCreationJob}
      */
     CouponCreationJob,
+
+    /**
+     * The CouponDeletionFilters model constructor.
+     * @property {module:model/CouponDeletionFilters}
+     */
+    CouponDeletionFilters,
+
+    /**
+     * The CouponDeletionJob model constructor.
+     * @property {module:model/CouponDeletionJob}
+     */
+    CouponDeletionJob,
 
     /**
      * The CouponLimitConfigs model constructor.
@@ -1572,6 +1633,42 @@ export {
      * @property {module:model/FunctionDef}
      */
     FunctionDef,
+
+    /**
+     * The GenerateCampaignDescription model constructor.
+     * @property {module:model/GenerateCampaignDescription}
+     */
+    GenerateCampaignDescription,
+
+    /**
+     * The GenerateCampaignTags model constructor.
+     * @property {module:model/GenerateCampaignTags}
+     */
+    GenerateCampaignTags,
+
+    /**
+     * The GenerateItemFilterDescription model constructor.
+     * @property {module:model/GenerateItemFilterDescription}
+     */
+    GenerateItemFilterDescription,
+
+    /**
+     * The GenerateLoyaltyCard model constructor.
+     * @property {module:model/GenerateLoyaltyCard}
+     */
+    GenerateLoyaltyCard,
+
+    /**
+     * The GenerateRuleTitle model constructor.
+     * @property {module:model/GenerateRuleTitle}
+     */
+    GenerateRuleTitle,
+
+    /**
+     * The GenerateRuleTitleRule model constructor.
+     * @property {module:model/GenerateRuleTitleRule}
+     */
+    GenerateRuleTitleRule,
 
     /**
      * The GetIntegrationCouponRequest model constructor.
@@ -2042,10 +2139,22 @@ export {
     LoyaltyBalance,
 
     /**
+     * The LoyaltyBalanceWithTier model constructor.
+     * @property {module:model/LoyaltyBalanceWithTier}
+     */
+    LoyaltyBalanceWithTier,
+
+    /**
      * The LoyaltyBalances model constructor.
      * @property {module:model/LoyaltyBalances}
      */
     LoyaltyBalances,
+
+    /**
+     * The LoyaltyBalancesWithTiers model constructor.
+     * @property {module:model/LoyaltyBalancesWithTiers}
+     */
+    LoyaltyBalancesWithTiers,
 
     /**
      * The LoyaltyCard model constructor.
@@ -2058,6 +2167,18 @@ export {
      * @property {module:model/LoyaltyCardBalances}
      */
     LoyaltyCardBalances,
+
+    /**
+     * The LoyaltyCardBatch model constructor.
+     * @property {module:model/LoyaltyCardBatch}
+     */
+    LoyaltyCardBatch,
+
+    /**
+     * The LoyaltyCardBatchResponse model constructor.
+     * @property {module:model/LoyaltyCardBatchResponse}
+     */
+    LoyaltyCardBatchResponse,
 
     /**
      * The LoyaltyCardProfileRegistration model constructor.
@@ -2130,12 +2251,6 @@ export {
      * @property {module:model/LoyaltyProgramLedgers}
      */
     LoyaltyProgramLedgers,
-
-    /**
-     * The LoyaltyProgramSubledgers model constructor.
-     * @property {module:model/LoyaltyProgramSubledgers}
-     */
-    LoyaltyProgramSubledgers,
 
     /**
      * The LoyaltyProgramTransaction model constructor.
@@ -2294,6 +2409,12 @@ export {
     NewAdditionalCost,
 
     /**
+     * The NewAppWideCouponDeletionJob model constructor.
+     * @property {module:model/NewAppWideCouponDeletionJob}
+     */
+    NewAppWideCouponDeletionJob,
+
+    /**
      * The NewApplication model constructor.
      * @property {module:model/NewApplication}
      */
@@ -2304,6 +2425,18 @@ export {
      * @property {module:model/NewApplicationAPIKey}
      */
     NewApplicationAPIKey,
+
+    /**
+     * The NewApplicationCIF model constructor.
+     * @property {module:model/NewApplicationCIF}
+     */
+    NewApplicationCIF,
+
+    /**
+     * The NewApplicationCIFExpression model constructor.
+     * @property {module:model/NewApplicationCIFExpression}
+     */
+    NewApplicationCIFExpression,
 
     /**
      * The NewAttribute model constructor.
@@ -2376,6 +2509,12 @@ export {
      * @property {module:model/NewCouponCreationJob}
      */
     NewCouponCreationJob,
+
+    /**
+     * The NewCouponDeletionJob model constructor.
+     * @property {module:model/NewCouponDeletionJob}
+     */
+    NewCouponDeletionJob,
 
     /**
      * The NewCoupons model constructor.
@@ -2534,6 +2673,12 @@ export {
     NewReturn,
 
     /**
+     * The NewRevisionVersion model constructor.
+     * @property {module:model/NewRevisionVersion}
+     */
+    NewRevisionVersion,
+
+    /**
      * The NewRole model constructor.
      * @property {module:model/NewRole}
      */
@@ -2604,6 +2749,30 @@ export {
      * @property {module:model/NotificationTest}
      */
     NotificationTest,
+
+    /**
+     * The OktaEvent model constructor.
+     * @property {module:model/OktaEvent}
+     */
+    OktaEvent,
+
+    /**
+     * The OktaEventPayload model constructor.
+     * @property {module:model/OktaEventPayload}
+     */
+    OktaEventPayload,
+
+    /**
+     * The OktaEventPayloadData model constructor.
+     * @property {module:model/OktaEventPayloadData}
+     */
+    OktaEventPayloadData,
+
+    /**
+     * The OktaEventTarget model constructor.
+     * @property {module:model/OktaEventTarget}
+     */
+    OktaEventTarget,
 
     /**
      * The OneTimeCode model constructor.
@@ -2708,6 +2877,12 @@ export {
     ProfileAudiencesChanges,
 
     /**
+     * The ProjectedTier model constructor.
+     * @property {module:model/ProjectedTier}
+     */
+    ProjectedTier,
+
+    /**
      * The RedeemReferralEffectProps model constructor.
      * @property {module:model/RedeemReferralEffectProps}
      */
@@ -2792,6 +2967,24 @@ export {
     ReturnedCartItem,
 
     /**
+     * The Revision model constructor.
+     * @property {module:model/Revision}
+     */
+    Revision,
+
+    /**
+     * The RevisionActivation model constructor.
+     * @property {module:model/RevisionActivation}
+     */
+    RevisionActivation,
+
+    /**
+     * The RevisionVersion model constructor.
+     * @property {module:model/RevisionVersion}
+     */
+    RevisionVersion,
+
+    /**
      * The Role model constructor.
      * @property {module:model/Role}
      */
@@ -2870,6 +3063,12 @@ export {
     RollbackDiscountEffectProps,
 
     /**
+     * The RollbackIncreasedAchievementProgressEffectProps model constructor.
+     * @property {module:model/RollbackIncreasedAchievementProgressEffectProps}
+     */
+    RollbackIncreasedAchievementProgressEffectProps,
+
+    /**
      * The RollbackReferralEffectProps model constructor.
      * @property {module:model/RollbackReferralEffectProps}
      */
@@ -2922,6 +3121,102 @@ export {
      * @property {module:model/SamlLoginEndpoint}
      */
     SamlLoginEndpoint,
+
+    /**
+     * The ScimBaseUser model constructor.
+     * @property {module:model/ScimBaseUser}
+     */
+    ScimBaseUser,
+
+    /**
+     * The ScimBaseUserName model constructor.
+     * @property {module:model/ScimBaseUserName}
+     */
+    ScimBaseUserName,
+
+    /**
+     * The ScimNewUser model constructor.
+     * @property {module:model/ScimNewUser}
+     */
+    ScimNewUser,
+
+    /**
+     * The ScimPatchOperation model constructor.
+     * @property {module:model/ScimPatchOperation}
+     */
+    ScimPatchOperation,
+
+    /**
+     * The ScimPatchRequest model constructor.
+     * @property {module:model/ScimPatchRequest}
+     */
+    ScimPatchRequest,
+
+    /**
+     * The ScimResource model constructor.
+     * @property {module:model/ScimResource}
+     */
+    ScimResource,
+
+    /**
+     * The ScimResourceTypesListResponse model constructor.
+     * @property {module:model/ScimResourceTypesListResponse}
+     */
+    ScimResourceTypesListResponse,
+
+    /**
+     * The ScimSchemaResource model constructor.
+     * @property {module:model/ScimSchemaResource}
+     */
+    ScimSchemaResource,
+
+    /**
+     * The ScimSchemasListResponse model constructor.
+     * @property {module:model/ScimSchemasListResponse}
+     */
+    ScimSchemasListResponse,
+
+    /**
+     * The ScimServiceProviderConfigResponse model constructor.
+     * @property {module:model/ScimServiceProviderConfigResponse}
+     */
+    ScimServiceProviderConfigResponse,
+
+    /**
+     * The ScimServiceProviderConfigResponseBulk model constructor.
+     * @property {module:model/ScimServiceProviderConfigResponseBulk}
+     */
+    ScimServiceProviderConfigResponseBulk,
+
+    /**
+     * The ScimServiceProviderConfigResponseChangePassword model constructor.
+     * @property {module:model/ScimServiceProviderConfigResponseChangePassword}
+     */
+    ScimServiceProviderConfigResponseChangePassword,
+
+    /**
+     * The ScimServiceProviderConfigResponseFilter model constructor.
+     * @property {module:model/ScimServiceProviderConfigResponseFilter}
+     */
+    ScimServiceProviderConfigResponseFilter,
+
+    /**
+     * The ScimServiceProviderConfigResponsePatch model constructor.
+     * @property {module:model/ScimServiceProviderConfigResponsePatch}
+     */
+    ScimServiceProviderConfigResponsePatch,
+
+    /**
+     * The ScimUser model constructor.
+     * @property {module:model/ScimUser}
+     */
+    ScimUser,
+
+    /**
+     * The ScimUsersListResponse model constructor.
+     * @property {module:model/ScimUsersListResponse}
+     */
+    ScimUsersListResponse,
 
     /**
      * The Session model constructor.
@@ -3126,6 +3421,12 @@ export {
      * @property {module:model/UpdateApplicationAPIKey}
      */
     UpdateApplicationAPIKey,
+
+    /**
+     * The UpdateApplicationCIF model constructor.
+     * @property {module:model/UpdateApplicationCIF}
+     */
+    UpdateApplicationCIF,
 
     /**
      * The UpdateAttributeEffectProps model constructor.

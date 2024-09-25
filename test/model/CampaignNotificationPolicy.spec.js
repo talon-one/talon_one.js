@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property batchingEnabled (base name: "batchingEnabled")', function() {
+      // uncomment below and update the code to test the property batchingEnabled
+      //var instane = new TalonOne.CampaignNotificationPolicy();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -18,7 +18,7 @@ import LoyaltyCardProfileRegistration from './LoyaltyCardProfileRegistration';
 /**
  * The LoyaltyCard model module.
  * @module model/LoyaltyCard
- * @version 8.0.0
+ * @version 9.0.0
  */
 class LoyaltyCard {
     /**
@@ -28,7 +28,7 @@ class LoyaltyCard {
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param programID {Number} The ID of the loyalty program that owns this entity.
-     * @param status {String} Status of the loyalty card. Can be one of: ['active', 'inactive'] 
+     * @param status {String} Status of the loyalty card. Can be `active` or `inactive`. 
      * @param identifier {String} The alphanumeric identifier of the loyalty card. 
      * @param usersPerCardLimit {Number} The max amount of customer profiles that can be linked to the card. 0 means unlimited. 
      */
@@ -74,6 +74,9 @@ class LoyaltyCard {
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
+            if (data.hasOwnProperty('blockReason')) {
+                obj['blockReason'] = ApiClient.convertToType(data['blockReason'], 'String');
+            }
             if (data.hasOwnProperty('identifier')) {
                 obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
             }
@@ -97,6 +100,9 @@ class LoyaltyCard {
             }
             if (data.hasOwnProperty('newCardIdentifier')) {
                 obj['newCardIdentifier'] = ApiClient.convertToType(data['newCardIdentifier'], 'String');
+            }
+            if (data.hasOwnProperty('batchId')) {
+                obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
             }
         }
         return obj;
@@ -124,10 +130,16 @@ LoyaltyCard.prototype['created'] = undefined;
 LoyaltyCard.prototype['programID'] = undefined;
 
 /**
- * Status of the loyalty card. Can be one of: ['active', 'inactive'] 
+ * Status of the loyalty card. Can be `active` or `inactive`. 
  * @member {String} status
  */
 LoyaltyCard.prototype['status'] = undefined;
+
+/**
+ * Reason for transferring and blocking the loyalty card. 
+ * @member {String} blockReason
+ */
+LoyaltyCard.prototype['blockReason'] = undefined;
 
 /**
  * The alphanumeric identifier of the loyalty card. 
@@ -175,6 +187,12 @@ LoyaltyCard.prototype['oldCardIdentifier'] = undefined;
  * @member {String} newCardIdentifier
  */
 LoyaltyCard.prototype['newCardIdentifier'] = undefined;
+
+/**
+ * The ID of the batch in which the loyalty card was created.
+ * @member {String} batchId
+ */
+LoyaltyCard.prototype['batchId'] = undefined;
 
 
 

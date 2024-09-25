@@ -17,14 +17,14 @@ import NewNotificationWebhook from './NewNotificationWebhook';
 /**
  * The NewBaseNotification model module.
  * @module model/NewBaseNotification
- * @version 8.0.0
+ * @version 9.0.0
  */
 class NewBaseNotification {
     /**
      * Constructs a new <code>NewBaseNotification</code>.
      * 
      * @alias module:model/NewBaseNotification
-     * @param policy {Object} 
+     * @param policy {Object} Indicates which notification properties to apply.
      * @param webhook {module:model/NewNotificationWebhook} 
      */
     constructor(policy, webhook) { 
@@ -70,6 +70,7 @@ class NewBaseNotification {
 }
 
 /**
+ * Indicates which notification properties to apply.
  * @member {Object} policy
  */
 NewBaseNotification.prototype['policy'] = undefined;

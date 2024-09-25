@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The IntegrationCoupon model module.
  * @module model/IntegrationCoupon
- * @version 8.0.0
+ * @version 9.0.0
  */
 class IntegrationCoupon {
     /**
@@ -188,7 +188,7 @@ IntegrationCoupon.prototype['reservationLimit'] = undefined;
 IntegrationCoupon.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted.
  * @member {Date} expiryDate
  */
 IntegrationCoupon.prototype['expiryDate'] = undefined;

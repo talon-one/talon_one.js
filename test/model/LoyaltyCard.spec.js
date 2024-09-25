@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property blockReason (base name: "blockReason")', function() {
+      // uncomment below and update the code to test the property blockReason
+      //var instane = new TalonOne.LoyaltyCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property identifier (base name: "identifier")', function() {
       // uncomment below and update the code to test the property identifier
       //var instane = new TalonOne.LoyaltyCard();
@@ -122,6 +128,12 @@
 
     it('should have the property newCardIdentifier (base name: "newCardIdentifier")', function() {
       // uncomment below and update the code to test the property newCardIdentifier
+      //var instane = new TalonOne.LoyaltyCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property batchId (base name: "batchId")', function() {
+      // uncomment below and update the code to test the property batchId
       //var instane = new TalonOne.LoyaltyCard();
       //expect(instance).to.be();
     });

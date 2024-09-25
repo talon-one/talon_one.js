@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InventoryReferral model module.
  * @module model/InventoryReferral
- * @version 8.0.0
+ * @version 9.0.0
  */
 class InventoryReferral {
     /**
@@ -132,7 +132,7 @@ InventoryReferral.prototype['created'] = undefined;
 InventoryReferral.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the referral code. Referral never expires if this is omitted, zero, or negative.
+ * Expiration date of the referral code. Referral never expires if this is omitted.
  * @member {Date} expiryDate
  */
 InventoryReferral.prototype['expiryDate'] = undefined;

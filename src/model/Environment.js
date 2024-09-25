@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import AccountAdditionalCost from './AccountAdditionalCost';
 import Achievement from './Achievement';
+import ApplicationCIF from './ApplicationCIF';
 import Attribute from './Attribute';
 import Audience from './Audience';
 import Collection from './Collection';
@@ -26,7 +27,7 @@ import TemplateDef from './TemplateDef';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Environment {
     /**
@@ -113,6 +114,9 @@ class Environment {
             }
             if (data.hasOwnProperty('collections')) {
                 obj['collections'] = ApiClient.convertToType(data['collections'], [Collection]);
+            }
+            if (data.hasOwnProperty('applicationCartItemFilters')) {
+                obj['applicationCartItemFilters'] = ApiClient.convertToType(data['applicationCartItemFilters'], [ApplicationCIF]);
             }
         }
         return obj;
@@ -204,6 +208,12 @@ Environment.prototype['audiences'] = undefined;
  * @member {Array.<module:model/Collection>} collections
  */
 Environment.prototype['collections'] = undefined;
+
+/**
+ * The cart item filters belonging to the Application.
+ * @member {Array.<module:model/ApplicationCIF>} applicationCartItemFilters
+ */
+Environment.prototype['applicationCartItemFilters'] = undefined;
 
 
 

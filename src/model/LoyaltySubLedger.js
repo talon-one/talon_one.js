@@ -18,7 +18,7 @@ import Tier from './Tier';
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 8.0.0
+ * @version 9.0.0
  */
 class LoyaltySubLedger {
     /**

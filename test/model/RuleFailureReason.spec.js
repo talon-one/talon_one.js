@@ -126,6 +126,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property evaluationGroupID (base name: "evaluationGroupID")', function() {
+      // uncomment below and update the code to test the property evaluationGroupID
+      //var instane = new TalonOne.RuleFailureReason();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property evaluationGroupMode (base name: "evaluationGroupMode")', function() {
+      // uncomment below and update the code to test the property evaluationGroupMode
+      //var instane = new TalonOne.RuleFailureReason();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

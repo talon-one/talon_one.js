@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CodeGeneratorSettings model module.
  * @module model/CodeGeneratorSettings
- * @version 8.0.0
+ * @version 9.0.0
  */
 class CodeGeneratorSettings {
     /**
      * Constructs a new <code>CodeGeneratorSettings</code>.
      * @alias module:model/CodeGeneratorSettings
      * @param validCharacters {Array.<String>} List of characters used to generate the random parts of a code. 
-     * @param couponPattern {String} The pattern used to generate coupon codes. The character `#` is a placeholder and is replaced by a random character from the `validCharacters` set. 
+     * @param couponPattern {String} The pattern used to generate codes, such as coupon codes, referral codes, and loyalty cards. The character `#` is a placeholder and is replaced by a random character from the `validCharacters` set. 
      */
     constructor(validCharacters, couponPattern) { 
         
@@ -71,7 +71,7 @@ class CodeGeneratorSettings {
 CodeGeneratorSettings.prototype['validCharacters'] = undefined;
 
 /**
- * The pattern used to generate coupon codes. The character `#` is a placeholder and is replaced by a random character from the `validCharacters` set. 
+ * The pattern used to generate codes, such as coupon codes, referral codes, and loyalty cards. The character `#` is a placeholder and is replaced by a random character from the `validCharacters` set. 
  * @member {String} couponPattern
  */
 CodeGeneratorSettings.prototype['couponPattern'] = undefined;

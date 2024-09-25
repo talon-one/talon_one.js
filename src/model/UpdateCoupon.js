@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 8.0.0
+ * @version 9.0.0
  */
 class UpdateCoupon {
     /**
@@ -111,7 +111,7 @@ UpdateCoupon.prototype['reservationLimit'] = undefined;
 UpdateCoupon.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the coupon. Coupon never expires if this is omitted, zero, or negative.
+ * Expiration date of the coupon. Coupon never expires if this is omitted.
  * @member {Date} expiryDate
  */
 UpdateCoupon.prototype['expiryDate'] = undefined;

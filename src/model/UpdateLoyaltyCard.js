@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLoyaltyCard model module.
  * @module model/UpdateLoyaltyCard
- * @version 8.0.0
+ * @version 9.0.0
  */
 class UpdateLoyaltyCard {
     /**
      * Constructs a new <code>UpdateLoyaltyCard</code>.
      * @alias module:model/UpdateLoyaltyCard
-     * @param status {String} Status of the loyalty card. Can be one of: ['active', 'inactive'] 
+     * @param status {String} Status of the loyalty card. Can be `active` or `inactive`. 
      */
     constructor(status) { 
         
@@ -52,6 +52,9 @@ class UpdateLoyaltyCard {
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
+            if (data.hasOwnProperty('blockReason')) {
+                obj['blockReason'] = ApiClient.convertToType(data['blockReason'], 'String');
+            }
         }
         return obj;
     }
@@ -60,10 +63,16 @@ class UpdateLoyaltyCard {
 }
 
 /**
- * Status of the loyalty card. Can be one of: ['active', 'inactive'] 
+ * Status of the loyalty card. Can be `active` or `inactive`. 
  * @member {String} status
  */
 UpdateLoyaltyCard.prototype['status'] = undefined;
+
+/**
+ * Reason for transferring and blocking the loyalty card. 
+ * @member {String} blockReason
+ */
+UpdateLoyaltyCard.prototype['blockReason'] = undefined;
 
 
 

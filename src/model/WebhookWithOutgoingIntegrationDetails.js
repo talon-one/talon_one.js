@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The WebhookWithOutgoingIntegrationDetails model module.
  * @module model/WebhookWithOutgoingIntegrationDetails
- * @version 8.0.0
+ * @version 9.0.0
  */
 class WebhookWithOutgoingIntegrationDetails {
     /**
@@ -84,6 +84,9 @@ class WebhookWithOutgoingIntegrationDetails {
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('verb')) {
                 obj['verb'] = ApiClient.convertToType(data['verb'], 'String');
             }
@@ -147,6 +150,12 @@ WebhookWithOutgoingIntegrationDetails.prototype['applicationIds'] = undefined;
  * @member {String} title
  */
 WebhookWithOutgoingIntegrationDetails.prototype['title'] = undefined;
+
+/**
+ * A description of the webhook.
+ * @member {String} description
+ */
+WebhookWithOutgoingIntegrationDetails.prototype['description'] = undefined;
 
 /**
  * API method for this webhook.

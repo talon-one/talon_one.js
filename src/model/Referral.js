@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Referral model module.
  * @module model/Referral
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Referral {
     /**
@@ -127,7 +127,7 @@ Referral.prototype['created'] = undefined;
 Referral.prototype['startDate'] = undefined;
 
 /**
- * Expiration date of the referral code. Referral never expires if this is omitted, zero, or negative.
+ * Expiration date of the referral code. Referral never expires if this is omitted.
  * @member {Date} expiryDate
  */
 Referral.prototype['expiryDate'] = undefined;

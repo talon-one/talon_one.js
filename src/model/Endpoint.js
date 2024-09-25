@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Endpoint model module.
  * @module model/Endpoint
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Endpoint {
     /**

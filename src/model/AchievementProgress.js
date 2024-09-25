@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementProgress model module.
  * @module model/AchievementProgress
- * @version 8.0.0
+ * @version 9.0.0
  */
 class AchievementProgress {
     /**
@@ -25,15 +25,16 @@ class AchievementProgress {
      * @param achievementId {Number} The internal ID of the achievement.
      * @param name {String} The internal name of the achievement used in API requests. 
      * @param title {String} The display name of the achievement in the Campaign Manager.
+     * @param description {String} The description of the achievement in the Campaign Manager.
      * @param campaignId {Number} The ID of the campaign the achievement belongs to.
      * @param status {module:model/AchievementProgress.StatusEnum} The status of the achievement.
      * @param progress {Number} The current progress of the customer in the achievement.
      * @param startDate {Date} Timestamp at which the customer started the achievement.
      * @param endDate {Date} Timestamp at which point the achievement ends and resets for the customer.
      */
-    constructor(achievementId, name, title, campaignId, status, progress, startDate, endDate) { 
+    constructor(achievementId, name, title, description, campaignId, status, progress, startDate, endDate) { 
         
-        AchievementProgress.initialize(this, achievementId, name, title, campaignId, status, progress, startDate, endDate);
+        AchievementProgress.initialize(this, achievementId, name, title, description, campaignId, status, progress, startDate, endDate);
     }
 
     /**
@@ -41,10 +42,11 @@ class AchievementProgress {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, achievementId, name, title, campaignId, status, progress, startDate, endDate) { 
+    static initialize(obj, achievementId, name, title, description, campaignId, status, progress, startDate, endDate) { 
         obj['achievementId'] = achievementId;
         obj['name'] = name;
         obj['title'] = title;
+        obj['description'] = description;
         obj['campaignId'] = campaignId;
         obj['status'] = status;
         obj['progress'] = progress;
@@ -71,6 +73,9 @@ class AchievementProgress {
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
@@ -117,6 +122,12 @@ AchievementProgress.prototype['name'] = undefined;
  * @member {String} title
  */
 AchievementProgress.prototype['title'] = undefined;
+
+/**
+ * The description of the achievement in the Campaign Manager.
+ * @member {String} description
+ */
+AchievementProgress.prototype['description'] = undefined;
 
 /**
  * The ID of the campaign the achievement belongs to.

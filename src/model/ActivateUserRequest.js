@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActivateUserRequest model module.
  * @module model/ActivateUserRequest
- * @version 8.0.0
+ * @version 9.0.0
  */
 class ActivateUserRequest {
     /**

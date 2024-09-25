@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Webhook {
     /**
@@ -84,6 +84,9 @@ class Webhook {
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('verb')) {
                 obj['verb'] = ApiClient.convertToType(data['verb'], 'String');
             }
@@ -138,6 +141,12 @@ Webhook.prototype['applicationIds'] = undefined;
  * @member {String} title
  */
 Webhook.prototype['title'] = undefined;
+
+/**
+ * A description of the webhook.
+ * @member {String} description
+ */
+Webhook.prototype['description'] = undefined;
 
 /**
  * API method for this webhook.

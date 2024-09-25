@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleFailureReason model module.
  * @module model/RuleFailureReason
- * @version 8.0.0
+ * @version 9.0.0
  */
 class RuleFailureReason {
     /**
@@ -93,6 +93,12 @@ class RuleFailureReason {
             }
             if (data.hasOwnProperty('details')) {
                 obj['details'] = ApiClient.convertToType(data['details'], 'String');
+            }
+            if (data.hasOwnProperty('evaluationGroupID')) {
+                obj['evaluationGroupID'] = ApiClient.convertToType(data['evaluationGroupID'], 'Number');
+            }
+            if (data.hasOwnProperty('evaluationGroupMode')) {
+                obj['evaluationGroupMode'] = ApiClient.convertToType(data['evaluationGroupMode'], 'String');
             }
         }
         return obj;
@@ -172,6 +178,18 @@ RuleFailureReason.prototype['effectIndex'] = undefined;
  * @member {String} details
  */
 RuleFailureReason.prototype['details'] = undefined;
+
+/**
+ * The ID of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation).
+ * @member {Number} evaluationGroupID
+ */
+RuleFailureReason.prototype['evaluationGroupID'] = undefined;
+
+/**
+ * The evaluation mode of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-
+ * @member {String} evaluationGroupMode
+ */
+RuleFailureReason.prototype['evaluationGroupMode'] = undefined;
 
 
 

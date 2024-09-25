@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(TalonOne.ApplicationCampaignStats);
     });
 
-    it('should have the property draft (base name: "draft")', function() {
-      // uncomment below and update the code to test the property draft
-      //var instane = new TalonOne.ApplicationCampaignStats();
-      //expect(instance).to.be();
-    });
-
     it('should have the property disabled (base name: "disabled")', function() {
       // uncomment below and update the code to test the property disabled
       //var instane = new TalonOne.ApplicationCampaignStats();

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignExclusionReason (base name: "campaignExclusionReason")', function() {
+      // uncomment below and update the code to test the property campaignExclusionReason
+      //var instane = new TalonOne.RejectCouponEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
