@@ -1,0 +1,47 @@
+services:
+  api-service:
+    image: europe-west3-docker.pkg.dev/talon-artifacts/talon-images/talon-service:master
+    depends_on:
+      - database-service
+    ports:
+      - "9000:9000"
+    environment:
+      - TALON_DB_NAME=talon
+      - TALON_DB_USER=talon
+      - TALON_DB_PASSWORD=talon.one.9000
+      - TALON_DB_HOST=database-service
+      - TALON_DB_PORT=5432
+      - TALON_ENABLE_WEBHOOK_WORKER_POOL=false
+      - TZ=UTC
+      - RELEASE_STAGE=ci
+      - TALON_CH_ENABLED=false
+      - TALON_DISABLE_PROFILER=true
+      - USE_REPLICA_DB=false
+    command:
+      - /talon/talon
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/v1/status/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: "on-failure:10"
+
+  database-service:
+    image: docker.io/bitnami/postgresql:15
+    volumes:
+      - 'postgresql_master_data:/bitnami/postgresql'
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRESQL_DATABASE=talon
+      - POSTGRESQL_USERNAME=talon
+      - POSTGRESQL_PASSWORD=talon.one.9000
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U talon -d talon"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: "on-failure:10"
+
+volumes:
+  postgresql_master_data:
