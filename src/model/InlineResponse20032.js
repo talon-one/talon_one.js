@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerProfile from './CustomerProfile';
+import ApplicationReferee from './ApplicationReferee';
 
 /**
  * The InlineResponse20032 model module.
  * @module model/InlineResponse20032
- * @version 9.0.0
+ * @version 10.0.0
  */
 class InlineResponse20032 {
     /**
      * Constructs a new <code>InlineResponse20032</code>.
      * @alias module:model/InlineResponse20032
-     * @param data {Array.<module:model/CustomerProfile>} 
+     * @param data {Array.<module:model/ApplicationReferee>} 
      */
     constructor(data) { 
         
@@ -53,8 +53,11 @@ class InlineResponse20032 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfile]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationReferee]);
             }
         }
         return obj;
@@ -69,7 +72,12 @@ class InlineResponse20032 {
 InlineResponse20032.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/CustomerProfile>} data
+ * @member {Number} totalResultSize
+ */
+InlineResponse20032.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/ApplicationReferee>} data
  */
 InlineResponse20032.prototype['data'] = undefined;
 

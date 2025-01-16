@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The DeactivateUserRequest model module.
  * @module model/DeactivateUserRequest
- * @version 9.0.0
+ * @version 10.0.0
  */
 class DeactivateUserRequest {
     /**
      * Constructs a new <code>DeactivateUserRequest</code>.
-     * 
      * @alias module:model/DeactivateUserRequest
      * @param email {String} The email address associated with the user profile.
      */

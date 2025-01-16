@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateLoyaltyCard model module.
  * @module model/GenerateLoyaltyCard
- * @version 9.0.0
+ * @version 10.0.0
  */
 class GenerateLoyaltyCard {
     /**
@@ -54,6 +54,9 @@ class GenerateLoyaltyCard {
             if (data.hasOwnProperty('customerProfileIds')) {
                 obj['customerProfileIds'] = ApiClient.convertToType(data['customerProfileIds'], ['String']);
             }
+            if (data.hasOwnProperty('cardIdentifier')) {
+                obj['cardIdentifier'] = ApiClient.convertToType(data['cardIdentifier'], 'String');
+            }
         }
         return obj;
     }
@@ -73,6 +76,12 @@ GenerateLoyaltyCard.prototype['status'] = 'active';
  * @member {Array.<String>} customerProfileIds
  */
 GenerateLoyaltyCard.prototype['customerProfileIds'] = undefined;
+
+/**
+ * The alphanumeric identifier of the loyalty card. 
+ * @member {String} cardIdentifier
+ */
+GenerateLoyaltyCard.prototype['cardIdentifier'] = undefined;
 
 
 

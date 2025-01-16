@@ -17,15 +17,14 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ApplicationSession {
     /**
      * Constructs a new <code>ApplicationSession</code>.
-     * 
      * @alias module:model/ApplicationSession
      * @param id {Number} Internal ID of this entity.
-     * @param created {Date} The time this entity was created. The time this entity was created.
+     * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param coupon {String} Any coupon code entered.
@@ -130,7 +129,7 @@ class ApplicationSession {
 ApplicationSession.prototype['id'] = undefined;
 
 /**
- * The time this entity was created. The time this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 ApplicationSession.prototype['created'] = undefined;

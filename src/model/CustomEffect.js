@@ -17,12 +17,11 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The CustomEffect model module.
  * @module model/CustomEffect
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CustomEffect {
     /**
      * Constructs a new <code>CustomEffect</code>.
-     * 
      * @alias module:model/CustomEffect
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

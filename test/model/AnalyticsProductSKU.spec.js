@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.DeleteUserRequest();
+    instance = new TalonOne.AnalyticsProductSKU();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,28 @@
       object[property] = value;
   }
 
-  describe('DeleteUserRequest', function() {
-    it('should create an instance of DeleteUserRequest', function() {
-      // uncomment below and update the code to test DeleteUserRequest
-      //var instane = new TalonOne.DeleteUserRequest();
-      //expect(instance).to.be.a(TalonOne.DeleteUserRequest);
+  describe('AnalyticsProductSKU', function() {
+    it('should create an instance of AnalyticsProductSKU', function() {
+      // uncomment below and update the code to test AnalyticsProductSKU
+      //var instane = new TalonOne.AnalyticsProductSKU();
+      //expect(instance).to.be.a(TalonOne.AnalyticsProductSKU);
     });
 
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instane = new TalonOne.DeleteUserRequest();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new TalonOne.AnalyticsProductSKU();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sku (base name: "sku")', function() {
+      // uncomment below and update the code to test the property sku
+      //var instane = new TalonOne.AnalyticsProductSKU();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastUpdated (base name: "lastUpdated")', function() {
+      // uncomment below and update the code to test the property lastUpdated
+      //var instane = new TalonOne.AnalyticsProductSKU();
       //expect(instance).to.be();
     });
 

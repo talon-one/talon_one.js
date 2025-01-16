@@ -18,12 +18,11 @@ import Rule from './Rule';
 /**
  * The Ruleset model module.
  * @module model/Ruleset
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Ruleset {
     /**
      * Constructs a new <code>Ruleset</code>.
-     * 
      * @alias module:model/Ruleset
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

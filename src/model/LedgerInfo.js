@@ -17,18 +17,18 @@ import Tier from './Tier';
 /**
  * The LedgerInfo model module.
  * @module model/LedgerInfo
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LedgerInfo {
     /**
      * Constructs a new <code>LedgerInfo</code>.
-     * 
+     * The balance in a Loyalty Program for some Customer.
      * @alias module:model/LedgerInfo
      * @param currentBalance {Number} Sum of currently active points.
      * @param pendingBalance {Number} Sum of pending points.
      * @param expiredBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param spentBalance {Number} **DEPRECATED** Value is shown as 0. 
-     * @param tentativeCurrentBalance {Number} Sum of the tentative active points (including additions and deductions) inside the currently open session. The `currentBalance` is updated to this value when you close the session, and the effects are applied.
+     * @param tentativeCurrentBalance {Number} The tentative points balance, reflecting the `currentBalance` and all point additions and deductions within the current open customer session. When the session is closed, the effects are applied and the `currentBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
      */
     constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
@@ -115,13 +115,13 @@ LedgerInfo.prototype['expiredBalance'] = undefined;
 LedgerInfo.prototype['spentBalance'] = undefined;
 
 /**
- * Sum of the tentative active points (including additions and deductions) inside the currently open session. The `currentBalance` is updated to this value when you close the session, and the effects are applied.
+ * The tentative points balance, reflecting the `currentBalance` and all point additions and deductions within the current open customer session. When the session is closed, the effects are applied and the `currentBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
  * @member {Number} tentativeCurrentBalance
  */
 LedgerInfo.prototype['tentativeCurrentBalance'] = undefined;
 
 /**
- * Sum of pending points (including additions and deductions) inside the currently open session. The `pendingBalance` is updated to this value when you close the session, and the effects are applied.
+ * The tentative points balance, reflecting the `pendingBalance` and all point additions with a future activation date within the current open customer session. When the session is closed, the effects are applied and the `pendingBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
  * @member {Number} tentativePendingBalance
  */
 LedgerInfo.prototype['tentativePendingBalance'] = undefined;

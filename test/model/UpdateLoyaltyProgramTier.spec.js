@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.UpdateCustomEffect();
+    instance = new TalonOne.UpdateLoyaltyProgramTier();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,58 +47,28 @@
       object[property] = value;
   }
 
-  describe('UpdateCustomEffect', function() {
-    it('should create an instance of UpdateCustomEffect', function() {
-      // uncomment below and update the code to test UpdateCustomEffect
-      //var instane = new TalonOne.UpdateCustomEffect();
-      //expect(instance).to.be.a(TalonOne.UpdateCustomEffect);
+  describe('UpdateLoyaltyProgramTier', function() {
+    it('should create an instance of UpdateLoyaltyProgramTier', function() {
+      // uncomment below and update the code to test UpdateLoyaltyProgramTier
+      //var instane = new TalonOne.UpdateLoyaltyProgramTier();
+      //expect(instance).to.be.a(TalonOne.UpdateLoyaltyProgramTier);
     });
 
-    it('should have the property applicationIds (base name: "applicationIds")', function() {
-      // uncomment below and update the code to test the property applicationIds
-      //var instane = new TalonOne.UpdateCustomEffect();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isPerItem (base name: "isPerItem")', function() {
-      // uncomment below and update the code to test the property isPerItem
-      //var instane = new TalonOne.UpdateCustomEffect();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new TalonOne.UpdateLoyaltyProgramTier();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new TalonOne.UpdateCustomEffect();
+      //var instane = new TalonOne.UpdateLoyaltyProgramTier();
       //expect(instance).to.be();
     });
 
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
-      //var instane = new TalonOne.UpdateCustomEffect();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property payload (base name: "payload")', function() {
-      // uncomment below and update the code to test the property payload
-      //var instane = new TalonOne.UpdateCustomEffect();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new TalonOne.UpdateCustomEffect();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property enabled (base name: "enabled")', function() {
-      // uncomment below and update the code to test the property enabled
-      //var instane = new TalonOne.UpdateCustomEffect();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property params (base name: "params")', function() {
-      // uncomment below and update the code to test the property params
-      //var instane = new TalonOne.UpdateCustomEffect();
+    it('should have the property minPoints (base name: "minPoints")', function() {
+      // uncomment below and update the code to test the property minPoints
+      //var instane = new TalonOne.UpdateLoyaltyProgramTier();
       //expect(instance).to.be();
     });
 

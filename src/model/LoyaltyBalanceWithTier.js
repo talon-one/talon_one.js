@@ -18,12 +18,12 @@ import Tier from './Tier';
 /**
  * The LoyaltyBalanceWithTier model module.
  * @module model/LoyaltyBalanceWithTier
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyBalanceWithTier {
     /**
      * Constructs a new <code>LoyaltyBalanceWithTier</code>.
-     * 
+     * Point balance of a ledger in the Loyalty Program.
      * @alias module:model/LoyaltyBalanceWithTier
      */
     constructor() { 

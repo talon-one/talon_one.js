@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Audience model module.
  * @module model/Audience
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Audience {
     /**
      * Constructs a new <code>Audience</code>.
-     * 
      * @alias module:model/Audience
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param id {Number} Internal ID of this entity.

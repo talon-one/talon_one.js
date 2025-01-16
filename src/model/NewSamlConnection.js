@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The NewSamlConnection model module.
  * @module model/NewSamlConnection
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewSamlConnection {
     /**
      * Constructs a new <code>NewSamlConnection</code>.
-     * 
+     * A new SAML 2.0 connection.
      * @alias module:model/NewSamlConnection
      * @param x509certificate {String} X.509 Certificate.
      * @param accountId {Number} The ID of the account that owns this entity.

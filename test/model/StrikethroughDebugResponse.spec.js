@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.InlineResponse20047();
+    instance = new TalonOne.StrikethroughDebugResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,22 @@
       object[property] = value;
   }
 
-  describe('InlineResponse20047', function() {
-    it('should create an instance of InlineResponse20047', function() {
-      // uncomment below and update the code to test InlineResponse20047
-      //var instane = new TalonOne.InlineResponse20047();
-      //expect(instance).to.be.a(TalonOne.InlineResponse20047);
+  describe('StrikethroughDebugResponse', function() {
+    it('should create an instance of StrikethroughDebugResponse', function() {
+      // uncomment below and update the code to test StrikethroughDebugResponse
+      //var instane = new TalonOne.StrikethroughDebugResponse();
+      //expect(instance).to.be.a(TalonOne.StrikethroughDebugResponse);
     });
 
-    it('should have the property hasMore (base name: "hasMore")', function() {
-      // uncomment below and update the code to test the property hasMore
-      //var instane = new TalonOne.InlineResponse20047();
+    it('should have the property campaignsIDs (base name: "campaignsIDs")', function() {
+      // uncomment below and update the code to test the property campaignsIDs
+      //var instane = new TalonOne.StrikethroughDebugResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property data (base name: "data")', function() {
-      // uncomment below and update the code to test the property data
-      //var instane = new TalonOne.InlineResponse20047();
+    it('should have the property effects (base name: "effects")', function() {
+      // uncomment below and update the code to test the property effects
+      //var instane = new TalonOne.StrikethroughDebugResponse();
       //expect(instance).to.be();
     });
 

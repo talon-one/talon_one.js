@@ -18,7 +18,7 @@ import Effect from './Effect';
 /**
  * The IntegrationCustomerSessionResponse model module.
  * @module model/IntegrationCustomerSessionResponse
- * @version 9.0.0
+ * @version 10.0.0
  */
 class IntegrationCustomerSessionResponse {
     /**
@@ -68,6 +68,7 @@ class IntegrationCustomerSessionResponse {
 IntegrationCustomerSessionResponse.prototype['customerSession'] = undefined;
 
 /**
+ * The returned effects.  **Note:** This endpoint returns only the effects that are valid after any rollback effects and their corresponding non-rollback effects are removed. 
  * @member {Array.<module:model/Effect>} effects
  */
 IntegrationCustomerSessionResponse.prototype['effects'] = undefined;

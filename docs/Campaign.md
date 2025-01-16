@@ -44,8 +44,9 @@ Name | Type | Description | Notes
 **createdBy** | **String** | Name of the user who created this campaign if available. | [optional] 
 **updatedBy** | **String** | Name of the user who last updated this campaign if available. | [optional] 
 **templateId** | **Number** | The ID of the Campaign Template this Campaign was created from. | [optional] 
-**frontendState** | **String** | A campaign state described exactly as in the Campaign Manager. | 
+**frontendState** | **String** | The campaign state displayed in the Campaign Manager. | 
 **storesImported** | **Boolean** | Indicates whether the linked stores were imported via a CSV file. | 
+**revisionFrontendState** | **String** | The campaign revision state displayed in the Campaign Manager. | [optional] 
 **activeRevisionId** | **Number** | ID of the revision that was last activated on this campaign.  | [optional] 
 **activeRevisionVersionId** | **Number** | ID of the revision version that is active on the campaign.  | [optional] 
 **version** | **Number** | Incrementing number representing how many revisions have been activated on this campaign, starts from 0 for a new campaign.  | [optional] 
@@ -110,6 +111,19 @@ Name | Type | Description | Notes
 * `disabled` (value: `"disabled"`)
 
 * `archived` (value: `"archived"`)
+
+* `staged` (value: `"staged"`)
+
+
+
+
+
+## Enum: RevisionFrontendStateEnum
+
+
+* `revised` (value: `"revised"`)
+
+* `pending` (value: `"pending"`)
 
 
 

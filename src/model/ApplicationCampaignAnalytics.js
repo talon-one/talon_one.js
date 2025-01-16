@@ -19,7 +19,7 @@ import AnalyticsDataPointWithTrendAndUplift from './AnalyticsDataPointWithTrendA
 /**
  * The ApplicationCampaignAnalytics model module.
  * @module model/ApplicationCampaignAnalytics
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ApplicationCampaignAnalytics {
     /**
@@ -210,7 +210,13 @@ ApplicationCampaignAnalytics['CampaignStateEnum'] = {
      * value: "archived"
      * @const
      */
-    "archived": "archived"
+    "archived": "archived",
+
+    /**
+     * value: "staged"
+     * @const
+     */
+    "staged": "staged"
 };
 
 

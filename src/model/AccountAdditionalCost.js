@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountAdditionalCost model module.
  * @module model/AccountAdditionalCost
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AccountAdditionalCost {
     /**
      * Constructs a new <code>AccountAdditionalCost</code>.
-     * 
      * @alias module:model/AccountAdditionalCost
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

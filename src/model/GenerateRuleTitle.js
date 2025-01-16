@@ -17,7 +17,7 @@ import GenerateRuleTitleRule from './GenerateRuleTitleRule';
 /**
  * The GenerateRuleTitle model module.
  * @module model/GenerateRuleTitle
- * @version 9.0.0
+ * @version 10.0.0
  */
 class GenerateRuleTitle {
     /**

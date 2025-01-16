@@ -17,12 +17,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The CampaignStoreBudget model module.
  * @module model/CampaignStoreBudget
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CampaignStoreBudget {
     /**
      * Constructs a new <code>CampaignStoreBudget</code>.
-     * 
      * @alias module:model/CampaignStoreBudget
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

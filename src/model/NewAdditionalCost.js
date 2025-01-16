@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAdditionalCost model module.
  * @module model/NewAdditionalCost
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewAdditionalCost {
     /**
      * Constructs a new <code>NewAdditionalCost</code>.
-     * 
      * @alias module:model/NewAdditionalCost
      * @param name {String} The internal name used in API requests.
      * @param title {String} The human-readable name for the additional cost that will be shown in the Campaign Manager. Like `name`, the combination of entity and title must also be unique.

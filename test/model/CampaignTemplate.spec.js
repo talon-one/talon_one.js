@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property couponReservationSettings (base name: "couponReservationSettings")', function() {
+      // uncomment below and update the code to test the property couponReservationSettings
+      //var instane = new TalonOne.CampaignTemplate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property referralSettings (base name: "referralSettings")', function() {
       // uncomment below and update the code to test the property referralSettings
       //var instane = new TalonOne.CampaignTemplate();

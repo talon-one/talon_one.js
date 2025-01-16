@@ -27,12 +27,11 @@ import TemplateDef from './TemplateDef';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Environment {
     /**
      * Constructs a new <code>Environment</code>.
-     * 
      * @alias module:model/Environment
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

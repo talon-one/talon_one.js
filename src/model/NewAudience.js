@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAudience model module.
  * @module model/NewAudience
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewAudience {
     /**
      * Constructs a new <code>NewAudience</code>.
-     * 
      * @alias module:model/NewAudience
      * @param name {String} The human-friendly display name for this audience.
      */

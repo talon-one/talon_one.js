@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cardIdentifier (base name: "cardIdentifier")', function() {
+      // uncomment below and update the code to test the property cardIdentifier
+      //var instane = new TalonOne.GenerateLoyaltyCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

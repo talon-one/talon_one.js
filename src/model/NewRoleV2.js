@@ -17,12 +17,11 @@ import RoleV2Permissions from './RoleV2Permissions';
 /**
  * The NewRoleV2 model module.
  * @module model/NewRoleV2
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewRoleV2 {
     /**
      * Constructs a new <code>NewRoleV2</code>.
-     * 
      * @alias module:model/NewRoleV2
      * @param name {String} Name of the role.
      * @param description {String} Description of the role.

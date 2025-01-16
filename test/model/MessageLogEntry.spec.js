@@ -84,6 +84,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property webhookId (base name: "webhookId")', function() {
+      // uncomment below and update the code to test the property webhookId
+      //var instane = new TalonOne.MessageLogEntry();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property webhookName (base name: "webhookName")', function() {
+      // uncomment below and update the code to test the property webhookName
+      //var instane = new TalonOne.MessageLogEntry();
+      //expect(instance).to.be();
+    });
+
     it('should have the property request (base name: "request")', function() {
       // uncomment below and update the code to test the property request
       //var instane = new TalonOne.MessageLogEntry();
@@ -108,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instane = new TalonOne.MessageLogEntry();
+      //expect(instance).to.be();
+    });
+
     it('should have the property applicationId (base name: "applicationId")', function() {
       // uncomment below and update the code to test the property applicationId
       //var instane = new TalonOne.MessageLogEntry();
@@ -116,6 +134,12 @@
 
     it('should have the property loyaltyProgramId (base name: "loyaltyProgramId")', function() {
       // uncomment below and update the code to test the property loyaltyProgramId
+      //var instane = new TalonOne.MessageLogEntry();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property campaignId (base name: "campaignId")', function() {
+      // uncomment below and update the code to test the property campaignId
       //var instane = new TalonOne.MessageLogEntry();
       //expect(instance).to.be();
     });

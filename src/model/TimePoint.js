@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TimePoint model module.
  * @module model/TimePoint
- * @version 9.0.0
+ * @version 10.0.0
  */
 class TimePoint {
     /**

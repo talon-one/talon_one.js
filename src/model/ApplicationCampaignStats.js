@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCampaignStats model module.
  * @module model/ApplicationCampaignStats
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ApplicationCampaignStats {
     /**
@@ -24,14 +24,15 @@ class ApplicationCampaignStats {
      * Provides statistics regarding an application&#39;s campaigns.
      * @alias module:model/ApplicationCampaignStats
      * @param disabled {Number} Number of disabled campaigns.
+     * @param staged {Number} Number of staged campaigns.
      * @param scheduled {Number} Number of scheduled campaigns.
      * @param running {Number} Number of running campaigns.
      * @param expired {Number} Number of expired campaigns.
      * @param archived {Number} Number of archived campaigns.
      */
-    constructor(disabled, scheduled, running, expired, archived) { 
+    constructor(disabled, staged, scheduled, running, expired, archived) { 
         
-        ApplicationCampaignStats.initialize(this, disabled, scheduled, running, expired, archived);
+        ApplicationCampaignStats.initialize(this, disabled, staged, scheduled, running, expired, archived);
     }
 
     /**
@@ -39,8 +40,9 @@ class ApplicationCampaignStats {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, disabled, scheduled, running, expired, archived) { 
+    static initialize(obj, disabled, staged, scheduled, running, expired, archived) { 
         obj['disabled'] = disabled;
+        obj['staged'] = staged;
         obj['scheduled'] = scheduled;
         obj['running'] = running;
         obj['expired'] = expired;
@@ -60,6 +62,9 @@ class ApplicationCampaignStats {
 
             if (data.hasOwnProperty('disabled')) {
                 obj['disabled'] = ApiClient.convertToType(data['disabled'], 'Number');
+            }
+            if (data.hasOwnProperty('staged')) {
+                obj['staged'] = ApiClient.convertToType(data['staged'], 'Number');
             }
             if (data.hasOwnProperty('scheduled')) {
                 obj['scheduled'] = ApiClient.convertToType(data['scheduled'], 'Number');
@@ -85,6 +90,12 @@ class ApplicationCampaignStats {
  * @member {Number} disabled
  */
 ApplicationCampaignStats.prototype['disabled'] = undefined;
+
+/**
+ * Number of staged campaigns.
+ * @member {Number} staged
+ */
+ApplicationCampaignStats.prototype['staged'] = undefined;
 
 /**
  * Number of scheduled campaigns.

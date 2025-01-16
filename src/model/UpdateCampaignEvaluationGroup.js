@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCampaignEvaluationGroup model module.
  * @module model/UpdateCampaignEvaluationGroup
- * @version 9.0.0
+ * @version 10.0.0
  */
 class UpdateCampaignEvaluationGroup {
     /**
      * Constructs a new <code>UpdateCampaignEvaluationGroup</code>.
-     * 
      * @alias module:model/UpdateCampaignEvaluationGroup
      * @param name {String} The name of the campaign evaluation group.
      * @param parentId {Number} The ID of the parent group that contains the campaign evaluation group.

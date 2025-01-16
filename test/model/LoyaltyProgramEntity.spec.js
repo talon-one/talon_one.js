@@ -60,6 +60,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property programName (base name: "programName")', function() {
+      // uncomment below and update the code to test the property programName
+      //var instane = new TalonOne.LoyaltyProgramEntity();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property programTitle (base name: "programTitle")', function() {
+      // uncomment below and update the code to test the property programTitle
+      //var instane = new TalonOne.LoyaltyProgramEntity();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

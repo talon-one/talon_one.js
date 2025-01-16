@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseNotificationWebhook model module.
  * @module model/BaseNotificationWebhook
- * @version 9.0.0
+ * @version 10.0.0
  */
 class BaseNotificationWebhook {
     /**
      * Constructs a new <code>BaseNotificationWebhook</code>.
-     * 
      * @alias module:model/BaseNotificationWebhook
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

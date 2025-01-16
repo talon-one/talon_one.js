@@ -18,12 +18,11 @@ import Product from './Product';
 /**
  * The CatalogItem model module.
  * @module model/CatalogItem
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CatalogItem {
     /**
      * Constructs a new <code>CatalogItem</code>.
-     * 
      * @alias module:model/CatalogItem
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

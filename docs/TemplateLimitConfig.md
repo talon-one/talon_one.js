@@ -37,6 +37,10 @@ Name | Type | Description | Notes
 
 * `Identifier` (value: `"Identifier"`)
 
+* `Store` (value: `"Store"`)
+
+* `Session` (value: `"Session"`)
+
 
 
 

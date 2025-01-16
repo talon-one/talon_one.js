@@ -17,12 +17,11 @@ import BaseNotificationWebhook from './BaseNotificationWebhook';
 /**
  * The BaseNotification model module.
  * @module model/BaseNotification
- * @version 9.0.0
+ * @version 10.0.0
  */
 class BaseNotification {
     /**
      * Constructs a new <code>BaseNotification</code>.
-     * 
      * @alias module:model/BaseNotification
      * @param policy {Object} Indicates which notification properties to apply.
      * @param webhook {module:model/BaseNotificationWebhook} 

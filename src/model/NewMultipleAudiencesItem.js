@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewMultipleAudiencesItem model module.
  * @module model/NewMultipleAudiencesItem
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewMultipleAudiencesItem {
     /**
      * Constructs a new <code>NewMultipleAudiencesItem</code>.
-     * 
      * @alias module:model/NewMultipleAudiencesItem
      * @param name {String} The human-friendly display name for this audience.
      */

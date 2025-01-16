@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The InventoryReferral model module.
  * @module model/InventoryReferral
- * @version 9.0.0
+ * @version 10.0.0
  */
 class InventoryReferral {
     /**
      * Constructs a new <code>InventoryReferral</code>.
-     * 
      * @alias module:model/InventoryReferral
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

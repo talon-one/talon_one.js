@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignGroup model module.
  * @module model/CampaignGroup
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CampaignGroup {
     /**
      * Constructs a new <code>CampaignGroup</code>.
-     * 
      * @alias module:model/CampaignGroup
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

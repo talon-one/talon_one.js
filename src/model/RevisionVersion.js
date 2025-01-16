@@ -18,12 +18,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The RevisionVersion model module.
  * @module model/RevisionVersion
- * @version 9.0.0
+ * @version 10.0.0
  */
 class RevisionVersion {
     /**
      * Constructs a new <code>RevisionVersion</code>.
-     * 
      * @alias module:model/RevisionVersion
      * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param accountId {Number} 

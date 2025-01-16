@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemAttribute model module.
  * @module model/ItemAttribute
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ItemAttribute {
     /**
      * Constructs a new <code>ItemAttribute</code>.
-     * 
      * @alias module:model/ItemAttribute
      * @param attributeid {Number} The ID of the attribute of the item.
      * @param name {String} The name of the attribute.

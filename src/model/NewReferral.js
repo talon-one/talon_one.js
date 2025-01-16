@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewReferral model module.
  * @module model/NewReferral
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewReferral {
     /**
      * Constructs a new <code>NewReferral</code>.
-     * 
      * @alias module:model/NewReferral
      * @param campaignId {Number} ID of the campaign from which the referral received the referral code.
      * @param advocateProfileIntegrationId {String} The Integration ID of the Advocate's Profile.

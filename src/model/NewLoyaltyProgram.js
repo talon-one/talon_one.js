@@ -18,12 +18,12 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewLoyaltyProgram {
     /**
      * Constructs a new <code>NewLoyaltyProgram</code>.
-     * 
+     * A new loyalty program
      * @alias module:model/NewLoyaltyProgram
      * @param title {String} The display title for the Loyalty Program.
      * @param defaultValidity {String} The default duration after which new loyalty points should expire. Can be 'unlimited' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
@@ -107,6 +107,9 @@ class NewLoyaltyProgram {
             }
             if (data.hasOwnProperty('cardCodeSettings')) {
                 obj['cardCodeSettings'] = CodeGeneratorSettings.constructFromObject(data['cardCodeSettings']);
+            }
+            if (data.hasOwnProperty('returnPolicy')) {
+                obj['returnPolicy'] = ApiClient.convertToType(data['returnPolicy'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -209,6 +212,12 @@ NewLoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
  * @member {module:model/CodeGeneratorSettings} cardCodeSettings
  */
 NewLoyaltyProgram.prototype['cardCodeSettings'] = undefined;
+
+/**
+ * The policy that defines the rollback of points in case of a partially returned, cancelled, or reopened [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). - `only_pending`: Only pending points can be rolled back. - `within_balance`: Available active points can be rolled back if there aren't enough pending points. The active balance of the customer cannot be negative. 
+ * @member {module:model/NewLoyaltyProgram.ReturnPolicyEnum} returnPolicy
+ */
+NewLoyaltyProgram.prototype['returnPolicy'] = undefined;
 
 /**
  * The internal name for the Loyalty Program. This is an immutable value.
@@ -317,6 +326,27 @@ NewLoyaltyProgram['TiersDowngradePolicyEnum'] = {
      * @const
      */
     "balance_based": "balance_based"
+};
+
+
+/**
+ * Allowed values for the <code>returnPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewLoyaltyProgram['ReturnPolicyEnum'] = {
+
+    /**
+     * value: "only_pending"
+     * @const
+     */
+    "only_pending": "only_pending",
+
+    /**
+     * value: "within_balance"
+     * @const
+     */
+    "within_balance": "within_balance"
 };
 
 

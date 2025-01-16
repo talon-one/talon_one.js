@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCIF model module.
  * @module model/ApplicationCIF
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ApplicationCIF {
     /**
      * Constructs a new <code>ApplicationCIF</code>.
-     * 
      * @alias module:model/ApplicationCIF
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

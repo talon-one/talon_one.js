@@ -17,14 +17,14 @@ import CampaignBudget from './CampaignBudget';
 /**
  * The AdditionalCampaignProperties model module.
  * @module model/AdditionalCampaignProperties
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AdditionalCampaignProperties {
     /**
      * Constructs a new <code>AdditionalCampaignProperties</code>.
      * @alias module:model/AdditionalCampaignProperties
      * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
-     * @param frontendState {module:model/AdditionalCampaignProperties.FrontendStateEnum} A campaign state described exactly as in the Campaign Manager.
+     * @param frontendState {module:model/AdditionalCampaignProperties.FrontendStateEnum} The campaign state displayed in the Campaign Manager.
      * @param storesImported {Boolean} Indicates whether the linked stores were imported via a CSV file.
      */
     constructor(budgets, frontendState, storesImported) { 
@@ -257,7 +257,7 @@ AdditionalCampaignProperties.prototype['updatedBy'] = undefined;
 AdditionalCampaignProperties.prototype['templateId'] = undefined;
 
 /**
- * A campaign state described exactly as in the Campaign Manager.
+ * The campaign state displayed in the Campaign Manager.
  * @member {module:model/AdditionalCampaignProperties.FrontendStateEnum} frontendState
  */
 AdditionalCampaignProperties.prototype['frontendState'] = undefined;
@@ -307,7 +307,13 @@ AdditionalCampaignProperties['FrontendStateEnum'] = {
      * value: "archived"
      * @const
      */
-    "archived": "archived"
+    "archived": "archived",
+
+    /**
+     * value: "staged"
+     * @const
+     */
+    "staged": "staged"
 };
 
 

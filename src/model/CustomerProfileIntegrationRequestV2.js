@@ -17,12 +17,12 @@ import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**
      * Constructs a new <code>CustomerProfileIntegrationRequestV2</code>.
-     * 
+     * The body of a V2 integration API request (customer profile update). Next to the customer profile details, this contains an optional listing of extra properties that should be returned in the response.
      * @alias module:model/CustomerProfileIntegrationRequestV2
      */
     constructor() { 

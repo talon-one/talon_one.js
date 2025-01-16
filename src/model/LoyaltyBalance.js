@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyBalance model module.
  * @module model/LoyaltyBalance
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyBalance {
     /**

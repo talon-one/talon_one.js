@@ -17,12 +17,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 9.0.0
+ * @version 10.0.0
  */
 class UpdateCoupon {
     /**
      * Constructs a new <code>UpdateCoupon</code>.
-     * 
      * @alias module:model/UpdateCoupon
      */
     constructor() { 

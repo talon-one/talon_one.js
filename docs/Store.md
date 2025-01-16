@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Internal ID of this entity. | 
-**created** | **Date** | The time this entity was created. The time this entity was created. | 
+**created** | **Date** | The time this entity was created. | 
 **name** | **String** | The name of the store. | 
 **description** | **String** | The description of the store. | 
 **attributes** | [**Object**](.md) | The attributes of the store. | [optional] 

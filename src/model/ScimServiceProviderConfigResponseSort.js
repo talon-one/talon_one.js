@@ -12,23 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AchievementProgress from './AchievementProgress';
 
 /**
- * The InlineResponse20047 model module.
- * @module model/InlineResponse20047
- * @version 9.0.0
+ * The ScimServiceProviderConfigResponseSort model module.
+ * @module model/ScimServiceProviderConfigResponseSort
+ * @version 10.0.0
  */
-class InlineResponse20047 {
+class ScimServiceProviderConfigResponseSort {
     /**
-     * Constructs a new <code>InlineResponse20047</code>.
-     * @alias module:model/InlineResponse20047
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/AchievementProgress>} 
+     * Constructs a new <code>ScimServiceProviderConfigResponseSort</code>.
+     * Configuration settings related to sorting SCIM resources in query responses.
+     * @alias module:model/ScimServiceProviderConfigResponseSort
      */
-    constructor(hasMore, data) { 
+    constructor() { 
         
-        InlineResponse20047.initialize(this, hasMore, data);
+        ScimServiceProviderConfigResponseSort.initialize(this);
     }
 
     /**
@@ -36,27 +34,22 @@ class InlineResponse20047 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
-        obj['data'] = data;
+    static initialize(obj) { 
     }
 
     /**
-     * Constructs a <code>InlineResponse20047</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ScimServiceProviderConfigResponseSort</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse20047} obj Optional instance to populate.
-     * @return {module:model/InlineResponse20047} The populated <code>InlineResponse20047</code> instance.
+     * @param {module:model/ScimServiceProviderConfigResponseSort} obj Optional instance to populate.
+     * @return {module:model/ScimServiceProviderConfigResponseSort} The populated <code>ScimServiceProviderConfigResponseSort</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineResponse20047();
+            obj = obj || new ScimServiceProviderConfigResponseSort();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AchievementProgress]);
+            if (data.hasOwnProperty('supported')) {
+                obj['supported'] = ApiClient.convertToType(data['supported'], 'Boolean');
             }
         }
         return obj;
@@ -66,19 +59,15 @@ class InlineResponse20047 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * Indicates whether the service provider supports sorting operations for ordered query results.
+ * @member {Boolean} supported
  */
-InlineResponse20047.prototype['hasMore'] = undefined;
-
-/**
- * @member {Array.<module:model/AchievementProgress>} data
- */
-InlineResponse20047.prototype['data'] = undefined;
+ScimServiceProviderConfigResponseSort.prototype['supported'] = undefined;
 
 
 
 
 
 
-export default InlineResponse20047;
+export default ScimServiceProviderConfigResponseSort;
 

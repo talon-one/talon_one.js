@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCampaignDescription model module.
  * @module model/GenerateCampaignDescription
- * @version 9.0.0
+ * @version 10.0.0
  */
 class GenerateCampaignDescription {
     /**
      * Constructs a new <code>GenerateCampaignDescription</code>.
      * @alias module:model/GenerateCampaignDescription
-     * @param campaignID {Number} ID of the campaign.
+     * @param rulesetID {Number} ID of a ruleset.
      * @param currency {String} Currency for the campaign.
      */
-    constructor(campaignID, currency) { 
+    constructor(rulesetID, currency) { 
         
-        GenerateCampaignDescription.initialize(this, campaignID, currency);
+        GenerateCampaignDescription.initialize(this, rulesetID, currency);
     }
 
     /**
@@ -35,8 +35,8 @@ class GenerateCampaignDescription {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaignID, currency) { 
-        obj['campaignID'] = campaignID;
+    static initialize(obj, rulesetID, currency) { 
+        obj['rulesetID'] = rulesetID;
         obj['currency'] = currency;
     }
 
@@ -51,8 +51,8 @@ class GenerateCampaignDescription {
         if (data) {
             obj = obj || new GenerateCampaignDescription();
 
-            if (data.hasOwnProperty('campaignID')) {
-                obj['campaignID'] = ApiClient.convertToType(data['campaignID'], 'Number');
+            if (data.hasOwnProperty('rulesetID')) {
+                obj['rulesetID'] = ApiClient.convertToType(data['rulesetID'], 'Number');
             }
             if (data.hasOwnProperty('currency')) {
                 obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
@@ -65,10 +65,10 @@ class GenerateCampaignDescription {
 }
 
 /**
- * ID of the campaign.
- * @member {Number} campaignID
+ * ID of a ruleset.
+ * @member {Number} rulesetID
  */
-GenerateCampaignDescription.prototype['campaignID'] = undefined;
+GenerateCampaignDescription.prototype['rulesetID'] = undefined;
 
 /**
  * Currency for the campaign.

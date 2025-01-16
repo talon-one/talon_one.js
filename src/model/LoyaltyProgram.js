@@ -18,14 +18,14 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyProgram {
     /**
      * Constructs a new <code>LoyaltyProgram</code>.
-     * 
+     * A Loyalty Program
      * @alias module:model/LoyaltyProgram
-     * @param id {Number} The ID of loyalty program. Internal ID of this entity.
+     * @param id {Number} The ID of loyalty program.
      * @param created {Date} The time this entity was created.
      * @param title {String} The display title for the Loyalty Program.
      * @param description {String} Description of our Loyalty Program.
@@ -124,6 +124,9 @@ class LoyaltyProgram {
             if (data.hasOwnProperty('cardCodeSettings')) {
                 obj['cardCodeSettings'] = CodeGeneratorSettings.constructFromObject(data['cardCodeSettings']);
             }
+            if (data.hasOwnProperty('returnPolicy')) {
+                obj['returnPolicy'] = ApiClient.convertToType(data['returnPolicy'], 'String');
+            }
             if (data.hasOwnProperty('accountID')) {
                 obj['accountID'] = ApiClient.convertToType(data['accountID'], 'Number');
             }
@@ -162,7 +165,7 @@ class LoyaltyProgram {
 }
 
 /**
- * The ID of loyalty program. Internal ID of this entity.
+ * The ID of loyalty program.
  * @member {Number} id
  */
 LoyaltyProgram.prototype['id'] = undefined;
@@ -255,6 +258,12 @@ LoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
  * @member {module:model/CodeGeneratorSettings} cardCodeSettings
  */
 LoyaltyProgram.prototype['cardCodeSettings'] = undefined;
+
+/**
+ * The policy that defines the rollback of points in case of a partially returned, cancelled, or reopened [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). - `only_pending`: Only pending points can be rolled back. - `within_balance`: Available active points can be rolled back if there aren't enough pending points. The active balance of the customer cannot be negative. 
+ * @member {module:model/LoyaltyProgram.ReturnPolicyEnum} returnPolicy
+ */
+LoyaltyProgram.prototype['returnPolicy'] = undefined;
 
 /**
  * The ID of the Talon.One account that owns this program.
@@ -402,6 +411,27 @@ LoyaltyProgram['TiersDowngradePolicyEnum'] = {
      * @const
      */
     "balance_based": "balance_based"
+};
+
+
+/**
+ * Allowed values for the <code>returnPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoyaltyProgram['ReturnPolicyEnum'] = {
+
+    /**
+     * value: "only_pending"
+     * @const
+     */
+    "only_pending": "only_pending",
+
+    /**
+     * value: "within_balance"
+     * @const
+     */
+    "within_balance": "within_balance"
 };
 
 

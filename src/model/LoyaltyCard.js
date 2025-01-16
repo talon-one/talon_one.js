@@ -18,12 +18,11 @@ import LoyaltyCardProfileRegistration from './LoyaltyCardProfileRegistration';
 /**
  * The LoyaltyCard model module.
  * @module model/LoyaltyCard
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyCard {
     /**
      * Constructs a new <code>LoyaltyCard</code>.
-     * 
      * @alias module:model/LoyaltyCard
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
@@ -70,6 +69,12 @@ class LoyaltyCard {
             }
             if (data.hasOwnProperty('programID')) {
                 obj['programID'] = ApiClient.convertToType(data['programID'], 'Number');
+            }
+            if (data.hasOwnProperty('programName')) {
+                obj['programName'] = ApiClient.convertToType(data['programName'], 'String');
+            }
+            if (data.hasOwnProperty('programTitle')) {
+                obj['programTitle'] = ApiClient.convertToType(data['programTitle'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -128,6 +133,18 @@ LoyaltyCard.prototype['created'] = undefined;
  * @member {Number} programID
  */
 LoyaltyCard.prototype['programID'] = undefined;
+
+/**
+ * The integration name of the loyalty program that owns this entity.
+ * @member {String} programName
+ */
+LoyaltyCard.prototype['programName'] = undefined;
+
+/**
+ * The Campaign Manager-displayed name of the loyalty program that owns this entity.
+ * @member {String} programTitle
+ */
+LoyaltyCard.prototype['programTitle'] = undefined;
 
 /**
  * Status of the loyalty card. Can be `active` or `inactive`. 

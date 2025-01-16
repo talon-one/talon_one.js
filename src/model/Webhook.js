@@ -17,17 +17,16 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Webhook {
     /**
      * Constructs a new <code>Webhook</code>.
-     * 
      * @alias module:model/Webhook
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
-     * @param applicationIds {Array.<Number>} The IDs of the Applications that are related to this entity. The IDs of the Applications that are related to this entity.
+     * @param applicationIds {Array.<Number>} The IDs of the Applications in which this webhook is available. An empty array means the webhook is available in `All Applications`. 
      * @param title {String} Name or title for this webhook.
      * @param verb {module:model/Webhook.VerbEnum} API method for this webhook.
      * @param url {String} API URL (supports templating using parameters) for this webhook.
@@ -131,7 +130,7 @@ Webhook.prototype['created'] = undefined;
 Webhook.prototype['modified'] = undefined;
 
 /**
- * The IDs of the Applications that are related to this entity. The IDs of the Applications that are related to this entity.
+ * The IDs of the Applications in which this webhook is available. An empty array means the webhook is available in `All Applications`. 
  * @member {Array.<Number>} applicationIds
  */
 Webhook.prototype['applicationIds'] = undefined;

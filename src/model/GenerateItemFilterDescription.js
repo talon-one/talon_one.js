@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateItemFilterDescription model module.
  * @module model/GenerateItemFilterDescription
- * @version 9.0.0
+ * @version 10.0.0
  */
 class GenerateItemFilterDescription {
     /**

@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Referral model module.
  * @module model/Referral
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Referral {
     /**
      * Constructs a new <code>Referral</code>.
-     * 
      * @alias module:model/Referral
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

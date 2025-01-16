@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCatalog model module.
  * @module model/NewCatalog
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewCatalog {
     /**
      * Constructs a new <code>NewCatalog</code>.
-     * 
      * @alias module:model/NewCatalog
      * @param name {String} The cart item catalog name.
      * @param description {String} A description of this cart item catalog.

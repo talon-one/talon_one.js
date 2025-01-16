@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelImport model module.
  * @module model/ModelImport
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ModelImport {
     /**
      * Constructs a new <code>ModelImport</code>.
-     * 
      * @alias module:model/ModelImport
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

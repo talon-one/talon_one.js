@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The FeaturesFeed model module.
  * @module model/FeaturesFeed
- * @version 9.0.0
+ * @version 10.0.0
  */
 class FeaturesFeed {
     /**
      * Constructs a new <code>FeaturesFeed</code>.
-     * 
      * @alias module:model/FeaturesFeed
      */
     constructor() { 

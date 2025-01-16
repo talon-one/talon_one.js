@@ -18,22 +18,22 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CustomerSessionV2 {
     /**
      * Constructs a new <code>CustomerSessionV2</code>.
-     * 
+     * The representation of the customer session.
      * @alias module:model/CustomerSessionV2
      * @param id {Number} Internal ID of this entity.
-     * @param created {Date} The time this entity was created. The time this entity was created.
+     * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
      * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
      * @param cartItems {Array.<module:model/CartItem>} The items to add to this session. **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
      * @param attributes {Object} Use this property to set a value for the attributes of your choice. Attributes represent any information to attach to your session, like the shipping city.  You can use [built-in attributes](https://docs.talon.one/docs/dev/concepts/attributes#built-in-attributes) or [custom ones](https://docs.talon.one/docs/dev/concepts/attributes#custom-attributes). Custom attributes must be created in the Campaign Manager before you set them with this property. 
-     * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
+     * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. It's always `true` for anonymous sessions.
      * @param total {Number} The total value of cart items and additional costs in the session, before any discounts are applied.
      * @param cartItemTotal {Number} The total value of cart items, before any discounts are applied.
      * @param additionalCostTotal {Number} The total value of additional costs, before any discounts are applied.
@@ -136,6 +136,9 @@ class CustomerSessionV2 {
             if (data.hasOwnProperty('updated')) {
                 obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
             }
+            if (data.hasOwnProperty('closurePrediction')) {
+                obj['closurePrediction'] = ApiClient.convertToType(data['closurePrediction'], 'Number');
+            }
         }
         return obj;
     }
@@ -150,7 +153,7 @@ class CustomerSessionV2 {
 CustomerSessionV2.prototype['id'] = undefined;
 
 /**
- * The time this entity was created. The time this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 CustomerSessionV2.prototype['created'] = undefined;
@@ -186,13 +189,13 @@ CustomerSessionV2.prototype['storeIntegrationId'] = undefined;
 CustomerSessionV2.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * Any coupon codes entered.  **Important - for requests only**:  - If you [create a coupon budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a coupon code by the time you close it. - In requests where `dry=false`, providing an empty array discards any previous coupons. To avoid this, provide `\"couponCodes\": null` or omit the parameter entirely. 
+ * Any coupon codes entered.  **Important - for requests only**:  - If you [create a coupon budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a coupon code by the time you close it. - In requests where `dry=false`, providing an empty array discards any previous coupons. To avoid this, omit the parameter entirely. 
  * @member {Array.<String>} couponCodes
  */
 CustomerSessionV2.prototype['couponCodes'] = undefined;
 
 /**
- * Any referral code entered.  **Important - for requests only**:  - If you [create a referral budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a referral code by the time you close it. - In requests where `dry=false`, providing an empty value discards the previous referral code. To avoid this, provide `\"referralCode\": null` or omit the parameter entirely. 
+ * Any referral code entered.  **Important - for requests only**:  - If you [create a referral budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a referral code by the time you close it. - In requests where `dry=false`, providing an empty value discards the previous referral code. To avoid this, omit the parameter entirely. 
  * @member {String} referralCode
  */
 CustomerSessionV2.prototype['referralCode'] = undefined;
@@ -223,7 +226,7 @@ CustomerSessionV2.prototype['cartItems'] = undefined;
 CustomerSessionV2.prototype['additionalCosts'] = undefined;
 
 /**
- * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. See the [tutorial](https://docs.talon.one/docs/dev/tutorials/using-identifiers).  **Important**: Ensure the session contains an identifier by the time you close it if: - You [create a unique identifier budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign. - Your campaign has [coupons](https://docs.talon.one/docs/product/campaigns/coupons/coupon-page-overview). 
+ * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. See the [tutorial](https://docs.talon.one/docs/dev/tutorials/using-identifiers).  **Important**: Ensure the session contains an identifier by the time you close it if: - You [create a unique identifier budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign. - Your campaign has [coupons](https://docs.talon.one/docs/product/campaigns/coupons/coupon-page-overview). - We recommend passing an anonymized (hashed) version of the identifier value. 
  * @member {Array.<String>} identifiers
  */
 CustomerSessionV2.prototype['identifiers'] = undefined;
@@ -235,7 +238,7 @@ CustomerSessionV2.prototype['identifiers'] = undefined;
 CustomerSessionV2.prototype['attributes'] = undefined;
 
 /**
- * Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
+ * Indicates whether this is the first session for the customer's profile. It's always `true` for anonymous sessions.
  * @member {Boolean} firstSession
  */
 CustomerSessionV2.prototype['firstSession'] = undefined;
@@ -263,6 +266,12 @@ CustomerSessionV2.prototype['additionalCostTotal'] = undefined;
  * @member {Date} updated
  */
 CustomerSessionV2.prototype['updated'] = undefined;
+
+/**
+ * The likelihood of the customer session closing based on predictive modeling, expressed as a decimal between `0` and `1`.
+ * @member {Number} closurePrediction
+ */
+CustomerSessionV2.prototype['closurePrediction'] = undefined;
 
 
 

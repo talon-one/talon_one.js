@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The AsyncCouponDeletionJobResponse model module.
  * @module model/AsyncCouponDeletionJobResponse
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AsyncCouponDeletionJobResponse {
     /**
      * Constructs a new <code>AsyncCouponDeletionJobResponse</code>.
-     * 
      * @alias module:model/AsyncCouponDeletionJobResponse
      * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      */

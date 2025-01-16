@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignVersions model module.
  * @module model/CampaignVersions
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CampaignVersions {
     /**
@@ -47,6 +47,9 @@ class CampaignVersions {
         if (data) {
             obj = obj || new CampaignVersions();
 
+            if (data.hasOwnProperty('revisionFrontendState')) {
+                obj['revisionFrontendState'] = ApiClient.convertToType(data['revisionFrontendState'], 'String');
+            }
             if (data.hasOwnProperty('activeRevisionId')) {
                 obj['activeRevisionId'] = ApiClient.convertToType(data['activeRevisionId'], 'Number');
             }
@@ -71,6 +74,12 @@ class CampaignVersions {
 
 
 }
+
+/**
+ * The campaign revision state displayed in the Campaign Manager.
+ * @member {module:model/CampaignVersions.RevisionFrontendStateEnum} revisionFrontendState
+ */
+CampaignVersions.prototype['revisionFrontendState'] = undefined;
 
 /**
  * ID of the revision that was last activated on this campaign. 
@@ -111,6 +120,27 @@ CampaignVersions.prototype['stageRevision'] = false;
 
 
 
+
+
+/**
+ * Allowed values for the <code>revisionFrontendState</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CampaignVersions['RevisionFrontendStateEnum'] = {
+
+    /**
+     * value: "revised"
+     * @const
+     */
+    "revised": "revised",
+
+    /**
+     * value: "pending"
+     * @const
+     */
+    "pending": "pending"
+};
 
 
 

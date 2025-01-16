@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Internal ID of this entity. | 
-**created** | **Date** | The time this entity was created. The time this entity was created. | 
+**created** | **Date** | The time this entity was created. | 
 **integrationId** | **String** | The integration ID set by your integration layer. | 
 **storeIntegrationId** | **String** | The integration ID of the store. You choose this ID when you create a store. | [optional] 
 **applicationId** | **Number** | The ID of the application that owns this entity. | 

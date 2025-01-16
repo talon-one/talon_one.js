@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The CollectionWithoutPayload model module.
  * @module model/CollectionWithoutPayload
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CollectionWithoutPayload {
     /**
      * Constructs a new <code>CollectionWithoutPayload</code>.
-     * 
      * @alias module:model/CollectionWithoutPayload
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

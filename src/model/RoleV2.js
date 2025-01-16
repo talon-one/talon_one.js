@@ -17,12 +17,11 @@ import RoleV2Permissions from './RoleV2Permissions';
 /**
  * The RoleV2 model module.
  * @module model/RoleV2
- * @version 9.0.0
+ * @version 10.0.0
  */
 class RoleV2 {
     /**
      * Constructs a new <code>RoleV2</code>.
-     * 
      * @alias module:model/RoleV2
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

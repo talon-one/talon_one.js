@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCampaignCollection model module.
  * @module model/NewCampaignCollection
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewCampaignCollection {
     /**
      * Constructs a new <code>NewCampaignCollection</code>.
-     * 
      * @alias module:model/NewCampaignCollection
      * @param name {String} The name of this collection.
      */

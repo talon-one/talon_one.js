@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property activateAt (base name: "activateAt")', function() {
+      // uncomment below and update the code to test the property activateAt
+      //var instane = new TalonOne.BulkOperationOnCampaigns();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**totalResultSize** | **Number** |  | [optional] 
+**hasMore** | **Boolean** |  | 
 **data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
 
 

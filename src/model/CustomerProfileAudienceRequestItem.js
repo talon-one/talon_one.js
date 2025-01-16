@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerProfileAudienceRequestItem model module.
  * @module model/CustomerProfileAudienceRequestItem
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CustomerProfileAudienceRequestItem {
     /**
      * Constructs a new <code>CustomerProfileAudienceRequestItem</code>.
      * @alias module:model/CustomerProfileAudienceRequestItem
-     * @param action {module:model/CustomerProfileAudienceRequestItem.ActionEnum} Defines the action to perform: - `add`: Adds the customer profile to the audience. If the customer profile does not exist, it will be created. - `delete`: Removes the customer profile from the audience. 
+     * @param action {module:model/CustomerProfileAudienceRequestItem.ActionEnum} Defines the action to perform: - `add`: Adds the customer profile to the audience.    **Note**: If the customer profile does not exist, it will be created. The profile will not be visible in any Application   until a session or profile update is received for that profile. - `delete`: Removes the customer profile from the audience. 
      * @param profileIntegrationId {String} The ID of this customer profile in the third-party integration.
      * @param audienceId {Number} The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
      */
@@ -70,7 +70,7 @@ class CustomerProfileAudienceRequestItem {
 }
 
 /**
- * Defines the action to perform: - `add`: Adds the customer profile to the audience. If the customer profile does not exist, it will be created. - `delete`: Removes the customer profile from the audience. 
+ * Defines the action to perform: - `add`: Adds the customer profile to the audience.    **Note**: If the customer profile does not exist, it will be created. The profile will not be visible in any Application   until a session or profile update is received for that profile. - `delete`: Removes the customer profile from the audience. 
  * @member {module:model/CustomerProfileAudienceRequestItem.ActionEnum} action
  */
 CustomerProfileAudienceRequestItem.prototype['action'] = undefined;

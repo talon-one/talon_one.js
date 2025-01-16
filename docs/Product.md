@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of the product. | 
+**name** | **String** | The product the item belongs to. | 
 
 

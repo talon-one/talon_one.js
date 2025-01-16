@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateLimitConfig model module.
  * @module model/TemplateLimitConfig
- * @version 9.0.0
+ * @version 10.0.0
  */
 class TemplateLimitConfig {
     /**
      * Constructs a new <code>TemplateLimitConfig</code>.
-     * 
      * @alias module:model/TemplateLimitConfig
      * @param action {String} The limitable action to which this limit applies. For example: - `setDiscount` - `setDiscountEffect` - `redeemCoupon` - `createCoupon` 
      * @param limit {Number} The value to set for the limit.
@@ -163,7 +162,19 @@ TemplateLimitConfig['EntitiesEnum'] = {
      * value: "Identifier"
      * @const
      */
-    "Identifier": "Identifier"
+    "Identifier": "Identifier",
+
+    /**
+     * value: "Store"
+     * @const
+     */
+    "Store": "Store",
+
+    /**
+     * value: "Session"
+     * @const
+     */
+    "Session": "Session"
 };
 
 

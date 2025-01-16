@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationReferee model module.
  * @module model/ApplicationReferee
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ApplicationReferee {
     /**
      * Constructs a new <code>ApplicationReferee</code>.
-     * 
      * @alias module:model/ApplicationReferee
      * @param applicationId {Number} The ID of the application that owns this entity.
      * @param sessionId {String} Integration ID of the session in which the customer redeemed the referral.

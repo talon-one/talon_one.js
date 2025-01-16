@@ -16,17 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCampaignTags model module.
  * @module model/GenerateCampaignTags
- * @version 9.0.0
+ * @version 10.0.0
  */
 class GenerateCampaignTags {
     /**
      * Constructs a new <code>GenerateCampaignTags</code>.
      * @alias module:model/GenerateCampaignTags
-     * @param campaignID {Number} ID of the campaign.
+     * @param rulesetID {Number} ID of a ruleset.
      */
-    constructor(campaignID) { 
+    constructor(rulesetID) { 
         
-        GenerateCampaignTags.initialize(this, campaignID);
+        GenerateCampaignTags.initialize(this, rulesetID);
     }
 
     /**
@@ -34,8 +34,8 @@ class GenerateCampaignTags {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaignID) { 
-        obj['campaignID'] = campaignID;
+    static initialize(obj, rulesetID) { 
+        obj['rulesetID'] = rulesetID;
     }
 
     /**
@@ -49,8 +49,8 @@ class GenerateCampaignTags {
         if (data) {
             obj = obj || new GenerateCampaignTags();
 
-            if (data.hasOwnProperty('campaignID')) {
-                obj['campaignID'] = ApiClient.convertToType(data['campaignID'], 'Number');
+            if (data.hasOwnProperty('rulesetID')) {
+                obj['rulesetID'] = ApiClient.convertToType(data['rulesetID'], 'Number');
             }
         }
         return obj;
@@ -60,10 +60,10 @@ class GenerateCampaignTags {
 }
 
 /**
- * ID of the campaign.
- * @member {Number} campaignID
+ * ID of a ruleset.
+ * @member {Number} rulesetID
  */
-GenerateCampaignTags.prototype['campaignID'] = undefined;
+GenerateCampaignTags.prototype['rulesetID'] = undefined;
 
 
 

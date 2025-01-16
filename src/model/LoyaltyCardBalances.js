@@ -18,12 +18,12 @@ import LoyaltyCardProfileRegistration from './LoyaltyCardProfileRegistration';
 /**
  * The LoyaltyCardBalances model module.
  * @module model/LoyaltyCardBalances
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyCardBalances {
     /**
      * Constructs a new <code>LoyaltyCardBalances</code>.
-     * 
+     * List of customer profiles linked to the loyalty card.
      * @alias module:model/LoyaltyCardBalances
      */
     constructor() { 

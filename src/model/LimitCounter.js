@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The LimitCounter model module.
  * @module model/LimitCounter
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LimitCounter {
     /**
      * Constructs a new <code>LimitCounter</code>.
-     * 
      * @alias module:model/LimitCounter
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param applicationId {Number} The ID of the application that owns this entity.

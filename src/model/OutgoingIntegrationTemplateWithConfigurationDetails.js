@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The OutgoingIntegrationTemplateWithConfigurationDetails model module.
  * @module model/OutgoingIntegrationTemplateWithConfigurationDetails
- * @version 9.0.0
+ * @version 10.0.0
  */
 class OutgoingIntegrationTemplateWithConfigurationDetails {
     /**
      * Constructs a new <code>OutgoingIntegrationTemplateWithConfigurationDetails</code>.
-     * 
      * @alias module:model/OutgoingIntegrationTemplateWithConfigurationDetails
      * @param id {Number} Unique ID for this entity.
      * @param integrationType {Number} Unique ID of outgoing integration type.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewApplicationCIFExpression model module.
  * @module model/NewApplicationCIFExpression
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewApplicationCIFExpression {
     /**

@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The TalangAttribute model module.
  * @module model/TalangAttribute
- * @version 9.0.0
+ * @version 10.0.0
  */
 class TalangAttribute {
     /**
      * Constructs a new <code>TalangAttribute</code>.
-     * 
      * @alias module:model/TalangAttribute
      * @param name {String} The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload. 
      * @param type {String} The talang type of the attribute.

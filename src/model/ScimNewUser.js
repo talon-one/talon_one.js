@@ -17,17 +17,18 @@ import ScimBaseUserName from './ScimBaseUserName';
 /**
  * The ScimNewUser model module.
  * @module model/ScimNewUser
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ScimNewUser {
     /**
      * Constructs a new <code>ScimNewUser</code>.
      * Payload for users that are created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID.
      * @alias module:model/ScimNewUser
+     * @param userName {String} Unique identifier of the user. This is usually an email address.
      */
-    constructor() { 
+    constructor(userName) { 
         
-        ScimNewUser.initialize(this);
+        ScimNewUser.initialize(this, userName);
     }
 
     /**
@@ -35,7 +36,8 @@ class ScimNewUser {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, userName) { 
+        obj['userName'] = userName;
     }
 
     /**

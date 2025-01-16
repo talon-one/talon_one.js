@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 9.0.0
+ * @version 10.0.0
  */
 class User {
     /**
      * Constructs a new <code>User</code>.
-     * 
      * @alias module:model/User
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The MultipleCustomerProfileIntegrationRequestItem model module.
  * @module model/MultipleCustomerProfileIntegrationRequestItem
- * @version 9.0.0
+ * @version 10.0.0
  */
 class MultipleCustomerProfileIntegrationRequestItem {
     /**
      * Constructs a new <code>MultipleCustomerProfileIntegrationRequestItem</code>.
-     * 
+     * The body of a V2 integration API request (customer profile update). Next to the customer profile details, this contains an optional listing of extra properties that should be returned in the response. 
      * @alias module:model/MultipleCustomerProfileIntegrationRequestItem
      * @param integrationId {String} The identifier of this profile, set by your integration layer. It must be unique within the account.  To get the `integrationId` of the profile from a `sessionId`, use the [Update customer session](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2). 
      */

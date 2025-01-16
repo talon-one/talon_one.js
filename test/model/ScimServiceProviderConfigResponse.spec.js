@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sort (base name: "sort")', function() {
+      // uncomment below and update the code to test the property sort
+      //var instane = new TalonOne.ScimServiceProviderConfigResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

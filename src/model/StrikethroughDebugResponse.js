@@ -12,22 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import StrikethroughEffect from './StrikethroughEffect';
 
 /**
- * The DeleteUserRequest model module.
- * @module model/DeleteUserRequest
- * @version 9.0.0
+ * The StrikethroughDebugResponse model module.
+ * @module model/StrikethroughDebugResponse
+ * @version 10.0.0
  */
-class DeleteUserRequest {
+class StrikethroughDebugResponse {
     /**
-     * Constructs a new <code>DeleteUserRequest</code>.
-     * 
-     * @alias module:model/DeleteUserRequest
-     * @param email {String} The email address associated with the user profile.
+     * Constructs a new <code>StrikethroughDebugResponse</code>.
+     * @alias module:model/StrikethroughDebugResponse
      */
-    constructor(email) { 
+    constructor() { 
         
-        DeleteUserRequest.initialize(this, email);
+        StrikethroughDebugResponse.initialize(this);
     }
 
     /**
@@ -35,23 +34,25 @@ class DeleteUserRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, email) { 
-        obj['email'] = email;
+    static initialize(obj) { 
     }
 
     /**
-     * Constructs a <code>DeleteUserRequest</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>StrikethroughDebugResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/DeleteUserRequest} obj Optional instance to populate.
-     * @return {module:model/DeleteUserRequest} The populated <code>DeleteUserRequest</code> instance.
+     * @param {module:model/StrikethroughDebugResponse} obj Optional instance to populate.
+     * @return {module:model/StrikethroughDebugResponse} The populated <code>StrikethroughDebugResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new DeleteUserRequest();
+            obj = obj || new StrikethroughDebugResponse();
 
-            if (data.hasOwnProperty('email')) {
-                obj['email'] = ApiClient.convertToType(data['email'], 'String');
+            if (data.hasOwnProperty('campaignsIDs')) {
+                obj['campaignsIDs'] = ApiClient.convertToType(data['campaignsIDs'], ['Number']);
+            }
+            if (data.hasOwnProperty('effects')) {
+                obj['effects'] = ApiClient.convertToType(data['effects'], [StrikethroughEffect]);
             }
         }
         return obj;
@@ -61,15 +62,21 @@ class DeleteUserRequest {
 }
 
 /**
- * The email address associated with the user profile.
- * @member {String} email
+ * The campaign IDs that got fetched for the evaluation process.
+ * @member {Array.<Number>} campaignsIDs
  */
-DeleteUserRequest.prototype['email'] = undefined;
+StrikethroughDebugResponse.prototype['campaignsIDs'] = undefined;
+
+/**
+ * The strikethrough effects that are returned from the evaluation process.
+ * @member {Array.<module:model/StrikethroughEffect>} effects
+ */
+StrikethroughDebugResponse.prototype['effects'] = undefined;
 
 
 
 
 
 
-export default DeleteUserRequest;
+export default StrikethroughDebugResponse;
 

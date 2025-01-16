@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignCollectionWithoutPayload model module.
  * @module model/CampaignCollectionWithoutPayload
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CampaignCollectionWithoutPayload {
     /**
      * Constructs a new <code>CampaignCollectionWithoutPayload</code>.
-     * 
      * @alias module:model/CampaignCollectionWithoutPayload
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaignID** | **Number** | ID of the campaign. | 
+**rulesetID** | **Number** | ID of a ruleset. | 
 
 

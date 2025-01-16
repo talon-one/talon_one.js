@@ -18,15 +18,14 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The AudienceCustomer model module.
  * @module model/AudienceCustomer
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AudienceCustomer {
     /**
      * Constructs a new <code>AudienceCustomer</code>.
-     * 
      * @alias module:model/AudienceCustomer
      * @param id {Number} Internal ID of this entity.
-     * @param created {Date} The time this entity was created. The time this entity was created.
+     * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param attributes {Object} Arbitrary properties associated with this item.
      * @param accountId {Number} The ID of the Talon.One account that owns this profile.
@@ -119,7 +118,7 @@ class AudienceCustomer {
 AudienceCustomer.prototype['id'] = undefined;
 
 /**
- * The time this entity was created. The time this entity was created.
+ * The time this entity was created.
  * @member {Date} created
  */
 AudienceCustomer.prototype['created'] = undefined;

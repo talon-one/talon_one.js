@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewStore model module.
  * @module model/NewStore
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewStore {
     /**
      * Constructs a new <code>NewStore</code>.
-     * 
      * @alias module:model/NewStore
      * @param name {String} The name of the store.
      * @param description {String} The description of the store.

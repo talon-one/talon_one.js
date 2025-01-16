@@ -638,16 +638,6 @@
         done();
       });
     });
-    describe('getAllAccessLogs', function() {
-      it('should call getAllAccessLogs successfully', function(done) {
-        //uncomment below and update the code to test getAllAccessLogs
-        //instance.getAllAccessLogs(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getApplication', function() {
       it('should call getApplication successfully', function(done) {
         //uncomment below and update the code to test getApplication

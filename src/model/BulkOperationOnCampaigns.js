@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BulkOperationOnCampaigns model module.
  * @module model/BulkOperationOnCampaigns
- * @version 9.0.0
+ * @version 10.0.0
  */
 class BulkOperationOnCampaigns {
     /**
@@ -57,6 +57,9 @@ class BulkOperationOnCampaigns {
             if (data.hasOwnProperty('campaignIds')) {
                 obj['campaignIds'] = ApiClient.convertToType(data['campaignIds'], ['Number']);
             }
+            if (data.hasOwnProperty('activateAt')) {
+                obj['activateAt'] = ApiClient.convertToType(data['activateAt'], 'Date');
+            }
         }
         return obj;
     }
@@ -75,6 +78,12 @@ BulkOperationOnCampaigns.prototype['operation'] = undefined;
  * @member {Array.<Number>} campaignIds
  */
 BulkOperationOnCampaigns.prototype['campaignIds'] = undefined;
+
+/**
+ * Timestamp when the revisions are finalized after the `activate_revision` operation. The current time is used when left blank.  **Note:** It must be an RFC3339 timestamp string. 
+ * @member {Date} activateAt
+ */
+BulkOperationOnCampaigns.prototype['activateAt'] = undefined;
 
 
 
@@ -97,7 +106,13 @@ BulkOperationOnCampaigns['OperationEnum'] = {
      * value: "delete"
      * @const
      */
-    "delete": "delete"
+    "delete": "delete",
+
+    /**
+     * value: "activate_revision"
+     * @const
+     */
+    "activate_revision": "activate_revision"
 };
 
 
