@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Catalog model module.
  * @module model/Catalog
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Catalog {
     /**
      * Constructs a new <code>Catalog</code>.
-     * 
      * @alias module:model/Catalog
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

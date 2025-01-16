@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The CollectionItem model module.
  * @module model/CollectionItem
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CollectionItem {
     /**
      * Constructs a new <code>CollectionItem</code>.
-     * 
      * @alias module:model/CollectionItem
      * @param item {String} 
      */

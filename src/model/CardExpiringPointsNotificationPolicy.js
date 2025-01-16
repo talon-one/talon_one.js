@@ -17,7 +17,7 @@ import CardExpiringPointsNotificationTrigger from './CardExpiringPointsNotificat
 /**
  * The CardExpiringPointsNotificationPolicy model module.
  * @module model/CardExpiringPointsNotificationPolicy
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CardExpiringPointsNotificationPolicy {
     /**

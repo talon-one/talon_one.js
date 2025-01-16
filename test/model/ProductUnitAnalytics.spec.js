@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.ActivateUserRequest();
+    instance = new TalonOne.ProductUnitAnalytics();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,40 @@
       object[property] = value;
   }
 
-  describe('ActivateUserRequest', function() {
-    it('should create an instance of ActivateUserRequest', function() {
-      // uncomment below and update the code to test ActivateUserRequest
-      //var instane = new TalonOne.ActivateUserRequest();
-      //expect(instance).to.be.a(TalonOne.ActivateUserRequest);
+  describe('ProductUnitAnalytics', function() {
+    it('should create an instance of ProductUnitAnalytics', function() {
+      // uncomment below and update the code to test ProductUnitAnalytics
+      //var instane = new TalonOne.ProductUnitAnalytics();
+      //expect(instance).to.be.a(TalonOne.ProductUnitAnalytics);
     });
 
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instane = new TalonOne.ActivateUserRequest();
+    it('should have the property startTime (base name: "startTime")', function() {
+      // uncomment below and update the code to test the property startTime
+      //var instane = new TalonOne.ProductUnitAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property endTime (base name: "endTime")', function() {
+      // uncomment below and update the code to test the property endTime
+      //var instane = new TalonOne.ProductUnitAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property purchasedUnits (base name: "purchasedUnits")', function() {
+      // uncomment below and update the code to test the property purchasedUnits
+      //var instane = new TalonOne.ProductUnitAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productId (base name: "productId")', function() {
+      // uncomment below and update the code to test the property productId
+      //var instane = new TalonOne.ProductUnitAnalytics();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productName (base name: "productName")', function() {
+      // uncomment below and update the code to test the property productName
+      //var instane = new TalonOne.ProductUnitAnalytics();
       //expect(instance).to.be();
     });
 

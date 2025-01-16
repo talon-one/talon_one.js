@@ -17,12 +17,11 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CouponCreationJob {
     /**
      * Constructs a new <code>CouponCreationJob</code>.
-     * 
      * @alias module:model/CouponCreationJob
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

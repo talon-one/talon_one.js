@@ -17,12 +17,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewCoupons {
     /**
      * Constructs a new <code>NewCoupons</code>.
-     * 
      * @alias module:model/NewCoupons
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign. Must be at least 1.

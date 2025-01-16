@@ -18,12 +18,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCampaign model module.
  * @module model/NewCampaign
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewCampaign {
     /**
      * Constructs a new <code>NewCampaign</code>.
-     * 
      * @alias module:model/NewCampaign
      * @param name {String} A user-facing name for this campaign.
      * @param state {module:model/NewCampaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 

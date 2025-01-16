@@ -19,12 +19,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Campaign {
     /**
      * Constructs a new <code>Campaign</code>.
-     * 
      * @alias module:model/Campaign
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
@@ -38,7 +37,7 @@ class Campaign {
      * @param limits {Array.<module:model/LimitConfig>} The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets) for this campaign. 
      * @param type {module:model/Campaign.TypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
      * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
-     * @param frontendState {module:model/Campaign.FrontendStateEnum} A campaign state described exactly as in the Campaign Manager.
+     * @param frontendState {module:model/Campaign.FrontendStateEnum} The campaign state displayed in the Campaign Manager.
      * @param storesImported {Boolean} Indicates whether the linked stores were imported via a CSV file.
      */
     constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState, storesImported) { 
@@ -204,6 +203,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('storesImported')) {
                 obj['storesImported'] = ApiClient.convertToType(data['storesImported'], 'Boolean');
+            }
+            if (data.hasOwnProperty('revisionFrontendState')) {
+                obj['revisionFrontendState'] = ApiClient.convertToType(data['revisionFrontendState'], 'String');
             }
             if (data.hasOwnProperty('activeRevisionId')) {
                 obj['activeRevisionId'] = ApiClient.convertToType(data['activeRevisionId'], 'Number');
@@ -471,7 +473,7 @@ Campaign.prototype['updatedBy'] = undefined;
 Campaign.prototype['templateId'] = undefined;
 
 /**
- * A campaign state described exactly as in the Campaign Manager.
+ * The campaign state displayed in the Campaign Manager.
  * @member {module:model/Campaign.FrontendStateEnum} frontendState
  */
 Campaign.prototype['frontendState'] = undefined;
@@ -481,6 +483,12 @@ Campaign.prototype['frontendState'] = undefined;
  * @member {Boolean} storesImported
  */
 Campaign.prototype['storesImported'] = undefined;
+
+/**
+ * The campaign revision state displayed in the Campaign Manager.
+ * @member {module:model/Campaign.RevisionFrontendStateEnum} revisionFrontendState
+ */
+Campaign.prototype['revisionFrontendState'] = undefined;
 
 /**
  * ID of the revision that was last activated on this campaign. 
@@ -651,7 +659,34 @@ Campaign['FrontendStateEnum'] = {
      * value: "archived"
      * @const
      */
-    "archived": "archived"
+    "archived": "archived",
+
+    /**
+     * value: "staged"
+     * @const
+     */
+    "staged": "staged"
+};
+
+
+/**
+ * Allowed values for the <code>revisionFrontendState</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Campaign['RevisionFrontendStateEnum'] = {
+
+    /**
+     * value: "revised"
+     * @const
+     */
+    "revised": "revised",
+
+    /**
+     * value: "pending"
+     * @const
+     */
+    "pending": "pending"
 };
 
 

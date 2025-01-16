@@ -17,12 +17,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The InventoryCoupon model module.
  * @module model/InventoryCoupon
- * @version 9.0.0
+ * @version 10.0.0
  */
 class InventoryCoupon {
     /**
      * Constructs a new <code>InventoryCoupon</code>.
-     * 
      * @alias module:model/InventoryCoupon
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

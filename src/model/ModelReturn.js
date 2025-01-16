@@ -17,12 +17,11 @@ import ReturnedCartItem from './ReturnedCartItem';
 /**
  * The ModelReturn model module.
  * @module model/ModelReturn
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ModelReturn {
     /**
      * Constructs a new <code>ModelReturn</code>.
-     * 
      * @alias module:model/ModelReturn
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

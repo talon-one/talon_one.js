@@ -18,7 +18,7 @@ import MessageLogResponse from './MessageLogResponse';
 /**
  * The MessageLogEntry model module.
  * @module model/MessageLogEntry
- * @version 9.0.0
+ * @version 10.0.0
  */
 class MessageLogEntry {
     /**
@@ -28,10 +28,11 @@ class MessageLogEntry {
      * @param id {String} Unique identifier of the message.
      * @param service {String} Name of the service that generated the log entry.
      * @param createdAt {Date} Timestamp when the log entry was created.
+     * @param entityType {module:model/MessageLogEntry.EntityTypeEnum} The entity type the log is related to. 
      */
-    constructor(id, service, createdAt) { 
+    constructor(id, service, createdAt, entityType) { 
         
-        MessageLogEntry.initialize(this, id, service, createdAt);
+        MessageLogEntry.initialize(this, id, service, createdAt, entityType);
     }
 
     /**
@@ -39,10 +40,11 @@ class MessageLogEntry {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, service, createdAt) { 
+    static initialize(obj, id, service, createdAt, entityType) { 
         obj['id'] = id;
         obj['service'] = service;
         obj['createdAt'] = createdAt;
+        obj['entityType'] = entityType;
     }
 
     /**
@@ -71,6 +73,12 @@ class MessageLogEntry {
             if (data.hasOwnProperty('notificationName')) {
                 obj['notificationName'] = ApiClient.convertToType(data['notificationName'], 'String');
             }
+            if (data.hasOwnProperty('webhookId')) {
+                obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'Number');
+            }
+            if (data.hasOwnProperty('webhookName')) {
+                obj['webhookName'] = ApiClient.convertToType(data['webhookName'], 'String');
+            }
             if (data.hasOwnProperty('request')) {
                 obj['request'] = MessageLogRequest.constructFromObject(data['request']);
             }
@@ -83,11 +91,17 @@ class MessageLogEntry {
             if (data.hasOwnProperty('entityType')) {
                 obj['entityType'] = ApiClient.convertToType(data['entityType'], 'String');
             }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
             }
             if (data.hasOwnProperty('loyaltyProgramId')) {
                 obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignId')) {
+                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
             }
         }
         return obj;
@@ -127,6 +141,18 @@ MessageLogEntry.prototype['notificationId'] = undefined;
 MessageLogEntry.prototype['notificationName'] = undefined;
 
 /**
+ * ID of the webhook.
+ * @member {Number} webhookId
+ */
+MessageLogEntry.prototype['webhookId'] = undefined;
+
+/**
+ * The name of the webhook.
+ * @member {String} webhookName
+ */
+MessageLogEntry.prototype['webhookName'] = undefined;
+
+/**
  * @member {module:model/MessageLogRequest} request
  */
 MessageLogEntry.prototype['request'] = undefined;
@@ -143,10 +169,16 @@ MessageLogEntry.prototype['response'] = undefined;
 MessageLogEntry.prototype['createdAt'] = undefined;
 
 /**
- * The entity type the notification is related to. 
+ * The entity type the log is related to. 
  * @member {module:model/MessageLogEntry.EntityTypeEnum} entityType
  */
 MessageLogEntry.prototype['entityType'] = undefined;
+
+/**
+ * The target URL of the request.
+ * @member {String} url
+ */
+MessageLogEntry.prototype['url'] = undefined;
 
 /**
  * Identifier of the Application.
@@ -159,6 +191,12 @@ MessageLogEntry.prototype['applicationId'] = undefined;
  * @member {Number} loyaltyProgramId
  */
 MessageLogEntry.prototype['loyaltyProgramId'] = undefined;
+
+/**
+ * Identifier of the campaign.
+ * @member {Number} campaignId
+ */
+MessageLogEntry.prototype['campaignId'] = undefined;
 
 
 
@@ -181,7 +219,13 @@ MessageLogEntry['EntityTypeEnum'] = {
      * value: "loyalty_program"
      * @const
      */
-    "loyalty_program": "loyalty_program"
+    "loyalty_program": "loyalty_program",
+
+    /**
+     * value: "webhook"
+     * @const
+     */
+    "webhook": "webhook"
 };
 
 

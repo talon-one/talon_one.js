@@ -17,7 +17,7 @@ import CustomerProfile from './CustomerProfile';
 /**
  * The CustomerProfileUpdateV2Response model module.
  * @module model/CustomerProfileUpdateV2Response
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CustomerProfileUpdateV2Response {
     /**

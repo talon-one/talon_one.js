@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewEventType model module.
  * @module model/NewEventType
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewEventType {
     /**
      * Constructs a new <code>NewEventType</code>.
-     * 
      * @alias module:model/NewEventType
      * @param title {String} The human-friendly name for this event type.
      * @param name {String} The integration name for this event type. This will be used in URLs and cannot be changed after an event type has been created.

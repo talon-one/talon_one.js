@@ -31,7 +31,6 @@ import AccountLimits from './model/AccountLimits';
 import Achievement from './model/Achievement';
 import AchievementAdditionalProperties from './model/AchievementAdditionalProperties';
 import AchievementProgress from './model/AchievementProgress';
-import ActivateUserRequest from './model/ActivateUserRequest';
 import AddFreeItemEffectProps from './model/AddFreeItemEffectProps';
 import AddItemCatalogAction from './model/AddItemCatalogAction';
 import AddLoyaltyPoints from './model/AddLoyaltyPoints';
@@ -44,6 +43,8 @@ import AnalyticsDataPoint from './model/AnalyticsDataPoint';
 import AnalyticsDataPointWithTrend from './model/AnalyticsDataPointWithTrend';
 import AnalyticsDataPointWithTrendAndInfluencedRate from './model/AnalyticsDataPointWithTrendAndInfluencedRate';
 import AnalyticsDataPointWithTrendAndUplift from './model/AnalyticsDataPointWithTrendAndUplift';
+import AnalyticsProduct from './model/AnalyticsProduct';
+import AnalyticsProductSKU from './model/AnalyticsProductSKU';
 import Application from './model/Application';
 import ApplicationAPIKey from './model/ApplicationAPIKey';
 import ApplicationAnalyticsDataPoint from './model/ApplicationAnalyticsDataPoint';
@@ -112,6 +113,7 @@ import CampaignStateChangedNotification from './model/CampaignStateChangedNotifi
 import CampaignStoreBudget from './model/CampaignStoreBudget';
 import CampaignTemplate from './model/CampaignTemplate';
 import CampaignTemplateCollection from './model/CampaignTemplateCollection';
+import CampaignTemplateCouponReservationSettings from './model/CampaignTemplateCouponReservationSettings';
 import CampaignTemplateParams from './model/CampaignTemplateParams';
 import CampaignVersions from './model/CampaignVersions';
 import CardAddedDeductedPointsNotificationPolicy from './model/CardAddedDeductedPointsNotificationPolicy';
@@ -168,7 +170,6 @@ import CustomerSessionV2 from './model/CustomerSessionV2';
 import DeactivateUserRequest from './model/DeactivateUserRequest';
 import DeductLoyaltyPoints from './model/DeductLoyaltyPoints';
 import DeductLoyaltyPointsEffectProps from './model/DeductLoyaltyPointsEffectProps';
-import DeleteUserRequest from './model/DeleteUserRequest';
 import Effect from './model/Effect';
 import EffectEntity from './model/EffectEntity';
 import EmailEntity from './model/EmailEntity';
@@ -246,7 +247,6 @@ import InlineResponse20043 from './model/InlineResponse20043';
 import InlineResponse20044 from './model/InlineResponse20044';
 import InlineResponse20045 from './model/InlineResponse20045';
 import InlineResponse20046 from './model/InlineResponse20046';
-import InlineResponse20047 from './model/InlineResponse20047';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
@@ -273,6 +273,8 @@ import LedgerTransactionLogEntryIntegrationAPI from './model/LedgerTransactionLo
 import LibraryAttribute from './model/LibraryAttribute';
 import LimitConfig from './model/LimitConfig';
 import LimitCounter from './model/LimitCounter';
+import ListCampaignStoreBudgets from './model/ListCampaignStoreBudgets';
+import ListCampaignStoreBudgetsStore from './model/ListCampaignStoreBudgetsStore';
 import LoginParams from './model/LoginParams';
 import Loyalty from './model/Loyalty';
 import LoyaltyBalance from './model/LoyaltyBalance';
@@ -334,6 +336,8 @@ import NewCampaignCollection from './model/NewCampaignCollection';
 import NewCampaignEvaluationGroup from './model/NewCampaignEvaluationGroup';
 import NewCampaignGroup from './model/NewCampaignGroup';
 import NewCampaignSet from './model/NewCampaignSet';
+import NewCampaignStoreBudget from './model/NewCampaignStoreBudget';
+import NewCampaignStoreBudgetStoreLimit from './model/NewCampaignStoreBudgetStoreLimit';
 import NewCampaignTemplate from './model/NewCampaignTemplate';
 import NewCatalog from './model/NewCatalog';
 import NewCollection from './model/NewCollection';
@@ -398,6 +402,9 @@ import PatchManyItemsCatalogAction from './model/PatchManyItemsCatalogAction';
 import PendingPointsNotificationPolicy from './model/PendingPointsNotificationPolicy';
 import Picklist from './model/Picklist';
 import Product from './model/Product';
+import ProductSearchMatch from './model/ProductSearchMatch';
+import ProductSkuUnitAnalytics from './model/ProductSkuUnitAnalytics';
+import ProductUnitAnalytics from './model/ProductUnitAnalytics';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import ProjectedTier from './model/ProjectedTier';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
@@ -454,6 +461,7 @@ import ScimServiceProviderConfigResponseBulk from './model/ScimServiceProviderCo
 import ScimServiceProviderConfigResponseChangePassword from './model/ScimServiceProviderConfigResponseChangePassword';
 import ScimServiceProviderConfigResponseFilter from './model/ScimServiceProviderConfigResponseFilter';
 import ScimServiceProviderConfigResponsePatch from './model/ScimServiceProviderConfigResponsePatch';
+import ScimServiceProviderConfigResponseSort from './model/ScimServiceProviderConfigResponseSort';
 import ScimUser from './model/ScimUser';
 import ScimUsersListResponse from './model/ScimUsersListResponse';
 import Session from './model/Session';
@@ -467,10 +475,12 @@ import SlotDef from './model/SlotDef';
 import Store from './model/Store';
 import StrikethroughChangedItem from './model/StrikethroughChangedItem';
 import StrikethroughCustomEffectPerItemProps from './model/StrikethroughCustomEffectPerItemProps';
+import StrikethroughDebugResponse from './model/StrikethroughDebugResponse';
 import StrikethroughEffect from './model/StrikethroughEffect';
 import StrikethroughLabelingNotification from './model/StrikethroughLabelingNotification';
 import StrikethroughSetDiscountPerItemEffectProps from './model/StrikethroughSetDiscountPerItemEffectProps';
 import StrikethroughTrigger from './model/StrikethroughTrigger';
+import SummaryCampaignStoreBudget from './model/SummaryCampaignStoreBudget';
 import TalangAttribute from './model/TalangAttribute';
 import TalangAttributeVisibility from './model/TalangAttributeVisibility';
 import TemplateArgDef from './model/TemplateArgDef';
@@ -502,9 +512,9 @@ import UpdateCatalog from './model/UpdateCatalog';
 import UpdateCollection from './model/UpdateCollection';
 import UpdateCoupon from './model/UpdateCoupon';
 import UpdateCouponBatch from './model/UpdateCouponBatch';
-import UpdateCustomEffect from './model/UpdateCustomEffect';
 import UpdateLoyaltyCard from './model/UpdateLoyaltyCard';
 import UpdateLoyaltyProgram from './model/UpdateLoyaltyProgram';
+import UpdateLoyaltyProgramTier from './model/UpdateLoyaltyProgramTier';
 import UpdatePicklist from './model/UpdatePicklist';
 import UpdateReferral from './model/UpdateReferral';
 import UpdateReferralBatch from './model/UpdateReferralBatch';
@@ -513,6 +523,7 @@ import UpdateStore from './model/UpdateStore';
 import UpdateUser from './model/UpdateUser';
 import User from './model/User';
 import UserEntity from './model/UserEntity';
+import ValueMap from './model/ValueMap';
 import Webhook from './model/Webhook';
 import WebhookActivationLogEntry from './model/WebhookActivationLogEntry';
 import WebhookLogEntry from './model/WebhookLogEntry';
@@ -551,7 +562,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 9.0.0
+* @version 10.0.0
 */
 export {
     /**
@@ -669,12 +680,6 @@ export {
     AchievementProgress,
 
     /**
-     * The ActivateUserRequest model constructor.
-     * @property {module:model/ActivateUserRequest}
-     */
-    ActivateUserRequest,
-
-    /**
      * The AddFreeItemEffectProps model constructor.
      * @property {module:model/AddFreeItemEffectProps}
      */
@@ -745,6 +750,18 @@ export {
      * @property {module:model/AnalyticsDataPointWithTrendAndUplift}
      */
     AnalyticsDataPointWithTrendAndUplift,
+
+    /**
+     * The AnalyticsProduct model constructor.
+     * @property {module:model/AnalyticsProduct}
+     */
+    AnalyticsProduct,
+
+    /**
+     * The AnalyticsProductSKU model constructor.
+     * @property {module:model/AnalyticsProductSKU}
+     */
+    AnalyticsProductSKU,
 
     /**
      * The Application model constructor.
@@ -1155,6 +1172,12 @@ export {
     CampaignTemplateCollection,
 
     /**
+     * The CampaignTemplateCouponReservationSettings model constructor.
+     * @property {module:model/CampaignTemplateCouponReservationSettings}
+     */
+    CampaignTemplateCouponReservationSettings,
+
+    /**
      * The CampaignTemplateParams model constructor.
      * @property {module:model/CampaignTemplateParams}
      */
@@ -1489,12 +1512,6 @@ export {
      * @property {module:model/DeductLoyaltyPointsEffectProps}
      */
     DeductLoyaltyPointsEffectProps,
-
-    /**
-     * The DeleteUserRequest model constructor.
-     * @property {module:model/DeleteUserRequest}
-     */
-    DeleteUserRequest,
 
     /**
      * The Effect model constructor.
@@ -1959,12 +1976,6 @@ export {
     InlineResponse20046,
 
     /**
-     * The InlineResponse20047 model constructor.
-     * @property {module:model/InlineResponse20047}
-     */
-    InlineResponse20047,
-
-    /**
      * The InlineResponse2005 model constructor.
      * @property {module:model/InlineResponse2005}
      */
@@ -2119,6 +2130,18 @@ export {
      * @property {module:model/LimitCounter}
      */
     LimitCounter,
+
+    /**
+     * The ListCampaignStoreBudgets model constructor.
+     * @property {module:model/ListCampaignStoreBudgets}
+     */
+    ListCampaignStoreBudgets,
+
+    /**
+     * The ListCampaignStoreBudgetsStore model constructor.
+     * @property {module:model/ListCampaignStoreBudgetsStore}
+     */
+    ListCampaignStoreBudgetsStore,
 
     /**
      * The LoginParams model constructor.
@@ -2485,6 +2508,18 @@ export {
      * @property {module:model/NewCampaignSet}
      */
     NewCampaignSet,
+
+    /**
+     * The NewCampaignStoreBudget model constructor.
+     * @property {module:model/NewCampaignStoreBudget}
+     */
+    NewCampaignStoreBudget,
+
+    /**
+     * The NewCampaignStoreBudgetStoreLimit model constructor.
+     * @property {module:model/NewCampaignStoreBudgetStoreLimit}
+     */
+    NewCampaignStoreBudgetStoreLimit,
 
     /**
      * The NewCampaignTemplate model constructor.
@@ -2871,6 +2906,24 @@ export {
     Product,
 
     /**
+     * The ProductSearchMatch model constructor.
+     * @property {module:model/ProductSearchMatch}
+     */
+    ProductSearchMatch,
+
+    /**
+     * The ProductSkuUnitAnalytics model constructor.
+     * @property {module:model/ProductSkuUnitAnalytics}
+     */
+    ProductSkuUnitAnalytics,
+
+    /**
+     * The ProductUnitAnalytics model constructor.
+     * @property {module:model/ProductUnitAnalytics}
+     */
+    ProductUnitAnalytics,
+
+    /**
      * The ProfileAudiencesChanges model constructor.
      * @property {module:model/ProfileAudiencesChanges}
      */
@@ -3207,6 +3260,12 @@ export {
     ScimServiceProviderConfigResponsePatch,
 
     /**
+     * The ScimServiceProviderConfigResponseSort model constructor.
+     * @property {module:model/ScimServiceProviderConfigResponseSort}
+     */
+    ScimServiceProviderConfigResponseSort,
+
+    /**
      * The ScimUser model constructor.
      * @property {module:model/ScimUser}
      */
@@ -3285,6 +3344,12 @@ export {
     StrikethroughCustomEffectPerItemProps,
 
     /**
+     * The StrikethroughDebugResponse model constructor.
+     * @property {module:model/StrikethroughDebugResponse}
+     */
+    StrikethroughDebugResponse,
+
+    /**
      * The StrikethroughEffect model constructor.
      * @property {module:model/StrikethroughEffect}
      */
@@ -3307,6 +3372,12 @@ export {
      * @property {module:model/StrikethroughTrigger}
      */
     StrikethroughTrigger,
+
+    /**
+     * The SummaryCampaignStoreBudget model constructor.
+     * @property {module:model/SummaryCampaignStoreBudget}
+     */
+    SummaryCampaignStoreBudget,
 
     /**
      * The TalangAttribute model constructor.
@@ -3495,12 +3566,6 @@ export {
     UpdateCouponBatch,
 
     /**
-     * The UpdateCustomEffect model constructor.
-     * @property {module:model/UpdateCustomEffect}
-     */
-    UpdateCustomEffect,
-
-    /**
      * The UpdateLoyaltyCard model constructor.
      * @property {module:model/UpdateLoyaltyCard}
      */
@@ -3511,6 +3576,12 @@ export {
      * @property {module:model/UpdateLoyaltyProgram}
      */
     UpdateLoyaltyProgram,
+
+    /**
+     * The UpdateLoyaltyProgramTier model constructor.
+     * @property {module:model/UpdateLoyaltyProgramTier}
+     */
+    UpdateLoyaltyProgramTier,
 
     /**
      * The UpdatePicklist model constructor.
@@ -3559,6 +3630,12 @@ export {
      * @property {module:model/UserEntity}
      */
     UserEntity,
+
+    /**
+     * The ValueMap model constructor.
+     * @property {module:model/ValueMap}
+     */
+    ValueMap,
 
     /**
      * The Webhook model constructor.

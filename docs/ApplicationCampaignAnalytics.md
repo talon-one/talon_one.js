@@ -32,6 +32,8 @@ Name | Type | Description | Notes
 
 * `archived` (value: `"archived"`)
 
+* `staged` (value: `"staged"`)
+
 
 
 

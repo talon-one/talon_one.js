@@ -18,7 +18,7 @@ import CartItem from './CartItem';
 /**
  * The NewCustomerSessionV2 model module.
  * @module model/NewCustomerSessionV2
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewCustomerSessionV2 {
     /**
@@ -109,13 +109,13 @@ NewCustomerSessionV2.prototype['storeIntegrationId'] = undefined;
 NewCustomerSessionV2.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * Any coupon codes entered.  **Important - for requests only**:  - If you [create a coupon budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a coupon code by the time you close it. - In requests where `dry=false`, providing an empty array discards any previous coupons. To avoid this, provide `\"couponCodes\": null` or omit the parameter entirely. 
+ * Any coupon codes entered.  **Important - for requests only**:  - If you [create a coupon budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a coupon code by the time you close it. - In requests where `dry=false`, providing an empty array discards any previous coupons. To avoid this, omit the parameter entirely. 
  * @member {Array.<String>} couponCodes
  */
 NewCustomerSessionV2.prototype['couponCodes'] = undefined;
 
 /**
- * Any referral code entered.  **Important - for requests only**:  - If you [create a referral budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a referral code by the time you close it. - In requests where `dry=false`, providing an empty value discards the previous referral code. To avoid this, provide `\"referralCode\": null` or omit the parameter entirely. 
+ * Any referral code entered.  **Important - for requests only**:  - If you [create a referral budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign, ensure the session contains a referral code by the time you close it. - In requests where `dry=false`, providing an empty value discards the previous referral code. To avoid this, omit the parameter entirely. 
  * @member {String} referralCode
  */
 NewCustomerSessionV2.prototype['referralCode'] = undefined;
@@ -146,7 +146,7 @@ NewCustomerSessionV2.prototype['cartItems'] = undefined;
 NewCustomerSessionV2.prototype['additionalCosts'] = undefined;
 
 /**
- * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. See the [tutorial](https://docs.talon.one/docs/dev/tutorials/using-identifiers).  **Important**: Ensure the session contains an identifier by the time you close it if: - You [create a unique identifier budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign. - Your campaign has [coupons](https://docs.talon.one/docs/product/campaigns/coupons/coupon-page-overview). 
+ * Session custom identifiers that you can set limits on or use inside your rules.  For example, you can use IP addresses as identifiers to potentially identify devices and limit discounts abuse in case of customers creating multiple accounts. See the [tutorial](https://docs.talon.one/docs/dev/tutorials/using-identifiers).  **Important**: Ensure the session contains an identifier by the time you close it if: - You [create a unique identifier budget](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets/#budget-types) for your campaign. - Your campaign has [coupons](https://docs.talon.one/docs/product/campaigns/coupons/coupon-page-overview). - We recommend passing an anonymized (hashed) version of the identifier value. 
  * @member {Array.<String>} identifiers
  */
 NewCustomerSessionV2.prototype['identifiers'] = undefined;

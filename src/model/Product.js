@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Product model module.
  * @module model/Product
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Product {
     /**
      * Constructs a new <code>Product</code>.
      * The specific properties of the product this item belongs to, if available.
      * @alias module:model/Product
-     * @param name {String} The name of the product.
+     * @param name {String} The product the item belongs to.
      */
     constructor(name) { 
         
@@ -61,7 +61,7 @@ class Product {
 }
 
 /**
- * The name of the product.
+ * The product the item belongs to.
  * @member {String} name
  */
 Product.prototype['name'] = undefined;

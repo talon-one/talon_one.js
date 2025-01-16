@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewReferralsForMultipleAdvocates model module.
  * @module model/NewReferralsForMultipleAdvocates
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewReferralsForMultipleAdvocates {
     /**
      * Constructs a new <code>NewReferralsForMultipleAdvocates</code>.
-     * 
      * @alias module:model/NewReferralsForMultipleAdvocates
      * @param usageLimit {Number} The number of times a referral code can be used. `0` means no limit but any campaign usage limits will still apply. 
      * @param campaignId {Number} The ID of the campaign from which the referral received the referral code.

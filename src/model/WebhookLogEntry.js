@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebhookLogEntry model module.
  * @module model/WebhookLogEntry
- * @version 9.0.0
+ * @version 10.0.0
  */
 class WebhookLogEntry {
     /**
@@ -26,7 +26,7 @@ class WebhookLogEntry {
      * @param id {String} UUID reference of the webhook request.
      * @param integrationRequestUuid {String} UUID reference of the integration request linked to this webhook request.
      * @param webhookId {Number} ID of the webhook that triggered the request.
-     * @param url {String} Target url of request
+     * @param url {String} The target URL of the request.
      * @param request {String} Request message
      * @param requestTime {Date} Timestamp of request
      */
@@ -122,7 +122,7 @@ WebhookLogEntry.prototype['webhookId'] = undefined;
 WebhookLogEntry.prototype['applicationId'] = undefined;
 
 /**
- * Target url of request
+ * The target URL of the request.
  * @member {String} url
  */
 WebhookLogEntry.prototype['url'] = undefined;

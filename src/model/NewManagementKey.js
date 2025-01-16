@@ -17,12 +17,11 @@ import Endpoint from './Endpoint';
 /**
  * The NewManagementKey model module.
  * @module model/NewManagementKey
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewManagementKey {
     /**
      * Constructs a new <code>NewManagementKey</code>.
-     * 
      * @alias module:model/NewManagementKey
      * @param name {String} Name for management key.
      * @param expiryDate {Date} The date the management key expires.

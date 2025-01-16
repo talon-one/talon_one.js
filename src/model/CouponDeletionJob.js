@@ -17,12 +17,11 @@ import CouponDeletionFilters from './CouponDeletionFilters';
 /**
  * The CouponDeletionJob model module.
  * @module model/CouponDeletionJob
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CouponDeletionJob {
     /**
      * Constructs a new <code>CouponDeletionJob</code>.
-     * 
      * @alias module:model/CouponDeletionJob
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

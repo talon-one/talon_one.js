@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(TalonOne.GenerateCampaignTags);
     });
 
-    it('should have the property campaignID (base name: "campaignID")', function() {
-      // uncomment below and update the code to test the property campaignID
+    it('should have the property rulesetID (base name: "rulesetID")', function() {
+      // uncomment below and update the code to test the property rulesetID
       //var instane = new TalonOne.GenerateCampaignTags();
       //expect(instance).to.be();
     });

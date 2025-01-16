@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cardCodeSettings (base name: "cardCodeSettings")', function() {
+      // uncomment below and update the code to test the property cardCodeSettings
+      //var instane = new TalonOne.LoyaltyCardBatch();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

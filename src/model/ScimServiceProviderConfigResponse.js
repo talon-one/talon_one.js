@@ -16,11 +16,12 @@ import ScimServiceProviderConfigResponseBulk from './ScimServiceProviderConfigRe
 import ScimServiceProviderConfigResponseChangePassword from './ScimServiceProviderConfigResponseChangePassword';
 import ScimServiceProviderConfigResponseFilter from './ScimServiceProviderConfigResponseFilter';
 import ScimServiceProviderConfigResponsePatch from './ScimServiceProviderConfigResponsePatch';
+import ScimServiceProviderConfigResponseSort from './ScimServiceProviderConfigResponseSort';
 
 /**
  * The ScimServiceProviderConfigResponse model module.
  * @module model/ScimServiceProviderConfigResponse
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ScimServiceProviderConfigResponse {
     /**
@@ -70,6 +71,9 @@ class ScimServiceProviderConfigResponse {
             if (data.hasOwnProperty('schemas')) {
                 obj['schemas'] = ApiClient.convertToType(data['schemas'], ['String']);
             }
+            if (data.hasOwnProperty('sort')) {
+                obj['sort'] = ScimServiceProviderConfigResponseSort.constructFromObject(data['sort']);
+            }
         }
         return obj;
     }
@@ -108,6 +112,11 @@ ScimServiceProviderConfigResponse.prototype['patch'] = undefined;
  * @member {Array.<String>} schemas
  */
 ScimServiceProviderConfigResponse.prototype['schemas'] = undefined;
+
+/**
+ * @member {module:model/ScimServiceProviderConfigResponseSort} sort
+ */
+ScimServiceProviderConfigResponse.prototype['sort'] = undefined;
 
 
 

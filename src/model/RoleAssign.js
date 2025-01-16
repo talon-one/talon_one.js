@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAssign model module.
  * @module model/RoleAssign
- * @version 9.0.0
+ * @version 10.0.0
  */
 class RoleAssign {
     /**
      * Constructs a new <code>RoleAssign</code>.
-     * 
      * @alias module:model/RoleAssign
      * @param users {Array.<Number>} An array of user IDs.
      * @param roles {Array.<Number>} An array of role IDs.

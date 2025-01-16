@@ -102,6 +102,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property recurrencePolicy (base name: "recurrencePolicy")', function() {
+      // uncomment below and update the code to test the property recurrencePolicy
+      //var instane = new TalonOne.Achievement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property activationPolicy (base name: "activationPolicy")', function() {
+      // uncomment below and update the code to test the property activationPolicy
+      //var instane = new TalonOne.Achievement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fixedStartDate (base name: "fixedStartDate")', function() {
+      // uncomment below and update the code to test the property fixedStartDate
+      //var instane = new TalonOne.Achievement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property endDate (base name: "endDate")', function() {
+      // uncomment below and update the code to test the property endDate
+      //var instane = new TalonOne.Achievement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property campaignId (base name: "campaignId")', function() {
       // uncomment below and update the code to test the property campaignId
       //var instane = new TalonOne.Achievement();

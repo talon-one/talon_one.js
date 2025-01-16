@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property staged (base name: "staged")', function() {
+      // uncomment below and update the code to test the property staged
+      //var instane = new TalonOne.ApplicationCampaignStats();
+      //expect(instance).to.be();
+    });
+
     it('should have the property scheduled (base name: "scheduled")', function() {
       // uncomment below and update the code to test the property scheduled
       //var instane = new TalonOne.ApplicationCampaignStats();

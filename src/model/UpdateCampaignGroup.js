@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCampaignGroup model module.
  * @module model/UpdateCampaignGroup
- * @version 9.0.0
+ * @version 10.0.0
  */
 class UpdateCampaignGroup {
     /**
      * Constructs a new <code>UpdateCampaignGroup</code>.
-     * 
      * @alias module:model/UpdateCampaignGroup
      * @param name {String} The name of the campaign access group.
      */

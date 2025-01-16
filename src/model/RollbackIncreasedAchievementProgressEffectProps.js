@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackIncreasedAchievementProgressEffectProps model module.
  * @module model/RollbackIncreasedAchievementProgressEffectProps
- * @version 9.0.0
+ * @version 10.0.0
  */
 class RollbackIncreasedAchievementProgressEffectProps {
     /**

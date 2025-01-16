@@ -17,7 +17,7 @@ import ExpiringPointsNotificationTrigger from './ExpiringPointsNotificationTrigg
 /**
  * The ExpiringPointsNotificationPolicy model module.
  * @module model/ExpiringPointsNotificationPolicy
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ExpiringPointsNotificationPolicy {
     /**

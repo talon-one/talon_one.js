@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The UpdateAchievement model module.
  * @module model/UpdateAchievement
- * @version 9.0.0
+ * @version 10.0.0
  */
 class UpdateAchievement {
     /**
@@ -66,6 +66,18 @@ class UpdateAchievement {
             if (data.hasOwnProperty('periodEndOverride')) {
                 obj['periodEndOverride'] = TimePoint.constructFromObject(data['periodEndOverride']);
             }
+            if (data.hasOwnProperty('recurrencePolicy')) {
+                obj['recurrencePolicy'] = ApiClient.convertToType(data['recurrencePolicy'], 'String');
+            }
+            if (data.hasOwnProperty('activationPolicy')) {
+                obj['activationPolicy'] = ApiClient.convertToType(data['activationPolicy'], 'String');
+            }
+            if (data.hasOwnProperty('fixedStartDate')) {
+                obj['fixedStartDate'] = ApiClient.convertToType(data['fixedStartDate'], 'Date');
+            }
+            if (data.hasOwnProperty('endDate')) {
+                obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
+            }
         }
         return obj;
     }
@@ -108,8 +120,74 @@ UpdateAchievement.prototype['period'] = undefined;
  */
 UpdateAchievement.prototype['periodEndOverride'] = undefined;
 
+/**
+ * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+ * @member {module:model/UpdateAchievement.RecurrencePolicyEnum} recurrencePolicy
+ */
+UpdateAchievement.prototype['recurrencePolicy'] = undefined;
+
+/**
+ * The policy that determines how the achievement starts, ends, or resets. - `user_action`: The achievement ends or resets relative to when the customer started the achievement. - `fixed_schedule`: The achievement starts, ends, or resets for all customers following a fixed schedule. 
+ * @member {module:model/UpdateAchievement.ActivationPolicyEnum} activationPolicy
+ */
+UpdateAchievement.prototype['activationPolicy'] = undefined;
+
+/**
+ * The achievement's start date when `activationPolicy` is set to `fixed_schedule`.  **Note:** It must be an RFC3339 timestamp string. 
+ * @member {Date} fixedStartDate
+ */
+UpdateAchievement.prototype['fixedStartDate'] = undefined;
+
+/**
+ * The achievement's end date. If defined, customers cannot participate in the achievement after this date.  **Note:** It must be an RFC3339 timestamp string. 
+ * @member {Date} endDate
+ */
+UpdateAchievement.prototype['endDate'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>recurrencePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateAchievement['RecurrencePolicyEnum'] = {
+
+    /**
+     * value: "no_recurrence"
+     * @const
+     */
+    "no_recurrence": "no_recurrence",
+
+    /**
+     * value: "on_expiration"
+     * @const
+     */
+    "on_expiration": "on_expiration"
+};
+
+
+/**
+ * Allowed values for the <code>activationPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateAchievement['ActivationPolicyEnum'] = {
+
+    /**
+     * value: "user_action"
+     * @const
+     */
+    "user_action": "user_action",
+
+    /**
+     * value: "fixed_schedule"
+     * @const
+     */
+    "fixed_schedule": "fixed_schedule"
+};
 
 
 

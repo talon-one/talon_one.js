@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The EventV2 model module.
  * @module model/EventV2
- * @version 9.0.0
+ * @version 10.0.0
  */
 class EventV2 {
     /**
      * Constructs a new <code>EventV2</code>.
-     * 
      * @alias module:model/EventV2
      * @param type {String} A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
      */

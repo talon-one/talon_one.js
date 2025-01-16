@@ -12,16 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
+import CodeGeneratorSettings from './CodeGeneratorSettings';
 
 /**
  * The LoyaltyCardBatch model module.
  * @module model/LoyaltyCardBatch
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyCardBatch {
     /**
      * Constructs a new <code>LoyaltyCardBatch</code>.
-     * 
      * @alias module:model/LoyaltyCardBatch
      * @param numberOfCards {Number} Number of loyalty cards in the batch.
      */
@@ -59,6 +59,9 @@ class LoyaltyCardBatch {
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
+            if (data.hasOwnProperty('cardCodeSettings')) {
+                obj['cardCodeSettings'] = CodeGeneratorSettings.constructFromObject(data['cardCodeSettings']);
+            }
         }
         return obj;
     }
@@ -84,6 +87,11 @@ LoyaltyCardBatch.prototype['batchId'] = undefined;
  * @default 'active'
  */
 LoyaltyCardBatch.prototype['status'] = 'active';
+
+/**
+ * @member {module:model/CodeGeneratorSettings} cardCodeSettings
+ */
+LoyaltyCardBatch.prototype['cardCodeSettings'] = undefined;
 
 
 

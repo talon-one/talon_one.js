@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramEntity model module.
  * @module model/LoyaltyProgramEntity
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyProgramEntity {
     /**
@@ -52,6 +52,12 @@ class LoyaltyProgramEntity {
             if (data.hasOwnProperty('programID')) {
                 obj['programID'] = ApiClient.convertToType(data['programID'], 'Number');
             }
+            if (data.hasOwnProperty('programName')) {
+                obj['programName'] = ApiClient.convertToType(data['programName'], 'String');
+            }
+            if (data.hasOwnProperty('programTitle')) {
+                obj['programTitle'] = ApiClient.convertToType(data['programTitle'], 'String');
+            }
         }
         return obj;
     }
@@ -64,6 +70,18 @@ class LoyaltyProgramEntity {
  * @member {Number} programID
  */
 LoyaltyProgramEntity.prototype['programID'] = undefined;
+
+/**
+ * The integration name of the loyalty program that owns this entity.
+ * @member {String} programName
+ */
+LoyaltyProgramEntity.prototype['programName'] = undefined;
+
+/**
+ * The Campaign Manager-displayed name of the loyalty program that owns this entity.
+ * @member {String} programTitle
+ */
+LoyaltyProgramEntity.prototype['programTitle'] = undefined;
 
 
 

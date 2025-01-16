@@ -150,6 +150,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property returnPolicy (base name: "returnPolicy")', function() {
+      // uncomment below and update the code to test the property returnPolicy
+      //var instane = new TalonOne.LoyaltyProgram();
+      //expect(instance).to.be();
+    });
+
     it('should have the property accountID (base name: "accountID")', function() {
       // uncomment below and update the code to test the property accountID
       //var instane = new TalonOne.LoyaltyProgram();

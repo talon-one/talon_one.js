@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewRole model module.
  * @module model/NewRole
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewRole {
     /**
      * Constructs a new <code>NewRole</code>.
-     * 
      * @alias module:model/NewRole
      * @param name {String} Name of the role.
      * @param acl {String} The `Access Control List` json defining the role of the user. This represents the access control on the user level.

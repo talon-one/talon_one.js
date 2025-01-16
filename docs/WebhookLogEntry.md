@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **integrationRequestUuid** | **String** | UUID reference of the integration request linked to this webhook request. | 
 **webhookId** | **Number** | ID of the webhook that triggered the request. | 
 **applicationId** | **Number** | ID of the application that triggered the webhook. | [optional] 
-**url** | **String** | Target url of request | 
+**url** | **String** | The target URL of the request. | 
 **request** | **String** | Request message | 
 **response** | **String** | Response message | [optional] 
 **status** | **Number** | HTTP status code of response. | [optional] 

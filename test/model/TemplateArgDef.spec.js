@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property key (base name: "key")', function() {
+      // uncomment below and update the code to test the property key
+      //var instane = new TalonOne.TemplateArgDef();
+      //expect(instance).to.be();
+    });
+
     it('should have the property picklistID (base name: "picklistID")', function() {
       // uncomment below and update the code to test the property picklistID
       //var instane = new TalonOne.TemplateArgDef();

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponDeletionFilters model module.
  * @module model/CouponDeletionFilters
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CouponDeletionFilters {
     /**
@@ -154,9 +154,8 @@ CouponDeletionFilters.prototype['exactMatch'] = false;
 /**
  * Filter results by the coupon code
  * @member {String} value
- * @default 'false'
  */
-CouponDeletionFilters.prototype['value'] = 'false';
+CouponDeletionFilters.prototype['value'] = undefined;
 
 /**
  * Filter results by batches of coupons

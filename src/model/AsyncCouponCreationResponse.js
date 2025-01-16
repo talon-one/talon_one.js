@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AsyncCouponCreationResponse model module.
  * @module model/AsyncCouponCreationResponse
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AsyncCouponCreationResponse {
     /**

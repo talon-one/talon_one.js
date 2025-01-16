@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyTier model module.
  * @module model/LoyaltyTier
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyTier {
     /**
      * Constructs a new <code>LoyaltyTier</code>.
-     * 
+     * A tier in a loyalty program.
      * @alias module:model/LoyaltyTier
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param programID {Number} The ID of the loyalty program that owns this entity.
-     * @param name {String} The name of the tier
-     * @param minPoints {Number} The minimum amount of points required to be eligible for the tier.
+     * @param name {String} The name of the tier.
+     * @param minPoints {Number} The minimum amount of points required to enter the tier.
      */
     constructor(id, created, programID, name, minPoints) { 
         
@@ -67,6 +67,12 @@ class LoyaltyTier {
             if (data.hasOwnProperty('programID')) {
                 obj['programID'] = ApiClient.convertToType(data['programID'], 'Number');
             }
+            if (data.hasOwnProperty('programName')) {
+                obj['programName'] = ApiClient.convertToType(data['programName'], 'String');
+            }
+            if (data.hasOwnProperty('programTitle')) {
+                obj['programTitle'] = ApiClient.convertToType(data['programTitle'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -99,13 +105,25 @@ LoyaltyTier.prototype['created'] = undefined;
 LoyaltyTier.prototype['programID'] = undefined;
 
 /**
- * The name of the tier
+ * The integration name of the loyalty program that owns this entity.
+ * @member {String} programName
+ */
+LoyaltyTier.prototype['programName'] = undefined;
+
+/**
+ * The Campaign Manager-displayed name of the loyalty program that owns this entity.
+ * @member {String} programTitle
+ */
+LoyaltyTier.prototype['programTitle'] = undefined;
+
+/**
+ * The name of the tier.
  * @member {String} name
  */
 LoyaltyTier.prototype['name'] = undefined;
 
 /**
- * The minimum amount of points required to be eligible for the tier.
+ * The minimum amount of points required to enter the tier.
  * @member {Number} minPoints
  */
 LoyaltyTier.prototype['minPoints'] = undefined;

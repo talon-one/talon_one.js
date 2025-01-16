@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CampaignTemplateCollection from './CampaignTemplateCollection';
+import CampaignTemplateCouponReservationSettings from './CampaignTemplateCouponReservationSettings';
 import CampaignTemplateParams from './CampaignTemplateParams';
 import CodeGeneratorSettings from './CodeGeneratorSettings';
 import TemplateLimitConfig from './TemplateLimitConfig';
@@ -20,12 +21,11 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CampaignTemplate {
     /**
      * Constructs a new <code>CampaignTemplate</code>.
-     * 
      * @alias module:model/CampaignTemplate
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
@@ -115,6 +115,9 @@ class CampaignTemplate {
             }
             if (data.hasOwnProperty('couponSettings')) {
                 obj['couponSettings'] = CodeGeneratorSettings.constructFromObject(data['couponSettings']);
+            }
+            if (data.hasOwnProperty('couponReservationSettings')) {
+                obj['couponReservationSettings'] = CampaignTemplateCouponReservationSettings.constructFromObject(data['couponReservationSettings']);
             }
             if (data.hasOwnProperty('referralSettings')) {
                 obj['referralSettings'] = CodeGeneratorSettings.constructFromObject(data['referralSettings']);
@@ -235,6 +238,11 @@ CampaignTemplate.prototype['features'] = undefined;
  * @member {module:model/CodeGeneratorSettings} couponSettings
  */
 CampaignTemplate.prototype['couponSettings'] = undefined;
+
+/**
+ * @member {module:model/CampaignTemplateCouponReservationSettings} couponReservationSettings
+ */
+CampaignTemplate.prototype['couponReservationSettings'] = undefined;
 
 /**
  * @member {module:model/CodeGeneratorSettings} referralSettings

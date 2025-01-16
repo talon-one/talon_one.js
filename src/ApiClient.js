@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 9.0.0
+* @version 10.0.0
 */
 
 /**

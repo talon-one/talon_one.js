@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The NewEvent model module.
  * @module model/NewEvent
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewEvent {
     /**
      * Constructs a new <code>NewEvent</code>.
-     * 
      * @alias module:model/NewEvent
      * @param type {String} A string representing the event. Must not be a reserved event name.
      * @param attributes {Object} Arbitrary additional JSON data associated with the event.

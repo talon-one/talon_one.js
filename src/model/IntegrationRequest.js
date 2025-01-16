@@ -17,7 +17,7 @@ import NewCustomerSessionV2 from './NewCustomerSessionV2';
 /**
  * The IntegrationRequest model module.
  * @module model/IntegrationRequest
- * @version 9.0.0
+ * @version 10.0.0
  */
 class IntegrationRequest {
     /**

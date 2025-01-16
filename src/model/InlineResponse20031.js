@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import AudienceAnalytics from './AudienceAnalytics';
+import CustomerProfile from './CustomerProfile';
 
 /**
  * The InlineResponse20031 model module.
  * @module model/InlineResponse20031
- * @version 9.0.0
+ * @version 10.0.0
  */
 class InlineResponse20031 {
     /**
      * Constructs a new <code>InlineResponse20031</code>.
      * @alias module:model/InlineResponse20031
-     * @param data {Array.<module:model/AudienceAnalytics>} 
+     * @param data {Array.<module:model/CustomerProfile>} 
      */
     constructor(data) { 
         
@@ -54,7 +54,7 @@ class InlineResponse20031 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AudienceAnalytics]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfile]);
             }
         }
         return obj;
@@ -69,7 +69,7 @@ class InlineResponse20031 {
 InlineResponse20031.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/AudienceAnalytics>} data
+ * @member {Array.<module:model/CustomerProfile>} data
  */
 InlineResponse20031.prototype['data'] = undefined;
 

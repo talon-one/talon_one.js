@@ -17,12 +17,11 @@ import RevisionVersion from './RevisionVersion';
 /**
  * The Revision model module.
  * @module model/Revision
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Revision {
     /**
      * Constructs a new <code>Revision</code>.
-     * 
      * @alias module:model/Revision
      * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
      * @param accountId {Number} 

@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateArgDef model module.
  * @module model/TemplateArgDef
- * @version 9.0.0
+ * @version 10.0.0
  */
 class TemplateArgDef {
     /**
      * Constructs a new <code>TemplateArgDef</code>.
-     * 
      * @alias module:model/TemplateArgDef
      * @param type {module:model/TemplateArgDef.TypeEnum} The type of value this argument expects.
      * @param title {String} A campaigner friendly name for the argument, this will be shown in the rule editor.
@@ -66,6 +65,9 @@ class TemplateArgDef {
             if (data.hasOwnProperty('ui')) {
                 obj['ui'] = ApiClient.convertToType(data['ui'], Object);
             }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
             if (data.hasOwnProperty('picklistID')) {
                 obj['picklistID'] = ApiClient.convertToType(data['picklistID'], 'Number');
             }
@@ -102,6 +104,12 @@ TemplateArgDef.prototype['title'] = undefined;
  * @member {Object} ui
  */
 TemplateArgDef.prototype['ui'] = undefined;
+
+/**
+ * The identifier for the associated value within the JSON object.
+ * @member {String} key
+ */
+TemplateArgDef.prototype['key'] = undefined;
 
 /**
  * ID of the picklist linked to a template.

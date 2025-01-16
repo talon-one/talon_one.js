@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Giveaway model module.
  * @module model/Giveaway
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Giveaway {
     /**
      * Constructs a new <code>Giveaway</code>.
-     * 
      * @alias module:model/Giveaway
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

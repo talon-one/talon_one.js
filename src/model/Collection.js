@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Collection model module.
  * @module model/Collection
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Collection {
     /**
      * Constructs a new <code>Collection</code>.
-     * 
      * @alias module:model/Collection
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

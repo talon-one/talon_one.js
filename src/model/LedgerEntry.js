@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The LedgerEntry model module.
  * @module model/LedgerEntry
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LedgerEntry {
     /**
      * Constructs a new <code>LedgerEntry</code>.
-     * 
+     * Entry in the point ledger.
      * @alias module:model/LedgerEntry
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

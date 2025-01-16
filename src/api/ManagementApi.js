@@ -17,7 +17,6 @@ import Account from '../model/Account';
 import AccountAdditionalCost from '../model/AccountAdditionalCost';
 import AccountAnalytics from '../model/AccountAnalytics';
 import Achievement from '../model/Achievement';
-import ActivateUserRequest from '../model/ActivateUserRequest';
 import AddLoyaltyPoints from '../model/AddLoyaltyPoints';
 import Application from '../model/Application';
 import ApplicationApiHealth from '../model/ApplicationApiHealth';
@@ -42,7 +41,6 @@ import CustomerProfile from '../model/CustomerProfile';
 import CustomerProfileSearchQuery from '../model/CustomerProfileSearchQuery';
 import DeactivateUserRequest from '../model/DeactivateUserRequest';
 import DeductLoyaltyPoints from '../model/DeductLoyaltyPoints';
-import DeleteUserRequest from '../model/DeleteUserRequest';
 import ErrorResponse from '../model/ErrorResponse';
 import ErrorResponseWithStatus from '../model/ErrorResponseWithStatus';
 import InlineResponse20010 from '../model/InlineResponse20010';
@@ -82,7 +80,6 @@ import InlineResponse20043 from '../model/InlineResponse20043';
 import InlineResponse20044 from '../model/InlineResponse20044';
 import InlineResponse20045 from '../model/InlineResponse20045';
 import InlineResponse20046 from '../model/InlineResponse20046';
-import InlineResponse20047 from '../model/InlineResponse20047';
 import InlineResponse2005 from '../model/InlineResponse2005';
 import InlineResponse2006 from '../model/InlineResponse2006';
 import InlineResponse2007 from '../model/InlineResponse2007';
@@ -141,7 +138,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ManagementApi {
 
@@ -161,7 +158,7 @@ export default class ManagementApi {
     /**
      * Enable user by email address
      * Enable a [disabled user](https://docs.talon.one/docs/product/account/account-settings/managing-users#disabling-a-user) by their email address. 
-     * @param {module:model/ActivateUserRequest} body body
+     * @param {module:model/DeactivateUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     activateUserByEmailWithHttpInfo(body) {
@@ -194,7 +191,7 @@ export default class ManagementApi {
     /**
      * Enable user by email address
      * Enable a [disabled user](https://docs.talon.one/docs/product/account/account-settings/managing-users#disabling-a-user) by their email address. 
-     * @param {module:model/ActivateUserRequest} body body
+     * @param {module:model/DeactivateUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     activateUserByEmail(body) {
@@ -1671,7 +1668,7 @@ export default class ManagementApi {
      * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @param {module:model/String=} [opts.usable] - `true`: only coupons where `usageCounter < usageLimit` will be returned. - `false`: only coupons where `usageCounter >= usageLimit` will be returned. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's `RecipientIntegrationId` field. 
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's `RecipientIntegrationId` field. 
      * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -1739,7 +1736,7 @@ export default class ManagementApi {
      * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @param {module:model/String=} [opts.usable] - `true`: only coupons where `usageCounter < usageLimit` will be returned. - `false`: only coupons where `usageCounter >= usageLimit` will be returned. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's `RecipientIntegrationId` field. 
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's `RecipientIntegrationId` field. 
      * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -1974,7 +1971,7 @@ export default class ManagementApi {
     /**
      * Delete user by email address
      * [Delete a specific user](https://docs.talon.one/docs/product/account/account-settings/managing-users#deleting-a-user) by their email address. 
-     * @param {module:model/DeleteUserRequest} body body
+     * @param {module:model/DeactivateUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteUserByEmailWithHttpInfo(body) {
@@ -2007,7 +2004,7 @@ export default class ManagementApi {
     /**
      * Delete user by email address
      * [Delete a specific user](https://docs.talon.one/docs/product/account/account-settings/managing-users#deleting-a-user) by their email address. 
-     * @param {module:model/DeleteUserRequest} body body
+     * @param {module:model/DeactivateUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteUserByEmail(body) {
@@ -2391,10 +2388,10 @@ export default class ManagementApi {
 
     /**
      * Export coupons
-     * Download a CSV file containing the coupons that match the given properties.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file can contain the following columns:  - `accountid`: The ID of your deployment. - `applicationid`: The ID of the Application this coupon is related to. - `attributes`: A json object describing _custom_ referral attribute names and their values. - `batchid`: The ID of the batch this coupon is part of. - `campaignid`: The ID of the campaign this coupon is related to. - `counter`: The number of times this coupon has been redeemed. - `created`: The creation date of the coupon code. - `deleted`: Whether the coupon code is deleted. - `deleted_changelogid`: The ID of the delete event in the logs. - `discount_counter`: The amount of discount given by this coupon. - `discount_limitval`: The maximum discount amount that can be given be this coupon. - `expirydate`: The end date in RFC3339 of the code redemption period. - `id`: The internal ID of the coupon code. - `importid`: The ID of the import job that created this coupon. - `is_reservation_mandatory`: Whether this coupon requires a reservation to be redeemed. - `limits`: The limits set on this coupon. - `limitval`: The maximum number of redemptions of this code. - `recipientintegrationid`: The integration ID of the recipient of the coupon.   Only the customer with this integration ID can redeem this code. Available only for personal codes. - `referralid`: The ID of the referral code that triggered the creation of this coupon (create coupon effect). - `reservation`: Whether the coupon can be reserved for multiple customers. - `reservation_counter`: How many times this coupon has been reserved. - `reservation_limitval`: The maximum of number of reservations this coupon can have. - `startdate`: The start date in RFC3339 of the code redemption period. - `value`: The coupon code. 
+     * Download a CSV file containing the coupons that match the given properties.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file can contain the following columns:  - `accountid`: The ID of your deployment. - `applicationid`: The ID of the Application this coupon is related to. - `attributes`: A json object describing _custom_ referral attribute names and their values. - `batchid`: The ID of the batch this coupon is part of. - `campaignid`: The ID of the campaign this coupon is related to. - `counter`: The number of times this coupon has been redeemed. - `created`: The creation date in RFC3339 of the coupon code. - `deleted`: Whether the coupon code is deleted. - `deleted_changelogid`: The ID of the delete event in the logs. - `discount_counter`: The amount of discount given by this coupon. - `discount_limitval`: The maximum discount amount that can be given be this coupon. - `expirydate`: The end date in RFC3339 of the code redemption period. - `id`: The internal ID of the coupon code. - `importid`: The ID of the import job that created this coupon. - `is_reservation_mandatory`: Whether this coupon requires a reservation to be redeemed. - `limits`: The limits set on this coupon. - `limitval`: The maximum number of redemptions of this code. - `recipientintegrationid`: The integration ID of the recipient of the coupon.   Only the customer with this integration ID can redeem this code. Available only for personal codes. - `referralid`: The ID of the referral code that triggered the creation of this coupon (create coupon effect). - `reservation`: Whether the coupon can be reserved for multiple customers. - `reservation_counter`: How many times this coupon has been reserved. - `reservation_limitval`: The maximum of number of reservations this coupon can have. - `startdate`: The start date in RFC3339 of the code redemption period. - `value`: The coupon code. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -2455,10 +2452,10 @@ export default class ManagementApi {
 
     /**
      * Export coupons
-     * Download a CSV file containing the coupons that match the given properties.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file can contain the following columns:  - `accountid`: The ID of your deployment. - `applicationid`: The ID of the Application this coupon is related to. - `attributes`: A json object describing _custom_ referral attribute names and their values. - `batchid`: The ID of the batch this coupon is part of. - `campaignid`: The ID of the campaign this coupon is related to. - `counter`: The number of times this coupon has been redeemed. - `created`: The creation date of the coupon code. - `deleted`: Whether the coupon code is deleted. - `deleted_changelogid`: The ID of the delete event in the logs. - `discount_counter`: The amount of discount given by this coupon. - `discount_limitval`: The maximum discount amount that can be given be this coupon. - `expirydate`: The end date in RFC3339 of the code redemption period. - `id`: The internal ID of the coupon code. - `importid`: The ID of the import job that created this coupon. - `is_reservation_mandatory`: Whether this coupon requires a reservation to be redeemed. - `limits`: The limits set on this coupon. - `limitval`: The maximum number of redemptions of this code. - `recipientintegrationid`: The integration ID of the recipient of the coupon.   Only the customer with this integration ID can redeem this code. Available only for personal codes. - `referralid`: The ID of the referral code that triggered the creation of this coupon (create coupon effect). - `reservation`: Whether the coupon can be reserved for multiple customers. - `reservation_counter`: How many times this coupon has been reserved. - `reservation_limitval`: The maximum of number of reservations this coupon can have. - `startdate`: The start date in RFC3339 of the code redemption period. - `value`: The coupon code. 
+     * Download a CSV file containing the coupons that match the given properties.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file can contain the following columns:  - `accountid`: The ID of your deployment. - `applicationid`: The ID of the Application this coupon is related to. - `attributes`: A json object describing _custom_ referral attribute names and their values. - `batchid`: The ID of the batch this coupon is part of. - `campaignid`: The ID of the campaign this coupon is related to. - `counter`: The number of times this coupon has been redeemed. - `created`: The creation date in RFC3339 of the coupon code. - `deleted`: Whether the coupon code is deleted. - `deleted_changelogid`: The ID of the delete event in the logs. - `discount_counter`: The amount of discount given by this coupon. - `discount_limitval`: The maximum discount amount that can be given be this coupon. - `expirydate`: The end date in RFC3339 of the code redemption period. - `id`: The internal ID of the coupon code. - `importid`: The ID of the import job that created this coupon. - `is_reservation_mandatory`: Whether this coupon requires a reservation to be redeemed. - `limits`: The limits set on this coupon. - `limitval`: The maximum number of redemptions of this code. - `recipientintegrationid`: The integration ID of the recipient of the coupon.   Only the customer with this integration ID can redeem this code. Available only for personal codes. - `referralid`: The ID of the referral code that triggered the creation of this coupon (create coupon effect). - `reservation`: Whether the coupon can be reserved for multiple customers. - `reservation_counter`: How many times this coupon has been reserved. - `reservation_limitval`: The maximum of number of reservations this coupon can have. - `startdate`: The start date in RFC3339 of the code redemption period. - `value`: The coupon code. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.value] Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -2610,7 +2607,7 @@ export default class ManagementApi {
      * Download a CSV file containing the triggered effects that match the given attributes.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `applicationid`: The ID of the Application. - `campaignid`: The ID of the campaign. - `couponid`: The ID of the coupon, when applicable to the effect. - `created`: The timestamp of the effect. - `event_type`: The name of the event. See the [docs](https://docs.talon.one/docs/dev/concepts/entities/events). - `eventid`: The internal ID of the effect. - `name`: The effect name. See the [docs](https://docs.talon.one/docs/dev/integration-api/api-effects). - `profileintegrationid`: The ID of the customer profile, when applicable. - `props`: The [properties](https://docs.talon.one/docs/dev/integration-api/api-effects) of the effect. - `ruleindex`: The index of the rule. - `rulesetid`: The ID of the rule set. - `sessionid`: The internal ID of the session that triggered the effect. - `profileid`: The internal ID of the customer profile. - `sessionintegrationid`: The integration ID of the session. - `total_revenue`: The total revenue. - `store_integration_id`: The integration ID of the store. You choose this ID when you create a store. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
@@ -2654,7 +2651,7 @@ export default class ManagementApi {
      * Download a CSV file containing the triggered effects that match the given attributes.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `applicationid`: The ID of the Application. - `campaignid`: The ID of the campaign. - `couponid`: The ID of the coupon, when applicable to the effect. - `created`: The timestamp of the effect. - `event_type`: The name of the event. See the [docs](https://docs.talon.one/docs/dev/concepts/entities/events). - `eventid`: The internal ID of the effect. - `name`: The effect name. See the [docs](https://docs.talon.one/docs/dev/integration-api/api-effects). - `profileintegrationid`: The ID of the customer profile, when applicable. - `props`: The [properties](https://docs.talon.one/docs/dev/integration-api/api-effects) of the effect. - `ruleindex`: The index of the rule. - `rulesetid`: The ID of the rule set. - `sessionid`: The internal ID of the session that triggered the effect. - `profileid`: The internal ID of the customer profile. - `sessionintegrationid`: The integration ID of the session. - `total_revenue`: The total revenue. - `store_integration_id`: The integration ID of the store. You choose this ID when you create a store. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
@@ -2911,6 +2908,7 @@ export default class ManagementApi {
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.batchId] Filter results by loyalty card batch ID.
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
     exportLoyaltyCardsWithHttpInfo(loyaltyProgramId, opts) {
@@ -2925,7 +2923,8 @@ export default class ManagementApi {
         'loyaltyProgramId': loyaltyProgramId
       };
       let queryParams = {
-        'batchId': opts['batchId']
+        'batchId': opts['batchId'],
+        'dateFormat': opts['dateFormat']
       };
       let headerParams = {
       };
@@ -2949,6 +2948,7 @@ export default class ManagementApi {
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.batchId] Filter results by loyalty card batch ID.
+     * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
     exportLoyaltyCards(loyaltyProgramId, opts) {
@@ -3096,7 +3096,7 @@ export default class ManagementApi {
      * Download a CSV file containing the referrals that match the given parameters.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file contains the following columns:  - `code`: The referral code. - `advocateprofileintegrationid`: The profile ID of the advocate. - `startdate`: The start date in RFC3339 of the code redemption period. - `expirydate`: The end date in RFC3339 of the code redemption period. - `limitval`: The maximum number of redemptions of this code. Defaults to `1` when left blank. - `attributes`: A json object describing _custom_ referral attribute names and their values. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {module:model/String=} [opts.valid] - `expired`: Matches referrals in which the expiration date is set and in the past. - `validNow`: Matches referrals in which start date is null or in the past and expiration date is null or in the future. - `validFuture`: Matches referrals in which start date is set and in the future. 
@@ -3146,7 +3146,7 @@ export default class ManagementApi {
      * Download a CSV file containing the referrals that match the given parameters.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file contains the following columns:  - `code`: The referral code. - `advocateprofileintegrationid`: The profile ID of the advocate. - `startdate`: The start date in RFC3339 of the code redemption period. - `expirydate`: The end date in RFC3339 of the code redemption period. - `limitval`: The maximum number of redemptions of this code. Defaults to `1` when left blank. - `attributes`: A json object describing _custom_ referral attribute names and their values. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {module:model/String=} [opts.valid] - `expired`: Matches referrals in which the expiration date is set and in the past. - `validNow`: Matches referrals in which start date is null or in the past and expiration date is null or in the future. - `validFuture`: Matches referrals in which start date is set and in the future. 
@@ -3507,7 +3507,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20036} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20035} and HTTP response
      */
     getAdditionalCostsWithHttpInfo(opts) {
       opts = opts || {};
@@ -3528,7 +3528,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20036;
+      let returnType = InlineResponse20035;
       return this.apiClient.callApi(
         '/v1/additional_costs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3543,78 +3543,10 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20036}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20035}
      */
     getAdditionalCosts(opts) {
       return this.getAdditionalCostsWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List access logs
-     * Fetches the access logs for the entire account. Sensitive requests (logins) are _always_ filtered from the logs. 
-     * @param {Object} [opts] Optional parameters
-     * @param {Date=} [opts.rangeStart] Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-     * @param {Date=} [opts.rangeEnd] Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
-     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
-     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
-     */
-    getAllAccessLogsWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'rangeStart': opts['rangeStart'],
-        'rangeEnd': opts['rangeEnd'],
-        'path': opts['path'],
-        'method': opts['method'],
-        'status': opts['status'],
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip'],
-        'sort': opts['sort']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['management_key', 'manager_auth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse20020;
-      return this.apiClient.callApi(
-        '/v1/access_logs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * List access logs
-     * Fetches the access logs for the entire account. Sensitive requests (logins) are _always_ filtered from the logs. 
-     * @param {Object} [opts] Optional parameters
-     * @param {Date=} [opts.rangeStart] Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-     * @param {Date=} [opts.rangeEnd] Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-     * @param {String=} [opts.path] Only return results where the request path matches the given regular expression.
-     * @param {module:model/String=} [opts.method] Only return results where the request method matches the given regular expression.
-     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
-     */
-    getAllAccessLogs(opts) {
-      return this.getAllAccessLogsWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3671,7 +3603,7 @@ export default class ManagementApi {
 
     /**
      * Get Application health
-     * Display the health of the Application and show the last time the Application was used.  You can also display this information from the **Settings** of an Application, in the **Developer Settings** menu. See the [docs](https://docs.talon.one/docs/dev/tutorials/monitoring-integration-status). 
+     * Display the health of the Application and show the last time the Application was used.  You can also find this information in the Campaign Manager. In your Application, click **Settings** > **Integration API Keys**. See the [docs](https://docs.talon.one/docs/dev/tutorials/monitoring-integration-status). 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicationApiHealth} and HTTP response
      */
@@ -3705,7 +3637,7 @@ export default class ManagementApi {
 
     /**
      * Get Application health
-     * Display the health of the Application and show the last time the Application was used.  You can also display this information from the **Settings** of an Application, in the **Developer Settings** menu. See the [docs](https://docs.talon.one/docs/dev/tutorials/monitoring-integration-status). 
+     * Display the health of the Application and show the last time the Application was used.  You can also find this information in the Campaign Manager. In your Application, click **Settings** > **Integration API Keys**. See the [docs](https://docs.talon.one/docs/dev/tutorials/monitoring-integration-status). 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicationApiHealth}
      */
@@ -3782,7 +3714,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20033} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20032} and HTTP response
      */
     getApplicationCustomerFriendsWithHttpInfo(applicationId, integrationId, opts) {
       opts = opts || {};
@@ -3814,7 +3746,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20033;
+      let returnType = InlineResponse20032;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/profile/{integrationId}/friends', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3832,7 +3764,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20033}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20032}
      */
     getApplicationCustomerFriends(applicationId, integrationId, opts) {
       return this.getApplicationCustomerFriendsWithHttpInfo(applicationId, integrationId, opts)
@@ -3851,7 +3783,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
      */
     getApplicationCustomersWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -3878,7 +3810,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20022;
+      let returnType = InlineResponse20021;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customers', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3895,7 +3827,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
      */
     getApplicationCustomers(applicationId, opts) {
       return this.getApplicationCustomersWithHttpInfo(applicationId, opts)
@@ -3914,7 +3846,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20022} and HTTP response
      */
     getApplicationCustomersByAttributesWithHttpInfo(applicationId, body, opts) {
       opts = opts || {};
@@ -3944,7 +3876,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20023;
+      let returnType = InlineResponse20022;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customer_search', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3961,7 +3893,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20022}
      */
     getApplicationCustomersByAttributes(applicationId, body, opts) {
       return this.getApplicationCustomersByAttributesWithHttpInfo(applicationId, body, opts)
@@ -3979,7 +3911,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
      */
     getApplicationEventTypesWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -4005,7 +3937,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20029;
+      let returnType = InlineResponse20028;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/event_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4021,7 +3953,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
      */
     getApplicationEventTypes(applicationId, opts) {
       return this.getApplicationEventTypesWithHttpInfo(applicationId, opts)
@@ -4050,7 +3982,7 @@ export default class ManagementApi {
      * @param {String=} [opts.referralCode] Referral code
      * @param {String=} [opts.ruleQuery] Rule name filter for events
      * @param {String=} [opts.campaignQuery] Campaign name filter for events
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20028} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
      */
     getApplicationEventsWithoutTotalCountWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -4087,7 +4019,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20028;
+      let returnType = InlineResponse20027;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/events/no_total', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4114,7 +4046,7 @@ export default class ManagementApi {
      * @param {String=} [opts.referralCode] Referral code
      * @param {String=} [opts.ruleQuery] Rule name filter for events
      * @param {String=} [opts.campaignQuery] Campaign name filter for events
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20028}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
      */
     getApplicationEventsWithoutTotalCount(applicationId, opts) {
       return this.getApplicationEventsWithoutTotalCountWithHttpInfo(applicationId, opts)
@@ -4193,9 +4125,9 @@ export default class ManagementApi {
      * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {String=} [opts.coupon] Filter by sessions with this coupon. Must be exact match.
      * @param {String=} [opts.referral] Filter by sessions with this referral. Must be exact match.
-     * @param {String=} [opts.integrationId] Filter by sessions with this integrationId. Must be exact match.
+     * @param {String=} [opts.integrationId] Filter by sessions with this integration ID. Must be exact match.
      * @param {String=} [opts.storeIntegrationId] The integration ID of the store. You choose this ID when you create a store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20027} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
      */
     getApplicationSessionsWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -4229,7 +4161,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20027;
+      let returnType = InlineResponse20026;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/sessions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4251,9 +4183,9 @@ export default class ManagementApi {
      * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {String=} [opts.coupon] Filter by sessions with this coupon. Must be exact match.
      * @param {String=} [opts.referral] Filter by sessions with this referral. Must be exact match.
-     * @param {String=} [opts.integrationId] Filter by sessions with this integrationId. Must be exact match.
+     * @param {String=} [opts.integrationId] Filter by sessions with this integration ID. Must be exact match.
      * @param {String=} [opts.storeIntegrationId] The integration ID of the store. You choose this ID when you create a store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20027}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
      */
     getApplicationSessions(applicationId, opts) {
       return this.getApplicationSessionsWithHttpInfo(applicationId, opts)
@@ -4372,7 +4304,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.entity] Returned attributes will be filtered by supplied entity.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20034} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20033} and HTTP response
      */
     getAttributesWithHttpInfo(opts) {
       opts = opts || {};
@@ -4394,7 +4326,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20034;
+      let returnType = InlineResponse20033;
       return this.apiClient.callApi(
         '/v1/attributes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4410,7 +4342,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.entity] Returned attributes will be filtered by supplied entity.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20034}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20033}
      */
     getAttributes(opts) {
       return this.getAttributesWithHttpInfo(opts)
@@ -4429,7 +4361,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.profileQuery] The filter to select a profile.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20032} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20031} and HTTP response
      */
     getAudienceMembershipsWithHttpInfo(audienceId, opts) {
       opts = opts || {};
@@ -4456,7 +4388,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20032;
+      let returnType = InlineResponse20031;
       return this.apiClient.callApi(
         '/v1/audiences/{audienceId}/memberships', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4473,7 +4405,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.profileQuery] The filter to select a profile.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20032}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20031}
      */
     getAudienceMemberships(audienceId, opts) {
       return this.getAudienceMembershipsWithHttpInfo(audienceId, opts)
@@ -4491,7 +4423,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20029} and HTTP response
      */
     getAudiencesWithHttpInfo(opts) {
       opts = opts || {};
@@ -4513,7 +4445,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20030;
+      let returnType = InlineResponse20029;
       return this.apiClient.callApi(
         '/v1/audiences', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4529,7 +4461,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20029}
      */
     getAudiences(opts) {
       return this.getAudiencesWithHttpInfo(opts)
@@ -4545,7 +4477,7 @@ export default class ManagementApi {
      * @param {String} audienceIds The IDs of one or more audiences, separated by commas, by which to filter results.
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20031} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
      */
     getAudiencesAnalyticsWithHttpInfo(audienceIds, opts) {
       opts = opts || {};
@@ -4569,7 +4501,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20031;
+      let returnType = InlineResponse20030;
       return this.apiClient.callApi(
         '/v1/audiences/analytics', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4583,7 +4515,7 @@ export default class ManagementApi {
      * @param {String} audienceIds The IDs of one or more audiences, separated by commas, by which to filter results.
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20031}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
      */
     getAudiencesAnalytics(audienceIds, opts) {
       return this.getAudiencesAnalyticsWithHttpInfo(audienceIds, opts)
@@ -4657,7 +4589,7 @@ export default class ManagementApi {
      * @param {Date} rangeEnd Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.granularity] The time interval between the results in the returned time-series.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20021} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20020} and HTTP response
      */
     getCampaignAnalyticsWithHttpInfo(applicationId, campaignId, rangeStart, rangeEnd, opts) {
       opts = opts || {};
@@ -4696,7 +4628,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20021;
+      let returnType = InlineResponse20020;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/analytics', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4713,7 +4645,7 @@ export default class ManagementApi {
      * @param {Date} rangeEnd Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.granularity] The time interval between the results in the returned time-series.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20021}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20020}
      */
     getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts) {
       return this.getCampaignAnalyticsWithHttpInfo(applicationId, campaignId, rangeStart, rangeEnd, opts)
@@ -4972,7 +4904,7 @@ export default class ManagementApi {
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Number=} [opts.campaignGroupId] Filter results to campaigns owned by the specified campaign access group ID.
-     * @param {Number=} [opts.templateId] The ID of the Campaign Template this Campaign was created from.
+     * @param {Number=} [opts.templateId] The ID of the campaign template this campaign was created from.
      * @param {Number=} [opts.storeId] Filter results to campaigns linked to the specified store ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
@@ -5030,7 +4962,7 @@ export default class ManagementApi {
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Number=} [opts.campaignGroupId] Filter results to campaigns owned by the specified campaign access group ID.
-     * @param {Number=} [opts.templateId] The ID of the Campaign Template this Campaign was created from.
+     * @param {Number=} [opts.templateId] The ID of the campaign template this campaign was created from.
      * @param {Number=} [opts.storeId] Filter results to campaigns linked to the specified store ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
@@ -5057,7 +4989,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Number=} [opts.managementKeyId] Filter results that match the given management key ID.
      * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20042} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20041} and HTTP response
      */
     getChangesWithHttpInfo(opts) {
       opts = opts || {};
@@ -5086,7 +5018,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20042;
+      let returnType = InlineResponse20041;
       return this.apiClient.callApi(
         '/v1/changes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5109,7 +5041,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Number=} [opts.managementKeyId] Filter results that match the given management key ID.
      * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20042}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20041}
      */
     getChanges(opts) {
       return this.getChangesWithHttpInfo(opts)
@@ -5254,9 +5186,9 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
      * @param {module:model/String=} [opts.redeemed] - `true`: only coupons where `usageCounter > 0` will be returned. - `false`: only coupons where `usageCounter = 0` will be returned. - This field cannot be used in conjunction with the `usable` query parameter. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
      * @param {String=} [opts.batchId] Filter results by batches of coupons
-     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code. (default to false)
      * @param {Date=} [opts.expiresBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon expiration date timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.expiresAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon expiration date timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.startsBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon start date timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -5332,9 +5264,9 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
      * @param {module:model/String=} [opts.redeemed] - `true`: only coupons where `usageCounter > 0` will be returned. - `false`: only coupons where `usageCounter = 0` will be returned. - This field cannot be used in conjunction with the `usable` query parameter. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
      * @param {String=} [opts.batchId] Filter results by batches of coupons
-     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code. (default to false)
      * @param {Date=} [opts.expiresBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon expiration date timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.expiresAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon expiration date timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.startsBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon start date timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -5438,11 +5370,11 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @param {String=} [opts.name] Only return reports matching the customer name
+     * @param {String=} [opts.name] Only return reports matching the customer name.
      * @param {String=} [opts.integrationId] Filter results performing an exact matching against the profile integration identifier.
-     * @param {String=} [opts.campaignName] Only return reports matching the campaignName
-     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20026} and HTTP response
+     * @param {String=} [opts.campaignName] Only return reports matching the campaign name.
+     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
      */
     getCustomerActivityReportsWithoutTotalCountWithHttpInfo(rangeStart, rangeEnd, applicationId, opts) {
       opts = opts || {};
@@ -5482,7 +5414,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20026;
+      let returnType = InlineResponse20025;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/customer_activity_reports/no_total', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5500,11 +5432,11 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @param {String=} [opts.name] Only return reports matching the customer name
+     * @param {String=} [opts.name] Only return reports matching the customer name.
      * @param {String=} [opts.integrationId] Filter results performing an exact matching against the profile integration identifier.
-     * @param {String=} [opts.campaignName] Only return reports matching the campaignName
-     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20026}
+     * @param {String=} [opts.campaignName] Only return reports matching the campaign name.
+     * @param {String=} [opts.advocateName] Only return reports matching the current customer referrer name.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
      */
     getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts) {
       return this.getCustomerActivityReportsWithoutTotalCountWithHttpInfo(rangeStart, rangeEnd, applicationId, opts)
@@ -5639,7 +5571,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Number=} [opts.achievementId] The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
      * @param {String=} [opts.title] Filter results by the `title` of an achievement.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20047} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20046} and HTTP response
      */
     getCustomerProfileAchievementProgressWithHttpInfo(applicationId, integrationId, opts) {
       opts = opts || {};
@@ -5671,7 +5603,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20047;
+      let returnType = InlineResponse20046;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/achievement_progress/{integrationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5689,7 +5621,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Number=} [opts.achievementId] The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
      * @param {String=} [opts.title] Filter results by the `title` of an achievement.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20047}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20046}
      */
     getCustomerProfileAchievementProgress(applicationId, integrationId, opts) {
       return this.getCustomerProfileAchievementProgressWithHttpInfo(applicationId, integrationId, opts)
@@ -5705,8 +5637,8 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or Live customer. (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20025} and HTTP response
+     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or live customer. (default to false)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
      */
     getCustomerProfilesWithHttpInfo(opts) {
       opts = opts || {};
@@ -5727,7 +5659,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20025;
+      let returnType = InlineResponse20024;
       return this.apiClient.callApi(
         '/v1/customers/no_total', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5741,8 +5673,8 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or Live customer. (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20025}
+     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or live customer. (default to false)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
      */
     getCustomerProfiles(opts) {
       return this.getCustomerProfilesWithHttpInfo(opts)
@@ -5759,8 +5691,8 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or Live customer. (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20024} and HTTP response
+     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or live customer. (default to false)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20023} and HTTP response
      */
     getCustomersByAttributesWithHttpInfo(body, opts) {
       opts = opts || {};
@@ -5785,7 +5717,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20024;
+      let returnType = InlineResponse20023;
       return this.apiClient.callApi(
         '/v1/customer_search/no_total', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5800,8 +5732,8 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or Live customer. (default to false)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20024}
+     * @param {Boolean=} [opts.sandbox] Indicates whether you are pointing to a sandbox or live customer. (default to false)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20023}
      */
     getCustomersByAttributes(body, opts) {
       return this.getCustomersByAttributesWithHttpInfo(body, opts)
@@ -5820,7 +5752,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20040} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20039} and HTTP response
      */
     getEventTypesWithHttpInfo(opts) {
       opts = opts || {};
@@ -5843,7 +5775,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20040;
+      let returnType = InlineResponse20039;
       return this.apiClient.callApi(
         '/v1/event_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5860,7 +5792,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20040}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20039}
      */
     getEventTypes(opts) {
       return this.getEventTypesWithHttpInfo(opts)
@@ -5879,7 +5811,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
      * @param {Number=} [opts.campaignId] Filter by the campaign ID on which the limit counters are used.
      * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20043} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20042} and HTTP response
      */
     getExportsWithHttpInfo(opts) {
       opts = opts || {};
@@ -5902,7 +5834,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20043;
+      let returnType = InlineResponse20042;
       return this.apiClient.callApi(
         '/v1/exports', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5919,7 +5851,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
      * @param {Number=} [opts.campaignId] Filter by the campaign ID on which the limit counters are used.
      * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20043}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20042}
      */
     getExports(opts) {
       return this.getExportsWithHttpInfo(opts)
@@ -6401,7 +6333,7 @@ export default class ManagementApi {
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiration date is set and in the past. The second matches referrals in which start date is null or in the past and expiration date is null or in the future, the third matches referrals in which start date is set and in the future. 
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
-     * @param {String=} [opts.advocate] Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
+     * @param {String=} [opts.advocate] Filter results by match with a profile ID specified in the referral's AdvocateProfileIntegrationId field.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20010} and HTTP response
      */
     getReferralsWithoutTotalCountWithHttpInfo(applicationId, campaignId, opts) {
@@ -6461,7 +6393,7 @@ export default class ManagementApi {
      * @param {Date=} [opts.createdAfter] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches referrals in which the expiration date is set and in the past. The second matches referrals in which start date is null or in the past and expiration date is null or in the future, the third matches referrals in which start date is set and in the future. 
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only referrals where `usageCounter < usageLimit` will be returned, \"false\" will return only referrals where `usageCounter >= usageLimit`. 
-     * @param {String=} [opts.advocate] Filter results by match with a profile id specified in the referral's AdvocateProfileIntegrationId field
+     * @param {String=} [opts.advocate] Filter results by match with a profile ID specified in the referral's AdvocateProfileIntegrationId field.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20010}
      */
     getReferralsWithoutTotalCount(applicationId, campaignId, opts) {
@@ -6759,7 +6691,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20041} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20040} and HTTP response
      */
     getUsersWithHttpInfo(opts) {
       opts = opts || {};
@@ -6780,7 +6712,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20041;
+      let returnType = InlineResponse20040;
       return this.apiClient.callApi(
         '/v1/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6795,7 +6727,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20041}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20040}
      */
     getUsers(opts) {
       return this.getUsersWithHttpInfo(opts)
@@ -6861,12 +6793,12 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
-     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.webhookId] Filter results by webhook id.
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20038} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20037} and HTTP response
      */
     getWebhookActivationLogsWithHttpInfo(opts) {
       opts = opts || {};
@@ -6893,7 +6825,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20038;
+      let returnType = InlineResponse20037;
       return this.apiClient.callApi(
         '/v1/webhook_activation_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6909,12 +6841,12 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
-     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.webhookId] Filter results by webhook id.
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20038}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20037}
      */
     getWebhookActivationLogs(opts) {
       return this.getWebhookActivationLogsWithHttpInfo(opts)
@@ -6932,13 +6864,13 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.webhookId] Filter results by webhook id.
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {String=} [opts.requestUuid] Filter results by request UUID.
      * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20039} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20038} and HTTP response
      */
     getWebhookLogsWithHttpInfo(opts) {
       opts = opts || {};
@@ -6966,7 +6898,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20039;
+      let returnType = InlineResponse20038;
       return this.apiClient.callApi(
         '/v1/webhook_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6982,13 +6914,13 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.webhookId] Filter results by Webhook.
+     * @param {Number=} [opts.webhookId] Filter results by webhook id.
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {String=} [opts.requestUuid] Filter results by request UUID.
      * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
      * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20039}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20038}
      */
     getWebhookLogs(opts) {
       return this.getWebhookLogsWithHttpInfo(opts)
@@ -7010,7 +6942,7 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.visibility] Filter results by visibility.
      * @param {Number=} [opts.outgoingIntegrationsTypeId] Filter results by outgoing integration type ID.
      * @param {String=} [opts.title] Filter results performing case-insensitive matching against the webhook title.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20037} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20036} and HTTP response
      */
     getWebhooksWithHttpInfo(opts) {
       opts = opts || {};
@@ -7036,7 +6968,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20037;
+      let returnType = InlineResponse20036;
       return this.apiClient.callApi(
         '/v1/webhooks', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7056,7 +6988,7 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.visibility] Filter results by visibility.
      * @param {Number=} [opts.outgoingIntegrationsTypeId] Filter results by outgoing integration type ID.
      * @param {String=} [opts.title] Filter results performing case-insensitive matching against the webhook title.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20037}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20036}
      */
     getWebhooks(opts) {
       return this.getWebhooksWithHttpInfo(opts)
@@ -7423,7 +7355,7 @@ export default class ManagementApi {
 
     /**
      * Import loyalty cards
-     * Upload a CSV file containing the loyalty cards that you want to use in your card-based loyalty program. Send the file as multipart data.  It contains the following columns for each card:  - `identifier` (required): The alphanumeric identifier of the loyalty card. - `state` (required): The state of the loyalty card. It can be `active` or `inactive`. - `customerprofileids` (optional): An array of strings representing the identifiers of the customer profiles linked to the loyalty card.  **Note:** We recommend limiting your file size to 500MB.  **Example:**  ```csv identifier,state,customerprofileids 123-456-789AT,active,Alexa001;UserA ``` 
+     * Upload a CSV file containing the loyalty cards that you want to use in your card-based loyalty program. Send the file as multipart data.  It contains the following columns for each card:  - `identifier` (required): The alphanumeric identifier of the loyalty card. - `state` (required): The state of the loyalty card. It can be `active` or `inactive`. - `customerprofileids` (optional): An array of strings representing the identifiers of the customer profiles linked to the loyalty card. The identifiers should be separated with a semicolon (;).  **Note:** We recommend limiting your file size to 500MB.  **Example:**  ```csv identifier,state,customerprofileids 123-456-789AT,active,Alexa001;UserA ``` 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.upFile] The file containing the data that is being imported.
@@ -7461,7 +7393,7 @@ export default class ManagementApi {
 
     /**
      * Import loyalty cards
-     * Upload a CSV file containing the loyalty cards that you want to use in your card-based loyalty program. Send the file as multipart data.  It contains the following columns for each card:  - `identifier` (required): The alphanumeric identifier of the loyalty card. - `state` (required): The state of the loyalty card. It can be `active` or `inactive`. - `customerprofileids` (optional): An array of strings representing the identifiers of the customer profiles linked to the loyalty card.  **Note:** We recommend limiting your file size to 500MB.  **Example:**  ```csv identifier,state,customerprofileids 123-456-789AT,active,Alexa001;UserA ``` 
+     * Upload a CSV file containing the loyalty cards that you want to use in your card-based loyalty program. Send the file as multipart data.  It contains the following columns for each card:  - `identifier` (required): The alphanumeric identifier of the loyalty card. - `state` (required): The state of the loyalty card. It can be `active` or `inactive`. - `customerprofileids` (optional): An array of strings representing the identifiers of the customer profiles linked to the loyalty card. The identifiers should be separated with a semicolon (;).  **Note:** We recommend limiting your file size to 500MB.  **Example:**  ```csv identifier,state,customerprofileids 123-456-789AT,active,Alexa001;UserA ``` 
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.upFile] The file containing the data that is being imported.
@@ -7531,7 +7463,7 @@ export default class ManagementApi {
 
     /**
      * Import loyalty points
-     * Upload a CSV file containing the loyalty points you want to import into a given loyalty program. Send the file as multipart data.  Depending on the type of loyalty program, you can import points into a given customer profile or loyalty card.  The CSV file contains the following columns:  - `customerprofileid` (optional): For profile-based loyalty programs, the integration ID of the customer profile where the loyalty points are imported. - `identifier` (optional): For card-based loyalty programs, the identifier of the loyalty card where the loyalty points are imported. - `amount`: The amount of points to award to the customer profile. - `startdate` (optional): The earliest date when the points can be redeemed. The points are `active` from this date until the expiration date.    **Note**: It must be an RFC3339 timestamp string or string `immediate`. Empty or missing values are considered `immediate`. - `expirydate` (optional): The latest date when the points can be redeemed. The points are `expired` after this date.    **Note**: It must be an RFC3339 timestamp string or string `unlimited`. Empty or missing values are considered `unlimited`. - `subledgerid` (optional): The ID of the subledger that should received the points. - `reason` (optional): The reason why these points are awarded.  You can use the time zone of your choice. It is converted to UTC internally by Talon.One.  **Note:** For existing customer profiles and loyalty cards, the imported points are added to any previous active or pending points, depending on the value provided for `startdate`. If `startdate` matches the current date, the imported points are _active_. If it is later, the points are _pending_ until the date provided for `startdate` is reached.  **Note:** We recommend limiting your file size to 500MB.  **Example for profile-based programs:**  ```text customerprofileid,amount,startdate,expirydate,subledgerid,reason URNGV8294NV,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ```  **Example for card-based programs:**  ```text identifier,amount,startdate,expirydate,subledgerid,reason summer-loyalty-card-0543,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ``` 
+     * Upload a CSV file containing the loyalty points you want to import into a given loyalty program. Send the file as multipart data.  Depending on the type of loyalty program, you can import points into a given customer profile or loyalty card.  The CSV file contains the following columns:  - `customerprofileid` (optional): For profile-based loyalty programs, the integration ID of the customer profile where the loyalty points are imported.    **Note**: If the customer profile does not exist, it will be created. The profile will not be visible in any Application   until a session or profile update is received for that profile. - `identifier` (optional): For card-based loyalty programs, the identifier of the loyalty card where the loyalty points are imported. - `amount`: The amount of points to award to the customer profile. - `startdate` (optional): The earliest date when the points can be redeemed. The points are `active` from this date until the expiration date.    **Note**: It must be an RFC3339 timestamp string or string `immediate`. Empty or missing values are considered `immediate`. - `expirydate` (optional): The latest date when the points can be redeemed. The points are `expired` after this date.    **Note**: It must be an RFC3339 timestamp string or string `unlimited`. Empty or missing values are considered `unlimited`. - `subledgerid` (optional): The ID of the subledger that should received the points. - `reason` (optional): The reason why these points are awarded.  You can use the time zone of your choice. It is converted to UTC internally by Talon.One.  **Note:** For existing customer profiles and loyalty cards, the imported points are added to any previous active or pending points, depending on the value provided for `startdate`. If `startdate` matches the current date, the imported points are _active_. If it is later, the points are _pending_ until the date provided for `startdate` is reached.  **Note:** We recommend limiting your file size to 500MB.  **Example for profile-based programs:**  ```text customerprofileid,amount,startdate,expirydate,subledgerid,reason URNGV8294NV,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ```  **Example for card-based programs:**  ```text identifier,amount,startdate,expirydate,subledgerid,reason summer-loyalty-card-0543,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ``` 
      * @param {Number} loyaltyProgramId Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.upFile] The file containing the data that is being imported.
@@ -7569,7 +7501,7 @@ export default class ManagementApi {
 
     /**
      * Import loyalty points
-     * Upload a CSV file containing the loyalty points you want to import into a given loyalty program. Send the file as multipart data.  Depending on the type of loyalty program, you can import points into a given customer profile or loyalty card.  The CSV file contains the following columns:  - `customerprofileid` (optional): For profile-based loyalty programs, the integration ID of the customer profile where the loyalty points are imported. - `identifier` (optional): For card-based loyalty programs, the identifier of the loyalty card where the loyalty points are imported. - `amount`: The amount of points to award to the customer profile. - `startdate` (optional): The earliest date when the points can be redeemed. The points are `active` from this date until the expiration date.    **Note**: It must be an RFC3339 timestamp string or string `immediate`. Empty or missing values are considered `immediate`. - `expirydate` (optional): The latest date when the points can be redeemed. The points are `expired` after this date.    **Note**: It must be an RFC3339 timestamp string or string `unlimited`. Empty or missing values are considered `unlimited`. - `subledgerid` (optional): The ID of the subledger that should received the points. - `reason` (optional): The reason why these points are awarded.  You can use the time zone of your choice. It is converted to UTC internally by Talon.One.  **Note:** For existing customer profiles and loyalty cards, the imported points are added to any previous active or pending points, depending on the value provided for `startdate`. If `startdate` matches the current date, the imported points are _active_. If it is later, the points are _pending_ until the date provided for `startdate` is reached.  **Note:** We recommend limiting your file size to 500MB.  **Example for profile-based programs:**  ```text customerprofileid,amount,startdate,expirydate,subledgerid,reason URNGV8294NV,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ```  **Example for card-based programs:**  ```text identifier,amount,startdate,expirydate,subledgerid,reason summer-loyalty-card-0543,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ``` 
+     * Upload a CSV file containing the loyalty points you want to import into a given loyalty program. Send the file as multipart data.  Depending on the type of loyalty program, you can import points into a given customer profile or loyalty card.  The CSV file contains the following columns:  - `customerprofileid` (optional): For profile-based loyalty programs, the integration ID of the customer profile where the loyalty points are imported.    **Note**: If the customer profile does not exist, it will be created. The profile will not be visible in any Application   until a session or profile update is received for that profile. - `identifier` (optional): For card-based loyalty programs, the identifier of the loyalty card where the loyalty points are imported. - `amount`: The amount of points to award to the customer profile. - `startdate` (optional): The earliest date when the points can be redeemed. The points are `active` from this date until the expiration date.    **Note**: It must be an RFC3339 timestamp string or string `immediate`. Empty or missing values are considered `immediate`. - `expirydate` (optional): The latest date when the points can be redeemed. The points are `expired` after this date.    **Note**: It must be an RFC3339 timestamp string or string `unlimited`. Empty or missing values are considered `unlimited`. - `subledgerid` (optional): The ID of the subledger that should received the points. - `reason` (optional): The reason why these points are awarded.  You can use the time zone of your choice. It is converted to UTC internally by Talon.One.  **Note:** For existing customer profiles and loyalty cards, the imported points are added to any previous active or pending points, depending on the value provided for `startdate`. If `startdate` matches the current date, the imported points are _active_. If it is later, the points are _pending_ until the date provided for `startdate` is reached.  **Note:** We recommend limiting your file size to 500MB.  **Example for profile-based programs:**  ```text customerprofileid,amount,startdate,expirydate,subledgerid,reason URNGV8294NV,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ```  **Example for card-based programs:**  ```text identifier,amount,startdate,expirydate,subledgerid,reason summer-loyalty-card-0543,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ``` 
      * @param {Number} loyaltyProgramId Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.upFile] The file containing the data that is being imported.
@@ -7813,7 +7745,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.title] Filter by the display name for the achievement in the campaign manager.  **Note**: If no `title` is provided, all the achievements from the campaign are returned. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20046} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20045} and HTTP response
      */
     listAchievementsWithHttpInfo(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -7844,7 +7776,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20046;
+      let returnType = InlineResponse20045;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/achievements', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7861,7 +7793,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.title] Filter by the display name for the achievement in the campaign manager.  **Note**: If no `title` is provided, all the achievements from the campaign are returned. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20046}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20045}
      */
     listAchievements(applicationId, campaignId, opts) {
       return this.listAchievementsWithHttpInfo(applicationId, campaignId, opts)
@@ -7874,7 +7806,7 @@ export default class ManagementApi {
     /**
      * List roles
      * List all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20044} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20043} and HTTP response
      */
     listAllRolesV2WithHttpInfo() {
       let postBody = null;
@@ -7891,7 +7823,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20044;
+      let returnType = InlineResponse20043;
       return this.apiClient.callApi(
         '/v2/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7902,7 +7834,7 @@ export default class ManagementApi {
     /**
      * List roles
      * List all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20044}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20043}
      */
     listAllRolesV2() {
       return this.listAllRolesV2WithHttpInfo()
@@ -7922,7 +7854,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Array.<String>=} [opts.sku] Filter results by one or more SKUs. Must be exact match.
      * @param {Array.<String>=} [opts.productNames] Filter results by one or more product names. Must be exact match.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20035} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20034} and HTTP response
      */
     listCatalogItemsWithHttpInfo(catalogId, opts) {
       opts = opts || {};
@@ -7950,7 +7882,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20035;
+      let returnType = InlineResponse20034;
       return this.apiClient.callApi(
         '/v1/catalogs/{catalogId}/items', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7968,7 +7900,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Array.<String>=} [opts.sku] Filter results by one or more SKUs. Must be exact match.
      * @param {Array.<String>=} [opts.productNames] Filter results by one or more product names. Must be exact match.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20035}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20034}
      */
     listCatalogItems(catalogId, opts) {
       return this.listCatalogItemsWithHttpInfo(catalogId, opts)
@@ -8126,11 +8058,11 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {String=} [opts.name] The name of the store.
      * @param {String=} [opts.integrationId] The integration ID of the store.
      * @param {String=} [opts.query] Filter results by `name` or `integrationId`.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20045} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20044} and HTTP response
      */
     listStoresWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -8161,7 +8093,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20045;
+      let returnType = InlineResponse20044;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/stores', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8178,11 +8110,11 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** This parameter works only with numeric fields. 
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-     * @param {Number=} [opts.campaignId] Filter results by campaign.
+     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
      * @param {String=} [opts.name] The name of the store.
      * @param {String=} [opts.integrationId] The integration ID of the store.
      * @param {String=} [opts.query] Filter results by `name` or `integrationId`.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20045}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20044}
      */
     listStores(applicationId, opts) {
       return this.listStoresWithHttpInfo(applicationId, opts)
@@ -8987,9 +8919,9 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
      * @param {String=} [opts.batchId] Filter results by batches of coupons
-     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code. (default to false)
      * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.  - `enabled`: Campaigns that are scheduled, running (activated), or expired. - `running`: Campaigns that are running (activated). - `disabled`: Campaigns that are disabled. - `expired`: Campaigns that are expired. - `archived`: Campaigns that are archived. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
@@ -9054,9 +8986,9 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
      * @param {String=} [opts.batchId] Filter results by batches of coupons
-     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code. (default to false)
      * @param {module:model/String=} [opts.campaignState] Filter results by the state of the campaign.  - `enabled`: Campaigns that are scheduled, running (activated), or expired. - `running`: Campaigns that are running (activated). - `disabled`: Campaigns that are disabled. - `expired`: Campaigns that are expired. - `archived`: Campaigns that are archived. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
@@ -9084,8 +9016,8 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code. (default to false)
      * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
@@ -9155,8 +9087,8 @@ export default class ManagementApi {
      * @param {module:model/String=} [opts.valid] Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
      * @param {module:model/String=} [opts.usable] Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
      * @param {Number=} [opts.referralId] Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
-     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field
-     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code (default to false)
+     * @param {String=} [opts.recipientIntegrationId] Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
+     * @param {Boolean=} [opts.exactMatch] Filter results to an exact case-insensitive matching against the coupon code. (default to false)
      * @param {String=} [opts.batchId] Filter results by batches of coupons
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
@@ -9461,7 +9393,7 @@ export default class ManagementApi {
 
     /**
      * Update campaign
-     * Update the given campaign.
+     * Update the given campaign.  **Important:** You cannot use this endpoint to update campaigns if [campaign staging and revisions](https://docs.talon.one/docs/product/applications/managing-general-settings#campaign-staging-and-revisions) is enabled for your Application. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
      * @param {module:model/UpdateCampaign} body body
@@ -9506,7 +9438,7 @@ export default class ManagementApi {
 
     /**
      * Update campaign
-     * Update the given campaign.
+     * Update the given campaign.  **Important:** You cannot use this endpoint to update campaigns if [campaign staging and revisions](https://docs.talon.one/docs/product/applications/managing-general-settings#campaign-staging-and-revisions) is enabled for your Application. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
      * @param {module:model/UpdateCampaign} body body
@@ -9590,7 +9522,7 @@ export default class ManagementApi {
 
     /**
      * Update coupon
-     * Update the specified coupon.  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <p>With this <code>PUT</code> endpoint alone, if you do not explicitly set a value for the <code>startDate</code>, <code>expiryDate</code>, and <code>recipientIntegrationId</code> properties in your request, it is automatically set to <code>null</code>.</p>  </div> 
+     * Update the specified coupon.  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <p>With this <code>PUT</code> endpoint, if you do not explicitly set a value for the <code>startDate</code>, <code>expiryDate</code>, and <code>recipientIntegrationId</code> properties in your request, it is automatically set to <code>null</code>.</p>  </div> 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
      * @param {String} couponId The internal ID of the coupon code. You can find this value in the `id` property from the [List coupons](https://docs.talon.one/management-api#tag/Coupons/operation/getCouponsWithoutTotalCount) endpoint response. 
@@ -9641,7 +9573,7 @@ export default class ManagementApi {
 
     /**
      * Update coupon
-     * Update the specified coupon.  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <p>With this <code>PUT</code> endpoint alone, if you do not explicitly set a value for the <code>startDate</code>, <code>expiryDate</code>, and <code>recipientIntegrationId</code> properties in your request, it is automatically set to <code>null</code>.</p>  </div> 
+     * Update the specified coupon.  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <p>With this <code>PUT</code> endpoint, if you do not explicitly set a value for the <code>startDate</code>, <code>expiryDate</code>, and <code>recipientIntegrationId</code> properties in your request, it is automatically set to <code>null</code>.</p>  </div> 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
      * @param {String} couponId The internal ID of the coupon code. You can find this value in the `id` property from the [List coupons](https://docs.talon.one/management-api#tag/Coupons/operation/getCouponsWithoutTotalCount) endpoint response. 
@@ -9658,7 +9590,7 @@ export default class ManagementApi {
 
     /**
      * Update coupons
-     * Update all coupons, or a specific batch of coupons in the given campaign. You can find the `batchId` in the **Coupons** view of your Application in the Campaign Manager, or you can use [List coupons](#operation/getCouponsWithoutTotalCount).  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <ul>     <li>Only send sequential requests to this endpoint.</li>     <li>Requests to this endpoint timeout after 30 minutes. If you hit a timeout, reach out to our support team.</li>   </ul>  </div>  To update a specific coupon, use [Update coupon](#operation/updateCoupon). 
+     * Update all coupons or a specific batch of coupons in the given campaign. You can find the `batchId` on the **Coupons** page of your campaign in the Campaign Manager, or you can use [List coupons](#operation/getCouponsWithoutTotalCount).  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <ul>     <li>Only send sequential requests to this endpoint.</li>     <li>Requests to this endpoint time out after 30 minutes. If you hit a timeout, contact our support team.</li>     <li>With this <code>PUT</code> endpoint, if you do not explicitly set a value for the <code>startDate</code> and <code>expiryDate</code> properties in your request, it is automatically set to <code>null</code>.</li>   </ul>  </div>  To update a specific coupon, use [Update coupon](#operation/updateCoupon). 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
      * @param {module:model/UpdateCouponBatch} body body
@@ -9703,7 +9635,7 @@ export default class ManagementApi {
 
     /**
      * Update coupons
-     * Update all coupons, or a specific batch of coupons in the given campaign. You can find the `batchId` in the **Coupons** view of your Application in the Campaign Manager, or you can use [List coupons](#operation/getCouponsWithoutTotalCount).  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <ul>     <li>Only send sequential requests to this endpoint.</li>     <li>Requests to this endpoint timeout after 30 minutes. If you hit a timeout, reach out to our support team.</li>   </ul>  </div>  To update a specific coupon, use [Update coupon](#operation/updateCoupon). 
+     * Update all coupons or a specific batch of coupons in the given campaign. You can find the `batchId` on the **Coupons** page of your campaign in the Campaign Manager, or you can use [List coupons](#operation/getCouponsWithoutTotalCount).  <div class=\"redoc-section\">   <p class=\"title\">Important</p>    <ul>     <li>Only send sequential requests to this endpoint.</li>     <li>Requests to this endpoint time out after 30 minutes. If you hit a timeout, contact our support team.</li>     <li>With this <code>PUT</code> endpoint, if you do not explicitly set a value for the <code>startDate</code> and <code>expiryDate</code> properties in your request, it is automatically set to <code>null</code>.</li>   </ul>  </div>  To update a specific coupon, use [Update coupon](#operation/updateCoupon). 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
      * @param {module:model/UpdateCouponBatch} body body

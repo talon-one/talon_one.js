@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationStoreEntity model module.
  * @module model/IntegrationStoreEntity
- * @version 9.0.0
+ * @version 10.0.0
  */
 class IntegrationStoreEntity {
     /**

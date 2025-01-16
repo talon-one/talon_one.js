@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Picklist model module.
  * @module model/Picklist
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Picklist {
     /**
      * Constructs a new <code>Picklist</code>.
-     * 
      * @alias module:model/Picklist
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

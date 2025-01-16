@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OneTimeCode model module.
  * @module model/OneTimeCode
- * @version 9.0.0
+ * @version 10.0.0
  */
 class OneTimeCode {
     /**

@@ -17,12 +17,11 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The TemplateDef model module.
  * @module model/TemplateDef
- * @version 9.0.0
+ * @version 10.0.0
  */
 class TemplateDef {
     /**
      * Constructs a new <code>TemplateDef</code>.
-     * 
      * @alias module:model/TemplateDef
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

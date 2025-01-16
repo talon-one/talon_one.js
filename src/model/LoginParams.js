@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The LoginParams model module.
  * @module model/LoginParams
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoginParams {
     /**
      * Constructs a new <code>LoginParams</code>.
-     * 
      * @alias module:model/LoginParams
      * @param email {String} The email address associated with the user profile.
      * @param password {String} The password for your account.

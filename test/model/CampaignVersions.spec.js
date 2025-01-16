@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.CampaignVersions);
     });
 
+    it('should have the property revisionFrontendState (base name: "revisionFrontendState")', function() {
+      // uncomment below and update the code to test the property revisionFrontendState
+      //var instane = new TalonOne.CampaignVersions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property activeRevisionId (base name: "activeRevisionId")', function() {
       // uncomment below and update the code to test the property activeRevisionId
       //var instane = new TalonOne.CampaignVersions();

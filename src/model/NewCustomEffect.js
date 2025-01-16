@@ -17,12 +17,11 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The NewCustomEffect model module.
  * @module model/NewCustomEffect
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NewCustomEffect {
     /**
      * Constructs a new <code>NewCustomEffect</code>.
-     * 
      * @alias module:model/NewCustomEffect
      * @param applicationIds {Array.<Number>} The IDs of the Applications that are related to this entity.
      * @param name {String} The name of this effect.

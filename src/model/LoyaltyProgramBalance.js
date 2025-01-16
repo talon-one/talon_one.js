@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramBalance model module.
  * @module model/LoyaltyProgramBalance
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LoyaltyProgramBalance {
     /**
@@ -27,7 +27,7 @@ class LoyaltyProgramBalance {
      * @param pendingBalance {Number} Sum of pending points.
      * @param expiredBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param spentBalance {Number} **DEPRECATED** Value is shown as 0. 
-     * @param tentativeCurrentBalance {Number} Sum of the tentative active points (including additions and deductions) inside the currently open session. The `currentBalance` is updated to this value when you close the session, and the effects are applied.
+     * @param tentativeCurrentBalance {Number} The tentative points balance, reflecting the `currentBalance` and all point additions and deductions within the current open customer session. When the session is closed, the effects are applied and the `currentBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
      */
     constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
@@ -108,13 +108,13 @@ LoyaltyProgramBalance.prototype['expiredBalance'] = undefined;
 LoyaltyProgramBalance.prototype['spentBalance'] = undefined;
 
 /**
- * Sum of the tentative active points (including additions and deductions) inside the currently open session. The `currentBalance` is updated to this value when you close the session, and the effects are applied.
+ * The tentative points balance, reflecting the `currentBalance` and all point additions and deductions within the current open customer session. When the session is closed, the effects are applied and the `currentBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
  * @member {Number} tentativeCurrentBalance
  */
 LoyaltyProgramBalance.prototype['tentativeCurrentBalance'] = undefined;
 
 /**
- * Sum of pending points (including additions and deductions) inside the currently open session. The `pendingBalance` is updated to this value when you close the session, and the effects are applied.
+ * The tentative points balance, reflecting the `pendingBalance` and all point additions with a future activation date within the current open customer session. When the session is closed, the effects are applied and the `pendingBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
  * @member {Number} tentativePendingBalance
  */
 LoyaltyProgramBalance.prototype['tentativePendingBalance'] = undefined;

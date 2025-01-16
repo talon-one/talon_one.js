@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The Role model module.
  * @module model/Role
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Role {
     /**
      * Constructs a new <code>Role</code>.
-     * 
      * @alias module:model/Role
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

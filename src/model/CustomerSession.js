@@ -17,12 +17,11 @@ import CartItem from './CartItem';
 /**
  * The CustomerSession model module.
  * @module model/CustomerSession
- * @version 9.0.0
+ * @version 10.0.0
  */
 class CustomerSession {
     /**
      * Constructs a new <code>CustomerSession</code>.
-     * 
      * @alias module:model/CustomerSession
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param created {Date} The time this entity was created.

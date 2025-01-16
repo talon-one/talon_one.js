@@ -18,12 +18,12 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The UpdateLoyaltyProgram model module.
  * @module model/UpdateLoyaltyProgram
- * @version 9.0.0
+ * @version 10.0.0
  */
 class UpdateLoyaltyProgram {
     /**
      * Constructs a new <code>UpdateLoyaltyProgram</code>.
-     * 
+     * An updated loyalty program.
      * @alias module:model/UpdateLoyaltyProgram
      */
     constructor() { 
@@ -91,6 +91,9 @@ class UpdateLoyaltyProgram {
             }
             if (data.hasOwnProperty('cardCodeSettings')) {
                 obj['cardCodeSettings'] = CodeGeneratorSettings.constructFromObject(data['cardCodeSettings']);
+            }
+            if (data.hasOwnProperty('returnPolicy')) {
+                obj['returnPolicy'] = ApiClient.convertToType(data['returnPolicy'], 'String');
             }
             if (data.hasOwnProperty('tiers')) {
                 obj['tiers'] = ApiClient.convertToType(data['tiers'], [NewLoyaltyTier]);
@@ -186,6 +189,12 @@ UpdateLoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
 UpdateLoyaltyProgram.prototype['cardCodeSettings'] = undefined;
 
 /**
+ * The policy that defines the rollback of points in case of a partially returned, cancelled, or reopened [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). - `only_pending`: Only pending points can be rolled back. - `within_balance`: Available active points can be rolled back if there aren't enough pending points. The active balance of the customer cannot be negative. 
+ * @member {module:model/UpdateLoyaltyProgram.ReturnPolicyEnum} returnPolicy
+ */
+UpdateLoyaltyProgram.prototype['returnPolicy'] = undefined;
+
+/**
  * The tiers in this loyalty program.
  * @member {Array.<module:model/NewLoyaltyTier>} tiers
  */
@@ -273,6 +282,27 @@ UpdateLoyaltyProgram['TiersDowngradePolicyEnum'] = {
      * @const
      */
     "balance_based": "balance_based"
+};
+
+
+/**
+ * Allowed values for the <code>returnPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateLoyaltyProgram['ReturnPolicyEnum'] = {
+
+    /**
+     * value: "only_pending"
+     * @const
+     */
+    "only_pending": "only_pending",
+
+    /**
+     * value: "within_balance"
+     * @const
+     */
+    "within_balance": "within_balance"
 };
 
 

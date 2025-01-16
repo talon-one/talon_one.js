@@ -19,12 +19,11 @@ import LoyaltyProgram from './LoyaltyProgram';
 /**
  * The Application model module.
  * @module model/Application
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Application {
     /**
      * Constructs a new <code>Application</code>.
-     * 
      * @alias module:model/Application
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

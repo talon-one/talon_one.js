@@ -17,12 +17,11 @@ import LimitConfig from './LimitConfig';
 /**
  * The Coupon model module.
  * @module model/Coupon
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Coupon {
     /**
      * Constructs a new <code>Coupon</code>.
-     * 
      * @alias module:model/Coupon
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.

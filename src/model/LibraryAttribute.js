@@ -16,12 +16,11 @@ import ApiClient from '../ApiClient';
 /**
  * The LibraryAttribute model module.
  * @module model/LibraryAttribute
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LibraryAttribute {
     /**
      * Constructs a new <code>LibraryAttribute</code>.
-     * 
      * @alias module:model/LibraryAttribute
      * @param entity {module:model/LibraryAttribute.EntityEnum} The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an `attributes` object with keys corresponding to the `name` of the custom attributes for that type.
      * @param name {String} The attribute name that will be used in API requests and Talang. E.g. if `name == \"region\"` then you would set the region attribute by including an `attributes.region` property in your request payload. 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AnalyticsDataPointWithTrendAndUplift model module.
  * @module model/AnalyticsDataPointWithTrendAndUplift
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AnalyticsDataPointWithTrendAndUplift {
     /**
