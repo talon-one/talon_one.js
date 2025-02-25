@@ -1,6 +1,6 @@
 {
   "name": "talon_one",
-  "version": "10.0.0",
+  "version": "11.0.0",
   "description": "Talon.One API SDK for Javascript",
   "homepage": "https://developers.talon.one/SDKs/JavaScript",
   "author": {
@@ -30,7 +30,7 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": "8.1.2"
+    "superagent": "^8.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -55,6 +55,7 @@
     "@babel/register": "^7.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^11.0.1",
+    "nock": "^14.0.1",
     "sinon": "^19.0.2",
     "typescript": "^5.7.3"
   },

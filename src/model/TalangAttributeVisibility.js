@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TalangAttributeVisibility model module.
  * @module model/TalangAttributeVisibility
- * @version 10.0.0
+ * @version 11.0.0
  */
 class TalangAttributeVisibility {
     /**

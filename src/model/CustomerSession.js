@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSession model module.
  * @module model/CustomerSession
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CustomerSession {
     /**
@@ -25,7 +25,7 @@ class CustomerSession {
      * @alias module:model/CustomerSession
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param created {Date} The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
@@ -136,7 +136,7 @@ CustomerSession.prototype['integrationId'] = undefined;
 CustomerSession.prototype['created'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 CustomerSession.prototype['applicationId'] = undefined;

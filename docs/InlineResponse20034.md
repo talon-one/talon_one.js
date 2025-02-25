@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**totalResultSize** | **Number** |  | [optional] 
-**data** | [**[CatalogItem]**](CatalogItem.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[Attribute]**](Attribute.md) |  | 
 
 

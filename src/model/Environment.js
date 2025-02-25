@@ -27,7 +27,7 @@ import TemplateDef from './TemplateDef';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Environment {
     /**
@@ -35,7 +35,7 @@ class Environment {
      * @alias module:model/Environment
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param slots {Array.<module:model/SlotDef>} The slots defined for this application.
      * @param functions {Array.<module:model/FunctionDef>} The functions defined for this application.
      * @param templates {Array.<module:model/TemplateDef>} The templates defined for this application.
@@ -137,7 +137,7 @@ Environment.prototype['id'] = undefined;
 Environment.prototype['created'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 Environment.prototype['applicationId'] = undefined;

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | [optional] 
-**data** | [**[Achievement]**](Achievement.md) |  | 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[Store]**](Store.md) |  | 
 
 

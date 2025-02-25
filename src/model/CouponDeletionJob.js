@@ -17,7 +17,7 @@ import CouponDeletionFilters from './CouponDeletionFilters';
 /**
  * The CouponDeletionJob model module.
  * @module model/CouponDeletionJob
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CouponDeletionJob {
     /**
@@ -25,7 +25,7 @@ class CouponDeletionJob {
      * @alias module:model/CouponDeletionJob
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param filters {module:model/CouponDeletionFilters} 
      * @param status {String} The current status of this request. Possible values: - `not_ready` - `pending` - `completed` - `failed` 
@@ -124,7 +124,7 @@ CouponDeletionJob.prototype['id'] = undefined;
 CouponDeletionJob.prototype['created'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 CouponDeletionJob.prototype['applicationId'] = undefined;

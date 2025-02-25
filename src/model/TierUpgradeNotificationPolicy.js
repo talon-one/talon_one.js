@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierUpgradeNotificationPolicy model module.
  * @module model/TierUpgradeNotificationPolicy
- * @version 10.0.0
+ * @version 11.0.0
  */
 class TierUpgradeNotificationPolicy {
     /**
@@ -55,6 +55,9 @@ class TierUpgradeNotificationPolicy {
             if (data.hasOwnProperty('batchingEnabled')) {
                 obj['batchingEnabled'] = ApiClient.convertToType(data['batchingEnabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('batchSize')) {
+                obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Number');
+            }
         }
         return obj;
     }
@@ -74,6 +77,12 @@ TierUpgradeNotificationPolicy.prototype['name'] = undefined;
  * @default true
  */
 TierUpgradeNotificationPolicy.prototype['batchingEnabled'] = true;
+
+/**
+ * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
+ * @member {Number} batchSize
+ */
+TierUpgradeNotificationPolicy.prototype['batchSize'] = undefined;
 
 
 

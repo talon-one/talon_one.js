@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddFreeItemEffectProps model module.
  * @module model/AddFreeItemEffectProps
- * @version 10.0.0
+ * @version 11.0.0
  */
 class AddFreeItemEffectProps {
     /**
@@ -58,6 +58,9 @@ class AddFreeItemEffectProps {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('desiredQuantity')) {
+                obj['desiredQuantity'] = ApiClient.convertToType(data['desiredQuantity'], 'Number');
+            }
         }
         return obj;
     }
@@ -76,6 +79,12 @@ AddFreeItemEffectProps.prototype['sku'] = undefined;
  * @member {String} name
  */
 AddFreeItemEffectProps.prototype['name'] = undefined;
+
+/**
+ * The original quantity in case a partial reward was applied.
+ * @member {Number} desiredQuantity
+ */
+AddFreeItemEffectProps.prototype['desiredQuantity'] = undefined;
 
 
 

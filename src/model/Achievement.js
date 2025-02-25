@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The Achievement model module.
  * @module model/Achievement
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Achievement {
     /**
@@ -29,14 +29,13 @@ class Achievement {
      * @param title {String} The display name for the achievement in the Campaign Manager.
      * @param description {String} A description of the achievement.
      * @param target {Number} The required number of actions or the transactional milestone to complete the achievement.
-     * @param period {String} The relative duration after which the achievement ends and resets for a particular customer profile.  **Note**: The `period` does not start when the achievement is created.  The period is a **positive real number** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can also round certain units down to the beginning of period and up to the end of period.: - `_D` for rounding down days only. Signifies the start of the day. Example: `30D_D` - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. Example: `23W_U`  **Note**: You can either use the round down and round up option or set an absolute period. 
      * @param campaignId {Number} ID of the campaign, to which the achievement belongs to
      * @param userId {Number} ID of the user that created this achievement.
      * @param createdBy {String} Name of the user that created the achievement.  **Note**: This is not available if the user has been deleted. 
      */
-    constructor(id, created, name, title, description, target, period, campaignId, userId, createdBy) { 
+    constructor(id, created, name, title, description, target, campaignId, userId, createdBy) { 
         
-        Achievement.initialize(this, id, created, name, title, description, target, period, campaignId, userId, createdBy);
+        Achievement.initialize(this, id, created, name, title, description, target, campaignId, userId, createdBy);
     }
 
     /**
@@ -44,14 +43,13 @@ class Achievement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, name, title, description, target, period, campaignId, userId, createdBy) { 
+    static initialize(obj, id, created, name, title, description, target, campaignId, userId, createdBy) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['name'] = name;
         obj['title'] = title;
         obj['description'] = description;
         obj['target'] = target;
-        obj['period'] = period;
         obj['campaignId'] = campaignId;
         obj['userId'] = userId;
         obj['createdBy'] = createdBy;
@@ -103,6 +101,12 @@ class Achievement {
             }
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
+            }
+            if (data.hasOwnProperty('isCappedByTarget')) {
+                obj['isCappedByTarget'] = ApiClient.convertToType(data['isCappedByTarget'], 'Boolean');
+            }
+            if (data.hasOwnProperty('isOptinRequired')) {
+                obj['isOptinRequired'] = ApiClient.convertToType(data['isOptinRequired'], 'Boolean');
             }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
@@ -193,6 +197,18 @@ Achievement.prototype['fixedStartDate'] = undefined;
  * @member {Date} endDate
  */
 Achievement.prototype['endDate'] = undefined;
+
+/**
+ * When `true`, it prevents the achievement from exceeding the target.
+ * @member {Boolean} isCappedByTarget
+ */
+Achievement.prototype['isCappedByTarget'] = undefined;
+
+/**
+ * When `true`, a customer can join an achievement only after explicit opt-in.
+ * @member {Boolean} isOptinRequired
+ */
+Achievement.prototype['isOptinRequired'] = undefined;
 
 /**
  * ID of the campaign, to which the achievement belongs to

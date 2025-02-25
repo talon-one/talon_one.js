@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 10.0.0
+* @version 11.0.0
 */
 
 /**
@@ -359,7 +359,7 @@ class ApiClient {
     */
     callApi(path, httpMethod, pathParams,
         queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-        returnType, apiBasePath) {
+        returnType, apiBasePath, abortCallback = undefined) {
 
         var url = this.buildUrl(path, pathParams, apiBasePath);
         var request = superagent(httpMethod, url);
@@ -443,8 +443,8 @@ class ApiClient {
             }
         }
 
-        return new Promise((resolve, reject) => {
-            request.end((error, response) => {
+        const cancellablePromise = new Promise((resolve, reject) => {
+            const endCallback = (error, response) => {
                 if (error) {
                     var err = {};
                     if (response) {
@@ -468,9 +468,30 @@ class ApiClient {
                         reject(err);
                     }
                 }
-            });
+            };
+
+            request.on('abort', () => {
+                if (abortCallback) {
+                    abortCallback(reject);
+                    return;
+                }
+
+                reject({
+                    error: {
+                        code: 'ABORTED',
+                        message: 'Request has been aborted'
+                    }
+                })
+            })
+
+            request.end(endCallback);
         });
 
+        cancellablePromise.cancel = () => {
+          request.abort();
+        };
+
+        return cancellablePromise;
     }
 
     /**

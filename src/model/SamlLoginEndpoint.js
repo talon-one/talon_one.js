@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlLoginEndpoint model module.
  * @module model/SamlLoginEndpoint
- * @version 10.0.0
+ * @version 11.0.0
  */
 class SamlLoginEndpoint {
     /**

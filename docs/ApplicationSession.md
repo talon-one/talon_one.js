@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **created** | **Date** | The time this entity was created. | 
 **integrationId** | **String** | The integration ID set by your integration layer. | 
 **storeIntegrationId** | **String** | The integration ID of the store. You choose this ID when you create a store. | [optional] 
-**applicationId** | **Number** | The ID of the application that owns this entity. | 
+**applicationId** | **Number** | The ID of the Application that owns this entity. | 
 **profileId** | **Number** | The globally unique Talon.One ID of the customer that created this entity. | [optional] 
 **profileintegrationid** | **String** | Integration ID of the customer for the session. | [optional] 
 **coupon** | **String** | Any coupon code entered. | 

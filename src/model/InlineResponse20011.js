@@ -17,7 +17,7 @@ import CampaignGroup from './CampaignGroup';
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse20011 {
     /**

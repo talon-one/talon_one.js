@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import CampaignAnalytics from './CampaignAnalytics';
+import AccessLogEntry from './AccessLogEntry';
 
 /**
  * The InlineResponse20020 model module.
  * @module model/InlineResponse20020
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse20020 {
     /**
      * Constructs a new <code>InlineResponse20020</code>.
      * @alias module:model/InlineResponse20020
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/CampaignAnalytics>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/AccessLogEntry>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20020.initialize(this, totalResultSize, data);
+        InlineResponse20020.initialize(this, hasMore, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse20020 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse20020 {
         if (data) {
             obj = obj || new InlineResponse20020();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CampaignAnalytics]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse20020 {
 }
 
 /**
- * @member {Number} totalResultSize
+ * @member {Boolean} hasMore
  */
-InlineResponse20020.prototype['totalResultSize'] = undefined;
+InlineResponse20020.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/CampaignAnalytics>} data
+ * @member {Array.<module:model/AccessLogEntry>} data
  */
 InlineResponse20020.prototype['data'] = undefined;
 

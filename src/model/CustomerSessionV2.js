@@ -18,7 +18,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CustomerSessionV2 {
     /**
@@ -28,7 +28,7 @@ class CustomerSessionV2 {
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
      * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
      * @param cartItems {Array.<module:model/CartItem>} The items to add to this session. **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
@@ -136,9 +136,6 @@ class CustomerSessionV2 {
             if (data.hasOwnProperty('updated')) {
                 obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
             }
-            if (data.hasOwnProperty('closurePrediction')) {
-                obj['closurePrediction'] = ApiClient.convertToType(data['closurePrediction'], 'Number');
-            }
         }
         return obj;
     }
@@ -165,7 +162,7 @@ CustomerSessionV2.prototype['created'] = undefined;
 CustomerSessionV2.prototype['integrationId'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 CustomerSessionV2.prototype['applicationId'] = undefined;
@@ -266,12 +263,6 @@ CustomerSessionV2.prototype['additionalCostTotal'] = undefined;
  * @member {Date} updated
  */
 CustomerSessionV2.prototype['updated'] = undefined;
-
-/**
- * The likelihood of the customer session closing based on predictive modeling, expressed as a decimal between `0` and `1`.
- * @member {Number} closurePrediction
- */
-CustomerSessionV2.prototype['closurePrediction'] = undefined;
 
 
 

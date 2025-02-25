@@ -17,13 +17,13 @@ import CampaignSetBranchNode from './CampaignSetBranchNode';
 /**
  * The CampaignSet model module.
  * @module model/CampaignSet
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CampaignSet {
     /**
      * Constructs a new <code>CampaignSet</code>.
      * @alias module:model/CampaignSet
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param id {Number} Internal ID of this entity.
      * @param version {Number} Version of the campaign set.
      * @param set {module:model/CampaignSetBranchNode} 
@@ -79,7 +79,7 @@ class CampaignSet {
 }
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 CampaignSet.prototype['applicationId'] = undefined;

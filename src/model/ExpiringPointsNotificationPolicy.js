@@ -17,7 +17,7 @@ import ExpiringPointsNotificationTrigger from './ExpiringPointsNotificationTrigg
 /**
  * The ExpiringPointsNotificationPolicy model module.
  * @module model/ExpiringPointsNotificationPolicy
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ExpiringPointsNotificationPolicy {
     /**
@@ -61,6 +61,9 @@ class ExpiringPointsNotificationPolicy {
             if (data.hasOwnProperty('batchingEnabled')) {
                 obj['batchingEnabled'] = ApiClient.convertToType(data['batchingEnabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('batchSize')) {
+                obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Number');
+            }
         }
         return obj;
     }
@@ -85,6 +88,12 @@ ExpiringPointsNotificationPolicy.prototype['triggers'] = undefined;
  * @default true
  */
 ExpiringPointsNotificationPolicy.prototype['batchingEnabled'] = true;
+
+/**
+ * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
+ * @member {Number} batchSize
+ */
+ExpiringPointsNotificationPolicy.prototype['batchSize'] = undefined;
 
 
 

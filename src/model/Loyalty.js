@@ -18,7 +18,7 @@ import LoyaltyProgramLedgers from './LoyaltyProgramLedgers';
 /**
  * The Loyalty model module.
  * @module model/Loyalty
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Loyalty {
     /**

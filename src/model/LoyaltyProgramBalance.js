@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramBalance model module.
  * @module model/LoyaltyProgramBalance
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LoyaltyProgramBalance {
     /**
@@ -25,13 +25,14 @@ class LoyaltyProgramBalance {
      * @alias module:model/LoyaltyProgramBalance
      * @param currentBalance {Number} Sum of currently active points.
      * @param pendingBalance {Number} Sum of pending points.
+     * @param negativeBalance {Number} Sum of negative points. This implies that `currentBalance` is `0`.
      * @param expiredBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param spentBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param tentativeCurrentBalance {Number} The tentative points balance, reflecting the `currentBalance` and all point additions and deductions within the current open customer session. When the session is closed, the effects are applied and the `currentBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
      */
-    constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
+    constructor(currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
-        LoyaltyProgramBalance.initialize(this, currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance);
+        LoyaltyProgramBalance.initialize(this, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance);
     }
 
     /**
@@ -39,9 +40,10 @@ class LoyaltyProgramBalance {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
+    static initialize(obj, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         obj['currentBalance'] = currentBalance;
         obj['pendingBalance'] = pendingBalance;
+        obj['negativeBalance'] = negativeBalance;
         obj['expiredBalance'] = expiredBalance;
         obj['spentBalance'] = spentBalance;
         obj['tentativeCurrentBalance'] = tentativeCurrentBalance;
@@ -63,6 +65,9 @@ class LoyaltyProgramBalance {
             }
             if (data.hasOwnProperty('pendingBalance')) {
                 obj['pendingBalance'] = ApiClient.convertToType(data['pendingBalance'], 'Number');
+            }
+            if (data.hasOwnProperty('negativeBalance')) {
+                obj['negativeBalance'] = ApiClient.convertToType(data['negativeBalance'], 'Number');
             }
             if (data.hasOwnProperty('expiredBalance')) {
                 obj['expiredBalance'] = ApiClient.convertToType(data['expiredBalance'], 'Number');
@@ -94,6 +99,12 @@ LoyaltyProgramBalance.prototype['currentBalance'] = undefined;
  * @member {Number} pendingBalance
  */
 LoyaltyProgramBalance.prototype['pendingBalance'] = undefined;
+
+/**
+ * Sum of negative points. This implies that `currentBalance` is `0`.
+ * @member {Number} negativeBalance
+ */
+LoyaltyProgramBalance.prototype['negativeBalance'] = undefined;
 
 /**
  * **DEPRECATED** Value is shown as 0. 

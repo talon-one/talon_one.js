@@ -17,7 +17,7 @@ import Endpoint from './Endpoint';
 /**
  * The ManagementKey model module.
  * @module model/ManagementKey
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ManagementKey {
     /**

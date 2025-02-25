@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**totalResultSize** | **Number** |  | [optional] 
-**data** | [**[Store]**](Store.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[RoleV2]**](RoleV2.md) |  | 
 
 

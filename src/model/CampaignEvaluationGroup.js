@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignEvaluationGroup model module.
  * @module model/CampaignEvaluationGroup
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CampaignEvaluationGroup {
     /**
      * Constructs a new <code>CampaignEvaluationGroup</code>.
      * @alias module:model/CampaignEvaluationGroup
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param name {String} The name of the campaign evaluation group.
      * @param parentId {Number} The ID of the parent group that contains the campaign evaluation group.
      * @param evaluationMode {module:model/CampaignEvaluationGroup.EvaluationModeEnum} The mode by which campaigns in the campaign evaluation group are evaluated.
@@ -93,7 +93,7 @@ class CampaignEvaluationGroup {
 }
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 CampaignEvaluationGroup.prototype['applicationId'] = undefined;

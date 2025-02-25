@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **action** | **String** |  | 
 **period** | **String** |  | [optional] 
 **storeCount** | **Number** |  | 
+**imported** | **Boolean** |  | 
 
 
 

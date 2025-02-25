@@ -17,7 +17,7 @@ import Coupon from './Coupon';
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse2009 {
     /**

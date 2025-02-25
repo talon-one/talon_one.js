@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerActivityReport from './CustomerActivityReport';
+import CustomerProfile from './CustomerProfile';
 
 /**
  * The InlineResponse20025 model module.
  * @module model/InlineResponse20025
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse20025 {
     /**
      * Constructs a new <code>InlineResponse20025</code>.
      * @alias module:model/InlineResponse20025
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/CustomerActivityReport>} 
+     * @param data {Array.<module:model/CustomerProfile>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20025 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CustomerActivityReport]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfile]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20025 {
 InlineResponse20025.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/CustomerActivityReport>} data
+ * @member {Array.<module:model/CustomerProfile>} data
  */
 InlineResponse20025.prototype['data'] = undefined;
 

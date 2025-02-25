@@ -978,6 +978,16 @@
         done();
       });
     });
+    describe('getDashboardStatistics', function() {
+      it('should call getDashboardStatistics successfully', function(done) {
+        //uncomment below and update the code to test getDashboardStatistics
+        //instance.getDashboardStatistics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getEventTypes', function() {
       it('should call getEventTypes successfully', function(done) {
         //uncomment below and update the code to test getEventTypes

@@ -18,7 +18,7 @@ import Product from './Product';
 /**
  * The CatalogItem model module.
  * @module model/CatalogItem
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CatalogItem {
     /**

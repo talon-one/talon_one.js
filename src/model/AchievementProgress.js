@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementProgress model module.
  * @module model/AchievementProgress
- * @version 10.0.0
+ * @version 11.0.0
  */
 class AchievementProgress {
     /**
      * Constructs a new <code>AchievementProgress</code>.
+     * The current progress of the customer in the achievement.
      * @alias module:model/AchievementProgress
      * @param achievementId {Number} The internal ID of the achievement.
      * @param name {String} The internal name of the achievement used in API requests. 
@@ -28,13 +29,15 @@ class AchievementProgress {
      * @param description {String} The description of the achievement in the Campaign Manager.
      * @param campaignId {Number} The ID of the campaign the achievement belongs to.
      * @param status {module:model/AchievementProgress.StatusEnum} The status of the achievement.
+     * @param achievementRecurrencePolicy {module:model/AchievementProgress.AchievementRecurrencePolicyEnum} The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+     * @param achievementActivationPolicy {module:model/AchievementProgress.AchievementActivationPolicyEnum} The policy that determines how the achievement starts, ends, or resets. - `user_action`: The achievement ends or resets relative to when the customer started the achievement. - `fixed_schedule`: The achievement starts, ends, or resets for all customers following a fixed schedule. 
      * @param progress {Number} The current progress of the customer in the achievement.
      * @param startDate {Date} Timestamp at which the customer started the achievement.
      * @param endDate {Date} Timestamp at which point the achievement ends and resets for the customer.
      */
-    constructor(achievementId, name, title, description, campaignId, status, progress, startDate, endDate) { 
+    constructor(achievementId, name, title, description, campaignId, status, achievementRecurrencePolicy, achievementActivationPolicy, progress, startDate, endDate) { 
         
-        AchievementProgress.initialize(this, achievementId, name, title, description, campaignId, status, progress, startDate, endDate);
+        AchievementProgress.initialize(this, achievementId, name, title, description, campaignId, status, achievementRecurrencePolicy, achievementActivationPolicy, progress, startDate, endDate);
     }
 
     /**
@@ -42,13 +45,15 @@ class AchievementProgress {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, achievementId, name, title, description, campaignId, status, progress, startDate, endDate) { 
+    static initialize(obj, achievementId, name, title, description, campaignId, status, achievementRecurrencePolicy, achievementActivationPolicy, progress, startDate, endDate) { 
         obj['achievementId'] = achievementId;
         obj['name'] = name;
         obj['title'] = title;
         obj['description'] = description;
         obj['campaignId'] = campaignId;
         obj['status'] = status;
+        obj['achievementRecurrencePolicy'] = achievementRecurrencePolicy;
+        obj['achievementActivationPolicy'] = achievementActivationPolicy;
         obj['progress'] = progress;
         obj['startDate'] = startDate;
         obj['endDate'] = endDate;
@@ -86,6 +91,18 @@ class AchievementProgress {
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'Number');
             }
+            if (data.hasOwnProperty('achievementRecurrencePolicy')) {
+                obj['achievementRecurrencePolicy'] = ApiClient.convertToType(data['achievementRecurrencePolicy'], 'String');
+            }
+            if (data.hasOwnProperty('achievementActivationPolicy')) {
+                obj['achievementActivationPolicy'] = ApiClient.convertToType(data['achievementActivationPolicy'], 'String');
+            }
+            if (data.hasOwnProperty('achievementFixedStartDate')) {
+                obj['achievementFixedStartDate'] = ApiClient.convertToType(data['achievementFixedStartDate'], 'Date');
+            }
+            if (data.hasOwnProperty('achievementEndDate')) {
+                obj['achievementEndDate'] = ApiClient.convertToType(data['achievementEndDate'], 'Date');
+            }
             if (data.hasOwnProperty('progress')) {
                 obj['progress'] = ApiClient.convertToType(data['progress'], 'Number');
             }
@@ -97,6 +114,9 @@ class AchievementProgress {
             }
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
+            }
+            if (data.hasOwnProperty('optinDate')) {
+                obj['optinDate'] = ApiClient.convertToType(data['optinDate'], 'Date');
             }
         }
         return obj;
@@ -148,6 +168,30 @@ AchievementProgress.prototype['status'] = undefined;
 AchievementProgress.prototype['target'] = undefined;
 
 /**
+ * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+ * @member {module:model/AchievementProgress.AchievementRecurrencePolicyEnum} achievementRecurrencePolicy
+ */
+AchievementProgress.prototype['achievementRecurrencePolicy'] = undefined;
+
+/**
+ * The policy that determines how the achievement starts, ends, or resets. - `user_action`: The achievement ends or resets relative to when the customer started the achievement. - `fixed_schedule`: The achievement starts, ends, or resets for all customers following a fixed schedule. 
+ * @member {module:model/AchievementProgress.AchievementActivationPolicyEnum} achievementActivationPolicy
+ */
+AchievementProgress.prototype['achievementActivationPolicy'] = undefined;
+
+/**
+ * The achievement's start date when `achievementActivationPolicy` is equal to `fixed_schedule`.  **Note:** It is an RFC3339 timestamp string. 
+ * @member {Date} achievementFixedStartDate
+ */
+AchievementProgress.prototype['achievementFixedStartDate'] = undefined;
+
+/**
+ * The achievement's end date. If defined, customers cannot participate in the achievement after this date.  **Note:** It is an RFC3339 timestamp string. 
+ * @member {Date} achievementEndDate
+ */
+AchievementProgress.prototype['achievementEndDate'] = undefined;
+
+/**
  * The current progress of the customer in the achievement.
  * @member {Number} progress
  */
@@ -170,6 +214,12 @@ AchievementProgress.prototype['completionDate'] = undefined;
  * @member {Date} endDate
  */
 AchievementProgress.prototype['endDate'] = undefined;
+
+/**
+ * Timestamp at which the customer opted in to the achievement.
+ * @member {Date} optinDate
+ */
+AchievementProgress.prototype['optinDate'] = undefined;
 
 
 
@@ -198,7 +248,55 @@ AchievementProgress['StatusEnum'] = {
      * value: "expired"
      * @const
      */
-    "expired": "expired"
+    "expired": "expired",
+
+    /**
+     * value: "opted_in"
+     * @const
+     */
+    "opted_in": "opted_in"
+};
+
+
+/**
+ * Allowed values for the <code>achievementRecurrencePolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+AchievementProgress['AchievementRecurrencePolicyEnum'] = {
+
+    /**
+     * value: "no_recurrence"
+     * @const
+     */
+    "no_recurrence": "no_recurrence",
+
+    /**
+     * value: "on_expiration"
+     * @const
+     */
+    "on_expiration": "on_expiration"
+};
+
+
+/**
+ * Allowed values for the <code>achievementActivationPolicy</code> property.
+ * @enum {String}
+ * @readonly
+ */
+AchievementProgress['AchievementActivationPolicyEnum'] = {
+
+    /**
+     * value: "user_action"
+     * @const
+     */
+    "user_action": "user_action",
+
+    /**
+     * value: "fixed_schedule"
+     * @const
+     */
+    "fixed_schedule": "fixed_schedule"
 };
 
 

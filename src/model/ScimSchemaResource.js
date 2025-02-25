@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimSchemaResource model module.
  * @module model/ScimSchemaResource
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ScimSchemaResource {
     /**

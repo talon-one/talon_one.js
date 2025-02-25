@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AnalyticsProductSKU model module.
  * @module model/AnalyticsProductSKU
- * @version 10.0.0
+ * @version 11.0.0
  */
 class AnalyticsProductSKU {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyBalance model module.
  * @module model/LoyaltyBalance
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LoyaltyBalance {
     /**
@@ -60,6 +60,9 @@ class LoyaltyBalance {
             if (data.hasOwnProperty('expiredPoints')) {
                 obj['expiredPoints'] = ApiClient.convertToType(data['expiredPoints'], 'Number');
             }
+            if (data.hasOwnProperty('negativePoints')) {
+                obj['negativePoints'] = ApiClient.convertToType(data['negativePoints'], 'Number');
+            }
         }
         return obj;
     }
@@ -90,6 +93,12 @@ LoyaltyBalance.prototype['spentPoints'] = undefined;
  * @member {Number} expiredPoints
  */
 LoyaltyBalance.prototype['expiredPoints'] = undefined;
+
+/**
+ * Total amount of negative points. This implies that `activePoints` is `0`.
+ * @member {Number} negativePoints
+ */
+LoyaltyBalance.prototype['negativePoints'] = undefined;
 
 
 

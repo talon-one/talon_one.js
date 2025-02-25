@@ -295,6 +295,7 @@ Class | Method | HTTP request | Description
 *TalonOne.ManagementApi* | [**getCustomerProfileAchievementProgress**](docs/ManagementApi.md#getCustomerProfileAchievementProgress) | **GET** /v1/applications/{applicationId}/achievement_progress/{integrationId} | List customer achievements
 *TalonOne.ManagementApi* | [**getCustomerProfiles**](docs/ManagementApi.md#getCustomerProfiles) | **GET** /v1/customers/no_total | List customer profiles
 *TalonOne.ManagementApi* | [**getCustomersByAttributes**](docs/ManagementApi.md#getCustomersByAttributes) | **POST** /v1/customer_search/no_total | List customer profiles matching the given attributes
+*TalonOne.ManagementApi* | [**getDashboardStatistics**](docs/ManagementApi.md#getDashboardStatistics) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/dashboard | Get statistics for loyalty dashboard
 *TalonOne.ManagementApi* | [**getEventTypes**](docs/ManagementApi.md#getEventTypes) | **GET** /v1/event_types | List event types
 *TalonOne.ManagementApi* | [**getExports**](docs/ManagementApi.md#getExports) | **GET** /v1/exports | Get exports
 *TalonOne.ManagementApi* | [**getLoyaltyCard**](docs/ManagementApi.md#getLoyaltyCard) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId} | Get loyalty card
@@ -387,6 +388,8 @@ Class | Method | HTTP request | Description
 - [TalonOne.AccountLimits](docs/AccountLimits.md)
 - [TalonOne.Achievement](docs/Achievement.md)
 - [TalonOne.AchievementAdditionalProperties](docs/AchievementAdditionalProperties.md)
+- [TalonOne.AchievementBase](docs/AchievementBase.md)
+- [TalonOne.AchievementLibraryEntry](docs/AchievementLibraryEntry.md)
 - [TalonOne.AchievementProgress](docs/AchievementProgress.md)
 - [TalonOne.AddFreeItemEffectProps](docs/AddFreeItemEffectProps.md)
 - [TalonOne.AddItemCatalogAction](docs/AddItemCatalogAction.md)
@@ -408,6 +411,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.ApplicationApiHealth](docs/ApplicationApiHealth.md)
 - [TalonOne.ApplicationCIF](docs/ApplicationCIF.md)
 - [TalonOne.ApplicationCIFExpression](docs/ApplicationCIFExpression.md)
+- [TalonOne.ApplicationCIFReferences](docs/ApplicationCIFReferences.md)
 - [TalonOne.ApplicationCampaignAnalytics](docs/ApplicationCampaignAnalytics.md)
 - [TalonOne.ApplicationCampaignStats](docs/ApplicationCampaignStats.md)
 - [TalonOne.ApplicationCustomer](docs/ApplicationCustomer.md)
@@ -451,6 +455,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.CampaignCopy](docs/CampaignCopy.md)
 - [TalonOne.CampaignCreatedNotification](docs/CampaignCreatedNotification.md)
 - [TalonOne.CampaignDeletedNotification](docs/CampaignDeletedNotification.md)
+- [TalonOne.CampaignDetail](docs/CampaignDetail.md)
 - [TalonOne.CampaignEditedNotification](docs/CampaignEditedNotification.md)
 - [TalonOne.CampaignEntity](docs/CampaignEntity.md)
 - [TalonOne.CampaignEvaluationGroup](docs/CampaignEvaluationGroup.md)
@@ -468,6 +473,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.CampaignSetNode](docs/CampaignSetNode.md)
 - [TalonOne.CampaignStateChangedNotification](docs/CampaignStateChangedNotification.md)
 - [TalonOne.CampaignStoreBudget](docs/CampaignStoreBudget.md)
+- [TalonOne.CampaignStoreBudgetLimitConfig](docs/CampaignStoreBudgetLimitConfig.md)
 - [TalonOne.CampaignTemplate](docs/CampaignTemplate.md)
 - [TalonOne.CampaignTemplateCollection](docs/CampaignTemplateCollection.md)
 - [TalonOne.CampaignTemplateCouponReservationSettings](docs/CampaignTemplateCouponReservationSettings.md)
@@ -604,6 +610,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.InlineResponse20044](docs/InlineResponse20044.md)
 - [TalonOne.InlineResponse20045](docs/InlineResponse20045.md)
 - [TalonOne.InlineResponse20046](docs/InlineResponse20046.md)
+- [TalonOne.InlineResponse20047](docs/InlineResponse20047.md)
 - [TalonOne.InlineResponse2005](docs/InlineResponse2005.md)
 - [TalonOne.InlineResponse2006](docs/InlineResponse2006.md)
 - [TalonOne.InlineResponse2007](docs/InlineResponse2007.md)
@@ -648,6 +655,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.LoyaltyDashboardPointsBreakdown](docs/LoyaltyDashboardPointsBreakdown.md)
 - [TalonOne.LoyaltyLedger](docs/LoyaltyLedger.md)
 - [TalonOne.LoyaltyLedgerEntry](docs/LoyaltyLedgerEntry.md)
+- [TalonOne.LoyaltyLedgerEntryFlags](docs/LoyaltyLedgerEntryFlags.md)
 - [TalonOne.LoyaltyLedgerTransactions](docs/LoyaltyLedgerTransactions.md)
 - [TalonOne.LoyaltyMembership](docs/LoyaltyMembership.md)
 - [TalonOne.LoyaltyProgram](docs/LoyaltyProgram.md)
@@ -663,6 +671,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.MessageLogEntry](docs/MessageLogEntry.md)
 - [TalonOne.MessageLogRequest](docs/MessageLogRequest.md)
 - [TalonOne.MessageLogResponse](docs/MessageLogResponse.md)
+- [TalonOne.MessageTest](docs/MessageTest.md)
 - [TalonOne.Meta](docs/Meta.md)
 - [TalonOne.ModelExport](docs/ModelExport.md)
 - [TalonOne.ModelImport](docs/ModelImport.md)
@@ -716,8 +725,8 @@ Class | Method | HTTP request | Description
 - [TalonOne.NewLoyaltyProgram](docs/NewLoyaltyProgram.md)
 - [TalonOne.NewLoyaltyTier](docs/NewLoyaltyTier.md)
 - [TalonOne.NewManagementKey](docs/NewManagementKey.md)
+- [TalonOne.NewMessageTest](docs/NewMessageTest.md)
 - [TalonOne.NewMultipleAudiencesItem](docs/NewMultipleAudiencesItem.md)
-- [TalonOne.NewNotificationTest](docs/NewNotificationTest.md)
 - [TalonOne.NewNotificationWebhook](docs/NewNotificationWebhook.md)
 - [TalonOne.NewOutgoingIntegrationWebhook](docs/NewOutgoingIntegrationWebhook.md)
 - [TalonOne.NewPassword](docs/NewPassword.md)
@@ -738,7 +747,6 @@ Class | Method | HTTP request | Description
 - [TalonOne.Notification](docs/Notification.md)
 - [TalonOne.NotificationActivation](docs/NotificationActivation.md)
 - [TalonOne.NotificationListItem](docs/NotificationListItem.md)
-- [TalonOne.NotificationTest](docs/NotificationTest.md)
 - [TalonOne.OktaEvent](docs/OktaEvent.md)
 - [TalonOne.OktaEventPayload](docs/OktaEventPayload.md)
 - [TalonOne.OktaEventPayloadData](docs/OktaEventPayloadData.md)

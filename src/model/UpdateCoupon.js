@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCoupon model module.
  * @module model/UpdateCoupon
- * @version 10.0.0
+ * @version 11.0.0
  */
 class UpdateCoupon {
     /**

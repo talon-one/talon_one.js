@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SummaryCampaignStoreBudget model module.
  * @module model/SummaryCampaignStoreBudget
- * @version 10.0.0
+ * @version 11.0.0
  */
 class SummaryCampaignStoreBudget {
     /**
@@ -24,10 +24,11 @@ class SummaryCampaignStoreBudget {
      * @alias module:model/SummaryCampaignStoreBudget
      * @param action {module:model/SummaryCampaignStoreBudget.ActionEnum} 
      * @param storeCount {Number} 
+     * @param imported {Boolean} 
      */
-    constructor(action, storeCount) { 
+    constructor(action, storeCount, imported) { 
         
-        SummaryCampaignStoreBudget.initialize(this, action, storeCount);
+        SummaryCampaignStoreBudget.initialize(this, action, storeCount, imported);
     }
 
     /**
@@ -35,9 +36,10 @@ class SummaryCampaignStoreBudget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, action, storeCount) { 
+    static initialize(obj, action, storeCount, imported) { 
         obj['action'] = action;
         obj['storeCount'] = storeCount;
+        obj['imported'] = imported;
     }
 
     /**
@@ -60,6 +62,9 @@ class SummaryCampaignStoreBudget {
             if (data.hasOwnProperty('storeCount')) {
                 obj['storeCount'] = ApiClient.convertToType(data['storeCount'], 'Number');
             }
+            if (data.hasOwnProperty('imported')) {
+                obj['imported'] = ApiClient.convertToType(data['imported'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -81,6 +86,11 @@ SummaryCampaignStoreBudget.prototype['period'] = undefined;
  * @member {Number} storeCount
  */
 SummaryCampaignStoreBudget.prototype['storeCount'] = undefined;
+
+/**
+ * @member {Boolean} imported
+ */
+SummaryCampaignStoreBudget.prototype['imported'] = undefined;
 
 
 

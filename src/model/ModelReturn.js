@@ -17,7 +17,7 @@ import ReturnedCartItem from './ReturnedCartItem';
 /**
  * The ModelReturn model module.
  * @module model/ModelReturn
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ModelReturn {
     /**
@@ -25,7 +25,7 @@ class ModelReturn {
      * @alias module:model/ModelReturn
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param returnedCartItems {Array.<module:model/ReturnedCartItem>} List of cart items to be returned.
      * @param eventId {Number} The event ID of that was generated for this return.
@@ -117,7 +117,7 @@ ModelReturn.prototype['id'] = undefined;
 ModelReturn.prototype['created'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 ModelReturn.prototype['applicationId'] = undefined;

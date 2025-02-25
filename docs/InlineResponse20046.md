@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[AchievementProgress]**](AchievementProgress.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**data** | [**[Achievement]**](Achievement.md) |  | 
 
 

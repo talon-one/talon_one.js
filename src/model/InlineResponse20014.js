@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyProgramTransaction from './LoyaltyProgramTransaction';
+import LoyaltyDashboardData from './LoyaltyDashboardData';
 
 /**
  * The InlineResponse20014 model module.
  * @module model/InlineResponse20014
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse20014 {
     /**
      * Constructs a new <code>InlineResponse20014</code>.
      * @alias module:model/InlineResponse20014
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/LoyaltyProgramTransaction>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/LoyaltyDashboardData>} 
      */
-    constructor(hasMore, data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20014.initialize(this, hasMore, data);
+        InlineResponse20014.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse20014 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse20014 {
         if (data) {
             obj = obj || new InlineResponse20014();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyProgramTransaction]);
+                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyDashboardData]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse20014 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse20014.prototype['hasMore'] = undefined;
+InlineResponse20014.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyProgramTransaction>} data
+ * @member {Array.<module:model/LoyaltyDashboardData>} data
  */
 InlineResponse20014.prototype['data'] = undefined;
 

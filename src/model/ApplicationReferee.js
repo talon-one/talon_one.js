@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationReferee model module.
  * @module model/ApplicationReferee
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ApplicationReferee {
     /**
      * Constructs a new <code>ApplicationReferee</code>.
      * @alias module:model/ApplicationReferee
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param sessionId {String} Integration ID of the session in which the customer redeemed the referral.
      * @param advocateIntegrationId {String} Integration ID of the Advocate's Profile.
      * @param friendIntegrationId {String} Integration ID of the Friend's Profile.
@@ -85,7 +85,7 @@ class ApplicationReferee {
 }
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 ApplicationReferee.prototype['applicationId'] = undefined;

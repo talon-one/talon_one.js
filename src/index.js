@@ -30,6 +30,8 @@ import AccountEntity from './model/AccountEntity';
 import AccountLimits from './model/AccountLimits';
 import Achievement from './model/Achievement';
 import AchievementAdditionalProperties from './model/AchievementAdditionalProperties';
+import AchievementBase from './model/AchievementBase';
+import AchievementLibraryEntry from './model/AchievementLibraryEntry';
 import AchievementProgress from './model/AchievementProgress';
 import AddFreeItemEffectProps from './model/AddFreeItemEffectProps';
 import AddItemCatalogAction from './model/AddItemCatalogAction';
@@ -51,6 +53,7 @@ import ApplicationAnalyticsDataPoint from './model/ApplicationAnalyticsDataPoint
 import ApplicationApiHealth from './model/ApplicationApiHealth';
 import ApplicationCIF from './model/ApplicationCIF';
 import ApplicationCIFExpression from './model/ApplicationCIFExpression';
+import ApplicationCIFReferences from './model/ApplicationCIFReferences';
 import ApplicationCampaignAnalytics from './model/ApplicationCampaignAnalytics';
 import ApplicationCampaignStats from './model/ApplicationCampaignStats';
 import ApplicationCustomer from './model/ApplicationCustomer';
@@ -94,6 +97,7 @@ import CampaignCollectionWithoutPayload from './model/CampaignCollectionWithoutP
 import CampaignCopy from './model/CampaignCopy';
 import CampaignCreatedNotification from './model/CampaignCreatedNotification';
 import CampaignDeletedNotification from './model/CampaignDeletedNotification';
+import CampaignDetail from './model/CampaignDetail';
 import CampaignEditedNotification from './model/CampaignEditedNotification';
 import CampaignEntity from './model/CampaignEntity';
 import CampaignEvaluationGroup from './model/CampaignEvaluationGroup';
@@ -111,6 +115,7 @@ import CampaignSetLeafNode from './model/CampaignSetLeafNode';
 import CampaignSetNode from './model/CampaignSetNode';
 import CampaignStateChangedNotification from './model/CampaignStateChangedNotification';
 import CampaignStoreBudget from './model/CampaignStoreBudget';
+import CampaignStoreBudgetLimitConfig from './model/CampaignStoreBudgetLimitConfig';
 import CampaignTemplate from './model/CampaignTemplate';
 import CampaignTemplateCollection from './model/CampaignTemplateCollection';
 import CampaignTemplateCouponReservationSettings from './model/CampaignTemplateCouponReservationSettings';
@@ -247,6 +252,7 @@ import InlineResponse20043 from './model/InlineResponse20043';
 import InlineResponse20044 from './model/InlineResponse20044';
 import InlineResponse20045 from './model/InlineResponse20045';
 import InlineResponse20046 from './model/InlineResponse20046';
+import InlineResponse20047 from './model/InlineResponse20047';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
@@ -291,6 +297,7 @@ import LoyaltyDashboardData from './model/LoyaltyDashboardData';
 import LoyaltyDashboardPointsBreakdown from './model/LoyaltyDashboardPointsBreakdown';
 import LoyaltyLedger from './model/LoyaltyLedger';
 import LoyaltyLedgerEntry from './model/LoyaltyLedgerEntry';
+import LoyaltyLedgerEntryFlags from './model/LoyaltyLedgerEntryFlags';
 import LoyaltyLedgerTransactions from './model/LoyaltyLedgerTransactions';
 import LoyaltyMembership from './model/LoyaltyMembership';
 import LoyaltyProgram from './model/LoyaltyProgram';
@@ -306,6 +313,7 @@ import MessageLogEntries from './model/MessageLogEntries';
 import MessageLogEntry from './model/MessageLogEntry';
 import MessageLogRequest from './model/MessageLogRequest';
 import MessageLogResponse from './model/MessageLogResponse';
+import MessageTest from './model/MessageTest';
 import Meta from './model/Meta';
 import ModelExport from './model/ModelExport';
 import ModelImport from './model/ModelImport';
@@ -359,8 +367,8 @@ import NewInviteEmail from './model/NewInviteEmail';
 import NewLoyaltyProgram from './model/NewLoyaltyProgram';
 import NewLoyaltyTier from './model/NewLoyaltyTier';
 import NewManagementKey from './model/NewManagementKey';
+import NewMessageTest from './model/NewMessageTest';
 import NewMultipleAudiencesItem from './model/NewMultipleAudiencesItem';
-import NewNotificationTest from './model/NewNotificationTest';
 import NewNotificationWebhook from './model/NewNotificationWebhook';
 import NewOutgoingIntegrationWebhook from './model/NewOutgoingIntegrationWebhook';
 import NewPassword from './model/NewPassword';
@@ -381,7 +389,6 @@ import NewWebhook from './model/NewWebhook';
 import Notification from './model/Notification';
 import NotificationActivation from './model/NotificationActivation';
 import NotificationListItem from './model/NotificationListItem';
-import NotificationTest from './model/NotificationTest';
 import OktaEvent from './model/OktaEvent';
 import OktaEventPayload from './model/OktaEventPayload';
 import OktaEventPayloadData from './model/OktaEventPayloadData';
@@ -562,7 +569,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 10.0.0
+* @version 11.0.0
 */
 export {
     /**
@@ -672,6 +679,18 @@ export {
      * @property {module:model/AchievementAdditionalProperties}
      */
     AchievementAdditionalProperties,
+
+    /**
+     * The AchievementBase model constructor.
+     * @property {module:model/AchievementBase}
+     */
+    AchievementBase,
+
+    /**
+     * The AchievementLibraryEntry model constructor.
+     * @property {module:model/AchievementLibraryEntry}
+     */
+    AchievementLibraryEntry,
 
     /**
      * The AchievementProgress model constructor.
@@ -798,6 +817,12 @@ export {
      * @property {module:model/ApplicationCIFExpression}
      */
     ApplicationCIFExpression,
+
+    /**
+     * The ApplicationCIFReferences model constructor.
+     * @property {module:model/ApplicationCIFReferences}
+     */
+    ApplicationCIFReferences,
 
     /**
      * The ApplicationCampaignAnalytics model constructor.
@@ -1058,6 +1083,12 @@ export {
     CampaignDeletedNotification,
 
     /**
+     * The CampaignDetail model constructor.
+     * @property {module:model/CampaignDetail}
+     */
+    CampaignDetail,
+
+    /**
      * The CampaignEditedNotification model constructor.
      * @property {module:model/CampaignEditedNotification}
      */
@@ -1158,6 +1189,12 @@ export {
      * @property {module:model/CampaignStoreBudget}
      */
     CampaignStoreBudget,
+
+    /**
+     * The CampaignStoreBudgetLimitConfig model constructor.
+     * @property {module:model/CampaignStoreBudgetLimitConfig}
+     */
+    CampaignStoreBudgetLimitConfig,
 
     /**
      * The CampaignTemplate model constructor.
@@ -1976,6 +2013,12 @@ export {
     InlineResponse20046,
 
     /**
+     * The InlineResponse20047 model constructor.
+     * @property {module:model/InlineResponse20047}
+     */
+    InlineResponse20047,
+
+    /**
      * The InlineResponse2005 model constructor.
      * @property {module:model/InlineResponse2005}
      */
@@ -2240,6 +2283,12 @@ export {
     LoyaltyLedgerEntry,
 
     /**
+     * The LoyaltyLedgerEntryFlags model constructor.
+     * @property {module:model/LoyaltyLedgerEntryFlags}
+     */
+    LoyaltyLedgerEntryFlags,
+
+    /**
      * The LoyaltyLedgerTransactions model constructor.
      * @property {module:model/LoyaltyLedgerTransactions}
      */
@@ -2328,6 +2377,12 @@ export {
      * @property {module:model/MessageLogResponse}
      */
     MessageLogResponse,
+
+    /**
+     * The MessageTest model constructor.
+     * @property {module:model/MessageTest}
+     */
+    MessageTest,
 
     /**
      * The Meta model constructor.
@@ -2648,16 +2703,16 @@ export {
     NewManagementKey,
 
     /**
+     * The NewMessageTest model constructor.
+     * @property {module:model/NewMessageTest}
+     */
+    NewMessageTest,
+
+    /**
      * The NewMultipleAudiencesItem model constructor.
      * @property {module:model/NewMultipleAudiencesItem}
      */
     NewMultipleAudiencesItem,
-
-    /**
-     * The NewNotificationTest model constructor.
-     * @property {module:model/NewNotificationTest}
-     */
-    NewNotificationTest,
 
     /**
      * The NewNotificationWebhook model constructor.
@@ -2778,12 +2833,6 @@ export {
      * @property {module:model/NotificationListItem}
      */
     NotificationListItem,
-
-    /**
-     * The NotificationTest model constructor.
-     * @property {module:model/NotificationTest}
-     */
-    NotificationTest,
 
     /**
      * The OktaEvent model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PendingPointsNotificationPolicy model module.
  * @module model/PendingPointsNotificationPolicy
- * @version 10.0.0
+ * @version 11.0.0
  */
 class PendingPointsNotificationPolicy {
     /**
@@ -55,6 +55,9 @@ class PendingPointsNotificationPolicy {
             if (data.hasOwnProperty('batchingEnabled')) {
                 obj['batchingEnabled'] = ApiClient.convertToType(data['batchingEnabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('batchSize')) {
+                obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Number');
+            }
         }
         return obj;
     }
@@ -74,6 +77,12 @@ PendingPointsNotificationPolicy.prototype['name'] = undefined;
  * @default true
  */
 PendingPointsNotificationPolicy.prototype['batchingEnabled'] = true;
+
+/**
+ * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
+ * @member {Number} batchSize
+ */
+PendingPointsNotificationPolicy.prototype['batchSize'] = undefined;
 
 
 

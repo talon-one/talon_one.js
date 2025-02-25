@@ -18,7 +18,7 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltyProgram model module.
  * @module model/LoyaltyProgram
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LoyaltyProgram {
     /**
@@ -260,7 +260,7 @@ LoyaltyProgram.prototype['tiersDowngradePolicy'] = undefined;
 LoyaltyProgram.prototype['cardCodeSettings'] = undefined;
 
 /**
- * The policy that defines the rollback of points in case of a partially returned, cancelled, or reopened [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). - `only_pending`: Only pending points can be rolled back. - `within_balance`: Available active points can be rolled back if there aren't enough pending points. The active balance of the customer cannot be negative. 
+ * The policy that defines the rollback of points in case of a partially returned, cancelled, or reopened [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). - `only_pending`: Only pending points can be rolled back. - `within_balance`: Available active points can be rolled back if there aren't enough pending points. The active balance of the customer cannot be negative. - `unlimited`: Allows negative balance without any limit. 
  * @member {module:model/LoyaltyProgram.ReturnPolicyEnum} returnPolicy
  */
 LoyaltyProgram.prototype['returnPolicy'] = undefined;
@@ -431,7 +431,13 @@ LoyaltyProgram['ReturnPolicyEnum'] = {
      * value: "within_balance"
      * @const
      */
-    "within_balance": "within_balance"
+    "within_balance": "within_balance",
+
+    /**
+     * value: "unlimited"
+     * @const
+     */
+    "unlimited": "unlimited"
 };
 
 

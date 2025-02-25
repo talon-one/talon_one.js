@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationEntity model module.
  * @module model/ApplicationEntity
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ApplicationEntity {
     /**
      * Constructs a new <code>ApplicationEntity</code>.
      * @alias module:model/ApplicationEntity
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      */
     constructor(applicationId) { 
         
@@ -60,7 +60,7 @@ class ApplicationEntity {
 }
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 ApplicationEntity.prototype['applicationId'] = undefined;

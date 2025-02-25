@@ -18,7 +18,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The ApplicationEvent model module.
  * @module model/ApplicationEvent
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ApplicationEvent {
     /**
@@ -26,7 +26,7 @@ class ApplicationEvent {
      * @alias module:model/ApplicationEvent
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param type {String} A string representing the event. Must not be a reserved event name.
      * @param attributes {Object} Additional JSON serialized data associated with the event.
      * @param effects {Array.<module:model/Effect>} An array containing the effects that were applied as a result of this event.
@@ -114,7 +114,7 @@ ApplicationEvent.prototype['id'] = undefined;
 ApplicationEvent.prototype['created'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 ApplicationEvent.prototype['applicationId'] = undefined;

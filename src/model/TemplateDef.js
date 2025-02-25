@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The TemplateDef model module.
  * @module model/TemplateDef
- * @version 10.0.0
+ * @version 11.0.0
  */
 class TemplateDef {
     /**
@@ -25,7 +25,7 @@ class TemplateDef {
      * @alias module:model/TemplateDef
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param title {String} Campaigner-friendly name for the template that will be shown in the rule editor.
      * @param description {String} A short description of the template that will be shown in the rule editor.
      * @param help {String} Extended help text for the template.
@@ -121,7 +121,7 @@ TemplateDef.prototype['id'] = undefined;
 TemplateDef.prototype['created'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 TemplateDef.prototype['applicationId'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CatalogsStrikethroughNotificationPolicy model module.
  * @module model/CatalogsStrikethroughNotificationPolicy
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CatalogsStrikethroughNotificationPolicy {
     /**
@@ -52,6 +52,9 @@ class CatalogsStrikethroughNotificationPolicy {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('aheadOfDaysTrigger')) {
+                obj['aheadOfDaysTrigger'] = ApiClient.convertToType(data['aheadOfDaysTrigger'], 'Number');
+            }
         }
         return obj;
     }
@@ -64,6 +67,12 @@ class CatalogsStrikethroughNotificationPolicy {
  * @member {String} name
  */
 CatalogsStrikethroughNotificationPolicy.prototype['name'] = undefined;
+
+/**
+ * The number of days in advance that strikethrough pricing updates should be sent.
+ * @member {Number} aheadOfDaysTrigger
+ */
+CatalogsStrikethroughNotificationPolicy.prototype['aheadOfDaysTrigger'] = undefined;
 
 
 
