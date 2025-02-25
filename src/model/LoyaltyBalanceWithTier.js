@@ -18,7 +18,7 @@ import Tier from './Tier';
 /**
  * The LoyaltyBalanceWithTier model module.
  * @module model/LoyaltyBalanceWithTier
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LoyaltyBalanceWithTier {
     /**
@@ -62,6 +62,9 @@ class LoyaltyBalanceWithTier {
             if (data.hasOwnProperty('expiredPoints')) {
                 obj['expiredPoints'] = ApiClient.convertToType(data['expiredPoints'], 'Number');
             }
+            if (data.hasOwnProperty('negativePoints')) {
+                obj['negativePoints'] = ApiClient.convertToType(data['negativePoints'], 'Number');
+            }
             if (data.hasOwnProperty('currentTier')) {
                 obj['currentTier'] = Tier.constructFromObject(data['currentTier']);
             }
@@ -104,6 +107,12 @@ LoyaltyBalanceWithTier.prototype['spentPoints'] = undefined;
  * @member {Number} expiredPoints
  */
 LoyaltyBalanceWithTier.prototype['expiredPoints'] = undefined;
+
+/**
+ * Total amount of negative points. This implies that `activePoints` is `0`.
+ * @member {Number} negativePoints
+ */
+LoyaltyBalanceWithTier.prototype['negativePoints'] = undefined;
 
 /**
  * @member {module:model/Tier} currentTier

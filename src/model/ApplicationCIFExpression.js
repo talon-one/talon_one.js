@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCIFExpression model module.
  * @module model/ApplicationCIFExpression
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ApplicationCIFExpression {
     /**
@@ -24,7 +24,7 @@ class ApplicationCIFExpression {
      * @alias module:model/ApplicationCIFExpression
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      */
     constructor(id, created, applicationId) { 
         
@@ -109,7 +109,7 @@ ApplicationCIFExpression.prototype['createdBy'] = undefined;
 ApplicationCIFExpression.prototype['expression'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 ApplicationCIFExpression.prototype['applicationId'] = undefined;

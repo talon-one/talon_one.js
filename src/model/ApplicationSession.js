@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ApplicationSession {
     /**
@@ -26,7 +26,7 @@ class ApplicationSession {
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param coupon {String} Any coupon code entered.
      * @param referral {String} Any referral code entered.
      * @param state {module:model/ApplicationSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
@@ -147,7 +147,7 @@ ApplicationSession.prototype['integrationId'] = undefined;
 ApplicationSession.prototype['storeIntegrationId'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 ApplicationSession.prototype['applicationId'] = undefined;

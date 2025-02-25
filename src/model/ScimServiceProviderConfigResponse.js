@@ -21,7 +21,7 @@ import ScimServiceProviderConfigResponseSort from './ScimServiceProviderConfigRe
 /**
  * The ScimServiceProviderConfigResponse model module.
  * @module model/ScimServiceProviderConfigResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ScimServiceProviderConfigResponse {
     /**

@@ -18,14 +18,14 @@ import StrikethroughTrigger from './StrikethroughTrigger';
 /**
  * The StrikethroughLabelingNotification model module.
  * @module model/StrikethroughLabelingNotification
- * @version 10.0.0
+ * @version 11.0.0
  */
 class StrikethroughLabelingNotification {
     /**
      * Constructs a new <code>StrikethroughLabelingNotification</code>.
      * The strikethrough labels notification for an application.
      * @alias module:model/StrikethroughLabelingNotification
-     * @param applicationId {Number} The ID of the application that catalog items labels belongs to.
+     * @param applicationId {Number} The ID of the Application to which the catalog items labels belongs.
      * @param currentBatch {Number} The batch number of the notification. Notifications might be sent in different batches.
      * @param totalBatches {Number} The total number of batches for the notification.
      * @param trigger {module:model/StrikethroughTrigger} 
@@ -83,7 +83,7 @@ class StrikethroughLabelingNotification {
 }
 
 /**
- * The ID of the application that catalog items labels belongs to.
+ * The ID of the Application to which the catalog items labels belongs.
  * @member {Number} applicationId
  */
 StrikethroughLabelingNotification.prototype['applicationId'] = undefined;

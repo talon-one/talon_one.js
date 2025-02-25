@@ -17,7 +17,7 @@ import OutgoingIntegrationType from './OutgoingIntegrationType';
 /**
  * The OutgoingIntegrationTypes model module.
  * @module model/OutgoingIntegrationTypes
- * @version 10.0.0
+ * @version 11.0.0
  */
 class OutgoingIntegrationTypes {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Store model module.
  * @module model/Store
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Store {
     /**
@@ -27,7 +27,7 @@ class Store {
      * @param name {String} The name of the store.
      * @param description {String} The description of the store.
      * @param integrationId {String} The integration ID of the store. You choose this ID when you create a store.  **Note**: You cannot edit the `integrationId` after the store has been created. 
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param updated {Date} Timestamp of the most recent update on this entity.
      */
     constructor(id, created, name, description, integrationId, applicationId, updated) { 
@@ -132,7 +132,7 @@ Store.prototype['attributes'] = undefined;
 Store.prototype['integrationId'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 Store.prototype['applicationId'] = undefined;

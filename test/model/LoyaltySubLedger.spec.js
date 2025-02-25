@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property totalNegativePoints (base name: "totalNegativePoints")', function() {
+      // uncomment below and update the code to test the property totalNegativePoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
     it('should have the property transactions (base name: "transactions")', function() {
       // uncomment below and update the code to test the property transactions
       //var instane = new TalonOne.LoyaltySubLedger();
@@ -110,6 +116,12 @@
 
     it('should have the property expiredPoints (base name: "expiredPoints")', function() {
       // uncomment below and update the code to test the property expiredPoints
+      //var instane = new TalonOne.LoyaltySubLedger();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property negativePoints (base name: "negativePoints")', function() {
+      // uncomment below and update the code to test the property negativePoints
       //var instane = new TalonOne.LoyaltySubLedger();
       //expect(instance).to.be();
     });

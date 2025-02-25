@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property imported (base name: "imported")', function() {
+      // uncomment below and update the code to test the property imported
+      //var instane = new TalonOne.SummaryCampaignStoreBudget();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

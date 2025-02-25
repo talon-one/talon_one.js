@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationCIF model module.
  * @module model/ApplicationCIF
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ApplicationCIF {
     /**
@@ -25,7 +25,7 @@ class ApplicationCIF {
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param name {String} The name of the Application cart item filter used in API requests.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      */
     constructor(id, created, name, applicationId) { 
         
@@ -138,7 +138,7 @@ ApplicationCIF.prototype['createdBy'] = undefined;
 ApplicationCIF.prototype['modified'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 ApplicationCIF.prototype['applicationId'] = undefined;

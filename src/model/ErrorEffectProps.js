@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorEffectProps model module.
  * @module model/ErrorEffectProps
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ErrorEffectProps {
     /**

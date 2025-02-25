@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The LimitCounter model module.
  * @module model/LimitCounter
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LimitCounter {
     /**
      * Constructs a new <code>LimitCounter</code>.
      * @alias module:model/LimitCounter
      * @param campaignId {Number} The ID of the campaign that owns this entity.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param id {Number} Unique ID for this entity.
      * @param action {String} The limitable action of the limit counter.
@@ -120,7 +120,7 @@ class LimitCounter {
 LimitCounter.prototype['campaignId'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 LimitCounter.prototype['applicationId'] = undefined;

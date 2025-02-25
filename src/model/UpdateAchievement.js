@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The UpdateAchievement model module.
  * @module model/UpdateAchievement
- * @version 10.0.0
+ * @version 11.0.0
  */
 class UpdateAchievement {
     /**
@@ -78,6 +78,12 @@ class UpdateAchievement {
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
             }
+            if (data.hasOwnProperty('isCappedByTarget')) {
+                obj['isCappedByTarget'] = ApiClient.convertToType(data['isCappedByTarget'], 'Boolean');
+            }
+            if (data.hasOwnProperty('isOptinRequired')) {
+                obj['isOptinRequired'] = ApiClient.convertToType(data['isOptinRequired'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -86,7 +92,7 @@ class UpdateAchievement {
 }
 
 /**
- * The internal name of the achievement used in API requests. 
+ * The internal name of the achievement used in API requests.  **Note**: The name should start with a letter. This cannot be changed after the achievement has been created. 
  * @member {String} name
  */
 UpdateAchievement.prototype['name'] = undefined;
@@ -110,7 +116,7 @@ UpdateAchievement.prototype['description'] = undefined;
 UpdateAchievement.prototype['target'] = undefined;
 
 /**
- * The relative duration after which the achievement ends and resets for a particular customer profile. 
+ * The relative duration after which the achievement ends and resets for a particular customer profile.  **Note**: The `period` does not start when the achievement is created.  The period is a **positive real number** followed by one letter indicating the time unit.  Examples: `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can also round certain units down to the beginning of period and up to the end of period.: - `_D` for rounding down days only. Signifies the start of the day. Example: `30D_D` - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. Example: `23W_U`  **Note**: You can either use the round down and round up option or set an absolute period. 
  * @member {String} period
  */
 UpdateAchievement.prototype['period'] = undefined;
@@ -143,6 +149,18 @@ UpdateAchievement.prototype['fixedStartDate'] = undefined;
  * @member {Date} endDate
  */
 UpdateAchievement.prototype['endDate'] = undefined;
+
+/**
+ * When `true`, it prevents the achievement from exceeding the target.
+ * @member {Boolean} isCappedByTarget
+ */
+UpdateAchievement.prototype['isCappedByTarget'] = undefined;
+
+/**
+ * When `true`, a customer can join an achievement only after explicit opt-in.
+ * @member {Boolean} isOptinRequired
+ */
+UpdateAchievement.prototype['isOptinRequired'] = undefined;
 
 
 

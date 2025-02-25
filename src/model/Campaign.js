@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Campaign {
     /**
@@ -27,7 +27,7 @@ class Campaign {
      * @alias module:model/Campaign
      * @param id {Number} Unique ID for this entity.
      * @param created {Date} The exact moment this entity was created.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param userId {Number} The ID of the user associated with this entity.
      * @param name {String} A user-facing name for this campaign.
      * @param description {String} A detailed description of the campaign.
@@ -36,13 +36,12 @@ class Campaign {
      * @param features {Array.<module:model/Campaign.FeaturesEnum>} The features enabled in this campaign.
      * @param limits {Array.<module:model/LimitConfig>} The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets) for this campaign. 
      * @param type {module:model/Campaign.TypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
-     * @param budgets {Array.<module:model/CampaignBudget>} A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
      * @param frontendState {module:model/Campaign.FrontendStateEnum} The campaign state displayed in the Campaign Manager.
      * @param storesImported {Boolean} Indicates whether the linked stores were imported via a CSV file.
      */
-    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState, storesImported) { 
+    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, frontendState, storesImported) { 
         
-        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState, storesImported);
+        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, frontendState, storesImported);
     }
 
     /**
@@ -50,7 +49,7 @@ class Campaign {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, budgets, frontendState, storesImported) { 
+    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, frontendState, storesImported) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -62,7 +61,6 @@ class Campaign {
         obj['features'] = features;
         obj['limits'] = limits;
         obj['type'] = type;
-        obj['budgets'] = budgets;
         obj['frontendState'] = frontendState;
         obj['storesImported'] = storesImported;
     }
@@ -245,7 +243,7 @@ Campaign.prototype['id'] = undefined;
 Campaign.prototype['created'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 Campaign.prototype['applicationId'] = undefined;

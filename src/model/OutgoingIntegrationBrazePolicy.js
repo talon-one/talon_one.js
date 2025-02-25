@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OutgoingIntegrationBrazePolicy model module.
  * @module model/OutgoingIntegrationBrazePolicy
- * @version 10.0.0
+ * @version 11.0.0
  */
 class OutgoingIntegrationBrazePolicy {
     /**

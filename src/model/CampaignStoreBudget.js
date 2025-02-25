@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import LimitConfig from './LimitConfig';
+import CampaignStoreBudgetLimitConfig from './CampaignStoreBudgetLimitConfig';
 
 /**
  * The CampaignStoreBudget model module.
  * @module model/CampaignStoreBudget
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CampaignStoreBudget {
     /**
@@ -27,7 +27,7 @@ class CampaignStoreBudget {
      * @param created {Date} The time this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param storeId {Number} The ID of the store.
-     * @param limits {Array.<module:model/LimitConfig>} The set of budget limits for stores linked to the campaign.
+     * @param limits {Array.<module:model/CampaignStoreBudgetLimitConfig>} The set of budget limits for stores linked to the campaign.
      */
     constructor(id, created, campaignId, storeId, limits) { 
         
@@ -71,7 +71,7 @@ class CampaignStoreBudget {
                 obj['storeId'] = ApiClient.convertToType(data['storeId'], 'Number');
             }
             if (data.hasOwnProperty('limits')) {
-                obj['limits'] = ApiClient.convertToType(data['limits'], [LimitConfig]);
+                obj['limits'] = ApiClient.convertToType(data['limits'], [CampaignStoreBudgetLimitConfig]);
             }
         }
         return obj;
@@ -106,7 +106,7 @@ CampaignStoreBudget.prototype['storeId'] = undefined;
 
 /**
  * The set of budget limits for stores linked to the campaign.
- * @member {Array.<module:model/LimitConfig>} limits
+ * @member {Array.<module:model/CampaignStoreBudgetLimitConfig>} limits
  */
 CampaignStoreBudget.prototype['limits'] = undefined;
 

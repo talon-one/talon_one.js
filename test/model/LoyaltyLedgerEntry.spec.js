@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property flags (base name: "flags")', function() {
+      // uncomment below and update the code to test the property flags
+      //var instane = new TalonOne.LoyaltyLedgerEntry();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

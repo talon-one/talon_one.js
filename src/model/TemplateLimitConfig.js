@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateLimitConfig model module.
  * @module model/TemplateLimitConfig
- * @version 10.0.0
+ * @version 11.0.0
  */
 class TemplateLimitConfig {
     /**

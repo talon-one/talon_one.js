@@ -114,6 +114,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isCappedByTarget (base name: "isCappedByTarget")', function() {
+      // uncomment below and update the code to test the property isCappedByTarget
+      //var instane = new TalonOne.CreateAchievement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isOptinRequired (base name: "isOptinRequired")', function() {
+      // uncomment below and update the code to test the property isOptinRequired
+      //var instane = new TalonOne.CreateAchievement();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

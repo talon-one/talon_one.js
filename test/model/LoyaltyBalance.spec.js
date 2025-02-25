@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property negativePoints (base name: "negativePoints")', function() {
+      // uncomment below and update the code to test the property negativePoints
+      //var instane = new TalonOne.LoyaltyBalance();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

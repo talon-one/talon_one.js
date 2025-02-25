@@ -174,12 +174,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property closurePrediction (base name: "closurePrediction")', function() {
-      // uncomment below and update the code to test the property closurePrediction
-      //var instane = new TalonOne.CustomerSessionV2();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

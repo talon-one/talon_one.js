@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCustomerProfile model module.
  * @module model/NewCustomerProfile
- * @version 10.0.0
+ * @version 11.0.0
  */
 class NewCustomerProfile {
     /**

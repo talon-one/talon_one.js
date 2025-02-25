@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
-**applicationId** | **Number** | The ID of the application that owns this entity. | 
+**applicationId** | **Number** | The ID of the Application that owns this entity. | 
 **title** | **String** | Campaigner-friendly name for the template that will be shown in the rule editor. | 
 **description** | **String** | A short description of the template that will be shown in the rule editor. | 
 **help** | **String** | Extended help text for the template. | 

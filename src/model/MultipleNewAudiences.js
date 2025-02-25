@@ -17,7 +17,7 @@ import NewMultipleAudiencesItem from './NewMultipleAudiencesItem';
 /**
  * The MultipleNewAudiences model module.
  * @module model/MultipleNewAudiences
- * @version 10.0.0
+ * @version 11.0.0
  */
 class MultipleNewAudiences {
     /**

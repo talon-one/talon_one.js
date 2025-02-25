@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LoyaltyLedgerEntry {
     /**
@@ -102,6 +103,9 @@ class LoyaltyLedgerEntry {
             if (data.hasOwnProperty('archived')) {
                 obj['archived'] = ApiClient.convertToType(data['archived'], 'Boolean');
             }
+            if (data.hasOwnProperty('flags')) {
+                obj['flags'] = LoyaltyLedgerEntryFlags.constructFromObject(data['flags']);
+            }
         }
         return obj;
     }
@@ -183,6 +187,11 @@ LoyaltyLedgerEntry.prototype['userID'] = undefined;
  * @member {Boolean} archived
  */
 LoyaltyLedgerEntry.prototype['archived'] = undefined;
+
+/**
+ * @member {module:model/LoyaltyLedgerEntryFlags} flags
+ */
+LoyaltyLedgerEntry.prototype['flags'] = undefined;
 
 
 

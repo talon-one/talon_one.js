@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property batchSize (base name: "batchSize")', function() {
+      // uncomment below and update the code to test the property batchSize
+      //var instane = new TalonOne.ExpiringPointsNotificationPolicy();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

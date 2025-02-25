@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property negativeBalance (base name: "negativeBalance")', function() {
+      // uncomment below and update the code to test the property negativeBalance
+      //var instane = new TalonOne.LoyaltyProgramBalance();
+      //expect(instance).to.be();
+    });
+
     it('should have the property expiredBalance (base name: "expiredBalance")', function() {
       // uncomment below and update the code to test the property expiredBalance
       //var instane = new TalonOne.LoyaltyProgramBalance();

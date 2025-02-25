@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CouponCreationJob {
     /**
@@ -26,7 +26,7 @@ class CouponCreationJob {
      * @param id {Number} Internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
-     * @param applicationId {Number} The ID of the application that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
      * @param numberOfCoupons {Number} The number of new coupon codes to generate for the campaign.
@@ -172,7 +172,7 @@ CouponCreationJob.prototype['created'] = undefined;
 CouponCreationJob.prototype['campaignId'] = undefined;
 
 /**
- * The ID of the application that owns this entity.
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 CouponCreationJob.prototype['applicationId'] = undefined;

@@ -17,7 +17,7 @@ import ScimPatchOperation from './ScimPatchOperation';
 /**
  * The ScimPatchRequest model module.
  * @module model/ScimPatchRequest
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ScimPatchRequest {
     /**

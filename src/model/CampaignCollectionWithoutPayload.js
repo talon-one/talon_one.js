@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignCollectionWithoutPayload model module.
  * @module model/CampaignCollectionWithoutPayload
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CampaignCollectionWithoutPayload {
     /**

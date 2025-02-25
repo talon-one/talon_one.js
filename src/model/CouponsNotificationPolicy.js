@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponsNotificationPolicy model module.
  * @module model/CouponsNotificationPolicy
- * @version 10.0.0
+ * @version 11.0.0
  */
 class CouponsNotificationPolicy {
     /**
@@ -60,6 +60,12 @@ class CouponsNotificationPolicy {
             if (data.hasOwnProperty('batchingEnabled')) {
                 obj['batchingEnabled'] = ApiClient.convertToType(data['batchingEnabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('includeData')) {
+                obj['includeData'] = ApiClient.convertToType(data['includeData'], 'Boolean');
+            }
+            if (data.hasOwnProperty('batchSize')) {
+                obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Number');
+            }
         }
         return obj;
     }
@@ -84,6 +90,18 @@ CouponsNotificationPolicy.prototype['scopes'] = undefined;
  * @default true
  */
 CouponsNotificationPolicy.prototype['batchingEnabled'] = true;
+
+/**
+ * Indicates whether to include all generated coupons. If `false`, only the `batchId` of the generated coupons is included.
+ * @member {Boolean} includeData
+ */
+CouponsNotificationPolicy.prototype['includeData'] = undefined;
+
+/**
+ * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
+ * @member {Number} batchSize
+ */
+CouponsNotificationPolicy.prototype['batchSize'] = undefined;
 
 
 

@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property desiredQuantity (base name: "desiredQuantity")', function() {
+      // uncomment below and update the code to test the property desiredQuantity
+      //var instane = new TalonOne.AddFreeItemEffectProps();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

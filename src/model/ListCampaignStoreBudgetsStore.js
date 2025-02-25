@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListCampaignStoreBudgetsStore model module.
  * @module model/ListCampaignStoreBudgetsStore
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ListCampaignStoreBudgetsStore {
     /**

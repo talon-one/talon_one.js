@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLoyaltyCard model module.
  * @module model/UpdateLoyaltyCard
- * @version 10.0.0
+ * @version 11.0.0
  */
 class UpdateLoyaltyCard {
     /**

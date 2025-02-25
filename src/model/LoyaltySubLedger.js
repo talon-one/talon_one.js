@@ -18,7 +18,7 @@ import Tier from './Tier';
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LoyaltySubLedger {
     /**
@@ -30,10 +30,11 @@ class LoyaltySubLedger {
      * @param totalPendingPoints {Number} Total amount of pending points, which are not active yet but will become active in the future.
      * @param totalSpentPoints {Number} Total amount of points already spent by this customer.
      * @param totalExpiredPoints {Number} Total amount of points, that expired without ever being spent.
+     * @param totalNegativePoints {Number} Total amount of negative points. This implies that `totalActivePoints` is `0`.
      */
-    constructor(total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints) { 
+    constructor(total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalNegativePoints) { 
         
-        LoyaltySubLedger.initialize(this, total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints);
+        LoyaltySubLedger.initialize(this, total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalNegativePoints);
     }
 
     /**
@@ -41,12 +42,13 @@ class LoyaltySubLedger {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints) { 
+    static initialize(obj, total, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalNegativePoints) { 
         obj['total'] = total;
         obj['totalActivePoints'] = totalActivePoints;
         obj['totalPendingPoints'] = totalPendingPoints;
         obj['totalSpentPoints'] = totalSpentPoints;
         obj['totalExpiredPoints'] = totalExpiredPoints;
+        obj['totalNegativePoints'] = totalNegativePoints;
     }
 
     /**
@@ -75,6 +77,9 @@ class LoyaltySubLedger {
             if (data.hasOwnProperty('totalExpiredPoints')) {
                 obj['totalExpiredPoints'] = ApiClient.convertToType(data['totalExpiredPoints'], 'Number');
             }
+            if (data.hasOwnProperty('totalNegativePoints')) {
+                obj['totalNegativePoints'] = ApiClient.convertToType(data['totalNegativePoints'], 'Number');
+            }
             if (data.hasOwnProperty('transactions')) {
                 obj['transactions'] = ApiClient.convertToType(data['transactions'], [LoyaltyLedgerEntry]);
             }
@@ -89,6 +94,9 @@ class LoyaltySubLedger {
             }
             if (data.hasOwnProperty('expiredPoints')) {
                 obj['expiredPoints'] = ApiClient.convertToType(data['expiredPoints'], [LoyaltyLedgerEntry]);
+            }
+            if (data.hasOwnProperty('negativePoints')) {
+                obj['negativePoints'] = ApiClient.convertToType(data['negativePoints'], [LoyaltyLedgerEntry]);
             }
             if (data.hasOwnProperty('currentTier')) {
                 obj['currentTier'] = Tier.constructFromObject(data['currentTier']);
@@ -131,6 +139,12 @@ LoyaltySubLedger.prototype['totalSpentPoints'] = undefined;
 LoyaltySubLedger.prototype['totalExpiredPoints'] = undefined;
 
 /**
+ * Total amount of negative points. This implies that `totalActivePoints` is `0`.
+ * @member {Number} totalNegativePoints
+ */
+LoyaltySubLedger.prototype['totalNegativePoints'] = undefined;
+
+/**
  * List of all events that have happened such as additions, subtractions and expiries.
  * @member {Array.<module:model/LoyaltyLedgerEntry>} transactions
  */
@@ -159,6 +173,12 @@ LoyaltySubLedger.prototype['pendingPoints'] = undefined;
  * @member {Array.<module:model/LoyaltyLedgerEntry>} expiredPoints
  */
 LoyaltySubLedger.prototype['expiredPoints'] = undefined;
+
+/**
+ * List of negative points.
+ * @member {Array.<module:model/LoyaltyLedgerEntry>} negativePoints
+ */
+LoyaltySubLedger.prototype['negativePoints'] = undefined;
 
 /**
  * @member {module:model/Tier} currentTier

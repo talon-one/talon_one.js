@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property aheadOfDaysTrigger (base name: "aheadOfDaysTrigger")', function() {
+      // uncomment below and update the code to test the property aheadOfDaysTrigger
+      //var instane = new TalonOne.CatalogsStrikethroughNotificationPolicy();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -210,7 +210,7 @@ api_key_v1.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.IntegrationApi();
 let body = new TalonOne.NewReferralsForMultipleAdvocates(); // NewReferralsForMultipleAdvocates | body
 let opts = {
-  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
+  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
 };
 apiInstance.createReferralsForMultipleAdvocates(body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -226,7 +226,7 @@ apiInstance.createReferralsForMultipleAdvocates(body, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**NewReferralsForMultipleAdvocates**](NewReferralsForMultipleAdvocates.md)| body | 
- **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the perfomance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
+ **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the performance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
 
 ### Return type
 
@@ -1270,7 +1270,7 @@ api_key_v1.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.IntegrationApi();
 let body = new TalonOne.IntegrationEventV2Request(); // IntegrationEventV2Request | body
 let opts = {
-  'silent': "'yes'", // String | Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
+  'silent': "'yes'", // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
   'dry': true // Boolean | Indicates whether to persist the changes. Changes are ignored when `dry=true`. 
 };
 apiInstance.trackEventV2(body, opts).then((data) => {
@@ -1287,7 +1287,7 @@ apiInstance.trackEventV2(body, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**IntegrationEventV2Request**](IntegrationEventV2Request.md)| body | 
- **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the perfomance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
+ **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the performance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
  **dry** | **Boolean**| Indicates whether to persist the changes. Changes are ignored when &#x60;dry&#x3D;true&#x60;.  | [optional] 
 
 ### Return type
@@ -1538,7 +1538,7 @@ api_key_v1.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.IntegrationApi();
 let body = new TalonOne.MultipleCustomerProfileIntegrationRequest(); // MultipleCustomerProfileIntegrationRequest | body
 let opts = {
-  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
+  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
 };
 apiInstance.updateCustomerProfilesV2(body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1554,7 +1554,7 @@ apiInstance.updateCustomerProfilesV2(body, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**MultipleCustomerProfileIntegrationRequest**](MultipleCustomerProfileIntegrationRequest.md)| body | 
- **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the perfomance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
+ **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the performance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
 
 ### Return type
 

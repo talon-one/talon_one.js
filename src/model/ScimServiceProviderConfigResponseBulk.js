@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimServiceProviderConfigResponseBulk model module.
  * @module model/ScimServiceProviderConfigResponseBulk
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ScimServiceProviderConfigResponseBulk {
     /**

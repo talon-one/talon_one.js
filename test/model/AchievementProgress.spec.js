@@ -96,6 +96,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property achievementRecurrencePolicy (base name: "achievementRecurrencePolicy")', function() {
+      // uncomment below and update the code to test the property achievementRecurrencePolicy
+      //var instane = new TalonOne.AchievementProgress();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property achievementActivationPolicy (base name: "achievementActivationPolicy")', function() {
+      // uncomment below and update the code to test the property achievementActivationPolicy
+      //var instane = new TalonOne.AchievementProgress();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property achievementFixedStartDate (base name: "achievementFixedStartDate")', function() {
+      // uncomment below and update the code to test the property achievementFixedStartDate
+      //var instane = new TalonOne.AchievementProgress();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property achievementEndDate (base name: "achievementEndDate")', function() {
+      // uncomment below and update the code to test the property achievementEndDate
+      //var instane = new TalonOne.AchievementProgress();
+      //expect(instance).to.be();
+    });
+
     it('should have the property progress (base name: "progress")', function() {
       // uncomment below and update the code to test the property progress
       //var instane = new TalonOne.AchievementProgress();
@@ -116,6 +140,12 @@
 
     it('should have the property endDate (base name: "endDate")', function() {
       // uncomment below and update the code to test the property endDate
+      //var instane = new TalonOne.AchievementProgress();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property optinDate (base name: "optinDate")', function() {
+      // uncomment below and update the code to test the property optinDate
       //var instane = new TalonOne.AchievementProgress();
       //expect(instance).to.be();
     });

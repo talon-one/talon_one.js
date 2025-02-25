@@ -97,6 +97,7 @@ Method | HTTP request | Description
 [**getCustomerProfileAchievementProgress**](ManagementApi.md#getCustomerProfileAchievementProgress) | **GET** /v1/applications/{applicationId}/achievement_progress/{integrationId} | List customer achievements
 [**getCustomerProfiles**](ManagementApi.md#getCustomerProfiles) | **GET** /v1/customers/no_total | List customer profiles
 [**getCustomersByAttributes**](ManagementApi.md#getCustomersByAttributes) | **POST** /v1/customer_search/no_total | List customer profiles matching the given attributes
+[**getDashboardStatistics**](ManagementApi.md#getDashboardStatistics) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/dashboard | Get statistics for loyalty dashboard
 [**getEventTypes**](ManagementApi.md#getEventTypes) | **GET** /v1/event_types | List event types
 [**getExports**](ManagementApi.md#getExports) | **GET** /v1/exports | Get exports
 [**getLoyaltyCard**](ManagementApi.md#getLoyaltyCard) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId} | Get loyalty card
@@ -830,7 +831,7 @@ let applicationId = 56; // Number | The ID of the Application. It is displayed i
 let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewCoupons(); // NewCoupons | body
 let opts = {
-  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
+  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
 };
 apiInstance.createCoupons(applicationId, campaignId, body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -848,7 +849,7 @@ Name | Type | Description  | Notes
  **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
  **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
  **body** | [**NewCoupons**](NewCoupons.md)| body | 
- **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the perfomance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
+ **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the performance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
 
 ### Return type
 
@@ -1011,7 +1012,7 @@ let applicationId = 56; // Number | The ID of the Application. It is displayed i
 let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewCouponsForMultipleRecipients(); // NewCouponsForMultipleRecipients | body
 let opts = {
-  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the perfomance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
+  'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
 };
 apiInstance.createCouponsForMultipleRecipients(applicationId, campaignId, body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1029,7 +1030,7 @@ Name | Type | Description  | Notes
  **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
  **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
  **body** | [**NewCouponsForMultipleRecipients**](NewCouponsForMultipleRecipients.md)| body | 
- **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the perfomance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
+ **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the performance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
 
 ### Return type
 
@@ -3266,7 +3267,7 @@ Name | Type | Description  | Notes
 
 ## getAccessLogsWithoutTotalCount
 
-> InlineResponse20019 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
+> InlineResponse20020 getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts)
 
 Get access logs for Application
 
@@ -3325,7 +3326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -3618,7 +3619,7 @@ Name | Type | Description  | Notes
 
 ## getAdditionalCosts
 
-> InlineResponse20035 getAdditionalCosts(opts)
+> InlineResponse20036 getAdditionalCosts(opts)
 
 List additional costs
 
@@ -3665,7 +3666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**InlineResponse20036**](InlineResponse20036.md)
 
 ### Authorization
 
@@ -3846,7 +3847,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomerFriends
 
-> InlineResponse20032 getApplicationCustomerFriends(applicationId, integrationId, opts)
+> InlineResponse20033 getApplicationCustomerFriends(applicationId, integrationId, opts)
 
 List friends referred by customer profile
 
@@ -3899,7 +3900,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**InlineResponse20033**](InlineResponse20033.md)
 
 ### Authorization
 
@@ -3913,7 +3914,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomers
 
-> InlineResponse20021 getApplicationCustomers(applicationId, opts)
+> InlineResponse20022 getApplicationCustomers(applicationId, opts)
 
 List application&#39;s customers
 
@@ -3964,7 +3965,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -3978,7 +3979,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationCustomersByAttributes
 
-> InlineResponse20022 getApplicationCustomersByAttributes(applicationId, body, opts)
+> InlineResponse20023 getApplicationCustomersByAttributes(applicationId, body, opts)
 
 List application customers matching the given attributes
 
@@ -4029,7 +4030,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -4043,7 +4044,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationEventTypes
 
-> InlineResponse20028 getApplicationEventTypes(applicationId, opts)
+> InlineResponse20029 getApplicationEventTypes(applicationId, opts)
 
 List Applications event types
 
@@ -4092,7 +4093,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -4106,7 +4107,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationEventsWithoutTotalCount
 
-> InlineResponse20027 getApplicationEventsWithoutTotalCount(applicationId, opts)
+> InlineResponse20028 getApplicationEventsWithoutTotalCount(applicationId, opts)
 
 List Applications events
 
@@ -4177,7 +4178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -4248,7 +4249,7 @@ Name | Type | Description  | Notes
 
 ## getApplicationSessions
 
-> InlineResponse20026 getApplicationSessions(applicationId, opts)
+> InlineResponse20027 getApplicationSessions(applicationId, opts)
 
 List Application sessions
 
@@ -4313,7 +4314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -4443,7 +4444,7 @@ Name | Type | Description  | Notes
 
 ## getAttributes
 
-> InlineResponse20033 getAttributes(opts)
+> InlineResponse20034 getAttributes(opts)
 
 List custom attributes
 
@@ -4492,7 +4493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**InlineResponse20034**](InlineResponse20034.md)
 
 ### Authorization
 
@@ -4506,7 +4507,7 @@ Name | Type | Description  | Notes
 
 ## getAudienceMemberships
 
-> InlineResponse20031 getAudienceMemberships(audienceId, opts)
+> InlineResponse20032 getAudienceMemberships(audienceId, opts)
 
 List audience members
 
@@ -4557,7 +4558,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**InlineResponse20032**](InlineResponse20032.md)
 
 ### Authorization
 
@@ -4571,7 +4572,7 @@ Name | Type | Description  | Notes
 
 ## getAudiences
 
-> InlineResponse20029 getAudiences(opts)
+> InlineResponse20030 getAudiences(opts)
 
 List audiences
 
@@ -4620,7 +4621,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**InlineResponse20030**](InlineResponse20030.md)
 
 ### Authorization
 
@@ -4634,7 +4635,7 @@ Name | Type | Description  | Notes
 
 ## getAudiencesAnalytics
 
-> InlineResponse20030 getAudiencesAnalytics(audienceIds, opts)
+> InlineResponse20031 getAudiencesAnalytics(audienceIds, opts)
 
 List audience analytics
 
@@ -4679,7 +4680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**InlineResponse20031**](InlineResponse20031.md)
 
 ### Authorization
 
@@ -4750,7 +4751,7 @@ Name | Type | Description  | Notes
 
 ## getCampaignAnalytics
 
-> InlineResponse20020 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
+> InlineResponse20021 getCampaignAnalytics(applicationId, campaignId, rangeStart, rangeEnd, opts)
 
 Get analytics of campaigns
 
@@ -4801,7 +4802,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -5146,7 +5147,7 @@ Name | Type | Description  | Notes
 
 ## getChanges
 
-> InlineResponse20041 getChanges(opts)
+> InlineResponse20042 getChanges(opts)
 
 Get audit logs for an account
 
@@ -5209,7 +5210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20041**](InlineResponse20041.md)
+[**InlineResponse20042**](InlineResponse20042.md)
 
 ### Authorization
 
@@ -5282,7 +5283,7 @@ Name | Type | Description  | Notes
 
 ## getCollectionItems
 
-> InlineResponse20018 getCollectionItems(collectionId, opts)
+> InlineResponse20019 getCollectionItems(collectionId, opts)
 
 Get collection items
 
@@ -5329,7 +5330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -5505,7 +5506,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerActivityReportsWithoutTotalCount
 
-> InlineResponse20025 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
+> InlineResponse20026 getCustomerActivityReportsWithoutTotalCount(rangeStart, rangeEnd, applicationId, opts)
 
 Get Activity Reports for Application Customers
 
@@ -5566,7 +5567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -5700,7 +5701,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerProfileAchievementProgress
 
-> InlineResponse20046 getCustomerProfileAchievementProgress(applicationId, integrationId, opts)
+> InlineResponse20047 getCustomerProfileAchievementProgress(applicationId, integrationId, opts)
 
 List customer achievements
 
@@ -5753,7 +5754,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20046**](InlineResponse20046.md)
+[**InlineResponse20047**](InlineResponse20047.md)
 
 ### Authorization
 
@@ -5767,7 +5768,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerProfiles
 
-> InlineResponse20024 getCustomerProfiles(opts)
+> InlineResponse20025 getCustomerProfiles(opts)
 
 List customer profiles
 
@@ -5814,7 +5815,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -5828,7 +5829,7 @@ Name | Type | Description  | Notes
 
 ## getCustomersByAttributes
 
-> InlineResponse20023 getCustomersByAttributes(body, opts)
+> InlineResponse20024 getCustomersByAttributes(body, opts)
 
 List customer profiles matching the given attributes
 
@@ -5877,7 +5878,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -5889,9 +5890,72 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getDashboardStatistics
+
+> InlineResponse20014 getDashboardStatistics(loyaltyProgramId, rangeStart, rangeEnd, opts)
+
+Get statistics for loyalty dashboard
+
+Retrieve the statistics displayed on the specified loyalty program&#39;s dashboard, such as the total active points, pending points, spent points, and expired points.  **Important:** The returned data does not include the current day. All statistics are updated daily at 11:59 PM in the loyalty program time zone. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let loyaltyProgramId = 56; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
+let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
+let opts = {
+  'subledgerId': "subledgerId_example" // String | The ID of the subledger by which we filter the data.
+};
+apiInstance.getDashboardStatistics(loyaltyProgramId, rangeStart, rangeEnd, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loyaltyProgramId** | **Number**| Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
+ **rangeStart** | **Date**| Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, &#x60;T23:59:59&#x60; to specify the end of the day. The time zone setting considered is &#x60;UTC&#x60;. If you do not include a time component, a default time value of &#x60;T00:00:00&#x60; (midnight) in &#x60;UTC&#x60; is considered.  | 
+ **rangeEnd** | **Date**| Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, &#x60;T23:59:59&#x60; to specify the end of the day. The time zone setting considered is &#x60;UTC&#x60;. If you do not include a time component, a default time value of &#x60;T00:00:00&#x60; (midnight) in &#x60;UTC&#x60; is considered.  | 
+ **subledgerId** | **String**| The ID of the subledger by which we filter the data. | [optional] 
+
+### Return type
+
+[**InlineResponse20014**](InlineResponse20014.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getEventTypes
 
-> InlineResponse20039 getEventTypes(opts)
+> InlineResponse20040 getEventTypes(opts)
 
 List event types
 
@@ -5942,7 +6006,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20039**](InlineResponse20039.md)
+[**InlineResponse20040**](InlineResponse20040.md)
 
 ### Authorization
 
@@ -5956,7 +6020,7 @@ Name | Type | Description  | Notes
 
 ## getExports
 
-> InlineResponse20042 getExports(opts)
+> InlineResponse20043 getExports(opts)
 
 Get exports
 
@@ -6007,7 +6071,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20042**](InlineResponse20042.md)
+[**InlineResponse20043**](InlineResponse20043.md)
 
 ### Authorization
 
@@ -6078,7 +6142,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyCardTransactionLogs
 
-> InlineResponse20016 getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardId, opts)
+> InlineResponse20017 getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardId, opts)
 
 List card&#39;s transactions
 
@@ -6133,7 +6197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -6147,7 +6211,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyCards
 
-> InlineResponse20015 getLoyaltyCards(loyaltyProgramId, opts)
+> InlineResponse20016 getLoyaltyCards(loyaltyProgramId, opts)
 
 List loyalty cards
 
@@ -6202,7 +6266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -6328,7 +6392,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyProgramTransactions
 
-> InlineResponse20014 getLoyaltyProgramTransactions(loyaltyProgramId, opts)
+> InlineResponse20015 getLoyaltyProgramTransactions(loyaltyProgramId, opts)
 
 List loyalty program transactions
 
@@ -6383,7 +6447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -6452,7 +6516,7 @@ This endpoint does not need any parameter.
 
 Get loyalty program statistics
 
-Retrieve the statistics of the specified loyalty program such as the total active points, pending points, spent points, and expired points.  **Important:** The returned data does not include the current day. All statistics are updated daily at 11:59 PM in the loyalty program time zone. 
+⚠️ Deprecation notice: Support for requests to this endpoint will end soon. To retrieve statistics for a loyalty program, use the [Get statistics for loyalty dashboard](/management-api#tag/Loyalty/operation/getDashboardStatistics) endpoint.  Retrieve the statistics of the specified loyalty program, such as the total active points, pending points, spent points, and expired points. 
 
 ### Example
 
@@ -6871,7 +6935,7 @@ Name | Type | Description  | Notes
 
 ## getUsers
 
-> InlineResponse20040 getUsers(opts)
+> InlineResponse20041 getUsers(opts)
 
 List users in account
 
@@ -6918,7 +6982,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20040**](InlineResponse20040.md)
+[**InlineResponse20041**](InlineResponse20041.md)
 
 ### Authorization
 
@@ -6987,7 +7051,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookActivationLogs
 
-> InlineResponse20037 getWebhookActivationLogs(opts)
+> InlineResponse20038 getWebhookActivationLogs(opts)
 
 List webhook activation log entries
 
@@ -7046,7 +7110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](InlineResponse20037.md)
+[**InlineResponse20038**](InlineResponse20038.md)
 
 ### Authorization
 
@@ -7060,7 +7124,7 @@ Name | Type | Description  | Notes
 
 ## getWebhookLogs
 
-> InlineResponse20038 getWebhookLogs(opts)
+> InlineResponse20039 getWebhookLogs(opts)
 
 List webhook log entries
 
@@ -7121,7 +7185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20038**](InlineResponse20038.md)
+[**InlineResponse20039**](InlineResponse20039.md)
 
 ### Authorization
 
@@ -7135,7 +7199,7 @@ Name | Type | Description  | Notes
 
 ## getWebhooks
 
-> InlineResponse20036 getWebhooks(opts)
+> InlineResponse20037 getWebhooks(opts)
 
 List webhooks
 
@@ -7192,7 +7256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20036**](InlineResponse20036.md)
+[**InlineResponse20037**](InlineResponse20037.md)
 
 ### Authorization
 
@@ -7922,7 +7986,7 @@ null (empty response body)
 
 ## listAccountCollections
 
-> InlineResponse20017 listAccountCollections(opts)
+> InlineResponse20018 listAccountCollections(opts)
 
 List collections in account
 
@@ -7973,7 +8037,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -7987,7 +8051,7 @@ Name | Type | Description  | Notes
 
 ## listAchievements
 
-> InlineResponse20045 listAchievements(applicationId, campaignId, opts)
+> InlineResponse20046 listAchievements(applicationId, campaignId, opts)
 
 List achievements
 
@@ -8038,7 +8102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20045**](InlineResponse20045.md)
+[**InlineResponse20046**](InlineResponse20046.md)
 
 ### Authorization
 
@@ -8052,7 +8116,7 @@ Name | Type | Description  | Notes
 
 ## listAllRolesV2
 
-> InlineResponse20043 listAllRolesV2()
+> InlineResponse20044 listAllRolesV2()
 
 List roles
 
@@ -8089,7 +8153,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20043**](InlineResponse20043.md)
+[**InlineResponse20044**](InlineResponse20044.md)
 
 ### Authorization
 
@@ -8103,7 +8167,7 @@ This endpoint does not need any parameter.
 
 ## listCatalogItems
 
-> InlineResponse20034 listCatalogItems(catalogId, opts)
+> InlineResponse20035 listCatalogItems(catalogId, opts)
 
 List items in a catalog
 
@@ -8156,7 +8220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**InlineResponse20035**](InlineResponse20035.md)
 
 ### Authorization
 
@@ -8170,7 +8234,7 @@ Name | Type | Description  | Notes
 
 ## listCollections
 
-> InlineResponse20017 listCollections(applicationId, campaignId, opts)
+> InlineResponse20018 listCollections(applicationId, campaignId, opts)
 
 List collections in campaign
 
@@ -8225,7 +8289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -8239,7 +8303,7 @@ Name | Type | Description  | Notes
 
 ## listCollectionsInApplication
 
-> InlineResponse20017 listCollectionsInApplication(applicationId, opts)
+> InlineResponse20018 listCollectionsInApplication(applicationId, opts)
 
 List collections in Application
 
@@ -8292,7 +8356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -8306,7 +8370,7 @@ Name | Type | Description  | Notes
 
 ## listStores
 
-> InlineResponse20044 listStores(applicationId, opts)
+> InlineResponse20045 listStores(applicationId, opts)
 
 List stores
 
@@ -8365,7 +8429,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**InlineResponse20045**](InlineResponse20045.md)
 
 ### Authorization
 

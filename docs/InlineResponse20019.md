@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
+**data** | [**[CollectionItem]**](CollectionItem.md) |  | 
 
 
