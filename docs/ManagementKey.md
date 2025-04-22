@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **createdBy** | **Number** | ID of the user who created it. | 
 **accountID** | **Number** | ID of account the key is used for. | 
 **created** | **Date** | The date the management key was created. | 
+**disabled** | **Boolean** | The management key is disabled (this property is set to &#x60;true&#x60;) when the user who created the key is disabled or deleted. | [optional] 
 
 

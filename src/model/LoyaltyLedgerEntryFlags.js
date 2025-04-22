@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntryFlags model module.
  * @module model/LoyaltyLedgerEntryFlags
- * @version 11.0.0
+ * @version 11.1.0
  */
 class LoyaltyLedgerEntryFlags {
     /**
@@ -51,9 +51,6 @@ class LoyaltyLedgerEntryFlags {
             if (data.hasOwnProperty('createsNegativeBalance')) {
                 obj['createsNegativeBalance'] = ApiClient.convertToType(data['createsNegativeBalance'], 'Boolean');
             }
-            if (data.hasOwnProperty('offsetsNegativeBalance')) {
-                obj['offsetsNegativeBalance'] = ApiClient.convertToType(data['offsetsNegativeBalance'], 'Boolean');
-            }
         }
         return obj;
     }
@@ -66,12 +63,6 @@ class LoyaltyLedgerEntryFlags {
  * @member {Boolean} createsNegativeBalance
  */
 LoyaltyLedgerEntryFlags.prototype['createsNegativeBalance'] = undefined;
-
-/**
- * Set to true if the entry offsets negative balance.
- * @member {Boolean} offsetsNegativeBalance
- */
-LoyaltyLedgerEntryFlags.prototype['offsetsNegativeBalance'] = undefined;
 
 
 

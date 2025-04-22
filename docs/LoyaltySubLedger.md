@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **activePoints** | [**[LoyaltyLedgerEntry]**](LoyaltyLedgerEntry.md) | List of all currently active points. | [optional] 
 **pendingPoints** | [**[LoyaltyLedgerEntry]**](LoyaltyLedgerEntry.md) | List of all points pending activation. | [optional] 
 **expiredPoints** | [**[LoyaltyLedgerEntry]**](LoyaltyLedgerEntry.md) | List of expired points. | [optional] 
-**negativePoints** | [**[LoyaltyLedgerEntry]**](LoyaltyLedgerEntry.md) | List of negative points. | [optional] 
 **currentTier** | [**Tier**](Tier.md) |  | [optional] 
 
 

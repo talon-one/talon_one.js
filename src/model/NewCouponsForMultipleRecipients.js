@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCouponsForMultipleRecipients model module.
  * @module model/NewCouponsForMultipleRecipients
- * @version 11.0.0
+ * @version 11.1.0
  */
 class NewCouponsForMultipleRecipients {
     /**

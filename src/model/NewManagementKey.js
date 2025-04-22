@@ -17,7 +17,7 @@ import Endpoint from './Endpoint';
 /**
  * The NewManagementKey model module.
  * @module model/NewManagementKey
- * @version 11.0.0
+ * @version 11.1.0
  */
 class NewManagementKey {
     /**
@@ -88,6 +88,9 @@ class NewManagementKey {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('disabled')) {
+                obj['disabled'] = ApiClient.convertToType(data['disabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -145,6 +148,12 @@ NewManagementKey.prototype['accountID'] = undefined;
  * @member {Date} created
  */
 NewManagementKey.prototype['created'] = undefined;
+
+/**
+ * The management key is disabled (this property is set to `true`) when the user who created the key is disabled or deleted.
+ * @member {Boolean} disabled
+ */
+NewManagementKey.prototype['disabled'] = undefined;
 
 /**
  * The management key.

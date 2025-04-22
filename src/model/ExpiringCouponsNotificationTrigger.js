@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExpiringCouponsNotificationTrigger model module.
  * @module model/ExpiringCouponsNotificationTrigger
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ExpiringCouponsNotificationTrigger {
     /**

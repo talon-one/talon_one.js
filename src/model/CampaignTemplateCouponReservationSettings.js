@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignTemplateCouponReservationSettings model module.
  * @module model/CampaignTemplateCouponReservationSettings
- * @version 11.0.0
+ * @version 11.1.0
  */
 class CampaignTemplateCouponReservationSettings {
     /**

@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Audience from './Audience';
+import ApplicationEvent from './ApplicationEvent';
 
 /**
  * The InlineResponse20030 model module.
  * @module model/InlineResponse20030
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20030 {
     /**
      * Constructs a new <code>InlineResponse20030</code>.
      * @alias module:model/InlineResponse20030
-     * @param data {Array.<module:model/Audience>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/ApplicationEvent>} 
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20030.initialize(this, data);
+        InlineResponse20030.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20030 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse20030 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Audience]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationEvent]);
             }
         }
         return obj;
@@ -72,12 +71,7 @@ class InlineResponse20030 {
 InlineResponse20030.prototype['hasMore'] = undefined;
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20030.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/Audience>} data
+ * @member {Array.<module:model/ApplicationEvent>} data
  */
 InlineResponse20030.prototype['data'] = undefined;
 

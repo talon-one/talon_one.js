@@ -5,6 +5,5 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createsNegativeBalance** | **Boolean** | Set to true if the entry creates negative balance. | [optional] 
-**offsetsNegativeBalance** | **Boolean** | Set to true if the entry offsets negative balance. | [optional] 
 
 

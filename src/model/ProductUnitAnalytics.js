@@ -12,26 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnalyticsDataPointWithTrend from './AnalyticsDataPointWithTrend';
+import ProductUnitAnalyticsDataPoint from './ProductUnitAnalyticsDataPoint';
+import ProductUnitAnalyticsTotals from './ProductUnitAnalyticsTotals';
 
 /**
  * The ProductUnitAnalytics model module.
  * @module model/ProductUnitAnalytics
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ProductUnitAnalytics {
     /**
      * Constructs a new <code>ProductUnitAnalytics</code>.
      * @alias module:model/ProductUnitAnalytics
-     * @param startTime {Date} The start of the aggregation time frame in UTC.
-     * @param endTime {Date} The end of the aggregation time frame in UTC.
-     * @param purchasedUnits {module:model/AnalyticsDataPointWithTrend} 
-     * @param productId {Number} The ID of the analytics-level product.
-     * @param productName {String} The name of the analytics-level product.
+     * @param data {Array.<module:model/ProductUnitAnalyticsDataPoint>} 
+     * @param totals {module:model/ProductUnitAnalyticsTotals} 
      */
-    constructor(startTime, endTime, purchasedUnits, productId, productName) { 
+    constructor(data, totals) { 
         
-        ProductUnitAnalytics.initialize(this, startTime, endTime, purchasedUnits, productId, productName);
+        ProductUnitAnalytics.initialize(this, data, totals);
     }
 
     /**
@@ -39,12 +37,9 @@ class ProductUnitAnalytics {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, startTime, endTime, purchasedUnits, productId, productName) { 
-        obj['startTime'] = startTime;
-        obj['endTime'] = endTime;
-        obj['purchasedUnits'] = purchasedUnits;
-        obj['productId'] = productId;
-        obj['productName'] = productName;
+    static initialize(obj, data, totals) { 
+        obj['data'] = data;
+        obj['totals'] = totals;
     }
 
     /**
@@ -58,20 +53,11 @@ class ProductUnitAnalytics {
         if (data) {
             obj = obj || new ProductUnitAnalytics();
 
-            if (data.hasOwnProperty('startTime')) {
-                obj['startTime'] = ApiClient.convertToType(data['startTime'], 'Date');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [ProductUnitAnalyticsDataPoint]);
             }
-            if (data.hasOwnProperty('endTime')) {
-                obj['endTime'] = ApiClient.convertToType(data['endTime'], 'Date');
-            }
-            if (data.hasOwnProperty('purchasedUnits')) {
-                obj['purchasedUnits'] = AnalyticsDataPointWithTrend.constructFromObject(data['purchasedUnits']);
-            }
-            if (data.hasOwnProperty('productId')) {
-                obj['productId'] = ApiClient.convertToType(data['productId'], 'Number');
-            }
-            if (data.hasOwnProperty('productName')) {
-                obj['productName'] = ApiClient.convertToType(data['productName'], 'String');
+            if (data.hasOwnProperty('totals')) {
+                obj['totals'] = ProductUnitAnalyticsTotals.constructFromObject(data['totals']);
             }
         }
         return obj;
@@ -81,33 +67,14 @@ class ProductUnitAnalytics {
 }
 
 /**
- * The start of the aggregation time frame in UTC.
- * @member {Date} startTime
+ * @member {Array.<module:model/ProductUnitAnalyticsDataPoint>} data
  */
-ProductUnitAnalytics.prototype['startTime'] = undefined;
+ProductUnitAnalytics.prototype['data'] = undefined;
 
 /**
- * The end of the aggregation time frame in UTC.
- * @member {Date} endTime
+ * @member {module:model/ProductUnitAnalyticsTotals} totals
  */
-ProductUnitAnalytics.prototype['endTime'] = undefined;
-
-/**
- * @member {module:model/AnalyticsDataPointWithTrend} purchasedUnits
- */
-ProductUnitAnalytics.prototype['purchasedUnits'] = undefined;
-
-/**
- * The ID of the analytics-level product.
- * @member {Number} productId
- */
-ProductUnitAnalytics.prototype['productId'] = undefined;
-
-/**
- * The name of the analytics-level product.
- * @member {String} productName
- */
-ProductUnitAnalytics.prototype['productName'] = undefined;
+ProductUnitAnalytics.prototype['totals'] = undefined;
 
 
 

@@ -1088,6 +1088,16 @@
         done();
       });
     });
+    describe('getMessageLogs', function() {
+      it('should call getMessageLogs successfully', function(done) {
+        //uncomment below and update the code to test getMessageLogs
+        //instance.getMessageLogs(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getReferralsWithoutTotalCount', function() {
       it('should call getReferralsWithoutTotalCount successfully', function(done) {
         //uncomment below and update the code to test getReferralsWithoutTotalCount
@@ -1388,50 +1398,10 @@
         done();
       });
     });
-    describe('notificationActivation', function() {
-      it('should call notificationActivation successfully', function(done) {
-        //uncomment below and update the code to test notificationActivation
-        //instance.notificationActivation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('oktaEventHandlerChallenge', function() {
       it('should call oktaEventHandlerChallenge successfully', function(done) {
         //uncomment below and update the code to test oktaEventHandlerChallenge
         //instance.oktaEventHandlerChallenge(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('postAddedDeductedPointsNotification', function() {
-      it('should call postAddedDeductedPointsNotification successfully', function(done) {
-        //uncomment below and update the code to test postAddedDeductedPointsNotification
-        //instance.postAddedDeductedPointsNotification(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('postCatalogsStrikethroughNotification', function() {
-      it('should call postCatalogsStrikethroughNotification successfully', function(done) {
-        //uncomment below and update the code to test postCatalogsStrikethroughNotification
-        //instance.postCatalogsStrikethroughNotification(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('postPendingPointsNotification', function() {
-      it('should call postPendingPointsNotification successfully', function(done) {
-        //uncomment below and update the code to test postPendingPointsNotification
-        //instance.postPendingPointsNotification(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

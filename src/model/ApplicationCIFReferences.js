@@ -17,7 +17,7 @@ import CampaignDetail from './CampaignDetail';
 /**
  * The ApplicationCIFReferences model module.
  * @module model/ApplicationCIFReferences
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ApplicationCIFReferences {
     /**

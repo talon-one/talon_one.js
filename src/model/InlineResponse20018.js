@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import CollectionWithoutPayload from './CollectionWithoutPayload';
+import LoyaltyCard from './LoyaltyCard';
 
 /**
  * The InlineResponse20018 model module.
  * @module model/InlineResponse20018
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20018 {
     /**
      * Constructs a new <code>InlineResponse20018</code>.
      * @alias module:model/InlineResponse20018
-     * @param data {Array.<module:model/CollectionWithoutPayload>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/LoyaltyCard>} 
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20018.initialize(this, data);
+        InlineResponse20018.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20018 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse20018 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CollectionWithoutPayload]);
+                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyCard]);
             }
         }
         return obj;
@@ -72,12 +71,7 @@ class InlineResponse20018 {
 InlineResponse20018.prototype['hasMore'] = undefined;
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20018.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/CollectionWithoutPayload>} data
+ * @member {Array.<module:model/LoyaltyCard>} data
  */
 InlineResponse20018.prototype['data'] = undefined;
 

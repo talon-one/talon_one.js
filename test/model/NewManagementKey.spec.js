@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property disabled (base name: "disabled")', function() {
+      // uncomment below and update the code to test the property disabled
+      //var instane = new TalonOne.NewManagementKey();
+      //expect(instance).to.be();
+    });
+
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
       //var instane = new TalonOne.NewManagementKey();

@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 * `mparticle` (value: `"mparticle"`)
 
-* `selligent` (value: `"selligent"`)
+* `shopify` (value: `"shopify"`)
 
 * `iterable` (value: `"iterable"`)
 

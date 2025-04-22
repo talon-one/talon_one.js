@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**deleteCouponReservation**](IntegrationApi.md#deleteCouponReservation) | **DELETE** /v1/coupon_reservations/{couponValue} | Delete coupon reservations
 [**deleteCustomerData**](IntegrationApi.md#deleteCustomerData) | **DELETE** /v1/customer_data/{integrationId} | Delete customer&#39;s personal data
 [**generateLoyaltyCard**](IntegrationApi.md#generateLoyaltyCard) | **POST** /v1/loyalty_programs/{loyaltyProgramId}/cards | Generate loyalty card
+[**getCustomerAchievementHistory**](IntegrationApi.md#getCustomerAchievementHistory) | **GET** /v1/customer_profiles/{integrationId}/achievements/{achievementId} | List customer&#39;s achievement history
+[**getCustomerAchievements**](IntegrationApi.md#getCustomerAchievements) | **GET** /v1/customer_profiles/{integrationId}/achievements | List customer&#39;s available achievements
 [**getCustomerInventory**](IntegrationApi.md#getCustomerInventory) | **GET** /v1/customer_profiles/{integrationId}/inventory | List customer data
 [**getCustomerSession**](IntegrationApi.md#getCustomerSession) | **GET** /v2/customer_sessions/{customerSessionId} | Get customer session
 [**getLoyaltyBalances**](IntegrationApi.md#getLoyaltyBalances) | **GET** /v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/balances | Get customer&#39;s loyalty balances
@@ -144,7 +146,7 @@ Name | Type | Description  | Notes
 
 Create referral code for an advocate
 
-Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the &#x60;campaignId&#x60; parameter, and will be associated with the profile specified in the &#x60;advocateProfileIntegrationId&#x60; parameter as the advocate&#39;s profile. 
+Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the &#x60;campaignId&#x60; parameter, and will be associated with the profile specified in the &#x60;advocateProfileIntegrationId&#x60; parameter as the advocate&#39;s profile.  **Note:** Any [referral limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets#referral-limits) set are ignored when you use this endpoint. 
 
 ### Example
 
@@ -194,7 +196,7 @@ Name | Type | Description  | Notes
 
 Create referral codes for multiple advocates
 
-Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the &#x60;campaignId&#x60; parameter, and one referral code will be associated with one advocate using the profile specified in the &#x60;advocateProfileIntegrationId&#x60; parameter as the advocate&#39;s profile. 
+Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the &#x60;campaignId&#x60; parameter, and one referral code will be associated with one advocate using the profile specified in the &#x60;advocateProfileIntegrationId&#x60; parameter as the advocate&#39;s profile.  **Note:** Any [referral limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets#referral-limits) set are ignored when you use this endpoint. 
 
 ### Example
 
@@ -496,6 +498,134 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getCustomerAchievementHistory
+
+> InlineResponse2002 getCustomerAchievementHistory(integrationId, achievementId, opts)
+
+List customer&#39;s achievement history
+
+Retrieve all progress history of a given customer in the given achievement. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.IntegrationApi();
+let integrationId = "integrationId_example"; // String | The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
+let achievementId = 56; // Number | The achievement identifier. 
+let opts = {
+  'progressStatus': ["null"], // [String] | Filter by customer progress status in the achievement. 
+  'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Timestamp that filters the results to only contain achievements created on or after the start date.
+  'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Timestamp that filters the results to only contain achievements created before or on the end date.
+  'pageSize': 1000, // Number | The number of items in the response.
+  'skip': 56 // Number | The number of items to skip when paging through large result sets.
+};
+apiInstance.getCustomerAchievementHistory(integrationId, achievementId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **integrationId** | **String**| The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier.  | 
+ **achievementId** | **Number**| The achievement identifier.  | 
+ **progressStatus** | [**[String]**](String.md)| Filter by customer progress status in the achievement.  | [optional] 
+ **startDate** | **Date**| Timestamp that filters the results to only contain achievements created on or after the start date. | [optional] 
+ **endDate** | **Date**| Timestamp that filters the results to only contain achievements created before or on the end date. | [optional] 
+ **pageSize** | **Number**| The number of items in the response. | [optional] [default to 1000]
+ **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+[api_key_v1](../README.md#api_key_v1)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getCustomerAchievements
+
+> InlineResponse2001 getCustomerAchievements(integrationId, opts)
+
+List customer&#39;s available achievements
+
+Retrieve all the achievements available to a given customer and their progress in them. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.IntegrationApi();
+let integrationId = "integrationId_example"; // String | The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
+let opts = {
+  'campaignIds': ["null"], // [String] | Filter by one or more Campaign IDs, separated by a comma.  **Note:** If no campaigns are specified, data for all the campaigns in the Application is returned. 
+  'achievementIds': ["null"], // [String] | Filter by one or more Achievement IDs, separated by a comma.  **Note:** If no achievements are specified, data for all the achievements in the Application is returned. 
+  'achievementStatus': ["null"], // [String] | Filter by status of the achievement.  **Note:** If the achievement status is not specified, only data for all active achievements in the Application is returned. 
+  'currentProgressStatus': ["null"], // [String] | Filter by customer progress status in the achievement. 
+  'pageSize': 1000, // Number | The number of items in the response.
+  'skip': 56 // Number | The number of items to skip when paging through large result sets.
+};
+apiInstance.getCustomerAchievements(integrationId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **integrationId** | **String**| The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier.  | 
+ **campaignIds** | [**[String]**](String.md)| Filter by one or more Campaign IDs, separated by a comma.  **Note:** If no campaigns are specified, data for all the campaigns in the Application is returned.  | [optional] 
+ **achievementIds** | [**[String]**](String.md)| Filter by one or more Achievement IDs, separated by a comma.  **Note:** If no achievements are specified, data for all the achievements in the Application is returned.  | [optional] 
+ **achievementStatus** | [**[String]**](String.md)| Filter by status of the achievement.  **Note:** If the achievement status is not specified, only data for all active achievements in the Application is returned.  | [optional] 
+ **currentProgressStatus** | [**[String]**](String.md)| Filter by customer progress status in the achievement.  | [optional] 
+ **pageSize** | **Number**| The number of items in the response. | [optional] [default to 1000]
+ **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[api_key_v1](../README.md#api_key_v1)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getCustomerInventory
 
 > CustomerInventory getCustomerInventory(integrationId, opts)
@@ -732,7 +862,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyCardPoints
 
-> InlineResponse2003 getLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, opts)
+> InlineResponse2005 getLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, opts)
 
 List card&#39;s unused loyalty points
 
@@ -780,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -794,7 +924,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyCardTransactions
 
-> InlineResponse2001 getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardId, opts)
+> InlineResponse2003 getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardId, opts)
 
 List card&#39;s transactions
 
@@ -819,7 +949,7 @@ let opts = {
   'loyaltyTransactionType': "loyaltyTransactionType_example", // String | Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
   'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-  'pageSize': 1000, // Number | The number of items in the response.
+  'pageSize': 50, // Number | The number of items in the response.
   'skip': 56 // Number | The number of items to skip when paging through large result sets.
 };
 apiInstance.getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardId, opts).then((data) => {
@@ -841,12 +971,12 @@ Name | Type | Description  | Notes
  **loyaltyTransactionType** | **String**| Filter results by loyalty transaction type: - &#x60;manual&#x60;: Loyalty transaction that was done manually. - &#x60;session&#x60;: Loyalty transaction that resulted from a customer session. - &#x60;import&#x60;: Loyalty transaction that was imported from a CSV file.  | [optional] 
  **startDate** | **Date**| Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, &#x60;T23:59:59&#x60; to specify the end of the day. The time zone setting considered is &#x60;UTC&#x60;. If you do not include a time component, a default time value of &#x60;T00:00:00&#x60; (midnight) in &#x60;UTC&#x60; is considered.  | [optional] 
  **endDate** | **Date**| Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, &#x60;T23:59:59&#x60; to specify the end of the day. The time zone setting considered is &#x60;UTC&#x60;. If you do not include a time component, a default time value of &#x60;T00:00:00&#x60; (midnight) in &#x60;UTC&#x60; is considered.  | [optional] 
- **pageSize** | **Number**| The number of items in the response. | [optional] [default to 1000]
+ **pageSize** | **Number**| The number of items in the response. | [optional] [default to 50]
  **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -860,7 +990,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyProgramProfilePoints
 
-> InlineResponse2004 getLoyaltyProgramProfilePoints(loyaltyProgramId, integrationId, opts)
+> InlineResponse2006 getLoyaltyProgramProfilePoints(loyaltyProgramId, integrationId, opts)
 
 List customer&#39;s unused loyalty points
 
@@ -908,7 +1038,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -922,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ## getLoyaltyProgramProfileTransactions
 
-> InlineResponse2002 getLoyaltyProgramProfileTransactions(loyaltyProgramId, integrationId, opts)
+> InlineResponse2004 getLoyaltyProgramProfileTransactions(loyaltyProgramId, integrationId, opts)
 
 List customer&#39;s loyalty transactions
 
@@ -974,7 +1104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

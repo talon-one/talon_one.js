@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tentativeNegativeBalance (base name: "tentativeNegativeBalance")', function() {
+      // uncomment below and update the code to test the property tentativeNegativeBalance
+      //var instane = new TalonOne.LoyaltyProgramBalance();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

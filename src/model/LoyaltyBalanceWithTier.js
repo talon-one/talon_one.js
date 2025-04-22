@@ -18,7 +18,7 @@ import Tier from './Tier';
 /**
  * The LoyaltyBalanceWithTier model module.
  * @module model/LoyaltyBalanceWithTier
- * @version 11.0.0
+ * @version 11.1.0
  */
 class LoyaltyBalanceWithTier {
     /**

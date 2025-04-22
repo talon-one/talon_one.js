@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property offsetsNegativeBalance (base name: "offsetsNegativeBalance")', function() {
-      // uncomment below and update the code to test the property offsetsNegativeBalance
-      //var instane = new TalonOne.LoyaltyLedgerEntryFlags();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductSearchMatch model module.
  * @module model/ProductSearchMatch
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ProductSearchMatch {
     /**
      * Constructs a new <code>ProductSearchMatch</code>.
      * @alias module:model/ProductSearchMatch
-     * @param productId {Number} The ID of the product.
      * @param value {String} The string matching the given value. Either a product name or SKU.
      */
-    constructor(productId, value) { 
+    constructor(value) { 
         
-        ProductSearchMatch.initialize(this, productId, value);
+        ProductSearchMatch.initialize(this, value);
     }
 
     /**
@@ -35,8 +34,7 @@ class ProductSearchMatch {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, productId, value) { 
-        obj['productId'] = productId;
+    static initialize(obj, value) { 
         obj['value'] = value;
     }
 
@@ -80,7 +78,7 @@ ProductSearchMatch.prototype['productId'] = undefined;
 ProductSearchMatch.prototype['value'] = undefined;
 
 /**
- * The ID of the SKU linked to a product. If empty, this is an analytics-level product.
+ * The ID of the SKU linked to a product. If empty, this is an product.
  * @member {Number} productSkuId
  */
 ProductSearchMatch.prototype['productSkuId'] = undefined;

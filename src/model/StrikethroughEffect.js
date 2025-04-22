@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughEffect model module.
  * @module model/StrikethroughEffect
- * @version 11.0.0
+ * @version 11.1.0
  */
 class StrikethroughEffect {
     /**
@@ -78,6 +78,12 @@ class StrikethroughEffect {
             if (data.hasOwnProperty('props')) {
                 obj['props'] = ApiClient.convertToType(data['props'], Object);
             }
+            if (data.hasOwnProperty('startTime')) {
+                obj['startTime'] = ApiClient.convertToType(data['startTime'], 'Date');
+            }
+            if (data.hasOwnProperty('endTime')) {
+                obj['endTime'] = ApiClient.convertToType(data['endTime'], 'Date');
+            }
         }
         return obj;
     }
@@ -119,6 +125,18 @@ StrikethroughEffect.prototype['type'] = undefined;
  * @member {Object} props
  */
 StrikethroughEffect.prototype['props'] = undefined;
+
+/**
+ * The start of the time frame where the effect is active in UTC.
+ * @member {Date} startTime
+ */
+StrikethroughEffect.prototype['startTime'] = undefined;
+
+/**
+ * The end of the time frame where the effect is active in UTC.
+ * @member {Date} endTime
+ */
+StrikethroughEffect.prototype['endTime'] = undefined;
 
 
 

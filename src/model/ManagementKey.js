@@ -17,7 +17,7 @@ import Endpoint from './Endpoint';
 /**
  * The ManagementKey model module.
  * @module model/ManagementKey
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ManagementKey {
     /**
@@ -86,6 +86,9 @@ class ManagementKey {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('disabled')) {
+                obj['disabled'] = ApiClient.convertToType(data['disabled'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -140,6 +143,12 @@ ManagementKey.prototype['accountID'] = undefined;
  * @member {Date} created
  */
 ManagementKey.prototype['created'] = undefined;
+
+/**
+ * The management key is disabled (this property is set to `true`) when the user who created the key is disabled or deleted.
+ * @member {Boolean} disabled
+ */
+ManagementKey.prototype['disabled'] = undefined;
 
 
 

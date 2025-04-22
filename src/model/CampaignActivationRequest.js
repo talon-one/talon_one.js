@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignActivationRequest model module.
  * @module model/CampaignActivationRequest
- * @version 11.0.0
+ * @version 11.1.0
  */
 class CampaignActivationRequest {
     /**

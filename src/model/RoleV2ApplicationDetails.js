@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2ApplicationDetails model module.
  * @module model/RoleV2ApplicationDetails
- * @version 11.0.0
+ * @version 11.1.0
  */
 class RoleV2ApplicationDetails {
     /**

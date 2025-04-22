@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ApplicationSession {
     /**
@@ -32,7 +32,7 @@ class ApplicationSession {
      * @param state {module:model/ApplicationSession.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. `closed` → `cancelled` or `partially_returned` 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
      * @param cartItems {Array.<module:model/CartItem>} Serialized JSON representation.
      * @param discounts {Object.<String, Number>} **API V1 only.** A map of labeled discount values, in the same currency as the session.  If you are using the V2 endpoints, refer to the `totalDiscounts` property instead. 
-     * @param totalDiscounts {Number} The total sum of the discounts applied to this session.
+     * @param totalDiscounts {Number} The total sum of the discounts applied to this session.  **Note:** If more than one session is returned, this value is displayed as `0`. 
      * @param total {Number} The total sum of the session before any discounts applied.
      */
     constructor(id, created, integrationId, applicationId, coupon, referral, state, cartItems, discounts, totalDiscounts, total) { 
@@ -195,7 +195,7 @@ ApplicationSession.prototype['cartItems'] = undefined;
 ApplicationSession.prototype['discounts'] = undefined;
 
 /**
- * The total sum of the discounts applied to this session.
+ * The total sum of the discounts applied to this session.  **Note:** If more than one session is returned, this value is displayed as `0`. 
  * @member {Number} totalDiscounts
  */
 ApplicationSession.prototype['totalDiscounts'] = undefined;

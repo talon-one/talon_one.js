@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerActivityReport from './CustomerActivityReport';
+import CustomerProfile from './CustomerProfile';
 
 /**
  * The InlineResponse20026 model module.
  * @module model/InlineResponse20026
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20026 {
     /**
      * Constructs a new <code>InlineResponse20026</code>.
      * @alias module:model/InlineResponse20026
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/CustomerActivityReport>} 
+     * @param data {Array.<module:model/CustomerProfile>} 
      */
-    constructor(hasMore, data) { 
+    constructor(data) { 
         
-        InlineResponse20026.initialize(this, hasMore, data);
+        InlineResponse20026.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20026 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse20026 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CustomerActivityReport]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfile]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse20026 {
 InlineResponse20026.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/CustomerActivityReport>} data
+ * @member {Number} totalResultSize
+ */
+InlineResponse20026.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomerProfile>} data
  */
 InlineResponse20026.prototype['data'] = undefined;
 

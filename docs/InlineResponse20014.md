@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[LoyaltyDashboardData]**](LoyaltyDashboardData.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[CampaignTemplate]**](CampaignTemplate.md) |  | 
 
 

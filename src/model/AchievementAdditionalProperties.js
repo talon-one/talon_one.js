@@ -16,19 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementAdditionalProperties model module.
  * @module model/AchievementAdditionalProperties
- * @version 11.0.0
+ * @version 11.1.0
  */
 class AchievementAdditionalProperties {
     /**
      * Constructs a new <code>AchievementAdditionalProperties</code>.
      * @alias module:model/AchievementAdditionalProperties
-     * @param campaignId {Number} ID of the campaign, to which the achievement belongs to
+     * @param campaignId {Number} The ID of the campaign the achievement belongs to.
      * @param userId {Number} ID of the user that created this achievement.
-     * @param createdBy {String} Name of the user that created the achievement.  **Note**: This is not available if the user has been deleted. 
      */
-    constructor(campaignId, userId, createdBy) { 
+    constructor(campaignId, userId) { 
         
-        AchievementAdditionalProperties.initialize(this, campaignId, userId, createdBy);
+        AchievementAdditionalProperties.initialize(this, campaignId, userId);
     }
 
     /**
@@ -36,10 +35,9 @@ class AchievementAdditionalProperties {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaignId, userId, createdBy) { 
+    static initialize(obj, campaignId, userId) { 
         obj['campaignId'] = campaignId;
         obj['userId'] = userId;
-        obj['createdBy'] = createdBy;
     }
 
     /**
@@ -65,6 +63,9 @@ class AchievementAdditionalProperties {
             if (data.hasOwnProperty('hasProgress')) {
                 obj['hasProgress'] = ApiClient.convertToType(data['hasProgress'], 'Boolean');
             }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
         }
         return obj;
     }
@@ -73,7 +74,7 @@ class AchievementAdditionalProperties {
 }
 
 /**
- * ID of the campaign, to which the achievement belongs to
+ * The ID of the campaign the achievement belongs to.
  * @member {Number} campaignId
  */
 AchievementAdditionalProperties.prototype['campaignId'] = undefined;
@@ -96,8 +97,47 @@ AchievementAdditionalProperties.prototype['createdBy'] = undefined;
  */
 AchievementAdditionalProperties.prototype['hasProgress'] = undefined;
 
+/**
+ * The status of the achievement.
+ * @member {module:model/AchievementAdditionalProperties.StatusEnum} status
+ */
+AchievementAdditionalProperties.prototype['status'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+AchievementAdditionalProperties['StatusEnum'] = {
+
+    /**
+     * value: "inprogress"
+     * @const
+     */
+    "inprogress": "inprogress",
+
+    /**
+     * value: "expired"
+     * @const
+     */
+    "expired": "expired",
+
+    /**
+     * value: "not_started"
+     * @const
+     */
+    "not_started": "not_started",
+
+    /**
+     * value: "completed"
+     * @const
+     */
+    "completed": "completed"
+};
 
 
 

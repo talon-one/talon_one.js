@@ -138,6 +138,26 @@
         done();
       });
     });
+    describe('getCustomerAchievementHistory', function() {
+      it('should call getCustomerAchievementHistory successfully', function(done) {
+        //uncomment below and update the code to test getCustomerAchievementHistory
+        //instance.getCustomerAchievementHistory(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCustomerAchievements', function() {
+      it('should call getCustomerAchievements successfully', function(done) {
+        //uncomment below and update the code to test getCustomerAchievements
+        //instance.getCustomerAchievements(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCustomerInventory', function() {
       it('should call getCustomerInventory successfully', function(done) {
         //uncomment below and update the code to test getCustomerInventory

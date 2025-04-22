@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[LedgerTransactionLogEntryIntegrationAPI]**](LedgerTransactionLogEntryIntegrationAPI.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[AchievementProgress]**](AchievementProgress.md) |  | 
 
 

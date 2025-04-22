@@ -31,8 +31,9 @@ import AccountLimits from './model/AccountLimits';
 import Achievement from './model/Achievement';
 import AchievementAdditionalProperties from './model/AchievementAdditionalProperties';
 import AchievementBase from './model/AchievementBase';
-import AchievementLibraryEntry from './model/AchievementLibraryEntry';
 import AchievementProgress from './model/AchievementProgress';
+import AchievementProgressWithDefinition from './model/AchievementProgressWithDefinition';
+import AchievementStatusEntry from './model/AchievementStatusEntry';
 import AddFreeItemEffectProps from './model/AddFreeItemEffectProps';
 import AddItemCatalogAction from './model/AddItemCatalogAction';
 import AddLoyaltyPoints from './model/AddLoyaltyPoints';
@@ -46,7 +47,7 @@ import AnalyticsDataPointWithTrend from './model/AnalyticsDataPointWithTrend';
 import AnalyticsDataPointWithTrendAndInfluencedRate from './model/AnalyticsDataPointWithTrendAndInfluencedRate';
 import AnalyticsDataPointWithTrendAndUplift from './model/AnalyticsDataPointWithTrendAndUplift';
 import AnalyticsProduct from './model/AnalyticsProduct';
-import AnalyticsProductSKU from './model/AnalyticsProductSKU';
+import AnalyticsSKU from './model/AnalyticsSKU';
 import Application from './model/Application';
 import ApplicationAPIKey from './model/ApplicationAPIKey';
 import ApplicationAnalyticsDataPoint from './model/ApplicationAnalyticsDataPoint';
@@ -207,6 +208,7 @@ import GenerateRuleTitleRule from './model/GenerateRuleTitleRule';
 import GetIntegrationCouponRequest from './model/GetIntegrationCouponRequest';
 import Giveaway from './model/Giveaway';
 import GiveawaysPool from './model/GiveawaysPool';
+import HiddenConditionsEffects from './model/HiddenConditionsEffects';
 import IdentifiableEntity from './model/IdentifiableEntity';
 import ImportEntity from './model/ImportEntity';
 import IncreaseAchievementProgressEffectProps from './model/IncreaseAchievementProgressEffectProps';
@@ -253,6 +255,8 @@ import InlineResponse20044 from './model/InlineResponse20044';
 import InlineResponse20045 from './model/InlineResponse20045';
 import InlineResponse20046 from './model/InlineResponse20046';
 import InlineResponse20047 from './model/InlineResponse20047';
+import InlineResponse20048 from './model/InlineResponse20048';
+import InlineResponse20049 from './model/InlineResponse20049';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
@@ -410,8 +414,9 @@ import PendingPointsNotificationPolicy from './model/PendingPointsNotificationPo
 import Picklist from './model/Picklist';
 import Product from './model/Product';
 import ProductSearchMatch from './model/ProductSearchMatch';
-import ProductSkuUnitAnalytics from './model/ProductSkuUnitAnalytics';
 import ProductUnitAnalytics from './model/ProductUnitAnalytics';
+import ProductUnitAnalyticsDataPoint from './model/ProductUnitAnalyticsDataPoint';
+import ProductUnitAnalyticsTotals from './model/ProductUnitAnalyticsTotals';
 import ProfileAudiencesChanges from './model/ProfileAudiencesChanges';
 import ProjectedTier from './model/ProjectedTier';
 import RedeemReferralEffectProps from './model/RedeemReferralEffectProps';
@@ -430,6 +435,7 @@ import ReturnIntegrationRequest from './model/ReturnIntegrationRequest';
 import ReturnedCartItem from './model/ReturnedCartItem';
 import Revision from './model/Revision';
 import RevisionActivation from './model/RevisionActivation';
+import RevisionActivationRequest from './model/RevisionActivationRequest';
 import RevisionVersion from './model/RevisionVersion';
 import Role from './model/Role';
 import RoleAssign from './model/RoleAssign';
@@ -478,6 +484,8 @@ import SetDiscountPerAdditionalCostPerItemEffectProps from './model/SetDiscountP
 import SetDiscountPerItemEffectProps from './model/SetDiscountPerItemEffectProps';
 import ShowBundleMetadataEffectProps from './model/ShowBundleMetadataEffectProps';
 import ShowNotificationEffectProps from './model/ShowNotificationEffectProps';
+import SkuUnitAnalytics from './model/SkuUnitAnalytics';
+import SkuUnitAnalyticsDataPoint from './model/SkuUnitAnalyticsDataPoint';
 import SlotDef from './model/SlotDef';
 import Store from './model/Store';
 import StrikethroughChangedItem from './model/StrikethroughChangedItem';
@@ -569,7 +577,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 11.0.0
+* @version 11.1.0
 */
 export {
     /**
@@ -687,16 +695,22 @@ export {
     AchievementBase,
 
     /**
-     * The AchievementLibraryEntry model constructor.
-     * @property {module:model/AchievementLibraryEntry}
-     */
-    AchievementLibraryEntry,
-
-    /**
      * The AchievementProgress model constructor.
      * @property {module:model/AchievementProgress}
      */
     AchievementProgress,
+
+    /**
+     * The AchievementProgressWithDefinition model constructor.
+     * @property {module:model/AchievementProgressWithDefinition}
+     */
+    AchievementProgressWithDefinition,
+
+    /**
+     * The AchievementStatusEntry model constructor.
+     * @property {module:model/AchievementStatusEntry}
+     */
+    AchievementStatusEntry,
 
     /**
      * The AddFreeItemEffectProps model constructor.
@@ -777,10 +791,10 @@ export {
     AnalyticsProduct,
 
     /**
-     * The AnalyticsProductSKU model constructor.
-     * @property {module:model/AnalyticsProductSKU}
+     * The AnalyticsSKU model constructor.
+     * @property {module:model/AnalyticsSKU}
      */
-    AnalyticsProductSKU,
+    AnalyticsSKU,
 
     /**
      * The Application model constructor.
@@ -1743,6 +1757,12 @@ export {
     GiveawaysPool,
 
     /**
+     * The HiddenConditionsEffects model constructor.
+     * @property {module:model/HiddenConditionsEffects}
+     */
+    HiddenConditionsEffects,
+
+    /**
      * The IdentifiableEntity model constructor.
      * @property {module:model/IdentifiableEntity}
      */
@@ -2017,6 +2037,18 @@ export {
      * @property {module:model/InlineResponse20047}
      */
     InlineResponse20047,
+
+    /**
+     * The InlineResponse20048 model constructor.
+     * @property {module:model/InlineResponse20048}
+     */
+    InlineResponse20048,
+
+    /**
+     * The InlineResponse20049 model constructor.
+     * @property {module:model/InlineResponse20049}
+     */
+    InlineResponse20049,
 
     /**
      * The InlineResponse2005 model constructor.
@@ -2961,16 +2993,22 @@ export {
     ProductSearchMatch,
 
     /**
-     * The ProductSkuUnitAnalytics model constructor.
-     * @property {module:model/ProductSkuUnitAnalytics}
-     */
-    ProductSkuUnitAnalytics,
-
-    /**
      * The ProductUnitAnalytics model constructor.
      * @property {module:model/ProductUnitAnalytics}
      */
     ProductUnitAnalytics,
+
+    /**
+     * The ProductUnitAnalyticsDataPoint model constructor.
+     * @property {module:model/ProductUnitAnalyticsDataPoint}
+     */
+    ProductUnitAnalyticsDataPoint,
+
+    /**
+     * The ProductUnitAnalyticsTotals model constructor.
+     * @property {module:model/ProductUnitAnalyticsTotals}
+     */
+    ProductUnitAnalyticsTotals,
 
     /**
      * The ProfileAudiencesChanges model constructor.
@@ -3079,6 +3117,12 @@ export {
      * @property {module:model/RevisionActivation}
      */
     RevisionActivation,
+
+    /**
+     * The RevisionActivationRequest model constructor.
+     * @property {module:model/RevisionActivationRequest}
+     */
+    RevisionActivationRequest,
 
     /**
      * The RevisionVersion model constructor.
@@ -3367,6 +3411,18 @@ export {
      * @property {module:model/ShowNotificationEffectProps}
      */
     ShowNotificationEffectProps,
+
+    /**
+     * The SkuUnitAnalytics model constructor.
+     * @property {module:model/SkuUnitAnalytics}
+     */
+    SkuUnitAnalytics,
+
+    /**
+     * The SkuUnitAnalyticsDataPoint model constructor.
+     * @property {module:model/SkuUnitAnalyticsDataPoint}
+     */
+    SkuUnitAnalyticsDataPoint,
 
     /**
      * The SlotDef model constructor.

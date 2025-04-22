@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The UpdateAchievement model module.
  * @module model/UpdateAchievement
- * @version 11.0.0
+ * @version 11.1.0
  */
 class UpdateAchievement {
     /**
@@ -77,12 +77,6 @@ class UpdateAchievement {
             }
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
-            }
-            if (data.hasOwnProperty('isCappedByTarget')) {
-                obj['isCappedByTarget'] = ApiClient.convertToType(data['isCappedByTarget'], 'Boolean');
-            }
-            if (data.hasOwnProperty('isOptinRequired')) {
-                obj['isOptinRequired'] = ApiClient.convertToType(data['isOptinRequired'], 'Boolean');
             }
         }
         return obj;
@@ -149,18 +143,6 @@ UpdateAchievement.prototype['fixedStartDate'] = undefined;
  * @member {Date} endDate
  */
 UpdateAchievement.prototype['endDate'] = undefined;
-
-/**
- * When `true`, it prevents the achievement from exceeding the target.
- * @member {Boolean} isCappedByTarget
- */
-UpdateAchievement.prototype['isCappedByTarget'] = undefined;
-
-/**
- * When `true`, a customer can join an achievement only after explicit opt-in.
- * @member {Boolean} isOptinRequired
- */
-UpdateAchievement.prototype['isOptinRequired'] = undefined;
 
 
 

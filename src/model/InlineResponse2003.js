@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import CardLedgerPointsEntryIntegrationAPI from './CardLedgerPointsEntryIntegrationAPI';
+import CardLedgerTransactionLogEntryIntegrationAPI from './CardLedgerTransactionLogEntryIntegrationAPI';
 
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse2003 {
     /**
      * Constructs a new <code>InlineResponse2003</code>.
      * @alias module:model/InlineResponse2003
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/CardLedgerPointsEntryIntegrationAPI>} 
+     * @param data {Array.<module:model/CardLedgerTransactionLogEntryIntegrationAPI>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2003 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CardLedgerPointsEntryIntegrationAPI]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CardLedgerTransactionLogEntryIntegrationAPI]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2003 {
 InlineResponse2003.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/CardLedgerPointsEntryIntegrationAPI>} data
+ * @member {Array.<module:model/CardLedgerTransactionLogEntryIntegrationAPI>} data
  */
 InlineResponse2003.prototype['data'] = undefined;
 

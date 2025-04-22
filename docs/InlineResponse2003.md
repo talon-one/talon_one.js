@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[CardLedgerPointsEntryIntegrationAPI]**](CardLedgerPointsEntryIntegrationAPI.md) |  | 
+**data** | [**[CardLedgerTransactionLogEntryIntegrationAPI]**](CardLedgerTransactionLogEntryIntegrationAPI.md) |  | 
 
 

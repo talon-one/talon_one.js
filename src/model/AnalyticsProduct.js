@@ -12,23 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
+import AnalyticsDataPointWithTrend from './AnalyticsDataPointWithTrend';
 
 /**
  * The AnalyticsProduct model module.
  * @module model/AnalyticsProduct
- * @version 11.0.0
+ * @version 11.1.0
  */
 class AnalyticsProduct {
     /**
      * Constructs a new <code>AnalyticsProduct</code>.
      * @alias module:model/AnalyticsProduct
-     * @param id {Number} The ID of the analytics-level product.
-     * @param isPreliminary {Boolean} Indicates whether the analytics-level product is connected to a catalog and also has a product name.
-     * @param name {String} The name of the analytics-level product.
+     * @param id {Number} The ID of the product.
+     * @param name {String} The name of the product.
+     * @param catalogId {Number} The ID of the catalog. You can find the ID in the Campaign Manager in **Account** > **Tools** > **Cart item catalogs**. 
      */
-    constructor(id, isPreliminary, name) { 
+    constructor(id, name, catalogId) { 
         
-        AnalyticsProduct.initialize(this, id, isPreliminary, name);
+        AnalyticsProduct.initialize(this, id, name, catalogId);
     }
 
     /**
@@ -36,10 +37,10 @@ class AnalyticsProduct {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, isPreliminary, name) { 
+    static initialize(obj, id, name, catalogId) { 
         obj['id'] = id;
-        obj['isPreliminary'] = isPreliminary;
         obj['name'] = name;
+        obj['catalogId'] = catalogId;
     }
 
     /**
@@ -56,14 +57,14 @@ class AnalyticsProduct {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('isPreliminary')) {
-                obj['isPreliminary'] = ApiClient.convertToType(data['isPreliminary'], 'Boolean');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('catalogId')) {
                 obj['catalogId'] = ApiClient.convertToType(data['catalogId'], 'Number');
+            }
+            if (data.hasOwnProperty('unitsSold')) {
+                obj['unitsSold'] = AnalyticsDataPointWithTrend.constructFromObject(data['unitsSold']);
             }
         }
         return obj;
@@ -73,19 +74,13 @@ class AnalyticsProduct {
 }
 
 /**
- * The ID of the analytics-level product.
+ * The ID of the product.
  * @member {Number} id
  */
 AnalyticsProduct.prototype['id'] = undefined;
 
 /**
- * Indicates whether the analytics-level product is connected to a catalog and also has a product name.
- * @member {Boolean} isPreliminary
- */
-AnalyticsProduct.prototype['isPreliminary'] = undefined;
-
-/**
- * The name of the analytics-level product.
+ * The name of the product.
  * @member {String} name
  */
 AnalyticsProduct.prototype['name'] = undefined;
@@ -95,6 +90,11 @@ AnalyticsProduct.prototype['name'] = undefined;
  * @member {Number} catalogId
  */
 AnalyticsProduct.prototype['catalogId'] = undefined;
+
+/**
+ * @member {module:model/AnalyticsDataPointWithTrend} unitsSold
+ */
+AnalyticsProduct.prototype['unitsSold'] = undefined;
 
 
 

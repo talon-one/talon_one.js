@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerProfile from './CustomerProfile';
+import ApplicationCustomer from './ApplicationCustomer';
 
 /**
  * The InlineResponse20024 model module.
  * @module model/InlineResponse20024
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20024 {
     /**
      * Constructs a new <code>InlineResponse20024</code>.
      * @alias module:model/InlineResponse20024
-     * @param data {Array.<module:model/CustomerProfile>} 
+     * @param data {Array.<module:model/ApplicationCustomer>} 
      */
     constructor(data) { 
         
@@ -50,14 +50,14 @@ class InlineResponse20024 {
         if (data) {
             obj = obj || new InlineResponse20024();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfile]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
             }
         }
         return obj;
@@ -67,17 +67,17 @@ class InlineResponse20024 {
 }
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20024.prototype['hasMore'] = undefined;
-
-/**
  * @member {Number} totalResultSize
  */
 InlineResponse20024.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/CustomerProfile>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20024.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Array.<module:model/ApplicationCustomer>} data
  */
 InlineResponse20024.prototype['data'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeactivateUserRequest model module.
  * @module model/DeactivateUserRequest
- * @version 11.0.0
+ * @version 11.1.0
  */
 class DeactivateUserRequest {
     /**

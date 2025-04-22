@@ -306,6 +306,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property valueMapsIds (base name: "valueMapsIds")', function() {
+      // uncomment below and update the code to test the property valueMapsIds
+      //var instane = new TalonOne.Campaign();
+      //expect(instance).to.be();
+    });
+
     it('should have the property revisionFrontendState (base name: "revisionFrontendState")', function() {
       // uncomment below and update the code to test the property revisionFrontendState
       //var instane = new TalonOne.Campaign();

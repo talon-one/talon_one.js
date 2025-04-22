@@ -54,6 +54,18 @@
       //expect(instance).to.be.a(TalonOne.StrikethroughLabelingNotification);
     });
 
+    it('should have the property version (base name: "version")', function() {
+      // uncomment below and update the code to test the property version
+      //var instane = new TalonOne.StrikethroughLabelingNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property validFrom (base name: "validFrom")', function() {
+      // uncomment below and update the code to test the property validFrom
+      //var instane = new TalonOne.StrikethroughLabelingNotification();
+      //expect(instance).to.be();
+    });
+
     it('should have the property applicationId (base name: "applicationId")', function() {
       // uncomment below and update the code to test the property applicationId
       //var instane = new TalonOne.StrikethroughLabelingNotification();

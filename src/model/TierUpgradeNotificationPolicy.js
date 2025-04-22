@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierUpgradeNotificationPolicy model module.
  * @module model/TierUpgradeNotificationPolicy
- * @version 11.0.0
+ * @version 11.1.0
  */
 class TierUpgradeNotificationPolicy {
     /**
