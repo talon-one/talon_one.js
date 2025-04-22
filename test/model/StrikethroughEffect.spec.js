@@ -90,6 +90,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property startTime (base name: "startTime")', function() {
+      // uncomment below and update the code to test the property startTime
+      //var instane = new TalonOne.StrikethroughEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property endTime (base name: "endTime")', function() {
+      // uncomment below and update the code to test the property endTime
+      //var instane = new TalonOne.StrikethroughEffect();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

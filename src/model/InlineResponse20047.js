@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AchievementProgress from './AchievementProgress';
+import Store from './Store';
 
 /**
  * The InlineResponse20047 model module.
  * @module model/InlineResponse20047
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20047 {
     /**
      * Constructs a new <code>InlineResponse20047</code>.
      * @alias module:model/InlineResponse20047
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/AchievementProgress>} 
+     * @param data {Array.<module:model/Store>} 
      */
-    constructor(hasMore, data) { 
+    constructor(data) { 
         
-        InlineResponse20047.initialize(this, hasMore, data);
+        InlineResponse20047.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20047 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse20047 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AchievementProgress]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Store]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse20047 {
 InlineResponse20047.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/AchievementProgress>} data
+ * @member {Number} totalResultSize
+ */
+InlineResponse20047.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/Store>} data
  */
 InlineResponse20047.prototype['data'] = undefined;
 

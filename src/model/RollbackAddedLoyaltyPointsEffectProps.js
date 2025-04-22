@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackAddedLoyaltyPointsEffectProps model module.
  * @module model/RollbackAddedLoyaltyPointsEffectProps
- * @version 11.0.0
+ * @version 11.1.0
  */
 class RollbackAddedLoyaltyPointsEffectProps {
     /**

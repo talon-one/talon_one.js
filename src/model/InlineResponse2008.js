@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Coupon from './Coupon';
+import Campaign from './Campaign';
 
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse2008 {
     /**
      * Constructs a new <code>InlineResponse2008</code>.
      * @alias module:model/InlineResponse2008
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Coupon>} 
+     * @param data {Array.<module:model/Campaign>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2008 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Campaign]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2008 {
 InlineResponse2008.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Coupon>} data
+ * @member {Array.<module:model/Campaign>} data
  */
 InlineResponse2008.prototype['data'] = undefined;
 

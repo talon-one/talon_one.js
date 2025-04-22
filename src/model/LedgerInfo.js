@@ -17,7 +17,7 @@ import Tier from './Tier';
 /**
  * The LedgerInfo model module.
  * @module model/LedgerInfo
- * @version 11.0.0
+ * @version 11.1.0
  */
 class LedgerInfo {
     /**
@@ -30,10 +30,11 @@ class LedgerInfo {
      * @param expiredBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param spentBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param tentativeCurrentBalance {Number} The tentative points balance, reflecting the `currentBalance` and all point additions and deductions within the current open customer session. When the session is closed, the effects are applied and the `currentBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
+     * @param tentativeNegativeBalance {Number} The tentative negative balance after all additions and deductions from the current customer session are applied to `negativeBalance`. When the session is closed, the tentative effects are applied and `negativeBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
      */
-    constructor(currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
+    constructor(currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance, tentativeNegativeBalance) { 
         
-        LedgerInfo.initialize(this, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance);
+        LedgerInfo.initialize(this, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance, tentativeNegativeBalance);
     }
 
     /**
@@ -41,13 +42,14 @@ class LedgerInfo {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
+    static initialize(obj, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance, tentativeNegativeBalance) { 
         obj['currentBalance'] = currentBalance;
         obj['pendingBalance'] = pendingBalance;
         obj['negativeBalance'] = negativeBalance;
         obj['expiredBalance'] = expiredBalance;
         obj['spentBalance'] = spentBalance;
         obj['tentativeCurrentBalance'] = tentativeCurrentBalance;
+        obj['tentativeNegativeBalance'] = tentativeNegativeBalance;
     }
 
     /**
@@ -81,6 +83,9 @@ class LedgerInfo {
             }
             if (data.hasOwnProperty('tentativePendingBalance')) {
                 obj['tentativePendingBalance'] = ApiClient.convertToType(data['tentativePendingBalance'], 'Number');
+            }
+            if (data.hasOwnProperty('tentativeNegativeBalance')) {
+                obj['tentativeNegativeBalance'] = ApiClient.convertToType(data['tentativeNegativeBalance'], 'Number');
             }
             if (data.hasOwnProperty('currentTier')) {
                 obj['currentTier'] = Tier.constructFromObject(data['currentTier']);
@@ -136,6 +141,12 @@ LedgerInfo.prototype['tentativeCurrentBalance'] = undefined;
  * @member {Number} tentativePendingBalance
  */
 LedgerInfo.prototype['tentativePendingBalance'] = undefined;
+
+/**
+ * The tentative negative balance after all additions and deductions from the current customer session are applied to `negativeBalance`. When the session is closed, the tentative effects are applied and `negativeBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
+ * @member {Number} tentativeNegativeBalance
+ */
+LedgerInfo.prototype['tentativeNegativeBalance'] = undefined;
 
 /**
  * @member {module:model/Tier} currentTier

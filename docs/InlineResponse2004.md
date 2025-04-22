@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[LedgerPointsEntryIntegrationAPI]**](LedgerPointsEntryIntegrationAPI.md) |  | 
+**data** | [**[LedgerTransactionLogEntryIntegrationAPI]**](LedgerTransactionLogEntryIntegrationAPI.md) |  | 
 
 

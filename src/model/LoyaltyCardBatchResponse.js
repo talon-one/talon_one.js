@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyCardBatchResponse model module.
  * @module model/LoyaltyCardBatchResponse
- * @version 11.0.0
+ * @version 11.1.0
  */
 class LoyaltyCardBatchResponse {
     /**

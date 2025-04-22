@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IdentifiableEntity model module.
  * @module model/IdentifiableEntity
- * @version 11.0.0
+ * @version 11.1.0
  */
 class IdentifiableEntity {
     /**

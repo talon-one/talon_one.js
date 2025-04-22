@@ -54,68 +54,8 @@
       //expect(instance).to.be.a(TalonOne.AchievementProgress);
     });
 
-    it('should have the property achievementId (base name: "achievementId")', function() {
-      // uncomment below and update the code to test the property achievementId
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property campaignId (base name: "campaignId")', function() {
-      // uncomment below and update the code to test the property campaignId
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property target (base name: "target")', function() {
-      // uncomment below and update the code to test the property target
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property achievementRecurrencePolicy (base name: "achievementRecurrencePolicy")', function() {
-      // uncomment below and update the code to test the property achievementRecurrencePolicy
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property achievementActivationPolicy (base name: "achievementActivationPolicy")', function() {
-      // uncomment below and update the code to test the property achievementActivationPolicy
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property achievementFixedStartDate (base name: "achievementFixedStartDate")', function() {
-      // uncomment below and update the code to test the property achievementFixedStartDate
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property achievementEndDate (base name: "achievementEndDate")', function() {
-      // uncomment below and update the code to test the property achievementEndDate
       //var instane = new TalonOne.AchievementProgress();
       //expect(instance).to.be();
     });
@@ -140,12 +80,6 @@
 
     it('should have the property endDate (base name: "endDate")', function() {
       // uncomment below and update the code to test the property endDate
-      //var instane = new TalonOne.AchievementProgress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property optinDate (base name: "optinDate")', function() {
-      // uncomment below and update the code to test the property optinDate
       //var instane = new TalonOne.AchievementProgress();
       //expect(instance).to.be();
     });

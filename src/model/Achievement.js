@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The Achievement model module.
  * @module model/Achievement
- * @version 11.0.0
+ * @version 11.1.0
  */
 class Achievement {
     /**
@@ -29,13 +29,12 @@ class Achievement {
      * @param title {String} The display name for the achievement in the Campaign Manager.
      * @param description {String} A description of the achievement.
      * @param target {Number} The required number of actions or the transactional milestone to complete the achievement.
-     * @param campaignId {Number} ID of the campaign, to which the achievement belongs to
+     * @param campaignId {Number} The ID of the campaign the achievement belongs to.
      * @param userId {Number} ID of the user that created this achievement.
-     * @param createdBy {String} Name of the user that created the achievement.  **Note**: This is not available if the user has been deleted. 
      */
-    constructor(id, created, name, title, description, target, campaignId, userId, createdBy) { 
+    constructor(id, created, name, title, description, target, campaignId, userId) { 
         
-        Achievement.initialize(this, id, created, name, title, description, target, campaignId, userId, createdBy);
+        Achievement.initialize(this, id, created, name, title, description, target, campaignId, userId);
     }
 
     /**
@@ -43,7 +42,7 @@ class Achievement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, name, title, description, target, campaignId, userId, createdBy) { 
+    static initialize(obj, id, created, name, title, description, target, campaignId, userId) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['name'] = name;
@@ -52,7 +51,6 @@ class Achievement {
         obj['target'] = target;
         obj['campaignId'] = campaignId;
         obj['userId'] = userId;
-        obj['createdBy'] = createdBy;
     }
 
     /**
@@ -102,12 +100,6 @@ class Achievement {
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
             }
-            if (data.hasOwnProperty('isCappedByTarget')) {
-                obj['isCappedByTarget'] = ApiClient.convertToType(data['isCappedByTarget'], 'Boolean');
-            }
-            if (data.hasOwnProperty('isOptinRequired')) {
-                obj['isOptinRequired'] = ApiClient.convertToType(data['isOptinRequired'], 'Boolean');
-            }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
             }
@@ -119,6 +111,9 @@ class Achievement {
             }
             if (data.hasOwnProperty('hasProgress')) {
                 obj['hasProgress'] = ApiClient.convertToType(data['hasProgress'], 'Boolean');
+            }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
         }
         return obj;
@@ -199,19 +194,7 @@ Achievement.prototype['fixedStartDate'] = undefined;
 Achievement.prototype['endDate'] = undefined;
 
 /**
- * When `true`, it prevents the achievement from exceeding the target.
- * @member {Boolean} isCappedByTarget
- */
-Achievement.prototype['isCappedByTarget'] = undefined;
-
-/**
- * When `true`, a customer can join an achievement only after explicit opt-in.
- * @member {Boolean} isOptinRequired
- */
-Achievement.prototype['isOptinRequired'] = undefined;
-
-/**
- * ID of the campaign, to which the achievement belongs to
+ * The ID of the campaign the achievement belongs to.
  * @member {Number} campaignId
  */
 Achievement.prototype['campaignId'] = undefined;
@@ -233,6 +216,12 @@ Achievement.prototype['createdBy'] = undefined;
  * @member {Boolean} hasProgress
  */
 Achievement.prototype['hasProgress'] = undefined;
+
+/**
+ * The status of the achievement.
+ * @member {module:model/Achievement.StatusEnum} status
+ */
+Achievement.prototype['status'] = undefined;
 
 
 
@@ -277,6 +266,39 @@ Achievement['ActivationPolicyEnum'] = {
      * @const
      */
     "fixed_schedule": "fixed_schedule"
+};
+
+
+/**
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Achievement['StatusEnum'] = {
+
+    /**
+     * value: "inprogress"
+     * @const
+     */
+    "inprogress": "inprogress",
+
+    /**
+     * value: "expired"
+     * @const
+     */
+    "expired": "expired",
+
+    /**
+     * value: "not_started"
+     * @const
+     */
+    "not_started": "not_started",
+
+    /**
+     * value: "completed"
+     * @const
+     */
+    "completed": "completed"
 };
 
 

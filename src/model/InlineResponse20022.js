@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationCustomer from './ApplicationCustomer';
+import AccessLogEntry from './AccessLogEntry';
 
 /**
  * The InlineResponse20022 model module.
  * @module model/InlineResponse20022
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20022 {
     /**
      * Constructs a new <code>InlineResponse20022</code>.
      * @alias module:model/InlineResponse20022
-     * @param data {Array.<module:model/ApplicationCustomer>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/AccessLogEntry>} 
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20022.initialize(this, data);
+        InlineResponse20022.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20022 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -50,14 +52,11 @@ class InlineResponse20022 {
         if (data) {
             obj = obj || new InlineResponse20022();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
             }
         }
         return obj;
@@ -67,17 +66,12 @@ class InlineResponse20022 {
 }
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20022.prototype['totalResultSize'] = undefined;
-
-/**
  * @member {Boolean} hasMore
  */
 InlineResponse20022.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationCustomer>} data
+ * @member {Array.<module:model/AccessLogEntry>} data
  */
 InlineResponse20022.prototype['data'] = undefined;
 

@@ -54,32 +54,14 @@
       //expect(instance).to.be.a(TalonOne.ProductUnitAnalytics);
     });
 
-    it('should have the property startTime (base name: "startTime")', function() {
-      // uncomment below and update the code to test the property startTime
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new TalonOne.ProductUnitAnalytics();
       //expect(instance).to.be();
     });
 
-    it('should have the property endTime (base name: "endTime")', function() {
-      // uncomment below and update the code to test the property endTime
-      //var instane = new TalonOne.ProductUnitAnalytics();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property purchasedUnits (base name: "purchasedUnits")', function() {
-      // uncomment below and update the code to test the property purchasedUnits
-      //var instane = new TalonOne.ProductUnitAnalytics();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productId (base name: "productId")', function() {
-      // uncomment below and update the code to test the property productId
-      //var instane = new TalonOne.ProductUnitAnalytics();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productName (base name: "productName")', function() {
-      // uncomment below and update the code to test the property productName
+    it('should have the property totals (base name: "totals")', function() {
+      // uncomment below and update the code to test the property totals
       //var instane = new TalonOne.ProductUnitAnalytics();
       //expect(instance).to.be();
     });

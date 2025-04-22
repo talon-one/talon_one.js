@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 11.0.0
+ * @version 11.1.0
  */
 class Campaign {
     /**
@@ -201,6 +201,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('storesImported')) {
                 obj['storesImported'] = ApiClient.convertToType(data['storesImported'], 'Boolean');
+            }
+            if (data.hasOwnProperty('valueMapsIds')) {
+                obj['valueMapsIds'] = ApiClient.convertToType(data['valueMapsIds'], ['Number']);
             }
             if (data.hasOwnProperty('revisionFrontendState')) {
                 obj['revisionFrontendState'] = ApiClient.convertToType(data['revisionFrontendState'], 'String');
@@ -481,6 +484,12 @@ Campaign.prototype['frontendState'] = undefined;
  * @member {Boolean} storesImported
  */
 Campaign.prototype['storesImported'] = undefined;
+
+/**
+ * A list of value map IDs for the campaign.
+ * @member {Array.<Number>} valueMapsIds
+ */
+Campaign.prototype['valueMapsIds'] = undefined;
 
 /**
  * The campaign revision state displayed in the Campaign Manager.

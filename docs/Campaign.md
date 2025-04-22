@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 **templateId** | **Number** | The ID of the Campaign Template this Campaign was created from. | [optional] 
 **frontendState** | **String** | The campaign state displayed in the Campaign Manager. | 
 **storesImported** | **Boolean** | Indicates whether the linked stores were imported via a CSV file. | 
+**valueMapsIds** | **[Number]** | A list of value map IDs for the campaign. | [optional] 
 **revisionFrontendState** | **String** | The campaign revision state displayed in the Campaign Manager. | [optional] 
 **activeRevisionId** | **Number** | ID of the revision that was last activated on this campaign.  | [optional] 
 **activeRevisionVersionId** | **Number** | ID of the revision version that is active on the campaign.  | [optional] 

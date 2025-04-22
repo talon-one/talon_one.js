@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyProgram from './LoyaltyProgram';
+import CampaignGroup from './CampaignGroup';
 
 /**
  * The InlineResponse20013 model module.
  * @module model/InlineResponse20013
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20013 {
     /**
      * Constructs a new <code>InlineResponse20013</code>.
      * @alias module:model/InlineResponse20013
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/LoyaltyProgram>} 
+     * @param data {Array.<module:model/CampaignGroup>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20013 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyProgram]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CampaignGroup]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20013 {
 InlineResponse20013.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyProgram>} data
+ * @member {Array.<module:model/CampaignGroup>} data
  */
 InlineResponse20013.prototype['data'] = undefined;
 

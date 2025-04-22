@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[CardLedgerTransactionLogEntryIntegrationAPI]**](CardLedgerTransactionLogEntryIntegrationAPI.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[AchievementStatusEntry]**](AchievementStatusEntry.md) |  | 
 
 

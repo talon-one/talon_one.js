@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationReferee from './ApplicationReferee';
+import AudienceAnalytics from './AudienceAnalytics';
 
 /**
  * The InlineResponse20033 model module.
  * @module model/InlineResponse20033
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20033 {
     /**
      * Constructs a new <code>InlineResponse20033</code>.
      * @alias module:model/InlineResponse20033
-     * @param data {Array.<module:model/ApplicationReferee>} 
+     * @param data {Array.<module:model/AudienceAnalytics>} 
      */
     constructor(data) { 
         
@@ -53,11 +53,8 @@ class InlineResponse20033 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationReferee]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AudienceAnalytics]);
             }
         }
         return obj;
@@ -72,12 +69,7 @@ class InlineResponse20033 {
 InlineResponse20033.prototype['hasMore'] = undefined;
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20033.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/ApplicationReferee>} data
+ * @member {Array.<module:model/AudienceAnalytics>} data
  */
 InlineResponse20033.prototype['data'] = undefined;
 

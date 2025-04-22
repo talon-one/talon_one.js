@@ -18,7 +18,7 @@ import Tier from './Tier';
 /**
  * The LoyaltySubLedger model module.
  * @module model/LoyaltySubLedger
- * @version 11.0.0
+ * @version 11.1.0
  */
 class LoyaltySubLedger {
     /**
@@ -95,9 +95,6 @@ class LoyaltySubLedger {
             if (data.hasOwnProperty('expiredPoints')) {
                 obj['expiredPoints'] = ApiClient.convertToType(data['expiredPoints'], [LoyaltyLedgerEntry]);
             }
-            if (data.hasOwnProperty('negativePoints')) {
-                obj['negativePoints'] = ApiClient.convertToType(data['negativePoints'], [LoyaltyLedgerEntry]);
-            }
             if (data.hasOwnProperty('currentTier')) {
                 obj['currentTier'] = Tier.constructFromObject(data['currentTier']);
             }
@@ -173,12 +170,6 @@ LoyaltySubLedger.prototype['pendingPoints'] = undefined;
  * @member {Array.<module:model/LoyaltyLedgerEntry>} expiredPoints
  */
 LoyaltySubLedger.prototype['expiredPoints'] = undefined;
-
-/**
- * List of negative points.
- * @member {Array.<module:model/LoyaltyLedgerEntry>} negativePoints
- */
-LoyaltySubLedger.prototype['negativePoints'] = undefined;
 
 /**
  * @member {module:model/Tier} currentTier

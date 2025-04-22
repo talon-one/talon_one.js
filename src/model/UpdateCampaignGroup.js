@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCampaignGroup model module.
  * @module model/UpdateCampaignGroup
- * @version 11.0.0
+ * @version 11.1.0
  */
 class UpdateCampaignGroup {
     /**

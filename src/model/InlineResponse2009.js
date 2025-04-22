@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Coupon from './Coupon';
+import Ruleset from './Ruleset';
 
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse2009 {
     /**
      * Constructs a new <code>InlineResponse2009</code>.
      * @alias module:model/InlineResponse2009
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/Coupon>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/Ruleset>} 
      */
-    constructor(hasMore, data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse2009.initialize(this, hasMore, data);
+        InlineResponse2009.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse2009 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse2009 {
         if (data) {
             obj = obj || new InlineResponse2009();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Ruleset]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse2009 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse2009.prototype['hasMore'] = undefined;
+InlineResponse2009.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Coupon>} data
+ * @member {Array.<module:model/Ruleset>} data
  */
 InlineResponse2009.prototype['data'] = undefined;
 

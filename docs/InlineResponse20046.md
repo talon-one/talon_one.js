@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**data** | [**[Achievement]**](Achievement.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[RoleV2]**](RoleV2.md) |  | 
 
 

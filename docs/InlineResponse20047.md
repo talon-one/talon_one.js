@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[AchievementProgress]**](AchievementProgress.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[Store]**](Store.md) |  | 
 
 

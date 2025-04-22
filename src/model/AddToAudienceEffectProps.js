@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddToAudienceEffectProps model module.
  * @module model/AddToAudienceEffectProps
- * @version 11.0.0
+ * @version 11.1.0
  */
 class AddToAudienceEffectProps {
     /**

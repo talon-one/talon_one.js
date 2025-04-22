@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewMessageTest model module.
  * @module model/NewMessageTest
- * @version 11.0.0
+ * @version 11.1.0
  */
 class NewMessageTest {
     /**

@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property isPreliminary (base name: "isPreliminary")', function() {
-      // uncomment below and update the code to test the property isPreliminary
-      //var instane = new TalonOne.AnalyticsProduct();
-      //expect(instance).to.be();
-    });
-
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new TalonOne.AnalyticsProduct();
@@ -74,6 +68,12 @@
 
     it('should have the property catalogId (base name: "catalogId")', function() {
       // uncomment below and update the code to test the property catalogId
+      //var instane = new TalonOne.AnalyticsProduct();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property unitsSold (base name: "unitsSold")', function() {
+      // uncomment below and update the code to test the property unitsSold
       //var instane = new TalonOne.AnalyticsProduct();
       //expect(instance).to.be();
     });

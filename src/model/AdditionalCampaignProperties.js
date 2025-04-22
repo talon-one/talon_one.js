@@ -17,7 +17,7 @@ import CampaignBudget from './CampaignBudget';
 /**
  * The AdditionalCampaignProperties model module.
  * @module model/AdditionalCampaignProperties
- * @version 11.0.0
+ * @version 11.1.0
  */
 class AdditionalCampaignProperties {
     /**
@@ -120,6 +120,9 @@ class AdditionalCampaignProperties {
             }
             if (data.hasOwnProperty('storesImported')) {
                 obj['storesImported'] = ApiClient.convertToType(data['storesImported'], 'Boolean');
+            }
+            if (data.hasOwnProperty('valueMapsIds')) {
+                obj['valueMapsIds'] = ApiClient.convertToType(data['valueMapsIds'], ['Number']);
             }
         }
         return obj;
@@ -265,6 +268,12 @@ AdditionalCampaignProperties.prototype['frontendState'] = undefined;
  * @member {Boolean} storesImported
  */
 AdditionalCampaignProperties.prototype['storesImported'] = undefined;
+
+/**
+ * A list of value map IDs for the campaign.
+ * @member {Array.<Number>} valueMapsIds
+ */
+AdditionalCampaignProperties.prototype['valueMapsIds'] = undefined;
 
 
 

@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[RoleV2]**](RoleV2.md) |  | 
+**totalResultSize** | **Number** |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
+**data** | [**[Change]**](Change.md) |  | 
 
 

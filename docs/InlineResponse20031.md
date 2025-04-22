@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**data** | [**[AudienceAnalytics]**](AudienceAnalytics.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | **[String]** |  | 
 
 

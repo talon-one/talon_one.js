@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationAPIKey model module.
  * @module model/ApplicationAPIKey
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ApplicationAPIKey {
     /**
@@ -194,10 +194,10 @@ ApplicationAPIKey['PlatformEnum'] = {
     "mparticle": "mparticle",
 
     /**
-     * value: "selligent"
+     * value: "shopify"
      * @const
      */
-    "selligent": "selligent",
+    "shopify": "shopify",
 
     /**
      * value: "iterable"

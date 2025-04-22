@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventType from './EventType';
+import WebhookActivationLogEntry from './WebhookActivationLogEntry';
 
 /**
  * The InlineResponse20040 model module.
  * @module model/InlineResponse20040
- * @version 11.0.0
+ * @version 11.1.0
  */
 class InlineResponse20040 {
     /**
      * Constructs a new <code>InlineResponse20040</code>.
      * @alias module:model/InlineResponse20040
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/EventType>} 
+     * @param data {Array.<module:model/WebhookActivationLogEntry>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20040 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WebhookActivationLogEntry]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20040 {
 InlineResponse20040.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/EventType>} data
+ * @member {Array.<module:model/WebhookActivationLogEntry>} data
  */
 InlineResponse20040.prototype['data'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Audience model module.
  * @module model/Audience
- * @version 11.0.0
+ * @version 11.1.0
  */
 class Audience {
     /**
@@ -129,7 +129,7 @@ Audience.prototype['sandbox'] = undefined;
 Audience.prototype['description'] = undefined;
 
 /**
- * The Talon.One-supported [3rd-party platform](https://docs.talon.one/docs/dev/technology-partners/overview) that this audience was created in.  For example, `mParticle`, `Segment`, `Selligent`, `Braze`, or `Iterable`.  **Note:** If you do not integrate with any of these platforms, do not use this property. 
+ * The Talon.One-supported [3rd-party platform](https://docs.talon.one/docs/dev/technology-partners/overview) that this audience was created in.  For example, `mParticle`, `Segment`, `Shopify`, `Braze`, or `Iterable`.  **Note:** If you do not integrate with any of these platforms, do not use this property. 
  * @member {String} integration
  */
 Audience.prototype['integration'] = undefined;

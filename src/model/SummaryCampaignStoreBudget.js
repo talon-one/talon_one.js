@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SummaryCampaignStoreBudget model module.
  * @module model/SummaryCampaignStoreBudget
- * @version 11.0.0
+ * @version 11.1.0
  */
 class SummaryCampaignStoreBudget {
     /**

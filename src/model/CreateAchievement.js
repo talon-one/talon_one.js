@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The CreateAchievement model module.
  * @module model/CreateAchievement
- * @version 11.0.0
+ * @version 11.1.0
  */
 class CreateAchievement {
     /**
@@ -86,12 +86,6 @@ class CreateAchievement {
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
             }
-            if (data.hasOwnProperty('isCappedByTarget')) {
-                obj['isCappedByTarget'] = ApiClient.convertToType(data['isCappedByTarget'], 'Boolean');
-            }
-            if (data.hasOwnProperty('isOptinRequired')) {
-                obj['isOptinRequired'] = ApiClient.convertToType(data['isOptinRequired'], 'Boolean');
-            }
         }
         return obj;
     }
@@ -157,18 +151,6 @@ CreateAchievement.prototype['fixedStartDate'] = undefined;
  * @member {Date} endDate
  */
 CreateAchievement.prototype['endDate'] = undefined;
-
-/**
- * When `true`, it prevents the achievement from exceeding the target.
- * @member {Boolean} isCappedByTarget
- */
-CreateAchievement.prototype['isCappedByTarget'] = undefined;
-
-/**
- * When `true`, a customer can join an achievement only after explicit opt-in.
- * @member {Boolean} isOptinRequired
- */
-CreateAchievement.prototype['isOptinRequired'] = undefined;
 
 
 

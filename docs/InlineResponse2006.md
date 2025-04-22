@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[Campaign]**](Campaign.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[LedgerPointsEntryIntegrationAPI]**](LedgerPointsEntryIntegrationAPI.md) |  | 
 
 

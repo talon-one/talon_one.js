@@ -21,7 +21,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 11.0.0
+ * @version 11.1.0
  */
 class CampaignTemplate {
     /**

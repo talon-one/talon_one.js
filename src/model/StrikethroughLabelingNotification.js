@@ -18,7 +18,7 @@ import StrikethroughTrigger from './StrikethroughTrigger';
 /**
  * The StrikethroughLabelingNotification model module.
  * @module model/StrikethroughLabelingNotification
- * @version 11.0.0
+ * @version 11.1.0
  */
 class StrikethroughLabelingNotification {
     /**
@@ -60,6 +60,12 @@ class StrikethroughLabelingNotification {
         if (data) {
             obj = obj || new StrikethroughLabelingNotification();
 
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
+            }
+            if (data.hasOwnProperty('validFrom')) {
+                obj['validFrom'] = ApiClient.convertToType(data['validFrom'], 'Date');
+            }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
             }
@@ -81,6 +87,18 @@ class StrikethroughLabelingNotification {
 
 
 }
+
+/**
+ * The version of the strikethrough pricing notification.
+ * @member {module:model/StrikethroughLabelingNotification.VersionEnum} version
+ */
+StrikethroughLabelingNotification.prototype['version'] = undefined;
+
+/**
+ * Timestamp at which the strikethrough pricing update becomes valid. Set for **scheduled** strikethrough pricing updates (version: v2) only. 
+ * @member {Date} validFrom
+ */
+StrikethroughLabelingNotification.prototype['validFrom'] = undefined;
 
 /**
  * The ID of the Application to which the catalog items labels belongs.
@@ -112,6 +130,21 @@ StrikethroughLabelingNotification.prototype['changedItems'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>version</code> property.
+ * @enum {String}
+ * @readonly
+ */
+StrikethroughLabelingNotification['VersionEnum'] = {
+
+    /**
+     * value: "v2"
+     * @const
+     */
+    "v2": "v2"
+};
 
 
 

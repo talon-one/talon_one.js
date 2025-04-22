@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCampaignTags model module.
  * @module model/GenerateCampaignTags
- * @version 11.0.0
+ * @version 11.1.0
  */
 class GenerateCampaignTags {
     /**

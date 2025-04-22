@@ -30,6 +30,8 @@ import InlineResponse2001 from '../model/InlineResponse2001';
 import InlineResponse2002 from '../model/InlineResponse2002';
 import InlineResponse2003 from '../model/InlineResponse2003';
 import InlineResponse2004 from '../model/InlineResponse2004';
+import InlineResponse2005 from '../model/InlineResponse2005';
+import InlineResponse2006 from '../model/InlineResponse2006';
 import InlineResponse201 from '../model/InlineResponse201';
 import IntegrationCustomerSessionResponse from '../model/IntegrationCustomerSessionResponse';
 import IntegrationEventV2Request from '../model/IntegrationEventV2Request';
@@ -53,7 +55,7 @@ import UpdateAudience from '../model/UpdateAudience';
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 11.0.0
+* @version 11.1.0
 */
 export default class IntegrationApi {
 
@@ -173,7 +175,7 @@ export default class IntegrationApi {
 
     /**
      * Create referral code for an advocate
-     * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile.  **Note:** Any [referral limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets#referral-limits) set are ignored when you use this endpoint. 
      * @param {module:model/NewReferral} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Referral} and HTTP response
      */
@@ -206,7 +208,7 @@ export default class IntegrationApi {
 
     /**
      * Create referral code for an advocate
-     * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * Creates a referral code for an advocate. The code will be valid for the referral campaign for which is created, indicated in the `campaignId` parameter, and will be associated with the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile.  **Note:** Any [referral limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets#referral-limits) set are ignored when you use this endpoint. 
      * @param {module:model/NewReferral} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Referral}
      */
@@ -220,7 +222,7 @@ export default class IntegrationApi {
 
     /**
      * Create referral codes for multiple advocates
-     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile.  **Note:** Any [referral limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets#referral-limits) set are ignored when you use this endpoint. 
      * @param {module:model/NewReferralsForMultipleAdvocates} body body
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles.  (default to 'yes')
@@ -257,7 +259,7 @@ export default class IntegrationApi {
 
     /**
      * Create referral codes for multiple advocates
-     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile. 
+     * Creates unique referral codes for multiple advocates. The code will be valid for the referral campaign for which it is created, indicated in the `campaignId` parameter, and one referral code will be associated with one advocate using the profile specified in the `advocateProfileIntegrationId` parameter as the advocate's profile.  **Note:** Any [referral limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets#referral-limits) set are ignored when you use this endpoint. 
      * @param {module:model/NewReferralsForMultipleAdvocates} body body
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles.  (default to 'yes')
@@ -517,6 +519,148 @@ export default class IntegrationApi {
      */
     generateLoyaltyCard(loyaltyProgramId, body) {
       return this.generateLoyaltyCardWithHttpInfo(loyaltyProgramId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List customer's achievement history
+     * Retrieve all progress history of a given customer in the given achievement. 
+     * @param {String} integrationId The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
+     * @param {Number} achievementId The achievement identifier. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Array.<module:model/String>=} [opts.progressStatus] Filter by customer progress status in the achievement. 
+     * @param {Date=} [opts.startDate] Timestamp that filters the results to only contain achievements created on or after the start date.
+     * @param {Date=} [opts.endDate] Timestamp that filters the results to only contain achievements created before or on the end date.
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     */
+    getCustomerAchievementHistoryWithHttpInfo(integrationId, achievementId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw new Error("Missing the required parameter 'integrationId' when calling getCustomerAchievementHistory");
+      }
+      // verify the required parameter 'achievementId' is set
+      if (achievementId === undefined || achievementId === null) {
+        throw new Error("Missing the required parameter 'achievementId' when calling getCustomerAchievementHistory");
+      }
+
+      let pathParams = {
+        'integrationId': integrationId,
+        'achievementId': achievementId
+      };
+      let queryParams = {
+        'progressStatus': this.apiClient.buildCollectionParam(opts['progressStatus'], 'csv'),
+        'startDate': opts['startDate'],
+        'endDate': opts['endDate'],
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2002;
+      return this.apiClient.callApi(
+        '/v1/customer_profiles/{integrationId}/achievements/{achievementId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List customer's achievement history
+     * Retrieve all progress history of a given customer in the given achievement. 
+     * @param {String} integrationId The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
+     * @param {Number} achievementId The achievement identifier. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Array.<module:model/String>=} [opts.progressStatus] Filter by customer progress status in the achievement. 
+     * @param {Date=} [opts.startDate] Timestamp that filters the results to only contain achievements created on or after the start date.
+     * @param {Date=} [opts.endDate] Timestamp that filters the results to only contain achievements created before or on the end date.
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     */
+    getCustomerAchievementHistory(integrationId, achievementId, opts) {
+      return this.getCustomerAchievementHistoryWithHttpInfo(integrationId, achievementId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List customer's available achievements
+     * Retrieve all the achievements available to a given customer and their progress in them. 
+     * @param {String} integrationId The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Array.<String>=} [opts.campaignIds] Filter by one or more Campaign IDs, separated by a comma.  **Note:** If no campaigns are specified, data for all the campaigns in the Application is returned. 
+     * @param {Array.<String>=} [opts.achievementIds] Filter by one or more Achievement IDs, separated by a comma.  **Note:** If no achievements are specified, data for all the achievements in the Application is returned. 
+     * @param {Array.<module:model/String>=} [opts.achievementStatus] Filter by status of the achievement.  **Note:** If the achievement status is not specified, only data for all active achievements in the Application is returned. 
+     * @param {Array.<module:model/String>=} [opts.currentProgressStatus] Filter by customer progress status in the achievement. 
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     */
+    getCustomerAchievementsWithHttpInfo(integrationId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw new Error("Missing the required parameter 'integrationId' when calling getCustomerAchievements");
+      }
+
+      let pathParams = {
+        'integrationId': integrationId
+      };
+      let queryParams = {
+        'campaignIds': this.apiClient.buildCollectionParam(opts['campaignIds'], 'csv'),
+        'achievementIds': this.apiClient.buildCollectionParam(opts['achievementIds'], 'csv'),
+        'achievementStatus': this.apiClient.buildCollectionParam(opts['achievementStatus'], 'csv'),
+        'currentProgressStatus': this.apiClient.buildCollectionParam(opts['currentProgressStatus'], 'csv'),
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+      return this.apiClient.callApi(
+        '/v1/customer_profiles/{integrationId}/achievements', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List customer's available achievements
+     * Retrieve all the achievements available to a given customer and their progress in them. 
+     * @param {String} integrationId The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Array.<String>=} [opts.campaignIds] Filter by one or more Campaign IDs, separated by a comma.  **Note:** If no campaigns are specified, data for all the campaigns in the Application is returned. 
+     * @param {Array.<String>=} [opts.achievementIds] Filter by one or more Achievement IDs, separated by a comma.  **Note:** If no achievements are specified, data for all the achievements in the Application is returned. 
+     * @param {Array.<module:model/String>=} [opts.achievementStatus] Filter by status of the achievement.  **Note:** If the achievement status is not specified, only data for all active achievements in the Application is returned. 
+     * @param {Array.<module:model/String>=} [opts.currentProgressStatus] Filter by customer progress status in the achievement. 
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     */
+    getCustomerAchievements(integrationId, opts) {
+      return this.getCustomerAchievementsWithHttpInfo(integrationId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -784,7 +928,7 @@ export default class IntegrationApi {
      * @param {Array.<String>=} [opts.subledgerId] Filter results by one or more subledger IDs. Must be exact match.
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     getLoyaltyCardPointsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
       opts = opts || {};
@@ -816,7 +960,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2005;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/points', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -834,7 +978,7 @@ export default class IntegrationApi {
      * @param {Array.<String>=} [opts.subledgerId] Filter results by one or more subledger IDs. Must be exact match.
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     getLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, opts) {
       return this.getLoyaltyCardPointsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts)
@@ -854,9 +998,9 @@ export default class IntegrationApi {
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
       opts = opts || {};
@@ -890,7 +1034,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2003;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/transactions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -908,9 +1052,9 @@ export default class IntegrationApi {
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardId, opts) {
       return this.getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts)
@@ -930,7 +1074,7 @@ export default class IntegrationApi {
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     getLoyaltyProgramProfilePointsWithHttpInfo(loyaltyProgramId, integrationId, opts) {
       opts = opts || {};
@@ -962,7 +1106,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2006;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/points', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -980,7 +1124,7 @@ export default class IntegrationApi {
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     getLoyaltyProgramProfilePoints(loyaltyProgramId, integrationId, opts) {
       return this.getLoyaltyProgramProfilePointsWithHttpInfo(loyaltyProgramId, integrationId, opts)
@@ -1002,7 +1146,7 @@ export default class IntegrationApi {
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getLoyaltyProgramProfileTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts) {
       opts = opts || {};
@@ -1036,7 +1180,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2004;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/transactions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1056,7 +1200,7 @@ export default class IntegrationApi {
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getLoyaltyProgramProfileTransactions(loyaltyProgramId, integrationId, opts) {
       return this.getLoyaltyProgramProfileTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts)

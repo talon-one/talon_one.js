@@ -17,7 +17,7 @@ import ScimBaseUserName from './ScimBaseUserName';
 /**
  * The ScimBaseUser model module.
  * @module model/ScimBaseUser
- * @version 11.0.0
+ * @version 11.1.0
  */
 class ScimBaseUser {
     /**

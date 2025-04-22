@@ -120,12 +120,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property negativePoints (base name: "negativePoints")', function() {
-      // uncomment below and update the code to test the property negativePoints
-      //var instane = new TalonOne.LoyaltySubLedger();
-      //expect(instance).to.be();
-    });
-
     it('should have the property currentTier (base name: "currentTier")', function() {
       // uncomment below and update the code to test the property currentTier
       //var instane = new TalonOne.LoyaltySubLedger();

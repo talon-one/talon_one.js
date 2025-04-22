@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tentativeNegativeBalance (base name: "tentativeNegativeBalance")', function() {
+      // uncomment below and update the code to test the property tentativeNegativeBalance
+      //var instane = new TalonOne.LedgerInfo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property currentTier (base name: "currentTier")', function() {
       // uncomment below and update the code to test the property currentTier
       //var instane = new TalonOne.LedgerInfo();
