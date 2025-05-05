@@ -17,7 +17,7 @@ import CatalogActionFilter from './CatalogActionFilter';
 /**
  * The PatchManyItemsCatalogAction model module.
  * @module model/PatchManyItemsCatalogAction
- * @version 11.1.0
+ * @version 12.0.0
  */
 class PatchManyItemsCatalogAction {
     /**

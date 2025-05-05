@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 11.1.0
+ * @version 12.0.0
  */
 class ApplicationCustomer {
     /**

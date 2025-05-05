@@ -1401,7 +1401,8 @@ let apiInstance = new TalonOne.IntegrationApi();
 let body = new TalonOne.IntegrationEventV2Request(); // IntegrationEventV2Request | body
 let opts = {
   'silent': "'yes'", // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
-  'dry': true // Boolean | Indicates whether to persist the changes. Changes are ignored when `dry=true`. 
+  'dry': true, // Boolean | Indicates whether to persist the changes. Changes are ignored when `dry=true`. 
+  'forceCompleteEvaluation': false // Boolean | Forces evaluation for all matching campaigns regardless of the [campaign evaluation mode](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation#setting-campaign-evaluation-mode). Requires `dry=true`. 
 };
 apiInstance.trackEventV2(body, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1419,6 +1420,7 @@ Name | Type | Description  | Notes
  **body** | [**IntegrationEventV2Request**](IntegrationEventV2Request.md)| body | 
  **silent** | **String**| Possible values: &#x60;yes&#x60; or &#x60;no&#x60;. - &#x60;yes&#x60;: Increases the performance of the API call by returning a 204 response. - &#x60;no&#x60;: Returns a 200 response that contains the updated customer profiles.  | [optional] [default to &#39;yes&#39;]
  **dry** | **Boolean**| Indicates whether to persist the changes. Changes are ignored when &#x60;dry&#x3D;true&#x60;.  | [optional] 
+ **forceCompleteEvaluation** | **Boolean**| Forces evaluation for all matching campaigns regardless of the [campaign evaluation mode](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation#setting-campaign-evaluation-mode). Requires &#x60;dry&#x3D;true&#x60;.  | [optional] [default to false]
 
 ### Return type
 

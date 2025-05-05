@@ -17,7 +17,7 @@ import RevisionVersion from './RevisionVersion';
 /**
  * The Revision model module.
  * @module model/Revision
- * @version 11.1.0
+ * @version 12.0.0
  */
 class Revision {
     /**

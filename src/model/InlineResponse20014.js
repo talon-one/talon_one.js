@@ -17,7 +17,7 @@ import CampaignTemplate from './CampaignTemplate';
 /**
  * The InlineResponse20014 model module.
  * @module model/InlineResponse20014
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20014 {
     /**

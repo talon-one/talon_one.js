@@ -17,7 +17,7 @@ import WebhookActivationLogEntry from './WebhookActivationLogEntry';
 /**
  * The InlineResponse20040 model module.
  * @module model/InlineResponse20040
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20040 {
     /**

@@ -17,7 +17,7 @@ import LoyaltyProgramTransaction from './LoyaltyProgramTransaction';
 /**
  * The InlineResponse20017 model module.
  * @module model/InlineResponse20017
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20017 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponSearch model module.
  * @module model/CouponSearch
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CouponSearch {
     /**

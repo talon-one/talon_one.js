@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimResource model module.
  * @module model/ScimResource
- * @version 11.1.0
+ * @version 12.0.0
  */
 class ScimResource {
     /**

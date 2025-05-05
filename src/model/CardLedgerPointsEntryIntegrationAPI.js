@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CardLedgerPointsEntryIntegrationAPI model module.
  * @module model/CardLedgerPointsEntryIntegrationAPI
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CardLedgerPointsEntryIntegrationAPI {
     /**

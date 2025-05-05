@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HiddenConditionsEffects model module.
  * @module model/HiddenConditionsEffects
- * @version 11.1.0
+ * @version 12.0.0
  */
 class HiddenConditionsEffects {
     /**

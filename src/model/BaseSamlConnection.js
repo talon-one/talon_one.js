@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseSamlConnection model module.
  * @module model/BaseSamlConnection
- * @version 11.1.0
+ * @version 12.0.0
  */
 class BaseSamlConnection {
     /**

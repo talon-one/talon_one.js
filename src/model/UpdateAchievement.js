@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The UpdateAchievement model module.
  * @module model/UpdateAchievement
- * @version 11.1.0
+ * @version 12.0.0
  */
 class UpdateAchievement {
     /**

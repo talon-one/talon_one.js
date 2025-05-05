@@ -17,7 +17,7 @@ import Binding from './Binding';
 /**
  * The Rule model module.
  * @module model/Rule
- * @version 11.1.0
+ * @version 12.0.0
  */
 class Rule {
     /**

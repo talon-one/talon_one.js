@@ -19,7 +19,7 @@ import AnalyticsDataPointWithTrendAndUplift from './AnalyticsDataPointWithTrendA
 /**
  * The ApplicationCampaignAnalytics model module.
  * @module model/ApplicationCampaignAnalytics
- * @version 11.1.0
+ * @version 12.0.0
  */
 class ApplicationCampaignAnalytics {
     /**

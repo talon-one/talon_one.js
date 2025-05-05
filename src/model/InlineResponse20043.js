@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The InlineResponse20043 model module.
  * @module model/InlineResponse20043
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20043 {
     /**

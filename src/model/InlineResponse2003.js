@@ -17,7 +17,7 @@ import CardLedgerTransactionLogEntryIntegrationAPI from './CardLedgerTransaction
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse2003 {
     /**

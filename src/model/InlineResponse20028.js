@@ -17,7 +17,7 @@ import CustomerActivityReport from './CustomerActivityReport';
 /**
  * The InlineResponse20028 model module.
  * @module model/InlineResponse20028
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20028 {
     /**

@@ -204,6 +204,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isUserFavorite (base name: "isUserFavorite")', function() {
+      // uncomment below and update the code to test the property isUserFavorite
+      //var instane = new TalonOne.CampaignTemplate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

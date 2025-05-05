@@ -14,19 +14,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The DeactivateUserRequest model module.
- * @module model/DeactivateUserRequest
- * @version 11.1.0
+ * The DeleteUserRequest model module.
+ * @module model/DeleteUserRequest
+ * @version 12.0.0
  */
-class DeactivateUserRequest {
+class DeleteUserRequest {
     /**
-     * Constructs a new <code>DeactivateUserRequest</code>.
-     * @alias module:model/DeactivateUserRequest
+     * Constructs a new <code>DeleteUserRequest</code>.
+     * @alias module:model/DeleteUserRequest
      * @param email {String} The email address associated with the user profile.
      */
     constructor(email) { 
         
-        DeactivateUserRequest.initialize(this, email);
+        DeleteUserRequest.initialize(this, email);
     }
 
     /**
@@ -39,15 +39,15 @@ class DeactivateUserRequest {
     }
 
     /**
-     * Constructs a <code>DeactivateUserRequest</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>DeleteUserRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/DeactivateUserRequest} obj Optional instance to populate.
-     * @return {module:model/DeactivateUserRequest} The populated <code>DeactivateUserRequest</code> instance.
+     * @param {module:model/DeleteUserRequest} obj Optional instance to populate.
+     * @return {module:model/DeleteUserRequest} The populated <code>DeleteUserRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new DeactivateUserRequest();
+            obj = obj || new DeleteUserRequest();
 
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -63,12 +63,12 @@ class DeactivateUserRequest {
  * The email address associated with the user profile.
  * @member {String} email
  */
-DeactivateUserRequest.prototype['email'] = undefined;
+DeleteUserRequest.prototype['email'] = undefined;
 
 
 
 
 
 
-export default DeactivateUserRequest;
+export default DeleteUserRequest;
 

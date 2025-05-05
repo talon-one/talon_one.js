@@ -21,7 +21,7 @@ import AccountDashboardStatisticRevenue from './AccountDashboardStatisticRevenue
 /**
  * The AccountDashboardStatistic model module.
  * @module model/AccountDashboardStatistic
- * @version 11.1.0
+ * @version 12.0.0
  */
 class AccountDashboardStatistic {
     /**

@@ -17,7 +17,7 @@ import Product from './Product';
 /**
  * The AddItemCatalogAction model module.
  * @module model/AddItemCatalogAction
- * @version 11.1.0
+ * @version 12.0.0
  */
 class AddItemCatalogAction {
     /**

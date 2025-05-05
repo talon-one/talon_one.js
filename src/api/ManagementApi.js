@@ -38,8 +38,8 @@ import CustomerActivityReport from '../model/CustomerActivityReport';
 import CustomerAnalytics from '../model/CustomerAnalytics';
 import CustomerProfile from '../model/CustomerProfile';
 import CustomerProfileSearchQuery from '../model/CustomerProfileSearchQuery';
-import DeactivateUserRequest from '../model/DeactivateUserRequest';
 import DeductLoyaltyPoints from '../model/DeductLoyaltyPoints';
+import DeleteUserRequest from '../model/DeleteUserRequest';
 import ErrorResponse from '../model/ErrorResponse';
 import ErrorResponseWithStatus from '../model/ErrorResponseWithStatus';
 import InlineResponse20010 from '../model/InlineResponse20010';
@@ -137,7 +137,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 11.1.0
+* @version 12.0.0
 */
 export default class ManagementApi {
 
@@ -157,7 +157,7 @@ export default class ManagementApi {
     /**
      * Enable user by email address
      * Enable a [disabled user](https://docs.talon.one/docs/product/account/account-settings/managing-users#disabling-a-user) by their email address. 
-     * @param {module:model/DeactivateUserRequest} body body
+     * @param {module:model/DeleteUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     activateUserByEmailWithHttpInfo(body) {
@@ -190,7 +190,7 @@ export default class ManagementApi {
     /**
      * Enable user by email address
      * Enable a [disabled user](https://docs.talon.one/docs/product/account/account-settings/managing-users#disabling-a-user) by their email address. 
-     * @param {module:model/DeactivateUserRequest} body body
+     * @param {module:model/DeleteUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     activateUserByEmail(body) {
@@ -1256,7 +1256,7 @@ export default class ManagementApi {
     /**
      * Disable user by email address
      * [Disable a specific user](https://docs.talon.one/docs/product/account/account-settings/managing-users#disabling-a-user) by their email address. 
-     * @param {module:model/DeactivateUserRequest} body body
+     * @param {module:model/DeleteUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deactivateUserByEmailWithHttpInfo(body) {
@@ -1289,7 +1289,7 @@ export default class ManagementApi {
     /**
      * Disable user by email address
      * [Disable a specific user](https://docs.talon.one/docs/product/account/account-settings/managing-users#disabling-a-user) by their email address. 
-     * @param {module:model/DeactivateUserRequest} body body
+     * @param {module:model/DeleteUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deactivateUserByEmail(body) {
@@ -1970,7 +1970,7 @@ export default class ManagementApi {
     /**
      * Delete user by email address
      * [Delete a specific user](https://docs.talon.one/docs/product/account/account-settings/managing-users#deleting-a-user) by their email address. 
-     * @param {module:model/DeactivateUserRequest} body body
+     * @param {module:model/DeleteUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteUserByEmailWithHttpInfo(body) {
@@ -2003,7 +2003,7 @@ export default class ManagementApi {
     /**
      * Delete user by email address
      * [Delete a specific user](https://docs.talon.one/docs/product/account/account-settings/managing-users#deleting-a-user) by their email address. 
-     * @param {module:model/DeactivateUserRequest} body body
+     * @param {module:model/DeleteUserRequest} body body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteUserByEmail(body) {
@@ -2960,7 +2960,7 @@ export default class ManagementApi {
 
     /**
      * Export customer's transaction logs
-     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. 
+     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. - `flags`: The flags of the transaction, when applicable. The `createsNegativeBalance` flag indicates whether the transaction results in a negative balance. 
      * @param {Date} rangeStart Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date} rangeEnd Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {String} loyaltyProgramId The identifier for the loyalty program.
@@ -3016,7 +3016,7 @@ export default class ManagementApi {
 
     /**
      * Export customer's transaction logs
-     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. 
+     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. - `flags`: The flags of the transaction, when applicable. The `createsNegativeBalance` flag indicates whether the transaction results in a negative balance. 
      * @param {Date} rangeStart Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date} rangeEnd Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {String} loyaltyProgramId The identifier for the loyalty program.

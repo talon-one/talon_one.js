@@ -55,7 +55,7 @@ import UpdateAudience from '../model/UpdateAudience';
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 11.1.0
+* @version 12.0.0
 */
 export default class IntegrationApi {
 
@@ -1488,6 +1488,7 @@ export default class IntegrationApi {
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles.  (default to 'yes')
      * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`. 
+     * @param {Boolean=} [opts.forceCompleteEvaluation] Forces evaluation for all matching campaigns regardless of the [campaign evaluation mode](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation#setting-campaign-evaluation-mode). Requires `dry=true`.  (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TrackEventV2Response} and HTTP response
      */
     trackEventV2WithHttpInfo(body, opts) {
@@ -1502,7 +1503,8 @@ export default class IntegrationApi {
       };
       let queryParams = {
         'silent': opts['silent'],
-        'dry': opts['dry']
+        'dry': opts['dry'],
+        'forceCompleteEvaluation': opts['forceCompleteEvaluation']
       };
       let headerParams = {
       };
@@ -1527,6 +1529,7 @@ export default class IntegrationApi {
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.silent] Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles.  (default to 'yes')
      * @param {Boolean=} [opts.dry] Indicates whether to persist the changes. Changes are ignored when `dry=true`. 
+     * @param {Boolean=} [opts.forceCompleteEvaluation] Forces evaluation for all matching campaigns regardless of the [campaign evaluation mode](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation#setting-campaign-evaluation-mode). Requires `dry=true`.  (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TrackEventV2Response}
      */
     trackEventV2(body, opts) {

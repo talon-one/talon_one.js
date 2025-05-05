@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **headers** | **{String: String}** | List of API HTTP headers for the given message. | [optional] 
 **verb** | **String** | API method for this message. | 
 **url** | **String** | API URL for the given message. | 
-**payload** | **String** | API payload of this message. | 
+**payload** | **String** | API payload of this message. | [optional] 
 
 
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TalonOne.DeactivateUserRequest();
+    instance = new TalonOne.DeleteUserRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('DeactivateUserRequest', function() {
-    it('should create an instance of DeactivateUserRequest', function() {
-      // uncomment below and update the code to test DeactivateUserRequest
-      //var instane = new TalonOne.DeactivateUserRequest();
-      //expect(instance).to.be.a(TalonOne.DeactivateUserRequest);
+  describe('DeleteUserRequest', function() {
+    it('should create an instance of DeleteUserRequest', function() {
+      // uncomment below and update the code to test DeleteUserRequest
+      //var instane = new TalonOne.DeleteUserRequest();
+      //expect(instance).to.be.a(TalonOne.DeleteUserRequest);
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new TalonOne.DeactivateUserRequest();
+      //var instane = new TalonOne.DeleteUserRequest();
       //expect(instance).to.be();
     });
 

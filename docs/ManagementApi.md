@@ -195,7 +195,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let body = new TalonOne.DeactivateUserRequest(); // DeactivateUserRequest | body
+let body = new TalonOne.DeleteUserRequest(); // DeleteUserRequest | body
 apiInstance.activateUserByEmail(body).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -209,7 +209,7 @@ apiInstance.activateUserByEmail(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **DeactivateUserRequest**| body | 
+ **body** | **DeleteUserRequest**| body | 
 
 ### Return type
 
@@ -1345,7 +1345,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let body = new TalonOne.DeactivateUserRequest(); // DeactivateUserRequest | body
+let body = new TalonOne.DeleteUserRequest(); // DeleteUserRequest | body
 apiInstance.deactivateUserByEmail(body).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1359,7 +1359,7 @@ apiInstance.deactivateUserByEmail(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeactivateUserRequest**](DeactivateUserRequest.md)| body | 
+ **body** | **DeleteUserRequest**| body | 
 
 ### Return type
 
@@ -2061,7 +2061,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let body = new TalonOne.DeactivateUserRequest(); // DeactivateUserRequest | body
+let body = new TalonOne.DeleteUserRequest(); // DeleteUserRequest | body
 apiInstance.deleteUserByEmail(body).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -2075,7 +2075,7 @@ apiInstance.deleteUserByEmail(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **DeactivateUserRequest**| body | 
+ **body** | [**DeleteUserRequest**](DeleteUserRequest.md)| body | 
 
 ### Return type
 
@@ -3071,7 +3071,7 @@ Name | Type | Description  | Notes
 
 Export customer&#39;s transaction logs
 
-Download a CSV file containing a customer&#39;s transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - &#x60;customerprofileid&#x60;: The ID of the profile. - &#x60;customersessionid&#x60;: The ID of the customer session. - &#x60;rulesetid&#x60;: The ID of the rule set. - &#x60;rulename&#x60;: The name of the rule. - &#x60;programid&#x60;: The ID of the loyalty program. - &#x60;type&#x60;: The transaction type, such as &#x60;addition&#x60; or &#x60;subtraction&#x60;. - &#x60;name&#x60;: The reason for the transaction. - &#x60;subledgerid&#x60;: The ID of the subledger, when applicable. - &#x60;startdate&#x60;: The start date of the program. - &#x60;expirydate&#x60;: The expiration date of the program. - &#x60;id&#x60;: The ID of the transaction. - &#x60;created&#x60;: The timestamp of the creation of the loyalty program. - &#x60;amount&#x60;: The number of points in that transaction. - &#x60;archived&#x60;: Whether the session related to the transaction is archived. - &#x60;campaignid&#x60;: The ID of the campaign. 
+Download a CSV file containing a customer&#39;s transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - &#x60;customerprofileid&#x60;: The ID of the profile. - &#x60;customersessionid&#x60;: The ID of the customer session. - &#x60;rulesetid&#x60;: The ID of the rule set. - &#x60;rulename&#x60;: The name of the rule. - &#x60;programid&#x60;: The ID of the loyalty program. - &#x60;type&#x60;: The transaction type, such as &#x60;addition&#x60; or &#x60;subtraction&#x60;. - &#x60;name&#x60;: The reason for the transaction. - &#x60;subledgerid&#x60;: The ID of the subledger, when applicable. - &#x60;startdate&#x60;: The start date of the program. - &#x60;expirydate&#x60;: The expiration date of the program. - &#x60;id&#x60;: The ID of the transaction. - &#x60;created&#x60;: The timestamp of the creation of the loyalty program. - &#x60;amount&#x60;: The number of points in that transaction. - &#x60;archived&#x60;: Whether the session related to the transaction is archived. - &#x60;campaignid&#x60;: The ID of the campaign. - &#x60;flags&#x60;: The flags of the transaction, when applicable. The &#x60;createsNegativeBalance&#x60; flag indicates whether the transaction results in a negative balance. 
 
 ### Example
 
@@ -10031,7 +10031,7 @@ apiInstance.updateRoleV2(roleId, body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **roleId** | **Number**| The ID of role.  **Note**: To find the ID of a role, use the [List roles](/management-api#tag/Roles/operation/listAllRolesV2) endpoint.  | 
- **body** | **RoleV2Base**| body | 
+ **body** | [**RoleV2Base**](RoleV2Base.md)| body | 
 
 ### Return type
 

@@ -17,7 +17,7 @@ import CampaignBudget from './CampaignBudget';
 /**
  * The AdditionalCampaignProperties model module.
  * @module model/AdditionalCampaignProperties
- * @version 11.1.0
+ * @version 12.0.0
  */
 class AdditionalCampaignProperties {
     /**
