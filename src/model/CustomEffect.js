@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The CustomEffect model module.
  * @module model/CustomEffect
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CustomEffect {
     /**

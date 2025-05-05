@@ -17,7 +17,7 @@ import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 11.1.0
+ * @version 12.0.0
  */
 class LoyaltyLedgerEntry {
     /**

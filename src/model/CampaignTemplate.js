@@ -21,7 +21,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CampaignTemplate {
     /**
@@ -148,6 +148,9 @@ class CampaignTemplate {
             }
             if (data.hasOwnProperty('validApplicationIds')) {
                 obj['validApplicationIds'] = ApiClient.convertToType(data['validApplicationIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('isUserFavorite')) {
+                obj['isUserFavorite'] = ApiClient.convertToType(data['isUserFavorite'], 'Boolean');
             }
         }
         return obj;
@@ -303,6 +306,13 @@ CampaignTemplate.prototype['updatedBy'] = undefined;
  * @member {Array.<Number>} validApplicationIds
  */
 CampaignTemplate.prototype['validApplicationIds'] = undefined;
+
+/**
+ * A flag indicating whether the user marked the template as a favorite.
+ * @member {Boolean} isUserFavorite
+ * @default false
+ */
+CampaignTemplate.prototype['isUserFavorite'] = false;
 
 
 

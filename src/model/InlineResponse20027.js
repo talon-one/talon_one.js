@@ -17,7 +17,7 @@ import CustomerProfile from './CustomerProfile';
 /**
  * The InlineResponse20027 model module.
  * @module model/InlineResponse20027
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20027 {
     /**

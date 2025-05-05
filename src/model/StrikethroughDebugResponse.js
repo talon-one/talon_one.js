@@ -17,7 +17,7 @@ import StrikethroughEffect from './StrikethroughEffect';
 /**
  * The StrikethroughDebugResponse model module.
  * @module model/StrikethroughDebugResponse
- * @version 11.1.0
+ * @version 12.0.0
  */
 class StrikethroughDebugResponse {
     /**

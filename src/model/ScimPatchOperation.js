@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimPatchOperation model module.
  * @module model/ScimPatchOperation
- * @version 11.1.0
+ * @version 12.0.0
  */
 class ScimPatchOperation {
     /**

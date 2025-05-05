@@ -1,4 +1,4 @@
-# TalonOne.DeactivateUserRequest
+# TalonOne.DeleteUserRequest
 
 ## Properties
 

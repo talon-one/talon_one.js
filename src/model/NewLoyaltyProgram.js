@@ -18,7 +18,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 11.1.0
+ * @version 12.0.0
  */
 class NewLoyaltyProgram {
     /**

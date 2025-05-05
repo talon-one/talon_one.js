@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 
 /**
  * The LedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/LedgerTransactionLogEntryIntegrationAPI
- * @version 11.1.0
+ * @version 12.0.0
  */
 class LedgerTransactionLogEntryIntegrationAPI {
     /**
@@ -102,6 +103,9 @@ class LedgerTransactionLogEntryIntegrationAPI {
             if (data.hasOwnProperty('ruleName')) {
                 obj['ruleName'] = ApiClient.convertToType(data['ruleName'], 'String');
             }
+            if (data.hasOwnProperty('flags')) {
+                obj['flags'] = LoyaltyLedgerEntryFlags.constructFromObject(data['flags']);
+            }
         }
         return obj;
     }
@@ -180,6 +184,11 @@ LedgerTransactionLogEntryIntegrationAPI.prototype['rulesetId'] = undefined;
  * @member {String} ruleName
  */
 LedgerTransactionLogEntryIntegrationAPI.prototype['ruleName'] = undefined;
+
+/**
+ * @member {module:model/LoyaltyLedgerEntryFlags} flags
+ */
+LedgerTransactionLogEntryIntegrationAPI.prototype['flags'] = undefined;
 
 
 

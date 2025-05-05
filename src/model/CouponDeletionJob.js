@@ -17,7 +17,7 @@ import CouponDeletionFilters from './CouponDeletionFilters';
 /**
  * The CouponDeletionJob model module.
  * @module model/CouponDeletionJob
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CouponDeletionJob {
     /**

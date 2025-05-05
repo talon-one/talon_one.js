@@ -22,7 +22,7 @@ import Loyalty from './Loyalty';
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CustomerInventory {
     /**

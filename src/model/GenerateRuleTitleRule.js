@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateRuleTitleRule model module.
  * @module model/GenerateRuleTitleRule
- * @version 11.1.0
+ * @version 12.0.0
  */
 class GenerateRuleTitleRule {
     /**

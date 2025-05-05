@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAudience model module.
  * @module model/UpdateAudience
- * @version 11.1.0
+ * @version 12.0.0
  */
 class UpdateAudience {
     /**

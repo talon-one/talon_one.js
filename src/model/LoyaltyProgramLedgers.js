@@ -17,7 +17,7 @@ import LedgerInfo from './LedgerInfo';
 /**
  * The LoyaltyProgramLedgers model module.
  * @module model/LoyaltyProgramLedgers
- * @version 11.1.0
+ * @version 12.0.0
  */
 class LoyaltyProgramLedgers {
     /**

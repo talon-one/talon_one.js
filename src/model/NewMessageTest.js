@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewMessageTest model module.
  * @module model/NewMessageTest
- * @version 11.1.0
+ * @version 12.0.0
  */
 class NewMessageTest {
     /**
@@ -25,11 +25,10 @@ class NewMessageTest {
      * @param type {module:model/NewMessageTest.TypeEnum} The message type.
      * @param verb {module:model/NewMessageTest.VerbEnum} API method for this message.
      * @param url {String} API URL for the given message.
-     * @param payload {String} API payload of this message.
      */
-    constructor(type, verb, url, payload) { 
+    constructor(type, verb, url) { 
         
-        NewMessageTest.initialize(this, type, verb, url, payload);
+        NewMessageTest.initialize(this, type, verb, url);
     }
 
     /**
@@ -37,11 +36,10 @@ class NewMessageTest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, verb, url, payload) { 
+    static initialize(obj, type, verb, url) { 
         obj['type'] = type;
         obj['verb'] = verb;
         obj['url'] = url;
-        obj['payload'] = payload;
     }
 
     /**

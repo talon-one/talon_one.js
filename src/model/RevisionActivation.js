@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RevisionActivation model module.
  * @module model/RevisionActivation
- * @version 11.1.0
+ * @version 12.0.0
  */
 class RevisionActivation {
     /**

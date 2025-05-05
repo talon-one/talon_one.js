@@ -18,7 +18,7 @@ import LoyaltyCardProfileRegistration from './LoyaltyCardProfileRegistration';
 /**
  * The LoyaltyCard model module.
  * @module model/LoyaltyCard
- * @version 11.1.0
+ * @version 12.0.0
  */
 class LoyaltyCard {
     /**

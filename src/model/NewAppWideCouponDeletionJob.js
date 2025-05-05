@@ -17,7 +17,7 @@ import CouponDeletionFilters from './CouponDeletionFilters';
 /**
  * The NewAppWideCouponDeletionJob model module.
  * @module model/NewAppWideCouponDeletionJob
- * @version 11.1.0
+ * @version 12.0.0
  */
 class NewAppWideCouponDeletionJob {
     /**

@@ -17,7 +17,7 @@ import MessageLogEntry from './MessageLogEntry';
 /**
  * The MessageLogEntries model module.
  * @module model/MessageLogEntries
- * @version 11.1.0
+ * @version 12.0.0
  */
 class MessageLogEntries {
     /**

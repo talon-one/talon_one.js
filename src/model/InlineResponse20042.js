@@ -17,7 +17,7 @@ import EventType from './EventType';
 /**
  * The InlineResponse20042 model module.
  * @module model/InlineResponse20042
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20042 {
     /**

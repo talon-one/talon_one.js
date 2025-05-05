@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 
 /**
  * The LoyaltyProgramTransaction model module.
  * @module model/LoyaltyProgramTransaction
- * @version 11.1.0
+ * @version 12.0.0
  */
 class LoyaltyProgramTransaction {
     /**
@@ -118,6 +119,9 @@ class LoyaltyProgramTransaction {
             }
             if (data.hasOwnProperty('ruleName')) {
                 obj['ruleName'] = ApiClient.convertToType(data['ruleName'], 'String');
+            }
+            if (data.hasOwnProperty('flags')) {
+                obj['flags'] = LoyaltyLedgerEntryFlags.constructFromObject(data['flags']);
             }
         }
         return obj;
@@ -233,6 +237,11 @@ LoyaltyProgramTransaction.prototype['rulesetId'] = undefined;
  * @member {String} ruleName
  */
 LoyaltyProgramTransaction.prototype['ruleName'] = undefined;
+
+/**
+ * @member {module:model/LoyaltyLedgerEntryFlags} flags
+ */
+LoyaltyProgramTransaction.prototype['flags'] = undefined;
 
 
 

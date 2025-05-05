@@ -19,7 +19,7 @@ import Ruleset from './Ruleset';
 /**
  * The CampaignCreatedNotification model module.
  * @module model/CampaignCreatedNotification
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CampaignCreatedNotification {
     /**

@@ -173,9 +173,9 @@ import CustomerProfileSearchQuery from './model/CustomerProfileSearchQuery';
 import CustomerProfileUpdateV2Response from './model/CustomerProfileUpdateV2Response';
 import CustomerSession from './model/CustomerSession';
 import CustomerSessionV2 from './model/CustomerSessionV2';
-import DeactivateUserRequest from './model/DeactivateUserRequest';
 import DeductLoyaltyPoints from './model/DeductLoyaltyPoints';
 import DeductLoyaltyPointsEffectProps from './model/DeductLoyaltyPointsEffectProps';
+import DeleteUserRequest from './model/DeleteUserRequest';
 import Effect from './model/Effect';
 import EffectEntity from './model/EffectEntity';
 import EmailEntity from './model/EmailEntity';
@@ -577,7 +577,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 11.1.0
+* @version 12.0.0
 */
 export {
     /**
@@ -1547,12 +1547,6 @@ export {
     CustomerSessionV2,
 
     /**
-     * The DeactivateUserRequest model constructor.
-     * @property {module:model/DeactivateUserRequest}
-     */
-    DeactivateUserRequest,
-
-    /**
      * The DeductLoyaltyPoints model constructor.
      * @property {module:model/DeductLoyaltyPoints}
      */
@@ -1563,6 +1557,12 @@ export {
      * @property {module:model/DeductLoyaltyPointsEffectProps}
      */
     DeductLoyaltyPointsEffectProps,
+
+    /**
+     * The DeleteUserRequest model constructor.
+     * @property {module:model/DeleteUserRequest}
+     */
+    DeleteUserRequest,
 
     /**
      * The Effect model constructor.

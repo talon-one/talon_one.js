@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LedgerPointsEntryIntegrationAPI model module.
  * @module model/LedgerPointsEntryIntegrationAPI
- * @version 11.1.0
+ * @version 12.0.0
  */
 class LedgerPointsEntryIntegrationAPI {
     /**

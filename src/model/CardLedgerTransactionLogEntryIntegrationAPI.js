@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CardLedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/CardLedgerTransactionLogEntryIntegrationAPI
- * @version 11.1.0
+ * @version 12.0.0
  */
 class CardLedgerTransactionLogEntryIntegrationAPI {
     /**

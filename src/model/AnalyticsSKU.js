@@ -17,7 +17,7 @@ import AnalyticsDataPointWithTrend from './AnalyticsDataPointWithTrend';
 /**
  * The AnalyticsSKU model module.
  * @module model/AnalyticsSKU
- * @version 11.1.0
+ * @version 12.0.0
  */
 class AnalyticsSKU {
     /**

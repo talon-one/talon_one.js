@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The UpdateCampaign model module.
  * @module model/UpdateCampaign
- * @version 11.1.0
+ * @version 12.0.0
  */
 class UpdateCampaign {
     /**

@@ -17,7 +17,7 @@ import AudienceAnalytics from './AudienceAnalytics';
 /**
  * The InlineResponse20033 model module.
  * @module model/InlineResponse20033
- * @version 11.1.0
+ * @version 12.0.0
  */
 class InlineResponse20033 {
     /**
