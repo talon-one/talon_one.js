@@ -30,7 +30,7 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": "8.1.2"
+    "superagent": "10.2.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
