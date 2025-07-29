@@ -29,7 +29,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The IntegrationStateV2 model module.
  * @module model/IntegrationStateV2
- * @version 12.0.0
+ * @version 25.15.0
  */
 class IntegrationStateV2 {
     /**

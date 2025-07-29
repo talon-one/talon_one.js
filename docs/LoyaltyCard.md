@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Internal ID of this entity. | 
+**id** | **Number** | The internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
 **programID** | **Number** | The ID of the loyalty program that owns this entity. | 
 **programName** | **String** | The integration name of the loyalty program that owns this entity. | [optional] 

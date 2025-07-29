@@ -214,6 +214,7 @@ Class | Method | HTTP request | Description
 *TalonOne.ManagementApi* | [**createAttribute**](docs/ManagementApi.md#createAttribute) | **POST** /v1/attributes | Create custom attribute
 *TalonOne.ManagementApi* | [**createBatchLoyaltyCards**](docs/ManagementApi.md#createBatchLoyaltyCards) | **POST** /v1/loyalty_programs/{loyaltyProgramId}/cards/batch | Create loyalty cards
 *TalonOne.ManagementApi* | [**createCampaignFromTemplate**](docs/ManagementApi.md#createCampaignFromTemplate) | **POST** /v1/applications/{applicationId}/create_campaign_from_template | Create campaign from campaign template
+*TalonOne.ManagementApi* | [**createCampaignStoreBudget**](docs/ManagementApi.md#createCampaignStoreBudget) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets | Create campaign store budget
 *TalonOne.ManagementApi* | [**createCollection**](docs/ManagementApi.md#createCollection) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/collections | Create campaign-level collection
 *TalonOne.ManagementApi* | [**createCoupons**](docs/ManagementApi.md#createCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Create coupons
 *TalonOne.ManagementApi* | [**createCouponsAsync**](docs/ManagementApi.md#createCouponsAsync) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_async | Create coupons asynchronously
@@ -229,6 +230,7 @@ Class | Method | HTTP request | Description
 *TalonOne.ManagementApi* | [**deleteAccountCollection**](docs/ManagementApi.md#deleteAccountCollection) | **DELETE** /v1/collections/{collectionId} | Delete account-level collection
 *TalonOne.ManagementApi* | [**deleteAchievement**](docs/ManagementApi.md#deleteAchievement) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements/{achievementId} | Delete achievement
 *TalonOne.ManagementApi* | [**deleteCampaign**](docs/ManagementApi.md#deleteCampaign) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId} | Delete campaign
+*TalonOne.ManagementApi* | [**deleteCampaignStoreBudgets**](docs/ManagementApi.md#deleteCampaignStoreBudgets) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets | Delete campaign store budgets
 *TalonOne.ManagementApi* | [**deleteCollection**](docs/ManagementApi.md#deleteCollection) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId} | Delete campaign-level collection
 *TalonOne.ManagementApi* | [**deleteCoupon**](docs/ManagementApi.md#deleteCoupon) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Delete coupon
 *TalonOne.ManagementApi* | [**deleteCoupons**](docs/ManagementApi.md#deleteCoupons) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Delete coupons
@@ -242,6 +244,7 @@ Class | Method | HTTP request | Description
 *TalonOne.ManagementApi* | [**exportAccountCollectionItems**](docs/ManagementApi.md#exportAccountCollectionItems) | **GET** /v1/collections/{collectionId}/export | Export account-level collection&#39;s items
 *TalonOne.ManagementApi* | [**exportAchievements**](docs/ManagementApi.md#exportAchievements) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements/{achievementId}/export | Export achievement customer data
 *TalonOne.ManagementApi* | [**exportAudiencesMemberships**](docs/ManagementApi.md#exportAudiencesMemberships) | **GET** /v1/audiences/{audienceId}/memberships/export | Export audience members
+*TalonOne.ManagementApi* | [**exportCampaignStoreBudgets**](docs/ManagementApi.md#exportCampaignStoreBudgets) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/export | Export campaign store budgets
 *TalonOne.ManagementApi* | [**exportCampaignStores**](docs/ManagementApi.md#exportCampaignStores) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/export | Export stores
 *TalonOne.ManagementApi* | [**exportCollectionItems**](docs/ManagementApi.md#exportCollectionItems) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId}/export | Export campaign-level collection&#39;s items
 *TalonOne.ManagementApi* | [**exportCoupons**](docs/ManagementApi.md#exportCoupons) | **GET** /v1/applications/{applicationId}/export_coupons | Export coupons
@@ -323,6 +326,7 @@ Class | Method | HTTP request | Description
 *TalonOne.ManagementApi* | [**importAccountCollection**](docs/ManagementApi.md#importAccountCollection) | **POST** /v1/collections/{collectionId}/import | Import data into existing account-level collection
 *TalonOne.ManagementApi* | [**importAllowedList**](docs/ManagementApi.md#importAllowedList) | **POST** /v1/attributes/{attributeId}/allowed_list/import | Import allowed values for attribute
 *TalonOne.ManagementApi* | [**importAudiencesMemberships**](docs/ManagementApi.md#importAudiencesMemberships) | **POST** /v1/audiences/{audienceId}/memberships/import | Import audience members
+*TalonOne.ManagementApi* | [**importCampaignStoreBudget**](docs/ManagementApi.md#importCampaignStoreBudget) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/import | Import campaign store budgets
 *TalonOne.ManagementApi* | [**importCampaignStores**](docs/ManagementApi.md#importCampaignStores) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/import | Import stores
 *TalonOne.ManagementApi* | [**importCollection**](docs/ManagementApi.md#importCollection) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId}/import | Import data into existing campaign-level collection
 *TalonOne.ManagementApi* | [**importCoupons**](docs/ManagementApi.md#importCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/import_coupons | Import coupons
@@ -335,6 +339,7 @@ Class | Method | HTTP request | Description
 *TalonOne.ManagementApi* | [**listAccountCollections**](docs/ManagementApi.md#listAccountCollections) | **GET** /v1/collections | List collections in account
 *TalonOne.ManagementApi* | [**listAchievements**](docs/ManagementApi.md#listAchievements) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements | List achievements
 *TalonOne.ManagementApi* | [**listAllRolesV2**](docs/ManagementApi.md#listAllRolesV2) | **GET** /v2/roles | List roles
+*TalonOne.ManagementApi* | [**listCampaignStoreBudgetLimits**](docs/ManagementApi.md#listCampaignStoreBudgetLimits) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets | List campaign store budget limits
 *TalonOne.ManagementApi* | [**listCatalogItems**](docs/ManagementApi.md#listCatalogItems) | **GET** /v1/catalogs/{catalogId}/items | List items in a catalog
 *TalonOne.ManagementApi* | [**listCollections**](docs/ManagementApi.md#listCollections) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/collections | List collections in campaign
 *TalonOne.ManagementApi* | [**listCollectionsInApplication**](docs/ManagementApi.md#listCollectionsInApplication) | **GET** /v1/applications/{applicationId}/collections | List collections in Application
@@ -342,17 +347,24 @@ Class | Method | HTTP request | Description
 *TalonOne.ManagementApi* | [**oktaEventHandlerChallenge**](docs/ManagementApi.md#oktaEventHandlerChallenge) | **GET** /v1/provisioning/okta | Validate Okta API ownership
 *TalonOne.ManagementApi* | [**removeLoyaltyPoints**](docs/ManagementApi.md#removeLoyaltyPoints) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/deduct_points | Deduct points from customer profile
 *TalonOne.ManagementApi* | [**resetPassword**](docs/ManagementApi.md#resetPassword) | **POST** /v1/reset_password | Reset password
+*TalonOne.ManagementApi* | [**scimCreateGroup**](docs/ManagementApi.md#scimCreateGroup) | **POST** /v1/provisioning/scim/Groups | Create SCIM group
 *TalonOne.ManagementApi* | [**scimCreateUser**](docs/ManagementApi.md#scimCreateUser) | **POST** /v1/provisioning/scim/Users | Create SCIM user
+*TalonOne.ManagementApi* | [**scimDeleteGroup**](docs/ManagementApi.md#scimDeleteGroup) | **DELETE** /v1/provisioning/scim/Groups/{groupId} | Delete SCIM group
 *TalonOne.ManagementApi* | [**scimDeleteUser**](docs/ManagementApi.md#scimDeleteUser) | **DELETE** /v1/provisioning/scim/Users/{userId} | Delete SCIM user
+*TalonOne.ManagementApi* | [**scimGetGroup**](docs/ManagementApi.md#scimGetGroup) | **GET** /v1/provisioning/scim/Groups/{groupId} | Get SCIM group
+*TalonOne.ManagementApi* | [**scimGetGroups**](docs/ManagementApi.md#scimGetGroups) | **GET** /v1/provisioning/scim/Groups | List SCIM groups
 *TalonOne.ManagementApi* | [**scimGetResourceTypes**](docs/ManagementApi.md#scimGetResourceTypes) | **GET** /v1/provisioning/scim/ResourceTypes | List supported SCIM resource types
 *TalonOne.ManagementApi* | [**scimGetSchemas**](docs/ManagementApi.md#scimGetSchemas) | **GET** /v1/provisioning/scim/Schemas | List supported SCIM schemas
 *TalonOne.ManagementApi* | [**scimGetServiceProviderConfig**](docs/ManagementApi.md#scimGetServiceProviderConfig) | **GET** /v1/provisioning/scim/ServiceProviderConfig | Get SCIM service provider configuration
 *TalonOne.ManagementApi* | [**scimGetUser**](docs/ManagementApi.md#scimGetUser) | **GET** /v1/provisioning/scim/Users/{userId} | Get SCIM user
 *TalonOne.ManagementApi* | [**scimGetUsers**](docs/ManagementApi.md#scimGetUsers) | **GET** /v1/provisioning/scim/Users | List SCIM users
+*TalonOne.ManagementApi* | [**scimPatchGroup**](docs/ManagementApi.md#scimPatchGroup) | **PATCH** /v1/provisioning/scim/Groups/{groupId} | Update SCIM group attributes
 *TalonOne.ManagementApi* | [**scimPatchUser**](docs/ManagementApi.md#scimPatchUser) | **PATCH** /v1/provisioning/scim/Users/{userId} | Update SCIM user attributes
+*TalonOne.ManagementApi* | [**scimReplaceGroupAttributes**](docs/ManagementApi.md#scimReplaceGroupAttributes) | **PUT** /v1/provisioning/scim/Groups/{groupId} | Update SCIM group
 *TalonOne.ManagementApi* | [**scimReplaceUserAttributes**](docs/ManagementApi.md#scimReplaceUserAttributes) | **PUT** /v1/provisioning/scim/Users/{userId} | Update SCIM user
 *TalonOne.ManagementApi* | [**searchCouponsAdvancedApplicationWideWithoutTotalCount**](docs/ManagementApi.md#searchCouponsAdvancedApplicationWideWithoutTotalCount) | **POST** /v1/applications/{applicationId}/coupons_search_advanced/no_total | List coupons that match the given attributes (without total count)
 *TalonOne.ManagementApi* | [**searchCouponsAdvancedWithoutTotalCount**](docs/ManagementApi.md#searchCouponsAdvancedWithoutTotalCount) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total | List coupons that match the given attributes in campaign (without total count)
+*TalonOne.ManagementApi* | [**summarizeCampaignStoreBudget**](docs/ManagementApi.md#summarizeCampaignStoreBudget) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/summary | Get summary of campaign store budgets
 *TalonOne.ManagementApi* | [**transferLoyaltyCard**](docs/ManagementApi.md#transferLoyaltyCard) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/transfer | Transfer card data
 *TalonOne.ManagementApi* | [**updateAccountCollection**](docs/ManagementApi.md#updateAccountCollection) | **PUT** /v1/collections/{collectionId} | Update account-level collection
 *TalonOne.ManagementApi* | [**updateAchievement**](docs/ManagementApi.md#updateAchievement) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements/{achievementId} | Update achievement
@@ -395,7 +407,9 @@ Class | Method | HTTP request | Description
 - [TalonOne.AddItemCatalogAction](docs/AddItemCatalogAction.md)
 - [TalonOne.AddLoyaltyPoints](docs/AddLoyaltyPoints.md)
 - [TalonOne.AddLoyaltyPointsEffectProps](docs/AddLoyaltyPointsEffectProps.md)
+- [TalonOne.AddPriceAdjustmentCatalogAction](docs/AddPriceAdjustmentCatalogAction.md)
 - [TalonOne.AddToAudienceEffectProps](docs/AddToAudienceEffectProps.md)
+- [TalonOne.AddedDeductedPointsBalancesNotificationPolicy](docs/AddedDeductedPointsBalancesNotificationPolicy.md)
 - [TalonOne.AddedDeductedPointsNotificationPolicy](docs/AddedDeductedPointsNotificationPolicy.md)
 - [TalonOne.AdditionalCampaignProperties](docs/AdditionalCampaignProperties.md)
 - [TalonOne.AdditionalCost](docs/AdditionalCost.md)
@@ -454,6 +468,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.CampaignCollectionWithoutPayload](docs/CampaignCollectionWithoutPayload.md)
 - [TalonOne.CampaignCopy](docs/CampaignCopy.md)
 - [TalonOne.CampaignCreatedNotification](docs/CampaignCreatedNotification.md)
+- [TalonOne.CampaignDeactivationRequest](docs/CampaignDeactivationRequest.md)
 - [TalonOne.CampaignDeletedNotification](docs/CampaignDeletedNotification.md)
 - [TalonOne.CampaignDetail](docs/CampaignDetail.md)
 - [TalonOne.CampaignEditedNotification](docs/CampaignEditedNotification.md)
@@ -479,6 +494,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.CampaignTemplateCouponReservationSettings](docs/CampaignTemplateCouponReservationSettings.md)
 - [TalonOne.CampaignTemplateParams](docs/CampaignTemplateParams.md)
 - [TalonOne.CampaignVersions](docs/CampaignVersions.md)
+- [TalonOne.CardAddedDeductedPointsBalancesNotificationPolicy](docs/CardAddedDeductedPointsBalancesNotificationPolicy.md)
 - [TalonOne.CardAddedDeductedPointsNotificationPolicy](docs/CardAddedDeductedPointsNotificationPolicy.md)
 - [TalonOne.CardExpiringPointsNotificationPolicy](docs/CardExpiringPointsNotificationPolicy.md)
 - [TalonOne.CardExpiringPointsNotificationTrigger](docs/CardExpiringPointsNotificationTrigger.md)
@@ -505,6 +521,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.CouponCreationJob](docs/CouponCreationJob.md)
 - [TalonOne.CouponDeletionFilters](docs/CouponDeletionFilters.md)
 - [TalonOne.CouponDeletionJob](docs/CouponDeletionJob.md)
+- [TalonOne.CouponEntity](docs/CouponEntity.md)
 - [TalonOne.CouponLimitConfigs](docs/CouponLimitConfigs.md)
 - [TalonOne.CouponRejectionReason](docs/CouponRejectionReason.md)
 - [TalonOne.CouponReservations](docs/CouponReservations.md)
@@ -524,6 +541,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.CustomerProfile](docs/CustomerProfile.md)
 - [TalonOne.CustomerProfileAudienceRequest](docs/CustomerProfileAudienceRequest.md)
 - [TalonOne.CustomerProfileAudienceRequestItem](docs/CustomerProfileAudienceRequestItem.md)
+- [TalonOne.CustomerProfileEntity](docs/CustomerProfileEntity.md)
 - [TalonOne.CustomerProfileIntegrationRequestV2](docs/CustomerProfileIntegrationRequestV2.md)
 - [TalonOne.CustomerProfileIntegrationResponseV2](docs/CustomerProfileIntegrationResponseV2.md)
 - [TalonOne.CustomerProfileSearchQuery](docs/CustomerProfileSearchQuery.md)
@@ -552,6 +570,7 @@ Class | Method | HTTP request | Description
 - [TalonOne.ExpiringCouponsNotificationTrigger](docs/ExpiringCouponsNotificationTrigger.md)
 - [TalonOne.ExpiringPointsNotificationPolicy](docs/ExpiringPointsNotificationPolicy.md)
 - [TalonOne.ExpiringPointsNotificationTrigger](docs/ExpiringPointsNotificationTrigger.md)
+- [TalonOne.ExtendLoyaltyPointsExpiryDateEffectProps](docs/ExtendLoyaltyPointsExpiryDateEffectProps.md)
 - [TalonOne.FeatureFlag](docs/FeatureFlag.md)
 - [TalonOne.FeaturesFeed](docs/FeaturesFeed.md)
 - [TalonOne.FuncArgDef](docs/FuncArgDef.md)
@@ -615,12 +634,16 @@ Class | Method | HTTP request | Description
 - [TalonOne.InlineResponse20048](docs/InlineResponse20048.md)
 - [TalonOne.InlineResponse20049](docs/InlineResponse20049.md)
 - [TalonOne.InlineResponse2005](docs/InlineResponse2005.md)
+- [TalonOne.InlineResponse20050](docs/InlineResponse20050.md)
+- [TalonOne.InlineResponse20051](docs/InlineResponse20051.md)
 - [TalonOne.InlineResponse2006](docs/InlineResponse2006.md)
 - [TalonOne.InlineResponse2007](docs/InlineResponse2007.md)
 - [TalonOne.InlineResponse2008](docs/InlineResponse2008.md)
 - [TalonOne.InlineResponse2009](docs/InlineResponse2009.md)
 - [TalonOne.InlineResponse201](docs/InlineResponse201.md)
 - [TalonOne.IntegrationCoupon](docs/IntegrationCoupon.md)
+- [TalonOne.IntegrationCustomerProfileAudienceRequest](docs/IntegrationCustomerProfileAudienceRequest.md)
+- [TalonOne.IntegrationCustomerProfileAudienceRequestItem](docs/IntegrationCustomerProfileAudienceRequestItem.md)
 - [TalonOne.IntegrationCustomerSessionResponse](docs/IntegrationCustomerSessionResponse.md)
 - [TalonOne.IntegrationEntity](docs/IntegrationEntity.md)
 - [TalonOne.IntegrationEvent](docs/IntegrationEvent.md)
@@ -735,6 +758,8 @@ Class | Method | HTTP request | Description
 - [TalonOne.NewPassword](docs/NewPassword.md)
 - [TalonOne.NewPasswordEmail](docs/NewPasswordEmail.md)
 - [TalonOne.NewPicklist](docs/NewPicklist.md)
+- [TalonOne.NewPriceAdjustment](docs/NewPriceAdjustment.md)
+- [TalonOne.NewPriceType](docs/NewPriceType.md)
 - [TalonOne.NewReferral](docs/NewReferral.md)
 - [TalonOne.NewReferralsForMultipleAdvocates](docs/NewReferralsForMultipleAdvocates.md)
 - [TalonOne.NewReturn](docs/NewReturn.md)
@@ -769,6 +794,8 @@ Class | Method | HTTP request | Description
 - [TalonOne.PatchManyItemsCatalogAction](docs/PatchManyItemsCatalogAction.md)
 - [TalonOne.PendingPointsNotificationPolicy](docs/PendingPointsNotificationPolicy.md)
 - [TalonOne.Picklist](docs/Picklist.md)
+- [TalonOne.PriceDetail](docs/PriceDetail.md)
+- [TalonOne.PriceType](docs/PriceType.md)
 - [TalonOne.Product](docs/Product.md)
 - [TalonOne.ProductSearchMatch](docs/ProductSearchMatch.md)
 - [TalonOne.ProductUnitAnalytics](docs/ProductUnitAnalytics.md)
@@ -817,8 +844,12 @@ Class | Method | HTTP request | Description
 - [TalonOne.SamlConnectionInternal](docs/SamlConnectionInternal.md)
 - [TalonOne.SamlConnectionMetadata](docs/SamlConnectionMetadata.md)
 - [TalonOne.SamlLoginEndpoint](docs/SamlLoginEndpoint.md)
+- [TalonOne.ScimBaseGroup](docs/ScimBaseGroup.md)
 - [TalonOne.ScimBaseUser](docs/ScimBaseUser.md)
 - [TalonOne.ScimBaseUserName](docs/ScimBaseUserName.md)
+- [TalonOne.ScimGroup](docs/ScimGroup.md)
+- [TalonOne.ScimGroupMember](docs/ScimGroupMember.md)
+- [TalonOne.ScimGroupsListResponse](docs/ScimGroupsListResponse.md)
 - [TalonOne.ScimNewUser](docs/ScimNewUser.md)
 - [TalonOne.ScimPatchOperation](docs/ScimPatchOperation.md)
 - [TalonOne.ScimPatchRequest](docs/ScimPatchRequest.md)
@@ -898,6 +929,11 @@ Class | Method | HTTP request | Description
 - [TalonOne.ValueMap](docs/ValueMap.md)
 - [TalonOne.Webhook](docs/Webhook.md)
 - [TalonOne.WebhookActivationLogEntry](docs/WebhookActivationLogEntry.md)
+- [TalonOne.WebhookAuthentication](docs/WebhookAuthentication.md)
+- [TalonOne.WebhookAuthenticationBase](docs/WebhookAuthenticationBase.md)
+- [TalonOne.WebhookAuthenticationDataBasic](docs/WebhookAuthenticationDataBasic.md)
+- [TalonOne.WebhookAuthenticationDataCustom](docs/WebhookAuthenticationDataCustom.md)
+- [TalonOne.WebhookAuthenticationWebhookRef](docs/WebhookAuthenticationWebhookRef.md)
 - [TalonOne.WebhookLogEntry](docs/WebhookLogEntry.md)
 - [TalonOne.WebhookWithOutgoingIntegrationDetails](docs/WebhookWithOutgoingIntegrationDetails.md)
 - [TalonOne.WillAwardGiveawayEffectProps](docs/WillAwardGiveawayEffectProps.md)

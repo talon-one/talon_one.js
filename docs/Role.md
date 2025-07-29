@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Internal ID of this entity. | 
+**id** | **Number** | The internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
 **modified** | **Date** | The time this entity was last modified. | 
 **accountId** | **Number** | The ID of the account that owns this entity. | 

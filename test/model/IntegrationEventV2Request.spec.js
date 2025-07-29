@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loyaltyCards (base name: "loyaltyCards")', function() {
+      // uncomment below and update the code to test the property loyaltyCards
+      //var instane = new TalonOne.IntegrationEventV2Request();
+      //expect(instance).to.be();
+    });
+
     it('should have the property responseContent (base name: "responseContent")', function() {
       // uncomment below and update the code to test the property responseContent
       //var instane = new TalonOne.IntegrationEventV2Request();

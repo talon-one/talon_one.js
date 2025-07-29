@@ -13,12 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import AdditionalCost from './AdditionalCost';
+import PriceDetail from './PriceDetail';
 import Product from './Product';
 
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CartItem {
     /**
@@ -100,6 +101,21 @@ class CartItem {
             }
             if (data.hasOwnProperty('catalogItemID')) {
                 obj['catalogItemID'] = ApiClient.convertToType(data['catalogItemID'], 'Number');
+            }
+            if (data.hasOwnProperty('selectedPriceType')) {
+                obj['selectedPriceType'] = ApiClient.convertToType(data['selectedPriceType'], 'String');
+            }
+            if (data.hasOwnProperty('adjustmentReferenceId')) {
+                obj['adjustmentReferenceId'] = ApiClient.convertToType(data['adjustmentReferenceId'], 'String');
+            }
+            if (data.hasOwnProperty('adjustmentEffectiveFrom')) {
+                obj['adjustmentEffectiveFrom'] = ApiClient.convertToType(data['adjustmentEffectiveFrom'], 'Date');
+            }
+            if (data.hasOwnProperty('adjustmentEffectiveUntil')) {
+                obj['adjustmentEffectiveUntil'] = ApiClient.convertToType(data['adjustmentEffectiveUntil'], 'Date');
+            }
+            if (data.hasOwnProperty('prices')) {
+                obj['prices'] = ApiClient.convertToType(data['prices'], {'String': PriceDetail});
             }
         }
         return obj;
@@ -198,10 +214,40 @@ CartItem.prototype['attributes'] = undefined;
 CartItem.prototype['additionalCosts'] = undefined;
 
 /**
- * The [catalog item ID](https://docs.talon.one/docs/product/account/dev-tools/managing-cart-item-catalogs/#synchronizing-a-cart-item-catalog).
+ * The catalog item ID.
  * @member {Number} catalogItemID
  */
 CartItem.prototype['catalogItemID'] = undefined;
+
+/**
+ * The selected price type for this cart item (e.g. the price for members only).
+ * @member {String} selectedPriceType
+ */
+CartItem.prototype['selectedPriceType'] = undefined;
+
+/**
+ * The reference ID of the selected price adjustment for this cart item. Only returned if the selected price resulted from a price adjustment.
+ * @member {String} adjustmentReferenceId
+ */
+CartItem.prototype['adjustmentReferenceId'] = undefined;
+
+/**
+ * The date and time from which the price adjustment is effective. Only returned if the selected price resulted from a price adjustment that contains this field.
+ * @member {Date} adjustmentEffectiveFrom
+ */
+CartItem.prototype['adjustmentEffectiveFrom'] = undefined;
+
+/**
+ * The date and time until which the price adjustment is effective. Only returned if the selected price resulted from a price adjustment that contains this field.
+ * @member {Date} adjustmentEffectiveUntil
+ */
+CartItem.prototype['adjustmentEffectiveUntil'] = undefined;
+
+/**
+ * A map of keys and values representing the price types and related price adjustment details for this cart item. The keys correspond to the `priceType` names. 
+ * @member {Object.<String, module:model/PriceDetail>} prices
+ */
+CartItem.prototype['prices'] = undefined;
 
 
 

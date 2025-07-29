@@ -150,6 +150,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property selectedPriceType (base name: "selectedPriceType")', function() {
+      // uncomment below and update the code to test the property selectedPriceType
+      //var instane = new TalonOne.CartItem();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property adjustmentReferenceId (base name: "adjustmentReferenceId")', function() {
+      // uncomment below and update the code to test the property adjustmentReferenceId
+      //var instane = new TalonOne.CartItem();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property adjustmentEffectiveFrom (base name: "adjustmentEffectiveFrom")', function() {
+      // uncomment below and update the code to test the property adjustmentEffectiveFrom
+      //var instane = new TalonOne.CartItem();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property adjustmentEffectiveUntil (base name: "adjustmentEffectiveUntil")', function() {
+      // uncomment below and update the code to test the property adjustmentEffectiveUntil
+      //var instane = new TalonOne.CartItem();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property prices (base name: "prices")', function() {
+      // uncomment below and update the code to test the property prices
+      //var instane = new TalonOne.CartItem();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

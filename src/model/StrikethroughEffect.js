@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughEffect model module.
  * @module model/StrikethroughEffect
- * @version 12.0.0
+ * @version 25.15.0
  */
 class StrikethroughEffect {
     /**

@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The UpdateAchievement model module.
  * @module model/UpdateAchievement
- * @version 12.0.0
+ * @version 25.15.0
  */
 class UpdateAchievement {
     /**
@@ -121,7 +121,7 @@ UpdateAchievement.prototype['period'] = undefined;
 UpdateAchievement.prototype['periodEndOverride'] = undefined;
 
 /**
- * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+ * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. - `on_completion`: When the customer progress status reaches `completed`, the achievement resets and becomes available again. 
  * @member {module:model/UpdateAchievement.RecurrencePolicyEnum} recurrencePolicy
  */
 UpdateAchievement.prototype['recurrencePolicy'] = undefined;
@@ -165,7 +165,13 @@ UpdateAchievement['RecurrencePolicyEnum'] = {
      * value: "on_expiration"
      * @const
      */
-    "on_expiration": "on_expiration"
+    "on_expiration": "on_expiration",
+
+    /**
+     * value: "on_completion"
+     * @const
+     */
+    "on_completion": "on_completion"
 };
 
 

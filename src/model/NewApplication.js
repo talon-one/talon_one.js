@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewApplication model module.
  * @module model/NewApplication
- * @version 12.0.0
+ * @version 25.15.0
  */
 class NewApplication {
     /**

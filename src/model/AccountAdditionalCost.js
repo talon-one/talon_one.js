@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountAdditionalCost model module.
  * @module model/AccountAdditionalCost
- * @version 12.0.0
+ * @version 25.15.0
  */
 class AccountAdditionalCost {
     /**
      * Constructs a new <code>AccountAdditionalCost</code>.
      * @alias module:model/AccountAdditionalCost
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param name {String} The internal name used in API requests.
@@ -91,7 +91,7 @@ class AccountAdditionalCost {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 AccountAdditionalCost.prototype['id'] = undefined;

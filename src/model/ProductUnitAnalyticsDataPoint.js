@@ -17,7 +17,7 @@ import AnalyticsDataPointWithTrend from './AnalyticsDataPointWithTrend';
 /**
  * The ProductUnitAnalyticsDataPoint model module.
  * @module model/ProductUnitAnalyticsDataPoint
- * @version 12.0.0
+ * @version 25.15.0
  */
 class ProductUnitAnalyticsDataPoint {
     /**

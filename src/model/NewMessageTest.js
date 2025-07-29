@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewMessageTest model module.
  * @module model/NewMessageTest
- * @version 12.0.0
+ * @version 25.15.0
  */
 class NewMessageTest {
     /**
@@ -142,6 +142,18 @@ NewMessageTest['TypeEnum'] = {
      * @const
      */
     "card_added_deducted_points": "card_added_deducted_points",
+
+    /**
+     * value: "loyalty_added_deducted_points_balances"
+     * @const
+     */
+    "loyalty_added_deducted_points_balances": "loyalty_added_deducted_points_balances",
+
+    /**
+     * value: "loyalty_card_added_deducted_points_balances"
+     * @const
+     */
+    "loyalty_card_added_deducted_points_balances": "loyalty_card_added_deducted_points_balances",
 
     /**
      * value: "coupon"

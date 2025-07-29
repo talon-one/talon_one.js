@@ -17,7 +17,7 @@ import Campaign from './Campaign';
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 12.0.0
+ * @version 25.15.0
  */
 class InlineResponse2008 {
     /**

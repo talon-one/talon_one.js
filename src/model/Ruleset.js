@@ -18,13 +18,13 @@ import Rule from './Rule';
 /**
  * The Ruleset model module.
  * @module model/Ruleset
- * @version 12.0.0
+ * @version 25.15.0
  */
 class Ruleset {
     /**
      * Constructs a new <code>Ruleset</code>.
      * @alias module:model/Ruleset
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param userId {Number} The ID of the user associated with this entity.
      * @param rules {Array.<module:model/Rule>} Set of rules to apply.
@@ -100,7 +100,7 @@ class Ruleset {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Ruleset.prototype['id'] = undefined;

@@ -17,13 +17,13 @@ import CouponDeletionFilters from './CouponDeletionFilters';
 /**
  * The CouponDeletionJob model module.
  * @module model/CouponDeletionJob
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CouponDeletionJob {
     /**
      * Constructs a new <code>CouponDeletionJob</code>.
      * @alias module:model/CouponDeletionJob
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
@@ -112,7 +112,7 @@ class CouponDeletionJob {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CouponDeletionJob.prototype['id'] = undefined;

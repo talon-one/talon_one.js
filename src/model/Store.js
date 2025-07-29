@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The Store model module.
  * @module model/Store
- * @version 12.0.0
+ * @version 25.15.0
  */
 class Store {
     /**
      * Constructs a new <code>Store</code>.
      * @alias module:model/Store
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param name {String} The name of the store.
      * @param description {String} The description of the store.
@@ -96,7 +96,7 @@ class Store {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Store.prototype['id'] = undefined;

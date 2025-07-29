@@ -17,7 +17,7 @@ import ScimSchemaResource from './ScimSchemaResource';
 /**
  * The ScimSchemasListResponse model module.
  * @module model/ScimSchemasListResponse
- * @version 12.0.0
+ * @version 25.15.0
  */
 class ScimSchemasListResponse {
     /**

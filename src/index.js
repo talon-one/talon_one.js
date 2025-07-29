@@ -38,7 +38,9 @@ import AddFreeItemEffectProps from './model/AddFreeItemEffectProps';
 import AddItemCatalogAction from './model/AddItemCatalogAction';
 import AddLoyaltyPoints from './model/AddLoyaltyPoints';
 import AddLoyaltyPointsEffectProps from './model/AddLoyaltyPointsEffectProps';
+import AddPriceAdjustmentCatalogAction from './model/AddPriceAdjustmentCatalogAction';
 import AddToAudienceEffectProps from './model/AddToAudienceEffectProps';
+import AddedDeductedPointsBalancesNotificationPolicy from './model/AddedDeductedPointsBalancesNotificationPolicy';
 import AddedDeductedPointsNotificationPolicy from './model/AddedDeductedPointsNotificationPolicy';
 import AdditionalCampaignProperties from './model/AdditionalCampaignProperties';
 import AdditionalCost from './model/AdditionalCost';
@@ -97,6 +99,7 @@ import CampaignCollectionEditedNotification from './model/CampaignCollectionEdit
 import CampaignCollectionWithoutPayload from './model/CampaignCollectionWithoutPayload';
 import CampaignCopy from './model/CampaignCopy';
 import CampaignCreatedNotification from './model/CampaignCreatedNotification';
+import CampaignDeactivationRequest from './model/CampaignDeactivationRequest';
 import CampaignDeletedNotification from './model/CampaignDeletedNotification';
 import CampaignDetail from './model/CampaignDetail';
 import CampaignEditedNotification from './model/CampaignEditedNotification';
@@ -122,6 +125,7 @@ import CampaignTemplateCollection from './model/CampaignTemplateCollection';
 import CampaignTemplateCouponReservationSettings from './model/CampaignTemplateCouponReservationSettings';
 import CampaignTemplateParams from './model/CampaignTemplateParams';
 import CampaignVersions from './model/CampaignVersions';
+import CardAddedDeductedPointsBalancesNotificationPolicy from './model/CardAddedDeductedPointsBalancesNotificationPolicy';
 import CardAddedDeductedPointsNotificationPolicy from './model/CardAddedDeductedPointsNotificationPolicy';
 import CardExpiringPointsNotificationPolicy from './model/CardExpiringPointsNotificationPolicy';
 import CardExpiringPointsNotificationTrigger from './model/CardExpiringPointsNotificationTrigger';
@@ -148,6 +152,7 @@ import CouponCreatedEffectProps from './model/CouponCreatedEffectProps';
 import CouponCreationJob from './model/CouponCreationJob';
 import CouponDeletionFilters from './model/CouponDeletionFilters';
 import CouponDeletionJob from './model/CouponDeletionJob';
+import CouponEntity from './model/CouponEntity';
 import CouponLimitConfigs from './model/CouponLimitConfigs';
 import CouponRejectionReason from './model/CouponRejectionReason';
 import CouponReservations from './model/CouponReservations';
@@ -167,6 +172,7 @@ import CustomerInventory from './model/CustomerInventory';
 import CustomerProfile from './model/CustomerProfile';
 import CustomerProfileAudienceRequest from './model/CustomerProfileAudienceRequest';
 import CustomerProfileAudienceRequestItem from './model/CustomerProfileAudienceRequestItem';
+import CustomerProfileEntity from './model/CustomerProfileEntity';
 import CustomerProfileIntegrationRequestV2 from './model/CustomerProfileIntegrationRequestV2';
 import CustomerProfileIntegrationResponseV2 from './model/CustomerProfileIntegrationResponseV2';
 import CustomerProfileSearchQuery from './model/CustomerProfileSearchQuery';
@@ -195,6 +201,7 @@ import ExpiringCouponsNotificationPolicy from './model/ExpiringCouponsNotificati
 import ExpiringCouponsNotificationTrigger from './model/ExpiringCouponsNotificationTrigger';
 import ExpiringPointsNotificationPolicy from './model/ExpiringPointsNotificationPolicy';
 import ExpiringPointsNotificationTrigger from './model/ExpiringPointsNotificationTrigger';
+import ExtendLoyaltyPointsExpiryDateEffectProps from './model/ExtendLoyaltyPointsExpiryDateEffectProps';
 import FeatureFlag from './model/FeatureFlag';
 import FeaturesFeed from './model/FeaturesFeed';
 import FuncArgDef from './model/FuncArgDef';
@@ -258,12 +265,16 @@ import InlineResponse20047 from './model/InlineResponse20047';
 import InlineResponse20048 from './model/InlineResponse20048';
 import InlineResponse20049 from './model/InlineResponse20049';
 import InlineResponse2005 from './model/InlineResponse2005';
+import InlineResponse20050 from './model/InlineResponse20050';
+import InlineResponse20051 from './model/InlineResponse20051';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
 import InlineResponse2008 from './model/InlineResponse2008';
 import InlineResponse2009 from './model/InlineResponse2009';
 import InlineResponse201 from './model/InlineResponse201';
 import IntegrationCoupon from './model/IntegrationCoupon';
+import IntegrationCustomerProfileAudienceRequest from './model/IntegrationCustomerProfileAudienceRequest';
+import IntegrationCustomerProfileAudienceRequestItem from './model/IntegrationCustomerProfileAudienceRequestItem';
 import IntegrationCustomerSessionResponse from './model/IntegrationCustomerSessionResponse';
 import IntegrationEntity from './model/IntegrationEntity';
 import IntegrationEvent from './model/IntegrationEvent';
@@ -378,6 +389,8 @@ import NewOutgoingIntegrationWebhook from './model/NewOutgoingIntegrationWebhook
 import NewPassword from './model/NewPassword';
 import NewPasswordEmail from './model/NewPasswordEmail';
 import NewPicklist from './model/NewPicklist';
+import NewPriceAdjustment from './model/NewPriceAdjustment';
+import NewPriceType from './model/NewPriceType';
 import NewReferral from './model/NewReferral';
 import NewReferralsForMultipleAdvocates from './model/NewReferralsForMultipleAdvocates';
 import NewReturn from './model/NewReturn';
@@ -412,6 +425,8 @@ import PatchItemCatalogAction from './model/PatchItemCatalogAction';
 import PatchManyItemsCatalogAction from './model/PatchManyItemsCatalogAction';
 import PendingPointsNotificationPolicy from './model/PendingPointsNotificationPolicy';
 import Picklist from './model/Picklist';
+import PriceDetail from './model/PriceDetail';
+import PriceType from './model/PriceType';
 import Product from './model/Product';
 import ProductSearchMatch from './model/ProductSearchMatch';
 import ProductUnitAnalytics from './model/ProductUnitAnalytics';
@@ -460,8 +475,12 @@ import SamlConnection from './model/SamlConnection';
 import SamlConnectionInternal from './model/SamlConnectionInternal';
 import SamlConnectionMetadata from './model/SamlConnectionMetadata';
 import SamlLoginEndpoint from './model/SamlLoginEndpoint';
+import ScimBaseGroup from './model/ScimBaseGroup';
 import ScimBaseUser from './model/ScimBaseUser';
 import ScimBaseUserName from './model/ScimBaseUserName';
+import ScimGroup from './model/ScimGroup';
+import ScimGroupMember from './model/ScimGroupMember';
+import ScimGroupsListResponse from './model/ScimGroupsListResponse';
 import ScimNewUser from './model/ScimNewUser';
 import ScimPatchOperation from './model/ScimPatchOperation';
 import ScimPatchRequest from './model/ScimPatchRequest';
@@ -541,6 +560,11 @@ import UserEntity from './model/UserEntity';
 import ValueMap from './model/ValueMap';
 import Webhook from './model/Webhook';
 import WebhookActivationLogEntry from './model/WebhookActivationLogEntry';
+import WebhookAuthentication from './model/WebhookAuthentication';
+import WebhookAuthenticationBase from './model/WebhookAuthenticationBase';
+import WebhookAuthenticationDataBasic from './model/WebhookAuthenticationDataBasic';
+import WebhookAuthenticationDataCustom from './model/WebhookAuthenticationDataCustom';
+import WebhookAuthenticationWebhookRef from './model/WebhookAuthenticationWebhookRef';
 import WebhookLogEntry from './model/WebhookLogEntry';
 import WebhookWithOutgoingIntegrationDetails from './model/WebhookWithOutgoingIntegrationDetails';
 import WillAwardGiveawayEffectProps from './model/WillAwardGiveawayEffectProps';
@@ -577,7 +601,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 12.0.0
+* @version 25.15.0
 */
 export {
     /**
@@ -737,10 +761,22 @@ export {
     AddLoyaltyPointsEffectProps,
 
     /**
+     * The AddPriceAdjustmentCatalogAction model constructor.
+     * @property {module:model/AddPriceAdjustmentCatalogAction}
+     */
+    AddPriceAdjustmentCatalogAction,
+
+    /**
      * The AddToAudienceEffectProps model constructor.
      * @property {module:model/AddToAudienceEffectProps}
      */
     AddToAudienceEffectProps,
+
+    /**
+     * The AddedDeductedPointsBalancesNotificationPolicy model constructor.
+     * @property {module:model/AddedDeductedPointsBalancesNotificationPolicy}
+     */
+    AddedDeductedPointsBalancesNotificationPolicy,
 
     /**
      * The AddedDeductedPointsNotificationPolicy model constructor.
@@ -1091,6 +1127,12 @@ export {
     CampaignCreatedNotification,
 
     /**
+     * The CampaignDeactivationRequest model constructor.
+     * @property {module:model/CampaignDeactivationRequest}
+     */
+    CampaignDeactivationRequest,
+
+    /**
      * The CampaignDeletedNotification model constructor.
      * @property {module:model/CampaignDeletedNotification}
      */
@@ -1239,6 +1281,12 @@ export {
      * @property {module:model/CampaignVersions}
      */
     CampaignVersions,
+
+    /**
+     * The CardAddedDeductedPointsBalancesNotificationPolicy model constructor.
+     * @property {module:model/CardAddedDeductedPointsBalancesNotificationPolicy}
+     */
+    CardAddedDeductedPointsBalancesNotificationPolicy,
 
     /**
      * The CardAddedDeductedPointsNotificationPolicy model constructor.
@@ -1397,6 +1445,12 @@ export {
     CouponDeletionJob,
 
     /**
+     * The CouponEntity model constructor.
+     * @property {module:model/CouponEntity}
+     */
+    CouponEntity,
+
+    /**
      * The CouponLimitConfigs model constructor.
      * @property {module:model/CouponLimitConfigs}
      */
@@ -1509,6 +1563,12 @@ export {
      * @property {module:model/CustomerProfileAudienceRequestItem}
      */
     CustomerProfileAudienceRequestItem,
+
+    /**
+     * The CustomerProfileEntity model constructor.
+     * @property {module:model/CustomerProfileEntity}
+     */
+    CustomerProfileEntity,
 
     /**
      * The CustomerProfileIntegrationRequestV2 model constructor.
@@ -1677,6 +1737,12 @@ export {
      * @property {module:model/ExpiringPointsNotificationTrigger}
      */
     ExpiringPointsNotificationTrigger,
+
+    /**
+     * The ExtendLoyaltyPointsExpiryDateEffectProps model constructor.
+     * @property {module:model/ExtendLoyaltyPointsExpiryDateEffectProps}
+     */
+    ExtendLoyaltyPointsExpiryDateEffectProps,
 
     /**
      * The FeatureFlag model constructor.
@@ -2057,6 +2123,18 @@ export {
     InlineResponse2005,
 
     /**
+     * The InlineResponse20050 model constructor.
+     * @property {module:model/InlineResponse20050}
+     */
+    InlineResponse20050,
+
+    /**
+     * The InlineResponse20051 model constructor.
+     * @property {module:model/InlineResponse20051}
+     */
+    InlineResponse20051,
+
+    /**
      * The InlineResponse2006 model constructor.
      * @property {module:model/InlineResponse2006}
      */
@@ -2091,6 +2169,18 @@ export {
      * @property {module:model/IntegrationCoupon}
      */
     IntegrationCoupon,
+
+    /**
+     * The IntegrationCustomerProfileAudienceRequest model constructor.
+     * @property {module:model/IntegrationCustomerProfileAudienceRequest}
+     */
+    IntegrationCustomerProfileAudienceRequest,
+
+    /**
+     * The IntegrationCustomerProfileAudienceRequestItem model constructor.
+     * @property {module:model/IntegrationCustomerProfileAudienceRequestItem}
+     */
+    IntegrationCustomerProfileAudienceRequestItem,
 
     /**
      * The IntegrationCustomerSessionResponse model constructor.
@@ -2777,6 +2867,18 @@ export {
     NewPicklist,
 
     /**
+     * The NewPriceAdjustment model constructor.
+     * @property {module:model/NewPriceAdjustment}
+     */
+    NewPriceAdjustment,
+
+    /**
+     * The NewPriceType model constructor.
+     * @property {module:model/NewPriceType}
+     */
+    NewPriceType,
+
+    /**
      * The NewReferral model constructor.
      * @property {module:model/NewReferral}
      */
@@ -2979,6 +3081,18 @@ export {
      * @property {module:model/Picklist}
      */
     Picklist,
+
+    /**
+     * The PriceDetail model constructor.
+     * @property {module:model/PriceDetail}
+     */
+    PriceDetail,
+
+    /**
+     * The PriceType model constructor.
+     * @property {module:model/PriceType}
+     */
+    PriceType,
 
     /**
      * The Product model constructor.
@@ -3269,6 +3383,12 @@ export {
     SamlLoginEndpoint,
 
     /**
+     * The ScimBaseGroup model constructor.
+     * @property {module:model/ScimBaseGroup}
+     */
+    ScimBaseGroup,
+
+    /**
      * The ScimBaseUser model constructor.
      * @property {module:model/ScimBaseUser}
      */
@@ -3279,6 +3399,24 @@ export {
      * @property {module:model/ScimBaseUserName}
      */
     ScimBaseUserName,
+
+    /**
+     * The ScimGroup model constructor.
+     * @property {module:model/ScimGroup}
+     */
+    ScimGroup,
+
+    /**
+     * The ScimGroupMember model constructor.
+     * @property {module:model/ScimGroupMember}
+     */
+    ScimGroupMember,
+
+    /**
+     * The ScimGroupsListResponse model constructor.
+     * @property {module:model/ScimGroupsListResponse}
+     */
+    ScimGroupsListResponse,
 
     /**
      * The ScimNewUser model constructor.
@@ -3753,6 +3891,36 @@ export {
      * @property {module:model/WebhookActivationLogEntry}
      */
     WebhookActivationLogEntry,
+
+    /**
+     * The WebhookAuthentication model constructor.
+     * @property {module:model/WebhookAuthentication}
+     */
+    WebhookAuthentication,
+
+    /**
+     * The WebhookAuthenticationBase model constructor.
+     * @property {module:model/WebhookAuthenticationBase}
+     */
+    WebhookAuthenticationBase,
+
+    /**
+     * The WebhookAuthenticationDataBasic model constructor.
+     * @property {module:model/WebhookAuthenticationDataBasic}
+     */
+    WebhookAuthenticationDataBasic,
+
+    /**
+     * The WebhookAuthenticationDataCustom model constructor.
+     * @property {module:model/WebhookAuthenticationDataCustom}
+     */
+    WebhookAuthenticationDataCustom,
+
+    /**
+     * The WebhookAuthenticationWebhookRef model constructor.
+     * @property {module:model/WebhookAuthenticationWebhookRef}
+     */
+    WebhookAuthenticationWebhookRef,
 
     /**
      * The WebhookLogEntry model constructor.

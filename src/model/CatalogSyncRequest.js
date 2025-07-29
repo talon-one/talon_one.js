@@ -17,7 +17,7 @@ import CatalogAction from './CatalogAction';
 /**
  * The CatalogSyncRequest model module.
  * @module model/CatalogSyncRequest
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CatalogSyncRequest {
     /**

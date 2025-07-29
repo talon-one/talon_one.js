@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 12.0.0
+ * @version 25.15.0
  */
 class Entity {
     /**
      * Constructs a new <code>Entity</code>.
      * @alias module:model/Entity
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      */
     constructor(id, created) { 
@@ -65,7 +65,7 @@ class Entity {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Entity.prototype['id'] = undefined;

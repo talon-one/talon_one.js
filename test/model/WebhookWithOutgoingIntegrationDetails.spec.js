@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property draft (base name: "draft")', function() {
+      // uncomment below and update the code to test the property draft
+      //var instane = new TalonOne.WebhookWithOutgoingIntegrationDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property verb (base name: "verb")', function() {
       // uncomment below and update the code to test the property verb
       //var instane = new TalonOne.WebhookWithOutgoingIntegrationDetails();

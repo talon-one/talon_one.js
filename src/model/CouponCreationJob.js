@@ -17,13 +17,13 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The CouponCreationJob model module.
  * @module model/CouponCreationJob
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CouponCreationJob {
     /**
      * Constructs a new <code>CouponCreationJob</code>.
      * @alias module:model/CouponCreationJob
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param applicationId {Number} The ID of the Application that owns this entity.
@@ -154,7 +154,7 @@ class CouponCreationJob {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CouponCreationJob.prototype['id'] = undefined;

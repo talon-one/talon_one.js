@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Internal ID of this entity. | 
+**id** | **Number** | The internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
 **name** | **String** | The name of the Application cart item filter used in API requests. | 
 **description** | **String** | A short description of the Application cart item filter. | [optional] 
