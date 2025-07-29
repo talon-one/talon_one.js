@@ -1,0 +1,119 @@
+name: Auto-release on master
+
+on:
+  push:
+    branches: [ master ]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # get full history so we can diff
+
+      - name: Extract version from commit message
+        id: get_version
+        run: |
+          msg='${{ github.event.head_commit.message }}'
+          if [[ "$msg" =~ update[[:space:]]+to[[:space:]]+([0-9]+\.[0-9]+\.[0-9]+) ]]; then
+            ver="${BASH_REMATCH[1]}"
+            echo "version=$ver" >> $GITHUB_OUTPUT
+          else
+            echo "Commit message does not match pattern - skipping release."
+            echo "version=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Skip when no version
+        if: ${{ steps.get_version.outputs.version == '' }}
+        run: echo "Nothing to do."
+
+      - name: Get diff of README endpoint section
+        if: ${{ steps.get_version.outputs.version != '' }}
+        id: get_diff
+        run: |
+          # Get section from old commit
+          git show HEAD^:README.md | awk '/^## Documentation for API endpoints/ {f=1; next} /^## / && f {exit} f' > old.txt || true
+
+          # Get section from current commit
+          awk '/^## Documentation for API endpoints/ {f=1; next} /^## / && f {exit} f' README.md > new.txt || true
+
+          # Normalize and diff
+          diff -u old.txt new.txt > endpoints.diff || true
+
+          echo "diff written"
+          cat endpoints.diff
+
+      - name: Generate release notes
+        if: ${{ steps.get_version.outputs.version != '' }}
+        id: relnotes
+        run: |
+          ADD=()
+          REMOVE=()
+
+          # Extract only meaningful +/- lines (skip diff headers)
+          while IFS= read -r line; do
+            clean="${line:1}"  # strip leading + or -
+            clean="${clean#*ManagementApi* | }"  # strip the prefix
+            if [[ "$line" == +* ]]; then
+              ADD+=("$clean")
+            elif [[ "$line" == -* ]]; then
+              REMOVE+=("$clean")
+            fi
+          done < <(grep '^[+-]' endpoints.diff | grep -v '^+++' | grep -v '^---')
+
+          {
+            echo "## Summary"
+            echo "### Added endpoints"
+            if [ ${#ADD[@]} -eq 0 ]; then
+              echo "- None"
+            else
+              printf -- "- %s\n" "${ADD[@]}"
+            fi
+
+            echo ""
+            echo "### Removed endpoints"
+            if [ ${#REMOVE[@]} -eq 0 ]; then
+              echo "- None"
+            else
+              printf -- "- %s\n" "${REMOVE[@]}"
+            fi
+          } > release-notes.md
+
+          echo "notes_file=release-notes.md" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create Git tag
+        if: ${{ steps.get_version.outputs.version != '' }}
+        run: |
+          ver="${{ steps.get_version.outputs.version }}"
+          git tag -f "$ver" "$GITHUB_SHA"
+          git push -f origin "refs/tags/$ver"
+
+      - name: Create GitHub release
+        if: ${{ steps.get_version.outputs.version != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ver="${{ steps.get_version.outputs.version }}"
+          notes_file="${{ steps.relnotes.outputs.notes_file }}"
+
+          if gh release view "$ver" &>/dev/null; then
+            gh release delete "$ver" --yes
+          fi
+
+          gh release create "$ver" \
+            --title "$ver" \
+            --notes-file "$notes_file" \
+            --target "$GITHUB_SHA"
