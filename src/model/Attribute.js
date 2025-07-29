@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The Attribute model module.
  * @module model/Attribute
- * @version 12.0.0
+ * @version .0
  */
 class Attribute {
     /**
      * Constructs a new <code>Attribute</code>.
      * @alias module:model/Attribute
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param entity {module:model/Attribute.EntityEnum} The name of the entity that can have this attribute. When creating or updating the entities of a given type, you can include an `attributes` object with keys corresponding to the `name` of the custom attributes for that type.
@@ -126,7 +126,7 @@ class Attribute {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Attribute.prototype['id'] = undefined;

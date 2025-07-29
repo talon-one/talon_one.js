@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FuncArgDef model module.
  * @module model/FuncArgDef
- * @version 12.0.0
+ * @version .0
  */
 class FuncArgDef {
     /**

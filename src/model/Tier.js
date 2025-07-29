@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Tier model module.
  * @module model/Tier
- * @version 12.0.0
+ * @version .0
  */
 class Tier {
     /**

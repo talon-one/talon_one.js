@@ -17,7 +17,7 @@ import Achievement from './Achievement';
 /**
  * The InlineResponse20048 model module.
  * @module model/InlineResponse20048
- * @version 12.0.0
+ * @version .0
  */
 class InlineResponse20048 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RemoveFromAudienceEffectProps model module.
  * @module model/RemoveFromAudienceEffectProps
- * @version 12.0.0
+ * @version .0
  */
 class RemoveFromAudienceEffectProps {
     /**

@@ -17,7 +17,7 @@ import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 /**
  * The LedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/LedgerTransactionLogEntryIntegrationAPI
- * @version 12.0.0
+ * @version .0
  */
 class LedgerTransactionLogEntryIntegrationAPI {
     /**

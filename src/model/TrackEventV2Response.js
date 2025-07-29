@@ -25,7 +25,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The TrackEventV2Response model module.
  * @module model/TrackEventV2Response
- * @version 12.0.0
+ * @version .0
  */
 class TrackEventV2Response {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountEffectProps model module.
  * @module model/SetDiscountEffectProps
- * @version 12.0.0
+ * @version .0
  */
 class SetDiscountEffectProps {
     /**

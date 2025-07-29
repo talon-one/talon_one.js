@@ -17,7 +17,7 @@ import ExpiringPointsNotificationTrigger from './ExpiringPointsNotificationTrigg
 /**
  * The ExpiringPointsNotificationPolicy model module.
  * @module model/ExpiringPointsNotificationPolicy
- * @version 12.0.0
+ * @version .0
  */
 class ExpiringPointsNotificationPolicy {
     /**
@@ -92,8 +92,9 @@ ExpiringPointsNotificationPolicy.prototype['batchingEnabled'] = true;
 /**
  * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
  * @member {Number} batchSize
+ * @default 1000
  */
-ExpiringPointsNotificationPolicy.prototype['batchSize'] = undefined;
+ExpiringPointsNotificationPolicy.prototype['batchSize'] = 1000;
 
 
 

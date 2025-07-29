@@ -17,14 +17,14 @@ import LimitConfig from './LimitConfig';
 /**
  * The IntegrationCoupon model module.
  * @module model/IntegrationCoupon
- * @version 12.0.0
+ * @version .0
  */
 class IntegrationCoupon {
     /**
      * Constructs a new <code>IntegrationCoupon</code>.
      * @alias module:model/IntegrationCoupon
-     * @param id {Number} Internal ID of this entity.
-     * @param created {Date} The time this entity was created.
+     * @param id {Number} The internal ID of the coupon.
+     * @param created {Date} The time the coupon was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param value {String} The coupon code.
      * @param usageLimit {Number} The number of times the coupon code can be redeemed. `0` means unlimited redemptions but any campaign usage limits will still apply. 
@@ -139,13 +139,13 @@ class IntegrationCoupon {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of the coupon.
  * @member {Number} id
  */
 IntegrationCoupon.prototype['id'] = undefined;
 
 /**
- * The time this entity was created.
+ * The time the coupon was created.
  * @member {Date} created
  */
 IntegrationCoupon.prototype['created'] = undefined;

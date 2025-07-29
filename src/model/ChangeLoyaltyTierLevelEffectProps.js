@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangeLoyaltyTierLevelEffectProps model module.
  * @module model/ChangeLoyaltyTierLevelEffectProps
- * @version 12.0.0
+ * @version .0
  */
 class ChangeLoyaltyTierLevelEffectProps {
     /**

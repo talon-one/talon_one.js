@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeductLoyaltyPoints model module.
  * @module model/DeductLoyaltyPoints
- * @version 12.0.0
+ * @version .0
  */
 class DeductLoyaltyPoints {
     /**

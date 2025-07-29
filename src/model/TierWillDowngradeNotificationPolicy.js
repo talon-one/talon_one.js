@@ -17,7 +17,7 @@ import TierWillDowngradeNotificationTrigger from './TierWillDowngradeNotificatio
 /**
  * The TierWillDowngradeNotificationPolicy model module.
  * @module model/TierWillDowngradeNotificationPolicy
- * @version 12.0.0
+ * @version .0
  */
 class TierWillDowngradeNotificationPolicy {
     /**
@@ -87,8 +87,9 @@ TierWillDowngradeNotificationPolicy.prototype['batchingEnabled'] = true;
 /**
  * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
  * @member {Number} batchSize
+ * @default 1000
  */
-TierWillDowngradeNotificationPolicy.prototype['batchSize'] = undefined;
+TierWillDowngradeNotificationPolicy.prototype['batchSize'] = 1000;
 
 /**
  * @member {Array.<module:model/TierWillDowngradeNotificationTrigger>} triggers

@@ -18,13 +18,13 @@ import Meta from './Meta';
 /**
  * The Event model module.
  * @module model/Event
- * @version 12.0.0
+ * @version .0
  */
 class Event {
     /**
      * Constructs a new <code>Event</code>.
      * @alias module:model/Event
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param type {String} A string representing the event. Must not be a reserved event name.
@@ -102,7 +102,7 @@ class Event {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Event.prototype['id'] = undefined;

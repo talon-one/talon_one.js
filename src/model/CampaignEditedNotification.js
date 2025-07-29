@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
-import Ruleset from './Ruleset';
+import CampaignEditedNotificationItem from './CampaignEditedNotificationItem';
 
 /**
  * The CampaignEditedNotification model module.
  * @module model/CampaignEditedNotification
- * @version 12.0.0
+ * @version .0
  */
 class CampaignEditedNotification {
     /**
      * Constructs a new <code>CampaignEditedNotification</code>.
-     * A notification regarding a campaign which was edited.
      * @alias module:model/CampaignEditedNotification
-     * @param campaign {module:model/Campaign} 
-     * @param oldCampaign {module:model/Campaign} 
+     * @param totalResultSize {Number} The total size of the result set.
      */
-    constructor(campaign, oldCampaign) { 
+    constructor(totalResultSize) { 
         
-        CampaignEditedNotification.initialize(this, campaign, oldCampaign);
+        CampaignEditedNotification.initialize(this, totalResultSize);
     }
 
     /**
@@ -38,9 +35,8 @@ class CampaignEditedNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaign, oldCampaign) { 
-        obj['campaign'] = campaign;
-        obj['oldCampaign'] = oldCampaign;
+    static initialize(obj, totalResultSize) { 
+        obj['TotalResultSize'] = totalResultSize;
     }
 
     /**
@@ -54,14 +50,14 @@ class CampaignEditedNotification {
         if (data) {
             obj = obj || new CampaignEditedNotification();
 
-            if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
+            if (data.hasOwnProperty('NotificationType')) {
+                obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
             }
-            if (data.hasOwnProperty('oldCampaign')) {
-                obj['oldCampaign'] = Campaign.constructFromObject(data['oldCampaign']);
+            if (data.hasOwnProperty('TotalResultSize')) {
+                obj['TotalResultSize'] = ApiClient.convertToType(data['TotalResultSize'], 'Number');
             }
-            if (data.hasOwnProperty('ruleset')) {
-                obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
+            if (data.hasOwnProperty('Data')) {
+                obj['Data'] = ApiClient.convertToType(data['Data'], [CampaignEditedNotificationItem]);
             }
         }
         return obj;
@@ -71,19 +67,22 @@ class CampaignEditedNotification {
 }
 
 /**
- * @member {module:model/Campaign} campaign
+ * The type of the notification
+ * @member {String} NotificationType
  */
-CampaignEditedNotification.prototype['campaign'] = undefined;
+CampaignEditedNotification.prototype['NotificationType'] = undefined;
 
 /**
- * @member {module:model/Campaign} oldCampaign
+ * The total size of the result set.
+ * @member {Number} TotalResultSize
  */
-CampaignEditedNotification.prototype['oldCampaign'] = undefined;
+CampaignEditedNotification.prototype['TotalResultSize'] = undefined;
 
 /**
- * @member {module:model/Ruleset} ruleset
+ * A list of campaign notification data.
+ * @member {Array.<module:model/CampaignEditedNotificationItem>} Data
  */
-CampaignEditedNotification.prototype['ruleset'] = undefined;
+CampaignEditedNotification.prototype['Data'] = undefined;
 
 
 

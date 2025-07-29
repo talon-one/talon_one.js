@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEventV2Request model module.
  * @module model/IntegrationEventV2Request
- * @version 12.0.0
+ * @version .0
  */
 class IntegrationEventV2Request {
     /**
@@ -64,6 +64,9 @@ class IntegrationEventV2Request {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
+            if (data.hasOwnProperty('loyaltyCards')) {
+                obj['loyaltyCards'] = ApiClient.convertToType(data['loyaltyCards'], ['String']);
+            }
             if (data.hasOwnProperty('responseContent')) {
                 obj['responseContent'] = ApiClient.convertToType(data['responseContent'], ['String']);
             }
@@ -103,6 +106,12 @@ IntegrationEventV2Request.prototype['type'] = undefined;
  * @member {Object} attributes
  */
 IntegrationEventV2Request.prototype['attributes'] = undefined;
+
+/**
+ * Identifier of the loyalty card used during this event.
+ * @member {Array.<String>} loyaltyCards
+ */
+IntegrationEventV2Request.prototype['loyaltyCards'] = undefined;
 
 /**
  * Optional list of requested information to be present on the response related to the tracking custom event. 

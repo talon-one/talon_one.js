@@ -17,7 +17,7 @@ import ApplicationReferee from './ApplicationReferee';
 /**
  * The InlineResponse20035 model module.
  * @module model/InlineResponse20035
- * @version 12.0.0
+ * @version .0
  */
 class InlineResponse20035 {
     /**

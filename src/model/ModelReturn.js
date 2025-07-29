@@ -17,13 +17,13 @@ import ReturnedCartItem from './ReturnedCartItem';
 /**
  * The ModelReturn model module.
  * @module model/ModelReturn
- * @version 12.0.0
+ * @version .0
  */
 class ModelReturn {
     /**
      * Constructs a new <code>ModelReturn</code>.
      * @alias module:model/ModelReturn
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param accountId {Number} The ID of the account that owns this entity.
@@ -105,7 +105,7 @@ class ModelReturn {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 ModelReturn.prototype['id'] = undefined;

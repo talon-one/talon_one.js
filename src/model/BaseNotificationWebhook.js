@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseNotificationWebhook model module.
  * @module model/BaseNotificationWebhook
- * @version 12.0.0
+ * @version .0
  */
 class BaseNotificationWebhook {
     /**
      * Constructs a new <code>BaseNotificationWebhook</code>.
      * @alias module:model/BaseNotificationWebhook
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
      * @param url {String} API URL for the given webhook-based notification.
@@ -83,7 +83,7 @@ class BaseNotificationWebhook {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 BaseNotificationWebhook.prototype['id'] = undefined;

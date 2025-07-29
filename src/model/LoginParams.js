@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoginParams model module.
  * @module model/LoginParams
- * @version 12.0.0
+ * @version .0
  */
 class LoginParams {
     /**

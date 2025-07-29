@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The LoyaltyCardBatch model module.
  * @module model/LoyaltyCardBatch
- * @version 12.0.0
+ * @version .0
  */
 class LoyaltyCardBatch {
     /**

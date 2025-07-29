@@ -17,7 +17,7 @@ import AnalyticsDataPoint from './AnalyticsDataPoint';
 /**
  * The ApplicationAnalyticsDataPoint model module.
  * @module model/ApplicationAnalyticsDataPoint
- * @version 12.0.0
+ * @version .0
  */
 class ApplicationAnalyticsDataPoint {
     /**

@@ -17,7 +17,7 @@ import CardExpiringPointsNotificationTrigger from './CardExpiringPointsNotificat
 /**
  * The CardExpiringPointsNotificationPolicy model module.
  * @module model/CardExpiringPointsNotificationPolicy
- * @version 12.0.0
+ * @version .0
  */
 class CardExpiringPointsNotificationPolicy {
     /**
@@ -92,8 +92,9 @@ CardExpiringPointsNotificationPolicy.prototype['batchingEnabled'] = true;
 /**
  * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
  * @member {Number} batchSize
+ * @default 1000
  */
-CardExpiringPointsNotificationPolicy.prototype['batchSize'] = undefined;
+CardExpiringPointsNotificationPolicy.prototype['batchSize'] = 1000;
 
 
 

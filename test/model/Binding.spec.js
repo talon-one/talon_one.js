@@ -78,6 +78,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property minValue (base name: "minValue")', function() {
+      // uncomment below and update the code to test the property minValue
+      //var instane = new TalonOne.Binding();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property maxValue (base name: "maxValue")', function() {
+      // uncomment below and update the code to test the property maxValue
+      //var instane = new TalonOne.Binding();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property attributeId (base name: "attributeId")', function() {
+      // uncomment below and update the code to test the property attributeId
+      //var instane = new TalonOne.Binding();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new TalonOne.Binding();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

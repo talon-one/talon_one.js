@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyProgramBalance model module.
  * @module model/LoyaltyProgramBalance
- * @version 12.0.0
+ * @version .0
  */
 class LoyaltyProgramBalance {
     /**
@@ -25,15 +25,13 @@ class LoyaltyProgramBalance {
      * @alias module:model/LoyaltyProgramBalance
      * @param currentBalance {Number} Sum of currently active points.
      * @param pendingBalance {Number} Sum of pending points.
-     * @param negativeBalance {Number} Sum of negative points. This implies that `currentBalance` is `0`.
      * @param expiredBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param spentBalance {Number} **DEPRECATED** Value is shown as 0. 
      * @param tentativeCurrentBalance {Number} The tentative points balance, reflecting the `currentBalance` and all point additions and deductions within the current open customer session. When the session is closed, the effects are applied and the `currentBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
-     * @param tentativeNegativeBalance {Number} The tentative negative balance after all additions and deductions from the current customer session are applied to `negativeBalance`. When the session is closed, the tentative effects are applied and `negativeBalance` is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer. 
      */
-    constructor(currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance, tentativeNegativeBalance) { 
+    constructor(currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         
-        LoyaltyProgramBalance.initialize(this, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance, tentativeNegativeBalance);
+        LoyaltyProgramBalance.initialize(this, currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance);
     }
 
     /**
@@ -41,14 +39,12 @@ class LoyaltyProgramBalance {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, currentBalance, pendingBalance, negativeBalance, expiredBalance, spentBalance, tentativeCurrentBalance, tentativeNegativeBalance) { 
+    static initialize(obj, currentBalance, pendingBalance, expiredBalance, spentBalance, tentativeCurrentBalance) { 
         obj['currentBalance'] = currentBalance;
         obj['pendingBalance'] = pendingBalance;
-        obj['negativeBalance'] = negativeBalance;
         obj['expiredBalance'] = expiredBalance;
         obj['spentBalance'] = spentBalance;
         obj['tentativeCurrentBalance'] = tentativeCurrentBalance;
-        obj['tentativeNegativeBalance'] = tentativeNegativeBalance;
     }
 
     /**

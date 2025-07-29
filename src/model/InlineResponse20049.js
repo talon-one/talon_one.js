@@ -17,7 +17,7 @@ import AchievementProgressWithDefinition from './AchievementProgressWithDefiniti
 /**
  * The InlineResponse20049 model module.
  * @module model/InlineResponse20049
- * @version 12.0.0
+ * @version .0
  */
 class InlineResponse20049 {
     /**

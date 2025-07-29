@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 12.0.0
+ * @version .0
  */
 class AddLoyaltyPointsEffectProps {
     /**

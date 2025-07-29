@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughEffect model module.
  * @module model/StrikethroughEffect
- * @version 12.0.0
+ * @version .0
  */
 class StrikethroughEffect {
     /**
@@ -84,6 +84,18 @@ class StrikethroughEffect {
             if (data.hasOwnProperty('endTime')) {
                 obj['endTime'] = ApiClient.convertToType(data['endTime'], 'Date');
             }
+            if (data.hasOwnProperty('selectedPriceType')) {
+                obj['selectedPriceType'] = ApiClient.convertToType(data['selectedPriceType'], 'String');
+            }
+            if (data.hasOwnProperty('selectedPrice')) {
+                obj['selectedPrice'] = ApiClient.convertToType(data['selectedPrice'], 'Number');
+            }
+            if (data.hasOwnProperty('adjustmentReferenceId')) {
+                obj['adjustmentReferenceId'] = ApiClient.convertToType(data['adjustmentReferenceId'], 'String');
+            }
+            if (data.hasOwnProperty('targets')) {
+                obj['targets'] = ApiClient.convertToType(data['targets'], [Object]);
+            }
         }
         return obj;
     }
@@ -137,6 +149,30 @@ StrikethroughEffect.prototype['startTime'] = undefined;
  * @member {Date} endTime
  */
 StrikethroughEffect.prototype['endTime'] = undefined;
+
+/**
+ * The selected price type for this cart item (e.g. the price for members only).
+ * @member {String} selectedPriceType
+ */
+StrikethroughEffect.prototype['selectedPriceType'] = undefined;
+
+/**
+ * The value of the selected price type to apply to the SKU targeted by this effect, before any discounts are applied.
+ * @member {Number} selectedPrice
+ */
+StrikethroughEffect.prototype['selectedPrice'] = undefined;
+
+/**
+ * The reference identifier of the selected price adjustment for this cart item.
+ * @member {String} adjustmentReferenceId
+ */
+StrikethroughEffect.prototype['adjustmentReferenceId'] = undefined;
+
+/**
+ * A list of entities (e.g. audiences) targeted by this effect.
+ * @member {Array.<Object>} targets
+ */
+StrikethroughEffect.prototype['targets'] = undefined;
 
 
 

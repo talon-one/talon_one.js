@@ -17,7 +17,7 @@ import ListCampaignStoreBudgetsStore from './ListCampaignStoreBudgetsStore';
 /**
  * The ListCampaignStoreBudgets model module.
  * @module model/ListCampaignStoreBudgets
- * @version 12.0.0
+ * @version .0
  */
 class ListCampaignStoreBudgets {
     /**

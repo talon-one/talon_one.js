@@ -126,6 +126,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property secondaryDeploymentPrice (base name: "secondaryDeploymentPrice")', function() {
+      // uncomment below and update the code to test the property secondaryDeploymentPrice
+      //var instane = new TalonOne.AccountLimits();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property currencyCode (base name: "currencyCode")', function() {
+      // uncomment below and update the code to test the property currencyCode
+      //var instane = new TalonOne.AccountLimits();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

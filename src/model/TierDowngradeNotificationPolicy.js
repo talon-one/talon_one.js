@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierDowngradeNotificationPolicy model module.
  * @module model/TierDowngradeNotificationPolicy
- * @version 12.0.0
+ * @version .0
  */
 class TierDowngradeNotificationPolicy {
     /**
@@ -81,8 +81,9 @@ TierDowngradeNotificationPolicy.prototype['batchingEnabled'] = true;
 /**
  * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
  * @member {Number} batchSize
+ * @default 1000
  */
-TierDowngradeNotificationPolicy.prototype['batchSize'] = undefined;
+TierDowngradeNotificationPolicy.prototype['batchSize'] = 1000;
 
 
 

@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The Picklist model module.
  * @module model/Picklist
- * @version 12.0.0
+ * @version .0
  */
 class Picklist {
     /**
      * Constructs a new <code>Picklist</code>.
      * @alias module:model/Picklist
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param type {module:model/Picklist.TypeEnum} The type of allowed values in the picklist. If the type `time` is chosen, it must be an RFC3339 timestamp string.
      * @param values {Array.<String>} The list of allowed values provided by this picklist.
@@ -89,7 +89,7 @@ class Picklist {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Picklist.prototype['id'] = undefined;

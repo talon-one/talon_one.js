@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductSearchMatch model module.
  * @module model/ProductSearchMatch
- * @version 12.0.0
+ * @version .0
  */
 class ProductSearchMatch {
     /**

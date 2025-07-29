@@ -21,19 +21,20 @@ import Collection from './Collection';
 import FunctionDef from './FunctionDef';
 import GiveawaysPool from './GiveawaysPool';
 import LoyaltyProgram from './LoyaltyProgram';
+import PriceType from './PriceType';
 import SlotDef from './SlotDef';
 import TemplateDef from './TemplateDef';
 
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 12.0.0
+ * @version .0
  */
 class Environment {
     /**
      * Constructs a new <code>Environment</code>.
      * @alias module:model/Environment
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param slots {Array.<module:model/SlotDef>} The slots defined for this application.
@@ -117,6 +118,9 @@ class Environment {
             if (data.hasOwnProperty('applicationCartItemFilters')) {
                 obj['applicationCartItemFilters'] = ApiClient.convertToType(data['applicationCartItemFilters'], [ApplicationCIF]);
             }
+            if (data.hasOwnProperty('priceTypes')) {
+                obj['priceTypes'] = ApiClient.convertToType(data['priceTypes'], [PriceType]);
+            }
         }
         return obj;
     }
@@ -125,7 +129,7 @@ class Environment {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Environment.prototype['id'] = undefined;
@@ -213,6 +217,12 @@ Environment.prototype['collections'] = undefined;
  * @member {Array.<module:model/ApplicationCIF>} applicationCartItemFilters
  */
 Environment.prototype['applicationCartItemFilters'] = undefined;
+
+/**
+ * The price types that this Application can use.
+ * @member {Array.<module:model/PriceType>} priceTypes
+ */
+Environment.prototype['priceTypes'] = undefined;
 
 
 

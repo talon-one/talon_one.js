@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetIntegrationCouponRequest model module.
  * @module model/GetIntegrationCouponRequest
- * @version 12.0.0
+ * @version .0
  */
 class GetIntegrationCouponRequest {
     /**
@@ -73,8 +73,9 @@ GetIntegrationCouponRequest.prototype['campaignIds'] = undefined;
 /**
  * The maximum number of coupons included in the response.
  * @member {Number} limit
+ * @default 10
  */
-GetIntegrationCouponRequest.prototype['limit'] = undefined;
+GetIntegrationCouponRequest.prototype['limit'] = 10;
 
 
 

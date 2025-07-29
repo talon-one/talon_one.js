@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 12.0.0
+ * @version .0
  */
 class User {
     /**
      * Constructs a new <code>User</code>.
      * @alias module:model/User
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
      * @param email {String} The email address associated with the user profile.
@@ -124,7 +124,7 @@ class User {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 User.prototype['id'] = undefined;

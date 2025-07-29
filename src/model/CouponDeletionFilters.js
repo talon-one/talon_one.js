@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponDeletionFilters model module.
  * @module model/CouponDeletionFilters
- * @version 12.0.0
+ * @version .0
  */
 class CouponDeletionFilters {
     /**

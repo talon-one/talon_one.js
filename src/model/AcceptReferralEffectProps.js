@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AcceptReferralEffectProps model module.
  * @module model/AcceptReferralEffectProps
- * @version 12.0.0
+ * @version .0
  */
 class AcceptReferralEffectProps {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerAnalytics model module.
  * @module model/CustomerAnalytics
- * @version 12.0.0
+ * @version .0
  */
 class CustomerAnalytics {
     /**

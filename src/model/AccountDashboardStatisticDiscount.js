@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountDashboardStatisticDiscount model module.
  * @module model/AccountDashboardStatisticDiscount
- * @version 12.0.0
+ * @version .0
  */
 class AccountDashboardStatisticDiscount {
     /**

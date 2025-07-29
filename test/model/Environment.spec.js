@@ -144,6 +144,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property priceTypes (base name: "priceTypes")', function() {
+      // uncomment below and update the code to test the property priceTypes
+      //var instane = new TalonOne.Environment();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

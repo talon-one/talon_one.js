@@ -18,13 +18,13 @@ import LoyaltyCardProfileRegistration from './LoyaltyCardProfileRegistration';
 /**
  * The LoyaltyCard model module.
  * @module model/LoyaltyCard
- * @version 12.0.0
+ * @version .0
  */
 class LoyaltyCard {
     /**
      * Constructs a new <code>LoyaltyCard</code>.
      * @alias module:model/LoyaltyCard
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param programID {Number} The ID of the loyalty program that owns this entity.
      * @param status {String} Status of the loyalty card. Can be `active` or `inactive`. 
@@ -117,7 +117,7 @@ class LoyaltyCard {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 LoyaltyCard.prototype['id'] = undefined;

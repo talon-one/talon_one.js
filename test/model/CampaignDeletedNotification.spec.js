@@ -54,14 +54,20 @@
       //expect(instance).to.be.a(TalonOne.CampaignDeletedNotification);
     });
 
-    it('should have the property campaign (base name: "campaign")', function() {
-      // uncomment below and update the code to test the property campaign
+    it('should have the property notificationType (base name: "NotificationType")', function() {
+      // uncomment below and update the code to test the property notificationType
       //var instane = new TalonOne.CampaignDeletedNotification();
       //expect(instance).to.be();
     });
 
-    it('should have the property deletedAt (base name: "deletedAt")', function() {
-      // uncomment below and update the code to test the property deletedAt
+    it('should have the property totalResultSize (base name: "TotalResultSize")', function() {
+      // uncomment below and update the code to test the property totalResultSize
+      //var instane = new TalonOne.CampaignDeletedNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property data (base name: "Data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new TalonOne.CampaignDeletedNotification();
       //expect(instance).to.be();
     });

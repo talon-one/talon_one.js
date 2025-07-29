@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign** | [**Campaign**](Campaign.md) |  | 
-**ruleset** | [**Ruleset**](Ruleset.md) |  | [optional] 
-**evaluationPosition** | [**CampaignEvaluationPosition**](CampaignEvaluationPosition.md) |  | 
+**notificationType** | **String** | The type of the notification | [optional] 
+**totalResultSize** | **Number** | The total size of the result set. | 
+**data** | [**[CampaignCreatedNotificationItem]**](CampaignCreatedNotificationItem.md) | A list of campaign notification data. | [optional] 
 
 

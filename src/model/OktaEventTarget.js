@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OktaEventTarget model module.
  * @module model/OktaEventTarget
- * @version 12.0.0
+ * @version .0
  */
 class OktaEventTarget {
     /**

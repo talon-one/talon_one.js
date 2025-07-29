@@ -97,6 +97,7 @@ import ModelImport from '../model/ModelImport';
 import NewAdditionalCost from '../model/NewAdditionalCost';
 import NewAttribute from '../model/NewAttribute';
 import NewCampaignCollection from '../model/NewCampaignCollection';
+import NewCampaignStoreBudget from '../model/NewCampaignStoreBudget';
 import NewCollection from '../model/NewCollection';
 import NewCouponCreationJob from '../model/NewCouponCreationJob';
 import NewCouponDeletionJob from '../model/NewCouponDeletionJob';
@@ -112,6 +113,9 @@ import Referral from '../model/Referral';
 import RoleV2 from '../model/RoleV2';
 import RoleV2Base from '../model/RoleV2Base';
 import Ruleset from '../model/Ruleset';
+import ScimBaseGroup from '../model/ScimBaseGroup';
+import ScimGroup from '../model/ScimGroup';
+import ScimGroupsListResponse from '../model/ScimGroupsListResponse';
 import ScimNewUser from '../model/ScimNewUser';
 import ScimPatchRequest from '../model/ScimPatchRequest';
 import ScimResourceTypesListResponse from '../model/ScimResourceTypesListResponse';
@@ -137,7 +141,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 12.0.0
+* @version .0
 */
 export default class ManagementApi {
 
@@ -688,6 +692,67 @@ export default class ManagementApi {
      */
     createCampaignFromTemplate(applicationId, body) {
       return this.createCampaignFromTemplateWithHttpInfo(applicationId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create campaign store budget
+     * Create a new store budget for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {module:model/NewCampaignStoreBudget} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    createCampaignStoreBudgetWithHttpInfo(applicationId, campaignId, body) {
+      let postBody = body;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling createCampaignStoreBudget");
+      }
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling createCampaignStoreBudget");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createCampaignStoreBudget");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create campaign store budget
+     * Create a new store budget for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {module:model/NewCampaignStoreBudget} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    createCampaignStoreBudget(applicationId, campaignId, body) {
+      return this.createCampaignStoreBudgetWithHttpInfo(applicationId, campaignId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1527,6 +1592,70 @@ export default class ManagementApi {
 
 
     /**
+     * Delete campaign store budgets
+     * Delete the store budgets for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteCampaignStoreBudgetsWithHttpInfo(applicationId, campaignId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling deleteCampaignStoreBudgets");
+      }
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling deleteCampaignStoreBudgets");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      let queryParams = {
+        'action': opts['action'],
+        'period': opts['period']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete campaign store budgets
+     * Delete the store budgets for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteCampaignStoreBudgets(applicationId, campaignId, opts) {
+      return this.deleteCampaignStoreBudgetsWithHttpInfo(applicationId, campaignId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete campaign-level collection
      * Delete a given campaign-level collection.
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
@@ -2269,6 +2398,70 @@ export default class ManagementApi {
 
 
     /**
+     * Export campaign store budgets
+     * Download a CSV file containing the store budgets for a given campaign.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file contains the following columns:  - `store_integration_id`: The identifier of the store. - `limit`: The budget limit for the store. 
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    exportCampaignStoreBudgetsWithHttpInfo(applicationId, campaignId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling exportCampaignStoreBudgets");
+      }
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling exportCampaignStoreBudgets");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      let queryParams = {
+        'action': opts['action'],
+        'period': opts['period']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/csv'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/export', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Export campaign store budgets
+     * Download a CSV file containing the store budgets for a given campaign.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file contains the following columns:  - `store_integration_id`: The identifier of the store. - `limit`: The budget limit for the store. 
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    exportCampaignStoreBudgets(applicationId, campaignId, opts) {
+      return this.exportCampaignStoreBudgetsWithHttpInfo(applicationId, campaignId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Export stores
      * Download a CSV file containing the stores linked to a specific campaign.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file contains the following column:  - `store_integration_id`: The identifier of the store. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
@@ -2480,7 +2673,7 @@ export default class ManagementApi {
 
     /**
      * Export customer sessions
-     * Download a CSV file containing the customer sessions that match the request.  **Important:** Archived sessions cannot be exported. See the [retention policy](https://docs.talon.one/docs/product/server-infrastructure-and-data-retention#data-retention-policy).  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  - `id`: The internal ID of the session. - `firstsession`: Whether this is a first session. - `integrationid`: The integration ID of the session. - `applicationid`: The ID of the Application. - `profileid`: The internal ID of the customer profile. - `profileintegrationid`: The integration ID of the customer profile. - `created`: The timestamp when the session was created. - `state`: The [state](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states) of the session. - `cartitems`: The cart items in the session. - `discounts`: The discounts in the session. - `total`: The total value of cart items and additional costs in the session, before any discounts are applied. - `attributes`: The attributes set in the session. - `closedat`: Timestamp when the session was closed. - `cancelledat`: Timestamp when the session was cancelled. - `referral`: The referral code in the session. - `identifiers`: The identifiers in the session. - `additional_costs`: The [additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs) in the session. - `updated`: Timestamp of the last session update. - `store_integration_id`: The integration ID of the store. - `coupons`: Coupon codes in the session. 
+     * Download a CSV file containing the customer sessions that match the request.  **Important:** Archived sessions cannot be exported. See the [retention policy](https://docs.talon.one/docs/dev/server-infrastructure-and-data-retention).  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  - `id`: The internal ID of the session. - `firstsession`: Whether this is a first session. - `integrationid`: The integration ID of the session. - `applicationid`: The ID of the Application. - `profileid`: The internal ID of the customer profile. - `profileintegrationid`: The integration ID of the customer profile. - `created`: The timestamp when the session was created. - `state`: The [state](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states) of the session. - `cartitems`: The cart items in the session. - `discounts`: The discounts in the session. - `total`: The total value of cart items and additional costs in the session, before any discounts are applied. - `attributes`: The attributes set in the session. - `closedat`: Timestamp when the session was closed. - `cancelledat`: Timestamp when the session was cancelled. - `referral`: The referral code in the session. - `identifiers`: The identifiers in the session. - `additional_costs`: The [additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs) in the session. - `updated`: Timestamp of the last session update. - `store_integration_id`: The integration ID of the store. - `coupons`: Coupon codes in the session. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
@@ -2526,7 +2719,7 @@ export default class ManagementApi {
 
     /**
      * Export customer sessions
-     * Download a CSV file containing the customer sessions that match the request.  **Important:** Archived sessions cannot be exported. See the [retention policy](https://docs.talon.one/docs/product/server-infrastructure-and-data-retention#data-retention-policy).  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  - `id`: The internal ID of the session. - `firstsession`: Whether this is a first session. - `integrationid`: The integration ID of the session. - `applicationid`: The ID of the Application. - `profileid`: The internal ID of the customer profile. - `profileintegrationid`: The integration ID of the customer profile. - `created`: The timestamp when the session was created. - `state`: The [state](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states) of the session. - `cartitems`: The cart items in the session. - `discounts`: The discounts in the session. - `total`: The total value of cart items and additional costs in the session, before any discounts are applied. - `attributes`: The attributes set in the session. - `closedat`: Timestamp when the session was closed. - `cancelledat`: Timestamp when the session was cancelled. - `referral`: The referral code in the session. - `identifiers`: The identifiers in the session. - `additional_costs`: The [additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs) in the session. - `updated`: Timestamp of the last session update. - `store_integration_id`: The integration ID of the store. - `coupons`: Coupon codes in the session. 
+     * Download a CSV file containing the customer sessions that match the request.  **Important:** Archived sessions cannot be exported. See the [retention policy](https://docs.talon.one/docs/dev/server-infrastructure-and-data-retention).  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  - `id`: The internal ID of the session. - `firstsession`: Whether this is a first session. - `integrationid`: The integration ID of the session. - `applicationid`: The ID of the Application. - `profileid`: The internal ID of the customer profile. - `profileintegrationid`: The integration ID of the customer profile. - `created`: The timestamp when the session was created. - `state`: The [state](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states) of the session. - `cartitems`: The cart items in the session. - `discounts`: The discounts in the session. - `total`: The total value of cart items and additional costs in the session, before any discounts are applied. - `attributes`: The attributes set in the session. - `closedat`: Timestamp when the session was closed. - `cancelledat`: Timestamp when the session was cancelled. - `referral`: The referral code in the session. - `identifiers`: The identifiers in the session. - `additional_costs`: The [additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs) in the session. - `updated`: Timestamp of the last session update. - `store_integration_id`: The integration ID of the store. - `coupons`: Coupon codes in the session. 
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Object} [opts] Optional parameters
      * @param {Date=} [opts.createdBefore] Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
@@ -2907,6 +3100,8 @@ export default class ManagementApi {
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.batchId] Filter results by loyalty card batch ID.
+     * @param {Date=} [opts.createdBefore] Only return loyalty cards created before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. 
+     * @param {Date=} [opts.createdAfter] Only return loyalty cards created after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. 
      * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
@@ -2923,6 +3118,8 @@ export default class ManagementApi {
       };
       let queryParams = {
         'batchId': opts['batchId'],
+        'createdBefore': opts['createdBefore'],
+        'createdAfter': opts['createdAfter'],
         'dateFormat': opts['dateFormat']
       };
       let headerParams = {
@@ -2947,6 +3144,8 @@ export default class ManagementApi {
      * @param {Number} loyaltyProgramId Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
      * @param {String=} [opts.batchId] Filter results by loyalty card batch ID.
+     * @param {Date=} [opts.createdBefore] Only return loyalty cards created before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. 
+     * @param {Date=} [opts.createdAfter] Only return loyalty cards created after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. 
      * @param {module:model/String=} [opts.dateFormat] Determines the format of dates in the export document.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
@@ -4988,7 +5187,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Number=} [opts.managementKeyId] Filter results that match the given management key ID.
      * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20044} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20042} and HTTP response
      */
     getChangesWithHttpInfo(opts) {
       opts = opts || {};
@@ -5017,7 +5216,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20044;
+      let returnType = InlineResponse20042;
       return this.apiClient.callApi(
         '/v1/changes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5040,7 +5239,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Number=} [opts.managementKeyId] Filter results that match the given management key ID.
      * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20044}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20042}
      */
     getChanges(opts) {
       return this.getChangesWithHttpInfo(opts)
@@ -5819,7 +6018,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20042} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20040} and HTTP response
      */
     getEventTypesWithHttpInfo(opts) {
       opts = opts || {};
@@ -5842,7 +6041,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20042;
+      let returnType = InlineResponse20040;
       return this.apiClient.callApi(
         '/v1/event_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5859,7 +6058,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20042}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20040}
      */
     getEventTypes(opts) {
       return this.getEventTypesWithHttpInfo(opts)
@@ -5878,7 +6077,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
      * @param {Number=} [opts.campaignId] Filter by the campaign ID on which the limit counters are used.
      * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20045} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20043} and HTTP response
      */
     getExportsWithHttpInfo(opts) {
       opts = opts || {};
@@ -5901,7 +6100,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20045;
+      let returnType = InlineResponse20043;
       return this.apiClient.callApi(
         '/v1/exports', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5918,7 +6117,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
      * @param {Number=} [opts.campaignId] Filter by the campaign ID on which the limit counters are used.
      * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20045}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20043}
      */
     getExports(opts) {
       return this.getExportsWithHttpInfo(opts)
@@ -6848,7 +7047,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20043} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20041} and HTTP response
      */
     getUsersWithHttpInfo(opts) {
       opts = opts || {};
@@ -6869,7 +7068,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20043;
+      let returnType = InlineResponse20041;
       return this.apiClient.callApi(
         '/v1/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6884,7 +7083,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20043}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20041}
      */
     getUsers(opts) {
       return this.getUsersWithHttpInfo(opts)
@@ -6936,151 +7135,6 @@ export default class ManagementApi {
      */
     getWebhook(webhookId) {
       return this.getWebhookWithHttpInfo(webhookId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List webhook activation log entries
-     * Webhook activation log entries are created as soon as an integration request triggers a webhook effect. See the [docs](https://docs.talon.one/docs/dev/getting-started/webhooks). 
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20040} and HTTP response
-     */
-    getWebhookActivationLogsWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip'],
-        'sort': opts['sort'],
-        'integrationRequestUuid': opts['integrationRequestUuid'],
-        'webhookId': opts['webhookId'],
-        'applicationId': opts['applicationId'],
-        'campaignId': opts['campaignId'],
-        'createdBefore': opts['createdBefore'],
-        'createdAfter': opts['createdAfter']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['management_key', 'manager_auth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse20040;
-      return this.apiClient.callApi(
-        '/v1/webhook_activation_logs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * List webhook activation log entries
-     * Webhook activation log entries are created as soon as an integration request triggers a webhook effect. See the [docs](https://docs.talon.one/docs/dev/getting-started/webhooks). 
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20040}
-     */
-    getWebhookActivationLogs(opts) {
-      return this.getWebhookActivationLogsWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List webhook log entries
-     * Retrieve all webhook log entries.
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {String=} [opts.requestUuid] Filter results by request UUID.
-     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20041} and HTTP response
-     */
-    getWebhookLogsWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip'],
-        'sort': opts['sort'],
-        'status': opts['status'],
-        'webhookId': opts['webhookId'],
-        'applicationId': opts['applicationId'],
-        'campaignId': opts['campaignId'],
-        'requestUuid': opts['requestUuid'],
-        'createdBefore': opts['createdBefore'],
-        'createdAfter': opts['createdAfter']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['management_key', 'manager_auth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse20041;
-      return this.apiClient.callApi(
-        '/v1/webhook_logs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * List webhook log entries
-     * Retrieve all webhook log entries.
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {String=} [opts.requestUuid] Filter results by request UUID.
-     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20041}
-     */
-    getWebhookLogs(opts) {
-      return this.getWebhookLogsWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7311,6 +7365,73 @@ export default class ManagementApi {
      */
     importAudiencesMemberships(audienceId, opts) {
       return this.importAudiencesMembershipsWithHttpInfo(audienceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Import campaign store budgets
+     * Upload a CSV file containing store budgets for a given campaign.  Send the file as multipart data.  The CSV file **must** only contain the following columns: - `store_integration_id`: The identifier of the store. - `limit`: The budget limit for the store.  The import **replaces** the previous list of store budgets. 
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @param {String=} [opts.upFile] The file containing the data that is being imported.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelImport} and HTTP response
+     */
+    importCampaignStoreBudgetWithHttpInfo(applicationId, campaignId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling importCampaignStoreBudget");
+      }
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling importCampaignStoreBudget");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      let queryParams = {
+        'action': opts['action'],
+        'period': opts['period']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+        'upFile': opts['upFile']
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = ['multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = ModelImport;
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/import', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Import campaign store budgets
+     * Upload a CSV file containing store budgets for a given campaign.  Send the file as multipart data.  The CSV file **must** only contain the following columns: - `store_integration_id`: The identifier of the store. - `limit`: The budget limit for the store.  The import **replaces** the previous list of store budgets. 
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @param {String=} [opts.upFile] The file containing the data that is being imported.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelImport}
+     */
+    importCampaignStoreBudget(applicationId, campaignId, opts) {
+      return this.importCampaignStoreBudgetWithHttpInfo(applicationId, campaignId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7623,6 +7744,7 @@ export default class ManagementApi {
      * Upload a CSV file containing the loyalty points you want to import into a given loyalty program. Send the file as multipart data.  Depending on the type of loyalty program, you can import points into a given customer profile or loyalty card.  The CSV file contains the following columns:  - `customerprofileid` (optional): For profile-based loyalty programs, the integration ID of the customer profile where the loyalty points are imported.    **Note**: If the customer profile does not exist, it will be created. The profile will not be visible in any Application   until a session or profile update is received for that profile. - `identifier` (optional): For card-based loyalty programs, the identifier of the loyalty card where the loyalty points are imported. - `amount`: The amount of points to award to the customer profile. - `startdate` (optional): The earliest date when the points can be redeemed. The points are `active` from this date until the expiration date.    **Note**: It must be an RFC3339 timestamp string or string `immediate`. Empty or missing values are considered `immediate`. - `expirydate` (optional): The latest date when the points can be redeemed. The points are `expired` after this date.    **Note**: It must be an RFC3339 timestamp string or string `unlimited`. Empty or missing values are considered `unlimited`. - `subledgerid` (optional): The ID of the subledger that should received the points. - `reason` (optional): The reason why these points are awarded.  You can use the time zone of your choice. It is converted to UTC internally by Talon.One.  **Note:** For existing customer profiles and loyalty cards, the imported points are added to any previous active or pending points, depending on the value provided for `startdate`. If `startdate` matches the current date, the imported points are _active_. If it is later, the points are _pending_ until the date provided for `startdate` is reached.  **Note:** We recommend limiting your file size to 500MB.  **Example for profile-based programs:**  ```text customerprofileid,amount,startdate,expirydate,subledgerid,reason URNGV8294NV,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ```  **Example for card-based programs:**  ```text identifier,amount,startdate,expirydate,subledgerid,reason summer-loyalty-card-0543,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ``` 
      * @param {Number} loyaltyProgramId Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
+     * @param {Boolean=} [opts.notificationsEnabled] Indicates whether the points import triggers notifications about its effects. For example, a notification is sent if the import upgrades a customer's tier or offsets their negative points balance.  This parameter is optional and defaults to `true`. 
      * @param {String=} [opts.upFile] The file containing the data that is being imported.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelImport} and HTTP response
      */
@@ -7638,6 +7760,7 @@ export default class ManagementApi {
         'loyaltyProgramId': loyaltyProgramId
       };
       let queryParams = {
+        'notificationsEnabled': opts['notificationsEnabled']
       };
       let headerParams = {
       };
@@ -7661,6 +7784,7 @@ export default class ManagementApi {
      * Upload a CSV file containing the loyalty points you want to import into a given loyalty program. Send the file as multipart data.  Depending on the type of loyalty program, you can import points into a given customer profile or loyalty card.  The CSV file contains the following columns:  - `customerprofileid` (optional): For profile-based loyalty programs, the integration ID of the customer profile where the loyalty points are imported.    **Note**: If the customer profile does not exist, it will be created. The profile will not be visible in any Application   until a session or profile update is received for that profile. - `identifier` (optional): For card-based loyalty programs, the identifier of the loyalty card where the loyalty points are imported. - `amount`: The amount of points to award to the customer profile. - `startdate` (optional): The earliest date when the points can be redeemed. The points are `active` from this date until the expiration date.    **Note**: It must be an RFC3339 timestamp string or string `immediate`. Empty or missing values are considered `immediate`. - `expirydate` (optional): The latest date when the points can be redeemed. The points are `expired` after this date.    **Note**: It must be an RFC3339 timestamp string or string `unlimited`. Empty or missing values are considered `unlimited`. - `subledgerid` (optional): The ID of the subledger that should received the points. - `reason` (optional): The reason why these points are awarded.  You can use the time zone of your choice. It is converted to UTC internally by Talon.One.  **Note:** For existing customer profiles and loyalty cards, the imported points are added to any previous active or pending points, depending on the value provided for `startdate`. If `startdate` matches the current date, the imported points are _active_. If it is later, the points are _pending_ until the date provided for `startdate` is reached.  **Note:** We recommend limiting your file size to 500MB.  **Example for profile-based programs:**  ```text customerprofileid,amount,startdate,expirydate,subledgerid,reason URNGV8294NV,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ```  **Example for card-based programs:**  ```text identifier,amount,startdate,expirydate,subledgerid,reason summer-loyalty-card-0543,100,2009-11-10T23:00:00Z,2009-11-11T23:00:00Z,subledger1,appeasement ``` 
      * @param {Number} loyaltyProgramId Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {Object} [opts] Optional parameters
+     * @param {Boolean=} [opts.notificationsEnabled] Indicates whether the points import triggers notifications about its effects. For example, a notification is sent if the import upgrades a customer's tier or offsets their negative points balance.  This parameter is optional and defaults to `true`. 
      * @param {String=} [opts.upFile] The file containing the data that is being imported.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelImport}
      */
@@ -7963,7 +8087,7 @@ export default class ManagementApi {
     /**
      * List roles
      * List all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20046} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20044} and HTTP response
      */
     listAllRolesV2WithHttpInfo() {
       let postBody = null;
@@ -7980,7 +8104,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20046;
+      let returnType = InlineResponse20044;
       return this.apiClient.callApi(
         '/v2/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7991,10 +8115,74 @@ export default class ManagementApi {
     /**
      * List roles
      * List all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20046}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20044}
      */
     listAllRolesV2() {
       return this.listAllRolesV2WithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List campaign store budget limits
+     * Return the store budget limits for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20046} and HTTP response
+     */
+    listCampaignStoreBudgetLimitsWithHttpInfo(applicationId, campaignId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling listCampaignStoreBudgetLimits");
+      }
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling listCampaignStoreBudgetLimits");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      let queryParams = {
+        'action': opts['action'],
+        'period': opts['period']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20046;
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List campaign store budget limits
+     * Return the store budget limits for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @param {Object} [opts] Optional parameters
+     * @param {module:model/String=} [opts.action] The action that this budget is limiting.
+     * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20046}
+     */
+    listCampaignStoreBudgetLimits(applicationId, campaignId, opts) {
+      return this.listCampaignStoreBudgetLimitsWithHttpInfo(applicationId, campaignId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8028,8 +8216,8 @@ export default class ManagementApi {
         'pageSize': opts['pageSize'],
         'skip': opts['skip'],
         'withTotalResultSize': opts['withTotalResultSize'],
-        'sku': this.apiClient.buildCollectionParam(opts['sku'], 'csv'),
-        'productNames': this.apiClient.buildCollectionParam(opts['productNames'], 'csv')
+        'sku': this.apiClient.buildCollectionParam(opts['sku'], 'multi'),
+        'productNames': this.apiClient.buildCollectionParam(opts['productNames'], 'multi')
       };
       let headerParams = {
       };
@@ -8219,7 +8407,7 @@ export default class ManagementApi {
      * @param {String=} [opts.name] The name of the store.
      * @param {String=} [opts.integrationId] The integration ID of the store.
      * @param {String=} [opts.query] Filter results by `name` or `integrationId`.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20047} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20045} and HTTP response
      */
     listStoresWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -8250,7 +8438,7 @@ export default class ManagementApi {
       let authNames = ['management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20047;
+      let returnType = InlineResponse20045;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/stores', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8271,7 +8459,7 @@ export default class ManagementApi {
      * @param {String=} [opts.name] The name of the store.
      * @param {String=} [opts.integrationId] The integration ID of the store.
      * @param {String=} [opts.query] Filter results by `name` or `integrationId`.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20047}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20045}
      */
     listStores(applicationId, opts) {
       return this.listStoresWithHttpInfo(applicationId, opts)
@@ -8431,6 +8619,53 @@ export default class ManagementApi {
 
 
     /**
+     * Create SCIM group
+     * Create a new Talon.One group using the SCIM Group provisioning protocol with an identity provider, for example, Microsoft Entra ID, and assign members from the payload to the new group. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @param {module:model/ScimBaseGroup} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ScimGroup} and HTTP response
+     */
+    scimCreateGroupWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling scimCreateGroup");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ScimGroup;
+      return this.apiClient.callApi(
+        '/v1/provisioning/scim/Groups', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create SCIM group
+     * Create a new Talon.One group using the SCIM Group provisioning protocol with an identity provider, for example, Microsoft Entra ID, and assign members from the payload to the new group. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @param {module:model/ScimBaseGroup} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ScimGroup}
+     */
+    scimCreateGroup(body) {
+      return this.scimCreateGroupWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create SCIM user
      * Create a new Talon.One user using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID.
      * @param {module:model/ScimNewUser} body body
@@ -8471,6 +8706,54 @@ export default class ManagementApi {
      */
     scimCreateUser(body) {
       return this.scimCreateUserWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete SCIM group
+     * Delete a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @param {Number} groupId The ID of the group.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    scimDeleteGroupWithHttpInfo(groupId) {
+      let postBody = null;
+      // verify the required parameter 'groupId' is set
+      if (groupId === undefined || groupId === null) {
+        throw new Error("Missing the required parameter 'groupId' when calling scimDeleteGroup");
+      }
+
+      let pathParams = {
+        'groupId': groupId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/v1/provisioning/scim/Groups/{groupId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete SCIM group
+     * Delete a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @param {Number} groupId The ID of the group.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    scimDeleteGroup(groupId) {
+      return this.scimDeleteGroupWithHttpInfo(groupId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8519,6 +8802,95 @@ export default class ManagementApi {
      */
     scimDeleteUser(userId) {
       return this.scimDeleteUserWithHttpInfo(userId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get SCIM group
+     * Retrieve data for a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @param {Number} groupId The ID of the group.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ScimGroup} and HTTP response
+     */
+    scimGetGroupWithHttpInfo(groupId) {
+      let postBody = null;
+      // verify the required parameter 'groupId' is set
+      if (groupId === undefined || groupId === null) {
+        throw new Error("Missing the required parameter 'groupId' when calling scimGetGroup");
+      }
+
+      let pathParams = {
+        'groupId': groupId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ScimGroup;
+      return this.apiClient.callApi(
+        '/v1/provisioning/scim/Groups/{groupId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get SCIM group
+     * Retrieve data for a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @param {Number} groupId The ID of the group.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ScimGroup}
+     */
+    scimGetGroup(groupId) {
+      return this.scimGetGroupWithHttpInfo(groupId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List SCIM groups
+     * Retrieve a paginated list of groups created using the SCIM protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ScimGroupsListResponse} and HTTP response
+     */
+    scimGetGroupsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ScimGroupsListResponse;
+      return this.apiClient.callApi(
+        '/v1/provisioning/scim/Groups', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List SCIM groups
+     * Retrieve a paginated list of groups created using the SCIM protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ScimGroupsListResponse}
+     */
+    scimGetGroups() {
+      return this.scimGetGroupsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8738,6 +9110,60 @@ export default class ManagementApi {
 
 
     /**
+     * Update SCIM group attributes
+     * Update certain attributes of a group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. This endpoint allows for selective adding, removing, or replacing of specific group attributes while other attributes remain unchanged. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role. 
+     * @param {Number} groupId The ID of the group.
+     * @param {module:model/ScimPatchRequest} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ScimGroup} and HTTP response
+     */
+    scimPatchGroupWithHttpInfo(groupId, body) {
+      let postBody = body;
+      // verify the required parameter 'groupId' is set
+      if (groupId === undefined || groupId === null) {
+        throw new Error("Missing the required parameter 'groupId' when calling scimPatchGroup");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling scimPatchGroup");
+      }
+
+      let pathParams = {
+        'groupId': groupId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ScimGroup;
+      return this.apiClient.callApi(
+        '/v1/provisioning/scim/Groups/{groupId}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update SCIM group attributes
+     * Update certain attributes of a group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. This endpoint allows for selective adding, removing, or replacing of specific group attributes while other attributes remain unchanged. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role. 
+     * @param {Number} groupId The ID of the group.
+     * @param {module:model/ScimPatchRequest} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ScimGroup}
+     */
+    scimPatchGroup(groupId, body) {
+      return this.scimPatchGroupWithHttpInfo(groupId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update SCIM user attributes
      * Update certain attributes of a specific Talon.One user created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID.  This endpoint allows for selective adding, removing, or replacing specific attributes while leaving other attributes unchanged. 
      * @param {Number} userId The ID of the user.
@@ -8785,6 +9211,60 @@ export default class ManagementApi {
      */
     scimPatchUser(userId, body) {
       return this.scimPatchUserWithHttpInfo(userId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update SCIM group
+     * Update the details of a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. This endpoint replaces all attributes of the given group with the attributes provided in the request payload. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role. 
+     * @param {Number} groupId The ID of the group.
+     * @param {module:model/ScimBaseGroup} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ScimGroup} and HTTP response
+     */
+    scimReplaceGroupAttributesWithHttpInfo(groupId, body) {
+      let postBody = body;
+      // verify the required parameter 'groupId' is set
+      if (groupId === undefined || groupId === null) {
+        throw new Error("Missing the required parameter 'groupId' when calling scimReplaceGroupAttributes");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling scimReplaceGroupAttributes");
+      }
+
+      let pathParams = {
+        'groupId': groupId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ScimGroup;
+      return this.apiClient.callApi(
+        '/v1/provisioning/scim/Groups/{groupId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update SCIM group
+     * Update the details of a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. This endpoint replaces all attributes of the given group with the attributes provided in the request payload. In Talon.One, a `Group` corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and `members` are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role. 
+     * @param {Number} groupId The ID of the group.
+     * @param {module:model/ScimBaseGroup} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ScimGroup}
+     */
+    scimReplaceGroupAttributes(groupId, body) {
+      return this.scimReplaceGroupAttributesWithHttpInfo(groupId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9035,6 +9515,61 @@ export default class ManagementApi {
      */
     searchCouponsAdvancedWithoutTotalCount(applicationId, campaignId, body, opts) {
       return this.searchCouponsAdvancedWithoutTotalCountWithHttpInfo(applicationId, campaignId, body, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get summary of campaign store budgets
+     * Fetch a summary of all store budget information for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20047} and HTTP response
+     */
+    summarizeCampaignStoreBudgetWithHttpInfo(applicationId, campaignId) {
+      let postBody = null;
+      // verify the required parameter 'applicationId' is set
+      if (applicationId === undefined || applicationId === null) {
+        throw new Error("Missing the required parameter 'applicationId' when calling summarizeCampaignStoreBudget");
+      }
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw new Error("Missing the required parameter 'campaignId' when calling summarizeCampaignStoreBudget");
+      }
+
+      let pathParams = {
+        'applicationId': applicationId,
+        'campaignId': campaignId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['management_key', 'manager_auth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20047;
+      return this.apiClient.callApi(
+        '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/summary', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get summary of campaign store budgets
+     * Fetch a summary of all store budget information for a given campaign.
+     * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
+     * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20047}
+     */
+    summarizeCampaignStoreBudget(applicationId, campaignId) {
+      return this.summarizeCampaignStoreBudgetWithHttpInfo(applicationId, campaignId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

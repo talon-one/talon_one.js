@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AudienceAnalytics model module.
  * @module model/AudienceAnalytics
- * @version 12.0.0
+ * @version .0
  */
 class AudienceAnalytics {
     /**

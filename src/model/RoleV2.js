@@ -17,13 +17,13 @@ import RoleV2Permissions from './RoleV2Permissions';
 /**
  * The RoleV2 model module.
  * @module model/RoleV2
- * @version 12.0.0
+ * @version .0
  */
 class RoleV2 {
     /**
      * Constructs a new <code>RoleV2</code>.
      * @alias module:model/RoleV2
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
      * @param accountId {Number} The ID of the account that owns this entity.
@@ -88,7 +88,7 @@ class RoleV2 {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 RoleV2.prototype['id'] = undefined;

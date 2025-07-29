@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Internal ID of this entity. | 
+**id** | **Number** | The internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
 **applicationId** | **Number** | The ID of the Application that owns this entity. | 
 **slots** | [**[SlotDef]**](SlotDef.md) | The slots defined for this application. | 
@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **audiences** | [**[Audience]**](Audience.md) | The audiences contained in the account which the application belongs to. | [optional] 
 **collections** | [**[Collection]**](Collection.md) | The account-level collections that the application is subscribed to. | [optional] 
 **applicationCartItemFilters** | [**[ApplicationCIF]**](ApplicationCIF.md) | The cart item filters belonging to the Application. | [optional] 
+**priceTypes** | [**[PriceType]**](PriceType.md) | The price types that this Application can use. | [optional] 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TalangAttribute model module.
  * @module model/TalangAttribute
- * @version 12.0.0
+ * @version .0
  */
 class TalangAttribute {
     /**

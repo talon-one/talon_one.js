@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The Collection model module.
  * @module model/Collection
- * @version 12.0.0
+ * @version .0
  */
 class Collection {
     /**
      * Constructs a new <code>Collection</code>.
      * @alias module:model/Collection
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param modified {Date} The time this entity was last modified.
@@ -103,7 +103,7 @@ class Collection {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Collection.prototype['id'] = undefined;

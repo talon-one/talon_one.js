@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyTier model module.
  * @module model/LoyaltyTier
- * @version 12.0.0
+ * @version .0
  */
 class LoyaltyTier {
     /**
      * Constructs a new <code>LoyaltyTier</code>.
      * A tier in a loyalty program.
      * @alias module:model/LoyaltyTier
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param programID {Number} The ID of the loyalty program that owns this entity.
      * @param name {String} The name of the tier.
@@ -87,7 +87,7 @@ class LoyaltyTier {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 LoyaltyTier.prototype['id'] = undefined;

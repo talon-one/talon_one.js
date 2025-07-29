@@ -17,7 +17,7 @@ import LoyaltyBalanceWithTier from './LoyaltyBalanceWithTier';
 /**
  * The LoyaltyBalancesWithTiers model module.
  * @module model/LoyaltyBalancesWithTiers
- * @version 12.0.0
+ * @version .0
  */
 class LoyaltyBalancesWithTiers {
     /**

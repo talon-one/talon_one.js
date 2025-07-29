@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountLimits model module.
  * @module model/AccountLimits
- * @version 12.0.0
+ * @version .0
  */
 class AccountLimits {
     /**
@@ -34,10 +34,12 @@ class AccountLimits {
      * @param users {Number} Total number of allowed users in the account.
      * @param apiVolume {Number} Allowed volume of API requests to the account.
      * @param promotionTypes {Array.<String>} Array of promotion types that are employed in the account.
+     * @param secondaryDeploymentPrice {Number} The price for a secondary deployment according to contractual agreements.
+     * @param currencyCode {String} The currency of the contract.
      */
-    constructor(liveApplications, sandboxApplications, activeCampaigns, coupons, referralCodes, activeRules, liveLoyaltyPrograms, sandboxLoyaltyPrograms, webhooks, users, apiVolume, promotionTypes) { 
+    constructor(liveApplications, sandboxApplications, activeCampaigns, coupons, referralCodes, activeRules, liveLoyaltyPrograms, sandboxLoyaltyPrograms, webhooks, users, apiVolume, promotionTypes, secondaryDeploymentPrice, currencyCode) { 
         
-        AccountLimits.initialize(this, liveApplications, sandboxApplications, activeCampaigns, coupons, referralCodes, activeRules, liveLoyaltyPrograms, sandboxLoyaltyPrograms, webhooks, users, apiVolume, promotionTypes);
+        AccountLimits.initialize(this, liveApplications, sandboxApplications, activeCampaigns, coupons, referralCodes, activeRules, liveLoyaltyPrograms, sandboxLoyaltyPrograms, webhooks, users, apiVolume, promotionTypes, secondaryDeploymentPrice, currencyCode);
     }
 
     /**
@@ -45,7 +47,7 @@ class AccountLimits {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, liveApplications, sandboxApplications, activeCampaigns, coupons, referralCodes, activeRules, liveLoyaltyPrograms, sandboxLoyaltyPrograms, webhooks, users, apiVolume, promotionTypes) { 
+    static initialize(obj, liveApplications, sandboxApplications, activeCampaigns, coupons, referralCodes, activeRules, liveLoyaltyPrograms, sandboxLoyaltyPrograms, webhooks, users, apiVolume, promotionTypes, secondaryDeploymentPrice, currencyCode) { 
         obj['liveApplications'] = liveApplications;
         obj['sandboxApplications'] = sandboxApplications;
         obj['activeCampaigns'] = activeCampaigns;
@@ -58,6 +60,8 @@ class AccountLimits {
         obj['users'] = users;
         obj['apiVolume'] = apiVolume;
         obj['promotionTypes'] = promotionTypes;
+        obj['secondaryDeploymentPrice'] = secondaryDeploymentPrice;
+        obj['currencyCode'] = currencyCode;
     }
 
     /**
@@ -106,6 +110,12 @@ class AccountLimits {
             }
             if (data.hasOwnProperty('promotionTypes')) {
                 obj['promotionTypes'] = ApiClient.convertToType(data['promotionTypes'], ['String']);
+            }
+            if (data.hasOwnProperty('secondaryDeploymentPrice')) {
+                obj['secondaryDeploymentPrice'] = ApiClient.convertToType(data['secondaryDeploymentPrice'], 'Number');
+            }
+            if (data.hasOwnProperty('currencyCode')) {
+                obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
             }
         }
         return obj;
@@ -185,6 +195,18 @@ AccountLimits.prototype['apiVolume'] = undefined;
  * @member {Array.<String>} promotionTypes
  */
 AccountLimits.prototype['promotionTypes'] = undefined;
+
+/**
+ * The price for a secondary deployment according to contractual agreements.
+ * @member {Number} secondaryDeploymentPrice
+ */
+AccountLimits.prototype['secondaryDeploymentPrice'] = undefined;
+
+/**
+ * The currency of the contract.
+ * @member {String} currencyCode
+ */
+AccountLimits.prototype['currencyCode'] = undefined;
 
 
 

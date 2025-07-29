@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The CreateAchievement model module.
  * @module model/CreateAchievement
- * @version 12.0.0
+ * @version .0
  */
 class CreateAchievement {
     /**
@@ -129,7 +129,7 @@ CreateAchievement.prototype['period'] = undefined;
 CreateAchievement.prototype['periodEndOverride'] = undefined;
 
 /**
- * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+ * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. - `on_completion`: When the customer progress status reaches `completed`, the achievement resets and becomes available again. 
  * @member {module:model/CreateAchievement.RecurrencePolicyEnum} recurrencePolicy
  */
 CreateAchievement.prototype['recurrencePolicy'] = undefined;
@@ -173,7 +173,13 @@ CreateAchievement['RecurrencePolicyEnum'] = {
      * value: "on_expiration"
      * @const
      */
-    "on_expiration": "on_expiration"
+    "on_expiration": "on_expiration",
+
+    /**
+     * value: "on_completion"
+     * @const
+     */
+    "on_completion": "on_completion"
 };
 
 

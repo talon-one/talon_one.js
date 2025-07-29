@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GiveawaysPool model module.
  * @module model/GiveawaysPool
- * @version 12.0.0
+ * @version .0
  */
 class GiveawaysPool {
     /**
      * Constructs a new <code>GiveawaysPool</code>.
      * Giveaways pools is an entity for managing multiple similar giveaways.
      * @alias module:model/GiveawaysPool
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param name {String} The name of this giveaways pool.
@@ -98,7 +98,7 @@ class GiveawaysPool {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 GiveawaysPool.prototype['id'] = undefined;

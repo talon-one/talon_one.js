@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 
 * `REMOVE_MANY` (value: `"REMOVE_MANY"`)
 
+* `ADD_PRICE_ADJUSTMENT` (value: `"ADD_PRICE_ADJUSTMENT"`)
+
 
 
 

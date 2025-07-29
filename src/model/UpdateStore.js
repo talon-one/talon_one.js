@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateStore model module.
  * @module model/UpdateStore
- * @version 12.0.0
+ * @version .0
  */
 class UpdateStore {
     /**

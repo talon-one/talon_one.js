@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Binding model module.
  * @module model/Binding
- * @version 12.0.0
+ * @version .0
  */
 class Binding {
     /**
@@ -63,6 +63,18 @@ class Binding {
             if (data.hasOwnProperty('valueType')) {
                 obj['valueType'] = ApiClient.convertToType(data['valueType'], 'String');
             }
+            if (data.hasOwnProperty('minValue')) {
+                obj['minValue'] = ApiClient.convertToType(data['minValue'], 'Number');
+            }
+            if (data.hasOwnProperty('maxValue')) {
+                obj['maxValue'] = ApiClient.convertToType(data['maxValue'], 'Number');
+            }
+            if (data.hasOwnProperty('attributeId')) {
+                obj['attributeId'] = ApiClient.convertToType(data['attributeId'], 'Number');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
         }
         return obj;
     }
@@ -93,6 +105,30 @@ Binding.prototype['expression'] = undefined;
  * @member {String} valueType
  */
 Binding.prototype['valueType'] = undefined;
+
+/**
+ * The minimum value allowed for this placeholder.
+ * @member {Number} minValue
+ */
+Binding.prototype['minValue'] = undefined;
+
+/**
+ * The maximum value allowed for this placeholder.
+ * @member {Number} maxValue
+ */
+Binding.prototype['maxValue'] = undefined;
+
+/**
+ * Id of the attribute attached to the placeholder.
+ * @member {Number} attributeId
+ */
+Binding.prototype['attributeId'] = undefined;
+
+/**
+ * Describes the placeholder field and value in the template. This description can be used when creating campaigns from this template.
+ * @member {String} description
+ */
+Binding.prototype['description'] = undefined;
 
 
 

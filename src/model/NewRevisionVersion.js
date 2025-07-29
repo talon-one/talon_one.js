@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewRevisionVersion model module.
  * @module model/NewRevisionVersion
- * @version 12.0.0
+ * @version .0
  */
 class NewRevisionVersion {
     /**

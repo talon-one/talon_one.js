@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OutgoingIntegrationMoEngagePolicy model module.
  * @module model/OutgoingIntegrationMoEngagePolicy
- * @version 12.0.0
+ * @version .0
  */
 class OutgoingIntegrationMoEngagePolicy {
     /**

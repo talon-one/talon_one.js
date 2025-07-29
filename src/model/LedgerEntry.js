@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The LedgerEntry model module.
  * @module model/LedgerEntry
- * @version 12.0.0
+ * @version .0
  */
 class LedgerEntry {
     /**
      * Constructs a new <code>LedgerEntry</code>.
      * Entry in the point ledger.
      * @alias module:model/LedgerEntry
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
      * @param accountId {Number} The ID of the Talon.One account that owns this profile.
@@ -104,7 +104,7 @@ class LedgerEntry {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 LedgerEntry.prototype['id'] = undefined;

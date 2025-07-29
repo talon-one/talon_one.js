@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AnalyticsDataPointWithTrendAndInfluencedRate model module.
  * @module model/AnalyticsDataPointWithTrendAndInfluencedRate
- * @version 12.0.0
+ * @version .0
  */
 class AnalyticsDataPointWithTrendAndInfluencedRate {
     /**

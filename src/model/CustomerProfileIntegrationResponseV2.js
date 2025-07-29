@@ -25,7 +25,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The CustomerProfileIntegrationResponseV2 model module.
  * @module model/CustomerProfileIntegrationResponseV2
- * @version 12.0.0
+ * @version .0
  */
 class CustomerProfileIntegrationResponseV2 {
     /**

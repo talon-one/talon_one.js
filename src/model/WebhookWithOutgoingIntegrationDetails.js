@@ -17,26 +17,27 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The WebhookWithOutgoingIntegrationDetails model module.
  * @module model/WebhookWithOutgoingIntegrationDetails
- * @version 12.0.0
+ * @version .0
  */
 class WebhookWithOutgoingIntegrationDetails {
     /**
      * Constructs a new <code>WebhookWithOutgoingIntegrationDetails</code>.
      * @alias module:model/WebhookWithOutgoingIntegrationDetails
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
      * @param applicationIds {Array.<Number>} The IDs of the Applications in which this webhook is available. An empty array means the webhook is available in `All Applications`. 
      * @param title {String} Name or title for this webhook.
+     * @param draft {Boolean} Indicates if the webhook is a draft.
      * @param verb {module:model/WebhookWithOutgoingIntegrationDetails.VerbEnum} API method for this webhook.
      * @param url {String} API URL (supports templating using parameters) for this webhook.
      * @param headers {Array.<String>} List of API HTTP headers for this webhook.
      * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions.
      * @param enabled {Boolean} Enables or disables webhook from showing in the Rule Builder.
      */
-    constructor(id, created, modified, applicationIds, title, verb, url, headers, params, enabled) { 
+    constructor(id, created, modified, applicationIds, title, draft, verb, url, headers, params, enabled) { 
         
-        WebhookWithOutgoingIntegrationDetails.initialize(this, id, created, modified, applicationIds, title, verb, url, headers, params, enabled);
+        WebhookWithOutgoingIntegrationDetails.initialize(this, id, created, modified, applicationIds, title, draft, verb, url, headers, params, enabled);
     }
 
     /**
@@ -44,12 +45,13 @@ class WebhookWithOutgoingIntegrationDetails {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, modified, applicationIds, title, verb, url, headers, params, enabled) { 
+    static initialize(obj, id, created, modified, applicationIds, title, draft, verb, url, headers, params, enabled) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['modified'] = modified;
         obj['applicationIds'] = applicationIds;
         obj['title'] = title;
+        obj['draft'] = draft;
         obj['verb'] = verb;
         obj['url'] = url;
         obj['headers'] = headers;
@@ -86,6 +88,9 @@ class WebhookWithOutgoingIntegrationDetails {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('draft')) {
+                obj['draft'] = ApiClient.convertToType(data['draft'], 'Boolean');
+            }
             if (data.hasOwnProperty('verb')) {
                 obj['verb'] = ApiClient.convertToType(data['verb'], 'String');
             }
@@ -104,6 +109,9 @@ class WebhookWithOutgoingIntegrationDetails {
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('authenticationId')) {
+                obj['authenticationId'] = ApiClient.convertToType(data['authenticationId'], 'Number');
+            }
             if (data.hasOwnProperty('outgoingIntegrationTemplateId')) {
                 obj['outgoingIntegrationTemplateId'] = ApiClient.convertToType(data['outgoingIntegrationTemplateId'], 'Number');
             }
@@ -121,7 +129,7 @@ class WebhookWithOutgoingIntegrationDetails {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 WebhookWithOutgoingIntegrationDetails.prototype['id'] = undefined;
@@ -155,6 +163,12 @@ WebhookWithOutgoingIntegrationDetails.prototype['title'] = undefined;
  * @member {String} description
  */
 WebhookWithOutgoingIntegrationDetails.prototype['description'] = undefined;
+
+/**
+ * Indicates if the webhook is a draft.
+ * @member {Boolean} draft
+ */
+WebhookWithOutgoingIntegrationDetails.prototype['draft'] = undefined;
 
 /**
  * API method for this webhook.
@@ -191,6 +205,12 @@ WebhookWithOutgoingIntegrationDetails.prototype['params'] = undefined;
  * @member {Boolean} enabled
  */
 WebhookWithOutgoingIntegrationDetails.prototype['enabled'] = undefined;
+
+/**
+ * The ID of the credential that this webhook is using.
+ * @member {Number} authenticationId
+ */
+WebhookWithOutgoingIntegrationDetails.prototype['authenticationId'] = undefined;
 
 /**
  * Identifier of the outgoing integration template.

@@ -12,23 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import RoleV2 from './RoleV2';
+import ListCampaignStoreBudgets from './ListCampaignStoreBudgets';
 
 /**
  * The InlineResponse20046 model module.
  * @module model/InlineResponse20046
- * @version 12.0.0
+ * @version .0
  */
 class InlineResponse20046 {
     /**
      * Constructs a new <code>InlineResponse20046</code>.
      * @alias module:model/InlineResponse20046
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/RoleV2>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor() { 
         
-        InlineResponse20046.initialize(this, totalResultSize, data);
+        InlineResponse20046.initialize(this);
     }
 
     /**
@@ -36,9 +34,7 @@ class InlineResponse20046 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
-        obj['data'] = data;
+    static initialize(obj) { 
     }
 
     /**
@@ -52,11 +48,8 @@ class InlineResponse20046 {
         if (data) {
             obj = obj || new InlineResponse20046();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RoleV2]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ListCampaignStoreBudgets]);
             }
         }
         return obj;
@@ -66,12 +59,7 @@ class InlineResponse20046 {
 }
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20046.prototype['totalResultSize'] = undefined;
-
-/**
- * @member {Array.<module:model/RoleV2>} data
+ * @member {Array.<module:model/ListCampaignStoreBudgets>} data
  */
 InlineResponse20046.prototype['data'] = undefined;
 

@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property draft (base name: "draft")', function() {
+      // uncomment below and update the code to test the property draft
+      //var instane = new TalonOne.NewWebhook();
+      //expect(instance).to.be();
+    });
+
     it('should have the property verb (base name: "verb")', function() {
       // uncomment below and update the code to test the property verb
       //var instane = new TalonOne.NewWebhook();
@@ -104,6 +110,12 @@
 
     it('should have the property enabled (base name: "enabled")', function() {
       // uncomment below and update the code to test the property enabled
+      //var instane = new TalonOne.NewWebhook();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authenticationId (base name: "authenticationId")', function() {
+      // uncomment below and update the code to test the property authenticationId
       //var instane = new TalonOne.NewWebhook();
       //expect(instance).to.be();
     });

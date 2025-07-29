@@ -12,26 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
-import Ruleset from './Ruleset';
+import CampaignStateChangedNotificationItem from './CampaignStateChangedNotificationItem';
 
 /**
  * The CampaignStateChangedNotification model module.
  * @module model/CampaignStateChangedNotification
- * @version 12.0.0
+ * @version .0
  */
 class CampaignStateChangedNotification {
     /**
      * Constructs a new <code>CampaignStateChangedNotification</code>.
-     * A notification regarding a campaign whose state changed.
      * @alias module:model/CampaignStateChangedNotification
-     * @param campaign {module:model/Campaign} 
-     * @param oldState {String} The campaign's old state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
-     * @param newState {String} The campaign's new state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
+     * @param totalResultSize {Number} The total size of the result set.
      */
-    constructor(campaign, oldState, newState) { 
+    constructor(totalResultSize) { 
         
-        CampaignStateChangedNotification.initialize(this, campaign, oldState, newState);
+        CampaignStateChangedNotification.initialize(this, totalResultSize);
     }
 
     /**
@@ -39,10 +35,8 @@ class CampaignStateChangedNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaign, oldState, newState) { 
-        obj['campaign'] = campaign;
-        obj['oldState'] = oldState;
-        obj['newState'] = newState;
+    static initialize(obj, totalResultSize) { 
+        obj['TotalResultSize'] = totalResultSize;
     }
 
     /**
@@ -56,17 +50,14 @@ class CampaignStateChangedNotification {
         if (data) {
             obj = obj || new CampaignStateChangedNotification();
 
-            if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
+            if (data.hasOwnProperty('NotificationType')) {
+                obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
             }
-            if (data.hasOwnProperty('oldState')) {
-                obj['oldState'] = ApiClient.convertToType(data['oldState'], 'String');
+            if (data.hasOwnProperty('TotalResultSize')) {
+                obj['TotalResultSize'] = ApiClient.convertToType(data['TotalResultSize'], 'Number');
             }
-            if (data.hasOwnProperty('newState')) {
-                obj['newState'] = ApiClient.convertToType(data['newState'], 'String');
-            }
-            if (data.hasOwnProperty('ruleset')) {
-                obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
+            if (data.hasOwnProperty('Data')) {
+                obj['Data'] = ApiClient.convertToType(data['Data'], [CampaignStateChangedNotificationItem]);
             }
         }
         return obj;
@@ -76,26 +67,22 @@ class CampaignStateChangedNotification {
 }
 
 /**
- * @member {module:model/Campaign} campaign
+ * The type of the notification
+ * @member {String} NotificationType
  */
-CampaignStateChangedNotification.prototype['campaign'] = undefined;
+CampaignStateChangedNotification.prototype['NotificationType'] = undefined;
 
 /**
- * The campaign's old state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
- * @member {String} oldState
+ * The total size of the result set.
+ * @member {Number} TotalResultSize
  */
-CampaignStateChangedNotification.prototype['oldState'] = undefined;
+CampaignStateChangedNotification.prototype['TotalResultSize'] = undefined;
 
 /**
- * The campaign's new state. Can be one of the following: ['running', 'disabled', 'scheduled', 'expired', 'archived'] 
- * @member {String} newState
+ * A list of campaign notification data.
+ * @member {Array.<module:model/CampaignStateChangedNotificationItem>} Data
  */
-CampaignStateChangedNotification.prototype['newState'] = undefined;
-
-/**
- * @member {module:model/Ruleset} ruleset
- */
-CampaignStateChangedNotification.prototype['ruleset'] = undefined;
+CampaignStateChangedNotification.prototype['Data'] = undefined;
 
 
 

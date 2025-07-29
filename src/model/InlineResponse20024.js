@@ -17,7 +17,7 @@ import ApplicationCustomer from './ApplicationCustomer';
 /**
  * The InlineResponse20024 model module.
  * @module model/InlineResponse20024
- * @version 12.0.0
+ * @version .0
  */
 class InlineResponse20024 {
     /**

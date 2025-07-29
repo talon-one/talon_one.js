@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Audience model module.
  * @module model/Audience
- * @version 12.0.0
+ * @version .0
  */
 class Audience {
     /**
      * Constructs a new <code>Audience</code>.
      * @alias module:model/Audience
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param name {String} The human-friendly display name for this audience.
      */
@@ -99,7 +99,7 @@ class Audience {
 Audience.prototype['accountId'] = undefined;
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Audience.prototype['id'] = undefined;

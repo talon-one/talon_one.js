@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimServiceProviderConfigResponseSort model module.
  * @module model/ScimServiceProviderConfigResponseSort
- * @version 12.0.0
+ * @version .0
  */
 class ScimServiceProviderConfigResponseSort {
     /**

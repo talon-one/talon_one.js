@@ -18,7 +18,7 @@ import SkuUnitAnalyticsDataPoint from './SkuUnitAnalyticsDataPoint';
 /**
  * The SkuUnitAnalytics model module.
  * @module model/SkuUnitAnalytics
- * @version 12.0.0
+ * @version .0
  */
 class SkuUnitAnalytics {
     /**

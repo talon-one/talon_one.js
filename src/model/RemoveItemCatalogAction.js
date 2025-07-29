@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RemoveItemCatalogAction model module.
  * @module model/RemoveItemCatalogAction
- * @version 12.0.0
+ * @version .0
  */
 class RemoveItemCatalogAction {
     /**

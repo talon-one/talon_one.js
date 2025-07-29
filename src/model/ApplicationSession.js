@@ -17,13 +17,13 @@ import CartItem from './CartItem';
 /**
  * The ApplicationSession model module.
  * @module model/ApplicationSession
- * @version 12.0.0
+ * @version .0
  */
 class ApplicationSession {
     /**
      * Constructs a new <code>ApplicationSession</code>.
      * @alias module:model/ApplicationSession
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param applicationId {Number} The ID of the Application that owns this entity.
@@ -123,7 +123,7 @@ class ApplicationSession {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 ApplicationSession.prototype['id'] = undefined;

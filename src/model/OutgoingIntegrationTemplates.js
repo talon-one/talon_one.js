@@ -17,7 +17,7 @@ import OutgoingIntegrationTemplate from './OutgoingIntegrationTemplate';
 /**
  * The OutgoingIntegrationTemplates model module.
  * @module model/OutgoingIntegrationTemplates
- * @version 12.0.0
+ * @version .0
  */
 class OutgoingIntegrationTemplates {
     /**

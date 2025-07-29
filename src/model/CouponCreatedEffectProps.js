@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponCreatedEffectProps model module.
  * @module model/CouponCreatedEffectProps
- * @version 12.0.0
+ * @version .0
  */
 class CouponCreatedEffectProps {
     /**

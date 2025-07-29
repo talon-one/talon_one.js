@@ -17,26 +17,27 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 12.0.0
+ * @version .0
  */
 class Webhook {
     /**
      * Constructs a new <code>Webhook</code>.
      * @alias module:model/Webhook
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
      * @param applicationIds {Array.<Number>} The IDs of the Applications in which this webhook is available. An empty array means the webhook is available in `All Applications`. 
      * @param title {String} Name or title for this webhook.
+     * @param draft {Boolean} Indicates if the webhook is a draft.
      * @param verb {module:model/Webhook.VerbEnum} API method for this webhook.
      * @param url {String} API URL (supports templating using parameters) for this webhook.
      * @param headers {Array.<String>} List of API HTTP headers for this webhook.
      * @param params {Array.<module:model/TemplateArgDef>} Array of template argument definitions.
      * @param enabled {Boolean} Enables or disables webhook from showing in the Rule Builder.
      */
-    constructor(id, created, modified, applicationIds, title, verb, url, headers, params, enabled) { 
+    constructor(id, created, modified, applicationIds, title, draft, verb, url, headers, params, enabled) { 
         
-        Webhook.initialize(this, id, created, modified, applicationIds, title, verb, url, headers, params, enabled);
+        Webhook.initialize(this, id, created, modified, applicationIds, title, draft, verb, url, headers, params, enabled);
     }
 
     /**
@@ -44,12 +45,13 @@ class Webhook {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, modified, applicationIds, title, verb, url, headers, params, enabled) { 
+    static initialize(obj, id, created, modified, applicationIds, title, draft, verb, url, headers, params, enabled) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['modified'] = modified;
         obj['applicationIds'] = applicationIds;
         obj['title'] = title;
+        obj['draft'] = draft;
         obj['verb'] = verb;
         obj['url'] = url;
         obj['headers'] = headers;
@@ -86,6 +88,9 @@ class Webhook {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('draft')) {
+                obj['draft'] = ApiClient.convertToType(data['draft'], 'Boolean');
+            }
             if (data.hasOwnProperty('verb')) {
                 obj['verb'] = ApiClient.convertToType(data['verb'], 'String');
             }
@@ -104,6 +109,9 @@ class Webhook {
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('authenticationId')) {
+                obj['authenticationId'] = ApiClient.convertToType(data['authenticationId'], 'Number');
+            }
         }
         return obj;
     }
@@ -112,7 +120,7 @@ class Webhook {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Webhook.prototype['id'] = undefined;
@@ -146,6 +154,12 @@ Webhook.prototype['title'] = undefined;
  * @member {String} description
  */
 Webhook.prototype['description'] = undefined;
+
+/**
+ * Indicates if the webhook is a draft.
+ * @member {Boolean} draft
+ */
+Webhook.prototype['draft'] = undefined;
 
 /**
  * API method for this webhook.
@@ -182,6 +196,12 @@ Webhook.prototype['params'] = undefined;
  * @member {Boolean} enabled
  */
 Webhook.prototype['enabled'] = undefined;
+
+/**
+ * The ID of the credential that this webhook is using.
+ * @member {Number} authenticationId
+ */
+Webhook.prototype['authenticationId'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProjectedTier model module.
  * @module model/ProjectedTier
- * @version 12.0.0
+ * @version .0
  */
 class ProjectedTier {
     /**

@@ -17,7 +17,7 @@ import CodeGeneratorSettings from './CodeGeneratorSettings';
 /**
  * The BaseLoyaltyProgram model module.
  * @module model/BaseLoyaltyProgram
- * @version 12.0.0
+ * @version .0
  */
 class BaseLoyaltyProgram {
     /**

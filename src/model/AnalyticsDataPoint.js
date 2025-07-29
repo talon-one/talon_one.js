@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AnalyticsDataPoint model module.
  * @module model/AnalyticsDataPoint
- * @version 12.0.0
+ * @version .0
  */
 class AnalyticsDataPoint {
     /**

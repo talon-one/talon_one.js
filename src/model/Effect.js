@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 12.0.0
+ * @version .0
  */
 class Effect {
     /**
@@ -28,7 +28,7 @@ class Effect {
      * @param ruleIndex {Number} The position of the rule that triggered this effect within the ruleset.
      * @param ruleName {String} The name of the rule that triggered this effect.
      * @param effectType {String} The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
-     * @param props {Object} The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
+     * @param props {Object} 
      */
     constructor(campaignId, rulesetId, ruleIndex, ruleName, effectType, props) { 
         
@@ -95,6 +95,15 @@ class Effect {
             }
             if (data.hasOwnProperty('campaignRevisionVersionId')) {
                 obj['campaignRevisionVersionId'] = ApiClient.convertToType(data['campaignRevisionVersionId'], 'Number');
+            }
+            if (data.hasOwnProperty('selectedPriceType')) {
+                obj['selectedPriceType'] = ApiClient.convertToType(data['selectedPriceType'], 'String');
+            }
+            if (data.hasOwnProperty('selectedPrice')) {
+                obj['selectedPrice'] = ApiClient.convertToType(data['selectedPrice'], 'Number');
+            }
+            if (data.hasOwnProperty('adjustmentReferenceId')) {
+                obj['adjustmentReferenceId'] = ApiClient.convertToType(data['adjustmentReferenceId'], 'String');
             }
             if (data.hasOwnProperty('props')) {
                 obj['props'] = ApiClient.convertToType(data['props'], Object);
@@ -179,7 +188,24 @@ Effect.prototype['campaignRevisionId'] = undefined;
 Effect.prototype['campaignRevisionVersionId'] = undefined;
 
 /**
- * The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
+ * The selected price type for the SKU targeted by this effect.
+ * @member {String} selectedPriceType
+ */
+Effect.prototype['selectedPriceType'] = undefined;
+
+/**
+ * The value of the selected price type to apply to the SKU targeted by this effect, before any discounts are applied.
+ * @member {Number} selectedPrice
+ */
+Effect.prototype['selectedPrice'] = undefined;
+
+/**
+ * The reference identifier of the selected price adjustment for this SKU. This is only returned if the `selectedPrice` resulted from a price adjustment.
+ * @member {String} adjustmentReferenceId
+ */
+Effect.prototype['adjustmentReferenceId'] = undefined;
+
+/**
  * @member {Object} props
  */
 Effect.prototype['props'] = undefined;

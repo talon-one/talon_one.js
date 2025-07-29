@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferralConstraints model module.
  * @module model/ReferralConstraints
- * @version 12.0.0
+ * @version .0
  */
 class ReferralConstraints {
     /**

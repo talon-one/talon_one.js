@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignBudget model module.
  * @module model/CampaignBudget
- * @version 12.0.0
+ * @version .0
  */
 class CampaignBudget {
     /**
