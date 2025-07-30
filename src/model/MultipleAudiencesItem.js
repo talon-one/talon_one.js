@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The MultipleAudiencesItem model module.
  * @module model/MultipleAudiencesItem
- * @version 12.0.0
+ * @version 25.15.0
  */
 class MultipleAudiencesItem {
     /**
      * Constructs a new <code>MultipleAudiencesItem</code>.
      * @alias module:model/MultipleAudiencesItem
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param name {String} The human-friendly display name for this audience.
      * @param integrationId {String} The ID of this audience in the third-party integration.
@@ -80,7 +80,7 @@ class MultipleAudiencesItem {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 MultipleAudiencesItem.prototype['id'] = undefined;

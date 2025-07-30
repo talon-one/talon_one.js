@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Internal ID of this entity. | 
+**id** | **Number** | The internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
 **cartItemFilterId** | **Number** | The ID of the Application cart item filter. | [optional] 
 **createdBy** | **Number** | The ID of the user who created the Application cart item filter. | [optional] 

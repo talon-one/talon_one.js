@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignCollectionWithoutPayload model module.
  * @module model/CampaignCollectionWithoutPayload
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CampaignCollectionWithoutPayload {
     /**
      * Constructs a new <code>CampaignCollectionWithoutPayload</code>.
      * @alias module:model/CampaignCollectionWithoutPayload
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param modified {Date} The time this entity was last modified.
@@ -97,7 +97,7 @@ class CampaignCollectionWithoutPayload {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CampaignCollectionWithoutPayload.prototype['id'] = undefined;

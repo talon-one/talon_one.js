@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The Referral model module.
  * @module model/Referral
- * @version 12.0.0
+ * @version 25.15.0
  */
 class Referral {
     /**
      * Constructs a new <code>Referral</code>.
      * @alias module:model/Referral
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param usageLimit {Number} The number of times a referral code can be used. `0` means no limit but any campaign usage limits will still apply. 
      * @param campaignId {Number} ID of the campaign from which the referral received the referral code.
@@ -108,7 +108,7 @@ class Referral {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Referral.prototype['id'] = undefined;

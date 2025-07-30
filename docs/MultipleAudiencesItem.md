@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Internal ID of this entity. | 
+**id** | **Number** | The internal ID of this entity. | 
 **created** | **Date** | The time this entity was created. | 
 **name** | **String** | The human-friendly display name for this audience. | 
 **integrationId** | **String** | The ID of this audience in the third-party integration. | 

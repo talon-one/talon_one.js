@@ -18,13 +18,13 @@ import Product from './Product';
 /**
  * The CatalogItem model module.
  * @module model/CatalogItem
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CatalogItem {
     /**
      * Constructs a new <code>CatalogItem</code>.
      * @alias module:model/CatalogItem
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param sku {String} The stock keeping unit of the item.
      * @param catalogid {Number} The ID of the catalog the item belongs to.
@@ -91,7 +91,7 @@ class CatalogItem {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CatalogItem.prototype['id'] = undefined;

@@ -21,13 +21,13 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CampaignTemplate {
     /**
      * Constructs a new <code>CampaignTemplate</code>.
      * @alias module:model/CampaignTemplate
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param userId {Number} The ID of the user associated with this entity.
@@ -160,7 +160,7 @@ class CampaignTemplate {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CampaignTemplate.prototype['id'] = undefined;

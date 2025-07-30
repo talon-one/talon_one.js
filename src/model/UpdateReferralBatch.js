@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateReferralBatch model module.
  * @module model/UpdateReferralBatch
- * @version 12.0.0
+ * @version 25.15.0
  */
 class UpdateReferralBatch {
     /**

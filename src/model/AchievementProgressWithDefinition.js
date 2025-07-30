@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementProgressWithDefinition model module.
  * @module model/AchievementProgressWithDefinition
- * @version 12.0.0
+ * @version 25.15.0
  */
 class AchievementProgressWithDefinition {
     /**
@@ -30,7 +30,7 @@ class AchievementProgressWithDefinition {
      * @param title {String} The display name of the achievement in the Campaign Manager.
      * @param description {String} The description of the achievement in the Campaign Manager.
      * @param campaignId {Number} The ID of the campaign the achievement belongs to.
-     * @param achievementRecurrencePolicy {module:model/AchievementProgressWithDefinition.AchievementRecurrencePolicyEnum} The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+     * @param achievementRecurrencePolicy {module:model/AchievementProgressWithDefinition.AchievementRecurrencePolicyEnum} The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. - `on_completion`: When the customer progress status reaches `completed`, the achievement resets and becomes available again. 
      * @param achievementActivationPolicy {module:model/AchievementProgressWithDefinition.AchievementActivationPolicyEnum} The policy that determines how the achievement starts, ends, or resets. - `user_action`: The achievement ends or resets relative to when the customer started the achievement. - `fixed_schedule`: The achievement starts, ends, or resets for all customers following a fixed schedule. 
      */
     constructor(status, progress, achievementId, name, title, description, campaignId, achievementRecurrencePolicy, achievementActivationPolicy) { 
@@ -185,7 +185,7 @@ AchievementProgressWithDefinition.prototype['campaignId'] = undefined;
 AchievementProgressWithDefinition.prototype['target'] = undefined;
 
 /**
- * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+ * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. - `on_completion`: When the customer progress status reaches `completed`, the achievement resets and becomes available again. 
  * @member {module:model/AchievementProgressWithDefinition.AchievementRecurrencePolicyEnum} achievementRecurrencePolicy
  */
 AchievementProgressWithDefinition.prototype['achievementRecurrencePolicy'] = undefined;
@@ -262,7 +262,13 @@ AchievementProgressWithDefinition['AchievementRecurrencePolicyEnum'] = {
      * value: "on_expiration"
      * @const
      */
-    "on_expiration": "on_expiration"
+    "on_expiration": "on_expiration",
+
+    /**
+     * value: "on_completion"
+     * @const
+     */
+    "on_completion": "on_completion"
 };
 
 

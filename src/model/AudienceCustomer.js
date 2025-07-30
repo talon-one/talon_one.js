@@ -18,18 +18,18 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The AudienceCustomer model module.
  * @module model/AudienceCustomer
- * @version 12.0.0
+ * @version 25.15.0
  */
 class AudienceCustomer {
     /**
      * Constructs a new <code>AudienceCustomer</code>.
      * @alias module:model/AudienceCustomer
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of the customer profile.
      * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param attributes {Object} Arbitrary properties associated with this item.
      * @param accountId {Number} The ID of the Talon.One account that owns this profile.
-     * @param closedSessions {Number} The total amount of closed sessions by a customer. A closed session is a successful purchase.
+     * @param closedSessions {Number} The total number of closed sessions. Does not include closed sessions that have been cancelled or reopened. See the [docs](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states).
      * @param totalSales {Number} The total amount of money spent by the customer **before** discounts are applied.  The total sales amount excludes the following: - Cancelled or reopened sessions. - Returned items. 
      * @param lastActivity {Date} Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the Rule Engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#operation/createCouponReservation) for a customer doesn't impact this field. 
      */
@@ -112,7 +112,7 @@ class AudienceCustomer {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of the customer profile.
  * @member {Number} id
  */
 AudienceCustomer.prototype['id'] = undefined;
@@ -142,7 +142,7 @@ AudienceCustomer.prototype['attributes'] = undefined;
 AudienceCustomer.prototype['accountId'] = undefined;
 
 /**
- * The total amount of closed sessions by a customer. A closed session is a successful purchase.
+ * The total number of closed sessions. Does not include closed sessions that have been cancelled or reopened. See the [docs](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states).
  * @member {Number} closedSessions
  */
 AudienceCustomer.prototype['closedSessions'] = undefined;

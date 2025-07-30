@@ -17,7 +17,7 @@ import WebhookLogEntry from './WebhookLogEntry';
 /**
  * The InlineResponse20041 model module.
  * @module model/InlineResponse20041
- * @version 12.0.0
+ * @version 25.15.0
  */
 class InlineResponse20041 {
     /**

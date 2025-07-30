@@ -12,23 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AchievementProgressWithDefinition from './AchievementProgressWithDefinition';
+import SummaryCampaignStoreBudget from './SummaryCampaignStoreBudget';
 
 /**
  * The InlineResponse20049 model module.
  * @module model/InlineResponse20049
- * @version 12.0.0
+ * @version 25.15.0
  */
 class InlineResponse20049 {
     /**
      * Constructs a new <code>InlineResponse20049</code>.
      * @alias module:model/InlineResponse20049
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/AchievementProgressWithDefinition>} 
      */
-    constructor(hasMore, data) { 
+    constructor() { 
         
-        InlineResponse20049.initialize(this, hasMore, data);
+        InlineResponse20049.initialize(this);
     }
 
     /**
@@ -36,9 +34,7 @@ class InlineResponse20049 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
-        obj['data'] = data;
+    static initialize(obj) { 
     }
 
     /**
@@ -52,11 +48,8 @@ class InlineResponse20049 {
         if (data) {
             obj = obj || new InlineResponse20049();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AchievementProgressWithDefinition]);
+                obj['data'] = ApiClient.convertToType(data['data'], [SummaryCampaignStoreBudget]);
             }
         }
         return obj;
@@ -66,12 +59,7 @@ class InlineResponse20049 {
 }
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20049.prototype['hasMore'] = undefined;
-
-/**
- * @member {Array.<module:model/AchievementProgressWithDefinition>} data
+ * @member {Array.<module:model/SummaryCampaignStoreBudget>} data
  */
 InlineResponse20049.prototype['data'] = undefined;
 

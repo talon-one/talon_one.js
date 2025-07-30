@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlConnection model module.
  * @module model/SamlConnection
- * @version 12.0.0
+ * @version 25.15.0
  */
 class SamlConnection {
     /**
@@ -30,7 +30,7 @@ class SamlConnection {
      * @param issuer {String} Identity Provider Entity ID.
      * @param signOnURL {String} Single Sign-On URL.
      * @param audienceURI {String} The application-defined unique identifier that is the intended audience of the SAML assertion. This is most often the SP Entity ID of your application. When not specified, the ACS URL will be used. 
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      */
     constructor(assertionConsumerServiceURL, accountId, name, enabled, issuer, signOnURL, audienceURI, id, created) { 
@@ -161,7 +161,7 @@ SamlConnection.prototype['metadataURL'] = undefined;
 SamlConnection.prototype['audienceURI'] = undefined;
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 SamlConnection.prototype['id'] = undefined;

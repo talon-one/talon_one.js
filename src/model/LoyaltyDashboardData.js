@@ -17,7 +17,7 @@ import LoyaltyDashboardPointsBreakdown from './LoyaltyDashboardPointsBreakdown';
 /**
  * The LoyaltyDashboardData model module.
  * @module model/LoyaltyDashboardData
- * @version 12.0.0
+ * @version 25.15.0
  */
 class LoyaltyDashboardData {
     /**

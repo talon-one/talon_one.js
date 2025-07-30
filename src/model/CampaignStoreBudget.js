@@ -17,13 +17,13 @@ import CampaignStoreBudgetLimitConfig from './CampaignStoreBudgetLimitConfig';
 /**
  * The CampaignStoreBudget model module.
  * @module model/CampaignStoreBudget
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CampaignStoreBudget {
     /**
      * Constructs a new <code>CampaignStoreBudget</code>.
      * @alias module:model/CampaignStoreBudget
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param campaignId {Number} The ID of the campaign that owns this entity.
      * @param storeId {Number} The ID of the store.
@@ -81,7 +81,7 @@ class CampaignStoreBudget {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CampaignStoreBudget.prototype['id'] = undefined;

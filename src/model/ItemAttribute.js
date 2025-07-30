@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemAttribute model module.
  * @module model/ItemAttribute
- * @version 12.0.0
+ * @version 25.15.0
  */
 class ItemAttribute {
     /**

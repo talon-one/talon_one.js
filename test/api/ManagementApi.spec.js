@@ -148,6 +148,16 @@
         done();
       });
     });
+    describe('createCampaignStoreBudget', function() {
+      it('should call createCampaignStoreBudget successfully', function(done) {
+        //uncomment below and update the code to test createCampaignStoreBudget
+        //instance.createCampaignStoreBudget(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCollection', function() {
       it('should call createCollection successfully', function(done) {
         //uncomment below and update the code to test createCollection
@@ -298,6 +308,16 @@
         done();
       });
     });
+    describe('deleteCampaignStoreBudgets', function() {
+      it('should call deleteCampaignStoreBudgets successfully', function(done) {
+        //uncomment below and update the code to test deleteCampaignStoreBudgets
+        //instance.deleteCampaignStoreBudgets(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteCollection', function() {
       it('should call deleteCollection successfully', function(done) {
         //uncomment below and update the code to test deleteCollection
@@ -422,6 +442,16 @@
       it('should call exportAudiencesMemberships successfully', function(done) {
         //uncomment below and update the code to test exportAudiencesMemberships
         //instance.exportAudiencesMemberships(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportCampaignStoreBudgets', function() {
+      it('should call exportCampaignStoreBudgets successfully', function(done) {
+        //uncomment below and update the code to test exportCampaignStoreBudgets
+        //instance.exportCampaignStoreBudgets(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1238,6 +1268,16 @@
         done();
       });
     });
+    describe('importCampaignStoreBudget', function() {
+      it('should call importCampaignStoreBudget successfully', function(done) {
+        //uncomment below and update the code to test importCampaignStoreBudget
+        //instance.importCampaignStoreBudget(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('importCampaignStores', function() {
       it('should call importCampaignStores successfully', function(done) {
         //uncomment below and update the code to test importCampaignStores
@@ -1358,6 +1398,16 @@
         done();
       });
     });
+    describe('listCampaignStoreBudgetLimits', function() {
+      it('should call listCampaignStoreBudgetLimits successfully', function(done) {
+        //uncomment below and update the code to test listCampaignStoreBudgetLimits
+        //instance.listCampaignStoreBudgetLimits(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listCatalogItems', function() {
       it('should call listCatalogItems successfully', function(done) {
         //uncomment below and update the code to test listCatalogItems
@@ -1428,6 +1478,16 @@
         done();
       });
     });
+    describe('scimCreateGroup', function() {
+      it('should call scimCreateGroup successfully', function(done) {
+        //uncomment below and update the code to test scimCreateGroup
+        //instance.scimCreateGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('scimCreateUser', function() {
       it('should call scimCreateUser successfully', function(done) {
         //uncomment below and update the code to test scimCreateUser
@@ -1438,10 +1498,40 @@
         done();
       });
     });
+    describe('scimDeleteGroup', function() {
+      it('should call scimDeleteGroup successfully', function(done) {
+        //uncomment below and update the code to test scimDeleteGroup
+        //instance.scimDeleteGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('scimDeleteUser', function() {
       it('should call scimDeleteUser successfully', function(done) {
         //uncomment below and update the code to test scimDeleteUser
         //instance.scimDeleteUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimGetGroup', function() {
+      it('should call scimGetGroup successfully', function(done) {
+        //uncomment below and update the code to test scimGetGroup
+        //instance.scimGetGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimGetGroups', function() {
+      it('should call scimGetGroups successfully', function(done) {
+        //uncomment below and update the code to test scimGetGroups
+        //instance.scimGetGroups(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1498,10 +1588,30 @@
         done();
       });
     });
+    describe('scimPatchGroup', function() {
+      it('should call scimPatchGroup successfully', function(done) {
+        //uncomment below and update the code to test scimPatchGroup
+        //instance.scimPatchGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('scimPatchUser', function() {
       it('should call scimPatchUser successfully', function(done) {
         //uncomment below and update the code to test scimPatchUser
         //instance.scimPatchUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scimReplaceGroupAttributes', function() {
+      it('should call scimReplaceGroupAttributes successfully', function(done) {
+        //uncomment below and update the code to test scimReplaceGroupAttributes
+        //instance.scimReplaceGroupAttributes(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1532,6 +1642,16 @@
       it('should call searchCouponsAdvancedWithoutTotalCount successfully', function(done) {
         //uncomment below and update the code to test searchCouponsAdvancedWithoutTotalCount
         //instance.searchCouponsAdvancedWithoutTotalCount(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('summarizeCampaignStoreBudget', function() {
+      it('should call summarizeCampaignStoreBudget successfully', function(done) {
+        //uncomment below and update the code to test summarizeCampaignStoreBudget
+        //instance.summarizeCampaignStoreBudget(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

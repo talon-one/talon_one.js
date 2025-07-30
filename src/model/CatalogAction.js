@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CatalogAction model module.
  * @module model/CatalogAction
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CatalogAction {
     /**
@@ -115,7 +115,13 @@ CatalogAction['TypeEnum'] = {
      * value: "REMOVE_MANY"
      * @const
      */
-    "REMOVE_MANY": "REMOVE_MANY"
+    "REMOVE_MANY": "REMOVE_MANY",
+
+    /**
+     * value: "ADD_PRICE_ADJUSTMENT"
+     * @const
+     */
+    "ADD_PRICE_ADJUSTMENT": "ADD_PRICE_ADJUSTMENT"
 };
 
 

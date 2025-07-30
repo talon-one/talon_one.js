@@ -17,7 +17,7 @@ import ApplicationEvent from './ApplicationEvent';
 /**
  * The InlineResponse20030 model module.
  * @module model/InlineResponse20030
- * @version 12.0.0
+ * @version 25.15.0
  */
 class InlineResponse20030 {
     /**

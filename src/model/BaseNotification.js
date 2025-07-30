@@ -17,7 +17,7 @@ import BaseNotificationWebhook from './BaseNotificationWebhook';
 /**
  * The BaseNotification model module.
  * @module model/BaseNotification
- * @version 12.0.0
+ * @version 25.15.0
  */
 class BaseNotification {
     /**
@@ -136,6 +136,18 @@ BaseNotification['TypeEnum'] = {
      * @const
      */
     "card_added_deducted_points": "card_added_deducted_points",
+
+    /**
+     * value: "loyalty_added_deducted_points_balances"
+     * @const
+     */
+    "loyalty_added_deducted_points_balances": "loyalty_added_deducted_points_balances",
+
+    /**
+     * value: "loyalty_card_added_deducted_points_balances"
+     * @const
+     */
+    "loyalty_card_added_deducted_points_balances": "loyalty_card_added_deducted_points_balances",
 
     /**
      * value: "coupon"

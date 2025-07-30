@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The Account model module.
  * @module model/Account
- * @version 12.0.0
+ * @version 25.15.0
  */
 class Account {
     /**
      * Constructs a new <code>Account</code>.
      * @alias module:model/Account
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param modified {Date} The time this entity was last modified.
      * @param companyName {String} 
@@ -131,7 +131,7 @@ class Account {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Account.prototype['id'] = undefined;

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**createAttribute**](ManagementApi.md#createAttribute) | **POST** /v1/attributes | Create custom attribute
 [**createBatchLoyaltyCards**](ManagementApi.md#createBatchLoyaltyCards) | **POST** /v1/loyalty_programs/{loyaltyProgramId}/cards/batch | Create loyalty cards
 [**createCampaignFromTemplate**](ManagementApi.md#createCampaignFromTemplate) | **POST** /v1/applications/{applicationId}/create_campaign_from_template | Create campaign from campaign template
+[**createCampaignStoreBudget**](ManagementApi.md#createCampaignStoreBudget) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets | Create campaign store budget
 [**createCollection**](ManagementApi.md#createCollection) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/collections | Create campaign-level collection
 [**createCoupons**](ManagementApi.md#createCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Create coupons
 [**createCouponsAsync**](ManagementApi.md#createCouponsAsync) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_async | Create coupons asynchronously
@@ -29,6 +30,7 @@ Method | HTTP request | Description
 [**deleteAccountCollection**](ManagementApi.md#deleteAccountCollection) | **DELETE** /v1/collections/{collectionId} | Delete account-level collection
 [**deleteAchievement**](ManagementApi.md#deleteAchievement) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements/{achievementId} | Delete achievement
 [**deleteCampaign**](ManagementApi.md#deleteCampaign) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId} | Delete campaign
+[**deleteCampaignStoreBudgets**](ManagementApi.md#deleteCampaignStoreBudgets) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets | Delete campaign store budgets
 [**deleteCollection**](ManagementApi.md#deleteCollection) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId} | Delete campaign-level collection
 [**deleteCoupon**](ManagementApi.md#deleteCoupon) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons/{couponId} | Delete coupon
 [**deleteCoupons**](ManagementApi.md#deleteCoupons) | **DELETE** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons | Delete coupons
@@ -42,6 +44,7 @@ Method | HTTP request | Description
 [**exportAccountCollectionItems**](ManagementApi.md#exportAccountCollectionItems) | **GET** /v1/collections/{collectionId}/export | Export account-level collection&#39;s items
 [**exportAchievements**](ManagementApi.md#exportAchievements) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements/{achievementId}/export | Export achievement customer data
 [**exportAudiencesMemberships**](ManagementApi.md#exportAudiencesMemberships) | **GET** /v1/audiences/{audienceId}/memberships/export | Export audience members
+[**exportCampaignStoreBudgets**](ManagementApi.md#exportCampaignStoreBudgets) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/export | Export campaign store budgets
 [**exportCampaignStores**](ManagementApi.md#exportCampaignStores) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/export | Export stores
 [**exportCollectionItems**](ManagementApi.md#exportCollectionItems) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId}/export | Export campaign-level collection&#39;s items
 [**exportCoupons**](ManagementApi.md#exportCoupons) | **GET** /v1/applications/{applicationId}/export_coupons | Export coupons
@@ -123,6 +126,7 @@ Method | HTTP request | Description
 [**importAccountCollection**](ManagementApi.md#importAccountCollection) | **POST** /v1/collections/{collectionId}/import | Import data into existing account-level collection
 [**importAllowedList**](ManagementApi.md#importAllowedList) | **POST** /v1/attributes/{attributeId}/allowed_list/import | Import allowed values for attribute
 [**importAudiencesMemberships**](ManagementApi.md#importAudiencesMemberships) | **POST** /v1/audiences/{audienceId}/memberships/import | Import audience members
+[**importCampaignStoreBudget**](ManagementApi.md#importCampaignStoreBudget) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/import | Import campaign store budgets
 [**importCampaignStores**](ManagementApi.md#importCampaignStores) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/import | Import stores
 [**importCollection**](ManagementApi.md#importCollection) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/collections/{collectionId}/import | Import data into existing campaign-level collection
 [**importCoupons**](ManagementApi.md#importCoupons) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/import_coupons | Import coupons
@@ -135,6 +139,7 @@ Method | HTTP request | Description
 [**listAccountCollections**](ManagementApi.md#listAccountCollections) | **GET** /v1/collections | List collections in account
 [**listAchievements**](ManagementApi.md#listAchievements) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements | List achievements
 [**listAllRolesV2**](ManagementApi.md#listAllRolesV2) | **GET** /v2/roles | List roles
+[**listCampaignStoreBudgetLimits**](ManagementApi.md#listCampaignStoreBudgetLimits) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets | List campaign store budget limits
 [**listCatalogItems**](ManagementApi.md#listCatalogItems) | **GET** /v1/catalogs/{catalogId}/items | List items in a catalog
 [**listCollections**](ManagementApi.md#listCollections) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/collections | List collections in campaign
 [**listCollectionsInApplication**](ManagementApi.md#listCollectionsInApplication) | **GET** /v1/applications/{applicationId}/collections | List collections in Application
@@ -142,17 +147,24 @@ Method | HTTP request | Description
 [**oktaEventHandlerChallenge**](ManagementApi.md#oktaEventHandlerChallenge) | **GET** /v1/provisioning/okta | Validate Okta API ownership
 [**removeLoyaltyPoints**](ManagementApi.md#removeLoyaltyPoints) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/deduct_points | Deduct points from customer profile
 [**resetPassword**](ManagementApi.md#resetPassword) | **POST** /v1/reset_password | Reset password
+[**scimCreateGroup**](ManagementApi.md#scimCreateGroup) | **POST** /v1/provisioning/scim/Groups | Create SCIM group
 [**scimCreateUser**](ManagementApi.md#scimCreateUser) | **POST** /v1/provisioning/scim/Users | Create SCIM user
+[**scimDeleteGroup**](ManagementApi.md#scimDeleteGroup) | **DELETE** /v1/provisioning/scim/Groups/{groupId} | Delete SCIM group
 [**scimDeleteUser**](ManagementApi.md#scimDeleteUser) | **DELETE** /v1/provisioning/scim/Users/{userId} | Delete SCIM user
+[**scimGetGroup**](ManagementApi.md#scimGetGroup) | **GET** /v1/provisioning/scim/Groups/{groupId} | Get SCIM group
+[**scimGetGroups**](ManagementApi.md#scimGetGroups) | **GET** /v1/provisioning/scim/Groups | List SCIM groups
 [**scimGetResourceTypes**](ManagementApi.md#scimGetResourceTypes) | **GET** /v1/provisioning/scim/ResourceTypes | List supported SCIM resource types
 [**scimGetSchemas**](ManagementApi.md#scimGetSchemas) | **GET** /v1/provisioning/scim/Schemas | List supported SCIM schemas
 [**scimGetServiceProviderConfig**](ManagementApi.md#scimGetServiceProviderConfig) | **GET** /v1/provisioning/scim/ServiceProviderConfig | Get SCIM service provider configuration
 [**scimGetUser**](ManagementApi.md#scimGetUser) | **GET** /v1/provisioning/scim/Users/{userId} | Get SCIM user
 [**scimGetUsers**](ManagementApi.md#scimGetUsers) | **GET** /v1/provisioning/scim/Users | List SCIM users
+[**scimPatchGroup**](ManagementApi.md#scimPatchGroup) | **PATCH** /v1/provisioning/scim/Groups/{groupId} | Update SCIM group attributes
 [**scimPatchUser**](ManagementApi.md#scimPatchUser) | **PATCH** /v1/provisioning/scim/Users/{userId} | Update SCIM user attributes
+[**scimReplaceGroupAttributes**](ManagementApi.md#scimReplaceGroupAttributes) | **PUT** /v1/provisioning/scim/Groups/{groupId} | Update SCIM group
 [**scimReplaceUserAttributes**](ManagementApi.md#scimReplaceUserAttributes) | **PUT** /v1/provisioning/scim/Users/{userId} | Update SCIM user
 [**searchCouponsAdvancedApplicationWideWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedApplicationWideWithoutTotalCount) | **POST** /v1/applications/{applicationId}/coupons_search_advanced/no_total | List coupons that match the given attributes (without total count)
 [**searchCouponsAdvancedWithoutTotalCount**](ManagementApi.md#searchCouponsAdvancedWithoutTotalCount) | **POST** /v1/applications/{applicationId}/campaigns/{campaignId}/coupons_search_advanced/no_total | List coupons that match the given attributes in campaign (without total count)
+[**summarizeCampaignStoreBudget**](ManagementApi.md#summarizeCampaignStoreBudget) | **GET** /v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/summary | Get summary of campaign store budgets
 [**transferLoyaltyCard**](ManagementApi.md#transferLoyaltyCard) | **PUT** /v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/transfer | Transfer card data
 [**updateAccountCollection**](ManagementApi.md#updateAccountCollection) | **PUT** /v1/collections/{collectionId} | Update account-level collection
 [**updateAchievement**](ManagementApi.md#updateAchievement) | **PUT** /v1/applications/{applicationId}/campaigns/{campaignId}/achievements/{achievementId} | Update achievement
@@ -250,7 +262,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.AddLoyaltyPoints(); // AddLoyaltyPoints | body
 apiInstance.addLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, body).then(() => {
@@ -368,8 +380,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.CampaignCopy(); // CampaignCopy | body
 apiInstance.copyCampaignToApplications(applicationId, campaignId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -482,8 +494,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.CreateAchievement(); // CreateAchievement | body
 apiInstance.createAchievement(applicationId, campaignId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -651,7 +663,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let body = new TalonOne.LoyaltyCardBatch(); // LoyaltyCardBatch | body
 apiInstance.createBatchLoyaltyCards(loyaltyProgramId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -708,7 +720,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.CreateTemplateCampaign(); // CreateTemplateCampaign | body
 apiInstance.createCampaignFromTemplate(applicationId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -729,6 +741,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateTemplateCampaignResponse**](CreateTemplateCampaignResponse.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createCampaignStoreBudget
+
+> createCampaignStoreBudget(applicationId, campaignId, body)
+
+Create campaign store budget
+
+Create a new store budget for a given campaign.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let body = new TalonOne.NewCampaignStoreBudget(); // NewCampaignStoreBudget | body
+apiInstance.createCampaignStoreBudget(applicationId, campaignId, body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
+ **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
+ **body** | [**NewCampaignStoreBudget**](NewCampaignStoreBudget.md)| body | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -765,8 +836,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewCampaignCollection(); // NewCampaignCollection | body
 apiInstance.createCollection(applicationId, campaignId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -824,8 +895,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewCoupons(); // NewCoupons | body
 let opts = {
   'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
@@ -887,8 +958,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewCouponCreationJob(); // NewCouponCreationJob | body
 apiInstance.createCouponsAsync(applicationId, campaignId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -946,8 +1017,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewCouponDeletionJob(); // NewCouponDeletionJob | body
 apiInstance.createCouponsDeletionJob(applicationId, campaignId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1005,8 +1076,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewCouponsForMultipleRecipients(); // NewCouponsForMultipleRecipients | body
 let opts = {
   'silent': "'yes'" // String | Possible values: `yes` or `no`. - `yes`: Increases the performance of the API call by returning a 204 response. - `no`: Returns a 200 response that contains the updated customer profiles. 
@@ -1288,7 +1359,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.NewStore(); // NewStore | body
 apiInstance.createStore(applicationId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1400,7 +1471,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.DeductLoyaltyPoints(); // DeductLoyaltyPoints | body
 apiInstance.deductLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, body).then(() => {
@@ -1459,7 +1530,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
 apiInstance.deleteAccountCollection(collectionId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1514,9 +1585,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let achievementId = 56; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let achievementId = 789; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
 apiInstance.deleteAchievement(applicationId, campaignId, achievementId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1573,8 +1644,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 apiInstance.deleteCampaign(applicationId, campaignId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1605,6 +1676,69 @@ null (empty response body)
 - **Accept**: Not defined
 
 
+## deleteCampaignStoreBudgets
+
+> deleteCampaignStoreBudgets(applicationId, campaignId, opts)
+
+Delete campaign store budgets
+
+Delete the store budgets for a given campaign.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let opts = {
+  'action': "action_example", // String | The action that this budget is limiting.
+  'period': "period_example" // String | The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+};
+apiInstance.deleteCampaignStoreBudgets(applicationId, campaignId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
+ **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
+ **action** | **String**| The action that this budget is limiting. | [optional] 
+ **period** | **String**| The period to which the limit applies.  **Note**: For budgets with no period, set this to &#x60;overall&#x60;.  | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## deleteCollection
 
 > deleteCollection(applicationId, campaignId, collectionId)
@@ -1630,9 +1764,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
 apiInstance.deleteCollection(applicationId, campaignId, collectionId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1689,8 +1823,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let couponId = "couponId_example"; // String | The internal ID of the coupon code. You can find this value in the `id` property from the [List coupons](https://docs.talon.one/management-api#tag/Coupons/operation/getCouponsWithoutTotalCount) endpoint response. 
 apiInstance.deleteCoupon(applicationId, campaignId, couponId).then(() => {
   console.log('API called successfully.');
@@ -1748,8 +1882,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -1761,7 +1895,7 @@ let opts = {
   'valid': "valid_example", // String | - `expired`: Matches coupons in which the expiration date is set and in the past. - `validNow`: Matches coupons in which start date is null or in the past and expiration date is null or in the future. - `validFuture`: Matches coupons in which start date is set and in the future. 
   'batchId': "batchId_example", // String | Filter results by batches of coupons
   'usable': "usable_example", // String | - `true`: only coupons where `usageCounter < usageLimit` will be returned. - `false`: only coupons where `usageCounter >= usageLimit` will be returned. 
-  'referralId': 56, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
+  'referralId': 789, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile ID specified in the coupon's `RecipientIntegrationId` field. 
   'exactMatch': false // Boolean | Filter results to an exact case-insensitive matching against the coupon code
 };
@@ -1833,7 +1967,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 apiInstance.deleteLoyaltyCard(loyaltyProgramId, loyaltyCardId).then(() => {
   console.log('API called successfully.');
@@ -1890,8 +2024,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let referralId = "referralId_example"; // String | The ID of the referral code.
 apiInstance.deleteReferral(applicationId, campaignId, referralId).then(() => {
   console.log('API called successfully.');
@@ -1949,7 +2083,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let storeId = "storeId_example"; // String | The ID of the store. You can get this ID with the [List stores](#tag/Stores/operation/listStores) endpoint. 
 apiInstance.deleteStore(applicationId, storeId).then(() => {
   console.log('API called successfully.');
@@ -2006,7 +2140,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let userId = 56; // Number | The ID of the user.
+let userId = 789; // Number | The ID of the user.
 apiInstance.deleteUser(userId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -2167,8 +2301,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 apiInstance.disconnectCampaignStores(applicationId, campaignId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -2224,7 +2358,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
 apiInstance.exportAccountCollectionItems(collectionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2279,9 +2413,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let achievementId = 56; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let achievementId = 789; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
 apiInstance.exportAchievements(applicationId, campaignId, achievementId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2338,7 +2472,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let audienceId = 56; // Number | The ID of the audience.
+let audienceId = 789; // Number | The ID of the audience.
 apiInstance.exportAudiencesMemberships(audienceId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2353,6 +2487,69 @@ apiInstance.exportAudiencesMemberships(audienceId).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **audienceId** | **Number**| The ID of the audience. | 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/csv
+
+
+## exportCampaignStoreBudgets
+
+> String exportCampaignStoreBudgets(applicationId, campaignId, opts)
+
+Export campaign store budgets
+
+Download a CSV file containing the store budgets for a given campaign.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The CSV file contains the following columns:  - &#x60;store_integration_id&#x60;: The identifier of the store. - &#x60;limit&#x60;: The budget limit for the store. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let opts = {
+  'action': "action_example", // String | The action that this budget is limiting.
+  'period': "period_example" // String | The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+};
+apiInstance.exportCampaignStoreBudgets(applicationId, campaignId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
+ **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
+ **action** | **String**| The action that this budget is limiting. | [optional] 
+ **period** | **String**| The period to which the limit applies.  **Note**: For budgets with no period, set this to &#x60;overall&#x60;.  | [optional] 
 
 ### Return type
 
@@ -2393,8 +2590,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 apiInstance.exportCampaignStores(applicationId, campaignId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2450,9 +2647,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
 apiInstance.exportCollectionItems(applicationId, campaignId, collectionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2509,7 +2706,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'campaignId': 3.4, // Number | Filter results by campaign ID.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
@@ -2518,7 +2715,7 @@ let opts = {
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'valid': "valid_example", // String | Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
   'usable': "usable_example", // String | Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-  'referralId': 56, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
+  'referralId': 789, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile id specified in the coupon's RecipientIntegrationId field.
   'batchId': "batchId_example", // String | Filter results by batches of coupons
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code.
@@ -2575,7 +2772,7 @@ Name | Type | Description  | Notes
 
 Export customer sessions
 
-Download a CSV file containing the customer sessions that match the request.  **Important:** Archived sessions cannot be exported. See the [retention policy](https://docs.talon.one/docs/product/server-infrastructure-and-data-retention#data-retention-policy).  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  - &#x60;id&#x60;: The internal ID of the session. - &#x60;firstsession&#x60;: Whether this is a first session. - &#x60;integrationid&#x60;: The integration ID of the session. - &#x60;applicationid&#x60;: The ID of the Application. - &#x60;profileid&#x60;: The internal ID of the customer profile. - &#x60;profileintegrationid&#x60;: The integration ID of the customer profile. - &#x60;created&#x60;: The timestamp when the session was created. - &#x60;state&#x60;: The [state](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states) of the session. - &#x60;cartitems&#x60;: The cart items in the session. - &#x60;discounts&#x60;: The discounts in the session. - &#x60;total&#x60;: The total value of cart items and additional costs in the session, before any discounts are applied. - &#x60;attributes&#x60;: The attributes set in the session. - &#x60;closedat&#x60;: Timestamp when the session was closed. - &#x60;cancelledat&#x60;: Timestamp when the session was cancelled. - &#x60;referral&#x60;: The referral code in the session. - &#x60;identifiers&#x60;: The identifiers in the session. - &#x60;additional_costs&#x60;: The [additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs) in the session. - &#x60;updated&#x60;: Timestamp of the last session update. - &#x60;store_integration_id&#x60;: The integration ID of the store. - &#x60;coupons&#x60;: Coupon codes in the session. 
+Download a CSV file containing the customer sessions that match the request.  **Important:** Archived sessions cannot be exported. See the [retention policy](https://docs.talon.one/docs/dev/server-infrastructure-and-data-retention).  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  - &#x60;id&#x60;: The internal ID of the session. - &#x60;firstsession&#x60;: Whether this is a first session. - &#x60;integrationid&#x60;: The integration ID of the session. - &#x60;applicationid&#x60;: The ID of the Application. - &#x60;profileid&#x60;: The internal ID of the customer profile. - &#x60;profileintegrationid&#x60;: The integration ID of the customer profile. - &#x60;created&#x60;: The timestamp when the session was created. - &#x60;state&#x60;: The [state](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states) of the session. - &#x60;cartitems&#x60;: The cart items in the session. - &#x60;discounts&#x60;: The discounts in the session. - &#x60;total&#x60;: The total value of cart items and additional costs in the session, before any discounts are applied. - &#x60;attributes&#x60;: The attributes set in the session. - &#x60;closedat&#x60;: Timestamp when the session was closed. - &#x60;cancelledat&#x60;: Timestamp when the session was cancelled. - &#x60;referral&#x60;: The referral code in the session. - &#x60;identifiers&#x60;: The identifiers in the session. - &#x60;additional_costs&#x60;: The [additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs) in the session. - &#x60;updated&#x60;: Timestamp of the last session update. - &#x60;store_integration_id&#x60;: The integration ID of the store. - &#x60;coupons&#x60;: Coupon codes in the session. 
 
 ### Example
 
@@ -2594,7 +2791,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string.
@@ -2722,7 +2919,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'campaignId': 3.4, // Number | Filter results by campaign ID.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -2905,7 +3102,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let opts = {
   'endDate': new Date("2013-10-20T19:20:30+01:00") // Date | Used to return expired, active, and pending loyalty balances before this timestamp. You can enter any past, present, or future timestamp value.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 };
@@ -2964,7 +3161,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
@@ -3029,9 +3226,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let opts = {
   'batchId': "batchId_example", // String | Filter results by loyalty card batch ID.
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return loyalty cards created before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. 
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return loyalty cards created after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. 
   'dateFormat': "dateFormat_example" // String | Determines the format of dates in the export document.
 };
 apiInstance.exportLoyaltyCards(loyaltyProgramId, opts).then((data) => {
@@ -3049,6 +3248,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
  **batchId** | **String**| Filter results by loyalty card batch ID. | [optional] 
+ **createdBefore** | **Date**| Only return loyalty cards created before this timestamp.  **Note:** - This must be an RFC3339 timestamp string.  | [optional] 
+ **createdAfter** | **Date**| Only return loyalty cards created after this timestamp.  **Note:** - This must be an RFC3339 timestamp string.  | [optional] 
  **dateFormat** | **String**| Determines the format of dates in the export document. | [optional] 
 
 ### Return type
@@ -3155,7 +3356,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let poolId = 56; // Number | The ID of the pool. You can find it in the Campaign Manager, in the **Giveaways** section.
+let poolId = 789; // Number | The ID of the pool. You can find it in the Campaign Manager, in the **Giveaways** section.
 let opts = {
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Timestamp that filters the results to only contain giveaways created before this date. Must be an RFC3339 timestamp string.
   'createdAfter': new Date("2013-10-20T19:20:30+01:00") // Date | Timestamp that filters the results to only contain giveaways created after this date. Must be an RFC3339 timestamp string.
@@ -3216,7 +3417,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'campaignId': 3.4, // Number | Filter results by campaign ID.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -3287,7 +3488,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let opts = {
@@ -3295,7 +3496,7 @@ let opts = {
   'method': "method_example", // String | Only return results where the request method matches the given regular expression.
   'status': "status_example", // String | Filter results by HTTP status codes.
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getAccessLogsWithoutTotalCount(applicationId, rangeStart, rangeEnd, opts).then((data) => {
@@ -3360,7 +3561,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let accountId = 56; // Number | The identifier of the account. Retrieve it via the [List users in account](https://docs.talon.one/management-api#operation/getUsers) endpoint in the `accountId` property. 
+let accountId = 789; // Number | The identifier of the account. Retrieve it via the [List users in account](https://docs.talon.one/management-api#operation/getUsers) endpoint in the `accountId` property. 
 apiInstance.getAccount(accountId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3415,7 +3616,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let accountId = 56; // Number | The identifier of the account. Retrieve it via the [List users in account](https://docs.talon.one/management-api#operation/getUsers) endpoint in the `accountId` property. 
+let accountId = 789; // Number | The identifier of the account. Retrieve it via the [List users in account](https://docs.talon.one/management-api#operation/getUsers) endpoint in the `accountId` property. 
 apiInstance.getAccountAnalytics(accountId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3470,7 +3671,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
 apiInstance.getAccountCollection(collectionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3525,9 +3726,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let achievementId = 56; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let achievementId = 789; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
 apiInstance.getAchievement(applicationId, campaignId, achievementId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3584,7 +3785,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let additionalCostId = 56; // Number | The ID of the additional cost. You can find the ID the the Campaign Manager's URL when you display the details of the cost in **Account** > **Tools** > **Additional costs**. 
+let additionalCostId = 789; // Number | The ID of the additional cost. You can find the ID the the Campaign Manager's URL when you display the details of the cost in **Account** > **Tools** > **Additional costs**. 
 apiInstance.getAdditionalCost(additionalCostId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3641,7 +3842,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getAdditionalCosts(opts).then((data) => {
@@ -3700,7 +3901,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 apiInstance.getApplication(applicationId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3755,7 +3956,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 apiInstance.getApplicationApiHealth(applicationId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3810,8 +4011,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let customerId = 56; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let customerId = 789; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
 apiInstance.getApplicationCustomer(applicationId, customerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3867,11 +4068,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let integrationId = "integrationId_example"; // String | The Integration ID of the Advocate's Profile.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'withTotalResultSize': true // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
 };
@@ -3934,11 +4135,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'integrationId': "integrationId_example", // String | Filter results performing an exact matching against the profile integration identifier.
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'withTotalResultSize': true // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
 };
 apiInstance.getApplicationCustomers(applicationId, opts).then((data) => {
@@ -3999,11 +4200,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.CustomerProfileSearchQuery(); // CustomerProfileSearchQuery | body
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'withTotalResultSize': true // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
 };
 apiInstance.getApplicationCustomersByAttributes(applicationId, body, opts).then((data) => {
@@ -4064,10 +4265,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getApplicationEventTypes(applicationId, opts).then((data) => {
@@ -4127,10 +4328,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'type': "type_example", // String | Comma-separated list of types by which to filter events. Must be exact match(es).
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -4212,8 +4413,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let sessionId = 56; // Number | The **internal** ID of the session. You can get the ID with the [List Application sessions](https://docs.talon.one/management-api#tag/Customer-data/operation/getApplicationSessions) endpoint. 
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let sessionId = 789; // Number | The **internal** ID of the session. You can get the ID with the [List Application sessions](https://docs.talon.one/management-api#tag/Customer-data/operation/getApplicationSessions) endpoint. 
 apiInstance.getApplicationSession(applicationId, sessionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4269,10 +4470,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'profile': "profile_example", // String | Profile integration ID filter for sessions. Must be exact match.
   'state': "state_example", // String | Filter by sessions with this state. Must be exact match.
@@ -4350,7 +4551,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getApplications(opts).then((data) => {
@@ -4409,7 +4610,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let attributeId = 56; // Number | The ID of the attribute. You can find the ID in the Campaign Manager's URL when you display the details of an attribute in **Account** > **Tools** > **Attributes**.
+let attributeId = 789; // Number | The ID of the attribute. You can find the ID in the Campaign Manager's URL when you display the details of an attribute in **Account** > **Tools** > **Attributes**.
 apiInstance.getAttribute(attributeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4466,7 +4667,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'entity': "entity_example" // String | Returned attributes will be filtered by supplied entity.
 };
@@ -4527,10 +4728,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let audienceId = 56; // Number | The ID of the audience.
+let audienceId = 789; // Number | The ID of the audience.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'profileQuery': "profileQuery_example" // String | The filter to select a profile.
 };
@@ -4594,7 +4795,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'withTotalResultSize': true // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
 };
@@ -4714,8 +4915,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 apiInstance.getCampaign(applicationId, campaignId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4771,8 +4972,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let opts = {
@@ -4836,11 +5037,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.CampaignSearch(); // CampaignSearch | body
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'campaignState': "campaignState_example" // String | Filter results by the state of the campaign.  - `enabled`: Campaigns that are scheduled, running (activated), or expired. - `running`: Campaigns that are running (activated). - `disabled`: Campaigns that are disabled. - `expired`: Campaigns that are expired. - `archived`: Campaigns that are archived. 
 };
@@ -4903,7 +5104,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let campaignGroupId = 56; // Number | The ID of the campaign access group.
+let campaignGroupId = 789; // Number | The ID of the campaign access group.
 apiInstance.getCampaignGroup(campaignGroupId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4960,7 +5161,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getCampaignGroups(opts).then((data) => {
@@ -5021,12 +5222,12 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'state': "state_example", // String | Filter results by the state of the campaign template.
   'name': "name_example", // String | Filter results performing case-insensitive matching against the name of the campaign template.
   'tags': "tags_example", // String | Filter results performing case-insensitive matching against the tags of the campaign template. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values. 
-  'userId': 56 // Number | Filter results by user ID.
+  'userId': 789 // Number | Filter results by user ID.
 };
 apiInstance.getCampaignTemplates(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -5088,19 +5289,19 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'campaignState': "campaignState_example", // String | Filter results by the state of the campaign.  - `enabled`: Campaigns that are scheduled, running (activated), or expired. - `running`: Campaigns that are running (activated). - `disabled`: Campaigns that are disabled. - `expired`: Campaigns that are expired. - `archived`: Campaigns that are archived. 
   'name': "name_example", // String | Filter results performing case-insensitive matching against the name of the campaign.
   'tags': "tags_example", // String | Filter results performing case-insensitive matching against the tags of the campaign. When used in conjunction with the \"name\" query parameter, a logical OR will be performed to search both tags and name for the provided values 
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the campaign creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
-  'campaignGroupId': 56, // Number | Filter results to campaigns owned by the specified campaign access group ID.
-  'templateId': 56, // Number | The ID of the campaign template this campaign was created from.
-  'storeId': 56 // Number | Filter results to campaigns linked to the specified store ID.
+  'campaignGroupId': 789, // Number | Filter results to campaigns owned by the specified campaign access group ID.
+  'templateId': 789, // Number | The ID of the campaign template this campaign was created from.
+  'storeId': 789 // Number | Filter results to campaigns linked to the specified store ID.
 };
 apiInstance.getCampaigns(applicationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -5169,15 +5370,15 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'applicationId': 3.4, // Number | Filter results by Application ID.
   'entityPath': "entityPath_example", // String | Filter results on a case insensitive matching of the url path of the entity
-  'userId': 56, // Number | Filter results by user ID.
+  'userId': 789, // Number | Filter results by user ID.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the change creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'withTotalResultSize': true, // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
-  'managementKeyId': 56, // Number | Filter results that match the given management key ID.
+  'managementKeyId': 789, // Number | Filter results that match the given management key ID.
   'includeOld': true // Boolean | When this flag is set to false, the state without the change will not be returned. The default value is true.
 };
 apiInstance.getChanges(opts).then((data) => {
@@ -5244,9 +5445,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
 apiInstance.getCollection(applicationId, campaignId, collectionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -5303,10 +5504,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56 // Number | The number of items to skip when paging through large result sets.
+  'skip': 789 // Number | The number of items to skip when paging through large result sets.
 };
 apiInstance.getCollectionItems(collectionId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -5364,11 +5565,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -5376,7 +5577,7 @@ let opts = {
   'valid': "valid_example", // String | Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
   'usable': "usable_example", // String | Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
   'redeemed': "redeemed_example", // String | - `true`: only coupons where `usageCounter > 0` will be returned. - `false`: only coupons where `usageCounter = 0` will be returned. - This field cannot be used in conjunction with the `usable` query parameter. 
-  'referralId': 56, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
+  'referralId': 789, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
   'batchId': "batchId_example", // String | Filter results by batches of coupons
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code.
@@ -5461,11 +5662,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let customerId = 56; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let customerId = 789; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56 // Number | The number of items to skip when paging through large result sets.
+  'skip': 789 // Number | The number of items to skip when paging through large result sets.
 };
 apiInstance.getCustomerActivityReport(rangeStart, rangeEnd, applicationId, customerId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -5528,10 +5729,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'name': "name_example", // String | Only return reports matching the customer name.
   'integrationId': "integrationId_example", // String | Filter results performing an exact matching against the profile integration identifier.
@@ -5601,11 +5802,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let customerId = 56; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let customerId = 789; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getCustomerAnalytics(applicationId, customerId, opts).then((data) => {
@@ -5666,7 +5867,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let customerId = 56; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
+let customerId = 789; // Number | The value of the `id` property of a customer profile. Get it with the [List Application's customers](https://docs.talon.one/management-api#operation/getApplicationCustomers) endpoint. 
 apiInstance.getCustomerProfile(customerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -5698,7 +5899,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerProfileAchievementProgress
 
-> InlineResponse20049 getCustomerProfileAchievementProgress(applicationId, integrationId, opts)
+> InlineResponse20051 getCustomerProfileAchievementProgress(applicationId, integrationId, opts)
 
 List customer achievements
 
@@ -5721,12 +5922,12 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let integrationId = "integrationId_example"; // String | The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
 let opts = {
   'pageSize': 50, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
-  'achievementId': 56, // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
+  'achievementId': 789, // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
   'title': "title_example" // String | Filter results by the `title` of an achievement.
 };
 apiInstance.getCustomerProfileAchievementProgress(applicationId, integrationId, opts).then((data) => {
@@ -5751,7 +5952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20049**](InlineResponse20049.md)
+[**InlineResponse20051**](InlineResponse20051.md)
 
 ### Authorization
 
@@ -5790,7 +5991,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sandbox': false // Boolean | Indicates whether you are pointing to a sandbox or live customer.
 };
 apiInstance.getCustomerProfiles(opts).then((data) => {
@@ -5852,7 +6053,7 @@ let apiInstance = new TalonOne.ManagementApi();
 let body = new TalonOne.CustomerProfileSearchQuery(); // CustomerProfileSearchQuery | body
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sandbox': false // Boolean | Indicates whether you are pointing to a sandbox or live customer.
 };
 apiInstance.getCustomersByAttributes(body, opts).then((data) => {
@@ -5912,7 +6113,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let rangeStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let rangeEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
 let opts = {
@@ -5979,7 +6180,7 @@ let opts = {
   'name': "name_example", // String | Filter results to event types with the given name. This parameter implies `includeOldVersions`.
   'includeOldVersions': false, // Boolean | Include all versions of every event type.
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getEventTypes(opts).then((data) => {
@@ -6042,9 +6243,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'applicationId': 3.4, // Number | Filter results by Application ID.
-  'campaignId': 56, // Number | Filter by the campaign ID on which the limit counters are used.
+  'campaignId': 789, // Number | Filter by the campaign ID on which the limit counters are used.
   'entity': "entity_example" // String | The name of the entity type that was exported.
 };
 apiInstance.getExports(opts).then((data) => {
@@ -6105,7 +6306,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 apiInstance.getLoyaltyCard(loyaltyProgramId, loyaltyCardId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -6162,13 +6363,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let opts = {
   'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'subledgerId': "subledgerId_example" // String | The ID of the subledger by which we filter the data.
 };
 apiInstance.getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardId, opts).then((data) => {
@@ -6231,13 +6432,13 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'identifier': "identifier_example", // String | The card code by which to filter loyalty cards in the response.
-  'profileId': 56, // Number | Filter results by customer profile ID.
+  'profileId': 789, // Number | Filter results by customer profile ID.
   'batchId': "batchId_example" // String | Filter results by loyalty card batch ID.
 };
 apiInstance.getLoyaltyCards(loyaltyProgramId, opts).then((data) => {
@@ -6357,7 +6558,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 apiInstance.getLoyaltyProgram(loyaltyProgramId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -6412,14 +6613,14 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let opts = {
   'loyaltyTransactionType': "loyaltyTransactionType_example", // String | Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
   'subledgerId': "subledgerId_example", // String | The ID of the subledger by which we filter the data.
   'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'pageSize': 50, // Number | The number of items in the response.
-  'skip': 56 // Number | The number of items to skip when paging through large result sets.
+  'skip': 789 // Number | The number of items to skip when paging through large result sets.
 };
 apiInstance.getLoyaltyProgramTransactions(loyaltyProgramId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -6532,7 +6733,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 apiInstance.getLoyaltyStatistics(loyaltyProgramId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -6599,8 +6800,8 @@ let opts = {
   'isSuccessful': true, // Boolean | Indicates whether to return log entries with either successful or unsuccessful HTTP response codes. When set to`true`, only log entries with `2xx` response codes are returned. When set to `false`, only log entries with `4xx` and `5xx` response codes are returned. 
   'applicationId': 3.4, // Number | Filter results by Application ID.
   'campaignId': 3.4, // Number | Filter results by campaign ID.
-  'loyaltyProgramId': 56, // Number | Identifier of the loyalty program.
-  'responseCode': 56, // Number | Filter results by response status code.
+  'loyaltyProgramId': 789, // Number | Identifier of the loyalty program.
+  'responseCode': 789, // Number | Filter results by response status code.
   'webhookIDs': "webhookIDs_example" // String | Filter results by webhook ID (include up to 30 values, separated by a comma).
 };
 apiInstance.getMessageLogs(entityType, opts).then((data) => {
@@ -6670,11 +6871,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'code': "code_example", // String | Filter results performing case-insensitive matching against the referral code. Both the code and the query are folded to remove all non-alpha-numeric characters.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the referral creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
@@ -6747,7 +6948,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let roleId = 56; // Number | The ID of role.  **Note**: To find the ID of a role, use the [List roles](/management-api#tag/Roles/operation/listAllRolesV2) endpoint. 
+let roleId = 789; // Number | The ID of role.  **Note**: To find the ID of a role, use the [List roles](/management-api#tag/Roles/operation/listAllRolesV2) endpoint. 
 apiInstance.getRoleV2(roleId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -6802,9 +7003,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let rulesetId = 56; // Number | The ID of the ruleset.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let rulesetId = 789; // Number | The ID of the ruleset.
 apiInstance.getRuleset(applicationId, campaignId, rulesetId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -6861,11 +7062,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getRulesets(applicationId, campaignId, opts).then((data) => {
@@ -6926,7 +7127,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let storeId = "storeId_example"; // String | The ID of the store. You can get this ID with the [List stores](#tag/Stores/operation/listStores) endpoint. 
 apiInstance.getStore(applicationId, storeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -6983,7 +7184,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let userId = 56; // Number | The ID of the user.
+let userId = 789; // Number | The ID of the user.
 apiInstance.getUser(userId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -7040,7 +7241,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example" // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
 };
 apiInstance.getUsers(opts).then((data) => {
@@ -7099,7 +7300,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let webhookId = 56; // Number | The ID of the webhook. You can find the ID in the Campaign Manager's URL when you display the details of the webhook in **Account** > **Webhooks**. 
+let webhookId = 789; // Number | The ID of the webhook. You can find the ID in the Campaign Manager's URL when you display the details of the webhook in **Account** > **Webhooks**. 
 apiInstance.getWebhook(webhookId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -7156,7 +7357,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'integrationRequestUuid': "integrationRequestUuid_example", // String | Filter results by integration request UUID.
   'webhookId': 3.4, // Number | Filter results by webhook id.
@@ -7229,7 +7430,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'status': "status_example", // String | Filter results by HTTP status codes.
   'webhookId': 3.4, // Number | Filter results by webhook id.
@@ -7306,10 +7507,10 @@ let opts = {
   'applicationIds': "applicationIds_example", // String | Checks if the given catalog or its attributes are referenced in the specified Application ID.  **Note**: If no Application ID is provided, we check for all connected Applications. 
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'creationType': "creationType_example", // String | Filter results by creation type.
   'visibility': "visibility_example", // String | Filter results by visibility.
-  'outgoingIntegrationsTypeId': 56, // Number | Filter results by outgoing integration type ID.
+  'outgoingIntegrationsTypeId': 789, // Number | Filter results by outgoing integration type ID.
   'title': "title_example" // String | Filter results performing case-insensitive matching against the webhook title.
 };
 apiInstance.getWebhooks(opts).then((data) => {
@@ -7373,7 +7574,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7432,7 +7633,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let attributeId = 56; // Number | The ID of the attribute. You can find the ID in the Campaign Manager's URL when you display the details of an attribute in **Account** > **Tools** > **Attributes**.
+let attributeId = 789; // Number | The ID of the attribute. You can find the ID in the Campaign Manager's URL when you display the details of an attribute in **Account** > **Tools** > **Attributes**.
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7491,7 +7692,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let audienceId = 56; // Number | The ID of the audience.
+let audienceId = 789; // Number | The ID of the audience.
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7509,6 +7710,71 @@ apiInstance.importAudiencesMemberships(audienceId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **audienceId** | **Number**| The ID of the audience. | 
+ **upFile** | **String**| The file containing the data that is being imported. | [optional] 
+
+### Return type
+
+[**ModelImport**](ModelImport.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
+
+## importCampaignStoreBudget
+
+> ModelImport importCampaignStoreBudget(applicationId, campaignId, opts)
+
+Import campaign store budgets
+
+Upload a CSV file containing store budgets for a given campaign.  Send the file as multipart data.  The CSV file **must** only contain the following columns: - &#x60;store_integration_id&#x60;: The identifier of the store. - &#x60;limit&#x60;: The budget limit for the store.  The import **replaces** the previous list of store budgets. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let opts = {
+  'action': "action_example", // String | The action that this budget is limiting.
+  'period': "period_example", // String | The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+  'upFile': "upFile_example" // String | The file containing the data that is being imported.
+};
+apiInstance.importCampaignStoreBudget(applicationId, campaignId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
+ **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
+ **action** | **String**| The action that this budget is limiting. | [optional] 
+ **period** | **String**| The period to which the limit applies.  **Note**: For budgets with no period, set this to &#x60;overall&#x60;.  | [optional] 
  **upFile** | **String**| The file containing the data that is being imported. | [optional] 
 
 ### Return type
@@ -7550,8 +7816,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7611,9 +7877,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7674,8 +7940,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'skipDuplicates': true, // Boolean | An indicator of whether to skip duplicate coupon values instead of causing an error. Duplicate values are ignored when `skipDuplicates=true`. 
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
@@ -7737,7 +8003,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7796,7 +8062,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7855,8 +8121,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let opts = {
+  'notificationsEnabled': true, // Boolean | Indicates whether the points import triggers notifications about its effects. For example, a notification is sent if the import upgrades a customer's tier or offsets their negative points balance.  This parameter is optional and defaults to `true`. 
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
 apiInstance.importLoyaltyPoints(loyaltyProgramId, opts).then((data) => {
@@ -7873,6 +8140,7 @@ apiInstance.importLoyaltyPoints(loyaltyProgramId, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyProgramId** | **Number**| Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
+ **notificationsEnabled** | **Boolean**| Indicates whether the points import triggers notifications about its effects. For example, a notification is sent if the import upgrades a customer&#39;s tier or offsets their negative points balance.  This parameter is optional and defaults to &#x60;true&#x60;.  | [optional] 
  **upFile** | **String**| The file containing the data that is being imported. | [optional] 
 
 ### Return type
@@ -7914,7 +8182,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let poolId = 56; // Number | The ID of the pool. You can find it in the Campaign Manager, in the **Giveaways** section.
+let poolId = 789; // Number | The ID of the pool. You can find it in the Campaign Manager, in the **Giveaways** section.
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -7973,8 +8241,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'upFile': "upFile_example" // String | The file containing the data that is being imported.
 };
@@ -8091,7 +8359,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 let apiInstance = new TalonOne.ManagementApi();
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'withTotalResultSize': true, // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
   'name': "name_example" // String | Filter by collection name.
@@ -8131,7 +8399,7 @@ Name | Type | Description  | Notes
 
 ## listAchievements
 
-> InlineResponse20048 listAchievements(applicationId, campaignId, opts)
+> InlineResponse20050 listAchievements(applicationId, campaignId, opts)
 
 List achievements
 
@@ -8154,11 +8422,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 50, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'title': "title_example" // String | Filter by the display name for the achievement in the campaign manager.  **Note**: If no `title` is provided, all the achievements from the campaign are returned. 
 };
 apiInstance.listAchievements(applicationId, campaignId, opts).then((data) => {
@@ -8182,7 +8450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20048**](InlineResponse20048.md)
+[**InlineResponse20050**](InlineResponse20050.md)
 
 ### Authorization
 
@@ -8245,6 +8513,69 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
+## listCampaignStoreBudgetLimits
+
+> InlineResponse20048 listCampaignStoreBudgetLimits(applicationId, campaignId, opts)
+
+List campaign store budget limits
+
+Return the store budget limits for a given campaign.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let opts = {
+  'action': "action_example", // String | The action that this budget is limiting.
+  'period': "period_example" // String | The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
+};
+apiInstance.listCampaignStoreBudgetLimits(applicationId, campaignId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
+ **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
+ **action** | **String**| The action that this budget is limiting. | [optional] 
+ **period** | **String**| The period to which the limit applies.  **Note**: For budgets with no period, set this to &#x60;overall&#x60;.  | [optional] 
+
+### Return type
+
+[**InlineResponse20048**](InlineResponse20048.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## listCatalogItems
 
 > InlineResponse20037 listCatalogItems(catalogId, opts)
@@ -8270,10 +8601,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let catalogId = 56; // Number | The ID of the catalog. You can find the ID in the Campaign Manager in **Account** > **Tools** > **Cart item catalogs**.
+let catalogId = 789; // Number | The ID of the catalog. You can find the ID in the Campaign Manager in **Account** > **Tools** > **Cart item catalogs**.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'withTotalResultSize': true, // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
   'sku': ["null"], // [String] | Filter results by one or more SKUs. Must be exact match.
   'productNames': ["null"] // [String] | Filter results by one or more product names. Must be exact match.
@@ -8337,11 +8668,11 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'withTotalResultSize': true, // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
   'name': "name_example" // String | Filter by collection name.
@@ -8406,10 +8737,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'withTotalResultSize': true, // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
   'name': "name_example" // String | Filter by collection name.
@@ -8473,10 +8804,10 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'withTotalResultSize': true, // Boolean | When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
   'campaignId': 3.4, // Number | Filter results by campaign ID.
@@ -8686,6 +9017,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## scimCreateGroup
+
+> ScimGroup scimCreateGroup(body)
+
+Create SCIM group
+
+Create a new Talon.One group using the SCIM Group provisioning protocol with an identity provider, for example, Microsoft Entra ID, and assign members from the payload to the new group. In Talon.One, a &#x60;Group&#x60; corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and &#x60;members&#x60; are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let body = new TalonOne.ScimBaseGroup(); // ScimBaseGroup | body
+apiInstance.scimCreateGroup(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ScimBaseGroup**](ScimBaseGroup.md)| body | 
+
+### Return type
+
+[**ScimGroup**](ScimGroup.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## scimCreateUser
 
 > ScimUser scimCreateUser(body)
@@ -8741,6 +9127,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## scimDeleteGroup
+
+> scimDeleteGroup(groupId)
+
+Delete SCIM group
+
+Delete a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a &#x60;Group&#x60; corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and &#x60;members&#x60; are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let groupId = 789; // Number | The ID of the group.
+apiInstance.scimDeleteGroup(groupId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **Number**| The ID of the group. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
 ## scimDeleteUser
 
 > scimDeleteUser(userId)
@@ -8766,7 +9207,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let userId = 56; // Number | The ID of the user.
+let userId = 789; // Number | The ID of the user.
 apiInstance.scimDeleteUser(userId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -8794,6 +9235,112 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+
+## scimGetGroup
+
+> ScimGroup scimGetGroup(groupId)
+
+Get SCIM group
+
+Retrieve data for a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a &#x60;Group&#x60; corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and &#x60;members&#x60; are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let groupId = 789; // Number | The ID of the group.
+apiInstance.scimGetGroup(groupId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **Number**| The ID of the group. | 
+
+### Return type
+
+[**ScimGroup**](ScimGroup.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## scimGetGroups
+
+> ScimGroupsListResponse scimGetGroups()
+
+List SCIM groups
+
+Retrieve a paginated list of groups created using the SCIM protocol with an identity provider, for example, Microsoft Entra ID. In Talon.One, a &#x60;Group&#x60; corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and &#x60;members&#x60; are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+apiInstance.scimGetGroups().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ScimGroupsListResponse**](ScimGroupsListResponse.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## scimGetResourceTypes
@@ -8974,7 +9521,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let userId = 56; // Number | The ID of the user.
+let userId = 789; // Number | The ID of the user.
 apiInstance.scimGetUser(userId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -9055,6 +9602,63 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
+## scimPatchGroup
+
+> ScimGroup scimPatchGroup(groupId, body)
+
+Update SCIM group attributes
+
+Update certain attributes of a group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. This endpoint allows for selective adding, removing, or replacing of specific group attributes while other attributes remain unchanged. In Talon.One, a &#x60;Group&#x60; corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and &#x60;members&#x60; are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let groupId = 789; // Number | The ID of the group.
+let body = new TalonOne.ScimPatchRequest(); // ScimPatchRequest | body
+apiInstance.scimPatchGroup(groupId, body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **Number**| The ID of the group. | 
+ **body** | [**ScimPatchRequest**](ScimPatchRequest.md)| body | 
+
+### Return type
+
+[**ScimGroup**](ScimGroup.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## scimPatchUser
 
 > ScimUser scimPatchUser(userId, body)
@@ -9080,7 +9684,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let userId = 56; // Number | The ID of the user.
+let userId = 789; // Number | The ID of the user.
 let body = new TalonOne.ScimPatchRequest(); // ScimPatchRequest | body
 apiInstance.scimPatchUser(userId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9101,6 +9705,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScimUser**](ScimUser.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## scimReplaceGroupAttributes
+
+> ScimGroup scimReplaceGroupAttributes(groupId, body)
+
+Update SCIM group
+
+Update the details of a specific group created using the SCIM provisioning protocol with an identity provider, for example, Microsoft Entra ID. This endpoint replaces all attributes of the given group with the attributes provided in the request payload. In Talon.One, a &#x60;Group&#x60; corresponds to a [role](https://docs.talon.one/docs/product/account/account-settings/managing-roles), and &#x60;members&#x60; are the [users](https://docs.talon.one/docs/product/account/account-settings/managing-users) assigned to that role. 
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let groupId = 789; // Number | The ID of the group.
+let body = new TalonOne.ScimBaseGroup(); // ScimBaseGroup | body
+apiInstance.scimReplaceGroupAttributes(groupId, body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **Number**| The ID of the group. | 
+ **body** | [**ScimBaseGroup**](ScimBaseGroup.md)| body | 
+
+### Return type
+
+[**ScimGroup**](ScimGroup.md)
 
 ### Authorization
 
@@ -9137,7 +9798,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let userId = 56; // Number | The ID of the user.
+let userId = 789; // Number | The ID of the user.
 let body = new TalonOne.ScimNewUser(); // ScimNewUser | body
 apiInstance.scimReplaceUserAttributes(userId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9194,18 +9855,18 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let body = null; // Object | body
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'valid': "valid_example", // String | Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
   'usable': "usable_example", // String | Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-  'referralId': 56, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
+  'referralId': 789, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
   'batchId': "batchId_example", // String | Filter results by batches of coupons
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code.
@@ -9279,19 +9940,19 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = null; // Object | body
 let opts = {
   'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 56, // Number | The number of items to skip when paging through large result sets.
+  'skip': 789, // Number | The number of items to skip when paging through large result sets.
   'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
   'value': "value_example", // String | Filter results performing case-insensitive matching against the coupon code. Both the code and the query are folded to remove all non-alpha-numeric characters.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results comparing the parameter value, expected to be an RFC3339 timestamp string, to the coupon creation timestamp. You can use any time zone setting. Talon.One will convert to UTC internally.
   'valid': "valid_example", // String | Either \"expired\", \"validNow\", or \"validFuture\". The first option matches coupons in which the expiration date is set and in the past. The second matches coupons in which start date is null or in the past and expiration date is null or in the future, the third matches coupons in which start date is set and in the future. 
   'usable': "usable_example", // String | Either \"true\" or \"false\". If \"true\", only coupons where `usageCounter < usageLimit` will be returned, \"false\" will return only coupons where `usageCounter >= usageLimit`. 
-  'referralId': 56, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
+  'referralId': 789, // Number | Filter the results by matching them with the ID of a referral. This filter shows the coupons created by redeeming a referral code.
   'recipientIntegrationId': "recipientIntegrationId_example", // String | Filter results by match with a profile ID specified in the coupon's RecipientIntegrationId field.
   'exactMatch': false, // Boolean | Filter results to an exact case-insensitive matching against the coupon code.
   'batchId': "batchId_example" // String | Filter results by batches of coupons
@@ -9339,6 +10000,63 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## summarizeCampaignStoreBudget
+
+> InlineResponse20049 summarizeCampaignStoreBudget(applicationId, campaignId)
+
+Get summary of campaign store budgets
+
+Fetch a summary of all store budget information for a given campaign.
+
+### Example
+
+```javascript
+import TalonOne from 'talon_one';
+let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: management_key
+let management_key = defaultClient.authentications['management_key'];
+management_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//management_key.apiKeyPrefix = 'Token';
+// Configure API key authorization: manager_auth
+let manager_auth = defaultClient.authentications['manager_auth'];
+manager_auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//manager_auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new TalonOne.ManagementApi();
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+apiInstance.summarizeCampaignStoreBudget(applicationId, campaignId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationId** | **Number**| The ID of the Application. It is displayed in your Talon.One deployment URL. | 
+ **campaignId** | **Number**| The ID of the campaign. It is displayed in your Talon.One deployment URL. | 
+
+### Return type
+
+[**InlineResponse20049**](InlineResponse20049.md)
+
+### Authorization
+
+[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## transferLoyaltyCard
 
 > transferLoyaltyCard(loyaltyProgramId, loyaltyCardId, body)
@@ -9364,7 +10082,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.TransferLoyaltyCard(); // TransferLoyaltyCard | body
 apiInstance.transferLoyaltyCard(loyaltyProgramId, loyaltyCardId, body).then(() => {
@@ -9423,7 +10141,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in account](#operation/listAccountCollections) endpoint.
 let body = new TalonOne.UpdateCollection(); // UpdateCollection | body
 apiInstance.updateAccountCollection(collectionId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9480,9 +10198,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let achievementId = 56; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let achievementId = 789; // Number | The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
 let body = new TalonOne.UpdateAchievement(); // UpdateAchievement | body
 apiInstance.updateAchievement(applicationId, campaignId, achievementId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9541,7 +10259,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let additionalCostId = 56; // Number | The ID of the additional cost. You can find the ID the the Campaign Manager's URL when you display the details of the cost in **Account** > **Tools** > **Additional costs**. 
+let additionalCostId = 789; // Number | The ID of the additional cost. You can find the ID the the Campaign Manager's URL when you display the details of the cost in **Account** > **Tools** > **Additional costs**. 
 let body = new TalonOne.NewAdditionalCost(); // NewAdditionalCost | body
 apiInstance.updateAdditionalCost(additionalCostId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9598,7 +10316,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let attributeId = 56; // Number | The ID of the attribute. You can find the ID in the Campaign Manager's URL when you display the details of an attribute in **Account** > **Tools** > **Attributes**.
+let attributeId = 789; // Number | The ID of the attribute. You can find the ID in the Campaign Manager's URL when you display the details of an attribute in **Account** > **Tools** > **Attributes**.
 let body = new TalonOne.NewAttribute(); // NewAttribute | body
 apiInstance.updateAttribute(attributeId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9655,8 +10373,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.UpdateCampaign(); // UpdateCampaign | body
 apiInstance.updateCampaign(applicationId, campaignId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9714,9 +10432,9 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
-let collectionId = 56; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let collectionId = 789; // Number | The ID of the collection. You can get it with the [List collections in Application](#operation/listCollectionsInApplication) endpoint.
 let body = new TalonOne.UpdateCampaignCollection(); // UpdateCampaignCollection | body
 apiInstance.updateCollection(applicationId, campaignId, collectionId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9775,8 +10493,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let couponId = "couponId_example"; // String | The internal ID of the coupon code. You can find this value in the `id` property from the [List coupons](https://docs.talon.one/management-api#tag/Coupons/operation/getCouponsWithoutTotalCount) endpoint response. 
 let body = new TalonOne.UpdateCoupon(); // UpdateCoupon | body
 apiInstance.updateCoupon(applicationId, campaignId, couponId, body).then((data) => {
@@ -9836,8 +10554,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let body = new TalonOne.UpdateCouponBatch(); // UpdateCouponBatch | body
 apiInstance.updateCouponBatch(applicationId, campaignId, body).then(() => {
   console.log('API called successfully.');
@@ -9895,7 +10613,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let loyaltyProgramId = 56; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
+let loyaltyProgramId = 789; // Number | Identifier of the card-based loyalty program containing the loyalty card. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Identifier of the loyalty card. You can get the identifier with the [List loyalty cards](https://docs.talon.one/management-api#tag/Loyalty-cards/operation/getLoyaltyCards) endpoint. 
 let body = new TalonOne.UpdateLoyaltyCard(); // UpdateLoyaltyCard | body
 apiInstance.updateLoyaltyCard(loyaltyProgramId, loyaltyCardId, body).then((data) => {
@@ -9954,8 +10672,8 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
-let campaignId = 56; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let campaignId = 789; // Number | The ID of the campaign. It is displayed in your Talon.One deployment URL.
 let referralId = "referralId_example"; // String | The ID of the referral code.
 let body = new TalonOne.UpdateReferral(); // UpdateReferral | body
 apiInstance.updateReferral(applicationId, campaignId, referralId, body).then((data) => {
@@ -10015,7 +10733,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let roleId = 56; // Number | The ID of role.  **Note**: To find the ID of a role, use the [List roles](/management-api#tag/Roles/operation/listAllRolesV2) endpoint. 
+let roleId = 789; // Number | The ID of role.  **Note**: To find the ID of a role, use the [List roles](/management-api#tag/Roles/operation/listAllRolesV2) endpoint. 
 let body = new TalonOne.RoleV2Base(); // RoleV2Base | body
 apiInstance.updateRoleV2(roleId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -10072,7 +10790,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let applicationId = 56; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
+let applicationId = 789; // Number | The ID of the Application. It is displayed in your Talon.One deployment URL.
 let storeId = "storeId_example"; // String | The ID of the store. You can get this ID with the [List stores](#tag/Stores/operation/listStores) endpoint. 
 let body = new TalonOne.NewStore(); // NewStore | body
 apiInstance.updateStore(applicationId, storeId, body).then((data) => {
@@ -10131,7 +10849,7 @@ manager_auth.apiKey = 'YOUR API KEY';
 //manager_auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new TalonOne.ManagementApi();
-let userId = 56; // Number | The ID of the user.
+let userId = 789; // Number | The ID of the user.
 let body = new TalonOne.UpdateUser(); // UpdateUser | body
 apiInstance.updateUser(userId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

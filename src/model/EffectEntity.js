@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 12.0.0
+ * @version 25.15.0
  */
 class EffectEntity {
     /**
@@ -93,6 +93,15 @@ class EffectEntity {
             }
             if (data.hasOwnProperty('campaignRevisionVersionId')) {
                 obj['campaignRevisionVersionId'] = ApiClient.convertToType(data['campaignRevisionVersionId'], 'Number');
+            }
+            if (data.hasOwnProperty('selectedPriceType')) {
+                obj['selectedPriceType'] = ApiClient.convertToType(data['selectedPriceType'], 'String');
+            }
+            if (data.hasOwnProperty('selectedPrice')) {
+                obj['selectedPrice'] = ApiClient.convertToType(data['selectedPrice'], 'Number');
+            }
+            if (data.hasOwnProperty('adjustmentReferenceId')) {
+                obj['adjustmentReferenceId'] = ApiClient.convertToType(data['adjustmentReferenceId'], 'String');
             }
         }
         return obj;
@@ -172,6 +181,24 @@ EffectEntity.prototype['campaignRevisionId'] = undefined;
  * @member {Number} campaignRevisionVersionId
  */
 EffectEntity.prototype['campaignRevisionVersionId'] = undefined;
+
+/**
+ * The selected price type for the SKU targeted by this effect.
+ * @member {String} selectedPriceType
+ */
+EffectEntity.prototype['selectedPriceType'] = undefined;
+
+/**
+ * The value of the selected price type to apply to the SKU targeted by this effect, before any discounts are applied.
+ * @member {Number} selectedPrice
+ */
+EffectEntity.prototype['selectedPrice'] = undefined;
+
+/**
+ * The reference identifier of the selected price adjustment for this SKU. This is only returned if the `selectedPrice` resulted from a price adjustment.
+ * @member {String} adjustmentReferenceId
+ */
+EffectEntity.prototype['adjustmentReferenceId'] = undefined;
 
 
 

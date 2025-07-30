@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCampaignDescription model module.
  * @module model/GenerateCampaignDescription
- * @version 12.0.0
+ * @version 25.15.0
  */
 class GenerateCampaignDescription {
     /**

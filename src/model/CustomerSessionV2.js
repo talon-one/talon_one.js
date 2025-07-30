@@ -18,14 +18,14 @@ import CartItem from './CartItem';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CustomerSessionV2 {
     /**
      * Constructs a new <code>CustomerSessionV2</code>.
      * The representation of the customer session.
      * @alias module:model/CustomerSessionV2
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param applicationId {Number} The ID of the Application that owns this entity.
@@ -144,7 +144,7 @@ class CustomerSessionV2 {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CustomerSessionV2.prototype['id'] = undefined;

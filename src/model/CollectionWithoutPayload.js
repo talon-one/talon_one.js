@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CollectionWithoutPayload model module.
  * @module model/CollectionWithoutPayload
- * @version 12.0.0
+ * @version 25.15.0
  */
 class CollectionWithoutPayload {
     /**
      * Constructs a new <code>CollectionWithoutPayload</code>.
      * @alias module:model/CollectionWithoutPayload
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
      * @param modified {Date} The time this entity was last modified.
@@ -100,7 +100,7 @@ class CollectionWithoutPayload {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 CollectionWithoutPayload.prototype['id'] = undefined;

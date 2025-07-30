@@ -17,13 +17,13 @@ import TimePoint from './TimePoint';
 /**
  * The Achievement model module.
  * @module model/Achievement
- * @version 12.0.0
+ * @version 25.15.0
  */
 class Achievement {
     /**
      * Constructs a new <code>Achievement</code>.
      * @alias module:model/Achievement
-     * @param id {Number} Internal ID of this entity.
+     * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param name {String} The internal name of the achievement used in API requests.  **Note**: The name should start with a letter. This cannot be changed after the achievement has been created. 
      * @param title {String} The display name for the achievement in the Campaign Manager.
@@ -123,7 +123,7 @@ class Achievement {
 }
 
 /**
- * Internal ID of this entity.
+ * The internal ID of this entity.
  * @member {Number} id
  */
 Achievement.prototype['id'] = undefined;
@@ -170,7 +170,7 @@ Achievement.prototype['period'] = undefined;
 Achievement.prototype['periodEndOverride'] = undefined;
 
 /**
- * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. 
+ * The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. - `on_completion`: When the customer progress status reaches `completed`, the achievement resets and becomes available again. 
  * @member {module:model/Achievement.RecurrencePolicyEnum} recurrencePolicy
  */
 Achievement.prototype['recurrencePolicy'] = undefined;
@@ -244,7 +244,13 @@ Achievement['RecurrencePolicyEnum'] = {
      * value: "on_expiration"
      * @const
      */
-    "on_expiration": "on_expiration"
+    "on_expiration": "on_expiration",
+
+    /**
+     * value: "on_completion"
+     * @const
+     */
+    "on_completion": "on_completion"
 };
 
 
