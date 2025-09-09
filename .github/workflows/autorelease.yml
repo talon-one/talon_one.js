@@ -87,10 +87,20 @@ jobs:
           echo "notes_file=release-notes.md" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v4
+        if: ${{ steps.get_version.outputs.version != '' }}
         with:
           node-version: 24
           registry-url: 'https://registry.npmjs.org'
-      - run: npm publish --provenance --access public
+      - name: Install dependencies
+        if: ${{ steps.get_version.outputs.version != '' }}
+        run: |
+          npm install;
+          npm run build;
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish the package
+        run: npm publish --provenance --access public
+        if: ${{ steps.get_version.outputs.version != '' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
