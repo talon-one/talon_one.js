@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedeemReferralEffectProps model module.
  * @module model/RedeemReferralEffectProps
- * @version 25.15.0
+ * @version 25.16.0
  */
 class RedeemReferralEffectProps {
     /**

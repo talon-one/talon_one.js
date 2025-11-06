@@ -18,7 +18,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The NewLoyaltyProgram model module.
  * @module model/NewLoyaltyProgram
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NewLoyaltyProgram {
     /**
@@ -27,7 +27,7 @@ class NewLoyaltyProgram {
      * @alias module:model/NewLoyaltyProgram
      * @param title {String} The display title for the Loyalty Program.
      * @param defaultValidity {String} The default duration after which new loyalty points should expire. Can be 'unlimited' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
-     * @param defaultPending {String} The default duration of the pending time after which points should be valid. Can be 'immediate' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
+     * @param defaultPending {String} The default duration of the pending time after which points should be valid. Accepted values: 'immediate', 'on_action' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
      * @param allowSubledger {Boolean} Indicates if this program supports subledgers inside the program.
      * @param sandbox {Boolean} Indicates if this program is a live or sandbox program. Programs of a given type can only be connected to Applications of the same type.
      * @param name {String} The internal name for the Loyalty Program. This is an immutable value.
@@ -155,7 +155,7 @@ NewLoyaltyProgram.prototype['subscribedApplications'] = undefined;
 NewLoyaltyProgram.prototype['defaultValidity'] = undefined;
 
 /**
- * The default duration of the pending time after which points should be valid. Can be 'immediate' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
+ * The default duration of the pending time after which points should be valid. Accepted values: 'immediate', 'on_action' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
  * @member {String} defaultPending
  */
 NewLoyaltyProgram.prototype['defaultPending'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NotificationListItem model module.
  * @module model/NotificationListItem
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NotificationListItem {
     /**

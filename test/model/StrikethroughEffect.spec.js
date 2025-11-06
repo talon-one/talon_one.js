@@ -102,6 +102,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property selectedPriceType (base name: "selectedPriceType")', function() {
+      // uncomment below and update the code to test the property selectedPriceType
+      //var instane = new TalonOne.StrikethroughEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property selectedPrice (base name: "selectedPrice")', function() {
+      // uncomment below and update the code to test the property selectedPrice
+      //var instane = new TalonOne.StrikethroughEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property adjustmentReferenceId (base name: "adjustmentReferenceId")', function() {
+      // uncomment below and update the code to test the property adjustmentReferenceId
+      //var instane = new TalonOne.StrikethroughEffect();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property targets (base name: "targets")', function() {
+      // uncomment below and update the code to test the property targets
+      //var instane = new TalonOne.StrikethroughEffect();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

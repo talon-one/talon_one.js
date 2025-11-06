@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import PriceDetail from './PriceDetail';
 import StrikethroughEffect from './StrikethroughEffect';
 
 /**
  * The StrikethroughChangedItem model module.
  * @module model/StrikethroughChangedItem
- * @version 25.15.0
+ * @version 25.16.0
  */
 class StrikethroughChangedItem {
     /**
@@ -76,6 +77,9 @@ class StrikethroughChangedItem {
             if (data.hasOwnProperty('price')) {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number');
             }
+            if (data.hasOwnProperty('prices')) {
+                obj['prices'] = ApiClient.convertToType(data['prices'], {'String': PriceDetail});
+            }
             if (data.hasOwnProperty('evaluatedAt')) {
                 obj['evaluatedAt'] = ApiClient.convertToType(data['evaluatedAt'], 'Date');
             }
@@ -118,6 +122,12 @@ StrikethroughChangedItem.prototype['version'] = undefined;
  * @member {Number} price
  */
 StrikethroughChangedItem.prototype['price'] = undefined;
+
+/**
+ * A map of keys and values representing the price types and related price adjustment details for this cart item.       The keys correspond to the `priceType` names. 
+ * @member {Object.<String, module:model/PriceDetail>} prices
+ */
+StrikethroughChangedItem.prototype['prices'] = undefined;
 
 /**
  * The evaluation time of the changed item.

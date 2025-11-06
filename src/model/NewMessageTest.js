@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
+import TemplateArgDef from './TemplateArgDef';
 
 /**
  * The NewMessageTest model module.
  * @module model/NewMessageTest
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NewMessageTest {
     /**
      * Constructs a new <code>NewMessageTest</code>.
      * @alias module:model/NewMessageTest
-     * @param type {module:model/NewMessageTest.TypeEnum} The message type.
      * @param verb {module:model/NewMessageTest.VerbEnum} API method for this message.
      * @param url {String} API URL for the given message.
      */
-    constructor(type, verb, url) { 
+    constructor(verb, url) { 
         
-        NewMessageTest.initialize(this, type, verb, url);
+        NewMessageTest.initialize(this, verb, url);
     }
 
     /**
@@ -36,8 +36,7 @@ class NewMessageTest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, verb, url) { 
-        obj['type'] = type;
+    static initialize(obj, verb, url) { 
         obj['verb'] = verb;
         obj['url'] = url;
     }
@@ -53,12 +52,6 @@ class NewMessageTest {
         if (data) {
             obj = obj || new NewMessageTest();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
-            }
-            if (data.hasOwnProperty('queryParams')) {
-                obj['queryParams'] = ApiClient.convertToType(data['queryParams'], {'String': 'String'});
-            }
             if (data.hasOwnProperty('headers')) {
                 obj['headers'] = ApiClient.convertToType(data['headers'], {'String': 'String'});
             }
@@ -71,24 +64,18 @@ class NewMessageTest {
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
+            if (data.hasOwnProperty('params')) {
+                obj['params'] = ApiClient.convertToType(data['params'], [TemplateArgDef]);
+            }
+            if (data.hasOwnProperty('applicationIds')) {
+                obj['applicationIds'] = ApiClient.convertToType(data['applicationIds'], ['Number']);
+            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * The message type.
- * @member {module:model/NewMessageTest.TypeEnum} type
- */
-NewMessageTest.prototype['type'] = undefined;
-
-/**
- * Array of query parameters.
- * @member {Object.<String, String>} queryParams
- */
-NewMessageTest.prototype['queryParams'] = undefined;
 
 /**
  * List of API HTTP headers for the given message.
@@ -114,107 +101,20 @@ NewMessageTest.prototype['url'] = undefined;
  */
 NewMessageTest.prototype['payload'] = undefined;
 
-
-
-
+/**
+ * Array of template argument definitions.
+ * @member {Array.<module:model/TemplateArgDef>} params
+ */
+NewMessageTest.prototype['params'] = undefined;
 
 /**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
+ * The IDs of the Applications in which this webhook is available. An empty array means the webhook is available in `All Applications`. 
+ * @member {Array.<Number>} applicationIds
  */
-NewMessageTest['TypeEnum'] = {
+NewMessageTest.prototype['applicationIds'] = undefined;
 
-    /**
-     * value: "campaign"
-     * @const
-     */
-    "campaign": "campaign",
 
-    /**
-     * value: "loyalty_added_deducted_points"
-     * @const
-     */
-    "loyalty_added_deducted_points": "loyalty_added_deducted_points",
 
-    /**
-     * value: "card_added_deducted_points"
-     * @const
-     */
-    "card_added_deducted_points": "card_added_deducted_points",
-
-    /**
-     * value: "loyalty_added_deducted_points_balances"
-     * @const
-     */
-    "loyalty_added_deducted_points_balances": "loyalty_added_deducted_points_balances",
-
-    /**
-     * value: "loyalty_card_added_deducted_points_balances"
-     * @const
-     */
-    "loyalty_card_added_deducted_points_balances": "loyalty_card_added_deducted_points_balances",
-
-    /**
-     * value: "coupon"
-     * @const
-     */
-    "coupon": "coupon",
-
-    /**
-     * value: "expiring_coupons"
-     * @const
-     */
-    "expiring_coupons": "expiring_coupons",
-
-    /**
-     * value: "expiring_points"
-     * @const
-     */
-    "expiring_points": "expiring_points",
-
-    /**
-     * value: "pending_to_active_points"
-     * @const
-     */
-    "pending_to_active_points": "pending_to_active_points",
-
-    /**
-     * value: "strikethrough_pricing"
-     * @const
-     */
-    "strikethrough_pricing": "strikethrough_pricing",
-
-    /**
-     * value: "tier_downgrade"
-     * @const
-     */
-    "tier_downgrade": "tier_downgrade",
-
-    /**
-     * value: "tier_upgrade"
-     * @const
-     */
-    "tier_upgrade": "tier_upgrade",
-
-    /**
-     * value: "tier_will_downgrade"
-     * @const
-     */
-    "tier_will_downgrade": "tier_will_downgrade",
-
-    /**
-     * value: "card_expiring_points"
-     * @const
-     */
-    "card_expiring_points": "card_expiring_points",
-
-    /**
-     * value: "rule_engine_webhook"
-     * @const
-     */
-    "rule_engine_webhook": "rule_engine_webhook"
-};
 
 
 /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewInvitation model module.
  * @module model/NewInvitation
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NewInvitation {
     /**

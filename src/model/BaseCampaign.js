@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The BaseCampaign model module.
  * @module model/BaseCampaign
- * @version 25.15.0
+ * @version 25.16.0
  */
 class BaseCampaign {
     /**

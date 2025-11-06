@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**transactionUUID** | **String** | Unique identifier of the transaction in the UUID format. | 
 **created** | **Date** | Date and time the loyalty transaction occurred. | 
 **programId** | **Number** | ID of the loyalty program. | 
 **customerSessionId** | **String** | ID of the customer session where the transaction occurred. | [optional] 

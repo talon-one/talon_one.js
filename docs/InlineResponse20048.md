@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ListCampaignStoreBudgets]**](ListCampaignStoreBudgets.md) |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
+**data** | [**[Achievement]**](Achievement.md) |  | 
 
 

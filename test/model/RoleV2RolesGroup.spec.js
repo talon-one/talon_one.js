@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property account (base name: "account")', function() {
+      // uncomment below and update the code to test the property account
+      //var instane = new TalonOne.RoleV2RolesGroup();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

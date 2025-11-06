@@ -17,7 +17,7 @@ import LoyaltyCard from './LoyaltyCard';
 /**
  * The InlineResponse20018 model module.
  * @module model/InlineResponse20018
- * @version 25.15.0
+ * @version 25.16.0
  */
 class InlineResponse20018 {
     /**

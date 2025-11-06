@@ -17,7 +17,7 @@ import ScimGroupMember from './ScimGroupMember';
 /**
  * The ScimBaseGroup model module.
  * @module model/ScimBaseGroup
- * @version 25.15.0
+ * @version 25.16.0
  */
 class ScimBaseGroup {
     /**

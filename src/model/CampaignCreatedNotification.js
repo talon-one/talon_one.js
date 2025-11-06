@@ -12,26 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
-import CampaignEvaluationPosition from './CampaignEvaluationPosition';
-import Ruleset from './Ruleset';
+import CampaignCreatedNotificationItem from './CampaignCreatedNotificationItem';
 
 /**
  * The CampaignCreatedNotification model module.
  * @module model/CampaignCreatedNotification
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CampaignCreatedNotification {
     /**
      * Constructs a new <code>CampaignCreatedNotification</code>.
-     * A notification regarding a campaign that was created.
      * @alias module:model/CampaignCreatedNotification
-     * @param campaign {module:model/Campaign} 
-     * @param evaluationPosition {module:model/CampaignEvaluationPosition} 
+     * @param notificationType {String} The type of the notification
+     * @param totalResultSize {Number} The total size of the result set.
      */
-    constructor(campaign, evaluationPosition) { 
+    constructor(notificationType, totalResultSize) { 
         
-        CampaignCreatedNotification.initialize(this, campaign, evaluationPosition);
+        CampaignCreatedNotification.initialize(this, notificationType, totalResultSize);
     }
 
     /**
@@ -39,9 +36,9 @@ class CampaignCreatedNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaign, evaluationPosition) { 
-        obj['campaign'] = campaign;
-        obj['evaluationPosition'] = evaluationPosition;
+    static initialize(obj, notificationType, totalResultSize) { 
+        obj['NotificationType'] = notificationType;
+        obj['TotalResultSize'] = totalResultSize;
     }
 
     /**
@@ -55,14 +52,14 @@ class CampaignCreatedNotification {
         if (data) {
             obj = obj || new CampaignCreatedNotification();
 
-            if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
+            if (data.hasOwnProperty('NotificationType')) {
+                obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
             }
-            if (data.hasOwnProperty('ruleset')) {
-                obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
+            if (data.hasOwnProperty('TotalResultSize')) {
+                obj['TotalResultSize'] = ApiClient.convertToType(data['TotalResultSize'], 'Number');
             }
-            if (data.hasOwnProperty('evaluationPosition')) {
-                obj['evaluationPosition'] = CampaignEvaluationPosition.constructFromObject(data['evaluationPosition']);
+            if (data.hasOwnProperty('Data')) {
+                obj['Data'] = ApiClient.convertToType(data['Data'], [CampaignCreatedNotificationItem]);
             }
         }
         return obj;
@@ -72,19 +69,22 @@ class CampaignCreatedNotification {
 }
 
 /**
- * @member {module:model/Campaign} campaign
+ * The type of the notification
+ * @member {String} NotificationType
  */
-CampaignCreatedNotification.prototype['campaign'] = undefined;
+CampaignCreatedNotification.prototype['NotificationType'] = undefined;
 
 /**
- * @member {module:model/Ruleset} ruleset
+ * The total size of the result set.
+ * @member {Number} TotalResultSize
  */
-CampaignCreatedNotification.prototype['ruleset'] = undefined;
+CampaignCreatedNotification.prototype['TotalResultSize'] = undefined;
 
 /**
- * @member {module:model/CampaignEvaluationPosition} evaluationPosition
+ * A list of campaign notification data.
+ * @member {Array.<module:model/CampaignCreatedNotificationItem>} Data
  */
-CampaignCreatedNotification.prototype['evaluationPosition'] = undefined;
+CampaignCreatedNotification.prototype['Data'] = undefined;
 
 
 

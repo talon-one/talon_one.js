@@ -82,8 +82,6 @@ import InlineResponse20046 from '../model/InlineResponse20046';
 import InlineResponse20047 from '../model/InlineResponse20047';
 import InlineResponse20048 from '../model/InlineResponse20048';
 import InlineResponse20049 from '../model/InlineResponse20049';
-import InlineResponse20050 from '../model/InlineResponse20050';
-import InlineResponse20051 from '../model/InlineResponse20051';
 import InlineResponse2007 from '../model/InlineResponse2007';
 import InlineResponse2008 from '../model/InlineResponse2008';
 import InlineResponse2009 from '../model/InlineResponse2009';
@@ -143,7 +141,7 @@ import Webhook from '../model/Webhook';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 25.15.0
+* @version 25.16.0
 */
 export default class ManagementApi {
 
@@ -182,7 +180,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -241,7 +239,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -302,7 +300,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -363,7 +361,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse2008;
@@ -412,7 +410,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Collection;
@@ -471,7 +469,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Achievement;
@@ -520,7 +518,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AccountAdditionalCost;
@@ -567,7 +565,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Attribute;
@@ -620,7 +618,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = LoyaltyCardBatchResponse;
@@ -674,7 +672,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CreateTemplateCampaignResponse;
@@ -734,7 +732,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -795,7 +793,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Collection;
@@ -860,7 +858,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse20010;
@@ -923,7 +921,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AsyncCouponCreationResponse;
@@ -984,7 +982,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AsyncCouponDeletionJobResponse;
@@ -1049,7 +1047,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse20010;
@@ -1100,7 +1098,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = NewInviteEmail;
@@ -1147,7 +1145,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = User;
@@ -1194,7 +1192,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = NewPasswordEmail;
@@ -1241,7 +1239,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Session;
@@ -1294,7 +1292,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Store;
@@ -1342,7 +1340,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -1401,7 +1399,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -1451,7 +1449,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -1511,7 +1509,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -1567,7 +1565,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1628,7 +1626,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -1692,7 +1690,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -1754,7 +1752,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1838,7 +1836,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1907,7 +1905,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -1968,7 +1966,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2024,7 +2022,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -2073,7 +2071,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2120,7 +2118,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -2162,7 +2160,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2215,7 +2213,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -2264,7 +2262,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2324,7 +2322,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2374,7 +2372,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2434,7 +2432,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2492,7 +2490,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2553,7 +2551,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2633,7 +2631,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2708,7 +2706,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2768,7 +2766,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2829,7 +2827,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2886,7 +2884,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2940,7 +2938,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -2994,7 +2992,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -3066,7 +3064,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -3129,7 +3127,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -3161,7 +3159,7 @@ export default class ManagementApi {
 
     /**
      * Export customer's transaction logs
-     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. - `flags`: The flags of the transaction, when applicable. The `createsNegativeBalance` flag indicates whether the transaction results in a negative balance. 
+     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. - `flags`: The flags of the transaction, when applicable. The `createsNegativeBalance` flag indicates whether the transaction results in a negative balance. - `transactionUUID`: Unique identifier of the transaction in the UUID format. 
      * @param {Date} rangeStart Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date} rangeEnd Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {String} loyaltyProgramId The identifier for the loyalty program.
@@ -3204,7 +3202,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -3217,7 +3215,7 @@ export default class ManagementApi {
 
     /**
      * Export customer's transaction logs
-     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. - `flags`: The flags of the transaction, when applicable. The `createsNegativeBalance` flag indicates whether the transaction results in a negative balance. 
+     * Download a CSV file containing a customer's transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - `customerprofileid`: The ID of the profile. - `customersessionid`: The ID of the customer session. - `rulesetid`: The ID of the rule set. - `rulename`: The name of the rule. - `programid`: The ID of the loyalty program. - `type`: The transaction type, such as `addition` or `subtraction`. - `name`: The reason for the transaction. - `subledgerid`: The ID of the subledger, when applicable. - `startdate`: The start date of the program. - `expirydate`: The expiration date of the program. - `id`: The ID of the transaction. - `created`: The timestamp of the creation of the loyalty program. - `amount`: The number of points in that transaction. - `archived`: Whether the session related to the transaction is archived. - `campaignid`: The ID of the campaign. - `flags`: The flags of the transaction, when applicable. The `createsNegativeBalance` flag indicates whether the transaction results in a negative balance. - `transactionUUID`: Unique identifier of the transaction in the UUID format. 
      * @param {Date} rangeStart Only return results from after this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date} rangeEnd Only return results from before this timestamp.  **Note:** - This must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {String} loyaltyProgramId The identifier for the loyalty program.
@@ -3263,7 +3261,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -3330,7 +3328,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/csv'];
       let returnType = 'String';
@@ -3412,7 +3410,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20022;
@@ -3469,7 +3467,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Account;
@@ -3517,7 +3515,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AccountAnalytics;
@@ -3565,7 +3563,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Collection;
@@ -3625,7 +3623,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Achievement;
@@ -3675,7 +3673,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AccountAdditionalCost;
@@ -3725,7 +3723,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20038;
@@ -3776,7 +3774,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Application;
@@ -3824,7 +3822,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApplicationApiHealth;
@@ -3878,7 +3876,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApplicationCustomer;
@@ -3943,7 +3941,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20035;
@@ -4007,7 +4005,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20024;
@@ -4073,7 +4071,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse20025;
@@ -4134,7 +4132,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20031;
@@ -4182,6 +4180,7 @@ export default class ManagementApi {
      * @param {String=} [opts.referralCode] Referral code
      * @param {String=} [opts.ruleQuery] Rule name filter for events
      * @param {String=} [opts.campaignQuery] Campaign name filter for events
+     * @param {String=} [opts.effectType] The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20030} and HTTP response
      */
     getApplicationEventsWithoutTotalCountWithHttpInfo(applicationId, opts) {
@@ -4209,14 +4208,15 @@ export default class ManagementApi {
         'couponCode': opts['couponCode'],
         'referralCode': opts['referralCode'],
         'ruleQuery': opts['ruleQuery'],
-        'campaignQuery': opts['campaignQuery']
+        'campaignQuery': opts['campaignQuery'],
+        'effectType': opts['effectType']
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20030;
@@ -4246,6 +4246,7 @@ export default class ManagementApi {
      * @param {String=} [opts.referralCode] Referral code
      * @param {String=} [opts.ruleQuery] Rule name filter for events
      * @param {String=} [opts.campaignQuery] Campaign name filter for events
+     * @param {String=} [opts.effectType] The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20030}
      */
     getApplicationEventsWithoutTotalCount(applicationId, opts) {
@@ -4285,7 +4286,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApplicationSession;
@@ -4358,7 +4359,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20029;
@@ -4420,7 +4421,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse2007;
@@ -4471,7 +4472,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Attribute;
@@ -4523,7 +4524,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20036;
@@ -4585,7 +4586,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20034;
@@ -4642,7 +4643,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20032;
@@ -4698,7 +4699,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20033;
@@ -4754,7 +4755,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Campaign;
@@ -4825,7 +4826,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20023;
@@ -4893,7 +4894,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse2008;
@@ -4947,7 +4948,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CampaignGroup;
@@ -4997,7 +4998,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20013;
@@ -5058,7 +5059,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20014;
@@ -5137,7 +5138,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse2008;
@@ -5189,7 +5190,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Number=} [opts.managementKeyId] Filter results that match the given management key ID.
      * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20044} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20042} and HTTP response
      */
     getChangesWithHttpInfo(opts) {
       opts = opts || {};
@@ -5215,10 +5216,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20044;
+      let returnType = InlineResponse20042;
       return this.apiClient.callApi(
         '/v1/changes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5241,7 +5242,7 @@ export default class ManagementApi {
      * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total size of the result, across all pages. This might decrease performance on large data sets.  - When `true`: `hasMore` is true when there is a next page. `totalResultSize` is always zero. - When `false`: `hasMore` is always false. `totalResultSize` contains the total number of results for this query. 
      * @param {Number=} [opts.managementKeyId] Filter results that match the given management key ID.
      * @param {Boolean=} [opts.includeOld] When this flag is set to false, the state without the change will not be returned. The default value is true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20044}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20042}
      */
     getChanges(opts) {
       return this.getChangesWithHttpInfo(opts)
@@ -5286,7 +5287,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Collection;
@@ -5342,7 +5343,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20021;
@@ -5437,7 +5438,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20011;
@@ -5529,7 +5530,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CustomerActivityReport;
@@ -5611,7 +5612,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20028;
@@ -5683,7 +5684,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CustomerAnalytics;
@@ -5736,7 +5737,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CustomerProfile;
@@ -5771,7 +5772,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Number=} [opts.achievementId] The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
      * @param {String=} [opts.title] Filter results by the `title` of an achievement.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20051} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20049} and HTTP response
      */
     getCustomerProfileAchievementProgressWithHttpInfo(applicationId, integrationId, opts) {
       opts = opts || {};
@@ -5800,10 +5801,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20051;
+      let returnType = InlineResponse20049;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/achievement_progress/{integrationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -5821,7 +5822,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Number=} [opts.achievementId] The ID of the achievement. You can get this ID with the [List achievement](https://docs.talon.one/management-api#tag/Achievements/operation/listAchievements) endpoint.
      * @param {String=} [opts.title] Filter results by the `title` of an achievement.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20051}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20049}
      */
     getCustomerProfileAchievementProgress(applicationId, integrationId, opts) {
       return this.getCustomerProfileAchievementProgressWithHttpInfo(applicationId, integrationId, opts)
@@ -5856,7 +5857,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20027;
@@ -5914,7 +5915,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse20026;
@@ -5982,7 +5983,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20016;
@@ -6020,7 +6021,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20042} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20040} and HTTP response
      */
     getEventTypesWithHttpInfo(opts) {
       opts = opts || {};
@@ -6040,10 +6041,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20042;
+      let returnType = InlineResponse20040;
       return this.apiClient.callApi(
         '/v1/event_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6060,7 +6061,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20042}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20040}
      */
     getEventTypes(opts) {
       return this.getEventTypesWithHttpInfo(opts)
@@ -6079,7 +6080,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
      * @param {Number=} [opts.campaignId] Filter by the campaign ID on which the limit counters are used.
      * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20045} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20043} and HTTP response
      */
     getExportsWithHttpInfo(opts) {
       opts = opts || {};
@@ -6099,10 +6100,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20045;
+      let returnType = InlineResponse20043;
       return this.apiClient.callApi(
         '/v1/exports', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6119,7 +6120,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.applicationId] Filter results by Application ID.
      * @param {Number=} [opts.campaignId] Filter by the campaign ID on which the limit counters are used.
      * @param {module:model/String=} [opts.entity] The name of the entity type that was exported.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20045}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20043}
      */
     getExports(opts) {
       return this.getExportsWithHttpInfo(opts)
@@ -6158,7 +6159,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = LoyaltyCard;
@@ -6195,6 +6196,8 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20019} and HTTP response
      */
     getLoyaltyCardTransactionLogsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
@@ -6218,14 +6221,16 @@ export default class ManagementApi {
         'endDate': opts['endDate'],
         'pageSize': opts['pageSize'],
         'skip': opts['skip'],
-        'subledgerId': opts['subledgerId']
+        'subledgerId': opts['subledgerId'],
+        'customerSessionIDs': this.apiClient.buildCollectionParam(opts['customerSessionIDs'], 'multi'),
+        'transactionUUIDs': this.apiClient.buildCollectionParam(opts['transactionUUIDs'], 'multi')
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20019;
@@ -6247,6 +6252,8 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20019}
      */
     getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardId, opts) {
@@ -6294,7 +6301,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20018;
@@ -6355,7 +6362,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = LoyaltyLedger;
@@ -6404,7 +6411,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = LoyaltyProgram;
@@ -6436,6 +6443,8 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
@@ -6456,6 +6465,8 @@ export default class ManagementApi {
       let queryParams = {
         'loyaltyTransactionType': opts['loyaltyTransactionType'],
         'subledgerId': opts['subledgerId'],
+        'customerSessionIDs': this.apiClient.buildCollectionParam(opts['customerSessionIDs'], 'multi'),
+        'transactionUUIDs': this.apiClient.buildCollectionParam(opts['transactionUUIDs'], 'multi'),
         'startDate': opts['startDate'],
         'endDate': opts['endDate'],
         'pageSize': opts['pageSize'],
@@ -6466,7 +6477,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20017;
@@ -6484,6 +6495,8 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
@@ -6515,7 +6528,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20015;
@@ -6562,7 +6575,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = LoyaltyDashboardData;
@@ -6595,8 +6608,8 @@ export default class ManagementApi {
      * @param {String=} [opts.messageID] Filter results by message ID.
      * @param {module:model/String=} [opts.changeType] Filter results by change type.
      * @param {String=} [opts.notificationIDs] Filter results by notification ID (include up to 30 values, separated by a comma).
-     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. Use UTC time.
+     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. Use UTC time.
      * @param {Blob=} [opts.cursor] A specific unique value in the database. If this value is not given, the server fetches results starting with the first record. 
      * @param {module:model/String=} [opts.period] Filter results by time period. Choose between the available relative time frames. 
      * @param {Boolean=} [opts.isSuccessful] Indicates whether to return log entries with either successful or unsuccessful HTTP response codes. When set to`true`, only log entries with `2xx` response codes are returned. When set to `false`, only log entries with `4xx` and `5xx` response codes are returned. 
@@ -6638,7 +6651,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = MessageLogEntries;
@@ -6657,8 +6670,8 @@ export default class ManagementApi {
      * @param {String=} [opts.messageID] Filter results by message ID.
      * @param {module:model/String=} [opts.changeType] Filter results by change type.
      * @param {String=} [opts.notificationIDs] Filter results by notification ID (include up to 30 values, separated by a comma).
-     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
+     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. Use UTC time.
+     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. Use UTC time.
      * @param {Blob=} [opts.cursor] A specific unique value in the database. If this value is not given, the server fetches results starting with the first record. 
      * @param {module:model/String=} [opts.period] Filter results by time period. Choose between the available relative time frames. 
      * @param {Boolean=} [opts.isSuccessful] Indicates whether to return log entries with either successful or unsuccessful HTTP response codes. When set to`true`, only log entries with `2xx` response codes are returned. When set to `false`, only log entries with `4xx` and `5xx` response codes are returned. 
@@ -6726,7 +6739,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20012;
@@ -6785,7 +6798,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = RoleV2;
@@ -6845,7 +6858,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Ruleset;
@@ -6909,7 +6922,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse2009;
@@ -6968,7 +6981,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Store;
@@ -7017,7 +7030,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = User;
@@ -7049,7 +7062,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20043} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20041} and HTTP response
      */
     getUsersWithHttpInfo(opts) {
       opts = opts || {};
@@ -7067,10 +7080,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20043;
+      let returnType = InlineResponse20041;
       return this.apiClient.callApi(
         '/v1/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7085,7 +7098,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20043}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20041}
      */
     getUsers(opts) {
       return this.getUsersWithHttpInfo(opts)
@@ -7118,7 +7131,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Webhook;
@@ -7137,151 +7150,6 @@ export default class ManagementApi {
      */
     getWebhook(webhookId) {
       return this.getWebhookWithHttpInfo(webhookId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List webhook activation log entries
-     * Webhook activation log entries are created as soon as an integration request triggers a webhook effect. See the [docs](https://docs.talon.one/docs/dev/getting-started/webhooks). 
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20040} and HTTP response
-     */
-    getWebhookActivationLogsWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip'],
-        'sort': opts['sort'],
-        'integrationRequestUuid': opts['integrationRequestUuid'],
-        'webhookId': opts['webhookId'],
-        'applicationId': opts['applicationId'],
-        'campaignId': opts['campaignId'],
-        'createdBefore': opts['createdBefore'],
-        'createdAfter': opts['createdAfter']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['management_key', 'manager_auth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse20040;
-      return this.apiClient.callApi(
-        '/v1/webhook_activation_logs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * List webhook activation log entries
-     * Webhook activation log entries are created as soon as an integration request triggers a webhook effect. See the [docs](https://docs.talon.one/docs/dev/getting-started/webhooks). 
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {String=} [opts.integrationRequestUuid] Filter results by integration request UUID.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {Date=} [opts.createdBefore] Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20040}
-     */
-    getWebhookActivationLogs(opts) {
-      return this.getWebhookActivationLogsWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List webhook log entries
-     * Retrieve all webhook log entries.
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {String=} [opts.requestUuid] Filter results by request UUID.
-     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20041} and HTTP response
-     */
-    getWebhookLogsWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'pageSize': opts['pageSize'],
-        'skip': opts['skip'],
-        'sort': opts['sort'],
-        'status': opts['status'],
-        'webhookId': opts['webhookId'],
-        'applicationId': opts['applicationId'],
-        'campaignId': opts['campaignId'],
-        'requestUuid': opts['requestUuid'],
-        'createdBefore': opts['createdBefore'],
-        'createdAfter': opts['createdAfter']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['management_key', 'manager_auth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse20041;
-      return this.apiClient.callApi(
-        '/v1/webhook_logs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * List webhook log entries
-     * Retrieve all webhook log entries.
-     * @param {Object} [opts] Optional parameters
-     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
-     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
-     * @param {String=} [opts.sort] The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-     * @param {module:model/String=} [opts.status] Filter results by HTTP status codes.
-     * @param {Number=} [opts.webhookId] Filter results by webhook id.
-     * @param {Number=} [opts.applicationId] Filter results by Application ID.
-     * @param {Number=} [opts.campaignId] Filter results by campaign ID.
-     * @param {String=} [opts.requestUuid] Filter results by request UUID.
-     * @param {Date=} [opts.createdBefore] Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @param {Date=} [opts.createdAfter] Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20041}
-     */
-    getWebhookLogs(opts) {
-      return this.getWebhookLogsWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7323,7 +7191,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20039;
@@ -7383,7 +7251,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7437,7 +7305,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7491,7 +7359,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7555,7 +7423,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7618,7 +7486,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7685,7 +7553,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7749,7 +7617,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7805,7 +7673,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7859,7 +7727,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7915,7 +7783,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -7970,7 +7838,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -8030,7 +7898,7 @@ export default class ManagementApi {
         'upFile': opts['upFile']
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelImport;
@@ -8080,7 +7948,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -8134,7 +8002,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20020;
@@ -8173,7 +8041,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.title] Filter by the display name for the achievement in the campaign manager.  **Note**: If no `title` is provided, all the achievements from the campaign are returned. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20050} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20048} and HTTP response
      */
     listAchievementsWithHttpInfo(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -8201,10 +8069,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20050;
+      let returnType = InlineResponse20048;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/achievements', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8221,7 +8089,7 @@ export default class ManagementApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {String=} [opts.title] Filter by the display name for the achievement in the campaign manager.  **Note**: If no `title` is provided, all the achievements from the campaign are returned. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20050}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20048}
      */
     listAchievements(applicationId, campaignId, opts) {
       return this.listAchievementsWithHttpInfo(applicationId, campaignId, opts)
@@ -8234,7 +8102,7 @@ export default class ManagementApi {
     /**
      * List roles
      * List all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20046} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20044} and HTTP response
      */
     listAllRolesV2WithHttpInfo() {
       let postBody = null;
@@ -8248,10 +8116,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20046;
+      let returnType = InlineResponse20044;
       return this.apiClient.callApi(
         '/v2/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8262,7 +8130,7 @@ export default class ManagementApi {
     /**
      * List roles
      * List all roles.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20046}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20044}
      */
     listAllRolesV2() {
       return this.listAllRolesV2WithHttpInfo()
@@ -8280,7 +8148,7 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.action] The action that this budget is limiting.
      * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20048} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20046} and HTTP response
      */
     listCampaignStoreBudgetLimitsWithHttpInfo(applicationId, campaignId, opts) {
       opts = opts || {};
@@ -8307,10 +8175,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20048;
+      let returnType = InlineResponse20046;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8326,7 +8194,7 @@ export default class ManagementApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.action] The action that this budget is limiting.
      * @param {module:model/String=} [opts.period] The period to which the limit applies.  **Note**: For budgets with no period, set this to `overall`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20048}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20046}
      */
     listCampaignStoreBudgetLimits(applicationId, campaignId, opts) {
       return this.listCampaignStoreBudgetLimitsWithHttpInfo(applicationId, campaignId, opts)
@@ -8371,7 +8239,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20037;
@@ -8443,7 +8311,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20020;
@@ -8510,7 +8378,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse20020;
@@ -8554,7 +8422,7 @@ export default class ManagementApi {
      * @param {String=} [opts.name] The name of the store.
      * @param {String=} [opts.integrationId] The integration ID of the store.
      * @param {String=} [opts.query] Filter results by `name` or `integrationId`.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20047} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20045} and HTTP response
      */
     listStoresWithHttpInfo(applicationId, opts) {
       opts = opts || {};
@@ -8582,10 +8450,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20047;
+      let returnType = InlineResponse20045;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/stores', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8606,7 +8474,7 @@ export default class ManagementApi {
      * @param {String=} [opts.name] The name of the store.
      * @param {String=} [opts.integrationId] The integration ID of the store.
      * @param {String=} [opts.query] Filter results by `name` or `integrationId`.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20047}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20045}
      */
     listStores(applicationId, opts) {
       return this.listStoresWithHttpInfo(applicationId, opts)
@@ -8633,7 +8501,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -8691,7 +8559,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -8740,7 +8608,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = NewPassword;
@@ -8787,7 +8655,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ScimGroup;
@@ -8834,7 +8702,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ScimUser;
@@ -8882,7 +8750,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -8930,7 +8798,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -8978,7 +8846,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ScimGroup;
@@ -9020,7 +8888,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ScimGroupsListResponse;
@@ -9061,7 +8929,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ScimResourceTypesListResponse;
@@ -9102,7 +8970,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ScimSchemasListResponse;
@@ -9143,7 +9011,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ScimServiceProviderConfigResponse;
@@ -9190,7 +9058,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ScimUser;
@@ -9232,7 +9100,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ScimUsersListResponse;
@@ -9284,7 +9152,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ScimGroup;
@@ -9338,7 +9206,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ScimUser;
@@ -9392,7 +9260,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ScimGroup;
@@ -9446,7 +9314,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ScimUser;
@@ -9528,7 +9396,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse20011;
@@ -9628,7 +9496,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse20011;
@@ -9673,7 +9541,7 @@ export default class ManagementApi {
      * Fetch a summary of all store budget information for a given campaign.
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20049} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20047} and HTTP response
      */
     summarizeCampaignStoreBudgetWithHttpInfo(applicationId, campaignId) {
       let postBody = null;
@@ -9697,10 +9565,10 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20049;
+      let returnType = InlineResponse20047;
       return this.apiClient.callApi(
         '/v1/applications/{applicationId}/campaigns/{campaignId}/stores/budgets/summary', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -9713,7 +9581,7 @@ export default class ManagementApi {
      * Fetch a summary of all store budget information for a given campaign.
      * @param {Number} applicationId The ID of the Application. It is displayed in your Talon.One deployment URL.
      * @param {Number} campaignId The ID of the campaign. It is displayed in your Talon.One deployment URL.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20049}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20047}
      */
     summarizeCampaignStoreBudget(applicationId, campaignId) {
       return this.summarizeCampaignStoreBudgetWithHttpInfo(applicationId, campaignId)
@@ -9757,7 +9625,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -9812,7 +9680,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Collection;
@@ -9878,7 +9746,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Achievement;
@@ -9934,7 +9802,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AccountAdditionalCost;
@@ -9988,7 +9856,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Attribute;
@@ -10048,7 +9916,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Campaign;
@@ -10115,7 +9983,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Collection;
@@ -10183,7 +10051,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Coupon;
@@ -10245,7 +10113,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -10306,7 +10174,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = LoyaltyCard;
@@ -10373,7 +10241,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Referral;
@@ -10429,7 +10297,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RoleV2;
@@ -10489,7 +10357,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Store;
@@ -10544,7 +10412,7 @@ export default class ManagementApi {
       let formParams = {
       };
 
-      let authNames = ['management_key', 'manager_auth'];
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = User;

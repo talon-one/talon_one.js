@@ -2,10 +2,11 @@ name: Auto-release on master
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
   release:
@@ -14,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # get full history so we can diff
+          fetch-depth: 0 # get full history so we can diff
 
       - name: Extract version from commit message
         id: get_version
@@ -90,7 +91,7 @@ jobs:
         if: ${{ steps.get_version.outputs.version != '' }}
         with:
           node-version: 24
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
       - name: Install dependencies
         if: ${{ steps.get_version.outputs.version != '' }}
         run: |

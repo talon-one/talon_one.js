@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddFreeItemEffectProps model module.
  * @module model/AddFreeItemEffectProps
- * @version 25.15.0
+ * @version 25.16.0
  */
 class AddFreeItemEffectProps {
     /**

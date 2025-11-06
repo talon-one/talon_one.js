@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PriceDetail model module.
  * @module model/PriceDetail
- * @version 25.15.0
+ * @version 25.16.0
  */
 class PriceDetail {
     /**
@@ -50,6 +50,9 @@ class PriceDetail {
             if (data.hasOwnProperty('price')) {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number');
             }
+            if (data.hasOwnProperty('adjustmentContextId')) {
+                obj['adjustmentContextId'] = ApiClient.convertToType(data['adjustmentContextId'], 'String');
+            }
             if (data.hasOwnProperty('adjustmentReferenceId')) {
                 obj['adjustmentReferenceId'] = ApiClient.convertToType(data['adjustmentReferenceId'], 'String');
             }
@@ -71,6 +74,12 @@ class PriceDetail {
  * @member {Number} price
  */
 PriceDetail.prototype['price'] = undefined;
+
+/**
+ * The context identifier of the selected price adjustment.
+ * @member {String} adjustmentContextId
+ */
+PriceDetail.prototype['adjustmentContextId'] = undefined;
 
 /**
  * The reference identifier of the selected price adjustment for this SKU.

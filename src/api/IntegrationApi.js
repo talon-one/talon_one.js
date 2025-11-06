@@ -14,6 +14,8 @@
 
 import ApiClient from "../ApiClient";
 import Audience from '../model/Audience';
+import BestPriorPrice from '../model/BestPriorPrice';
+import BestPriorPriceRequest from '../model/BestPriorPriceRequest';
 import Catalog from '../model/Catalog';
 import CatalogSyncRequest from '../model/CatalogSyncRequest';
 import Coupon from '../model/Coupon';
@@ -55,7 +57,7 @@ import UpdateAudience from '../model/UpdateAudience';
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 25.15.0
+* @version 25.16.0
 */
 export default class IntegrationApi {
 
@@ -70,6 +72,53 @@ export default class IntegrationApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Fetch best prior price
+     * Returns the best prior price based on historical pricing data for the specified SKUs within a defined timeframe. 
+     * @param {module:model/BestPriorPriceRequest} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BestPriorPrice>} and HTTP response
+     */
+    bestPriorPriceWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling bestPriorPrice");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1', 'management_key', 'manager_auth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [BestPriorPrice];
+      return this.apiClient.callApi(
+        '/v1/best_prior_price', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Fetch best prior price
+     * Returns the best prior price based on historical pricing data for the specified SKUs within a defined timeframe. 
+     * @param {module:model/BestPriorPriceRequest} body body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BestPriorPrice>}
+     */
+    bestPriorPrice(body) {
+      return this.bestPriorPriceWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -926,8 +975,11 @@ export default class IntegrationApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.status] Filter points based on their status. (default to 'active')
      * @param {Array.<String>=} [opts.subledgerId] Filter results by one or more subledger IDs. Must be exact match.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order.  To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     getLoyaltyCardPointsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
@@ -949,8 +1001,11 @@ export default class IntegrationApi {
       let queryParams = {
         'status': opts['status'],
         'subledgerId': this.apiClient.buildCollectionParam(opts['subledgerId'], 'multi'),
+        'customerSessionIDs': this.apiClient.buildCollectionParam(opts['customerSessionIDs'], 'multi'),
+        'transactionUUIDs': this.apiClient.buildCollectionParam(opts['transactionUUIDs'], 'multi'),
         'pageSize': opts['pageSize'],
-        'skip': opts['skip']
+        'skip': opts['skip'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };
@@ -976,8 +1031,11 @@ export default class IntegrationApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.status] Filter points based on their status. (default to 'active')
      * @param {Array.<String>=} [opts.subledgerId] Filter results by one or more subledger IDs. Must be exact match.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order.  To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     getLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, opts) {
@@ -998,6 +1056,8 @@ export default class IntegrationApi {
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
@@ -1023,6 +1083,8 @@ export default class IntegrationApi {
         'loyaltyTransactionType': opts['loyaltyTransactionType'],
         'startDate': opts['startDate'],
         'endDate': opts['endDate'],
+        'customerSessionIDs': this.apiClient.buildCollectionParam(opts['customerSessionIDs'], 'multi'),
+        'transactionUUIDs': this.apiClient.buildCollectionParam(opts['transactionUUIDs'], 'multi'),
         'pageSize': opts['pageSize'],
         'skip': opts['skip']
       };
@@ -1052,6 +1114,8 @@ export default class IntegrationApi {
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
      * @param {Date=} [opts.endDate] Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
@@ -1072,8 +1136,11 @@ export default class IntegrationApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.status] Filter points based on their status. (default to 'active')
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order.  To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     getLoyaltyProgramProfilePointsWithHttpInfo(loyaltyProgramId, integrationId, opts) {
@@ -1095,8 +1162,11 @@ export default class IntegrationApi {
       let queryParams = {
         'status': opts['status'],
         'subledgerId': opts['subledgerId'],
+        'customerSessionIDs': this.apiClient.buildCollectionParam(opts['customerSessionIDs'], 'multi'),
+        'transactionUUIDs': this.apiClient.buildCollectionParam(opts['transactionUUIDs'], 'multi'),
         'pageSize': opts['pageSize'],
-        'skip': opts['skip']
+        'skip': opts['skip'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };
@@ -1122,8 +1192,11 @@ export default class IntegrationApi {
      * @param {Object} [opts] Optional parameters
      * @param {module:model/String=} [opts.status] Filter points based on their status. (default to 'active')
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order.  To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     getLoyaltyProgramProfilePoints(loyaltyProgramId, integrationId, opts) {
@@ -1140,6 +1213,8 @@ export default class IntegrationApi {
      * @param {Number} loyaltyProgramId Identifier of the profile-based loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {String} integrationId The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
      * @param {Object} [opts] Optional parameters
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
@@ -1165,6 +1240,8 @@ export default class IntegrationApi {
         'integrationId': integrationId
       };
       let queryParams = {
+        'customerSessionIDs': this.apiClient.buildCollectionParam(opts['customerSessionIDs'], 'multi'),
+        'transactionUUIDs': this.apiClient.buildCollectionParam(opts['transactionUUIDs'], 'multi'),
         'subledgerId': opts['subledgerId'],
         'loyaltyTransactionType': opts['loyaltyTransactionType'],
         'startDate': opts['startDate'],
@@ -1194,6 +1271,8 @@ export default class IntegrationApi {
      * @param {Number} loyaltyProgramId Identifier of the profile-based loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint. 
      * @param {String} integrationId The integration identifier for this customer profile. Must be: - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID.  Once set, you cannot update this identifier. 
      * @param {Object} [opts] Optional parameters
+     * @param {Array.<String>=} [opts.customerSessionIDs] Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+     * @param {Array.<String>=} [opts.transactionUUIDs] Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
      * @param {String=} [opts.subledgerId] The ID of the subledger by which we filter the data.
      * @param {module:model/String=} [opts.loyaltyTransactionType] Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
      * @param {Date=} [opts.startDate] Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
@@ -1321,7 +1400,7 @@ export default class IntegrationApi {
 
     /**
      * Reopen customer session
-     * Reopen a closed [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). For example, if a session has been completed but still needs to be edited, you can reopen it with this endpoint. A reopen session is treated like a standard open session.  When reopening a session: - The `talon_session_reopened` event is triggered. You can see it in the **Events** view in the Campaign Manager. - The session state is updated to `open`. - Modified budgets and triggered effects when the session was closed are rolled back except for the list below.  <details>   <summary><strong>Effects and budgets unimpacted by a session reopening</strong></summary>   <div>     <p>The following effects and budgets are left the way they were once the session was originally closed:</p>     <ul>       <li>Add free item effect</li>       <li>Any <strong>non-pending</strong> loyalty points</li>       <li>Award giveaway</li>       <li>Coupon and referral creation</li>       <li>Coupon reservation</li>       <li>Custom effect</li>       <li>Update attribute value</li>       <li>Update cart item attribute value</li>     </ul>   </div> <p>To see an example of roll back, see the <a href=\"https://docs.talon.one/docs/dev/tutorials/rolling-back-effects\">Cancelling a session with campaign budgets tutorial</a>.</p> </details>  **Note:** If your order workflow requires you to create a new session instead of reopening a session, use the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint to cancel a closed session and create a new one. 
+     * Reopen a closed [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). For example, if a session has been completed but still needs to be edited, you can reopen it with this endpoint. A reopen session is treated like a standard open session.  When reopening a session: - The `talon_session_reopened` event is triggered. You can see it in the **Events** view in the Campaign Manager. - The session state is updated to `open`. - Any modified budgets and triggered effects are rolled back when the session closes. - Depending on the [return policy](https://docs.talon.one/docs/product/loyalty-programs/managing-loyalty-programs#return-policy)  in your loyalty programs, points are rolled back in the following ways:   - Pending points are rolled back automatically.   - If **Active points deduction** setting is enabled, any points that were earned and activated when the session closed    are rolled back.   - If **Negative balance** is enabled, the rollback can create a negative points balance.   <details>   <summary><strong>Effects and budgets unimpacted by a session reopening</strong></summary>   <div>     <p>The following effects and budgets remain in the state they were in when the session closed:</p>     <ul>       <li>Add free item effect</li>       <li>Award giveaway</li>       <li>Coupon and referral creation</li>       <li>Coupon reservation</li>       <li>Custom effect</li>       <li>Update attribute value</li>       <li>Update cart item attribute value</li>     </ul>   </div>   </details> <p>To see an example of a rollback, see the <a href=\"https://docs.talon.one/docs/dev/tutorials/rolling-back-effects\">Cancelling a session with campaign budgets</a>tutorial.</p>  **Note:** If your order workflow requires you to create a new session instead of reopening a session, use the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint to cancel a closed session and create a new one. 
      * @param {String} customerSessionId The `integration ID` of the customer session. You set this ID when you create a customer session.  You can see existing customer session integration IDs in the Campaign Manager's **Sessions** menu, or via the [List Application session](https://docs.talon.one/management-api#operation/getApplicationSessions) endpoint. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ReopenSessionResponse} and HTTP response
      */
@@ -1355,7 +1434,7 @@ export default class IntegrationApi {
 
     /**
      * Reopen customer session
-     * Reopen a closed [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). For example, if a session has been completed but still needs to be edited, you can reopen it with this endpoint. A reopen session is treated like a standard open session.  When reopening a session: - The `talon_session_reopened` event is triggered. You can see it in the **Events** view in the Campaign Manager. - The session state is updated to `open`. - Modified budgets and triggered effects when the session was closed are rolled back except for the list below.  <details>   <summary><strong>Effects and budgets unimpacted by a session reopening</strong></summary>   <div>     <p>The following effects and budgets are left the way they were once the session was originally closed:</p>     <ul>       <li>Add free item effect</li>       <li>Any <strong>non-pending</strong> loyalty points</li>       <li>Award giveaway</li>       <li>Coupon and referral creation</li>       <li>Coupon reservation</li>       <li>Custom effect</li>       <li>Update attribute value</li>       <li>Update cart item attribute value</li>     </ul>   </div> <p>To see an example of roll back, see the <a href=\"https://docs.talon.one/docs/dev/tutorials/rolling-back-effects\">Cancelling a session with campaign budgets tutorial</a>.</p> </details>  **Note:** If your order workflow requires you to create a new session instead of reopening a session, use the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint to cancel a closed session and create a new one. 
+     * Reopen a closed [customer session](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). For example, if a session has been completed but still needs to be edited, you can reopen it with this endpoint. A reopen session is treated like a standard open session.  When reopening a session: - The `talon_session_reopened` event is triggered. You can see it in the **Events** view in the Campaign Manager. - The session state is updated to `open`. - Any modified budgets and triggered effects are rolled back when the session closes. - Depending on the [return policy](https://docs.talon.one/docs/product/loyalty-programs/managing-loyalty-programs#return-policy)  in your loyalty programs, points are rolled back in the following ways:   - Pending points are rolled back automatically.   - If **Active points deduction** setting is enabled, any points that were earned and activated when the session closed    are rolled back.   - If **Negative balance** is enabled, the rollback can create a negative points balance.   <details>   <summary><strong>Effects and budgets unimpacted by a session reopening</strong></summary>   <div>     <p>The following effects and budgets remain in the state they were in when the session closed:</p>     <ul>       <li>Add free item effect</li>       <li>Award giveaway</li>       <li>Coupon and referral creation</li>       <li>Coupon reservation</li>       <li>Custom effect</li>       <li>Update attribute value</li>       <li>Update cart item attribute value</li>     </ul>   </div>   </details> <p>To see an example of a rollback, see the <a href=\"https://docs.talon.one/docs/dev/tutorials/rolling-back-effects\">Cancelling a session with campaign budgets</a>tutorial.</p>  **Note:** If your order workflow requires you to create a new session instead of reopening a session, use the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint to cancel a closed session and create a new one. 
      * @param {String} customerSessionId The `integration ID` of the customer session. You set this ID when you create a customer session.  You can see existing customer session integration IDs in the Campaign Manager's **Sessions** menu, or via the [List Application session](https://docs.talon.one/management-api#operation/getApplicationSessions) endpoint. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ReopenSessionResponse}
      */

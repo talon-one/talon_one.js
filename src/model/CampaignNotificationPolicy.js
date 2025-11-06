@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignNotificationPolicy model module.
  * @module model/CampaignNotificationPolicy
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CampaignNotificationPolicy {
     /**
@@ -81,8 +81,9 @@ CampaignNotificationPolicy.prototype['batchingEnabled'] = true;
 /**
  * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
  * @member {Number} batchSize
+ * @default 5
  */
-CampaignNotificationPolicy.prototype['batchSize'] = undefined;
+CampaignNotificationPolicy.prototype['batchSize'] = 5;
 
 
 

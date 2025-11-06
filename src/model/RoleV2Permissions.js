@@ -18,7 +18,7 @@ import RoleV2RolesGroup from './RoleV2RolesGroup';
 /**
  * The RoleV2Permissions model module.
  * @module model/RoleV2Permissions
- * @version 25.15.0
+ * @version 25.16.0
  */
 class RoleV2Permissions {
     /**

@@ -17,7 +17,7 @@ import Application from './Application';
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 25.15.0
+ * @version 25.16.0
  */
 class InlineResponse2007 {
     /**

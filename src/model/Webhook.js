@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 25.15.0
+ * @version 25.16.0
  */
 class Webhook {
     /**
@@ -109,6 +109,9 @@ class Webhook {
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('authenticationId')) {
+                obj['authenticationId'] = ApiClient.convertToType(data['authenticationId'], 'Number');
+            }
         }
         return obj;
     }
@@ -193,6 +196,12 @@ Webhook.prototype['params'] = undefined;
  * @member {Boolean} enabled
  */
 Webhook.prototype['enabled'] = undefined;
+
+/**
+ * The ID of the credential that this webhook is using.
+ * @member {Number} authenticationId
+ */
+Webhook.prototype['authenticationId'] = undefined;
 
 
 

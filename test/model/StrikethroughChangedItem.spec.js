@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property prices (base name: "prices")', function() {
+      // uncomment below and update the code to test the property prices
+      //var instane = new TalonOne.StrikethroughChangedItem();
+      //expect(instance).to.be();
+    });
+
     it('should have the property evaluatedAt (base name: "evaluatedAt")', function() {
       // uncomment below and update the code to test the property evaluatedAt
       //var instane = new TalonOne.StrikethroughChangedItem();

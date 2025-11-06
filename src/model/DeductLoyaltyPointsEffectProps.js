@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeductLoyaltyPointsEffectProps model module.
  * @module model/DeductLoyaltyPointsEffectProps
- * @version 25.15.0
+ * @version 25.16.0
  */
 class DeductLoyaltyPointsEffectProps {
     /**

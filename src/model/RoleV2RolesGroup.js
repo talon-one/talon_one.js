@@ -17,7 +17,7 @@ import RoleV2ApplicationDetails from './RoleV2ApplicationDetails';
 /**
  * The RoleV2RolesGroup model module.
  * @module model/RoleV2RolesGroup
- * @version 25.15.0
+ * @version 25.16.0
  */
 class RoleV2RolesGroup {
     /**
@@ -57,6 +57,9 @@ class RoleV2RolesGroup {
             if (data.hasOwnProperty('campaignAccessGroups')) {
                 obj['campaignAccessGroups'] = ApiClient.convertToType(data['campaignAccessGroups'], {'String': 'String'});
             }
+            if (data.hasOwnProperty('account')) {
+                obj['account'] = ApiClient.convertToType(data['account'], 'String');
+            }
         }
         return obj;
     }
@@ -81,6 +84,12 @@ RoleV2RolesGroup.prototype['loyaltyPrograms'] = undefined;
  * @member {Object.<String, String>} campaignAccessGroups
  */
 RoleV2RolesGroup.prototype['campaignAccessGroups'] = undefined;
+
+/**
+ * Name of the account-level permission set
+ * @member {String} account
+ */
+RoleV2RolesGroup.prototype['account'] = undefined;
 
 
 

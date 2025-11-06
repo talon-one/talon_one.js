@@ -17,7 +17,7 @@ import Audience from './Audience';
 /**
  * The InlineResponse20032 model module.
  * @module model/InlineResponse20032
- * @version 25.15.0
+ * @version 25.16.0
  */
 class InlineResponse20032 {
     /**

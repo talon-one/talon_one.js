@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PendingPointsNotificationPolicy model module.
  * @module model/PendingPointsNotificationPolicy
- * @version 25.15.0
+ * @version 25.16.0
  */
 class PendingPointsNotificationPolicy {
     /**
@@ -81,8 +81,9 @@ PendingPointsNotificationPolicy.prototype['batchingEnabled'] = true;
 /**
  * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
  * @member {Number} batchSize
+ * @default 1000
  */
-PendingPointsNotificationPolicy.prototype['batchSize'] = undefined;
+PendingPointsNotificationPolicy.prototype['batchSize'] = 1000;
 
 
 

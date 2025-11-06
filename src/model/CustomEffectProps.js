@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomEffectProps model module.
  * @module model/CustomEffectProps
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CustomEffectProps {
     /**

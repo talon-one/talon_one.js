@@ -18,7 +18,7 @@ import TimePoint from './TimePoint';
 /**
  * The AchievementStatusEntry model module.
  * @module model/AchievementStatusEntry
- * @version 25.15.0
+ * @version 25.16.0
  */
 class AchievementStatusEntry {
     /**
@@ -96,6 +96,9 @@ class AchievementStatusEntry {
             }
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
+            }
+            if (data.hasOwnProperty('allowRollbackAfterCompletion')) {
+                obj['allowRollbackAfterCompletion'] = ApiClient.convertToType(data['allowRollbackAfterCompletion'], 'Boolean');
             }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
@@ -183,6 +186,12 @@ AchievementStatusEntry.prototype['fixedStartDate'] = undefined;
  * @member {Date} endDate
  */
 AchievementStatusEntry.prototype['endDate'] = undefined;
+
+/**
+ * When `true`, customer progress can be rolled back in completed achievements.
+ * @member {Boolean} allowRollbackAfterCompletion
+ */
+AchievementStatusEntry.prototype['allowRollbackAfterCompletion'] = undefined;
 
 /**
  * The ID of the campaign the achievement belongs to.

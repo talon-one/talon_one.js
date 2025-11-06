@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The WebhookWithOutgoingIntegrationDetails model module.
  * @module model/WebhookWithOutgoingIntegrationDetails
- * @version 25.15.0
+ * @version 25.16.0
  */
 class WebhookWithOutgoingIntegrationDetails {
     /**
@@ -108,6 +108,9 @@ class WebhookWithOutgoingIntegrationDetails {
             }
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
+            }
+            if (data.hasOwnProperty('authenticationId')) {
+                obj['authenticationId'] = ApiClient.convertToType(data['authenticationId'], 'Number');
             }
             if (data.hasOwnProperty('outgoingIntegrationTemplateId')) {
                 obj['outgoingIntegrationTemplateId'] = ApiClient.convertToType(data['outgoingIntegrationTemplateId'], 'Number');
@@ -202,6 +205,12 @@ WebhookWithOutgoingIntegrationDetails.prototype['params'] = undefined;
  * @member {Boolean} enabled
  */
 WebhookWithOutgoingIntegrationDetails.prototype['enabled'] = undefined;
+
+/**
+ * The ID of the credential that this webhook is using.
+ * @member {Number} authenticationId
+ */
+WebhookWithOutgoingIntegrationDetails.prototype['authenticationId'] = undefined;
 
 /**
  * Identifier of the outgoing integration template.

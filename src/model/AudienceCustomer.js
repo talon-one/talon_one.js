@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The AudienceCustomer model module.
  * @module model/AudienceCustomer
- * @version 25.15.0
+ * @version 25.16.0
  */
 class AudienceCustomer {
     /**
@@ -154,7 +154,7 @@ AudienceCustomer.prototype['closedSessions'] = undefined;
 AudienceCustomer.prototype['totalSales'] = undefined;
 
 /**
- * **DEPRECATED** A list of loyalty programs joined by the customer. 
+ * **DEPRECATED. Always returns `null`.** A list of loyalty programs joined by the customer. 
  * @member {Array.<module:model/LoyaltyMembership>} loyaltyMemberships
  */
 AudienceCustomer.prototype['loyaltyMemberships'] = undefined;

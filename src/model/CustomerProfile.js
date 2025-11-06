@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The CustomerProfile model module.
  * @module model/CustomerProfile
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CustomerProfile {
     /**
@@ -148,7 +148,7 @@ CustomerProfile.prototype['closedSessions'] = undefined;
 CustomerProfile.prototype['totalSales'] = undefined;
 
 /**
- * **DEPRECATED** A list of loyalty programs joined by the customer. 
+ * **DEPRECATED. Always returns `null`.** A list of loyalty programs joined by the customer. 
  * @member {Array.<module:model/LoyaltyMembership>} loyaltyMemberships
  */
 CustomerProfile.prototype['loyaltyMemberships'] = undefined;

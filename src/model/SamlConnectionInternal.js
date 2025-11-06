@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlConnectionInternal model module.
  * @module model/SamlConnectionInternal
- * @version 25.15.0
+ * @version 25.16.0
  */
 class SamlConnectionInternal {
     /**

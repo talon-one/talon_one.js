@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property totalNegativePoints (base name: "totalNegativePoints")', function() {
+      // uncomment below and update the code to test the property totalNegativePoints
+      //var instane = new TalonOne.LoyaltyDashboardData();
+      //expect(instance).to.be();
+    });
+
     it('should have the property totalMembers (base name: "totalMembers")', function() {
       // uncomment below and update the code to test the property totalMembers
       //var instane = new TalonOne.LoyaltyDashboardData();

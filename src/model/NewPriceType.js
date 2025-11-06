@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The NewPriceType model module.
  * @module model/NewPriceType
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NewPriceType {
     /**
      * Constructs a new <code>NewPriceType</code>.
      * @alias module:model/NewPriceType
      * @param name {String} The API name of the price type. This is an immutable value.
-     * @param title {String} The title of the price type.
+     * @param title {String} The name displayed in the Campaign Manager for the price type.
      */
     constructor(name, title) { 
         
@@ -77,19 +77,19 @@ class NewPriceType {
 NewPriceType.prototype['name'] = undefined;
 
 /**
- * The title of the price type.
+ * The name displayed in the Campaign Manager for the price type.
  * @member {String} title
  */
 NewPriceType.prototype['title'] = undefined;
 
 /**
- * The description of the price type.
+ * A description of the price type.
  * @member {String} description
  */
 NewPriceType.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the audiences that are targeted by this price type.
+ * A list of the IDs of the audiences targeted by this price type.
  * @member {Array.<Number>} targetedAudiencesIds
  */
 NewPriceType.prototype['targetedAudiencesIds'] = undefined;

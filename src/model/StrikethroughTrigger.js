@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughTrigger model module.
  * @module model/StrikethroughTrigger
- * @version 25.15.0
+ * @version 25.16.0
  */
 class StrikethroughTrigger {
     /**

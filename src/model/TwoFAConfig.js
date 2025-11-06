@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwoFAConfig model module.
  * @module model/TwoFAConfig
- * @version 25.15.0
+ * @version 25.16.0
  */
 class TwoFAConfig {
     /**

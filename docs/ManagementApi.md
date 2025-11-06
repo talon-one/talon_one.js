@@ -120,8 +120,6 @@ Method | HTTP request | Description
 [**getUser**](ManagementApi.md#getUser) | **GET** /v1/users/{userId} | Get user
 [**getUsers**](ManagementApi.md#getUsers) | **GET** /v1/users | List users in account
 [**getWebhook**](ManagementApi.md#getWebhook) | **GET** /v1/webhooks/{webhookId} | Get webhook
-[**getWebhookActivationLogs**](ManagementApi.md#getWebhookActivationLogs) | **GET** /v1/webhook_activation_logs | List webhook activation log entries
-[**getWebhookLogs**](ManagementApi.md#getWebhookLogs) | **GET** /v1/webhook_logs | List webhook log entries
 [**getWebhooks**](ManagementApi.md#getWebhooks) | **GET** /v1/webhooks | List webhooks
 [**importAccountCollection**](ManagementApi.md#importAccountCollection) | **POST** /v1/collections/{collectionId}/import | Import data into existing account-level collection
 [**importAllowedList**](ManagementApi.md#importAllowedList) | **POST** /v1/attributes/{attributeId}/allowed_list/import | Import allowed values for attribute
@@ -195,6 +193,11 @@ Enable a [disabled user](https://docs.talon.one/docs/product/account/account-set
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -229,7 +232,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -250,6 +253,11 @@ Add points to the given loyalty card in the specified card-based loyalty program
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -288,7 +296,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -309,6 +317,11 @@ Add points in the specified loyalty program for the given customer.  To get the 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -347,7 +360,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -368,6 +381,11 @@ Copy the campaign into all specified Applications.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -406,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -427,6 +445,11 @@ Create an account-level collection.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -461,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -482,6 +505,11 @@ Create a new achievement in a specific campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -520,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -541,6 +569,11 @@ Create an [additional cost](https://docs.talon.one/docs/product/account/dev-tool
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -575,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -596,6 +629,11 @@ Create a _custom attribute_ in this account. [Custom attributes](https://docs.ta
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -630,7 +668,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -651,6 +689,11 @@ Create a batch of loyalty cards in a specified [card-based loyalty program](http
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -687,7 +730,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -708,6 +751,11 @@ Use the campaign template referenced in the request body to create a new campaig
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -744,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -765,6 +813,11 @@ Create a new store budget for a given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -803,7 +856,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -824,6 +877,11 @@ Create a campaign-level collection in a given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -862,7 +920,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -883,6 +941,11 @@ Create coupons according to some pattern. Up to 20.000 coupons can be created wi
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -925,7 +988,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -946,6 +1009,11 @@ Create up to 5,000,000 coupons asynchronously. You should typically use this enp
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -984,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1005,6 +1073,11 @@ This endpoint handles creating a job to delete coupons asynchronously.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1043,7 +1116,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1064,6 +1137,11 @@ Create coupons according to some pattern for up to 1000 recipients.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1106,7 +1184,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1127,6 +1205,11 @@ Resend an email invitation to an existing user.  **Note:** The invitation token 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1161,7 +1244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1182,6 +1265,11 @@ Create a new user in the account and send an invitation to their email address. 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1216,7 +1304,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1237,6 +1325,11 @@ Send an email with a password recovery link to the email address of an existing 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1271,7 +1364,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1292,6 +1385,11 @@ Create a session to use the Management API endpoints. Use the value of the &#x60
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1326,7 +1424,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1347,6 +1445,11 @@ Create a new store in a specific Application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1383,7 +1486,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1404,6 +1507,11 @@ Disable user by email address
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1438,7 +1546,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1459,6 +1567,11 @@ Deduct points from the given loyalty card in the specified card-based loyalty pr
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1497,7 +1610,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1518,6 +1631,11 @@ Delete a given account-level collection.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1552,7 +1670,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1573,6 +1691,11 @@ Delete the specified achievement.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1611,7 +1734,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1632,6 +1755,11 @@ Delete the given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1668,7 +1796,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1689,6 +1817,11 @@ Delete the store budgets for a given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1731,7 +1864,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1752,6 +1885,11 @@ Delete a given campaign-level collection.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1790,7 +1928,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1811,6 +1949,11 @@ Delete the specified coupon.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1849,7 +1992,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1870,6 +2013,11 @@ Deletes all the coupons matching the specified criteria.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1934,7 +2082,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -1955,6 +2103,11 @@ Delete the given loyalty card.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -1991,7 +2144,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2012,6 +2165,11 @@ Delete the specified referral.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2050,7 +2208,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2071,6 +2229,11 @@ Delete the specified store.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2107,7 +2270,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2128,6 +2291,11 @@ Delete a specific user.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2162,7 +2330,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2183,6 +2351,11 @@ Delete user by email address
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2217,7 +2390,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2238,6 +2411,11 @@ Destroys the session.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2268,7 +2446,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2289,6 +2467,11 @@ Disconnect the stores linked to a specific campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2325,7 +2508,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2346,6 +2529,11 @@ Download a CSV file containing items from a given account-level collection.  **T
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2380,7 +2568,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2401,6 +2589,11 @@ Download a CSV file containing a list of all the customers who have participated
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2439,7 +2632,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2460,6 +2653,11 @@ Download a CSV file containing the integration IDs of the members of an audience
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2494,7 +2692,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2515,6 +2713,11 @@ Download a CSV file containing the store budgets for a given campaign.  **Tip:**
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2557,7 +2760,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2578,6 +2781,11 @@ Download a CSV file containing the stores linked to a specific campaign.  **Tip:
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2614,7 +2822,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2635,6 +2843,11 @@ Download a CSV file containing items from a given campaign-level collection.  **
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2673,7 +2886,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2694,6 +2907,11 @@ Download a CSV file containing the coupons that match the given properties.  **T
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2758,7 +2976,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2779,6 +2997,11 @@ Download a CSV file containing the customer sessions that match the request.  **
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2825,7 +3048,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2846,6 +3069,11 @@ Download a CSV file containing the tier information for customers of the specifi
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2886,7 +3114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2907,6 +3135,11 @@ Download a CSV file containing the triggered effects that match the given attrib
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -2951,7 +3184,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -2972,6 +3205,11 @@ Export customer loyalty balance to CSV
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3010,7 +3248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3031,6 +3269,11 @@ Download a CSV file containing the balance of each customer in the loyalty progr
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3069,7 +3312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3090,6 +3333,11 @@ Download a CSV file containing the balances of all cards in the loyalty program.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3128,7 +3376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3149,6 +3397,11 @@ Download a CSV file containing a loyalty card ledger log of the loyalty program.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3193,7 +3446,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3214,6 +3467,11 @@ Download a CSV file containing the loyalty cards from a specified loyalty progra
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3258,7 +3516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3272,13 +3530,18 @@ Name | Type | Description  | Notes
 
 Export customer&#39;s transaction logs
 
-Download a CSV file containing a customer&#39;s transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - &#x60;customerprofileid&#x60;: The ID of the profile. - &#x60;customersessionid&#x60;: The ID of the customer session. - &#x60;rulesetid&#x60;: The ID of the rule set. - &#x60;rulename&#x60;: The name of the rule. - &#x60;programid&#x60;: The ID of the loyalty program. - &#x60;type&#x60;: The transaction type, such as &#x60;addition&#x60; or &#x60;subtraction&#x60;. - &#x60;name&#x60;: The reason for the transaction. - &#x60;subledgerid&#x60;: The ID of the subledger, when applicable. - &#x60;startdate&#x60;: The start date of the program. - &#x60;expirydate&#x60;: The expiration date of the program. - &#x60;id&#x60;: The ID of the transaction. - &#x60;created&#x60;: The timestamp of the creation of the loyalty program. - &#x60;amount&#x60;: The number of points in that transaction. - &#x60;archived&#x60;: Whether the session related to the transaction is archived. - &#x60;campaignid&#x60;: The ID of the campaign. - &#x60;flags&#x60;: The flags of the transaction, when applicable. The &#x60;createsNegativeBalance&#x60; flag indicates whether the transaction results in a negative balance. 
+Download a CSV file containing a customer&#39;s transaction logs in the loyalty program.  **Tip:** If the exported CSV file is too large to view, you can [split it into multiple files](https://www.makeuseof.com/tag/how-to-split-a-huge-csv-excel-workbook-into-seperate-files/).  The generated file can contain the following columns:  - &#x60;customerprofileid&#x60;: The ID of the profile. - &#x60;customersessionid&#x60;: The ID of the customer session. - &#x60;rulesetid&#x60;: The ID of the rule set. - &#x60;rulename&#x60;: The name of the rule. - &#x60;programid&#x60;: The ID of the loyalty program. - &#x60;type&#x60;: The transaction type, such as &#x60;addition&#x60; or &#x60;subtraction&#x60;. - &#x60;name&#x60;: The reason for the transaction. - &#x60;subledgerid&#x60;: The ID of the subledger, when applicable. - &#x60;startdate&#x60;: The start date of the program. - &#x60;expirydate&#x60;: The expiration date of the program. - &#x60;id&#x60;: The ID of the transaction. - &#x60;created&#x60;: The timestamp of the creation of the loyalty program. - &#x60;amount&#x60;: The number of points in that transaction. - &#x60;archived&#x60;: Whether the session related to the transaction is archived. - &#x60;campaignid&#x60;: The ID of the campaign. - &#x60;flags&#x60;: The flags of the transaction, when applicable. The &#x60;createsNegativeBalance&#x60; flag indicates whether the transaction results in a negative balance. - &#x60;transactionUUID&#x60;: Unique identifier of the transaction in the UUID format. 
 
 ### Example
 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3323,7 +3586,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3344,6 +3607,11 @@ Download a CSV file containing the giveaway codes of a specific giveaway pool.  
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3384,7 +3652,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3405,6 +3673,11 @@ Download a CSV file containing the referrals that match the given parameters.  *
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3455,7 +3728,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3476,6 +3749,11 @@ Retrieve the list of API calls sent to the specified Application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3528,7 +3806,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3549,6 +3827,11 @@ Return the details of your companies Talon.One account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3583,7 +3866,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3604,6 +3887,11 @@ Return the analytics of your Talon.One account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3638,7 +3926,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3659,6 +3947,11 @@ Retrieve a given account-level collection.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3693,7 +3986,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3714,6 +4007,11 @@ Get the details of a specific achievement.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3752,7 +4050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3773,6 +4071,11 @@ Returns the additional cost.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3807,7 +4110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3828,6 +4131,11 @@ Returns all the defined additional costs for the account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3868,7 +4176,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3889,6 +4197,11 @@ Get the application specified by the ID.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3923,7 +4236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3944,6 +4257,11 @@ Display the health of the Application and show the last time the Application was
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -3978,7 +4296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -3999,6 +4317,11 @@ Retrieve the customers of the specified application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4035,7 +4358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4056,6 +4379,11 @@ List the friends referred by the specified customer profile in this Application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4102,7 +4430,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4123,6 +4451,11 @@ List all the customers of the specified application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4167,7 +4500,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4188,6 +4521,11 @@ Get a list of the application customers matching the provided criteria.  The mat
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4232,7 +4570,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4253,6 +4591,11 @@ Get all of the distinct values of the Event &#x60;type&#x60; property for events
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4295,7 +4638,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4316,6 +4659,11 @@ Lists all events recorded for an application. Instead of having the total number
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4343,7 +4691,8 @@ let opts = {
   'couponCode': "couponCode_example", // String | Coupon code
   'referralCode': "referralCode_example", // String | Referral code
   'ruleQuery': "ruleQuery_example", // String | Rule name filter for events
-  'campaignQuery': "campaignQuery_example" // String | Campaign name filter for events
+  'campaignQuery': "campaignQuery_example", // String | Campaign name filter for events
+  'effectType': "effectType_example" // String | The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
 };
 apiInstance.getApplicationEventsWithoutTotalCount(applicationId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -4373,6 +4722,7 @@ Name | Type | Description  | Notes
  **referralCode** | **String**| Referral code | [optional] 
  **ruleQuery** | **String**| Rule name filter for events | [optional] 
  **campaignQuery** | **String**| Campaign name filter for events | [optional] 
+ **effectType** | **String**| The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects). | [optional] 
 
 ### Return type
 
@@ -4380,7 +4730,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4401,6 +4751,11 @@ Get the details of the given session. You can list the sessions with the [List A
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4437,7 +4792,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4458,6 +4813,11 @@ List all the sessions of the specified Application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4516,7 +4876,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4537,6 +4897,11 @@ List all applications in the current account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4577,7 +4942,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4598,6 +4963,11 @@ Retrieve the specified custom attribute.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4632,7 +5002,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4653,6 +5023,11 @@ Return all the custom attributes for the account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4695,7 +5070,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4716,6 +5091,11 @@ Get a paginated list of the customer profiles in a given audience.  A maximum of
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4760,7 +5140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4781,6 +5161,11 @@ Get all audiences created in the account. To create an audience, use [Create aud
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4823,7 +5208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4844,6 +5229,11 @@ Get a list of audience IDs and their member count.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4882,7 +5272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4903,6 +5293,11 @@ Retrieve the given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -4939,7 +5334,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -4960,6 +5355,11 @@ Retrieve statistical data about the performance of the given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5004,7 +5404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5025,6 +5425,11 @@ Get a list of all the campaigns that match a set of attributes.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5071,7 +5476,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5092,6 +5497,11 @@ Get a campaign access group specified by its ID.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5126,7 +5536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5147,6 +5557,11 @@ List the campaign access groups in the current account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5187,7 +5602,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5208,6 +5623,11 @@ Retrieve a list of campaign templates.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5256,7 +5676,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5277,6 +5697,11 @@ List the campaigns of the specified application that match your filter criteria.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5335,7 +5760,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5345,7 +5770,7 @@ Name | Type | Description  | Notes
 
 ## getChanges
 
-> InlineResponse20044 getChanges(opts)
+> InlineResponse20042 getChanges(opts)
 
 Get audit logs for an account
 
@@ -5356,6 +5781,11 @@ Retrieve the audit logs displayed in **Accounts &gt; Audit logs**.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5408,11 +5838,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**InlineResponse20042**](InlineResponse20042.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5433,6 +5863,11 @@ Retrieve a given campaign-level collection.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5471,7 +5906,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5492,6 +5927,11 @@ Retrieve items from a given collection.  You can retrieve items from both accoun
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5532,7 +5972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5553,6 +5993,11 @@ List all the coupons matching the specified criteria.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5627,7 +6072,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5648,6 +6093,11 @@ Fetch the summary report of a given customer in the given application, in a time
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5694,7 +6144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5715,6 +6165,11 @@ Fetch summary reports for all application customers based on a time range. Inste
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5769,7 +6224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5790,6 +6245,11 @@ Fetch analytics for a given customer in the given application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5834,7 +6294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5855,6 +6315,11 @@ Return the details of the specified customer profile.  &lt;div class&#x3D;\&quot
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5889,7 +6354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5899,7 +6364,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerProfileAchievementProgress
 
-> InlineResponse20051 getCustomerProfileAchievementProgress(applicationId, integrationId, opts)
+> InlineResponse20049 getCustomerProfileAchievementProgress(applicationId, integrationId, opts)
 
 List customer achievements
 
@@ -5910,6 +6375,11 @@ For the given customer profile, list all the achievements that match your filter
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -5952,11 +6422,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20051**](InlineResponse20051.md)
+[**InlineResponse20049**](InlineResponse20049.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -5977,6 +6447,11 @@ List all customer profiles.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6017,7 +6492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6038,6 +6513,11 @@ Get a list of the customer profiles matching the provided criteria.  The match i
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6080,7 +6560,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6101,6 +6581,11 @@ Retrieve the statistics displayed on the specified loyalty program&#39;s dashboa
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6143,7 +6628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6153,7 +6638,7 @@ Name | Type | Description  | Notes
 
 ## getEventTypes
 
-> InlineResponse20042 getEventTypes(opts)
+> InlineResponse20040 getEventTypes(opts)
 
 List event types
 
@@ -6164,6 +6649,11 @@ Fetch all event type definitions for your account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6204,11 +6694,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20042**](InlineResponse20042.md)
+[**InlineResponse20040**](InlineResponse20040.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6218,7 +6708,7 @@ Name | Type | Description  | Notes
 
 ## getExports
 
-> InlineResponse20045 getExports(opts)
+> InlineResponse20043 getExports(opts)
 
 Get exports
 
@@ -6229,6 +6719,11 @@ List all past exports
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6269,11 +6764,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20045**](InlineResponse20045.md)
+[**InlineResponse20043**](InlineResponse20043.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6294,6 +6789,11 @@ Get the given loyalty card.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6330,7 +6830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6351,6 +6851,11 @@ Retrieve the transaction logs for the given [loyalty card](https://docs.talon.on
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6370,7 +6875,9 @@ let opts = {
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'pageSize': 1000, // Number | The number of items in the response.
   'skip': 789, // Number | The number of items to skip when paging through large result sets.
-  'subledgerId': "subledgerId_example" // String | The ID of the subledger by which we filter the data.
+  'subledgerId': "subledgerId_example", // String | The ID of the subledger by which we filter the data.
+  'customerSessionIDs': ["null"], // [String] | Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+  'transactionUUIDs': ["null"] // [String] | Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
 };
 apiInstance.getLoyaltyCardTransactionLogs(loyaltyProgramId, loyaltyCardId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -6392,6 +6899,8 @@ Name | Type | Description  | Notes
  **pageSize** | **Number**| The number of items in the response. | [optional] [default to 1000]
  **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
  **subledgerId** | **String**| The ID of the subledger by which we filter the data. | [optional] 
+ **customerSessionIDs** | [**[String]**](String.md)| Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  &#x60;?customerSessionIDs&#x3D;id1&amp;customerSessionIDs&#x3D;id2&#x60;.  The response contains only data associated with the specified sessions.  | [optional] 
+ **transactionUUIDs** | [**[String]**](String.md)| Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  &#x60;?transactionUUIDs&#x3D;uuid1&amp;transactionUUIDs&#x3D;uuid2&#x60;.  The response contains only data associated with the specified transactions.  | [optional] 
 
 ### Return type
 
@@ -6399,7 +6908,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6420,6 +6929,11 @@ For the given card-based loyalty program, list the loyalty cards that match your
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6468,7 +6982,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6489,6 +7003,11 @@ Get the loyalty ledger for this profile integration ID.  To get the &#x60;integr
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6525,7 +7044,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6546,6 +7065,11 @@ Get the specified [loyalty program](https://docs.talon.one/docs/product/loyalty-
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6580,7 +7104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6601,6 +7125,11 @@ Retrieve loyalty program transaction logs in a given loyalty program with filter
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6617,6 +7146,8 @@ let loyaltyProgramId = 789; // Number | Identifier of the loyalty program. You c
 let opts = {
   'loyaltyTransactionType': "loyaltyTransactionType_example", // String | Filter results by loyalty transaction type: - `manual`: Loyalty transaction that was done manually. - `session`: Loyalty transaction that resulted from a customer session. - `import`: Loyalty transaction that was imported from a CSV file. 
   'subledgerId': "subledgerId_example", // String | The ID of the subledger by which we filter the data.
+  'customerSessionIDs': ["null"], // [String] | Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  `?customerSessionIDs=id1&customerSessionIDs=id2`.  The response contains only data associated with the specified sessions. 
+  'transactionUUIDs': ["null"], // [String] | Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  `?transactionUUIDs=uuid1&transactionUUIDs=uuid2`.  The response contains only data associated with the specified transactions. 
   'startDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, `T23:59:59` to specify the end of the day. The time zone setting considered is `UTC`. If you do not include a time component, a default time value of `T00:00:00` (midnight) in `UTC` is considered. 
   'pageSize': 50, // Number | The number of items in the response.
@@ -6638,6 +7169,8 @@ Name | Type | Description  | Notes
  **loyaltyProgramId** | **Number**| Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.  | 
  **loyaltyTransactionType** | **String**| Filter results by loyalty transaction type: - &#x60;manual&#x60;: Loyalty transaction that was done manually. - &#x60;session&#x60;: Loyalty transaction that resulted from a customer session. - &#x60;import&#x60;: Loyalty transaction that was imported from a CSV file.  | [optional] 
  **subledgerId** | **String**| The ID of the subledger by which we filter the data. | [optional] 
+ **customerSessionIDs** | [**[String]**](String.md)| Filter the results by a list of customer session IDs.   To include multiple IDs, repeat the parameter for each one, for example,  &#x60;?customerSessionIDs&#x3D;id1&amp;customerSessionIDs&#x3D;id2&#x60;.  The response contains only data associated with the specified sessions.  | [optional] 
+ **transactionUUIDs** | [**[String]**](String.md)| Filter the results by a list of transaction UUIDs.  To include multiple IDs, repeat the parameter for each one, for example,  &#x60;?transactionUUIDs&#x3D;uuid1&amp;transactionUUIDs&#x3D;uuid2&#x60;.  The response contains only data associated with the specified transactions.  | [optional] 
  **startDate** | **Date**| Date and time from which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, &#x60;T23:59:59&#x60; to specify the end of the day. The time zone setting considered is &#x60;UTC&#x60;. If you do not include a time component, a default time value of &#x60;T00:00:00&#x60; (midnight) in &#x60;UTC&#x60; is considered.  | [optional] 
  **endDate** | **Date**| Date and time by which results are returned. Results are filtered by transaction creation date.  **Note:**  - It must be an RFC3339 timestamp string. - You can include a time component in your string, for example, &#x60;T23:59:59&#x60; to specify the end of the day. The time zone setting considered is &#x60;UTC&#x60;. If you do not include a time component, a default time value of &#x60;T00:00:00&#x60; (midnight) in &#x60;UTC&#x60; is considered.  | [optional] 
  **pageSize** | **Number**| The number of items in the response. | [optional] [default to 50]
@@ -6649,7 +7182,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6670,6 +7203,11 @@ List the loyalty programs of the account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6700,7 +7238,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6721,6 +7259,11 @@ Get loyalty program statistics
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6755,7 +7298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6776,6 +7319,11 @@ Retrieve all message log entries.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6793,8 +7341,8 @@ let opts = {
   'messageID': "messageID_example", // String | Filter results by message ID.
   'changeType': "changeType_example", // String | Filter results by change type.
   'notificationIDs': "notificationIDs_example", // String | Filter results by notification ID (include up to 30 values, separated by a comma).
-  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. Use UTC time.
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. Use UTC time.
   'cursor': null, // Blob | A specific unique value in the database. If this value is not given, the server fetches results starting with the first record. 
   'period': "period_example", // String | Filter results by time period. Choose between the available relative time frames. 
   'isSuccessful': true, // Boolean | Indicates whether to return log entries with either successful or unsuccessful HTTP response codes. When set to`true`, only log entries with `2xx` response codes are returned. When set to `false`, only log entries with `4xx` and `5xx` response codes are returned. 
@@ -6821,8 +7369,8 @@ Name | Type | Description  | Notes
  **messageID** | **String**| Filter results by message ID. | [optional] 
  **changeType** | **String**| Filter results by change type. | [optional] 
  **notificationIDs** | **String**| Filter results by notification ID (include up to 30 values, separated by a comma). | [optional] 
- **createdBefore** | **Date**| Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally. | [optional] 
- **createdAfter** | **Date**| Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally. | [optional] 
+ **createdBefore** | **Date**| Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. Use UTC time. | [optional] 
+ **createdAfter** | **Date**| Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. Use UTC time. | [optional] 
  **cursor** | **Blob**| A specific unique value in the database. If this value is not given, the server fetches results starting with the first record.  | [optional] 
  **period** | **String**| Filter results by time period. Choose between the available relative time frames.  | [optional] 
  **isSuccessful** | **Boolean**| Indicates whether to return log entries with either successful or unsuccessful HTTP response codes. When set to&#x60;true&#x60;, only log entries with &#x60;2xx&#x60; response codes are returned. When set to &#x60;false&#x60;, only log entries with &#x60;4xx&#x60; and &#x60;5xx&#x60; response codes are returned.  | [optional] 
@@ -6838,7 +7386,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6859,6 +7407,11 @@ List all referrals of the specified campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6915,7 +7468,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6936,6 +7489,11 @@ Get the details of a specific role. To see all the roles, use the [List roles](/
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -6970,7 +7528,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -6991,6 +7549,11 @@ Retrieve the specified ruleset.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7029,7 +7592,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7050,6 +7613,11 @@ List all rulesets of this campaign. A ruleset is a revision of the rules of a ca
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7094,7 +7662,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7115,6 +7683,11 @@ Get store details for a specific store ID.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7151,7 +7724,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7172,6 +7745,11 @@ Retrieve the data (including an invitation code) for a user. Non-admin users can
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7206,7 +7784,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7216,7 +7794,7 @@ Name | Type | Description  | Notes
 
 ## getUsers
 
-> InlineResponse20043 getUsers(opts)
+> InlineResponse20041 getUsers(opts)
 
 List users in account
 
@@ -7227,6 +7805,11 @@ Retrieve all users in your account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7263,11 +7846,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20043**](InlineResponse20043.md)
+[**InlineResponse20041**](InlineResponse20041.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7288,6 +7871,11 @@ Returns a webhook by its id.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7322,155 +7910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getWebhookActivationLogs
-
-> InlineResponse20040 getWebhookActivationLogs(opts)
-
-List webhook activation log entries
-
-Webhook activation log entries are created as soon as an integration request triggers a webhook effect. See the [docs](https://docs.talon.one/docs/dev/getting-started/webhooks). 
-
-### Example
-
-```javascript
-import TalonOne from 'talon_one';
-let defaultClient = TalonOne.ApiClient.instance;
-// Configure API key authorization: management_key
-let management_key = defaultClient.authentications['management_key'];
-management_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//management_key.apiKeyPrefix = 'Token';
-// Configure API key authorization: manager_auth
-let manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix = 'Token';
-
-let apiInstance = new TalonOne.ManagementApi();
-let opts = {
-  'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 789, // Number | The number of items to skip when paging through large result sets.
-  'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-  'integrationRequestUuid': "integrationRequestUuid_example", // String | Filter results by integration request UUID.
-  'webhookId': 3.4, // Number | Filter results by webhook id.
-  'applicationId': 3.4, // Number | Filter results by Application ID.
-  'campaignId': 3.4, // Number | Filter results by campaign ID.
-  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00") // Date | Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally.
-};
-apiInstance.getWebhookActivationLogs(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items in the response. | [optional] [default to 1000]
- **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
- **sort** | **String**| The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with &#x60;-&#x60;.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations.  | [optional] 
- **integrationRequestUuid** | **String**| Filter results by integration request UUID. | [optional] 
- **webhookId** | **Number**| Filter results by webhook id. | [optional] 
- **applicationId** | **Number**| Filter results by Application ID. | [optional] 
- **campaignId** | **Number**| Filter results by campaign ID. | [optional] 
- **createdBefore** | **Date**| Only return events created before this date. You can use any time zone setting. Talon.One will convert to UTC internally. | [optional] 
- **createdAfter** | **Date**| Only return events created after this date. You can use any time zone setting. Talon.One will convert to UTC internally. | [optional] 
-
-### Return type
-
-[**InlineResponse20040**](InlineResponse20040.md)
-
-### Authorization
-
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getWebhookLogs
-
-> InlineResponse20041 getWebhookLogs(opts)
-
-List webhook log entries
-
-Retrieve all webhook log entries.
-
-### Example
-
-```javascript
-import TalonOne from 'talon_one';
-let defaultClient = TalonOne.ApiClient.instance;
-// Configure API key authorization: management_key
-let management_key = defaultClient.authentications['management_key'];
-management_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//management_key.apiKeyPrefix = 'Token';
-// Configure API key authorization: manager_auth
-let manager_auth = defaultClient.authentications['manager_auth'];
-manager_auth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//manager_auth.apiKeyPrefix = 'Token';
-
-let apiInstance = new TalonOne.ManagementApi();
-let opts = {
-  'pageSize': 1000, // Number | The number of items in the response.
-  'skip': 789, // Number | The number of items to skip when paging through large result sets.
-  'sort': "sort_example", // String | The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations. 
-  'status': "status_example", // String | Filter results by HTTP status codes.
-  'webhookId': 3.4, // Number | Filter results by webhook id.
-  'applicationId': 3.4, // Number | Filter results by Application ID.
-  'campaignId': 3.4, // Number | Filter results by campaign ID.
-  'requestUuid': "requestUuid_example", // String | Filter results by request UUID.
-  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00") // Date | Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally.
-};
-apiInstance.getWebhookLogs(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pageSize** | **Number**| The number of items in the response. | [optional] [default to 1000]
- **skip** | **Number**| The number of items to skip when paging through large result sets. | [optional] 
- **sort** | **String**| The field by which results should be sorted. By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with &#x60;-&#x60;.  **Note:** You may not be able to use all fields for sorting. This is due to performance limitations.  | [optional] 
- **status** | **String**| Filter results by HTTP status codes. | [optional] 
- **webhookId** | **Number**| Filter results by webhook id. | [optional] 
- **applicationId** | **Number**| Filter results by Application ID. | [optional] 
- **campaignId** | **Number**| Filter results by campaign ID. | [optional] 
- **requestUuid** | **String**| Filter results by request UUID. | [optional] 
- **createdBefore** | **Date**| Filter results where request and response times to return entries before parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally. | [optional] 
- **createdAfter** | **Date**| Filter results where request and response times to return entries after parameter value, expected to be an RFC3339 timestamp string. You can use any time zone setting. Talon.One will convert to UTC internally. | [optional] 
-
-### Return type
-
-[**InlineResponse20041**](InlineResponse20041.md)
-
-### Authorization
-
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7491,6 +7931,11 @@ List all webhooks.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7541,7 +7986,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7562,6 +8007,11 @@ Upload a CSV file containing the collection of string values that should be atta
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7600,7 +8050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7621,6 +8071,11 @@ Upload a CSV file containing a list of [picklist values](https://docs.talon.one/
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7659,7 +8114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7680,6 +8135,11 @@ Upload a CSV file containing the integration IDs of the members you want to add 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7718,7 +8178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7739,6 +8199,11 @@ Upload a CSV file containing store budgets for a given campaign.  Send the file 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7783,7 +8248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7804,6 +8269,11 @@ Upload a CSV file containing the stores you want to link to a specific campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7844,7 +8314,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7865,6 +8335,11 @@ Upload a CSV file containing the collection of string values that should be atta
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7907,7 +8382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7928,6 +8403,11 @@ Upload a CSV file containing the coupons that should be created. The file should
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -7970,7 +8450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -7991,6 +8471,11 @@ Upload a CSV file containing the loyalty cards that you want to use in your card
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8029,7 +8514,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8050,6 +8535,11 @@ Upload a CSV file containing existing customers to be assigned to existing tiers
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8088,7 +8578,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8109,6 +8599,11 @@ Upload a CSV file containing the loyalty points you want to import into a given 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8149,7 +8644,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8170,6 +8665,11 @@ Upload a CSV file containing the giveaway codes that should be created. Send the
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8208,7 +8708,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8229,6 +8729,11 @@ Upload a CSV file containing the referrals that should be created. The file shou
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8269,7 +8774,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8290,6 +8795,11 @@ Invite user from identity provider
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8324,7 +8834,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8345,6 +8855,11 @@ List account-level collections in the account.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8389,7 +8904,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8399,7 +8914,7 @@ Name | Type | Description  | Notes
 
 ## listAchievements
 
-> InlineResponse20050 listAchievements(applicationId, campaignId, opts)
+> InlineResponse20048 listAchievements(applicationId, campaignId, opts)
 
 List achievements
 
@@ -8410,6 +8925,11 @@ List all the achievements for a specific campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8450,11 +8970,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20050**](InlineResponse20050.md)
+[**InlineResponse20048**](InlineResponse20048.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8464,7 +8984,7 @@ Name | Type | Description  | Notes
 
 ## listAllRolesV2
 
-> InlineResponse20046 listAllRolesV2()
+> InlineResponse20044 listAllRolesV2()
 
 List roles
 
@@ -8475,6 +8995,11 @@ List all roles.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8501,11 +9026,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20046**](InlineResponse20046.md)
+[**InlineResponse20044**](InlineResponse20044.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8515,7 +9040,7 @@ This endpoint does not need any parameter.
 
 ## listCampaignStoreBudgetLimits
 
-> InlineResponse20048 listCampaignStoreBudgetLimits(applicationId, campaignId, opts)
+> InlineResponse20046 listCampaignStoreBudgetLimits(applicationId, campaignId, opts)
 
 List campaign store budget limits
 
@@ -8526,6 +9051,11 @@ Return the store budget limits for a given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8564,11 +9094,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20048**](InlineResponse20048.md)
+[**InlineResponse20046**](InlineResponse20046.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8589,6 +9119,11 @@ Return a paginated list of cart items in the given catalog.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8635,7 +9170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8656,6 +9191,11 @@ List collections in a given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8704,7 +9244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8725,6 +9265,11 @@ List campaign-level collections from all campaigns in a given Application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8771,7 +9316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8781,7 +9326,7 @@ Name | Type | Description  | Notes
 
 ## listStores
 
-> InlineResponse20047 listStores(applicationId, opts)
+> InlineResponse20045 listStores(applicationId, opts)
 
 List stores
 
@@ -8792,6 +9337,11 @@ List all stores for a specific Application.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8840,11 +9390,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20047**](InlineResponse20047.md)
+[**InlineResponse20045**](InlineResponse20045.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8865,6 +9415,11 @@ Validate the ownership of the API through a challenge-response mechanism.  This 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8895,7 +9450,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8916,6 +9471,11 @@ Deduct points from the specified loyalty program and specified customer profile.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -8954,7 +9514,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -8975,6 +9535,11 @@ Consumes the supplied password reset token and updates the password for the asso
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9009,7 +9574,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9030,6 +9595,11 @@ Create a new Talon.One group using the SCIM Group provisioning protocol with an 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9064,7 +9634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9085,6 +9655,11 @@ Create a new Talon.One user using the SCIM provisioning protocol with an identit
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9119,7 +9694,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9140,6 +9715,11 @@ Delete a specific group created using the SCIM provisioning protocol with an ide
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9174,7 +9754,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9195,6 +9775,11 @@ Delete a specific Talon.One user created using the SCIM provisioning protocol wi
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9229,7 +9814,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9250,6 +9835,11 @@ Retrieve data for a specific group created using the SCIM provisioning protocol 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9284,7 +9874,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9305,6 +9895,11 @@ Retrieve a paginated list of groups created using the SCIM protocol with an iden
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9335,7 +9930,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9356,6 +9951,11 @@ Retrieve a list of resource types supported by the SCIM provisioning protocol.  
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9386,7 +9986,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9407,6 +10007,11 @@ Retrieve a list of schemas supported by the SCIM provisioning protocol.  Schemas
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9437,7 +10042,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9458,6 +10063,11 @@ Retrieve the configuration settings of the SCIM service provider. It provides de
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9488,7 +10098,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9509,6 +10119,11 @@ Retrieve data for a specific Talon.One user created using the SCIM provisioning 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9543,7 +10158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9564,6 +10179,11 @@ Retrieve a paginated list of users that have been provisioned using the SCIM pro
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9594,7 +10214,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9615,6 +10235,11 @@ Update certain attributes of a group created using the SCIM provisioning protoco
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9651,7 +10276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9672,6 +10297,11 @@ Update certain attributes of a specific Talon.One user created using the SCIM pr
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9708,7 +10338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9729,6 +10359,11 @@ Update the details of a specific group created using the SCIM provisioning proto
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9765,7 +10400,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9786,6 +10421,11 @@ Update the details of a specific Talon.One user created using the SCIM provision
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9822,7 +10462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9843,6 +10483,11 @@ List the coupons whose attributes match the query criteria in all the campaigns 
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9907,7 +10552,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -9928,6 +10573,11 @@ List the coupons whose attributes match the query criteria in the given campaign
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -9992,7 +10642,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10002,7 +10652,7 @@ Name | Type | Description  | Notes
 
 ## summarizeCampaignStoreBudget
 
-> InlineResponse20049 summarizeCampaignStoreBudget(applicationId, campaignId)
+> InlineResponse20047 summarizeCampaignStoreBudget(applicationId, campaignId)
 
 Get summary of campaign store budgets
 
@@ -10013,6 +10663,11 @@ Fetch a summary of all store budget information for a given campaign.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10045,11 +10700,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20049**](InlineResponse20049.md)
+[**InlineResponse20047**](InlineResponse20047.md)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10070,6 +10725,11 @@ Transfer loyalty card data, such as linked customers, loyalty balances and trans
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10108,7 +10768,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10129,6 +10789,11 @@ Edit the description of a given account-level collection and enable or disable t
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10165,7 +10830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10186,6 +10851,11 @@ Update the details of a specific achievement.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10226,7 +10896,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10247,6 +10917,11 @@ Updates an existing additional cost. Once created, the only property of an addit
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10283,7 +10958,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10304,6 +10979,11 @@ Update an existing custom attribute. Once created, the only property of a custom
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10340,7 +11020,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10361,6 +11041,11 @@ Update the given campaign.  **Important:** You cannot use this endpoint to updat
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10399,7 +11084,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10420,6 +11105,11 @@ Edit the description of a given campaign-level collection.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10460,7 +11150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10481,6 +11171,11 @@ Update the specified coupon.  &lt;div class&#x3D;\&quot;redoc-section\&quot;&gt;
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10521,7 +11216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10542,6 +11237,11 @@ Update all coupons or a specific batch of coupons in the given campaign. You can
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10580,7 +11280,7 @@ null (empty response body)
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10601,6 +11301,11 @@ Update the status of the given loyalty card. A card can be _active_ or _inactive
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10639,7 +11344,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10660,6 +11365,11 @@ Update the specified referral.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10700,7 +11410,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10721,6 +11431,11 @@ Update a specific role.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10757,7 +11472,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10778,6 +11493,11 @@ Update store details for a specific store ID.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10816,7 +11536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 
@@ -10837,6 +11557,11 @@ Update the details of a specific user.
 ```javascript
 import TalonOne from 'talon_one';
 let defaultClient = TalonOne.ApiClient.instance;
+// Configure API key authorization: api_key_v1
+let api_key_v1 = defaultClient.authentications['api_key_v1'];
+api_key_v1.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key_v1.apiKeyPrefix = 'Token';
 // Configure API key authorization: management_key
 let management_key = defaultClient.authentications['management_key'];
 management_key.apiKey = 'YOUR API KEY';
@@ -10873,7 +11598,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
+[api_key_v1](../README.md#api_key_v1), [management_key](../README.md#management_key), [manager_auth](../README.md#manager_auth)
 
 ### HTTP request headers
 

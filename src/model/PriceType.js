@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PriceType model module.
  * @module model/PriceType
- * @version 25.15.0
+ * @version 25.16.0
  */
 class PriceType {
     /**
@@ -25,10 +25,10 @@ class PriceType {
      * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param name {String} The API name of the price type. This is an immutable value.
-     * @param title {String} The title of the price type.
+     * @param title {String} The name displayed in the Campaign Manager for the price type.
      * @param modified {Date} The date and time when the price type was last modified.
      * @param subscribedCatalogsIds {Array.<Number>} A list of the IDs of the catalogs that are subscribed to this price type.
-     * @param targetedAudiencesIds {Array.<Number>} A list of the IDs of the audiences that are targeted by this price type.
+     * @param targetedAudiencesIds {Array.<Number>} A list of the IDs of the audiences targeted by this price type.
      */
     constructor(id, created, name, title, modified, subscribedCatalogsIds, targetedAudiencesIds) { 
         
@@ -120,13 +120,13 @@ PriceType.prototype['accountId'] = undefined;
 PriceType.prototype['name'] = undefined;
 
 /**
- * The title of the price type.
+ * The name displayed in the Campaign Manager for the price type.
  * @member {String} title
  */
 PriceType.prototype['title'] = undefined;
 
 /**
- * The description of the price type.
+ * A description of the price type.
  * @member {String} description
  */
 PriceType.prototype['description'] = undefined;
@@ -144,7 +144,7 @@ PriceType.prototype['modified'] = undefined;
 PriceType.prototype['subscribedCatalogsIds'] = undefined;
 
 /**
- * A list of the IDs of the audiences that are targeted by this price type.
+ * A list of the IDs of the audiences targeted by this price type.
  * @member {Array.<Number>} targetedAudiencesIds
  */
 PriceType.prototype['targetedAudiencesIds'] = undefined;

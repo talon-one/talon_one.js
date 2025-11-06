@@ -17,13 +17,14 @@ import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 /**
  * The LoyaltyProgramTransaction model module.
  * @module model/LoyaltyProgramTransaction
- * @version 25.15.0
+ * @version 25.16.0
  */
 class LoyaltyProgramTransaction {
     /**
      * Constructs a new <code>LoyaltyProgramTransaction</code>.
      * @alias module:model/LoyaltyProgramTransaction
      * @param id {Number} ID of the loyalty ledger transaction.
+     * @param transactionUUID {String} Unique identifier of the transaction in the UUID format.
      * @param programId {Number} ID of the loyalty program.
      * @param created {Date} Date and time the loyalty transaction occurred.
      * @param type {module:model/LoyaltyProgramTransaction.TypeEnum} Type of transaction. Possible values:   - `addition`: Signifies added points.   - `subtraction`: Signifies deducted points. 
@@ -33,9 +34,9 @@ class LoyaltyProgramTransaction {
      * @param expiryDate {String} When points expire. Possible values:   - `unlimited`: Points have no expiration date.   - a timestamp value: Points expire at a given date and time. 
      * @param subledgerId {String} ID of the subledger.
      */
-    constructor(id, programId, created, type, amount, name, startDate, expiryDate, subledgerId) { 
+    constructor(id, transactionUUID, programId, created, type, amount, name, startDate, expiryDate, subledgerId) { 
         
-        LoyaltyProgramTransaction.initialize(this, id, programId, created, type, amount, name, startDate, expiryDate, subledgerId);
+        LoyaltyProgramTransaction.initialize(this, id, transactionUUID, programId, created, type, amount, name, startDate, expiryDate, subledgerId);
     }
 
     /**
@@ -43,8 +44,9 @@ class LoyaltyProgramTransaction {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, programId, created, type, amount, name, startDate, expiryDate, subledgerId) { 
+    static initialize(obj, id, transactionUUID, programId, created, type, amount, name, startDate, expiryDate, subledgerId) { 
         obj['id'] = id;
+        obj['transactionUUID'] = transactionUUID;
         obj['programId'] = programId;
         obj['created'] = created;
         obj['type'] = type;
@@ -68,6 +70,9 @@ class LoyaltyProgramTransaction {
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('transactionUUID')) {
+                obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
             }
             if (data.hasOwnProperty('programId')) {
                 obj['programId'] = ApiClient.convertToType(data['programId'], 'Number');
@@ -135,6 +140,12 @@ class LoyaltyProgramTransaction {
  * @member {Number} id
  */
 LoyaltyProgramTransaction.prototype['id'] = undefined;
+
+/**
+ * Unique identifier of the transaction in the UUID format.
+ * @member {String} transactionUUID
+ */
+LoyaltyProgramTransaction.prototype['transactionUUID'] = undefined;
 
 /**
  * ID of the loyalty program.

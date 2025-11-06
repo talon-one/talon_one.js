@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2PermissionSet model module.
  * @module model/RoleV2PermissionSet
- * @version 25.15.0
+ * @version 25.16.0
  */
 class RoleV2PermissionSet {
     /**

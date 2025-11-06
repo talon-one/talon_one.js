@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The NewWebhook model module.
  * @module model/NewWebhook
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NewWebhook {
     /**
@@ -94,6 +94,9 @@ class NewWebhook {
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('authenticationId')) {
+                obj['authenticationId'] = ApiClient.convertToType(data['authenticationId'], 'Number');
+            }
         }
         return obj;
     }
@@ -160,6 +163,12 @@ NewWebhook.prototype['params'] = undefined;
  * @member {Boolean} enabled
  */
 NewWebhook.prototype['enabled'] = undefined;
+
+/**
+ * The ID of the credential that this webhook is using.
+ * @member {Number} authenticationId
+ */
+NewWebhook.prototype['authenticationId'] = undefined;
 
 
 

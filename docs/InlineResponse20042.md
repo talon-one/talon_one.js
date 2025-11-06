@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[EventType]**](EventType.md) |  | 
+**totalResultSize** | **Number** |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
+**data** | [**[Change]**](Change.md) |  | 
 
 

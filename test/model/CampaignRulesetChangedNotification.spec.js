@@ -54,20 +54,20 @@
       //expect(instance).to.be.a(TalonOne.CampaignRulesetChangedNotification);
     });
 
-    it('should have the property campaign (base name: "campaign")', function() {
-      // uncomment below and update the code to test the property campaign
+    it('should have the property notificationType (base name: "NotificationType")', function() {
+      // uncomment below and update the code to test the property notificationType
       //var instane = new TalonOne.CampaignRulesetChangedNotification();
       //expect(instance).to.be();
     });
 
-    it('should have the property oldRuleset (base name: "oldRuleset")', function() {
-      // uncomment below and update the code to test the property oldRuleset
+    it('should have the property totalResultSize (base name: "TotalResultSize")', function() {
+      // uncomment below and update the code to test the property totalResultSize
       //var instane = new TalonOne.CampaignRulesetChangedNotification();
       //expect(instance).to.be();
     });
 
-    it('should have the property ruleset (base name: "ruleset")', function() {
-      // uncomment below and update the code to test the property ruleset
+    it('should have the property data (base name: "Data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new TalonOne.CampaignRulesetChangedNotification();
       //expect(instance).to.be();
     });

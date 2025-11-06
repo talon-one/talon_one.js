@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property contextId (base name: "contextId")', function() {
+      // uncomment below and update the code to test the property contextId
+      //var instane = new TalonOne.NewPriceAdjustment();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

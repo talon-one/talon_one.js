@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property notificationType (base name: "NotificationType")', function() {
+      // uncomment below and update the code to test the property notificationType
+      //var instane = new TalonOne.StrikethroughLabelingNotification();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
