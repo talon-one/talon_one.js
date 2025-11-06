@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LedgerPointsEntryIntegrationAPI model module.
  * @module model/LedgerPointsEntryIntegrationAPI
- * @version 25.15.0
+ * @version 25.16.0
  */
 class LedgerPointsEntryIntegrationAPI {
     /**
@@ -24,6 +24,7 @@ class LedgerPointsEntryIntegrationAPI {
      * Loyalty profile points with start and expiry dates.
      * @alias module:model/LedgerPointsEntryIntegrationAPI
      * @param id {Number} ID of the transaction that adds loyalty points.
+     * @param transactionUUID {String} Unique identifier of the transaction in the UUID format.
      * @param created {Date} Date and time the loyalty points were added.
      * @param programId {Number} ID of the loyalty program.
      * @param name {String} Name or reason of the transaction that adds loyalty points.
@@ -32,9 +33,9 @@ class LedgerPointsEntryIntegrationAPI {
      * @param subledgerId {String} ID of the subledger.
      * @param amount {Number} Amount of loyalty points added in the transaction.
      */
-    constructor(id, created, programId, name, startDate, expiryDate, subledgerId, amount) { 
+    constructor(id, transactionUUID, created, programId, name, startDate, expiryDate, subledgerId, amount) { 
         
-        LedgerPointsEntryIntegrationAPI.initialize(this, id, created, programId, name, startDate, expiryDate, subledgerId, amount);
+        LedgerPointsEntryIntegrationAPI.initialize(this, id, transactionUUID, created, programId, name, startDate, expiryDate, subledgerId, amount);
     }
 
     /**
@@ -42,8 +43,9 @@ class LedgerPointsEntryIntegrationAPI {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, programId, name, startDate, expiryDate, subledgerId, amount) { 
+    static initialize(obj, id, transactionUUID, created, programId, name, startDate, expiryDate, subledgerId, amount) { 
         obj['id'] = id;
+        obj['transactionUUID'] = transactionUUID;
         obj['created'] = created;
         obj['programId'] = programId;
         obj['name'] = name;
@@ -66,6 +68,9 @@ class LedgerPointsEntryIntegrationAPI {
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('transactionUUID')) {
+                obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
@@ -103,6 +108,12 @@ class LedgerPointsEntryIntegrationAPI {
  * @member {Number} id
  */
 LedgerPointsEntryIntegrationAPI.prototype['id'] = undefined;
+
+/**
+ * Unique identifier of the transaction in the UUID format.
+ * @member {String} transactionUUID
+ */
+LedgerPointsEntryIntegrationAPI.prototype['transactionUUID'] = undefined;
 
 /**
  * Date and time the loyalty points were added.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 25.15.0
+ * @version 25.16.0
  */
 class Effect {
     /**
@@ -28,7 +28,7 @@ class Effect {
      * @param ruleIndex {Number} The position of the rule that triggered this effect within the ruleset.
      * @param ruleName {String} The name of the rule that triggered this effect.
      * @param effectType {String} The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
-     * @param props {Object} The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
+     * @param props {Object} 
      */
     constructor(campaignId, rulesetId, ruleIndex, ruleName, effectType, props) { 
         
@@ -206,7 +206,6 @@ Effect.prototype['selectedPrice'] = undefined;
 Effect.prototype['adjustmentReferenceId'] = undefined;
 
 /**
- * The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
  * @member {Object} props
  */
 Effect.prototype['props'] = undefined;

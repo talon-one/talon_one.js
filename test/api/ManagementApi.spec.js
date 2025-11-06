@@ -1208,26 +1208,6 @@
         done();
       });
     });
-    describe('getWebhookActivationLogs', function() {
-      it('should call getWebhookActivationLogs successfully', function(done) {
-        //uncomment below and update the code to test getWebhookActivationLogs
-        //instance.getWebhookActivationLogs(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getWebhookLogs', function() {
-      it('should call getWebhookLogs successfully', function(done) {
-        //uncomment below and update the code to test getWebhookLogs
-        //instance.getWebhookLogs(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getWebhooks', function() {
       it('should call getWebhooks successfully', function(done) {
         //uncomment below and update the code to test getWebhooks

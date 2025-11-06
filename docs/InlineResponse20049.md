@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[SummaryCampaignStoreBudget]**](SummaryCampaignStoreBudget.md) |  | [optional] 
+**hasMore** | **Boolean** |  | 
+**data** | [**[AchievementProgressWithDefinition]**](AchievementProgressWithDefinition.md) |  | 
 
 

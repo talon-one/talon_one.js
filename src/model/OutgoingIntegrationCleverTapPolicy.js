@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OutgoingIntegrationCleverTapPolicy model module.
  * @module model/OutgoingIntegrationCleverTapPolicy
- * @version 25.15.0
+ * @version 25.16.0
  */
 class OutgoingIntegrationCleverTapPolicy {
     /**

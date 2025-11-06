@@ -17,7 +17,7 @@ import ScimGroup from './ScimGroup';
 /**
  * The ScimGroupsListResponse model module.
  * @module model/ScimGroupsListResponse
- * @version 25.15.0
+ * @version 25.16.0
  */
 class ScimGroupsListResponse {
     /**

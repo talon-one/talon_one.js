@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign** | [**Campaign**](Campaign.md) |  | 
-**oldRuleset** | [**Ruleset**](Ruleset.md) |  | [optional] 
-**ruleset** | [**Ruleset**](Ruleset.md) |  | [optional] 
+**notificationType** | **String** | The type of the notification | 
+**totalResultSize** | **Number** | The total size of the result set. | 
+**data** | [**[CampaignRulesetChangedNotificationItem]**](CampaignRulesetChangedNotificationItem.md) | A list of campaign notification data. | [optional] 
 
 

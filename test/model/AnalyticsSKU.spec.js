@@ -72,6 +72,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property catalogId (base name: "catalogId")', function() {
+      // uncomment below and update the code to test the property catalogId
+      //var instane = new TalonOne.AnalyticsSKU();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productId (base name: "productId")', function() {
+      // uncomment below and update the code to test the property productId
+      //var instane = new TalonOne.AnalyticsSKU();
+      //expect(instance).to.be();
+    });
+
     it('should have the property unitsSold (base name: "unitsSold")', function() {
       // uncomment below and update the code to test the property unitsSold
       //var instane = new TalonOne.AnalyticsSKU();

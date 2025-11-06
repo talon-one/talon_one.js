@@ -17,7 +17,7 @@ import NewCampaignStoreBudgetStoreLimit from './NewCampaignStoreBudgetStoreLimit
 /**
  * The NewCampaignStoreBudget model module.
  * @module model/NewCampaignStoreBudget
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NewCampaignStoreBudget {
     /**

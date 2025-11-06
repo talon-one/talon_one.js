@@ -17,7 +17,7 @@ import Tier from './Tier';
 /**
  * The LedgerInfo model module.
  * @module model/LedgerInfo
- * @version 25.15.0
+ * @version 25.16.0
  */
 class LedgerInfo {
     /**

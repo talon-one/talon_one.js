@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCampaignDescription model module.
  * @module model/GenerateCampaignDescription
- * @version 25.15.0
+ * @version 25.16.0
  */
 class GenerateCampaignDescription {
     /**
      * Constructs a new <code>GenerateCampaignDescription</code>.
      * @alias module:model/GenerateCampaignDescription
+     * @param campaignID {Number} ID of a campaign.
      * @param rulesetID {Number} ID of a ruleset.
      * @param currency {String} Currency for the campaign.
      */
-    constructor(rulesetID, currency) { 
+    constructor(campaignID, rulesetID, currency) { 
         
-        GenerateCampaignDescription.initialize(this, rulesetID, currency);
+        GenerateCampaignDescription.initialize(this, campaignID, rulesetID, currency);
     }
 
     /**
@@ -35,7 +36,8 @@ class GenerateCampaignDescription {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, rulesetID, currency) { 
+    static initialize(obj, campaignID, rulesetID, currency) { 
+        obj['campaignID'] = campaignID;
         obj['rulesetID'] = rulesetID;
         obj['currency'] = currency;
     }
@@ -51,6 +53,9 @@ class GenerateCampaignDescription {
         if (data) {
             obj = obj || new GenerateCampaignDescription();
 
+            if (data.hasOwnProperty('campaignID')) {
+                obj['campaignID'] = ApiClient.convertToType(data['campaignID'], 'Number');
+            }
             if (data.hasOwnProperty('rulesetID')) {
                 obj['rulesetID'] = ApiClient.convertToType(data['rulesetID'], 'Number');
             }
@@ -63,6 +68,12 @@ class GenerateCampaignDescription {
 
 
 }
+
+/**
+ * ID of a campaign.
+ * @member {Number} campaignID
+ */
+GenerateCampaignDescription.prototype['campaignID'] = undefined;
 
 /**
  * ID of a ruleset.

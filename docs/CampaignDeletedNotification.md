@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign** | [**Campaign**](Campaign.md) |  | 
-**deletedAt** | **Date** | Time when the campaign was deleted. | 
+**notificationType** | **String** | The type of the notification | 
+**totalResultSize** | **Number** | The total size of the result set. | 
+**data** | [**[CampaignDeletedNotificationItem]**](CampaignDeletedNotificationItem.md) | A list of campaign notification data. | [optional] 
 
 

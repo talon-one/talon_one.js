@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CatalogsStrikethroughNotificationPolicy model module.
  * @module model/CatalogsStrikethroughNotificationPolicy
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CatalogsStrikethroughNotificationPolicy {
     /**
@@ -55,6 +55,9 @@ class CatalogsStrikethroughNotificationPolicy {
             if (data.hasOwnProperty('aheadOfDaysTrigger')) {
                 obj['aheadOfDaysTrigger'] = ApiClient.convertToType(data['aheadOfDaysTrigger'], 'Number');
             }
+            if (data.hasOwnProperty('batchSize')) {
+                obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Number');
+            }
         }
         return obj;
     }
@@ -73,6 +76,13 @@ CatalogsStrikethroughNotificationPolicy.prototype['name'] = undefined;
  * @member {Number} aheadOfDaysTrigger
  */
 CatalogsStrikethroughNotificationPolicy.prototype['aheadOfDaysTrigger'] = undefined;
+
+/**
+ * The required size of each batch of data.
+ * @member {Number} batchSize
+ * @default 1000
+ */
+CatalogsStrikethroughNotificationPolicy.prototype['batchSize'] = 1000;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SSOConfig model module.
  * @module model/SSOConfig
- * @version 25.15.0
+ * @version 25.16.0
  */
 class SSOConfig {
     /**

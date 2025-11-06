@@ -17,7 +17,7 @@ import LoyaltyDashboardPointsBreakdown from './LoyaltyDashboardPointsBreakdown';
 /**
  * The LoyaltyDashboardData model module.
  * @module model/LoyaltyDashboardData
- * @version 25.15.0
+ * @version 25.16.0
  */
 class LoyaltyDashboardData {
     /**
@@ -29,14 +29,15 @@ class LoyaltyDashboardData {
      * @param totalPendingPoints {Number} Total of pending points for this loyalty program.
      * @param totalSpentPoints {Number} Total of spent points for this loyalty program.
      * @param totalExpiredPoints {Number} Total of expired points for this loyalty program.
+     * @param totalNegativePoints {Number} Total of negative points for this loyalty program.
      * @param totalMembers {Number} Number of loyalty program members.
      * @param newMembers {Number} Number of members who joined on this day.
      * @param spentPoints {module:model/LoyaltyDashboardPointsBreakdown} 
      * @param earnedPoints {module:model/LoyaltyDashboardPointsBreakdown} 
      */
-    constructor(_date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalMembers, newMembers, spentPoints, earnedPoints) { 
+    constructor(_date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalNegativePoints, totalMembers, newMembers, spentPoints, earnedPoints) { 
         
-        LoyaltyDashboardData.initialize(this, _date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalMembers, newMembers, spentPoints, earnedPoints);
+        LoyaltyDashboardData.initialize(this, _date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalNegativePoints, totalMembers, newMembers, spentPoints, earnedPoints);
     }
 
     /**
@@ -44,12 +45,13 @@ class LoyaltyDashboardData {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, _date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalMembers, newMembers, spentPoints, earnedPoints) { 
+    static initialize(obj, _date, totalActivePoints, totalPendingPoints, totalSpentPoints, totalExpiredPoints, totalNegativePoints, totalMembers, newMembers, spentPoints, earnedPoints) { 
         obj['date'] = _date;
         obj['totalActivePoints'] = totalActivePoints;
         obj['totalPendingPoints'] = totalPendingPoints;
         obj['totalSpentPoints'] = totalSpentPoints;
         obj['totalExpiredPoints'] = totalExpiredPoints;
+        obj['totalNegativePoints'] = totalNegativePoints;
         obj['totalMembers'] = totalMembers;
         obj['newMembers'] = newMembers;
         obj['spentPoints'] = spentPoints;
@@ -81,6 +83,9 @@ class LoyaltyDashboardData {
             }
             if (data.hasOwnProperty('totalExpiredPoints')) {
                 obj['totalExpiredPoints'] = ApiClient.convertToType(data['totalExpiredPoints'], 'Number');
+            }
+            if (data.hasOwnProperty('totalNegativePoints')) {
+                obj['totalNegativePoints'] = ApiClient.convertToType(data['totalNegativePoints'], 'Number');
             }
             if (data.hasOwnProperty('totalMembers')) {
                 obj['totalMembers'] = ApiClient.convertToType(data['totalMembers'], 'Number');
@@ -130,6 +135,12 @@ LoyaltyDashboardData.prototype['totalSpentPoints'] = undefined;
  * @member {Number} totalExpiredPoints
  */
 LoyaltyDashboardData.prototype['totalExpiredPoints'] = undefined;
+
+/**
+ * Total of negative points for this loyalty program.
+ * @member {Number} totalNegativePoints
+ */
+LoyaltyDashboardData.prototype['totalNegativePoints'] = undefined;
 
 /**
  * Number of loyalty program members.

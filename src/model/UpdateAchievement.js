@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The UpdateAchievement model module.
  * @module model/UpdateAchievement
- * @version 25.15.0
+ * @version 25.16.0
  */
 class UpdateAchievement {
     /**
@@ -77,6 +77,9 @@ class UpdateAchievement {
             }
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
+            }
+            if (data.hasOwnProperty('allowRollbackAfterCompletion')) {
+                obj['allowRollbackAfterCompletion'] = ApiClient.convertToType(data['allowRollbackAfterCompletion'], 'Boolean');
             }
         }
         return obj;
@@ -143,6 +146,12 @@ UpdateAchievement.prototype['fixedStartDate'] = undefined;
  * @member {Date} endDate
  */
 UpdateAchievement.prototype['endDate'] = undefined;
+
+/**
+ * When `true`, customer progress can be rolled back in completed achievements.
+ * @member {Boolean} allowRollbackAfterCompletion
+ */
+UpdateAchievement.prototype['allowRollbackAfterCompletion'] = undefined;
 
 
 

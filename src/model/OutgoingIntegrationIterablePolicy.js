@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OutgoingIntegrationIterablePolicy model module.
  * @module model/OutgoingIntegrationIterablePolicy
- * @version 25.15.0
+ * @version 25.16.0
  */
 class OutgoingIntegrationIterablePolicy {
     /**

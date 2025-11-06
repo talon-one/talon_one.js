@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**transactionUUID** | **String** | Unique identifier of the transaction in the UUID format. | 
 **created** | **Date** | Date and time the loyalty card transaction occurred. | 
 **programId** | **Number** | ID of the loyalty program. | 
 **cardIdentifier** | **String** | The alphanumeric identifier of the loyalty card.  | 

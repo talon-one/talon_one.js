@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The CreateTemplateCampaign model module.
  * @module model/CreateTemplateCampaign
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CreateTemplateCampaign {
     /**

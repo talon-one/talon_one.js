@@ -19,6 +19,6 @@ Name | Type | Description | Notes
 **selectedPriceType** | **String** | The selected price type for the SKU targeted by this effect. | [optional] 
 **selectedPrice** | **Number** | The value of the selected price type to apply to the SKU targeted by this effect, before any discounts are applied. | [optional] 
 **adjustmentReferenceId** | **String** | The reference identifier of the selected price adjustment for this SKU. This is only returned if the &#x60;selectedPrice&#x60; resulted from a price adjustment. | [optional] 
-**props** | [**Object**](.md) | The properties of the effect. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects). | 
+**props** | [**Object**](.md) |  | 
 
 

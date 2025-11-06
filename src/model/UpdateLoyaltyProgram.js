@@ -18,7 +18,7 @@ import NewLoyaltyTier from './NewLoyaltyTier';
 /**
  * The UpdateLoyaltyProgram model module.
  * @module model/UpdateLoyaltyProgram
- * @version 25.15.0
+ * @version 25.16.0
  */
 class UpdateLoyaltyProgram {
     /**
@@ -130,7 +130,7 @@ UpdateLoyaltyProgram.prototype['subscribedApplications'] = undefined;
 UpdateLoyaltyProgram.prototype['defaultValidity'] = undefined;
 
 /**
- * The default duration of the pending time after which points should be valid. Can be 'immediate' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
+ * The default duration of the pending time after which points should be valid. Accepted values: 'immediate', 'on_action' or a specific time. The time format is a number followed by one letter indicating the time unit, like '30s', '40m', '1h', '5D', '7W', or 10M'. These rounding suffixes are also supported: - '_D' for rounding down. Can be used as a suffix after 'D', and signifies the start of the day. - '_U' for rounding up. Can be used as a suffix after 'D', 'W', and 'M', and signifies the end of the day, week, and month. 
  * @member {String} defaultPending
  */
 UpdateLoyaltyProgram.prototype['defaultPending'] = undefined;

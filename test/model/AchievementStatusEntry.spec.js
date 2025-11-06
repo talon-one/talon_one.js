@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property allowRollbackAfterCompletion (base name: "allowRollbackAfterCompletion")', function() {
+      // uncomment below and update the code to test the property allowRollbackAfterCompletion
+      //var instane = new TalonOne.AchievementStatusEntry();
+      //expect(instance).to.be();
+    });
+
     it('should have the property campaignId (base name: "campaignId")', function() {
       // uncomment below and update the code to test the property campaignId
       //var instane = new TalonOne.AchievementStatusEntry();

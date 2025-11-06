@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimServiceProviderConfigResponseFilter model module.
  * @module model/ScimServiceProviderConfigResponseFilter
- * @version 25.15.0
+ * @version 25.16.0
  */
 class ScimServiceProviderConfigResponseFilter {
     /**

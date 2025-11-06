@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponValue model module.
  * @module model/CouponValue
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CouponValue {
     /**

@@ -12,5 +12,9 @@ Name | Type | Description | Notes
 **props** | [**Object**](.md) |  | 
 **startTime** | **Date** | The start of the time frame where the effect is active in UTC. | [optional] 
 **endTime** | **Date** | The end of the time frame where the effect is active in UTC. | [optional] 
+**selectedPriceType** | **String** | The selected price type for this cart item (e.g. the price for members only). | [optional] 
+**selectedPrice** | **Number** | The value of the selected price type to apply to the SKU targeted by this effect, before any discounts are applied. | [optional] 
+**adjustmentReferenceId** | **String** | The reference identifier of the selected price adjustment for this cart item. | [optional] 
+**targets** | **[Object]** | A list of entities (e.g. audiences) targeted by this effect. | [optional] 
 
 

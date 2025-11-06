@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authenticationId (base name: "authenticationId")', function() {
+      // uncomment below and update the code to test the property authenticationId
+      //var instane = new TalonOne.NewWebhook();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

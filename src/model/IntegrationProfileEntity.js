@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationProfileEntity model module.
  * @module model/IntegrationProfileEntity
- * @version 25.15.0
+ * @version 25.16.0
  */
 class IntegrationProfileEntity {
     /**

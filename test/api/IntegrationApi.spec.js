@@ -48,6 +48,16 @@
   }
 
   describe('IntegrationApi', function() {
+    describe('bestPriorPrice', function() {
+      it('should call bestPriorPrice successfully', function(done) {
+        //uncomment below and update the code to test bestPriorPrice
+        //instance.bestPriorPrice(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createAudienceV2', function() {
       it('should call createAudienceV2 successfully', function(done) {
         //uncomment below and update the code to test createAudienceV2

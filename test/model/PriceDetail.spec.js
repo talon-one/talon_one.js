@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property adjustmentContextId (base name: "adjustmentContextId")', function() {
+      // uncomment below and update the code to test the property adjustmentContextId
+      //var instane = new TalonOne.PriceDetail();
+      //expect(instance).to.be();
+    });
+
     it('should have the property adjustmentReferenceId (base name: "adjustmentReferenceId")', function() {
       // uncomment below and update the code to test the property adjustmentReferenceId
       //var instane = new TalonOne.PriceDetail();

@@ -19,7 +19,7 @@ import Product from './Product';
 /**
  * The CartItem model module.
  * @module model/CartItem
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CartItem {
     /**

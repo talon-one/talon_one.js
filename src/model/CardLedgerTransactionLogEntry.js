@@ -16,13 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CardLedgerTransactionLogEntry model module.
  * @module model/CardLedgerTransactionLogEntry
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CardLedgerTransactionLogEntry {
     /**
      * Constructs a new <code>CardLedgerTransactionLogEntry</code>.
      * Log entry for a given loyalty card transaction.
      * @alias module:model/CardLedgerTransactionLogEntry
+     * @param transactionUUID {String} Unique identifier of the transaction in the UUID format.
      * @param created {Date} Date and time the loyalty card transaction occurred.
      * @param programId {Number} ID of the loyalty program.
      * @param cardIdentifier {String} The alphanumeric identifier of the loyalty card. 
@@ -34,9 +35,9 @@ class CardLedgerTransactionLogEntry {
      * @param amount {Number} Amount of loyalty points added or deducted in the transaction.
      * @param id {Number} ID of the loyalty ledger entry.
      */
-    constructor(created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+    constructor(transactionUUID, created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id) { 
         
-        CardLedgerTransactionLogEntry.initialize(this, created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id);
+        CardLedgerTransactionLogEntry.initialize(this, transactionUUID, created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id);
     }
 
     /**
@@ -44,7 +45,8 @@ class CardLedgerTransactionLogEntry {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+    static initialize(obj, transactionUUID, created, programId, cardIdentifier, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+        obj['transactionUUID'] = transactionUUID;
         obj['created'] = created;
         obj['programId'] = programId;
         obj['cardIdentifier'] = cardIdentifier;
@@ -68,6 +70,9 @@ class CardLedgerTransactionLogEntry {
         if (data) {
             obj = obj || new CardLedgerTransactionLogEntry();
 
+            if (data.hasOwnProperty('transactionUUID')) {
+                obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
+            }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
@@ -113,6 +118,12 @@ class CardLedgerTransactionLogEntry {
 
 
 }
+
+/**
+ * Unique identifier of the transaction in the UUID format.
+ * @member {String} transactionUUID
+ */
+CardLedgerTransactionLogEntry.prototype['transactionUUID'] = undefined;
 
 /**
  * Date and time the loyalty card transaction occurred.

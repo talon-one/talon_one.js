@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransferLoyaltyCard model module.
  * @module model/TransferLoyaltyCard
- * @version 25.15.0
+ * @version 25.16.0
  */
 class TransferLoyaltyCard {
     /**

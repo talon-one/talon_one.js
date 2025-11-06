@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | ID of the transaction that adds loyalty points. | 
+**transactionUUID** | **String** | Unique identifier of the transaction in the UUID format. | 
 **created** | **Date** | Date and time the loyalty points were added. | 
 **programId** | **Number** | ID of the loyalty program. | 
 **customerSessionId** | **String** | ID of the customer session where points were added. | [optional] 

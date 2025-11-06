@@ -17,13 +17,14 @@ import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 /**
  * The LedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/LedgerTransactionLogEntryIntegrationAPI
- * @version 25.15.0
+ * @version 25.16.0
  */
 class LedgerTransactionLogEntryIntegrationAPI {
     /**
      * Constructs a new <code>LedgerTransactionLogEntryIntegrationAPI</code>.
-     * Log entry for a given loyalty card transaction.
+     * Log entry for a given loyalty profile transaction.
      * @alias module:model/LedgerTransactionLogEntryIntegrationAPI
+     * @param transactionUUID {String} Unique identifier of the transaction in the UUID format.
      * @param created {Date} Date and time the loyalty transaction occurred.
      * @param programId {Number} ID of the loyalty program.
      * @param type {module:model/LedgerTransactionLogEntryIntegrationAPI.TypeEnum} Type of transaction. Possible values:   - `addition`: Signifies added points.   - `subtraction`: Signifies deducted points. 
@@ -34,9 +35,9 @@ class LedgerTransactionLogEntryIntegrationAPI {
      * @param amount {Number} Amount of loyalty points added or deducted in the transaction.
      * @param id {Number} ID of the loyalty ledger transaction.
      */
-    constructor(created, programId, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+    constructor(transactionUUID, created, programId, type, name, startDate, expiryDate, subledgerId, amount, id) { 
         
-        LedgerTransactionLogEntryIntegrationAPI.initialize(this, created, programId, type, name, startDate, expiryDate, subledgerId, amount, id);
+        LedgerTransactionLogEntryIntegrationAPI.initialize(this, transactionUUID, created, programId, type, name, startDate, expiryDate, subledgerId, amount, id);
     }
 
     /**
@@ -44,7 +45,8 @@ class LedgerTransactionLogEntryIntegrationAPI {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, created, programId, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+    static initialize(obj, transactionUUID, created, programId, type, name, startDate, expiryDate, subledgerId, amount, id) { 
+        obj['transactionUUID'] = transactionUUID;
         obj['created'] = created;
         obj['programId'] = programId;
         obj['type'] = type;
@@ -67,6 +69,9 @@ class LedgerTransactionLogEntryIntegrationAPI {
         if (data) {
             obj = obj || new LedgerTransactionLogEntryIntegrationAPI();
 
+            if (data.hasOwnProperty('transactionUUID')) {
+                obj['transactionUUID'] = ApiClient.convertToType(data['transactionUUID'], 'String');
+            }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
@@ -112,6 +117,12 @@ class LedgerTransactionLogEntryIntegrationAPI {
 
 
 }
+
+/**
+ * Unique identifier of the transaction in the UUID format.
+ * @member {String} transactionUUID
+ */
+LedgerTransactionLogEntryIntegrationAPI.prototype['transactionUUID'] = undefined;
 
 /**
  * Date and time the loyalty transaction occurred.

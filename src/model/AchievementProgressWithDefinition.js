@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementProgressWithDefinition model module.
  * @module model/AchievementProgressWithDefinition
- * @version 25.15.0
+ * @version 25.16.0
  */
 class AchievementProgressWithDefinition {
     /**
@@ -110,6 +110,9 @@ class AchievementProgressWithDefinition {
             }
             if (data.hasOwnProperty('achievementEndDate')) {
                 obj['achievementEndDate'] = ApiClient.convertToType(data['achievementEndDate'], 'Date');
+            }
+            if (data.hasOwnProperty('achievementAllowRollbackAfterCompletion')) {
+                obj['achievementAllowRollbackAfterCompletion'] = ApiClient.convertToType(data['achievementAllowRollbackAfterCompletion'], 'Boolean');
             }
         }
         return obj;
@@ -207,6 +210,12 @@ AchievementProgressWithDefinition.prototype['achievementFixedStartDate'] = undef
  * @member {Date} achievementEndDate
  */
 AchievementProgressWithDefinition.prototype['achievementEndDate'] = undefined;
+
+/**
+ * When `true`, customer progress can be rolled back in completed achievements.
+ * @member {Boolean} achievementAllowRollbackAfterCompletion
+ */
+AchievementProgressWithDefinition.prototype['achievementAllowRollbackAfterCompletion'] = undefined;
 
 
 

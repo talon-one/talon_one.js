@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationReferee model module.
  * @module model/ApplicationReferee
- * @version 25.15.0
+ * @version 25.16.0
  */
 class ApplicationReferee {
     /**

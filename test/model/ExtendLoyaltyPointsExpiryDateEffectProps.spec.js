@@ -72,14 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property transactionUUIDs (base name: "transactionUUIDs")', function() {
-      // uncomment below and update the code to test the property transactionUUIDs
-      //var instane = new TalonOne.ExtendLoyaltyPointsExpiryDateEffectProps();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property previousExpirationDate (base name: "previousExpirationDate")', function() {
-      // uncomment below and update the code to test the property previousExpirationDate
+    it('should have the property affectedTransactions (base name: "affectedTransactions")', function() {
+      // uncomment below and update the code to test the property affectedTransactions
       //var instane = new TalonOne.ExtendLoyaltyPointsExpiryDateEffectProps();
       //expect(instance).to.be();
     });

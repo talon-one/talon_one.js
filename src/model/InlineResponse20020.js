@@ -17,7 +17,7 @@ import CollectionWithoutPayload from './CollectionWithoutPayload';
 /**
  * The InlineResponse20020 model module.
  * @module model/InlineResponse20020
- * @version 25.15.0
+ * @version 25.16.0
  */
 class InlineResponse20020 {
     /**

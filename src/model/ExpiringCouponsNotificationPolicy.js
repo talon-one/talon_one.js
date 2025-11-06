@@ -17,7 +17,7 @@ import ExpiringCouponsNotificationTrigger from './ExpiringCouponsNotificationTri
 /**
  * The ExpiringCouponsNotificationPolicy model module.
  * @module model/ExpiringCouponsNotificationPolicy
- * @version 25.15.0
+ * @version 25.16.0
  */
 class ExpiringCouponsNotificationPolicy {
     /**
@@ -92,8 +92,9 @@ ExpiringCouponsNotificationPolicy.prototype['batchingEnabled'] = true;
 /**
  * The required size of each batch of data. This value applies only when `batchingEnabled` is `true`.
  * @member {Number} batchSize
+ * @default 1000
  */
-ExpiringCouponsNotificationPolicy.prototype['batchSize'] = undefined;
+ExpiringCouponsNotificationPolicy.prototype['batchSize'] = 1000;
 
 
 

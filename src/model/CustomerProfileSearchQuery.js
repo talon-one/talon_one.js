@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerProfileSearchQuery model module.
  * @module model/CustomerProfileSearchQuery
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CustomerProfileSearchQuery {
     /**

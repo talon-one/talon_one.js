@@ -17,14 +17,14 @@ import AnalyticsDataPointWithTrend from './AnalyticsDataPointWithTrend';
 /**
  * The AnalyticsSKU model module.
  * @module model/AnalyticsSKU
- * @version 25.15.0
+ * @version 25.16.0
  */
 class AnalyticsSKU {
     /**
      * Constructs a new <code>AnalyticsSKU</code>.
      * @alias module:model/AnalyticsSKU
-     * @param id {Number} The ID of the SKU linked to the application.
-     * @param sku {String} The SKU linked to the application.
+     * @param id {Number} The ID of the SKU linked to the Application.
+     * @param sku {String} The SKU linked to the Application.
      */
     constructor(id, sku) { 
         
@@ -61,6 +61,12 @@ class AnalyticsSKU {
             if (data.hasOwnProperty('lastUpdated')) {
                 obj['lastUpdated'] = ApiClient.convertToType(data['lastUpdated'], 'Date');
             }
+            if (data.hasOwnProperty('catalogId')) {
+                obj['catalogId'] = ApiClient.convertToType(data['catalogId'], 'Number');
+            }
+            if (data.hasOwnProperty('productId')) {
+                obj['productId'] = ApiClient.convertToType(data['productId'], 'Number');
+            }
             if (data.hasOwnProperty('unitsSold')) {
                 obj['unitsSold'] = AnalyticsDataPointWithTrend.constructFromObject(data['unitsSold']);
             }
@@ -72,13 +78,13 @@ class AnalyticsSKU {
 }
 
 /**
- * The ID of the SKU linked to the application.
+ * The ID of the SKU linked to the Application.
  * @member {Number} id
  */
 AnalyticsSKU.prototype['id'] = undefined;
 
 /**
- * The SKU linked to the application.
+ * The SKU linked to the Application.
  * @member {String} sku
  */
 AnalyticsSKU.prototype['sku'] = undefined;
@@ -88,6 +94,18 @@ AnalyticsSKU.prototype['sku'] = undefined;
  * @member {Date} lastUpdated
  */
 AnalyticsSKU.prototype['lastUpdated'] = undefined;
+
+/**
+ * The ID of the catalog that contains the SKU.
+ * @member {Number} catalogId
+ */
+AnalyticsSKU.prototype['catalogId'] = undefined;
+
+/**
+ * The ID of the product that the SKU belongs to.
+ * @member {Number} productId
+ */
+AnalyticsSKU.prototype['productId'] = undefined;
 
 /**
  * @member {module:model/AnalyticsDataPointWithTrend} unitsSold

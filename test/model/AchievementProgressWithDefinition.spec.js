@@ -144,6 +144,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property achievementAllowRollbackAfterCompletion (base name: "achievementAllowRollbackAfterCompletion")', function() {
+      // uncomment below and update the code to test the property achievementAllowRollbackAfterCompletion
+      //var instane = new TalonOne.AchievementProgressWithDefinition();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -54,18 +54,6 @@
       //expect(instance).to.be.a(TalonOne.NewMessageTest);
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new TalonOne.NewMessageTest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property queryParams (base name: "queryParams")', function() {
-      // uncomment below and update the code to test the property queryParams
-      //var instane = new TalonOne.NewMessageTest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property headers (base name: "headers")', function() {
       // uncomment below and update the code to test the property headers
       //var instane = new TalonOne.NewMessageTest();
@@ -86,6 +74,18 @@
 
     it('should have the property payload (base name: "payload")', function() {
       // uncomment below and update the code to test the property payload
+      //var instane = new TalonOne.NewMessageTest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property params (base name: "params")', function() {
+      // uncomment below and update the code to test the property params
+      //var instane = new TalonOne.NewMessageTest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property applicationIds (base name: "applicationIds")', function() {
+      // uncomment below and update the code to test the property applicationIds
       //var instane = new TalonOne.NewMessageTest();
       //expect(instance).to.be();
     });

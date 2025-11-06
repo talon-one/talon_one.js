@@ -17,7 +17,7 @@ import CardLedgerPointsEntryIntegrationAPI from './CardLedgerPointsEntryIntegrat
 /**
  * The InlineResponse2005 model module.
  * @module model/InlineResponse2005
- * @version 25.15.0
+ * @version 25.16.0
  */
 class InlineResponse2005 {
     /**

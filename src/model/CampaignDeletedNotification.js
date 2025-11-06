@@ -12,24 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Campaign from './Campaign';
+import CampaignDeletedNotificationItem from './CampaignDeletedNotificationItem';
 
 /**
  * The CampaignDeletedNotification model module.
  * @module model/CampaignDeletedNotification
- * @version 25.15.0
+ * @version 25.16.0
  */
 class CampaignDeletedNotification {
     /**
      * Constructs a new <code>CampaignDeletedNotification</code>.
-     * A notification regarding a campaign that was deleted.
      * @alias module:model/CampaignDeletedNotification
-     * @param campaign {module:model/Campaign} 
-     * @param deletedAt {Date} Time when the campaign was deleted.
+     * @param notificationType {String} The type of the notification
+     * @param totalResultSize {Number} The total size of the result set.
      */
-    constructor(campaign, deletedAt) { 
+    constructor(notificationType, totalResultSize) { 
         
-        CampaignDeletedNotification.initialize(this, campaign, deletedAt);
+        CampaignDeletedNotification.initialize(this, notificationType, totalResultSize);
     }
 
     /**
@@ -37,9 +36,9 @@ class CampaignDeletedNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, campaign, deletedAt) { 
-        obj['campaign'] = campaign;
-        obj['deletedAt'] = deletedAt;
+    static initialize(obj, notificationType, totalResultSize) { 
+        obj['NotificationType'] = notificationType;
+        obj['TotalResultSize'] = totalResultSize;
     }
 
     /**
@@ -53,11 +52,14 @@ class CampaignDeletedNotification {
         if (data) {
             obj = obj || new CampaignDeletedNotification();
 
-            if (data.hasOwnProperty('campaign')) {
-                obj['campaign'] = Campaign.constructFromObject(data['campaign']);
+            if (data.hasOwnProperty('NotificationType')) {
+                obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
             }
-            if (data.hasOwnProperty('deletedAt')) {
-                obj['deletedAt'] = ApiClient.convertToType(data['deletedAt'], 'Date');
+            if (data.hasOwnProperty('TotalResultSize')) {
+                obj['TotalResultSize'] = ApiClient.convertToType(data['TotalResultSize'], 'Number');
+            }
+            if (data.hasOwnProperty('Data')) {
+                obj['Data'] = ApiClient.convertToType(data['Data'], [CampaignDeletedNotificationItem]);
             }
         }
         return obj;
@@ -67,15 +69,22 @@ class CampaignDeletedNotification {
 }
 
 /**
- * @member {module:model/Campaign} campaign
+ * The type of the notification
+ * @member {String} NotificationType
  */
-CampaignDeletedNotification.prototype['campaign'] = undefined;
+CampaignDeletedNotification.prototype['NotificationType'] = undefined;
 
 /**
- * Time when the campaign was deleted.
- * @member {Date} deletedAt
+ * The total size of the result set.
+ * @member {Number} TotalResultSize
  */
-CampaignDeletedNotification.prototype['deletedAt'] = undefined;
+CampaignDeletedNotification.prototype['TotalResultSize'] = undefined;
+
+/**
+ * A list of campaign notification data.
+ * @member {Array.<module:model/CampaignDeletedNotificationItem>} Data
+ */
+CampaignDeletedNotification.prototype['Data'] = undefined;
 
 
 

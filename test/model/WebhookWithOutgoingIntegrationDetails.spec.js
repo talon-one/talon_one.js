@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authenticationId (base name: "authenticationId")', function() {
+      // uncomment below and update the code to test the property authenticationId
+      //var instane = new TalonOne.WebhookWithOutgoingIntegrationDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property outgoingIntegrationTemplateId (base name: "outgoingIntegrationTemplateId")', function() {
       // uncomment below and update the code to test the property outgoingIntegrationTemplateId
       //var instane = new TalonOne.WebhookWithOutgoingIntegrationDetails();

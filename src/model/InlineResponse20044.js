@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Change from './Change';
+import RoleV2 from './RoleV2';
 
 /**
  * The InlineResponse20044 model module.
  * @module model/InlineResponse20044
- * @version 25.15.0
+ * @version 25.16.0
  */
 class InlineResponse20044 {
     /**
      * Constructs a new <code>InlineResponse20044</code>.
      * @alias module:model/InlineResponse20044
-     * @param data {Array.<module:model/Change>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/RoleV2>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20044.initialize(this, data);
+        InlineResponse20044.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20044 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse20044 {
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Change]);
+                obj['data'] = ApiClient.convertToType(data['data'], [RoleV2]);
             }
         }
         return obj;
@@ -72,12 +71,7 @@ class InlineResponse20044 {
 InlineResponse20044.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20044.prototype['hasMore'] = undefined;
-
-/**
- * @member {Array.<module:model/Change>} data
+ * @member {Array.<module:model/RoleV2>} data
  */
 InlineResponse20044.prototype['data'] = undefined;
 

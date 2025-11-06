@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateLoyaltyCard model module.
  * @module model/GenerateLoyaltyCard
- * @version 25.15.0
+ * @version 25.16.0
  */
 class GenerateLoyaltyCard {
     /**

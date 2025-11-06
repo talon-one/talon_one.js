@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **payload** | **String** | API payload (supports templating using parameters) for this webhook. | [optional] 
 **params** | [**[TemplateArgDef]**](TemplateArgDef.md) | Array of template argument definitions. | 
 **enabled** | **Boolean** | Enables or disables webhook from showing in the Rule Builder. | 
+**authenticationId** | **Number** | The ID of the credential that this webhook is using. | [optional] 
 
 
 

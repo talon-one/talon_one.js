@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **activationPolicy** | **String** | The policy that determines how the achievement starts, ends, or resets. - &#x60;user_action&#x60;: The achievement ends or resets relative to when the customer started the achievement. - &#x60;fixed_schedule&#x60;: The achievement starts, ends, or resets for all customers following a fixed schedule.  | [optional] 
 **fixedStartDate** | **Date** | The achievement&#39;s start date when &#x60;activationPolicy&#x60; is set to &#x60;fixed_schedule&#x60;.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
 **endDate** | **Date** | The achievement&#39;s end date. If defined, customers cannot participate in the achievement after this date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
+**allowRollbackAfterCompletion** | **Boolean** | When &#x60;true&#x60;, customer progress can be rolled back in completed achievements. | [optional] 
 **campaignId** | **Number** | The ID of the campaign the achievement belongs to. | [optional] 
 **status** | **String** | The status of the achievement. | [optional] 
 **currentProgress** | [**AchievementProgress**](AchievementProgress.md) |  | [optional] 

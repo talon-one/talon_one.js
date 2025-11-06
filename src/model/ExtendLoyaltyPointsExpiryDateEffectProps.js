@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoyaltyLedgerEntryExpiryDateChange from './LoyaltyLedgerEntryExpiryDateChange';
 
 /**
  * The ExtendLoyaltyPointsExpiryDateEffectProps model module.
  * @module model/ExtendLoyaltyPointsExpiryDateEffectProps
- * @version 25.15.0
+ * @version 25.16.0
  */
 class ExtendLoyaltyPointsExpiryDateEffectProps {
     /**
@@ -26,11 +27,10 @@ class ExtendLoyaltyPointsExpiryDateEffectProps {
      * @param programId {Number} ID of the loyalty program that contains these points.
      * @param subLedgerId {String} API name of the loyalty program subledger that contains these points. added.
      * @param extensionDuration {String} Time frame by which the expiry date extends.  The time format is either: - immediate, or - an **integer** followed by a letter indicating the time unit.  Examples: `immediate`, `30s`, `40m`, `1h`, `5D`, `7W`, `10M`, `15Y`.  Available units:  - `s`: seconds - `m`: minutes - `h`: hours - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year. 
-     * @param previousExpirationDate {Date} Expiry date before applying the extension.
      */
-    constructor(programId, subLedgerId, extensionDuration, previousExpirationDate) { 
+    constructor(programId, subLedgerId, extensionDuration) { 
         
-        ExtendLoyaltyPointsExpiryDateEffectProps.initialize(this, programId, subLedgerId, extensionDuration, previousExpirationDate);
+        ExtendLoyaltyPointsExpiryDateEffectProps.initialize(this, programId, subLedgerId, extensionDuration);
     }
 
     /**
@@ -38,11 +38,10 @@ class ExtendLoyaltyPointsExpiryDateEffectProps {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, programId, subLedgerId, extensionDuration, previousExpirationDate) { 
+    static initialize(obj, programId, subLedgerId, extensionDuration) { 
         obj['programId'] = programId;
         obj['subLedgerId'] = subLedgerId;
         obj['extensionDuration'] = extensionDuration;
-        obj['previousExpirationDate'] = previousExpirationDate;
     }
 
     /**
@@ -65,11 +64,8 @@ class ExtendLoyaltyPointsExpiryDateEffectProps {
             if (data.hasOwnProperty('extensionDuration')) {
                 obj['extensionDuration'] = ApiClient.convertToType(data['extensionDuration'], 'String');
             }
-            if (data.hasOwnProperty('transactionUUIDs')) {
-                obj['transactionUUIDs'] = ApiClient.convertToType(data['transactionUUIDs'], ['String']);
-            }
-            if (data.hasOwnProperty('previousExpirationDate')) {
-                obj['previousExpirationDate'] = ApiClient.convertToType(data['previousExpirationDate'], 'Date');
+            if (data.hasOwnProperty('affectedTransactions')) {
+                obj['affectedTransactions'] = ApiClient.convertToType(data['affectedTransactions'], [LoyaltyLedgerEntryExpiryDateChange]);
             }
         }
         return obj;
@@ -97,16 +93,10 @@ ExtendLoyaltyPointsExpiryDateEffectProps.prototype['subLedgerId'] = undefined;
 ExtendLoyaltyPointsExpiryDateEffectProps.prototype['extensionDuration'] = undefined;
 
 /**
- * The list of identifiers of transactions affected affected by the extension.
- * @member {Array.<String>} transactionUUIDs
+ * List of transactions affected by the expiry date update.
+ * @member {Array.<module:model/LoyaltyLedgerEntryExpiryDateChange>} affectedTransactions
  */
-ExtendLoyaltyPointsExpiryDateEffectProps.prototype['transactionUUIDs'] = undefined;
-
-/**
- * Expiry date before applying the extension.
- * @member {Date} previousExpirationDate
- */
-ExtendLoyaltyPointsExpiryDateEffectProps.prototype['previousExpirationDate'] = undefined;
+ExtendLoyaltyPointsExpiryDateEffectProps.prototype['affectedTransactions'] = undefined;
 
 
 

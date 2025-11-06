@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.CardLedgerTransactionLogEntryIntegrationAPI);
     });
 
+    it('should have the property transactionUUID (base name: "transactionUUID")', function() {
+      // uncomment below and update the code to test the property transactionUUID
+      //var instane = new TalonOne.CardLedgerTransactionLogEntryIntegrationAPI();
+      //expect(instance).to.be();
+    });
+
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
       //var instane = new TalonOne.CardLedgerTransactionLogEntryIntegrationAPI();

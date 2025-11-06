@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateApplicationCIF model module.
  * @module model/UpdateApplicationCIF
- * @version 25.15.0
+ * @version 25.16.0
  */
 class UpdateApplicationCIF {
     /**

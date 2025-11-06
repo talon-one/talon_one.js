@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | ID of the loyalty ledger transaction. | 
+**transactionUUID** | **String** | Unique identifier of the transaction in the UUID format. | 
 **programId** | **Number** | ID of the loyalty program. | 
 **campaignId** | **Number** | ID of the campaign. | [optional] 
 **created** | **Date** | Date and time the loyalty transaction occurred. | 

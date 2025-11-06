@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewPriceAdjustment model module.
  * @module model/NewPriceAdjustment
- * @version 25.15.0
+ * @version 25.16.0
  */
 class NewPriceAdjustment {
     /**
@@ -69,6 +69,9 @@ class NewPriceAdjustment {
             if (data.hasOwnProperty('effectiveUntil')) {
                 obj['effectiveUntil'] = ApiClient.convertToType(data['effectiveUntil'], 'Date');
             }
+            if (data.hasOwnProperty('contextId')) {
+                obj['contextId'] = ApiClient.convertToType(data['contextId'], 'String');
+            }
         }
         return obj;
     }
@@ -111,6 +114,12 @@ NewPriceAdjustment.prototype['effectiveFrom'] = undefined;
  * @member {Date} effectiveUntil
  */
 NewPriceAdjustment.prototype['effectiveUntil'] = undefined;
+
+/**
+ * Identifier of the context of this price adjustment (e.g. summer sale).
+ * @member {String} contextId
+ */
+NewPriceAdjustment.prototype['contextId'] = undefined;
 
 
 

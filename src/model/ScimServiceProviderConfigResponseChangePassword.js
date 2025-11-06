@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimServiceProviderConfigResponseChangePassword model module.
  * @module model/ScimServiceProviderConfigResponseChangePassword
- * @version 25.15.0
+ * @version 25.16.0
  */
 class ScimServiceProviderConfigResponseChangePassword {
     /**

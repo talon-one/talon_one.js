@@ -18,7 +18,7 @@ import StrikethroughTrigger from './StrikethroughTrigger';
 /**
  * The StrikethroughLabelingNotification model module.
  * @module model/StrikethroughLabelingNotification
- * @version 25.15.0
+ * @version 25.16.0
  */
 class StrikethroughLabelingNotification {
     /**
@@ -30,10 +30,11 @@ class StrikethroughLabelingNotification {
      * @param totalBatches {Number} The total number of batches for the notification.
      * @param trigger {module:model/StrikethroughTrigger} 
      * @param changedItems {Array.<module:model/StrikethroughChangedItem>} 
+     * @param notificationType {String} The type of the notification
      */
-    constructor(applicationId, currentBatch, totalBatches, trigger, changedItems) { 
+    constructor(applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType) { 
         
-        StrikethroughLabelingNotification.initialize(this, applicationId, currentBatch, totalBatches, trigger, changedItems);
+        StrikethroughLabelingNotification.initialize(this, applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType);
     }
 
     /**
@@ -41,12 +42,13 @@ class StrikethroughLabelingNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applicationId, currentBatch, totalBatches, trigger, changedItems) { 
+    static initialize(obj, applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType) { 
         obj['applicationId'] = applicationId;
         obj['currentBatch'] = currentBatch;
         obj['totalBatches'] = totalBatches;
         obj['trigger'] = trigger;
         obj['changedItems'] = changedItems;
+        obj['NotificationType'] = notificationType;
     }
 
     /**
@@ -80,6 +82,9 @@ class StrikethroughLabelingNotification {
             }
             if (data.hasOwnProperty('changedItems')) {
                 obj['changedItems'] = ApiClient.convertToType(data['changedItems'], [StrikethroughChangedItem]);
+            }
+            if (data.hasOwnProperty('NotificationType')) {
+                obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
             }
         }
         return obj;
@@ -127,6 +132,12 @@ StrikethroughLabelingNotification.prototype['trigger'] = undefined;
  * @member {Array.<module:model/StrikethroughChangedItem>} changedItems
  */
 StrikethroughLabelingNotification.prototype['changedItems'] = undefined;
+
+/**
+ * The type of the notification
+ * @member {String} NotificationType
+ */
+StrikethroughLabelingNotification.prototype['NotificationType'] = undefined;
 
 
 
