@@ -1,5 +1,10 @@
 # Talon.One JavaScript SDK
 
+> [!NOTE]
+The next-generation version of this SDK is available [here](https://github.com/talon-one/talon-one-ts-sdk).
+The new SDK offers significant improvements, including immediate feature parity with the latest Talon.One
+product releases, enhanced security and reliability, and native TypeScript support.
+
 This SDK supports all of the operations of Talon.One's Integration API and Management API.
 
 ## Installation
