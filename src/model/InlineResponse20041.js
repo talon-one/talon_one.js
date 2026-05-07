@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import User from './User';
+import WebhookWithOutgoingIntegrationDetails from './WebhookWithOutgoingIntegrationDetails';
 
 /**
  * The InlineResponse20041 model module.
  * @module model/InlineResponse20041
- * @version 25.16.0
+ * @version 25.17.0
  */
 class InlineResponse20041 {
     /**
      * Constructs a new <code>InlineResponse20041</code>.
      * @alias module:model/InlineResponse20041
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/User>} 
+     * @param data {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20041 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [User]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WebhookWithOutgoingIntegrationDetails]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20041 {
 InlineResponse20041.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/User>} data
+ * @member {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} data
  */
 InlineResponse20041.prototype['data'] = undefined;
 

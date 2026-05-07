@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,17 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The ReturnedCartItem model module.
  * @module model/ReturnedCartItem
- * @version 25.16.0
+ * @version 25.17.0
  */
 class ReturnedCartItem {
     /**
      * Constructs a new <code>ReturnedCartItem</code>.
      * @alias module:model/ReturnedCartItem
-     * @param position {Number} The index of the cart item in the provided customer session's `cartItems` property.
      */
-    constructor(position) { 
+    constructor() { 
         
-        ReturnedCartItem.initialize(this, position);
+        ReturnedCartItem.initialize(this);
     }
 
     /**
@@ -34,8 +33,7 @@ class ReturnedCartItem {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, position) { 
-        obj['position'] = position;
+    static initialize(obj) { 
     }
 
     /**
@@ -55,6 +53,9 @@ class ReturnedCartItem {
             if (data.hasOwnProperty('quantity')) {
                 obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
             }
+            if (data.hasOwnProperty('sku')) {
+                obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
+            }
         }
         return obj;
     }
@@ -73,6 +74,12 @@ ReturnedCartItem.prototype['position'] = undefined;
  * @member {Number} quantity
  */
 ReturnedCartItem.prototype['quantity'] = undefined;
+
+/**
+ * The SKU of the cart item in the provided customer session's `cartItems` property.
+ * @member {String} sku
+ */
+ReturnedCartItem.prototype['sku'] = undefined;
 
 
 

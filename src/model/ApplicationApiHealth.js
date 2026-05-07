@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationApiHealth model module.
  * @module model/ApplicationApiHealth
- * @version 25.16.0
+ * @version 25.17.0
  */
 class ApplicationApiHealth {
     /**
      * Constructs a new <code>ApplicationApiHealth</code>.
      * Report of health of the API connection of an application.
      * @alias module:model/ApplicationApiHealth
-     * @param summary {module:model/ApplicationApiHealth.SummaryEnum} One-word summary of the health of the API connection of an application. Possible values are: - `OK`: The Application has received only successful API requests in the last 5 minutes. - `WARNING`: The Application received at least one failed request in the last 50 minutes. - `ERROR`: More than 50% of received requests failed. - `CRITICAL`: All received requests failed. - `NONE`: During the last 5 minutes, the Application hasn't recorded any integration API requests. 
+     * @param summary {module:model/ApplicationApiHealth.SummaryEnum} One-word summary of the health of the API connection of an application. Possible values are: - `OK`: The Application has received only successful API requests in the last 5 minutes. - `WARNING`: The Application received at least one failed request in the last 5 minutes. - `ERROR`: More than 50% of received requests failed. - `CRITICAL`: All received requests failed. - `NONE`: During the last 5 minutes, the Application hasn't recorded any integration API requests. 
      * @param lastUsed {Date} time of last request relevant to the API health test.
      */
     constructor(summary, lastUsed) { 
@@ -66,7 +66,7 @@ class ApplicationApiHealth {
 }
 
 /**
- * One-word summary of the health of the API connection of an application. Possible values are: - `OK`: The Application has received only successful API requests in the last 5 minutes. - `WARNING`: The Application received at least one failed request in the last 50 minutes. - `ERROR`: More than 50% of received requests failed. - `CRITICAL`: All received requests failed. - `NONE`: During the last 5 minutes, the Application hasn't recorded any integration API requests. 
+ * One-word summary of the health of the API connection of an application. Possible values are: - `OK`: The Application has received only successful API requests in the last 5 minutes. - `WARNING`: The Application received at least one failed request in the last 5 minutes. - `ERROR`: More than 50% of received requests failed. - `CRITICAL`: All received requests failed. - `NONE`: During the last 5 minutes, the Application hasn't recorded any integration API requests. 
  * @member {module:model/ApplicationApiHealth.SummaryEnum} summary
  */
 ApplicationApiHealth.prototype['summary'] = undefined;

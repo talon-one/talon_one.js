@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ListCampaignStoreBudgets]**](ListCampaignStoreBudgets.md) |  | [optional] 
+**totalResultSize** | **Number** |  | 
+**data** | [**[RoleV2]**](RoleV2.md) |  | 
 
 

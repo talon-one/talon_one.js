@@ -11,3 +11,12 @@ Name | Type | Description | Notes
 **notificationType** | **String** | The type of the notification | 
 
 
+
+## Enum: NotificationTypeEnum
+
+
+* `AsyncCouponsCreated` (value: `"AsyncCouponsCreated"`)
+
+
+
+

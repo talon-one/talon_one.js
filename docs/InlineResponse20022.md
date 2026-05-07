@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[CollectionWithoutPayload]**](CollectionWithoutPayload.md) |  | 
 
 

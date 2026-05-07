@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **totalBatches** | **Number** | The total number of batches for the notification. | 
 **trigger** | [**StrikethroughTrigger**](StrikethroughTrigger.md) |  | 
 **changedItems** | [**[StrikethroughChangedItem]**](StrikethroughChangedItem.md) |  | 
-**notificationType** | **String** | The type of the notification | 
+**notificationType** | **String** | The type of notification. | 
+**sentAt** | **Date** | Timestamp at which the notification was sent. | 
 
 
 
@@ -19,6 +20,15 @@ Name | Type | Description | Notes
 
 
 * `v2` (value: `"v2"`)
+
+
+
+
+
+## Enum: NotificationTypeEnum
+
+
+* `StrikethroughPrice` (value: `"StrikethroughPrice"`)
 
 
 

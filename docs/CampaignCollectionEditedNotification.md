@@ -9,3 +9,12 @@ Name | Type | Description | Notes
 **data** | [**[CampaignCollectionEditedNotificationItem]**](CampaignCollectionEditedNotificationItem.md) | A list of campaign notification data. | [optional] 
 
 
+
+## Enum: NotificationTypeEnum
+
+
+* `CampaignNotification` (value: `"CampaignNotification"`)
+
+
+
+

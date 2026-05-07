@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -12,21 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
+import AdjustmentDetails from './AdjustmentDetails';
+import InfluencingCampaignDetails from './InfluencingCampaignDetails';
 
 /**
  * The BestPriorPriceMetadata model module.
  * @module model/BestPriorPriceMetadata
- * @version 25.16.0
+ * @version 25.17.0
  */
 class BestPriorPriceMetadata {
     /**
      * Constructs a new <code>BestPriorPriceMetadata</code>.
      * Auxiliary data for found price observation.
      * @alias module:model/BestPriorPriceMetadata
+     * @param influencingCampaignDetails {Array.<module:model/InfluencingCampaignDetails>} Details about campaigns that influenced the final price.
      */
-    constructor() { 
+    constructor(influencingCampaignDetails) { 
         
-        BestPriorPriceMetadata.initialize(this);
+        BestPriorPriceMetadata.initialize(this, influencingCampaignDetails);
     }
 
     /**
@@ -34,7 +37,8 @@ class BestPriorPriceMetadata {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, influencingCampaignDetails) { 
+        obj['influencingCampaignDetails'] = influencingCampaignDetails;
     }
 
     /**
@@ -48,11 +52,11 @@ class BestPriorPriceMetadata {
         if (data) {
             obj = obj || new BestPriorPriceMetadata();
 
-            if (data.hasOwnProperty('influencingCampaignIDs')) {
-                obj['influencingCampaignIDs'] = ApiClient.convertToType(data['influencingCampaignIDs'], ['Number']);
+            if (data.hasOwnProperty('influencingCampaignDetails')) {
+                obj['influencingCampaignDetails'] = ApiClient.convertToType(data['influencingCampaignDetails'], [InfluencingCampaignDetails]);
             }
-            if (data.hasOwnProperty('adjustmentReferenceID')) {
-                obj['adjustmentReferenceID'] = ApiClient.convertToType(data['adjustmentReferenceID'], 'String');
+            if (data.hasOwnProperty('adjustmentDetails')) {
+                obj['adjustmentDetails'] = AdjustmentDetails.constructFromObject(data['adjustmentDetails']);
             }
         }
         return obj;
@@ -62,15 +66,15 @@ class BestPriorPriceMetadata {
 }
 
 /**
- * @member {Array.<Number>} influencingCampaignIDs
+ * Details about campaigns that influenced the final price.
+ * @member {Array.<module:model/InfluencingCampaignDetails>} influencingCampaignDetails
  */
-BestPriorPriceMetadata.prototype['influencingCampaignIDs'] = undefined;
+BestPriorPriceMetadata.prototype['influencingCampaignDetails'] = undefined;
 
 /**
- * Identifier related to the `referenceId` used during a `ADD_PRICE_ADJUSTMENT` action  using the [Sync cart item catalog endpoint](https://docs.talon.one/integration-api#tag/Catalogs/operation/syncCatalog).
- * @member {String} adjustmentReferenceID
+ * @member {module:model/AdjustmentDetails} adjustmentDetails
  */
-BestPriorPriceMetadata.prototype['adjustmentReferenceID'] = undefined;
+BestPriorPriceMetadata.prototype['adjustmentDetails'] = undefined;
 
 
 

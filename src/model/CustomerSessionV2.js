@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import AdditionalCost from './AdditionalCost';
 import CartItem from './CartItem';
+import ExperimentVariantAllocation from './ExperimentVariantAllocation';
 
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CustomerSessionV2 {
     /**
@@ -34,14 +35,15 @@ class CustomerSessionV2 {
      * @param cartItems {Array.<module:model/CartItem>} The items to add to this session. **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
      * @param attributes {Object} Use this property to set a value for the attributes of your choice. Attributes represent any information to attach to your session, like the shipping city.  You can use [built-in attributes](https://docs.talon.one/docs/dev/concepts/attributes#built-in-attributes) or [custom ones](https://docs.talon.one/docs/dev/concepts/attributes#custom-attributes). Custom attributes must be created in the Campaign Manager before you set them with this property. 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. It's always `true` for anonymous sessions.
+     * @param updateCount {Number} The number of times the session was updated. When the session is created, this value is initialized to `1`.
      * @param total {Number} The total value of cart items and additional costs in the session, before any discounts are applied.
      * @param cartItemTotal {Number} The total value of cart items, before any discounts are applied.
      * @param additionalCostTotal {Number} The total value of additional costs, before any discounts are applied.
      * @param updated {Date} Timestamp of the most recent event received on this session.
      */
-    constructor(id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
+    constructor(id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, updated) { 
         
-        CustomerSessionV2.initialize(this, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated);
+        CustomerSessionV2.initialize(this, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, updated);
     }
 
     /**
@@ -49,7 +51,7 @@ class CustomerSessionV2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, total, cartItemTotal, additionalCostTotal, updated) { 
+    static initialize(obj, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, updated) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['integrationId'] = integrationId;
@@ -59,6 +61,7 @@ class CustomerSessionV2 {
         obj['cartItems'] = cartItems;
         obj['attributes'] = attributes;
         obj['firstSession'] = firstSession;
+        obj['updateCount'] = updateCount;
         obj['total'] = total;
         obj['cartItemTotal'] = cartItemTotal;
         obj['additionalCostTotal'] = additionalCostTotal;
@@ -112,6 +115,9 @@ class CustomerSessionV2 {
             if (data.hasOwnProperty('cartItems')) {
                 obj['cartItems'] = ApiClient.convertToType(data['cartItems'], [CartItem]);
             }
+            if (data.hasOwnProperty('experimentVariantAllocations')) {
+                obj['experimentVariantAllocations'] = ApiClient.convertToType(data['experimentVariantAllocations'], [ExperimentVariantAllocation]);
+            }
             if (data.hasOwnProperty('additionalCosts')) {
                 obj['additionalCosts'] = ApiClient.convertToType(data['additionalCosts'], {'String': AdditionalCost});
             }
@@ -123,6 +129,9 @@ class CustomerSessionV2 {
             }
             if (data.hasOwnProperty('firstSession')) {
                 obj['firstSession'] = ApiClient.convertToType(data['firstSession'], 'Boolean');
+            }
+            if (data.hasOwnProperty('updateCount')) {
+                obj['updateCount'] = ApiClient.convertToType(data['updateCount'], 'Number');
             }
             if (data.hasOwnProperty('total')) {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number');
@@ -217,6 +226,12 @@ CustomerSessionV2.prototype['state'] = 'open';
 CustomerSessionV2.prototype['cartItems'] = undefined;
 
 /**
+ * The experiment variant allocations to add to this session. 
+ * @member {Array.<module:model/ExperimentVariantAllocation>} experimentVariantAllocations
+ */
+CustomerSessionV2.prototype['experimentVariantAllocations'] = undefined;
+
+/**
  * Use this property to set a value for the additional costs of this session, such as a shipping cost.  They must be created in the Campaign Manager before you set them with this property. See [Managing additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs). 
  * @member {Object.<String, module:model/AdditionalCost>} additionalCosts
  */
@@ -239,6 +254,12 @@ CustomerSessionV2.prototype['attributes'] = undefined;
  * @member {Boolean} firstSession
  */
 CustomerSessionV2.prototype['firstSession'] = undefined;
+
+/**
+ * The number of times the session was updated. When the session is created, this value is initialized to `1`.
+ * @member {Number} updateCount
+ */
+CustomerSessionV2.prototype['updateCount'] = undefined;
 
 /**
  * The total value of cart items and additional costs in the session, before any discounts are applied.

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -14,12 +14,13 @@
 import ApiClient from '../ApiClient';
 import Campaign from './Campaign';
 import CollectionWithoutPayload from './CollectionWithoutPayload';
+import PlaceholderDetails from './PlaceholderDetails';
 import Ruleset from './Ruleset';
 
 /**
  * The CampaignCollectionEditedNotificationItem model module.
  * @module model/CampaignCollectionEditedNotificationItem
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CampaignCollectionEditedNotificationItem {
     /**
@@ -66,6 +67,9 @@ class CampaignCollectionEditedNotificationItem {
             if (data.hasOwnProperty('ruleset')) {
                 obj['ruleset'] = Ruleset.constructFromObject(data['ruleset']);
             }
+            if (data.hasOwnProperty('placeholders')) {
+                obj['placeholders'] = ApiClient.convertToType(data['placeholders'], [PlaceholderDetails]);
+            }
             if (data.hasOwnProperty('collection')) {
                 obj['collection'] = CollectionWithoutPayload.constructFromObject(data['collection']);
             }
@@ -91,6 +95,12 @@ CampaignCollectionEditedNotificationItem.prototype['campaign'] = undefined;
  * @member {module:model/Ruleset} ruleset
  */
 CampaignCollectionEditedNotificationItem.prototype['ruleset'] = undefined;
+
+/**
+ * The current details of the [placeholders](https://docs.talon.one/docs/product/campaigns/templates/create-templates#use-placeholders) in the campaign.
+ * @member {Array.<module:model/PlaceholderDetails>} placeholders
+ */
+CampaignCollectionEditedNotificationItem.prototype['placeholders'] = undefined;
 
 /**
  * @member {module:model/CollectionWithoutPayload} collection

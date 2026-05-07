@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -54,38 +54,14 @@
       //expect(instance).to.be.a(TalonOne.IntegrationStateV2);
     });
 
-    it('should have the property customerSession (base name: "customerSession")', function() {
-      // uncomment below and update the code to test the property customerSession
-      //var instane = new TalonOne.IntegrationStateV2();
-      //expect(instance).to.be();
-    });
-
     it('should have the property customerProfile (base name: "customerProfile")', function() {
       // uncomment below and update the code to test the property customerProfile
       //var instane = new TalonOne.IntegrationStateV2();
       //expect(instance).to.be();
     });
 
-    it('should have the property event (base name: "event")', function() {
-      // uncomment below and update the code to test the property event
-      //var instane = new TalonOne.IntegrationStateV2();
-      //expect(instance).to.be();
-    });
-
     it('should have the property loyalty (base name: "loyalty")', function() {
       // uncomment below and update the code to test the property loyalty
-      //var instane = new TalonOne.IntegrationStateV2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property referral (base name: "referral")', function() {
-      // uncomment below and update the code to test the property referral
-      //var instane = new TalonOne.IntegrationStateV2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property coupons (base name: "coupons")', function() {
-      // uncomment below and update the code to test the property coupons
       //var instane = new TalonOne.IntegrationStateV2();
       //expect(instance).to.be();
     });
@@ -122,6 +98,36 @@
 
     it('should have the property awardedGiveaways (base name: "awardedGiveaways")', function() {
       // uncomment below and update the code to test the property awardedGiveaways
+      //var instane = new TalonOne.IntegrationStateV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referral (base name: "referral")', function() {
+      // uncomment below and update the code to test the property referral
+      //var instane = new TalonOne.IntegrationStateV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property coupons (base name: "coupons")', function() {
+      // uncomment below and update the code to test the property coupons
+      //var instane = new TalonOne.IntegrationStateV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property event (base name: "event")', function() {
+      // uncomment below and update the code to test the property event
+      //var instane = new TalonOne.IntegrationStateV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property advancedEvent (base name: "advancedEvent")', function() {
+      // uncomment below and update the code to test the property advancedEvent
+      //var instane = new TalonOne.IntegrationStateV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property customerSession (base name: "customerSession")', function() {
+      // uncomment below and update the code to test the property customerSession
       //var instane = new TalonOne.IntegrationStateV2();
       //expect(instance).to.be();
     });

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -18,7 +18,7 @@ import StrikethroughTrigger from './StrikethroughTrigger';
 /**
  * The StrikethroughLabelingNotification model module.
  * @module model/StrikethroughLabelingNotification
- * @version 25.16.0
+ * @version 25.17.0
  */
 class StrikethroughLabelingNotification {
     /**
@@ -30,11 +30,12 @@ class StrikethroughLabelingNotification {
      * @param totalBatches {Number} The total number of batches for the notification.
      * @param trigger {module:model/StrikethroughTrigger} 
      * @param changedItems {Array.<module:model/StrikethroughChangedItem>} 
-     * @param notificationType {String} The type of the notification
+     * @param notificationType {module:model/StrikethroughLabelingNotification.NotificationTypeEnum} The type of notification.
+     * @param sentAt {Date} Timestamp at which the notification was sent.
      */
-    constructor(applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType) { 
+    constructor(applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType, sentAt) { 
         
-        StrikethroughLabelingNotification.initialize(this, applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType);
+        StrikethroughLabelingNotification.initialize(this, applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType, sentAt);
     }
 
     /**
@@ -42,13 +43,14 @@ class StrikethroughLabelingNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType) { 
+    static initialize(obj, applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType, sentAt) { 
         obj['applicationId'] = applicationId;
         obj['currentBatch'] = currentBatch;
         obj['totalBatches'] = totalBatches;
         obj['trigger'] = trigger;
         obj['changedItems'] = changedItems;
         obj['NotificationType'] = notificationType;
+        obj['sentAt'] = sentAt;
     }
 
     /**
@@ -85,6 +87,9 @@ class StrikethroughLabelingNotification {
             }
             if (data.hasOwnProperty('NotificationType')) {
                 obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
+            }
+            if (data.hasOwnProperty('sentAt')) {
+                obj['sentAt'] = ApiClient.convertToType(data['sentAt'], 'Date');
             }
         }
         return obj;
@@ -134,10 +139,16 @@ StrikethroughLabelingNotification.prototype['trigger'] = undefined;
 StrikethroughLabelingNotification.prototype['changedItems'] = undefined;
 
 /**
- * The type of the notification
- * @member {String} NotificationType
+ * The type of notification.
+ * @member {module:model/StrikethroughLabelingNotification.NotificationTypeEnum} NotificationType
  */
 StrikethroughLabelingNotification.prototype['NotificationType'] = undefined;
+
+/**
+ * Timestamp at which the notification was sent.
+ * @member {Date} sentAt
+ */
+StrikethroughLabelingNotification.prototype['sentAt'] = undefined;
 
 
 
@@ -155,6 +166,21 @@ StrikethroughLabelingNotification['VersionEnum'] = {
      * @const
      */
     "v2": "v2"
+};
+
+
+/**
+ * Allowed values for the <code>NotificationType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+StrikethroughLabelingNotification['NotificationTypeEnum'] = {
+
+    /**
+     * value: "StrikethroughPrice"
+     * @const
+     */
+    "StrikethroughPrice": "StrikethroughPrice"
 };
 
 

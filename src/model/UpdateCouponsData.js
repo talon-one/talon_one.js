@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCouponsData model module.
  * @module model/UpdateCouponsData
- * @version 25.16.0
+ * @version 25.17.0
  */
 class UpdateCouponsData {
     /**
@@ -28,7 +28,7 @@ class UpdateCouponsData {
      * @param typeOfChange {String} 
      * @param operation {String} 
      * @param employeeName {String} 
-     * @param notificationType {String} The type of the notification
+     * @param notificationType {module:model/UpdateCouponsData.NotificationTypeEnum} The type of the notification
      */
     constructor(batchID, applicationID, campaignID, typeOfChange, operation, employeeName, notificationType) { 
         
@@ -121,12 +121,27 @@ UpdateCouponsData.prototype['EmployeeName'] = undefined;
 
 /**
  * The type of the notification
- * @member {String} NotificationType
+ * @member {module:model/UpdateCouponsData.NotificationTypeEnum} NotificationType
  */
 UpdateCouponsData.prototype['NotificationType'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>NotificationType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateCouponsData['NotificationTypeEnum'] = {
+
+    /**
+     * value: "CouponsUpdated"
+     * @const
+     */
+    "CouponsUpdated": "CouponsUpdated"
+};
 
 
 

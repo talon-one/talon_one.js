@@ -27,6 +27,8 @@ Name | Type | Description | Notes
 
 * `(list string)` (value: `"(list string)"`)
 
+* `(list number)` (value: `"(list number)"`)
+
 
 
 

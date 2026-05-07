@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -54,38 +54,8 @@
       //expect(instance).to.be.a(TalonOne.CardAddedDeductedPointsNotification);
     });
 
-    it('should have the property profileIntegrationIDs (base name: "ProfileIntegrationIDs")', function() {
-      // uncomment below and update the code to test the property profileIntegrationIDs
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property loyaltyProgramID (base name: "LoyaltyProgramID")', function() {
-      // uncomment below and update the code to test the property loyaltyProgramID
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property subledgerID (base name: "SubledgerID")', function() {
-      // uncomment below and update the code to test the property subledgerID
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property amount (base name: "Amount")', function() {
-      // uncomment below and update the code to test the property amount
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reason (base name: "Reason")', function() {
-      // uncomment below and update the code to test the property reason
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property typeOfChange (base name: "TypeOfChange")', function() {
-      // uncomment below and update the code to test the property typeOfChange
+    it('should have the property cardIdentifier (base name: "CardIdentifier")', function() {
+      // uncomment below and update the code to test the property cardIdentifier
       //var instane = new TalonOne.CardAddedDeductedPointsNotification();
       //expect(instance).to.be();
     });
@@ -96,32 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property userID (base name: "UserID")', function() {
-      // uncomment below and update the code to test the property userID
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property operation (base name: "Operation")', function() {
-      // uncomment below and update the code to test the property operation
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property startDate (base name: "StartDate")', function() {
-      // uncomment below and update the code to test the property startDate
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expiryDate (base name: "ExpiryDate")', function() {
-      // uncomment below and update the code to test the property expiryDate
-      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sessionIntegrationID (base name: "SessionIntegrationID")', function() {
-      // uncomment below and update the code to test the property sessionIntegrationID
+    it('should have the property loyaltyProgramID (base name: "LoyaltyProgramID")', function() {
+      // uncomment below and update the code to test the property loyaltyProgramID
       //var instane = new TalonOne.CardAddedDeductedPointsNotification();
       //expect(instance).to.be();
     });
@@ -132,14 +78,74 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property cardIdentifier (base name: "CardIdentifier")', function() {
-      // uncomment below and update the code to test the property cardIdentifier
+    it('should have the property profileIntegrationIDs (base name: "ProfileIntegrationIDs")', function() {
+      // uncomment below and update the code to test the property profileIntegrationIDs
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sessionIntegrationID (base name: "SessionIntegrationID")', function() {
+      // uncomment below and update the code to test the property sessionIntegrationID
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subledgerID (base name: "SubledgerID")', function() {
+      // uncomment below and update the code to test the property subledgerID
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property typeOfChange (base name: "TypeOfChange")', function() {
+      // uncomment below and update the code to test the property typeOfChange
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property userID (base name: "UserID")', function() {
+      // uncomment below and update the code to test the property userID
       //var instane = new TalonOne.CardAddedDeductedPointsNotification();
       //expect(instance).to.be();
     });
 
     it('should have the property usersPerCardLimit (base name: "UsersPerCardLimit")', function() {
       // uncomment below and update the code to test the property usersPerCardLimit
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property amount (base name: "Amount")', function() {
+      // uncomment below and update the code to test the property amount
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiryDate (base name: "ExpiryDate")', function() {
+      // uncomment below and update the code to test the property expiryDate
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property operation (base name: "Operation")', function() {
+      // uncomment below and update the code to test the property operation
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reason (base name: "Reason")', function() {
+      // uncomment below and update the code to test the property reason
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property startDate (base name: "StartDate")', function() {
+      // uncomment below and update the code to test the property startDate
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionUUID (base name: "TransactionUUID")', function() {
+      // uncomment below and update the code to test the property transactionUUID
       //var instane = new TalonOne.CardAddedDeductedPointsNotification();
       //expect(instance).to.be();
     });

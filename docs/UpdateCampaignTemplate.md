@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **state** | **String** | Only campaign templates in &#39;available&#39; state may be used to create campaigns. | 
 **activeRulesetId** | **Number** | The ID of the ruleset this campaign template will use. | [optional] 
 **tags** | **[String]** | A list of tags for the campaign template. | [optional] 
+**reevaluateOnReturn** | **Boolean** | Indicates whether campaigns created from this template should be reevaluated when a customer returns an item. | [optional] 
 **features** | **[String]** | A list of features for the campaign template. | [optional] 
 **couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
 **couponReservationSettings** | [**CampaignTemplateCouponReservationSettings**](CampaignTemplateCouponReservationSettings.md) |  | [optional] 

@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import AdditionalCost from './AdditionalCost';
 import CartItem from './CartItem';
+import ExperimentVariantAllocation from './ExperimentVariantAllocation';
 
 /**
  * The NewCustomerSessionV2 model module.
  * @module model/NewCustomerSessionV2
- * @version 25.16.0
+ * @version 25.17.0
  */
 class NewCustomerSessionV2 {
     /**
@@ -73,6 +74,9 @@ class NewCustomerSessionV2 {
             }
             if (data.hasOwnProperty('cartItems')) {
                 obj['cartItems'] = ApiClient.convertToType(data['cartItems'], [CartItem]);
+            }
+            if (data.hasOwnProperty('experimentVariantAllocations')) {
+                obj['experimentVariantAllocations'] = ApiClient.convertToType(data['experimentVariantAllocations'], [ExperimentVariantAllocation]);
             }
             if (data.hasOwnProperty('additionalCosts')) {
                 obj['additionalCosts'] = ApiClient.convertToType(data['additionalCosts'], {'String': AdditionalCost});
@@ -138,6 +142,12 @@ NewCustomerSessionV2.prototype['state'] = 'open';
  * @member {Array.<module:model/CartItem>} cartItems
  */
 NewCustomerSessionV2.prototype['cartItems'] = undefined;
+
+/**
+ * The experiment variant allocations to add to this session. 
+ * @member {Array.<module:model/ExperimentVariantAllocation>} experimentVariantAllocations
+ */
+NewCustomerSessionV2.prototype['experimentVariantAllocations'] = undefined;
 
 /**
  * Use this property to set a value for the additional costs of this session, such as a shipping cost.  They must be created in the Campaign Manager before you set them with this property. See [Managing additional costs](https://docs.talon.one/docs/product/account/dev-tools/managing-additional-costs). 

@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[AchievementStatusEntry]**](AchievementStatusEntry.md) |  | 
+**data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
 
 

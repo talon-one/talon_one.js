@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -17,7 +17,7 @@ import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 /**
  * The LedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/LedgerTransactionLogEntryIntegrationAPI
- * @version 25.16.0
+ * @version 25.17.0
  */
 class LedgerTransactionLogEntryIntegrationAPI {
     /**
@@ -29,7 +29,7 @@ class LedgerTransactionLogEntryIntegrationAPI {
      * @param programId {Number} ID of the loyalty program.
      * @param type {module:model/LedgerTransactionLogEntryIntegrationAPI.TypeEnum} Type of transaction. Possible values:   - `addition`: Signifies added points.   - `subtraction`: Signifies deducted points. 
      * @param name {String} Name or reason of the loyalty ledger transaction.
-     * @param startDate {String} When points become active. Possible values:   - `immediate`: Points are immediately active.   - a timestamp value: Points become active at a given date and time. 
+     * @param startDate {String} When points become active. Possible values:   - `immediate`: Points are immediately active.   - `on_action`: Points become active based on the customer's action.   - a timestamp value: Points become active at a given date and time. 
      * @param expiryDate {String} Date when points expire. Possible values are:   - `unlimited`: Points have no expiration date.   - `timestamp value`: Points expire on the given date. 
      * @param subledgerId {String} ID of the subledger.
      * @param amount {Number} Amount of loyalty points added or deducted in the transaction.
@@ -111,6 +111,9 @@ class LedgerTransactionLogEntryIntegrationAPI {
             if (data.hasOwnProperty('flags')) {
                 obj['flags'] = LoyaltyLedgerEntryFlags.constructFromObject(data['flags']);
             }
+            if (data.hasOwnProperty('validityDuration')) {
+                obj['validityDuration'] = ApiClient.convertToType(data['validityDuration'], 'String');
+            }
         }
         return obj;
     }
@@ -155,7 +158,7 @@ LedgerTransactionLogEntryIntegrationAPI.prototype['type'] = undefined;
 LedgerTransactionLogEntryIntegrationAPI.prototype['name'] = undefined;
 
 /**
- * When points become active. Possible values:   - `immediate`: Points are immediately active.   - a timestamp value: Points become active at a given date and time. 
+ * When points become active. Possible values:   - `immediate`: Points are immediately active.   - `on_action`: Points become active based on the customer's action.   - a timestamp value: Points become active at a given date and time. 
  * @member {String} startDate
  */
 LedgerTransactionLogEntryIntegrationAPI.prototype['startDate'] = undefined;
@@ -200,6 +203,12 @@ LedgerTransactionLogEntryIntegrationAPI.prototype['ruleName'] = undefined;
  * @member {module:model/LoyaltyLedgerEntryFlags} flags
  */
 LedgerTransactionLogEntryIntegrationAPI.prototype['flags'] = undefined;
+
+/**
+ * The duration for which the points remain active, relative to the  activation date.  **Note**: This only applies to points for which `awaitsActivation` is `true` and `expiryDate` is not set. 
+ * @member {String} validityDuration
+ */
+LedgerTransactionLogEntryIntegrationAPI.prototype['validityDuration'] = undefined;
 
 
 

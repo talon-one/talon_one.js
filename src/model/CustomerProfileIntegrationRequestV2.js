@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -17,7 +17,7 @@ import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**
@@ -55,11 +55,11 @@ class CustomerProfileIntegrationRequestV2 {
             if (data.hasOwnProperty('evaluableCampaignIds')) {
                 obj['evaluableCampaignIds'] = ApiClient.convertToType(data['evaluableCampaignIds'], ['Number']);
             }
-            if (data.hasOwnProperty('audiencesChanges')) {
-                obj['audiencesChanges'] = ProfileAudiencesChanges.constructFromObject(data['audiencesChanges']);
-            }
             if (data.hasOwnProperty('responseContent')) {
                 obj['responseContent'] = ApiClient.convertToType(data['responseContent'], ['String']);
+            }
+            if (data.hasOwnProperty('audiencesChanges')) {
+                obj['audiencesChanges'] = ProfileAudiencesChanges.constructFromObject(data['audiencesChanges']);
             }
         }
         return obj;
@@ -81,15 +81,15 @@ CustomerProfileIntegrationRequestV2.prototype['attributes'] = undefined;
 CustomerProfileIntegrationRequestV2.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * @member {module:model/ProfileAudiencesChanges} audiencesChanges
- */
-CustomerProfileIntegrationRequestV2.prototype['audiencesChanges'] = undefined;
-
-/**
- * Extends the response with the chosen data entities. Use this property to get as much data as you need in one _Update customer profile_ request instead of sending extra requests to other endpoints. 
+ * Extends the response with the chosen data entities. Use this property to get as much data back as needed from one request instead of sending extra requests to other endpoints. 
  * @member {Array.<module:model/CustomerProfileIntegrationRequestV2.ResponseContentEnum>} responseContent
  */
 CustomerProfileIntegrationRequestV2.prototype['responseContent'] = undefined;
+
+/**
+ * @member {module:model/ProfileAudiencesChanges} audiencesChanges
+ */
+CustomerProfileIntegrationRequestV2.prototype['audiencesChanges'] = undefined;
 
 
 

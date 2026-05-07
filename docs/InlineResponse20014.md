@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[CampaignTemplate]**](CampaignTemplate.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[CampaignGroup]**](CampaignGroup.md) |  | 
 
 

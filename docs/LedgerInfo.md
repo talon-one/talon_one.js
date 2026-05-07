@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **tentativeNegativeBalance** | **Number** | The tentative negative balance after all additions and deductions from the current customer session are applied to &#x60;negativeBalance&#x60;. When the session is closed, the tentative effects are applied and &#x60;negativeBalance&#x60; is updated to this value.  **Note:** Tentative balances are specific to the current session and do not take into account other open sessions for the given customer.  | [optional] 
 **currentTier** | [**Tier**](Tier.md) |  | [optional] 
 **pointsToNextTier** | **Number** | Points required to move up a tier. | [optional] 
+**nextTierName** | **String** | The name of the next higher tier level in the loyalty program.  **Note**: - Returns &#x60;null&#x60; if the customer has reached the highest available tier. - Returns the lowest level tier name if the customer is not currently assigned to any tier.  | [optional] 
 
 

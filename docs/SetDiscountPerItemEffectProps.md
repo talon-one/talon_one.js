@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **bundleName** | **String** | The name of the bundle definition. | [optional] 
 **targetedItemPosition** | **Number** | The index of the targeted bundle item on which the applied discount is based. | [optional] 
 **targetedItemSubPosition** | **Number** | The sub-position of the targeted bundle item on which the applied discount is based.  | [optional] 
+**excludedFromPriceHistory** | **Boolean** | When set to &#x60;true&#x60;, the applied discount is excluded from the item&#39;s price history. | [optional] 
 
 

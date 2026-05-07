@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -17,22 +17,23 @@ import BestPriorPriceMetadata from './BestPriorPriceMetadata';
 /**
  * The BestPriorPrice model module.
  * @module model/BestPriorPrice
- * @version 25.16.0
+ * @version 25.17.0
  */
 class BestPriorPrice {
     /**
      * Constructs a new <code>BestPriorPrice</code>.
      * @alias module:model/BestPriorPrice
+     * @param id {Number} The ID of the historical price.
      * @param sku {String} sku
-     * @param observedAt {Date} The date and time when the best price was observed.
+     * @param observedAt {Date} The date and time when the price was observed.
      * @param contextId {String} The context ID of the context active at the time of observation. 
      * @param price {Number} Price of the item.
      * @param metadata {module:model/BestPriorPriceMetadata} 
      * @param target {Object} 
      */
-    constructor(sku, observedAt, contextId, price, metadata, target) { 
+    constructor(id, sku, observedAt, contextId, price, metadata, target) { 
         
-        BestPriorPrice.initialize(this, sku, observedAt, contextId, price, metadata, target);
+        BestPriorPrice.initialize(this, id, sku, observedAt, contextId, price, metadata, target);
     }
 
     /**
@@ -40,7 +41,8 @@ class BestPriorPrice {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sku, observedAt, contextId, price, metadata, target) { 
+    static initialize(obj, id, sku, observedAt, contextId, price, metadata, target) { 
+        obj['id'] = id;
         obj['sku'] = sku;
         obj['observedAt'] = observedAt;
         obj['contextId'] = contextId;
@@ -60,6 +62,9 @@ class BestPriorPrice {
         if (data) {
             obj = obj || new BestPriorPrice();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('sku')) {
                 obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
             }
@@ -86,13 +91,19 @@ class BestPriorPrice {
 }
 
 /**
+ * The ID of the historical price.
+ * @member {Number} id
+ */
+BestPriorPrice.prototype['id'] = undefined;
+
+/**
  * sku
  * @member {String} sku
  */
 BestPriorPrice.prototype['sku'] = undefined;
 
 /**
- * The date and time when the best price was observed.
+ * The date and time when the price was observed.
  * @member {Date} observedAt
  */
 BestPriorPrice.prototype['observedAt'] = undefined;

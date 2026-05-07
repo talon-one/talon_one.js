@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[IntegrationCampaign]**](IntegrationCampaign.md) |  | 
 
 

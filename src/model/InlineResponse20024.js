@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationCustomer from './ApplicationCustomer';
+import AccessLogEntry from './AccessLogEntry';
 
 /**
  * The InlineResponse20024 model module.
  * @module model/InlineResponse20024
- * @version 25.16.0
+ * @version 25.17.0
  */
 class InlineResponse20024 {
     /**
      * Constructs a new <code>InlineResponse20024</code>.
      * @alias module:model/InlineResponse20024
-     * @param data {Array.<module:model/ApplicationCustomer>} 
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/AccessLogEntry>} 
      */
-    constructor(data) { 
+    constructor(hasMore, data) { 
         
-        InlineResponse20024.initialize(this, data);
+        InlineResponse20024.initialize(this, hasMore, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20024 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, hasMore, data) { 
+        obj['hasMore'] = hasMore;
         obj['data'] = data;
     }
 
@@ -50,14 +52,11 @@ class InlineResponse20024 {
         if (data) {
             obj = obj || new InlineResponse20024();
 
-            if (data.hasOwnProperty('totalResultSize')) {
-                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
-            }
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCustomer]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccessLogEntry]);
             }
         }
         return obj;
@@ -67,17 +66,12 @@ class InlineResponse20024 {
 }
 
 /**
- * @member {Number} totalResultSize
- */
-InlineResponse20024.prototype['totalResultSize'] = undefined;
-
-/**
  * @member {Boolean} hasMore
  */
 InlineResponse20024.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationCustomer>} data
+ * @member {Array.<module:model/AccessLogEntry>} data
  */
 InlineResponse20024.prototype['data'] = undefined;
 

@@ -45,6 +45,8 @@ Name | Type | Description | Notes
 
 * `Loyalty` (value: `"Loyalty"`)
 
+* `LoyaltyCard` (value: `"LoyaltyCard"`)
+
 * `Profile` (value: `"Profile"`)
 
 * `Giveaway` (value: `"Giveaway"`)
