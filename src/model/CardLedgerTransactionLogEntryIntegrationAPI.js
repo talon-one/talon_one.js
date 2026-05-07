@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CardLedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/CardLedgerTransactionLogEntryIntegrationAPI
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CardLedgerTransactionLogEntryIntegrationAPI {
     /**
@@ -26,10 +26,10 @@ class CardLedgerTransactionLogEntryIntegrationAPI {
      * @param transactionUUID {String} Unique identifier of the transaction in the UUID format.
      * @param created {Date} Date and time the loyalty card transaction occurred.
      * @param programId {Number} ID of the loyalty program.
-     * @param cardIdentifier {String} The alphanumeric identifier of the loyalty card. 
+     * @param cardIdentifier {String} The identifier of the loyalty card, which must match the regular expression `^[A-Za-z0-9._%+@-]+$`. 
      * @param type {module:model/CardLedgerTransactionLogEntryIntegrationAPI.TypeEnum} Type of transaction. Possible values:   - `addition`: Signifies added points.   - `subtraction`: Signifies deducted points. 
      * @param name {String} Name or reason of the loyalty ledger transaction.
-     * @param startDate {String} When points become active. Possible values:   - `immediate`: Points are active immediately.   - a timestamp value: Points become active at a given date and time. 
+     * @param startDate {String} When points become active. Possible values:   - `immediate`: Points are active immediately.   - `on_action`: Points become active based on the customer's action.   - a timestamp value: Points become active at a given date and time. 
      * @param expiryDate {String} Date when points expire. Possible values are:   - `unlimited`: Points have no expiration date.   - `timestamp value`: Points expire on the given date. 
      * @param subledgerId {String} ID of the subledger.
      * @param amount {Number} Amount of loyalty points added or deducted in the transaction.
@@ -112,6 +112,9 @@ class CardLedgerTransactionLogEntryIntegrationAPI {
             if (data.hasOwnProperty('ruleName')) {
                 obj['ruleName'] = ApiClient.convertToType(data['ruleName'], 'String');
             }
+            if (data.hasOwnProperty('validityDuration')) {
+                obj['validityDuration'] = ApiClient.convertToType(data['validityDuration'], 'String');
+            }
         }
         return obj;
     }
@@ -138,7 +141,7 @@ CardLedgerTransactionLogEntryIntegrationAPI.prototype['created'] = undefined;
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['programId'] = undefined;
 
 /**
- * The alphanumeric identifier of the loyalty card. 
+ * The identifier of the loyalty card, which must match the regular expression `^[A-Za-z0-9._%+@-]+$`. 
  * @member {String} cardIdentifier
  */
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['cardIdentifier'] = undefined;
@@ -162,7 +165,7 @@ CardLedgerTransactionLogEntryIntegrationAPI.prototype['type'] = undefined;
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['name'] = undefined;
 
 /**
- * When points become active. Possible values:   - `immediate`: Points are active immediately.   - a timestamp value: Points become active at a given date and time. 
+ * When points become active. Possible values:   - `immediate`: Points are active immediately.   - `on_action`: Points become active based on the customer's action.   - a timestamp value: Points become active at a given date and time. 
  * @member {String} startDate
  */
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['startDate'] = undefined;
@@ -202,6 +205,12 @@ CardLedgerTransactionLogEntryIntegrationAPI.prototype['rulesetId'] = undefined;
  * @member {String} ruleName
  */
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['ruleName'] = undefined;
+
+/**
+ * The duration for which the points remain active, relative to the  activation date.  **Note**: This only applies to points for which `awaitsActivation` is `true` and `expiryDate` is not set. 
+ * @member {String} validityDuration
+ */
+CardLedgerTransactionLogEntryIntegrationAPI.prototype['validityDuration'] = undefined;
 
 
 

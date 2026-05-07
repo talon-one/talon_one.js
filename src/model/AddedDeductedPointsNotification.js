@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,27 +16,28 @@ import ApiClient from '../ApiClient';
 /**
  * The AddedDeductedPointsNotification model module.
  * @module model/AddedDeductedPointsNotification
- * @version 25.16.0
+ * @version 25.17.0
  */
 class AddedDeductedPointsNotification {
     /**
      * Constructs a new <code>AddedDeductedPointsNotification</code>.
      * @alias module:model/AddedDeductedPointsNotification
-     * @param profileIntegrationID {String} The integration ID of the customer profile to whom points were added or deducted.
-     * @param loyaltyProgramID {Number} The ID of the loyalty program.
-     * @param subledgerID {String} The ID of the subledger within the loyalty program where these points were added.
-     * @param amount {Number} The amount of added or deducted loyalty points.
-     * @param reason {String} The reason for the points addition or deduction.
-     * @param typeOfChange {module:model/AddedDeductedPointsNotification.TypeOfChangeEnum} The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
      * @param employeeName {String} The name of the employee who added or deducted points.
-     * @param userID {Number} The ID of the employee who added or deducted points.
-     * @param operation {module:model/AddedDeductedPointsNotification.OperationEnum} The action (addition or deduction) made with loyalty points.
-     * @param sessionIntegrationID {String} The integration ID of the session through which the points were earned or lost.
+     * @param loyaltyProgramID {Number} The ID of the loyalty program.
      * @param notificationType {module:model/AddedDeductedPointsNotification.NotificationTypeEnum} The type of notification.
+     * @param profileIntegrationID {String} The integration ID of the customer profile to whom points were added or deducted.
+     * @param sessionIntegrationID {String} The integration ID of the session through which the points were earned or lost.
+     * @param subledgerID {String} The ID of the subledger within the loyalty program where these points were added.
+     * @param typeOfChange {module:model/AddedDeductedPointsNotification.TypeOfChangeEnum} The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
+     * @param userID {Number} The ID of the employee who added or deducted points.
+     * @param amount {Number} The amount of added or deducted loyalty points.
+     * @param operation {module:model/AddedDeductedPointsNotification.OperationEnum} The action (addition or subtraction) made with loyalty points.
+     * @param reason {String} The reason for the points addition or deduction.
+     * @param transactionUUID {String} The identifier of the transaction in the loyalty ledger.
      */
-    constructor(profileIntegrationID, loyaltyProgramID, subledgerID, amount, reason, typeOfChange, employeeName, userID, operation, sessionIntegrationID, notificationType) { 
+    constructor(employeeName, loyaltyProgramID, notificationType, profileIntegrationID, sessionIntegrationID, subledgerID, typeOfChange, userID, amount, operation, reason, transactionUUID) { 
         
-        AddedDeductedPointsNotification.initialize(this, profileIntegrationID, loyaltyProgramID, subledgerID, amount, reason, typeOfChange, employeeName, userID, operation, sessionIntegrationID, notificationType);
+        AddedDeductedPointsNotification.initialize(this, employeeName, loyaltyProgramID, notificationType, profileIntegrationID, sessionIntegrationID, subledgerID, typeOfChange, userID, amount, operation, reason, transactionUUID);
     }
 
     /**
@@ -44,18 +45,19 @@ class AddedDeductedPointsNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, profileIntegrationID, loyaltyProgramID, subledgerID, amount, reason, typeOfChange, employeeName, userID, operation, sessionIntegrationID, notificationType) { 
-        obj['ProfileIntegrationID'] = profileIntegrationID;
-        obj['LoyaltyProgramID'] = loyaltyProgramID;
-        obj['SubledgerID'] = subledgerID;
-        obj['Amount'] = amount;
-        obj['Reason'] = reason;
-        obj['TypeOfChange'] = typeOfChange;
+    static initialize(obj, employeeName, loyaltyProgramID, notificationType, profileIntegrationID, sessionIntegrationID, subledgerID, typeOfChange, userID, amount, operation, reason, transactionUUID) { 
         obj['EmployeeName'] = employeeName;
-        obj['UserID'] = userID;
-        obj['Operation'] = operation;
-        obj['SessionIntegrationID'] = sessionIntegrationID;
+        obj['LoyaltyProgramID'] = loyaltyProgramID;
         obj['NotificationType'] = notificationType;
+        obj['ProfileIntegrationID'] = profileIntegrationID;
+        obj['SessionIntegrationID'] = sessionIntegrationID;
+        obj['SubledgerID'] = subledgerID;
+        obj['TypeOfChange'] = typeOfChange;
+        obj['UserID'] = userID;
+        obj['Amount'] = amount;
+        obj['Operation'] = operation;
+        obj['Reason'] = reason;
+        obj['TransactionUUID'] = transactionUUID;
     }
 
     /**
@@ -69,44 +71,47 @@ class AddedDeductedPointsNotification {
         if (data) {
             obj = obj || new AddedDeductedPointsNotification();
 
-            if (data.hasOwnProperty('ProfileIntegrationID')) {
-                obj['ProfileIntegrationID'] = ApiClient.convertToType(data['ProfileIntegrationID'], 'String');
+            if (data.hasOwnProperty('EmployeeName')) {
+                obj['EmployeeName'] = ApiClient.convertToType(data['EmployeeName'], 'String');
             }
             if (data.hasOwnProperty('LoyaltyProgramID')) {
                 obj['LoyaltyProgramID'] = ApiClient.convertToType(data['LoyaltyProgramID'], 'Number');
             }
-            if (data.hasOwnProperty('SubledgerID')) {
-                obj['SubledgerID'] = ApiClient.convertToType(data['SubledgerID'], 'String');
+            if (data.hasOwnProperty('NotificationType')) {
+                obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
             }
-            if (data.hasOwnProperty('Amount')) {
-                obj['Amount'] = ApiClient.convertToType(data['Amount'], 'Number');
-            }
-            if (data.hasOwnProperty('Reason')) {
-                obj['Reason'] = ApiClient.convertToType(data['Reason'], 'String');
-            }
-            if (data.hasOwnProperty('TypeOfChange')) {
-                obj['TypeOfChange'] = ApiClient.convertToType(data['TypeOfChange'], 'String');
-            }
-            if (data.hasOwnProperty('EmployeeName')) {
-                obj['EmployeeName'] = ApiClient.convertToType(data['EmployeeName'], 'String');
-            }
-            if (data.hasOwnProperty('UserID')) {
-                obj['UserID'] = ApiClient.convertToType(data['UserID'], 'Number');
-            }
-            if (data.hasOwnProperty('Operation')) {
-                obj['Operation'] = ApiClient.convertToType(data['Operation'], 'String');
-            }
-            if (data.hasOwnProperty('StartDate')) {
-                obj['StartDate'] = ApiClient.convertToType(data['StartDate'], 'Date');
-            }
-            if (data.hasOwnProperty('ExpiryDate')) {
-                obj['ExpiryDate'] = ApiClient.convertToType(data['ExpiryDate'], 'Date');
+            if (data.hasOwnProperty('ProfileIntegrationID')) {
+                obj['ProfileIntegrationID'] = ApiClient.convertToType(data['ProfileIntegrationID'], 'String');
             }
             if (data.hasOwnProperty('SessionIntegrationID')) {
                 obj['SessionIntegrationID'] = ApiClient.convertToType(data['SessionIntegrationID'], 'String');
             }
-            if (data.hasOwnProperty('NotificationType')) {
-                obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
+            if (data.hasOwnProperty('SubledgerID')) {
+                obj['SubledgerID'] = ApiClient.convertToType(data['SubledgerID'], 'String');
+            }
+            if (data.hasOwnProperty('TypeOfChange')) {
+                obj['TypeOfChange'] = ApiClient.convertToType(data['TypeOfChange'], 'String');
+            }
+            if (data.hasOwnProperty('UserID')) {
+                obj['UserID'] = ApiClient.convertToType(data['UserID'], 'Number');
+            }
+            if (data.hasOwnProperty('Amount')) {
+                obj['Amount'] = ApiClient.convertToType(data['Amount'], 'Number');
+            }
+            if (data.hasOwnProperty('ExpiryDate')) {
+                obj['ExpiryDate'] = ApiClient.convertToType(data['ExpiryDate'], 'Date');
+            }
+            if (data.hasOwnProperty('Operation')) {
+                obj['Operation'] = ApiClient.convertToType(data['Operation'], 'String');
+            }
+            if (data.hasOwnProperty('Reason')) {
+                obj['Reason'] = ApiClient.convertToType(data['Reason'], 'String');
+            }
+            if (data.hasOwnProperty('StartDate')) {
+                obj['StartDate'] = ApiClient.convertToType(data['StartDate'], 'Date');
+            }
+            if (data.hasOwnProperty('TransactionUUID')) {
+                obj['TransactionUUID'] = ApiClient.convertToType(data['TransactionUUID'], 'String');
             }
         }
         return obj;
@@ -116,10 +121,10 @@ class AddedDeductedPointsNotification {
 }
 
 /**
- * The integration ID of the customer profile to whom points were added or deducted.
- * @member {String} ProfileIntegrationID
+ * The name of the employee who added or deducted points.
+ * @member {String} EmployeeName
  */
-AddedDeductedPointsNotification.prototype['ProfileIntegrationID'] = undefined;
+AddedDeductedPointsNotification.prototype['EmployeeName'] = undefined;
 
 /**
  * The ID of the loyalty program.
@@ -128,58 +133,16 @@ AddedDeductedPointsNotification.prototype['ProfileIntegrationID'] = undefined;
 AddedDeductedPointsNotification.prototype['LoyaltyProgramID'] = undefined;
 
 /**
- * The ID of the subledger within the loyalty program where these points were added.
- * @member {String} SubledgerID
+ * The type of notification.
+ * @member {module:model/AddedDeductedPointsNotification.NotificationTypeEnum} NotificationType
  */
-AddedDeductedPointsNotification.prototype['SubledgerID'] = undefined;
+AddedDeductedPointsNotification.prototype['NotificationType'] = undefined;
 
 /**
- * The amount of added or deducted loyalty points.
- * @member {Number} Amount
+ * The integration ID of the customer profile to whom points were added or deducted.
+ * @member {String} ProfileIntegrationID
  */
-AddedDeductedPointsNotification.prototype['Amount'] = undefined;
-
-/**
- * The reason for the points addition or deduction.
- * @member {String} Reason
- */
-AddedDeductedPointsNotification.prototype['Reason'] = undefined;
-
-/**
- * The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
- * @member {module:model/AddedDeductedPointsNotification.TypeOfChangeEnum} TypeOfChange
- */
-AddedDeductedPointsNotification.prototype['TypeOfChange'] = undefined;
-
-/**
- * The name of the employee who added or deducted points.
- * @member {String} EmployeeName
- */
-AddedDeductedPointsNotification.prototype['EmployeeName'] = undefined;
-
-/**
- * The ID of the employee who added or deducted points.
- * @member {Number} UserID
- */
-AddedDeductedPointsNotification.prototype['UserID'] = undefined;
-
-/**
- * The action (addition or deduction) made with loyalty points.
- * @member {module:model/AddedDeductedPointsNotification.OperationEnum} Operation
- */
-AddedDeductedPointsNotification.prototype['Operation'] = undefined;
-
-/**
- * The start date for loyalty points.
- * @member {Date} StartDate
- */
-AddedDeductedPointsNotification.prototype['StartDate'] = undefined;
-
-/**
- * The expiration date for loyalty points.
- * @member {Date} ExpiryDate
- */
-AddedDeductedPointsNotification.prototype['ExpiryDate'] = undefined;
+AddedDeductedPointsNotification.prototype['ProfileIntegrationID'] = undefined;
 
 /**
  * The integration ID of the session through which the points were earned or lost.
@@ -188,13 +151,82 @@ AddedDeductedPointsNotification.prototype['ExpiryDate'] = undefined;
 AddedDeductedPointsNotification.prototype['SessionIntegrationID'] = undefined;
 
 /**
- * The type of notification.
- * @member {module:model/AddedDeductedPointsNotification.NotificationTypeEnum} NotificationType
+ * The ID of the subledger within the loyalty program where these points were added.
+ * @member {String} SubledgerID
  */
-AddedDeductedPointsNotification.prototype['NotificationType'] = undefined;
+AddedDeductedPointsNotification.prototype['SubledgerID'] = undefined;
+
+/**
+ * The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
+ * @member {module:model/AddedDeductedPointsNotification.TypeOfChangeEnum} TypeOfChange
+ */
+AddedDeductedPointsNotification.prototype['TypeOfChange'] = undefined;
+
+/**
+ * The ID of the employee who added or deducted points.
+ * @member {Number} UserID
+ */
+AddedDeductedPointsNotification.prototype['UserID'] = undefined;
+
+/**
+ * The amount of added or deducted loyalty points.
+ * @member {Number} Amount
+ */
+AddedDeductedPointsNotification.prototype['Amount'] = undefined;
+
+/**
+ * The expiration date for loyalty points.
+ * @member {Date} ExpiryDate
+ */
+AddedDeductedPointsNotification.prototype['ExpiryDate'] = undefined;
+
+/**
+ * The action (addition or subtraction) made with loyalty points.
+ * @member {module:model/AddedDeductedPointsNotification.OperationEnum} Operation
+ */
+AddedDeductedPointsNotification.prototype['Operation'] = undefined;
+
+/**
+ * The reason for the points addition or deduction.
+ * @member {String} Reason
+ */
+AddedDeductedPointsNotification.prototype['Reason'] = undefined;
+
+/**
+ * The start date for loyalty points.
+ * @member {Date} StartDate
+ */
+AddedDeductedPointsNotification.prototype['StartDate'] = undefined;
+
+/**
+ * The identifier of the transaction in the loyalty ledger.
+ * @member {String} TransactionUUID
+ */
+AddedDeductedPointsNotification.prototype['TransactionUUID'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>NotificationType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+AddedDeductedPointsNotification['NotificationTypeEnum'] = {
+
+    /**
+     * value: "LoyaltyPointsDeducted"
+     * @const
+     */
+    "LoyaltyPointsDeducted": "LoyaltyPointsDeducted",
+
+    /**
+     * value: "LoyaltyPointsAdded"
+     * @const
+     */
+    "LoyaltyPointsAdded": "LoyaltyPointsAdded"
+};
 
 
 /**
@@ -238,31 +270,10 @@ AddedDeductedPointsNotification['OperationEnum'] = {
     "addition": "addition",
 
     /**
-     * value: "deduction"
+     * value: "subtraction"
      * @const
      */
-    "deduction": "deduction"
-};
-
-
-/**
- * Allowed values for the <code>NotificationType</code> property.
- * @enum {String}
- * @readonly
- */
-AddedDeductedPointsNotification['NotificationTypeEnum'] = {
-
-    /**
-     * value: "LoyaltyPointsDeducted"
-     * @const
-     */
-    "LoyaltyPointsDeducted": "LoyaltyPointsDeducted",
-
-    /**
-     * value: "LoyaltyPointsAdded"
-     * @const
-     */
-    "LoyaltyPointsAdded": "LoyaltyPointsAdded"
+    "subtraction": "subtraction"
 };
 
 

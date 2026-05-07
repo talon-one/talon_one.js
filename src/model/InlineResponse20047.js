@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -12,21 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import SummaryCampaignStoreBudget from './SummaryCampaignStoreBudget';
+import Store from './Store';
 
 /**
  * The InlineResponse20047 model module.
  * @module model/InlineResponse20047
- * @version 25.16.0
+ * @version 25.17.0
  */
 class InlineResponse20047 {
     /**
      * Constructs a new <code>InlineResponse20047</code>.
      * @alias module:model/InlineResponse20047
+     * @param data {Array.<module:model/Store>} 
      */
-    constructor() { 
+    constructor(data) { 
         
-        InlineResponse20047.initialize(this);
+        InlineResponse20047.initialize(this, data);
     }
 
     /**
@@ -34,7 +35,8 @@ class InlineResponse20047 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, data) { 
+        obj['data'] = data;
     }
 
     /**
@@ -48,8 +50,14 @@ class InlineResponse20047 {
         if (data) {
             obj = obj || new InlineResponse20047();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SummaryCampaignStoreBudget]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Store]);
             }
         }
         return obj;
@@ -59,7 +67,17 @@ class InlineResponse20047 {
 }
 
 /**
- * @member {Array.<module:model/SummaryCampaignStoreBudget>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20047.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Number} totalResultSize
+ */
+InlineResponse20047.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/Store>} data
  */
 InlineResponse20047.prototype['data'] = undefined;
 

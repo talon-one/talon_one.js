@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerProfileAudienceRequestItem model module.
  * @module model/CustomerProfileAudienceRequestItem
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CustomerProfileAudienceRequestItem {
     /**
@@ -24,7 +24,7 @@ class CustomerProfileAudienceRequestItem {
      * @alias module:model/CustomerProfileAudienceRequestItem
      * @param action {module:model/CustomerProfileAudienceRequestItem.ActionEnum} Defines the action to perform: - `add`: Adds the customer profile to the audience.    **Note**: If the customer profile does not exist, it will be created. The profile will not be visible in any Application   until a session or profile update is received for that profile. - `delete`: Removes the customer profile from the audience. 
      * @param profileIntegrationId {String} The ID of this customer profile in the third-party integration.
-     * @param audienceId {Number} The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+     * @param audienceId {Number} The ID of the audience. You get it via the `id` property when [creating an audience](#tag/Audiences/operation/createAudienceV2).
      */
     constructor(action, profileIntegrationId, audienceId) { 
         
@@ -82,7 +82,7 @@ CustomerProfileAudienceRequestItem.prototype['action'] = undefined;
 CustomerProfileAudienceRequestItem.prototype['profileIntegrationId'] = undefined;
 
 /**
- * The ID of the audience. You get it via the `id` property when [creating an audience](#operation/createAudienceV2).
+ * The ID of the audience. You get it via the `id` property when [creating an audience](#tag/Audiences/operation/createAudienceV2).
  * @member {Number} audienceId
  */
 CustomerProfileAudienceRequestItem.prototype['audienceId'] = undefined;

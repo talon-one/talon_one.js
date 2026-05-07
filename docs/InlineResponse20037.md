@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | [optional] 
 **totalResultSize** | **Number** |  | [optional] 
-**data** | [**[CatalogItem]**](CatalogItem.md) |  | 
+**data** | [**[ApplicationReferee]**](ApplicationReferee.md) |  | 
 
 

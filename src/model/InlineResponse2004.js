@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import LedgerTransactionLogEntryIntegrationAPI from './LedgerTransactionLogEntryIntegrationAPI';
+import CardLedgerTransactionLogEntryIntegrationAPI from './CardLedgerTransactionLogEntryIntegrationAPI';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 25.16.0
+ * @version 25.17.0
  */
 class InlineResponse2004 {
     /**
      * Constructs a new <code>InlineResponse2004</code>.
      * @alias module:model/InlineResponse2004
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/LedgerTransactionLogEntryIntegrationAPI>} 
+     * @param data {Array.<module:model/CardLedgerTransactionLogEntryIntegrationAPI>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2004 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LedgerTransactionLogEntryIntegrationAPI]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CardLedgerTransactionLogEntryIntegrationAPI]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2004 {
 InlineResponse2004.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/LedgerTransactionLogEntryIntegrationAPI>} data
+ * @member {Array.<module:model/CardLedgerTransactionLogEntryIntegrationAPI>} data
  */
 InlineResponse2004.prototype['data'] = undefined;
 

@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[WebhookWithOutgoingIntegrationDetails]**](WebhookWithOutgoingIntegrationDetails.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[CatalogItem]**](CatalogItem.md) |  | 
 
 

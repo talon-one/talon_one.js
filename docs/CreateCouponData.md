@@ -13,3 +13,12 @@ Name | Type | Description | Notes
 **notificationType** | **String** | The type of the not | 
 
 
+
+## Enum: NotificationTypeEnum
+
+
+* `CouponCreated` (value: `"CouponCreated"`)
+
+
+
+

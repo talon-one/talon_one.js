@@ -8,3 +8,12 @@ Name | Type | Description | Notes
 **totalResultSize** | **Number** | The total size of the result set. | 
 
 
+
+## Enum: NotificationTypeEnum
+
+
+* `CampaignNotification` (value: `"CampaignNotification"`)
+
+
+
+

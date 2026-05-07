@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -21,7 +21,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CampaignTemplate {
     /**
@@ -35,13 +35,14 @@ class CampaignTemplate {
      * @param description {String} Customer-facing text that explains the objective of the template.
      * @param instructions {String} Customer-facing text that explains how to use the template. For example, you can use this property to explain the available attributes of this template, and how they can be modified when a user uses this template to create a new campaign.
      * @param state {module:model/CampaignTemplate.StateEnum} Only campaign templates in 'available' state may be used to create campaigns.
+     * @param reevaluateOnReturn {Boolean} Indicates whether campaigns created from this template should be reevaluated when a customer returns an item.
      * @param applicationsIds {Array.<Number>} A list of IDs of the Applications that are subscribed to this campaign template.
      * @param campaignType {module:model/CampaignTemplate.CampaignTypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
      * @param validApplicationIds {Array.<Number>} The IDs of the Applications that are related to this entity.
      */
-    constructor(id, created, accountId, userId, name, description, instructions, state, applicationsIds, campaignType, validApplicationIds) { 
+    constructor(id, created, accountId, userId, name, description, instructions, state, reevaluateOnReturn, applicationsIds, campaignType, validApplicationIds) { 
         
-        CampaignTemplate.initialize(this, id, created, accountId, userId, name, description, instructions, state, applicationsIds, campaignType, validApplicationIds);
+        CampaignTemplate.initialize(this, id, created, accountId, userId, name, description, instructions, state, reevaluateOnReturn, applicationsIds, campaignType, validApplicationIds);
     }
 
     /**
@@ -49,7 +50,7 @@ class CampaignTemplate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, accountId, userId, name, description, instructions, state, applicationsIds, campaignType, validApplicationIds) { 
+    static initialize(obj, id, created, accountId, userId, name, description, instructions, state, reevaluateOnReturn, applicationsIds, campaignType, validApplicationIds) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['accountId'] = accountId;
@@ -58,6 +59,7 @@ class CampaignTemplate {
         obj['description'] = description;
         obj['instructions'] = instructions;
         obj['state'] = state;
+        obj['reevaluateOnReturn'] = reevaluateOnReturn;
         obj['applicationsIds'] = applicationsIds;
         obj['campaignType'] = campaignType;
         obj['validApplicationIds'] = validApplicationIds;
@@ -110,6 +112,9 @@ class CampaignTemplate {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
+            if (data.hasOwnProperty('reevaluateOnReturn')) {
+                obj['reevaluateOnReturn'] = ApiClient.convertToType(data['reevaluateOnReturn'], 'Boolean');
+            }
             if (data.hasOwnProperty('features')) {
                 obj['features'] = ApiClient.convertToType(data['features'], ['String']);
             }
@@ -139,6 +144,9 @@ class CampaignTemplate {
             }
             if (data.hasOwnProperty('campaignType')) {
                 obj['campaignType'] = ApiClient.convertToType(data['campaignType'], 'String');
+            }
+            if (data.hasOwnProperty('campaignsCount')) {
+                obj['campaignsCount'] = ApiClient.convertToType(data['campaignsCount'], 'Number');
             }
             if (data.hasOwnProperty('updated')) {
                 obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
@@ -232,6 +240,12 @@ CampaignTemplate.prototype['activeRulesetId'] = undefined;
 CampaignTemplate.prototype['tags'] = undefined;
 
 /**
+ * Indicates whether campaigns created from this template should be reevaluated when a customer returns an item.
+ * @member {Boolean} reevaluateOnReturn
+ */
+CampaignTemplate.prototype['reevaluateOnReturn'] = undefined;
+
+/**
  * A list of features for the campaign template.
  * @member {Array.<module:model/CampaignTemplate.FeaturesEnum>} features
  */
@@ -288,6 +302,12 @@ CampaignTemplate.prototype['defaultCampaignGroupId'] = undefined;
  * @default 'advanced'
  */
 CampaignTemplate.prototype['campaignType'] = 'advanced';
+
+/**
+ * The number of Campaigns created from this template.
+ * @member {Number} campaignsCount
+ */
+CampaignTemplate.prototype['campaignsCount'] = undefined;
 
 /**
  * Timestamp of the most recent update to the campaign template or any of its elements.

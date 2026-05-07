@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -17,7 +17,7 @@ import CartItem from './CartItem';
 /**
  * The CustomerSession model module.
  * @module model/CustomerSession
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CustomerSession {
     /**
@@ -34,12 +34,13 @@ class CustomerSession {
      * @param total {Number} The total sum of the cart in one session.
      * @param attributes {Object} A key-value map of the sessions attributes. The potentially valid attributes are configured in your accounts developer settings. 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. Will always be true for anonymous sessions.
+     * @param updateCount {Number} The number of times the session was updated. When the session is created, this value is initialized to `1`.
      * @param discounts {Object.<String, Number>} A map of labelled discount values, values will be in the same currency as the application associated with the session.
      * @param updated {Date} Timestamp of the most recent event received on this session.
      */
-    constructor(integrationId, created, applicationId, profileId, coupon, referral, state, cartItems, total, attributes, firstSession, discounts, updated) { 
+    constructor(integrationId, created, applicationId, profileId, coupon, referral, state, cartItems, total, attributes, firstSession, updateCount, discounts, updated) { 
         
-        CustomerSession.initialize(this, integrationId, created, applicationId, profileId, coupon, referral, state, cartItems, total, attributes, firstSession, discounts, updated);
+        CustomerSession.initialize(this, integrationId, created, applicationId, profileId, coupon, referral, state, cartItems, total, attributes, firstSession, updateCount, discounts, updated);
     }
 
     /**
@@ -47,7 +48,7 @@ class CustomerSession {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, integrationId, created, applicationId, profileId, coupon, referral, state, cartItems, total, attributes, firstSession, discounts, updated) { 
+    static initialize(obj, integrationId, created, applicationId, profileId, coupon, referral, state, cartItems, total, attributes, firstSession, updateCount, discounts, updated) { 
         obj['integrationId'] = integrationId;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -59,6 +60,7 @@ class CustomerSession {
         obj['total'] = total;
         obj['attributes'] = attributes;
         obj['firstSession'] = firstSession;
+        obj['updateCount'] = updateCount;
         obj['discounts'] = discounts;
         obj['updated'] = updated;
     }
@@ -109,6 +111,9 @@ class CustomerSession {
             }
             if (data.hasOwnProperty('firstSession')) {
                 obj['firstSession'] = ApiClient.convertToType(data['firstSession'], 'Boolean');
+            }
+            if (data.hasOwnProperty('updateCount')) {
+                obj['updateCount'] = ApiClient.convertToType(data['updateCount'], 'Number');
             }
             if (data.hasOwnProperty('discounts')) {
                 obj['discounts'] = ApiClient.convertToType(data['discounts'], {'String': 'Number'});
@@ -195,6 +200,12 @@ CustomerSession.prototype['attributes'] = undefined;
  * @member {Boolean} firstSession
  */
 CustomerSession.prototype['firstSession'] = undefined;
+
+/**
+ * The number of times the session was updated. When the session is created, this value is initialized to `1`.
+ * @member {Number} updateCount
+ */
+CustomerSession.prototype['updateCount'] = undefined;
 
 /**
  * A map of labelled discount values, values will be in the same currency as the application associated with the session.

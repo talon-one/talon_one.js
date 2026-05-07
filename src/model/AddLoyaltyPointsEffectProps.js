@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddLoyaltyPointsEffectProps model module.
  * @module model/AddLoyaltyPointsEffectProps
- * @version 25.16.0
+ * @version 25.17.0
  */
 class AddLoyaltyPointsEffectProps {
     /**
@@ -102,6 +102,12 @@ class AddLoyaltyPointsEffectProps {
             if (data.hasOwnProperty('bundleName')) {
                 obj['bundleName'] = ApiClient.convertToType(data['bundleName'], 'String');
             }
+            if (data.hasOwnProperty('awaitsActivation')) {
+                obj['awaitsActivation'] = ApiClient.convertToType(data['awaitsActivation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('validityDuration')) {
+                obj['validityDuration'] = ApiClient.convertToType(data['validityDuration'], 'String');
+            }
         }
         return obj;
     }
@@ -176,7 +182,7 @@ AddLoyaltyPointsEffectProps.prototype['cartItemPosition'] = undefined;
 AddLoyaltyPointsEffectProps.prototype['cartItemSubPosition'] = undefined;
 
 /**
- * The alphanumeric identifier of the loyalty card. 
+ * The identifier of the loyalty card, which must match the regular expression `^[A-Za-z0-9._%+@-]+$`. 
  * @member {String} cardIdentifier
  */
 AddLoyaltyPointsEffectProps.prototype['cardIdentifier'] = undefined;
@@ -192,6 +198,18 @@ AddLoyaltyPointsEffectProps.prototype['bundleIndex'] = undefined;
  * @member {String} bundleName
  */
 AddLoyaltyPointsEffectProps.prototype['bundleName'] = undefined;
+
+/**
+ * If `true`, the loyalty points remain pending until a specific action is complete. The `startDate` parameter automatically sets to `on_action`. 
+ * @member {Boolean} awaitsActivation
+ */
+AddLoyaltyPointsEffectProps.prototype['awaitsActivation'] = undefined;
+
+/**
+ * The duration for which the points remain active, calculated relative to the  activation date.    **Note**: This value is returned only if `awaitsActivation` is `true`  and `expiryDate` is not set. 
+ * @member {String} validityDuration
+ */
+AddLoyaltyPointsEffectProps.prototype['validityDuration'] = undefined;
 
 
 

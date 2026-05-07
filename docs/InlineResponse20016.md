@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[LoyaltyDashboardData]**](LoyaltyDashboardData.md) |  | 
+**data** | [**[Experiment]**](Experiment.md) |  | 
 
 

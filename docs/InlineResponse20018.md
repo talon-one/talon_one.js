@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[LoyaltyCard]**](LoyaltyCard.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[LoyaltyDashboardData]**](LoyaltyDashboardData.md) |  | 
 
 

@@ -9,3 +9,12 @@ Name | Type | Description | Notes
 **data** | [**[ApplicationNotification]**](ApplicationNotification.md) | The array of changes. | [optional] 
 
 
+
+## Enum: NotificationTypeEnum
+
+
+* `CampaignNotification` (value: `"CampaignNotification"`)
+
+
+
+

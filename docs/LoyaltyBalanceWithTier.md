@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **currentTier** | [**Tier**](Tier.md) |  | [optional] 
 **projectedTier** | [**ProjectedTier**](ProjectedTier.md) |  | [optional] 
 **pointsToNextTier** | **Number** | The number of points required to move up a tier. | [optional] 
-**nextTierName** | **String** | The name of the tier consecutive to the current tier. | [optional] 
+**nextTierName** | **String** | The name of the next higher tier level in the loyalty program.  **Note**: - Returns &#x60;null&#x60; if the customer has reached the highest available tier. - Returns the lowest level tier name if the customer is not currently assigned to any tier.  | [optional] 
 
 

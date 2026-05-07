@@ -17,12 +17,14 @@ Name | Type | Description | Notes
 **endTime** | **Date** | Timestamp when the campaign will become inactive. | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this campaign. | [optional] 
 **description** | **String** | A detailed description of the campaign. | [optional] 
-**activeRulesetId** | **Number** | The ID of the ruleset this campaign template will use. | [optional] 
-**tags** | **[String]** | A list of tags for the campaign template. | [optional] 
+**activeRulesetId** | **Number** | The ID of the ruleset this campaign will use. | [optional] 
+**tags** | **[String]** | A list of tags for the campaign. | [optional] 
 **couponSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
 **referralSettings** | [**CodeGeneratorSettings**](CodeGeneratorSettings.md) |  | [optional] 
 **limits** | [**[LimitConfig]**](LimitConfig.md) | The set of limits that will operate for this campaign version. | [optional] 
-**features** | **[String]** | A list of features for the campaign template. | [optional] 
+**reevaluateOnReturn** | **Boolean** | Indicates whether this campaign should be reevaluated when a customer returns an item. | [optional] 
+**features** | **[String]** | A list of features for the campaign. | [optional] 
+**couponAttributes** | [**Object**](.md) | Arbitrary properties associated with coupons in this campaign. | [optional] 
 
 
 

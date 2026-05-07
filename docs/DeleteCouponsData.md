@@ -14,3 +14,12 @@ Name | Type | Description | Notes
 **notificationType** | **String** | The type of the notification | 
 
 
+
+## Enum: NotificationTypeEnum
+
+
+* `CouponsDeleted` (value: `"CouponsDeleted"`)
+
+
+
+

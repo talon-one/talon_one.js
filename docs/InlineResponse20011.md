@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
+**totalResultSize** | **Number** |  | 
 **data** | [**[Coupon]**](Coupon.md) |  | 
 
 

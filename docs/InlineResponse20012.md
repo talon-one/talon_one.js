@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[Referral]**](Referral.md) |  | 
+**data** | [**[Coupon]**](Coupon.md) |  | 
 
 

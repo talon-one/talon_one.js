@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BestPriorPriceRequestTarget from './BestPriorPriceRequestTarget';
+import BestPriorTarget from './BestPriorTarget';
 
 /**
  * The BestPriorPriceRequest model module.
  * @module model/BestPriorPriceRequest
- * @version 25.16.0
+ * @version 25.17.0
  */
 class BestPriorPriceRequest {
     /**
@@ -25,12 +25,12 @@ class BestPriorPriceRequest {
      * @alias module:model/BestPriorPriceRequest
      * @param skus {Array.<String>} List of product SKUs to check when determining the best prior price.
      * @param timeframeEndDate {Date} The end date and time that defines the latest time for retrieving historical SKU prices.
-     * @param timeframe {Number} The number of days prior to the timeframeEndDate. Only prices within this look back period are considered for the best prior price evaluation.
-     * @param strictEndDate {Boolean} Indicates whether the timeframe includes the start of the current sale. - When `false`, the timeframe includes the start date of the current sale. - When `true`, the timeframe striclty uses the number of days specified in `timeframe`. 
+     * @param timeframe {String} The number of days prior to the timeframeEndDate. Only prices within this look back period are considered for the best prior price evaluation.
+     * @param timeframeEndDateType {module:model/BestPriorPriceRequest.TimeframeEndDateTypeEnum} Sets the timeframe for retrieving historical pricing data. Can be one of the following values: - `strict`: The timeframe ends at the `timeframeEndDate` value. - `price`: The timeframe ends at the start of current price value and takes the prices prior to the start of the current price value into account. - `sale`:  The timeframe ends at the start of current `contextId` and takes the prices prior to the start of the `contextId` into account. 
      */
-    constructor(skus, timeframeEndDate, timeframe, strictEndDate) { 
+    constructor(skus, timeframeEndDate, timeframe, timeframeEndDateType) { 
         
-        BestPriorPriceRequest.initialize(this, skus, timeframeEndDate, timeframe, strictEndDate);
+        BestPriorPriceRequest.initialize(this, skus, timeframeEndDate, timeframe, timeframeEndDateType);
     }
 
     /**
@@ -38,11 +38,11 @@ class BestPriorPriceRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, skus, timeframeEndDate, timeframe, strictEndDate) { 
+    static initialize(obj, skus, timeframeEndDate, timeframe, timeframeEndDateType) { 
         obj['skus'] = skus;
         obj['timeframeEndDate'] = timeframeEndDate;
         obj['timeframe'] = timeframe;
-        obj['strictEndDate'] = strictEndDate;
+        obj['timeframeEndDateType'] = timeframeEndDateType;
     }
 
     /**
@@ -63,13 +63,13 @@ class BestPriorPriceRequest {
                 obj['timeframeEndDate'] = ApiClient.convertToType(data['timeframeEndDate'], 'Date');
             }
             if (data.hasOwnProperty('timeframe')) {
-                obj['timeframe'] = ApiClient.convertToType(data['timeframe'], 'Number');
+                obj['timeframe'] = ApiClient.convertToType(data['timeframe'], 'String');
             }
-            if (data.hasOwnProperty('strictEndDate')) {
-                obj['strictEndDate'] = ApiClient.convertToType(data['strictEndDate'], 'Boolean');
+            if (data.hasOwnProperty('timeframeEndDateType')) {
+                obj['timeframeEndDateType'] = ApiClient.convertToType(data['timeframeEndDateType'], 'String');
             }
             if (data.hasOwnProperty('target')) {
-                obj['target'] = BestPriorPriceRequestTarget.constructFromObject(data['target']);
+                obj['target'] = BestPriorTarget.constructFromObject(data['target']);
             }
         }
         return obj;
@@ -92,23 +92,50 @@ BestPriorPriceRequest.prototype['timeframeEndDate'] = undefined;
 
 /**
  * The number of days prior to the timeframeEndDate. Only prices within this look back period are considered for the best prior price evaluation.
- * @member {Number} timeframe
+ * @member {String} timeframe
  */
 BestPriorPriceRequest.prototype['timeframe'] = undefined;
 
 /**
- * Indicates whether the timeframe includes the start of the current sale. - When `false`, the timeframe includes the start date of the current sale. - When `true`, the timeframe striclty uses the number of days specified in `timeframe`. 
- * @member {Boolean} strictEndDate
+ * Sets the timeframe for retrieving historical pricing data. Can be one of the following values: - `strict`: The timeframe ends at the `timeframeEndDate` value. - `price`: The timeframe ends at the start of current price value and takes the prices prior to the start of the current price value into account. - `sale`:  The timeframe ends at the start of current `contextId` and takes the prices prior to the start of the `contextId` into account. 
+ * @member {module:model/BestPriorPriceRequest.TimeframeEndDateTypeEnum} timeframeEndDateType
  */
-BestPriorPriceRequest.prototype['strictEndDate'] = undefined;
+BestPriorPriceRequest.prototype['timeframeEndDateType'] = undefined;
 
 /**
- * @member {module:model/BestPriorPriceRequestTarget} target
+ * @member {module:model/BestPriorTarget} target
  */
 BestPriorPriceRequest.prototype['target'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>timeframeEndDateType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+BestPriorPriceRequest['TimeframeEndDateTypeEnum'] = {
+
+    /**
+     * value: "strict"
+     * @const
+     */
+    "strict": "strict",
+
+    /**
+     * value: "price"
+     * @const
+     */
+    "price": "price",
+
+    /**
+     * value: "sale"
+     * @const
+     */
+    "sale": "sale"
+};
 
 
 

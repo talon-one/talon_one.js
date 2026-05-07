@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 25.16.0
+ * @version 25.17.0
  */
 class Campaign {
     /**
@@ -33,15 +33,16 @@ class Campaign {
      * @param description {String} A detailed description of the campaign.
      * @param state {module:model/Campaign.StateEnum} A disabled or archived campaign is not evaluated for rules or coupons. 
      * @param tags {Array.<String>} A list of tags for the campaign.
+     * @param reevaluateOnReturn {Boolean} Indicates whether this campaign should be reevaluated when a customer returns an item.
      * @param features {Array.<module:model/Campaign.FeaturesEnum>} The features enabled in this campaign.
      * @param limits {Array.<module:model/LimitConfig>} The set of [budget limits](https://docs.talon.one/docs/product/campaigns/settings/managing-campaign-budgets) for this campaign. 
      * @param type {module:model/Campaign.TypeEnum} The campaign type. Possible type values:   - `cartItem`: Type of campaign that can apply effects only to cart items.   - `advanced`: Type of campaign that can apply effects to customer sessions and cart items. 
      * @param frontendState {module:model/Campaign.FrontendStateEnum} The campaign state displayed in the Campaign Manager.
      * @param storesImported {Boolean} Indicates whether the linked stores were imported via a CSV file.
      */
-    constructor(id, created, applicationId, userId, name, description, state, tags, features, limits, type, frontendState, storesImported) { 
+    constructor(id, created, applicationId, userId, name, description, state, tags, reevaluateOnReturn, features, limits, type, frontendState, storesImported) { 
         
-        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, features, limits, type, frontendState, storesImported);
+        Campaign.initialize(this, id, created, applicationId, userId, name, description, state, tags, reevaluateOnReturn, features, limits, type, frontendState, storesImported);
     }
 
     /**
@@ -49,7 +50,7 @@ class Campaign {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, features, limits, type, frontendState, storesImported) { 
+    static initialize(obj, id, created, applicationId, userId, name, description, state, tags, reevaluateOnReturn, features, limits, type, frontendState, storesImported) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
@@ -58,6 +59,7 @@ class Campaign {
         obj['description'] = description;
         obj['state'] = state;
         obj['tags'] = tags;
+        obj['reevaluateOnReturn'] = reevaluateOnReturn;
         obj['features'] = features;
         obj['limits'] = limits;
         obj['type'] = type;
@@ -112,6 +114,9 @@ class Campaign {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
+            if (data.hasOwnProperty('reevaluateOnReturn')) {
+                obj['reevaluateOnReturn'] = ApiClient.convertToType(data['reevaluateOnReturn'], 'Boolean');
+            }
             if (data.hasOwnProperty('features')) {
                 obj['features'] = ApiClient.convertToType(data['features'], ['String']);
             }
@@ -132,6 +137,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('linkedStoreIds')) {
                 obj['linkedStoreIds'] = ApiClient.convertToType(data['linkedStoreIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('couponAttributes')) {
+                obj['couponAttributes'] = ApiClient.convertToType(data['couponAttributes'], Object);
             }
             if (data.hasOwnProperty('budgets')) {
                 obj['budgets'] = ApiClient.convertToType(data['budgets'], [CampaignBudget]);
@@ -204,6 +212,9 @@ class Campaign {
             }
             if (data.hasOwnProperty('valueMapsIds')) {
                 obj['valueMapsIds'] = ApiClient.convertToType(data['valueMapsIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('experimentId')) {
+                obj['experimentId'] = ApiClient.convertToType(data['experimentId'], 'Number');
             }
             if (data.hasOwnProperty('revisionFrontendState')) {
                 obj['revisionFrontendState'] = ApiClient.convertToType(data['revisionFrontendState'], 'String');
@@ -295,7 +306,7 @@ Campaign.prototype['attributes'] = undefined;
 Campaign.prototype['state'] = 'enabled';
 
 /**
- * [ID of Ruleset](https://docs.talon.one/management-api#operation/getRulesets) this campaign applies on customer session evaluation. 
+ * [ID of Ruleset](https://docs.talon.one/management-api#tag/Campaigns/operation/getRulesets) this campaign applies on customer session evaluation. 
  * @member {Number} activeRulesetId
  */
 Campaign.prototype['activeRulesetId'] = undefined;
@@ -305,6 +316,12 @@ Campaign.prototype['activeRulesetId'] = undefined;
  * @member {Array.<String>} tags
  */
 Campaign.prototype['tags'] = undefined;
+
+/**
+ * Indicates whether this campaign should be reevaluated when a customer returns an item.
+ * @member {Boolean} reevaluateOnReturn
+ */
+Campaign.prototype['reevaluateOnReturn'] = undefined;
 
 /**
  * The features enabled in this campaign.
@@ -346,6 +363,12 @@ Campaign.prototype['type'] = 'advanced';
  * @member {Array.<Number>} linkedStoreIds
  */
 Campaign.prototype['linkedStoreIds'] = undefined;
+
+/**
+ * Arbitrary properties associated with coupons in this campaign.
+ * @member {Object} couponAttributes
+ */
+Campaign.prototype['couponAttributes'] = undefined;
 
 /**
  * A list of all the budgets that are defined by this campaign and their usage.  **Note:** Budgets that are not defined do not appear in this list and their usage is not counted until they are defined. 
@@ -490,6 +513,12 @@ Campaign.prototype['storesImported'] = undefined;
  * @member {Array.<Number>} valueMapsIds
  */
 Campaign.prototype['valueMapsIds'] = undefined;
+
+/**
+ * The ID of the Experiment this Campaign is part of.
+ * @member {Number} experimentId
+ */
+Campaign.prototype['experimentId'] = undefined;
 
 /**
  * The campaign revision state displayed in the Campaign Manager.

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **payload** | **String** | API payload of this message. | [optional] 
 **params** | [**[TemplateArgDef]**](TemplateArgDef.md) | Array of template argument definitions. | [optional] 
 **applicationIds** | **[Number]** | The IDs of the Applications in which this webhook is available. An empty array means the webhook is available in &#x60;All Applications&#x60;.  | [optional] 
+**authenticationId** | **Number** | The ID of the credential that this webhook is using. | [optional] 
 
 
 

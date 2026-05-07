@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -16,29 +16,30 @@ import ApiClient from '../ApiClient';
 /**
  * The CardAddedDeductedPointsNotification model module.
  * @module model/CardAddedDeductedPointsNotification
- * @version 25.16.0
+ * @version 25.17.0
  */
 class CardAddedDeductedPointsNotification {
     /**
      * Constructs a new <code>CardAddedDeductedPointsNotification</code>.
      * @alias module:model/CardAddedDeductedPointsNotification
-     * @param profileIntegrationIDs {Array.<String>} The integration ID of the customer profile to whom points were added or deducted.
-     * @param loyaltyProgramID {Number} The ID of the loyalty program.
-     * @param subledgerID {String} The ID of the subledger within the loyalty program where these points were added or deducted.
-     * @param amount {Number} The amount of added or deducted loyalty points.
-     * @param reason {String} The reason for the points addition or deduction.
-     * @param typeOfChange {module:model/CardAddedDeductedPointsNotification.TypeOfChangeEnum} The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
-     * @param employeeName {String} The name of the employee who added or deducted points.
-     * @param userID {Number} The ID of the employee who added or deducted points.
-     * @param operation {module:model/CardAddedDeductedPointsNotification.OperationEnum} The action (addition or deduction) made with loyalty points.
-     * @param sessionIntegrationID {String} The integration ID of the session through which the points were earned or lost.
-     * @param notificationType {module:model/CardAddedDeductedPointsNotification.NotificationTypeEnum} The type of notification.
      * @param cardIdentifier {String} Loyalty card identification number.
+     * @param employeeName {String} The name of the employee who added or deducted points.
+     * @param loyaltyProgramID {Number} The ID of the loyalty program.
+     * @param notificationType {module:model/CardAddedDeductedPointsNotification.NotificationTypeEnum} The type of notification.
+     * @param profileIntegrationIDs {Array.<String>} The integration ID of the customer profile to whom points were added or deducted.
+     * @param sessionIntegrationID {String} The integration ID of the session through which the points were earned or lost.
+     * @param subledgerID {String} The ID of the subledger within the loyalty program where these points were added or deducted.
+     * @param typeOfChange {module:model/CardAddedDeductedPointsNotification.TypeOfChangeEnum} The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
+     * @param userID {Number} The ID of the employee who added or deducted points.
      * @param usersPerCardLimit {Number} The max amount of user profiles with whom a card can be shared. This can be set to `0` for no limit.
+     * @param amount {Number} The amount of added or deducted loyalty points.
+     * @param operation {module:model/CardAddedDeductedPointsNotification.OperationEnum} The action (addition or subtraction) made with loyalty points.
+     * @param reason {String} The reason for the points addition or deduction.
+     * @param transactionUUID {String} The identifier of the transaction in the loyalty ledger.
      */
-    constructor(profileIntegrationIDs, loyaltyProgramID, subledgerID, amount, reason, typeOfChange, employeeName, userID, operation, sessionIntegrationID, notificationType, cardIdentifier, usersPerCardLimit) { 
+    constructor(cardIdentifier, employeeName, loyaltyProgramID, notificationType, profileIntegrationIDs, sessionIntegrationID, subledgerID, typeOfChange, userID, usersPerCardLimit, amount, operation, reason, transactionUUID) { 
         
-        CardAddedDeductedPointsNotification.initialize(this, profileIntegrationIDs, loyaltyProgramID, subledgerID, amount, reason, typeOfChange, employeeName, userID, operation, sessionIntegrationID, notificationType, cardIdentifier, usersPerCardLimit);
+        CardAddedDeductedPointsNotification.initialize(this, cardIdentifier, employeeName, loyaltyProgramID, notificationType, profileIntegrationIDs, sessionIntegrationID, subledgerID, typeOfChange, userID, usersPerCardLimit, amount, operation, reason, transactionUUID);
     }
 
     /**
@@ -46,20 +47,21 @@ class CardAddedDeductedPointsNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, profileIntegrationIDs, loyaltyProgramID, subledgerID, amount, reason, typeOfChange, employeeName, userID, operation, sessionIntegrationID, notificationType, cardIdentifier, usersPerCardLimit) { 
-        obj['ProfileIntegrationIDs'] = profileIntegrationIDs;
-        obj['LoyaltyProgramID'] = loyaltyProgramID;
-        obj['SubledgerID'] = subledgerID;
-        obj['Amount'] = amount;
-        obj['Reason'] = reason;
-        obj['TypeOfChange'] = typeOfChange;
-        obj['EmployeeName'] = employeeName;
-        obj['UserID'] = userID;
-        obj['Operation'] = operation;
-        obj['SessionIntegrationID'] = sessionIntegrationID;
-        obj['NotificationType'] = notificationType;
+    static initialize(obj, cardIdentifier, employeeName, loyaltyProgramID, notificationType, profileIntegrationIDs, sessionIntegrationID, subledgerID, typeOfChange, userID, usersPerCardLimit, amount, operation, reason, transactionUUID) { 
         obj['CardIdentifier'] = cardIdentifier;
+        obj['EmployeeName'] = employeeName;
+        obj['LoyaltyProgramID'] = loyaltyProgramID;
+        obj['NotificationType'] = notificationType;
+        obj['ProfileIntegrationIDs'] = profileIntegrationIDs;
+        obj['SessionIntegrationID'] = sessionIntegrationID;
+        obj['SubledgerID'] = subledgerID;
+        obj['TypeOfChange'] = typeOfChange;
+        obj['UserID'] = userID;
         obj['UsersPerCardLimit'] = usersPerCardLimit;
+        obj['Amount'] = amount;
+        obj['Operation'] = operation;
+        obj['Reason'] = reason;
+        obj['TransactionUUID'] = transactionUUID;
     }
 
     /**
@@ -73,50 +75,53 @@ class CardAddedDeductedPointsNotification {
         if (data) {
             obj = obj || new CardAddedDeductedPointsNotification();
 
-            if (data.hasOwnProperty('ProfileIntegrationIDs')) {
-                obj['ProfileIntegrationIDs'] = ApiClient.convertToType(data['ProfileIntegrationIDs'], ['String']);
-            }
-            if (data.hasOwnProperty('LoyaltyProgramID')) {
-                obj['LoyaltyProgramID'] = ApiClient.convertToType(data['LoyaltyProgramID'], 'Number');
-            }
-            if (data.hasOwnProperty('SubledgerID')) {
-                obj['SubledgerID'] = ApiClient.convertToType(data['SubledgerID'], 'String');
-            }
-            if (data.hasOwnProperty('Amount')) {
-                obj['Amount'] = ApiClient.convertToType(data['Amount'], 'Number');
-            }
-            if (data.hasOwnProperty('Reason')) {
-                obj['Reason'] = ApiClient.convertToType(data['Reason'], 'String');
-            }
-            if (data.hasOwnProperty('TypeOfChange')) {
-                obj['TypeOfChange'] = ApiClient.convertToType(data['TypeOfChange'], 'String');
+            if (data.hasOwnProperty('CardIdentifier')) {
+                obj['CardIdentifier'] = ApiClient.convertToType(data['CardIdentifier'], 'String');
             }
             if (data.hasOwnProperty('EmployeeName')) {
                 obj['EmployeeName'] = ApiClient.convertToType(data['EmployeeName'], 'String');
             }
-            if (data.hasOwnProperty('UserID')) {
-                obj['UserID'] = ApiClient.convertToType(data['UserID'], 'Number');
-            }
-            if (data.hasOwnProperty('Operation')) {
-                obj['Operation'] = ApiClient.convertToType(data['Operation'], 'String');
-            }
-            if (data.hasOwnProperty('StartDate')) {
-                obj['StartDate'] = ApiClient.convertToType(data['StartDate'], 'Date');
-            }
-            if (data.hasOwnProperty('ExpiryDate')) {
-                obj['ExpiryDate'] = ApiClient.convertToType(data['ExpiryDate'], 'Date');
-            }
-            if (data.hasOwnProperty('SessionIntegrationID')) {
-                obj['SessionIntegrationID'] = ApiClient.convertToType(data['SessionIntegrationID'], 'String');
+            if (data.hasOwnProperty('LoyaltyProgramID')) {
+                obj['LoyaltyProgramID'] = ApiClient.convertToType(data['LoyaltyProgramID'], 'Number');
             }
             if (data.hasOwnProperty('NotificationType')) {
                 obj['NotificationType'] = ApiClient.convertToType(data['NotificationType'], 'String');
             }
-            if (data.hasOwnProperty('CardIdentifier')) {
-                obj['CardIdentifier'] = ApiClient.convertToType(data['CardIdentifier'], 'String');
+            if (data.hasOwnProperty('ProfileIntegrationIDs')) {
+                obj['ProfileIntegrationIDs'] = ApiClient.convertToType(data['ProfileIntegrationIDs'], ['String']);
+            }
+            if (data.hasOwnProperty('SessionIntegrationID')) {
+                obj['SessionIntegrationID'] = ApiClient.convertToType(data['SessionIntegrationID'], 'String');
+            }
+            if (data.hasOwnProperty('SubledgerID')) {
+                obj['SubledgerID'] = ApiClient.convertToType(data['SubledgerID'], 'String');
+            }
+            if (data.hasOwnProperty('TypeOfChange')) {
+                obj['TypeOfChange'] = ApiClient.convertToType(data['TypeOfChange'], 'String');
+            }
+            if (data.hasOwnProperty('UserID')) {
+                obj['UserID'] = ApiClient.convertToType(data['UserID'], 'Number');
             }
             if (data.hasOwnProperty('UsersPerCardLimit')) {
                 obj['UsersPerCardLimit'] = ApiClient.convertToType(data['UsersPerCardLimit'], 'Number');
+            }
+            if (data.hasOwnProperty('Amount')) {
+                obj['Amount'] = ApiClient.convertToType(data['Amount'], 'Number');
+            }
+            if (data.hasOwnProperty('ExpiryDate')) {
+                obj['ExpiryDate'] = ApiClient.convertToType(data['ExpiryDate'], 'Date');
+            }
+            if (data.hasOwnProperty('Operation')) {
+                obj['Operation'] = ApiClient.convertToType(data['Operation'], 'String');
+            }
+            if (data.hasOwnProperty('Reason')) {
+                obj['Reason'] = ApiClient.convertToType(data['Reason'], 'String');
+            }
+            if (data.hasOwnProperty('StartDate')) {
+                obj['StartDate'] = ApiClient.convertToType(data['StartDate'], 'Date');
+            }
+            if (data.hasOwnProperty('TransactionUUID')) {
+                obj['TransactionUUID'] = ApiClient.convertToType(data['TransactionUUID'], 'String');
             }
         }
         return obj;
@@ -126,40 +131,10 @@ class CardAddedDeductedPointsNotification {
 }
 
 /**
- * The integration ID of the customer profile to whom points were added or deducted.
- * @member {Array.<String>} ProfileIntegrationIDs
+ * Loyalty card identification number.
+ * @member {String} CardIdentifier
  */
-CardAddedDeductedPointsNotification.prototype['ProfileIntegrationIDs'] = undefined;
-
-/**
- * The ID of the loyalty program.
- * @member {Number} LoyaltyProgramID
- */
-CardAddedDeductedPointsNotification.prototype['LoyaltyProgramID'] = undefined;
-
-/**
- * The ID of the subledger within the loyalty program where these points were added or deducted.
- * @member {String} SubledgerID
- */
-CardAddedDeductedPointsNotification.prototype['SubledgerID'] = undefined;
-
-/**
- * The amount of added or deducted loyalty points.
- * @member {Number} Amount
- */
-CardAddedDeductedPointsNotification.prototype['Amount'] = undefined;
-
-/**
- * The reason for the points addition or deduction.
- * @member {String} Reason
- */
-CardAddedDeductedPointsNotification.prototype['Reason'] = undefined;
-
-/**
- * The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
- * @member {module:model/CardAddedDeductedPointsNotification.TypeOfChangeEnum} TypeOfChange
- */
-CardAddedDeductedPointsNotification.prototype['TypeOfChange'] = undefined;
+CardAddedDeductedPointsNotification.prototype['CardIdentifier'] = undefined;
 
 /**
  * The name of the employee who added or deducted points.
@@ -168,34 +143,10 @@ CardAddedDeductedPointsNotification.prototype['TypeOfChange'] = undefined;
 CardAddedDeductedPointsNotification.prototype['EmployeeName'] = undefined;
 
 /**
- * The ID of the employee who added or deducted points.
- * @member {Number} UserID
+ * The ID of the loyalty program.
+ * @member {Number} LoyaltyProgramID
  */
-CardAddedDeductedPointsNotification.prototype['UserID'] = undefined;
-
-/**
- * The action (addition or deduction) made with loyalty points.
- * @member {module:model/CardAddedDeductedPointsNotification.OperationEnum} Operation
- */
-CardAddedDeductedPointsNotification.prototype['Operation'] = undefined;
-
-/**
- * The start date for loyalty points.
- * @member {Date} StartDate
- */
-CardAddedDeductedPointsNotification.prototype['StartDate'] = undefined;
-
-/**
- * The expiration date for loyalty points.
- * @member {Date} ExpiryDate
- */
-CardAddedDeductedPointsNotification.prototype['ExpiryDate'] = undefined;
-
-/**
- * The integration ID of the session through which the points were earned or lost.
- * @member {String} SessionIntegrationID
- */
-CardAddedDeductedPointsNotification.prototype['SessionIntegrationID'] = undefined;
+CardAddedDeductedPointsNotification.prototype['LoyaltyProgramID'] = undefined;
 
 /**
  * The type of notification.
@@ -204,10 +155,34 @@ CardAddedDeductedPointsNotification.prototype['SessionIntegrationID'] = undefine
 CardAddedDeductedPointsNotification.prototype['NotificationType'] = undefined;
 
 /**
- * Loyalty card identification number.
- * @member {String} CardIdentifier
+ * The integration ID of the customer profile to whom points were added or deducted.
+ * @member {Array.<String>} ProfileIntegrationIDs
  */
-CardAddedDeductedPointsNotification.prototype['CardIdentifier'] = undefined;
+CardAddedDeductedPointsNotification.prototype['ProfileIntegrationIDs'] = undefined;
+
+/**
+ * The integration ID of the session through which the points were earned or lost.
+ * @member {String} SessionIntegrationID
+ */
+CardAddedDeductedPointsNotification.prototype['SessionIntegrationID'] = undefined;
+
+/**
+ * The ID of the subledger within the loyalty program where these points were added or deducted.
+ * @member {String} SubledgerID
+ */
+CardAddedDeductedPointsNotification.prototype['SubledgerID'] = undefined;
+
+/**
+ * The notification source, that is, it indicates whether the points were added or deducted via one of the following routes:  - [The Campaign Manager](/docs/product/getting-started)  - [Management API](/management-api#tag/Loyalty)  - [Rule Engine](/docs/product/applications/evaluation-order-for-rules-and-filters) 
+ * @member {module:model/CardAddedDeductedPointsNotification.TypeOfChangeEnum} TypeOfChange
+ */
+CardAddedDeductedPointsNotification.prototype['TypeOfChange'] = undefined;
+
+/**
+ * The ID of the employee who added or deducted points.
+ * @member {Number} UserID
+ */
+CardAddedDeductedPointsNotification.prototype['UserID'] = undefined;
 
 /**
  * The max amount of user profiles with whom a card can be shared. This can be set to `0` for no limit.
@@ -215,8 +190,65 @@ CardAddedDeductedPointsNotification.prototype['CardIdentifier'] = undefined;
  */
 CardAddedDeductedPointsNotification.prototype['UsersPerCardLimit'] = undefined;
 
+/**
+ * The amount of added or deducted loyalty points.
+ * @member {Number} Amount
+ */
+CardAddedDeductedPointsNotification.prototype['Amount'] = undefined;
+
+/**
+ * The expiration date for loyalty points.
+ * @member {Date} ExpiryDate
+ */
+CardAddedDeductedPointsNotification.prototype['ExpiryDate'] = undefined;
+
+/**
+ * The action (addition or subtraction) made with loyalty points.
+ * @member {module:model/CardAddedDeductedPointsNotification.OperationEnum} Operation
+ */
+CardAddedDeductedPointsNotification.prototype['Operation'] = undefined;
+
+/**
+ * The reason for the points addition or deduction.
+ * @member {String} Reason
+ */
+CardAddedDeductedPointsNotification.prototype['Reason'] = undefined;
+
+/**
+ * The start date for loyalty points.
+ * @member {Date} StartDate
+ */
+CardAddedDeductedPointsNotification.prototype['StartDate'] = undefined;
+
+/**
+ * The identifier of the transaction in the loyalty ledger.
+ * @member {String} TransactionUUID
+ */
+CardAddedDeductedPointsNotification.prototype['TransactionUUID'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>NotificationType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CardAddedDeductedPointsNotification['NotificationTypeEnum'] = {
+
+    /**
+     * value: "LoyaltyCardPointsDeducted"
+     * @const
+     */
+    "LoyaltyCardPointsDeducted": "LoyaltyCardPointsDeducted",
+
+    /**
+     * value: "LoyaltyCardPointsAdded"
+     * @const
+     */
+    "LoyaltyCardPointsAdded": "LoyaltyCardPointsAdded"
+};
 
 
 /**
@@ -260,31 +292,10 @@ CardAddedDeductedPointsNotification['OperationEnum'] = {
     "addition": "addition",
 
     /**
-     * value: "deduction"
+     * value: "subtraction"
      * @const
      */
-    "deduction": "deduction"
-};
-
-
-/**
- * Allowed values for the <code>NotificationType</code> property.
- * @enum {String}
- * @readonly
- */
-CardAddedDeductedPointsNotification['NotificationTypeEnum'] = {
-
-    /**
-     * value: "LoyaltyCardPointsDeducted"
-     * @const
-     */
-    "LoyaltyCardPointsDeducted": "LoyaltyCardPointsDeducted",
-
-    /**
-     * value: "LoyaltyCardPointsAdded"
-     * @const
-     */
-    "LoyaltyCardPointsAdded": "LoyaltyCardPointsAdded"
+    "subtraction": "subtraction"
 };
 
 

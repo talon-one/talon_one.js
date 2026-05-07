@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[AchievementProgress]**](AchievementProgress.md) |  | 
+**data** | [**[AchievementStatusEntry]**](AchievementStatusEntry.md) |  | 
 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalResultSize** | **Number** |  | 
-**data** | [**[CampaignGroup]**](CampaignGroup.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[Referral]**](Referral.md) |  | 
 
 

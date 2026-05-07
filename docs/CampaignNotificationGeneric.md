@@ -9,3 +9,12 @@ Name | Type | Description | Notes
 **data** | **[Object]** | A list of campaign notification data. | 
 
 
+
+## Enum: NotificationTypeEnum
+
+
+* `CampaignNotification` (value: `"CampaignNotification"`)
+
+
+
+

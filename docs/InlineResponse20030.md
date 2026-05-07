@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[ApplicationEvent]**](ApplicationEvent.md) |  | 
+**data** | [**[CustomerActivityReport]**](CustomerActivityReport.md) |  | 
 
 

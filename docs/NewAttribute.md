@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 
 * `Giveaway` (value: `"Giveaway"`)
 
+* `LoyaltyCard` (value: `"LoyaltyCard"`)
+
 * `Referral` (value: `"Referral"`)
 
 * `Store` (value: `"Store"`)

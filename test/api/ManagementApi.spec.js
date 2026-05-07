@@ -1,6 +1,6 @@
 /**
  * Talon.One API
- * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) are used to integrate with our platform - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment. For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}` 
+ * Use the Talon.One API to integrate with your application and to manage applications and campaigns:  - Use the operations in the [Integration API section](#integration-api) to integrate with our platform. - Use the operation in the [Management API section](#management-api) to manage applications and campaigns.  ## Determining the base URL of the endpoints  The API is available at the same hostname as your Campaign Manager deployment.  For example, if you access the Campaign Manager at `https://yourbaseurl.talon.one/`, the URL for the [updateCustomerSessionV2](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint is `https://yourbaseurl.talon.one/v2/customer_sessions/{Id}`. 
  *
  * The version of the OpenAPI document: 
  * 
@@ -438,6 +438,16 @@
         done();
       });
     });
+    describe('exportApplicationCampaignAnalytics', function() {
+      it('should call exportApplicationCampaignAnalytics successfully', function(done) {
+        //uncomment below and update the code to test exportApplicationCampaignAnalytics
+        //instance.exportApplicationCampaignAnalytics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('exportAudiencesMemberships', function() {
       it('should call exportAudiencesMemberships successfully', function(done) {
         //uncomment below and update the code to test exportAudiencesMemberships
@@ -462,6 +472,16 @@
       it('should call exportCampaignStores successfully', function(done) {
         //uncomment below and update the code to test exportCampaignStores
         //instance.exportCampaignStores(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportCampaignValueMap', function() {
+      it('should call exportCampaignValueMap successfully', function(done) {
+        //uncomment below and update the code to test exportCampaignValueMap
+        //instance.exportCampaignValueMap(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -568,6 +588,16 @@
         done();
       });
     });
+    describe('exportLoyaltyJoinDates', function() {
+      it('should call exportLoyaltyJoinDates successfully', function(done) {
+        //uncomment below and update the code to test exportLoyaltyJoinDates
+        //instance.exportLoyaltyJoinDates(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('exportLoyaltyLedger', function() {
       it('should call exportLoyaltyLedger successfully', function(done) {
         //uncomment below and update the code to test exportLoyaltyLedger
@@ -592,6 +622,16 @@
       it('should call exportReferrals successfully', function(done) {
         //uncomment below and update the code to test exportReferrals
         //instance.exportReferrals(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('generateCouponRejections', function() {
+      it('should call generateCouponRejections successfully', function(done) {
+        //uncomment below and update the code to test generateCouponRejections
+        //instance.generateCouponRejections(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -682,6 +722,16 @@
       it('should call getApplicationApiHealth successfully', function(done) {
         //uncomment below and update the code to test getApplicationApiHealth
         //instance.getApplicationApiHealth(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getApplicationCartItemFilterExpression', function() {
+      it('should call getApplicationCartItemFilterExpression successfully', function(done) {
+        //uncomment below and update the code to test getApplicationCartItemFilterExpression
+        //instance.getApplicationCartItemFilterExpression(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1028,6 +1078,16 @@
         done();
       });
     });
+    describe('getExperiment', function() {
+      it('should call getExperiment successfully', function(done) {
+        //uncomment below and update the code to test getExperiment
+        //instance.getExperiment(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getExports', function() {
       it('should call getExports successfully', function(done) {
         //uncomment below and update the code to test getExports
@@ -1068,6 +1128,16 @@
         done();
       });
     });
+    describe('getLoyaltyLedgerBalances', function() {
+      it('should call getLoyaltyLedgerBalances successfully', function(done) {
+        //uncomment below and update the code to test getLoyaltyLedgerBalances
+        //instance.getLoyaltyLedgerBalances(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getLoyaltyPoints', function() {
       it('should call getLoyaltyPoints successfully', function(done) {
         //uncomment below and update the code to test getLoyaltyPoints
@@ -1082,6 +1152,16 @@
       it('should call getLoyaltyProgram successfully', function(done) {
         //uncomment below and update the code to test getLoyaltyProgram
         //instance.getLoyaltyProgram(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getLoyaltyProgramProfileLedgerTransactions', function() {
+      it('should call getLoyaltyProgramProfileLedgerTransactions successfully', function(done) {
+        //uncomment below and update the code to test getLoyaltyProgramProfileLedgerTransactions
+        //instance.getLoyaltyProgramProfileLedgerTransactions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1378,6 +1458,16 @@
         done();
       });
     });
+    describe('listApplicationCartItemFilters', function() {
+      it('should call listApplicationCartItemFilters successfully', function(done) {
+        //uncomment below and update the code to test listApplicationCartItemFilters
+        //instance.listApplicationCartItemFilters(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listCampaignStoreBudgetLimits', function() {
       it('should call listCampaignStoreBudgetLimits successfully', function(done) {
         //uncomment below and update the code to test listCampaignStoreBudgetLimits
@@ -1418,6 +1508,16 @@
         done();
       });
     });
+    describe('listExperiments', function() {
+      it('should call listExperiments successfully', function(done) {
+        //uncomment below and update the code to test listExperiments
+        //instance.listExperiments(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listStores', function() {
       it('should call listStores successfully', function(done) {
         //uncomment below and update the code to test listStores
@@ -1432,6 +1532,16 @@
       it('should call oktaEventHandlerChallenge successfully', function(done) {
         //uncomment below and update the code to test oktaEventHandlerChallenge
         //instance.oktaEventHandlerChallenge(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('priceHistory', function() {
+      it('should call priceHistory successfully', function(done) {
+        //uncomment below and update the code to test priceHistory
+        //instance.priceHistory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
