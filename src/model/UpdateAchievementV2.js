@@ -16,16 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAchievementV2 model module.
  * @module model/UpdateAchievementV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class UpdateAchievementV2 {
     /**
      * Constructs a new <code>UpdateAchievementV2</code>.
      * @alias module:model/UpdateAchievementV2
+     * @param name {String} The internal name of the achievement used in API requests.  **Note**: The name should start with a letter. This cannot be changed after the achievement has been created. 
+     * @param title {String} The display name for the achievement in the Campaign Manager.
+     * @param description {String} A description of the achievement.
+     * @param target {Number} The required number of actions or the transactional milestone to complete the achievement.
+     * @param subscribedApplications {Array.<Number>} A list containing the IDs of all applications that are subscribed to A list containing the IDs of all Applications that are connected to this achievement.
      */
-    constructor() { 
+    constructor(name, title, description, target, subscribedApplications) { 
         
-        UpdateAchievementV2.initialize(this);
+        UpdateAchievementV2.initialize(this, name, title, description, target, subscribedApplications);
     }
 
     /**
@@ -33,7 +38,12 @@ class UpdateAchievementV2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, name, title, description, target, subscribedApplications) { 
+        obj['name'] = name;
+        obj['title'] = title;
+        obj['description'] = description;
+        obj['target'] = target;
+        obj['subscribedApplications'] = subscribedApplications;
     }
 
     /**
@@ -77,14 +87,8 @@ class UpdateAchievementV2 {
             if (data.hasOwnProperty('allowRollbackAfterCompletion')) {
                 obj['allowRollbackAfterCompletion'] = ApiClient.convertToType(data['allowRollbackAfterCompletion'], 'Boolean');
             }
-            if (data.hasOwnProperty('sandbox')) {
-                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
-            }
             if (data.hasOwnProperty('subscribedApplications')) {
                 obj['subscribedApplications'] = ApiClient.convertToType(data['subscribedApplications'], ['Number']);
-            }
-            if (data.hasOwnProperty('timezone')) {
-                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
             }
         }
         return obj;
@@ -154,22 +158,10 @@ UpdateAchievementV2.prototype['endDate'] = undefined;
 UpdateAchievementV2.prototype['allowRollbackAfterCompletion'] = undefined;
 
 /**
- * Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type.
- * @member {Boolean} sandbox
- */
-UpdateAchievementV2.prototype['sandbox'] = undefined;
-
-/**
  * A list containing the IDs of all applications that are subscribed to A list containing the IDs of all Applications that are connected to this achievement.
  * @member {Array.<Number>} subscribedApplications
  */
 UpdateAchievementV2.prototype['subscribedApplications'] = undefined;
-
-/**
- * A string containing an IANA timezone descriptor.
- * @member {String} timezone
- */
-UpdateAchievementV2.prototype['timezone'] = undefined;
 
 
 

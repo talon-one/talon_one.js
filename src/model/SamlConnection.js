@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlConnection model module.
  * @module model/SamlConnection
- * @version 25.17.0
+ * @version 25.18.0
  */
 class SamlConnection {
     /**
@@ -69,6 +69,9 @@ class SamlConnection {
             if (data.hasOwnProperty('assertionConsumerServiceURL')) {
                 obj['assertionConsumerServiceURL'] = ApiClient.convertToType(data['assertionConsumerServiceURL'], 'String');
             }
+            if (data.hasOwnProperty('certificateExpiry')) {
+                obj['certificateExpiry'] = ApiClient.convertToType(data['certificateExpiry'], 'Date');
+            }
             if (data.hasOwnProperty('accountId')) {
                 obj['accountId'] = ApiClient.convertToType(data['accountId'], 'Number');
             }
@@ -111,6 +114,12 @@ class SamlConnection {
  * @member {String} assertionConsumerServiceURL
  */
 SamlConnection.prototype['assertionConsumerServiceURL'] = undefined;
+
+/**
+ * The expiry date of the X.509 certificate.
+ * @member {Date} certificateExpiry
+ */
+SamlConnection.prototype['certificateExpiry'] = undefined;
 
 /**
  * The ID of the account that owns this entity.

@@ -17,7 +17,7 @@ import CustomerProfileUpdateV2Response from './CustomerProfileUpdateV2Response';
 /**
  * The MultipleCustomerProfileIntegrationResponseV2 model module.
  * @module model/MultipleCustomerProfileIntegrationResponseV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class MultipleCustomerProfileIntegrationResponseV2 {
     /**

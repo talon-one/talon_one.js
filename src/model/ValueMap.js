@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValueMap model module.
  * @module model/ValueMap
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ValueMap {
     /**

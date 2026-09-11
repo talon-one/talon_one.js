@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CardLedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/CardLedgerTransactionLogEntryIntegrationAPI
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CardLedgerTransactionLogEntryIntegrationAPI {
     /**
@@ -207,7 +207,7 @@ CardLedgerTransactionLogEntryIntegrationAPI.prototype['rulesetId'] = undefined;
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['ruleName'] = undefined;
 
 /**
- * The duration for which the points remain active, relative to the  activation date.  **Note**: This only applies to points for which `awaitsActivation` is `true` and `expiryDate` is not set. 
+ * The duration for which the points remain active, relative to the activation date.  **Note**: This only applies to points for which `awaitsActivation` is `true` and `expiryDate` is not set. 
  * @member {String} validityDuration
  */
 CardLedgerTransactionLogEntryIntegrationAPI.prototype['validityDuration'] = undefined;

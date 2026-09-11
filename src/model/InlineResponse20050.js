@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import SummaryCampaignStoreBudget from './SummaryCampaignStoreBudget';
+import ListCampaignStoreBudgets from './ListCampaignStoreBudgets';
 
 /**
  * The InlineResponse20050 model module.
  * @module model/InlineResponse20050
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20050 {
     /**
@@ -49,7 +49,7 @@ class InlineResponse20050 {
             obj = obj || new InlineResponse20050();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SummaryCampaignStoreBudget]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ListCampaignStoreBudgets]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class InlineResponse20050 {
 }
 
 /**
- * @member {Array.<module:model/SummaryCampaignStoreBudget>} data
+ * @member {Array.<module:model/ListCampaignStoreBudgets>} data
  */
 InlineResponse20050.prototype['data'] = undefined;
 

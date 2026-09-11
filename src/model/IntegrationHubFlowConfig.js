@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationHubFlowConfig model module.
  * @module model/IntegrationHubFlowConfig
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubFlowConfig {
     /**
@@ -61,6 +61,12 @@ class IntegrationHubFlowConfig {
             if (data.hasOwnProperty('MaxRetries')) {
                 obj['MaxRetries'] = ApiClient.convertToType(data['MaxRetries'], 'Number');
             }
+            if (data.hasOwnProperty('InstanceName')) {
+                obj['InstanceName'] = ApiClient.convertToType(data['InstanceName'], 'String');
+            }
+            if (data.hasOwnProperty('IntegrationName')) {
+                obj['IntegrationName'] = ApiClient.convertToType(data['IntegrationName'], 'String');
+            }
         }
         return obj;
     }
@@ -93,6 +99,18 @@ IntegrationHubFlowConfig.prototype['MaxEventsPerMessage'] = 1000;
  * @default 10
  */
 IntegrationHubFlowConfig.prototype['MaxRetries'] = 10;
+
+/**
+ * Name of the Prismatic instance that registered this flow.
+ * @member {String} InstanceName
+ */
+IntegrationHubFlowConfig.prototype['InstanceName'] = undefined;
+
+/**
+ * Name of the Prismatic integration that registered this flow.
+ * @member {String} IntegrationName
+ */
+IntegrationHubFlowConfig.prototype['IntegrationName'] = undefined;
 
 
 

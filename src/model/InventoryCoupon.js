@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The InventoryCoupon model module.
  * @module model/InventoryCoupon
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InventoryCoupon {
     /**

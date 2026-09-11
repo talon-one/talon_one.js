@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerItemEffectProps model module.
  * @module model/SetDiscountPerItemEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class SetDiscountPerItemEffectProps {
     /**
      * Constructs a new <code>SetDiscountPerItemEffectProps</code>.
-     * The properties specific to the &#x60;setDiscountPerItem&#x60; effect, triggered whenever a validated rule contained a \&quot;set per item discount\&quot; effect. This is a discount that will be applied either on a specific item, on a specific item + additional cost or on all additional costs per item. This depends on the chosen scope. 
+     * This effect schema is returned when you use the **Discount individual items**, **Discount individual items pro rata**, or **Discount individual item in bundles** effect in a rule.  It indicates that a discount per item should be applied on the specific item specified in the effect.  The properties it contains depends on:  - Whether you used a pro rata effect or not. - Whether you used an effect with bundles or not. - Whether the partial discount feature is enabled.
      * @alias module:model/SetDiscountPerItemEffectProps
-     * @param name {String} The name of the discount. Contains a hashtag character indicating the index of the position of the item the discount applies to. It is identical to the value of the `position` property. 
-     * @param value {Number} The total monetary value of the discount.
-     * @param position {Number} The index of the item in the cart items list on which this discount should be applied.
+     * @param name {String} The description of this discount. `#number` is equal to the `position` property.
+     * @param value {Number} The monetary value of the effective discount applied to the item.
+     * @param position {Number} The index of the item in the `cartItem` object on which this discount should be applied.
      */
     constructor(name, value, position) { 
         
@@ -101,73 +101,73 @@ class SetDiscountPerItemEffectProps {
 }
 
 /**
- * The name of the discount. Contains a hashtag character indicating the index of the position of the item the discount applies to. It is identical to the value of the `position` property. 
+ * The description of this discount. `#number` is equal to the `position` property.
  * @member {String} name
  */
 SetDiscountPerItemEffectProps.prototype['name'] = undefined;
 
 /**
- * The total monetary value of the discount.
+ * The monetary value of the effective discount applied to the item.
  * @member {Number} value
  */
 SetDiscountPerItemEffectProps.prototype['value'] = undefined;
 
 /**
- * The index of the item in the cart items list on which this discount should be applied.
+ * The index of the item in the `cartItem` object on which this discount should be applied.
  * @member {Number} position
  */
 SetDiscountPerItemEffectProps.prototype['position'] = undefined;
 
 /**
- * For cart items with `quantity` > 1, the sub position indicates which item the discount applies to. 
+ * The index of the item unit in its line item.
  * @member {Number} subPosition
  */
 SetDiscountPerItemEffectProps.prototype['subPosition'] = undefined;
 
 /**
- * The original value of the discount.
+ * _(Partial discounts enabled only)_ The monetary value of the discount to be applied to the item without considering budget limitations.
  * @member {Number} desiredValue
  */
 SetDiscountPerItemEffectProps.prototype['desiredValue'] = undefined;
 
 /**
- * The scope of the discount: - `additionalCosts`: The discount applies to all the additional costs of the item. - `itemTotal`: The discount applies to the price of the item + the additional costs of the item. - `price`: The discount applies to the price of the item. 
+ * What the discount applies to. Possible values:  - `price`: discount on the price of the item. - `additionalCosts`: discount on the [additional cost](https://docs.talon.one/docs/product/account/dev-tools/manage-additional-costs) of the item. - `itemTotal`: discount on the sum of price + additional cost of the item.
  * @member {String} scope
  */
 SetDiscountPerItemEffectProps.prototype['scope'] = undefined;
 
 /**
- * The total discount given if this effect is a result of a prorated discount.
+ * _(Pro rata discounts only)_ The monetary value of the total effective discount
  * @member {Number} totalDiscount
  */
 SetDiscountPerItemEffectProps.prototype['totalDiscount'] = undefined;
 
 /**
- * The original total discount to give if this effect is a result of a prorated discount.
+ * _(Pro rata discounts only)_ The monetary value of the total discount to be applied without considering budget limitations
  * @member {Number} desiredTotalDiscount
  */
 SetDiscountPerItemEffectProps.prototype['desiredTotalDiscount'] = undefined;
 
 /**
- * The position of the bundle in a list of item bundles created from the same bundle definition.
+ * _(Discounts with bundles only)_ The position of the specific item bundle in the list of bundles created from the same bundle definition.
  * @member {Number} bundleIndex
  */
 SetDiscountPerItemEffectProps.prototype['bundleIndex'] = undefined;
 
 /**
- * The name of the bundle definition.
+ * _(Discounts with bundles only)_ The name of the bundle definition.
  * @member {String} bundleName
  */
 SetDiscountPerItemEffectProps.prototype['bundleName'] = undefined;
 
 /**
- * The index of the targeted bundle item on which the applied discount is based.
+ * _(Discounting individual item in bundles only)_ The index of the targeted bundle item on which the applied discount is based.
  * @member {Number} targetedItemPosition
  */
 SetDiscountPerItemEffectProps.prototype['targetedItemPosition'] = undefined;
 
 /**
- * The sub-position of the targeted bundle item on which the applied discount is based. 
+ * _(Discounting individual item in bundles only)_ The sub-position of the targeted bundle item on which the applied discount is based.
  * @member {Number} targetedItemSubPosition
  */
 SetDiscountPerItemEffectProps.prototype['targetedItemSubPosition'] = undefined;

@@ -208,6 +208,16 @@
         done();
       });
     });
+    describe('getEventV3', function() {
+      it('should call getEventV3 successfully', function(done) {
+        //uncomment below and update the code to test getEventV3
+        //instance.getEventV3(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getLoyaltyBalances', function() {
       it('should call getLoyaltyBalances successfully', function(done) {
         //uncomment below and update the code to test getLoyaltyBalances
@@ -288,6 +298,26 @@
         done();
       });
     });
+    describe('integrationRewardsCatalog', function() {
+      it('should call integrationRewardsCatalog successfully', function(done) {
+        //uncomment below and update the code to test integrationRewardsCatalog
+        //instance.integrationRewardsCatalog(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('joinLoyaltyProgram', function() {
+      it('should call joinLoyaltyProgram successfully', function(done) {
+        //uncomment below and update the code to test joinLoyaltyProgram
+        //instance.joinLoyaltyProgram(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('linkLoyaltyCardToProfile', function() {
       it('should call linkLoyaltyCardToProfile successfully', function(done) {
         //uncomment below and update the code to test linkLoyaltyCardToProfile
@@ -338,10 +368,30 @@
         done();
       });
     });
+    describe('trackEventV3', function() {
+      it('should call trackEventV3 successfully', function(done) {
+        //uncomment below and update the code to test trackEventV3
+        //instance.trackEventV3(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('unlinkLoyaltyCardFromProfile', function() {
       it('should call unlinkLoyaltyCardFromProfile successfully', function(done) {
         //uncomment below and update the code to test unlinkLoyaltyCardFromProfile
         //instance.unlinkLoyaltyCardFromProfile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('unlockReward', function() {
+      it('should call unlockReward successfully', function(done) {
+        //uncomment below and update the code to test unlockReward
+        //instance.unlockReward(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

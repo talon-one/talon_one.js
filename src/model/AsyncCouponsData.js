@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AsyncCouponsData model module.
  * @module model/AsyncCouponsData
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AsyncCouponsData {
     /**

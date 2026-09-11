@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackAddedLoyaltyPointsEffectProps model module.
  * @module model/RollbackAddedLoyaltyPointsEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RollbackAddedLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>RollbackAddedLoyaltyPointsEffectProps</code>.
-     * The properties specific to the \&quot;rollbackAddedLoyaltyPoints\&quot; effect. This gets triggered whenever previously a closed session with an addLoyaltyPoints effect is cancelled.
+     * This effect is triggered in the following cases:  - A session was cancelled in which loyalty points have been added. - A session was partially returned and loyalty point were added by the returned items. See [returning items](https://docs.talon.one/docs/dev/tutorials/partially-return-a-session).  If you use the [Add loyalty points per item effect](https://docs.talon.one/docs/product/rules/effects/available-effects#reward-effects), use the &#x60;cartItemPosition&#x60; property to identify which items the loyalty points were rolled back for.  If you use **Add loyalty points per item** and if the session contains some cart items with _quantity &gt; 1_, use the &#x60;cartItemSubPosition&#x60; property to identify the item unit in its line item.  If the loyalty program is [profile-based](https://docs.talon.one/docs/product/loyalty-programs/overview#loyalty-program-types), use the &#x60;recipientIntegrationId&#x60; property to identify the user for whom the loyalty points are rolled back. If the loyalty program is [card-based](https://docs.talon.one/docs/product/loyalty-programs/overview#loyalty-program-types), use the &#x60;cardIdentifier&#x60; property to identify the loyalty card where the points were originally added.
      * @alias module:model/RollbackAddedLoyaltyPointsEffectProps
-     * @param programId {Number} The ID of the loyalty program where the points were originally added.
-     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were originally added.
+     * @param programId {Number} The ID of the loyalty program where these points were rolled back.
+     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were rolled back.
      * @param value {Number} The amount of points that were rolled back.
-     * @param recipientIntegrationId {String} The user for whom these points were originally added.
-     * @param transactionUUID {String} The identifier of 'deduction' entry added to the ledger as the `addLoyaltyPoints` effect is rolled back.
+     * @param recipientIntegrationId {String} The user for whom these points were rolled back.
+     * @param transactionUUID {String} The identifier of this loyalty point transaction.
      */
     constructor(programId, subLedgerId, value, recipientIntegrationId, transactionUUID) { 
         
@@ -90,13 +90,13 @@ class RollbackAddedLoyaltyPointsEffectProps {
 }
 
 /**
- * The ID of the loyalty program where the points were originally added.
+ * The ID of the loyalty program where these points were rolled back.
  * @member {Number} programId
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['programId'] = undefined;
 
 /**
- * The ID of the subledger within the loyalty program where these points were originally added.
+ * The ID of the subledger within the loyalty program where these points were rolled back.
  * @member {String} subLedgerId
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
@@ -108,25 +108,25 @@ RollbackAddedLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
 RollbackAddedLoyaltyPointsEffectProps.prototype['value'] = undefined;
 
 /**
- * The user for whom these points were originally added.
+ * The user for whom these points were rolled back.
  * @member {String} recipientIntegrationId
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * The identifier of 'deduction' entry added to the ledger as the `addLoyaltyPoints` effect is rolled back.
+ * The identifier of this loyalty point transaction.
  * @member {String} transactionUUID
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;
 
 /**
- * The index of the item in the cart items for which the loyalty points were rolled back.
+ * (_Add points per cart item_ only.) The index of the item in the `cartItem` object for which these points were rolled back.
  * @member {Number} cartItemPosition
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['cartItemPosition'] = undefined;
 
 /**
- * For cart items with `quantity` > 1, the sub-position indicates to which item the loyalty points were rolled back. 
+ * (_Add points per cart item_ ) The index of the item unit in its line item.
  * @member {Number} cartItemSubPosition
  */
 RollbackAddedLoyaltyPointsEffectProps.prototype['cartItemSubPosition'] = undefined;

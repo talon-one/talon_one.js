@@ -17,7 +17,7 @@ import WebhookAuthenticationWebhookRef from './WebhookAuthenticationWebhookRef';
 /**
  * The WebhookAuthentication model module.
  * @module model/WebhookAuthentication
- * @version 25.17.0
+ * @version 25.18.0
  */
 class WebhookAuthentication {
     /**

@@ -17,7 +17,7 @@ import NewRuleset from './NewRuleset';
 /**
  * The NewExperimentVariant model module.
  * @module model/NewExperimentVariant
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewExperimentVariant {
     /**

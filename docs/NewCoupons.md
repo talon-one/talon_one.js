@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **expiryDate** | **Date** | Expiration date of the coupon. Coupon never expires if this is omitted. | [optional] 
 **limits** | [**[LimitConfig]**](LimitConfig.md) | Limits configuration for a coupon. These limits will override the limits set from the campaign.  **Note:** Only usable when creating a single coupon which is not tied to a specific recipient. Only per-profile limits are allowed to be configured.  | [optional] 
 **numberOfCoupons** | **Number** | The number of new coupon codes to generate for the campaign. Must be at least 1. | 
+**batchId** | **String** | The batch ID that all coupons created by the request will bear. If omitted, a batch ID is generated automatically. | [optional] 
 **uniquePrefix** | **String** | **DEPRECATED** To create more than 20,000 coupons in one request, use [Create coupons asynchronously](https://docs.talon.one/management-api#tag/Coupons/operation/createCouponsAsync) endpoint.  | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this item. | [optional] 
 **recipientIntegrationId** | **String** | The integration ID for this coupon&#39;s beneficiary&#39;s profile. | [optional] 
@@ -18,5 +19,7 @@ Name | Type | Description | Notes
 **couponPattern** | **String** | The pattern used to generate coupon codes. The character &#x60;#&#x60; is a placeholder and is replaced by a random character from the &#x60;validCharacters&#x60; set.  | [optional] 
 **isReservationMandatory** | **Boolean** | An indication of whether the code can be redeemed only if it has been reserved first. | [optional] [default to false]
 **implicitlyReserved** | **Boolean** | An indication of whether the coupon is implicitly reserved for all customers. | [optional] 
+**supportRequestId** | **Number** | The identifier of the support request to link to the coupon creation. The request must exist and not yet be processed. | [optional] 
+**supportRequestNote** | **String** | A note recorded when the linked support request is approved or rejected. Applied when &#x60;supportRequestId&#x60; is provided. | [optional] 
 
 

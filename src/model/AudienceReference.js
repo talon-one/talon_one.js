@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AudienceReference model module.
  * @module model/AudienceReference
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AudienceReference {
     /**

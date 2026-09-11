@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[CouponFailureSummary]**](CouponFailureSummary.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**data** | [**[AchievementV2]**](AchievementV2.md) |  | 
 
 

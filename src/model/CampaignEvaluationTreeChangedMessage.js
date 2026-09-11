@@ -17,7 +17,7 @@ import ApplicationNotification from './ApplicationNotification';
 /**
  * The CampaignEvaluationTreeChangedMessage model module.
  * @module model/CampaignEvaluationTreeChangedMessage
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CampaignEvaluationTreeChangedMessage {
     /**

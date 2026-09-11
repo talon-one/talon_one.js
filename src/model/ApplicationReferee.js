@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationReferee model module.
  * @module model/ApplicationReferee
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ApplicationReferee {
     /**
@@ -65,6 +65,9 @@ class ApplicationReferee {
             if (data.hasOwnProperty('sessionId')) {
                 obj['sessionId'] = ApiClient.convertToType(data['sessionId'], 'String');
             }
+            if (data.hasOwnProperty('advancedEventIntegrationId')) {
+                obj['advancedEventIntegrationId'] = ApiClient.convertToType(data['advancedEventIntegrationId'], 'String');
+            }
             if (data.hasOwnProperty('advocateIntegrationId')) {
                 obj['advocateIntegrationId'] = ApiClient.convertToType(data['advocateIntegrationId'], 'String');
             }
@@ -95,6 +98,12 @@ ApplicationReferee.prototype['applicationId'] = undefined;
  * @member {String} sessionId
  */
 ApplicationReferee.prototype['sessionId'] = undefined;
+
+/**
+ * The unique ID of the advanced event in which the customer redeemed the referral. Omitted when the referral was redeemed through a customer session rather than an advanced event.
+ * @member {String} advancedEventIntegrationId
+ */
+ApplicationReferee.prototype['advancedEventIntegrationId'] = undefined;
 
 /**
  * Integration ID of the Advocate's Profile.

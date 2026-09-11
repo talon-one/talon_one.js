@@ -12,22 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Achievement from './Achievement';
+import SummaryCampaignStoreBudget from './SummaryCampaignStoreBudget';
 
 /**
  * The InlineResponse20051 model module.
  * @module model/InlineResponse20051
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20051 {
     /**
      * Constructs a new <code>InlineResponse20051</code>.
      * @alias module:model/InlineResponse20051
-     * @param data {Array.<module:model/Achievement>} 
      */
-    constructor(data) { 
+    constructor() { 
         
-        InlineResponse20051.initialize(this, data);
+        InlineResponse20051.initialize(this);
     }
 
     /**
@@ -35,8 +34,7 @@ class InlineResponse20051 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
-        obj['data'] = data;
+    static initialize(obj) { 
     }
 
     /**
@@ -50,11 +48,8 @@ class InlineResponse20051 {
         if (data) {
             obj = obj || new InlineResponse20051();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Achievement]);
+                obj['data'] = ApiClient.convertToType(data['data'], [SummaryCampaignStoreBudget]);
             }
         }
         return obj;
@@ -64,12 +59,7 @@ class InlineResponse20051 {
 }
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20051.prototype['hasMore'] = undefined;
-
-/**
- * @member {Array.<module:model/Achievement>} data
+ * @member {Array.<module:model/SummaryCampaignStoreBudget>} data
  */
 InlineResponse20051.prototype['data'] = undefined;
 

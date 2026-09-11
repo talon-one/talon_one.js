@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(TalonOne.IntegrationCampaign);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property applicationId (base name: "applicationId")', function() {
+      // uncomment below and update the code to test the property applicationId
       //var instane = new TalonOne.IntegrationCampaign();
       //expect(instance).to.be();
     });
 
-    it('should have the property applicationId (base name: "applicationId")', function() {
-      // uncomment below and update the code to test the property applicationId
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new TalonOne.IntegrationCampaign();
       //expect(instance).to.be();
     });
@@ -110,6 +110,24 @@
 
     it('should have the property features (base name: "features")', function() {
       // uncomment below and update the code to test the property features
+      //var instane = new TalonOne.IntegrationCampaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rules (base name: "rules")', function() {
+      // uncomment below and update the code to test the property rules
+      //var instane = new TalonOne.IntegrationCampaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property linkedStoreIds (base name: "linkedStoreIds")', function() {
+      // uncomment below and update the code to test the property linkedStoreIds
+      //var instane = new TalonOne.IntegrationCampaign();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property linkedAudienceIds (base name: "linkedAudienceIds")', function() {
+      // uncomment below and update the code to test the property linkedAudienceIds
       //var instane = new TalonOne.IntegrationCampaign();
       //expect(instance).to.be();
     });

@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property periodEndOverride (base name: "periodEndOverride")', function() {
+      // uncomment below and update the code to test the property periodEndOverride
+      //var instane = new TalonOne.AchievementAdditionalPropertiesV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property hasProgress (base name: "hasProgress")', function() {
       // uncomment below and update the code to test the property hasProgress
       //var instane = new TalonOne.AchievementAdditionalPropertiesV2();

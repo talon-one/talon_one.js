@@ -17,7 +17,7 @@ import LedgerInfo from './LedgerInfo';
 /**
  * The LoyaltyProgramLedgers model module.
  * @module model/LoyaltyProgramLedgers
- * @version 25.17.0
+ * @version 25.18.0
  */
 class LoyaltyProgramLedgers {
     /**
@@ -112,7 +112,7 @@ LoyaltyProgramLedgers.prototype['joinDate'] = undefined;
 LoyaltyProgramLedgers.prototype['ledger'] = undefined;
 
 /**
- * A map containing information about each loyalty subledger.
+ * A map containing information about each loyalty subledger. Subledgers for which all balances are zero are excluded from the response.
  * @member {Object.<String, module:model/LedgerInfo>} subLedgers
  */
 LoyaltyProgramLedgers.prototype['subLedgers'] = undefined;

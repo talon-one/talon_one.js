@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PlaceholderDetails model module.
  * @module model/PlaceholderDetails
- * @version 25.17.0
+ * @version 25.18.0
  */
 class PlaceholderDetails {
     /**

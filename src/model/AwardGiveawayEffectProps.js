@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The AwardGiveawayEffectProps model module.
  * @module model/AwardGiveawayEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AwardGiveawayEffectProps {
     /**
      * Constructs a new <code>AwardGiveawayEffectProps</code>.
-     * The properties specific to the \&quot;awardGiveaway\&quot; effect. This effect contains information on the giveaway item, and which profile it was awarded to.
+     * This effect indicates the awarded giveaway item and to which profile the item was awarded. Learn more about [giveaways](https://docs.talon.one/docs/product/giveaways/overview).
      * @alias module:model/AwardGiveawayEffectProps
-     * @param poolId {Number} The ID of the giveaways pool the code was taken from.
-     * @param poolName {String} The name of the giveaways pool the code was taken from.
-     * @param recipientIntegrationId {String} The integration ID of the profile that was awarded the giveaway.
-     * @param giveawayId {Number} The internal ID for the giveaway that was awarded.
-     * @param code {String} The giveaway code that was awarded.
+     * @param poolId {Number} The internal ID of the giveaway pool.
+     * @param poolName {String} The name of the giveaway pool.
+     * @param recipientIntegrationId {String} The integration ID of the customer that receives the giveaway.
+     * @param giveawayId {Number} The internal ID of the giveaway.
+     * @param code {String} The giveaway code to be rewarded.
      */
     constructor(poolId, poolName, recipientIntegrationId, giveawayId, code) { 
         
@@ -81,31 +81,31 @@ class AwardGiveawayEffectProps {
 }
 
 /**
- * The ID of the giveaways pool the code was taken from.
+ * The internal ID of the giveaway pool.
  * @member {Number} poolId
  */
 AwardGiveawayEffectProps.prototype['poolId'] = undefined;
 
 /**
- * The name of the giveaways pool the code was taken from.
+ * The name of the giveaway pool.
  * @member {String} poolName
  */
 AwardGiveawayEffectProps.prototype['poolName'] = undefined;
 
 /**
- * The integration ID of the profile that was awarded the giveaway.
+ * The integration ID of the customer that receives the giveaway.
  * @member {String} recipientIntegrationId
  */
 AwardGiveawayEffectProps.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * The internal ID for the giveaway that was awarded.
+ * The internal ID of the giveaway.
  * @member {Number} giveawayId
  */
 AwardGiveawayEffectProps.prototype['giveawayId'] = undefined;
 
 /**
- * The giveaway code that was awarded.
+ * The giveaway code to be rewarded.
  * @member {String} code
  */
 AwardGiveawayEffectProps.prototype['code'] = undefined;

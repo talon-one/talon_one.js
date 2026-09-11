@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | The type of sync action. | 
-**payload** | [**Object**](.md) |  | 
+**type** | **String** | The type of sync action. | [optional] 
+**payload** | [**Object**](.md) |  | [optional] 
 
 
 

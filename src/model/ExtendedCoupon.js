@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The ExtendedCoupon model module.
  * @module model/ExtendedCoupon
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExtendedCoupon {
     /**

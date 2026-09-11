@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExperimentVariantResult model module.
  * @module model/ExperimentVariantResult
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentVariantResult {
     /**

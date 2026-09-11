@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property integrationId (base name: "integrationId")', function() {
+      // uncomment below and update the code to test the property integrationId
+      //var instane = new TalonOne.ApplicationEvent();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sessionId (base name: "sessionId")', function() {
       // uncomment below and update the code to test the property sessionId
       //var instane = new TalonOne.ApplicationEvent();

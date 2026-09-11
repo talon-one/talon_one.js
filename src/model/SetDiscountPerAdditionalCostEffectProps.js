@@ -16,17 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountPerAdditionalCostEffectProps model module.
  * @module model/SetDiscountPerAdditionalCostEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class SetDiscountPerAdditionalCostEffectProps {
     /**
      * Constructs a new <code>SetDiscountPerAdditionalCostEffectProps</code>.
-     * The properties specific to the \&quot;setDiscountPerAdditionalCost\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set per additional cost discount\&quot; effect. This is a discount that should be applied on a specific additional cost.
+     * This effect indicates that a discount that should be applied on a specific additional cost. It is triggered whenever a rule containing a **Discount additional cost** effect is validated.  Enabling [partial rewards](https://docs.talon.one/docs/product/applications/manage-general-settings#partial-rewards) allows a rule that would fail because of insufficient budget to pass. The rule still fails when the budget reaches 0. Use the &#x60;desiredValue&#x60; property to identify the original amount of loyalty points.
      * @alias module:model/SetDiscountPerAdditionalCostEffectProps
-     * @param name {String} The name / description of this discount
-     * @param additionalCostId {Number} The ID of the additional cost.
-     * @param additionalCost {String} The name of the additional cost.
-     * @param value {Number} The total monetary value of the discount.
+     * @param name {String} The name of the discount.
+     * @param additionalCostId {Number} The identifier of the additional cost.
+     * @param additionalCost {String} The API name of the additional cost.
+     * @param value {Number} The monetary value of the discount to apply.
      */
     constructor(name, additionalCostId, additionalCost, value) { 
         
@@ -79,31 +79,31 @@ class SetDiscountPerAdditionalCostEffectProps {
 }
 
 /**
- * The name / description of this discount
+ * The name of the discount.
  * @member {String} name
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['name'] = undefined;
 
 /**
- * The ID of the additional cost.
+ * The identifier of the additional cost.
  * @member {Number} additionalCostId
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['additionalCostId'] = undefined;
 
 /**
- * The name of the additional cost.
+ * The API name of the additional cost.
  * @member {String} additionalCost
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['additionalCost'] = undefined;
 
 /**
- * The total monetary value of the discount.
+ * The monetary value of the discount to apply.
  * @member {Number} value
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['value'] = undefined;
 
 /**
- * The original value of the discount.
+ * _(Partial discounts enabled only)_ The monetary value of the discount to be applied without considering budget limitations.
  * @member {Number} desiredValue
  */
 SetDiscountPerAdditionalCostEffectProps.prototype['desiredValue'] = undefined;

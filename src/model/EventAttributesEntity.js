@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributesEntity model module.
  * @module model/EventAttributesEntity
- * @version 25.17.0
+ * @version 25.18.0
  */
 class EventAttributesEntity {
     /**
      * Constructs a new <code>EventAttributesEntity</code>.
      * @alias module:model/EventAttributesEntity
-     * @param type {String} A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+     * @param type {String} The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
      */
     constructor(type) { 
         
@@ -63,7 +63,7 @@ class EventAttributesEntity {
 }
 
 /**
- * A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+ * The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
  * @member {String} type
  */
 EventAttributesEntity.prototype['type'] = undefined;

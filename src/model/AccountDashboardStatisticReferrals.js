@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountDashboardStatisticReferrals model module.
  * @module model/AccountDashboardStatisticReferrals
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AccountDashboardStatisticReferrals {
     /**

@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.RolesV2Thresholds);
     });
 
+    it('should have the property loyaltyProgramId (base name: "loyaltyProgramId")', function() {
+      // uncomment below and update the code to test the property loyaltyProgramId
+      //var instane = new TalonOne.RolesV2Thresholds();
+      //expect(instance).to.be();
+    });
+
     it('should have the property loyaltyPointsLimit (base name: "loyaltyPointsLimit")', function() {
       // uncomment below and update the code to test the property loyaltyPointsLimit
       //var instane = new TalonOne.RolesV2Thresholds();

@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomEffectProps model module.
  * @module model/CustomEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CustomEffectProps {
     /**
      * Constructs a new <code>CustomEffectProps</code>.
-     * Effect containing custom payload.
+     * If you want to return data as an effect but no effect matches your use case, you can [create a custom effect](https://docs.talon.one/docs/dev/tutorials/create-custom-effects).  Custom effects can be used as both rule effects and failure effects.  The structure of a custom effect depends on your specifications but is always named &#x60;customEffect&#x60;.
      * @alias module:model/CustomEffectProps
      * @param effectId {Number} The ID of the custom effect that was triggered.
      * @param name {String} The type of the custom effect.

@@ -17,7 +17,7 @@ import AchievementProgress from './AchievementProgress';
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse2003 {
     /**

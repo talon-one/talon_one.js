@@ -17,7 +17,7 @@ import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 /**
  * The LedgerTransactionLogEntryIntegrationAPI model module.
  * @module model/LedgerTransactionLogEntryIntegrationAPI
- * @version 25.17.0
+ * @version 25.18.0
  */
 class LedgerTransactionLogEntryIntegrationAPI {
     /**
@@ -80,6 +80,9 @@ class LedgerTransactionLogEntryIntegrationAPI {
             }
             if (data.hasOwnProperty('customerSessionId')) {
                 obj['customerSessionId'] = ApiClient.convertToType(data['customerSessionId'], 'String');
+            }
+            if (data.hasOwnProperty('storeIntegrationId')) {
+                obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -146,6 +149,12 @@ LedgerTransactionLogEntryIntegrationAPI.prototype['programId'] = undefined;
 LedgerTransactionLogEntryIntegrationAPI.prototype['customerSessionId'] = undefined;
 
 /**
+ * The integration ID of the store where the transaction occurred. Only set for transactions created by a customer session or event that referenced a store.
+ * @member {String} storeIntegrationId
+ */
+LedgerTransactionLogEntryIntegrationAPI.prototype['storeIntegrationId'] = undefined;
+
+/**
  * Type of transaction. Possible values:   - `addition`: Signifies added points.   - `subtraction`: Signifies deducted points. 
  * @member {module:model/LedgerTransactionLogEntryIntegrationAPI.TypeEnum} type
  */
@@ -205,7 +214,7 @@ LedgerTransactionLogEntryIntegrationAPI.prototype['ruleName'] = undefined;
 LedgerTransactionLogEntryIntegrationAPI.prototype['flags'] = undefined;
 
 /**
- * The duration for which the points remain active, relative to the  activation date.  **Note**: This only applies to points for which `awaitsActivation` is `true` and `expiryDate` is not set. 
+ * The duration for which the points remain active, relative to the activation date.  **Note**: This only applies to points for which `awaitsActivation` is `true` and `expiryDate` is not set. 
  * @member {String} validityDuration
  */
 LedgerTransactionLogEntryIntegrationAPI.prototype['validityDuration'] = undefined;

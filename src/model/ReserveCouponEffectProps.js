@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The ReserveCouponEffectProps model module.
  * @module model/ReserveCouponEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ReserveCouponEffectProps {
     /**
      * Constructs a new <code>ReserveCouponEffectProps</code>.
-     * The properties specific to the \&quot;reserveCoupon\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;reserve coupon\&quot; effect. This reserves the coupon currently on scope to the profile on scope.
+     * This effect indicates that the given coupon code was reserved for the given customer.  Talon.One provides soft and hard reservations. For more information, see [Reserve a coupon code](https://docs.talon.one/docs/product/rules/effects/use-effects#reserve-a-coupon-code).
      * @alias module:model/ReserveCouponEffectProps
-     * @param couponValue {String} The value of the coupon currently on scope.
-     * @param profileIntegrationId {String} The ID of this customer profile in the third-party integration.
+     * @param couponValue {String} The coupon code that was created.
+     * @param profileIntegrationId {String} The integration identifier of the customer for whom this coupon was reserved.
      * @param isNewReservation {Boolean} Indicates whether this is a new coupon reservation or not.
      */
     constructor(couponValue, profileIntegrationId, isNewReservation) { 
@@ -71,13 +71,13 @@ class ReserveCouponEffectProps {
 }
 
 /**
- * The value of the coupon currently on scope.
+ * The coupon code that was created.
  * @member {String} couponValue
  */
 ReserveCouponEffectProps.prototype['couponValue'] = undefined;
 
 /**
- * The ID of this customer profile in the third-party integration.
+ * The integration identifier of the customer for whom this coupon was reserved.
  * @member {String} profileIntegrationId
  */
 ReserveCouponEffectProps.prototype['profileIntegrationId'] = undefined;

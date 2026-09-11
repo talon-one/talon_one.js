@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The EventV2 model module.
  * @module model/EventV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class EventV2 {
     /**
      * Constructs a new <code>EventV2</code>.
      * @alias module:model/EventV2
-     * @param type {String} A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+     * @param type {String} The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
      */
     constructor(type) { 
         
@@ -90,7 +90,7 @@ EventV2.prototype['storeIntegrationId'] = undefined;
 EventV2.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+ * The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
  * @member {String} type
  */
 EventV2.prototype['type'] = undefined;

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CampaignReference from './CampaignReference';
 
 /**
  * The AchievementProgressWithDefinition model module.
  * @module model/AchievementProgressWithDefinition
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AchievementProgressWithDefinition {
     /**
@@ -29,13 +30,14 @@ class AchievementProgressWithDefinition {
      * @param name {String} The internal name of the achievement used in API requests. 
      * @param title {String} The display name of the achievement in the Campaign Manager.
      * @param description {String} The description of the achievement in the Campaign Manager.
-     * @param campaignId {Number} The ID of the campaign the achievement belongs to.
+     * @param campaignIds {Array.<Number>} The IDs of the campaigns that reference this achievement, in ascending order.
+     * @param referencedByCampaigns {Array.<module:model/CampaignReference>} The campaigns that reference this achievement, in ascending order of their `id`.
      * @param achievementRecurrencePolicy {module:model/AchievementProgressWithDefinition.AchievementRecurrencePolicyEnum} The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. - `on_completion`: When the customer progress status reaches `completed`, the achievement resets and becomes available again. 
      * @param achievementActivationPolicy {module:model/AchievementProgressWithDefinition.AchievementActivationPolicyEnum} The policy that determines how the achievement starts, ends, or resets. - `user_action`: The achievement ends or resets relative to when the customer started the achievement. - `fixed_schedule`: The achievement starts, ends, or resets for all customers following a fixed schedule. 
      */
-    constructor(status, progress, achievementId, name, title, description, campaignId, achievementRecurrencePolicy, achievementActivationPolicy) { 
+    constructor(status, progress, achievementId, name, title, description, campaignIds, referencedByCampaigns, achievementRecurrencePolicy, achievementActivationPolicy) { 
         
-        AchievementProgressWithDefinition.initialize(this, status, progress, achievementId, name, title, description, campaignId, achievementRecurrencePolicy, achievementActivationPolicy);
+        AchievementProgressWithDefinition.initialize(this, status, progress, achievementId, name, title, description, campaignIds, referencedByCampaigns, achievementRecurrencePolicy, achievementActivationPolicy);
     }
 
     /**
@@ -43,14 +45,15 @@ class AchievementProgressWithDefinition {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, status, progress, achievementId, name, title, description, campaignId, achievementRecurrencePolicy, achievementActivationPolicy) { 
+    static initialize(obj, status, progress, achievementId, name, title, description, campaignIds, referencedByCampaigns, achievementRecurrencePolicy, achievementActivationPolicy) { 
         obj['status'] = status;
         obj['progress'] = progress;
         obj['achievementId'] = achievementId;
         obj['name'] = name;
         obj['title'] = title;
         obj['description'] = description;
-        obj['campaignId'] = campaignId;
+        obj['campaignIds'] = campaignIds;
+        obj['referencedByCampaigns'] = referencedByCampaigns;
         obj['achievementRecurrencePolicy'] = achievementRecurrencePolicy;
         obj['achievementActivationPolicy'] = achievementActivationPolicy;
     }
@@ -95,6 +98,12 @@ class AchievementProgressWithDefinition {
             }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignIds')) {
+                obj['campaignIds'] = ApiClient.convertToType(data['campaignIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('referencedByCampaigns')) {
+                obj['referencedByCampaigns'] = ApiClient.convertToType(data['referencedByCampaigns'], [CampaignReference]);
             }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'Number');
@@ -176,10 +185,22 @@ AchievementProgressWithDefinition.prototype['title'] = undefined;
 AchievementProgressWithDefinition.prototype['description'] = undefined;
 
 /**
- * The ID of the campaign the achievement belongs to.
+ * This property is **deprecated**. Use `campaignIds` (Integration API) or `referencedByCampaigns` (Management API) instead. This field contains the first campaign ID from the related `campaignIds`, and is omitted when `campaignIds` is empty.
  * @member {Number} campaignId
  */
 AchievementProgressWithDefinition.prototype['campaignId'] = undefined;
+
+/**
+ * The IDs of the campaigns that reference this achievement, in ascending order.
+ * @member {Array.<Number>} campaignIds
+ */
+AchievementProgressWithDefinition.prototype['campaignIds'] = undefined;
+
+/**
+ * The campaigns that reference this achievement, in ascending order of their `id`.
+ * @member {Array.<module:model/CampaignReference>} referencedByCampaigns
+ */
+AchievementProgressWithDefinition.prototype['referencedByCampaigns'] = undefined;
 
 /**
  * The required number of actions or the transactional milestone to complete the achievement.

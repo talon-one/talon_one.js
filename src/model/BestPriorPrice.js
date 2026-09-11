@@ -17,7 +17,7 @@ import BestPriorPriceMetadata from './BestPriorPriceMetadata';
 /**
  * The BestPriorPrice model module.
  * @module model/BestPriorPrice
- * @version 25.17.0
+ * @version 25.18.0
  */
 class BestPriorPrice {
     /**
@@ -26,14 +26,14 @@ class BestPriorPrice {
      * @param id {Number} The ID of the historical price.
      * @param sku {String} sku
      * @param observedAt {Date} The date and time when the price was observed.
-     * @param contextId {String} The context ID of the context active at the time of observation. 
+     * @param contextIds {Array.<String>} The identifiers of the relevant context at the time the price was observed. Includes the context IDs of any price adjustments and of the campaigns that influenced the final price. 
      * @param price {Number} Price of the item.
      * @param metadata {module:model/BestPriorPriceMetadata} 
      * @param target {Object} 
      */
-    constructor(id, sku, observedAt, contextId, price, metadata, target) { 
+    constructor(id, sku, observedAt, contextIds, price, metadata, target) { 
         
-        BestPriorPrice.initialize(this, id, sku, observedAt, contextId, price, metadata, target);
+        BestPriorPrice.initialize(this, id, sku, observedAt, contextIds, price, metadata, target);
     }
 
     /**
@@ -41,11 +41,11 @@ class BestPriorPrice {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, sku, observedAt, contextId, price, metadata, target) { 
+    static initialize(obj, id, sku, observedAt, contextIds, price, metadata, target) { 
         obj['id'] = id;
         obj['sku'] = sku;
         obj['observedAt'] = observedAt;
-        obj['contextId'] = contextId;
+        obj['contextIds'] = contextIds;
         obj['price'] = price;
         obj['metadata'] = metadata;
         obj['target'] = target;
@@ -71,8 +71,8 @@ class BestPriorPrice {
             if (data.hasOwnProperty('observedAt')) {
                 obj['observedAt'] = ApiClient.convertToType(data['observedAt'], 'Date');
             }
-            if (data.hasOwnProperty('contextId')) {
-                obj['contextId'] = ApiClient.convertToType(data['contextId'], 'String');
+            if (data.hasOwnProperty('contextIds')) {
+                obj['contextIds'] = ApiClient.convertToType(data['contextIds'], ['String']);
             }
             if (data.hasOwnProperty('price')) {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number');
@@ -109,10 +109,10 @@ BestPriorPrice.prototype['sku'] = undefined;
 BestPriorPrice.prototype['observedAt'] = undefined;
 
 /**
- * The context ID of the context active at the time of observation. 
- * @member {String} contextId
+ * The identifiers of the relevant context at the time the price was observed. Includes the context IDs of any price adjustments and of the campaigns that influenced the final price. 
+ * @member {Array.<String>} contextIds
  */
-BestPriorPrice.prototype['contextId'] = undefined;
+BestPriorPrice.prototype['contextIds'] = undefined;
 
 /**
  * Price of the item.

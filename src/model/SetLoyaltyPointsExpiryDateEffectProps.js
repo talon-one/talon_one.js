@@ -17,12 +17,12 @@ import LoyaltyLedgerEntryExpiryDateChange from './LoyaltyLedgerEntryExpiryDateCh
 /**
  * The SetLoyaltyPointsExpiryDateEffectProps model module.
  * @module model/SetLoyaltyPointsExpiryDateEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class SetLoyaltyPointsExpiryDateEffectProps {
     /**
      * Constructs a new <code>SetLoyaltyPointsExpiryDateEffectProps</code>.
-     * The properties specific to the \&quot;setLoyaltyPointsExpiryDate\&quot; effect. This gets triggered when a validated rule contains the \&quot;set expiry date\&quot; effect. The current expiry date gets set to the date given in the effect. 
+     * This effect updates the expiry date of all active, pending, and unlimited point transactions to a specific date. 
      * @alias module:model/SetLoyaltyPointsExpiryDateEffectProps
      * @param programId {Number} ID of the loyalty program that contains these points.
      * @param subLedgerId {String} API name of the loyalty program subledger that contains these points.

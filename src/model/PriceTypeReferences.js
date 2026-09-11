@@ -17,7 +17,7 @@ import PriceTypeReferenceDetail from './PriceTypeReferenceDetail';
 /**
  * The PriceTypeReferences model module.
  * @module model/PriceTypeReferences
- * @version 25.17.0
+ * @version 25.18.0
  */
 class PriceTypeReferences {
     /**

@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bestPriorPriceSettings (base name: "bestPriorPriceSettings")', function() {
+      // uncomment below and update the code to test the property bestPriorPriceSettings
+      //var instane = new TalonOne.Application();
+      //expect(instance).to.be();
+    });
+
     it('should have the property loyaltyPrograms (base name: "loyaltyPrograms")', function() {
       // uncomment below and update the code to test the property loyaltyPrograms
       //var instane = new TalonOne.Application();

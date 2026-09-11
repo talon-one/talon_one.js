@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAchievementV2 model module.
  * @module model/CreateAchievementV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CreateAchievementV2 {
     /**
@@ -89,11 +89,11 @@ class CreateAchievementV2 {
             if (data.hasOwnProperty('allowRollbackAfterCompletion')) {
                 obj['allowRollbackAfterCompletion'] = ApiClient.convertToType(data['allowRollbackAfterCompletion'], 'Boolean');
             }
-            if (data.hasOwnProperty('sandbox')) {
-                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
-            }
             if (data.hasOwnProperty('subscribedApplications')) {
                 obj['subscribedApplications'] = ApiClient.convertToType(data['subscribedApplications'], ['Number']);
+            }
+            if (data.hasOwnProperty('sandbox')) {
+                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
             if (data.hasOwnProperty('timezone')) {
                 obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
@@ -166,16 +166,16 @@ CreateAchievementV2.prototype['endDate'] = undefined;
 CreateAchievementV2.prototype['allowRollbackAfterCompletion'] = undefined;
 
 /**
- * Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type.
- * @member {Boolean} sandbox
- */
-CreateAchievementV2.prototype['sandbox'] = undefined;
-
-/**
  * A list containing the IDs of all applications that are subscribed to A list containing the IDs of all Applications that are connected to this achievement.
  * @member {Array.<Number>} subscribedApplications
  */
 CreateAchievementV2.prototype['subscribedApplications'] = undefined;
+
+/**
+ * Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type.
+ * @member {Boolean} sandbox
+ */
+CreateAchievementV2.prototype['sandbox'] = undefined;
 
 /**
  * A string containing an IANA timezone descriptor.

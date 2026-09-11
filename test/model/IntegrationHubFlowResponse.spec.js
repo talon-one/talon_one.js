@@ -54,31 +54,55 @@
       //expect(instance).to.be.a(TalonOne.IntegrationHubFlowResponse);
     });
 
-    it('should have the property id (base name: "Id")', function() {
+    it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new TalonOne.IntegrationHubFlowResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property applicationID (base name: "ApplicationID")', function() {
-      // uncomment below and update the code to test the property applicationID
+    it('should have the property integrationName (base name: "integrationName")', function() {
+      // uncomment below and update the code to test the property integrationName
       //var instane = new TalonOne.IntegrationHubFlowResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property eventType (base name: "EventType")', function() {
+    it('should have the property instanceName (base name: "instanceName")', function() {
+      // uncomment below and update the code to test the property instanceName
+      //var instane = new TalonOne.IntegrationHubFlowResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdAt (base name: "createdAt")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instane = new TalonOne.IntegrationHubFlowResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property disabledUntil (base name: "disabledUntil")', function() {
+      // uncomment below and update the code to test the property disabledUntil
+      //var instane = new TalonOne.IntegrationHubFlowResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property applicationId (base name: "applicationId")', function() {
+      // uncomment below and update the code to test the property applicationId
+      //var instane = new TalonOne.IntegrationHubFlowResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property loyaltyProgramId (base name: "loyaltyProgramId")', function() {
+      // uncomment below and update the code to test the property loyaltyProgramId
+      //var instane = new TalonOne.IntegrationHubFlowResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eventType (base name: "eventType")', function() {
       // uncomment below and update the code to test the property eventType
       //var instane = new TalonOne.IntegrationHubFlowResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property integrationHubFlowUrl (base name: "IntegrationHubFlowUrl")', function() {
-      // uncomment below and update the code to test the property integrationHubFlowUrl
-      //var instane = new TalonOne.IntegrationHubFlowResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property config (base name: "Config")', function() {
+    it('should have the property config (base name: "config")', function() {
       // uncomment below and update the code to test the property config
       //var instane = new TalonOne.IntegrationHubFlowResponse();
       //expect(instance).to.be();

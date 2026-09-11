@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification);
     });
 
+    it('should have the property eventId (base name: "EventId")', function() {
+      // uncomment below and update the code to test the property eventId
+      //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
+      //expect(instance).to.be();
+    });
+
     it('should have the property profileIntegrationID (base name: "ProfileIntegrationID")', function() {
       // uncomment below and update the code to test the property profileIntegrationID
       //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
@@ -66,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loyaltyProgramName (base name: "LoyaltyProgramName")', function() {
+      // uncomment below and update the code to test the property loyaltyProgramName
+      //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
+      //expect(instance).to.be();
+    });
+
     it('should have the property subledgerID (base name: "SubledgerID")', function() {
       // uncomment below and update the code to test the property subledgerID
       //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
@@ -74,6 +86,18 @@
 
     it('should have the property sourceOfEvent (base name: "SourceOfEvent")', function() {
       // uncomment below and update the code to test the property sourceOfEvent
+      //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property currentTier (base name: "CurrentTier")', function() {
+      // uncomment below and update the code to test the property currentTier
+      //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sessionIntegrationID (base name: "SessionIntegrationID")', function() {
+      // uncomment below and update the code to test the property sessionIntegrationID
       //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
       //expect(instance).to.be();
     });

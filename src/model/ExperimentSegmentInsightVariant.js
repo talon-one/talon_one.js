@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExperimentSegmentInsightVariant model module.
  * @module model/ExperimentSegmentInsightVariant
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentSegmentInsightVariant {
     /**

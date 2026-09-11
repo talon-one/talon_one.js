@@ -126,20 +126,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sandbox (base name: "sandbox")', function() {
-      // uncomment below and update the code to test the property sandbox
-      //var instane = new TalonOne.AchievementV2();
-      //expect(instance).to.be();
-    });
-
     it('should have the property subscribedApplications (base name: "subscribedApplications")', function() {
       // uncomment below and update the code to test the property subscribedApplications
-      //var instane = new TalonOne.AchievementV2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property timezone (base name: "timezone")', function() {
-      // uncomment below and update the code to test the property timezone
       //var instane = new TalonOne.AchievementV2();
       //expect(instance).to.be();
     });
@@ -156,6 +144,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property periodEndOverride (base name: "periodEndOverride")', function() {
+      // uncomment below and update the code to test the property periodEndOverride
+      //var instane = new TalonOne.AchievementV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property hasProgress (base name: "hasProgress")', function() {
       // uncomment below and update the code to test the property hasProgress
       //var instane = new TalonOne.AchievementV2();
@@ -164,6 +158,30 @@
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
+      //var instane = new TalonOne.AchievementV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sandbox (base name: "sandbox")', function() {
+      // uncomment below and update the code to test the property sandbox
+      //var instane = new TalonOne.AchievementV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property timezone (base name: "timezone")', function() {
+      // uncomment below and update the code to test the property timezone
+      //var instane = new TalonOne.AchievementV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property campaignId (base name: "campaignId")', function() {
+      // uncomment below and update the code to test the property campaignId
+      //var instane = new TalonOne.AchievementV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referencedByCampaigns (base name: "referencedByCampaigns")', function() {
+      // uncomment below and update the code to test the property referencedByCampaigns
       //var instane = new TalonOne.AchievementV2();
       //expect(instance).to.be();
     });

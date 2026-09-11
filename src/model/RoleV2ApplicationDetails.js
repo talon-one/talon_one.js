@@ -12,12 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import RolesV2Thresholds from './RolesV2Thresholds';
 
 /**
  * The RoleV2ApplicationDetails model module.
  * @module model/RoleV2ApplicationDetails
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RoleV2ApplicationDetails {
     /**
@@ -60,9 +59,6 @@ class RoleV2ApplicationDetails {
             if (data.hasOwnProperty('tools')) {
                 obj['tools'] = ApiClient.convertToType(data['tools'], 'String');
             }
-            if (data.hasOwnProperty('thresholds')) {
-                obj['thresholds'] = RolesV2Thresholds.constructFromObject(data['thresholds']);
-            }
         }
         return obj;
     }
@@ -93,11 +89,6 @@ RoleV2ApplicationDetails.prototype['draftCampaign'] = undefined;
  * @member {String} tools
  */
 RoleV2ApplicationDetails.prototype['tools'] = undefined;
-
-/**
- * @member {module:model/RolesV2Thresholds} thresholds
- */
-RoleV2ApplicationDetails.prototype['thresholds'] = undefined;
 
 
 

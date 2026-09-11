@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementReference model module.
  * @module model/AchievementReference
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AchievementReference {
     /**
@@ -26,10 +26,12 @@ class AchievementReference {
      * @param applicationId {Number} The ID of the Application associated with the campaign that references this achievement.
      * @param applicationName {String} The name of the Application associated with the campaign that references this achievement.
      * @param campaignId {Number} The ID of the campaign that references this achievement.
+     * @param campaignName {String} The name of the campaign that references this achievement.
+     * @param campaignState {module:model/AchievementReference.CampaignStateEnum} The state of the campaign that references this achievement.
      */
-    constructor(achievementId, applicationId, applicationName, campaignId) { 
+    constructor(achievementId, applicationId, applicationName, campaignId, campaignName, campaignState) { 
         
-        AchievementReference.initialize(this, achievementId, applicationId, applicationName, campaignId);
+        AchievementReference.initialize(this, achievementId, applicationId, applicationName, campaignId, campaignName, campaignState);
     }
 
     /**
@@ -37,11 +39,13 @@ class AchievementReference {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, achievementId, applicationId, applicationName, campaignId) { 
+    static initialize(obj, achievementId, applicationId, applicationName, campaignId, campaignName, campaignState) { 
         obj['achievementId'] = achievementId;
         obj['applicationId'] = applicationId;
         obj['applicationName'] = applicationName;
         obj['campaignId'] = campaignId;
+        obj['campaignName'] = campaignName;
+        obj['campaignState'] = campaignState;
     }
 
     /**
@@ -66,6 +70,12 @@ class AchievementReference {
             }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignName')) {
+                obj['campaignName'] = ApiClient.convertToType(data['campaignName'], 'String');
+            }
+            if (data.hasOwnProperty('campaignState')) {
+                obj['campaignState'] = ApiClient.convertToType(data['campaignState'], 'String');
             }
         }
         return obj;
@@ -98,8 +108,47 @@ AchievementReference.prototype['applicationName'] = undefined;
  */
 AchievementReference.prototype['campaignId'] = undefined;
 
+/**
+ * The name of the campaign that references this achievement.
+ * @member {String} campaignName
+ */
+AchievementReference.prototype['campaignName'] = undefined;
+
+/**
+ * The state of the campaign that references this achievement.
+ * @member {module:model/AchievementReference.CampaignStateEnum} campaignState
+ */
+AchievementReference.prototype['campaignState'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>campaignState</code> property.
+ * @enum {String}
+ * @readonly
+ */
+AchievementReference['CampaignStateEnum'] = {
+
+    /**
+     * value: "enabled"
+     * @const
+     */
+    "enabled": "enabled",
+
+    /**
+     * value: "disabled"
+     * @const
+     */
+    "disabled": "disabled",
+
+    /**
+     * value: "archived"
+     * @const
+     */
+    "archived": "archived"
+};
 
 
 

@@ -17,7 +17,7 @@ import NewCampaign from './NewCampaign';
 /**
  * The NewExperiment model module.
  * @module model/NewExperiment
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewExperiment {
     /**
@@ -25,10 +25,11 @@ class NewExperiment {
      * @alias module:model/NewExperiment
      * @param isVariantAssignmentExternal {Boolean} The source of the assignment. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. 
      * @param campaign {module:model/NewCampaign} 
+     * @param goalType {module:model/NewExperiment.GoalTypeEnum} The goal of the experiment. Determines which single metric is used to decide the winning variant. When set to `other`, multiple metrics are used. 
      */
-    constructor(isVariantAssignmentExternal, campaign) { 
+    constructor(isVariantAssignmentExternal, campaign, goalType) { 
         
-        NewExperiment.initialize(this, isVariantAssignmentExternal, campaign);
+        NewExperiment.initialize(this, isVariantAssignmentExternal, campaign, goalType);
     }
 
     /**
@@ -36,9 +37,10 @@ class NewExperiment {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, isVariantAssignmentExternal, campaign) { 
+    static initialize(obj, isVariantAssignmentExternal, campaign, goalType) { 
         obj['isVariantAssignmentExternal'] = isVariantAssignmentExternal;
         obj['campaign'] = campaign;
+        obj['goalType'] = goalType;
     }
 
     /**
@@ -58,6 +60,12 @@ class NewExperiment {
             if (data.hasOwnProperty('campaign')) {
                 obj['campaign'] = NewCampaign.constructFromObject(data['campaign']);
             }
+            if (data.hasOwnProperty('goalType')) {
+                obj['goalType'] = ApiClient.convertToType(data['goalType'], 'String');
+            }
+            if (data.hasOwnProperty('goalDescription')) {
+                obj['goalDescription'] = ApiClient.convertToType(data['goalDescription'], 'String');
+            }
         }
         return obj;
     }
@@ -76,8 +84,54 @@ NewExperiment.prototype['isVariantAssignmentExternal'] = undefined;
  */
 NewExperiment.prototype['campaign'] = undefined;
 
+/**
+ * The goal of the experiment. Determines which single metric is used to decide the winning variant. When set to `other`, multiple metrics are used. 
+ * @member {module:model/NewExperiment.GoalTypeEnum} goalType
+ * @default 'other'
+ */
+NewExperiment.prototype['goalType'] = 'other';
+
+/**
+ * A description of the experiment goal. Provides context for the AI summary and helps it interpret the outcome of the experiment against the stated goal. 
+ * @member {String} goalDescription
+ */
+NewExperiment.prototype['goalDescription'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>goalType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+NewExperiment['GoalTypeEnum'] = {
+
+    /**
+     * value: "other"
+     * @const
+     */
+    "other": "other",
+
+    /**
+     * value: "maximize_revenue"
+     * @const
+     */
+    "maximize_revenue": "maximize_revenue",
+
+    /**
+     * value: "maximize_items_sold"
+     * @const
+     */
+    "maximize_items_sold": "maximize_items_sold",
+
+    /**
+     * value: "optimize_discount_efficiency"
+     * @const
+     */
+    "optimize_discount_efficiency": "optimize_discount_efficiency"
+};
 
 
 

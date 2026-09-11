@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAudience model module.
  * @module model/UpdateAudience
- * @version 25.17.0
+ * @version 25.18.0
  */
 class UpdateAudience {
     /**
@@ -52,6 +52,9 @@ class UpdateAudience {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('subscribedApplicationsIds')) {
+                obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
+            }
         }
         return obj;
     }
@@ -64,6 +67,12 @@ class UpdateAudience {
  * @member {String} name
  */
 UpdateAudience.prototype['name'] = undefined;
+
+/**
+ * A list of the IDs of the Applications that are connected to this audience.
+ * @member {Array.<Number>} subscribedApplicationsIds
+ */
+UpdateAudience.prototype['subscribedApplicationsIds'] = undefined;
 
 
 

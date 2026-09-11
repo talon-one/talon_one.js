@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackCouponEffectProps model module.
  * @module model/RollbackCouponEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RollbackCouponEffectProps {
     /**
      * Constructs a new <code>RollbackCouponEffectProps</code>.
-     * The properties specific to the \&quot;rollbackCoupon\&quot; effect. This gets triggered whenever previously closed session is now cancelled and a coupon redemption was cancelled on our internal usage limit counters.
+     * This effect indicates that a coupon code redemption has been rolled back. The coupon becomes redeemable again.  The effect is triggered when you [cancel](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#manage-the-sessions-state) a session where a coupon was accepted. See an example of use in the [cancelling a session tutorial](https://docs.talon.one/docs/dev/tutorials/roll-back-effects).
      * @alias module:model/RollbackCouponEffectProps
-     * @param value {String} The coupon code whose usage has been rolled back.
+     * @param value {String} The coupon code whose redemption has been rolled back.
      */
     constructor(value) { 
         
@@ -61,7 +61,7 @@ class RollbackCouponEffectProps {
 }
 
 /**
- * The coupon code whose usage has been rolled back.
+ * The coupon code whose redemption has been rolled back.
  * @member {String} value
  */
 RollbackCouponEffectProps.prototype['value'] = undefined;

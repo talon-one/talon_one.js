@@ -18,7 +18,7 @@ import CatalogRule from './CatalogRule';
 /**
  * The UpdateBlueprint model module.
  * @module model/UpdateBlueprint
- * @version 25.17.0
+ * @version 25.18.0
  */
 class UpdateBlueprint {
     /**

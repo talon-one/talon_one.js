@@ -17,7 +17,7 @@ import UpdateCampaign from './UpdateCampaign';
 /**
  * The UpdateExperiment model module.
  * @module model/UpdateExperiment
- * @version 25.17.0
+ * @version 25.18.0
  */
 class UpdateExperiment {
     /**
@@ -58,6 +58,12 @@ class UpdateExperiment {
             if (data.hasOwnProperty('campaign')) {
                 obj['campaign'] = UpdateCampaign.constructFromObject(data['campaign']);
             }
+            if (data.hasOwnProperty('goalType')) {
+                obj['goalType'] = ApiClient.convertToType(data['goalType'], 'String');
+            }
+            if (data.hasOwnProperty('goalDescription')) {
+                obj['goalDescription'] = ApiClient.convertToType(data['goalDescription'], 'String');
+            }
         }
         return obj;
     }
@@ -76,8 +82,53 @@ UpdateExperiment.prototype['isVariantAssignmentExternal'] = undefined;
  */
 UpdateExperiment.prototype['campaign'] = undefined;
 
+/**
+ * The goal of the experiment. Determines which single metric is used to decide the winning variant. When set to `other`, multiple metrics are used. If omitted, the current value is preserved. 
+ * @member {module:model/UpdateExperiment.GoalTypeEnum} goalType
+ */
+UpdateExperiment.prototype['goalType'] = undefined;
+
+/**
+ * A description of the experiment goal. Provides context for the AI summary and helps it interpret the outcome of the experiment against the stated goal. If omitted, the current value is preserved. 
+ * @member {String} goalDescription
+ */
+UpdateExperiment.prototype['goalDescription'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>goalType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+UpdateExperiment['GoalTypeEnum'] = {
+
+    /**
+     * value: "other"
+     * @const
+     */
+    "other": "other",
+
+    /**
+     * value: "maximize_revenue"
+     * @const
+     */
+    "maximize_revenue": "maximize_revenue",
+
+    /**
+     * value: "maximize_items_sold"
+     * @const
+     */
+    "maximize_items_sold": "maximize_items_sold",
+
+    /**
+     * value: "optimize_discount_efficiency"
+     * @const
+     */
+    "optimize_discount_efficiency": "optimize_discount_efficiency"
+};
 
 
 

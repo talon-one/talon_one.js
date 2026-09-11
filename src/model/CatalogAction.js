@@ -16,19 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The CatalogAction model module.
  * @module model/CatalogAction
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CatalogAction {
     /**
      * Constructs a new <code>CatalogAction</code>.
-     * Definition of all the properties that are needed for a single catalog sync action.
+     * Definition of all the properties that are needed for a single catalog sync action. The &#x60;type&#x60; field selects the concrete action variant.
      * @alias module:model/CatalogAction
-     * @param type {module:model/CatalogAction.TypeEnum} The type of sync action.
-     * @param payload {Object} 
      */
-    constructor(type, payload) { 
+    constructor() { 
         
-        CatalogAction.initialize(this, type, payload);
+        CatalogAction.initialize(this);
     }
 
     /**
@@ -36,9 +34,7 @@ class CatalogAction {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, payload) { 
-        obj['type'] = type;
-        obj['payload'] = payload;
+    static initialize(obj) { 
     }
 
     /**

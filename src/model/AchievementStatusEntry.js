@@ -18,7 +18,7 @@ import TimePoint from './TimePoint';
 /**
  * The AchievementStatusEntry model module.
  * @module model/AchievementStatusEntry
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AchievementStatusEntry {
     /**
@@ -102,6 +102,9 @@ class AchievementStatusEntry {
             }
             if (data.hasOwnProperty('campaignId')) {
                 obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
+            if (data.hasOwnProperty('campaignIds')) {
+                obj['campaignIds'] = ApiClient.convertToType(data['campaignIds'], ['Number']);
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -194,10 +197,16 @@ AchievementStatusEntry.prototype['endDate'] = undefined;
 AchievementStatusEntry.prototype['allowRollbackAfterCompletion'] = undefined;
 
 /**
- * The ID of the campaign the achievement belongs to.
+ * This property is **deprecated**. Use `referencedByCampaigns` instead. This field contains the first campaign ID from the related `referencedByCampaigns`, and is omitted when `referencedByCampaigns` is empty.
  * @member {Number} campaignId
  */
 AchievementStatusEntry.prototype['campaignId'] = undefined;
+
+/**
+ * The IDs of the campaigns that reference this achievement, in ascending order.
+ * @member {Array.<Number>} campaignIds
+ */
+AchievementStatusEntry.prototype['campaignIds'] = undefined;
 
 /**
  * The status of the achievement.

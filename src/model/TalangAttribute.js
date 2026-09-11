@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TalangAttribute model module.
  * @module model/TalangAttribute
- * @version 25.17.0
+ * @version 25.18.0
  */
 class TalangAttribute {
     /**
@@ -275,7 +275,19 @@ TalangAttribute['EntityEnum'] = {
      * value: "Achievements"
      * @const
      */
-    "Achievements": "Achievements"
+    "Achievements": "Achievements",
+
+    /**
+     * value: "AdvancedEvent"
+     * @const
+     */
+    "AdvancedEvent": "AdvancedEvent",
+
+    /**
+     * value: "AdvancedEventConnectedSession"
+     * @const
+     */
+    "AdvancedEventConnectedSession": "AdvancedEventConnectedSession"
 };
 
 

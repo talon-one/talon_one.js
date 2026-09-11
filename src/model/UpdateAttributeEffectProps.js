@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAttributeEffectProps model module.
  * @module model/UpdateAttributeEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class UpdateAttributeEffectProps {
     /**
      * Constructs a new <code>UpdateAttributeEffectProps</code>.
-     * The properties specific to the \&quot;updateAttribute\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;update an attribute\&quot; effect.
+     * This effect indicates that a rule containing an [Update attribute value](https://docs.talon.one/docs/product/rules/effects/available-effects#update-effects) or [Update cart item attribute value](https://docs.talon.one/docs/product/rules/effects/available-effects#update-effects) was validated. You should update the value of the attribute in your system based on the content of the returned effect.
      * @alias module:model/UpdateAttributeEffectProps
-     * @param path {String} The exact path of the attribute that was updated.
-     * @param value {Object} The new value of this attribute. The value can be of the following types: - boolean - location - number - string - time - list of any of those types 
+     * @param path {String} The entity type and the attribute name.
+     * @param value {Object} The new value of the attribute.
      */
     constructor(path, value) { 
         
@@ -66,13 +66,13 @@ class UpdateAttributeEffectProps {
 }
 
 /**
- * The exact path of the attribute that was updated.
+ * The entity type and the attribute name.
  * @member {String} path
  */
 UpdateAttributeEffectProps.prototype['path'] = undefined;
 
 /**
- * The new value of this attribute. The value can be of the following types: - boolean - location - number - string - time - list of any of those types 
+ * The new value of the attribute.
  * @member {Object} value
  */
 UpdateAttributeEffectProps.prototype['value'] = undefined;

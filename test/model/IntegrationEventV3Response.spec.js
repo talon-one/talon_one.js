@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignEligibility (base name: "campaignEligibility")', function() {
+      // uncomment below and update the code to test the property campaignEligibility
+      //var instane = new TalonOne.IntegrationEventV3Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property effects (base name: "effects")', function() {
       // uncomment below and update the code to test the property effects
       //var instane = new TalonOne.IntegrationEventV3Response();
@@ -102,8 +108,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property achievements (base name: "achievements")', function() {
+      // uncomment below and update the code to test the property achievements
+      //var instane = new TalonOne.IntegrationEventV3Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewards (base name: "rewards")', function() {
+      // uncomment below and update the code to test the property rewards
+      //var instane = new TalonOne.IntegrationEventV3Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property advancedEvent (base name: "advancedEvent")', function() {
       // uncomment below and update the code to test the property advancedEvent
+      //var instane = new TalonOne.IntegrationEventV3Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referral (base name: "referral")', function() {
+      // uncomment below and update the code to test the property referral
       //var instane = new TalonOne.IntegrationEventV3Response();
       //expect(instance).to.be();
     });

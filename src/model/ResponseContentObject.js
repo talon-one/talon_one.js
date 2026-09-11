@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResponseContentObject model module.
  * @module model/ResponseContentObject
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ResponseContentObject {
     /**
@@ -108,7 +108,25 @@ ResponseContentObject['ResponseContentEnum'] = {
      * value: "ruleFailureReasons"
      * @const
      */
-    "ruleFailureReasons": "ruleFailureReasons"
+    "ruleFailureReasons": "ruleFailureReasons",
+
+    /**
+     * value: "campaignEligibility"
+     * @const
+     */
+    "campaignEligibility": "campaignEligibility",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements",
+
+    /**
+     * value: "unlockedRewards"
+     * @const
+     */
+    "unlockedRewards": "unlockedRewards"
 };
 
 

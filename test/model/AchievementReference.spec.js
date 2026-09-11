@@ -78,6 +78,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignName (base name: "campaignName")', function() {
+      // uncomment below and update the code to test the property campaignName
+      //var instane = new TalonOne.AchievementReference();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property campaignState (base name: "campaignState")', function() {
+      // uncomment below and update the code to test the property campaignState
+      //var instane = new TalonOne.AchievementReference();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

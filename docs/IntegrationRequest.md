@@ -32,6 +32,12 @@ Name | Type | Description | Notes
 
 * `previousReturns` (value: `"previousReturns"`)
 
+* `campaignEligibility` (value: `"campaignEligibility"`)
+
+* `achievements` (value: `"achievements"`)
+
+* `unlockedRewards` (value: `"unlockedRewards"`)
+
 
 
 

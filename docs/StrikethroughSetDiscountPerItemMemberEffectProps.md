@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | effect name. | 
-**value** | [**Object**](.md) | discount value. | 
+**name** | **String** | The effect name. | 
+**value** | [**Object**](.md) | The discount value. | 
 
 

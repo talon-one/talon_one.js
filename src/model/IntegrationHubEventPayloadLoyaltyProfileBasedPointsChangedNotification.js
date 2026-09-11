@@ -17,22 +17,25 @@ import IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAct
 /**
  * The IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification model module.
  * @module model/IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification {
     /**
      * Constructs a new <code>IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification</code>.
      * @alias module:model/IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification
+     * @param eventId {Number} The ID of the integration hub event. Return this value in the delivery-status callback to mark the event delivered or failed.
      * @param profileIntegrationID {String} 
      * @param loyaltyProgramID {Number} 
+     * @param loyaltyProgramName {String} The name of the loyalty program.
      * @param subledgerID {String} 
      * @param sourceOfEvent {String} 
+     * @param currentTier {String} The name of the customer's current tier.
      * @param currentPoints {Number} 
      * @param publishedAt {Date} Timestamp when the event was published.
      */
-    constructor(profileIntegrationID, loyaltyProgramID, subledgerID, sourceOfEvent, currentPoints, publishedAt) { 
+    constructor(eventId, profileIntegrationID, loyaltyProgramID, loyaltyProgramName, subledgerID, sourceOfEvent, currentTier, currentPoints, publishedAt) { 
         
-        IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.initialize(this, profileIntegrationID, loyaltyProgramID, subledgerID, sourceOfEvent, currentPoints, publishedAt);
+        IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.initialize(this, eventId, profileIntegrationID, loyaltyProgramID, loyaltyProgramName, subledgerID, sourceOfEvent, currentTier, currentPoints, publishedAt);
     }
 
     /**
@@ -40,11 +43,14 @@ class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, profileIntegrationID, loyaltyProgramID, subledgerID, sourceOfEvent, currentPoints, publishedAt) { 
+    static initialize(obj, eventId, profileIntegrationID, loyaltyProgramID, loyaltyProgramName, subledgerID, sourceOfEvent, currentTier, currentPoints, publishedAt) { 
+        obj['EventId'] = eventId;
         obj['ProfileIntegrationID'] = profileIntegrationID;
         obj['LoyaltyProgramID'] = loyaltyProgramID;
+        obj['LoyaltyProgramName'] = loyaltyProgramName;
         obj['SubledgerID'] = subledgerID;
         obj['SourceOfEvent'] = sourceOfEvent;
+        obj['CurrentTier'] = currentTier;
         obj['CurrentPoints'] = currentPoints;
         obj['PublishedAt'] = publishedAt;
     }
@@ -60,17 +66,29 @@ class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification {
         if (data) {
             obj = obj || new IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification();
 
+            if (data.hasOwnProperty('EventId')) {
+                obj['EventId'] = ApiClient.convertToType(data['EventId'], 'Number');
+            }
             if (data.hasOwnProperty('ProfileIntegrationID')) {
                 obj['ProfileIntegrationID'] = ApiClient.convertToType(data['ProfileIntegrationID'], 'String');
             }
             if (data.hasOwnProperty('LoyaltyProgramID')) {
                 obj['LoyaltyProgramID'] = ApiClient.convertToType(data['LoyaltyProgramID'], 'Number');
             }
+            if (data.hasOwnProperty('LoyaltyProgramName')) {
+                obj['LoyaltyProgramName'] = ApiClient.convertToType(data['LoyaltyProgramName'], 'String');
+            }
             if (data.hasOwnProperty('SubledgerID')) {
                 obj['SubledgerID'] = ApiClient.convertToType(data['SubledgerID'], 'String');
             }
             if (data.hasOwnProperty('SourceOfEvent')) {
                 obj['SourceOfEvent'] = ApiClient.convertToType(data['SourceOfEvent'], 'String');
+            }
+            if (data.hasOwnProperty('CurrentTier')) {
+                obj['CurrentTier'] = ApiClient.convertToType(data['CurrentTier'], 'String');
+            }
+            if (data.hasOwnProperty('SessionIntegrationID')) {
+                obj['SessionIntegrationID'] = ApiClient.convertToType(data['SessionIntegrationID'], 'String');
             }
             if (data.hasOwnProperty('EmployeeName')) {
                 obj['EmployeeName'] = ApiClient.convertToType(data['EmployeeName'], 'String');
@@ -95,6 +113,12 @@ class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification {
 }
 
 /**
+ * The ID of the integration hub event. Return this value in the delivery-status callback to mark the event delivered or failed.
+ * @member {Number} EventId
+ */
+IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['EventId'] = undefined;
+
+/**
  * @member {String} ProfileIntegrationID
  */
 IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['ProfileIntegrationID'] = undefined;
@@ -105,6 +129,12 @@ IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype
 IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['LoyaltyProgramID'] = undefined;
 
 /**
+ * The name of the loyalty program.
+ * @member {String} LoyaltyProgramName
+ */
+IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['LoyaltyProgramName'] = undefined;
+
+/**
  * @member {String} SubledgerID
  */
 IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['SubledgerID'] = undefined;
@@ -113,6 +143,18 @@ IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype
  * @member {String} SourceOfEvent
  */
 IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['SourceOfEvent'] = undefined;
+
+/**
+ * The name of the customer's current tier.
+ * @member {String} CurrentTier
+ */
+IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['CurrentTier'] = undefined;
+
+/**
+ * The integration ID of the session through which the points were earned or lost. Only set when the change results from a rule engine execution; empty otherwise.
+ * @member {String} SessionIntegrationID
+ */
+IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification.prototype['SessionIntegrationID'] = undefined;
 
 /**
  * @member {String} EmployeeName

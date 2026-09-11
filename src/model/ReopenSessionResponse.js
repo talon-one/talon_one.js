@@ -17,7 +17,7 @@ import Effect from './Effect';
 /**
  * The ReopenSessionResponse model module.
  * @module model/ReopenSessionResponse
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ReopenSessionResponse {
     /**

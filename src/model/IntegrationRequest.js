@@ -17,7 +17,7 @@ import NewCustomerSessionV2 from './NewCustomerSessionV2';
 /**
  * The IntegrationRequest model module.
  * @module model/IntegrationRequest
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationRequest {
     /**
@@ -144,7 +144,25 @@ IntegrationRequest['ResponseContentEnum'] = {
      * value: "previousReturns"
      * @const
      */
-    "previousReturns": "previousReturns"
+    "previousReturns": "previousReturns",
+
+    /**
+     * value: "campaignEligibility"
+     * @const
+     */
+    "campaignEligibility": "campaignEligibility",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements",
+
+    /**
+     * value: "unlockedRewards"
+     * @const
+     */
+    "unlockedRewards": "unlockedRewards"
 };
 
 

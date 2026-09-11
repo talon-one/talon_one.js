@@ -17,7 +17,7 @@ import ExperimentSegmentInsightMetric from './ExperimentSegmentInsightMetric';
 /**
  * The ExperimentSegmentInsights model module.
  * @module model/ExperimentSegmentInsights
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentSegmentInsights {
     /**

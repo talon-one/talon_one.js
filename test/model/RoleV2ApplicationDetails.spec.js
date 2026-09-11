@@ -78,12 +78,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property thresholds (base name: "thresholds")', function() {
-      // uncomment below and update the code to test the property thresholds
-      //var instane = new TalonOne.RoleV2ApplicationDetails();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

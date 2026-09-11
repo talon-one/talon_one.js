@@ -17,7 +17,7 @@ import ScimResource from './ScimResource';
 /**
  * The ScimResourceTypesListResponse model module.
  * @module model/ScimResourceTypesListResponse
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ScimResourceTypesListResponse {
     /**

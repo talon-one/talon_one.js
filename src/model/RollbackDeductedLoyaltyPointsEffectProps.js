@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackDeductedLoyaltyPointsEffectProps model module.
  * @module model/RollbackDeductedLoyaltyPointsEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RollbackDeductedLoyaltyPointsEffectProps {
     /**
      * Constructs a new <code>RollbackDeductedLoyaltyPointsEffectProps</code>.
-     * The properties specific to the \&quot;rollbackDeductedLoyaltyPoints\&quot; effect. This effect is triggered whenever a previously closed session is cancelled and a deductLoyaltyPoints effect was revoked.
+     * This effect is triggered in the following cases:  - A session is _cancelled_ and this session deducted loyalty points. The rollback action returns the redeemed loyalty points to the customer. - A session is impacted by a _partial return_. Only added loyalty points that are still **pending** are rolled back. - A session in which loyalty points were spent is reopened.  See the [session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#customer-session-states).  If you set custom activation and expiration dates for the loyalty points, use the &#x60;startDate&#x60; and &#x60;expiryDate&#x60; properties to identify when the reward will be active and when will expire.  If the loyalty program is [profile-based](https://docs.talon.one/docs/product/loyalty-programs/profile-based/profile-based-overview), use the &#x60;recipientIntegrationId&#x60; property to identify the user who receives the loyalty points. If the loyalty program is [card-based](https://docs.talon.one/docs/product/loyalty-programs/overview#loyalty-program-types), use the &#x60;cardIdentifier&#x60; property to identify the loyalty card where the points are reimbursed.
      * @alias module:model/RollbackDeductedLoyaltyPointsEffectProps
      * @param programId {Number} The ID of the loyalty program where these points were reimbursed.
      * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were reimbursed.
-     * @param value {Number} The amount of reimbursed points that were added.
+     * @param value {Number} The amount of points that were reimbursed.
      * @param recipientIntegrationId {String} The user for whom these points were reimbursed.
-     * @param transactionUUID {String} The identifier of 'addition' entries added to the ledger as the `deductLoyaltyPoints` effect is rolled back.
+     * @param transactionUUID {String} The identifier of this loyalty point transaction.
      */
     constructor(programId, subLedgerId, value, recipientIntegrationId, transactionUUID) { 
         
@@ -102,7 +102,7 @@ RollbackDeductedLoyaltyPointsEffectProps.prototype['programId'] = undefined;
 RollbackDeductedLoyaltyPointsEffectProps.prototype['subLedgerId'] = undefined;
 
 /**
- * The amount of reimbursed points that were added.
+ * The amount of points that were reimbursed.
  * @member {Number} value
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['value'] = undefined;
@@ -114,19 +114,19 @@ RollbackDeductedLoyaltyPointsEffectProps.prototype['value'] = undefined;
 RollbackDeductedLoyaltyPointsEffectProps.prototype['recipientIntegrationId'] = undefined;
 
 /**
- * Date after which the reimbursed points will be valid.
+ * The date after which the reimbursed points will be valid.
  * @member {Date} startDate
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['startDate'] = undefined;
 
 /**
- * Date after which the reimbursed points will expire.
+ * The date after which the reimbursed points will expire.
  * @member {Date} expiryDate
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['expiryDate'] = undefined;
 
 /**
- * The identifier of 'addition' entries added to the ledger as the `deductLoyaltyPoints` effect is rolled back.
+ * The identifier of this loyalty point transaction.
  * @member {String} transactionUUID
  */
 RollbackDeductedLoyaltyPointsEffectProps.prototype['transactionUUID'] = undefined;

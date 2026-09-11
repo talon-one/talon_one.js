@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import RoleV2 from './RoleV2';
+import ModelExport from './ModelExport';
 
 /**
  * The InlineResponse20046 model module.
  * @module model/InlineResponse20046
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20046 {
     /**
      * Constructs a new <code>InlineResponse20046</code>.
      * @alias module:model/InlineResponse20046
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/RoleV2>} 
+     * @param data {Array.<module:model/ModelExport>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20046 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RoleV2]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20046 {
 InlineResponse20046.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/RoleV2>} data
+ * @member {Array.<module:model/ModelExport>} data
  */
 InlineResponse20046.prototype['data'] = undefined;
 

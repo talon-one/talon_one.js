@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The RedeemReferralEffectProps model module.
  * @module model/RedeemReferralEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RedeemReferralEffectProps {
     /**
      * Constructs a new <code>RedeemReferralEffectProps</code>.
-     * This effect is **deprecated**. The properties specific to the \&quot;redeemReferral\&quot; effect. This gets triggered whenever the referral code is valid, and a rule was triggered that contains a \&quot;redeem referral\&quot; effect. 
+     * This effect is **deprecated**. It has been replaced by the &#x60;acceptReferral&#x60; effect. This effect indicates that the referral code is valid and has been redeemed. 
      * @alias module:model/RedeemReferralEffectProps
      * @param id {Number} The id of the referral code that was redeemed.
      * @param value {String} The referral code that was redeemed.

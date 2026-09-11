@@ -12,18 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
+import IntegrationHubEventType from './IntegrationHubEventType';
 
 /**
  * The IntegrationHubPaginatedEventPayload model module.
  * @module model/IntegrationHubPaginatedEventPayload
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubPaginatedEventPayload {
     /**
      * Constructs a new <code>IntegrationHubPaginatedEventPayload</code>.
      * @alias module:model/IntegrationHubPaginatedEventPayload
      * @param totalResultSize {Number} 
-     * @param eventType {module:model/IntegrationHubPaginatedEventPayload.EventTypeEnum} 
+     * @param eventType {module:model/IntegrationHubEventType} 
      * @param data {Array.<Object>} 
      */
     constructor(totalResultSize, eventType, data) { 
@@ -60,7 +61,7 @@ class IntegrationHubPaginatedEventPayload {
                 obj['BatchedAt'] = ApiClient.convertToType(data['BatchedAt'], 'Date');
             }
             if (data.hasOwnProperty('EventType')) {
-                obj['EventType'] = ApiClient.convertToType(data['EventType'], 'String');
+                obj['EventType'] = IntegrationHubEventType.constructFromObject(data['EventType']);
             }
             if (data.hasOwnProperty('Data')) {
                 obj['Data'] = ApiClient.convertToType(data['Data'], [Object]);
@@ -84,7 +85,7 @@ IntegrationHubPaginatedEventPayload.prototype['TotalResultSize'] = undefined;
 IntegrationHubPaginatedEventPayload.prototype['BatchedAt'] = undefined;
 
 /**
- * @member {module:model/IntegrationHubPaginatedEventPayload.EventTypeEnum} EventType
+ * @member {module:model/IntegrationHubEventType} EventType
  */
 IntegrationHubPaginatedEventPayload.prototype['EventType'] = undefined;
 
@@ -95,51 +96,6 @@ IntegrationHubPaginatedEventPayload.prototype['Data'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>EventType</code> property.
- * @enum {String}
- * @readonly
- */
-IntegrationHubPaginatedEventPayload['EventTypeEnum'] = {
-
-    /**
-     * value: "LoyaltyPointsChanged"
-     * @const
-     */
-    "LoyaltyPointsChanged": "LoyaltyPointsChanged",
-
-    /**
-     * value: "LoyaltyTierDowngrade"
-     * @const
-     */
-    "LoyaltyTierDowngrade": "LoyaltyTierDowngrade",
-
-    /**
-     * value: "LoyaltyTierUpgrade"
-     * @const
-     */
-    "LoyaltyTierUpgrade": "LoyaltyTierUpgrade",
-
-    /**
-     * value: "CouponCreated"
-     * @const
-     */
-    "CouponCreated": "CouponCreated",
-
-    /**
-     * value: "CouponUpdated"
-     * @const
-     */
-    "CouponUpdated": "CouponUpdated",
-
-    /**
-     * value: "CouponDeleted"
-     * @const
-     */
-    "CouponDeleted": "CouponDeleted"
-};
 
 
 

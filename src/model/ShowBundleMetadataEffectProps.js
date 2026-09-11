@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ShowBundleMetadataEffectProps model module.
  * @module model/ShowBundleMetadataEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ShowBundleMetadataEffectProps {
     /**
      * Constructs a new <code>ShowBundleMetadataEffectProps</code>.
-     * This effect is **deprecated**. The properties specific to the \&quot;ShowBundleMetadata\&quot; effect. This effect contains information that allows you to associate the discounts from a rule in a bundle campaign with specific cart items. This way you can distinguish from \&quot;normal\&quot; discounts that were not the result of a product bundle. 
+     * This effect is **deprecated**.  The &#x60;ShowBundleMetadata&#x60; effect contains information that allows you to associate the discounts from a rule in a bundle campaign with specific cart items. This way you can distinguish from \&quot;normal\&quot; discounts that were not the result of a product bundle.
      * @alias module:model/ShowBundleMetadataEffectProps
      * @param description {String} Description of the product bundle.
      * @param bundleAttributes {Array.<String>} The cart item attributes that determined which items are being bundled together.

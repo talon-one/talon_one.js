@@ -72,12 +72,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property integrationId (base name: "integrationId")', function() {
-      // uncomment below and update the code to test the property integrationId
-      //var instane = new TalonOne.IntegrationEventV3Request();
-      //expect(instance).to.be();
-    });
-
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instane = new TalonOne.IntegrationEventV3Request();
@@ -90,14 +84,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property connectedSessionID (base name: "connectedSessionID")', function() {
-      // uncomment below and update the code to test the property connectedSessionID
+    it('should have the property integrationId (base name: "integrationId")', function() {
+      // uncomment below and update the code to test the property integrationId
       //var instane = new TalonOne.IntegrationEventV3Request();
       //expect(instance).to.be();
     });
 
-    it('should have the property previousEventID (base name: "previousEventID")', function() {
-      // uncomment below and update the code to test the property previousEventID
+    it('should have the property connectedSessionId (base name: "connectedSessionId")', function() {
+      // uncomment below and update the code to test the property connectedSessionId
+      //var instane = new TalonOne.IntegrationEventV3Request();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referralCode (base name: "referralCode")', function() {
+      // uncomment below and update the code to test the property referralCode
       //var instane = new TalonOne.IntegrationEventV3Request();
       //expect(instance).to.be();
     });

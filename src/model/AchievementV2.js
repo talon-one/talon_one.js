@@ -12,11 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import CampaignReference from './CampaignReference';
+import TimePoint from './TimePoint';
 
 /**
  * The AchievementV2 model module.
  * @module model/AchievementV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AchievementV2 {
     /**
@@ -30,14 +32,15 @@ class AchievementV2 {
      * @param target {Number} The required number of actions or the transactional milestone to complete the achievement.
      * @param recurrencePolicy {module:model/AchievementV2.RecurrencePolicyEnum} The policy that determines if and how the achievement recurs. - `no_recurrence`: The achievement can be completed only once. - `on_expiration`: The achievement resets after it expires and becomes available again. - `on_completion`: When the customer progress status reaches `completed`, the achievement resets and becomes available again. 
      * @param activationPolicy {module:model/AchievementV2.ActivationPolicyEnum} The policy that determines how the achievement starts, ends, or resets. - `user_action`: The achievement ends or resets relative to when the customer started the achievement. - `fixed_schedule`: The achievement starts, ends, or resets for all customers following a fixed schedule. 
-     * @param sandbox {Boolean} Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type.
      * @param subscribedApplications {Array.<Number>} A list containing the IDs of all applications that are subscribed to A list containing the IDs of all Applications that are connected to this achievement.
-     * @param timezone {String} A string containing an IANA timezone descriptor.
      * @param userId {Number} The ID of the user that created this achievement.
+     * @param sandbox {Boolean} Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type.
+     * @param timezone {String} A string containing an IANA timezone descriptor.
+     * @param referencedByCampaigns {Array.<module:model/CampaignReference>} The campaigns that reference this achievement. They are sorted in ascending order by their id.
      */
-    constructor(id, created, name, title, description, target, recurrencePolicy, activationPolicy, sandbox, subscribedApplications, timezone, userId) { 
+    constructor(id, created, name, title, description, target, recurrencePolicy, activationPolicy, subscribedApplications, userId, sandbox, timezone, referencedByCampaigns) { 
         
-        AchievementV2.initialize(this, id, created, name, title, description, target, recurrencePolicy, activationPolicy, sandbox, subscribedApplications, timezone, userId);
+        AchievementV2.initialize(this, id, created, name, title, description, target, recurrencePolicy, activationPolicy, subscribedApplications, userId, sandbox, timezone, referencedByCampaigns);
     }
 
     /**
@@ -45,7 +48,7 @@ class AchievementV2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, name, title, description, target, recurrencePolicy, activationPolicy, sandbox, subscribedApplications, timezone, userId) { 
+    static initialize(obj, id, created, name, title, description, target, recurrencePolicy, activationPolicy, subscribedApplications, userId, sandbox, timezone, referencedByCampaigns) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['name'] = name;
@@ -54,10 +57,11 @@ class AchievementV2 {
         obj['target'] = target;
         obj['recurrencePolicy'] = recurrencePolicy;
         obj['activationPolicy'] = activationPolicy;
-        obj['sandbox'] = sandbox;
         obj['subscribedApplications'] = subscribedApplications;
-        obj['timezone'] = timezone;
         obj['userId'] = userId;
+        obj['sandbox'] = sandbox;
+        obj['timezone'] = timezone;
+        obj['referencedByCampaigns'] = referencedByCampaigns;
     }
 
     /**
@@ -107,14 +111,8 @@ class AchievementV2 {
             if (data.hasOwnProperty('allowRollbackAfterCompletion')) {
                 obj['allowRollbackAfterCompletion'] = ApiClient.convertToType(data['allowRollbackAfterCompletion'], 'Boolean');
             }
-            if (data.hasOwnProperty('sandbox')) {
-                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
-            }
             if (data.hasOwnProperty('subscribedApplications')) {
                 obj['subscribedApplications'] = ApiClient.convertToType(data['subscribedApplications'], ['Number']);
-            }
-            if (data.hasOwnProperty('timezone')) {
-                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
             }
             if (data.hasOwnProperty('userId')) {
                 obj['userId'] = ApiClient.convertToType(data['userId'], 'Number');
@@ -122,11 +120,26 @@ class AchievementV2 {
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
             }
+            if (data.hasOwnProperty('periodEndOverride')) {
+                obj['periodEndOverride'] = TimePoint.constructFromObject(data['periodEndOverride']);
+            }
             if (data.hasOwnProperty('hasProgress')) {
                 obj['hasProgress'] = ApiClient.convertToType(data['hasProgress'], 'Boolean');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('sandbox')) {
+                obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
+            }
+            if (data.hasOwnProperty('timezone')) {
+                obj['timezone'] = ApiClient.convertToType(data['timezone'], 'String');
+            }
+            if (data.hasOwnProperty('campaignId')) {
+                obj['campaignId'] = ApiClient.convertToType(data['campaignId'], 'Number');
+            }
+            if (data.hasOwnProperty('referencedByCampaigns')) {
+                obj['referencedByCampaigns'] = ApiClient.convertToType(data['referencedByCampaigns'], [CampaignReference]);
             }
         }
         return obj;
@@ -208,22 +221,10 @@ AchievementV2.prototype['endDate'] = undefined;
 AchievementV2.prototype['allowRollbackAfterCompletion'] = undefined;
 
 /**
- * Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type.
- * @member {Boolean} sandbox
- */
-AchievementV2.prototype['sandbox'] = undefined;
-
-/**
  * A list containing the IDs of all applications that are subscribed to A list containing the IDs of all Applications that are connected to this achievement.
  * @member {Array.<Number>} subscribedApplications
  */
 AchievementV2.prototype['subscribedApplications'] = undefined;
-
-/**
- * A string containing an IANA timezone descriptor.
- * @member {String} timezone
- */
-AchievementV2.prototype['timezone'] = undefined;
 
 /**
  * The ID of the user that created this achievement.
@@ -238,16 +239,45 @@ AchievementV2.prototype['userId'] = undefined;
 AchievementV2.prototype['createdBy'] = undefined;
 
 /**
+ * @member {module:model/TimePoint} periodEndOverride
+ */
+AchievementV2.prototype['periodEndOverride'] = undefined;
+
+/**
  * Indicates if a customer has made progress in the achievement.
  * @member {Boolean} hasProgress
  */
 AchievementV2.prototype['hasProgress'] = undefined;
 
 /**
- * The status of the achievement.
+ * The status of the achievement.                                                                                               - `active`: The achievement is available to customers. - `scheduled`: The achievement has a `fixedStartDate` set in the future. - `expired`: The achievement's `endDate` is in the past. 
  * @member {module:model/AchievementV2.StatusEnum} status
  */
 AchievementV2.prototype['status'] = undefined;
+
+/**
+ * Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type.
+ * @member {Boolean} sandbox
+ */
+AchievementV2.prototype['sandbox'] = undefined;
+
+/**
+ * A string containing an IANA timezone descriptor.
+ * @member {String} timezone
+ */
+AchievementV2.prototype['timezone'] = undefined;
+
+/**
+ * This property is **deprecated**. Use `referencedByCampaigns` instead. This field contains the first campaign ID from the related `referencedByCampaigns`, and is omitted when `referencedByCampaigns` is empty.
+ * @member {Number} campaignId
+ */
+AchievementV2.prototype['campaignId'] = undefined;
+
+/**
+ * The campaigns that reference this achievement. They are sorted in ascending order by their id.
+ * @member {Array.<module:model/CampaignReference>} referencedByCampaigns
+ */
+AchievementV2.prototype['referencedByCampaigns'] = undefined;
 
 
 
@@ -309,28 +339,22 @@ AchievementV2['ActivationPolicyEnum'] = {
 AchievementV2['StatusEnum'] = {
 
     /**
-     * value: "inprogress"
+     * value: "active"
      * @const
      */
-    "inprogress": "inprogress",
+    "active": "active",
+
+    /**
+     * value: "scheduled"
+     * @const
+     */
+    "scheduled": "scheduled",
 
     /**
      * value: "expired"
      * @const
      */
-    "expired": "expired",
-
-    /**
-     * value: "not_started"
-     * @const
-     */
-    "not_started": "not_started",
-
-    /**
-     * value: "completed"
-     * @const
-     */
-    "completed": "completed"
+    "expired": "expired"
 };
 
 

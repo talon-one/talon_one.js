@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2Readonly model module.
  * @module model/RoleV2Readonly
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RoleV2Readonly {
     /**

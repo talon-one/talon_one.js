@@ -17,7 +17,7 @@ import Experiment from './Experiment';
 /**
  * The InlineResponse20016 model module.
  * @module model/InlineResponse20016
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20016 {
     /**

@@ -17,7 +17,7 @@ import IntegrationCampaign from './IntegrationCampaign';
 /**
  * The InlineResponse200 model module.
  * @module model/InlineResponse200
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse200 {
     /**

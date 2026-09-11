@@ -59,6 +59,10 @@ Name | Type | Description | Notes
 
 * `Achievements` (value: `"Achievements"`)
 
+* `AdvancedEvent` (value: `"AdvancedEvent"`)
+
+* `AdvancedEventConnectedSession` (value: `"AdvancedEventConnectedSession"`)
+
 
 
 

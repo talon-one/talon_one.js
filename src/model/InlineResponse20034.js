@@ -12,22 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import Audience from './Audience';
 
 /**
  * The InlineResponse20034 model module.
  * @module model/InlineResponse20034
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20034 {
     /**
      * Constructs a new <code>InlineResponse20034</code>.
      * @alias module:model/InlineResponse20034
-     * @param data {Array.<module:model/Audience>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<String>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20034.initialize(this, data);
+        InlineResponse20034.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,7 +35,8 @@ class InlineResponse20034 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -50,14 +51,11 @@ class InlineResponse20034 {
         if (data) {
             obj = obj || new InlineResponse20034();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Audience]);
+                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
             }
         }
         return obj;
@@ -67,17 +65,12 @@ class InlineResponse20034 {
 }
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20034.prototype['hasMore'] = undefined;
-
-/**
  * @member {Number} totalResultSize
  */
 InlineResponse20034.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Audience>} data
+ * @member {Array.<String>} data
  */
 InlineResponse20034.prototype['data'] = undefined;
 

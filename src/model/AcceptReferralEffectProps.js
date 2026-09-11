@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The AcceptReferralEffectProps model module.
  * @module model/AcceptReferralEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AcceptReferralEffectProps {
     /**
      * Constructs a new <code>AcceptReferralEffectProps</code>.
-     * The properties specific to the \&quot;acceptReferral\&quot; effect. TThis gets triggered whenever the referral code is valid and all other conditions in the rules of its campaign are met.
+     * This effect indicates that the referral code supplied is valid.  You should handle this effect by informing the user that the referral code is valid.  The code is automatically redeemed when you close the session.  Other effects will provide more information about the actual reward.
      * @alias module:model/AcceptReferralEffectProps
-     * @param value {String} The referral code that was accepted.
+     * @param value {String} The referral code provided in the session.
      */
     constructor(value) { 
         
@@ -61,7 +61,7 @@ class AcceptReferralEffectProps {
 }
 
 /**
- * The referral code that was accepted.
+ * The referral code provided in the session.
  * @member {String} value
  */
 AcceptReferralEffectProps.prototype['value'] = undefined;

@@ -18,7 +18,7 @@ import StrikethroughTrigger from './StrikethroughTrigger';
 /**
  * The StrikethroughLabelingNotification model module.
  * @module model/StrikethroughLabelingNotification
- * @version 25.17.0
+ * @version 25.18.0
  */
 class StrikethroughLabelingNotification {
     /**
@@ -99,7 +99,7 @@ class StrikethroughLabelingNotification {
 }
 
 /**
- * The version of the strikethrough pricing notification.
+ * The version of the strikethrough pricing notification. Set for **scheduled** strikethrough pricing updates only. 
  * @member {module:model/StrikethroughLabelingNotification.VersionEnum} version
  */
 StrikethroughLabelingNotification.prototype['version'] = undefined;

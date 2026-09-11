@@ -17,7 +17,7 @@ import ExperimentCampaignCopy from './ExperimentCampaignCopy';
 /**
  * The ExperimentCopyExperiment model module.
  * @module model/ExperimentCopyExperiment
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentCopyExperiment {
     /**
@@ -58,6 +58,12 @@ class ExperimentCopyExperiment {
             if (data.hasOwnProperty('campaign')) {
                 obj['campaign'] = ExperimentCampaignCopy.constructFromObject(data['campaign']);
             }
+            if (data.hasOwnProperty('goalType')) {
+                obj['goalType'] = ApiClient.convertToType(data['goalType'], 'String');
+            }
+            if (data.hasOwnProperty('goalDescription')) {
+                obj['goalDescription'] = ApiClient.convertToType(data['goalDescription'], 'String');
+            }
         }
         return obj;
     }
@@ -76,8 +82,53 @@ ExperimentCopyExperiment.prototype['isVariantAssignmentExternal'] = undefined;
  */
 ExperimentCopyExperiment.prototype['campaign'] = undefined;
 
+/**
+ * The goal of the experiment. Determines which single metric is used to decide the winning variant. When set to `other`, multiple metrics are used. If omitted, the value from the source experiment is used. 
+ * @member {module:model/ExperimentCopyExperiment.GoalTypeEnum} goalType
+ */
+ExperimentCopyExperiment.prototype['goalType'] = undefined;
+
+/**
+ * A description of the experiment goal. Provides context for the AI summary and helps it interpret the outcome of the experiment against the stated goal. If omitted, the value from the source experiment is used. 
+ * @member {String} goalDescription
+ */
+ExperimentCopyExperiment.prototype['goalDescription'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>goalType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+ExperimentCopyExperiment['GoalTypeEnum'] = {
+
+    /**
+     * value: "other"
+     * @const
+     */
+    "other": "other",
+
+    /**
+     * value: "maximize_revenue"
+     * @const
+     */
+    "maximize_revenue": "maximize_revenue",
+
+    /**
+     * value: "maximize_items_sold"
+     * @const
+     */
+    "maximize_items_sold": "maximize_items_sold",
+
+    /**
+     * value: "optimize_discount_efficiency"
+     * @const
+     */
+    "optimize_discount_efficiency": "optimize_discount_efficiency"
+};
 
 
 

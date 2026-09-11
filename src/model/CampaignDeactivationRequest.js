@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignDeactivationRequest model module.
  * @module model/CampaignDeactivationRequest
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CampaignDeactivationRequest {
     /**

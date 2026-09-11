@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationApiHealth model module.
  * @module model/ApplicationApiHealth
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ApplicationApiHealth {
     /**

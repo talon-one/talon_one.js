@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The AddFreeItemEffectProps model module.
  * @module model/AddFreeItemEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AddFreeItemEffectProps {
     /**
      * Constructs a new <code>AddFreeItemEffectProps</code>.
-     * The properties specific to the \&quot;addFreeItem\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;add free item\&quot; effect.
+     * This effect indicates that a free item should be added to the shopping cart in the current session. In this example, add the SKU to the shopping cart and set its price to &#x60;0&#x60;.  The effect of a successful referral can mean a free item for someone else, such as the referrer.
      * @alias module:model/AddFreeItemEffectProps
      * @param sku {String} SKU of the item that needs to be added.
-     * @param name {String} The name / description of the effect
+     * @param name {String} Description of the effect.
      */
     constructor(sku, name) { 
         
@@ -75,7 +75,7 @@ class AddFreeItemEffectProps {
 AddFreeItemEffectProps.prototype['sku'] = undefined;
 
 /**
- * The name / description of the effect
+ * Description of the effect.
  * @member {String} name
  */
 AddFreeItemEffectProps.prototype['name'] = undefined;

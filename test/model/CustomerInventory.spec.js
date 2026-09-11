@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewards (base name: "rewards")', function() {
+      // uncomment below and update the code to test the property rewards
+      //var instane = new TalonOne.CustomerInventory();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

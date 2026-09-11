@@ -114,20 +114,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sandbox (base name: "sandbox")', function() {
-      // uncomment below and update the code to test the property sandbox
-      //var instane = new TalonOne.AchievementBaseV2();
-      //expect(instance).to.be();
-    });
-
     it('should have the property subscribedApplications (base name: "subscribedApplications")', function() {
       // uncomment below and update the code to test the property subscribedApplications
-      //var instane = new TalonOne.AchievementBaseV2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property timezone (base name: "timezone")', function() {
-      // uncomment below and update the code to test the property timezone
       //var instane = new TalonOne.AchievementBaseV2();
       //expect(instance).to.be();
     });

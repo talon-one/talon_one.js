@@ -17,7 +17,7 @@ import TierWillDowngradeNotificationTrigger from './TierWillDowngradeNotificatio
 /**
  * The TierWillDowngradeNotificationPolicy model module.
  * @module model/TierWillDowngradeNotificationPolicy
- * @version 25.17.0
+ * @version 25.18.0
  */
 class TierWillDowngradeNotificationPolicy {
     /**

@@ -19,7 +19,7 @@ import ExperimentVariantAllocation from './ExperimentVariantAllocation';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CustomerSessionV2 {
     /**
@@ -31,7 +31,7 @@ class CustomerSessionV2 {
      * @param integrationId {String} The integration ID set by your integration layer.
      * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
-     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
+     * @param state {module:model/CustomerSessionV2.StateEnum} Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` -> `closed` 2. `open` -> `cancelled` 3. Either:    - `closed` -> `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` -> `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` -> `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` -> `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
      * @param cartItems {Array.<module:model/CartItem>} The items to add to this session. **Do not exceed 1000 items** and ensure the sum of all cart item's `quantity` **does not exceed 10.000** per request. 
      * @param attributes {Object} Use this property to set a value for the attributes of your choice. Attributes represent any information to attach to your session, like the shipping city.  You can use [built-in attributes](https://docs.talon.one/docs/dev/concepts/attributes#built-in-attributes) or [custom ones](https://docs.talon.one/docs/dev/concepts/attributes#custom-attributes). Custom attributes must be created in the Campaign Manager before you set them with this property. 
      * @param firstSession {Boolean} Indicates whether this is the first session for the customer's profile. It's always `true` for anonymous sessions.
@@ -39,11 +39,12 @@ class CustomerSessionV2 {
      * @param total {Number} The total value of cart items and additional costs in the session, before any discounts are applied.
      * @param cartItemTotal {Number} The total value of cart items, before any discounts are applied.
      * @param additionalCostTotal {Number} The total value of additional costs, before any discounts are applied.
+     * @param cartItemAdditionalCostTotal {Number} The total value of additional costs applied to individual items, before any discounts are applied.
      * @param updated {Date} Timestamp of the most recent event received on this session.
      */
-    constructor(id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, updated) { 
+    constructor(id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, cartItemAdditionalCostTotal, updated) { 
         
-        CustomerSessionV2.initialize(this, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, updated);
+        CustomerSessionV2.initialize(this, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, cartItemAdditionalCostTotal, updated);
     }
 
     /**
@@ -51,7 +52,7 @@ class CustomerSessionV2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, updated) { 
+    static initialize(obj, id, created, integrationId, applicationId, profileId, state, cartItems, attributes, firstSession, updateCount, total, cartItemTotal, additionalCostTotal, cartItemAdditionalCostTotal, updated) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['integrationId'] = integrationId;
@@ -65,6 +66,7 @@ class CustomerSessionV2 {
         obj['total'] = total;
         obj['cartItemTotal'] = cartItemTotal;
         obj['additionalCostTotal'] = additionalCostTotal;
+        obj['cartItemAdditionalCostTotal'] = cartItemAdditionalCostTotal;
         obj['updated'] = updated;
     }
 
@@ -109,6 +111,9 @@ class CustomerSessionV2 {
             if (data.hasOwnProperty('loyaltyCards')) {
                 obj['loyaltyCards'] = ApiClient.convertToType(data['loyaltyCards'], ['String']);
             }
+            if (data.hasOwnProperty('rewardIntegrationIds')) {
+                obj['rewardIntegrationIds'] = ApiClient.convertToType(data['rewardIntegrationIds'], ['String']);
+            }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
@@ -141,6 +146,9 @@ class CustomerSessionV2 {
             }
             if (data.hasOwnProperty('additionalCostTotal')) {
                 obj['additionalCostTotal'] = ApiClient.convertToType(data['additionalCostTotal'], 'Number');
+            }
+            if (data.hasOwnProperty('cartItemAdditionalCostTotal')) {
+                obj['cartItemAdditionalCostTotal'] = ApiClient.convertToType(data['cartItemAdditionalCostTotal'], 'Number');
             }
             if (data.hasOwnProperty('updated')) {
                 obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
@@ -213,7 +221,13 @@ CustomerSessionV2.prototype['referralCode'] = undefined;
 CustomerSessionV2.prototype['loyaltyCards'] = undefined;
 
 /**
- * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` → `closed` 2. `open` → `cancelled` 3. Either:    - `closed` → `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` → `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` → `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` → `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
+ * The integration IDs of the unlocked rewards that can be used in this session. 
+ * @member {Array.<String>} rewardIntegrationIds
+ */
+CustomerSessionV2.prototype['rewardIntegrationIds'] = undefined;
+
+/**
+ * Indicates the current state of the session. Sessions can be created as `open` or `closed`. The state transitions are:  1. `open` -> `closed` 2. `open` -> `cancelled` 3. Either:    - `closed` -> `cancelled` (**only** via [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2)) or    - `closed` -> `partially_returned` (**only** via [Return cart items](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/returnCartItems))    - `closed` -> `open` (**only** via [Reopen customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession)) 4. `partially_returned` -> `cancelled`  For more information, see [Customer session states](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions). 
  * @member {module:model/CustomerSessionV2.StateEnum} state
  * @default 'open'
  */
@@ -278,6 +292,12 @@ CustomerSessionV2.prototype['cartItemTotal'] = undefined;
  * @member {Number} additionalCostTotal
  */
 CustomerSessionV2.prototype['additionalCostTotal'] = undefined;
+
+/**
+ * The total value of additional costs applied to individual items, before any discounts are applied.
+ * @member {Number} cartItemAdditionalCostTotal
+ */
+CustomerSessionV2.prototype['cartItemAdditionalCostTotal'] = undefined;
 
 /**
  * Timestamp of the most recent event received on this session.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewInternalAudience model module.
  * @module model/NewInternalAudience
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewInternalAudience {
     /**
@@ -58,6 +58,9 @@ class NewInternalAudience {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('subscribedApplicationsIds')) {
+                obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
+            }
         }
         return obj;
     }
@@ -82,6 +85,12 @@ NewInternalAudience.prototype['sandbox'] = undefined;
  * @member {String} description
  */
 NewInternalAudience.prototype['description'] = undefined;
+
+/**
+ * A list of the IDs of the Applications that are connected to this audience.
+ * @member {Array.<Number>} subscribedApplicationsIds
+ */
+NewInternalAudience.prototype['subscribedApplicationsIds'] = undefined;
 
 
 

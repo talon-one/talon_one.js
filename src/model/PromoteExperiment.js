@@ -17,7 +17,7 @@ import ExperimentCampaignCopy from './ExperimentCampaignCopy';
 /**
  * The PromoteExperiment model module.
  * @module model/PromoteExperiment
- * @version 25.17.0
+ * @version 25.18.0
  */
 class PromoteExperiment {
     /**

@@ -78,6 +78,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property instanceName (base name: "InstanceName")', function() {
+      // uncomment below and update the code to test the property instanceName
+      //var instane = new TalonOne.IntegrationHubFlowConfig();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property integrationName (base name: "IntegrationName")', function() {
+      // uncomment below and update the code to test the property integrationName
+      //var instane = new TalonOne.IntegrationHubFlowConfig();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

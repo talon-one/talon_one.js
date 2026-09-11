@@ -17,7 +17,7 @@ import OktaEvent from './OktaEvent';
 /**
  * The OktaEventPayloadData model module.
  * @module model/OktaEventPayloadData
- * @version 25.17.0
+ * @version 25.18.0
  */
 class OktaEventPayloadData {
     /**

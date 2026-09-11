@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignEligibility (base name: "campaignEligibility")', function() {
+      // uncomment below and update the code to test the property campaignEligibility
+      //var instane = new TalonOne.IntegrationEventV2Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property effects (base name: "effects")', function() {
       // uncomment below and update the code to test the property effects
       //var instane = new TalonOne.IntegrationEventV2Response();
@@ -98,6 +104,18 @@
 
     it('should have the property awardedGiveaways (base name: "awardedGiveaways")', function() {
       // uncomment below and update the code to test the property awardedGiveaways
+      //var instane = new TalonOne.IntegrationEventV2Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property achievements (base name: "achievements")', function() {
+      // uncomment below and update the code to test the property achievements
+      //var instane = new TalonOne.IntegrationEventV2Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewards (base name: "rewards")', function() {
+      // uncomment below and update the code to test the property rewards
       //var instane = new TalonOne.IntegrationEventV2Response();
       //expect(instance).to.be();
     });

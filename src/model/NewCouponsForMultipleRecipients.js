@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCouponsForMultipleRecipients model module.
  * @module model/NewCouponsForMultipleRecipients
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewCouponsForMultipleRecipients {
     /**
@@ -66,6 +66,9 @@ class NewCouponsForMultipleRecipients {
             if (data.hasOwnProperty('expiryDate')) {
                 obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
             }
+            if (data.hasOwnProperty('batchId')) {
+                obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
@@ -114,6 +117,12 @@ NewCouponsForMultipleRecipients.prototype['startDate'] = undefined;
  * @member {Date} expiryDate
  */
 NewCouponsForMultipleRecipients.prototype['expiryDate'] = undefined;
+
+/**
+ * The batch ID that all coupons created by the request will bear. If omitted, a batch ID is generated automatically.
+ * @member {String} batchId
+ */
+NewCouponsForMultipleRecipients.prototype['batchId'] = undefined;
 
 /**
  * Arbitrary properties associated with this item.

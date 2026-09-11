@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 
 * `achievements` (value: `"achievements"`)
 
+* `advancedEvents` (value: `"advancedEvents"`)
+
 
 
 

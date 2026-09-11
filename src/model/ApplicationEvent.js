@@ -18,7 +18,7 @@ import RuleFailureReason from './RuleFailureReason';
 /**
  * The ApplicationEvent model module.
  * @module model/ApplicationEvent
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ApplicationEvent {
     /**
@@ -27,7 +27,7 @@ class ApplicationEvent {
      * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the Application that owns this entity.
-     * @param type {String} A string representing the event. Must not be a reserved event name.
+     * @param type {String} The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
      * @param attributes {Object} Additional JSON serialized data associated with the event.
      * @param effects {Array.<module:model/Effect>} An array containing the effects that were applied as a result of this event.
      */
@@ -78,6 +78,9 @@ class ApplicationEvent {
             }
             if (data.hasOwnProperty('storeIntegrationId')) {
                 obj['storeIntegrationId'] = ApiClient.convertToType(data['storeIntegrationId'], 'String');
+            }
+            if (data.hasOwnProperty('integrationId')) {
+                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
             }
             if (data.hasOwnProperty('sessionId')) {
                 obj['sessionId'] = ApiClient.convertToType(data['sessionId'], 'Number');
@@ -138,13 +141,19 @@ ApplicationEvent.prototype['storeId'] = undefined;
 ApplicationEvent.prototype['storeIntegrationId'] = undefined;
 
 /**
+ * The unique ID of the event. Only one event with this ID can be registered. 
+ * @member {String} integrationId
+ */
+ApplicationEvent.prototype['integrationId'] = undefined;
+
+/**
  * The globally unique Talon.One ID of the session that contains this event.
  * @member {Number} sessionId
  */
 ApplicationEvent.prototype['sessionId'] = undefined;
 
 /**
- * A string representing the event. Must not be a reserved event name.
+ * The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
  * @member {String} type
  */
 ApplicationEvent.prototype['type'] = undefined;

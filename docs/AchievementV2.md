@@ -16,13 +16,16 @@ Name | Type | Description | Notes
 **fixedStartDate** | **Date** | The achievement&#39;s start date when &#x60;activationPolicy&#x60; is set to &#x60;fixed_schedule&#x60;.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
 **endDate** | **Date** | The achievement&#39;s end date. If defined, customers cannot participate in the achievement after this date.  **Note:** It must be an RFC3339 timestamp string.  | [optional] 
 **allowRollbackAfterCompletion** | **Boolean** | When &#x60;true&#x60;, customer progress can be rolled back in completed achievements. | [optional] 
-**sandbox** | **Boolean** | Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type. | 
 **subscribedApplications** | **[Number]** | A list containing the IDs of all applications that are subscribed to A list containing the IDs of all Applications that are connected to this achievement. | 
-**timezone** | **String** | A string containing an IANA timezone descriptor. | 
 **userId** | **Number** | The ID of the user that created this achievement. | 
 **createdBy** | **String** | Name of the user that created the achievement.  **Note**: This is not available if the user has been deleted.  | [optional] 
+**periodEndOverride** | [**TimePoint**](TimePoint.md) |  | [optional] 
 **hasProgress** | **Boolean** | Indicates if a customer has made progress in the achievement. | [optional] 
-**status** | **String** | The status of the achievement. | [optional] 
+**status** | **String** | The status of the achievement.                                                                                               - &#x60;active&#x60;: The achievement is available to customers. - &#x60;scheduled&#x60;: The achievement has a &#x60;fixedStartDate&#x60; set in the future. - &#x60;expired&#x60;: The achievement&#39;s &#x60;endDate&#x60; is in the past.  | [optional] 
+**sandbox** | **Boolean** | Indicates if this achievement is a live or sandbox achievement. Achievements of a given type can only be connected to Applications of the same type. | 
+**timezone** | **String** | A string containing an IANA timezone descriptor. | 
+**campaignId** | **Number** | This property is **deprecated**. Use &#x60;referencedByCampaigns&#x60; instead. This field contains the first campaign ID from the related &#x60;referencedByCampaigns&#x60;, and is omitted when &#x60;referencedByCampaigns&#x60; is empty. | [optional] 
+**referencedByCampaigns** | [**[CampaignReference]**](CampaignReference.md) | The campaigns that reference this achievement. They are sorted in ascending order by their id. | 
 
 
 
@@ -53,13 +56,11 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 
 
-* `inprogress` (value: `"inprogress"`)
+* `active` (value: `"active"`)
+
+* `scheduled` (value: `"scheduled"`)
 
 * `expired` (value: `"expired"`)
-
-* `not_started` (value: `"not_started"`)
-
-* `completed` (value: `"completed"`)
 
 
 

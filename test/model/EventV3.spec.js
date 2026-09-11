@@ -54,6 +54,30 @@
       //expect(instance).to.be.a(TalonOne.EventV3);
     });
 
+    it('should have the property connectedSessionId (base name: "connectedSessionId")', function() {
+      // uncomment below and update the code to test the property connectedSessionId
+      //var instane = new TalonOne.EventV3();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new TalonOne.EventV3();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property created (base name: "created")', function() {
+      // uncomment below and update the code to test the property created
+      //var instane = new TalonOne.EventV3();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property applicationId (base name: "applicationId")', function() {
+      // uncomment below and update the code to test the property applicationId
+      //var instane = new TalonOne.EventV3();
+      //expect(instance).to.be();
+    });
+
     it('should have the property profileId (base name: "profileId")', function() {
       // uncomment below and update the code to test the property profileId
       //var instane = new TalonOne.EventV3();
@@ -62,18 +86,6 @@
 
     it('should have the property storeIntegrationId (base name: "storeIntegrationId")', function() {
       // uncomment below and update the code to test the property storeIntegrationId
-      //var instane = new TalonOne.EventV3();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property evaluableCampaignIds (base name: "evaluableCampaignIds")', function() {
-      // uncomment below and update the code to test the property evaluableCampaignIds
-      //var instane = new TalonOne.EventV3();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property integrationId (base name: "integrationId")', function() {
-      // uncomment below and update the code to test the property integrationId
       //var instane = new TalonOne.EventV3();
       //expect(instance).to.be();
     });
@@ -90,14 +102,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property connectedSessionID (base name: "connectedSessionID")', function() {
-      // uncomment below and update the code to test the property connectedSessionID
+    it('should have the property integrationId (base name: "integrationId")', function() {
+      // uncomment below and update the code to test the property integrationId
       //var instane = new TalonOne.EventV3();
       //expect(instance).to.be();
     });
 
-    it('should have the property previousEventID (base name: "previousEventID")', function() {
-      // uncomment below and update the code to test the property previousEventID
+    it('should have the property referralCode (base name: "referralCode")', function() {
+      // uncomment below and update the code to test the property referralCode
+      //var instane = new TalonOne.EventV3();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property effects (base name: "effects")', function() {
+      // uncomment below and update the code to test the property effects
       //var instane = new TalonOne.EventV3();
       //expect(instance).to.be();
     });

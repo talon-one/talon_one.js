@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The RevisionVersion model module.
  * @module model/RevisionVersion
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RevisionVersion {
     /**
@@ -297,7 +297,13 @@ RevisionVersion['FeaturesEnum'] = {
      * value: "achievements"
      * @const
      */
-    "achievements": "achievements"
+    "achievements": "achievements",
+
+    /**
+     * value: "advancedEvents"
+     * @const
+     */
+    "advancedEvents": "advancedEvents"
 };
 
 

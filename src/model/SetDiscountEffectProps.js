@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDiscountEffectProps model module.
  * @module model/SetDiscountEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class SetDiscountEffectProps {
     /**
      * Constructs a new <code>SetDiscountEffectProps</code>.
-     * The properties specific to the \&quot;setDiscount\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;set discount\&quot; effect. This is a discount that should be applied on the scope of defined with it.
+     * This effect indicates that a discount should be set on the total shopping cart value of the current order with the given label and amount.  The discount should overwrite any existing discount with the same name. The most recent integration state update always returns the latest values for **all** effects, effectively overwriting any previous effects.  Enabling [partial discounts](https://docs.talon.one/docs/product/applications/manage-general-settings#partial-discounts) allows a rule that would fail because of insufficient budget to pass. The rule still fails when the budget reaches &#x60;0&#x60;. Use the &#x60;desiredValue&#x60; property to identify the original value of the discount.
      * @alias module:model/SetDiscountEffectProps
-     * @param name {String} The name / description of this discount
-     * @param value {Number} The total monetary value of the discount.
+     * @param name {String} The name or description of this discount.
+     * @param value {Number} The monetary value of the effective discount.
      */
     constructor(name, value) { 
         
@@ -72,25 +72,25 @@ class SetDiscountEffectProps {
 }
 
 /**
- * The name / description of this discount
+ * The name or description of this discount.
  * @member {String} name
  */
 SetDiscountEffectProps.prototype['name'] = undefined;
 
 /**
- * The total monetary value of the discount.
+ * The monetary value of the effective discount.
  * @member {Number} value
  */
 SetDiscountEffectProps.prototype['value'] = undefined;
 
 /**
- * The scope which the discount was applied on, can be one of (cartItems,additionalCosts,sessionTotal).
+ * What the discount applies to. Possible values:  - `cartItems`: Discount on the price of the items. - `additionalCosts`: Discount on the [additional costs](https://docs.talon.one/docs/product/account/dev-tools/manage-additional-costs) of the items. - `sessionTotal`: Discount on the total value of the customer session.  **Note:** [Cascading discounts](https://docs.talon.one/docs/product/applications/manage-general-settings#cascading-discounts) must be enabled for this property to be returned.
  * @member {String} scope
  */
 SetDiscountEffectProps.prototype['scope'] = undefined;
 
 /**
- * The original value of the discount.
+ * _(Partial discounts enabled only)_ The monetary value of the discount to be applied without considering budget limitations.
  * @member {Number} desiredValue
  */
 SetDiscountEffectProps.prototype['desiredValue'] = undefined;

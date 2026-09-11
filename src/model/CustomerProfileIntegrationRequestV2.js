@@ -17,7 +17,7 @@ import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**
@@ -136,7 +136,25 @@ CustomerProfileIntegrationRequestV2['ResponseContentEnum'] = {
      * value: "ruleFailureReasons"
      * @const
      */
-    "ruleFailureReasons": "ruleFailureReasons"
+    "ruleFailureReasons": "ruleFailureReasons",
+
+    /**
+     * value: "campaignEligibility"
+     * @const
+     */
+    "campaignEligibility": "campaignEligibility",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements",
+
+    /**
+     * value: "unlockedRewards"
+     * @const
+     */
+    "unlockedRewards": "unlockedRewards"
 };
 
 

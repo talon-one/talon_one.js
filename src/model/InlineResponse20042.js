@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventType from './EventType';
+import WebhookWithOutgoingIntegrationDetails from './WebhookWithOutgoingIntegrationDetails';
 
 /**
  * The InlineResponse20042 model module.
  * @module model/InlineResponse20042
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20042 {
     /**
      * Constructs a new <code>InlineResponse20042</code>.
      * @alias module:model/InlineResponse20042
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/EventType>} 
+     * @param data {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20042 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WebhookWithOutgoingIntegrationDetails]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20042 {
 InlineResponse20042.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/EventType>} data
+ * @member {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} data
  */
 InlineResponse20042.prototype['data'] = undefined;
 

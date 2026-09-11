@@ -102,6 +102,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eligibilityConditions (base name: "eligibilityConditions")', function() {
+      // uncomment below and update the code to test the property eligibilityConditions
+      //var instane = new TalonOne.Reward();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rule (base name: "rule")', function() {
+      // uncomment below and update the code to test the property rule
+      //var instane = new TalonOne.Reward();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bindings (base name: "bindings")', function() {
+      // uncomment below and update the code to test the property bindings
+      //var instane = new TalonOne.Reward();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pointsRequired (base name: "pointsRequired")', function() {
+      // uncomment below and update the code to test the property pointsRequired
+      //var instane = new TalonOne.Reward();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property modified (base name: "modified")', function() {
+      // uncomment below and update the code to test the property modified
+      //var instane = new TalonOne.Reward();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new TalonOne.Reward();

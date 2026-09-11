@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LabelTargetNone model module.
  * @module model/LabelTargetNone
- * @version 25.17.0
+ * @version 25.18.0
  */
 class LabelTargetNone {
     /**

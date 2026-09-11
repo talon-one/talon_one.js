@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InfluencingCampaignDetails model module.
  * @module model/InfluencingCampaignDetails
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InfluencingCampaignDetails {
     /**

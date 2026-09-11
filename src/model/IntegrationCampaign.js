@@ -12,26 +12,28 @@
  */
 
 import ApiClient from '../ApiClient';
+import RuleMetadata from './RuleMetadata';
 
 /**
  * The IntegrationCampaign model module.
  * @module model/IntegrationCampaign
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationCampaign {
     /**
      * Constructs a new <code>IntegrationCampaign</code>.
      * @alias module:model/IntegrationCampaign
-     * @param id {Number} Unique ID of Campaign.
      * @param applicationId {Number} The ID of the Application that owns this entity.
-     * @param name {String} A user-facing name for this campaign.
+     * @param id {Number} Unique ID of Campaign.
+     * @param name {String} The name of the campaign.
      * @param state {module:model/IntegrationCampaign.StateEnum} The state of the campaign. 
      * @param tags {Array.<String>} A list of tags for the campaign.
      * @param features {Array.<module:model/IntegrationCampaign.FeaturesEnum>} The features enabled in this campaign.
+     * @param rules {Array.<module:model/RuleMetadata>} A list of rules containing customer-facing details of the rewards defined in the campaign.
      */
-    constructor(id, applicationId, name, state, tags, features) { 
+    constructor(applicationId, id, name, state, tags, features, rules) { 
         
-        IntegrationCampaign.initialize(this, id, applicationId, name, state, tags, features);
+        IntegrationCampaign.initialize(this, applicationId, id, name, state, tags, features, rules);
     }
 
     /**
@@ -39,13 +41,14 @@ class IntegrationCampaign {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, applicationId, name, state, tags, features) { 
-        obj['id'] = id;
+    static initialize(obj, applicationId, id, name, state, tags, features, rules) { 
         obj['applicationId'] = applicationId;
+        obj['id'] = id;
         obj['name'] = name;
         obj['state'] = state;
         obj['tags'] = tags;
         obj['features'] = features;
+        obj['rules'] = rules;
     }
 
     /**
@@ -59,11 +62,11 @@ class IntegrationCampaign {
         if (data) {
             obj = obj || new IntegrationCampaign();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -89,6 +92,15 @@ class IntegrationCampaign {
             if (data.hasOwnProperty('features')) {
                 obj['features'] = ApiClient.convertToType(data['features'], ['String']);
             }
+            if (data.hasOwnProperty('rules')) {
+                obj['rules'] = ApiClient.convertToType(data['rules'], [RuleMetadata]);
+            }
+            if (data.hasOwnProperty('linkedStoreIds')) {
+                obj['linkedStoreIds'] = ApiClient.convertToType(data['linkedStoreIds'], ['Number']);
+            }
+            if (data.hasOwnProperty('linkedAudienceIds')) {
+                obj['linkedAudienceIds'] = ApiClient.convertToType(data['linkedAudienceIds'], ['Number']);
+            }
         }
         return obj;
     }
@@ -97,19 +109,19 @@ class IntegrationCampaign {
 }
 
 /**
- * Unique ID of Campaign.
- * @member {Number} id
- */
-IntegrationCampaign.prototype['id'] = undefined;
-
-/**
  * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 IntegrationCampaign.prototype['applicationId'] = undefined;
 
 /**
- * A user-facing name for this campaign.
+ * Unique ID of Campaign.
+ * @member {Number} id
+ */
+IntegrationCampaign.prototype['id'] = undefined;
+
+/**
+ * The name of the campaign.
  * @member {String} name
  */
 IntegrationCampaign.prototype['name'] = undefined;
@@ -156,6 +168,24 @@ IntegrationCampaign.prototype['tags'] = undefined;
  * @member {Array.<module:model/IntegrationCampaign.FeaturesEnum>} features
  */
 IntegrationCampaign.prototype['features'] = undefined;
+
+/**
+ * A list of rules containing customer-facing details of the rewards defined in the campaign.
+ * @member {Array.<module:model/RuleMetadata>} rules
+ */
+IntegrationCampaign.prototype['rules'] = undefined;
+
+/**
+ * A list of store IDs linked to this campaign.
+ * @member {Array.<Number>} linkedStoreIds
+ */
+IntegrationCampaign.prototype['linkedStoreIds'] = undefined;
+
+/**
+ * A list of audience IDs linked to this campaign.
+ * @member {Array.<Number>} linkedAudienceIds
+ */
+IntegrationCampaign.prototype['linkedAudienceIds'] = undefined;
 
 
 
@@ -217,7 +247,13 @@ IntegrationCampaign['FeaturesEnum'] = {
      * value: "achievements"
      * @const
      */
-    "achievements": "achievements"
+    "achievements": "achievements",
+
+    /**
+     * value: "advancedEvents"
+     * @const
+     */
+    "advancedEvents": "advancedEvents"
 };
 
 

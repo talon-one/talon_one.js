@@ -17,7 +17,7 @@ import TierDowngradeData from './TierDowngradeData';
 /**
  * The TierDowngradeNotification model module.
  * @module model/TierDowngradeNotification
- * @version 25.17.0
+ * @version 25.18.0
  */
 class TierDowngradeNotification {
     /**

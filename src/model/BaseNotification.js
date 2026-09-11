@@ -17,7 +17,7 @@ import BaseNotificationWebhook from './BaseNotificationWebhook';
 /**
  * The BaseNotification model module.
  * @module model/BaseNotification
- * @version 25.17.0
+ * @version 25.18.0
  */
 class BaseNotification {
     /**

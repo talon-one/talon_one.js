@@ -18,7 +18,7 @@ import ExperimentVariant from './ExperimentVariant';
 /**
  * The Experiment model module.
  * @module model/Experiment
- * @version 25.17.0
+ * @version 25.18.0
  */
 class Experiment {
     /**
@@ -28,10 +28,11 @@ class Experiment {
      * @param created {Date} The time this entity was created.
      * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param state {module:model/Experiment.StateEnum} A disabled experiment is not evaluated for rules or coupons. 
+     * @param goalType {module:model/Experiment.GoalTypeEnum} The goal of the experiment. Determines which single metric is used to decide the winning variant. When set to `other`, multiple metrics are used. 
      */
-    constructor(id, created, applicationId, state) { 
+    constructor(id, created, applicationId, state, goalType) { 
         
-        Experiment.initialize(this, id, created, applicationId, state);
+        Experiment.initialize(this, id, created, applicationId, state, goalType);
     }
 
     /**
@@ -39,11 +40,12 @@ class Experiment {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, applicationId, state) { 
+    static initialize(obj, id, created, applicationId, state, goalType) { 
         obj['id'] = id;
         obj['created'] = created;
         obj['applicationId'] = applicationId;
         obj['state'] = state;
+        obj['goalType'] = goalType;
     }
 
     /**
@@ -80,6 +82,12 @@ class Experiment {
             }
             if (data.hasOwnProperty('variants')) {
                 obj['variants'] = ApiClient.convertToType(data['variants'], [ExperimentVariant]);
+            }
+            if (data.hasOwnProperty('goalType')) {
+                obj['goalType'] = ApiClient.convertToType(data['goalType'], 'String');
+            }
+            if (data.hasOwnProperty('goalDescription')) {
+                obj['goalDescription'] = ApiClient.convertToType(data['goalDescription'], 'String');
             }
             if (data.hasOwnProperty('deletedat')) {
                 obj['deletedat'] = ApiClient.convertToType(data['deletedat'], 'Date');
@@ -139,6 +147,18 @@ Experiment.prototype['state'] = 'disabled';
 Experiment.prototype['variants'] = undefined;
 
 /**
+ * The goal of the experiment. Determines which single metric is used to decide the winning variant. When set to `other`, multiple metrics are used. 
+ * @member {module:model/Experiment.GoalTypeEnum} goalType
+ */
+Experiment.prototype['goalType'] = undefined;
+
+/**
+ * A description of the experiment goal. Provides context for the AI summary and helps it interpret the outcome of the experiment against the stated goal. 
+ * @member {String} goalDescription
+ */
+Experiment.prototype['goalDescription'] = undefined;
+
+/**
  * The date and time the experiment was deleted. 
  * @member {Date} deletedat
  */
@@ -172,6 +192,39 @@ Experiment['StateEnum'] = {
      * @const
      */
     "archived": "archived"
+};
+
+
+/**
+ * Allowed values for the <code>goalType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Experiment['GoalTypeEnum'] = {
+
+    /**
+     * value: "other"
+     * @const
+     */
+    "other": "other",
+
+    /**
+     * value: "maximize_revenue"
+     * @const
+     */
+    "maximize_revenue": "maximize_revenue",
+
+    /**
+     * value: "optimize_discount_efficiency"
+     * @const
+     */
+    "optimize_discount_efficiency": "optimize_discount_efficiency",
+
+    /**
+     * value: "maximize_items_sold"
+     * @const
+     */
+    "maximize_items_sold": "maximize_items_sold"
 };
 
 

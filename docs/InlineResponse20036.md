@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | [optional] 
-**data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
+**data** | [**[AudienceAnalytics]**](AudienceAnalytics.md) |  | 
 
 

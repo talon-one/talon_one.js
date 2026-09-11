@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectReferralEffectProps model module.
  * @module model/RejectReferralEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RejectReferralEffectProps {
     /**
      * Constructs a new <code>RejectReferralEffectProps</code>.
-     * The properties specific to the \&quot;rejectReferral\&quot; effect. This gets triggered whenever the referral code was rejected. See rejectionReason for more info on why.
+     * This effect indicates that the provided referral code is invalid.
      * @alias module:model/RejectReferralEffectProps
-     * @param value {String} The referral code that was rejected.
-     * @param rejectionReason {String} The reason why this referral code was rejected.
+     * @param value {String} The referral code that was rejected
+     * @param rejectionReason {String} The reason why the code was rejected.  - `AdvocateNotFound`: The advocate was not found. - `CampaignLimitReached`: The campaign-wide referral code redemption limit has been reached. - `EffectCouldNotBeApplied`: One of the effects in the campaign wasn't applied because a limit for that effect was reached (most common use case will be `setDiscount` can not be applied because a discount limit is reached). - `ProfileLimitReached`: The profile-specific referral code redemption limit has been reached. - `ReferralCustomerAlreadyReferred`: The friend is already referred. - `ReferralExpired`: The transferred referral code is expired. - `ReferralLimitReached`: The referral code redemption limit has been reached. - `ReferralNotFound`: The transferred referral code is wrong. - `ReferralPartOfNotRunningCampaign`: The campaign the referral code belongs to is currently not active. The campaign ID field shows the ID of that campaign. - `ReferralRecipientDoesNotMatch`: The given referral code value does not match the recipient. - `ReferralRecipientIdSameAsAdvocate`: The recipient (friend) has the same id as the advocate. - `ReferralRejectedByCondition`: The referral code is valid and in an active campaign, but there were other conditions in that campaign's rules that were not met. - `ReferralStartDateInFuture`: The transferred referral code isn't active yet. - `ReferralPartOfNotTriggeredCampaign`: The campaign the referral code belongs to was not triggered during evaluation (an exclusive or stackable campaign). The campaign ID field shows the ID of that campaign.
      */
     constructor(value, rejectionReason) { 
         
@@ -78,13 +78,13 @@ class RejectReferralEffectProps {
 }
 
 /**
- * The referral code that was rejected.
+ * The referral code that was rejected
  * @member {String} value
  */
 RejectReferralEffectProps.prototype['value'] = undefined;
 
 /**
- * The reason why this referral code was rejected.
+ * The reason why the code was rejected.  - `AdvocateNotFound`: The advocate was not found. - `CampaignLimitReached`: The campaign-wide referral code redemption limit has been reached. - `EffectCouldNotBeApplied`: One of the effects in the campaign wasn't applied because a limit for that effect was reached (most common use case will be `setDiscount` can not be applied because a discount limit is reached). - `ProfileLimitReached`: The profile-specific referral code redemption limit has been reached. - `ReferralCustomerAlreadyReferred`: The friend is already referred. - `ReferralExpired`: The transferred referral code is expired. - `ReferralLimitReached`: The referral code redemption limit has been reached. - `ReferralNotFound`: The transferred referral code is wrong. - `ReferralPartOfNotRunningCampaign`: The campaign the referral code belongs to is currently not active. The campaign ID field shows the ID of that campaign. - `ReferralRecipientDoesNotMatch`: The given referral code value does not match the recipient. - `ReferralRecipientIdSameAsAdvocate`: The recipient (friend) has the same id as the advocate. - `ReferralRejectedByCondition`: The referral code is valid and in an active campaign, but there were other conditions in that campaign's rules that were not met. - `ReferralStartDateInFuture`: The transferred referral code isn't active yet. - `ReferralPartOfNotTriggeredCampaign`: The campaign the referral code belongs to was not triggered during evaluation (an exclusive or stackable campaign). The campaign ID field shows the ID of that campaign.
  * @member {String} rejectionReason
  */
 RejectReferralEffectProps.prototype['rejectionReason'] = undefined;
@@ -108,7 +108,7 @@ RejectReferralEffectProps.prototype['effectIndex'] = undefined;
 RejectReferralEffectProps.prototype['details'] = undefined;
 
 /**
- * The reason why the campaign was not applied.
+ * The reason why the campaign the referral belongs to was excluded during [campaign evaluation](https://docs.talon.one/docs/product/applications/manage-campaign-evaluation), when `rejectionReason` was `CouponPartOfNotTriggeredCampaign`. Its possible values are:  - `CampaignGaveLowerDiscount`: The required campaign and referral conditions were met, but another campaign in a [Highest discount value](https://docs.talon.one/docs/product/applications/manage-campaign-evaluation#set-campaign-evaluation-mode) group offered a higher discount value. - `CampaignIsNotFirst`: The campaign was not evaluated because another campaign in a [First campaign](https://docs.talon.one/docs/product/applications/manage-campaign-evaluation#set-campaign-evaluation-mode) group was picked and evaluated first. - `CampaignNotInEvaluationSet`: The campaign did not meet other evaluation requirements, for example, because the referral is part of an archived campaign.
  * @member {String} campaignExclusionReason
  */
 RejectReferralEffectProps.prototype['campaignExclusionReason'] = undefined;

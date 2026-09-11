@@ -13,12 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import AttributesSettings from './AttributesSettings';
+import BestPriorPriceSettings from './BestPriorPriceSettings';
 import LimitConfig from './LimitConfig';
 
 /**
  * The UpdateApplication model module.
  * @module model/UpdateApplication
- * @version 25.17.0
+ * @version 25.18.0
  */
 class UpdateApplication {
     /**
@@ -105,6 +106,9 @@ class UpdateApplication {
             }
             if (data.hasOwnProperty('enableCampaignStateManagement')) {
                 obj['enableCampaignStateManagement'] = ApiClient.convertToType(data['enableCampaignStateManagement'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bestPriorPriceSettings')) {
+                obj['bestPriorPriceSettings'] = BestPriorPriceSettings.constructFromObject(data['bestPriorPriceSettings']);
             }
         }
         return obj;
@@ -213,6 +217,11 @@ UpdateApplication.prototype['defaultCartItemFilterId'] = undefined;
  * @member {Boolean} enableCampaignStateManagement
  */
 UpdateApplication.prototype['enableCampaignStateManagement'] = undefined;
+
+/**
+ * @member {module:model/BestPriorPriceSettings} bestPriorPriceSettings
+ */
+UpdateApplication.prototype['bestPriorPriceSettings'] = undefined;
 
 
 

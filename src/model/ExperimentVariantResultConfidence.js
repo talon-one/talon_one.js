@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExperimentVariantResultConfidence model module.
  * @module model/ExperimentVariantResultConfidence
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentVariantResultConfidence {
     /**

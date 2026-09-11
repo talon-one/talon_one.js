@@ -17,7 +17,7 @@ import ScimUser from './ScimUser';
 /**
  * The ScimUsersListResponse model module.
  * @module model/ScimUsersListResponse
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ScimUsersListResponse {
     /**

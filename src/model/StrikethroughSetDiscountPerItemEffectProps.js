@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughSetDiscountPerItemEffectProps model module.
  * @module model/StrikethroughSetDiscountPerItemEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class StrikethroughSetDiscountPerItemEffectProps {
     /**
      * Constructs a new <code>StrikethroughSetDiscountPerItemEffectProps</code>.
      * setDiscountPerItem effect in strikethrough pricing payload.
      * @alias module:model/StrikethroughSetDiscountPerItemEffectProps
-     * @param name {String} effect name.
-     * @param value {Object} discount value.
+     * @param name {String} The effect name.
+     * @param value {Object} The discount value.
      */
     constructor(name, value) { 
         
@@ -69,18 +69,19 @@ class StrikethroughSetDiscountPerItemEffectProps {
 }
 
 /**
- * effect name.
+ * The effect name.
  * @member {String} name
  */
 StrikethroughSetDiscountPerItemEffectProps.prototype['name'] = undefined;
 
 /**
- * discount value.
+ * The discount value.
  * @member {Object} value
  */
 StrikethroughSetDiscountPerItemEffectProps.prototype['value'] = undefined;
 
 /**
+ * When set to `true`, the applied discount is excluded from the item's price history.
  * @member {Boolean} excludedFromPriceHistory
  */
 StrikethroughSetDiscountPerItemEffectProps.prototype['excludedFromPriceHistory'] = undefined;

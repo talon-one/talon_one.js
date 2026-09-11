@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.IntegrationHubEventPayloadCouponBasedNotifications);
     });
 
+    it('should have the property eventId (base name: "EventId")', function() {
+      // uncomment below and update the code to test the property eventId
+      //var instane = new TalonOne.IntegrationHubEventPayloadCouponBasedNotifications();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "Id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new TalonOne.IntegrationHubEventPayloadCouponBasedNotifications();

@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The ShowNotificationEffectProps model module.
  * @module model/ShowNotificationEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ShowNotificationEffectProps {
     /**
      * Constructs a new <code>ShowNotificationEffectProps</code>.
-     * The properties specific to the \&quot;showNotification\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;show notification\&quot; effect.
+     * You can use notifications to inform customers of certain events. There are four types of notification messages:  - &#x60;Info&#x60; - &#x60;Offer&#x60; - &#x60;Error&#x60; - &#x60;Misc&#x60;  It is up to you to use the Rule Builder to decide why and when to show notifications. Notifications can be used as both rule effects and failure effects.  A common use case is to display the notification at the top of the cart view in your web app. You can use the notification type to vary the styling of the notification message.
      * @alias module:model/ShowNotificationEffectProps
-     * @param notificationType {String} The type of notification that should be shown (e.g. error/warning/info).
-     * @param title {String} Title of the notification.
-     * @param body {String} Body of the notification.
+     * @param notificationType {String} The type of notification.
+     * @param title {String} The title of the notification.
+     * @param body {String} The body of the notification.
      */
     constructor(notificationType, title, body) { 
         
@@ -71,19 +71,19 @@ class ShowNotificationEffectProps {
 }
 
 /**
- * The type of notification that should be shown (e.g. error/warning/info).
+ * The type of notification.
  * @member {String} notificationType
  */
 ShowNotificationEffectProps.prototype['notificationType'] = undefined;
 
 /**
- * Title of the notification.
+ * The title of the notification.
  * @member {String} title
  */
 ShowNotificationEffectProps.prototype['title'] = undefined;
 
 /**
- * Body of the notification.
+ * The body of the notification.
  * @member {String} body
  */
 ShowNotificationEffectProps.prototype['body'] = undefined;
