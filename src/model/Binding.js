@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The Binding model module.
  * @module model/Binding
- * @version 25.17.0
+ * @version 25.18.0
  */
 class Binding {
     /**
      * Constructs a new <code>Binding</code>.
      * @alias module:model/Binding
      * @param name {String} A descriptive name for the value to be bound.
-     * @param expression {Array.<Object>} A Talang expression that will be evaluated and its result attached to the name of the binding.
+     * @param expression {Array.<Object>} A Talang expression that is evaluated, and its result is bound to the name of the binding. The first element must be one of the functions or operators supported by Talang, followed by its arguments. The arguments can be strings, numbers, or nested expressions. For example: - `[\"list\", \"10014\", \"10015\"]` calls the `list` function to build a list of strings. - `[\"+\", 2, 0]` uses the `+` operator to add two numbers. 
      */
     constructor(name, expression) { 
         
@@ -95,13 +95,13 @@ Binding.prototype['name'] = undefined;
 Binding.prototype['type'] = undefined;
 
 /**
- * A Talang expression that will be evaluated and its result attached to the name of the binding.
+ * A Talang expression that is evaluated, and its result is bound to the name of the binding. The first element must be one of the functions or operators supported by Talang, followed by its arguments. The arguments can be strings, numbers, or nested expressions. For example: - `[\"list\", \"10014\", \"10015\"]` calls the `list` function to build a list of strings. - `[\"+\", 2, 0]` uses the `+` operator to add two numbers. 
  * @member {Array.<Object>} expression
  */
 Binding.prototype['expression'] = undefined;
 
 /**
- * Can be one of the following: - `string` - `number` - `boolean` 
+ * The data type of the value. One of the following: - `string` - `number` - `boolean` 
  * @member {String} valueType
  */
 Binding.prototype['valueType'] = undefined;
@@ -119,13 +119,13 @@ Binding.prototype['minValue'] = undefined;
 Binding.prototype['maxValue'] = undefined;
 
 /**
- * Id of the attribute attached to the placeholder.
+ * Identifier of the attribute attached to the placeholder.
  * @member {Number} attributeId
  */
 Binding.prototype['attributeId'] = undefined;
 
 /**
- * Describes the placeholder field and value in the template. This description can be used when creating campaigns from this template.
+ * Description of the placeholder field and its value in the template. This text can be shown when creating campaigns from this template.
  * @member {String} description
  */
 Binding.prototype['description'] = undefined;

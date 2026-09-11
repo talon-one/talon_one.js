@@ -17,7 +17,7 @@ import BestPriorTarget from './BestPriorTarget';
 /**
  * The BestPriorPriceRequest model module.
  * @module model/BestPriorPriceRequest
- * @version 25.17.0
+ * @version 25.18.0
  */
 class BestPriorPriceRequest {
     /**

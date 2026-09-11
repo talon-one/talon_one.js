@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEventV2Request model module.
  * @module model/IntegrationEventV2Request
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationEventV2Request {
     /**
      * Constructs a new <code>IntegrationEventV2Request</code>.
      * @alias module:model/IntegrationEventV2Request
-     * @param type {String} A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+     * @param type {String} The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
      */
     constructor(type) { 
         
@@ -96,7 +96,7 @@ IntegrationEventV2Request.prototype['storeIntegrationId'] = undefined;
 IntegrationEventV2Request.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+ * The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
  * @member {String} type
  */
 IntegrationEventV2Request.prototype['type'] = undefined;
@@ -164,7 +164,25 @@ IntegrationEventV2Request['ResponseContentEnum'] = {
      * value: "ruleFailureReasons"
      * @const
      */
-    "ruleFailureReasons": "ruleFailureReasons"
+    "ruleFailureReasons": "ruleFailureReasons",
+
+    /**
+     * value: "campaignEligibility"
+     * @const
+     */
+    "campaignEligibility": "campaignEligibility",
+
+    /**
+     * value: "achievements"
+     * @const
+     */
+    "achievements": "achievements",
+
+    /**
+     * value: "unlockedRewards"
+     * @const
+     */
+    "unlockedRewards": "unlockedRewards"
 };
 
 

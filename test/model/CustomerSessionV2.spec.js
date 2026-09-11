@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewardIntegrationIds (base name: "rewardIntegrationIds")', function() {
+      // uncomment below and update the code to test the property rewardIntegrationIds
+      //var instane = new TalonOne.CustomerSessionV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
       //var instane = new TalonOne.CustomerSessionV2();
@@ -176,6 +182,12 @@
 
     it('should have the property additionalCostTotal (base name: "additionalCostTotal")', function() {
       // uncomment below and update the code to test the property additionalCostTotal
+      //var instane = new TalonOne.CustomerSessionV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cartItemAdditionalCostTotal (base name: "cartItemAdditionalCostTotal")', function() {
+      // uncomment below and update the code to test the property cartItemAdditionalCostTotal
       //var instane = new TalonOne.CustomerSessionV2();
       //expect(instance).to.be();
     });

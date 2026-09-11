@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import TimePoint from './TimePoint';
 
 /**
  * The AchievementAdditionalPropertiesV2 model module.
  * @module model/AchievementAdditionalPropertiesV2
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AchievementAdditionalPropertiesV2 {
     /**
@@ -55,6 +56,9 @@ class AchievementAdditionalPropertiesV2 {
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
             }
+            if (data.hasOwnProperty('periodEndOverride')) {
+                obj['periodEndOverride'] = TimePoint.constructFromObject(data['periodEndOverride']);
+            }
             if (data.hasOwnProperty('hasProgress')) {
                 obj['hasProgress'] = ApiClient.convertToType(data['hasProgress'], 'Boolean');
             }
@@ -81,13 +85,18 @@ AchievementAdditionalPropertiesV2.prototype['userId'] = undefined;
 AchievementAdditionalPropertiesV2.prototype['createdBy'] = undefined;
 
 /**
+ * @member {module:model/TimePoint} periodEndOverride
+ */
+AchievementAdditionalPropertiesV2.prototype['periodEndOverride'] = undefined;
+
+/**
  * Indicates if a customer has made progress in the achievement.
  * @member {Boolean} hasProgress
  */
 AchievementAdditionalPropertiesV2.prototype['hasProgress'] = undefined;
 
 /**
- * The status of the achievement.
+ * The status of the achievement.                                                                                               - `active`: The achievement is available to customers. - `scheduled`: The achievement has a `fixedStartDate` set in the future. - `expired`: The achievement's `endDate` is in the past. 
  * @member {module:model/AchievementAdditionalPropertiesV2.StatusEnum} status
  */
 AchievementAdditionalPropertiesV2.prototype['status'] = undefined;
@@ -104,28 +113,22 @@ AchievementAdditionalPropertiesV2.prototype['status'] = undefined;
 AchievementAdditionalPropertiesV2['StatusEnum'] = {
 
     /**
-     * value: "inprogress"
+     * value: "active"
      * @const
      */
-    "inprogress": "inprogress",
+    "active": "active",
+
+    /**
+     * value: "scheduled"
+     * @const
+     */
+    "scheduled": "scheduled",
 
     /**
      * value: "expired"
      * @const
      */
-    "expired": "expired",
-
-    /**
-     * value: "not_started"
-     * @const
-     */
-    "not_started": "not_started",
-
-    /**
-     * value: "completed"
-     * @const
-     */
-    "completed": "completed"
+    "expired": "expired"
 };
 
 

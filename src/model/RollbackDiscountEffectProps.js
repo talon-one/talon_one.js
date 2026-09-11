@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackDiscountEffectProps model module.
  * @module model/RollbackDiscountEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RollbackDiscountEffectProps {
     /**
      * Constructs a new <code>RollbackDiscountEffectProps</code>.
-     * The properties specific to the \&quot;rollbackDiscount\&quot; effect. This gets triggered whenever previously closed session is now cancelled or partially returned and a setDiscount effect was cancelled on our internal discount limit counters.
+     * This effect indicates that a discounted session, cart item, or additional cost has been cancelled or partially returned. This effect can only happen when you set the status of a session to &#x60;cancel&#x60; or the status changes to &#x60;partially_returned&#x60;.  If the session contains some cart items with _quantity &gt; 1_, use the &#x60;cartItemSubPosition&#x60; property to identify the specific item unit in its line item. See the example below.
      * @alias module:model/RollbackDiscountEffectProps
-     * @param name {String} The name of the \"setDiscount\" effect that was rolled back.
-     * @param value {Number} The value of the discount that was rolled back.
+     * @param name {String} The name of the discount effect that was rolled back.
+     * @param value {Number} The monetary value of the discount that was rolled back.
      */
     constructor(name, value) { 
         
@@ -81,43 +81,43 @@ class RollbackDiscountEffectProps {
 }
 
 /**
- * The name of the \"setDiscount\" effect that was rolled back.
+ * The name of the discount effect that was rolled back.
  * @member {String} name
  */
 RollbackDiscountEffectProps.prototype['name'] = undefined;
 
 /**
- * The value of the discount that was rolled back.
+ * The monetary value of the discount that was rolled back.
  * @member {Number} value
  */
 RollbackDiscountEffectProps.prototype['value'] = undefined;
 
 /**
- * The index of the item in the cart items for which the discount was rolled back.
+ * The index of the item in the `cartItem` object whose discount was rolled back, or the unit containing the additional cost whose discount was rolled back.
  * @member {Number} cartItemPosition
  */
 RollbackDiscountEffectProps.prototype['cartItemPosition'] = undefined;
 
 /**
- * For cart items with `quantity` > 1, the subposition returns the index of the item unit in its line item. 
+ * The index of the item unit in its line item for which the discount was rolled back.
  * @member {Number} cartItemSubPosition
  */
 RollbackDiscountEffectProps.prototype['cartItemSubPosition'] = undefined;
 
 /**
- * The ID of the additional cost that was rolled back.
+ * _Only when rolling back [setDiscountPerAdditionalCost](https://docs.talon.one/docs/dev/integration-api/api-effects#setdiscountperadditionalcost) and [setDiscountPerAdditionalCostPerItem](https://docs.talon.one/docs/dev/integration-api/api-effects#setdiscountperadditionalcostperitem)_ The ID of the additional cost to be discounted.
  * @member {Number} additionalCostId
  */
 RollbackDiscountEffectProps.prototype['additionalCostId'] = undefined;
 
 /**
- * The name of the additional cost that was rolled back.
+ * The API name of the additional cost whose discount was rolled back.
  * @member {String} additionalCost
  */
 RollbackDiscountEffectProps.prototype['additionalCost'] = undefined;
 
 /**
- * The scope of the rolled back discount - For a discount per session, it can be one of `cartItems`, `additionalCosts` or `sessionTotal` - For a discount per item, it can be one of `price`, `additionalCosts` or `itemTotal` 
+ * The scope of the rolled back discount.  - For a discount per session, it can be one of `cartItems`, `additionalCosts` or `sessionTotal` - For a discount per item, it can be one of `price`, `additionalCosts` or `itemTotal`
  * @member {String} scope
  */
 RollbackDiscountEffectProps.prototype['scope'] = undefined;

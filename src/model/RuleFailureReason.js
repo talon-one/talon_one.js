@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleFailureReason model module.
  * @module model/RuleFailureReason
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RuleFailureReason {
     /**
@@ -78,6 +78,12 @@ class RuleFailureReason {
             }
             if (data.hasOwnProperty('referralValue')) {
                 obj['referralValue'] = ApiClient.convertToType(data['referralValue'], 'String');
+            }
+            if (data.hasOwnProperty('rewardId')) {
+                obj['rewardId'] = ApiClient.convertToType(data['rewardId'], 'Number');
+            }
+            if (data.hasOwnProperty('rewardIntegrationId')) {
+                obj['rewardIntegrationId'] = ApiClient.convertToType(data['rewardIntegrationId'], 'String');
             }
             if (data.hasOwnProperty('ruleIndex')) {
                 obj['ruleIndex'] = ApiClient.convertToType(data['ruleIndex'], 'Number');
@@ -148,6 +154,18 @@ RuleFailureReason.prototype['referralID'] = undefined;
  * @member {String} referralValue
  */
 RuleFailureReason.prototype['referralValue'] = undefined;
+
+/**
+ * The ID of the reward that was being evaluated at the time of the rule failure.
+ * @member {Number} rewardId
+ */
+RuleFailureReason.prototype['rewardId'] = undefined;
+
+/**
+ * The integration ID of the reward that was being evaluated at the time of the rule failure.
+ * @member {String} rewardIntegrationId
+ */
+RuleFailureReason.prototype['rewardIntegrationId'] = undefined;
 
 /**
  * The index of the rule that failed within the ruleset.

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique ID of Campaign. | 
 **applicationId** | **Number** | The ID of the Application that owns this entity. | 
-**name** | **String** | A user-facing name for this campaign. | 
+**id** | **Number** | Unique ID of Campaign. | 
+**name** | **String** | The name of the campaign. | 
 **description** | **String** | A detailed description of the campaign. | [optional] 
 **startTime** | **Date** | Timestamp when the campaign will become active. | [optional] 
 **endTime** | **Date** | Timestamp when the campaign will become inactive. | [optional] 
@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **state** | **String** | The state of the campaign.  | [default to &#39;enabled&#39;]
 **tags** | **[String]** | A list of tags for the campaign. | 
 **features** | **[String]** | The features enabled in this campaign. | 
+**rules** | [**[RuleMetadata]**](RuleMetadata.md) | A list of rules containing customer-facing details of the rewards defined in the campaign. | 
+**linkedStoreIds** | **[Number]** | A list of store IDs linked to this campaign. | [optional] 
+**linkedAudienceIds** | **[Number]** | A list of audience IDs linked to this campaign. | [optional] 
 
 
 
@@ -40,6 +43,8 @@ Name | Type | Description | Notes
 * `strikethrough` (value: `"strikethrough"`)
 
 * `achievements` (value: `"achievements"`)
+
+* `advancedEvents` (value: `"advancedEvents"`)
 
 
 

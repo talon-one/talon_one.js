@@ -17,7 +17,7 @@ import ExperimentVerdict from './ExperimentVerdict';
 /**
  * The ExperimentVerdictResponse model module.
  * @module model/ExperimentVerdictResponse
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentVerdictResponse {
     /**

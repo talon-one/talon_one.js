@@ -17,7 +17,7 @@ import OktaEventTarget from './OktaEventTarget';
 /**
  * The OktaEvent model module.
  * @module model/OktaEvent
- * @version 25.17.0
+ * @version 25.18.0
  */
 class OktaEvent {
     /**

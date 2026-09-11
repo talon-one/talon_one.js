@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 25.17.0
+ * @version 25.18.0
  */
 class EffectEntity {
     /**
@@ -105,6 +105,9 @@ class EffectEntity {
             }
             if (data.hasOwnProperty('adjustmentReferenceId')) {
                 obj['adjustmentReferenceId'] = ApiClient.convertToType(data['adjustmentReferenceId'], 'String');
+            }
+            if (data.hasOwnProperty('rewardId')) {
+                obj['rewardId'] = ApiClient.convertToType(data['rewardId'], 'Number');
             }
         }
         return obj;
@@ -208,6 +211,12 @@ EffectEntity.prototype['selectedPrice'] = undefined;
  * @member {String} adjustmentReferenceId
  */
 EffectEntity.prototype['adjustmentReferenceId'] = undefined;
+
+/**
+ * The ID of the reward that was being evaluated when this effect was triggered.
+ * @member {Number} rewardId
+ */
+EffectEntity.prototype['rewardId'] = undefined;
 
 
 

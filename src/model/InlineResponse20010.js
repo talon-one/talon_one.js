@@ -17,7 +17,7 @@ import Ruleset from './Ruleset';
 /**
  * The InlineResponse20010 model module.
  * @module model/InlineResponse20010
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20010 {
     /**

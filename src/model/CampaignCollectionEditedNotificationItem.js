@@ -20,7 +20,7 @@ import Ruleset from './Ruleset';
 /**
  * The CampaignCollectionEditedNotificationItem model module.
  * @module model/CampaignCollectionEditedNotificationItem
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CampaignCollectionEditedNotificationItem {
     /**

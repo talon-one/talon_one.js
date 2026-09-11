@@ -13,13 +13,14 @@
 
 import ApiClient from '../ApiClient';
 import AttributesSettings from './AttributesSettings';
+import BestPriorPriceSettings from './BestPriorPriceSettings';
 import LimitConfig from './LimitConfig';
 import LoyaltyProgram from './LoyaltyProgram';
 
 /**
  * The Application model module.
  * @module model/Application
- * @version 25.17.0
+ * @version 25.18.0
  */
 class Application {
     /**
@@ -128,6 +129,9 @@ class Application {
             }
             if (data.hasOwnProperty('enableCampaignStateManagement')) {
                 obj['enableCampaignStateManagement'] = ApiClient.convertToType(data['enableCampaignStateManagement'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bestPriorPriceSettings')) {
+                obj['bestPriorPriceSettings'] = BestPriorPriceSettings.constructFromObject(data['bestPriorPriceSettings']);
             }
             if (data.hasOwnProperty('loyaltyPrograms')) {
                 obj['loyaltyPrograms'] = ApiClient.convertToType(data['loyaltyPrograms'], [LoyaltyProgram]);
@@ -263,6 +267,11 @@ Application.prototype['defaultCartItemFilterId'] = undefined;
  * @member {Boolean} enableCampaignStateManagement
  */
 Application.prototype['enableCampaignStateManagement'] = undefined;
+
+/**
+ * @member {module:model/BestPriorPriceSettings} bestPriorPriceSettings
+ */
+Application.prototype['bestPriorPriceSettings'] = undefined;
 
 /**
  * An array containing all the loyalty programs to which this application is subscribed.

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **reservationLimit** | **Number** | The number of reservations that can be made with this coupon code.  | [optional] 
 **startDate** | **Date** | Timestamp at which point the coupon becomes valid. | [optional] 
 **expiryDate** | **Date** | Expiration date of the coupon. Coupon never expires if this is omitted. | [optional] 
+**batchId** | **String** | The batch ID that all coupons created by the request will bear. If omitted, a batch ID is generated automatically. | [optional] 
 **attributes** | [**Object**](.md) | Arbitrary properties associated with this item. | [optional] 
 **recipientsIntegrationIds** | **[String]** | The integration IDs for recipients. | 
 **validCharacters** | **[String]** | List of characters used to generate the random parts of a code. By default, the list of characters is equivalent to the &#x60;[A-Z, 0-9]&#x60; regular expression.  | [optional] 

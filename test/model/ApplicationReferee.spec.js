@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property advancedEventIntegrationId (base name: "advancedEventIntegrationId")', function() {
+      // uncomment below and update the code to test the property advancedEventIntegrationId
+      //var instane = new TalonOne.ApplicationReferee();
+      //expect(instance).to.be();
+    });
+
     it('should have the property advocateIntegrationId (base name: "advocateIntegrationId")', function() {
       // uncomment below and update the code to test the property advocateIntegrationId
       //var instane = new TalonOne.ApplicationReferee();

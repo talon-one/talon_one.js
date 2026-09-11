@@ -12,11 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import Binding from './Binding';
+import RewardPointsRequired from './RewardPointsRequired';
+import Rule from './Rule';
 
 /**
  * The Reward model module.
  * @module model/Reward
- * @version 25.17.0
+ * @version 25.18.0
  */
 class Reward {
     /**
@@ -87,6 +90,21 @@ class Reward {
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
+            if (data.hasOwnProperty('eligibilityConditions')) {
+                obj['eligibilityConditions'] = Rule.constructFromObject(data['eligibilityConditions']);
+            }
+            if (data.hasOwnProperty('rule')) {
+                obj['rule'] = Rule.constructFromObject(data['rule']);
+            }
+            if (data.hasOwnProperty('bindings')) {
+                obj['bindings'] = ApiClient.convertToType(data['bindings'], [Binding]);
+            }
+            if (data.hasOwnProperty('pointsRequired')) {
+                obj['pointsRequired'] = ApiClient.convertToType(data['pointsRequired'], [RewardPointsRequired]);
+            }
+            if (data.hasOwnProperty('modified')) {
+                obj['modified'] = ApiClient.convertToType(data['modified'], 'Date');
+            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
@@ -144,6 +162,34 @@ Reward.prototype['applicationIds'] = undefined;
  * @member {Boolean} sandbox
  */
 Reward.prototype['sandbox'] = undefined;
+
+/**
+ * @member {module:model/Rule} eligibilityConditions
+ */
+Reward.prototype['eligibilityConditions'] = undefined;
+
+/**
+ * @member {module:model/Rule} rule
+ */
+Reward.prototype['rule'] = undefined;
+
+/**
+ * A list of named variables created before the reward's rules are evaluated. Each binding pairs a name with a talang expression. The expression is evaluated once and its result is available by name in any rule condition or effect. Bindings must be defined outside of individual rules.
+ * @member {Array.<module:model/Binding>} bindings
+ */
+Reward.prototype['bindings'] = undefined;
+
+/**
+ * The loyalty points required to activate the reward. Each object defines the specific loyalty program and subledger from which points are deducted when activating the reward.  **Note:** When creating a reward, the `id` of each entry is ignored and a new entry is always created. 
+ * @member {Array.<module:model/RewardPointsRequired>} pointsRequired
+ */
+Reward.prototype['pointsRequired'] = undefined;
+
+/**
+ * The timestamp when the reward was last updated in RFC3339 format.
+ * @member {Date} modified
+ */
+Reward.prototype['modified'] = undefined;
 
 /**
  * The status of the reward.

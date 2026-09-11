@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewAudience model module.
  * @module model/NewAudience
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewAudience {
     /**
@@ -58,6 +58,9 @@ class NewAudience {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('subscribedApplicationsIds')) {
+                obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
+            }
             if (data.hasOwnProperty('integration')) {
                 obj['integration'] = ApiClient.convertToType(data['integration'], 'String');
             }
@@ -94,6 +97,12 @@ NewAudience.prototype['sandbox'] = undefined;
  * @member {String} description
  */
 NewAudience.prototype['description'] = undefined;
+
+/**
+ * A list of the IDs of the Applications that are connected to this audience.
+ * @member {Array.<Number>} subscribedApplicationsIds
+ */
+NewAudience.prototype['subscribedApplicationsIds'] = undefined;
 
 /**
  * The Talon.One-supported [3rd-party platform](https://docs.talon.one/docs/dev/technology-partners/overview) that this audience was created in.  For example, `mParticle`, `Segment`, `Shopify`, `Braze`, or `Iterable`.  **Note:** If you do not integrate with any of these platforms, do not use this property. 

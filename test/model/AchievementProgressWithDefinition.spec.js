@@ -114,6 +114,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignIds (base name: "campaignIds")', function() {
+      // uncomment below and update the code to test the property campaignIds
+      //var instane = new TalonOne.AchievementProgressWithDefinition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referencedByCampaigns (base name: "referencedByCampaigns")', function() {
+      // uncomment below and update the code to test the property referencedByCampaigns
+      //var instane = new TalonOne.AchievementProgressWithDefinition();
+      //expect(instance).to.be();
+    });
+
     it('should have the property target (base name: "target")', function() {
       // uncomment below and update the code to test the property target
       //var instane = new TalonOne.AchievementProgressWithDefinition();

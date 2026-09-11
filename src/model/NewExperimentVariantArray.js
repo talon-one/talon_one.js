@@ -17,7 +17,7 @@ import NewExperimentVariant from './NewExperimentVariant';
 /**
  * The NewExperimentVariantArray model module.
  * @module model/NewExperimentVariantArray
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewExperimentVariantArray {
     /**

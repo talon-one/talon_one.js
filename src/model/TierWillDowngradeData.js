@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierWillDowngradeData model module.
  * @module model/TierWillDowngradeData
- * @version 25.17.0
+ * @version 25.18.0
  */
 class TierWillDowngradeData {
     /**

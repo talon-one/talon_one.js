@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property contextId (base name: "contextId")', function() {
-      // uncomment below and update the code to test the property contextId
+    it('should have the property contextIds (base name: "contextIds")', function() {
+      // uncomment below and update the code to test the property contextIds
       //var instane = new TalonOne.BestPriorPrice();
       //expect(instance).to.be();
     });

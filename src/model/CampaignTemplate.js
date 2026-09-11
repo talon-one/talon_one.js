@@ -21,7 +21,7 @@ import TemplateLimitConfig from './TemplateLimitConfig';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CampaignTemplate {
     /**
@@ -406,7 +406,13 @@ CampaignTemplate['FeaturesEnum'] = {
      * value: "achievements"
      * @const
      */
-    "achievements": "achievements"
+    "achievements": "achievements",
+
+    /**
+     * value: "advancedEvents"
+     * @const
+     */
+    "advancedEvents": "advancedEvents"
 };
 
 

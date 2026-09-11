@@ -13,7 +13,9 @@ Name | Type | Description | Notes
 **name** | **String** | The internal name of the achievement used in API requests.  | 
 **title** | **String** | The display name of the achievement in the Campaign Manager. | 
 **description** | **String** | The description of the achievement in the Campaign Manager. | 
-**campaignId** | **Number** | The ID of the campaign the achievement belongs to. | 
+**campaignId** | **Number** | This property is **deprecated**. Use &#x60;campaignIds&#x60; (Integration API) or &#x60;referencedByCampaigns&#x60; (Management API) instead. This field contains the first campaign ID from the related &#x60;campaignIds&#x60;, and is omitted when &#x60;campaignIds&#x60; is empty. | [optional] 
+**campaignIds** | **[Number]** | The IDs of the campaigns that reference this achievement, in ascending order. | 
+**referencedByCampaigns** | [**[CampaignReference]**](CampaignReference.md) | The campaigns that reference this achievement, in ascending order of their &#x60;id&#x60;. | 
 **target** | **Number** | The required number of actions or the transactional milestone to complete the achievement. | [optional] 
 **achievementRecurrencePolicy** | **String** | The policy that determines if and how the achievement recurs. - &#x60;no_recurrence&#x60;: The achievement can be completed only once. - &#x60;on_expiration&#x60;: The achievement resets after it expires and becomes available again. - &#x60;on_completion&#x60;: When the customer progress status reaches &#x60;completed&#x60;, the achievement resets and becomes available again.  | 
 **achievementActivationPolicy** | **String** | The policy that determines how the achievement starts, ends, or resets. - &#x60;user_action&#x60;: The achievement ends or resets relative to when the customer started the achievement. - &#x60;fixed_schedule&#x60;: The achievement starts, ends, or resets for all customers following a fixed schedule.  | 

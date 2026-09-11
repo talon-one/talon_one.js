@@ -17,7 +17,7 @@ import ExpiringCardPointsData from './ExpiringCardPointsData';
 /**
  * The ExpiringCardPointsNotification model module.
  * @module model/ExpiringCardPointsNotification
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExpiringCardPointsNotification {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimGroupMember model module.
  * @module model/ScimGroupMember
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ScimGroupMember {
     /**

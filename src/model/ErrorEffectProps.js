@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorEffectProps model module.
  * @module model/ErrorEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ErrorEffectProps {
     /**
      * Constructs a new <code>ErrorEffectProps</code>.
-     * Whenever an error occurred during evaluation, we return an error effect. This should never happen for rules created in the rule builder.
+     * This effect is triggered whenever an error occurs during rule evaluation. This effect only provides information about what the error is.
      * @alias module:model/ErrorEffectProps
      * @param message {String} The error message.
      */

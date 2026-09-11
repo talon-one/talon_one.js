@@ -17,7 +17,7 @@ import History from './History';
 /**
  * The PriceHistoryResponse model module.
  * @module model/PriceHistoryResponse
- * @version 25.17.0
+ * @version 25.18.0
  */
 class PriceHistoryResponse {
     /**

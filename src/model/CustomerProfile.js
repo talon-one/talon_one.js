@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The CustomerProfile model module.
  * @module model/CustomerProfile
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CustomerProfile {
     /**

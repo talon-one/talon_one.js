@@ -16,17 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackIncreasedAchievementProgressEffectProps model module.
  * @module model/RollbackIncreasedAchievementProgressEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RollbackIncreasedAchievementProgressEffectProps {
     /**
      * Constructs a new <code>RollbackIncreasedAchievementProgressEffectProps</code>.
-     * The properties specific to the \&quot;rollbackIncreasedAchievementProgress\&quot; effect. This gets triggered whenever a closed session where the &#x60;increaseAchievementProgress&#x60; effect was triggered is cancelled. This is applicable only when the customer has not completed the achievement.
+     * This effect indicates that the customer&#39;s progress in an achievement was rolled back.  The Rule Engine triggers this effect when you cancel or [reopen a customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/reopenCustomerSession) that previously validated the [Update customer progress](https://docs.talon.one/docs/product/rules/effects/use-effects#update-customer-progress) effect and triggered the [increaseAchievementProgress](https://docs.talon.one/docs/dev/integration-api/api-effects#increaseachievementprogress) API effect.  The effect is also triggered for completed achievements if the **Allow progress rollback for completed achievements** setting is enabled. You can enable this through the [Campaign Manager](https://docs.talon.one/docs/product/achievements/manage-achievements) or the [Management API](https://docs.talon.one/management-api#tag/Achievements/operation/createAchievement) by setting the &#x60;achievementAllowRollbackAfterCompletion&#x60; property to &#x60;true&#x60;. This setting only applies to one-time and recurring on expiration achievements.
      * @alias module:model/RollbackIncreasedAchievementProgressEffectProps
      * @param achievementId {Number} The internal ID of the achievement.
      * @param achievementName {String} The name of the achievement.
      * @param progressTrackerId {Number} The internal ID of the achievement progress tracker.
-     * @param decreaseProgressBy {Number} The value by which the customer's current progress in the achievement is decreased.
+     * @param decreaseProgressBy {Number} The value by which the customer's current progress in the achievement has decreased.
      * @param currentProgress {Number} The current progress of the customer in the achievement.
      * @param target {Number} The target value to complete the achievement.
      */
@@ -104,7 +104,7 @@ RollbackIncreasedAchievementProgressEffectProps.prototype['achievementName'] = u
 RollbackIncreasedAchievementProgressEffectProps.prototype['progressTrackerId'] = undefined;
 
 /**
- * The value by which the customer's current progress in the achievement is decreased.
+ * The value by which the customer's current progress in the achievement has decreased.
  * @member {Number} decreaseProgressBy
  */
 RollbackIncreasedAchievementProgressEffectProps.prototype['decreaseProgressBy'] = undefined;

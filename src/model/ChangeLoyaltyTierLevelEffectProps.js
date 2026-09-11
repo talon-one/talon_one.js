@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangeLoyaltyTierLevelEffectProps model module.
  * @module model/ChangeLoyaltyTierLevelEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ChangeLoyaltyTierLevelEffectProps {
     /**
      * Constructs a new <code>ChangeLoyaltyTierLevelEffectProps</code>.
-     * The properties specific to the \&quot;changeLoyaltyTierLevel\&quot; effect. This is triggered whenever the user&#39;s loyalty tier is upgraded due to a validated rule that contained an \&quot;addLoyaltyPoints\&quot; effect. 
+     * This effect indicates that a customer&#39;s loyalty tier has been upgraded.  This effect is generated only when the [Add loyalty points](https://docs.talon.one/docs/product/rules/effects/use-effects#add-loyalty-points) and the [Add loyalty points per cart item](https://docs.talon.one/docs/product/rules/effects/use-effects#add-loyalty-points-per-cart-item) effects are triggered for a particular customer, and, as a result, the customer&#39;s loyalty tier is upgraded.
      * @alias module:model/ChangeLoyaltyTierLevelEffectProps
      * @param ruleTitle {String} The title of the rule that triggered the tier upgrade.
-     * @param programId {Number} The ID of the loyalty program where these points were added.
-     * @param subLedgerId {String} The ID of the subledger within the loyalty program where these points were added.
+     * @param programId {Number} The ID of the loyalty program where the points were added.
+     * @param subLedgerId {String} The ID of the subledger within the loyalty program where the points were added.
      * @param newTierName {String} The name of the tier to which the user has been upgraded.
      */
     constructor(ruleTitle, programId, subLedgerId, newTierName) { 
@@ -88,13 +88,13 @@ class ChangeLoyaltyTierLevelEffectProps {
 ChangeLoyaltyTierLevelEffectProps.prototype['ruleTitle'] = undefined;
 
 /**
- * The ID of the loyalty program where these points were added.
+ * The ID of the loyalty program where the points were added.
  * @member {Number} programId
  */
 ChangeLoyaltyTierLevelEffectProps.prototype['programId'] = undefined;
 
 /**
- * The ID of the subledger within the loyalty program where these points were added.
+ * The ID of the subledger within the loyalty program where the points were added.
  * @member {String} subLedgerId
  */
 ChangeLoyaltyTierLevelEffectProps.prototype['subLedgerId'] = undefined;

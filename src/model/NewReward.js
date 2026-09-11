@@ -12,11 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import Binding from './Binding';
+import RewardPointsRequired from './RewardPointsRequired';
+import Rule from './Rule';
 
 /**
  * The NewReward model module.
  * @module model/NewReward
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewReward {
     /**
@@ -70,6 +73,18 @@ class NewReward {
             if (data.hasOwnProperty('sandbox')) {
                 obj['sandbox'] = ApiClient.convertToType(data['sandbox'], 'Boolean');
             }
+            if (data.hasOwnProperty('eligibilityConditions')) {
+                obj['eligibilityConditions'] = Rule.constructFromObject(data['eligibilityConditions']);
+            }
+            if (data.hasOwnProperty('rule')) {
+                obj['rule'] = Rule.constructFromObject(data['rule']);
+            }
+            if (data.hasOwnProperty('bindings')) {
+                obj['bindings'] = ApiClient.convertToType(data['bindings'], [Binding]);
+            }
+            if (data.hasOwnProperty('pointsRequired')) {
+                obj['pointsRequired'] = ApiClient.convertToType(data['pointsRequired'], [RewardPointsRequired]);
+            }
         }
         return obj;
     }
@@ -106,6 +121,28 @@ NewReward.prototype['applicationIds'] = undefined;
  * @member {Boolean} sandbox
  */
 NewReward.prototype['sandbox'] = undefined;
+
+/**
+ * @member {module:model/Rule} eligibilityConditions
+ */
+NewReward.prototype['eligibilityConditions'] = undefined;
+
+/**
+ * @member {module:model/Rule} rule
+ */
+NewReward.prototype['rule'] = undefined;
+
+/**
+ * A list of named variables created before the reward's rules are evaluated. Each binding pairs a name with a talang expression. The expression is evaluated once and its result is available by name in any rule condition or effect. Bindings must be defined outside of individual rules.
+ * @member {Array.<module:model/Binding>} bindings
+ */
+NewReward.prototype['bindings'] = undefined;
+
+/**
+ * The loyalty points required to activate the reward. Each object defines the specific loyalty program and subledger from which points are deducted when activating the reward.  **Note:** When creating a reward, the `id` of each entry is ignored and a new entry is always created. 
+ * @member {Array.<module:model/RewardPointsRequired>} pointsRequired
+ */
+NewReward.prototype['pointsRequired'] = undefined;
 
 
 

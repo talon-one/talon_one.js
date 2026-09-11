@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierUpgradeData model module.
  * @module model/TierUpgradeData
- * @version 25.17.0
+ * @version 25.18.0
  */
 class TierUpgradeData {
     /**

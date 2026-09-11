@@ -12,27 +12,28 @@
  */
 
 import ApiClient from '../ApiClient';
+import IntegrationHubEventType from './IntegrationHubEventType';
 
 /**
  * The IntegrationHubEventRecord model module.
  * @module model/IntegrationHubEventRecord
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubEventRecord {
     /**
      * Constructs a new <code>IntegrationHubEventRecord</code>.
      * @alias module:model/IntegrationHubEventRecord
-     * @param id {Number} 
-     * @param flowId {Number} 
-     * @param eventType {String} 
-     * @param eventData {Object} 
-     * @param publishedAt {Date} 
-     * @param processAfter {Date} 
-     * @param retry {Number} 
+     * @param id {Number} ID of the event record.
+     * @param flowId {Number} ID of the integration hub flow.
+     * @param eventType {module:model/IntegrationHubEventType} 
+     * @param publishedAt {Date} Timestamp when the event was published.
+     * @param scheduledTo {Date} Timestamp after which the event is scheduled to be processed.
+     * @param retry {Number} Number of delivery retries attempted.
+     * @param payload {String} The event payload as a formatted JSON string.
      */
-    constructor(id, flowId, eventType, eventData, publishedAt, processAfter, retry) { 
+    constructor(id, flowId, eventType, publishedAt, scheduledTo, retry, payload) { 
         
-        IntegrationHubEventRecord.initialize(this, id, flowId, eventType, eventData, publishedAt, processAfter, retry);
+        IntegrationHubEventRecord.initialize(this, id, flowId, eventType, publishedAt, scheduledTo, retry, payload);
     }
 
     /**
@@ -40,14 +41,14 @@ class IntegrationHubEventRecord {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, flowId, eventType, eventData, publishedAt, processAfter, retry) { 
-        obj['Id'] = id;
-        obj['FlowId'] = flowId;
-        obj['EventType'] = eventType;
-        obj['EventData'] = eventData;
-        obj['PublishedAt'] = publishedAt;
-        obj['ProcessAfter'] = processAfter;
-        obj['Retry'] = retry;
+    static initialize(obj, id, flowId, eventType, publishedAt, scheduledTo, retry, payload) { 
+        obj['id'] = id;
+        obj['flowId'] = flowId;
+        obj['eventType'] = eventType;
+        obj['publishedAt'] = publishedAt;
+        obj['scheduledTo'] = scheduledTo;
+        obj['retry'] = retry;
+        obj['payload'] = payload;
     }
 
     /**
@@ -61,29 +62,38 @@ class IntegrationHubEventRecord {
         if (data) {
             obj = obj || new IntegrationHubEventRecord();
 
-            if (data.hasOwnProperty('Id')) {
-                obj['Id'] = ApiClient.convertToType(data['Id'], 'Number');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('FlowId')) {
-                obj['FlowId'] = ApiClient.convertToType(data['FlowId'], 'Number');
+            if (data.hasOwnProperty('flowId')) {
+                obj['flowId'] = ApiClient.convertToType(data['flowId'], 'Number');
             }
-            if (data.hasOwnProperty('EventType')) {
-                obj['EventType'] = ApiClient.convertToType(data['EventType'], 'String');
+            if (data.hasOwnProperty('integrationName')) {
+                obj['integrationName'] = ApiClient.convertToType(data['integrationName'], 'String');
             }
-            if (data.hasOwnProperty('EventData')) {
-                obj['EventData'] = ApiClient.convertToType(data['EventData'], Object);
+            if (data.hasOwnProperty('instanceName')) {
+                obj['instanceName'] = ApiClient.convertToType(data['instanceName'], 'String');
             }
-            if (data.hasOwnProperty('PublishedAt')) {
-                obj['PublishedAt'] = ApiClient.convertToType(data['PublishedAt'], 'Date');
+            if (data.hasOwnProperty('eventType')) {
+                obj['eventType'] = IntegrationHubEventType.constructFromObject(data['eventType']);
             }
-            if (data.hasOwnProperty('ProcessedAt')) {
-                obj['ProcessedAt'] = ApiClient.convertToType(data['ProcessedAt'], 'Date');
+            if (data.hasOwnProperty('publishedAt')) {
+                obj['publishedAt'] = ApiClient.convertToType(data['publishedAt'], 'Date');
             }
-            if (data.hasOwnProperty('ProcessAfter')) {
-                obj['ProcessAfter'] = ApiClient.convertToType(data['ProcessAfter'], 'Date');
+            if (data.hasOwnProperty('processedAt')) {
+                obj['processedAt'] = ApiClient.convertToType(data['processedAt'], 'Date');
             }
-            if (data.hasOwnProperty('Retry')) {
-                obj['Retry'] = ApiClient.convertToType(data['Retry'], 'Number');
+            if (data.hasOwnProperty('deliveredAt')) {
+                obj['deliveredAt'] = ApiClient.convertToType(data['deliveredAt'], 'Date');
+            }
+            if (data.hasOwnProperty('scheduledTo')) {
+                obj['scheduledTo'] = ApiClient.convertToType(data['scheduledTo'], 'Date');
+            }
+            if (data.hasOwnProperty('retry')) {
+                obj['retry'] = ApiClient.convertToType(data['retry'], 'Number');
+            }
+            if (data.hasOwnProperty('payload')) {
+                obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
         }
         return obj;
@@ -93,44 +103,69 @@ class IntegrationHubEventRecord {
 }
 
 /**
- * @member {Number} Id
+ * ID of the event record.
+ * @member {Number} id
  */
-IntegrationHubEventRecord.prototype['Id'] = undefined;
+IntegrationHubEventRecord.prototype['id'] = undefined;
 
 /**
- * @member {Number} FlowId
+ * ID of the integration hub flow.
+ * @member {Number} flowId
  */
-IntegrationHubEventRecord.prototype['FlowId'] = undefined;
+IntegrationHubEventRecord.prototype['flowId'] = undefined;
 
 /**
- * @member {String} EventType
+ * Name of the integration.
+ * @member {String} integrationName
  */
-IntegrationHubEventRecord.prototype['EventType'] = undefined;
+IntegrationHubEventRecord.prototype['integrationName'] = undefined;
 
 /**
- * @member {Object} EventData
+ * Name of the integration instance.
+ * @member {String} instanceName
  */
-IntegrationHubEventRecord.prototype['EventData'] = undefined;
+IntegrationHubEventRecord.prototype['instanceName'] = undefined;
 
 /**
- * @member {Date} PublishedAt
+ * @member {module:model/IntegrationHubEventType} eventType
  */
-IntegrationHubEventRecord.prototype['PublishedAt'] = undefined;
+IntegrationHubEventRecord.prototype['eventType'] = undefined;
 
 /**
- * @member {Date} ProcessedAt
+ * Timestamp when the event was published.
+ * @member {Date} publishedAt
  */
-IntegrationHubEventRecord.prototype['ProcessedAt'] = undefined;
+IntegrationHubEventRecord.prototype['publishedAt'] = undefined;
 
 /**
- * @member {Date} ProcessAfter
+ * Timestamp when the event was processed.
+ * @member {Date} processedAt
  */
-IntegrationHubEventRecord.prototype['ProcessAfter'] = undefined;
+IntegrationHubEventRecord.prototype['processedAt'] = undefined;
 
 /**
- * @member {Number} Retry
+ * Timestamp when the event was delivered.
+ * @member {Date} deliveredAt
  */
-IntegrationHubEventRecord.prototype['Retry'] = undefined;
+IntegrationHubEventRecord.prototype['deliveredAt'] = undefined;
+
+/**
+ * Timestamp after which the event is scheduled to be processed.
+ * @member {Date} scheduledTo
+ */
+IntegrationHubEventRecord.prototype['scheduledTo'] = undefined;
+
+/**
+ * Number of delivery retries attempted.
+ * @member {Number} retry
+ */
+IntegrationHubEventRecord.prototype['retry'] = undefined;
+
+/**
+ * The event payload as a formatted JSON string.
+ * @member {String} payload
+ */
+IntegrationHubEventRecord.prototype['payload'] = undefined;
 
 
 

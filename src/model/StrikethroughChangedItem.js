@@ -18,7 +18,7 @@ import StrikethroughEffect from './StrikethroughEffect';
 /**
  * The StrikethroughChangedItem model module.
  * @module model/StrikethroughChangedItem
- * @version 25.17.0
+ * @version 25.18.0
  */
 class StrikethroughChangedItem {
     /**

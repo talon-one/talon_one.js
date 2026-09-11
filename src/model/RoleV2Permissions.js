@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import RoleV2PermissionSet from './RoleV2PermissionSet';
 import RoleV2RolesGroup from './RoleV2RolesGroup';
+import RolesV2Thresholds from './RolesV2Thresholds';
 
 /**
  * The RoleV2Permissions model module.
  * @module model/RoleV2Permissions
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RoleV2Permissions {
     /**
@@ -55,6 +56,9 @@ class RoleV2Permissions {
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = RoleV2RolesGroup.constructFromObject(data['roles']);
             }
+            if (data.hasOwnProperty('thresholds')) {
+                obj['thresholds'] = ApiClient.convertToType(data['thresholds'], [RolesV2Thresholds]);
+            }
         }
         return obj;
     }
@@ -72,6 +76,12 @@ RoleV2Permissions.prototype['permissionSets'] = undefined;
  * @member {module:model/RoleV2RolesGroup} roles
  */
 RoleV2Permissions.prototype['roles'] = undefined;
+
+/**
+ * Support user limits for actions that require admin approval within the given application.
+ * @member {Array.<module:model/RolesV2Thresholds>} thresholds
+ */
+RoleV2Permissions.prototype['thresholds'] = undefined;
 
 
 

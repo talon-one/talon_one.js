@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **defaultDiscountAdditionalCostPerItemScope** | **String** | The default scope to apply &#x60;setDiscountPerItem&#x60; effects on if no scope was provided with the effect.  | [optional] 
 **key** | **String** | Hex key for HMAC-signing API calls as coming from this application (16 hex digits). | [optional] 
 **enableCampaignStateManagement** | **Boolean** | Indicates whether the campaign staging and revisions feature is enabled for the Application.  **Important:** After this feature is enabled, it cannot be disabled.  | [optional] 
+**bestPriorPriceSettings** | [**BestPriorPriceSettings**](BestPriorPriceSettings.md) |  | [optional] 
 
 
 

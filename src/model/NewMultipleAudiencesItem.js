@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewMultipleAudiencesItem model module.
  * @module model/NewMultipleAudiencesItem
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewMultipleAudiencesItem {
     /**
@@ -52,6 +52,9 @@ class NewMultipleAudiencesItem {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('subscribedApplicationsIds')) {
+                obj['subscribedApplicationsIds'] = ApiClient.convertToType(data['subscribedApplicationsIds'], ['Number']);
+            }
             if (data.hasOwnProperty('integrationId')) {
                 obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
             }
@@ -67,6 +70,12 @@ class NewMultipleAudiencesItem {
  * @member {String} name
  */
 NewMultipleAudiencesItem.prototype['name'] = undefined;
+
+/**
+ * A list of the IDs of the Applications that are connected to this audience.
+ * @member {Array.<Number>} subscribedApplicationsIds
+ */
+NewMultipleAudiencesItem.prototype['subscribedApplicationsIds'] = undefined;
 
 /**
  * The ID of this audience in the third-party integration.

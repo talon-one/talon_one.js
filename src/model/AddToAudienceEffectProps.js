@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The AddToAudienceEffectProps model module.
  * @module model/AddToAudienceEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AddToAudienceEffectProps {
     /**
      * Constructs a new <code>AddToAudienceEffectProps</code>.
-     * The properties specific to the \&quot;addToAudience\&quot; effect. This gets triggered whenever a validated rule contains an \&quot;addToAudience\&quot; effect.
+     * This effect is triggered when a rule containing an [Update audience](https://docs.talon.one/docs/product/rules/effects/use-effects#update-an-audience) effect with **Add customer to an audience** selected is validated. It indicates that a customer was added to an audience and is returned when a customer session is opened, updated, or closed.
      * @alias module:model/AddToAudienceEffectProps
      */
     constructor() { 

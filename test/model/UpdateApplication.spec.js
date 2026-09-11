@@ -156,6 +156,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bestPriorPriceSettings (base name: "bestPriorPriceSettings")', function() {
+      // uncomment below and update the code to test the property bestPriorPriceSettings
+      //var instane = new TalonOne.UpdateApplication();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

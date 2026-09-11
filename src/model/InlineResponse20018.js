@@ -17,7 +17,7 @@ import LoyaltyDashboardData from './LoyaltyDashboardData';
 /**
  * The InlineResponse20018 model module.
  * @module model/InlineResponse20018
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20018 {
     /**

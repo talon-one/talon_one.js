@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignIds (base name: "campaignIds")', function() {
+      // uncomment below and update the code to test the property campaignIds
+      //var instane = new TalonOne.AchievementStatusEntry();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new TalonOne.AchievementStatusEntry();

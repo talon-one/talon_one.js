@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **defaultEvaluationGroupId** | **Number** | The ID of the default campaign evaluation group to which new campaigns will be added unless a different group is selected when creating the campaign. | [optional] 
 **defaultCartItemFilterId** | **Number** | The ID of the default Cart-Item-Filter for this application. | [optional] 
 **enableCampaignStateManagement** | **Boolean** | Indicates whether the campaign staging and revisions feature is enabled for the Application.  **Important:** After this feature is enabled, it cannot be disabled.  | [optional] 
+**bestPriorPriceSettings** | [**BestPriorPriceSettings**](BestPriorPriceSettings.md) |  | [optional] 
 
 
 

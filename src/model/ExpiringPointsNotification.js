@@ -17,7 +17,7 @@ import ExpiringPointsData from './ExpiringPointsData';
 /**
  * The ExpiringPointsNotification model module.
  * @module model/ExpiringPointsNotification
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExpiringPointsNotification {
     /**

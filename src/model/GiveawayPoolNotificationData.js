@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GiveawayPoolNotificationData model module.
  * @module model/GiveawayPoolNotificationData
- * @version 25.17.0
+ * @version 25.18.0
  */
 class GiveawayPoolNotificationData {
     /**

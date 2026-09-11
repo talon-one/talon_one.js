@@ -17,7 +17,7 @@ import ExperimentResult from './ExperimentResult';
 /**
  * The ExperimentListResults model module.
  * @module model/ExperimentListResults
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentListResults {
     /**

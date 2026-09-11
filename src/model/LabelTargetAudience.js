@@ -17,7 +17,7 @@ import AudienceReference from './AudienceReference';
 /**
  * The LabelTargetAudience model module.
  * @module model/LabelTargetAudience
- * @version 25.17.0
+ * @version 25.18.0
  */
 class LabelTargetAudience {
     /**

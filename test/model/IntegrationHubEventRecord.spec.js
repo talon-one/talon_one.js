@@ -54,50 +54,68 @@
       //expect(instance).to.be.a(TalonOne.IntegrationHubEventRecord);
     });
 
-    it('should have the property id (base name: "Id")', function() {
+    it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new TalonOne.IntegrationHubEventRecord();
       //expect(instance).to.be();
     });
 
-    it('should have the property flowId (base name: "FlowId")', function() {
+    it('should have the property flowId (base name: "flowId")', function() {
       // uncomment below and update the code to test the property flowId
       //var instane = new TalonOne.IntegrationHubEventRecord();
       //expect(instance).to.be();
     });
 
-    it('should have the property eventType (base name: "EventType")', function() {
+    it('should have the property integrationName (base name: "integrationName")', function() {
+      // uncomment below and update the code to test the property integrationName
+      //var instane = new TalonOne.IntegrationHubEventRecord();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property instanceName (base name: "instanceName")', function() {
+      // uncomment below and update the code to test the property instanceName
+      //var instane = new TalonOne.IntegrationHubEventRecord();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eventType (base name: "eventType")', function() {
       // uncomment below and update the code to test the property eventType
       //var instane = new TalonOne.IntegrationHubEventRecord();
       //expect(instance).to.be();
     });
 
-    it('should have the property eventData (base name: "EventData")', function() {
-      // uncomment below and update the code to test the property eventData
-      //var instane = new TalonOne.IntegrationHubEventRecord();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property publishedAt (base name: "PublishedAt")', function() {
+    it('should have the property publishedAt (base name: "publishedAt")', function() {
       // uncomment below and update the code to test the property publishedAt
       //var instane = new TalonOne.IntegrationHubEventRecord();
       //expect(instance).to.be();
     });
 
-    it('should have the property processedAt (base name: "ProcessedAt")', function() {
+    it('should have the property processedAt (base name: "processedAt")', function() {
       // uncomment below and update the code to test the property processedAt
       //var instane = new TalonOne.IntegrationHubEventRecord();
       //expect(instance).to.be();
     });
 
-    it('should have the property processAfter (base name: "ProcessAfter")', function() {
-      // uncomment below and update the code to test the property processAfter
+    it('should have the property deliveredAt (base name: "deliveredAt")', function() {
+      // uncomment below and update the code to test the property deliveredAt
       //var instane = new TalonOne.IntegrationHubEventRecord();
       //expect(instance).to.be();
     });
 
-    it('should have the property retry (base name: "Retry")', function() {
+    it('should have the property scheduledTo (base name: "scheduledTo")', function() {
+      // uncomment below and update the code to test the property scheduledTo
+      //var instane = new TalonOne.IntegrationHubEventRecord();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property retry (base name: "retry")', function() {
       // uncomment below and update the code to test the property retry
+      //var instane = new TalonOne.IntegrationHubEventRecord();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property payload (base name: "payload")', function() {
+      // uncomment below and update the code to test the property payload
       //var instane = new TalonOne.IntegrationHubEventRecord();
       //expect(instance).to.be();
     });

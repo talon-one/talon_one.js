@@ -12,17 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
+import IntegrationHubEventType from './IntegrationHubEventType';
 
 /**
  * The IntegrationHubFlow model module.
  * @module model/IntegrationHubFlow
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubFlow {
     /**
      * Constructs a new <code>IntegrationHubFlow</code>.
      * @alias module:model/IntegrationHubFlow
-     * @param eventType {String} The event type we want to register a flow for.
+     * @param eventType {module:model/IntegrationHubEventType} 
      * @param integrationHubFlowUrl {String} The URL of the integration hub flow that we want to trigger for the event.
      */
     constructor(eventType, integrationHubFlowUrl) { 
@@ -54,8 +55,11 @@ class IntegrationHubFlow {
             if (data.hasOwnProperty('ApplicationID')) {
                 obj['ApplicationID'] = ApiClient.convertToType(data['ApplicationID'], 'Number');
             }
+            if (data.hasOwnProperty('LoyaltyProgramID')) {
+                obj['LoyaltyProgramID'] = ApiClient.convertToType(data['LoyaltyProgramID'], 'Number');
+            }
             if (data.hasOwnProperty('EventType')) {
-                obj['EventType'] = ApiClient.convertToType(data['EventType'], 'String');
+                obj['EventType'] = IntegrationHubEventType.constructFromObject(data['EventType']);
             }
             if (data.hasOwnProperty('IntegrationHubFlowUrl')) {
                 obj['IntegrationHubFlowUrl'] = ApiClient.convertToType(data['IntegrationHubFlowUrl'], 'String');
@@ -68,14 +72,19 @@ class IntegrationHubFlow {
 }
 
 /**
- * ID of application the flow is registered for.
+ * ID of the application the flow is registered for.
  * @member {Number} ApplicationID
  */
 IntegrationHubFlow.prototype['ApplicationID'] = undefined;
 
 /**
- * The event type we want to register a flow for.
- * @member {String} EventType
+ * ID of the loyalty program the flow is registered for.
+ * @member {Number} LoyaltyProgramID
+ */
+IntegrationHubFlow.prototype['LoyaltyProgramID'] = undefined;
+
+/**
+ * @member {module:model/IntegrationHubEventType} EventType
  */
 IntegrationHubFlow.prototype['EventType'] = undefined;
 

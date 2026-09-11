@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subscribedApplicationsIds (base name: "subscribedApplicationsIds")', function() {
+      // uncomment below and update the code to test the property subscribedApplicationsIds
+      //var instane = new TalonOne.Audience();
+      //expect(instance).to.be();
+    });
+
     it('should have the property integration (base name: "integration")', function() {
       // uncomment below and update the code to test the property integration
       //var instane = new TalonOne.Audience();

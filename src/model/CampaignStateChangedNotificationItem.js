@@ -19,7 +19,7 @@ import Ruleset from './Ruleset';
 /**
  * The CampaignStateChangedNotificationItem model module.
  * @module model/CampaignStateChangedNotificationItem
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CampaignStateChangedNotificationItem {
     /**

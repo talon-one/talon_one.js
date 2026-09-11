@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationCIF from './ApplicationCIF';
+import Store from './Store';
 
 /**
  * The InlineResponse20048 model module.
  * @module model/InlineResponse20048
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20048 {
     /**
      * Constructs a new <code>InlineResponse20048</code>.
      * @alias module:model/InlineResponse20048
-     * @param data {Array.<module:model/ApplicationCIF>} 
+     * @param data {Array.<module:model/Store>} 
      */
     constructor(data) { 
         
@@ -53,8 +53,11 @@ class InlineResponse20048 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCIF]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Store]);
             }
         }
         return obj;
@@ -69,7 +72,12 @@ class InlineResponse20048 {
 InlineResponse20048.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationCIF>} data
+ * @member {Number} totalResultSize
+ */
+InlineResponse20048.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/Store>} data
  */
 InlineResponse20048.prototype['data'] = undefined;
 

@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification);
     });
 
+    it('should have the property eventId (base name: "EventId")', function() {
+      // uncomment below and update the code to test the property eventId
+      //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification();
+      //expect(instance).to.be();
+    });
+
     it('should have the property profileIntegrationID (base name: "ProfileIntegrationID")', function() {
       // uncomment below and update the code to test the property profileIntegrationID
       //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification();
@@ -62,6 +68,12 @@
 
     it('should have the property loyaltyProgramID (base name: "LoyaltyProgramID")', function() {
       // uncomment below and update the code to test the property loyaltyProgramID
+      //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property loyaltyProgramName (base name: "LoyaltyProgramName")', function() {
+      // uncomment below and update the code to test the property loyaltyProgramName
       //var instane = new TalonOne.IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification();
       //expect(instance).to.be();
     });

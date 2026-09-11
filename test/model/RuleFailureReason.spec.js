@@ -96,6 +96,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewardId (base name: "rewardId")', function() {
+      // uncomment below and update the code to test the property rewardId
+      //var instane = new TalonOne.RuleFailureReason();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewardIntegrationId (base name: "rewardIntegrationId")', function() {
+      // uncomment below and update the code to test the property rewardIntegrationId
+      //var instane = new TalonOne.RuleFailureReason();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ruleIndex (base name: "ruleIndex")', function() {
       // uncomment below and update the code to test the property ruleIndex
       //var instane = new TalonOne.RuleFailureReason();

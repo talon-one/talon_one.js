@@ -17,7 +17,7 @@ import CampaignStateChangedNotificationItem from './CampaignStateChangedNotifica
 /**
  * The CampaignStateChangedNotification model module.
  * @module model/CampaignStateChangedNotification
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CampaignStateChangedNotification {
     /**

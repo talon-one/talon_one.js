@@ -17,20 +17,20 @@ import IntegrationHubFlowConfigResponse from './IntegrationHubFlowConfigResponse
 /**
  * The IntegrationHubFlowResponse model module.
  * @module model/IntegrationHubFlowResponse
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubFlowResponse {
     /**
      * Constructs a new <code>IntegrationHubFlowResponse</code>.
      * @alias module:model/IntegrationHubFlowResponse
      * @param id {Number} ID of the integration hub flow.
+     * @param createdAt {Date} Timestamp when the flow was created.
      * @param eventType {String} The event type we want to register a flow for.
-     * @param integrationHubFlowUrl {String} The URL of the integration hub flow that we want to trigger for the event.
      * @param config {module:model/IntegrationHubFlowConfigResponse} 
      */
-    constructor(id, eventType, integrationHubFlowUrl, config) { 
+    constructor(id, createdAt, eventType, config) { 
         
-        IntegrationHubFlowResponse.initialize(this, id, eventType, integrationHubFlowUrl, config);
+        IntegrationHubFlowResponse.initialize(this, id, createdAt, eventType, config);
     }
 
     /**
@@ -38,11 +38,11 @@ class IntegrationHubFlowResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, eventType, integrationHubFlowUrl, config) { 
-        obj['Id'] = id;
-        obj['EventType'] = eventType;
-        obj['IntegrationHubFlowUrl'] = integrationHubFlowUrl;
-        obj['Config'] = config;
+    static initialize(obj, id, createdAt, eventType, config) { 
+        obj['id'] = id;
+        obj['createdAt'] = createdAt;
+        obj['eventType'] = eventType;
+        obj['config'] = config;
     }
 
     /**
@@ -56,20 +56,32 @@ class IntegrationHubFlowResponse {
         if (data) {
             obj = obj || new IntegrationHubFlowResponse();
 
-            if (data.hasOwnProperty('Id')) {
-                obj['Id'] = ApiClient.convertToType(data['Id'], 'Number');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('ApplicationID')) {
-                obj['ApplicationID'] = ApiClient.convertToType(data['ApplicationID'], 'Number');
+            if (data.hasOwnProperty('integrationName')) {
+                obj['integrationName'] = ApiClient.convertToType(data['integrationName'], 'String');
             }
-            if (data.hasOwnProperty('EventType')) {
-                obj['EventType'] = ApiClient.convertToType(data['EventType'], 'String');
+            if (data.hasOwnProperty('instanceName')) {
+                obj['instanceName'] = ApiClient.convertToType(data['instanceName'], 'String');
             }
-            if (data.hasOwnProperty('IntegrationHubFlowUrl')) {
-                obj['IntegrationHubFlowUrl'] = ApiClient.convertToType(data['IntegrationHubFlowUrl'], 'String');
+            if (data.hasOwnProperty('createdAt')) {
+                obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'Date');
             }
-            if (data.hasOwnProperty('Config')) {
-                obj['Config'] = IntegrationHubFlowConfigResponse.constructFromObject(data['Config']);
+            if (data.hasOwnProperty('disabledUntil')) {
+                obj['disabledUntil'] = ApiClient.convertToType(data['disabledUntil'], 'Date');
+            }
+            if (data.hasOwnProperty('applicationId')) {
+                obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
+            }
+            if (data.hasOwnProperty('loyaltyProgramId')) {
+                obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
+            }
+            if (data.hasOwnProperty('eventType')) {
+                obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
+            }
+            if (data.hasOwnProperty('config')) {
+                obj['config'] = IntegrationHubFlowConfigResponse.constructFromObject(data['config']);
             }
         }
         return obj;
@@ -80,32 +92,56 @@ class IntegrationHubFlowResponse {
 
 /**
  * ID of the integration hub flow.
- * @member {Number} Id
+ * @member {Number} id
  */
-IntegrationHubFlowResponse.prototype['Id'] = undefined;
+IntegrationHubFlowResponse.prototype['id'] = undefined;
 
 /**
- * ID of application the flow is registered for.
- * @member {Number} ApplicationID
+ * Name of the integration.
+ * @member {String} integrationName
  */
-IntegrationHubFlowResponse.prototype['ApplicationID'] = undefined;
+IntegrationHubFlowResponse.prototype['integrationName'] = undefined;
+
+/**
+ * Name of the integration instance.
+ * @member {String} instanceName
+ */
+IntegrationHubFlowResponse.prototype['instanceName'] = undefined;
+
+/**
+ * Timestamp when the flow was created.
+ * @member {Date} createdAt
+ */
+IntegrationHubFlowResponse.prototype['createdAt'] = undefined;
+
+/**
+ * Timestamp until which the flow is disabled. Null when the flow is active.
+ * @member {Date} disabledUntil
+ */
+IntegrationHubFlowResponse.prototype['disabledUntil'] = undefined;
+
+/**
+ * ID of the application the flow is registered for.
+ * @member {Number} applicationId
+ */
+IntegrationHubFlowResponse.prototype['applicationId'] = undefined;
+
+/**
+ * ID of the loyalty program the flow is registered for.
+ * @member {Number} loyaltyProgramId
+ */
+IntegrationHubFlowResponse.prototype['loyaltyProgramId'] = undefined;
 
 /**
  * The event type we want to register a flow for.
- * @member {String} EventType
+ * @member {String} eventType
  */
-IntegrationHubFlowResponse.prototype['EventType'] = undefined;
+IntegrationHubFlowResponse.prototype['eventType'] = undefined;
 
 /**
- * The URL of the integration hub flow that we want to trigger for the event.
- * @member {String} IntegrationHubFlowUrl
+ * @member {module:model/IntegrationHubFlowConfigResponse} config
  */
-IntegrationHubFlowResponse.prototype['IntegrationHubFlowUrl'] = undefined;
-
-/**
- * @member {module:model/IntegrationHubFlowConfigResponse} Config
- */
-IntegrationHubFlowResponse.prototype['Config'] = undefined;
+IntegrationHubFlowResponse.prototype['config'] = undefined;
 
 
 

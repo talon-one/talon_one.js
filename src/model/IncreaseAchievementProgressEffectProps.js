@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The IncreaseAchievementProgressEffectProps model module.
  * @module model/IncreaseAchievementProgressEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IncreaseAchievementProgressEffectProps {
     /**
      * Constructs a new <code>IncreaseAchievementProgressEffectProps</code>.
-     * The properties specific to the \&quot;increaseAchievementProgress\&quot; effect. This gets triggered whenever a validated rule contained an \&quot;increase customer progress\&quot; effect.
+     * This effect indicates that the customer&#39;s progress in an achievement was updated during the current session. It is triggered when a rule using the [Update customer progress](https://docs.talon.one/docs/product/rules/effects/use-effects#update-customer-progress) effect is successfully validated.  For [on-completion achievements](https://docs.talon.one/docs/product/achievements/overview#recurring-on-completion-achievements), any customer progress exceeding the target automatically starts a new iteration. This generates a new &#x60;progressTrackerId&#x60; for each iteration, and there can be multiple progress updates for the same achievement from a single validation of this effect.
      * @alias module:model/IncreaseAchievementProgressEffectProps
      * @param achievementId {Number} The internal ID of the achievement.
      * @param achievementName {String} The name of the achievement.
-     * @param delta {Number} The value by which the customer's current progress in the achievement is increased.
+     * @param delta {Number} The value by which the customer's current progress in the achievement has increased.
      * @param value {Number} The current progress of the customer in the achievement.
      * @param target {Number} The target value to complete the achievement.
      * @param isJustCompleted {Boolean} Indicates if the customer has completed the achievement in the current session.
@@ -101,13 +101,13 @@ IncreaseAchievementProgressEffectProps.prototype['achievementId'] = undefined;
 IncreaseAchievementProgressEffectProps.prototype['achievementName'] = undefined;
 
 /**
- * The internal ID of the achievement progress tracker.
+ * The internal ID of the customer progress tracker. For [on-completion achievements](https://docs.talon.one/docs/product/achievements/overview#recurring-on-completion-achievements), this effect generates a unique ID for each iteration.
  * @member {Number} progressTrackerId
  */
 IncreaseAchievementProgressEffectProps.prototype['progressTrackerId'] = undefined;
 
 /**
- * The value by which the customer's current progress in the achievement is increased.
+ * The value by which the customer's current progress in the achievement has increased.
  * @member {Number} delta
  */
 IncreaseAchievementProgressEffectProps.prototype['delta'] = undefined;

@@ -12,18 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
+import IntegrationHubEventType from './IntegrationHubEventType';
 import IntegrationHubFlowConfig from './IntegrationHubFlowConfig';
 
 /**
  * The IntegrationHubFlowWithConfig model module.
  * @module model/IntegrationHubFlowWithConfig
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubFlowWithConfig {
     /**
      * Constructs a new <code>IntegrationHubFlowWithConfig</code>.
      * @alias module:model/IntegrationHubFlowWithConfig
-     * @param eventType {String} The event type we want to register a flow for.
+     * @param eventType {module:model/IntegrationHubEventType} 
      * @param integrationHubFlowUrl {String} The URL of the integration hub flow that we want to trigger for the event.
      * @param config {module:model/IntegrationHubFlowConfig} 
      */
@@ -57,8 +58,11 @@ class IntegrationHubFlowWithConfig {
             if (data.hasOwnProperty('ApplicationID')) {
                 obj['ApplicationID'] = ApiClient.convertToType(data['ApplicationID'], 'Number');
             }
+            if (data.hasOwnProperty('LoyaltyProgramID')) {
+                obj['LoyaltyProgramID'] = ApiClient.convertToType(data['LoyaltyProgramID'], 'Number');
+            }
             if (data.hasOwnProperty('EventType')) {
-                obj['EventType'] = ApiClient.convertToType(data['EventType'], 'String');
+                obj['EventType'] = IntegrationHubEventType.constructFromObject(data['EventType']);
             }
             if (data.hasOwnProperty('IntegrationHubFlowUrl')) {
                 obj['IntegrationHubFlowUrl'] = ApiClient.convertToType(data['IntegrationHubFlowUrl'], 'String');
@@ -74,14 +78,19 @@ class IntegrationHubFlowWithConfig {
 }
 
 /**
- * ID of application the flow is registered for.
+ * ID of the application the flow is registered for.
  * @member {Number} ApplicationID
  */
 IntegrationHubFlowWithConfig.prototype['ApplicationID'] = undefined;
 
 /**
- * The event type we want to register a flow for.
- * @member {String} EventType
+ * ID of the loyalty program the flow is registered for.
+ * @member {Number} LoyaltyProgramID
+ */
+IntegrationHubFlowWithConfig.prototype['LoyaltyProgramID'] = undefined;
+
+/**
+ * @member {module:model/IntegrationHubEventType} EventType
  */
 IntegrationHubFlowWithConfig.prototype['EventType'] = undefined;
 

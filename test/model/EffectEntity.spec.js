@@ -150,6 +150,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewardId (base name: "rewardId")', function() {
+      // uncomment below and update the code to test the property rewardId
+      //var instane = new TalonOne.EffectEntity();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

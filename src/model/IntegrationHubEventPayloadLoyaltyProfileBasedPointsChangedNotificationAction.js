@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction model module.
  * @module model/IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction {
     /**

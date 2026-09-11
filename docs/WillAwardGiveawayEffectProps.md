@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**poolId** | **Number** | The ID of the giveaways pool the code will be taken from. | 
-**poolName** | **String** | The name of the giveaways pool the code will be taken from. | 
-**recipientIntegrationId** | **String** | The integration ID of the profile that will be awarded the giveaway. | 
+**poolId** | **Number** | The internal ID of the giveaway pool. | 
+**poolName** | **String** | The name of the giveaway pool. | 
+**recipientIntegrationId** | **String** | The integration ID of the customer that receives the giveaway. | 
 
 

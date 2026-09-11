@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyLedgerEntryFlags model module.
  * @module model/LoyaltyLedgerEntryFlags
- * @version 25.17.0
+ * @version 25.18.0
  */
 class LoyaltyLedgerEntryFlags {
     /**

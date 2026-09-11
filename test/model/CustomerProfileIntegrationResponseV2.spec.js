@@ -84,8 +84,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property campaignEligibility (base name: "campaignEligibility")', function() {
+      // uncomment below and update the code to test the property campaignEligibility
+      //var instane = new TalonOne.CustomerProfileIntegrationResponseV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property awardedGiveaways (base name: "awardedGiveaways")', function() {
       // uncomment below and update the code to test the property awardedGiveaways
+      //var instane = new TalonOne.CustomerProfileIntegrationResponseV2();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewards (base name: "rewards")', function() {
+      // uncomment below and update the code to test the property rewards
       //var instane = new TalonOne.CustomerProfileIntegrationResponseV2();
       //expect(instance).to.be();
     });

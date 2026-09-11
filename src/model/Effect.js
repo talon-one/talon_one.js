@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Effect model module.
  * @module model/Effect
- * @version 25.17.0
+ * @version 25.18.0
  */
 class Effect {
     /**
@@ -107,6 +107,9 @@ class Effect {
             }
             if (data.hasOwnProperty('adjustmentReferenceId')) {
                 obj['adjustmentReferenceId'] = ApiClient.convertToType(data['adjustmentReferenceId'], 'String');
+            }
+            if (data.hasOwnProperty('rewardId')) {
+                obj['rewardId'] = ApiClient.convertToType(data['rewardId'], 'Number');
             }
             if (data.hasOwnProperty('props')) {
                 obj['props'] = ApiClient.convertToType(data['props'], Object);
@@ -213,6 +216,12 @@ Effect.prototype['selectedPrice'] = undefined;
  * @member {String} adjustmentReferenceId
  */
 Effect.prototype['adjustmentReferenceId'] = undefined;
+
+/**
+ * The ID of the reward that was being evaluated when this effect was triggered.
+ * @member {Number} rewardId
+ */
+Effect.prototype['rewardId'] = undefined;
 
 /**
  * @member {Object} props

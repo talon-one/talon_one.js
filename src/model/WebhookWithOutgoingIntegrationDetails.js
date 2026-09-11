@@ -17,7 +17,7 @@ import TemplateArgDef from './TemplateArgDef';
 /**
  * The WebhookWithOutgoingIntegrationDetails model module.
  * @module model/WebhookWithOutgoingIntegrationDetails
- * @version 25.17.0
+ * @version 25.18.0
  */
 class WebhookWithOutgoingIntegrationDetails {
     /**

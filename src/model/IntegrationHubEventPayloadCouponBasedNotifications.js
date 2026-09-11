@@ -17,12 +17,13 @@ import IntegrationHubEventPayloadCouponBasedNotificationsLimits from './Integrat
 /**
  * The IntegrationHubEventPayloadCouponBasedNotifications model module.
  * @module model/IntegrationHubEventPayloadCouponBasedNotifications
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationHubEventPayloadCouponBasedNotifications {
     /**
      * Constructs a new <code>IntegrationHubEventPayloadCouponBasedNotifications</code>.
      * @alias module:model/IntegrationHubEventPayloadCouponBasedNotifications
+     * @param eventId {Number} The ID of the integration hub event. Return this value in the delivery-status callback to mark the event delivered or failed.
      * @param id {Number} 
      * @param created {Date} 
      * @param campaignId {Number} 
@@ -33,9 +34,9 @@ class IntegrationHubEventPayloadCouponBasedNotifications {
      * @param sourceOfEvent {String} 
      * @param employeeName {String} 
      */
-    constructor(id, created, campaignId, value, usageLimit, usageCounter, publishedAt, sourceOfEvent, employeeName) { 
+    constructor(eventId, id, created, campaignId, value, usageLimit, usageCounter, publishedAt, sourceOfEvent, employeeName) { 
         
-        IntegrationHubEventPayloadCouponBasedNotifications.initialize(this, id, created, campaignId, value, usageLimit, usageCounter, publishedAt, sourceOfEvent, employeeName);
+        IntegrationHubEventPayloadCouponBasedNotifications.initialize(this, eventId, id, created, campaignId, value, usageLimit, usageCounter, publishedAt, sourceOfEvent, employeeName);
     }
 
     /**
@@ -43,7 +44,8 @@ class IntegrationHubEventPayloadCouponBasedNotifications {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, created, campaignId, value, usageLimit, usageCounter, publishedAt, sourceOfEvent, employeeName) { 
+    static initialize(obj, eventId, id, created, campaignId, value, usageLimit, usageCounter, publishedAt, sourceOfEvent, employeeName) { 
+        obj['EventId'] = eventId;
         obj['Id'] = id;
         obj['Created'] = created;
         obj['CampaignId'] = campaignId;
@@ -66,6 +68,9 @@ class IntegrationHubEventPayloadCouponBasedNotifications {
         if (data) {
             obj = obj || new IntegrationHubEventPayloadCouponBasedNotifications();
 
+            if (data.hasOwnProperty('EventId')) {
+                obj['EventId'] = ApiClient.convertToType(data['EventId'], 'Number');
+            }
             if (data.hasOwnProperty('Id')) {
                 obj['Id'] = ApiClient.convertToType(data['Id'], 'Number');
             }
@@ -135,6 +140,12 @@ class IntegrationHubEventPayloadCouponBasedNotifications {
 
 
 }
+
+/**
+ * The ID of the integration hub event. Return this value in the delivery-status callback to mark the event delivered or failed.
+ * @member {Number} EventId
+ */
+IntegrationHubEventPayloadCouponBasedNotifications.prototype['EventId'] = undefined;
 
 /**
  * @member {Number} Id

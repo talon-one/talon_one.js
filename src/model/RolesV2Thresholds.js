@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RolesV2Thresholds model module.
  * @module model/RolesV2Thresholds
- * @version 25.17.0
+ * @version 25.18.0
  */
 class RolesV2Thresholds {
     /**
@@ -47,6 +47,9 @@ class RolesV2Thresholds {
         if (data) {
             obj = obj || new RolesV2Thresholds();
 
+            if (data.hasOwnProperty('loyaltyProgramId')) {
+                obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
+            }
             if (data.hasOwnProperty('loyaltyPointsLimit')) {
                 obj['loyaltyPointsLimit'] = ApiClient.convertToType(data['loyaltyPointsLimit'], 'Number');
             }
@@ -56,6 +59,12 @@ class RolesV2Thresholds {
 
 
 }
+
+/**
+ * Identifier of the loyalty program. You can get the ID with the [List loyalty programs](https://docs.talon.one/management-api#tag/Loyalty/operation/getLoyaltyPrograms) endpoint.
+ * @member {Number} loyaltyProgramId
+ */
+RolesV2Thresholds.prototype['loyaltyProgramId'] = undefined;
 
 /**
  * Maximum number of loyalty points a support user can award without approval.

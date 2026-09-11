@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagerConfig model module.
  * @module model/ManagerConfig
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ManagerConfig {
     /**

@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CouponCreatedEffectProps model module.
  * @module model/CouponCreatedEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CouponCreatedEffectProps {
     /**
      * Constructs a new <code>CouponCreatedEffectProps</code>.
-     * The properties specific to the \&quot;couponCreated\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;create coupon\&quot; effect, and a coupon was created for a customer. See \&quot;createdCoupons\&quot; on the response for all details of this coupon.
+     * This effect indicates that a coupon was created.  For referrals and retention marketing, a common use case is to generate a coupon that can only be redeemed by one specific customer.  Handle this effect by notifying the recipient about their new coupon code.
      * @alias module:model/CouponCreatedEffectProps
      * @param value {String} The coupon code that was created.
      * @param profileId {String} The integration identifier of the customer for whom this coupon was created.

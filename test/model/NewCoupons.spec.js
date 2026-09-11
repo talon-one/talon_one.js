@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property batchId (base name: "batchId")', function() {
+      // uncomment below and update the code to test the property batchId
+      //var instane = new TalonOne.NewCoupons();
+      //expect(instance).to.be();
+    });
+
     it('should have the property uniquePrefix (base name: "uniquePrefix")', function() {
       // uncomment below and update the code to test the property uniquePrefix
       //var instane = new TalonOne.NewCoupons();
@@ -134,6 +140,18 @@
 
     it('should have the property implicitlyReserved (base name: "implicitlyReserved")', function() {
       // uncomment below and update the code to test the property implicitlyReserved
+      //var instane = new TalonOne.NewCoupons();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property supportRequestId (base name: "supportRequestId")', function() {
+      // uncomment below and update the code to test the property supportRequestId
+      //var instane = new TalonOne.NewCoupons();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property supportRequestNote (base name: "supportRequestNote")', function() {
+      // uncomment below and update the code to test the property supportRequestNote
       //var instane = new TalonOne.NewCoupons();
       //expect(instance).to.be();
     });

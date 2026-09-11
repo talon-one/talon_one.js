@@ -66,8 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property contextId (base name: "contextId")', function() {
-      // uncomment below and update the code to test the property contextId
+    it('should have the property contextIds (base name: "contextIds")', function() {
+      // uncomment below and update the code to test the property contextIds
       //var instane = new TalonOne.History();
       //expect(instance).to.be();
     });
@@ -86,6 +86,18 @@
 
     it('should have the property target (base name: "target")', function() {
       // uncomment below and update the code to test the property target
+      //var instane = new TalonOne.History();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property excludedAt (base name: "excludedAt")', function() {
+      // uncomment below and update the code to test the property excludedAt
+      //var instane = new TalonOne.History();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property exclusionReason (base name: "exclusionReason")', function() {
+      // uncomment below and update the code to test the property exclusionReason
       //var instane = new TalonOne.History();
       //expect(instance).to.be();
     });

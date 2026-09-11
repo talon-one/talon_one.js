@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferralCreatedEffectProps model module.
  * @module model/ReferralCreatedEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ReferralCreatedEffectProps {
     /**
      * Constructs a new <code>ReferralCreatedEffectProps</code>.
-     * The properties specific to the \&quot;referralCreated\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;create referral\&quot; effect, and a referral code was created for a customer. See \&quot;createdReferrals\&quot; on the response for all details of this referral code.
+     * The &#x60;referralCreated&#x60; effect behaves similarly to [couponCreated](https://docs.talon.one/docs/dev/integration-api/api-effects#couponcreated). If the &#x60;friendProfileIntegrationId&#x60; parameter is empty, the referral code can be redeemed by anyone.
      * @alias module:model/ReferralCreatedEffectProps
-     * @param value {String} The referral code that was created.
+     * @param value {String} The referral code provided in the session.
      */
     constructor(value) { 
         
@@ -61,7 +61,7 @@ class ReferralCreatedEffectProps {
 }
 
 /**
- * The referral code that was created.
+ * The referral code provided in the session.
  * @member {String} value
  */
 ReferralCreatedEffectProps.prototype['value'] = undefined;

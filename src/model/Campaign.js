@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 25.17.0
+ * @version 25.18.0
  */
 class Campaign {
     /**
@@ -635,7 +635,13 @@ Campaign['FeaturesEnum'] = {
      * value: "achievements"
      * @const
      */
-    "achievements": "achievements"
+    "achievements": "achievements",
+
+    /**
+     * value: "advancedEvents"
+     * @const
+     */
+    "advancedEvents": "advancedEvents"
 };
 
 

@@ -17,7 +17,7 @@ import Product from './Product';
 /**
  * The PatchItemCatalogAction model module.
  * @module model/PatchItemCatalogAction
- * @version 25.17.0
+ * @version 25.18.0
  */
 class PatchItemCatalogAction {
     /**

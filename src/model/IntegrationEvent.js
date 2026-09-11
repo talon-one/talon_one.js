@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEvent model module.
  * @module model/IntegrationEvent
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationEvent {
     /**
      * Constructs a new <code>IntegrationEvent</code>.
      * @alias module:model/IntegrationEvent
-     * @param type {String} A string representing the event. Must not be a reserved event name.
+     * @param type {String} The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
      * @param attributes {Object} Arbitrary additional JSON data associated with the event.
      */
     constructor(type, attributes) { 
@@ -83,7 +83,7 @@ IntegrationEvent.prototype['profileId'] = undefined;
 IntegrationEvent.prototype['storeIntegrationId'] = undefined;
 
 /**
- * A string representing the event. Must not be a reserved event name.
+ * The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
  * @member {String} type
  */
 IntegrationEvent.prototype['type'] = undefined;

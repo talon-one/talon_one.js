@@ -23,6 +23,12 @@ Name | Type | Description | Notes
 
 * `ruleFailureReasons` (value: `"ruleFailureReasons"`)
 
+* `campaignEligibility` (value: `"campaignEligibility"`)
+
+* `achievements` (value: `"achievements"`)
+
+* `unlockedRewards` (value: `"unlockedRewards"`)
+
 
 
 

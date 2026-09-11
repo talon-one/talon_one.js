@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InventoryReferral model module.
  * @module model/InventoryReferral
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InventoryReferral {
     /**

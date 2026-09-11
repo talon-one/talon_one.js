@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewPriceType model module.
  * @module model/NewPriceType
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewPriceType {
     /**

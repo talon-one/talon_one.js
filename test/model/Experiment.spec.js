@@ -102,6 +102,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property goalType (base name: "goalType")', function() {
+      // uncomment below and update the code to test the property goalType
+      //var instane = new TalonOne.Experiment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property goalDescription (base name: "goalDescription")', function() {
+      // uncomment below and update the code to test the property goalDescription
+      //var instane = new TalonOne.Experiment();
+      //expect(instance).to.be();
+    });
+
     it('should have the property deletedat (base name: "deletedat")', function() {
       // uncomment below and update the code to test the property deletedat
       //var instane = new TalonOne.Experiment();

@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The TriggerWebhookEffectProps model module.
  * @module model/TriggerWebhookEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class TriggerWebhookEffectProps {
     /**
      * Constructs a new <code>TriggerWebhookEffectProps</code>.
-     * The properties specific to the \&quot;triggerWebhook\&quot; effect. This gets triggered whenever a validated rule contained a \&quot;trigger webhook\&quot; effect. This is communicated as an FYI and should usually not require action on your side.
+     * This effect is triggered when a rule containing a [webhook effect](https://docs.talon.one/docs/product/rules/effects/available-effects#webhooks) is validated. The details are shared with you for your information only. It usually doesn&#39;t require an action on your side.
      * @alias module:model/TriggerWebhookEffectProps
-     * @param webhookId {Number} The ID of the webhook that was triggered.
-     * @param webhookName {String} The name of the webhook that was triggered.
+     * @param webhookId {Number} The internal ID of the webhook.
+     * @param webhookName {String} The name of the webhook.
      */
     constructor(webhookId, webhookName) { 
         
@@ -66,13 +66,13 @@ class TriggerWebhookEffectProps {
 }
 
 /**
- * The ID of the webhook that was triggered.
+ * The internal ID of the webhook.
  * @member {Number} webhookId
  */
 TriggerWebhookEffectProps.prototype['webhookId'] = undefined;
 
 /**
- * The name of the webhook that was triggered.
+ * The name of the webhook.
  * @member {String} webhookName
  */
 TriggerWebhookEffectProps.prototype['webhookName'] = undefined;

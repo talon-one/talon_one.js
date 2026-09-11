@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import ModelExport from './ModelExport';
+import Change from './Change';
 
 /**
  * The InlineResponse20045 model module.
  * @module model/InlineResponse20045
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20045 {
     /**
      * Constructs a new <code>InlineResponse20045</code>.
      * @alias module:model/InlineResponse20045
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/ModelExport>} 
+     * @param data {Array.<module:model/Change>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(data) { 
         
-        InlineResponse20045.initialize(this, totalResultSize, data);
+        InlineResponse20045.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20045 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse20045 {
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Change]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse20045 {
 InlineResponse20045.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ModelExport>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20045.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Array.<module:model/Change>} data
  */
 InlineResponse20045.prototype['data'] = undefined;
 

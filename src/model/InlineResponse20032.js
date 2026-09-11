@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationEvent from './ApplicationEvent';
+import ApplicationSession from './ApplicationSession';
 
 /**
  * The InlineResponse20032 model module.
  * @module model/InlineResponse20032
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20032 {
     /**
      * Constructs a new <code>InlineResponse20032</code>.
      * @alias module:model/InlineResponse20032
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/ApplicationEvent>} 
+     * @param data {Array.<module:model/ApplicationSession>} 
      */
-    constructor(hasMore, data) { 
+    constructor(data) { 
         
-        InlineResponse20032.initialize(this, hasMore, data);
+        InlineResponse20032.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20032 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse20032 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationEvent]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationSession]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse20032 {
 InlineResponse20032.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationEvent>} data
+ * @member {Number} totalResultSize
+ */
+InlineResponse20032.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/ApplicationSession>} data
  */
 InlineResponse20032.prototype['data'] = undefined;
 

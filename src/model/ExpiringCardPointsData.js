@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExpiringCardPointsData model module.
  * @module model/ExpiringCardPointsData
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExpiringCardPointsData {
     /**

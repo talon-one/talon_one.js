@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCoupons model module.
  * @module model/NewCoupons
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewCoupons {
     /**
@@ -73,6 +73,9 @@ class NewCoupons {
             if (data.hasOwnProperty('numberOfCoupons')) {
                 obj['numberOfCoupons'] = ApiClient.convertToType(data['numberOfCoupons'], 'Number');
             }
+            if (data.hasOwnProperty('batchId')) {
+                obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+            }
             if (data.hasOwnProperty('uniquePrefix')) {
                 obj['uniquePrefix'] = ApiClient.convertToType(data['uniquePrefix'], 'String');
             }
@@ -93,6 +96,12 @@ class NewCoupons {
             }
             if (data.hasOwnProperty('implicitlyReserved')) {
                 obj['implicitlyReserved'] = ApiClient.convertToType(data['implicitlyReserved'], 'Boolean');
+            }
+            if (data.hasOwnProperty('supportRequestId')) {
+                obj['supportRequestId'] = ApiClient.convertToType(data['supportRequestId'], 'Number');
+            }
+            if (data.hasOwnProperty('supportRequestNote')) {
+                obj['supportRequestNote'] = ApiClient.convertToType(data['supportRequestNote'], 'String');
             }
         }
         return obj;
@@ -144,6 +153,12 @@ NewCoupons.prototype['limits'] = undefined;
 NewCoupons.prototype['numberOfCoupons'] = undefined;
 
 /**
+ * The batch ID that all coupons created by the request will bear. If omitted, a batch ID is generated automatically.
+ * @member {String} batchId
+ */
+NewCoupons.prototype['batchId'] = undefined;
+
+/**
  * **DEPRECATED** To create more than 20,000 coupons in one request, use [Create coupons asynchronously](https://docs.talon.one/management-api#tag/Coupons/operation/createCouponsAsync) endpoint. 
  * @member {String} uniquePrefix
  */
@@ -185,6 +200,18 @@ NewCoupons.prototype['isReservationMandatory'] = false;
  * @member {Boolean} implicitlyReserved
  */
 NewCoupons.prototype['implicitlyReserved'] = undefined;
+
+/**
+ * The identifier of the support request to link to the coupon creation. The request must exist and not yet be processed.
+ * @member {Number} supportRequestId
+ */
+NewCoupons.prototype['supportRequestId'] = undefined;
+
+/**
+ * A note recorded when the linked support request is approved or rejected. Applied when `supportRequestId` is provided.
+ * @member {String} supportRequestNote
+ */
+NewCoupons.prototype['supportRequestNote'] = undefined;
 
 
 

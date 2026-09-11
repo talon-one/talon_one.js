@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loyaltyProgramID (base name: "LoyaltyProgramID")', function() {
+      // uncomment below and update the code to test the property loyaltyProgramID
+      //var instane = new TalonOne.IntegrationHubFlowWithConfig();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eventType (base name: "EventType")', function() {
       // uncomment below and update the code to test the property eventType
       //var instane = new TalonOne.IntegrationHubFlowWithConfig();

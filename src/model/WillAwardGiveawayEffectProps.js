@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The WillAwardGiveawayEffectProps model module.
  * @module model/WillAwardGiveawayEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class WillAwardGiveawayEffectProps {
     /**
      * Constructs a new <code>WillAwardGiveawayEffectProps</code>.
-     * The properties specific to the \&quot;awardGiveaway\&quot; effect when the session is not closed yet. This effect replaces \&quot;awardGiveaway\&quot; only when updating a session with any state other than \&quot;closed\&quot;. This is to ensure no giveaway codes are leaked when they are still not guaranteed to be awarded.
+     * The equivalent of the &#x60;awardGiveaway&#x60; effect but returned when updating a session with any state other than &#x60;closed&#x60;. This ensures no giveaway codes are leaked when they are still not guaranteed to be awarded.  For more information about session states, see [Manage the session&#39;s state](https://docs.talon.one/docs/dev/concepts/entities/customer-sessions#manage-the-sessions-state).
      * @alias module:model/WillAwardGiveawayEffectProps
-     * @param poolId {Number} The ID of the giveaways pool the code will be taken from.
-     * @param poolName {String} The name of the giveaways pool the code will be taken from.
-     * @param recipientIntegrationId {String} The integration ID of the profile that will be awarded the giveaway.
+     * @param poolId {Number} The internal ID of the giveaway pool.
+     * @param poolName {String} The name of the giveaway pool.
+     * @param recipientIntegrationId {String} The integration ID of the customer that receives the giveaway.
      */
     constructor(poolId, poolName, recipientIntegrationId) { 
         
@@ -71,19 +71,19 @@ class WillAwardGiveawayEffectProps {
 }
 
 /**
- * The ID of the giveaways pool the code will be taken from.
+ * The internal ID of the giveaway pool.
  * @member {Number} poolId
  */
 WillAwardGiveawayEffectProps.prototype['poolId'] = undefined;
 
 /**
- * The name of the giveaways pool the code will be taken from.
+ * The name of the giveaway pool.
  * @member {String} poolName
  */
 WillAwardGiveawayEffectProps.prototype['poolName'] = undefined;
 
 /**
- * The integration ID of the profile that will be awarded the giveaway.
+ * The integration ID of the customer that receives the giveaway.
  * @member {String} recipientIntegrationId
  */
 WillAwardGiveawayEffectProps.prototype['recipientIntegrationId'] = undefined;

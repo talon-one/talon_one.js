@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property certificateExpiry (base name: "certificateExpiry")', function() {
+      // uncomment below and update the code to test the property certificateExpiry
+      //var instane = new TalonOne.SamlConnection();
+      //expect(instance).to.be();
+    });
+
     it('should have the property accountId (base name: "accountId")', function() {
       // uncomment below and update the code to test the property accountId
       //var instane = new TalonOne.SamlConnection();

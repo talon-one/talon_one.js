@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExperimentVariantAllocation model module.
  * @module model/ExperimentVariantAllocation
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExperimentVariantAllocation {
     /**

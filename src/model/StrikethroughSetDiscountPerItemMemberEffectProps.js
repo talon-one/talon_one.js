@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The StrikethroughSetDiscountPerItemMemberEffectProps model module.
  * @module model/StrikethroughSetDiscountPerItemMemberEffectProps
- * @version 25.17.0
+ * @version 25.18.0
  */
 class StrikethroughSetDiscountPerItemMemberEffectProps {
     /**
      * Constructs a new <code>StrikethroughSetDiscountPerItemMemberEffectProps</code>.
      * setDiscountPerItem member effect in strikethrough pricing payload.
      * @alias module:model/StrikethroughSetDiscountPerItemMemberEffectProps
-     * @param name {String} effect name.
-     * @param value {Object} discount value.
+     * @param name {String} The effect name.
+     * @param value {Object} The discount value.
      */
     constructor(name, value) { 
         
@@ -66,13 +66,13 @@ class StrikethroughSetDiscountPerItemMemberEffectProps {
 }
 
 /**
- * effect name.
+ * The effect name.
  * @member {String} name
  */
 StrikethroughSetDiscountPerItemMemberEffectProps.prototype['name'] = undefined;
 
 /**
- * discount value.
+ * The discount value.
  * @member {Object} value
  */
 StrikethroughSetDiscountPerItemMemberEffectProps.prototype['value'] = undefined;

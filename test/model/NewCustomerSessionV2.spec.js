@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewardIntegrationIds (base name: "rewardIntegrationIds")', function() {
+      // uncomment below and update the code to test the property rewardIntegrationIds
+      //var instane = new TalonOne.NewCustomerSessionV2();
+      //expect(instance).to.be();
+    });
+
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
       //var instane = new TalonOne.NewCustomerSessionV2();

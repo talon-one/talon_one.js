@@ -17,7 +17,7 @@ import CampaignStoreBudgetLimitConfig from './CampaignStoreBudgetLimitConfig';
 /**
  * The CampaignStoreBudget model module.
  * @module model/CampaignStoreBudget
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CampaignStoreBudget {
     /**

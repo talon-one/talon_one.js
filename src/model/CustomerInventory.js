@@ -18,11 +18,12 @@ import Giveaway from './Giveaway';
 import InventoryCoupon from './InventoryCoupon';
 import InventoryReferral from './InventoryReferral';
 import Loyalty from './Loyalty';
+import RewardWithUnlocks from './RewardWithUnlocks';
 
 /**
  * The CustomerInventory model module.
  * @module model/CustomerInventory
- * @version 25.17.0
+ * @version 25.18.0
  */
 class CustomerInventory {
     /**
@@ -71,6 +72,9 @@ class CustomerInventory {
             if (data.hasOwnProperty('achievements')) {
                 obj['achievements'] = ApiClient.convertToType(data['achievements'], [AchievementProgressWithDefinition]);
             }
+            if (data.hasOwnProperty('rewards')) {
+                obj['rewards'] = ApiClient.convertToType(data['rewards'], [RewardWithUnlocks]);
+            }
         }
         return obj;
     }
@@ -108,6 +112,12 @@ CustomerInventory.prototype['giveaways'] = undefined;
  * @member {Array.<module:model/AchievementProgressWithDefinition>} achievements
  */
 CustomerInventory.prototype['achievements'] = undefined;
+
+/**
+ * The customer rewards that are `unlocked` and not yet `used`.
+ * @member {Array.<module:model/RewardWithUnlocks>} rewards
+ */
+CustomerInventory.prototype['rewards'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import ExpiringCouponsNotificationTrigger from './ExpiringCouponsNotificationTri
 /**
  * The ExpiringCouponsNotificationPolicy model module.
  * @module model/ExpiringCouponsNotificationPolicy
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ExpiringCouponsNotificationPolicy {
     /**

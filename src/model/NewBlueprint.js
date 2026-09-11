@@ -18,7 +18,7 @@ import CatalogRule from './CatalogRule';
 /**
  * The NewBlueprint model module.
  * @module model/NewBlueprint
- * @version 25.17.0
+ * @version 25.18.0
  */
 class NewBlueprint {
     /**

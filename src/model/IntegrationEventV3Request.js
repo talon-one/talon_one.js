@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEventV3Request model module.
  * @module model/IntegrationEventV3Request
- * @version 25.17.0
+ * @version 25.18.0
  */
 class IntegrationEventV3Request {
     /**
      * Constructs a new <code>IntegrationEventV3Request</code>.
      * @alias module:model/IntegrationEventV3Request
      * @param profileId {String} ID of the customer profile set by your integration layer.  **Note:** If the customer does not yet have a known `profileId`, we recommend you use a guest `profileId`. 
-     * @param integrationId {String} The unique ID of the current event. Only one event with this ID could be activated, duplicated events are forbidden. 
-     * @param type {String} A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+     * @param type {String} The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
+     * @param integrationId {String} The unique ID of the event. Only one event with this ID can be registered. 
      */
-    constructor(profileId, integrationId, type) { 
+    constructor(profileId, type, integrationId) { 
         
-        IntegrationEventV3Request.initialize(this, profileId, integrationId, type);
+        IntegrationEventV3Request.initialize(this, profileId, type, integrationId);
     }
 
     /**
@@ -36,10 +36,10 @@ class IntegrationEventV3Request {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, profileId, integrationId, type) { 
+    static initialize(obj, profileId, type, integrationId) { 
         obj['profileId'] = profileId;
-        obj['integrationId'] = integrationId;
         obj['type'] = type;
+        obj['integrationId'] = integrationId;
     }
 
     /**
@@ -62,20 +62,20 @@ class IntegrationEventV3Request {
             if (data.hasOwnProperty('evaluableCampaignIds')) {
                 obj['evaluableCampaignIds'] = ApiClient.convertToType(data['evaluableCampaignIds'], ['Number']);
             }
-            if (data.hasOwnProperty('integrationId')) {
-                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
-            if (data.hasOwnProperty('connectedSessionID')) {
-                obj['connectedSessionID'] = ApiClient.convertToType(data['connectedSessionID'], 'String');
+            if (data.hasOwnProperty('integrationId')) {
+                obj['integrationId'] = ApiClient.convertToType(data['integrationId'], 'String');
             }
-            if (data.hasOwnProperty('previousEventID')) {
-                obj['previousEventID'] = ApiClient.convertToType(data['previousEventID'], 'String');
+            if (data.hasOwnProperty('connectedSessionId')) {
+                obj['connectedSessionId'] = ApiClient.convertToType(data['connectedSessionId'], 'String');
+            }
+            if (data.hasOwnProperty('referralCode')) {
+                obj['referralCode'] = ApiClient.convertToType(data['referralCode'], 'String');
             }
             if (data.hasOwnProperty('loyaltyCards')) {
                 obj['loyaltyCards'] = ApiClient.convertToType(data['loyaltyCards'], ['String']);
@@ -109,13 +109,7 @@ IntegrationEventV3Request.prototype['storeIntegrationId'] = undefined;
 IntegrationEventV3Request.prototype['evaluableCampaignIds'] = undefined;
 
 /**
- * The unique ID of the current event. Only one event with this ID could be activated, duplicated events are forbidden. 
- * @member {String} integrationId
- */
-IntegrationEventV3Request.prototype['integrationId'] = undefined;
-
-/**
- * A string representing the event name. Must not be a reserved event name. You create this value when you [create an attribute](https://docs.talon.one/docs/dev/concepts/entities/events#creating-a-custom-event) of type `event` in the Campaign Manager. 
+ * The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
  * @member {String} type
  */
 IntegrationEventV3Request.prototype['type'] = undefined;
@@ -127,16 +121,22 @@ IntegrationEventV3Request.prototype['type'] = undefined;
 IntegrationEventV3Request.prototype['attributes'] = undefined;
 
 /**
- * The ID of the session that happened in the past.
- * @member {String} connectedSessionID
+ * The unique ID of the event. Only one event with this ID can be registered. 
+ * @member {String} integrationId
  */
-IntegrationEventV3Request.prototype['connectedSessionID'] = undefined;
+IntegrationEventV3Request.prototype['integrationId'] = undefined;
 
 /**
- * The unique identifier of the event that happened in the past.
- * @member {String} previousEventID
+ * The ID of the session to reference. The session must be in `closed` state. Otherwise, the API call will fail.
+ * @member {String} connectedSessionId
  */
-IntegrationEventV3Request.prototype['previousEventID'] = undefined;
+IntegrationEventV3Request.prototype['connectedSessionId'] = undefined;
+
+/**
+ * The referral code submitted with the event. The endpoint does not validate the code, and submitting a code does not redeem it. Use the \"Referral code is valid\" condition in the Rule Builder to validate and redeem the code, or \"Referral code is valid (without redemption)\" to validate without redeeming. 
+ * @member {String} referralCode
+ */
+IntegrationEventV3Request.prototype['referralCode'] = undefined;
 
 /**
  * Identifiers of the loyalty cards used during this event.
@@ -162,24 +162,6 @@ IntegrationEventV3Request.prototype['responseContent'] = undefined;
 IntegrationEventV3Request['ResponseContentEnum'] = {
 
     /**
-     * value: "customerProfile"
-     * @const
-     */
-    "customerProfile": "customerProfile",
-
-    /**
-     * value: "triggeredCampaigns"
-     * @const
-     */
-    "triggeredCampaigns": "triggeredCampaigns",
-
-    /**
-     * value: "loyalty"
-     * @const
-     */
-    "loyalty": "loyalty",
-
-    /**
      * value: "advancedEvent"
      * @const
      */
@@ -192,10 +174,34 @@ IntegrationEventV3Request['ResponseContentEnum'] = {
     "awardedGiveaways": "awardedGiveaways",
 
     /**
+     * value: "customerProfile"
+     * @const
+     */
+    "customerProfile": "customerProfile",
+
+    /**
+     * value: "loyalty"
+     * @const
+     */
+    "loyalty": "loyalty",
+
+    /**
+     * value: "referral"
+     * @const
+     */
+    "referral": "referral",
+
+    /**
      * value: "ruleFailureReasons"
      * @const
      */
-    "ruleFailureReasons": "ruleFailureReasons"
+    "ruleFailureReasons": "ruleFailureReasons",
+
+    /**
+     * value: "triggeredCampaigns"
+     * @const
+     */
+    "triggeredCampaigns": "triggeredCampaigns"
 };
 
 

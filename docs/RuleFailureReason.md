@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **couponValue** | **String** | The code of the coupon that was being evaluated at the time of the rule failure. | [optional] 
 **referralID** | **Number** | The ID of the referral that was being evaluated at the time of the rule failure. | [optional] 
 **referralValue** | **String** | The code of the referral that was being evaluated at the time of the rule failure. | [optional] 
+**rewardId** | **Number** | The ID of the reward that was being evaluated at the time of the rule failure. | [optional] 
+**rewardIntegrationId** | **String** | The integration ID of the reward that was being evaluated at the time of the rule failure. | [optional] 
 **ruleIndex** | **Number** | The index of the rule that failed within the ruleset. | 
 **ruleName** | **String** | The name of the rule that failed within the ruleset. | 
 **conditionIndex** | **Number** | The index of the condition that failed. | [optional] 

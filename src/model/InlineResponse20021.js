@@ -17,7 +17,7 @@ import CardLedgerTransactionLogEntry from './CardLedgerTransactionLogEntry';
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 25.17.0
+ * @version 25.18.0
  */
 class InlineResponse20021 {
     /**

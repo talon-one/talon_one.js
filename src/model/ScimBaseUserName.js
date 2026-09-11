@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimBaseUserName model module.
  * @module model/ScimBaseUserName
- * @version 25.17.0
+ * @version 25.18.0
  */
 class ScimBaseUserName {
     /**
      * Constructs a new <code>ScimBaseUserName</code>.
-     * The components of the user’s real name.
+     * The components of the user&#39;s real name.
      * @alias module:model/ScimBaseUserName
      */
     constructor() { 

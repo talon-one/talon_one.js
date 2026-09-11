@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementProgress model module.
  * @module model/AchievementProgress
- * @version 25.17.0
+ * @version 25.18.0
  */
 class AchievementProgress {
     /**
