@@ -27,7 +27,7 @@ services:
     restart: "on-failure:10"
 
   database-service:
-    image: docker.io/bitnamilegacy/postgresql:15
+    image: docker.io/soldevelo/postgresql:15
     volumes:
       - "postgresql_master_data:/bitnami/postgresql"
     ports:
