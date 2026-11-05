@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleFailureReason model module.
  * @module model/RuleFailureReason
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RuleFailureReason {
     /**
@@ -204,7 +204,7 @@ RuleFailureReason.prototype['details'] = undefined;
 RuleFailureReason.prototype['evaluationGroupID'] = undefined;
 
 /**
- * The evaluation mode of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-
+ * The evaluation mode of the evaluation group. For more information, see [Managing campaign evaluation](https://docs.talon.one/docs/product/applications/managing-campaign-evaluation).
  * @member {String} evaluationGroupMode
  */
 RuleFailureReason.prototype['evaluationGroupMode'] = undefined;

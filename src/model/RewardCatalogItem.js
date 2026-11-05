@@ -19,7 +19,7 @@ import RuleMetadata from './RuleMetadata';
 /**
  * The RewardCatalogItem model module.
  * @module model/RewardCatalogItem
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RewardCatalogItem {
     /**

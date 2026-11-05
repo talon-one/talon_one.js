@@ -17,7 +17,7 @@ import ExperimentConfidenceTimelineDataPoint from './ExperimentConfidenceTimelin
 /**
  * The ExperimentConfidenceTimeline model module.
  * @module model/ExperimentConfidenceTimeline
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ExperimentConfidenceTimeline {
     /**

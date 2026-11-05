@@ -17,7 +17,7 @@ import AchievementStatusEntry from './AchievementStatusEntry';
 /**
  * The InlineResponse2002 model module.
  * @module model/InlineResponse2002
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse2002 {
     /**

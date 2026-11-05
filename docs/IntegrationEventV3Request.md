@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **connectedSessionId** | **String** | The ID of the session to reference. The session must be in &#x60;closed&#x60; state. Otherwise, the API call will fail. | [optional] 
 **referralCode** | **String** | The referral code submitted with the event. The endpoint does not validate the code, and submitting a code does not redeem it. Use the \&quot;Referral code is valid\&quot; condition in the Rule Builder to validate and redeem the code, or \&quot;Referral code is valid (without redemption)\&quot; to validate without redeeming.  | [optional] 
 **loyaltyCards** | **[String]** | Identifiers of the loyalty cards used during this event. | [optional] 
+**rewardIntegrationIds** | **[String]** | The integration IDs of the unlocked rewards that can be used in this event.  | [optional] 
 **responseContent** | **[String]** | Optional list of requested information to be present on the response related to the tracking custom event.  | [optional] 
 
 
@@ -33,6 +34,8 @@ Name | Type | Description | Notes
 * `ruleFailureReasons` (value: `"ruleFailureReasons"`)
 
 * `triggeredCampaigns` (value: `"triggeredCampaigns"`)
+
+* `unlockedRewards` (value: `"unlockedRewards"`)
 
 
 

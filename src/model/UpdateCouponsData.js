@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCouponsData model module.
  * @module model/UpdateCouponsData
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateCouponsData {
     /**

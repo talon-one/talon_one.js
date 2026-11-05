@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **referralValue** | **String** | The referral code that was being evaluated when the rule failed.  | [optional] 
 **conditionIndex** | **Number** | The index of the condition that caused the rule to fail. | [optional] 
 **effectIndex** | **Number** | The index of the effect that caused the rule to fail. | [optional] 
+**ruleIndex** | **Number** | The index of the rule that failed within the ruleset. | [optional] 
+**rulesetId** | **Number** | The ID of the ruleset containing the rule that failed. | [optional] 
 **details** | **String** | Additional details about the failure. | 
 
 

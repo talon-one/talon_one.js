@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GroupBlock model module.
  * @module model/GroupBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class GroupBlock {
     /**

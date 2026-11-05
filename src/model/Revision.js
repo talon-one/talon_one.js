@@ -17,18 +17,18 @@ import RevisionVersion from './RevisionVersion';
 /**
  * The Revision model module.
  * @module model/Revision
- * @version 25.18.0
+ * @version 25.19.0
  */
 class Revision {
     /**
      * Constructs a new <code>Revision</code>.
      * @alias module:model/Revision
      * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param accountId {Number} 
-     * @param applicationId {Number} 
-     * @param campaignId {Number} 
-     * @param created {Date} 
-     * @param createdBy {Number} 
+     * @param accountId {Number} The ID of the account that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
+     * @param campaignId {Number} The ID of the campaign that the revision was created from.
+     * @param created {Date} Timestamp when the revision was created.
+     * @param createdBy {Number} The ID of the user who created this revision.
      */
     constructor(id, accountId, applicationId, campaignId, created, createdBy) { 
         
@@ -104,41 +104,49 @@ class Revision {
 Revision.prototype['id'] = undefined;
 
 /**
+ * Timestamp when the revision will be activated.
  * @member {Date} activateAt
  */
 Revision.prototype['activateAt'] = undefined;
 
 /**
+ * The ID of the account that owns this entity.
  * @member {Number} accountId
  */
 Revision.prototype['accountId'] = undefined;
 
 /**
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 Revision.prototype['applicationId'] = undefined;
 
 /**
+ * The ID of the campaign that the revision was created from.
  * @member {Number} campaignId
  */
 Revision.prototype['campaignId'] = undefined;
 
 /**
+ * Timestamp when the revision was created.
  * @member {Date} created
  */
 Revision.prototype['created'] = undefined;
 
 /**
+ * The ID of the user who created this revision.
  * @member {Number} createdBy
  */
 Revision.prototype['createdBy'] = undefined;
 
 /**
+ * Timestamp when this revision was activated.
  * @member {Date} activatedAt
  */
 Revision.prototype['activatedAt'] = undefined;
 
 /**
+ * The ID of the user who activated this revision.
  * @member {Number} activatedBy
  */
 Revision.prototype['activatedBy'] = undefined;

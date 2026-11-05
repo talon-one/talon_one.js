@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import TriggerCustomEffectBlockCustomEffect from './TriggerCustomEffectBlockCustomEffect';
+import CustomEffectBlockReference from './CustomEffectBlockReference';
 import TriggerCustomEffectBlockTarget from './TriggerCustomEffectBlockTarget';
 
 /**
  * The TriggerCustomEffectBlock model module.
  * @module model/TriggerCustomEffectBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class TriggerCustomEffectBlock {
     /**
@@ -26,7 +26,7 @@ class TriggerCustomEffectBlock {
      * A block that triggers a configured custom effect and passes its required parameters.
      * @alias module:model/TriggerCustomEffectBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
-     * @param customEffect {module:model/TriggerCustomEffectBlockCustomEffect} 
+     * @param customEffect {module:model/CustomEffectBlockReference} 
      * @param target {module:model/TriggerCustomEffectBlockTarget} 
      */
     constructor(type, customEffect, target) { 
@@ -66,7 +66,7 @@ class TriggerCustomEffectBlock {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('customEffect')) {
-                obj['customEffect'] = TriggerCustomEffectBlockCustomEffect.constructFromObject(data['customEffect']);
+                obj['customEffect'] = CustomEffectBlockReference.constructFromObject(data['customEffect']);
             }
             if (data.hasOwnProperty('params')) {
                 obj['params'] = ApiClient.convertToType(data['params'], Object);
@@ -103,7 +103,7 @@ TriggerCustomEffectBlock.prototype['type'] = undefined;
 TriggerCustomEffectBlock.prototype['tags'] = undefined;
 
 /**
- * @member {module:model/TriggerCustomEffectBlockCustomEffect} customEffect
+ * @member {module:model/CustomEffectBlockReference} customEffect
  */
 TriggerCustomEffectBlock.prototype['customEffect'] = undefined;
 

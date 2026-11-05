@@ -148,6 +148,16 @@
         done();
       });
     });
+    describe('createCampaign', function() {
+      it('should call createCampaign successfully', function(done) {
+        //uncomment below and update the code to test createCampaign
+        //instance.createCampaign(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCampaignFromTemplate', function() {
       it('should call createCampaignFromTemplate successfully', function(done) {
         //uncomment below and update the code to test createCampaignFromTemplate
@@ -1058,6 +1068,16 @@
         done();
       });
     });
+    describe('getCurrentRevision', function() {
+      it('should call getCurrentRevision successfully', function(done) {
+        //uncomment below and update the code to test getCurrentRevision
+        //instance.getCurrentRevision(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCustomerActivityReport', function() {
       it('should call getCustomerActivityReport successfully', function(done) {
         //uncomment below and update the code to test getCustomerActivityReport
@@ -1162,6 +1182,16 @@
       it('should call getExports successfully', function(done) {
         //uncomment below and update the code to test getExports
         //instance.getExports(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getGiveawaysPool', function() {
+      it('should call getGiveawaysPool successfully', function(done) {
+        //uncomment below and update the code to test getGiveawaysPool
+        //instance.getGiveawaysPool(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1612,6 +1642,16 @@
       it('should call listExperiments successfully', function(done) {
         //uncomment below and update the code to test listExperiments
         //instance.listExperiments(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listGiveawaysPool', function() {
+      it('should call listGiveawaysPool successfully', function(done) {
+        //uncomment below and update the code to test listGiveawaysPool
+        //instance.listGiveawaysPool(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

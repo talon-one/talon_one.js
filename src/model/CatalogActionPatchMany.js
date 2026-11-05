@@ -17,7 +17,7 @@ import PatchManyItemsCatalogAction from './PatchManyItemsCatalogAction';
 /**
  * The CatalogActionPatchMany model module.
  * @module model/CatalogActionPatchMany
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CatalogActionPatchMany {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAttributeEffectProps model module.
  * @module model/UpdateAttributeEffectProps
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateAttributeEffectProps {
     /**

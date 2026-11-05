@@ -96,12 +96,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property onFailure (base name: "onFailure")', function() {
-      // uncomment below and update the code to test the property onFailure
-      //var instane = new TalonOne.RedeemLoyaltyPointsBlock();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

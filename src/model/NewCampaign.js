@@ -18,7 +18,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The NewCampaign model module.
  * @module model/NewCampaign
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewCampaign {
     /**

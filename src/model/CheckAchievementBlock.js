@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import CheckAchievementBlockAchievement from './CheckAchievementBlockAchievement';
+import AchievementBlockReference from './AchievementBlockReference';
 
 /**
  * The CheckAchievementBlock model module.
  * @module model/CheckAchievementBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CheckAchievementBlock {
     /**
@@ -26,7 +26,7 @@ class CheckAchievementBlock {
      * @alias module:model/CheckAchievementBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param operator {module:model/CheckAchievementBlock.OperatorEnum} The comparison operator applied to the achievement.
-     * @param achievement {module:model/CheckAchievementBlockAchievement} 
+     * @param achievement {module:model/AchievementBlockReference} 
      */
     constructor(type, operator, achievement) { 
         
@@ -68,7 +68,7 @@ class CheckAchievementBlock {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
             }
             if (data.hasOwnProperty('achievement')) {
-                obj['achievement'] = CheckAchievementBlockAchievement.constructFromObject(data['achievement']);
+                obj['achievement'] = AchievementBlockReference.constructFromObject(data['achievement']);
             }
             if (data.hasOwnProperty('onFailure')) {
                 obj['onFailure'] = ApiClient.convertToType(data['onFailure'], [Object]);
@@ -105,7 +105,7 @@ CheckAchievementBlock.prototype['tags'] = undefined;
 CheckAchievementBlock.prototype['operator'] = undefined;
 
 /**
- * @member {module:model/CheckAchievementBlockAchievement} achievement
+ * @member {module:model/AchievementBlockReference} achievement
  */
 CheckAchievementBlock.prototype['achievement'] = undefined;
 

@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import User from './User';
+import AccountAdditionalCost from './AccountAdditionalCost';
 
 /**
  * The InlineResponse20044 model module.
  * @module model/InlineResponse20044
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20044 {
     /**
      * Constructs a new <code>InlineResponse20044</code>.
      * @alias module:model/InlineResponse20044
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/User>} 
+     * @param data {Array.<module:model/AccountAdditionalCost>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20044 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [User]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AccountAdditionalCost]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20044 {
 InlineResponse20044.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/User>} data
+ * @member {Array.<module:model/AccountAdditionalCost>} data
  */
 InlineResponse20044.prototype['data'] = undefined;
 

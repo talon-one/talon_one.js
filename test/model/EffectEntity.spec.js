@@ -156,6 +156,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewardIntegrationId (base name: "rewardIntegrationId")', function() {
+      // uncomment below and update the code to test the property rewardIntegrationId
+      //var instane = new TalonOne.EffectEntity();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

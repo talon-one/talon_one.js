@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLoyaltyProgramTier model module.
  * @module model/UpdateLoyaltyProgramTier
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateLoyaltyProgramTier {
     /**

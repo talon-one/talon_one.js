@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The AddFreeItemEffectProps model module.
  * @module model/AddFreeItemEffectProps
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AddFreeItemEffectProps {
     /**
      * Constructs a new <code>AddFreeItemEffectProps</code>.
-     * This effect indicates that a free item should be added to the shopping cart in the current session. In this example, add the SKU to the shopping cart and set its price to &#x60;0&#x60;.  The effect of a successful referral can mean a free item for someone else, such as the referrer.
+     * This effect indicates that a free item should be added to the shopping cart in the current session. In this example, add the SKU to the shopping cart and set its price to &#x60;0&#x60;.
      * @alias module:model/AddFreeItemEffectProps
      * @param sku {String} SKU of the item that needs to be added.
      * @param name {String} Description of the effect.

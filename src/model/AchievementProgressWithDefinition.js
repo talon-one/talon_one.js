@@ -17,7 +17,7 @@ import CampaignReference from './CampaignReference';
 /**
  * The AchievementProgressWithDefinition model module.
  * @module model/AchievementProgressWithDefinition
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AchievementProgressWithDefinition {
     /**

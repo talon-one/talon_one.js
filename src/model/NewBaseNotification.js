@@ -17,7 +17,7 @@ import NewNotificationWebhook from './NewNotificationWebhook';
 /**
  * The NewBaseNotification model module.
  * @module model/NewBaseNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewBaseNotification {
     /**

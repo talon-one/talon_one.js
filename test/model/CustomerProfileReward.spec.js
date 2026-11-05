@@ -132,8 +132,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property loyaltyCardIdentifier (base name: "loyaltyCardIdentifier")', function() {
-      // uncomment below and update the code to test the property loyaltyCardIdentifier
+    it('should have the property loyaltyCardId (base name: "loyaltyCardId")', function() {
+      // uncomment below and update the code to test the property loyaltyCardId
       //var instane = new TalonOne.CustomerProfileReward();
       //expect(instance).to.be();
     });

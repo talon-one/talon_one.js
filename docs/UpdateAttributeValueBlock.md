@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **String** | Identifies the block variant and determines which additional properties are present in it. | 
 **tags** | **[String]** | Semantic labels attached to this block. | [optional] [readonly] 
 **operator** | **String** | The update operation applied to the attribute. | 
-**attribute** | [**UpdateAttributeValueBlockAttribute**](UpdateAttributeValueBlockAttribute.md) |  | 
+**attribute** | [**AttributeBlockReference**](AttributeBlockReference.md) |  | 
 **value** | [**Object**](.md) | The value of the attribute. Omitted when operator is set to &#x60;toggle&#x60;. | [optional] 
 **target** | [**UpdateAttributeValueBlockTarget**](UpdateAttributeValueBlockTarget.md) |  | 
 

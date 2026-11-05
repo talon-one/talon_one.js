@@ -17,7 +17,7 @@ import CampaignSet from './CampaignSet';
 /**
  * The CampaignEvaluationTreeChangedNotification model module.
  * @module model/CampaignEvaluationTreeChangedNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CampaignEvaluationTreeChangedNotification {
     /**

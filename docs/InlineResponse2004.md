@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | 
-**data** | [**[CardLedgerTransactionLogEntryIntegrationAPI]**](CardLedgerTransactionLogEntryIntegrationAPI.md) |  | 
+**hasMore** | **Boolean** |  | [optional] 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[CustomerProfileReward]**](CustomerProfileReward.md) |  | 
 
 

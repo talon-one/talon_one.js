@@ -18,7 +18,7 @@ import LoyaltyMembership from './LoyaltyMembership';
 /**
  * The ApplicationCustomer model module.
  * @module model/ApplicationCustomer
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ApplicationCustomer {
     /**
@@ -101,6 +101,9 @@ class ApplicationCustomer {
             if (data.hasOwnProperty('advocateIntegrationId')) {
                 obj['advocateIntegrationId'] = ApiClient.convertToType(data['advocateIntegrationId'], 'String');
             }
+            if (data.hasOwnProperty('loyaltyProgramJoinDates')) {
+                obj['loyaltyProgramJoinDates'] = ApiClient.convertToType(data['loyaltyProgramJoinDates'], [LoyaltyMembership]);
+            }
         }
         return obj;
     }
@@ -179,6 +182,12 @@ ApplicationCustomer.prototype['sandbox'] = undefined;
  * @member {String} advocateIntegrationId
  */
 ApplicationCustomer.prototype['advocateIntegrationId'] = undefined;
+
+/**
+ * The dates on which the customer joined the profile-based loyalty programs they are part of. Returned only when the `withLoyaltyMemberships` query parameter is `true`.
+ * @member {Array.<module:model/LoyaltyMembership>} loyaltyProgramJoinDates
+ */
+ApplicationCustomer.prototype['loyaltyProgramJoinDates'] = undefined;
 
 
 

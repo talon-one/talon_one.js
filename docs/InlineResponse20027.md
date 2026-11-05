@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**totalResultSize** | **Number** |  | [optional] 
-**data** | [**[ApplicationCustomer]**](ApplicationCustomer.md) |  | 
+**hasMore** | **Boolean** |  | 
+**data** | [**[AccessLogEntry]**](AccessLogEntry.md) |  | 
 
 

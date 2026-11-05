@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationHubInstance model module.
  * @module model/IntegrationHubInstance
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubInstance {
     /**

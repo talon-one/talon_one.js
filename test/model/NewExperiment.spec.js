@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(TalonOne.NewExperiment);
     });
 
+    it('should have the property assignmentType (base name: "assignmentType")', function() {
+      // uncomment below and update the code to test the property assignmentType
+      //var instane = new TalonOne.NewExperiment();
+      //expect(instance).to.be();
+    });
+
     it('should have the property isVariantAssignmentExternal (base name: "isVariantAssignmentExternal")', function() {
       // uncomment below and update the code to test the property isVariantAssignmentExternal
       //var instane = new TalonOne.NewExperiment();

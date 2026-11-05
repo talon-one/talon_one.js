@@ -18,7 +18,7 @@ import InfluencingCampaignDetails from './InfluencingCampaignDetails';
 /**
  * The BestPriorPriceMetadata model module.
  * @module model/BestPriorPriceMetadata
- * @version 25.18.0
+ * @version 25.19.0
  */
 class BestPriorPriceMetadata {
     /**

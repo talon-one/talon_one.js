@@ -11,5 +11,8 @@ Name | Type | Description | Notes
 **activeOn** | **Date** | The date and time the loyalty points become active. | [optional] 
 **expireOn** | **Date** | The date and time the loyalty points expire. | [optional] 
 **sessionIntegrationID** | **String** | The integration ID of the session through which the points were earned. | [optional] 
+**created** | **Date** | The timestamp when the loyalty transaction occurred. | [optional] 
+**awaitsActivation** | **Boolean** | Indicates whether the points have an action-based start date. This property is returned only for point transactions with an action-based start date. | [optional] 
+**validityDuration** | **String** | The duration for which the points remain active, relative to the activation date.  **Note**: This only applies to points for which &#x60;AwaitsActivation&#x60; is &#x60;true&#x60; and &#x60;ExpireOn&#x60; is not set.  | [optional] 
 
 

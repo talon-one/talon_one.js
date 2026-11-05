@@ -12,5 +12,18 @@ Name | Type | Description | Notes
 **oldTier** | **String** | The name of the customer&#39;s previous tier. | 
 **tierExpirationDate** | **Date** | The exact date and time the tier expires. | [optional] 
 **timestampOfTierChange** | **Date** | The exact date and time the tier was changed. | 
+**source** | **String** | The source of the tier change, whether from a points change or boost.  | [optional] [default to &#39;points&#39;]
+**reason** | **String** | The reason for the tier change.  | [optional] 
+
+
+
+## Enum: SourceEnum
+
+
+* `boost` (value: `"boost"`)
+
+* `points` (value: `"points"`)
+
+
 
 

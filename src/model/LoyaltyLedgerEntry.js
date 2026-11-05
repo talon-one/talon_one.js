@@ -17,7 +17,7 @@ import LoyaltyLedgerEntryFlags from './LoyaltyLedgerEntryFlags';
 /**
  * The LoyaltyLedgerEntry model module.
  * @module model/LoyaltyLedgerEntry
- * @version 25.18.0
+ * @version 25.19.0
  */
 class LoyaltyLedgerEntry {
     /**
@@ -108,6 +108,9 @@ class LoyaltyLedgerEntry {
             }
             if (data.hasOwnProperty('validityDuration')) {
                 obj['validityDuration'] = ApiClient.convertToType(data['validityDuration'], 'String');
+            }
+            if (data.hasOwnProperty('awaitsActivation')) {
+                obj['awaitsActivation'] = ApiClient.convertToType(data['awaitsActivation'], 'Boolean');
             }
         }
         return obj;
@@ -201,6 +204,12 @@ LoyaltyLedgerEntry.prototype['flags'] = undefined;
  * @member {String} validityDuration
  */
 LoyaltyLedgerEntry.prototype['validityDuration'] = undefined;
+
+/**
+ * Indicates whether the points have an action-based start date. This property is returned only for point transactions with an action-based start date.
+ * @member {Boolean} awaitsActivation
+ */
+LoyaltyLedgerEntry.prototype['awaitsActivation'] = undefined;
 
 
 

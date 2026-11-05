@@ -17,7 +17,7 @@ import AddItemCatalogAction from './AddItemCatalogAction';
 /**
  * The CatalogActionAdd model module.
  * @module model/CatalogActionAdd
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CatalogActionAdd {
     /**

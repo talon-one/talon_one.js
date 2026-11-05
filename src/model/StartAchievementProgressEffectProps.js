@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The StartAchievementProgressEffectProps model module.
  * @module model/StartAchievementProgressEffectProps
- * @version 25.18.0
+ * @version 25.19.0
  */
 class StartAchievementProgressEffectProps {
     /**
      * Constructs a new <code>StartAchievementProgressEffectProps</code>.
-     * This effect indicates that the customer&#39;s progress in an achievement was started during the current session. The progress value is set to 0. It is triggered when a rule using the [Start achievement progress](https://docs.talon.one/docs/product/rules/effects/use-effects#start-achievement-progress) effect is successfully validated.  This effect only marks the start of progress tracking. It can fire together with &#x60;increaseAchievementProgress&#x60; when progress starts and increases at the same time. In that case, both effects share the same &#x60;progressTrackerId&#x60;, &#x60;startDate&#x60;, and &#x60;endDate&#x60;.  For [on-completion achievements](https://docs.talon.one/docs/product/campaigns/achievements/overview#recurring-on-completion-achievements), each iteration also gets its own &#x60;startDate&#x60; and &#x60;endDate&#x60;. 
+     * This effect indicates that the customer&#39;s progress in an achievement was started during  the current session. The Rule Engine creates a progress tracker for the customer,  identified by &#x60;progressTrackerId&#x60;.   This effect only starts the customer&#39;s progress and does not increase the progress. When this effect is returned, the customer progress status is &#x60;inprogress&#x60; and the progress value is &#x60;0&#x60;.  You can retrieve the customer&#39;s current progress at any time, whether or not this effect was returned, in the following ways: - Include &#x60;achievements&#x60; in the &#x60;responseContent&#x60; property of your request,   on any endpoint where this property is available, for example   [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2). - Use the [List customer&#39;s available achievements](https://docs.talon.one/integration-api#tag/Achievements/operation/getCustomerAchievements) endpoint. - Use the [List customer&#39;s achievement history](https://docs.talon.one/integration-api#tag/Achievements/operation/getCustomerAchievementHistory) endpoint.  For recurring achievements, this effect is only returned for the first iteration and has no effect on the iterations that follow. For  [recurring user-action achievements](https://docs.talon.one/docs/product/achievements/overview#recurring-user-action-achievements) specifically, this effect also begins the customer&#39;s progress period, specified  by the &#x60;startDate&#x60; and &#x60;endDate&#x60; properties.  This effect is triggered in the following cases:  - A rule containing a [Start customer   progress](https://docs.talon.one/docs/product/rules/effects/use-effects#start-customer-progress)   effect is validated. - A rule containing an [Update customer   progress](https://docs.talon.one/docs/product/rules/effects/use-effects#update-customer-progress)   effect is validated for an achievement that the customer has not started   yet. In this case, the Rule Engine returns the &#x60;startAchievementProgress&#x60;   effect first, followed by   [increaseAchievementProgress](https://docs.talon.one/docs/dev/integration-api/api-effects#increaseachievementprogress),   which carries the increased customer progress. Use &#x60;progressTrackerId&#x60; to   connect the results produced by the two effects.  **Note:** - This effect is not returned if the customer&#39;s progress in the achievement has    already started, or if the achievement&#39;s end date has passed. In these cases,    the **Start customer progress** effect fails, an    [error](https://docs.talon.one/docs/dev/integration-api/api-effects#error) effect   is returned, and the customer&#39;s progress remains unchanged. Any other effects    in the same rule are also not applied. - If a rule with this effect fails, include &#x60;ruleFailureReasons&#x60; in the    &#x60;responseContent&#x60; property of your request to see the reason for failure.    The customer&#39;s progress is unchanged, so no update is required. The failure    reason identifies the campaign, ruleset, and rule that failed, and &#x60;details&#x60;    explains why. - There is no rollback effect for the &#x60;startAchievementProgress&#x60; effect. 
      * @alias module:model/StartAchievementProgressEffectProps
      * @param achievementId {Number} The ID of the achievement.
      * @param achievementName {String} The name of the achievement.
@@ -94,7 +94,7 @@ StartAchievementProgressEffectProps.prototype['achievementId'] = undefined;
 StartAchievementProgressEffectProps.prototype['achievementName'] = undefined;
 
 /**
- * The ID of the customer's progress tracker for this achievement.  For [on-completion achievements](https://docs.talon.one/docs/product/campaigns/achievements/overview#recurring-on-completion-achievements), this effect generates a unique ID for each iteration.
+ * The ID of the customer's progress tracker for this achievement.  For [on-completion achievements](https://docs.talon.one/docs/product/achievements/overview#recurring-on-completion-achievements), this effect generates a unique ID for each iteration.
  * @member {Number} progressTrackerId
  */
 StartAchievementProgressEffectProps.prototype['progressTrackerId'] = undefined;
@@ -112,7 +112,7 @@ StartAchievementProgressEffectProps.prototype['target'] = undefined;
 StartAchievementProgressEffectProps.prototype['startDate'] = undefined;
 
 /**
- * Timestamp at which this progress period ends.  Only returned for achievements that have a fixed end date. [On-completion achievements](https://docs.talon.one/docs/product/campaigns/achievements/overview#recurring-on-completion-achievements) have no end date.
+ * Timestamp at which this progress period ends.  Only returned for achievements that have a fixed end date. [On-completion achievements](https://docs.talon.one/docs/product/achievements/overview#recurring-on-completion-achievements) have no end date.
  * @member {Date} endDate
  */
 StartAchievementProgressEffectProps.prototype['endDate'] = undefined;

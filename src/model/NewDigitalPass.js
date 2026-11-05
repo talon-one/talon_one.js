@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewDigitalPass model module.
  * @module model/NewDigitalPass
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewDigitalPass {
     /**
@@ -25,7 +25,7 @@ class NewDigitalPass {
      * @param loyaltyProgramId {Number} The ID of the associated loyalty program.
      * @param passTemplateId {String} The ID of the digital pass template used to generate the pass. 
      * @param profileId {String} The integration ID of the customer profile the pass is issued for.
-     * @param platform {module:model/NewDigitalPass.PlatformEnum} The wallet platform the pass is generated for.
+     * @param platform {module:model/NewDigitalPass.PlatformEnum} The wallet platform the pass is generated for. Possible values:  - `apple`: The digital pass is generated for Apple Wallet. - `google`: The digital pass is generated for Google Wallet. 
      */
     constructor(loyaltyProgramId, passTemplateId, profileId, platform) { 
         
@@ -105,7 +105,7 @@ NewDigitalPass.prototype['profileId'] = undefined;
 NewDigitalPass.prototype['loyaltyCardId'] = undefined;
 
 /**
- * The wallet platform the pass is generated for.
+ * The wallet platform the pass is generated for. Possible values:  - `apple`: The digital pass is generated for Apple Wallet. - `google`: The digital pass is generated for Google Wallet. 
  * @member {module:model/NewDigitalPass.PlatformEnum} platform
  */
 NewDigitalPass.prototype['platform'] = undefined;

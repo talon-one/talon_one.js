@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedeemLoyaltyPointsBlockProgram model module.
  * @module model/RedeemLoyaltyPointsBlockProgram
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RedeemLoyaltyPointsBlockProgram {
     /**
@@ -24,12 +24,10 @@ class RedeemLoyaltyPointsBlockProgram {
      * The loyalty program whose balance points are deducted from.
      * @alias module:model/RedeemLoyaltyPointsBlockProgram
      * @param id {Number} The ID of the loyalty program.
-     * @param name {String} The internal name of the loyalty program.
-     * @param title {String} The display name of the loyalty program.
      */
-    constructor(id, name, title) { 
+    constructor(id) { 
         
-        RedeemLoyaltyPointsBlockProgram.initialize(this, id, name, title);
+        RedeemLoyaltyPointsBlockProgram.initialize(this, id);
     }
 
     /**
@@ -37,10 +35,8 @@ class RedeemLoyaltyPointsBlockProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, name, title) { 
+    static initialize(obj, id) { 
         obj['id'] = id;
-        obj['name'] = name;
-        obj['title'] = title;
     }
 
     /**

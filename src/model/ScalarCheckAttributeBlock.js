@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScalarCheckAttributeBlock model module.
  * @module model/ScalarCheckAttributeBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ScalarCheckAttributeBlock {
     /**

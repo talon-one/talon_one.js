@@ -198,6 +198,16 @@
         done();
       });
     });
+    describe('getCustomerRewards', function() {
+      it('should call getCustomerRewards successfully', function(done) {
+        //uncomment below and update the code to test getCustomerRewards
+        //instance.getCustomerRewards(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCustomerSession', function() {
       it('should call getCustomerSession successfully', function(done) {
         //uncomment below and update the code to test getCustomerSession

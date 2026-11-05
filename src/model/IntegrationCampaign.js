@@ -17,7 +17,7 @@ import RuleMetadata from './RuleMetadata';
 /**
  * The IntegrationCampaign model module.
  * @module model/IntegrationCampaign
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationCampaign {
     /**

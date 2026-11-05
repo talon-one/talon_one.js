@@ -17,7 +17,7 @@ import ApplicationNotification from './ApplicationNotification';
 /**
  * The BulkApplicationNotification model module.
  * @module model/BulkApplicationNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class BulkApplicationNotification {
     /**

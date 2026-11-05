@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorSource model module.
  * @module model/ErrorSource
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ErrorSource {
     /**

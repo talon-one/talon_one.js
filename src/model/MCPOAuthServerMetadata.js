@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MCPOAuthServerMetadata model module.
  * @module model/MCPOAuthServerMetadata
- * @version 25.18.0
+ * @version 25.19.0
  */
 class MCPOAuthServerMetadata {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwardItemBlock model module.
  * @module model/AwardItemBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AwardItemBlock {
     /**
@@ -127,7 +127,7 @@ AwardItemBlock.prototype['name'] = undefined;
 AwardItemBlock.prototype['quantity'] = undefined;
 
 /**
- * When set to `true`, applies a partial item reward if the remaining budget is insufficient to award the full reward.
+ * When set to `true`, applies a partial item reward if the remaining budget is insufficient to award the full reward. When omitted, the Application's partial discounts setting applies.
  * @member {Boolean} partial
  */
 AwardItemBlock.prototype['partial'] = undefined;

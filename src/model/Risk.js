@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Risk model module.
  * @module model/Risk
- * @version 25.18.0
+ * @version 25.19.0
  */
 class Risk {
     /**

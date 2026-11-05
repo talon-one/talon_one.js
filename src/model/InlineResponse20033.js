@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationEvent from './ApplicationEvent';
+import CustomerActivityReport from './CustomerActivityReport';
 
 /**
  * The InlineResponse20033 model module.
  * @module model/InlineResponse20033
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20033 {
     /**
      * Constructs a new <code>InlineResponse20033</code>.
      * @alias module:model/InlineResponse20033
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/ApplicationEvent>} 
+     * @param data {Array.<module:model/CustomerActivityReport>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20033 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationEvent]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerActivityReport]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20033 {
 InlineResponse20033.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationEvent>} data
+ * @member {Array.<module:model/CustomerActivityReport>} data
  */
 InlineResponse20033.prototype['data'] = undefined;
 

@@ -17,7 +17,7 @@ import RuleMetadata from './RuleMetadata';
 /**
  * The CustomerProfileReward model module.
  * @module model/CustomerProfileReward
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CustomerProfileReward {
     /**
@@ -102,8 +102,8 @@ class CustomerProfileReward {
             if (data.hasOwnProperty('loyaltyProgramId')) {
                 obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
             }
-            if (data.hasOwnProperty('loyaltyCardIdentifier')) {
-                obj['loyaltyCardIdentifier'] = ApiClient.convertToType(data['loyaltyCardIdentifier'], 'String');
+            if (data.hasOwnProperty('loyaltyCardId')) {
+                obj['loyaltyCardId'] = ApiClient.convertToType(data['loyaltyCardId'], 'String');
             }
         }
         return obj;
@@ -191,9 +191,9 @@ CustomerProfileReward.prototype['loyaltyProgramId'] = undefined;
 
 /**
  * The identifier of the loyalty card, which must match the regular expression `^[A-Za-z0-9._%+@-]+$`. 
- * @member {String} loyaltyCardIdentifier
+ * @member {String} loyaltyCardId
  */
-CustomerProfileReward.prototype['loyaltyCardIdentifier'] = undefined;
+CustomerProfileReward.prototype['loyaltyCardId'] = undefined;
 
 
 

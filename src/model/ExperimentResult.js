@@ -18,7 +18,7 @@ import ExperimentVariantResultConfidence from './ExperimentVariantResultConfiden
 /**
  * The ExperimentResult model module.
  * @module model/ExperimentResult
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ExperimentResult {
     /**

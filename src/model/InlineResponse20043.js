@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventType from './EventType';
+import CatalogItem from './CatalogItem';
 
 /**
  * The InlineResponse20043 model module.
  * @module model/InlineResponse20043
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20043 {
     /**
      * Constructs a new <code>InlineResponse20043</code>.
      * @alias module:model/InlineResponse20043
-     * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/EventType>} 
+     * @param data {Array.<module:model/CatalogItem>} 
      */
-    constructor(totalResultSize, data) { 
+    constructor(data) { 
         
-        InlineResponse20043.initialize(this, totalResultSize, data);
+        InlineResponse20043.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse20043 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalResultSize, data) { 
-        obj['totalResultSize'] = totalResultSize;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -52,11 +50,14 @@ class InlineResponse20043 {
         if (data) {
             obj = obj || new InlineResponse20043();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [EventType]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CatalogItem]);
             }
         }
         return obj;
@@ -66,12 +67,17 @@ class InlineResponse20043 {
 }
 
 /**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20043.prototype['hasMore'] = undefined;
+
+/**
  * @member {Number} totalResultSize
  */
 InlineResponse20043.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/EventType>} data
+ * @member {Array.<module:model/CatalogItem>} data
  */
 InlineResponse20043.prototype['data'] = undefined;
 

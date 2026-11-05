@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddedDeductedPointsBalancesAction model module.
  * @module model/AddedDeductedPointsBalancesAction
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AddedDeductedPointsBalancesAction {
     /**
@@ -73,6 +73,15 @@ class AddedDeductedPointsBalancesAction {
             if (data.hasOwnProperty('TransactionUUID')) {
                 obj['TransactionUUID'] = ApiClient.convertToType(data['TransactionUUID'], 'String');
             }
+            if (data.hasOwnProperty('Created')) {
+                obj['Created'] = ApiClient.convertToType(data['Created'], 'Date');
+            }
+            if (data.hasOwnProperty('AwaitsActivation')) {
+                obj['AwaitsActivation'] = ApiClient.convertToType(data['AwaitsActivation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ValidityDuration')) {
+                obj['ValidityDuration'] = ApiClient.convertToType(data['ValidityDuration'], 'String');
+            }
         }
         return obj;
     }
@@ -115,6 +124,24 @@ AddedDeductedPointsBalancesAction.prototype['ExpiryDate'] = undefined;
  * @member {String} TransactionUUID
  */
 AddedDeductedPointsBalancesAction.prototype['TransactionUUID'] = undefined;
+
+/**
+ * The timestamp when the loyalty transaction occurred.
+ * @member {Date} Created
+ */
+AddedDeductedPointsBalancesAction.prototype['Created'] = undefined;
+
+/**
+ * Indicates whether the points have an action-based start date. This property is returned only for point transactions with an action-based start date.
+ * @member {Boolean} AwaitsActivation
+ */
+AddedDeductedPointsBalancesAction.prototype['AwaitsActivation'] = undefined;
+
+/**
+ * The duration for which the points remain active, calculated relative to their start date.   **Note**: This only applies to points for which `AwaitsActivation` is `true` and `ExpiryDate` is not set. 
+ * @member {String} ValidityDuration
+ */
+AddedDeductedPointsBalancesAction.prototype['ValidityDuration'] = undefined;
 
 
 

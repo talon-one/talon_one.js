@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AdjustmentDetails model module.
  * @module model/AdjustmentDetails
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AdjustmentDetails {
     /**

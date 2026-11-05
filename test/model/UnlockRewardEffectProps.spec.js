@@ -84,8 +84,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property cardIdentifier (base name: "cardIdentifier")', function() {
-      // uncomment below and update the code to test the property cardIdentifier
+    it('should have the property loyaltyCardId (base name: "loyaltyCardId")', function() {
+      // uncomment below and update the code to test the property loyaltyCardId
       //var instane = new TalonOne.UnlockRewardEffectProps();
       //expect(instance).to.be();
     });

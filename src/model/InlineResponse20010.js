@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Ruleset from './Ruleset';
+import Application from './Application';
 
 /**
  * The InlineResponse20010 model module.
  * @module model/InlineResponse20010
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20010 {
     /**
      * Constructs a new <code>InlineResponse20010</code>.
      * @alias module:model/InlineResponse20010
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Ruleset>} 
+     * @param data {Array.<module:model/Application>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20010 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Ruleset]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Application]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20010 {
 InlineResponse20010.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Ruleset>} data
+ * @member {Array.<module:model/Application>} data
  */
 InlineResponse20010.prototype['data'] = undefined;
 

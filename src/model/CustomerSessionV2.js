@@ -19,7 +19,7 @@ import ExperimentVariantAllocation from './ExperimentVariantAllocation';
 /**
  * The CustomerSessionV2 model module.
  * @module model/CustomerSessionV2
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CustomerSessionV2 {
     /**

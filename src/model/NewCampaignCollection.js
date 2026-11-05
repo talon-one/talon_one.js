@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewCampaignCollection model module.
  * @module model/NewCampaignCollection
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewCampaignCollection {
     /**

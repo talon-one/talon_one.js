@@ -18,7 +18,7 @@ import StrikethroughTrigger from './StrikethroughTrigger';
 /**
  * The StrikethroughLabelingNotification model module.
  * @module model/StrikethroughLabelingNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class StrikethroughLabelingNotification {
     /**
@@ -31,7 +31,7 @@ class StrikethroughLabelingNotification {
      * @param trigger {module:model/StrikethroughTrigger} 
      * @param changedItems {Array.<module:model/StrikethroughChangedItem>} 
      * @param notificationType {module:model/StrikethroughLabelingNotification.NotificationTypeEnum} The type of notification.
-     * @param sentAt {Date} Timestamp at which the notification was sent.
+     * @param sentAt {Date} Timestamp when the notification was sent by Talon.One. There may be a delay before the notification is delivered to the user.
      */
     constructor(applicationId, currentBatch, totalBatches, trigger, changedItems, notificationType, sentAt) { 
         
@@ -145,7 +145,7 @@ StrikethroughLabelingNotification.prototype['changedItems'] = undefined;
 StrikethroughLabelingNotification.prototype['NotificationType'] = undefined;
 
 /**
- * Timestamp at which the notification was sent.
+ * Timestamp when the notification was sent by Talon.One. There may be a delay before the notification is delivered to the user.
  * @member {Date} sentAt
  */
 StrikethroughLabelingNotification.prototype['sentAt'] = undefined;

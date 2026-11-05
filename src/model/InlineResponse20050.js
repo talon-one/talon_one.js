@@ -12,21 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import ListCampaignStoreBudgets from './ListCampaignStoreBudgets';
+import RoleV2 from './RoleV2';
 
 /**
  * The InlineResponse20050 model module.
  * @module model/InlineResponse20050
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20050 {
     /**
      * Constructs a new <code>InlineResponse20050</code>.
      * @alias module:model/InlineResponse20050
+     * @param totalResultSize {Number} The total number of roles returned.
+     * @param data {Array.<module:model/RoleV2>} The list of roles.
      */
-    constructor() { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20050.initialize(this);
+        InlineResponse20050.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -34,7 +36,9 @@ class InlineResponse20050 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
+        obj['data'] = data;
     }
 
     /**
@@ -48,8 +52,11 @@ class InlineResponse20050 {
         if (data) {
             obj = obj || new InlineResponse20050();
 
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ListCampaignStoreBudgets]);
+                obj['data'] = ApiClient.convertToType(data['data'], [RoleV2]);
             }
         }
         return obj;
@@ -59,7 +66,14 @@ class InlineResponse20050 {
 }
 
 /**
- * @member {Array.<module:model/ListCampaignStoreBudgets>} data
+ * The total number of roles returned.
+ * @member {Number} totalResultSize
+ */
+InlineResponse20050.prototype['totalResultSize'] = undefined;
+
+/**
+ * The list of roles.
+ * @member {Array.<module:model/RoleV2>} data
  */
 InlineResponse20050.prototype['data'] = undefined;
 

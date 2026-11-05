@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RiskCriticalityUpdate model module.
  * @module model/RiskCriticalityUpdate
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RiskCriticalityUpdate {
     /**

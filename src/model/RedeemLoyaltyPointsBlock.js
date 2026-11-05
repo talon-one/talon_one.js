@@ -17,7 +17,7 @@ import RedeemLoyaltyPointsBlockProgram from './RedeemLoyaltyPointsBlockProgram';
 /**
  * The RedeemLoyaltyPointsBlock model module.
  * @module model/RedeemLoyaltyPointsBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RedeemLoyaltyPointsBlock {
     /**
@@ -78,9 +78,6 @@ class RedeemLoyaltyPointsBlock {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('onFailure')) {
-                obj['onFailure'] = ApiClient.convertToType(data['onFailure'], [Object]);
-            }
         }
         return obj;
     }
@@ -128,12 +125,6 @@ RedeemLoyaltyPointsBlock.prototype['value'] = undefined;
  * @member {String} name
  */
 RedeemLoyaltyPointsBlock.prototype['name'] = undefined;
-
-/**
- * Promotion blocks evaluated when this block fails or returns false.
- * @member {Array.<Object>} onFailure
- */
-RedeemLoyaltyPointsBlock.prototype['onFailure'] = undefined;
 
 
 

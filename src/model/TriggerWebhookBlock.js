@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import TriggerWebhookBlockWebhook from './TriggerWebhookBlockWebhook';
+import WebhookBlockReference from './WebhookBlockReference';
 
 /**
  * The TriggerWebhookBlock model module.
  * @module model/TriggerWebhookBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class TriggerWebhookBlock {
     /**
@@ -25,7 +25,7 @@ class TriggerWebhookBlock {
      * A block that triggers a configured webhook and passes its required parameters.
      * @alias module:model/TriggerWebhookBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
-     * @param webhook {module:model/TriggerWebhookBlockWebhook} 
+     * @param webhook {module:model/WebhookBlockReference} 
      */
     constructor(type, webhook) { 
         
@@ -63,7 +63,7 @@ class TriggerWebhookBlock {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('webhook')) {
-                obj['webhook'] = TriggerWebhookBlockWebhook.constructFromObject(data['webhook']);
+                obj['webhook'] = WebhookBlockReference.constructFromObject(data['webhook']);
             }
             if (data.hasOwnProperty('params')) {
                 obj['params'] = ApiClient.convertToType(data['params'], Object);
@@ -97,7 +97,7 @@ TriggerWebhookBlock.prototype['type'] = undefined;
 TriggerWebhookBlock.prototype['tags'] = undefined;
 
 /**
- * @member {module:model/TriggerWebhookBlockWebhook} webhook
+ * @member {module:model/WebhookBlockReference} webhook
  */
 TriggerWebhookBlock.prototype['webhook'] = undefined;
 

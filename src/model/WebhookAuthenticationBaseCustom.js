@@ -17,7 +17,7 @@ import WebhookAuthenticationDataCustom from './WebhookAuthenticationDataCustom';
 /**
  * The WebhookAuthenticationBaseCustom model module.
  * @module model/WebhookAuthenticationBaseCustom
- * @version 25.18.0
+ * @version 25.19.0
  */
 class WebhookAuthenticationBaseCustom {
     /**

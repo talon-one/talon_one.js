@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventV3Entity model module.
  * @module model/EventV3Entity
- * @version 25.18.0
+ * @version 25.19.0
  */
 class EventV3Entity {
     /**

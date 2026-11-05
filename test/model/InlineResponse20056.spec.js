@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(TalonOne.InlineResponse20056);
     });
 
-    it('should have the property catalog (base name: "catalog")', function() {
-      // uncomment below and update the code to test the property catalog
+    it('should have the property hasMore (base name: "hasMore")', function() {
+      // uncomment below and update the code to test the property hasMore
       //var instane = new TalonOne.InlineResponse20056();
       //expect(instance).to.be();
     });
 
-    it('should have the property loyalty (base name: "loyalty")', function() {
-      // uncomment below and update the code to test the property loyalty
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new TalonOne.InlineResponse20056();
       //expect(instance).to.be();
     });

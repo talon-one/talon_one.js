@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DigitalPass model module.
  * @module model/DigitalPass
- * @version 25.18.0
+ * @version 25.19.0
  */
 class DigitalPass {
     /**
@@ -24,7 +24,7 @@ class DigitalPass {
      * @alias module:model/DigitalPass
      * @param passId {String} The ID of the generated digital pass.
      * @param passTemplateId {String} The ID of the digital pass template used to generate the pass.
-     * @param status {module:model/DigitalPass.StatusEnum} The status of the digital pass.
+     * @param status {module:model/DigitalPass.StatusEnum} The status of the digital pass.  `created` indicates that the pass was generated and is ready to be added to a wallet. 
      * @param passUrl {String} The URL you can use to let the customer add the digital pass to their wallet.
      */
     constructor(passId, passTemplateId, status, passUrl) { 
@@ -87,7 +87,7 @@ DigitalPass.prototype['passId'] = undefined;
 DigitalPass.prototype['passTemplateId'] = undefined;
 
 /**
- * The status of the digital pass.
+ * The status of the digital pass.  `created` indicates that the pass was generated and is ready to be added to a wallet. 
  * @member {module:model/DigitalPass.StatusEnum} status
  */
 DigitalPass.prototype['status'] = undefined;

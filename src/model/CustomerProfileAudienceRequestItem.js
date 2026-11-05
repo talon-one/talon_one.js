@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerProfileAudienceRequestItem model module.
  * @module model/CustomerProfileAudienceRequestItem
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CustomerProfileAudienceRequestItem {
     /**

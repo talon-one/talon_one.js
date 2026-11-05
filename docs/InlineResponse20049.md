@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasMore** | **Boolean** |  | [optional] 
-**data** | [**[ApplicationCIF]**](ApplicationCIF.md) |  | 
+**totalResultSize** | **Number** |  | 
+**data** | [**[ModelExport]**](ModelExport.md) |  | 
 
 

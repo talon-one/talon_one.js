@@ -19,11 +19,12 @@ import RolesV2Thresholds from './RolesV2Thresholds';
 /**
  * The RoleV2Permissions model module.
  * @module model/RoleV2Permissions
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RoleV2Permissions {
     /**
      * Constructs a new <code>RoleV2Permissions</code>.
+     * The permissions that this role gives.
      * @alias module:model/RoleV2Permissions
      */
     constructor() { 

@@ -17,7 +17,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The IntegrationCoupon model module.
  * @module model/IntegrationCoupon
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationCoupon {
     /**

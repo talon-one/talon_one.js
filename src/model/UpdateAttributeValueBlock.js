@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import UpdateAttributeValueBlockAttribute from './UpdateAttributeValueBlockAttribute';
+import AttributeBlockReference from './AttributeBlockReference';
 import UpdateAttributeValueBlockTarget from './UpdateAttributeValueBlockTarget';
 
 /**
  * The UpdateAttributeValueBlock model module.
  * @module model/UpdateAttributeValueBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateAttributeValueBlock {
     /**
@@ -27,7 +27,7 @@ class UpdateAttributeValueBlock {
      * @alias module:model/UpdateAttributeValueBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param operator {module:model/UpdateAttributeValueBlock.OperatorEnum} The update operation applied to the attribute.
-     * @param attribute {module:model/UpdateAttributeValueBlockAttribute} 
+     * @param attribute {module:model/AttributeBlockReference} 
      * @param target {module:model/UpdateAttributeValueBlockTarget} 
      */
     constructor(type, operator, attribute, target) { 
@@ -71,7 +71,7 @@ class UpdateAttributeValueBlock {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
             }
             if (data.hasOwnProperty('attribute')) {
-                obj['attribute'] = UpdateAttributeValueBlockAttribute.constructFromObject(data['attribute']);
+                obj['attribute'] = AttributeBlockReference.constructFromObject(data['attribute']);
             }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], Object);
@@ -111,7 +111,7 @@ UpdateAttributeValueBlock.prototype['tags'] = undefined;
 UpdateAttributeValueBlock.prototype['operator'] = undefined;
 
 /**
- * @member {module:model/UpdateAttributeValueBlockAttribute} attribute
+ * @member {module:model/AttributeBlockReference} attribute
  */
 UpdateAttributeValueBlock.prototype['attribute'] = undefined;
 

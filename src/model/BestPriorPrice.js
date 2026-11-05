@@ -17,7 +17,7 @@ import BestPriorPriceMetadata from './BestPriorPriceMetadata';
 /**
  * The BestPriorPrice model module.
  * @module model/BestPriorPrice
- * @version 25.18.0
+ * @version 25.19.0
  */
 class BestPriorPrice {
     /**
@@ -26,7 +26,7 @@ class BestPriorPrice {
      * @param id {Number} The ID of the historical price.
      * @param sku {String} sku
      * @param observedAt {Date} The date and time when the price was observed.
-     * @param contextIds {Array.<String>} The identifiers of the relevant context at the time the price was observed. Includes the context IDs of any price adjustments and of the campaigns that influenced the final price. 
+     * @param contextIds {Array.<String>} The identifiers of the relevant context (the sales events, e.g. \"Spring Sale\", \"Summer Sale\") at the time the price was observed. Includes the context IDs of any price adjustments and of the campaigns that influenced the final price. 
      * @param price {Number} Price of the item.
      * @param metadata {module:model/BestPriorPriceMetadata} 
      * @param target {Object} 
@@ -109,7 +109,7 @@ BestPriorPrice.prototype['sku'] = undefined;
 BestPriorPrice.prototype['observedAt'] = undefined;
 
 /**
- * The identifiers of the relevant context at the time the price was observed. Includes the context IDs of any price adjustments and of the campaigns that influenced the final price. 
+ * The identifiers of the relevant context (the sales events, e.g. \"Spring Sale\", \"Summer Sale\") at the time the price was observed. Includes the context IDs of any price adjustments and of the campaigns that influenced the final price. 
  * @member {Array.<String>} contextIds
  */
 BestPriorPrice.prototype['contextIds'] = undefined;

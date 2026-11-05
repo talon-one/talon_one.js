@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import AchievementProgress from './AchievementProgress';
+import CustomerAchievementHistoryEntry from './CustomerAchievementHistoryEntry';
 
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse2003 {
     /**
      * Constructs a new <code>InlineResponse2003</code>.
      * @alias module:model/InlineResponse2003
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/AchievementProgress>} 
+     * @param data {Array.<module:model/CustomerAchievementHistoryEntry>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2003 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AchievementProgress]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerAchievementHistoryEntry]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2003 {
 InlineResponse2003.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/AchievementProgress>} data
+ * @member {Array.<module:model/CustomerAchievementHistoryEntry>} data
  */
 InlineResponse2003.prototype['data'] = undefined;
 

@@ -17,12 +17,12 @@ import AudienceReference from './AudienceReference';
 /**
  * The LabelTargetAudience model module.
  * @module model/LabelTargetAudience
- * @version 25.18.0
+ * @version 25.19.0
  */
 class LabelTargetAudience {
     /**
      * Constructs a new <code>LabelTargetAudience</code>.
-     * Represents the targeted audience. 
+     * Target type when a specific audience is selected. 
      * @alias module:model/LabelTargetAudience
      * @param type {module:model/LabelTargetAudience.TypeEnum} 
      * @param audience {module:model/AudienceReference} 

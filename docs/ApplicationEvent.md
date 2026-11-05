@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **sessionId** | **Number** | The globally unique Talon.One ID of the session that contains this event. | [optional] 
 **type** | **String** | The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event. | 
 **attributes** | [**Object**](.md) | Additional JSON serialized data associated with the event. | 
-**effects** | [**[Effect]**](Effect.md) | An array containing the effects that were applied as a result of this event. | 
+**effects** | **[Object]** | An array containing the effects that were applied as a result of this event. | 
 **ruleFailureReasons** | [**[RuleFailureReason]**](RuleFailureReason.md) | An array containing the rule failure reasons which happened during this event. | [optional] 
 
 

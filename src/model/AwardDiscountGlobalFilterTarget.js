@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwardDiscountGlobalFilterTarget model module.
  * @module model/AwardDiscountGlobalFilterTarget
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AwardDiscountGlobalFilterTarget {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierUpgradeData model module.
  * @module model/TierUpgradeData
- * @version 25.18.0
+ * @version 25.19.0
  */
 class TierUpgradeData {
     /**
@@ -91,6 +91,12 @@ class TierUpgradeData {
             if (data.hasOwnProperty('TimestampOfTierChange')) {
                 obj['TimestampOfTierChange'] = ApiClient.convertToType(data['TimestampOfTierChange'], 'Date');
             }
+            if (data.hasOwnProperty('Source')) {
+                obj['Source'] = ApiClient.convertToType(data['Source'], 'String');
+            }
+            if (data.hasOwnProperty('Reason')) {
+                obj['Reason'] = ApiClient.convertToType(data['Reason'], 'String');
+            }
         }
         return obj;
     }
@@ -159,8 +165,42 @@ TierUpgradeData.prototype['TierExpirationDate'] = undefined;
  */
 TierUpgradeData.prototype['TimestampOfTierChange'] = undefined;
 
+/**
+ * The source of the tier change, whether from a points change or boost. 
+ * @member {module:model/TierUpgradeData.SourceEnum} Source
+ * @default 'points'
+ */
+TierUpgradeData.prototype['Source'] = 'points';
+
+/**
+ * The reason for the tier change. 
+ * @member {String} Reason
+ */
+TierUpgradeData.prototype['Reason'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>Source</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TierUpgradeData['SourceEnum'] = {
+
+    /**
+     * value: "boost"
+     * @const
+     */
+    "boost": "boost",
+
+    /**
+     * value: "points"
+     * @const
+     */
+    "points": "points"
+};
 
 
 

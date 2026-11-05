@@ -17,7 +17,7 @@ import IntegrationCustomerProfileAudienceRequestItem from './IntegrationCustomer
 /**
  * The IntegrationCustomerProfileAudienceRequest model module.
  * @module model/IntegrationCustomerProfileAudienceRequest
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationCustomerProfileAudienceRequest {
     /**

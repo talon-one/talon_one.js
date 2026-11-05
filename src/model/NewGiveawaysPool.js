@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The NewGiveawaysPool model module.
  * @module model/NewGiveawaysPool
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewGiveawaysPool {
     /**
      * Constructs a new <code>NewGiveawaysPool</code>.
      * @alias module:model/NewGiveawaysPool
-     * @param name {String} The name of this giveaways pool.
+     * @param name {String} The name of this giveaway pool.
      * @param sandbox {Boolean} Indicates if this program is a live or sandbox program. Programs of a given type can only be connected to Applications of the same type.
      */
     constructor(name, sandbox) { 
@@ -71,19 +71,19 @@ class NewGiveawaysPool {
 }
 
 /**
- * The name of this giveaways pool.
+ * The name of this giveaway pool.
  * @member {String} name
  */
 NewGiveawaysPool.prototype['name'] = undefined;
 
 /**
- * The description of this giveaways pool.
+ * The description of this giveaway pool.
  * @member {String} description
  */
 NewGiveawaysPool.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that this giveaways pool is enabled for.
+ * A list of the IDs of the Applications that this giveaway pool is enabled for.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 NewGiveawaysPool.prototype['subscribedApplicationsIds'] = undefined;

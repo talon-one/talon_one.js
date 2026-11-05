@@ -17,18 +17,17 @@ import ExperimentCampaignCopy from './ExperimentCampaignCopy';
 /**
  * The ExperimentCopyExperiment model module.
  * @module model/ExperimentCopyExperiment
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ExperimentCopyExperiment {
     /**
      * Constructs a new <code>ExperimentCopyExperiment</code>.
      * @alias module:model/ExperimentCopyExperiment
-     * @param isVariantAssignmentExternal {Boolean} The source of the assignment. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. 
      * @param campaign {module:model/ExperimentCampaignCopy} 
      */
-    constructor(isVariantAssignmentExternal, campaign) { 
+    constructor(campaign) { 
         
-        ExperimentCopyExperiment.initialize(this, isVariantAssignmentExternal, campaign);
+        ExperimentCopyExperiment.initialize(this, campaign);
     }
 
     /**
@@ -36,8 +35,7 @@ class ExperimentCopyExperiment {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, isVariantAssignmentExternal, campaign) { 
-        obj['isVariantAssignmentExternal'] = isVariantAssignmentExternal;
+    static initialize(obj, campaign) { 
         obj['campaign'] = campaign;
     }
 
@@ -52,6 +50,9 @@ class ExperimentCopyExperiment {
         if (data) {
             obj = obj || new ExperimentCopyExperiment();
 
+            if (data.hasOwnProperty('assignmentType')) {
+                obj['assignmentType'] = ApiClient.convertToType(data['assignmentType'], 'String');
+            }
             if (data.hasOwnProperty('isVariantAssignmentExternal')) {
                 obj['isVariantAssignmentExternal'] = ApiClient.convertToType(data['isVariantAssignmentExternal'], 'Boolean');
             }
@@ -72,7 +73,13 @@ class ExperimentCopyExperiment {
 }
 
 /**
- * The source of the assignment. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. 
+ * Controls how customers are assigned to experiment variants in the copied experiment. - `random`: Talon.One assigns customers randomly based on variant weights. - `external`: The variant assignment is handled externally. - `audience`: Each variant targets a specific audience; customers are assigned based on audience membership. This is the source of truth. When omitted, it is derived from the deprecated `isVariantAssignmentExternal` flag (`true` maps to `external`, otherwise `random`). 
+ * @member {module:model/ExperimentCopyExperiment.AssignmentTypeEnum} assignmentType
+ */
+ExperimentCopyExperiment.prototype['assignmentType'] = undefined;
+
+/**
+ * The source of the assignment. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. Deprecated: use `assignmentType` instead. Kept for backwards compatibility with older clients; when set and `assignmentType` is omitted, `true` maps to `external`. 
  * @member {Boolean} isVariantAssignmentExternal
  */
 ExperimentCopyExperiment.prototype['isVariantAssignmentExternal'] = undefined;
@@ -96,6 +103,33 @@ ExperimentCopyExperiment.prototype['goalDescription'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>assignmentType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+ExperimentCopyExperiment['AssignmentTypeEnum'] = {
+
+    /**
+     * value: "random"
+     * @const
+     */
+    "random": "random",
+
+    /**
+     * value: "external"
+     * @const
+     */
+    "external": "external",
+
+    /**
+     * value: "audience"
+     * @const
+     */
+    "audience": "audience"
+};
 
 
 /**

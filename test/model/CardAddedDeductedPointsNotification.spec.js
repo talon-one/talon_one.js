@@ -150,6 +150,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property created (base name: "Created")', function() {
+      // uncomment below and update the code to test the property created
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property awaitsActivation (base name: "AwaitsActivation")', function() {
+      // uncomment below and update the code to test the property awaitsActivation
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property validityDuration (base name: "ValidityDuration")', function() {
+      // uncomment below and update the code to test the property validityDuration
+      //var instane = new TalonOne.CardAddedDeductedPointsNotification();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

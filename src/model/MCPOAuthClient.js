@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MCPOAuthClient model module.
  * @module model/MCPOAuthClient
- * @version 25.18.0
+ * @version 25.19.0
  */
 class MCPOAuthClient {
     /**

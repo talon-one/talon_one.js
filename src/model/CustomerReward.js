@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerReward model module.
  * @module model/CustomerReward
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CustomerReward {
     /**

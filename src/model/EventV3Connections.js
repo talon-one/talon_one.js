@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventV3Connections model module.
  * @module model/EventV3Connections
- * @version 25.18.0
+ * @version 25.19.0
  */
 class EventV3Connections {
     /**

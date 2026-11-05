@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | [optional] 
-**data** | [**[Achievement]**](Achievement.md) |  | 
+**data** | [**[ApplicationCIF]**](ApplicationCIF.md) |  | 
 
 

@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import CouponFailureSummary from './CouponFailureSummary';
+import Achievement from './Achievement';
 
 /**
  * The InlineResponse20055 model module.
  * @module model/InlineResponse20055
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20055 {
     /**
      * Constructs a new <code>InlineResponse20055</code>.
      * @alias module:model/InlineResponse20055
-     * @param data {Array.<module:model/CouponFailureSummary>} 
+     * @param data {Array.<module:model/Achievement>} 
      */
     constructor(data) { 
         
@@ -50,8 +50,11 @@ class InlineResponse20055 {
         if (data) {
             obj = obj || new InlineResponse20055();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CouponFailureSummary]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Achievement]);
             }
         }
         return obj;
@@ -61,7 +64,12 @@ class InlineResponse20055 {
 }
 
 /**
- * @member {Array.<module:model/CouponFailureSummary>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20055.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Array.<module:model/Achievement>} data
  */
 InlineResponse20055.prototype['data'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CatalogAction model module.
  * @module model/CatalogAction
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CatalogAction {
     /**

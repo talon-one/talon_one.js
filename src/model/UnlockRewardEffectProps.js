@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UnlockRewardEffectProps model module.
  * @module model/UnlockRewardEffectProps
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UnlockRewardEffectProps {
     /**
@@ -73,8 +73,8 @@ class UnlockRewardEffectProps {
             if (data.hasOwnProperty('unlockedAt')) {
                 obj['unlockedAt'] = ApiClient.convertToType(data['unlockedAt'], 'Date');
             }
-            if (data.hasOwnProperty('cardIdentifier')) {
-                obj['cardIdentifier'] = ApiClient.convertToType(data['cardIdentifier'], 'String');
+            if (data.hasOwnProperty('loyaltyCardId')) {
+                obj['loyaltyCardId'] = ApiClient.convertToType(data['loyaltyCardId'], 'String');
             }
         }
         return obj;
@@ -115,9 +115,9 @@ UnlockRewardEffectProps.prototype['unlockedAt'] = undefined;
 
 /**
  * The identifier of the loyalty card, which must match the regular expression `^[A-Za-z0-9._%+@-]+$`. 
- * @member {String} cardIdentifier
+ * @member {String} loyaltyCardId
  */
-UnlockRewardEffectProps.prototype['cardIdentifier'] = undefined;
+UnlockRewardEffectProps.prototype['loyaltyCardId'] = undefined;
 
 
 

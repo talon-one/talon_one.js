@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The GiveawaysPool model module.
  * @module model/GiveawaysPool
- * @version 25.18.0
+ * @version 25.19.0
  */
 class GiveawaysPool {
     /**
      * Constructs a new <code>GiveawaysPool</code>.
-     * Giveaways pools is an entity for managing multiple similar giveaways.
+     * A giveaway pool is an entity for managing multiple similar giveaways.
      * @alias module:model/GiveawaysPool
      * @param id {Number} The internal ID of this entity.
      * @param created {Date} The time this entity was created.
      * @param accountId {Number} The ID of the account that owns this entity.
-     * @param name {String} The name of this giveaways pool.
+     * @param name {String} The name of this giveaway pool.
      * @param sandbox {Boolean} Indicates if this program is a live or sandbox program. Programs of a given type can only be connected to Applications of the same type.
-     * @param createdBy {Number} ID of the user who created this giveaways pool.
+     * @param createdBy {Number} ID of the user who created this giveaway pool.
      */
     constructor(id, created, accountId, name, sandbox, createdBy) { 
         
@@ -116,19 +116,19 @@ GiveawaysPool.prototype['created'] = undefined;
 GiveawaysPool.prototype['accountId'] = undefined;
 
 /**
- * The name of this giveaways pool.
+ * The name of this giveaway pool.
  * @member {String} name
  */
 GiveawaysPool.prototype['name'] = undefined;
 
 /**
- * The description of this giveaways pool.
+ * The description of this giveaway pool.
  * @member {String} description
  */
 GiveawaysPool.prototype['description'] = undefined;
 
 /**
- * A list of the IDs of the applications that this giveaways pool is enabled for.
+ * A list of the IDs of the Applications that this giveaway pool is enabled for.
  * @member {Array.<Number>} subscribedApplicationsIds
  */
 GiveawaysPool.prototype['subscribedApplicationsIds'] = undefined;
@@ -140,19 +140,19 @@ GiveawaysPool.prototype['subscribedApplicationsIds'] = undefined;
 GiveawaysPool.prototype['sandbox'] = undefined;
 
 /**
- * Timestamp of the most recent update to the giveaways pool.
+ * Timestamp of the most recent update to the giveaway pool.
  * @member {Date} modified
  */
 GiveawaysPool.prototype['modified'] = undefined;
 
 /**
- * ID of the user who created this giveaways pool.
+ * ID of the user who created this giveaway pool.
  * @member {Number} createdBy
  */
 GiveawaysPool.prototype['createdBy'] = undefined;
 
 /**
- * ID of the user who last updated this giveaways pool if available.
+ * ID of the user who last updated this giveaway pool if available.
  * @member {Number} modifiedBy
  */
 GiveawaysPool.prototype['modifiedBy'] = undefined;

@@ -17,7 +17,7 @@ import SortSelectorStepField from './SortSelectorStepField';
 /**
  * The SortSelectorStep model module.
  * @module model/SortSelectorStep
- * @version 25.18.0
+ * @version 25.19.0
  */
 class SortSelectorStep {
     /**

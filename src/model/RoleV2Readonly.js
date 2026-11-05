@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2Readonly model module.
  * @module model/RoleV2Readonly
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RoleV2Readonly {
     /**
@@ -58,7 +58,7 @@ class RoleV2Readonly {
 }
 
 /**
- * Identifies if the role is read-only. For read-only roles, you can only assign or unassign users. You cannot edit any other properties, such as the name, description, or permissions. The 'isReadonly' property cannot be set for new or existing roles. It is reserved for predefined roles, such as the Talon.One support role.
+ * Identifies if the role is read-only. For read-only roles, you can only assign or unassign users. You cannot edit any other properties, such as the name, description, or permissions. This property cannot be set for new or existing roles. It is reserved for predefined roles, such as the Talon.One support role.
  * @member {Boolean} isReadonly
  * @default false
  */

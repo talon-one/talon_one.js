@@ -17,7 +17,7 @@ import IntegrationHubFlowConfigResponse from './IntegrationHubFlowConfigResponse
 /**
  * The IntegrationHubFlowResponse model module.
  * @module model/IntegrationHubFlowResponse
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubFlowResponse {
     /**

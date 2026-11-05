@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CheckCouponBlock model module.
  * @module model/CheckCouponBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CheckCouponBlock {
     /**
      * Constructs a new <code>CheckCouponBlock</code>.
      * A block that validates the coupon code value and date.
      * @alias module:model/CheckCouponBlock
-     * @param type {String} Identifies the block variant and determines which additional properties are present in it.
+     * @param type {module:model/CheckCouponBlock.TypeEnum} A block discriminator of type `checkCoupon`.
      * @param redeem {Boolean} When `true`, the coupon code is redeemed.
      */
     constructor(type, redeem) { 
@@ -81,8 +81,8 @@ class CheckCouponBlock {
 CheckCouponBlock.prototype['id'] = undefined;
 
 /**
- * Identifies the block variant and determines which additional properties are present in it.
- * @member {String} type
+ * A block discriminator of type `checkCoupon`.
+ * @member {module:model/CheckCouponBlock.TypeEnum} type
  */
 CheckCouponBlock.prototype['type'] = undefined;
 
@@ -106,6 +106,21 @@ CheckCouponBlock.prototype['onFailure'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CheckCouponBlock['TypeEnum'] = {
+
+    /**
+     * value: "checkCoupon"
+     * @const
+     */
+    "checkCoupon": "checkCoupon"
+};
 
 
 

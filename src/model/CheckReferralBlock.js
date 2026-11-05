@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CheckReferralBlock model module.
  * @module model/CheckReferralBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CheckReferralBlock {
     /**
      * Constructs a new <code>CheckReferralBlock</code>.
      * A block that validates the referral code value and date.
      * @alias module:model/CheckReferralBlock
-     * @param type {String} Identifies the block variant and determines which additional properties are present in it.
+     * @param type {module:model/CheckReferralBlock.TypeEnum} A block discriminator of type `checkReferral`.
      * @param redeem {Boolean} When `true`, the referral code is redeemed.
      */
     constructor(type, redeem) { 
@@ -81,8 +81,8 @@ class CheckReferralBlock {
 CheckReferralBlock.prototype['id'] = undefined;
 
 /**
- * Identifies the block variant and determines which additional properties are present in it.
- * @member {String} type
+ * A block discriminator of type `checkReferral`.
+ * @member {module:model/CheckReferralBlock.TypeEnum} type
  */
 CheckReferralBlock.prototype['type'] = undefined;
 
@@ -106,6 +106,21 @@ CheckReferralBlock.prototype['onFailure'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CheckReferralBlock['TypeEnum'] = {
+
+    /**
+     * value: "checkReferral"
+     * @const
+     */
+    "checkReferral": "checkReferral"
+};
 
 
 

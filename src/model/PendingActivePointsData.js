@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PendingActivePointsData model module.
  * @module model/PendingActivePointsData
- * @version 25.18.0
+ * @version 25.19.0
  */
 class PendingActivePointsData {
     /**
@@ -76,6 +76,15 @@ class PendingActivePointsData {
             if (data.hasOwnProperty('SessionIntegrationID')) {
                 obj['SessionIntegrationID'] = ApiClient.convertToType(data['SessionIntegrationID'], 'String');
             }
+            if (data.hasOwnProperty('Created')) {
+                obj['Created'] = ApiClient.convertToType(data['Created'], 'Date');
+            }
+            if (data.hasOwnProperty('AwaitsActivation')) {
+                obj['AwaitsActivation'] = ApiClient.convertToType(data['AwaitsActivation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ValidityDuration')) {
+                obj['ValidityDuration'] = ApiClient.convertToType(data['ValidityDuration'], 'String');
+            }
         }
         return obj;
     }
@@ -125,6 +134,24 @@ PendingActivePointsData.prototype['ExpireOn'] = undefined;
  * @member {String} SessionIntegrationID
  */
 PendingActivePointsData.prototype['SessionIntegrationID'] = undefined;
+
+/**
+ * The timestamp when the loyalty transaction occurred.
+ * @member {Date} Created
+ */
+PendingActivePointsData.prototype['Created'] = undefined;
+
+/**
+ * Indicates whether the points have an action-based start date. This property is returned only for point transactions with an action-based start date.
+ * @member {Boolean} AwaitsActivation
+ */
+PendingActivePointsData.prototype['AwaitsActivation'] = undefined;
+
+/**
+ * The duration for which the points remain active, relative to the activation date.  **Note**: This only applies to points for which `AwaitsActivation` is `true` and `ExpireOn` is not set. 
+ * @member {String} ValidityDuration
+ */
+PendingActivePointsData.prototype['ValidityDuration'] = undefined;
 
 
 

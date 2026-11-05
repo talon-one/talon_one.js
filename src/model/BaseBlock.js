@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BaseBlock model module.
  * @module model/BaseBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class BaseBlock {
     /**

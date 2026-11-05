@@ -17,7 +17,7 @@ import ExperimentSegmentInsightVariant from './ExperimentSegmentInsightVariant';
 /**
  * The ExperimentSegmentInsight model module.
  * @module model/ExperimentSegmentInsight
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ExperimentSegmentInsight {
     /**

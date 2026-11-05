@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackReferralEffectProps model module.
  * @module model/RollbackReferralEffectProps
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RollbackReferralEffectProps {
     /**

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[SummaryCampaignStoreBudget]**](SummaryCampaignStoreBudget.md) |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[Store]**](Store.md) |  | 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateAuditLogSummary model module.
  * @module model/GenerateAuditLogSummary
- * @version 25.18.0
+ * @version 25.19.0
  */
 class GenerateAuditLogSummary {
     /**

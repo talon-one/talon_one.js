@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CheckLoyaltyBalanceBlockProgram model module.
  * @module model/CheckLoyaltyBalanceBlockProgram
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CheckLoyaltyBalanceBlockProgram {
     /**
@@ -24,12 +24,10 @@ class CheckLoyaltyBalanceBlockProgram {
      * The loyalty program whose ledger balance is checked.
      * @alias module:model/CheckLoyaltyBalanceBlockProgram
      * @param id {Number} The ID of the loyalty program.
-     * @param name {String} The internal name of the loyalty program.
-     * @param title {String} The display name of the loyalty program.
      */
-    constructor(id, name, title) { 
+    constructor(id) { 
         
-        CheckLoyaltyBalanceBlockProgram.initialize(this, id, name, title);
+        CheckLoyaltyBalanceBlockProgram.initialize(this, id);
     }
 
     /**
@@ -37,10 +35,8 @@ class CheckLoyaltyBalanceBlockProgram {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, name, title) { 
+    static initialize(obj, id) { 
         obj['id'] = id;
-        obj['name'] = name;
-        obj['title'] = title;
     }
 
     /**

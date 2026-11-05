@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleEligibilityFailureDetails model module.
  * @module model/RuleEligibilityFailureDetails
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RuleEligibilityFailureDetails {
     /**
@@ -73,6 +73,12 @@ class RuleEligibilityFailureDetails {
             if (data.hasOwnProperty('effectIndex')) {
                 obj['effectIndex'] = ApiClient.convertToType(data['effectIndex'], 'Number');
             }
+            if (data.hasOwnProperty('ruleIndex')) {
+                obj['ruleIndex'] = ApiClient.convertToType(data['ruleIndex'], 'Number');
+            }
+            if (data.hasOwnProperty('rulesetId')) {
+                obj['rulesetId'] = ApiClient.convertToType(data['rulesetId'], 'Number');
+            }
             if (data.hasOwnProperty('details')) {
                 obj['details'] = ApiClient.convertToType(data['details'], 'String');
             }
@@ -124,6 +130,18 @@ RuleEligibilityFailureDetails.prototype['conditionIndex'] = undefined;
  * @member {Number} effectIndex
  */
 RuleEligibilityFailureDetails.prototype['effectIndex'] = undefined;
+
+/**
+ * The index of the rule that failed within the ruleset.
+ * @member {Number} ruleIndex
+ */
+RuleEligibilityFailureDetails.prototype['ruleIndex'] = undefined;
+
+/**
+ * The ID of the ruleset containing the rule that failed.
+ * @member {Number} rulesetId
+ */
+RuleEligibilityFailureDetails.prototype['rulesetId'] = undefined;
 
 /**
  * Additional details about the failure.

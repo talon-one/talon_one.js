@@ -17,14 +17,14 @@ import NewRuleset from './NewRuleset';
 /**
  * The NewExperimentVariant model module.
  * @module model/NewExperimentVariant
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewExperimentVariant {
     /**
      * Constructs a new <code>NewExperimentVariant</code>.
      * @alias module:model/NewExperimentVariant
      * @param name {String} The name of this variant.
-     * @param weight {Number} The percentage split of this variant. The sum of all variant percentages must be 100.
+     * @param weight {Number} The percentage split of this variant. For `random` assignment, the split must be between 1 and 99 and the sum across all variants must equal 100. Ignored for `audience` and `external` assignment. 
      * @param ruleset {module:model/NewRuleset} 
      * @param isPrimary {Boolean} 
      */
@@ -68,6 +68,9 @@ class NewExperimentVariant {
             if (data.hasOwnProperty('isPrimary')) {
                 obj['isPrimary'] = ApiClient.convertToType(data['isPrimary'], 'Boolean');
             }
+            if (data.hasOwnProperty('audienceId')) {
+                obj['audienceId'] = ApiClient.convertToType(data['audienceId'], 'Number');
+            }
         }
         return obj;
     }
@@ -82,7 +85,7 @@ class NewExperimentVariant {
 NewExperimentVariant.prototype['name'] = undefined;
 
 /**
- * The percentage split of this variant. The sum of all variant percentages must be 100.
+ * The percentage split of this variant. For `random` assignment, the split must be between 1 and 99 and the sum across all variants must equal 100. Ignored for `audience` and `external` assignment. 
  * @member {Number} weight
  */
 NewExperimentVariant.prototype['weight'] = undefined;
@@ -96,6 +99,12 @@ NewExperimentVariant.prototype['ruleset'] = undefined;
  * @member {Boolean} isPrimary
  */
 NewExperimentVariant.prototype['isPrimary'] = undefined;
+
+/**
+ * The ID of the audience this variant targets. Only used when the experiment `assignmentType` is `audience`. 
+ * @member {Number} audienceId
+ */
+NewExperimentVariant.prototype['audienceId'] = undefined;
 
 
 

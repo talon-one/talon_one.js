@@ -17,7 +17,7 @@ import CampaignRulesetChangedNotificationItem from './CampaignRulesetChangedNoti
 /**
  * The CampaignRulesetChangedNotification model module.
  * @module model/CampaignRulesetChangedNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CampaignRulesetChangedNotification {
     /**

@@ -20,8 +20,8 @@ import BestPriorPrice from '../model/BestPriorPrice';
 import BestPriorPriceRequest from '../model/BestPriorPriceRequest';
 import Catalog from '../model/Catalog';
 import CatalogSyncRequest from '../model/CatalogSyncRequest';
-import Coupon from '../model/Coupon';
 import CouponReservations from '../model/CouponReservations';
+import CouponWithReservations from '../model/CouponWithReservations';
 import CustomerInventory from '../model/CustomerInventory';
 import CustomerProfileAudienceRequest from '../model/CustomerProfileAudienceRequest';
 import CustomerProfileIntegrationRequestV2 from '../model/CustomerProfileIntegrationRequestV2';
@@ -37,9 +37,10 @@ import InlineResponse2002 from '../model/InlineResponse2002';
 import InlineResponse2003 from '../model/InlineResponse2003';
 import InlineResponse2004 from '../model/InlineResponse2004';
 import InlineResponse2005 from '../model/InlineResponse2005';
-import InlineResponse20056 from '../model/InlineResponse20056';
+import InlineResponse20059 from '../model/InlineResponse20059';
 import InlineResponse2006 from '../model/InlineResponse2006';
-import InlineResponse2007 from '../model/InlineResponse2007';
+import InlineResponse2008 from '../model/InlineResponse2008';
+import InlineResponse2009 from '../model/InlineResponse2009';
 import InlineResponse201 from '../model/InlineResponse201';
 import IntegrationCustomerSessionResponse from '../model/IntegrationCustomerSessionResponse';
 import IntegrationEventV2Request from '../model/IntegrationEventV2Request';
@@ -49,6 +50,7 @@ import IntegrationEventV3Response from '../model/IntegrationEventV3Response';
 import IntegrationRequest from '../model/IntegrationRequest';
 import IntegrationStateV2 from '../model/IntegrationStateV2';
 import IntegrationUnlockRewardRequest from '../model/IntegrationUnlockRewardRequest';
+import IntegrationUnlockRewardResponse from '../model/IntegrationUnlockRewardResponse';
 import LoyaltyBalancesWithTiers from '../model/LoyaltyBalancesWithTiers';
 import LoyaltyCard from '../model/LoyaltyCard';
 import LoyaltyCardBalances from '../model/LoyaltyCardBalances';
@@ -67,7 +69,7 @@ import UpdateAudience from '../model/UpdateAudience';
 /**
 * Integration service.
 * @module api/IntegrationApi
-* @version 25.18.0
+* @version 25.19.0
 */
 export default class IntegrationApi {
 
@@ -237,7 +239,7 @@ export default class IntegrationApi {
      * Create a coupon reservation for the specified customer profiles on the specified coupon.  You can also create a reservation via the Campaign Manager using the [Create coupon code reservation](https://docs.talon.one/docs/product/rules/effects/using-effects#reserving-a-coupon-code) effect.  > [!note] **Note** > - If the **Reservation mandatory** option was selected when creating the >   specified coupon, the endpoint creates a **hard** reservation, meaning only users who have >   this coupon code reserved can redeem it. > >   Otherwise, the endpoint creates a **soft** reservation, meaning the coupon >   is associated with the specified customer profiles (they show up when using >   the [List customer data](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/getCustomerInventory) >   endpoint), but any user can redeem it. > >   This can be useful, for example, to display a _coupon wallet_ for customers >   when they visit your store. > - If the **Coupon visibility** option was selected when creating the >   specified coupon, the coupon code is implicitly soft-reserved for all customers, and the code >   will be returned for all customer profiles in the [List customer >   data](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/getCustomerInventory) endpoint. > - This endpoint overrides the coupon reservation limit set when >   [the coupon is created](https://docs.talon.one/docs/product/campaigns/coupons/creating-coupons).  To ensure that coupons cannot be reserved after the reservation limit is reached, use the [Create coupon code reservation](https://docs.talon.one/docs/product/rules/effects/using-effects#reserving-a-coupon-code) effect in the Rule Builder and the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint.  To delete a reservation, use the [Delete reservation](https://docs.talon.one/integration-api#tag/Coupons/operation/deleteCouponReservation) endpoint. 
      * @param {String} couponValue The code of the coupon.  **Important:** The coupon code requires [URL encoding](https://www.w3schools.com/tags//ref_urlencode.asp) if it contains special characters. For example, you must encode `SUMMER25%OFF` as `SUMMER25%25OFF`. 
      * @param {module:model/CouponReservations} body body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coupon} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CouponWithReservations} and HTTP response
      */
     createCouponReservationWithHttpInfo(couponValue, body) {
       let postBody = body;
@@ -263,7 +265,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Coupon;
+      let returnType = CouponWithReservations;
       return this.apiClient.callApi(
         '/v1/coupon_reservations/{couponValue}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -276,7 +278,7 @@ export default class IntegrationApi {
      * Create a coupon reservation for the specified customer profiles on the specified coupon.  You can also create a reservation via the Campaign Manager using the [Create coupon code reservation](https://docs.talon.one/docs/product/rules/effects/using-effects#reserving-a-coupon-code) effect.  > [!note] **Note** > - If the **Reservation mandatory** option was selected when creating the >   specified coupon, the endpoint creates a **hard** reservation, meaning only users who have >   this coupon code reserved can redeem it. > >   Otherwise, the endpoint creates a **soft** reservation, meaning the coupon >   is associated with the specified customer profiles (they show up when using >   the [List customer data](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/getCustomerInventory) >   endpoint), but any user can redeem it. > >   This can be useful, for example, to display a _coupon wallet_ for customers >   when they visit your store. > - If the **Coupon visibility** option was selected when creating the >   specified coupon, the coupon code is implicitly soft-reserved for all customers, and the code >   will be returned for all customer profiles in the [List customer >   data](https://docs.talon.one/integration-api#tag/Customer-profiles/operation/getCustomerInventory) endpoint. > - This endpoint overrides the coupon reservation limit set when >   [the coupon is created](https://docs.talon.one/docs/product/campaigns/coupons/creating-coupons).  To ensure that coupons cannot be reserved after the reservation limit is reached, use the [Create coupon code reservation](https://docs.talon.one/docs/product/rules/effects/using-effects#reserving-a-coupon-code) effect in the Rule Builder and the [Update customer session](https://docs.talon.one/integration-api#tag/Customer-sessions/operation/updateCustomerSessionV2) endpoint.  To delete a reservation, use the [Delete reservation](https://docs.talon.one/integration-api#tag/Coupons/operation/deleteCouponReservation) endpoint. 
      * @param {String} couponValue The code of the coupon.  **Important:** The coupon code requires [URL encoding](https://www.w3schools.com/tags//ref_urlencode.asp) if it contains special characters. For example, you must encode `SUMMER25%OFF` as `SUMMER25%25OFF`. 
      * @param {module:model/CouponReservations} body body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coupon}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CouponWithReservations}
      */
     createCouponReservation(couponValue, body) {
       return this.createCouponReservationWithHttpInfo(couponValue, body)
@@ -914,6 +916,69 @@ export default class IntegrationApi {
 
 
     /**
+     * List customer's rewards
+     * List the rewards held by a given customer profile. This includes shared rewards unlocked with a loyalty card linked to the customer. 
+     * @param {String} integrationId The integration identifier for this customer profile. Must be:  - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Array.<module:model/String>=} [opts.status] Filter results by one or more customer reward statuses.  **Note:** If no status is specified, rewards of all statuses are returned. 
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total number of results for this query. This might decrease performance on large data sets.   - When `true`: `totalResultSize` contains the total number of results for this query.  - When `false`: Only `hasMore` is returned, and it is set to `true` when there are more results than shown on the page. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     */
+    getCustomerRewardsWithHttpInfo(integrationId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw new Error("Missing the required parameter 'integrationId' when calling getCustomerRewards");
+      }
+
+      let pathParams = {
+        'integrationId': integrationId
+      };
+      let queryParams = {
+        'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),
+        'pageSize': opts['pageSize'],
+        'skip': opts['skip'],
+        'withTotalResultSize': opts['withTotalResultSize']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key_v1'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2004;
+      return this.apiClient.callApi(
+        '/v1/customer_profiles/{integrationId}/rewards', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List customer's rewards
+     * List the rewards held by a given customer profile. This includes shared rewards unlocked with a loyalty card linked to the customer. 
+     * @param {String} integrationId The integration identifier for this customer profile. Must be:  - Unique within the deployment. - Stable for the customer. Do not use an ID that the customer can update themselves. For example, you can use a database ID. 
+     * @param {Object} [opts] Optional parameters
+     * @param {Array.<module:model/String>=} [opts.status] Filter results by one or more customer reward statuses.  **Note:** If no status is specified, rewards of all statuses are returned. 
+     * @param {Number=} [opts.pageSize] The number of items in the response. (default to 1000)
+     * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
+     * @param {Boolean=} [opts.withTotalResultSize] When this flag is set, the result includes the total number of results for this query. This might decrease performance on large data sets.   - When `true`: `totalResultSize` contains the total number of results for this query.  - When `false`: Only `hasMore` is returned, and it is set to `true` when there are more results than shown on the page. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     */
+    getCustomerRewards(integrationId, opts) {
+      return this.getCustomerRewardsWithHttpInfo(integrationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get customer session
      * Get the details of the given customer session.  You can get the same data via other endpoints that also apply changes, which can help you save requests and increase performance. See:  - [Update customer session](#tag/Customer-sessions/operation/updateCustomerSessionV2) - [Update customer profile](#tag/Customer-profiles/operation/updateCustomerProfileV2) 
      * @param {String} customerSessionId The `integration ID` of the customer session. You set this ID when you create a customer session.  You can see existing customer session integration IDs in the Campaign Manager's **Sessions** menu, or via the [List Application session](https://docs.talon.one/management-api#tag/Customer-data/operation/getApplicationSessions) endpoint. **Notes**: - There is no length limit for this ID. - It must be URL-encoded. For example, replace spaces with `%20`. [Learn more](https://www.w3schools.com/tags/ref_urlencode.asp). 
@@ -1156,7 +1221,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
      */
     getLoyaltyCardPointsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
       opts = opts || {};
@@ -1191,7 +1256,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2008;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/points', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1212,7 +1277,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
      */
     getLoyaltyCardPoints(loyaltyProgramId, loyaltyCardId, opts) {
       return this.getLoyaltyCardPointsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts)
@@ -1237,7 +1302,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.awaitsActivation] If `true`: Filters results to include only point transactions that have action-based activation and have not expired.  If `false`: Returns a `400` response. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts) {
       opts = opts || {};
@@ -1274,7 +1339,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2005;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/cards/{loyaltyCardId}/transactions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1297,7 +1362,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.awaitsActivation] If `true`: Filters results to include only point transactions that have action-based activation and have not expired.  If `false`: Returns a `400` response. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     getLoyaltyCardTransactions(loyaltyProgramId, loyaltyCardId, opts) {
       return this.getLoyaltyCardTransactionsWithHttpInfo(loyaltyProgramId, loyaltyCardId, opts)
@@ -1320,7 +1385,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
     getLoyaltyProgramProfilePointsWithHttpInfo(loyaltyProgramId, integrationId, opts) {
       opts = opts || {};
@@ -1355,7 +1420,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2007;
+      let returnType = InlineResponse2009;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/points', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1376,7 +1441,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {module:model/String=} [opts.sort] The field by which results should be sorted. You can enter one of the following values:  - `startDate`: Sorts the results by the start date of the points. - `expiryDate`: Sorts the results by the expiry date of the points.  By default, results are sorted in ascending order. To sort them in descending order, prefix the field name with `-`.  **Note:** You can only sort by one field at a time. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
     getLoyaltyProgramProfilePoints(loyaltyProgramId, integrationId, opts) {
       return this.getLoyaltyProgramProfilePointsWithHttpInfo(loyaltyProgramId, integrationId, opts)
@@ -1401,7 +1466,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.awaitsActivation] If `true`: Filters results to include only point transactions that have action-based activation and have not expired.  If `false`: Returns a `400` response. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     getLoyaltyProgramProfileTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts) {
       opts = opts || {};
@@ -1438,7 +1503,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2005;
+      let returnType = InlineResponse2006;
       return this.apiClient.callApi(
         '/v1/loyalty_programs/{loyaltyProgramId}/profile/{integrationId}/transactions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1461,7 +1526,7 @@ export default class IntegrationApi {
      * @param {Number=} [opts.pageSize] The number of items in the response. (default to 50)
      * @param {Number=} [opts.skip] The number of items to skip when paging through large result sets.
      * @param {Boolean=} [opts.awaitsActivation] If `true`: Filters results to include only point transactions that have action-based activation and have not expired.  If `false`: Returns a `400` response. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     getLoyaltyProgramProfileTransactions(loyaltyProgramId, integrationId, opts) {
       return this.getLoyaltyProgramProfileTransactionsWithHttpInfo(loyaltyProgramId, integrationId, opts)
@@ -1601,9 +1666,9 @@ export default class IntegrationApi {
      * @param {Boolean=} [opts.includeFree] Whether to include rewards that have no `pointsRequired`. These rewards are treated as free and available to all customers.  (default to true)
      * @param {Number=} [opts.loyaltyProgramId] Return only rewards available in this loyalty program. 
      * @param {String=} [opts.subledgerId] Return only rewards available in this subledger. Must be combined with `loyaltyProgramId`. To specify the main ledger, provide an empty string (\"\"). 
-     * @param {String=} [opts.profileIntegrationId] The integration ID of the customer profile whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  **Note:** `profileIntegrationId` and `loyaltyCardId` are mutually exclusive. Do not send both in the same request. 
-     * @param {String=} [opts.loyaltyCardId] The identifier of the loyalty card whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  **Note:** `profileIntegrationId` and `loyaltyCardId` are mutually exclusive. Do not send both in the same request. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20056} and HTTP response
+     * @param {String=} [opts.profileIntegrationId] The integration ID of the customer profile whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  For a reward with `pointsRequired` configured for a card-based loyalty program, eligibility can be evaluated based on both `profileIntegrationId` and `loyaltyCardId`, if both are provided. The required points are then checked against the card's balance. 
+     * @param {String=} [opts.loyaltyCardId] The identifier of the loyalty card whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  For a reward with `pointsRequired` configured for a card-based loyalty program, eligibility can be evaluated based on both `profileIntegrationId` and `loyaltyCardId`, if both are provided. The card must also be linked to that customer profile. - If `loyaltyCardId` is not provided, the reward returns the `CARD_REQUIRED` failure code, because there is no card balance to compare `pointsRequired` against. - If `profileIntegrationId` is not provided, the reward returns the `PROFILE_REQUIRED` failure code, because its eligibility cannot be evaluated without a customer profile. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20059} and HTTP response
      */
     integrationRewardsCatalogWithHttpInfo(opts) {
       opts = opts || {};
@@ -1630,7 +1695,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20056;
+      let returnType = InlineResponse20059;
       return this.apiClient.callApi(
         '/v1/rewards/catalog', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1649,9 +1714,9 @@ export default class IntegrationApi {
      * @param {Boolean=} [opts.includeFree] Whether to include rewards that have no `pointsRequired`. These rewards are treated as free and available to all customers.  (default to true)
      * @param {Number=} [opts.loyaltyProgramId] Return only rewards available in this loyalty program. 
      * @param {String=} [opts.subledgerId] Return only rewards available in this subledger. Must be combined with `loyaltyProgramId`. To specify the main ledger, provide an empty string (\"\"). 
-     * @param {String=} [opts.profileIntegrationId] The integration ID of the customer profile whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  **Note:** `profileIntegrationId` and `loyaltyCardId` are mutually exclusive. Do not send both in the same request. 
-     * @param {String=} [opts.loyaltyCardId] The identifier of the loyalty card whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  **Note:** `profileIntegrationId` and `loyaltyCardId` are mutually exclusive. Do not send both in the same request. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20056}
+     * @param {String=} [opts.profileIntegrationId] The integration ID of the customer profile whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  For a reward with `pointsRequired` configured for a card-based loyalty program, eligibility can be evaluated based on both `profileIntegrationId` and `loyaltyCardId`, if both are provided. The required points are then checked against the card's balance. 
+     * @param {String=} [opts.loyaltyCardId] The identifier of the loyalty card whose loyalty balances to include in the response. Balances are returned only when `loyaltyProgramId` is also provided.  For a reward with `pointsRequired` configured for a card-based loyalty program, eligibility can be evaluated based on both `profileIntegrationId` and `loyaltyCardId`, if both are provided. The card must also be linked to that customer profile. - If `loyaltyCardId` is not provided, the reward returns the `CARD_REQUIRED` failure code, because there is no card balance to compare `pointsRequired` against. - If `profileIntegrationId` is not provided, the reward returns the `PROFILE_REQUIRED` failure code, because its eligibility cannot be evaluated without a customer profile. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20059}
      */
     integrationRewardsCatalog(opts) {
       return this.integrationRewardsCatalogWithHttpInfo(opts)
@@ -2123,12 +2188,12 @@ export default class IntegrationApi {
 
     /**
      * Unlock a reward
-     * Unlock a reward for a customer. If the reward has `pointsRequired` configured, the corresponding loyalty points are deducted from the customer's balance.  To unlock a reward with the points of a loyalty card, provide the card in `cardIdentifier`. The points are then deducted from the card, and the unlocked reward belongs to the card, which makes it available to all customer profiles linked to that card. 
+     * Unlock a reward for a customer. If the reward has `pointsRequired` configured, the corresponding loyalty points are deducted from the customer's balance.  To unlock a reward with the points of a loyalty card, provide the card in `loyaltyCardId`. The points are then deducted from the card, and the unlocked reward belongs to the card, which makes it available to all customer profiles linked to that card. 
      * @param {Number} rewardId The ID of the reward. You can get the ID with the [List rewards](#tag/Rewards/operation/listRewards) endpoint.
      * @param {module:model/IntegrationUnlockRewardRequest} body 
      * @param {Object} [opts] Optional parameters
      * @param {Boolean=} [opts.dry] When set to `true`, the rule evaluation is performed but no changes are persisted. Use this to preview the outcome of an unlocking.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationStateV2} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntegrationUnlockRewardResponse} and HTTP response
      */
     unlockRewardWithHttpInfo(rewardId, body, opts) {
       opts = opts || {};
@@ -2156,7 +2221,7 @@ export default class IntegrationApi {
       let authNames = ['api_key_v1'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = IntegrationStateV2;
+      let returnType = IntegrationUnlockRewardResponse;
       return this.apiClient.callApi(
         '/v1/rewards/{rewardId}/unlock', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2166,12 +2231,12 @@ export default class IntegrationApi {
 
     /**
      * Unlock a reward
-     * Unlock a reward for a customer. If the reward has `pointsRequired` configured, the corresponding loyalty points are deducted from the customer's balance.  To unlock a reward with the points of a loyalty card, provide the card in `cardIdentifier`. The points are then deducted from the card, and the unlocked reward belongs to the card, which makes it available to all customer profiles linked to that card. 
+     * Unlock a reward for a customer. If the reward has `pointsRequired` configured, the corresponding loyalty points are deducted from the customer's balance.  To unlock a reward with the points of a loyalty card, provide the card in `loyaltyCardId`. The points are then deducted from the card, and the unlocked reward belongs to the card, which makes it available to all customer profiles linked to that card. 
      * @param {Number} rewardId The ID of the reward. You can get the ID with the [List rewards](#tag/Rewards/operation/listRewards) endpoint.
      * @param {module:model/IntegrationUnlockRewardRequest} body 
      * @param {Object} [opts] Optional parameters
      * @param {Boolean=} [opts.dry] When set to `true`, the rule evaluation is performed but no changes are persisted. Use this to preview the outcome of an unlocking.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationStateV2}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntegrationUnlockRewardResponse}
      */
     unlockReward(rewardId, body, opts) {
       return this.unlockRewardWithHttpInfo(rewardId, body, opts)

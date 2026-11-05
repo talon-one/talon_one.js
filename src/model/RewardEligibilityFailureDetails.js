@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardEligibilityFailureDetails model module.
  * @module model/RewardEligibilityFailureDetails
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RewardEligibilityFailureDetails {
     /**

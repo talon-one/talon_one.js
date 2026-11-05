@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import Achievement from './Achievement';
+import ApplicationCIF from './ApplicationCIF';
 
 /**
  * The InlineResponse20052 model module.
  * @module model/InlineResponse20052
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20052 {
     /**
      * Constructs a new <code>InlineResponse20052</code>.
      * @alias module:model/InlineResponse20052
-     * @param data {Array.<module:model/Achievement>} 
+     * @param data {Array.<module:model/ApplicationCIF>} 
      */
     constructor(data) { 
         
@@ -54,7 +54,7 @@ class InlineResponse20052 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Achievement]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCIF]);
             }
         }
         return obj;
@@ -69,7 +69,7 @@ class InlineResponse20052 {
 InlineResponse20052.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/Achievement>} data
+ * @member {Array.<module:model/ApplicationCIF>} data
  */
 InlineResponse20052.prototype['data'] = undefined;
 

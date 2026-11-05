@@ -17,7 +17,7 @@ import Ruleset from './Ruleset';
 /**
  * The ExperimentVariant model module.
  * @module model/ExperimentVariant
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ExperimentVariant {
     /**
@@ -77,6 +77,9 @@ class ExperimentVariant {
             if (data.hasOwnProperty('isPrimary')) {
                 obj['isPrimary'] = ApiClient.convertToType(data['isPrimary'], 'Boolean');
             }
+            if (data.hasOwnProperty('audienceId')) {
+                obj['audienceId'] = ApiClient.convertToType(data['audienceId'], 'Number');
+            }
         }
         return obj;
     }
@@ -120,6 +123,12 @@ ExperimentVariant.prototype['weight'] = undefined;
  * @member {Boolean} isPrimary
  */
 ExperimentVariant.prototype['isPrimary'] = undefined;
+
+/**
+ * The ID of the audience this variant targets. Only used when the experiment `assignmentType` is `audience`. 
+ * @member {Number} audienceId
+ */
+ExperimentVariant.prototype['audienceId'] = undefined;
 
 
 
