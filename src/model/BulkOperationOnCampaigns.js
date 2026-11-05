@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BulkOperationOnCampaigns model module.
  * @module model/BulkOperationOnCampaigns
- * @version 25.18.0
+ * @version 25.19.0
  */
 class BulkOperationOnCampaigns {
     /**

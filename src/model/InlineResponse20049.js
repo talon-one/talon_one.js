@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApplicationCIF from './ApplicationCIF';
+import ModelExport from './ModelExport';
 
 /**
  * The InlineResponse20049 model module.
  * @module model/InlineResponse20049
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20049 {
     /**
      * Constructs a new <code>InlineResponse20049</code>.
      * @alias module:model/InlineResponse20049
-     * @param data {Array.<module:model/ApplicationCIF>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/ModelExport>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20049.initialize(this, data);
+        InlineResponse20049.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20049 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -50,11 +52,11 @@ class InlineResponse20049 {
         if (data) {
             obj = obj || new InlineResponse20049();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ApplicationCIF]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ModelExport]);
             }
         }
         return obj;
@@ -64,12 +66,12 @@ class InlineResponse20049 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse20049.prototype['hasMore'] = undefined;
+InlineResponse20049.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/ApplicationCIF>} data
+ * @member {Array.<module:model/ModelExport>} data
  */
 InlineResponse20049.prototype['data'] = undefined;
 

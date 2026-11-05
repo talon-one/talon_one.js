@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The RolesV2Thresholds model module.
  * @module model/RolesV2Thresholds
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RolesV2Thresholds {
     /**
      * Constructs a new <code>RolesV2Thresholds</code>.
+     * Support user limits for actions that require admin approval within the given loyalty program.
      * @alias module:model/RolesV2Thresholds
      */
     constructor() { 

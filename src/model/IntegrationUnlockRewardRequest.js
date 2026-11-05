@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationUnlockRewardRequest model module.
  * @module model/IntegrationUnlockRewardRequest
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationUnlockRewardRequest {
     /**
@@ -58,8 +58,8 @@ class IntegrationUnlockRewardRequest {
             if (data.hasOwnProperty('profileIntegrationId')) {
                 obj['profileIntegrationId'] = ApiClient.convertToType(data['profileIntegrationId'], 'String');
             }
-            if (data.hasOwnProperty('cardIdentifier')) {
-                obj['cardIdentifier'] = ApiClient.convertToType(data['cardIdentifier'], 'String');
+            if (data.hasOwnProperty('loyaltyCardId')) {
+                obj['loyaltyCardId'] = ApiClient.convertToType(data['loyaltyCardId'], 'String');
             }
             if (data.hasOwnProperty('loyaltyProgramId')) {
                 obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
@@ -91,9 +91,9 @@ IntegrationUnlockRewardRequest.prototype['profileIntegrationId'] = undefined;
 
 /**
  * The identifier of the loyalty card, which must match the regular expression `^[A-Za-z0-9._%+@-]+$`. 
- * @member {String} cardIdentifier
+ * @member {String} loyaltyCardId
  */
-IntegrationUnlockRewardRequest.prototype['cardIdentifier'] = undefined;
+IntegrationUnlockRewardRequest.prototype['loyaltyCardId'] = undefined;
 
 /**
  * The ID of the loyalty program from which points will be deducted. Required when the reward has `pointsRequired` configured.

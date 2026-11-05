@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventV3ReferralEntity model module.
  * @module model/EventV3ReferralEntity
- * @version 25.18.0
+ * @version 25.19.0
  */
 class EventV3ReferralEntity {
     /**

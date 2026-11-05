@@ -17,7 +17,7 @@ import IntegrationHubEventType from './IntegrationHubEventType';
 /**
  * The IntegrationHubFlow model module.
  * @module model/IntegrationHubFlow
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubFlow {
     /**

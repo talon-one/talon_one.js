@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleV2ApplicationDetails model module.
  * @module model/RoleV2ApplicationDetails
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RoleV2ApplicationDetails {
     /**
      * Constructs a new <code>RoleV2ApplicationDetails</code>.
+     * Details of the permission sets configured for an Application.
      * @alias module:model/RoleV2ApplicationDetails
      */
     constructor() { 

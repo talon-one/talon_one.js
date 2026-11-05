@@ -102,6 +102,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property source (base name: "Source")', function() {
+      // uncomment below and update the code to test the property source
+      //var instane = new TalonOne.TierWillDowngradeData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reason (base name: "Reason")', function() {
+      // uncomment below and update the code to test the property reason
+      //var instane = new TalonOne.TierWillDowngradeData();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -17,7 +17,7 @@ import IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAct
 /**
  * The IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification model module.
  * @module model/IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotification {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementReference model module.
  * @module model/AchievementReference
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AchievementReference {
     /**

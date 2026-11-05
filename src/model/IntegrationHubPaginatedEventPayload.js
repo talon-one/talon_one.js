@@ -17,7 +17,7 @@ import IntegrationHubEventType from './IntegrationHubEventType';
 /**
  * The IntegrationHubPaginatedEventPayload model module.
  * @module model/IntegrationHubPaginatedEventPayload
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubPaginatedEventPayload {
     /**

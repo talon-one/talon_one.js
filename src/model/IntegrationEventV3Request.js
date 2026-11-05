@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEventV3Request model module.
  * @module model/IntegrationEventV3Request
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationEventV3Request {
     /**
@@ -79,6 +79,9 @@ class IntegrationEventV3Request {
             }
             if (data.hasOwnProperty('loyaltyCards')) {
                 obj['loyaltyCards'] = ApiClient.convertToType(data['loyaltyCards'], ['String']);
+            }
+            if (data.hasOwnProperty('rewardIntegrationIds')) {
+                obj['rewardIntegrationIds'] = ApiClient.convertToType(data['rewardIntegrationIds'], ['String']);
             }
             if (data.hasOwnProperty('responseContent')) {
                 obj['responseContent'] = ApiClient.convertToType(data['responseContent'], ['String']);
@@ -145,6 +148,12 @@ IntegrationEventV3Request.prototype['referralCode'] = undefined;
 IntegrationEventV3Request.prototype['loyaltyCards'] = undefined;
 
 /**
+ * The integration IDs of the unlocked rewards that can be used in this event. 
+ * @member {Array.<String>} rewardIntegrationIds
+ */
+IntegrationEventV3Request.prototype['rewardIntegrationIds'] = undefined;
+
+/**
  * Optional list of requested information to be present on the response related to the tracking custom event. 
  * @member {Array.<module:model/IntegrationEventV3Request.ResponseContentEnum>} responseContent
  */
@@ -201,7 +210,13 @@ IntegrationEventV3Request['ResponseContentEnum'] = {
      * value: "triggeredCampaigns"
      * @const
      */
-    "triggeredCampaigns": "triggeredCampaigns"
+    "triggeredCampaigns": "triggeredCampaigns",
+
+    /**
+     * value: "unlockedRewards"
+     * @const
+     */
+    "unlockedRewards": "unlockedRewards"
 };
 
 

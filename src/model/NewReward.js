@@ -19,7 +19,7 @@ import Rule from './Rule';
 /**
  * The NewReward model module.
  * @module model/NewReward
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewReward {
     /**
@@ -85,6 +85,12 @@ class NewReward {
             if (data.hasOwnProperty('pointsRequired')) {
                 obj['pointsRequired'] = ApiClient.convertToType(data['pointsRequired'], [RewardPointsRequired]);
             }
+            if (data.hasOwnProperty('validityDuration')) {
+                obj['validityDuration'] = ApiClient.convertToType(data['validityDuration'], 'String');
+            }
+            if (data.hasOwnProperty('expiryDate')) {
+                obj['expiryDate'] = ApiClient.convertToType(data['expiryDate'], 'Date');
+            }
         }
         return obj;
     }
@@ -143,6 +149,18 @@ NewReward.prototype['bindings'] = undefined;
  * @member {Array.<module:model/RewardPointsRequired>} pointsRequired
  */
 NewReward.prototype['pointsRequired'] = undefined;
+
+/**
+ * The duration for which the customer rewards unlocked from this reward remain active, relative to when the customer reward was unlocked.  The time format is an **integer** followed by one letter indicating the time unit.  Examples: `5D`, `7W`, `10M`, `15Y`.  Available units:  - `D`: days - `W`: weeks - `M`: months - `Y`: years  You can round certain units up or down: - `_D` for rounding down days only. Signifies the start of the day. - `_U` for rounding up days, weeks, months and years. Signifies the end of the day, week, month or year.  This field cannot be used in combination with `expiryDate`. If both `validityDuration` and `expiryDate` are not set, customer rewards have unlimited validity. 
+ * @member {String} validityDuration
+ */
+NewReward.prototype['validityDuration'] = undefined;
+
+/**
+ * Expiry date of the customer rewards unlocked from this reward. Customer rewards never expire if this is omitted and `validityDuration` is not set.  **Note:** - The date must be in the future. - This field cannot be used in combination with `validityDuration`. 
+ * @member {Date} expiryDate
+ */
+NewReward.prototype['expiryDate'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReduceSelectorStep model module.
  * @module model/ReduceSelectorStep
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ReduceSelectorStep {
     /**

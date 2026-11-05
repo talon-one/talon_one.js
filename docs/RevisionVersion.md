@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** | Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints. | 
-**accountId** | **Number** |  | 
-**applicationId** | **Number** |  | 
-**campaignId** | **Number** |  | 
-**created** | **Date** |  | 
-**createdBy** | **Number** |  | 
-**revisionId** | **Number** |  | 
-**version** | **Number** |  | 
+**accountId** | **Number** | The ID of the account that owns this entity. | 
+**applicationId** | **Number** | The ID of the Application that owns this entity. | 
+**campaignId** | **Number** | The ID of the campaign that the revision was created from. | 
+**created** | **Date** | Timestamp when the revision was created. | 
+**createdBy** | **Number** | The ID of the user who created this revision. | 
+**revisionId** | **Number** | The ID of the revision. | 
+**version** | **Number** | Incrementing number representing how many revisions have been activated on this campaign. Starts from &#x60;0&#x60; for a new campaign.  | 
 **name** | **String** | A user-facing name for this campaign. | [optional] 
 **startTime** | **Date** | Timestamp when the campaign will become active. | [optional] 
 **endTime** | **Date** | Timestamp when the campaign will become inactive. | [optional] 

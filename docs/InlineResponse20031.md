@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | [optional] 
-**data** | [**[ApplicationSession]**](ApplicationSession.md) |  | 
+**totalResultSize** | **Number** |  | [optional] 
+**data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
 
 

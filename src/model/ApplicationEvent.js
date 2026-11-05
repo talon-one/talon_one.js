@@ -12,13 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Effect from './Effect';
 import RuleFailureReason from './RuleFailureReason';
 
 /**
  * The ApplicationEvent model module.
  * @module model/ApplicationEvent
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ApplicationEvent {
     /**
@@ -29,7 +28,7 @@ class ApplicationEvent {
      * @param applicationId {Number} The ID of the Application that owns this entity.
      * @param type {String} The name of the event. Must be a [custom event](https://docs.talon.one/docs/dev/concepts/entities/events#custom-events), not a built-in event.
      * @param attributes {Object} Additional JSON serialized data associated with the event.
-     * @param effects {Array.<module:model/Effect>} An array containing the effects that were applied as a result of this event.
+     * @param effects {Array.<Object>} An array containing the effects that were applied as a result of this event.
      */
     constructor(id, created, applicationId, type, attributes, effects) { 
         
@@ -92,7 +91,7 @@ class ApplicationEvent {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Object);
             }
             if (data.hasOwnProperty('effects')) {
-                obj['effects'] = ApiClient.convertToType(data['effects'], [Effect]);
+                obj['effects'] = ApiClient.convertToType(data['effects'], [Object]);
             }
             if (data.hasOwnProperty('ruleFailureReasons')) {
                 obj['ruleFailureReasons'] = ApiClient.convertToType(data['ruleFailureReasons'], [RuleFailureReason]);
@@ -166,7 +165,7 @@ ApplicationEvent.prototype['attributes'] = undefined;
 
 /**
  * An array containing the effects that were applied as a result of this event.
- * @member {Array.<module:model/Effect>} effects
+ * @member {Array.<Object>} effects
  */
 ApplicationEvent.prototype['effects'] = undefined;
 

@@ -17,7 +17,7 @@ import ExperimentCopyExperiment from './ExperimentCopyExperiment';
 /**
  * The ExperimentCopy model module.
  * @module model/ExperimentCopy
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ExperimentCopy {
     /**

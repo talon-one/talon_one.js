@@ -18,7 +18,7 @@ import ExperimentVariant from './ExperimentVariant';
 /**
  * The Experiment model module.
  * @module model/Experiment
- * @version 25.18.0
+ * @version 25.19.0
  */
 class Experiment {
     /**
@@ -67,6 +67,9 @@ class Experiment {
             }
             if (data.hasOwnProperty('applicationId')) {
                 obj['applicationId'] = ApiClient.convertToType(data['applicationId'], 'Number');
+            }
+            if (data.hasOwnProperty('assignmentType')) {
+                obj['assignmentType'] = ApiClient.convertToType(data['assignmentType'], 'String');
             }
             if (data.hasOwnProperty('isVariantAssignmentExternal')) {
                 obj['isVariantAssignmentExternal'] = ApiClient.convertToType(data['isVariantAssignmentExternal'], 'Boolean');
@@ -118,7 +121,13 @@ Experiment.prototype['created'] = undefined;
 Experiment.prototype['applicationId'] = undefined;
 
 /**
- * The source of the assignment. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. 
+ * Controls how customers are assigned to experiment variants. - `random`: Talon.One assigns customers randomly based on variant weights. - `external`: Variant assignment is handled externally. - `audience`: Each variant targets a specific audience; customers are assigned based on audience membership. 
+ * @member {module:model/Experiment.AssignmentTypeEnum} assignmentType
+ */
+Experiment.prototype['assignmentType'] = undefined;
+
+/**
+ * Deprecated. Use `assignmentType` instead. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. 
  * @member {Boolean} isVariantAssignmentExternal
  */
 Experiment.prototype['isVariantAssignmentExternal'] = undefined;
@@ -166,6 +175,33 @@ Experiment.prototype['deletedat'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>assignmentType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Experiment['AssignmentTypeEnum'] = {
+
+    /**
+     * value: "random"
+     * @const
+     */
+    "random": "random",
+
+    /**
+     * value: "external"
+     * @const
+     */
+    "external": "external",
+
+    /**
+     * value: "audience"
+     * @const
+     */
+    "audience": "audience"
+};
 
 
 /**

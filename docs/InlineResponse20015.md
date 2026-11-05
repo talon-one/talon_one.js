@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasMore** | **Boolean** |  | 
-**data** | [**[CampaignTemplate]**](CampaignTemplate.md) |  | 
+**data** | [**[Referral]**](Referral.md) |  | 
 
 

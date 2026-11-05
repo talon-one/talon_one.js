@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationEventV2Request model module.
  * @module model/IntegrationEventV2Request
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationEventV2Request {
     /**
@@ -70,6 +70,9 @@ class IntegrationEventV2Request {
             if (data.hasOwnProperty('loyaltyCards')) {
                 obj['loyaltyCards'] = ApiClient.convertToType(data['loyaltyCards'], ['String']);
             }
+            if (data.hasOwnProperty('rewardIntegrationIds')) {
+                obj['rewardIntegrationIds'] = ApiClient.convertToType(data['rewardIntegrationIds'], ['String']);
+            }
         }
         return obj;
     }
@@ -118,6 +121,12 @@ IntegrationEventV2Request.prototype['responseContent'] = undefined;
  * @member {Array.<String>} loyaltyCards
  */
 IntegrationEventV2Request.prototype['loyaltyCards'] = undefined;
+
+/**
+ * The integration IDs of the unlocked rewards that can be used in this event. 
+ * @member {Array.<String>} rewardIntegrationIds
+ */
+IntegrationEventV2Request.prototype['rewardIntegrationIds'] = undefined;
 
 
 

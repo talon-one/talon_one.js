@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activateAt** | **Date** |  | [optional] 
+**activateAt** | **Date** | Timestamp when the revision will be activated. | [optional] 
 
 

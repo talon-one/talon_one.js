@@ -17,7 +17,7 @@ import CheckLoyaltyBalanceBlockProgram from './CheckLoyaltyBalanceBlockProgram';
 /**
  * The CheckLoyaltyBalanceBlock model module.
  * @module model/CheckLoyaltyBalanceBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CheckLoyaltyBalanceBlock {
     /**
@@ -27,8 +27,8 @@ class CheckLoyaltyBalanceBlock {
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param operator {module:model/CheckLoyaltyBalanceBlock.OperatorEnum} An indicator of how the block compares the balance to the value.
      * @param program {module:model/CheckLoyaltyBalanceBlockProgram} 
-     * @param subledger {String} The name of the subledger to check the balance of. Can be empty if this block checks the loyalty program's main ledger balance instead of a subledger.
-     * @param balance {module:model/CheckLoyaltyBalanceBlock.BalanceEnum} The type of balance to check:  - `current` is the sum of currently active points  - `pending` is the sum of pending points.  - `negative` is the sum of negative points.  - `tentativeCurrent` is the tentative points balance within the current open customer session.
+     * @param subledger {String} The name of the subledger to check the balance of. Can be empty if this block checks the loyalty program's main ledger balance instead of a subledger. A subledger can only be used when the loyalty program has subledgers enabled.
+     * @param balance {module:model/CheckLoyaltyBalanceBlock.BalanceEnum} The type of balance to check:  - `current` is the sum of currently active points  - `pending` is the sum of pending points.  - `negative` is the sum of negative points. It cannot be used with a subledger.  - `tentativeCurrent` is the tentative points balance within the current open customer session.
      * @param value {Number} The numeric value to compare the balance against.
      */
     constructor(type, operator, program, subledger, balance, value) { 
@@ -125,13 +125,13 @@ CheckLoyaltyBalanceBlock.prototype['operator'] = undefined;
 CheckLoyaltyBalanceBlock.prototype['program'] = undefined;
 
 /**
- * The name of the subledger to check the balance of. Can be empty if this block checks the loyalty program's main ledger balance instead of a subledger.
+ * The name of the subledger to check the balance of. Can be empty if this block checks the loyalty program's main ledger balance instead of a subledger. A subledger can only be used when the loyalty program has subledgers enabled.
  * @member {String} subledger
  */
 CheckLoyaltyBalanceBlock.prototype['subledger'] = undefined;
 
 /**
- * The type of balance to check:  - `current` is the sum of currently active points  - `pending` is the sum of pending points.  - `negative` is the sum of negative points.  - `tentativeCurrent` is the tentative points balance within the current open customer session.
+ * The type of balance to check:  - `current` is the sum of currently active points  - `pending` is the sum of pending points.  - `negative` is the sum of negative points. It cannot be used with a subledger.  - `tentativeCurrent` is the tentative points balance within the current open customer session.
  * @member {module:model/CheckLoyaltyBalanceBlock.BalanceEnum} balance
  */
 CheckLoyaltyBalanceBlock.prototype['balance'] = undefined;

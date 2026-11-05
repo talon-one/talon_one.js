@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReviewRisksRequest model module.
  * @module model/ReviewRisksRequest
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ReviewRisksRequest {
     /**

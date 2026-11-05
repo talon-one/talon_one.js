@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MCPKey model module.
  * @module model/MCPKey
- * @version 25.18.0
+ * @version 25.19.0
  */
 class MCPKey {
     /**

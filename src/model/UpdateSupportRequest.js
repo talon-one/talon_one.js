@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSupportRequest model module.
  * @module model/UpdateSupportRequest
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateSupportRequest {
     /**

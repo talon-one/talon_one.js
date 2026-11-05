@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import InlineResponse20056Catalog from './InlineResponse20056Catalog';
-import LoyaltyBalances from './LoyaltyBalances';
+import AchievementV2 from './AchievementV2';
 
 /**
  * The InlineResponse20056 model module.
  * @module model/InlineResponse20056
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20056 {
     /**
      * Constructs a new <code>InlineResponse20056</code>.
      * @alias module:model/InlineResponse20056
-     * @param catalog {module:model/InlineResponse20056Catalog} 
+     * @param data {Array.<module:model/AchievementV2>} 
      */
-    constructor(catalog) { 
+    constructor(data) { 
         
-        InlineResponse20056.initialize(this, catalog);
+        InlineResponse20056.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,8 @@ class InlineResponse20056 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, catalog) { 
-        obj['catalog'] = catalog;
+    static initialize(obj, data) { 
+        obj['data'] = data;
     }
 
     /**
@@ -51,11 +50,11 @@ class InlineResponse20056 {
         if (data) {
             obj = obj || new InlineResponse20056();
 
-            if (data.hasOwnProperty('catalog')) {
-                obj['catalog'] = InlineResponse20056Catalog.constructFromObject(data['catalog']);
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
-            if (data.hasOwnProperty('loyalty')) {
-                obj['loyalty'] = ApiClient.convertToType(data['loyalty'], {'String': LoyaltyBalances});
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [AchievementV2]);
             }
         }
         return obj;
@@ -65,15 +64,14 @@ class InlineResponse20056 {
 }
 
 /**
- * @member {module:model/InlineResponse20056Catalog} catalog
+ * @member {Boolean} hasMore
  */
-InlineResponse20056.prototype['catalog'] = undefined;
+InlineResponse20056.prototype['hasMore'] = undefined;
 
 /**
- * The customer's loyalty balances for the specified loyalty program. Returned only when `loyaltyProgramId` is provided together with `profileIntegrationId` or `loyaltyCardId`. 
- * @member {Object.<String, module:model/LoyaltyBalances>} loyalty
+ * @member {Array.<module:model/AchievementV2>} data
  */
-InlineResponse20056.prototype['loyalty'] = undefined;
+InlineResponse20056.prototype['data'] = undefined;
 
 
 

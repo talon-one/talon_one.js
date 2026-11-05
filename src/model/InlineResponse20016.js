@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Experiment from './Experiment';
+import CampaignGroup from './CampaignGroup';
 
 /**
  * The InlineResponse20016 model module.
  * @module model/InlineResponse20016
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20016 {
     /**
      * Constructs a new <code>InlineResponse20016</code>.
      * @alias module:model/InlineResponse20016
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Experiment>} 
+     * @param data {Array.<module:model/CampaignGroup>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20016 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Experiment]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CampaignGroup]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20016 {
 InlineResponse20016.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Experiment>} data
+ * @member {Array.<module:model/CampaignGroup>} data
  */
 InlineResponse20016.prototype['data'] = undefined;
 

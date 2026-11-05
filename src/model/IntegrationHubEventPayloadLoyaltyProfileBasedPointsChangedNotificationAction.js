@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction model module.
  * @module model/IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction {
     /**
@@ -71,6 +71,15 @@ class IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationActi
             if (data.hasOwnProperty('TransactionUUID')) {
                 obj['TransactionUUID'] = ApiClient.convertToType(data['TransactionUUID'], 'String');
             }
+            if (data.hasOwnProperty('Created')) {
+                obj['Created'] = ApiClient.convertToType(data['Created'], 'Date');
+            }
+            if (data.hasOwnProperty('AwaitsActivation')) {
+                obj['AwaitsActivation'] = ApiClient.convertToType(data['AwaitsActivation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ValidityDuration')) {
+                obj['ValidityDuration'] = ApiClient.convertToType(data['ValidityDuration'], 'String');
+            }
         }
         return obj;
     }
@@ -108,6 +117,24 @@ IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction.pro
  * @member {String} TransactionUUID
  */
 IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction.prototype['TransactionUUID'] = undefined;
+
+/**
+ * The timestamp when the loyalty transaction occurred.
+ * @member {Date} Created
+ */
+IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction.prototype['Created'] = undefined;
+
+/**
+ * Indicates whether the points have an action-based start date. This property is returned only for point transactions with an action-based start date.
+ * @member {Boolean} AwaitsActivation
+ */
+IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction.prototype['AwaitsActivation'] = undefined;
+
+/**
+ * The duration for which the points remain active, relative to the activation date.  **Note**: This only applies to points for which `AwaitsActivation` is `true` and `ExpiryDate` is not set. 
+ * @member {String} ValidityDuration
+ */
+IntegrationHubEventPayloadLoyaltyProfileBasedPointsChangedNotificationAction.prototype['ValidityDuration'] = undefined;
 
 
 

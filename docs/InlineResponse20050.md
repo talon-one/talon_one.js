@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ListCampaignStoreBudgets]**](ListCampaignStoreBudgets.md) |  | [optional] 
+**totalResultSize** | **Number** | The total number of roles returned. | 
+**data** | [**[RoleV2]**](RoleV2.md) | The list of roles. | 
 
 

@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import CheckAudienceBlockAudience from './CheckAudienceBlockAudience';
+import AudienceBlockReference from './AudienceBlockReference';
 
 /**
  * The CheckAudienceBlock model module.
  * @module model/CheckAudienceBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CheckAudienceBlock {
     /**
@@ -26,12 +26,11 @@ class CheckAudienceBlock {
      * @alias module:model/CheckAudienceBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param operator {module:model/CheckAudienceBlock.OperatorEnum} An indicator of how the block compares its elements.
-     * @param profile {module:model/CheckAudienceBlock.ProfileEnum} The customer profile to check against the audience. `Current` targets the customer in the current session; `Advocate` targets the person who invited their friend via referral program.
-     * @param audience {module:model/CheckAudienceBlockAudience} 
+     * @param audience {module:model/AudienceBlockReference} 
      */
-    constructor(type, operator, profile, audience) { 
+    constructor(type, operator, audience) { 
         
-        CheckAudienceBlock.initialize(this, type, operator, profile, audience);
+        CheckAudienceBlock.initialize(this, type, operator, audience);
     }
 
     /**
@@ -39,10 +38,9 @@ class CheckAudienceBlock {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, operator, profile, audience) { 
+    static initialize(obj, type, operator, audience) { 
         obj['type'] = type;
         obj['operator'] = operator;
-        obj['profile'] = profile;
         obj['audience'] = audience;
     }
 
@@ -73,7 +71,7 @@ class CheckAudienceBlock {
                 obj['profile'] = ApiClient.convertToType(data['profile'], 'String');
             }
             if (data.hasOwnProperty('audience')) {
-                obj['audience'] = CheckAudienceBlockAudience.constructFromObject(data['audience']);
+                obj['audience'] = AudienceBlockReference.constructFromObject(data['audience']);
             }
             if (data.hasOwnProperty('onFailure')) {
                 obj['onFailure'] = ApiClient.convertToType(data['onFailure'], [Object]);
@@ -110,13 +108,13 @@ CheckAudienceBlock.prototype['tags'] = undefined;
 CheckAudienceBlock.prototype['operator'] = undefined;
 
 /**
- * The customer profile to check against the audience. `Current` targets the customer in the current session; `Advocate` targets the person who invited their friend via referral program.
+ * The customer profile to check against the audience. `Current` targets the customer in the current session; `Advocate` targets the person who invited their friend via referral program. Only applies to the `member` and `not(member)` operators; ignored for `justJoined` and `justLeft`.
  * @member {module:model/CheckAudienceBlock.ProfileEnum} profile
  */
 CheckAudienceBlock.prototype['profile'] = undefined;
 
 /**
- * @member {module:model/CheckAudienceBlockAudience} audience
+ * @member {module:model/AudienceBlockReference} audience
  */
 CheckAudienceBlock.prototype['audience'] = undefined;
 

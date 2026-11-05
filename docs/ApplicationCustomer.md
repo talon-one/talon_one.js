@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **lastActivity** | **Date** | Timestamp of the most recent event received from this customer. This field is updated on calls that trigger the Rule Engine and that are not [dry requests](https://docs.talon.one/docs/dev/integration-api/dry-requests/#overlay).  For example, [reserving a coupon](https://docs.talon.one/integration-api#tag/Coupons/operation/createCouponReservation) for a customer doesn&#39;t impact this field.  | 
 **sandbox** | **Boolean** | An indicator of whether the customer is part of a sandbox or live Application. See the [docs](https://docs.talon.one/docs/product/applications/overview#application-environments).  | [optional] 
 **advocateIntegrationId** | **String** | The Integration ID of the Customer Profile that referred this Customer in the Application. | [optional] 
+**loyaltyProgramJoinDates** | [**[LoyaltyMembership]**](LoyaltyMembership.md) | The dates on which the customer joined the profile-based loyalty programs they are part of. Returned only when the &#x60;withLoyaltyMemberships&#x60; query parameter is &#x60;true&#x60;. | [optional] 
 
 

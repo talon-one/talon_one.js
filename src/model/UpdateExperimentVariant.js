@@ -17,7 +17,7 @@ import NewRuleset from './NewRuleset';
 /**
  * The UpdateExperimentVariant model module.
  * @module model/UpdateExperimentVariant
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateExperimentVariant {
     /**
@@ -26,7 +26,7 @@ class UpdateExperimentVariant {
      * @param id {Number} 
      * @param name {String} The name of this variant.
      * @param ruleset {module:model/NewRuleset} 
-     * @param weight {Number} The percentage split of this variant. The sum of all variant percentages must be 100.
+     * @param weight {Number} The percentage split of this variant. For `random` assignment, the split must be between 1 and 99 and the sum across all variants must equal 100. Ignored for `audience` and `external` assignment. 
      */
     constructor(id, name, ruleset, weight) { 
         
@@ -68,6 +68,9 @@ class UpdateExperimentVariant {
             if (data.hasOwnProperty('weight')) {
                 obj['weight'] = ApiClient.convertToType(data['weight'], 'Number');
             }
+            if (data.hasOwnProperty('audienceId')) {
+                obj['audienceId'] = ApiClient.convertToType(data['audienceId'], 'Number');
+            }
         }
         return obj;
     }
@@ -92,10 +95,16 @@ UpdateExperimentVariant.prototype['name'] = undefined;
 UpdateExperimentVariant.prototype['ruleset'] = undefined;
 
 /**
- * The percentage split of this variant. The sum of all variant percentages must be 100.
+ * The percentage split of this variant. For `random` assignment, the split must be between 1 and 99 and the sum across all variants must equal 100. Ignored for `audience` and `external` assignment. 
  * @member {Number} weight
  */
 UpdateExperimentVariant.prototype['weight'] = undefined;
+
+/**
+ * The ID of the audience this variant targets. Only used when the experiment `assignmentType` is `audience`. 
+ * @member {Number} audienceId
+ */
+UpdateExperimentVariant.prototype['audienceId'] = undefined;
 
 
 

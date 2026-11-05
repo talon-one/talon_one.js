@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import CardLedgerTransactionLogEntryIntegrationAPI from './CardLedgerTransactionLogEntryIntegrationAPI';
+import CustomerProfileReward from './CustomerProfileReward';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse2004 {
     /**
      * Constructs a new <code>InlineResponse2004</code>.
      * @alias module:model/InlineResponse2004
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/CardLedgerTransactionLogEntryIntegrationAPI>} 
+     * @param data {Array.<module:model/CustomerProfileReward>} 
      */
-    constructor(hasMore, data) { 
+    constructor(data) { 
         
-        InlineResponse2004.initialize(this, hasMore, data);
+        InlineResponse2004.initialize(this, data);
     }
 
     /**
@@ -36,8 +35,7 @@ class InlineResponse2004 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, data) { 
         obj['data'] = data;
     }
 
@@ -55,8 +53,11 @@ class InlineResponse2004 {
             if (data.hasOwnProperty('hasMore')) {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CardLedgerTransactionLogEntryIntegrationAPI]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfileReward]);
             }
         }
         return obj;
@@ -71,7 +72,12 @@ class InlineResponse2004 {
 InlineResponse2004.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/CardLedgerTransactionLogEntryIntegrationAPI>} data
+ * @member {Number} totalResultSize
+ */
+InlineResponse2004.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomerProfileReward>} data
  */
 InlineResponse2004.prototype['data'] = undefined;
 

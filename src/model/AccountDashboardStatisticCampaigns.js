@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountDashboardStatisticCampaigns model module.
  * @module model/AccountDashboardStatisticCampaigns
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AccountDashboardStatisticCampaigns {
     /**

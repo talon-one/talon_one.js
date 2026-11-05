@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyCard from './LoyaltyCard';
+import LoyaltyDashboardData from './LoyaltyDashboardData';
 
 /**
  * The InlineResponse20020 model module.
  * @module model/InlineResponse20020
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20020 {
     /**
      * Constructs a new <code>InlineResponse20020</code>.
      * @alias module:model/InlineResponse20020
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/LoyaltyCard>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/LoyaltyDashboardData>} 
      */
-    constructor(hasMore, data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20020.initialize(this, hasMore, data);
+        InlineResponse20020.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse20020 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse20020 {
         if (data) {
             obj = obj || new InlineResponse20020();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyCard]);
+                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyDashboardData]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse20020 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse20020.prototype['hasMore'] = undefined;
+InlineResponse20020.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyCard>} data
+ * @member {Array.<module:model/LoyaltyDashboardData>} data
  */
 InlineResponse20020.prototype['data'] = undefined;
 

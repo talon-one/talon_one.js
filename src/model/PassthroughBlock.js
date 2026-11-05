@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PassthroughBlock model module.
  * @module model/PassthroughBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class PassthroughBlock {
     /**

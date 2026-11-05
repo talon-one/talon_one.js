@@ -14,5 +14,18 @@ Name | Type | Description | Notes
 **nextTier** | **String** | The name of the customer&#39;s next tier. | [optional] 
 **tierExpirationDate** | **Date** | The exact date and time the tier expires. | 
 **timestampOfTierChange** | **Date** | The exact date and time the tier was changed. | 
+**source** | **String** | The source of the tier change, whether from a points change or boost.  | [optional] [default to &#39;points&#39;]
+**reason** | **String** | The reason for the tier change.  | [optional] 
+
+
+
+## Enum: SourceEnum
+
+
+* `boost` (value: `"boost"`)
+
+* `points` (value: `"points"`)
+
+
 
 

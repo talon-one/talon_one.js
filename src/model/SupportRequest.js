@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SupportRequest model module.
  * @module model/SupportRequest
- * @version 25.18.0
+ * @version 25.19.0
  */
 class SupportRequest {
     /**
@@ -77,7 +77,7 @@ class SupportRequest {
                 obj['loyaltyProgramId'] = ApiClient.convertToType(data['loyaltyProgramId'], 'Number');
             }
             if (data.hasOwnProperty('subledgerId')) {
-                obj['subledgerId'] = ApiClient.convertToType(data['subledgerId'], 'Number');
+                obj['subledgerId'] = ApiClient.convertToType(data['subledgerId'], 'String');
             }
             if (data.hasOwnProperty('createdByUser')) {
                 obj['createdByUser'] = ApiClient.convertToType(data['createdByUser'], 'String');
@@ -144,8 +144,8 @@ SupportRequest.prototype['campaignId'] = undefined;
 SupportRequest.prototype['loyaltyProgramId'] = undefined;
 
 /**
- * Identifier of the subledger the points are added to or deducted from. If there is no existing subledger with this ID, the subledger is created automatically.
- * @member {Number} subledgerId
+ * ID of the subledger the points are added to or deducted from. Must be combined with `loyaltyProgramId`. The subledger must already exist in the given loyalty program.
+ * @member {String} subledgerId
  */
 SupportRequest.prototype['subledgerId'] = undefined;
 

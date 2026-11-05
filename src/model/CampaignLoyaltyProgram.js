@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignLoyaltyProgram model module.
  * @module model/CampaignLoyaltyProgram
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CampaignLoyaltyProgram {
     /**

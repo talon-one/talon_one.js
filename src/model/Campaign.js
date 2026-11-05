@@ -19,7 +19,7 @@ import LimitConfig from './LimitConfig';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 25.18.0
+ * @version 25.19.0
  */
 class Campaign {
     /**
@@ -539,7 +539,7 @@ Campaign.prototype['activeRevisionId'] = undefined;
 Campaign.prototype['activeRevisionVersionId'] = undefined;
 
 /**
- * Incrementing number representing how many revisions have been activated on this campaign, starts from 0 for a new campaign. 
+ * Incrementing number representing how many revisions have been activated on this campaign. Starts from `0` for a new campaign. 
  * @member {Number} version
  */
 Campaign.prototype['version'] = undefined;

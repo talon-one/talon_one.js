@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TierWillDowngradeData model module.
  * @module model/TierWillDowngradeData
- * @version 25.18.0
+ * @version 25.19.0
  */
 class TierWillDowngradeData {
     /**
@@ -83,6 +83,12 @@ class TierWillDowngradeData {
             if (data.hasOwnProperty('TierExpirationDate')) {
                 obj['TierExpirationDate'] = ApiClient.convertToType(data['TierExpirationDate'], 'Date');
             }
+            if (data.hasOwnProperty('Source')) {
+                obj['Source'] = ApiClient.convertToType(data['Source'], 'String');
+            }
+            if (data.hasOwnProperty('Reason')) {
+                obj['Reason'] = ApiClient.convertToType(data['Reason'], 'String');
+            }
         }
         return obj;
     }
@@ -139,8 +145,42 @@ TierWillDowngradeData.prototype['NextTier'] = undefined;
  */
 TierWillDowngradeData.prototype['TierExpirationDate'] = undefined;
 
+/**
+ * The source of the tier change, whether from a points change or boost.
+ * @member {module:model/TierWillDowngradeData.SourceEnum} Source
+ * @default 'points'
+ */
+TierWillDowngradeData.prototype['Source'] = 'points';
+
+/**
+ * The reason for the tier change.
+ * @member {String} Reason
+ */
+TierWillDowngradeData.prototype['Reason'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>Source</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TierWillDowngradeData['SourceEnum'] = {
+
+    /**
+     * value: "boost"
+     * @const
+     */
+    "boost": "boost",
+
+    /**
+     * value: "points"
+     * @const
+     */
+    "points": "points"
+};
 
 
 

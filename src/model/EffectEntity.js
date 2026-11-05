@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EffectEntity model module.
  * @module model/EffectEntity
- * @version 25.18.0
+ * @version 25.19.0
  */
 class EffectEntity {
     /**
@@ -27,7 +27,7 @@ class EffectEntity {
      * @param rulesetId {Number} The ID of the ruleset that was active in the campaign when this effect was triggered.
      * @param ruleIndex {Number} The position of the rule that triggered this effect within the ruleset.
      * @param ruleName {String} The name of the rule that triggered this effect.
-     * @param effectType {String} The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
+     * @param effectType {String} See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
      */
     constructor(campaignId, rulesetId, ruleIndex, ruleName, effectType) { 
         
@@ -109,6 +109,9 @@ class EffectEntity {
             if (data.hasOwnProperty('rewardId')) {
                 obj['rewardId'] = ApiClient.convertToType(data['rewardId'], 'Number');
             }
+            if (data.hasOwnProperty('rewardIntegrationId')) {
+                obj['rewardIntegrationId'] = ApiClient.convertToType(data['rewardIntegrationId'], 'String');
+            }
         }
         return obj;
     }
@@ -147,7 +150,7 @@ EffectEntity.prototype['ruleIndex'] = undefined;
 EffectEntity.prototype['ruleName'] = undefined;
 
 /**
- * The type of effect that was triggered. See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
+ * See [API effects](https://docs.talon.one/docs/dev/integration-api/api-effects).
  * @member {String} effectType
  */
 EffectEntity.prototype['effectType'] = undefined;
@@ -217,6 +220,12 @@ EffectEntity.prototype['adjustmentReferenceId'] = undefined;
  * @member {Number} rewardId
  */
 EffectEntity.prototype['rewardId'] = undefined;
+
+/**
+ * The integration ID of the specific customer reward whose usage produced this effect.
+ * @member {String} rewardIntegrationId
+ */
+EffectEntity.prototype['rewardIntegrationId'] = undefined;
 
 
 

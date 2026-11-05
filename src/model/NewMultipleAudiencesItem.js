@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewMultipleAudiencesItem model module.
  * @module model/NewMultipleAudiencesItem
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewMultipleAudiencesItem {
     /**

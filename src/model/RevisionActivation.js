@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RevisionActivation model module.
  * @module model/RevisionActivation
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RevisionActivation {
     /**
@@ -58,6 +58,7 @@ class RevisionActivation {
 }
 
 /**
+ * Timestamp when the revision will be activated.
  * @member {Date} activateAt
  */
 RevisionActivation.prototype['activateAt'] = undefined;

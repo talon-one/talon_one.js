@@ -150,6 +150,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property awaitsActivation (base name: "awaitsActivation")', function() {
+      // uncomment below and update the code to test the property awaitsActivation
+      //var instane = new TalonOne.LoyaltyLedgerEntry();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

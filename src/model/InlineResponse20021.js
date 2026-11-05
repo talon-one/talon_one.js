@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import CardLedgerTransactionLogEntry from './CardLedgerTransactionLogEntry';
+import LoyaltyProgramTransaction from './LoyaltyProgramTransaction';
 
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20021 {
     /**
      * Constructs a new <code>InlineResponse20021</code>.
      * @alias module:model/InlineResponse20021
-     * @param hasMore {Boolean} true means there is more data in the source collection to request..
-     * @param data {Array.<module:model/CardLedgerTransactionLogEntry>} List of loyalty card transaction logs.
+     * @param hasMore {Boolean} 
+     * @param data {Array.<module:model/LoyaltyProgramTransaction>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20021 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CardLedgerTransactionLogEntry]);
+                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyProgramTransaction]);
             }
         }
         return obj;
@@ -66,14 +66,12 @@ class InlineResponse20021 {
 }
 
 /**
- * true means there is more data in the source collection to request..
  * @member {Boolean} hasMore
  */
 InlineResponse20021.prototype['hasMore'] = undefined;
 
 /**
- * List of loyalty card transaction logs.
- * @member {Array.<module:model/CardLedgerTransactionLogEntry>} data
+ * @member {Array.<module:model/LoyaltyProgramTransaction>} data
  */
 InlineResponse20021.prototype['data'] = undefined;
 

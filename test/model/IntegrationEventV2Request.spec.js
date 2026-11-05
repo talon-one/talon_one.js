@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewardIntegrationIds (base name: "rewardIntegrationIds")', function() {
+      // uncomment below and update the code to test the property rewardIntegrationIds
+      //var instane = new TalonOne.IntegrationEventV2Request();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

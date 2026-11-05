@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import GiveawayPoolReference from './GiveawayPoolReference';
+import GiveawayPoolBlockReference from './GiveawayPoolBlockReference';
 
 /**
  * The AwardGiveawayBlock model module.
  * @module model/AwardGiveawayBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AwardGiveawayBlock {
     /**
@@ -25,7 +25,7 @@ class AwardGiveawayBlock {
      * A block that awards a giveaway item from a configured giveaway pool to the specified customer profile.
      * @alias module:model/AwardGiveawayBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
-     * @param giveawayPool {module:model/GiveawayPoolReference} 
+     * @param giveawayPool {module:model/GiveawayPoolBlockReference} 
      * @param profile {module:model/AwardGiveawayBlock.ProfileEnum} The customer profile to award the giveaway to. `Current` targets the customer in the current session; `Advocate` targets the person who invited their friend via referral program.
      */
     constructor(type, giveawayPool, profile) { 
@@ -65,13 +65,10 @@ class AwardGiveawayBlock {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('giveawayPool')) {
-                obj['giveawayPool'] = GiveawayPoolReference.constructFromObject(data['giveawayPool']);
+                obj['giveawayPool'] = GiveawayPoolBlockReference.constructFromObject(data['giveawayPool']);
             }
             if (data.hasOwnProperty('profile')) {
                 obj['profile'] = ApiClient.convertToType(data['profile'], 'String');
-            }
-            if (data.hasOwnProperty('onFailure')) {
-                obj['onFailure'] = ApiClient.convertToType(data['onFailure'], [Object]);
             }
             if (data.hasOwnProperty('onError')) {
                 obj['onError'] = ApiClient.convertToType(data['onError'], {'String': [Object]});
@@ -102,7 +99,7 @@ AwardGiveawayBlock.prototype['type'] = undefined;
 AwardGiveawayBlock.prototype['tags'] = undefined;
 
 /**
- * @member {module:model/GiveawayPoolReference} giveawayPool
+ * @member {module:model/GiveawayPoolBlockReference} giveawayPool
  */
 AwardGiveawayBlock.prototype['giveawayPool'] = undefined;
 
@@ -111,12 +108,6 @@ AwardGiveawayBlock.prototype['giveawayPool'] = undefined;
  * @member {module:model/AwardGiveawayBlock.ProfileEnum} profile
  */
 AwardGiveawayBlock.prototype['profile'] = undefined;
-
-/**
- * Blocks evaluated when this block fails or returns false.
- * @member {Array.<Object>} onFailure
- */
-AwardGiveawayBlock.prototype['onFailure'] = undefined;
 
 /**
  * Named error handlers evaluated when a specific error occurs.

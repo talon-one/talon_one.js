@@ -17,7 +17,7 @@ import AddPriceAdjustmentCatalogAction from './AddPriceAdjustmentCatalogAction';
 /**
  * The CatalogActionAddPriceAdjustment model module.
  * @module model/CatalogActionAddPriceAdjustment
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CatalogActionAddPriceAdjustment {
     /**

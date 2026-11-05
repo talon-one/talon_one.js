@@ -17,7 +17,7 @@ import TimePoint from './TimePoint';
 /**
  * The AchievementAdditionalPropertiesV2 model module.
  * @module model/AchievementAdditionalPropertiesV2
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AchievementAdditionalPropertiesV2 {
     /**

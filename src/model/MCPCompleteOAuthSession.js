@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MCPCompleteOAuthSession model module.
  * @module model/MCPCompleteOAuthSession
- * @version 25.18.0
+ * @version 25.19.0
  */
 class MCPCompleteOAuthSession {
     /**

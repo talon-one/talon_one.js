@@ -17,7 +17,7 @@ import EmbeddedDashboardConfiguration from './EmbeddedDashboardConfiguration';
 /**
  * The EmbeddedAnalyticsConfigurationDashboards model module.
  * @module model/EmbeddedAnalyticsConfigurationDashboards
- * @version 25.18.0
+ * @version 25.19.0
  */
 class EmbeddedAnalyticsConfigurationDashboards {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewPriceAdjustment model module.
  * @module model/NewPriceAdjustment
- * @version 25.18.0
+ * @version 25.19.0
  */
 class NewPriceAdjustment {
     /**
@@ -116,7 +116,7 @@ NewPriceAdjustment.prototype['effectiveFrom'] = undefined;
 NewPriceAdjustment.prototype['effectiveUntil'] = undefined;
 
 /**
- * Identifier of the context of this price adjustment (e.g. summer sale).
+ * Identifier of the context of this price adjustment (the sales event, e.g. \"Summer Sale\").
  * @member {String} contextId
  */
 NewPriceAdjustment.prototype['contextId'] = undefined;

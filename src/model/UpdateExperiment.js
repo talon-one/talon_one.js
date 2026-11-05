@@ -17,18 +17,17 @@ import UpdateCampaign from './UpdateCampaign';
 /**
  * The UpdateExperiment model module.
  * @module model/UpdateExperiment
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateExperiment {
     /**
      * Constructs a new <code>UpdateExperiment</code>.
      * @alias module:model/UpdateExperiment
-     * @param isVariantAssignmentExternal {Boolean} The source of the assignment. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. 
      * @param campaign {module:model/UpdateCampaign} 
      */
-    constructor(isVariantAssignmentExternal, campaign) { 
+    constructor(campaign) { 
         
-        UpdateExperiment.initialize(this, isVariantAssignmentExternal, campaign);
+        UpdateExperiment.initialize(this, campaign);
     }
 
     /**
@@ -36,8 +35,7 @@ class UpdateExperiment {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, isVariantAssignmentExternal, campaign) { 
-        obj['isVariantAssignmentExternal'] = isVariantAssignmentExternal;
+    static initialize(obj, campaign) { 
         obj['campaign'] = campaign;
     }
 
@@ -72,7 +70,7 @@ class UpdateExperiment {
 }
 
 /**
- * The source of the assignment. - false - The variant assignment is handled internally by Talon.One. - true - The variant assignment is handled externally. 
+ * Deprecated and ignored. The assignment type is set at experiment creation and cannot be changed. Use `assignmentType` when creating an experiment instead. 
  * @member {Boolean} isVariantAssignmentExternal
  */
 UpdateExperiment.prototype['isVariantAssignmentExternal'] = undefined;

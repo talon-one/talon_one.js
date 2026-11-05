@@ -33,6 +33,7 @@ import AchievementAdditionalProperties from './model/AchievementAdditionalProper
 import AchievementAdditionalPropertiesV2 from './model/AchievementAdditionalPropertiesV2';
 import AchievementBase from './model/AchievementBase';
 import AchievementBaseV2 from './model/AchievementBaseV2';
+import AchievementBlockReference from './model/AchievementBlockReference';
 import AchievementProgress from './model/AchievementProgress';
 import AchievementProgressWithDefinition from './model/AchievementProgressWithDefinition';
 import AchievementReference from './model/AchievementReference';
@@ -85,10 +86,12 @@ import AsyncCouponCreationResponse from './model/AsyncCouponCreationResponse';
 import AsyncCouponDeletionJobResponse from './model/AsyncCouponDeletionJobResponse';
 import AsyncCouponsData from './model/AsyncCouponsData';
 import Attribute from './model/Attribute';
+import AttributeBlockReference from './model/AttributeBlockReference';
 import AttributesMandatory from './model/AttributesMandatory';
 import AttributesSettings from './model/AttributesSettings';
 import Audience from './model/Audience';
 import AudienceAnalytics from './model/AudienceAnalytics';
+import AudienceBlockReference from './model/AudienceBlockReference';
 import AudienceCustomer from './model/AudienceCustomer';
 import AudienceIntegrationID from './model/AudienceIntegrationID';
 import AudienceMembership from './model/AudienceMembership';
@@ -105,6 +108,13 @@ import AwardDiscountSelectorTarget from './model/AwardDiscountSelectorTarget';
 import AwardGiveawayBlock from './model/AwardGiveawayBlock';
 import AwardGiveawayEffectProps from './model/AwardGiveawayEffectProps';
 import AwardItemBlock from './model/AwardItemBlock';
+import AwardLoyaltyPointsAllItemsTarget from './model/AwardLoyaltyPointsAllItemsTarget';
+import AwardLoyaltyPointsBlock from './model/AwardLoyaltyPointsBlock';
+import AwardLoyaltyPointsBlockProgram from './model/AwardLoyaltyPointsBlockProgram';
+import AwardLoyaltyPointsBundleTarget from './model/AwardLoyaltyPointsBundleTarget';
+import AwardLoyaltyPointsCartTarget from './model/AwardLoyaltyPointsCartTarget';
+import AwardLoyaltyPointsGlobalFilterTarget from './model/AwardLoyaltyPointsGlobalFilterTarget';
+import AwardLoyaltyPointsSelectorTarget from './model/AwardLoyaltyPointsSelectorTarget';
 import BaseBlock from './model/BaseBlock';
 import BaseCampaign from './model/BaseCampaign';
 import BaseLoyaltyProgram from './model/BaseLoyaltyProgram';
@@ -121,6 +131,7 @@ import BestPriorTarget from './model/BestPriorTarget';
 import BetweenCheckAttributeBlock from './model/BetweenCheckAttributeBlock';
 import Binding from './model/Binding';
 import Blueprint from './model/Blueprint';
+import BoostLoyaltyTierEffectProps from './model/BoostLoyaltyTierEffectProps';
 import BulkApplicationNotification from './model/BulkApplicationNotification';
 import BulkOperationOnCampaigns from './model/BulkOperationOnCampaigns';
 import Bundle from './model/Bundle';
@@ -197,17 +208,16 @@ import CatalogActionRemove from './model/CatalogActionRemove';
 import CatalogActionRemoveMany from './model/CatalogActionRemoveMany';
 import CatalogItem from './model/CatalogItem';
 import CatalogRule from './model/CatalogRule';
+import CatalogRuleset from './model/CatalogRuleset';
 import CatalogSyncRequest from './model/CatalogSyncRequest';
 import CatalogsStrikethroughNotificationPolicy from './model/CatalogsStrikethroughNotificationPolicy';
 import Change from './model/Change';
 import ChangeLoyaltyTierLevelEffectProps from './model/ChangeLoyaltyTierLevelEffectProps';
 import ChangeProfilePassword from './model/ChangeProfilePassword';
 import CheckAchievementBlock from './model/CheckAchievementBlock';
-import CheckAchievementBlockAchievement from './model/CheckAchievementBlockAchievement';
 import CheckAttributeBlock from './model/CheckAttributeBlock';
 import CheckAttributeBlockBase from './model/CheckAttributeBlockBase';
 import CheckAudienceBlock from './model/CheckAudienceBlock';
-import CheckAudienceBlockAudience from './model/CheckAudienceBlockAudience';
 import CheckBudgetBlock from './model/CheckBudgetBlock';
 import CheckCouponBlock from './model/CheckCouponBlock';
 import CheckEventBlock from './model/CheckEventBlock';
@@ -216,7 +226,6 @@ import CheckLoyaltyBalanceBlockProgram from './model/CheckLoyaltyBalanceBlockPro
 import CheckLoyaltyCardBlock from './model/CheckLoyaltyCardBlock';
 import CheckReferralBlock from './model/CheckReferralBlock';
 import CheckTierBlock from './model/CheckTierBlock';
-import CheckTierBlockTier from './model/CheckTierBlockTier';
 import CodeGeneratorSettings from './model/CodeGeneratorSettings';
 import Collection from './model/Collection';
 import CollectionItem from './model/CollectionItem';
@@ -233,10 +242,12 @@ import CouponEntity from './model/CouponEntity';
 import CouponFailureSummary from './model/CouponFailureSummary';
 import CouponLimitConfigs from './model/CouponLimitConfigs';
 import CouponRejectionReason from './model/CouponRejectionReason';
+import CouponReservation from './model/CouponReservation';
 import CouponReservations from './model/CouponReservations';
 import CouponSearch from './model/CouponSearch';
 import CouponValue from './model/CouponValue';
 import CouponWithApplication from './model/CouponWithApplication';
+import CouponWithReservations from './model/CouponWithReservations';
 import CouponsNotificationData from './model/CouponsNotificationData';
 import CouponsNotificationPolicy from './model/CouponsNotificationPolicy';
 import CreateAchievement from './model/CreateAchievement';
@@ -250,8 +261,10 @@ import CreateReferralBlock from './model/CreateReferralBlock';
 import CreateTemplateCampaign from './model/CreateTemplateCampaign';
 import CreateTemplateCampaignResponse from './model/CreateTemplateCampaignResponse';
 import CustomEffect from './model/CustomEffect';
+import CustomEffectBlockReference from './model/CustomEffectBlockReference';
 import CustomEffectProps from './model/CustomEffectProps';
 import CustomerAchievement from './model/CustomerAchievement';
+import CustomerAchievementHistoryEntry from './model/CustomerAchievementHistoryEntry';
 import CustomerActivityReport from './model/CustomerActivityReport';
 import CustomerAnalytics from './model/CustomerAnalytics';
 import CustomerInventory from './model/CustomerInventory';
@@ -264,6 +277,7 @@ import CustomerProfileIntegrationResponseV2 from './model/CustomerProfileIntegra
 import CustomerProfileReward from './model/CustomerProfileReward';
 import CustomerProfileSearchQuery from './model/CustomerProfileSearchQuery';
 import CustomerProfileUpdateV2Response from './model/CustomerProfileUpdateV2Response';
+import CustomerReservation from './model/CustomerReservation';
 import CustomerReward from './model/CustomerReward';
 import CustomerSession from './model/CustomerSession';
 import CustomerSessionV2 from './model/CustomerSessionV2';
@@ -274,8 +288,53 @@ import DeleteLoyaltyTransactionsRequest from './model/DeleteLoyaltyTransactionsR
 import DeleteUserRequest from './model/DeleteUserRequest';
 import DigitalPass from './model/DigitalPass';
 import DiscardRisksRequest from './model/DiscardRisksRequest';
-import Effect from './model/Effect';
+import EffectAcceptCoupon from './model/EffectAcceptCoupon';
+import EffectAcceptReferral from './model/EffectAcceptReferral';
+import EffectAddFreeItem from './model/EffectAddFreeItem';
+import EffectAddLoyaltyPoints from './model/EffectAddLoyaltyPoints';
+import EffectAddNegativeLoyaltyPoints from './model/EffectAddNegativeLoyaltyPoints';
+import EffectAddToAudience from './model/EffectAddToAudience';
+import EffectAwardGiveaway from './model/EffectAwardGiveaway';
+import EffectBoostLoyaltyTier from './model/EffectBoostLoyaltyTier';
+import EffectCallApi from './model/EffectCallApi';
+import EffectChangeLoyaltyTierLevel from './model/EffectChangeLoyaltyTierLevel';
+import EffectCouponCreated from './model/EffectCouponCreated';
+import EffectCustomEffect from './model/EffectCustomEffect';
+import EffectDeductLoyaltyPoints from './model/EffectDeductLoyaltyPoints';
 import EffectEntity from './model/EffectEntity';
+import EffectError from './model/EffectError';
+import EffectExtendLoyaltyPointsExpiryDate from './model/EffectExtendLoyaltyPointsExpiryDate';
+import EffectIncreaseAchievementProgress from './model/EffectIncreaseAchievementProgress';
+import EffectIncreaseAchievementProgressPerItem from './model/EffectIncreaseAchievementProgressPerItem';
+import EffectJoinLoyaltyProgram from './model/EffectJoinLoyaltyProgram';
+import EffectOffsetNegativeLoyaltyPoints from './model/EffectOffsetNegativeLoyaltyPoints';
+import EffectRedeemReferral from './model/EffectRedeemReferral';
+import EffectReferralCreated from './model/EffectReferralCreated';
+import EffectRejectCoupon from './model/EffectRejectCoupon';
+import EffectRejectReferral from './model/EffectRejectReferral';
+import EffectRemoveFromAudience from './model/EffectRemoveFromAudience';
+import EffectReserveCoupon from './model/EffectReserveCoupon';
+import EffectRollbackAddedLoyaltyPoints from './model/EffectRollbackAddedLoyaltyPoints';
+import EffectRollbackCoupon from './model/EffectRollbackCoupon';
+import EffectRollbackDeductedLoyaltyPoints from './model/EffectRollbackDeductedLoyaltyPoints';
+import EffectRollbackDiscount from './model/EffectRollbackDiscount';
+import EffectRollbackIncreasedAchievementProgress from './model/EffectRollbackIncreasedAchievementProgress';
+import EffectRollbackIncreasedAchievementProgressPerItem from './model/EffectRollbackIncreasedAchievementProgressPerItem';
+import EffectRollbackReferral from './model/EffectRollbackReferral';
+import EffectRollbackTierBoost from './model/EffectRollbackTierBoost';
+import EffectRollbackUseReward from './model/EffectRollbackUseReward';
+import EffectSet from './model/EffectSet';
+import EffectSetDiscount from './model/EffectSetDiscount';
+import EffectSetDiscountPerAdditionalCost from './model/EffectSetDiscountPerAdditionalCost';
+import EffectSetDiscountPerAdditionalCostPerItem from './model/EffectSetDiscountPerAdditionalCostPerItem';
+import EffectSetDiscountPerItem from './model/EffectSetDiscountPerItem';
+import EffectSetLoyaltyPointsExpiryDate from './model/EffectSetLoyaltyPointsExpiryDate';
+import EffectShowBundleMetadata from './model/EffectShowBundleMetadata';
+import EffectShowNotification from './model/EffectShowNotification';
+import EffectStartAchievementProgress from './model/EffectStartAchievementProgress';
+import EffectUnlockReward from './model/EffectUnlockReward';
+import EffectUseReward from './model/EffectUseReward';
+import EffectWillAwardGiveaway from './model/EffectWillAwardGiveaway';
 import EmailEntity from './model/EmailEntity';
 import EmbeddedAnalyticsConfiguration from './model/EmbeddedAnalyticsConfiguration';
 import EmbeddedAnalyticsConfigurationDashboards from './model/EmbeddedAnalyticsConfigurationDashboards';
@@ -300,6 +359,8 @@ import EventV3ReferralEntity from './model/EventV3ReferralEntity';
 import EventV3RequestEntity from './model/EventV3RequestEntity';
 import ExcludePriceObservationsRequest from './model/ExcludePriceObservationsRequest';
 import Experiment from './model/Experiment';
+import ExperimentBlueprint from './model/ExperimentBlueprint';
+import ExperimentBlueprintVariant from './model/ExperimentBlueprintVariant';
 import ExperimentCampaignCopy from './model/ExperimentCampaignCopy';
 import ExperimentConfidenceTimeline from './model/ExperimentConfidenceTimeline';
 import ExperimentConfidenceTimelineDataPoint from './model/ExperimentConfidenceTimelineDataPoint';
@@ -355,9 +416,9 @@ import GeoJSONPoint from './model/GeoJSONPoint';
 import GeoJSONPolygon from './model/GeoJSONPolygon';
 import GetIntegrationCouponRequest from './model/GetIntegrationCouponRequest';
 import Giveaway from './model/Giveaway';
+import GiveawayPoolBlockReference from './model/GiveawayPoolBlockReference';
 import GiveawayPoolNotification from './model/GiveawayPoolNotification';
 import GiveawayPoolNotificationData from './model/GiveawayPoolNotificationData';
-import GiveawayPoolReference from './model/GiveawayPoolReference';
 import GiveawaysPool from './model/GiveawaysPool';
 import GroupBlock from './model/GroupBlock';
 import HiddenConditionsEffects from './model/HiddenConditionsEffects';
@@ -365,6 +426,7 @@ import History from './model/History';
 import IdentifiableEntity from './model/IdentifiableEntity';
 import ImportEntity from './model/ImportEntity';
 import IncreaseAchievementProgressEffectProps from './model/IncreaseAchievementProgressEffectProps';
+import IncreaseAchievementProgressPerItemEffectProps from './model/IncreaseAchievementProgressPerItemEffectProps';
 import InfluencingCampaignDetails from './model/InfluencingCampaignDetails';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
@@ -419,7 +481,10 @@ import InlineResponse20053 from './model/InlineResponse20053';
 import InlineResponse20054 from './model/InlineResponse20054';
 import InlineResponse20055 from './model/InlineResponse20055';
 import InlineResponse20056 from './model/InlineResponse20056';
-import InlineResponse20056Catalog from './model/InlineResponse20056Catalog';
+import InlineResponse20057 from './model/InlineResponse20057';
+import InlineResponse20058 from './model/InlineResponse20058';
+import InlineResponse20059 from './model/InlineResponse20059';
+import InlineResponse20059Catalog from './model/InlineResponse20059Catalog';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
 import InlineResponse2008 from './model/InlineResponse2008';
@@ -462,6 +527,7 @@ import IntegrationState from './model/IntegrationState';
 import IntegrationStateV2 from './model/IntegrationStateV2';
 import IntegrationStoreEntity from './model/IntegrationStoreEntity';
 import IntegrationUnlockRewardRequest from './model/IntegrationUnlockRewardRequest';
+import IntegrationUnlockRewardResponse from './model/IntegrationUnlockRewardResponse';
 import InventoryCoupon from './model/InventoryCoupon';
 import InventoryReferral from './model/InventoryReferral';
 import ItemAttribute from './model/ItemAttribute';
@@ -472,6 +538,7 @@ import LedgerEntry from './model/LedgerEntry';
 import LedgerInfo from './model/LedgerInfo';
 import LedgerPointsEntryIntegrationAPI from './model/LedgerPointsEntryIntegrationAPI';
 import LedgerTransactionLogEntryIntegrationAPI from './model/LedgerTransactionLogEntryIntegrationAPI';
+import LedgerTransactionLogEntryManagementAPI from './model/LedgerTransactionLogEntryManagementAPI';
 import LibraryAttribute from './model/LibraryAttribute';
 import LimitConfig from './model/LimitConfig';
 import LimitCounter from './model/LimitCounter';
@@ -574,6 +641,7 @@ import NewEvent from './model/NewEvent';
 import NewEventType from './model/NewEventType';
 import NewEventV3Entity from './model/NewEventV3Entity';
 import NewExperiment from './model/NewExperiment';
+import NewExperimentBlueprint from './model/NewExperimentBlueprint';
 import NewExperimentVariant from './model/NewExperimentVariant';
 import NewExperimentVariantArray from './model/NewExperimentVariantArray';
 import NewExternalInvitation from './model/NewExternalInvitation';
@@ -619,6 +687,14 @@ import OktaEventPayload from './model/OktaEventPayload';
 import OktaEventPayloadData from './model/OktaEventPayloadData';
 import OktaEventTarget from './model/OktaEventTarget';
 import OneTimeCode from './model/OneTimeCode';
+import OutboundLog from './model/OutboundLog';
+import OutboundLogBase from './model/OutboundLogBase';
+import OutboundLogRequest from './model/OutboundLogRequest';
+import OutboundLogResponse from './model/OutboundLogResponse';
+import OutboundLogs from './model/OutboundLogs';
+import OutboundMessage from './model/OutboundMessage';
+import OutboundMessageResponse from './model/OutboundMessageResponse';
+import OutboundMessages from './model/OutboundMessages';
 import OutgoingIntegrationBrazePolicy from './model/OutgoingIntegrationBrazePolicy';
 import OutgoingIntegrationCleverTapPolicy from './model/OutgoingIntegrationCleverTapPolicy';
 import OutgoingIntegrationConfiguration from './model/OutgoingIntegrationConfiguration';
@@ -705,7 +781,9 @@ import RollbackCouponEffectProps from './model/RollbackCouponEffectProps';
 import RollbackDeductedLoyaltyPointsEffectProps from './model/RollbackDeductedLoyaltyPointsEffectProps';
 import RollbackDiscountEffectProps from './model/RollbackDiscountEffectProps';
 import RollbackIncreasedAchievementProgressEffectProps from './model/RollbackIncreasedAchievementProgressEffectProps';
+import RollbackIncreasedAchievementProgressPerItemEffectProps from './model/RollbackIncreasedAchievementProgressPerItemEffectProps';
 import RollbackReferralEffectProps from './model/RollbackReferralEffectProps';
+import RollbackTierBoostEffectProps from './model/RollbackTierBoostEffectProps';
 import RollbackUseRewardEffectProps from './model/RollbackUseRewardEffectProps';
 import Rule from './model/Rule';
 import RuleEligibility from './model/RuleEligibility';
@@ -772,6 +850,7 @@ import StrikethroughSetDiscountPerItemEffectProps from './model/StrikethroughSet
 import StrikethroughSetDiscountPerItemMemberEffectProps from './model/StrikethroughSetDiscountPerItemMemberEffectProps';
 import StrikethroughTrigger from './model/StrikethroughTrigger';
 import SummaryCampaignStoreBudget from './model/SummaryCampaignStoreBudget';
+import SupportBalances from './model/SupportBalances';
 import SupportCustomerProfile from './model/SupportCustomerProfile';
 import SupportRequest from './model/SupportRequest';
 import SupportRequestInput from './model/SupportRequestInput';
@@ -782,6 +861,7 @@ import TemplateDef from './model/TemplateDef';
 import TemplateLimitConfig from './model/TemplateLimitConfig';
 import TemplateParameter from './model/TemplateParameter';
 import Tier from './model/Tier';
+import TierBlockReference from './model/TierBlockReference';
 import TierDowngradeData from './model/TierDowngradeData';
 import TierDowngradeNotification from './model/TierDowngradeNotification';
 import TierDowngradeNotificationPolicy from './model/TierDowngradeNotificationPolicy';
@@ -795,10 +875,8 @@ import TierWillDowngradeNotificationTrigger from './model/TierWillDowngradeNotif
 import TimePoint from './model/TimePoint';
 import TransferLoyaltyCard from './model/TransferLoyaltyCard';
 import TriggerCustomEffectBlock from './model/TriggerCustomEffectBlock';
-import TriggerCustomEffectBlockCustomEffect from './model/TriggerCustomEffectBlockCustomEffect';
 import TriggerCustomEffectBlockTarget from './model/TriggerCustomEffectBlockTarget';
 import TriggerWebhookBlock from './model/TriggerWebhookBlock';
-import TriggerWebhookBlockWebhook from './model/TriggerWebhookBlockWebhook';
 import TriggerWebhookEffectProps from './model/TriggerWebhookEffectProps';
 import TwoFAConfig from './model/TwoFAConfig';
 import UnaryCheckAttributeBlock from './model/UnaryCheckAttributeBlock';
@@ -806,18 +884,15 @@ import UnlockRewardEffectProps from './model/UnlockRewardEffectProps';
 import UpdateAccount from './model/UpdateAccount';
 import UpdateAchievement from './model/UpdateAchievement';
 import UpdateAchievementProgressBlock from './model/UpdateAchievementProgressBlock';
-import UpdateAchievementProgressBlockAchievement from './model/UpdateAchievementProgressBlockAchievement';
 import UpdateAchievementV2 from './model/UpdateAchievementV2';
 import UpdateApplication from './model/UpdateApplication';
 import UpdateApplicationAPIKey from './model/UpdateApplicationAPIKey';
 import UpdateApplicationCIF from './model/UpdateApplicationCIF';
 import UpdateAttributeEffectProps from './model/UpdateAttributeEffectProps';
 import UpdateAttributeValueBlock from './model/UpdateAttributeValueBlock';
-import UpdateAttributeValueBlockAttribute from './model/UpdateAttributeValueBlockAttribute';
 import UpdateAttributeValueBlockTarget from './model/UpdateAttributeValueBlockTarget';
 import UpdateAudience from './model/UpdateAudience';
 import UpdateAudienceMembershipBlock from './model/UpdateAudienceMembershipBlock';
-import UpdateAudienceMembershipBlockAudience from './model/UpdateAudienceMembershipBlockAudience';
 import UpdateBlueprint from './model/UpdateBlueprint';
 import UpdateCampaign from './model/UpdateCampaign';
 import UpdateCampaignCollection from './model/UpdateCampaignCollection';
@@ -830,11 +905,14 @@ import UpdateCoupon from './model/UpdateCoupon';
 import UpdateCouponBatch from './model/UpdateCouponBatch';
 import UpdateCouponsData from './model/UpdateCouponsData';
 import UpdateExperiment from './model/UpdateExperiment';
+import UpdateExperimentBlueprint from './model/UpdateExperimentBlueprint';
 import UpdateExperimentVariant from './model/UpdateExperimentVariant';
 import UpdateExperimentVariantArray from './model/UpdateExperimentVariantArray';
 import UpdateExperimentVariantName from './model/UpdateExperimentVariantName';
 import UpdateLoyaltyCard from './model/UpdateLoyaltyCard';
 import UpdateLoyaltyCardRequest from './model/UpdateLoyaltyCardRequest';
+import UpdateLoyaltyPointsExpiryBlock from './model/UpdateLoyaltyPointsExpiryBlock';
+import UpdateLoyaltyPointsExpiryBlockProgram from './model/UpdateLoyaltyPointsExpiryBlockProgram';
 import UpdateLoyaltyProgram from './model/UpdateLoyaltyProgram';
 import UpdateLoyaltyProgramTier from './model/UpdateLoyaltyProgramTier';
 import UpdatePicklist from './model/UpdatePicklist';
@@ -858,6 +936,7 @@ import WebhookAuthenticationBaseCustom from './model/WebhookAuthenticationBaseCu
 import WebhookAuthenticationDataBasic from './model/WebhookAuthenticationDataBasic';
 import WebhookAuthenticationDataCustom from './model/WebhookAuthenticationDataCustom';
 import WebhookAuthenticationWebhookRef from './model/WebhookAuthenticationWebhookRef';
+import WebhookBlockReference from './model/WebhookBlockReference';
 import WebhookWithOutgoingIntegrationDetails from './model/WebhookWithOutgoingIntegrationDetails';
 import WillAwardGiveawayEffectProps from './model/WillAwardGiveawayEffectProps';
 import WithinCheckAttributeBlock from './model/WithinCheckAttributeBlock';
@@ -894,7 +973,7 @@ import ManagementApi from './api/ManagementApi';
 * </pre>
 * </p>
 * @module index
-* @version 25.18.0
+* @version 25.19.0
 */
 export {
     /**
@@ -1022,6 +1101,12 @@ export {
      * @property {module:model/AchievementBaseV2}
      */
     AchievementBaseV2,
+
+    /**
+     * The AchievementBlockReference model constructor.
+     * @property {module:model/AchievementBlockReference}
+     */
+    AchievementBlockReference,
 
     /**
      * The AchievementProgress model constructor.
@@ -1336,6 +1421,12 @@ export {
     Attribute,
 
     /**
+     * The AttributeBlockReference model constructor.
+     * @property {module:model/AttributeBlockReference}
+     */
+    AttributeBlockReference,
+
+    /**
      * The AttributesMandatory model constructor.
      * @property {module:model/AttributesMandatory}
      */
@@ -1358,6 +1449,12 @@ export {
      * @property {module:model/AudienceAnalytics}
      */
     AudienceAnalytics,
+
+    /**
+     * The AudienceBlockReference model constructor.
+     * @property {module:model/AudienceBlockReference}
+     */
+    AudienceBlockReference,
 
     /**
      * The AudienceCustomer model constructor.
@@ -1456,6 +1553,48 @@ export {
     AwardItemBlock,
 
     /**
+     * The AwardLoyaltyPointsAllItemsTarget model constructor.
+     * @property {module:model/AwardLoyaltyPointsAllItemsTarget}
+     */
+    AwardLoyaltyPointsAllItemsTarget,
+
+    /**
+     * The AwardLoyaltyPointsBlock model constructor.
+     * @property {module:model/AwardLoyaltyPointsBlock}
+     */
+    AwardLoyaltyPointsBlock,
+
+    /**
+     * The AwardLoyaltyPointsBlockProgram model constructor.
+     * @property {module:model/AwardLoyaltyPointsBlockProgram}
+     */
+    AwardLoyaltyPointsBlockProgram,
+
+    /**
+     * The AwardLoyaltyPointsBundleTarget model constructor.
+     * @property {module:model/AwardLoyaltyPointsBundleTarget}
+     */
+    AwardLoyaltyPointsBundleTarget,
+
+    /**
+     * The AwardLoyaltyPointsCartTarget model constructor.
+     * @property {module:model/AwardLoyaltyPointsCartTarget}
+     */
+    AwardLoyaltyPointsCartTarget,
+
+    /**
+     * The AwardLoyaltyPointsGlobalFilterTarget model constructor.
+     * @property {module:model/AwardLoyaltyPointsGlobalFilterTarget}
+     */
+    AwardLoyaltyPointsGlobalFilterTarget,
+
+    /**
+     * The AwardLoyaltyPointsSelectorTarget model constructor.
+     * @property {module:model/AwardLoyaltyPointsSelectorTarget}
+     */
+    AwardLoyaltyPointsSelectorTarget,
+
+    /**
      * The BaseBlock model constructor.
      * @property {module:model/BaseBlock}
      */
@@ -1550,6 +1689,12 @@ export {
      * @property {module:model/Blueprint}
      */
     Blueprint,
+
+    /**
+     * The BoostLoyaltyTierEffectProps model constructor.
+     * @property {module:model/BoostLoyaltyTierEffectProps}
+     */
+    BoostLoyaltyTierEffectProps,
 
     /**
      * The BulkApplicationNotification model constructor.
@@ -2008,6 +2153,12 @@ export {
     CatalogRule,
 
     /**
+     * The CatalogRuleset model constructor.
+     * @property {module:model/CatalogRuleset}
+     */
+    CatalogRuleset,
+
+    /**
      * The CatalogSyncRequest model constructor.
      * @property {module:model/CatalogSyncRequest}
      */
@@ -2044,12 +2195,6 @@ export {
     CheckAchievementBlock,
 
     /**
-     * The CheckAchievementBlockAchievement model constructor.
-     * @property {module:model/CheckAchievementBlockAchievement}
-     */
-    CheckAchievementBlockAchievement,
-
-    /**
      * The CheckAttributeBlock model constructor.
      * @property {module:model/CheckAttributeBlock}
      */
@@ -2066,12 +2211,6 @@ export {
      * @property {module:model/CheckAudienceBlock}
      */
     CheckAudienceBlock,
-
-    /**
-     * The CheckAudienceBlockAudience model constructor.
-     * @property {module:model/CheckAudienceBlockAudience}
-     */
-    CheckAudienceBlockAudience,
 
     /**
      * The CheckBudgetBlock model constructor.
@@ -2120,12 +2259,6 @@ export {
      * @property {module:model/CheckTierBlock}
      */
     CheckTierBlock,
-
-    /**
-     * The CheckTierBlockTier model constructor.
-     * @property {module:model/CheckTierBlockTier}
-     */
-    CheckTierBlockTier,
 
     /**
      * The CodeGeneratorSettings model constructor.
@@ -2224,6 +2357,12 @@ export {
     CouponRejectionReason,
 
     /**
+     * The CouponReservation model constructor.
+     * @property {module:model/CouponReservation}
+     */
+    CouponReservation,
+
+    /**
      * The CouponReservations model constructor.
      * @property {module:model/CouponReservations}
      */
@@ -2246,6 +2385,12 @@ export {
      * @property {module:model/CouponWithApplication}
      */
     CouponWithApplication,
+
+    /**
+     * The CouponWithReservations model constructor.
+     * @property {module:model/CouponWithReservations}
+     */
+    CouponWithReservations,
 
     /**
      * The CouponsNotificationData model constructor.
@@ -2326,6 +2471,12 @@ export {
     CustomEffect,
 
     /**
+     * The CustomEffectBlockReference model constructor.
+     * @property {module:model/CustomEffectBlockReference}
+     */
+    CustomEffectBlockReference,
+
+    /**
      * The CustomEffectProps model constructor.
      * @property {module:model/CustomEffectProps}
      */
@@ -2336,6 +2487,12 @@ export {
      * @property {module:model/CustomerAchievement}
      */
     CustomerAchievement,
+
+    /**
+     * The CustomerAchievementHistoryEntry model constructor.
+     * @property {module:model/CustomerAchievementHistoryEntry}
+     */
+    CustomerAchievementHistoryEntry,
 
     /**
      * The CustomerActivityReport model constructor.
@@ -2410,6 +2567,12 @@ export {
     CustomerProfileUpdateV2Response,
 
     /**
+     * The CustomerReservation model constructor.
+     * @property {module:model/CustomerReservation}
+     */
+    CustomerReservation,
+
+    /**
      * The CustomerReward model constructor.
      * @property {module:model/CustomerReward}
      */
@@ -2470,16 +2633,286 @@ export {
     DiscardRisksRequest,
 
     /**
-     * The Effect model constructor.
-     * @property {module:model/Effect}
+     * The EffectAcceptCoupon model constructor.
+     * @property {module:model/EffectAcceptCoupon}
      */
-    Effect,
+    EffectAcceptCoupon,
+
+    /**
+     * The EffectAcceptReferral model constructor.
+     * @property {module:model/EffectAcceptReferral}
+     */
+    EffectAcceptReferral,
+
+    /**
+     * The EffectAddFreeItem model constructor.
+     * @property {module:model/EffectAddFreeItem}
+     */
+    EffectAddFreeItem,
+
+    /**
+     * The EffectAddLoyaltyPoints model constructor.
+     * @property {module:model/EffectAddLoyaltyPoints}
+     */
+    EffectAddLoyaltyPoints,
+
+    /**
+     * The EffectAddNegativeLoyaltyPoints model constructor.
+     * @property {module:model/EffectAddNegativeLoyaltyPoints}
+     */
+    EffectAddNegativeLoyaltyPoints,
+
+    /**
+     * The EffectAddToAudience model constructor.
+     * @property {module:model/EffectAddToAudience}
+     */
+    EffectAddToAudience,
+
+    /**
+     * The EffectAwardGiveaway model constructor.
+     * @property {module:model/EffectAwardGiveaway}
+     */
+    EffectAwardGiveaway,
+
+    /**
+     * The EffectBoostLoyaltyTier model constructor.
+     * @property {module:model/EffectBoostLoyaltyTier}
+     */
+    EffectBoostLoyaltyTier,
+
+    /**
+     * The EffectCallApi model constructor.
+     * @property {module:model/EffectCallApi}
+     */
+    EffectCallApi,
+
+    /**
+     * The EffectChangeLoyaltyTierLevel model constructor.
+     * @property {module:model/EffectChangeLoyaltyTierLevel}
+     */
+    EffectChangeLoyaltyTierLevel,
+
+    /**
+     * The EffectCouponCreated model constructor.
+     * @property {module:model/EffectCouponCreated}
+     */
+    EffectCouponCreated,
+
+    /**
+     * The EffectCustomEffect model constructor.
+     * @property {module:model/EffectCustomEffect}
+     */
+    EffectCustomEffect,
+
+    /**
+     * The EffectDeductLoyaltyPoints model constructor.
+     * @property {module:model/EffectDeductLoyaltyPoints}
+     */
+    EffectDeductLoyaltyPoints,
 
     /**
      * The EffectEntity model constructor.
      * @property {module:model/EffectEntity}
      */
     EffectEntity,
+
+    /**
+     * The EffectError model constructor.
+     * @property {module:model/EffectError}
+     */
+    EffectError,
+
+    /**
+     * The EffectExtendLoyaltyPointsExpiryDate model constructor.
+     * @property {module:model/EffectExtendLoyaltyPointsExpiryDate}
+     */
+    EffectExtendLoyaltyPointsExpiryDate,
+
+    /**
+     * The EffectIncreaseAchievementProgress model constructor.
+     * @property {module:model/EffectIncreaseAchievementProgress}
+     */
+    EffectIncreaseAchievementProgress,
+
+    /**
+     * The EffectIncreaseAchievementProgressPerItem model constructor.
+     * @property {module:model/EffectIncreaseAchievementProgressPerItem}
+     */
+    EffectIncreaseAchievementProgressPerItem,
+
+    /**
+     * The EffectJoinLoyaltyProgram model constructor.
+     * @property {module:model/EffectJoinLoyaltyProgram}
+     */
+    EffectJoinLoyaltyProgram,
+
+    /**
+     * The EffectOffsetNegativeLoyaltyPoints model constructor.
+     * @property {module:model/EffectOffsetNegativeLoyaltyPoints}
+     */
+    EffectOffsetNegativeLoyaltyPoints,
+
+    /**
+     * The EffectRedeemReferral model constructor.
+     * @property {module:model/EffectRedeemReferral}
+     */
+    EffectRedeemReferral,
+
+    /**
+     * The EffectReferralCreated model constructor.
+     * @property {module:model/EffectReferralCreated}
+     */
+    EffectReferralCreated,
+
+    /**
+     * The EffectRejectCoupon model constructor.
+     * @property {module:model/EffectRejectCoupon}
+     */
+    EffectRejectCoupon,
+
+    /**
+     * The EffectRejectReferral model constructor.
+     * @property {module:model/EffectRejectReferral}
+     */
+    EffectRejectReferral,
+
+    /**
+     * The EffectRemoveFromAudience model constructor.
+     * @property {module:model/EffectRemoveFromAudience}
+     */
+    EffectRemoveFromAudience,
+
+    /**
+     * The EffectReserveCoupon model constructor.
+     * @property {module:model/EffectReserveCoupon}
+     */
+    EffectReserveCoupon,
+
+    /**
+     * The EffectRollbackAddedLoyaltyPoints model constructor.
+     * @property {module:model/EffectRollbackAddedLoyaltyPoints}
+     */
+    EffectRollbackAddedLoyaltyPoints,
+
+    /**
+     * The EffectRollbackCoupon model constructor.
+     * @property {module:model/EffectRollbackCoupon}
+     */
+    EffectRollbackCoupon,
+
+    /**
+     * The EffectRollbackDeductedLoyaltyPoints model constructor.
+     * @property {module:model/EffectRollbackDeductedLoyaltyPoints}
+     */
+    EffectRollbackDeductedLoyaltyPoints,
+
+    /**
+     * The EffectRollbackDiscount model constructor.
+     * @property {module:model/EffectRollbackDiscount}
+     */
+    EffectRollbackDiscount,
+
+    /**
+     * The EffectRollbackIncreasedAchievementProgress model constructor.
+     * @property {module:model/EffectRollbackIncreasedAchievementProgress}
+     */
+    EffectRollbackIncreasedAchievementProgress,
+
+    /**
+     * The EffectRollbackIncreasedAchievementProgressPerItem model constructor.
+     * @property {module:model/EffectRollbackIncreasedAchievementProgressPerItem}
+     */
+    EffectRollbackIncreasedAchievementProgressPerItem,
+
+    /**
+     * The EffectRollbackReferral model constructor.
+     * @property {module:model/EffectRollbackReferral}
+     */
+    EffectRollbackReferral,
+
+    /**
+     * The EffectRollbackTierBoost model constructor.
+     * @property {module:model/EffectRollbackTierBoost}
+     */
+    EffectRollbackTierBoost,
+
+    /**
+     * The EffectRollbackUseReward model constructor.
+     * @property {module:model/EffectRollbackUseReward}
+     */
+    EffectRollbackUseReward,
+
+    /**
+     * The EffectSet model constructor.
+     * @property {module:model/EffectSet}
+     */
+    EffectSet,
+
+    /**
+     * The EffectSetDiscount model constructor.
+     * @property {module:model/EffectSetDiscount}
+     */
+    EffectSetDiscount,
+
+    /**
+     * The EffectSetDiscountPerAdditionalCost model constructor.
+     * @property {module:model/EffectSetDiscountPerAdditionalCost}
+     */
+    EffectSetDiscountPerAdditionalCost,
+
+    /**
+     * The EffectSetDiscountPerAdditionalCostPerItem model constructor.
+     * @property {module:model/EffectSetDiscountPerAdditionalCostPerItem}
+     */
+    EffectSetDiscountPerAdditionalCostPerItem,
+
+    /**
+     * The EffectSetDiscountPerItem model constructor.
+     * @property {module:model/EffectSetDiscountPerItem}
+     */
+    EffectSetDiscountPerItem,
+
+    /**
+     * The EffectSetLoyaltyPointsExpiryDate model constructor.
+     * @property {module:model/EffectSetLoyaltyPointsExpiryDate}
+     */
+    EffectSetLoyaltyPointsExpiryDate,
+
+    /**
+     * The EffectShowBundleMetadata model constructor.
+     * @property {module:model/EffectShowBundleMetadata}
+     */
+    EffectShowBundleMetadata,
+
+    /**
+     * The EffectShowNotification model constructor.
+     * @property {module:model/EffectShowNotification}
+     */
+    EffectShowNotification,
+
+    /**
+     * The EffectStartAchievementProgress model constructor.
+     * @property {module:model/EffectStartAchievementProgress}
+     */
+    EffectStartAchievementProgress,
+
+    /**
+     * The EffectUnlockReward model constructor.
+     * @property {module:model/EffectUnlockReward}
+     */
+    EffectUnlockReward,
+
+    /**
+     * The EffectUseReward model constructor.
+     * @property {module:model/EffectUseReward}
+     */
+    EffectUseReward,
+
+    /**
+     * The EffectWillAwardGiveaway model constructor.
+     * @property {module:model/EffectWillAwardGiveaway}
+     */
+    EffectWillAwardGiveaway,
 
     /**
      * The EmailEntity model constructor.
@@ -2624,6 +3057,18 @@ export {
      * @property {module:model/Experiment}
      */
     Experiment,
+
+    /**
+     * The ExperimentBlueprint model constructor.
+     * @property {module:model/ExperimentBlueprint}
+     */
+    ExperimentBlueprint,
+
+    /**
+     * The ExperimentBlueprintVariant model constructor.
+     * @property {module:model/ExperimentBlueprintVariant}
+     */
+    ExperimentBlueprintVariant,
 
     /**
      * The ExperimentCampaignCopy model constructor.
@@ -2956,6 +3401,12 @@ export {
     Giveaway,
 
     /**
+     * The GiveawayPoolBlockReference model constructor.
+     * @property {module:model/GiveawayPoolBlockReference}
+     */
+    GiveawayPoolBlockReference,
+
+    /**
      * The GiveawayPoolNotification model constructor.
      * @property {module:model/GiveawayPoolNotification}
      */
@@ -2966,12 +3417,6 @@ export {
      * @property {module:model/GiveawayPoolNotificationData}
      */
     GiveawayPoolNotificationData,
-
-    /**
-     * The GiveawayPoolReference model constructor.
-     * @property {module:model/GiveawayPoolReference}
-     */
-    GiveawayPoolReference,
 
     /**
      * The GiveawaysPool model constructor.
@@ -3014,6 +3459,12 @@ export {
      * @property {module:model/IncreaseAchievementProgressEffectProps}
      */
     IncreaseAchievementProgressEffectProps,
+
+    /**
+     * The IncreaseAchievementProgressPerItemEffectProps model constructor.
+     * @property {module:model/IncreaseAchievementProgressPerItemEffectProps}
+     */
+    IncreaseAchievementProgressPerItemEffectProps,
 
     /**
      * The InfluencingCampaignDetails model constructor.
@@ -3340,10 +3791,28 @@ export {
     InlineResponse20056,
 
     /**
-     * The InlineResponse20056Catalog model constructor.
-     * @property {module:model/InlineResponse20056Catalog}
+     * The InlineResponse20057 model constructor.
+     * @property {module:model/InlineResponse20057}
      */
-    InlineResponse20056Catalog,
+    InlineResponse20057,
+
+    /**
+     * The InlineResponse20058 model constructor.
+     * @property {module:model/InlineResponse20058}
+     */
+    InlineResponse20058,
+
+    /**
+     * The InlineResponse20059 model constructor.
+     * @property {module:model/InlineResponse20059}
+     */
+    InlineResponse20059,
+
+    /**
+     * The InlineResponse20059Catalog model constructor.
+     * @property {module:model/InlineResponse20059Catalog}
+     */
+    InlineResponse20059Catalog,
 
     /**
      * The InlineResponse2006 model constructor.
@@ -3598,6 +4067,12 @@ export {
     IntegrationUnlockRewardRequest,
 
     /**
+     * The IntegrationUnlockRewardResponse model constructor.
+     * @property {module:model/IntegrationUnlockRewardResponse}
+     */
+    IntegrationUnlockRewardResponse,
+
+    /**
      * The InventoryCoupon model constructor.
      * @property {module:model/InventoryCoupon}
      */
@@ -3656,6 +4131,12 @@ export {
      * @property {module:model/LedgerTransactionLogEntryIntegrationAPI}
      */
     LedgerTransactionLogEntryIntegrationAPI,
+
+    /**
+     * The LedgerTransactionLogEntryManagementAPI model constructor.
+     * @property {module:model/LedgerTransactionLogEntryManagementAPI}
+     */
+    LedgerTransactionLogEntryManagementAPI,
 
     /**
      * The LibraryAttribute model constructor.
@@ -4270,6 +4751,12 @@ export {
     NewExperiment,
 
     /**
+     * The NewExperimentBlueprint model constructor.
+     * @property {module:model/NewExperimentBlueprint}
+     */
+    NewExperimentBlueprint,
+
+    /**
      * The NewExperimentVariant model constructor.
      * @property {module:model/NewExperimentVariant}
      */
@@ -4538,6 +5025,54 @@ export {
      * @property {module:model/OneTimeCode}
      */
     OneTimeCode,
+
+    /**
+     * The OutboundLog model constructor.
+     * @property {module:model/OutboundLog}
+     */
+    OutboundLog,
+
+    /**
+     * The OutboundLogBase model constructor.
+     * @property {module:model/OutboundLogBase}
+     */
+    OutboundLogBase,
+
+    /**
+     * The OutboundLogRequest model constructor.
+     * @property {module:model/OutboundLogRequest}
+     */
+    OutboundLogRequest,
+
+    /**
+     * The OutboundLogResponse model constructor.
+     * @property {module:model/OutboundLogResponse}
+     */
+    OutboundLogResponse,
+
+    /**
+     * The OutboundLogs model constructor.
+     * @property {module:model/OutboundLogs}
+     */
+    OutboundLogs,
+
+    /**
+     * The OutboundMessage model constructor.
+     * @property {module:model/OutboundMessage}
+     */
+    OutboundMessage,
+
+    /**
+     * The OutboundMessageResponse model constructor.
+     * @property {module:model/OutboundMessageResponse}
+     */
+    OutboundMessageResponse,
+
+    /**
+     * The OutboundMessages model constructor.
+     * @property {module:model/OutboundMessages}
+     */
+    OutboundMessages,
 
     /**
      * The OutgoingIntegrationBrazePolicy model constructor.
@@ -5056,10 +5591,22 @@ export {
     RollbackIncreasedAchievementProgressEffectProps,
 
     /**
+     * The RollbackIncreasedAchievementProgressPerItemEffectProps model constructor.
+     * @property {module:model/RollbackIncreasedAchievementProgressPerItemEffectProps}
+     */
+    RollbackIncreasedAchievementProgressPerItemEffectProps,
+
+    /**
      * The RollbackReferralEffectProps model constructor.
      * @property {module:model/RollbackReferralEffectProps}
      */
     RollbackReferralEffectProps,
+
+    /**
+     * The RollbackTierBoostEffectProps model constructor.
+     * @property {module:model/RollbackTierBoostEffectProps}
+     */
+    RollbackTierBoostEffectProps,
 
     /**
      * The RollbackUseRewardEffectProps model constructor.
@@ -5458,6 +6005,12 @@ export {
     SummaryCampaignStoreBudget,
 
     /**
+     * The SupportBalances model constructor.
+     * @property {module:model/SupportBalances}
+     */
+    SupportBalances,
+
+    /**
      * The SupportCustomerProfile model constructor.
      * @property {module:model/SupportCustomerProfile}
      */
@@ -5516,6 +6069,12 @@ export {
      * @property {module:model/Tier}
      */
     Tier,
+
+    /**
+     * The TierBlockReference model constructor.
+     * @property {module:model/TierBlockReference}
+     */
+    TierBlockReference,
 
     /**
      * The TierDowngradeData model constructor.
@@ -5596,12 +6155,6 @@ export {
     TriggerCustomEffectBlock,
 
     /**
-     * The TriggerCustomEffectBlockCustomEffect model constructor.
-     * @property {module:model/TriggerCustomEffectBlockCustomEffect}
-     */
-    TriggerCustomEffectBlockCustomEffect,
-
-    /**
      * The TriggerCustomEffectBlockTarget model constructor.
      * @property {module:model/TriggerCustomEffectBlockTarget}
      */
@@ -5612,12 +6165,6 @@ export {
      * @property {module:model/TriggerWebhookBlock}
      */
     TriggerWebhookBlock,
-
-    /**
-     * The TriggerWebhookBlockWebhook model constructor.
-     * @property {module:model/TriggerWebhookBlockWebhook}
-     */
-    TriggerWebhookBlockWebhook,
 
     /**
      * The TriggerWebhookEffectProps model constructor.
@@ -5662,12 +6209,6 @@ export {
     UpdateAchievementProgressBlock,
 
     /**
-     * The UpdateAchievementProgressBlockAchievement model constructor.
-     * @property {module:model/UpdateAchievementProgressBlockAchievement}
-     */
-    UpdateAchievementProgressBlockAchievement,
-
-    /**
      * The UpdateAchievementV2 model constructor.
      * @property {module:model/UpdateAchievementV2}
      */
@@ -5704,12 +6245,6 @@ export {
     UpdateAttributeValueBlock,
 
     /**
-     * The UpdateAttributeValueBlockAttribute model constructor.
-     * @property {module:model/UpdateAttributeValueBlockAttribute}
-     */
-    UpdateAttributeValueBlockAttribute,
-
-    /**
      * The UpdateAttributeValueBlockTarget model constructor.
      * @property {module:model/UpdateAttributeValueBlockTarget}
      */
@@ -5726,12 +6261,6 @@ export {
      * @property {module:model/UpdateAudienceMembershipBlock}
      */
     UpdateAudienceMembershipBlock,
-
-    /**
-     * The UpdateAudienceMembershipBlockAudience model constructor.
-     * @property {module:model/UpdateAudienceMembershipBlockAudience}
-     */
-    UpdateAudienceMembershipBlockAudience,
 
     /**
      * The UpdateBlueprint model constructor.
@@ -5806,6 +6335,12 @@ export {
     UpdateExperiment,
 
     /**
+     * The UpdateExperimentBlueprint model constructor.
+     * @property {module:model/UpdateExperimentBlueprint}
+     */
+    UpdateExperimentBlueprint,
+
+    /**
      * The UpdateExperimentVariant model constructor.
      * @property {module:model/UpdateExperimentVariant}
      */
@@ -5834,6 +6369,18 @@ export {
      * @property {module:model/UpdateLoyaltyCardRequest}
      */
     UpdateLoyaltyCardRequest,
+
+    /**
+     * The UpdateLoyaltyPointsExpiryBlock model constructor.
+     * @property {module:model/UpdateLoyaltyPointsExpiryBlock}
+     */
+    UpdateLoyaltyPointsExpiryBlock,
+
+    /**
+     * The UpdateLoyaltyPointsExpiryBlockProgram model constructor.
+     * @property {module:model/UpdateLoyaltyPointsExpiryBlockProgram}
+     */
+    UpdateLoyaltyPointsExpiryBlockProgram,
 
     /**
      * The UpdateLoyaltyProgram model constructor.
@@ -5972,6 +6519,12 @@ export {
      * @property {module:model/WebhookAuthenticationWebhookRef}
      */
     WebhookAuthenticationWebhookRef,
+
+    /**
+     * The WebhookBlockReference model constructor.
+     * @property {module:model/WebhookBlockReference}
+     */
+    WebhookBlockReference,
 
     /**
      * The WebhookWithOutgoingIntegrationDetails model constructor.

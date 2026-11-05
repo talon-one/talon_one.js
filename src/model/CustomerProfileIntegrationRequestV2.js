@@ -17,7 +17,7 @@ import ProfileAudiencesChanges from './ProfileAudiencesChanges';
 /**
  * The CustomerProfileIntegrationRequestV2 model module.
  * @module model/CustomerProfileIntegrationRequestV2
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CustomerProfileIntegrationRequestV2 {
     /**
@@ -61,6 +61,9 @@ class CustomerProfileIntegrationRequestV2 {
             if (data.hasOwnProperty('audiencesChanges')) {
                 obj['audiencesChanges'] = ProfileAudiencesChanges.constructFromObject(data['audiencesChanges']);
             }
+            if (data.hasOwnProperty('rewardIntegrationIds')) {
+                obj['rewardIntegrationIds'] = ApiClient.convertToType(data['rewardIntegrationIds'], ['String']);
+            }
         }
         return obj;
     }
@@ -90,6 +93,12 @@ CustomerProfileIntegrationRequestV2.prototype['responseContent'] = undefined;
  * @member {module:model/ProfileAudiencesChanges} audiencesChanges
  */
 CustomerProfileIntegrationRequestV2.prototype['audiencesChanges'] = undefined;
+
+/**
+ * The integration IDs of the unlocked rewards that can be used in this request. 
+ * @member {Array.<String>} rewardIntegrationIds
+ */
+CustomerProfileIntegrationRequestV2.prototype['rewardIntegrationIds'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RiskNotification model module.
  * @module model/RiskNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RiskNotification {
     /**

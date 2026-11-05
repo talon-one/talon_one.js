@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[Experiment]**](Experiment.md) |  | 
+**data** | [**[CampaignGroup]**](CampaignGroup.md) |  | 
 
 

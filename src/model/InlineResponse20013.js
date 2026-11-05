@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Referral from './Referral';
+import Coupon from './Coupon';
 
 /**
  * The InlineResponse20013 model module.
  * @module model/InlineResponse20013
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20013 {
     /**
      * Constructs a new <code>InlineResponse20013</code>.
      * @alias module:model/InlineResponse20013
-     * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/Referral>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/Coupon>} 
      */
-    constructor(hasMore, data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20013.initialize(this, hasMore, data);
+        InlineResponse20013.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -36,8 +36,8 @@ class InlineResponse20013 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hasMore, data) { 
-        obj['hasMore'] = hasMore;
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -52,11 +52,11 @@ class InlineResponse20013 {
         if (data) {
             obj = obj || new InlineResponse20013();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Referral]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
             }
         }
         return obj;
@@ -66,12 +66,12 @@ class InlineResponse20013 {
 }
 
 /**
- * @member {Boolean} hasMore
+ * @member {Number} totalResultSize
  */
-InlineResponse20013.prototype['hasMore'] = undefined;
+InlineResponse20013.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Referral>} data
+ * @member {Array.<module:model/Coupon>} data
  */
 InlineResponse20013.prototype['data'] = undefined;
 

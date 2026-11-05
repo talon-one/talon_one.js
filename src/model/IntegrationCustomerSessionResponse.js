@@ -13,12 +13,11 @@
 
 import ApiClient from '../ApiClient';
 import CustomerSessionV2 from './CustomerSessionV2';
-import Effect from './Effect';
 
 /**
  * The IntegrationCustomerSessionResponse model module.
  * @module model/IntegrationCustomerSessionResponse
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationCustomerSessionResponse {
     /**
@@ -53,7 +52,7 @@ class IntegrationCustomerSessionResponse {
                 obj['customerSession'] = CustomerSessionV2.constructFromObject(data['customerSession']);
             }
             if (data.hasOwnProperty('effects')) {
-                obj['effects'] = ApiClient.convertToType(data['effects'], [Effect]);
+                obj['effects'] = ApiClient.convertToType(data['effects'], [Object]);
             }
         }
         return obj;
@@ -69,7 +68,7 @@ IntegrationCustomerSessionResponse.prototype['customerSession'] = undefined;
 
 /**
  * The returned effects.  **Note:** This endpoint returns only the effects that are valid after any rollback effects and their corresponding non-rollback effects are removed. 
- * @member {Array.<module:model/Effect>} effects
+ * @member {Array.<Object>} effects
  */
 IntegrationCustomerSessionResponse.prototype['effects'] = undefined;
 

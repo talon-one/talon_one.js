@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AchievementAdditionalProperties model module.
  * @module model/AchievementAdditionalProperties
- * @version 25.18.0
+ * @version 25.19.0
  */
 class AchievementAdditionalProperties {
     /**

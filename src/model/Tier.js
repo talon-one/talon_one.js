@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Tier model module.
  * @module model/Tier
- * @version 25.18.0
+ * @version 25.19.0
  */
 class Tier {
     /**
@@ -66,6 +66,12 @@ class Tier {
             if (data.hasOwnProperty('downgradePolicy')) {
                 obj['downgradePolicy'] = ApiClient.convertToType(data['downgradePolicy'], 'String');
             }
+            if (data.hasOwnProperty('source')) {
+                obj['source'] = ApiClient.convertToType(data['source'], 'String');
+            }
+            if (data.hasOwnProperty('reason')) {
+                obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+            }
         }
         return obj;
     }
@@ -103,6 +109,19 @@ Tier.prototype['expiryDate'] = undefined;
  */
 Tier.prototype['downgradePolicy'] = undefined;
 
+/**
+ * Indicates whether the customer's current tier was determined based on their points balance or a temporary boost.  - `points`: The tier reflects the customer's current point balance. - `boost`: A temporary tier boost is in effect where the customer is in a higher tier than their points-based tier. The boost expires after a set duration and the customer returns to their points-based tier. 
+ * @member {module:model/Tier.SourceEnum} source
+ * @default 'points'
+ */
+Tier.prototype['source'] = 'points';
+
+/**
+ * The reason for the tier assignment. 
+ * @member {String} reason
+ */
+Tier.prototype['reason'] = undefined;
+
 
 
 
@@ -125,6 +144,27 @@ Tier['DowngradePolicyEnum'] = {
      * @const
      */
     "balance_based": "balance_based"
+};
+
+
+/**
+ * Allowed values for the <code>source</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Tier['SourceEnum'] = {
+
+    /**
+     * value: "boost"
+     * @const
+     */
+    "boost": "boost",
+
+    /**
+     * value: "points"
+     * @const
+     */
+    "points": "points"
 };
 
 

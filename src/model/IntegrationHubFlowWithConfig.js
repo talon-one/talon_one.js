@@ -18,7 +18,7 @@ import IntegrationHubFlowConfig from './IntegrationHubFlowConfig';
 /**
  * The IntegrationHubFlowWithConfig model module.
  * @module model/IntegrationHubFlowWithConfig
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubFlowWithConfig {
     /**

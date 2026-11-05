@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerProfile from './CustomerProfile';
+import CustomerReservation from './CustomerReservation';
 
 /**
  * The InlineResponse2001 model module.
  * @module model/InlineResponse2001
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse2001 {
     /**
      * Constructs a new <code>InlineResponse2001</code>.
      * @alias module:model/InlineResponse2001
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/CustomerProfile>} 
+     * @param data {Array.<module:model/CustomerReservation>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2001 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [CustomerProfile]);
+                obj['data'] = ApiClient.convertToType(data['data'], [CustomerReservation]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2001 {
 InlineResponse2001.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/CustomerProfile>} data
+ * @member {Array.<module:model/CustomerReservation>} data
  */
 InlineResponse2001.prototype['data'] = undefined;
 

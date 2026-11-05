@@ -17,11 +17,12 @@ import RoleV2ApplicationDetails from './RoleV2ApplicationDetails';
 /**
  * The RoleV2RolesGroup model module.
  * @module model/RoleV2RolesGroup
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RoleV2RolesGroup {
     /**
      * Constructs a new <code>RoleV2RolesGroup</code>.
+     * A map of target entities to their permission sets.
      * @alias module:model/RoleV2RolesGroup
      */
     constructor() { 
@@ -74,19 +75,19 @@ class RoleV2RolesGroup {
 RoleV2RolesGroup.prototype['applications'] = undefined;
 
 /**
- * A map of the link between the loyalty program-related permission set and the Application ID the permissions apply to.
+ * A map of the link between the loyalty program-related permission set and the loyalty program ID the permissions apply to.
  * @member {Object.<String, String>} loyaltyPrograms
  */
 RoleV2RolesGroup.prototype['loyaltyPrograms'] = undefined;
 
 /**
- * A map of the link between the campaign access group-related permission set and the Application ID the permissions apply to.
+ * A map of the link between the campaign access group-related permission set and the campaign access group ID the permissions apply to.
  * @member {Object.<String, String>} campaignAccessGroups
  */
 RoleV2RolesGroup.prototype['campaignAccessGroups'] = undefined;
 
 /**
- * Name of the account-level permission set
+ * Name of the account-level permission set.
  * @member {String} account
  */
 RoleV2RolesGroup.prototype['account'] = undefined;

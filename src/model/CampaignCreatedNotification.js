@@ -17,7 +17,7 @@ import CampaignCreatedNotificationItem from './CampaignCreatedNotificationItem';
 /**
  * The CampaignCreatedNotification model module.
  * @module model/CampaignCreatedNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CampaignCreatedNotification {
     /**

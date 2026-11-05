@@ -17,7 +17,7 @@ import RuleEligibilityFailureDetails from './RuleEligibilityFailureDetails';
 /**
  * The RuleEligibility model module.
  * @module model/RuleEligibility
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RuleEligibility {
     /**

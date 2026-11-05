@@ -12,22 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import CheckTierBlockTier from './CheckTierBlockTier';
+import TierBlockReference from './TierBlockReference';
 
 /**
  * The CheckTierBlock model module.
  * @module model/CheckTierBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CheckTierBlock {
     /**
      * Constructs a new <code>CheckTierBlock</code>.
-     * A block that checks whether a user profile is a member of a specific tier within a loyalty program.
+     * A block that checks whether a customer profile is a member of a specific tier in a loyalty program.
      * @alias module:model/CheckTierBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param operator {module:model/CheckTierBlock.OperatorEnum} An indicator of how the block compares its elements.
-     * @param subledger {String} The name of the subledger to check the balance of. Can be empty if this block checks the loyalty program's main ledger balance instead of a subledger.
-     * @param tier {module:model/CheckTierBlockTier} 
+     * @param subledger {String} The name of the subledger to check a customer's tier in. Can be empty if this block checks the loyalty program's main ledger instead of a subledger. A subledger can only be used when the loyalty program that the tier is in has subledgers enabled. To specify the main ledger, provide an empty string (\"\").
+     * @param tier {module:model/TierBlockReference} 
      */
     constructor(type, operator, subledger, tier) { 
         
@@ -73,7 +73,7 @@ class CheckTierBlock {
                 obj['subledger'] = ApiClient.convertToType(data['subledger'], 'String');
             }
             if (data.hasOwnProperty('tier')) {
-                obj['tier'] = CheckTierBlockTier.constructFromObject(data['tier']);
+                obj['tier'] = TierBlockReference.constructFromObject(data['tier']);
             }
             if (data.hasOwnProperty('onFailure')) {
                 obj['onFailure'] = ApiClient.convertToType(data['onFailure'], [Object]);
@@ -110,13 +110,13 @@ CheckTierBlock.prototype['tags'] = undefined;
 CheckTierBlock.prototype['operator'] = undefined;
 
 /**
- * The name of the subledger to check the balance of. Can be empty if this block checks the loyalty program's main ledger balance instead of a subledger.
+ * The name of the subledger to check a customer's tier in. Can be empty if this block checks the loyalty program's main ledger instead of a subledger. A subledger can only be used when the loyalty program that the tier is in has subledgers enabled. To specify the main ledger, provide an empty string (\"\").
  * @member {String} subledger
  */
 CheckTierBlock.prototype['subledger'] = undefined;
 
 /**
- * @member {module:model/CheckTierBlockTier} tier
+ * @member {module:model/TierBlockReference} tier
  */
 CheckTierBlock.prototype['tier'] = undefined;
 

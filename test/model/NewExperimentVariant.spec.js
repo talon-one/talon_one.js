@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property audienceId (base name: "audienceId")', function() {
+      // uncomment below and update the code to test the property audienceId
+      //var instane = new TalonOne.NewExperimentVariant();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

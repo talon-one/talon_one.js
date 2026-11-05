@@ -12,21 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import SummaryCampaignStoreBudget from './SummaryCampaignStoreBudget';
+import Store from './Store';
 
 /**
  * The InlineResponse20051 model module.
  * @module model/InlineResponse20051
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20051 {
     /**
      * Constructs a new <code>InlineResponse20051</code>.
      * @alias module:model/InlineResponse20051
+     * @param data {Array.<module:model/Store>} 
      */
-    constructor() { 
+    constructor(data) { 
         
-        InlineResponse20051.initialize(this);
+        InlineResponse20051.initialize(this, data);
     }
 
     /**
@@ -34,7 +35,8 @@ class InlineResponse20051 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, data) { 
+        obj['data'] = data;
     }
 
     /**
@@ -48,8 +50,14 @@ class InlineResponse20051 {
         if (data) {
             obj = obj || new InlineResponse20051();
 
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
+            if (data.hasOwnProperty('totalResultSize')) {
+                obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SummaryCampaignStoreBudget]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Store]);
             }
         }
         return obj;
@@ -59,7 +67,17 @@ class InlineResponse20051 {
 }
 
 /**
- * @member {Array.<module:model/SummaryCampaignStoreBudget>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20051.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Number} totalResultSize
+ */
+InlineResponse20051.prototype['totalResultSize'] = undefined;
+
+/**
+ * @member {Array.<module:model/Store>} data
  */
 InlineResponse20051.prototype['data'] = undefined;
 

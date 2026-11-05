@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The LabelTargetNone model module.
  * @module model/LabelTargetNone
- * @version 25.18.0
+ * @version 25.19.0
  */
 class LabelTargetNone {
     /**
      * Constructs a new <code>LabelTargetNone</code>.
-     * Represents the target type when no entity is selected.
+     * Target type when no specific audience is selected. Targets all customers who are not members of an audience.
      * @alias module:model/LabelTargetNone
      * @param type {module:model/LabelTargetNone.TypeEnum} 
      */

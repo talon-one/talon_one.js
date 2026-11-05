@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import Coupon from './Coupon';
+import Campaign from './Campaign';
 
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20011 {
     /**
      * Constructs a new <code>InlineResponse20011</code>.
      * @alias module:model/InlineResponse20011
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/Coupon>} 
+     * @param data {Array.<module:model/Campaign>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20011 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Coupon]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Campaign]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20011 {
 InlineResponse20011.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Coupon>} data
+ * @member {Array.<module:model/Campaign>} data
  */
 InlineResponse20011.prototype['data'] = undefined;
 

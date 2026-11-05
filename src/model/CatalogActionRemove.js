@@ -17,7 +17,7 @@ import RemoveItemCatalogAction from './RemoveItemCatalogAction';
 /**
  * The CatalogActionRemove model module.
  * @module model/CatalogActionRemove
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CatalogActionRemove {
     /**

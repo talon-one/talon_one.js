@@ -17,7 +17,7 @@ import ApplicationMembership from './ApplicationMembership';
 /**
  * The SupportCustomerProfile model module.
  * @module model/SupportCustomerProfile
- * @version 25.18.0
+ * @version 25.19.0
  */
 class SupportCustomerProfile {
     /**

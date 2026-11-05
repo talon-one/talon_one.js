@@ -28,7 +28,7 @@ import TemplateDef from './TemplateDef';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 25.18.0
+ * @version 25.19.0
  */
 class Environment {
     /**
@@ -171,7 +171,7 @@ Environment.prototype['templates'] = undefined;
 Environment.prototype['variables'] = undefined;
 
 /**
- * The giveaways pools that the application is subscribed to.
+ * The giveaway pools that the Application is subscribed to.
  * @member {Array.<module:model/GiveawaysPool>} giveawaysPools
  */
 Environment.prototype['giveawaysPools'] = undefined;

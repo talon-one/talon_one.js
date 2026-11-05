@@ -18,20 +18,20 @@ import LimitConfig from './LimitConfig';
 /**
  * The RevisionVersion model module.
  * @module model/RevisionVersion
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RevisionVersion {
     /**
      * Constructs a new <code>RevisionVersion</code>.
      * @alias module:model/RevisionVersion
      * @param id {Number} Unique ID for this entity. Not to be confused with the Integration ID, which is set by your integration layer and used in most endpoints.
-     * @param accountId {Number} 
-     * @param applicationId {Number} 
-     * @param campaignId {Number} 
-     * @param created {Date} 
-     * @param createdBy {Number} 
-     * @param revisionId {Number} 
-     * @param version {Number} 
+     * @param accountId {Number} The ID of the account that owns this entity.
+     * @param applicationId {Number} The ID of the Application that owns this entity.
+     * @param campaignId {Number} The ID of the campaign that the revision was created from.
+     * @param created {Date} Timestamp when the revision was created.
+     * @param createdBy {Number} The ID of the user who created this revision.
+     * @param revisionId {Number} The ID of the revision.
+     * @param version {Number} Incrementing number representing how many revisions have been activated on this campaign. Starts from `0` for a new campaign. 
      */
     constructor(id, accountId, applicationId, campaignId, created, createdBy, revisionId, version) { 
         
@@ -142,36 +142,43 @@ class RevisionVersion {
 RevisionVersion.prototype['id'] = undefined;
 
 /**
+ * The ID of the account that owns this entity.
  * @member {Number} accountId
  */
 RevisionVersion.prototype['accountId'] = undefined;
 
 /**
+ * The ID of the Application that owns this entity.
  * @member {Number} applicationId
  */
 RevisionVersion.prototype['applicationId'] = undefined;
 
 /**
+ * The ID of the campaign that the revision was created from.
  * @member {Number} campaignId
  */
 RevisionVersion.prototype['campaignId'] = undefined;
 
 /**
+ * Timestamp when the revision was created.
  * @member {Date} created
  */
 RevisionVersion.prototype['created'] = undefined;
 
 /**
+ * The ID of the user who created this revision.
  * @member {Number} createdBy
  */
 RevisionVersion.prototype['createdBy'] = undefined;
 
 /**
+ * The ID of the revision.
  * @member {Number} revisionId
  */
 RevisionVersion.prototype['revisionId'] = undefined;
 
 /**
+ * Incrementing number representing how many revisions have been activated on this campaign. Starts from `0` for a new campaign. 
  * @member {Number} version
  */
 RevisionVersion.prototype['version'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RiskAffectedEntityItem model module.
  * @module model/RiskAffectedEntityItem
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RiskAffectedEntityItem {
     /**

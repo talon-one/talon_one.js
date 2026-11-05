@@ -16,20 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The ShowNotificationBlock model module.
  * @module model/ShowNotificationBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ShowNotificationBlock {
     /**
      * Constructs a new <code>ShowNotificationBlock</code>.
-     * A block that displays a notification to the customer with a configurable type, title, and optional body message.
+     * A block that displays a notification to the customer with a configurable type, title, and body message.
      * @alias module:model/ShowNotificationBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param notificationType {String} The type of notification to display.
      * @param title {String} The notification heading shown to the customer.
+     * @param body {String} The notification body text. Supports template placeholders (e.g. \"{{$Session.Total}}\") evaluated at rule execution time.
      */
-    constructor(type, notificationType, title) { 
+    constructor(type, notificationType, title, body) { 
         
-        ShowNotificationBlock.initialize(this, type, notificationType, title);
+        ShowNotificationBlock.initialize(this, type, notificationType, title, body);
     }
 
     /**
@@ -37,10 +38,11 @@ class ShowNotificationBlock {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type, notificationType, title) { 
+    static initialize(obj, type, notificationType, title, body) { 
         obj['type'] = type;
         obj['notificationType'] = notificationType;
         obj['title'] = title;
+        obj['body'] = body;
     }
 
     /**
@@ -71,9 +73,6 @@ class ShowNotificationBlock {
             }
             if (data.hasOwnProperty('body')) {
                 obj['body'] = ApiClient.convertToType(data['body'], 'String');
-            }
-            if (data.hasOwnProperty('onFailure')) {
-                obj['onFailure'] = ApiClient.convertToType(data['onFailure'], [Object]);
             }
             if (data.hasOwnProperty('onError')) {
                 obj['onError'] = ApiClient.convertToType(data['onError'], {'String': [Object]});
@@ -120,12 +119,6 @@ ShowNotificationBlock.prototype['title'] = undefined;
  * @member {String} body
  */
 ShowNotificationBlock.prototype['body'] = undefined;
-
-/**
- * Blocks evaluated when this block fails or returns false.
- * @member {Array.<Object>} onFailure
- */
-ShowNotificationBlock.prototype['onFailure'] = undefined;
 
 /**
  * Named error handlers evaluated when a specific error occurs.

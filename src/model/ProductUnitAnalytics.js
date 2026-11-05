@@ -18,7 +18,7 @@ import ProductUnitAnalyticsTotals from './ProductUnitAnalyticsTotals';
 /**
  * The ProductUnitAnalytics model module.
  * @module model/ProductUnitAnalytics
- * @version 25.18.0
+ * @version 25.19.0
  */
 class ProductUnitAnalytics {
     /**

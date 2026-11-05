@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalResultSize** | **Number** |  | 
-**data** | [**[CustomerProfile]**](CustomerProfile.md) |  | 
+**data** | [**[CustomerReservation]**](CustomerReservation.md) |  | 
 
 

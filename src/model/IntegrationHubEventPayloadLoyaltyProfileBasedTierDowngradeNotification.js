@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification model module.
  * @module model/IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification
- * @version 25.18.0
+ * @version 25.19.0
  */
 class IntegrationHubEventPayloadLoyaltyProfileBasedTierDowngradeNotification {
     /**

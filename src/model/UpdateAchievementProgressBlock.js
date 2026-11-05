@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import UpdateAchievementProgressBlockAchievement from './UpdateAchievementProgressBlockAchievement';
+import AchievementBlockReference from './AchievementBlockReference';
 
 /**
  * The UpdateAchievementProgressBlock model module.
  * @module model/UpdateAchievementProgressBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateAchievementProgressBlock {
     /**
@@ -26,8 +26,8 @@ class UpdateAchievementProgressBlock {
      * @alias module:model/UpdateAchievementProgressBlock
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param operator {module:model/UpdateAchievementProgressBlock.OperatorEnum} 
-     * @param value {String} The value to update the progress by. Supports template placeholders (e.g. \"{{$Session.Total / 2}}\") for dynamic quantities.
-     * @param achievement {module:model/UpdateAchievementProgressBlockAchievement} 
+     * @param value {Object} The value to update the progress by. Either a numeric scalar or a `{{expression}}` string that resolves to a number at evaluation time.
+     * @param achievement {module:model/AchievementBlockReference} 
      */
     constructor(type, operator, value, achievement) { 
         
@@ -70,10 +70,10 @@ class UpdateAchievementProgressBlock {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], 'String');
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
             if (data.hasOwnProperty('achievement')) {
-                obj['achievement'] = UpdateAchievementProgressBlockAchievement.constructFromObject(data['achievement']);
+                obj['achievement'] = AchievementBlockReference.constructFromObject(data['achievement']);
             }
         }
         return obj;
@@ -106,13 +106,13 @@ UpdateAchievementProgressBlock.prototype['tags'] = undefined;
 UpdateAchievementProgressBlock.prototype['operator'] = undefined;
 
 /**
- * The value to update the progress by. Supports template placeholders (e.g. \"{{$Session.Total / 2}}\") for dynamic quantities.
- * @member {String} value
+ * The value to update the progress by. Either a numeric scalar or a `{{expression}}` string that resolves to a number at evaluation time.
+ * @member {Object} value
  */
 UpdateAchievementProgressBlock.prototype['value'] = undefined;
 
 /**
- * @member {module:model/UpdateAchievementProgressBlockAchievement} achievement
+ * @member {module:model/AchievementBlockReference} achievement
  */
 UpdateAchievementProgressBlock.prototype['achievement'] = undefined;
 

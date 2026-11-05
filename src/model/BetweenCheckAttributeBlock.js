@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BetweenCheckAttributeBlock model module.
  * @module model/BetweenCheckAttributeBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class BetweenCheckAttributeBlock {
     /**

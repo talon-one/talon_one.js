@@ -84,12 +84,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property onFailure (base name: "onFailure")', function() {
-      // uncomment below and update the code to test the property onFailure
-      //var instane = new TalonOne.AwardGiveawayBlock();
-      //expect(instance).to.be();
-    });
-
     it('should have the property onError (base name: "onError")', function() {
       // uncomment below and update the code to test the property onError
       //var instane = new TalonOne.AwardGiveawayBlock();

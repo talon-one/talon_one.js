@@ -16,22 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The Bundle model module.
  * @module model/Bundle
- * @version 25.18.0
+ * @version 25.19.0
  */
 class Bundle {
     /**
      * Constructs a new <code>Bundle</code>.
      * A named bundle definition consisting of selector sources with matching constraints. Replaces &#x60;bundle&#x60; [bindings](https://docs.talon.one/management-api#tag/Campaigns/operation/getRuleset.responses.200.bindings) in V1 rulesets.
      * @alias module:model/Bundle
-     * @param id {String} An identifier derived from the bundle content.
      * @param name {String} The name of the bundle.
      * @param type {module:model/Bundle.TypeEnum} A binding of type `bundle`.
      * @param sources {Array.<String>} The selector sources of bundle items. Each source is expressed as a `{{$selectorName}}` reference.
      * @param counts {Array.<Number>} The number of items to retrieve from each corresponding source in `sources`.
      */
-    constructor(id, name, type, sources, counts) { 
+    constructor(name, type, sources, counts) { 
         
-        Bundle.initialize(this, id, name, type, sources, counts);
+        Bundle.initialize(this, name, type, sources, counts);
     }
 
     /**
@@ -39,8 +38,7 @@ class Bundle {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, name, type, sources, counts) { 
-        obj['id'] = id;
+    static initialize(obj, name, type, sources, counts) { 
         obj['name'] = name;
         obj['type'] = type;
         obj['sources'] = sources;

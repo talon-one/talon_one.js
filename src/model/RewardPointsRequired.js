@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardPointsRequired model module.
  * @module model/RewardPointsRequired
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RewardPointsRequired {
     /**

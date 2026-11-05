@@ -17,7 +17,7 @@ import BestPriorTarget from './BestPriorTarget';
 /**
  * The BestPriorPriceRequest model module.
  * @module model/BestPriorPriceRequest
- * @version 25.18.0
+ * @version 25.19.0
  */
 class BestPriorPriceRequest {
     /**
@@ -26,7 +26,7 @@ class BestPriorPriceRequest {
      * @param skus {Array.<String>} List of product SKUs to check when determining the best prior price.
      * @param timeframeEndDate {Date} The end date and time that defines the latest time for retrieving historical SKU prices.
      * @param timeframe {String} The number of days prior to the timeframeEndDate. Only prices within this look back period are considered for the best prior price evaluation.
-     * @param timeframeEndDateType {module:model/BestPriorPriceRequest.TimeframeEndDateTypeEnum} Sets the timeframe for retrieving historical pricing data. Can be one of the following values: - `strict`: The timeframe ends at the `timeframeEndDate` value. - `price`: The timeframe ends at the start of current price value and takes the prices prior to the start of the current price value into account. - `sale`:  The timeframe ends at the start of current `contextId` and takes the prices prior to the start of the `contextId` into account. 
+     * @param timeframeEndDateType {module:model/BestPriorPriceRequest.TimeframeEndDateTypeEnum} Sets the timeframe for retrieving historical pricing data. Can be one of the following values: - `strict`: The timeframe ends at the `timeframeEndDate` value. - `price`: The timeframe ends at the start of current price value and takes the prices prior to the start of the current price value into account. - `sale`:  The timeframe ends at the start of the current sales event, as defined by the `contextId`. It takes the prices prior to the current sale event into account. 
      */
     constructor(skus, timeframeEndDate, timeframe, timeframeEndDateType) { 
         
@@ -97,7 +97,7 @@ BestPriorPriceRequest.prototype['timeframeEndDate'] = undefined;
 BestPriorPriceRequest.prototype['timeframe'] = undefined;
 
 /**
- * Sets the timeframe for retrieving historical pricing data. Can be one of the following values: - `strict`: The timeframe ends at the `timeframeEndDate` value. - `price`: The timeframe ends at the start of current price value and takes the prices prior to the start of the current price value into account. - `sale`:  The timeframe ends at the start of current `contextId` and takes the prices prior to the start of the `contextId` into account. 
+ * Sets the timeframe for retrieving historical pricing data. Can be one of the following values: - `strict`: The timeframe ends at the `timeframeEndDate` value. - `price`: The timeframe ends at the start of current price value and takes the prices prior to the start of the current price value into account. - `sale`:  The timeframe ends at the start of the current sales event, as defined by the `contextId`. It takes the prices prior to the current sale event into account. 
  * @member {module:model/BestPriorPriceRequest.TimeframeEndDateTypeEnum} timeframeEndDateType
  */
 BestPriorPriceRequest.prototype['timeframeEndDateType'] = undefined;

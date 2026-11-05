@@ -12,22 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Change from './Change';
+import WebhookWithOutgoingIntegrationDetails from './WebhookWithOutgoingIntegrationDetails';
 
 /**
  * The InlineResponse20045 model module.
  * @module model/InlineResponse20045
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20045 {
     /**
      * Constructs a new <code>InlineResponse20045</code>.
      * @alias module:model/InlineResponse20045
-     * @param data {Array.<module:model/Change>} 
+     * @param totalResultSize {Number} 
+     * @param data {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} 
      */
-    constructor(data) { 
+    constructor(totalResultSize, data) { 
         
-        InlineResponse20045.initialize(this, data);
+        InlineResponse20045.initialize(this, totalResultSize, data);
     }
 
     /**
@@ -35,7 +36,8 @@ class InlineResponse20045 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data) { 
+    static initialize(obj, totalResultSize, data) { 
+        obj['totalResultSize'] = totalResultSize;
         obj['data'] = data;
     }
 
@@ -53,11 +55,8 @@ class InlineResponse20045 {
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Change]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WebhookWithOutgoingIntegrationDetails]);
             }
         }
         return obj;
@@ -72,12 +71,7 @@ class InlineResponse20045 {
 InlineResponse20045.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20045.prototype['hasMore'] = undefined;
-
-/**
- * @member {Array.<module:model/Change>} data
+ * @member {Array.<module:model/WebhookWithOutgoingIntegrationDetails>} data
  */
 InlineResponse20045.prototype['data'] = undefined;
 

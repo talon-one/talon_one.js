@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loyaltyProgramJoinDates (base name: "loyaltyProgramJoinDates")', function() {
+      // uncomment below and update the code to test the property loyaltyProgramJoinDates
+      //var instane = new TalonOne.ApplicationCustomer();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

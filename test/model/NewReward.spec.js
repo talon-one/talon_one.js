@@ -108,6 +108,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property validityDuration (base name: "validityDuration")', function() {
+      // uncomment below and update the code to test the property validityDuration
+      //var instane = new TalonOne.NewReward();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiryDate (base name: "expiryDate")', function() {
+      // uncomment below and update the code to test the property expiryDate
+      //var instane = new TalonOne.NewReward();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

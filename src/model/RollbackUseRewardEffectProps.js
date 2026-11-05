@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackUseRewardEffectProps model module.
  * @module model/RollbackUseRewardEffectProps
- * @version 25.18.0
+ * @version 25.19.0
  */
 class RollbackUseRewardEffectProps {
     /**

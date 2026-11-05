@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import UpdateAudienceMembershipBlockAudience from './UpdateAudienceMembershipBlockAudience';
+import AudienceBlockReference from './AudienceBlockReference';
 
 /**
  * The UpdateAudienceMembershipBlock model module.
  * @module model/UpdateAudienceMembershipBlock
- * @version 25.18.0
+ * @version 25.19.0
  */
 class UpdateAudienceMembershipBlock {
     /**
@@ -27,7 +27,7 @@ class UpdateAudienceMembershipBlock {
      * @param type {String} Identifies the block variant and determines which additional properties are present in it.
      * @param operator {module:model/UpdateAudienceMembershipBlock.OperatorEnum} The action to perform.
      * @param profile {module:model/UpdateAudienceMembershipBlock.ProfileEnum} The customer profile to add or remove from the audience. `Current` targets the customer in the current session; `Advocate` targets the person who invited their friend via referral program.
-     * @param audience {module:model/UpdateAudienceMembershipBlockAudience} 
+     * @param audience {module:model/AudienceBlockReference} 
      */
     constructor(type, operator, profile, audience) { 
         
@@ -73,7 +73,7 @@ class UpdateAudienceMembershipBlock {
                 obj['profile'] = ApiClient.convertToType(data['profile'], 'String');
             }
             if (data.hasOwnProperty('audience')) {
-                obj['audience'] = UpdateAudienceMembershipBlockAudience.constructFromObject(data['audience']);
+                obj['audience'] = AudienceBlockReference.constructFromObject(data['audience']);
             }
         }
         return obj;
@@ -113,7 +113,7 @@ UpdateAudienceMembershipBlock.prototype['operator'] = undefined;
 UpdateAudienceMembershipBlock.prototype['profile'] = undefined;
 
 /**
- * @member {module:model/UpdateAudienceMembershipBlockAudience} audience
+ * @member {module:model/AudienceBlockReference} audience
  */
 UpdateAudienceMembershipBlock.prototype['audience'] = undefined;
 

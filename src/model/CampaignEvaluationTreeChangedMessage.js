@@ -17,7 +17,7 @@ import ApplicationNotification from './ApplicationNotification';
 /**
  * The CampaignEvaluationTreeChangedMessage model module.
  * @module model/CampaignEvaluationTreeChangedMessage
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CampaignEvaluationTreeChangedMessage {
     /**
@@ -25,10 +25,11 @@ class CampaignEvaluationTreeChangedMessage {
      * @alias module:model/CampaignEvaluationTreeChangedMessage
      * @param notificationType {module:model/CampaignEvaluationTreeChangedMessage.NotificationTypeEnum} The type of the notification
      * @param totalResultSize {Number} The total size of the result set.
+     * @param data {Array.<module:model/ApplicationNotification>} The array of changes.
      */
-    constructor(notificationType, totalResultSize) { 
+    constructor(notificationType, totalResultSize, data) { 
         
-        CampaignEvaluationTreeChangedMessage.initialize(this, notificationType, totalResultSize);
+        CampaignEvaluationTreeChangedMessage.initialize(this, notificationType, totalResultSize, data);
     }
 
     /**
@@ -36,9 +37,10 @@ class CampaignEvaluationTreeChangedMessage {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, notificationType, totalResultSize) { 
+    static initialize(obj, notificationType, totalResultSize, data) { 
         obj['NotificationType'] = notificationType;
         obj['TotalResultSize'] = totalResultSize;
+        obj['Data'] = data;
     }
 
     /**
@@ -98,10 +100,10 @@ CampaignEvaluationTreeChangedMessage.prototype['Data'] = undefined;
 CampaignEvaluationTreeChangedMessage['NotificationTypeEnum'] = {
 
     /**
-     * value: "CampaignNotification"
+     * value: "CampaignEvaluationTreeChanged"
      * @const
      */
-    "CampaignNotification": "CampaignNotification"
+    "CampaignEvaluationTreeChanged": "CampaignEvaluationTreeChanged"
 };
 
 

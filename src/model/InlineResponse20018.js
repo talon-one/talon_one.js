@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoyaltyDashboardData from './LoyaltyDashboardData';
+import Experiment from './Experiment';
 
 /**
  * The InlineResponse20018 model module.
  * @module model/InlineResponse20018
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20018 {
     /**
      * Constructs a new <code>InlineResponse20018</code>.
      * @alias module:model/InlineResponse20018
      * @param totalResultSize {Number} 
-     * @param data {Array.<module:model/LoyaltyDashboardData>} 
+     * @param data {Array.<module:model/Experiment>} 
      */
     constructor(totalResultSize, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse20018 {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LoyaltyDashboardData]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Experiment]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse20018 {
 InlineResponse20018.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyDashboardData>} data
+ * @member {Array.<module:model/Experiment>} data
  */
 InlineResponse20018.prototype['data'] = undefined;
 

@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import LedgerPointsEntryIntegrationAPI from './LedgerPointsEntryIntegrationAPI';
+import LedgerTransactionLogEntryManagementAPI from './LedgerTransactionLogEntryManagementAPI';
 
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse2007 {
     /**
      * Constructs a new <code>InlineResponse2007</code>.
      * @alias module:model/InlineResponse2007
      * @param hasMore {Boolean} 
-     * @param data {Array.<module:model/LedgerPointsEntryIntegrationAPI>} 
+     * @param data {Array.<module:model/LedgerTransactionLogEntryManagementAPI>} 
      */
     constructor(hasMore, data) { 
         
@@ -56,7 +56,7 @@ class InlineResponse2007 {
                 obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LedgerPointsEntryIntegrationAPI]);
+                obj['data'] = ApiClient.convertToType(data['data'], [LedgerTransactionLogEntryManagementAPI]);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class InlineResponse2007 {
 InlineResponse2007.prototype['hasMore'] = undefined;
 
 /**
- * @member {Array.<module:model/LedgerPointsEntryIntegrationAPI>} data
+ * @member {Array.<module:model/LedgerTransactionLogEntryManagementAPI>} data
  */
 InlineResponse2007.prototype['data'] = undefined;
 

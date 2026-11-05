@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import Store from './Store';
+import Change from './Change';
 
 /**
  * The InlineResponse20048 model module.
  * @module model/InlineResponse20048
- * @version 25.18.0
+ * @version 25.19.0
  */
 class InlineResponse20048 {
     /**
      * Constructs a new <code>InlineResponse20048</code>.
      * @alias module:model/InlineResponse20048
-     * @param data {Array.<module:model/Store>} 
+     * @param data {Array.<module:model/Change>} 
      */
     constructor(data) { 
         
@@ -50,14 +50,14 @@ class InlineResponse20048 {
         if (data) {
             obj = obj || new InlineResponse20048();
 
-            if (data.hasOwnProperty('hasMore')) {
-                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
-            }
             if (data.hasOwnProperty('totalResultSize')) {
                 obj['totalResultSize'] = ApiClient.convertToType(data['totalResultSize'], 'Number');
             }
+            if (data.hasOwnProperty('hasMore')) {
+                obj['hasMore'] = ApiClient.convertToType(data['hasMore'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Store]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Change]);
             }
         }
         return obj;
@@ -67,17 +67,17 @@ class InlineResponse20048 {
 }
 
 /**
- * @member {Boolean} hasMore
- */
-InlineResponse20048.prototype['hasMore'] = undefined;
-
-/**
  * @member {Number} totalResultSize
  */
 InlineResponse20048.prototype['totalResultSize'] = undefined;
 
 /**
- * @member {Array.<module:model/Store>} data
+ * @member {Boolean} hasMore
+ */
+InlineResponse20048.prototype['hasMore'] = undefined;
+
+/**
+ * @member {Array.<module:model/Change>} data
  */
 InlineResponse20048.prototype['data'] = undefined;
 

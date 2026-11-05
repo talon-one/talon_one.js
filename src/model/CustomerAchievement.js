@@ -18,7 +18,7 @@ import CampaignReference from './CampaignReference';
 /**
  * The CustomerAchievement model module.
  * @module model/CustomerAchievement
- * @version 25.18.0
+ * @version 25.19.0
  */
 class CustomerAchievement {
     /**
